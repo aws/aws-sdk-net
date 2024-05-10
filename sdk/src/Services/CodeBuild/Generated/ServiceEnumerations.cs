@@ -189,6 +189,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly AuthType BASIC_AUTH = new AuthType("BASIC_AUTH");
         /// <summary>
+        /// Constant CODECONNECTIONS for AuthType
+        /// </summary>
+        public static readonly AuthType CODECONNECTIONS = new AuthType("CODECONNECTIONS");
+        /// <summary>
         /// Constant OAUTH for AuthType
         /// </summary>
         public static readonly AuthType OAUTH = new AuthType("OAUTH");
@@ -1167,6 +1171,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly FleetStatusCode DELETING = new FleetStatusCode("DELETING");
         /// <summary>
+        /// Constant PENDING_DELETION for FleetStatusCode
+        /// </summary>
+        public static readonly FleetStatusCode PENDING_DELETION = new FleetStatusCode("PENDING_DELETION");
+        /// <summary>
         /// Constant ROTATING for FleetStatusCode
         /// </summary>
         public static readonly FleetStatusCode ROTATING = new FleetStatusCode("ROTATING");
@@ -2070,6 +2078,14 @@ namespace Amazon.CodeBuild
         /// Constant GITHUB_ENTERPRISE for ServerType
         /// </summary>
         public static readonly ServerType GITHUB_ENTERPRISE = new ServerType("GITHUB_ENTERPRISE");
+        /// <summary>
+        /// Constant GITLAB for ServerType
+        /// </summary>
+        public static readonly ServerType GITLAB = new ServerType("GITLAB");
+        /// <summary>
+        /// Constant GITLAB_SELF_MANAGED for ServerType
+        /// </summary>
+        public static readonly ServerType GITLAB_SELF_MANAGED = new ServerType("GITLAB_SELF_MANAGED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2213,6 +2229,10 @@ namespace Amazon.CodeBuild
     {
 
         /// <summary>
+        /// Constant CODECONNECTIONS for SourceAuthType
+        /// </summary>
+        public static readonly SourceAuthType CODECONNECTIONS = new SourceAuthType("CODECONNECTIONS");
+        /// <summary>
         /// Constant OAUTH for SourceAuthType
         /// </summary>
         public static readonly SourceAuthType OAUTH = new SourceAuthType("OAUTH");
@@ -2278,6 +2298,14 @@ namespace Amazon.CodeBuild
         /// Constant GITHUB_ENTERPRISE for SourceType
         /// </summary>
         public static readonly SourceType GITHUB_ENTERPRISE = new SourceType("GITHUB_ENTERPRISE");
+        /// <summary>
+        /// Constant GITLAB for SourceType
+        /// </summary>
+        public static readonly SourceType GITLAB = new SourceType("GITLAB");
+        /// <summary>
+        /// Constant GITLAB_SELF_MANAGED for SourceType
+        /// </summary>
+        public static readonly SourceType GITLAB_SELF_MANAGED = new SourceType("GITLAB_SELF_MANAGED");
         /// <summary>
         /// Constant NO_SOURCE for SourceType
         /// </summary>
@@ -2468,6 +2496,18 @@ namespace Amazon.CodeBuild
         /// Constant HEAD_REF for WebhookFilterType
         /// </summary>
         public static readonly WebhookFilterType HEAD_REF = new WebhookFilterType("HEAD_REF");
+        /// <summary>
+        /// Constant RELEASE_NAME for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType RELEASE_NAME = new WebhookFilterType("RELEASE_NAME");
+        /// <summary>
+        /// Constant TAG_NAME for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType TAG_NAME = new WebhookFilterType("TAG_NAME");
+        /// <summary>
+        /// Constant WORKFLOW_NAME for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType WORKFLOW_NAME = new WebhookFilterType("WORKFLOW_NAME");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

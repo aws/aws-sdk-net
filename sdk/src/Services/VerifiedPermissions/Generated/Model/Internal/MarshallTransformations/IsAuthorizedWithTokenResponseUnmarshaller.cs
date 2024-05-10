@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<EvaluationErrorItem, EvaluationErrorItemUnmarshaller>(EvaluationErrorItemUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("principal", targetDepth))
+                {
+                    var unmarshaller = EntityIdentifierUnmarshaller.Instance;
+                    response.Principal = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

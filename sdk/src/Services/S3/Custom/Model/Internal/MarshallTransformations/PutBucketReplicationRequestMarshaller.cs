@@ -23,7 +23,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 
-#pragma warning disable 1591
+#pragma warning disable 1591,CS0612,CS0618
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -262,6 +262,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static PutBucketReplicationRequestMarshaller _instance;
 
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
         public static PutBucketReplicationRequestMarshaller Instance
         {
             get

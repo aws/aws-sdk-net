@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the chime-sdk-voice-2022-08-03.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>

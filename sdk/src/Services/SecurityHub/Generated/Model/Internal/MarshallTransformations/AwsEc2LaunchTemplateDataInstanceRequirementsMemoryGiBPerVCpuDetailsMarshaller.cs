@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMax())
             {
                 context.Writer.WritePropertyName("Max");
-                context.Writer.Write(requestObject.Max.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Max.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Max.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Max.Value);
+                }
             }
 
             if(requestObject.IsSetMin())
             {
                 context.Writer.WritePropertyName("Min");
-                context.Writer.Write(requestObject.Min.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Min.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Min.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Min.Value);
+                }
             }
 
         }

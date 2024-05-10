@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Gets a list of tags associated with a specified resource. Amazon Q applications and
-    /// data sources can have tags associated with them.
+    /// Gets a list of tags associated with a specified resource. Amazon Q Business applications
+    /// and data sources can have tags associated with them.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonQBusinessRequest
     {
@@ -40,8 +41,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Q application or data source to get a
-        /// list of tags for.
+        /// The Amazon Resource Name (ARN) of the Amazon Q Business application or data source
+        /// to get a list of tags for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

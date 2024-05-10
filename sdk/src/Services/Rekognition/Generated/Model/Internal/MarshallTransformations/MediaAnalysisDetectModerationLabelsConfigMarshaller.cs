@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MediaAnalysisDetectModerationLabelsConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMinConfidence())
             {
                 context.Writer.WritePropertyName("MinConfidence");
-                context.Writer.Write(requestObject.MinConfidence.Value);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinConfidence.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinConfidence.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinConfidence.Value);
+                }
             }
 
             if(requestObject.IsSetProjectVersion())

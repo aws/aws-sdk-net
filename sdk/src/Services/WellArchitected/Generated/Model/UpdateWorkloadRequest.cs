@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -45,6 +46,7 @@ namespace Amazon.WellArchitected.Model
         private string _industry;
         private string _industryType;
         private bool? _isReviewOwnerUpdateAcknowledged;
+        private WorkloadJiraConfigurationInput _jiraConfiguration;
         private List<string> _nonAwsRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _notes;
         private List<string> _pillarPriorities = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -237,6 +239,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetIsReviewOwnerUpdateAcknowledged()
         {
             return this._isReviewOwnerUpdateAcknowledged.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JiraConfiguration. 
+        /// <para>
+        /// Configuration of the Jira integration.
+        /// </para>
+        /// </summary>
+        public WorkloadJiraConfigurationInput JiraConfiguration
+        {
+            get { return this._jiraConfiguration; }
+            set { this._jiraConfiguration = value; }
+        }
+
+        // Check to see if JiraConfiguration property is set
+        internal bool IsSetJiraConfiguration()
+        {
+            return this._jiraConfiguration != null;
         }
 
         /// <summary>

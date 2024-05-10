@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsJobExponentialRolloutRate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBaseRatePerMinute())
             {
                 context.Writer.WritePropertyName("baseRatePerMinute");
@@ -54,7 +57,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncrementFactor())
             {
                 context.Writer.WritePropertyName("incrementFactor");
-                context.Writer.Write(requestObject.IncrementFactor.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.IncrementFactor.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.IncrementFactor.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.IncrementFactor.Value);
+                }
             }
 
             if(requestObject.IsSetRateIncreaseCriteria())

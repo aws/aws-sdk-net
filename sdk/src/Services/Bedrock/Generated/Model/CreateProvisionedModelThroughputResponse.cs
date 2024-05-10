@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ProvisionedModelArn. 
         /// <para>
-        /// The ARN for this provisioned throughput.
+        /// The Amazon Resource Name (ARN) for this Provisioned Throughput.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

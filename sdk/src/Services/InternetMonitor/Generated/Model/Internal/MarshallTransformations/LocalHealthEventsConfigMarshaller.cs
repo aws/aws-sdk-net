@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LocalHealthEventsConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHealthScoreThreshold())
             {
                 context.Writer.WritePropertyName("HealthScoreThreshold");
-                context.Writer.Write(requestObject.HealthScoreThreshold.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.HealthScoreThreshold.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.HealthScoreThreshold.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.HealthScoreThreshold.Value);
+                }
             }
 
             if(requestObject.IsSetMinTrafficImpact())
             {
                 context.Writer.WritePropertyName("MinTrafficImpact");
-                context.Writer.Write(requestObject.MinTrafficImpact.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinTrafficImpact.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinTrafficImpact.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinTrafficImpact.Value);
+                }
             }
 
             if(requestObject.IsSetStatus())

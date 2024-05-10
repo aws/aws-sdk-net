@@ -52,7 +52,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static GetBucketLocationRequestMarshaller _instance;
 
-	    public static GetBucketLocationRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static GetBucketLocationRequestMarshaller Instance
 	    {
 	        get
 	        {

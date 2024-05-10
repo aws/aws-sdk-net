@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -73,6 +74,14 @@ namespace Amazon.WorkSpaces.Model
         public IDescribeWorkspacesPaginator DescribeWorkspaces(DescribeWorkspacesRequest request) 
         {
             return new DescribeWorkspacesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAccountLinks operation
+        ///</summary>
+        public IListAccountLinksPaginator ListAccountLinks(ListAccountLinksRequest request) 
+        {
+            return new ListAccountLinksPaginator(this.client, request);
         }
     }
 }

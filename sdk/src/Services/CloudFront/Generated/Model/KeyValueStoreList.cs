@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The Key Value Store list.
+    /// The key value store list.
     /// </summary>
     public partial class KeyValueStoreList
     {
@@ -41,7 +42,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The items of the Key Value Store list.
+        /// The items of the key value store list.
         /// </para>
         /// </summary>
         public List<KeyValueStore> Items
@@ -59,7 +60,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of items in the Key Value Store list.
+        /// The maximum number of items in the key value store list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,7 +79,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// The next marker associated with the Key Value Store list.
+        /// The next marker associated with the key value store list.
         /// </para>
         /// </summary>
         public string NextMarker
@@ -96,7 +97,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The quantity of the Key Value Store list.
+        /// The quantity of the key value store list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

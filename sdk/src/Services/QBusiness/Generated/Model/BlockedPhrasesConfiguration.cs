@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property BlockedPhrases. 
         /// <para>
-        /// A list of phrases blocked from a Amazon Q web experience chat.
+        /// A list of phrases blocked from a Amazon Q Business web experience chat.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

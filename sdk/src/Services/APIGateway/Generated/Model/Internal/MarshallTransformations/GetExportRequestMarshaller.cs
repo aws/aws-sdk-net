@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,12 +68,14 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetStageName())
                 throw new AmazonAPIGatewayException("Request object does not have required field StageName set");
             request.AddPathResource("{stage_name}", StringUtils.FromString(publicRequest.StageName));
-            
             if (publicRequest.IsSetParameters())
             {
                 foreach(var kvp in publicRequest.Parameters)
                 {
-                    request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
+                    if(request.Parameters.ContainsKey(kvp.Key))
+                       continue;
+                    else
+                       request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
                 }
             }
             request.ResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/exports/{export_type}";

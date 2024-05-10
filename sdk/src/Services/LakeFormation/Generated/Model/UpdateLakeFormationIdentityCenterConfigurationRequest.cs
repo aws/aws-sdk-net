@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
@@ -37,6 +38,7 @@ namespace Amazon.LakeFormation.Model
         private ApplicationStatus _applicationStatus;
         private string _catalogId;
         private ExternalFilteringConfiguration _externalFiltering;
+        private List<DataLakePrincipal> _shareRecipients = AWSConfigs.InitializeCollections ? new List<DataLakePrincipal>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationStatus. 
@@ -94,6 +96,41 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetExternalFiltering()
         {
             return this._externalFiltering != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareRecipients. 
+        /// <para>
+        /// A list of Amazon Web Services account IDs or Amazon Web Services organization/organizational
+        /// unit ARNs that are allowed to access to access data managed by Lake Formation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <c>ShareRecipients</c> list includes valid values, then the resource share
+        /// is updated with the principals you want to have access to the resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <c>ShareRecipients</c> value is null, both the list of share recipients and
+        /// the resource share remain unchanged.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <c>ShareRecipients</c> value is an empty list, then the existing share recipients
+        /// list will be cleared, and the resource share will be deleted.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=30)]
+        public List<DataLakePrincipal> ShareRecipients
+        {
+            get { return this._shareRecipients; }
+            set { this._shareRecipients = value; }
+        }
+
+        // Check to see if ShareRecipients property is set
+        internal bool IsSetShareRecipients()
+        {
+            return this._shareRecipients != null && (this._shareRecipients.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
@@ -81,6 +82,9 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property ProvisionedMemory. 
         /// <para>
         /// The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.
+        /// </para>
+        ///  
+        /// <para>
         /// Min = 128
         /// </para>
         /// </summary>

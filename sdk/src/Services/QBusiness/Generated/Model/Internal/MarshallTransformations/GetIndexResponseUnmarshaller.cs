@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -115,6 +116,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("updatedAt", targetDepth))

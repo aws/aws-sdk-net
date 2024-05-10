@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A name to identify the origin access control.
+        /// A name to identify the origin access control. You can specify up to 64 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

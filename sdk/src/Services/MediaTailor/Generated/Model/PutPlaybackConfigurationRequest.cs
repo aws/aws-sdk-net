@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
@@ -42,6 +43,7 @@ namespace Amazon.MediaTailor.Model
         private CdnConfiguration _cdnConfiguration;
         private Dictionary<string, Dictionary<string, string>> _configurationAliases = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
         private DashConfigurationForPut _dashConfiguration;
+        private InsertionMode _insertionMode;
         private LivePreRollConfiguration _livePreRollConfiguration;
         private ManifestProcessingRules _manifestProcessingRules;
         private string _name;
@@ -166,6 +168,28 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetDashConfiguration()
         {
             return this._dashConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InsertionMode. 
+        /// <para>
+        /// The setting that controls whether players can use stitched or guided ad insertion.
+        /// The default, <c>STITCHED_ONLY</c>, forces all player sessions to use stitched (server-side)
+        /// ad insertion. Choosing <c>PLAYER_SELECT</c> allows players to select either stitched
+        /// or guided ad insertion at session-initialization time. The default for players that
+        /// do not specify an insertion mode is stitched.
+        /// </para>
+        /// </summary>
+        public InsertionMode InsertionMode
+        {
+            get { return this._insertionMode; }
+            set { this._insertionMode = value; }
+        }
+
+        // Check to see if InsertionMode property is set
+        internal bool IsSetInsertionMode()
+        {
+            return this._insertionMode != null;
         }
 
         /// <summary>

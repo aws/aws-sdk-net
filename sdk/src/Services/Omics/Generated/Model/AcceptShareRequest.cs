@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the AcceptShare operation.
-    /// Accepts a share for an analytics store.
+    /// Accept a resource share request.
     /// </summary>
     public partial class AcceptShareRequest : AmazonOmicsRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ShareId. 
         /// <para>
-        ///  The ID for a share offer for analytics store data. 
+        /// The ID of the resource share.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

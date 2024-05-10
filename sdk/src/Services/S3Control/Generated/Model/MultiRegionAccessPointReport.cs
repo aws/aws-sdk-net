@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -45,8 +46,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property Alias. 
         /// <para>
         /// The alias for the Multi-Region Access Point. For more information about the distinction
-        /// between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-        /// Multi-Region Access Points</a>.
+        /// between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Rules
+        /// for naming Amazon S3 Multi-Region Access Points</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]

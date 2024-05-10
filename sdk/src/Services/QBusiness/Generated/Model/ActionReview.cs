@@ -26,12 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// An output event that Amazon Q returns to an user who wants to perform a plugin action
-    /// during a non-streaming chat conversation. It contains information about the selected
-    /// action with a list of possible user input fields, some pre-populated by Amazon Q.
+    /// An output event that Amazon Q Business returns to an user who wants to perform a plugin
+    /// action during a non-streaming chat conversation. It contains information about the
+    /// selected action with a list of possible user input fields, some pre-populated by Amazon
+    /// Q Business.
     /// </summary>
     public partial class ActionReview
     {
@@ -43,8 +45,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        /// Field values that an end user needs to provide to Amazon Q for Amazon Q to perform
-        /// the requested plugin action.
+        /// Field values that an end user needs to provide to Amazon Q Business for Amazon Q Business
+        /// to perform the requested plugin action.
         /// </para>
         /// </summary>
         public Dictionary<string, ActionReviewPayloadField> Payload

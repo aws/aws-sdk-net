@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -870,6 +871,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The <c>serverless</c> engine mode only applies for Aurora Serverless v1 DB clusters.
+        /// Aurora Serverless v2 DB clusters use the <c>provisioned</c> engine mode.
         /// </para>
         ///  
         /// <para>

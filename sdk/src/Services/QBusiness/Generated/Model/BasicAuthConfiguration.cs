@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -39,8 +40,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of an IAM role used by Amazon Q to access the basic authentication credentials
-        /// stored in a Secrets Manager secret.
+        /// The ARN of an IAM role used by Amazon Q Business to access the basic authentication
+        /// credentials stored in a Secrets Manager secret.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1284)]

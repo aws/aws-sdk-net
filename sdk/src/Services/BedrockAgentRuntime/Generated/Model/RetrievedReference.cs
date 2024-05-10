@@ -26,15 +26,33 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains metadata about a sources cited for the generated response.
+    /// Contains metadata about a source cited for the generated response.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax">RetrieveAndGenerate
+    /// response</a> – in the <c>retrievedReferences</c> field
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+    /// response</a> – in the <c>retrievedReferences</c> field
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class RetrievedReference
     {
         private RetrievalResultContent _content;
         private RetrievalResultLocation _location;
+        private Dictionary<string, Amazon.Runtime.Documents.Document> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
 
         /// <summary>
         /// Gets and sets the property Content. 
@@ -72,6 +90,27 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Contains metadata attributes and their values for the file in the data source. For
+        /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+        /// and filtering</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1)]
+        public Dictionary<string, Amazon.Runtime.Documents.Document> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

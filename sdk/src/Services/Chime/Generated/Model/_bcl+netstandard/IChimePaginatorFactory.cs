@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the chime-2018-05-01.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model
 {
     /// <summary>

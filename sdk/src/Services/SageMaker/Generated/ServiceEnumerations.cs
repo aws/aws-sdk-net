@@ -407,6 +407,114 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppInstanceType MlC5Xlarge = new AppInstanceType("ml.c5.xlarge");
         /// <summary>
+        /// Constant MlC6i12xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6i12xlarge = new AppInstanceType("ml.c6i.12xlarge");
+        /// <summary>
+        /// Constant MlC6i16xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6i16xlarge = new AppInstanceType("ml.c6i.16xlarge");
+        /// <summary>
+        /// Constant MlC6i24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6i24xlarge = new AppInstanceType("ml.c6i.24xlarge");
+        /// <summary>
+        /// Constant MlC6i2xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6i2xlarge = new AppInstanceType("ml.c6i.2xlarge");
+        /// <summary>
+        /// Constant MlC6i32xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6i32xlarge = new AppInstanceType("ml.c6i.32xlarge");
+        /// <summary>
+        /// Constant MlC6i4xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6i4xlarge = new AppInstanceType("ml.c6i.4xlarge");
+        /// <summary>
+        /// Constant MlC6i8xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6i8xlarge = new AppInstanceType("ml.c6i.8xlarge");
+        /// <summary>
+        /// Constant MlC6id12xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6id12xlarge = new AppInstanceType("ml.c6id.12xlarge");
+        /// <summary>
+        /// Constant MlC6id16xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6id16xlarge = new AppInstanceType("ml.c6id.16xlarge");
+        /// <summary>
+        /// Constant MlC6id24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6id24xlarge = new AppInstanceType("ml.c6id.24xlarge");
+        /// <summary>
+        /// Constant MlC6id2xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6id2xlarge = new AppInstanceType("ml.c6id.2xlarge");
+        /// <summary>
+        /// Constant MlC6id32xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6id32xlarge = new AppInstanceType("ml.c6id.32xlarge");
+        /// <summary>
+        /// Constant MlC6id4xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6id4xlarge = new AppInstanceType("ml.c6id.4xlarge");
+        /// <summary>
+        /// Constant MlC6id8xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6id8xlarge = new AppInstanceType("ml.c6id.8xlarge");
+        /// <summary>
+        /// Constant MlC6idLarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6idLarge = new AppInstanceType("ml.c6id.large");
+        /// <summary>
+        /// Constant MlC6idXlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6idXlarge = new AppInstanceType("ml.c6id.xlarge");
+        /// <summary>
+        /// Constant MlC6iLarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6iLarge = new AppInstanceType("ml.c6i.large");
+        /// <summary>
+        /// Constant MlC6iXlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC6iXlarge = new AppInstanceType("ml.c6i.xlarge");
+        /// <summary>
+        /// Constant MlC7i12xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC7i12xlarge = new AppInstanceType("ml.c7i.12xlarge");
+        /// <summary>
+        /// Constant MlC7i16xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC7i16xlarge = new AppInstanceType("ml.c7i.16xlarge");
+        /// <summary>
+        /// Constant MlC7i24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC7i24xlarge = new AppInstanceType("ml.c7i.24xlarge");
+        /// <summary>
+        /// Constant MlC7i2xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC7i2xlarge = new AppInstanceType("ml.c7i.2xlarge");
+        /// <summary>
+        /// Constant MlC7i48xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC7i48xlarge = new AppInstanceType("ml.c7i.48xlarge");
+        /// <summary>
+        /// Constant MlC7i4xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC7i4xlarge = new AppInstanceType("ml.c7i.4xlarge");
+        /// <summary>
+        /// Constant MlC7i8xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC7i8xlarge = new AppInstanceType("ml.c7i.8xlarge");
+        /// <summary>
+        /// Constant MlC7iLarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC7iLarge = new AppInstanceType("ml.c7i.large");
+        /// <summary>
+        /// Constant MlC7iXlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlC7iXlarge = new AppInstanceType("ml.c7i.xlarge");
+        /// <summary>
         /// Constant MlG4dn12xlarge for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlG4dn12xlarge = new AppInstanceType("ml.g4dn.12xlarge");
@@ -531,6 +639,114 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppInstanceType MlM5Xlarge = new AppInstanceType("ml.m5.xlarge");
         /// <summary>
+        /// Constant MlM6i12xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6i12xlarge = new AppInstanceType("ml.m6i.12xlarge");
+        /// <summary>
+        /// Constant MlM6i16xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6i16xlarge = new AppInstanceType("ml.m6i.16xlarge");
+        /// <summary>
+        /// Constant MlM6i24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6i24xlarge = new AppInstanceType("ml.m6i.24xlarge");
+        /// <summary>
+        /// Constant MlM6i2xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6i2xlarge = new AppInstanceType("ml.m6i.2xlarge");
+        /// <summary>
+        /// Constant MlM6i32xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6i32xlarge = new AppInstanceType("ml.m6i.32xlarge");
+        /// <summary>
+        /// Constant MlM6i4xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6i4xlarge = new AppInstanceType("ml.m6i.4xlarge");
+        /// <summary>
+        /// Constant MlM6i8xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6i8xlarge = new AppInstanceType("ml.m6i.8xlarge");
+        /// <summary>
+        /// Constant MlM6id12xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6id12xlarge = new AppInstanceType("ml.m6id.12xlarge");
+        /// <summary>
+        /// Constant MlM6id16xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6id16xlarge = new AppInstanceType("ml.m6id.16xlarge");
+        /// <summary>
+        /// Constant MlM6id24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6id24xlarge = new AppInstanceType("ml.m6id.24xlarge");
+        /// <summary>
+        /// Constant MlM6id2xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6id2xlarge = new AppInstanceType("ml.m6id.2xlarge");
+        /// <summary>
+        /// Constant MlM6id32xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6id32xlarge = new AppInstanceType("ml.m6id.32xlarge");
+        /// <summary>
+        /// Constant MlM6id4xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6id4xlarge = new AppInstanceType("ml.m6id.4xlarge");
+        /// <summary>
+        /// Constant MlM6id8xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6id8xlarge = new AppInstanceType("ml.m6id.8xlarge");
+        /// <summary>
+        /// Constant MlM6idLarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6idLarge = new AppInstanceType("ml.m6id.large");
+        /// <summary>
+        /// Constant MlM6idXlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6idXlarge = new AppInstanceType("ml.m6id.xlarge");
+        /// <summary>
+        /// Constant MlM6iLarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6iLarge = new AppInstanceType("ml.m6i.large");
+        /// <summary>
+        /// Constant MlM6iXlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM6iXlarge = new AppInstanceType("ml.m6i.xlarge");
+        /// <summary>
+        /// Constant MlM7i12xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM7i12xlarge = new AppInstanceType("ml.m7i.12xlarge");
+        /// <summary>
+        /// Constant MlM7i16xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM7i16xlarge = new AppInstanceType("ml.m7i.16xlarge");
+        /// <summary>
+        /// Constant MlM7i24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM7i24xlarge = new AppInstanceType("ml.m7i.24xlarge");
+        /// <summary>
+        /// Constant MlM7i2xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM7i2xlarge = new AppInstanceType("ml.m7i.2xlarge");
+        /// <summary>
+        /// Constant MlM7i48xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM7i48xlarge = new AppInstanceType("ml.m7i.48xlarge");
+        /// <summary>
+        /// Constant MlM7i4xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM7i4xlarge = new AppInstanceType("ml.m7i.4xlarge");
+        /// <summary>
+        /// Constant MlM7i8xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM7i8xlarge = new AppInstanceType("ml.m7i.8xlarge");
+        /// <summary>
+        /// Constant MlM7iLarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM7iLarge = new AppInstanceType("ml.m7i.large");
+        /// <summary>
+        /// Constant MlM7iXlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlM7iXlarge = new AppInstanceType("ml.m7i.xlarge");
+        /// <summary>
         /// Constant MlP316xlarge for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlP316xlarge = new AppInstanceType("ml.p3.16xlarge");
@@ -554,6 +770,10 @@ namespace Amazon.SageMaker
         /// Constant MlP4de24xlarge for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlP4de24xlarge = new AppInstanceType("ml.p4de.24xlarge");
+        /// <summary>
+        /// Constant MlP548xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlP548xlarge = new AppInstanceType("ml.p5.48xlarge");
         /// <summary>
         /// Constant MlR512xlarge for AppInstanceType
         /// </summary>
@@ -586,6 +806,114 @@ namespace Amazon.SageMaker
         /// Constant MlR5Xlarge for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlR5Xlarge = new AppInstanceType("ml.r5.xlarge");
+        /// <summary>
+        /// Constant MlR6i12xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6i12xlarge = new AppInstanceType("ml.r6i.12xlarge");
+        /// <summary>
+        /// Constant MlR6i16xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6i16xlarge = new AppInstanceType("ml.r6i.16xlarge");
+        /// <summary>
+        /// Constant MlR6i24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6i24xlarge = new AppInstanceType("ml.r6i.24xlarge");
+        /// <summary>
+        /// Constant MlR6i2xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6i2xlarge = new AppInstanceType("ml.r6i.2xlarge");
+        /// <summary>
+        /// Constant MlR6i32xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6i32xlarge = new AppInstanceType("ml.r6i.32xlarge");
+        /// <summary>
+        /// Constant MlR6i4xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6i4xlarge = new AppInstanceType("ml.r6i.4xlarge");
+        /// <summary>
+        /// Constant MlR6i8xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6i8xlarge = new AppInstanceType("ml.r6i.8xlarge");
+        /// <summary>
+        /// Constant MlR6id12xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6id12xlarge = new AppInstanceType("ml.r6id.12xlarge");
+        /// <summary>
+        /// Constant MlR6id16xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6id16xlarge = new AppInstanceType("ml.r6id.16xlarge");
+        /// <summary>
+        /// Constant MlR6id24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6id24xlarge = new AppInstanceType("ml.r6id.24xlarge");
+        /// <summary>
+        /// Constant MlR6id2xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6id2xlarge = new AppInstanceType("ml.r6id.2xlarge");
+        /// <summary>
+        /// Constant MlR6id32xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6id32xlarge = new AppInstanceType("ml.r6id.32xlarge");
+        /// <summary>
+        /// Constant MlR6id4xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6id4xlarge = new AppInstanceType("ml.r6id.4xlarge");
+        /// <summary>
+        /// Constant MlR6id8xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6id8xlarge = new AppInstanceType("ml.r6id.8xlarge");
+        /// <summary>
+        /// Constant MlR6idLarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6idLarge = new AppInstanceType("ml.r6id.large");
+        /// <summary>
+        /// Constant MlR6idXlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6idXlarge = new AppInstanceType("ml.r6id.xlarge");
+        /// <summary>
+        /// Constant MlR6iLarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6iLarge = new AppInstanceType("ml.r6i.large");
+        /// <summary>
+        /// Constant MlR6iXlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR6iXlarge = new AppInstanceType("ml.r6i.xlarge");
+        /// <summary>
+        /// Constant MlR7i12xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR7i12xlarge = new AppInstanceType("ml.r7i.12xlarge");
+        /// <summary>
+        /// Constant MlR7i16xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR7i16xlarge = new AppInstanceType("ml.r7i.16xlarge");
+        /// <summary>
+        /// Constant MlR7i24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR7i24xlarge = new AppInstanceType("ml.r7i.24xlarge");
+        /// <summary>
+        /// Constant MlR7i2xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR7i2xlarge = new AppInstanceType("ml.r7i.2xlarge");
+        /// <summary>
+        /// Constant MlR7i48xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR7i48xlarge = new AppInstanceType("ml.r7i.48xlarge");
+        /// <summary>
+        /// Constant MlR7i4xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR7i4xlarge = new AppInstanceType("ml.r7i.4xlarge");
+        /// <summary>
+        /// Constant MlR7i8xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR7i8xlarge = new AppInstanceType("ml.r7i.8xlarge");
+        /// <summary>
+        /// Constant MlR7iLarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR7iLarge = new AppInstanceType("ml.r7i.large");
+        /// <summary>
+        /// Constant MlR7iXlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlR7iXlarge = new AppInstanceType("ml.r7i.xlarge");
         /// <summary>
         /// Constant MlT32xlarge for AppInstanceType
         /// </summary>
@@ -2325,14 +2653,6 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
-        /// Constant AWSBedrockModelEvaluation for AwsManagedHumanLoopRequestSource
-        /// </summary>
-        public static readonly AwsManagedHumanLoopRequestSource AWSBedrockModelEvaluation = new AwsManagedHumanLoopRequestSource("AWS/Bedrock/ModelEvaluation");
-        /// <summary>
-        /// Constant AWSHandshakeVerifyIdentity for AwsManagedHumanLoopRequestSource
-        /// </summary>
-        public static readonly AwsManagedHumanLoopRequestSource AWSHandshakeVerifyIdentity = new AwsManagedHumanLoopRequestSource("AWS/Handshake/VerifyIdentity");
-        /// <summary>
         /// Constant AWSRekognitionDetectModerationLabelsImageV3 for AwsManagedHumanLoopRequestSource
         /// </summary>
         public static readonly AwsManagedHumanLoopRequestSource AWSRekognitionDetectModerationLabelsImageV3 = new AwsManagedHumanLoopRequestSource("AWS/Rekognition/DetectModerationLabels/Image/V3");
@@ -2340,10 +2660,6 @@ namespace Amazon.SageMaker
         /// Constant AWSTextractAnalyzeDocumentFormsV1 for AwsManagedHumanLoopRequestSource
         /// </summary>
         public static readonly AwsManagedHumanLoopRequestSource AWSTextractAnalyzeDocumentFormsV1 = new AwsManagedHumanLoopRequestSource("AWS/Textract/AnalyzeDocument/Forms/V1");
-        /// <summary>
-        /// Constant AWSTextractAnalyzeExpense for AwsManagedHumanLoopRequestSource
-        /// </summary>
-        public static readonly AwsManagedHumanLoopRequestSource AWSTextractAnalyzeExpense = new AwsManagedHumanLoopRequestSource("AWS/Textract/AnalyzeExpense");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -10711,7 +11027,7 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Constant Equals for Operator
         /// </summary>
-        public static readonly Operator Equals = new Operator("Equals");
+        public new static readonly Operator Equals = new Operator("Equals");
         /// <summary>
         /// Constant Exists for Operator
         /// </summary>
@@ -12068,6 +12384,38 @@ namespace Amazon.SageMaker
         /// Constant MlG5Xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlG5Xlarge = new ProductionVariantInstanceType("ml.g5.xlarge");
+        /// <summary>
+        /// Constant MlG612xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG612xlarge = new ProductionVariantInstanceType("ml.g6.12xlarge");
+        /// <summary>
+        /// Constant MlG616xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG616xlarge = new ProductionVariantInstanceType("ml.g6.16xlarge");
+        /// <summary>
+        /// Constant MlG624xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG624xlarge = new ProductionVariantInstanceType("ml.g6.24xlarge");
+        /// <summary>
+        /// Constant MlG62xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG62xlarge = new ProductionVariantInstanceType("ml.g6.2xlarge");
+        /// <summary>
+        /// Constant MlG648xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG648xlarge = new ProductionVariantInstanceType("ml.g6.48xlarge");
+        /// <summary>
+        /// Constant MlG64xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG64xlarge = new ProductionVariantInstanceType("ml.g6.4xlarge");
+        /// <summary>
+        /// Constant MlG68xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG68xlarge = new ProductionVariantInstanceType("ml.g6.8xlarge");
+        /// <summary>
+        /// Constant MlG6Xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG6Xlarge = new ProductionVariantInstanceType("ml.g6.xlarge");
         /// <summary>
         /// Constant MlInf124xlarge for ProductionVariantInstanceType
         /// </summary>

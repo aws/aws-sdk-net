@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoScalingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoScalingMetric())
             {
                 context.Writer.WritePropertyName("autoScalingMetric");
@@ -60,7 +63,14 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetricTarget())
             {
                 context.Writer.WritePropertyName("metricTarget");
-                context.Writer.Write(requestObject.MetricTarget.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricTarget.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricTarget.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MetricTarget.Value);
+                }
             }
 
             if(requestObject.IsSetMinNodeCount())
@@ -72,13 +82,27 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScaleInCooldownSeconds())
             {
                 context.Writer.WritePropertyName("scaleInCooldownSeconds");
-                context.Writer.Write(requestObject.ScaleInCooldownSeconds.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ScaleInCooldownSeconds.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScaleInCooldownSeconds.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ScaleInCooldownSeconds.Value);
+                }
             }
 
             if(requestObject.IsSetScaleOutCooldownSeconds())
             {
                 context.Writer.WritePropertyName("scaleOutCooldownSeconds");
-                context.Writer.Write(requestObject.ScaleOutCooldownSeconds.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ScaleOutCooldownSeconds.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScaleOutCooldownSeconds.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ScaleOutCooldownSeconds.Value);
+                }
             }
 
         }

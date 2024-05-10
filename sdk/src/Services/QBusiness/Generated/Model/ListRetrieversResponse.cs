@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -39,8 +40,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, Amazon Q returns this token, which you can use in a
-        /// later request to list the next set of retrievers.
+        /// If the response is truncated, Amazon Q Business returns this token, which you can
+        /// use in a later request to list the next set of retrievers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

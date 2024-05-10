@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -39,6 +40,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private MessageType _defaultMessageType;
         private string _defaultSenderId;
         private List<EventDestination> _eventDestinations = AWSConfigs.InitializeCollections ? new List<EventDestination>() : null;
+        private string _protectConfigurationId;
 
         /// <summary>
         /// Gets and sets the property ConfigurationSetArn. 
@@ -154,6 +156,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetEventDestinations()
         {
             return this._eventDestinations != null && (this._eventDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProtectConfigurationId. 
+        /// <para>
+        /// The unique identifier for the protect configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ProtectConfigurationId
+        {
+            get { return this._protectConfigurationId; }
+            set { this._protectConfigurationId = value; }
+        }
+
+        // Check to see if ProtectConfigurationId property is set
+        internal bool IsSetProtectConfigurationId()
+        {
+            return this._protectConfigurationId != null;
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the RDS for Oracle or Microsoft SQL Server DB instance.
-        /// For example, <c>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</c>.
+        /// For example, <c>arn:aws:rds:us-east-1:12345667890:db:my-orcl-db</c>.
         /// </para>
         /// </summary>
         public string ResourceArn

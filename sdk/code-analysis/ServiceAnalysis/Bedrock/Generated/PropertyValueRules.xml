@@ -1,6 +1,120 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateEvaluationJobRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateEvaluationJobRequest.CustomerEncryptionKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:kms:[a-zA-Z0-9-]*:[0-9]{12}:((key/[a-zA-Z0-9-]{36})|(alias/[a-zA-Z0-9-_/]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateEvaluationJobRequest.JobDescription</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateEvaluationJobRequest.JobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-z0-9](-*[a-z0-9]){0,62}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateEvaluationJobRequest.RoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateEvaluationJobResponse.JobArn</property>
+    <min>0</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:evaluation-job/[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateGuardrailRequest.BlockedInputMessaging</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateGuardrailRequest.BlockedOutputsMessaging</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateGuardrailRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateGuardrailRequest.Description</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateGuardrailRequest.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:kms:[a-zA-Z0-9-]*:[0-9]{12}:((key/[a-zA-Z0-9-]{36})|(alias/[a-zA-Z0-9-_/]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateGuardrailRequest.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[0-9a-zA-Z-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateGuardrailResponse.GuardrailArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateGuardrailResponse.GuardrailId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateGuardrailResponse.Version</property>
+    <min>5</min>
+    <max>5</max>
+    <pattern>DRAFT</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateGuardrailVersionRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateGuardrailVersionRequest.Description</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateGuardrailVersionRequest.GuardrailIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateGuardrailVersionResponse.GuardrailId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateGuardrailVersionResponse.Version</property>
+    <pattern>[1-9][0-9]{0,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.CreateModelCustomizationJobRequest.BaseModelIdentifier</property>
     <min>1</min>
     <max>2048</max>
@@ -75,6 +189,16 @@
     <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}(([:][a-z0-9-]{1,63}){0,2})?/[a-z0-9]{12})|(:foundation-model/([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2})))|(([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2}))|(([0-9a-zA-Z][_-]?)+)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.DeleteGuardrailRequest.GuardrailIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.DeleteGuardrailRequest.GuardrailVersion</property>
+    <pattern>[1-9][0-9]{0,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.DeleteProvisionedModelThroughputRequest.ProvisionedModelId</property>
     <pattern>((([0-9a-zA-Z][_-]?)+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:provisioned-model/[a-z0-9]{12}))</pattern>
   </property-value-rule>
@@ -121,10 +245,99 @@
     <pattern>([0-9a-zA-Z][_-]?)+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetEvaluationJobRequest.JobIdentifier</property>
+    <min>0</min>
+    <max>1011</max>
+    <pattern>(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:evaluation-job/[a-z0-9]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetEvaluationJobResponse.CustomerEncryptionKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:kms:[a-zA-Z0-9-]*:[0-9]{12}:((key/[a-zA-Z0-9-]{36})|(alias/[a-zA-Z0-9-_/]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetEvaluationJobResponse.JobArn</property>
+    <min>0</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:evaluation-job/[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetEvaluationJobResponse.JobDescription</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetEvaluationJobResponse.JobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-z0-9](-*[a-z0-9]){0,62}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetEvaluationJobResponse.RoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.GetFoundationModelRequest.ModelIdentifier</property>
     <min>1</min>
     <max>2048</max>
     <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}(([:][a-z0-9-]{1,63}){0,2})?/[a-z0-9]{12})|(:foundation-model/([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2})))|(([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2}))|(([0-9a-zA-Z][_-]?)+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetGuardrailRequest.GuardrailIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetGuardrailRequest.GuardrailVersion</property>
+    <pattern>(([1-9][0-9]{0,7})|(DRAFT))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetGuardrailResponse.BlockedInputMessaging</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetGuardrailResponse.BlockedOutputsMessaging</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetGuardrailResponse.Description</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetGuardrailResponse.GuardrailArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetGuardrailResponse.GuardrailId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetGuardrailResponse.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetGuardrailResponse.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[0-9a-zA-Z-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetGuardrailResponse.Version</property>
+    <pattern>(([1-9][0-9]{0,7})|(DRAFT))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.GetModelCustomizationJobRequest.JobIdentifier</property>
@@ -260,8 +473,54 @@
     <pattern>\S*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListEvaluationJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListEvaluationJobsRequest.NameContains</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-z0-9](-*[a-z0-9]){0,62}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListEvaluationJobsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListEvaluationJobsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.ListFoundationModelsRequest.ByProvider</property>
     <pattern>[A-Za-z0-9- ]{1,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListGuardrailsRequest.GuardrailIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListGuardrailsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListGuardrailsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListGuardrailsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.ListModelCustomizationJobsRequest.MaxResults</property>
@@ -319,7 +578,13 @@
     <property>Amazon.Bedrock.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>.*(^[a-zA-Z0-9][a-zA-Z0-9\-]*$)|(^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:([0-9]{12}|)((:(fine-tuning-job|model-customization-job|custom-model)/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}(/[a-z0-9]{12})$)|(:provisioned-model/[a-z0-9]{12}$))).*</pattern>
+    <pattern>.*(^[a-zA-Z0-9][a-zA-Z0-9\-]*$)|(^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:([0-9]{12}|)((:(fine-tuning-job|model-customization-job|custom-model)/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}(/[a-z0-9]{12})$)|(:provisioned-model/[a-z0-9]{12}$)|(:guardrail/[a-z0-9]+$)|(:evaluation-job/[a-z0-9]{12}$))).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.StopEvaluationJobRequest.JobIdentifier</property>
+    <min>0</min>
+    <max>1011</max>
+    <pattern>(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:evaluation-job/[a-z0-9]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.StopModelCustomizationJobRequest.JobIdentifier</property>
@@ -331,13 +596,64 @@
     <property>Amazon.Bedrock.Model.TagResourceRequest.ResourceARN</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>.*(^[a-zA-Z0-9][a-zA-Z0-9\-]*$)|(^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:([0-9]{12}|)((:(fine-tuning-job|model-customization-job|custom-model)/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}(/[a-z0-9]{12})$)|(:provisioned-model/[a-z0-9]{12}$))).*</pattern>
+    <pattern>.*(^[a-zA-Z0-9][a-zA-Z0-9\-]*$)|(^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:([0-9]{12}|)((:(fine-tuning-job|model-customization-job|custom-model)/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}(/[a-z0-9]{12})$)|(:provisioned-model/[a-z0-9]{12}$)|(:guardrail/[a-z0-9]+$)|(:evaluation-job/[a-z0-9]{12}$))).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.UntagResourceRequest.ResourceARN</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>.*(^[a-zA-Z0-9][a-zA-Z0-9\-]*$)|(^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:([0-9]{12}|)((:(fine-tuning-job|model-customization-job|custom-model)/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}(/[a-z0-9]{12})$)|(:provisioned-model/[a-z0-9]{12}$))).*</pattern>
+    <pattern>.*(^[a-zA-Z0-9][a-zA-Z0-9\-]*$)|(^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:([0-9]{12}|)((:(fine-tuning-job|model-customization-job|custom-model)/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}(/[a-z0-9]{12})$)|(:provisioned-model/[a-z0-9]{12}$)|(:guardrail/[a-z0-9]+$)|(:evaluation-job/[a-z0-9]{12}$))).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.UpdateGuardrailRequest.BlockedInputMessaging</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.UpdateGuardrailRequest.BlockedOutputsMessaging</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.UpdateGuardrailRequest.Description</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.UpdateGuardrailRequest.GuardrailIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.UpdateGuardrailRequest.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:kms:[a-zA-Z0-9-]*:[0-9]{12}:((key/[a-zA-Z0-9-]{36})|(alias/[a-zA-Z0-9-_/]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.UpdateGuardrailRequest.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[0-9a-zA-Z-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.UpdateGuardrailResponse.GuardrailArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.UpdateGuardrailResponse.GuardrailId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.UpdateGuardrailResponse.Version</property>
+    <min>5</min>
+    <max>5</max>
+    <pattern>DRAFT</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.UpdateProvisionedModelThroughputRequest.DesiredModelId</property>
@@ -391,6 +707,53 @@
     <pattern>([0-9a-zA-Z][_-]?)+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.EvaluationBedrockModel.InferenceParams</property>
+    <min>1</min>
+    <max>1023</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.EvaluationBedrockModel.ModelIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}(([:][a-z0-9-]{1,63}){0,2})?/[a-z0-9]{12})|(:foundation-model/([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2})))|(([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2}))|(([0-9a-zA-Z][_-]?)+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.EvaluationDataset.Name</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[0-9a-zA-Z-_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.EvaluationDatasetLocation.S3Uri</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.EvaluationDatasetMetricConfig.TaskType</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.EvaluationOutputDataConfig.S3Uri</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.EvaluationSummary.JobArn</property>
+    <min>0</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:evaluation-job/[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.EvaluationSummary.JobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-z0-9](-*[a-z0-9]){0,62}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.FoundationModelDetails.ModelArn</property>
     <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}::foundation-model/[a-z0-9-]{1,63}[.]{1}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}</pattern>
   </property-value-rule>
@@ -433,6 +796,125 @@
     <min>1</min>
     <max>20</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailRegex.Description</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailRegex.Name</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailRegex.Pattern</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailRegexConfig.Description</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailRegexConfig.Name</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailRegexConfig.Pattern</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailSummary.Arn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailSummary.Description</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailSummary.Id</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailSummary.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[0-9a-zA-Z-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailSummary.Version</property>
+    <pattern>(([1-9][0-9]{0,7})|(DRAFT))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailTopic.Definition</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailTopic.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9a-zA-Z-_ !?.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailTopicConfig.Definition</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailTopicConfig.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9a-zA-Z-_ !?.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailWord.Text</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailWordConfig.Text</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.HumanEvaluationCustomMetric.Description</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.HumanEvaluationCustomMetric.Name</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[0-9a-zA-Z-_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.HumanEvaluationCustomMetric.RatingMethod</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9a-zA-Z-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.HumanWorkflowConfig.FlowDefinitionArn</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>arn:aws(-[^:]+)?:sagemaker:[a-z0-9-]{1,20}:[0-9]{12}:flow-definition/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.HumanWorkflowConfig.Instructions</property>
+    <min>1</min>
+    <max>5000</max>
+    <pattern>[\S\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.ModelCustomizationJobSummary.BaseModelArn</property>
@@ -530,7 +1012,7 @@
     <property>Amazon.Bedrock.Model.TooManyTagsException.ResourceName</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>.*(^[a-zA-Z0-9][a-zA-Z0-9\-]*$)|(^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:([0-9]{12}|)((:(fine-tuning-job|model-customization-job|custom-model)/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}(/[a-z0-9]{12})$)|(:provisioned-model/[a-z0-9]{12}$))).*</pattern>
+    <pattern>.*(^[a-zA-Z0-9][a-zA-Z0-9\-]*$)|(^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:([0-9]{12}|)((:(fine-tuning-job|model-customization-job|custom-model)/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}(/[a-z0-9]{12})$)|(:provisioned-model/[a-z0-9]{12}$)|(:guardrail/[a-z0-9]+$)|(:evaluation-job/[a-z0-9]{12}$))).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.TrainingDataConfig.S3Uri</property>

@@ -29,11 +29,18 @@ namespace Amazon.S3.Model
     {
         private readonly string prefix;
 
+        /// <summary>
+        /// Construct an instance of MetricsPrefixPredicate
+        /// </summary>
+        /// <param name="prefix"></param>
         public MetricsPrefixPredicate(string prefix)
         {
             this.prefix = prefix;
         }
 
+        /// <summary>
+        /// The prefix used by the predicate.
+        /// </summary>
         public string Prefix
         {
             get { return this.prefix; }

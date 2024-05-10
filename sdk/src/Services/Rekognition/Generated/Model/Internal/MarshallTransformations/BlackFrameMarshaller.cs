@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BlackFrame requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxPixelThreshold())
             {
                 context.Writer.WritePropertyName("MaxPixelThreshold");
-                context.Writer.Write(requestObject.MaxPixelThreshold.Value);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MaxPixelThreshold.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxPixelThreshold.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaxPixelThreshold.Value);
+                }
             }
 
             if(requestObject.IsSetMinCoveragePercentage())
             {
                 context.Writer.WritePropertyName("MinCoveragePercentage");
-                context.Writer.Write(requestObject.MinCoveragePercentage.Value);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinCoveragePercentage.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinCoveragePercentage.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinCoveragePercentage.Value);
+                }
             }
 
         }

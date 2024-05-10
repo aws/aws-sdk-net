@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the elasticache-2015-02-02.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>

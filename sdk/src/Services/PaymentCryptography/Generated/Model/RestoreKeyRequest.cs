@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
@@ -51,15 +52,18 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DeleteKey</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>StartKeyUsage</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>StopKeyUsage</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>

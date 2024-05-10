@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.DocDB.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.DocDB
 {
     /// <summary>
@@ -3326,6 +3327,60 @@ namespace Amazon.DocDB
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StopDBCluster">REST API Reference for StopDBCluster Operation</seealso>
         Task<StopDBClusterResponse> StopDBClusterAsync(StopDBClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SwitchoverGlobalCluster
+
+
+        /// <summary>
+        /// Switches over the specified secondary Amazon DocumentDB cluster to be the new primary
+        /// Amazon DocumentDB cluster in the global database cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverGlobalCluster service method.</param>
+        /// 
+        /// <returns>The response from the SwitchoverGlobalCluster service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
+        /// <c>DBClusterIdentifier</c> doesn't refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.GlobalClusterNotFoundException">
+        /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
+        /// The cluster isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidGlobalClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/SwitchoverGlobalCluster">REST API Reference for SwitchoverGlobalCluster Operation</seealso>
+        SwitchoverGlobalClusterResponse SwitchoverGlobalCluster(SwitchoverGlobalClusterRequest request);
+
+
+
+        /// <summary>
+        /// Switches over the specified secondary Amazon DocumentDB cluster to be the new primary
+        /// Amazon DocumentDB cluster in the global database cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverGlobalCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SwitchoverGlobalCluster service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
+        /// <c>DBClusterIdentifier</c> doesn't refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.GlobalClusterNotFoundException">
+        /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
+        /// The cluster isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidGlobalClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/SwitchoverGlobalCluster">REST API Reference for SwitchoverGlobalCluster Operation</seealso>
+        Task<SwitchoverGlobalClusterResponse> SwitchoverGlobalClusterAsync(SwitchoverGlobalClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

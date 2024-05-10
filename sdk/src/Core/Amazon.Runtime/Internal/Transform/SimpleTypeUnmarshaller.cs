@@ -921,7 +921,13 @@ namespace Amazon.Runtime.Internal.Transform
         {
             context.Read(); // Read [ or null
             if (context.CurrentTokenType == JsonToken.Null)
-                return new List<I>();
+            {
+                if (AWSConfigs.InitializeCollections)
+                    return new List<I>();
+                else
+                    return null;
+            }
+
 
             // If a list is present in the response, use AlwaysSendList,
             // so if the response was empty, reusing the object in the request we will
@@ -975,7 +981,13 @@ namespace Amazon.Runtime.Internal.Transform
         {
             context.Read(); // Read { or null
             if (context.CurrentTokenType == JsonToken.Null)
-                return new Dictionary<TKey,TValue>();
+            {
+                if (AWSConfigs.InitializeCollections)
+                    return new Dictionary<TKey, TValue>();
+                else
+                    return null;
+            }
+
 
             // If a dictionary is present in the response, use AlwaysSendDictionary,
             // so if the response was empty, reusing the object in the request we will

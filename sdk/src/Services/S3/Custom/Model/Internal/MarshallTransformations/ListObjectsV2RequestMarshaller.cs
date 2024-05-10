@@ -74,7 +74,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static ListObjectsV2RequestMarshaller _instance;
 
-	    public static ListObjectsV2RequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static ListObjectsV2RequestMarshaller Instance
 	    {
 	        get
 	        {

@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceTypes operation.
-    /// Describes the details of the instance types that are offered in a location. The results
-    /// can be filtered by the attributes of the instance types.
+    /// Describes the specified instance types. By default, all instance types for the current
+    /// Region are described. Alternatively, you can filter the results.
     /// </summary>
     public partial class DescribeInstanceTypesRequest : AmazonEC2Request
     {
@@ -300,8 +301,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceTypes. 
         /// <para>
-        /// The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// types</a> in the <i>Amazon EC2 User Guide</i>.
+        /// The instance types.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

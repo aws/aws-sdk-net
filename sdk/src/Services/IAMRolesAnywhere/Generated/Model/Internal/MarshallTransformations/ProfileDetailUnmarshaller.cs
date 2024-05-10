@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,12 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("attributeMappings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AttributeMapping, AttributeMappingUnmarshaller>(AttributeMappingUnmarshaller.Instance);
+                    unmarshalledObject.AttributeMappings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

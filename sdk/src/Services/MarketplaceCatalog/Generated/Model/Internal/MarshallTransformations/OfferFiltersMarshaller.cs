@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OfferFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailabilityEndDate())
             {
                 context.Writer.WritePropertyName("AvailabilityEndDate");
@@ -118,6 +121,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 
                 var marshaller = OfferReleaseDateFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReleaseDate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetResaleAuthorizationId())
+            {
+                context.Writer.WritePropertyName("ResaleAuthorizationId");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OfferResaleAuthorizationIdFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.ResaleAuthorizationId, context);
 
                 context.Writer.WriteObjectEnd();
             }

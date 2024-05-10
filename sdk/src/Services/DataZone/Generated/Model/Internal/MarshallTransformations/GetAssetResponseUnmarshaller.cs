@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -109,6 +110,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("latestTimeSeriesDataPointFormsOutput", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TimeSeriesDataPointSummaryFormOutput, TimeSeriesDataPointSummaryFormOutputUnmarshaller>(TimeSeriesDataPointSummaryFormOutputUnmarshaller.Instance);
+                    response.LatestTimeSeriesDataPointFormsOutput = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("listing", targetDepth))

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -38,8 +39,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuntimeConfiguration. 
         /// <para>
-        /// Instructions that describe how server processes should be launched and maintained
-        /// on each instance in the fleet.
+        /// Instructions that describe how server processes are launched and maintained on computes
+        /// in the fleet.
         /// </para>
         /// </summary>
         public RuntimeConfiguration RuntimeConfiguration

@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Configures fixed size chunking strategy
+    /// Configurations for when you choose fixed-size chunking. If you set the <c>chunkingStrategy</c>
+    /// as <c>NONE</c>, exclude this field.
     /// </summary>
     public partial class FixedSizeChunkingConfiguration
     {
@@ -39,7 +41,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property MaxTokens. 
         /// <para>
-        /// The maximum number of tokens per chunk.
+        /// The maximum number of tokens to include in a chunk.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -58,7 +60,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property OverlapPercentage. 
         /// <para>
-        /// The overlap percentage between adjacent chunks.
+        /// The percentage of overlap between adjacent chunks of a data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=99)]

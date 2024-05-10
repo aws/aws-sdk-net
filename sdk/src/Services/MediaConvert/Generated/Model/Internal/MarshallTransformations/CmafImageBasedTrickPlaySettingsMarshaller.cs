@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CmafImageBasedTrickPlaySettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIntervalCadence())
             {
                 context.Writer.WritePropertyName("intervalCadence");
@@ -60,7 +63,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThumbnailInterval())
             {
                 context.Writer.WritePropertyName("thumbnailInterval");
-                context.Writer.Write(requestObject.ThumbnailInterval.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThumbnailInterval.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThumbnailInterval.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ThumbnailInterval.Value);
+                }
             }
 
             if(requestObject.IsSetThumbnailWidth())

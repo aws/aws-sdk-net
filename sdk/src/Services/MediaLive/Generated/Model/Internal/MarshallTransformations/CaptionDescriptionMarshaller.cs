@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,23 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CaptionDescription requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccessibility())
             {
                 context.Writer.WritePropertyName("accessibility");
                 context.Writer.Write(requestObject.Accessibility);
+            }
+
+            if(requestObject.IsSetCaptionDashRoles())
+            {
+                context.Writer.WritePropertyName("captionDashRoles");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCaptionDashRolesListValue in requestObject.CaptionDashRoles)
+                {
+                        context.Writer.Write(requestObjectCaptionDashRolesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetCaptionSelectorName())
@@ -66,6 +80,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.DestinationSettings, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDvbDashAccessibility())
+            {
+                context.Writer.WritePropertyName("dvbDashAccessibility");
+                context.Writer.Write(requestObject.DvbDashAccessibility);
             }
 
             if(requestObject.IsSetLanguageCode())

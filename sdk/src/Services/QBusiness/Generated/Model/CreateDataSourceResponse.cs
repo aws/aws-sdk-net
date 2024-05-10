@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -39,7 +40,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DataSourceArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of a data source in an Amazon Q application. 
+        ///  The Amazon Resource Name (ARN) of a data source in an Amazon Q Business application.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

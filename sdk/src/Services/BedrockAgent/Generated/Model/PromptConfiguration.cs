@@ -26,10 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// BasePromptConfiguration per Prompt Type.
+    /// Contains configurations to override a prompt template in one part of an agent sequence.
+    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
+    /// prompts</a>.
     /// </summary>
     public partial class PromptConfiguration
     {
@@ -41,7 +44,13 @@ namespace Amazon.BedrockAgent.Model
         private PromptType _promptType;
 
         /// <summary>
-        /// Gets and sets the property BasePromptTemplate.
+        /// Gets and sets the property BasePromptTemplate. 
+        /// <para>
+        /// Defines the prompt template with which to replace the default prompt template. You
+        /// can use placeholder variables in the base prompt template to customize the prompt.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
+        /// template placeholder variables</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
         public string BasePromptTemplate
@@ -57,7 +66,13 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InferenceConfiguration.
+        /// Gets and sets the property InferenceConfiguration. 
+        /// <para>
+        /// Contains inference parameters to use when the agent invokes a foundation model in
+        /// the part of the agent sequence defined by the <c>promptType</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+        /// parameters for foundation models</a>.
+        /// </para>
         /// </summary>
         public InferenceConfiguration InferenceConfiguration
         {
@@ -72,7 +87,14 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParserMode.
+        /// Gets and sets the property ParserMode. 
+        /// <para>
+        /// Specifies whether to override the default parser Lambda function when parsing the
+        /// raw foundation model output in the part of the agent sequence defined by the <c>promptType</c>.
+        /// If you set the field as <c>OVERRIDEN</c>, the <c>overrideLambda</c> field in the <a
+        /// href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
+        /// must be specified with the ARN of a Lambda function.
+        /// </para>
         /// </summary>
         public CreationMode ParserMode
         {
@@ -87,7 +109,12 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PromptCreationMode.
+        /// Gets and sets the property PromptCreationMode. 
+        /// <para>
+        /// Specifies whether to override the default prompt template for this <c>promptType</c>.
+        /// Set this value to <c>OVERRIDDEN</c> to use the prompt that you provide in the <c>basePromptTemplate</c>.
+        /// If you leave it as <c>DEFAULT</c>, the agent uses a default prompt template.
+        /// </para>
         /// </summary>
         public CreationMode PromptCreationMode
         {
@@ -102,7 +129,29 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PromptState.
+        /// Gets and sets the property PromptState. 
+        /// <para>
+        /// Specifies whether to allow the agent to carry out the step specified in the <c>promptType</c>.
+        /// If you set this value to <c>DISABLED</c>, the agent skips that step. The default state
+        /// for each <c>promptType</c> is as follows.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PRE_PROCESSING</c> – <c>ENABLED</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ORCHESTRATION</c> – <c>ENABLED</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>KNOWLEDGE_BASE_RESPONSE_GENERATION</c> – <c>ENABLED</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>POST_PROCESSING</c> – <c>DISABLED</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public PromptState PromptState
         {
@@ -117,7 +166,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PromptType.
+        /// Gets and sets the property PromptType. 
+        /// <para>
+        /// The step in the agent sequence that this prompt configuration applies to.
+        /// </para>
         /// </summary>
         public PromptType PromptType
         {

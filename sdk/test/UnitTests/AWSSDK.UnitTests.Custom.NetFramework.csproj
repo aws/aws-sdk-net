@@ -22,7 +22,8 @@ This project file should not be used as part of a release pipeline.
         <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
-        <NoWarn>CS1591</NoWarn>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <NoWarn>CS1591,CS0612,CS0618</NoWarn>
 
         <SignAssembly>True</SignAssembly>
     </PropertyGroup>

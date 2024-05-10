@@ -90,7 +90,7 @@ namespace Amazon.Runtime
         /// and runs some validation logic.
         /// <para />
         /// NOTE: Per the Spec, this method can throw exceptions that should bubble up through
-        /// <see cref="IAWSTokenProvider.TryResolveToken"/>.
+        /// IAWSTokenProvider.TryResolveToken.
         /// </summary>
         /// <returns>
         /// True if the profile has all necessary data points and should be further processed by

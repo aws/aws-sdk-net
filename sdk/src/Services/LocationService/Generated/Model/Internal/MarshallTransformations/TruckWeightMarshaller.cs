@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TruckWeight requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTotal())
             {
                 context.Writer.WritePropertyName("Total");
-                context.Writer.Write(requestObject.Total.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Total.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Total.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Total.Value);
+                }
             }
 
             if(requestObject.IsSetUnit())

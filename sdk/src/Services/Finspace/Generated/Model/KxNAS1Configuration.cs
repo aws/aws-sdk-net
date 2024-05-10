@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -40,7 +41,9 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        ///  The size of the network attached storage.
+        ///  The size of the network attached storage. For storage type <c>SSD_1000</c> and <c>SSD_250</c>
+        /// you can select the minimum size as 1200 GB or increments of 2400 GB. For storage type
+        /// <c>HDD_12</c> you can select the minimum size as 6000 GB or increments of 6000 GB.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1200)]

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.QBusiness.Model
     public partial class GetChatControlsConfigurationResponse : AmazonWebServiceResponse
     {
         private BlockedPhrasesConfiguration _blockedPhrases;
+        private AppliedCreatorModeConfiguration _creatorModeConfiguration;
         private string _nextToken;
         private ResponseScope _responseScope;
         private List<TopicConfiguration> _topicConfigurations = AWSConfigs.InitializeCollections ? new List<TopicConfiguration>() : null;
@@ -57,11 +59,29 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreatorModeConfiguration. 
+        /// <para>
+        /// The configuration details for <c>CREATOR_MODE</c>.
+        /// </para>
+        /// </summary>
+        public AppliedCreatorModeConfiguration CreatorModeConfiguration
+        {
+            get { return this._creatorModeConfiguration; }
+            set { this._creatorModeConfiguration = value; }
+        }
+
+        // Check to see if CreatorModeConfiguration property is set
+        internal bool IsSetCreatorModeConfiguration()
+        {
+            return this._creatorModeConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the <c>maxResults</c> response was incomplete because there is more data to retrieve,
-        /// Amazon Q returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of Amazon Q chat controls configured.
+        /// Amazon Q Business returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of Amazon Q Business chat controls configured.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]
@@ -80,8 +100,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ResponseScope. 
         /// <para>
-        /// The response scope configured for a Amazon Q application. This determines whether
-        /// your application uses its retrieval augmented generation (RAG) system to generate
+        /// The response scope configured for a Amazon Q Business application. This determines
+        /// whether your application uses its retrieval augmented generation (RAG) system to generate
         /// answers only from your enterprise data, or also uses the large language models (LLM)
         /// knowledge to respons to end user questions in chat.
         /// </para>
@@ -101,7 +121,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property TopicConfigurations. 
         /// <para>
-        /// The topic specific controls configured for a Amazon Q application.
+        /// The topic specific controls configured for a Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]

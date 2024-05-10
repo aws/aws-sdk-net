@@ -26,13 +26,20 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateService operation.
     /// Modifies the parameters of a service.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// On March 21, 2024, a change was made to resolve the task definition revision before
+    /// authorization. When a task definition revision is not specified, authorization will
+    /// occur using the latest revision of a task definition.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For services using the rolling update (<c>ECS</c>) you can update the desired count,
     /// deployment configuration, network configuration, load balancers, service registries,

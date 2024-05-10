@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Eac3AtmosSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Bitrate.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Bitrate.Value);
+                }
             }
 
             if(requestObject.IsSetCodingMode())
@@ -78,13 +88,27 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeightTrim())
             {
                 context.Writer.WritePropertyName("heightTrim");
-                context.Writer.Write(requestObject.HeightTrim.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.HeightTrim.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.HeightTrim.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.HeightTrim.Value);
+                }
             }
 
             if(requestObject.IsSetSurroundTrim())
             {
                 context.Writer.WritePropertyName("surroundTrim");
-                context.Writer.Write(requestObject.SurroundTrim.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SurroundTrim.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SurroundTrim.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.SurroundTrim.Value);
+                }
             }
 
         }

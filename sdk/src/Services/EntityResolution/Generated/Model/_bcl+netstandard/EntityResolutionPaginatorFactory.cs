@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -49,6 +50,14 @@ namespace Amazon.EntityResolution.Model
         public IListIdMappingWorkflowsPaginator ListIdMappingWorkflows(ListIdMappingWorkflowsRequest request) 
         {
             return new ListIdMappingWorkflowsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListIdNamespaces operation
+        ///</summary>
+        public IListIdNamespacesPaginator ListIdNamespaces(ListIdNamespacesRequest request) 
+        {
+            return new ListIdNamespacesPaginator(this.client, request);
         }
 
         /// <summary>

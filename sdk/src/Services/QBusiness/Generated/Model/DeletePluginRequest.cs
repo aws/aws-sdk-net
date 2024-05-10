@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePlugin operation.
-    /// Deletes an Amazon Q plugin.
+    /// Deletes an Amazon Q Business plugin.
     /// </summary>
     public partial class DeletePluginRequest : AmazonQBusinessRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier the application attached to the Amazon Q plugin.
+        /// The identifier the application attached to the Amazon Q Business plugin.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

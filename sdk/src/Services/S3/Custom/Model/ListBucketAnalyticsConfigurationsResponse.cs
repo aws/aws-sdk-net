@@ -55,7 +55,10 @@ namespace Amazon.S3.Model
             set { this.analyticsConfigurationList = value; }
         }
 
-        // Check to see if AnalyticsConfigurationList property is set
+        /// <summary>
+        /// Check to see if AnalyticsConfigurationList property is set
+        /// </summary>
+        /// <returns></returns>
         public bool IsSetAnalyticsConfigurationList()
         {
             return this.analyticsConfigurationList != null && (this.analyticsConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections);

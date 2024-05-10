@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,14 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SessionState requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetInvocationId())
+            {
+                context.Writer.WritePropertyName("invocationId");
+                context.Writer.Write(requestObject.InvocationId);
+            }
+
             if(requestObject.IsSetPromptSessionAttributes())
             {
                 context.Writer.WritePropertyName("promptSessionAttributes");
@@ -57,6 +66,22 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectPromptSessionAttributesValue);
                 }
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetReturnControlInvocationResults())
+            {
+                context.Writer.WritePropertyName("returnControlInvocationResults");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectReturnControlInvocationResultsListValue in requestObject.ReturnControlInvocationResults)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InvocationResultMemberMarshaller.Instance;
+                    marshaller.Marshall(requestObjectReturnControlInvocationResultsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetSessionAttributes())

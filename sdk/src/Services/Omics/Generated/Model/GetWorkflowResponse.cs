@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Accelerators. 
         /// <para>
-        ///  The computational accelerator specified to run the workflow. 
+        /// The computational accelerator specified to run the workflow. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -224,7 +225,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        ///  Gets metadata for workflow. 
+        /// Gets metadata for workflow.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Metadata
@@ -317,7 +318,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// The workflow's storage capacity in gigabytes.
+        /// The workflow's storage capacity in gibibytes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -34,8 +35,10 @@ namespace Amazon.MediaLive.Model
     public partial class CaptionDescription
     {
         private AccessibilityType _accessibility;
+        private List<string> _captionDashRoles = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _captionSelectorName;
         private CaptionDestinationSettings _destinationSettings;
+        private DvbDashAccessibility _dvbDashAccessibility;
         private string _languageCode;
         private string _languageDescription;
         private string _name;
@@ -55,6 +58,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetAccessibility()
         {
             return this._accessibility != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaptionDashRoles. Identifies the DASH roles to assign to
+        /// this captions output. Applies only when the captions output is configured for DVB
+        /// DASH accessibility signaling.
+        /// </summary>
+        public List<string> CaptionDashRoles
+        {
+            get { return this._captionDashRoles; }
+            set { this._captionDashRoles = value; }
+        }
+
+        // Check to see if CaptionDashRoles property is set
+        internal bool IsSetCaptionDashRoles()
+        {
+            return this._captionDashRoles != null && (this._captionDashRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,6 +109,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetDestinationSettings()
         {
             return this._destinationSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DvbDashAccessibility. Identifies DVB DASH accessibility
+        /// signaling in this captions output. Used in Microsoft Smooth Streaming outputs to signal
+        /// accessibility information to packagers.
+        /// </summary>
+        public DvbDashAccessibility DvbDashAccessibility
+        {
+            get { return this._dvbDashAccessibility; }
+            set { this._dvbDashAccessibility = value; }
+        }
+
+        // Check to see if DvbDashAccessibility property is set
+        internal bool IsSetDvbDashAccessibility()
+        {
+            return this._dvbDashAccessibility != null;
         }
 
         /// <summary>

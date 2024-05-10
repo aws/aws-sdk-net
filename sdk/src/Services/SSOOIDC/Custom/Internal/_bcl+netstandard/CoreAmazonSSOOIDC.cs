@@ -27,6 +27,9 @@ using Amazon.Util.Internal;
 
 namespace Amazon.SSOOIDC.Internal
 {
+    /// <summary>
+    /// Utilities methods for SSO OIDC
+    /// </summary>	
     public static class CoreAmazonSSOOIDC
     {
         private const string CreateTokenGrantType = "urn:ietf:params:oauth:grant-type:device_code";
@@ -42,11 +45,24 @@ namespace Amazon.SSOOIDC.Internal
         }
 
 #if BCL
+        /// <summary>
+        /// Get SSO token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public static GetSsoTokenResponse GetSsoToken(IAmazonSSOOIDC client, GetSsoTokenRequest request)
         {
             return GetSsoToken(client, request, new GetSsoTokenContext());
         }
 
+        /// <summary>
+        /// Get SSO Token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public static GetSsoTokenResponse GetSsoToken(IAmazonSSOOIDC client, GetSsoTokenRequest request, IGetSsoTokenContext context)
         {
             var registerClientRequest = new RegisterClientRequest
@@ -102,7 +118,7 @@ namespace Amazon.SSOOIDC.Internal
                 startDeviceAuthorizationResponse.Interval.GetValueOrDefault(),
                 deviceCodeExpiration,
                 context);
-            var clientSecretExpiresAtString = XmlConvert.ToString(AWSSDKUtils.ConvertFromUnixEpochSeconds((int)registerClientResponse.ClientSecretExpiresAt), XmlDateTimeSerializationMode.Utc);
+            var clientSecretExpiresAtString = XmlConvert.ToString(AWSSDKUtils.ConvertFromUnixEpochSeconds((int)registerClientResponse.ClientSecretExpiresAt.GetValueOrDefault()), XmlDateTimeSerializationMode.Utc);
             return new GetSsoTokenResponse
             {
                 AccessToken = ssoToken.AccessToken,
@@ -117,21 +133,49 @@ namespace Amazon.SSOOIDC.Internal
         }
 #endif
 
+        /// <summary>
+        /// Get SSO Token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public static Task<GetSsoTokenResponse> GetSsoTokenAsync(IAmazonSSOOIDC client, GetSsoTokenRequest request)
         {
             return GetSsoTokenAsync(client, request, new GetSsoTokenContext());
         }
 
+        /// <summary>
+        /// Get SSO Token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public static Task<GetSsoTokenResponse> GetSsoTokenAsync(IAmazonSSOOIDC client, GetSsoTokenRequest request, CancellationToken cancellationToken)
         {
             return GetSsoTokenAsync(client, request, new GetSsoTokenContext(), cancellationToken);
         }
 
+        /// <summary>
+        /// Get SSO Token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public static async Task<GetSsoTokenResponse> GetSsoTokenAsync(IAmazonSSOOIDC client, GetSsoTokenRequest request, IGetSsoTokenContext context)
         {
             return await GetSsoTokenAsync(client, request, context, cancellationToken: default).ConfigureAwait(false);
         }
 
+        /// <summary>
+        /// Get SSO Token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="context"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public static async Task<GetSsoTokenResponse> GetSsoTokenAsync(IAmazonSSOOIDC client, GetSsoTokenRequest request, IGetSsoTokenContext context, CancellationToken cancellationToken)
         {
             var registerClientRequest = new RegisterClientRequest
@@ -189,7 +233,7 @@ namespace Amazon.SSOOIDC.Internal
                 cancellationToken
             ).ConfigureAwait(false);
             
-            var clientSecretExpiresAtString = XmlConvert.ToString(AWSSDKUtils.ConvertFromUnixEpochSeconds((int)registerClientResponse.ClientSecretExpiresAt), XmlDateTimeSerializationMode.Utc);
+            var clientSecretExpiresAtString = XmlConvert.ToString(AWSSDKUtils.ConvertFromUnixEpochSeconds((int)registerClientResponse.ClientSecretExpiresAt.GetValueOrDefault()), XmlDateTimeSerializationMode.Utc);
             return new GetSsoTokenResponse
             {
                 AccessToken = ssoToken.AccessToken,
@@ -204,6 +248,12 @@ namespace Amazon.SSOOIDC.Internal
         }
 
 #if BCL
+        /// <summary>
+        /// Refresh SSO Token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="previousResponse"></param>
+        /// <returns></returns>
         public static GetSsoTokenResponse RefreshToken(
             IAmazonSSOOIDC client,
             GetSsoTokenResponse previousResponse)
@@ -230,6 +280,12 @@ namespace Amazon.SSOOIDC.Internal
         }
 #endif
 
+        /// <summary>
+        /// Refresh SSO Token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="previousResponse"></param>
+        /// <returns></returns>
         public static async Task<GetSsoTokenResponse> RefreshTokenAsync(
             IAmazonSSOOIDC client,
             GetSsoTokenResponse previousResponse)
@@ -256,6 +312,7 @@ namespace Amazon.SSOOIDC.Internal
         }
 
 #if BCL
+
         private static CreateTokenResponse PollForSsoToken(IAmazonSSOOIDC client,
             CreateTokenRequest createTokenRequest,
             int pollingIntervalSeconds,

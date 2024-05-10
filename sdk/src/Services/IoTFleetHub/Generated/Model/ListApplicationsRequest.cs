@@ -26,18 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListApplications operation.
-    /// Gets a list of Fleet Hub for AWS IoT Device Management web applications for the current
+    /// Gets a list of Fleet Hub for IoT Device Management web applications for the current
     /// account.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ListApplicationsRequest : AmazonIoTFleetHubRequest
     {

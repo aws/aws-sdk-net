@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -49,6 +50,7 @@ namespace Amazon.Personalize.Model
         private string _status;
         private double? _trainingHours;
         private TrainingMode _trainingMode;
+        private TrainingType _trainingType;
         private TunedHPOParams _tunedhpoParams;
 
         /// <summary>
@@ -346,21 +348,11 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property TrainingMode. 
         /// <para>
-        /// The scope of training to be performed when creating the solution version. The <c>FULL</c>
-        /// option trains the solution version based on the entirety of the input solution's training
-        /// data, while the <c>UPDATE</c> option processes only the data that has changed in comparison
-        /// to the input solution. Choose <c>UPDATE</c> when you want to incrementally update
-        /// your solution version instead of creating an entirely new one.
+        /// The scope of training to be performed when creating the solution version. A <c>FULL</c>
+        /// training considers all of the data in your dataset group. An <c>UPDATE</c> processes
+        /// only the data that has changed since the latest training. Only solution versions created
+        /// with the User-Personalization recipe can use <c>UPDATE</c>. 
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// The <c>UPDATE</c> option can only be used when you already have an active solution
-        /// version created from the input solution using the <c>FULL</c> option and the input
-        /// solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-        /// recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
-        /// recipe.
-        /// </para>
-        ///  </important>
         /// </summary>
         public TrainingMode TrainingMode
         {
@@ -372,6 +364,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetTrainingMode()
         {
             return this._trainingMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingType. 
+        /// <para>
+        /// Whether the solution version was created automatically or manually.
+        /// </para>
+        /// </summary>
+        public TrainingType TrainingType
+        {
+            get { return this._trainingType; }
+            set { this._trainingType = value; }
+        }
+
+        // Check to see if TrainingType property is set
+        internal bool IsSetTrainingType()
+        {
+            return this._trainingType != null;
         }
 
         /// <summary>

@@ -27,11 +27,12 @@ foreach(var enumeration in this.Config.ServiceModel.Enumerations(false))
 <#
     foreach(var enumValue in enumeration.EnumerationValues)
     {
+        // Because some services have model properties named "Equals" which conflicts with .NET's Equals operation. Add the "new" keyword to override the behavior.
 #>
         /// <summary>
         /// Constant <#=enumValue.PropertyName#> for <#=enumeration.Name#>
         /// </summary>
-        public static readonly <#=enumeration.Name#> <#=enumValue.PropertyName#> = new <#=enumeration.Name#>("<#=enumValue.MarshallName#>");
+        public <#=enumValue.PropertyName.Equals("Equals") ? "new " : ""#>static readonly <#=enumeration.Name#> <#=enumValue.PropertyName#> = new <#=enumeration.Name#>("<#=enumValue.MarshallName#>");
 <#
     }
 #>

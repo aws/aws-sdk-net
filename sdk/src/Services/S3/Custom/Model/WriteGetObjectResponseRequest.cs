@@ -498,7 +498,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html\">Object Lock</a>.</para>
+        /// <para>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</para>
         /// </summary>
         public ObjectLockMode ObjectLockMode
         {
@@ -554,7 +554,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html\">Replication</a>.</para>
+        /// <para>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</para>
         /// </summary>
         public ReplicationStatus ReplicationStatus
         {
@@ -646,7 +646,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html\">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>.</para>
+        /// <para>128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>.</para>
         /// </summary>
         public string SSECustomerKeyMD5
         {

@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Delete Action Group Response
+    /// This is the response object from the DeleteAgentActionGroup operation.
     /// </summary>
     public partial class DeleteAgentActionGroupResponse : AmazonWebServiceResponse
     {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
@@ -37,7 +38,6 @@ namespace Amazon.CleanRoomsML.Model
         private DateTime? _createTime;
         private string _description;
         private string _kmsKeyArn;
-        private List<AudienceModelMetric> _metrics = AWSConfigs.InitializeCollections ? new List<AudienceModelMetric>() : null;
         private string _name;
         private AudienceModelStatus _status;
         private StatusDetails _statusDetails;
@@ -121,24 +121,6 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetKmsKeyArn()
         {
             return this._kmsKeyArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Metrics. 
-        /// <para>
-        /// Accuracy metrics for the model.
-        /// </para>
-        /// </summary>
-        public List<AudienceModelMetric> Metrics
-        {
-            get { return this._metrics; }
-            set { this._metrics = value; }
-        }
-
-        // Check to see if Metrics property is set
-        internal bool IsSetMetrics()
-        {
-            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

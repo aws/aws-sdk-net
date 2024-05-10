@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsJobAbortCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("action");
@@ -66,7 +69,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThresholdPercentage())
             {
                 context.Writer.WritePropertyName("thresholdPercentage");
-                context.Writer.Write(requestObject.ThresholdPercentage.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThresholdPercentage.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdPercentage.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ThresholdPercentage.Value);
+                }
             }
 
         }

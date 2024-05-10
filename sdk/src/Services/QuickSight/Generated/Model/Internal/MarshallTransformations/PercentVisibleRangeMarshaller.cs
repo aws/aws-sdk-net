@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PercentVisibleRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFrom())
             {
                 context.Writer.WritePropertyName("From");
-                context.Writer.Write(requestObject.From.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.From.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.From.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.From.Value);
+                }
             }
 
             if(requestObject.IsSetTo())
             {
                 context.Writer.WritePropertyName("To");
-                context.Writer.Write(requestObject.To.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.To.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.To.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.To.Value);
+                }
             }
 
         }

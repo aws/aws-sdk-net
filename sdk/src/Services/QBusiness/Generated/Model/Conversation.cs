@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// A conversation in an Amazon Q application.
+    /// A conversation in an Amazon Q Business application.
     /// </summary>
     public partial class Conversation
     {
@@ -40,7 +41,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ConversationId. 
         /// <para>
-        /// The identifier of the Amazon Q conversation.
+        /// The identifier of the Amazon Q Business conversation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

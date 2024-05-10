@@ -26,15 +26,32 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCampaign operation.
     /// Updates a campaign to deploy a retrained solution version with an existing campaign,
-    /// change your campaign's <c>minProvisionedTPS</c>, or modify your campaign's configuration,
-    /// such as the exploration configuration. 
+    /// change your campaign's <c>minProvisionedTPS</c>, or modify your campaign's configuration.
+    /// For example, you can set <c>enableMetadataWithRecommendations</c> to true for an existing
+    /// campaign.
     /// 
     ///  
+    /// <para>
+    ///  To update a campaign to start automatically using the latest solution version, specify
+    /// the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For the <c>SolutionVersionArn</c> parameter, specify the Amazon Resource Name (ARN)
+    /// of your solution in <c>SolutionArn/$LATEST</c> format. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  In the <c>campaignConfig</c>, set <c>syncWithLatestSolutionVersion</c> to <c>true</c>.
+    /// 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// To update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the
     /// campaign status using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
@@ -124,7 +141,21 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property SolutionVersionArn. 
         /// <para>
-        /// The ARN of a new solution version to deploy.
+        /// The Amazon Resource Name (ARN) of a new model to deploy. To specify the latest solution
+        /// version of your solution, specify the ARN of your <i>solution</i> in <c>SolutionArn/$LATEST</c>
+        /// format. You must use this format if you set <c>syncWithLatestSolutionVersion</c> to
+        /// <c>True</c> in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  To deploy a model that isn't the latest solution version of your solution, specify
+        /// the ARN of the solution version. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
+        /// automatic campaign updates</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

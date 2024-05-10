@@ -162,7 +162,9 @@ namespace Amazon.EC2.Util
         }
         private static async Task<HttpWebResponse> DownloadControlFileAsync(string location, IWebProxy proxy)
         {
+#pragma warning disable SYSLIB0014 // Continue to use WebRequest while the SDK targets .NET Framework 3.5
             var request = WebRequest.Create(location) as HttpWebRequest;
+#pragma warning restore SYSLIB0014
             if (proxy != null)
                 request.Proxy = proxy;
             return await request.GetResponseAsync().ConfigureAwait(false) as HttpWebResponse;

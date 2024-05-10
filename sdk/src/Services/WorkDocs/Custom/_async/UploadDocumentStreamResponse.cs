@@ -49,6 +49,10 @@ namespace Amazon.WorkDocs.Utils
         /// The size of the document, in bytes.
         /// </summary>
         public long DocumentSizeInBytes { get; }
+
+        /// <summary>
+        /// Steam of the document content.
+        /// </summary>
         public Stream Stream { get; }
 
         /// <summary>

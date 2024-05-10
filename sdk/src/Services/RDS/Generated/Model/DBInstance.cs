@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -1835,8 +1836,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Timezone. 
         /// <para>
         /// The time zone of the DB instance. In most cases, the <c>Timezone</c> element is empty.
-        /// <c>Timezone</c> content appears only for Microsoft SQL Server DB instances that were
-        /// created with a time zone specified.
+        /// <c>Timezone</c> content appears only for RDS for Db2 and RDS for SQL Server DB instances
+        /// that were created with a time zone specified.
         /// </para>
         /// </summary>
         public string Timezone

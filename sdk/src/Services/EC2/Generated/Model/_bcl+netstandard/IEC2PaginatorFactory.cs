@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>

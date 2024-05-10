@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -43,6 +44,7 @@ namespace Amazon.DataZone.Model
         private List<FormOutput> _formsOutput = AWSConfigs.InitializeCollections ? new List<FormOutput>() : null;
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
+        private List<TimeSeriesDataPointSummaryFormOutput> _latestTimeSeriesDataPointFormsOutput = AWSConfigs.InitializeCollections ? new List<TimeSeriesDataPointSummaryFormOutput>() : null;
         private AssetListingDetails _listing;
         private string _name;
         private string _owningProjectId;
@@ -127,7 +129,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExternalIdentifier.
+        /// Gets and sets the property ExternalIdentifier. 
+        /// <para>
+        /// The external identifier of the asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string ExternalIdentifier
@@ -236,7 +241,28 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Listing.
+        /// Gets and sets the property LatestTimeSeriesDataPointFormsOutput. 
+        /// <para>
+        /// The latest data point that was imported into the time series form for the asset. 
+        /// </para>
+        /// </summary>
+        public List<TimeSeriesDataPointSummaryFormOutput> LatestTimeSeriesDataPointFormsOutput
+        {
+            get { return this._latestTimeSeriesDataPointFormsOutput; }
+            set { this._latestTimeSeriesDataPointFormsOutput = value; }
+        }
+
+        // Check to see if LatestTimeSeriesDataPointFormsOutput property is set
+        internal bool IsSetLatestTimeSeriesDataPointFormsOutput()
+        {
+            return this._latestTimeSeriesDataPointFormsOutput != null && (this._latestTimeSeriesDataPointFormsOutput.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Listing. 
+        /// <para>
+        /// The details of an asset published in an Amazon DataZone catalog. 
+        /// </para>
         /// </summary>
         public AssetListingDetails Listing
         {
@@ -352,7 +378,7 @@ namespace Amazon.DataZone.Model
         /// The identifier of the revision type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=385)]
+        [AWSProperty(Required=true, Min=1, Max=513)]
         public string TypeIdentifier
         {
             get { return this._typeIdentifier; }

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.ServiceDiscovery.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.ServiceDiscovery
 {
     /// <summary>
@@ -1155,7 +1156,7 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Lists summary information for all the services that are associated with one or more
-        /// specified namespaces.
+        /// namespaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServices service method.</param>
         /// 
@@ -1172,7 +1173,7 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Lists summary information for all the services that are associated with one or more
-        /// specified namespaces.
+        /// namespaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServices service method.</param>
         /// <param name="cancellationToken">

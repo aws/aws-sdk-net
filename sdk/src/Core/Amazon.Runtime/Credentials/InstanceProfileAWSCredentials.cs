@@ -91,9 +91,9 @@ namespace Amazon.Runtime
                 // but try again to refresh them in 2 minutes.
                 if (null != _currentRefreshState)
                 {
-                    #pragma warning disable CS0612 // Type or member is obsolete
+#pragma warning disable CS0612, CS0618 // Type or member is obsolete
                     var newExpiryTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() + TimeSpan.FromMinutes(2);
-#pragma warning restore CS0612 // Type or member is obsolete
+#pragma warning restore CS0612,CS0618 // Type or member is obsolete
 
                     _currentRefreshState = new CredentialsRefreshState(_currentRefreshState.Credentials.Copy(), newExpiryTime);
                     return _currentRefreshState;
@@ -107,9 +107,9 @@ namespace Amazon.Runtime
 
                 // use a custom refresh time
 
-                #pragma warning disable CS0612 // Type or member is obsolete
+#pragma warning disable CS0612, CS0618 // Type or member is obsolete
                 var newExpiryTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() + TimeSpan.FromMinutes(new Random().Next(5, 11));
-                #pragma warning restore CS0612 // Type or member is obsolete
+#pragma warning restore CS0612, CS0618 // Type or member is obsolete
 
                 _currentRefreshState = new CredentialsRefreshState(newState.Credentials.Copy(), newExpiryTime);
 
@@ -284,10 +284,10 @@ namespace Amazon.Runtime
         private CredentialsRefreshState GetEarlyRefreshState(CredentialsRefreshState state)
         {
             // New expiry time = Now + _refreshAttemptPeriod + PreemptExpiryTime
-#pragma warning disable CS0612 // Type or member is obsolete
+#pragma warning disable CS0612,CS0618 // Type or member is obsolete
             var newExpiryTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() + _refreshAttemptPeriod + PreemptExpiryTime;
-#pragma warning restore CS0612 // Type or member is obsolete
-            
+#pragma warning restore CS0612, CS0618 // Type or member is obsolete
+
             // Use this only if the time is earlier than the default expiration time
             if (newExpiryTime.ToUniversalTime() > state.Expiration.ToUniversalTime())
                 newExpiryTime = state.Expiration;

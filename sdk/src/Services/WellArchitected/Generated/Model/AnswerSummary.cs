@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -36,6 +37,7 @@ namespace Amazon.WellArchitected.Model
         private List<ChoiceAnswerSummary> _choiceAnswerSummaries = AWSConfigs.InitializeCollections ? new List<ChoiceAnswerSummary>() : null;
         private List<Choice> _choices = AWSConfigs.InitializeCollections ? new List<Choice>() : null;
         private bool? _isApplicable;
+        private JiraConfiguration _jiraConfiguration;
         private string _pillarId;
         private string _questionId;
         private string _questionTitle;
@@ -90,6 +92,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetIsApplicable()
         {
             return this._isApplicable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JiraConfiguration. 
+        /// <para>
+        /// Configuration of the Jira integration.
+        /// </para>
+        /// </summary>
+        public JiraConfiguration JiraConfiguration
+        {
+            get { return this._jiraConfiguration; }
+            set { this._jiraConfiguration = value; }
+        }
+
+        // Check to see if JiraConfiguration property is set
+        internal bool IsSetJiraConfiguration()
+        {
+            return this._jiraConfiguration != null;
         }
 
         /// <summary>

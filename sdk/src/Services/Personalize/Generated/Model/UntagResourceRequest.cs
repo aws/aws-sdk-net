@@ -26,12 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Remove <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
-    /// that are attached to a resource.
+    /// Removes the specified tags that are attached to a resource. For more information,
+    /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/tags-remove.html">Removing
+    /// tags from Amazon Personalize resources</a>.
     /// </summary>
     public partial class UntagResourceRequest : AmazonPersonalizeRequest
     {
@@ -60,7 +62,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// Keys to remove from the resource's tags.
+        /// The keys of the tags to be removed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

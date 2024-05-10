@@ -56,6 +56,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetBucketAccelerateConfigurationRequestMarshaller _instance;
 
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
         public static GetBucketAccelerateConfigurationRequestMarshaller Instance
         {
             get

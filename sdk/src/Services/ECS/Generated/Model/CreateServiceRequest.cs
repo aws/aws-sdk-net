@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -37,13 +38,9 @@ namespace Amazon.ECS.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-    /// Elastic Inference (EI), and will help current customers migrate their workloads to
-    /// options that offer better price and performance. After April 15, 2023, new customers
-    /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-    /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-    /// during the past 30-day period are considered current customers and will be able to
-    /// continue using the service. 
+    /// On March 21, 2024, a change was made to resolve the task definition revision before
+    /// authorization. When a task definition revision is not specified, authorization will
+    /// occur using the latest revision of a task definition.
     /// </para>
     ///  </note> 
     /// <para>
@@ -151,7 +148,18 @@ namespace Amazon.ECS.Model
     /// <para>
     /// When the service scheduler launches new tasks, it determines task placement. For information
     /// about task placement and task placement strategies, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement.html">Amazon
-    /// ECS task placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// ECS task placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
+    /// Elastic Inference (EI), and will help current customers migrate their workloads to
+    /// options that offer better price and performance. After April 15, 2023, new customers
+    /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
+    /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
+    /// during the past 30-day period are considered current customers and will be able to
+    /// continue using the service. 
     /// </para>
     /// </summary>
     public partial class CreateServiceRequest : AmazonECSRequest
@@ -406,7 +414,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Fargate Spot infrastructure is available for use but a capacity provider strategy
         /// must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
-        /// capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+        /// capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -596,6 +604,12 @@ namespace Amazon.ECS.Model
         /// value is specified, the tags aren't propagated. Tags can only be propagated to the
         /// task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
         /// API action.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must set this to a value other than <c>NONE</c> when you use Cost Explorer. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon
+        /// ECS usage reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>

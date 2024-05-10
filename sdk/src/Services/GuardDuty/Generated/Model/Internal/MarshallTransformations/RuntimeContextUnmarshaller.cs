@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AddressFamily = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("commandLineExample", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CommandLineExample = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("fileSystemType", targetDepth))
@@ -165,6 +172,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScriptPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("serviceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("shellHistoryFilePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -181,6 +194,24 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ProcessDetailsUnmarshaller.Instance;
                     unmarshalledObject.TargetProcess = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("threatFilePath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ThreatFilePath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("toolCategory", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ToolCategory = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("toolName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ToolName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DvbSubDestinationSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlignment())
             {
                 context.Writer.WritePropertyName("alignment");
@@ -97,6 +100,30 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("fontColor");
                 context.Writer.Write(requestObject.FontColor);
+            }
+
+            if(requestObject.IsSetFontFileBold())
+            {
+                context.Writer.WritePropertyName("fontFileBold");
+                context.Writer.Write(requestObject.FontFileBold);
+            }
+
+            if(requestObject.IsSetFontFileBoldItalic())
+            {
+                context.Writer.WritePropertyName("fontFileBoldItalic");
+                context.Writer.Write(requestObject.FontFileBoldItalic);
+            }
+
+            if(requestObject.IsSetFontFileItalic())
+            {
+                context.Writer.WritePropertyName("fontFileItalic");
+                context.Writer.Write(requestObject.FontFileItalic);
+            }
+
+            if(requestObject.IsSetFontFileRegular())
+            {
+                context.Writer.WritePropertyName("fontFileRegular");
+                context.Writer.Write(requestObject.FontFileRegular);
             }
 
             if(requestObject.IsSetFontOpacity())

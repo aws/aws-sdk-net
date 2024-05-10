@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the cloudhsmv2-2017-04-28.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>

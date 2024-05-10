@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -46,7 +47,10 @@ namespace Amazon.DataZone.Model
         private string _updatedBy;
 
         /// <summary>
-        /// Gets and sets the property Assets.
+        /// Gets and sets the property Assets. 
+        /// <para>
+        /// The details of the asset for which the subscription grant is created.
+        /// </para>
         /// </summary>
         public List<SubscribedAsset> Assets
         {

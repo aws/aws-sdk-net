@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,11 +34,32 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeNetworkInterfaceAttributeResponse : AmazonWebServiceResponse
     {
+        private bool? _associatePublicIpAddress;
         private NetworkInterfaceAttachment _attachment;
         private string _description;
         private List<GroupIdentifier> _groups = AWSConfigs.InitializeCollections ? new List<GroupIdentifier>() : null;
         private string _networkInterfaceId;
         private bool? _sourceDestCheck;
+
+        /// <summary>
+        /// Gets and sets the property AssociatePublicIpAddress. 
+        /// <para>
+        /// Indicates whether to assign a public IPv4 address to a network interface. This option
+        /// can be enabled for any network interface but will only apply to the primary network
+        /// interface (eth0).
+        /// </para>
+        /// </summary>
+        public bool? AssociatePublicIpAddress
+        {
+            get { return this._associatePublicIpAddress; }
+            set { this._associatePublicIpAddress = value; }
+        }
+
+        // Check to see if AssociatePublicIpAddress property is set
+        internal bool IsSetAssociatePublicIpAddress()
+        {
+            return this._associatePublicIpAddress.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Attachment. 

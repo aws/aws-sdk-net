@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property ASName. 
         /// <para>
-        /// The name of the network at an impacted location.
+        /// The name of the internet service provider (ISP) or network (ASN).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

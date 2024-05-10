@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -98,6 +99,10 @@ namespace Amazon.CodeBuild.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>ROTATING</c>: The compute fleet is being rotated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PENDING_DELETION</c>: The compute fleet is pending deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>

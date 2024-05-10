@@ -263,6 +263,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="requestContent">The destination where the content stream is written.</param>
         /// <param name="content">The content stream to be written.</param>
         /// <param name="contentHeaders">HTTP content headers.</param>
+        /// <param name="cancellationToken"></param>
         public async Task WriteToRequestBodyAsync(Stream requestContent, byte[] content, IDictionary<string, string> contentHeaders, CancellationToken cancellationToken = default(CancellationToken))
         {
             cancellationToken.ThrowIfCancellationRequested();

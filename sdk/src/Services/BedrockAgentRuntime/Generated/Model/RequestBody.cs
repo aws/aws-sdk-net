@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// The parameters in the request body for the Lambda input event.
+    /// The parameters in the API request body.
     /// </summary>
     public partial class RequestBody
     {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -43,6 +44,7 @@ namespace Amazon.QuickSight.Model
     {
         private RegisteredUserDashboardEmbeddingConfiguration _dashboard;
         private RegisteredUserDashboardVisualEmbeddingConfiguration _dashboardVisual;
+        private RegisteredUserGenerativeQnAEmbeddingConfiguration _generativeQnA;
         private RegisteredUserQSearchBarEmbeddingConfiguration _qSearchBar;
         private RegisteredUserQuickSightConsoleEmbeddingConfiguration _quickSightConsole;
 
@@ -80,6 +82,29 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDashboardVisual()
         {
             return this._dashboardVisual != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GenerativeQnA. 
+        /// <para>
+        /// The configuration details for embedding the Generative Q&amp;A experience.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about embedding the Generative Q&amp;A experience, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
+        /// Overview</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// </para>
+        /// </summary>
+        public RegisteredUserGenerativeQnAEmbeddingConfiguration GenerativeQnA
+        {
+            get { return this._generativeQnA; }
+            set { this._generativeQnA = value; }
+        }
+
+        // Check to see if GenerativeQnA property is set
+        internal bool IsSetGenerativeQnA()
+        {
+            return this._generativeQnA != null;
         }
 
         /// <summary>

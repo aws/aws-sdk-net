@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -60,10 +61,10 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
             
             if (publicRequest.IsSetByCreationAfter())
-                request.Parameters.Add("CreationAfter", StringUtils.FromDateTimeToISO8601(publicRequest.ByCreationAfter));
+                request.Parameters.Add("CreationAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ByCreationAfter));
             
             if (publicRequest.IsSetByCreationBefore())
-                request.Parameters.Add("CreationBefore", StringUtils.FromDateTimeToISO8601(publicRequest.ByCreationBefore));
+                request.Parameters.Add("CreationBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ByCreationBefore));
             
             if (publicRequest.IsSetByReportPlanName())
                 request.Parameters.Add("ReportPlanName", StringUtils.FromString(publicRequest.ByReportPlanName));

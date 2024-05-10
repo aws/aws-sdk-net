@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
@@ -83,7 +84,7 @@ namespace Amazon.NetworkMonitor.Model
         /// The name of the monitor that was updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string MonitorName
         {
             get { return this._monitorName; }

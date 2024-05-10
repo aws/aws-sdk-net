@@ -48,7 +48,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (deleteBucketRequest.BucketRegion != null)
             {
 // Disable error preventing using explicit RegionEndpoints in the SDK since the code is mapping S3Regions to RegionEndpoints with a fallback default.
-#pragma warning disable CR1004
+#pragma warning disable CR1004,CS0612,CS0618
                 RegionEndpoint regionEndpoint;
                 if(deleteBucketRequest.BucketRegion == S3Region.US)
                 {
@@ -62,7 +62,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     regionEndpoint = RegionEndpoint.GetBySystemName(deleteBucketRequest.BucketRegion.Value);
                 }
-#pragma warning restore CR1004
+#pragma warning restore CR1004,CS0612,CS0618
                 request.AlternateEndpoint = regionEndpoint;
             }
                 
@@ -73,7 +73,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static DeleteBucketRequestMarshaller _instance;
 
-	    public static DeleteBucketRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static DeleteBucketRequestMarshaller Instance
 	    {
 	        get
 	        {

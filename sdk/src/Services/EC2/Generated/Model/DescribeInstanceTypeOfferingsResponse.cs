@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceTypeOfferings. 
         /// <para>
-        /// The instance types offered.
+        /// The instance types offered in the location.
         /// </para>
         /// </summary>
         public List<InstanceTypeOffering> InstanceTypeOfferings

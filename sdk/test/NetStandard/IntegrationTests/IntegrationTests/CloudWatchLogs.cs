@@ -30,7 +30,7 @@ namespace Amazon.DNXCore.IntegrationTests
                             LogGroupNamePrefix = logGroupName
                         });
 
-                    Assert.Equal(1, response.LogGroups.Count);
+                    Assert.Single(response.LogGroups);
                     Assert.NotNull(response.LogGroups[0].Arn);
                     Assert.Null(response.LogGroups[0].RetentionInDays);
 
@@ -45,7 +45,7 @@ namespace Amazon.DNXCore.IntegrationTests
                         LogGroupNamePrefix = logGroupName
                     });
 
-                    Assert.Equal(1, response.LogGroups.Count);
+                    Assert.Single(response.LogGroups);
                     Assert.Equal(1, response.LogGroups[0].RetentionInDays.GetValueOrDefault());
                 }
 
@@ -62,7 +62,7 @@ namespace Amazon.DNXCore.IntegrationTests
                             LogStreamNamePrefix = "sample"
                         });
 
-                    Assert.Equal(1, describeResponse.LogStreams.Count);
+                    Assert.Single(describeResponse.LogStreams);
                     Assert.NotNull(describeResponse.LogStreams[0].Arn);
 
                     PutLogEventsResponse putResponse1 = await Client.PutLogEventsAsync(new PutLogEventsRequest

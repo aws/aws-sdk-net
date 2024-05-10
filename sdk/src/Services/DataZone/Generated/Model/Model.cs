@@ -26,17 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// 
+    /// The model of the API.
     /// </summary>
     public partial class Model
     {
         private string _smithy;
 
         /// <summary>
-        /// Gets and sets the property Smithy.
+        /// Gets and sets the property Smithy. 
+        /// <para>
+        /// Indicates the smithy model of the API.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
         public string Smithy

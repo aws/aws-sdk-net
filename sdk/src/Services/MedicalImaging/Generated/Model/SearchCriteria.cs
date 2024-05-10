@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MedicalImaging.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.MedicalImaging.Model
     public partial class SearchCriteria
     {
         private List<SearchFilter> _filters = AWSConfigs.InitializeCollections ? new List<SearchFilter>() : null;
+        private Sort _sort;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -52,6 +54,24 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sort. 
+        /// <para>
+        /// The sort input for search criteria.
+        /// </para>
+        /// </summary>
+        public Sort Sort
+        {
+            get { return this._sort; }
+            set { this._sort = value; }
+        }
+
+        // Check to see if Sort property is set
+        internal bool IsSetSort()
+        {
+            return this._sort != null;
         }
 
     }

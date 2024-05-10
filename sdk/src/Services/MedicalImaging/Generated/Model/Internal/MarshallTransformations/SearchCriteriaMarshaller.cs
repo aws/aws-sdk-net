@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SearchCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilters())
             {
                 context.Writer.WritePropertyName("filters");
@@ -59,6 +62,17 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetSort())
+            {
+                context.Writer.WritePropertyName("sort");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SortMarshaller.Instance;
+                marshaller.Marshall(requestObject.Sort, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

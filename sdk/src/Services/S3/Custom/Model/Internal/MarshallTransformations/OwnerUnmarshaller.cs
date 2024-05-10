@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// </summary>
     public class OwnerUnmarshaller : IUnmarshaller<Owner, XmlUnmarshallerContext>, IUnmarshaller<Owner, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Owner Unmarshall(XmlUnmarshallerContext context) 
         {
             Owner owner = new Owner();
@@ -61,6 +66,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return owner;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Owner Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
@@ -68,6 +78,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static OwnerUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static OwnerUnmarshaller Instance
         {
             get

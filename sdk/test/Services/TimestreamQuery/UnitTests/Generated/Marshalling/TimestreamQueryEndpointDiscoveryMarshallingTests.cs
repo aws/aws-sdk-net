@@ -88,6 +88,21 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("TimestreamQuery")]
+        public void DescribeAccountSettingsEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAccountSettings");
+            var request = InstantiateClassGenerator.Execute<DescribeAccountSettingsRequest>(operation);
+            var marshaller = new DescribeAccountSettingsEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamQuery")]
         public void DescribeScheduledQueryEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeScheduledQuery");
@@ -198,6 +213,21 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var operation = service_model.FindOperation("UntagResource");
             var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamQuery")]
+        public void UpdateAccountSettingsEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAccountSettings");
+            var request = InstantiateClassGenerator.Execute<UpdateAccountSettingsRequest>(operation);
+            var marshaller = new UpdateAccountSettingsEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
             var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);

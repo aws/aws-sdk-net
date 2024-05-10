@@ -76,6 +76,7 @@ namespace Amazon.RuntimeDependencies
         /// <typeparam name="T">The type that should be returned from the registry.</typeparam>
         /// <param name="assemblyName"></param>
         /// <param name="className"></param>
+        /// <param name="context"></param>
         /// <returns></returns>
         public virtual T GetInstance<T>(string assemblyName, string className, CreateInstanceContext context)
             where T : class

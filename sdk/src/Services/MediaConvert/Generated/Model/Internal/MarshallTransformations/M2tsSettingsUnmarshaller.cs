@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -223,6 +224,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PmtPid = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("preventBufferUnderflow", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreventBufferUnderflow = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("privateMetadataPid", targetDepth))

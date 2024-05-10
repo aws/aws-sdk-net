@@ -26,18 +26,22 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the GetKnowledgeBase operation.
-    /// Get an existing knowledge base
+    /// Gets information about a knoweldge base.
     /// </summary>
     public partial class GetKnowledgeBaseRequest : AmazonBedrockAgentRequest
     {
         private string _knowledgeBaseId;
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base for which to get information.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string KnowledgeBaseId

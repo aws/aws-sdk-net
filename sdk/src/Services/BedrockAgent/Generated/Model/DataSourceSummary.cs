@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Summary information of a data source.
+    /// Contains details about a data source.
     /// </summary>
     public partial class DataSourceSummary
     {
@@ -41,7 +42,10 @@ namespace Amazon.BedrockAgent.Model
         private DateTime? _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property DataSourceId.
+        /// Gets and sets the property DataSourceId. 
+        /// <para>
+        /// The unique identifier of the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DataSourceId
@@ -57,7 +61,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -73,7 +80,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base to which the data source belongs.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string KnowledgeBaseId
@@ -89,7 +99,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -105,7 +118,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DataSourceStatus Status
@@ -121,7 +137,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The time at which the data source was last updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime? UpdatedAt

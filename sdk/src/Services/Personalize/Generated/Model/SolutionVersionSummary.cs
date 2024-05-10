@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -40,6 +41,8 @@ namespace Amazon.Personalize.Model
         private DateTime? _lastUpdatedDateTime;
         private string _solutionVersionArn;
         private string _status;
+        private TrainingMode _trainingMode;
+        private TrainingType _trainingType;
 
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
@@ -140,6 +143,45 @@ namespace Amazon.Personalize.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingMode. 
+        /// <para>
+        /// The scope of training to be performed when creating the solution version. A <c>FULL</c>
+        /// training considers all of the data in your dataset group. An <c>UPDATE</c> processes
+        /// only the data that has changed since the latest training. Only solution versions created
+        /// with the User-Personalization recipe can use <c>UPDATE</c>. 
+        /// </para>
+        /// </summary>
+        public TrainingMode TrainingMode
+        {
+            get { return this._trainingMode; }
+            set { this._trainingMode = value; }
+        }
+
+        // Check to see if TrainingMode property is set
+        internal bool IsSetTrainingMode()
+        {
+            return this._trainingMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingType. 
+        /// <para>
+        /// Whether the solution version was created automatically or manually.
+        /// </para>
+        /// </summary>
+        public TrainingType TrainingType
+        {
+            get { return this._trainingType; }
+            set { this._trainingType = value; }
+        }
+
+        // Check to see if TrainingType property is set
+        internal bool IsSetTrainingType()
+        {
+            return this._trainingType != null;
         }
 
     }

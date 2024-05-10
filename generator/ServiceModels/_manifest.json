@@ -94,7 +94,7 @@
                     "name": "System.Configuration"
                 }
             ],
-            "noWarn" : "CS1591"
+            "noWarn" : "CS1591,CS0612,CS0618"
         }
     ]
 }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// response. You can specify a maximum of 50 policy stores per response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1)]
         public int? MaxResults
         {
             get { return this._maxResults; }

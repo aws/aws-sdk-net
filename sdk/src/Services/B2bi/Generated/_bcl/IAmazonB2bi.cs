@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.B2bi.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.B2bi
 {
     /// <summary>

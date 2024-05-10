@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
@@ -37,8 +38,9 @@ namespace Amazon.PaymentCryptography.Model
     /// <para>
     /// The signing key certificate signs the wrapped key under export within the TR-34 key
     /// payload. The export token and signing key certificate must be in place and operational
-    /// before calling <a>ExportKey</a>. The export token expires in 7 days. You can use the
-    /// same export token to export multiple keys from your service account.
+    /// before calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>.
+    /// The export token expires in 7 days. You can use the same export token to export multiple
+    /// keys from your service account.
     /// </para>
     ///  
     /// <para>
@@ -51,11 +53,13 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ExportKey</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetParametersForImport</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>

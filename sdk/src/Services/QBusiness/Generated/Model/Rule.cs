@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Guardrail rules for an Amazon Q application. Amazon Q supports only one rule at a
-    /// time.
+    /// Guardrail rules for an Amazon Q Business application. Amazon Q Business supports only
+    /// one rule at a time.
     /// </summary>
     public partial class Rule
     {

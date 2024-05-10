@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QConnect.Model
 {
     /// <summary>
-    /// The configuration information for the Amazon Q assistant integration.
+    /// The configuration information for the Amazon Q in Connect assistant integration.
     /// </summary>
     public partial class AssistantIntegrationConfiguration
     {

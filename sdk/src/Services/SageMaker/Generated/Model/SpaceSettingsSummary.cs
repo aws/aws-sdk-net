@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -57,7 +58,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SpaceStorageSettings. 
         /// <para>
-        /// The storage settings for a private space.
+        /// The storage settings for a space.
         /// </para>
         /// </summary>
         public SpaceStorageSettings SpaceStorageSettings

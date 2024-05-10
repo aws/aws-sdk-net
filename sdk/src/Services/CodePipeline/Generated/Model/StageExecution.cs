@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -35,6 +36,7 @@ namespace Amazon.CodePipeline.Model
     {
         private string _pipelineExecutionId;
         private StageExecutionStatus _status;
+        private ExecutionType _type;
 
         /// <summary>
         /// Gets and sets the property PipelineExecutionId. 
@@ -78,6 +80,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of pipeline execution for the stage, such as a rollback pipeline execution.
+        /// </para>
+        /// </summary>
+        public ExecutionType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

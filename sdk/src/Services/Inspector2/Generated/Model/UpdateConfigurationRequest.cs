@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -36,7 +37,26 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class UpdateConfigurationRequest : AmazonInspector2Request
     {
+        private Ec2Configuration _ec2Configuration;
         private EcrConfiguration _ecrConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property Ec2Configuration. 
+        /// <para>
+        /// Specifies how the Amazon EC2 automated scan will be updated for your environment.
+        /// </para>
+        /// </summary>
+        public Ec2Configuration Ec2Configuration
+        {
+            get { return this._ec2Configuration; }
+            set { this._ec2Configuration = value; }
+        }
+
+        // Check to see if Ec2Configuration property is set
+        internal bool IsSetEc2Configuration()
+        {
+            return this._ec2Configuration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EcrConfiguration. 
@@ -44,7 +64,6 @@ namespace Amazon.Inspector2.Model
         /// Specifies how the ECR automated re-scan will be updated for your environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public EcrConfiguration EcrConfiguration
         {
             get { return this._ecrConfiguration; }

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the bcm-data-exports-2023-11-26.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BCMDataExports.Model
 {
     /// <summary>

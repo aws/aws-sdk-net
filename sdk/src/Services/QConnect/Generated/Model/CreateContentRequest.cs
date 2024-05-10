@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateContent operation.
-    /// Creates Amazon Q content. Before to calling this API, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
+    /// Creates Amazon Q in Connect content. Before to calling this API, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
     /// to upload an asset.
     /// </summary>
     public partial class CreateContentRequest : AmazonQConnectRequest
@@ -70,8 +71,7 @@ namespace Amazon.QConnect.Model
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
         /// The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge
-        /// base if you're storing Amazon Q Content resource to it. Can be either the ID or the
-        /// ARN. URLs cannot contain the ARN.
+        /// base. Can be either the ID or the ARN. URLs cannot contain the ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,8 +91,9 @@ namespace Amazon.QConnect.Model
         /// Gets and sets the property Metadata. 
         /// <para>
         /// A key/value map to store attributes without affecting tagging or recommendations.
-        /// For example, when synchronizing data between an external system and Amazon Q, you
-        /// can store an external version identifier as metadata to utilize for determining drift.
+        /// For example, when synchronizing data between an external system and Amazon Q in Connect,
+        /// you can store an external version identifier as metadata to utilize for determining
+        /// drift.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]

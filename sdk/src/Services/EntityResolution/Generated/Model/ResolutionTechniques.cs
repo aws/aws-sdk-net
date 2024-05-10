@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -58,7 +59,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property ResolutionType. 
         /// <para>
-        /// The type of matching. There are two types of matching: <c>RULE_MATCHING</c> and <c>ML_MATCHING</c>.
+        /// The type of matching. There are three types of matching: <c>RULE_MATCHING</c>, <c>ML_MATCHING</c>,
+        /// and <c>PROVIDER</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

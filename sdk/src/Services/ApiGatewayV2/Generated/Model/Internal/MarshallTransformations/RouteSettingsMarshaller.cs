@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RouteSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataTraceEnabled())
             {
                 context.Writer.WritePropertyName("dataTraceEnabled");
@@ -72,7 +75,14 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThrottlingRateLimit())
             {
                 context.Writer.WritePropertyName("throttlingRateLimit");
-                context.Writer.Write(requestObject.ThrottlingRateLimit.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThrottlingRateLimit.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThrottlingRateLimit.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ThrottlingRateLimit.Value);
+                }
             }
 
         }

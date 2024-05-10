@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Circle requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCenter())
             {
                 context.Writer.WritePropertyName("Center");
@@ -59,7 +62,14 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRadius())
             {
                 context.Writer.WritePropertyName("Radius");
-                context.Writer.Write(requestObject.Radius.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Radius.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Radius.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Radius.Value);
+                }
             }
 
         }

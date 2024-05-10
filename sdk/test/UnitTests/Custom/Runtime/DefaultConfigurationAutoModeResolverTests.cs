@@ -27,14 +27,14 @@ namespace AWSSDK.UnitTests.Runtime
     public class DefaultConfigurationAutoModeResolverTests
     {
         private const string ExecutionEnvironmentEnvVar = "AWS_EXECUTION_ENV";
-        private readonly DefaultConfigurationAutoModeResolver _resolver;
+        private DefaultConfigurationAutoModeResolver _resolver;
         private readonly Mock<IRuntimeInformationProvider> _runtimeInformationProvider = new Mock<IRuntimeInformationProvider>();
         private readonly Mock<IEnvironmentVariableRetriever> _environmentVariableRetriever = new Mock<IEnvironmentVariableRetriever>();
 
-        public DefaultConfigurationAutoModeResolverTests()
+        [TestInitialize]
+        public void InitializeResolver()
         {
             _resolver = new DefaultConfigurationAutoModeResolver(_runtimeInformationProvider.Object, _environmentVariableRetriever.Object);
-            _runtimeInformationProvider.Setup(p => p.IsMobile()).Returns(false);
         }
 
         [DataTestMethod]

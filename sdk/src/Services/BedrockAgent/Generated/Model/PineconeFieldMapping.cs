@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// A mapping of Bedrock Knowledge Base fields to Pinecone field names
+    /// Contains the names of the fields to which to map information about the vector store.
     /// </summary>
     public partial class PineconeFieldMapping
     {
@@ -37,7 +38,10 @@ namespace Amazon.BedrockAgent.Model
         private string _textField;
 
         /// <summary>
-        /// Gets and sets the property MetadataField.
+        /// Gets and sets the property MetadataField. 
+        /// <para>
+        /// The name of the field in which Amazon Bedrock stores metadata about the vector store.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string MetadataField
@@ -53,7 +57,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TextField.
+        /// Gets and sets the property TextField. 
+        /// <para>
+        /// The name of the field in which Amazon Bedrock stores the raw text from your data.
+        /// The text is split according to the chunking strategy you choose.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string TextField

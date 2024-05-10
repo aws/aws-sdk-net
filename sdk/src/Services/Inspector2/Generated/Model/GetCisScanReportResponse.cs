@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -57,7 +58,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        ///  The URL where the CIS scan report PDF can be downloaded. 
+        ///  The URL where a PDF of the CIS scan report can be downloaded. 
         /// </para>
         /// </summary>
         public string Url

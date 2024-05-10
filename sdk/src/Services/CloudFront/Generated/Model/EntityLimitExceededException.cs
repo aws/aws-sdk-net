@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The Key Value Store entity limit has been exceeded.
+    /// The key value store entity limit has been exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

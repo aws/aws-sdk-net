@@ -26,11 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// A list of documents that could not be removed from an Amazon Q index. Each entry contains
-    /// an error message that indicates why the document couldn't be removed from the index.
+    /// A list of documents that could not be removed from an Amazon Q Business index. Each
+    /// entry contains an error message that indicates why the document couldn't be removed
+    /// from the index.
     /// </summary>
     public partial class FailedDocument
     {
@@ -41,7 +43,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The identifier of the Amazon Q data source connector that contains the failed document.
+        /// The identifier of the Amazon Q Business data source connector that contains the failed
+        /// document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -78,7 +81,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the document that couldn't be removed from the Amazon Q index.
+        /// The identifier of the document that couldn't be removed from the Amazon Q Business
+        /// index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1825)]

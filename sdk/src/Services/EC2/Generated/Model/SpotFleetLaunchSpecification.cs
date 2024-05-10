@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -254,13 +255,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// One or more network interfaces. If you specify a network interface, you must specify
-        /// subnet IDs and security group IDs using the network interface.
+        /// The network interfaces.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <c>SpotFleetLaunchSpecification</c> currently does not support Elastic Fabric Adapter
-        /// (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.
+        ///  <c>SpotFleetLaunchSpecification</c> does not support Elastic Fabric Adapter (EFA).
+        /// You must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>
+        /// instead.
         /// </para>
         ///  </note>
         /// </summary>
@@ -320,6 +321,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The security groups.
         /// </para>
+        ///  
+        /// <para>
+        /// If you specify a network interface, you must specify any security groups as part of
+        /// the network interface instead of using this parameter.
+        /// </para>
         /// </summary>
         public List<GroupIdentifier> SecurityGroups
         {
@@ -364,6 +370,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The IDs of the subnets in which to launch the instances. To specify multiple subnets,
         /// separate them using commas; for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a network interface, you must specify any subnets as part of the network
+        /// interface instead of using this parameter.
         /// </para>
         /// </summary>
         public string SubnetId

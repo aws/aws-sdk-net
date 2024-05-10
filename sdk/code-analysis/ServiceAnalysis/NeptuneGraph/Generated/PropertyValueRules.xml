@@ -500,6 +500,26 @@
     <pattern>gs-[a-z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.StartImportTaskRequest.GraphIdentifier</property>
+    <pattern>g-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.StartImportTaskRequest.RoleArn</property>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.StartImportTaskResponse.GraphId</property>
+    <pattern>g-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.StartImportTaskResponse.RoleArn</property>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.StartImportTaskResponse.TaskId</property>
+    <pattern>t-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>

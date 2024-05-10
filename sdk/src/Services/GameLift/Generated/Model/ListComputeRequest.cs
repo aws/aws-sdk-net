@@ -26,25 +26,51 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCompute operation.
-    /// Retrieves the compute resources in an Amazon GameLift fleet. You can request information
-    /// for either managed EC2 fleets or Anywhere fleets. 
+    /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
+    /// which is currently in public preview.</b> 
     /// 
     ///  
     /// <para>
-    /// To request a list of computes, specify the fleet ID. You can filter the result set
-    /// by location. Use the pagination parameters to retrieve results in a set of sequential
-    /// pages.
+    /// Retrieves information on the compute resources in an Amazon GameLift fleet. 
     /// </para>
     ///  
     /// <para>
-    /// If successful, this operation returns the compute resource for the requested fleet.
-    /// For managed EC2 fleets, it returns a list of EC2 instances. For Anywhere fleets, it
-    /// returns a list of registered compute names.
+    /// To request a list of computes, specify the fleet ID. Use the pagination parameters
+    /// to retrieve results in a set of sequential pages.
     /// </para>
+    ///  
+    /// <para>
+    /// You can filter the result set by location. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, this operation returns information on all computes in the requested
+    /// fleet. Depending on the fleet's compute type, the result includes the following information:
+    /// 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For <c>EC2</c> fleets, this operation returns information about the EC2 instance.
+    /// Compute names are instance IDs.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <c>ANYWHERE</c> fleets, this operation returns the compute names and details provided
+    /// when the compute was registered with <c>RegisterCompute</c>. The <c>GameLiftServiceSdkEndpoint</c>
+    /// or <c>GameLiftAgentEndpoint</c> is included.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <c>CONTAINER</c> fleets, this operation returns information about containers that
+    /// are registered as computes, and the instances they're running on. Compute names are
+    /// container names.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListComputeRequest : AmazonGameLiftRequest
     {
@@ -95,7 +121,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The name of a location to retrieve compute resources for.
+        /// The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere
+        /// fleet, use a custom location. For a multi-location EC2 or container fleet, provide
+        /// a Amazon Web Services Region or Local Zone code (for example: <c>us-west-2</c> or
+        /// <c>us-west-2-lax-1</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -52,7 +52,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static GetBucketRequestPaymentRequestMarshaller _instance;
 
-	    public static GetBucketRequestPaymentRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static GetBucketRequestPaymentRequestMarshaller Instance
 	    {
 	        get
 	        {

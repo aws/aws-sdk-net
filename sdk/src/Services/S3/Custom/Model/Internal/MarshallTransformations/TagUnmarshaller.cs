@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// </summary>
     public class TagUnmarshaller : IUnmarshaller<Tag, XmlUnmarshallerContext>, IUnmarshaller<Tag, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Tag Unmarshall(XmlUnmarshallerContext context) 
         {
             Tag tag = new Tag();
@@ -61,6 +66,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return tag;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Tag Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
@@ -68,6 +78,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static TagUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static TagUnmarshaller Instance
         {
             get

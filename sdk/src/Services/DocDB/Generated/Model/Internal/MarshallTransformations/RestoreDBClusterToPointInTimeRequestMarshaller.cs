@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DocDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRestoreToTime())
                 {
-                    request.Parameters.Add("RestoreToTime", StringUtils.FromDateTimeToISO8601(publicRequest.RestoreToTime));
+                    request.Parameters.Add("RestoreToTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.RestoreToTime));
                 }
                 if(publicRequest.IsSetRestoreType())
                 {

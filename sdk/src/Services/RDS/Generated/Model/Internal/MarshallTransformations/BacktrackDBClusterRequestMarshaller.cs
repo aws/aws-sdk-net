@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetBacktrackToUtc())
                 {
-                    request.Parameters.Add("BacktrackTo", StringUtils.FromDateTimeToISO8601(publicRequest.BacktrackToUtc));
+                    request.Parameters.Add("BacktrackTo", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.BacktrackToUtc));
                 }
                 if(publicRequest.IsSetDBClusterIdentifier())
                 {

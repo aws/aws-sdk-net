@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// The specified resource ARN was not found. Check the ARN and try your request again.
+    /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+    /// Resource Name (ARN) and try your request again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

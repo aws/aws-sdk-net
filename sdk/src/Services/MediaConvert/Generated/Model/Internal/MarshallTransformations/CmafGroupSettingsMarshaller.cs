@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CmafGroupSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalManifests())
             {
                 context.Writer.WritePropertyName("additionalManifests");
@@ -157,7 +160,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinFinalSegmentLength())
             {
                 context.Writer.WritePropertyName("minFinalSegmentLength");
-                context.Writer.Write(requestObject.MinFinalSegmentLength.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinFinalSegmentLength.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinFinalSegmentLength.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinFinalSegmentLength.Value);
+                }
             }
 
             if(requestObject.IsSetMpdManifestBandwidthType())

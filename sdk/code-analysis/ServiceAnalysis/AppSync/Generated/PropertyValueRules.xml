@@ -652,7 +652,7 @@
     <property>Amazon.AppSync.Model.RdsDataApiConfig.SecretArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:[a-z-]*:secretsmanager:[a-z0-9-]*:\d{12}:secret:[0-9A-Za-z_/-]*$</pattern>
+    <pattern>^arn:[a-z-]*:secretsmanager:[a-z0-9-]*:\d{12}:secret:[0-9A-Za-z_/+=.@!-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.Resolver.Code</property>

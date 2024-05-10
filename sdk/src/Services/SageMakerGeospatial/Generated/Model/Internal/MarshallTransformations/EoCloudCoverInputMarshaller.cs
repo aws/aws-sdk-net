@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EoCloudCoverInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLowerBound())
             {
                 context.Writer.WritePropertyName("LowerBound");
-                context.Writer.Write(requestObject.LowerBound.Value);
+                if(StringUtils.IsSpecialFloatValue(requestObject.LowerBound.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.LowerBound.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.LowerBound.Value);
+                }
             }
 
             if(requestObject.IsSetUpperBound())
             {
                 context.Writer.WritePropertyName("UpperBound");
-                context.Writer.Write(requestObject.UpperBound.Value);
+                if(StringUtils.IsSpecialFloatValue(requestObject.UpperBound.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.UpperBound.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.UpperBound.Value);
+                }
             }
 
         }

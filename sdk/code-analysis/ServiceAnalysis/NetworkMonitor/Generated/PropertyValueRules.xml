@@ -7,7 +7,7 @@
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.CreateMonitorRequest.MonitorName</property>
     <min>1</min>
-    <max>255</max>
+    <max>200</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -23,13 +23,13 @@
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.CreateMonitorResponse.MonitorName</property>
     <min>1</min>
-    <max>255</max>
+    <max>200</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.CreateProbeRequest.MonitorName</property>
     <min>1</min>
-    <max>255</max>
+    <max>200</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -70,13 +70,13 @@
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.DeleteMonitorRequest.MonitorName</property>
     <min>1</min>
-    <max>255</max>
+    <max>200</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.DeleteProbeRequest.MonitorName</property>
     <min>1</min>
-    <max>255</max>
+    <max>200</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -86,7 +86,7 @@
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.GetMonitorRequest.MonitorName</property>
     <min>1</min>
-    <max>255</max>
+    <max>200</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -102,13 +102,13 @@
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.GetMonitorResponse.MonitorName</property>
     <min>1</min>
-    <max>255</max>
+    <max>200</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.GetProbeRequest.MonitorName</property>
     <min>1</min>
-    <max>255</max>
+    <max>200</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -185,7 +185,7 @@
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.UpdateMonitorRequest.MonitorName</property>
     <min>1</min>
-    <max>255</max>
+    <max>200</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -201,7 +201,7 @@
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.UpdateMonitorResponse.MonitorName</property>
     <min>1</min>
-    <max>255</max>
+    <max>200</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -217,7 +217,7 @@
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.UpdateProbeRequest.MonitorName</property>
     <min>1</min>
-    <max>255</max>
+    <max>200</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -298,7 +298,7 @@
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.MonitorSummary.MonitorName</property>
     <min>1</min>
-    <max>255</max>
+    <max>200</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>

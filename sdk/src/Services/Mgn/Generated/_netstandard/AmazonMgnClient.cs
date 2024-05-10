@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.Mgn
 {
     /// <summary>
@@ -3077,6 +3078,12 @@ namespace Amazon.Mgn
 
         /// <summary>
         /// Updates multiple LaunchConfigurations by Source Server ID.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// bootMode valid values are <c>LEGACY_BIOS | UEFI</c> 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLaunchConfiguration service method.</param>
         /// <param name="cancellationToken">

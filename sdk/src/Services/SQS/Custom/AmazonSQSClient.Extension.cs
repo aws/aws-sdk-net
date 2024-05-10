@@ -45,7 +45,9 @@ namespace Amazon.SQS
             var sourceArn = string.Format(CultureInfo.InvariantCulture, "arn:aws:s3:*:*:{0}", bucket);
 
             statement = new Statement(Statement.StatementEffect.Allow);
+#pragma warning disable CS0612,CS0618
             statement.Actions.Add(SQSActionIdentifiers.SendMessage);
+#pragma warning restore CS0612,CS0618
             statement.Resources.Add(new Resource(response.QueueARN));
             statement.Principals.Add(new Principal("*"));
             statement.Conditions.Add(ConditionFactory.NewSourceArnCondition(sourceArn));

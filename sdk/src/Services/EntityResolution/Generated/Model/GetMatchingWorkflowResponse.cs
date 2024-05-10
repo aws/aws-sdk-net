@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -165,7 +166,7 @@ namespace Amazon.EntityResolution.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role
-        /// to access resources on your behalf.
+        /// to access Amazon Web Services resources on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

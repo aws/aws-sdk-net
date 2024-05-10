@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
@@ -215,7 +216,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property FunctionAssociations. 
         /// <para>
-        /// A list of CloudFront functions that are associated with this cache behavior. CloudFront
+        /// A list of CloudFront functions that are associated with this cache behavior. Your
         /// functions must be published to the <c>LIVE</c> stage to associate them with a cache
         /// behavior.
         /// </para>

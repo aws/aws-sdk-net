@@ -26,12 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
     /// Container for the parameters to the ExecuteQuery operation.
-    /// Execute an openCypher query. Currently, the SDK does not support parameterized queries.
-    /// If you want to make a parameterized query call, you can use an HTTP request. 
+    /// Execute an openCypher query.
     /// 
     ///  
     /// <para>
@@ -51,14 +51,7 @@ namespace Amazon.NeptuneGraph.Model
     /// <para>
     /// neptune-graph:DeleteDataViaQuery
     /// </para>
-    ///  </li> </ul> <note> 
-    /// <para>
-    ///  Non-parametrized queries are not considered for plan caching. You can force plan
-    /// caching with <c>planCache=enabled</c>. The plan cache will be reused only for the
-    /// same exact query. Slight variations in the query will not be able to reuse the query
-    /// plan cache. 
-    /// </para>
-    ///  </note>
+    ///  </li> </ul>
     /// </summary>
     public partial class ExecuteQueryRequest : AmazonNeptuneGraphRequest
     {

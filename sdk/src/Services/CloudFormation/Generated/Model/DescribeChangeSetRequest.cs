@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -37,6 +38,7 @@ namespace Amazon.CloudFormation.Model
     public partial class DescribeChangeSetRequest : AmazonCloudFormationRequest
     {
         private string _changeSetName;
+        private bool? _includePropertyValues;
         private string _nextToken;
         private string _stackName;
 
@@ -57,6 +59,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetChangeSetName()
         {
             return this._changeSetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludePropertyValues. 
+        /// <para>
+        /// If <c>true</c>, the returned changes include detailed changes in the property values.
+        /// </para>
+        /// </summary>
+        public bool? IncludePropertyValues
+        {
+            get { return this._includePropertyValues; }
+            set { this._includePropertyValues = value; }
+        }
+
+        // Check to see if IncludePropertyValues property is set
+        internal bool IsSetIncludePropertyValues()
+        {
+            return this._includePropertyValues.HasValue; 
         }
 
         /// <summary>

@@ -109,7 +109,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
                 lakRes = await Client.ListAccessKeysAsync(new ListAccessKeysRequest() { UserName = username });
 
-                Assert.Equal(1, lakRes.AccessKeyMetadata.Count());
+                Assert.Single(lakRes.AccessKeyMetadata);
                 Assert.Equal(keyIds[1], lakRes.AccessKeyMetadata[0].AccessKeyId);
             }
         }

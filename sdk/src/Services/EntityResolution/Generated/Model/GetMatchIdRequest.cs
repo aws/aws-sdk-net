@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -34,8 +35,30 @@ namespace Amazon.EntityResolution.Model
     /// </summary>
     public partial class GetMatchIdRequest : AmazonEntityResolutionRequest
     {
+        private bool? _applyNormalization;
         private Dictionary<string, string> _record = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workflowName;
+
+        /// <summary>
+        /// Gets and sets the property ApplyNormalization. 
+        /// <para>
+        /// Normalizes the attributes defined in the schema in the input data. For example, if
+        /// an attribute has an <c>AttributeType</c> of <c>PHONE_NUMBER</c>, and the data in the
+        /// input table is in a format of 1234567890, Entity Resolution will normalize this field
+        /// in the output to (123)-456-7890.
+        /// </para>
+        /// </summary>
+        public bool? ApplyNormalization
+        {
+            get { return this._applyNormalization; }
+            set { this._applyNormalization = value; }
+        }
+
+        // Check to see if ApplyNormalization property is set
+        internal bool IsSetApplyNormalization()
+        {
+            return this._applyNormalization.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Record. 

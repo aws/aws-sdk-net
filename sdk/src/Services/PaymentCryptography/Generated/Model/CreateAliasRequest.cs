@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
@@ -45,9 +46,10 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  
     /// <para>
-    /// To change the key that's associated with the alias, call <a>UpdateAlias</a>. To delete
-    /// the alias, call <a>DeleteAlias</a>. These operations don't affect the underlying key.
-    /// To get the alias that you created, call <a>ListAliases</a>.
+    /// To change the key that's associated with the alias, call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>.
+    /// To delete the alias, call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a>.
+    /// These operations don't affect the underlying key. To get the alias that you created,
+    /// call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListAliases.html">ListAliases</a>.
     /// </para>
     ///  
     /// <para>
@@ -60,19 +62,23 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DeleteAlias</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetAlias</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetAlias.html">GetAlias</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListAliases</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListAliases.html">ListAliases</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateAlias</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>

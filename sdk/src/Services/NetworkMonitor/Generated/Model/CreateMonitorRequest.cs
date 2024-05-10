@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
@@ -34,6 +35,39 @@ namespace Amazon.NetworkMonitor.Model
     /// you'll create one or more probes that monitor network traffic between your source
     /// Amazon Web Services VPC subnets and your destination IP addresses. Each probe then
     /// aggregates and sends metrics to Amazon CloudWatch.
+    /// 
+    ///  
+    /// <para>
+    /// You can also create a monitor with probes using this command. For each probe, you
+    /// define the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>source</c>—The subnet IDs where the probes will be created.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>destination</c>— The target destination IP address for the probe.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>destinationPort</c>—Required only if the protocol is <c>TCP</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>protocol</c>—The communication protocol between the source and destination. This
+    /// will be either <c>TCP</c> or <c>ICMP</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>packetSize</c>—The size of the packets. This must be a number between <c>56</c>
+    /// and <c>8500</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// (Optional) <c>tags</c> —Key-value pairs created and assigned to the probe.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateMonitorRequest : AmazonNetworkMonitorRequest
     {
@@ -47,7 +81,8 @@ namespace Amazon.NetworkMonitor.Model
         /// Gets and sets the property AggregationPeriod. 
         /// <para>
         /// The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid
-        /// values are either <c>30</c> or <c>60</c>. 
+        /// values are either <c>30</c> or <c>60</c>. <c>60</c> is the default if no period is
+        /// chosen.
         /// </para>
         /// </summary>
         [AWSProperty(Min=30)]
@@ -86,10 +121,10 @@ namespace Amazon.NetworkMonitor.Model
         /// Gets and sets the property MonitorName. 
         /// <para>
         /// The name identifying the monitor. It can contain only letters, underscores (_), or
-        /// dashes (-), and can be up to 255 characters.
+        /// dashes (-), and can be up to 200 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string MonitorName
         {
             get { return this._monitorName; }

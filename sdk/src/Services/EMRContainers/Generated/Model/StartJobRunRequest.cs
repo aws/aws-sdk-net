@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
@@ -146,7 +147,7 @@ namespace Amazon.EMRContainers.Model
         /// The values of job template parameters to start a job run.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Max=100)]
         public Dictionary<string, string> JobTemplateParameters
         {
             get { return this._jobTemplateParameters; }

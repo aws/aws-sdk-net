@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BucketArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("bucketOwnerAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BucketOwnerAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("inclusionPrefixes", targetDepth))

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -69,11 +70,11 @@ namespace Amazon.CloudWatchLogs.Model
                 nextToken = response.NextForwardToken;
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(nextToken));
+            while (nextToken != _request.NextToken);
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetLogEventsResponse> IPaginator<GetLogEventsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetLogEventsResponse> IPaginator<GetLogEventsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -90,7 +91,7 @@ namespace Amazon.CloudWatchLogs.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(nextToken));
+            while (nextToken != _request.NextToken);
         }
 #endif
     }

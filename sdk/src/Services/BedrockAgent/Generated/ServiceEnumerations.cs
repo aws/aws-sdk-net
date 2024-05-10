@@ -357,6 +357,102 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type CustomControlMethod.
+    /// </summary>
+    public class CustomControlMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RETURN_CONTROL for CustomControlMethod
+        /// </summary>
+        public static readonly CustomControlMethod RETURN_CONTROL = new CustomControlMethod("RETURN_CONTROL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomControlMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomControlMethod FindValue(string value)
+        {
+            return FindValue<CustomControlMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomControlMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataDeletionPolicy.
+    /// </summary>
+    public class DataDeletionPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE for DataDeletionPolicy
+        /// </summary>
+        public static readonly DataDeletionPolicy DELETE = new DataDeletionPolicy("DELETE");
+        /// <summary>
+        /// Constant RETAIN for DataDeletionPolicy
+        /// </summary>
+        public static readonly DataDeletionPolicy RETAIN = new DataDeletionPolicy("RETAIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataDeletionPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataDeletionPolicy FindValue(string value)
+        {
+            return FindValue<DataDeletionPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataDeletionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataSourceStatus.
     /// </summary>
     public class DataSourceStatus : ConstantClass
@@ -366,6 +462,10 @@ namespace Amazon.BedrockAgent
         /// Constant AVAILABLE for DataSourceStatus
         /// </summary>
         public static readonly DataSourceStatus AVAILABLE = new DataSourceStatus("AVAILABLE");
+        /// <summary>
+        /// Constant DELETE_UNSUCCESSFUL for DataSourceStatus
+        /// </summary>
+        public static readonly DataSourceStatus DELETE_UNSUCCESSFUL = new DataSourceStatus("DELETE_UNSUCCESSFUL");
         /// <summary>
         /// Constant DELETING for DataSourceStatus
         /// </summary>
@@ -717,6 +817,10 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly KnowledgeBaseStatus CREATING = new KnowledgeBaseStatus("CREATING");
         /// <summary>
+        /// Constant DELETE_UNSUCCESSFUL for KnowledgeBaseStatus
+        /// </summary>
+        public static readonly KnowledgeBaseStatus DELETE_UNSUCCESSFUL = new KnowledgeBaseStatus("DELETE_UNSUCCESSFUL");
+        /// <summary>
         /// Constant DELETING for KnowledgeBaseStatus
         /// </summary>
         public static readonly KnowledgeBaseStatus DELETING = new KnowledgeBaseStatus("DELETING");
@@ -1020,6 +1124,68 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Type.
+    /// </summary>
+    public class Type : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Array for Type
+        /// </summary>
+        public static readonly Type Array = new Type("array");
+        /// <summary>
+        /// Constant Boolean for Type
+        /// </summary>
+        public static readonly Type Boolean = new Type("boolean");
+        /// <summary>
+        /// Constant Integer for Type
+        /// </summary>
+        public static readonly Type Integer = new Type("integer");
+        /// <summary>
+        /// Constant Number for Type
+        /// </summary>
+        public static readonly Type Number = new Type("number");
+        /// <summary>
+        /// Constant String for Type
+        /// </summary>
+        public static readonly Type String = new Type("string");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Type(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Type FindValue(string value)
+        {
+            return FindValue<Type>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Type(string value)
         {
             return FindValue(value);
         }

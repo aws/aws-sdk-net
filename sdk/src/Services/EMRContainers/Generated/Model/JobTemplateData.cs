@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
@@ -118,7 +119,7 @@ namespace Amazon.EMRContainers.Model
         /// The configuration of parameters existing in the job template.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Max=100)]
         public Dictionary<string, TemplateParameterConfiguration> ParameterConfiguration
         {
             get { return this._parameterConfiguration; }

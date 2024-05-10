@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetApplication operation.
-    /// Gets information about an existing Amazon Q application.
+    /// Gets information about an existing Amazon Q Business application.
     /// </summary>
     public partial class GetApplicationRequest : AmazonQBusinessRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application.
+        /// The identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

@@ -35,7 +35,8 @@
                         "SourceKey",
                         "DestinationBucket",
                         "DestinationKey",
-                        "UploadId"
+                        "UploadId",
+						"PartNumber"
                     ],
                     [
                         "SourceBucket",
@@ -43,7 +44,8 @@
                         "SourceVersionId",
                         "DestinationBucket",
                         "DestinationKey",
-                        "UploadId"
+                        "UploadId",
+						"PartNumber"
                     ]
                 ]
             },

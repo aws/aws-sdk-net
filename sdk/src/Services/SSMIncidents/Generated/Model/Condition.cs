@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
@@ -82,7 +83,7 @@ namespace Amazon.SSMIncidents.Model
         /// The value is equal to the provided string or integer. 
         /// </para>
         /// </summary>
-        public AttributeValueList Equals
+        public new AttributeValueList Equals
         {
             get { return this._equals; }
             set { this._equals = value; }

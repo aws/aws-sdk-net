@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property Key. 
         /// <para>
         ///  The key for the tag. Keys are not case sensitive and must be unique for the Amazon
-        /// Q application or data source.
+        /// Q Business application or data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

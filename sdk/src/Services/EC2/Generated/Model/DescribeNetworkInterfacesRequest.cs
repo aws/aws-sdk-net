@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -38,6 +39,12 @@ namespace Amazon.EC2.Model
     /// pagination or one of the following filters: <c>group-id</c>, <c>mac-address</c>, <c>private-dns-name</c>,
     /// <c>private-ip-address</c>, <c>private-dns-name</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+    /// to throttling and timeouts.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DescribeNetworkInterfacesRequest : AmazonEC2Request
     {

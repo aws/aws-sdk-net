@@ -21,8 +21,16 @@ using Amazon.S3.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// ServerSideEncryptionRule unmarshaller
+    /// </summary>
     public class ServerSideEncryptionRuleUnmarshaller : IUnmarshaller<ServerSideEncryptionRule, XmlUnmarshallerContext>, IUnmarshaller<ServerSideEncryptionRule, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ServerSideEncryptionRule Unmarshall(XmlUnmarshallerContext context)
         {
             ServerSideEncryptionRule rule = new ServerSideEncryptionRule();
@@ -60,12 +68,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public ServerSideEncryptionRule Unmarshall(JsonUnmarshallerContext input)
         {
             return null;
         }
         private static ServerSideEncryptionRuleUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ServerSideEncryptionRuleUnmarshaller Instance
         {
             get

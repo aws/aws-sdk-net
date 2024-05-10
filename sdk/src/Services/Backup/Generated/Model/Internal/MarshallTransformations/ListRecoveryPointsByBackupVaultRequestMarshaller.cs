@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,10 +70,10 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 request.Parameters.Add("backupPlanId", StringUtils.FromString(publicRequest.ByBackupPlanId));
             
             if (publicRequest.IsSetByCreatedAfter())
-                request.Parameters.Add("createdAfter", StringUtils.FromDateTimeToISO8601(publicRequest.ByCreatedAfter));
+                request.Parameters.Add("createdAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ByCreatedAfter));
             
             if (publicRequest.IsSetByCreatedBefore())
-                request.Parameters.Add("createdBefore", StringUtils.FromDateTimeToISO8601(publicRequest.ByCreatedBefore));
+                request.Parameters.Add("createdBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ByCreatedBefore));
             
             if (publicRequest.IsSetByParentRecoveryPointArn())
                 request.Parameters.Add("parentRecoveryPointArn", StringUtils.FromString(publicRequest.ByParentRecoveryPointArn));

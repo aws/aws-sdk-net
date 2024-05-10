@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -244,6 +245,10 @@ namespace Amazon.CloudWatch.Model
         /// the newest data first and paginates when the <c>MaxDatapoints</c> limit is reached.
         /// <c>TimestampAscending</c> returns the oldest data first and paginates when the <c>MaxDatapoints</c>
         /// limit is reached.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, the default of <c>TimestampDescending</c> is used.
         /// </para>
         /// </summary>
         public ScanBy ScanBy

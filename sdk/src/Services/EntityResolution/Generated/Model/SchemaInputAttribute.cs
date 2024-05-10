@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>FieldName</c>, <c>Type</c>, <c>GroupName</c>, and <c>MatchKey</c>.
+    /// An object containing <c>FieldName</c>, <c>Type</c>, <c>GroupName</c>, <c>MatchKey</c>,
+    /// and <c>SubType</c>.
     /// </summary>
     public partial class SchemaInputAttribute
     {
@@ -61,9 +63,13 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// Instruct Entity Resolution to combine several columns into a unified column with the
-        /// identical attribute type. For example, when working with columns such as first_name,
-        /// middle_name, and last_name, assigning them a common <c>GroupName</c> will prompt Entity
+        /// A string that instructs Entity Resolution to combine several columns into a unified
+        /// column with the identical attribute type. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, when working with columns such as <c>first_name</c>, <c>middle_name</c>,
+        /// and <c>last_name</c>, assigning them a common <c>groupName</c> will prompt Entity
         /// Resolution to concatenate them into a single value.
         /// </para>
         /// </summary>
@@ -84,10 +90,10 @@ namespace Amazon.EntityResolution.Model
         /// Gets and sets the property MatchKey. 
         /// <para>
         /// A key that allows grouping of multiple input attributes into a unified matching group.
-        /// For example, let's consider a scenario where the source table contains various addresses,
-        /// such as <c>business_address</c> and <c>shipping_address</c>. By assigning the <c>MatchKey</c>
-        /// <i>Address</i> to both attributes, Entity Resolution will match records across these
-        /// fields to create a consolidated matching group. If no <c>MatchKey</c> is specified
+        /// For example, consider a scenario where the source table contains various addresses,
+        /// such as <c>business_address</c> and <c>shipping_address</c>. By assigning a <c>matchKey</c>
+        /// called <c>address</c> to both attributes, Entity Resolution will match records across
+        /// these fields to create a consolidated matching group. If no <c>matchKey</c> is specified
         /// for a column, it won't be utilized for matching purposes but will still be included
         /// in the output table.
         /// </para>

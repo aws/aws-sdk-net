@@ -19,14 +19,14 @@ namespace Amazon.DynamoDBv2
     /// The higher-level programming models found in the DocumentModel and DataModel namespaces 
     /// rely on an internal cache of the DynamoDB table's metadata to construct and validate requests.
     /// This controls how the cache key is derived, which influences 
-    /// when the SDK will call <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.
+    /// when the SDK will call IAmazonDynamoDB.DescribeTable(string) internally to populate the cache.
     /// </summary>
     public enum MetadataCachingMode
     {
         /// <summary>
         /// The cache key will be a combination of the table name, credentials, region and service URL.
         /// This ensures applications using tables with the same name but different definitions have their own metadata cached in the application. 
-        /// This will require additional <see cref="IAmazonDynamoDB.DescribeTable(string)"/> API calls as credentials are refreshed.
+        /// This will require additional IAmazonDynamoDB.DescribeTable(string) API calls as credentials are refreshed.
         /// </summary>
         Default,
 

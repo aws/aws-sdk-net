@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -121,6 +122,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("functionSchema", targetDepth))
+                {
+                    var unmarshaller = FunctionSchemaUnmarshaller.Instance;
+                    unmarshalledObject.FunctionSchema = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("parentActionSignature", targetDepth))

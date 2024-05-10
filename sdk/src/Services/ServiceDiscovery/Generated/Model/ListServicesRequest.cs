@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServices operation.
     /// Lists summary information for all the services that are associated with one or more
-    /// specified namespaces.
+    /// namespaces.
     /// </summary>
     public partial class ListServicesRequest : AmazonServiceDiscoveryRequest
     {

@@ -2343,6 +2343,146 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type InstancePropertyFilterKey.
+    /// </summary>
+    public class InstancePropertyFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ActivationIds for InstancePropertyFilterKey
+        /// </summary>
+        public static readonly InstancePropertyFilterKey ActivationIds = new InstancePropertyFilterKey("ActivationIds");
+        /// <summary>
+        /// Constant AgentVersion for InstancePropertyFilterKey
+        /// </summary>
+        public static readonly InstancePropertyFilterKey AgentVersion = new InstancePropertyFilterKey("AgentVersion");
+        /// <summary>
+        /// Constant AssociationStatus for InstancePropertyFilterKey
+        /// </summary>
+        public static readonly InstancePropertyFilterKey AssociationStatus = new InstancePropertyFilterKey("AssociationStatus");
+        /// <summary>
+        /// Constant DocumentName for InstancePropertyFilterKey
+        /// </summary>
+        public static readonly InstancePropertyFilterKey DocumentName = new InstancePropertyFilterKey("DocumentName");
+        /// <summary>
+        /// Constant IamRole for InstancePropertyFilterKey
+        /// </summary>
+        public static readonly InstancePropertyFilterKey IamRole = new InstancePropertyFilterKey("IamRole");
+        /// <summary>
+        /// Constant InstanceIds for InstancePropertyFilterKey
+        /// </summary>
+        public static readonly InstancePropertyFilterKey InstanceIds = new InstancePropertyFilterKey("InstanceIds");
+        /// <summary>
+        /// Constant PingStatus for InstancePropertyFilterKey
+        /// </summary>
+        public static readonly InstancePropertyFilterKey PingStatus = new InstancePropertyFilterKey("PingStatus");
+        /// <summary>
+        /// Constant PlatformTypes for InstancePropertyFilterKey
+        /// </summary>
+        public static readonly InstancePropertyFilterKey PlatformTypes = new InstancePropertyFilterKey("PlatformTypes");
+        /// <summary>
+        /// Constant ResourceType for InstancePropertyFilterKey
+        /// </summary>
+        public static readonly InstancePropertyFilterKey ResourceType = new InstancePropertyFilterKey("ResourceType");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstancePropertyFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstancePropertyFilterKey FindValue(string value)
+        {
+            return FindValue<InstancePropertyFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstancePropertyFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstancePropertyFilterOperator.
+    /// </summary>
+    public class InstancePropertyFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BeginWith for InstancePropertyFilterOperator
+        /// </summary>
+        public static readonly InstancePropertyFilterOperator BeginWith = new InstancePropertyFilterOperator("BeginWith");
+        /// <summary>
+        /// Constant Equal for InstancePropertyFilterOperator
+        /// </summary>
+        public static readonly InstancePropertyFilterOperator Equal = new InstancePropertyFilterOperator("Equal");
+        /// <summary>
+        /// Constant GreaterThan for InstancePropertyFilterOperator
+        /// </summary>
+        public static readonly InstancePropertyFilterOperator GreaterThan = new InstancePropertyFilterOperator("GreaterThan");
+        /// <summary>
+        /// Constant LessThan for InstancePropertyFilterOperator
+        /// </summary>
+        public static readonly InstancePropertyFilterOperator LessThan = new InstancePropertyFilterOperator("LessThan");
+        /// <summary>
+        /// Constant NotEqual for InstancePropertyFilterOperator
+        /// </summary>
+        public static readonly InstancePropertyFilterOperator NotEqual = new InstancePropertyFilterOperator("NotEqual");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstancePropertyFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstancePropertyFilterOperator FindValue(string value)
+        {
+            return FindValue<InstancePropertyFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstancePropertyFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InventoryAttributeDataType.
     /// </summary>
     public class InventoryAttributeDataType : ConstantClass

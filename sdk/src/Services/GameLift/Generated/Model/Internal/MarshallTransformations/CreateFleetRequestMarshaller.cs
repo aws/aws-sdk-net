@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAnywhereConfiguration())
@@ -99,6 +101,17 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ComputeType");
                     context.Writer.Write(publicRequest.ComputeType);
+                }
+
+                if(publicRequest.IsSetContainerGroupsConfiguration())
+                {
+                    context.Writer.WritePropertyName("ContainerGroupsConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ContainerGroupsConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ContainerGroupsConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetDescription())

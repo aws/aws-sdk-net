@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
@@ -33,7 +34,10 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class GetTemplateResponse : AmazonWebServiceResponse
     {
+        private DateTime? _createdTime;
+        private bool? _deleted;
         private string _description;
+        private DateTime? _lastModifiedTime;
         private LayoutConfiguration _layoutConfiguration;
         private string _name;
         private List<RequiredField> _requiredFields = AWSConfigs.InitializeCollections ? new List<RequiredField>() : null;
@@ -41,6 +45,42 @@ namespace Amazon.ConnectCases.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _templateArn;
         private string _templateId;
+
+        /// <summary>
+        /// Gets and sets the property CreatedTime. 
+        /// <para>
+        /// The timestamp for when the resource was created.
+        /// </para>
+        /// </summary>
+        public DateTime? CreatedTime
+        {
+            get { return this._createdTime; }
+            set { this._createdTime = value; }
+        }
+
+        // Check to see if CreatedTime property is set
+        internal bool IsSetCreatedTime()
+        {
+            return this._createdTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Deleted. 
+        /// <para>
+        /// Indicates whether the resource has been deleted.
+        /// </para>
+        /// </summary>
+        public bool? Deleted
+        {
+            get { return this._deleted; }
+            set { this._deleted = value; }
+        }
+
+        // Check to see if Deleted property is set
+        internal bool IsSetDeleted()
+        {
+            return this._deleted.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -59,6 +99,24 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The timestamp for when the resource was created or last modified.
+        /// </para>
+        /// </summary>
+        public DateTime? LastModifiedTime
+        {
+            get { return this._lastModifiedTime; }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
         }
 
         /// <summary>

@@ -27,13 +27,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [Trait(CategoryAttribute, "SecurityTokenService")]
         public async void TestAssumeRoleWithWebIdentityCredentialsUsesAnonymousAWSCredentialsToFetch()
         {
-            var user = await Client.GetUserAsync().ConfigureAwait(false);
+            var user = await Client.GetUserAsync();
             var createRoleRequest = new CreateRoleRequest()
             {
                 RoleName = "DummyAccountRole",
                 AssumeRolePolicyDocument = "{\"Version\": \"2012-10-17\", \"Statement\": [{ \"Effect\": \"Allow\",\"Principal\": {\"AWS\": \"" + user.User.Arn + "\"},\"Action\": \"sts:AssumeRole\",\"Condition\": {}}]}"
             };
-            var role = await Client.CreateRoleAsync(createRoleRequest).ConfigureAwait(false);
+            var role = await Client.CreateRoleAsync(createRoleRequest);
 
             var dummyToken = "dummyToken";
             var dummyRoleArn = role.Role.Arn;

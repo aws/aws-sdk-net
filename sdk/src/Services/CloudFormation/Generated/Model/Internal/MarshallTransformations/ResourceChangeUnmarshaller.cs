@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Action = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("AfterContext", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AfterContext = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("BeforeContext", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.BeforeContext = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ChangeSetId", targetDepth))
@@ -93,6 +106,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.PhysicalResourceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PolicyAction", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PolicyAction = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Replacement", targetDepth))

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetHub.Model
 {
     /// <summary>
@@ -201,7 +202,9 @@ namespace Amazon.IoTFleetHub.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// A message indicating why the <c>DescribeApplication</c> API failed.
+        /// A message that explains any failures included in the <c>applicationState</c> response
+        /// field. This message explains failures in the <c>CreateApplication</c> and <c>DeleteApplication</c>
+        /// actions.
         /// </para>
         /// </summary>
         public string ErrorMessage
@@ -219,8 +222,8 @@ namespace Amazon.IoTFleetHub.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role that the web application assumes when it interacts with AWS IoT
-        /// Core.
+        /// The ARN of the role that the web application assumes when it interacts with Amazon
+        /// Web Services IoT Core.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]

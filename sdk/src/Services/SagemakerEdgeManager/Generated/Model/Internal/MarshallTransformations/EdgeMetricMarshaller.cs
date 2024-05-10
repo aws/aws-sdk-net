@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EdgeMetric requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDimension())
             {
                 context.Writer.WritePropertyName("Dimension");
@@ -66,7 +69,14 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Value.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Value.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Value.Value);
+                }
             }
 
         }

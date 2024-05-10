@@ -234,7 +234,7 @@ namespace AWSSDK.UnitTests
             exception = Utils.AssertExceptionExpected<AmazonS3Exception>(() =>
             {
                 var copyPartResponse = s3Client.CopyPart("source", "key",
-                    "destination", "key", "Upload123");
+                    "destination", "key", "Upload123", 1);
             });
             Assert.AreEqual(MAX_RETRIES, executionContext.RequestContext.Retries);
 

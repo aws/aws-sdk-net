@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContinuousHyperParameterRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("maxValue");
-                context.Writer.Write(requestObject.MaxValue.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxValue.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxValue.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaxValue.Value);
+                }
             }
 
             if(requestObject.IsSetMinValue())
             {
                 context.Writer.WritePropertyName("minValue");
-                context.Writer.Write(requestObject.MinValue.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinValue.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinValue.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinValue.Value);
+                }
             }
 
             if(requestObject.IsSetName())

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -301,9 +302,13 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property UtilizationPreferences. 
         /// <para>
-        ///  The preference to control the resource’s CPU utilization thresholds - threshold and
-        /// headroom. When this preference isn't specified, we use the following default values:
-        /// 
+        ///  The preference to control the resource’s CPU utilization threshold, CPU utilization
+        /// headroom, and memory utilization headroom. When this preference isn't specified, we
+        /// use the following default values. 
+        /// </para>
+        ///  
+        /// <para>
+        /// CPU utilization:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -311,13 +316,26 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PERCENT_17</c> for headroom
+        ///  <c>PERCENT_20</c> for headroom
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
         /// <para>
-        /// You can only set this preference for the Amazon EC2 instance resource type.
+        /// Memory utilization:
         /// </para>
-        ///  </note>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PERCENT_20</c> for headroom
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        /// You can only set CPU and memory utilization preferences for the Amazon EC2 instance
+        /// resource type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The threshold setting isn’t available for memory utilization.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public List<UtilizationPreference> UtilizationPreferences
         {

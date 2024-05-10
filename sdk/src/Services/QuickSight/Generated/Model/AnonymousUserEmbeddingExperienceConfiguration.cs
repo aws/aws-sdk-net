@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -36,6 +37,7 @@ namespace Amazon.QuickSight.Model
     {
         private AnonymousUserDashboardEmbeddingConfiguration _dashboard;
         private AnonymousUserDashboardVisualEmbeddingConfiguration _dashboardVisual;
+        private AnonymousUserGenerativeQnAEmbeddingConfiguration _generativeQnA;
         private AnonymousUserQSearchBarEmbeddingConfiguration _qSearchBar;
 
         /// <summary>
@@ -72,6 +74,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDashboardVisual()
         {
             return this._dashboardVisual != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GenerativeQnA. 
+        /// <para>
+        /// The Generative Q&amp;A experience that you want to use for anonymous user embedding.
+        /// </para>
+        /// </summary>
+        public AnonymousUserGenerativeQnAEmbeddingConfiguration GenerativeQnA
+        {
+            get { return this._generativeQnA; }
+            set { this._generativeQnA = value; }
+        }
+
+        // Check to see if GenerativeQnA property is set
+        internal bool IsSetGenerativeQnA()
+        {
+            return this._generativeQnA != null;
         }
 
         /// <summary>

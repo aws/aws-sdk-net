@@ -64,13 +64,38 @@
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ByteContentDoc.ContentType</property>
+    <pattern>[a-z]{1,20}/.{1,20}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ByteContentDoc.Data</property>
+    <min>1</min>
+    <max>10485760</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ByteContentDoc.Identifier</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.DependencyFailedException.ResourceName</property>
     <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ExternalSourcesRetrieveAndGenerateConfiguration.ModelArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.FailureTrace.TraceId</property>
     <min>2</min>
     <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FilterAttribute.Key</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.InferenceConfiguration.MaximumLength</property>
@@ -117,7 +142,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.KnowledgeBaseVectorSearchConfiguration.NumberOfResults</property>
     <min>1</min>
-    <max>25</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.ModelInvocationInput.TraceId</property>
@@ -145,6 +170,11 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.PromptTemplate.TextPromptTemplate</property>
+    <min>1</min>
+    <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.Rationale.TraceId</property>
     <min>2</min>
     <max>16</max>
@@ -159,6 +189,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.S3ObjectDoc.Uri</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^s3://[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]/.{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.Span.End</property>
@@ -179,6 +215,12 @@
     <min>0</min>
     <max>10</max>
     <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.TracePart.AgentVersion</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^(DRAFT|[0-9]{0,4}[1-9][0-9]{0,4})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.TracePart.SessionId</property>

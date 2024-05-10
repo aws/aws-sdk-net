@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// A message in an Amazon Q web experience.
+    /// A message in an Amazon Q Business web experience.
     /// </summary>
     public partial class Message
     {
@@ -75,7 +76,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Attachments. 
         /// <para>
-        /// A file directly uploaded into an Amazon Q web experience chat.
+        /// A file directly uploaded into an Amazon Q Business web experience chat.
         /// </para>
         /// </summary>
         public List<AttachmentOutput> Attachments
@@ -93,7 +94,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// The content of the Amazon Q web experience message.
+        /// The content of the Amazon Q Business web experience message.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -112,7 +113,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The identifier of the Amazon Q web experience message.
+        /// The identifier of the Amazon Q Business web experience message.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -131,7 +132,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property SourceAttribution. 
         /// <para>
-        /// The source documents used to generate Amazon Q web experience message.
+        /// The source documents used to generate Amazon Q Business web experience message.
         /// </para>
         /// </summary>
         public List<SourceAttribution> SourceAttribution
@@ -149,7 +150,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Time. 
         /// <para>
-        /// The timestamp of the first Amazon Q web experience message.
+        /// The timestamp of the first Amazon Q Business web experience message.
         /// </para>
         /// </summary>
         public DateTime? Time
@@ -167,7 +168,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of Amazon Q message, whether <c>HUMAN</c> or <c>AI</c> generated.
+        /// The type of Amazon Q Business message, whether <c>HUMAN</c> or <c>AI</c> generated.
         /// </para>
         /// </summary>
         public MessageType Type

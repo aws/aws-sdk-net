@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
@@ -41,6 +42,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private OfferNameFilter _name;
         private OfferProductIdFilter _productId;
         private OfferReleaseDateFilter _releaseDate;
+        private OfferResaleAuthorizationIdFilter _resaleAuthorizationId;
         private OfferStateFilter _state;
         private OfferTargetingFilter _targeting;
 
@@ -168,6 +170,30 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetReleaseDate()
         {
             return this._releaseDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResaleAuthorizationId. 
+        /// <para>
+        /// Allows filtering on the <c>ResaleAuthorizationId</c> of an offer.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not all offers have a <c>ResaleAuthorizationId</c>. The response will only include
+        /// offers for which you have permissions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public OfferResaleAuthorizationIdFilter ResaleAuthorizationId
+        {
+            get { return this._resaleAuthorizationId; }
+            set { this._resaleAuthorizationId = value; }
+        }
+
+        // Check to see if ResaleAuthorizationId property is set
+        internal bool IsSetResaleAuthorizationId()
+        {
+            return this._resaleAuthorizationId != null;
         }
 
         /// <summary>

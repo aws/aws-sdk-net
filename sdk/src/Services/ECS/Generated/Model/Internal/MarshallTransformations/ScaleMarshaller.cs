@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Scale requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("unit");
@@ -54,7 +57,14 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
-                context.Writer.Write(requestObject.Value.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Value.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Value.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Value.Value);
+                }
             }
 
         }

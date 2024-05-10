@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.NetworkMonitor.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.NetworkMonitor
 {
     /// <summary>
@@ -41,6 +42,13 @@ namespace Amazon.NetworkMonitor
     /// monitor. These probes then monitor network traffic to help you identify where network
     /// issues might be affecting your traffic.
     /// 
+    ///  
+    /// <para>
+    /// Before you begin, ensure the Amazon Web Services CLI is configured in the Amazon Web
+    /// Services Account where you will create the Network Monitor resource. Network Monitor
+    /// doesn’t support creation on cross-account resources, but you can create a Network
+    /// Monitor in any subnet belonging to a VPC owned by your Account.
+    /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/what-is-network-monitor.html">Using
@@ -65,6 +73,39 @@ namespace Amazon.NetworkMonitor
         /// you'll create one or more probes that monitor network traffic between your source
         /// Amazon Web Services VPC subnets and your destination IP addresses. Each probe then
         /// aggregates and sends metrics to Amazon CloudWatch.
+        /// 
+        ///  
+        /// <para>
+        /// You can also create a monitor with probes using this command. For each probe, you
+        /// define the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>source</c>—The subnet IDs where the probes will be created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>destination</c>— The target destination IP address for the probe.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>destinationPort</c>—Required only if the protocol is <c>TCP</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>protocol</c>—The communication protocol between the source and destination. This
+        /// will be either <c>TCP</c> or <c>ICMP</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>packetSize</c>—The size of the packets. This must be a number between <c>56</c>
+        /// and <c>8500</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (Optional) <c>tags</c> —Key-value pairs created and assigned to the probe.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMonitor service method.</param>
         /// <param name="cancellationToken">
@@ -101,7 +142,9 @@ namespace Amazon.NetworkMonitor
 
         /// <summary>
         /// Create a probe within a monitor. Once you create a probe, and it begins monitoring
-        /// your network traffic, you'll incur billing charges for that probe.
+        /// your network traffic, you'll incur billing charges for that probe. This action requires
+        /// the <c>monitorName</c> parameter. Run <c>ListMonitors</c> to get a list of monitor
+        /// names. Note the name of the <c>monitorName</c> you want to create the probe for.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProbe service method.</param>
         /// <param name="cancellationToken">
@@ -138,6 +181,12 @@ namespace Amazon.NetworkMonitor
 
         /// <summary>
         /// Deletes a specified monitor.
+        /// 
+        ///  
+        /// <para>
+        /// This action requires the <c>monitorName</c> parameter. Run <c>ListMonitors</c> to
+        /// get a list of monitor names. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMonitor service method.</param>
         /// <param name="cancellationToken">
@@ -170,8 +219,16 @@ namespace Amazon.NetworkMonitor
 
 
         /// <summary>
-        /// Deletes the specified monitor. Once a probe is deleted you'll no longer incur any
-        /// billing fees for that probe.
+        /// Deletes the specified probe. Once a probe is deleted you'll no longer incur any billing
+        /// fees for that probe.
+        /// 
+        ///  
+        /// <para>
+        /// This action requires both the <c>monitorName</c> and <c>probeId</c> parameters. Run
+        /// <c>ListMonitors</c> to get a list of monitor names. Run <c>GetMonitor</c> to get a
+        /// list of probes and probe IDs. You can only delete a single probe at a time using this
+        /// action. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProbe service method.</param>
         /// <param name="cancellationToken">
@@ -207,7 +264,13 @@ namespace Amazon.NetworkMonitor
 
 
         /// <summary>
-        /// Returns details about a specific monitor.
+        /// Returns details about a specific monitor. 
+        /// 
+        ///  
+        /// <para>
+        /// This action requires the <c>monitorName</c> parameter. Run <c>ListMonitors</c> to
+        /// get a list of monitor names. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMonitor service method.</param>
         /// <param name="cancellationToken">
@@ -240,7 +303,9 @@ namespace Amazon.NetworkMonitor
 
 
         /// <summary>
-        /// Returns the details about a probe. You'll need both the <c>monitorName</c> and <c>probeId</c>.
+        /// Returns the details about a probe. This action requires both the <c>monitorName</c>
+        /// and <c>probeId</c> parameters. Run <c>ListMonitors</c> to get a list of monitor names.
+        /// Run <c>GetMonitor</c> to get a list of probes and probe IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProbe service method.</param>
         /// <param name="cancellationToken">
@@ -412,7 +477,8 @@ namespace Amazon.NetworkMonitor
 
         /// <summary>
         /// Updates the <c>aggregationPeriod</c> for a monitor. Monitors support an <c>aggregationPeriod</c>
-        /// of either <c>30</c> or <c>60</c> seconds.
+        /// of either <c>30</c> or <c>60</c> seconds. This action requires the <c>monitorName</c>
+        /// and <c>probeId</c> parameter. Run <c>ListMonitors</c> to get a list of monitor names.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMonitor service method.</param>
         /// <param name="cancellationToken">
@@ -450,7 +516,40 @@ namespace Amazon.NetworkMonitor
         /// <summary>
         /// Updates a monitor probe. This action requires both the <c>monitorName</c> and <c>probeId</c>
         /// parameters. Run <c>ListMonitors</c> to get a list of monitor names. Run <c>GetMonitor</c>
-        /// to get a list of probes and probe IDs.
+        /// to get a list of probes and probe IDs. 
+        /// 
+        ///  
+        /// <para>
+        /// You can update the following para create a monitor with probes using this command.
+        /// For each probe, you define the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>state</c>—The state of the probe.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>destination</c>— The target destination IP address for the probe.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>destinationPort</c>—Required only if the protocol is <c>TCP</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>protocol</c>—The communication protocol between the source and destination. This
+        /// will be either <c>TCP</c> or <c>ICMP</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>packetSize</c>—The size of the packets. This must be a number between <c>56</c>
+        /// and <c>8500</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (Optional) <c>tags</c> —Key-value pairs created and assigned to the probe.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProbe service method.</param>
         /// <param name="cancellationToken">

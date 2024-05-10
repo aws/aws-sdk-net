@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StreamingDistributionSummary Object
     /// </summary>  
-    public class StreamingDistributionSummaryUnmarshaller : IUnmarshaller<StreamingDistributionSummary, XmlUnmarshallerContext>
+    public class StreamingDistributionSummaryUnmarshaller : IUnmarshaller<StreamingDistributionSummary, XmlUnmarshallerContext>, IUnmarshaller<StreamingDistributionSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -128,6 +129,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public StreamingDistributionSummary Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static StreamingDistributionSummaryUnmarshaller _instance = new StreamingDistributionSummaryUnmarshaller();        

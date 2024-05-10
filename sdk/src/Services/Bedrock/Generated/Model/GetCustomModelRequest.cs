@@ -26,13 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCustomModel operation.
     /// Get the properties associated with a Amazon Bedrock custom model that you have created.For
     /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-    /// models</a> in the Bedrock User Guide.
+    /// models</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class GetCustomModelRequest : AmazonBedrockRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ModelIdentifier. 
         /// <para>
-        /// Name or ARN of the custom model.
+        /// Name or Amazon Resource Name (ARN) of the custom model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

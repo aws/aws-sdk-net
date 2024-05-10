@@ -883,6 +883,10 @@ namespace Amazon.GuardDuty
     {
 
         /// <summary>
+        /// Constant EC2_AGENT_MANAGEMENT for FeatureAdditionalConfiguration
+        /// </summary>
+        public static readonly FeatureAdditionalConfiguration EC2_AGENT_MANAGEMENT = new FeatureAdditionalConfiguration("EC2_AGENT_MANAGEMENT");
+        /// <summary>
         /// Constant ECS_FARGATE_AGENT_MANAGEMENT for FeatureAdditionalConfiguration
         /// </summary>
         public static readonly FeatureAdditionalConfiguration ECS_FARGATE_AGENT_MANAGEMENT = new FeatureAdditionalConfiguration("ECS_FARGATE_AGENT_MANAGEMENT");
@@ -1578,6 +1582,10 @@ namespace Amazon.GuardDuty
     public class OrgFeatureAdditionalConfiguration : ConstantClass
     {
 
+        /// <summary>
+        /// Constant EC2_AGENT_MANAGEMENT for OrgFeatureAdditionalConfiguration
+        /// </summary>
+        public static readonly OrgFeatureAdditionalConfiguration EC2_AGENT_MANAGEMENT = new OrgFeatureAdditionalConfiguration("EC2_AGENT_MANAGEMENT");
         /// <summary>
         /// Constant ECS_FARGATE_AGENT_MANAGEMENT for OrgFeatureAdditionalConfiguration
         /// </summary>

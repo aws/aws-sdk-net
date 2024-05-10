@@ -34,7 +34,9 @@ namespace Amazon.Glacier
             // Set Timeout and ReadWriteTimeout for Glacier client to max timeout as per-request  
             // timeouts are not supported.
             this.Timeout = ClientConfig.MaxTimeout;
+#pragma warning disable CS0612,CS0618
             this.ReadWriteTimeout = ClientConfig.MaxTimeout;
+#pragma warning restore CS0612,CS0618
 #endif
             base.Initialize();
         }

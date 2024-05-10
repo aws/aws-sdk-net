@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
@@ -55,7 +56,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Weight. 
         /// <para>
         /// The percentage of traffic to send to a staging distribution, expressed as a decimal
-        /// number between 0 and .15.
+        /// number between 0 and 0.15. For example, a value of 0.10 means 10% of traffic is sent
+        /// to the staging distribution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

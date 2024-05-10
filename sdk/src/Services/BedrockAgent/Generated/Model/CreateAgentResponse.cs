@@ -26,17 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Create Agent Response
+    /// This is the response object from the CreateAgent operation.
     /// </summary>
     public partial class CreateAgentResponse : AmazonWebServiceResponse
     {
         private Agent _agent;
 
         /// <summary>
-        /// Gets and sets the property Agent.
+        /// Gets and sets the property Agent. 
+        /// <para>
+        /// Contains details about the agent created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Agent Agent

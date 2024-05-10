@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains the information of an Agent Action Group
+    /// Contains details about an action group.
     /// </summary>
     public partial class AgentActionGroup
     {
@@ -43,11 +44,16 @@ namespace Amazon.BedrockAgent.Model
         private string _clientToken;
         private DateTime? _createdAt;
         private string _description;
+        private FunctionSchema _functionSchema;
         private ActionGroupSignature _parentActionSignature;
         private DateTime? _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property ActionGroupExecutor.
+        /// Gets and sets the property ActionGroupExecutor. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Lambda function containing the business logic
+        /// that is carried out upon invoking the action.
+        /// </para>
         /// </summary>
         public ActionGroupExecutor ActionGroupExecutor
         {
@@ -62,7 +68,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ActionGroupId.
+        /// Gets and sets the property ActionGroupId. 
+        /// <para>
+        /// The unique identifier of the action group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ActionGroupId
@@ -78,7 +87,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ActionGroupName.
+        /// Gets and sets the property ActionGroupName. 
+        /// <para>
+        /// The name of the action group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ActionGroupName
@@ -94,7 +106,12 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ActionGroupState.
+        /// Gets and sets the property ActionGroupState. 
+        /// <para>
+        /// Specifies whether the action group is available for the agent to invoke or not when
+        /// sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
+        /// request.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ActionGroupState ActionGroupState
@@ -110,7 +127,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentId.
+        /// Gets and sets the property AgentId. 
+        /// <para>
+        /// The unique identifier of the agent to which the action group belongs.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentId
@@ -126,7 +146,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentVersion.
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The version of the agent to which the action group belongs.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
         public string AgentVersion
@@ -142,7 +165,13 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ApiSchema.
+        /// Gets and sets the property ApiSchema. 
+        /// <para>
+        /// Contains either details about the S3 object containing the OpenAPI schema for the
+        /// action group or the JSON or YAML-formatted payload defining the schema. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html">Action
+        /// group OpenAPI schemas</a>.
+        /// </para>
         /// </summary>
         public APISchema ApiSchema
         {
@@ -157,7 +186,13 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier to ensure that the API request completes no more
+        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
+        /// request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// idempotency</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]
         public string ClientToken
@@ -173,7 +208,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedAt.
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The time at which the action group was created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime? CreatedAt
@@ -189,7 +227,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the action group.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -205,7 +246,38 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParentActionSignature.
+        /// Gets and sets the property FunctionSchema. 
+        /// <para>
+        /// Defines functions that each define parameters that the agent needs to invoke from
+        /// the user. Each function represents an action in an action group.
+        /// </para>
+        /// </summary>
+        public FunctionSchema FunctionSchema
+        {
+            get { return this._functionSchema; }
+            set { this._functionSchema = value; }
+        }
+
+        // Check to see if FunctionSchema property is set
+        internal bool IsSetFunctionSchema()
+        {
+            return this._functionSchema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentActionSignature. 
+        /// <para>
+        /// If this field is set as <c>AMAZON.UserInput</c>, the agent can request the user for
+        /// additional information when trying to complete a task. The <c>description</c>, <c>apiSchema</c>,
+        /// and <c>actionGroupExecutor</c> fields must be blank for this action group.
+        /// </para>
+        ///  
+        /// <para>
+        /// During orchestration, if the agent determines that it needs to invoke an API in an
+        /// action group, but doesn't have enough information to complete the API request, it
+        /// will invoke this action group instead and return an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a>
+        /// reprompting the user for more information.
+        /// </para>
         /// </summary>
         public ActionGroupSignature ParentActionSignature
         {
@@ -220,7 +292,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The time at which the action group was last updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime? UpdatedAt

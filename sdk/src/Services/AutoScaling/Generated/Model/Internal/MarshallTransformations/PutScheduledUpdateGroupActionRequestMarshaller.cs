@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetEndTimeUtc())
                 {
-                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTimeUtc));
                 }
                 if(publicRequest.IsSetMaxSize())
                 {
@@ -88,11 +89,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetStartTimeUtc())
                 {
-                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeUtc));
                 }
                 if(publicRequest.IsSetTimeUtc())
                 {
-                    request.Parameters.Add("Time", StringUtils.FromDateTimeToISO8601(publicRequest.TimeUtc));
+                    request.Parameters.Add("Time", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.TimeUtc));
                 }
                 if(publicRequest.IsSetTimeZone())
                 {

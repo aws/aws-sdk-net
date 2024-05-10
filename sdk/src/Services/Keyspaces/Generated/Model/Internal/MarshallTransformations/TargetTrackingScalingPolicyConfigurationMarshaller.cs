@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TargetTrackingScalingPolicyConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDisableScaleIn())
             {
                 context.Writer.WritePropertyName("disableScaleIn");
@@ -66,7 +69,14 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetValue())
             {
                 context.Writer.WritePropertyName("targetValue");
-                context.Writer.Write(requestObject.TargetValue.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetValue.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TargetValue.Value);
+                }
             }
 
         }

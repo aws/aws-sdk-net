@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAgentActionGroup operation.
-    /// Deletes an Action Group for existing Amazon Bedrock Agent.
+    /// Deletes an action group in an agent.
     /// </summary>
     public partial class DeleteAgentActionGroupRequest : AmazonBedrockAgentRequest
     {
@@ -42,7 +43,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ActionGroupId. 
         /// <para>
-        /// Id generated at the server side when an Agent ActionGroup is created
+        /// The unique identifier of the action group to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +62,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent that the action group belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +81,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// Draft Version of the Agent.
+        /// The version of the agent that the action group belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=5)]
@@ -99,7 +100,9 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property SkipResourceInUseCheck. 
         /// <para>
-        /// Skips checking if resource is in use when set to true. Defaults to false
+        /// By default, this value is <c>false</c> and deletion is stopped if the resource is
+        /// in use. If you set it to <c>true</c>, the resource will be deleted even if the resource
+        /// is in use.
         /// </para>
         /// </summary>
         public bool? SkipResourceInUseCheck

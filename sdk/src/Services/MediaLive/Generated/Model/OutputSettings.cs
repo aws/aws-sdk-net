@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class OutputSettings
     {
         private ArchiveOutputSettings _archiveOutputSettings;
+        private CmafIngestOutputSettings _cmafIngestOutputSettings;
         private FrameCaptureOutputSettings _frameCaptureOutputSettings;
         private HlsOutputSettings _hlsOutputSettings;
         private MediaPackageOutputSettings _mediaPackageOutputSettings;
@@ -55,6 +57,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetArchiveOutputSettings()
         {
             return this._archiveOutputSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CmafIngestOutputSettings.
+        /// </summary>
+        public CmafIngestOutputSettings CmafIngestOutputSettings
+        {
+            get { return this._cmafIngestOutputSettings; }
+            set { this._cmafIngestOutputSettings = value; }
+        }
+
+        // Check to see if CmafIngestOutputSettings property is set
+        internal bool IsSetCmafIngestOutputSettings()
+        {
+            return this._cmafIngestOutputSettings != null;
         }
 
         /// <summary>

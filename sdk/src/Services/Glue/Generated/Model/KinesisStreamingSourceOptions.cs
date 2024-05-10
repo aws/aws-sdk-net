@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -233,8 +234,11 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaxFetchRecordsPerShard. 
         /// <para>
-        /// The maximum number of records to fetch per shard in the Kinesis data stream. The default
-        /// value is <c>100000</c>.
+        /// The maximum number of records to fetch per shard in the Kinesis data stream per microbatch.
+        /// Note: The client can exceed this limit if the streaming job has already read extra
+        /// records from Kinesis (in the same get-records call). If <c>MaxFetchRecordsPerShard</c>
+        /// needs to be strict then it needs to be a multiple of <c>MaxRecordPerRead</c>. The
+        /// default value is <c>100000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -253,8 +257,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaxFetchTimeInMs. 
         /// <para>
-        /// The maximum time spent in the job executor to fetch a record from the Kinesis data
-        /// stream per shard, specified in milliseconds (ms). The default value is <c>1000</c>.
+        /// The maximum time spent for the job executor to read records for the current batch
+        /// from the Kinesis data stream, specified in milliseconds (ms). Multiple <c>GetRecords</c>
+        /// API calls may be made within this time. The default value is <c>1000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

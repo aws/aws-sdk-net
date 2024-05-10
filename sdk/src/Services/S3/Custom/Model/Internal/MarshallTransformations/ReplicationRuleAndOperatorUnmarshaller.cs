@@ -19,8 +19,16 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// ReplicationRuleAndOperator unmarshaller
+    /// </summary>
     public class ReplicationRuleAndOperatorUnmarshaller : IUnmarshaller<ReplicationRuleAndOperator, XmlUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ReplicationRuleAndOperator Unmarshall(XmlUnmarshallerContext context)
         {
             ReplicationRuleAndOperator ruleAndOperator = new ReplicationRuleAndOperator();
@@ -61,6 +69,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static ReplicationRuleAndOperatorUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ReplicationRuleAndOperatorUnmarshaller Instance
         {
             get

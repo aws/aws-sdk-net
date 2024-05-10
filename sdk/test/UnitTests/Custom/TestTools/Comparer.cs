@@ -12,6 +12,8 @@ using Amazon.Runtime.Documents;
 using Amazon.Runtime.Internal.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ServiceClientGenerator;
+using System.Collections.ObjectModel;
+using Amazon;
 
 namespace AWSSDK_DotNet.UnitTests.TestTools
 {
@@ -51,7 +53,15 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             if (x == null && y == null)
                 return;
 
-            if ((x == null && y != null) || (x != null && y == null))
+            if (!AWSConfigs.InitializeCollections && x != null && type.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(ICollection<>)))
+            {
+                var expectedCollection = (ICollection)x;
+                var actualCollection = (ICollection)y;
+                if (expectedCollection.Count == 0 && actualCollection == null)
+                    return;
+            }
+
+            if (x == null ^ y == null)
                 Assert.Fail("Either x or y is null. x={0} y={1}", x, y);
 
 

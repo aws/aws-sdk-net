@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,34 +46,71 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NumberFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEq())
             {
                 context.Writer.WritePropertyName("Eq");
-                context.Writer.Write(requestObject.Eq.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Eq.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Eq.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Eq.Value);
+                }
             }
 
             if(requestObject.IsSetGt())
             {
                 context.Writer.WritePropertyName("Gt");
-                context.Writer.Write(requestObject.Gt.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Gt.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Gt.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Gt.Value);
+                }
             }
 
             if(requestObject.IsSetGte())
             {
                 context.Writer.WritePropertyName("Gte");
-                context.Writer.Write(requestObject.Gte.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Gte.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Gte.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Gte.Value);
+                }
             }
 
             if(requestObject.IsSetLt())
             {
                 context.Writer.WritePropertyName("Lt");
-                context.Writer.Write(requestObject.Lt.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Lt.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lt.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Lt.Value);
+                }
             }
 
             if(requestObject.IsSetLte())
             {
                 context.Writer.WritePropertyName("Lte");
-                context.Writer.Write(requestObject.Lte.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Lte.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lte.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Lte.Value);
+                }
             }
 
         }

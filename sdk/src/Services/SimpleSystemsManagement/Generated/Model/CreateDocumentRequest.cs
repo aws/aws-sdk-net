@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates CreateDocumentRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <c>aws</c>  </li> <li>  <c>amazon</c>  </li> <li>  <c>amzn</c>  </li> </ul> </important></param>
+        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <c>aws</c>  </li> <li>  <c>amazon</c>  </li> <li>  <c>amzn</c>  </li> <li>  <c>AWSEC2</c>  </li> <li>  <c>AWSConfigRemediation</c>  </li> <li>  <c>AWSSupport</c>  </li> </ul> </important></param>
         /// <param name="content">The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create an SSM document (console)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create an SSM document (command line)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create an SSM document (API)</a>  </li> </ul></param>
         public CreateDocumentRequest(string name, string content)
         {
@@ -213,6 +214,18 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>amzn</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWSEC2</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWSConfigRemediation</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWSSupport</c> 
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>

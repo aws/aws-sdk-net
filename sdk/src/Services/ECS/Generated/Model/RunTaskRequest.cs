@@ -26,13 +26,20 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the RunTask operation.
     /// Starts a new task using the specified task definition.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// On March 21, 2024, a change was made to resolve the task definition revision before
+    /// authorization. When a task definition revision is not specified, authorization will
+    /// occur using the latest revision of a task definition.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS
     /// places tasks using placement constraints and placement strategies. For more information,
@@ -44,7 +51,7 @@ namespace Amazon.ECS.Model
     /// Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks
     /// manually on specific container instances.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
     /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
     /// Elastic Inference (EI), and will help current customers migrate their workloads to
@@ -54,7 +61,7 @@ namespace Amazon.ECS.Model
     /// during the past 30-day period are considered current customers and will be able to
     /// continue using the service. 
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
     /// creating or updating a service. For more infomation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
@@ -568,31 +575,28 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// When you create a policy for run-task, you can set the resource to be the latest task
-        /// definition revision, or a specific revision.
-        /// </para>
-        ///  
-        /// <para>
         /// The full ARN value must match the value that you specified as the <c>Resource</c>
         /// of the principal's permissions policy.
         /// </para>
         ///  
         /// <para>
-        /// When you specify the policy resource as the latest task definition version (by setting
-        /// the <c>Resource</c> in the policy to <c>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</c>),
-        /// then set this value to <c>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</c>.
+        /// When you specify a task definition, you must either specify a specific revision, or
+        /// all revisions in the ARN.
         /// </para>
         ///  
         /// <para>
-        /// When you specify the policy resource as a specific task definition version (by setting
-        /// the <c>Resource</c> in the policy to <c>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</c>
-        /// or <c>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</c>), then
-        /// set this value to <c>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</c>.
+        /// To specify a specific revision, include the revision number in the ARN. For example,
+        /// to specify revision 2, use <c>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify all revisions, use the wildcard (*) in the ARN. For example, to specify
+        /// all revisions, use <c>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</c>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
-        /// Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.
+        /// Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

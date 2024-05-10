@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -352,7 +353,7 @@ namespace Amazon.FMS.Model
         /// An array of <c>ResourceTag</c> objects.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=8)]
+        [AWSProperty(Min=0, Max=50)]
         public List<ResourceTag> ResourceTags
         {
             get { return this._resourceTags; }
@@ -390,12 +391,16 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  DNS Firewall, Network Firewall, and third-party firewall - <c>AWS::EC2::VPC</c>.
+        /// Shield Advanced - <c>AWS::ElasticLoadBalancingV2::LoadBalancer</c>, <c>AWS::ElasticLoadBalancing::LoadBalancer</c>,
+        /// <c>AWS::EC2::EIP</c>, and <c>AWS::CloudFront::Distribution</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Shield Advanced - <c>AWS::ElasticLoadBalancingV2::LoadBalancer</c>, <c>AWS::ElasticLoadBalancing::LoadBalancer</c>,
-        /// <c>AWS::EC2::EIP</c>, and <c>AWS::CloudFront::Distribution</c>.
+        /// Network ACL - <c>AWS::EC2::Subnet</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Security group usage audit - <c>AWS::EC2::SecurityGroup</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -404,7 +409,7 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Security group usage audit - <c>AWS::EC2::SecurityGroup</c>.
+        /// DNS Firewall, Network Firewall, and third-party firewall - <c>AWS::EC2::VPC</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

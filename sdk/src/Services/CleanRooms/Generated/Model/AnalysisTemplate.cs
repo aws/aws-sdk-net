@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -47,6 +48,7 @@ namespace Amazon.CleanRooms.Model
         private AnalysisSchema _schema;
         private AnalysisSource _source;
         private DateTime? _updateTime;
+        private List<AnalysisTemplateValidationStatusDetail> _validations = AWSConfigs.InitializeCollections ? new List<AnalysisTemplateValidationStatusDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalysisParameters. 
@@ -312,6 +314,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetUpdateTime()
         {
             return this._updateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Validations. 
+        /// <para>
+        /// Information about the validations performed on the analysis template.
+        /// </para>
+        /// </summary>
+        public List<AnalysisTemplateValidationStatusDetail> Validations
+        {
+            get { return this._validations; }
+            set { this._validations = value; }
+        }
+
+        // Check to see if Validations property is set
+        internal bool IsSetValidations()
+        {
+            return this._validations != null && (this._validations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

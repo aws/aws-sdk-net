@@ -243,6 +243,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly CustomizableMetricHeadroom PERCENT_0 = new CustomizableMetricHeadroom("PERCENT_0");
         /// <summary>
+        /// Constant PERCENT_10 for CustomizableMetricHeadroom
+        /// </summary>
+        public static readonly CustomizableMetricHeadroom PERCENT_10 = new CustomizableMetricHeadroom("PERCENT_10");
+        /// <summary>
         /// Constant PERCENT_20 for CustomizableMetricHeadroom
         /// </summary>
         public static readonly CustomizableMetricHeadroom PERCENT_20 = new CustomizableMetricHeadroom("PERCENT_20");
@@ -296,6 +300,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant CpuUtilization for CustomizableMetricName
         /// </summary>
         public static readonly CustomizableMetricName CpuUtilization = new CustomizableMetricName("CpuUtilization");
+        /// <summary>
+        /// Constant MemoryUtilization for CustomizableMetricName
+        /// </summary>
+        public static readonly CustomizableMetricName MemoryUtilization = new CustomizableMetricName("MemoryUtilization");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

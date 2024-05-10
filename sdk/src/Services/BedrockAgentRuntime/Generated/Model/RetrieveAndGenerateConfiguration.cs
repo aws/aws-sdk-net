@@ -26,15 +26,47 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Contains details about the resource being queried.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
+    /// request</a> – in the <c>retrieveAndGenerateConfiguration</c> field
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class RetrieveAndGenerateConfiguration
     {
+        private ExternalSourcesRetrieveAndGenerateConfiguration _externalSourcesConfiguration;
         private KnowledgeBaseRetrieveAndGenerateConfiguration _knowledgeBaseConfiguration;
         private RetrieveAndGenerateType _type;
+
+        /// <summary>
+        /// Gets and sets the property ExternalSourcesConfiguration. 
+        /// <para>
+        /// The configuration used with the external source wrapper object in the retrieveAndGenerate
+        /// function.
+        /// </para>
+        /// </summary>
+        public ExternalSourcesRetrieveAndGenerateConfiguration ExternalSourcesConfiguration
+        {
+            get { return this._externalSourcesConfiguration; }
+            set { this._externalSourcesConfiguration = value; }
+        }
+
+        // Check to see if ExternalSourcesConfiguration property is set
+        internal bool IsSetExternalSourcesConfiguration()
+        {
+            return this._externalSourcesConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KnowledgeBaseConfiguration. 

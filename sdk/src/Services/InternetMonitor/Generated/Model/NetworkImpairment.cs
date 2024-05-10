@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
@@ -61,7 +62,7 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property NetworkEventType. 
         /// <para>
-        /// Type of network impairment.
+        /// The type of network impairment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the glue-2017-03-31.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model
 {
     /// <summary>

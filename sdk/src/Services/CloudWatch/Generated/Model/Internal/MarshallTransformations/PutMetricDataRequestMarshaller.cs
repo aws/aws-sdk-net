@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -118,7 +119,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         }
                         if(publicRequestlistValue.IsSetTimestampUtc())
                         {
-                            request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Timestamp", StringUtils.FromDateTimeToISO8601(publicRequestlistValue.TimestampUtc));
+                            request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Timestamp", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.TimestampUtc));
                         }
                         if(publicRequestlistValue.IsSetUnit())
                         {

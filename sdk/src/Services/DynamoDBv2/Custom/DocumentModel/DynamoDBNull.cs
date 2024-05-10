@@ -27,6 +27,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// A DynamoDBEntry that represents a DynamoDB null (NULL) type.
     /// </summary>
+
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     public class DynamoDBNull : DynamoDBEntry
     {
         /// <summary>

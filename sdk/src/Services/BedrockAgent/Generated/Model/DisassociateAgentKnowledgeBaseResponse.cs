@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Disassociate Agent Knowledge Base Response
+    /// This is the response object from the DisassociateAgentKnowledgeBase operation.
     /// </summary>
     public partial class DisassociateAgentKnowledgeBaseResponse : AmazonWebServiceResponse
     {

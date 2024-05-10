@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
@@ -50,7 +51,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property AddressFamily. 
         /// <para>
-        /// The updated IP address family. This will be either <c>IPV4</c> or <c>IPV6</c>.
+        /// The updated IP address family. This must be either <c>IPV4</c> or <c>IPV6</c>.
         /// </para>
         /// </summary>
         public AddressFamily AddressFamily
@@ -105,7 +106,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property DestinationPort. 
         /// <para>
-        /// The updated destination port. This will be a number between <c>1</c> and <c>65536</c>.
+        /// The updated destination port. This must be a number between <c>1</c> and <c>65536</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]

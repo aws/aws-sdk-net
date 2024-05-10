@@ -26,11 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the InvokeAgent operation.
-    /// Sends a prompt for the agent to process and respond to.
+    /// Sends a prompt for the agent to process and respond to. Use return control event type
+    /// for function calling.
     /// 
     ///  <note> 
     /// <para>
@@ -55,7 +57,12 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Include attributes for the session or prompt in the <c>sessionState</c> object.
+    /// In the <c>sessionState</c> object, you can include attributes for the session or prompt
+    /// or parameters returned from the action group.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use return control event type for function calling.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -168,7 +175,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// The prompt text to send the agent.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=25000000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=25000000)]
         public string InputText
         {
             get { return this._inputText; }
@@ -204,7 +211,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property SessionState. 
         /// <para>
-        /// Contains parameters that specify various attributes of the session.
+        /// Contains parameters that specify various attributes of the session. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+        /// session context</a>.
         /// </para>
         /// </summary>
         public SessionState SessionState

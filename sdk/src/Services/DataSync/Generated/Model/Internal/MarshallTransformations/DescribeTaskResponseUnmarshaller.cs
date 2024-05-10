@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -127,6 +128,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = TaskScheduleUnmarshaller.Instance;
                     response.Schedule = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ScheduleDetails", targetDepth))
+                {
+                    var unmarshaller = TaskScheduleDetailsUnmarshaller.Instance;
+                    response.ScheduleDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SourceLocationArn", targetDepth))

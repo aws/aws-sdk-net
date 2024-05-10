@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.ElasticMapReduce
 {
     /// <summary>
@@ -2686,7 +2687,7 @@ namespace Amazon.ElasticMapReduce
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_UnhealthyNodeReplacement.html">graceful
+        /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-node-replacement.html">graceful
         /// node replacement</a> in the <i>Amazon EMR Management Guide</i>.
         /// </para>
         /// </summary>

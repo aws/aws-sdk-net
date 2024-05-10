@@ -25,7 +25,7 @@ namespace Amazon.DNXCore.IntegrationTests
         {
             Assert.NotNull(ae);
             Assert.NotNull(ae.InnerExceptions);
-            Assert.Equal(1, ae.InnerExceptions.Count);
+            Assert.Single(ae.InnerExceptions);
             var inner = ae.InnerExceptions[0] as T;
             Assert.NotNull(inner);
             return inner;

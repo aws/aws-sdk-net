@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// You have exceeded the set limits for your Amazon Q service.
+    /// You have exceeded the set limits for your Amazon Q Business service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

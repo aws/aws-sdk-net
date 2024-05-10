@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PercentileAggregation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPercentileValue())
             {
                 context.Writer.WritePropertyName("PercentileValue");
-                context.Writer.Write(requestObject.PercentileValue.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentileValue.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentileValue.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.PercentileValue.Value);
+                }
             }
 
         }

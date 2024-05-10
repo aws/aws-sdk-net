@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.DataSync.Model
         /// Specifies a name for your agent. You can see this name in the DataSync console.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string AgentName
         {
             get { return this._agentName; }

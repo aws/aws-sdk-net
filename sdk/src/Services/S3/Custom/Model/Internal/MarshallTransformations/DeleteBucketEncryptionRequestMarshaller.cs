@@ -50,6 +50,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static DeleteBucketEncryptionRequestMarshaller _instance;
 
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
         public static DeleteBucketEncryptionRequestMarshaller Instance
         {
             get

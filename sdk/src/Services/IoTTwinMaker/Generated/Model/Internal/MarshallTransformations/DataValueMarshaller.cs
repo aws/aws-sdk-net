@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("booleanValue");
@@ -54,7 +57,14 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDoubleValue())
             {
                 context.Writer.WritePropertyName("doubleValue");
-                context.Writer.Write(requestObject.DoubleValue.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DoubleValue.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.DoubleValue.Value);
+                }
             }
 
             if(requestObject.IsSetExpression())

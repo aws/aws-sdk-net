@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -208,12 +209,30 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>Lambda actions:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Invoke the latest version of a Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+        /// </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke a specific version of a Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+        /// </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke a function by using an alias Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+        /// </c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>SNS notification action:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-        /// </c> 
+        ///  <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -539,12 +558,30 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>Lambda actions:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Invoke the latest version of a Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+        /// </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke a specific version of a Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+        /// </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke a function by using an alias Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+        /// </c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>SNS notification action:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-        /// </c> 
+        ///  <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -717,12 +754,30 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>Lambda actions:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Invoke the latest version of a Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+        /// </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke a specific version of a Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+        /// </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke a function by using an alias Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+        /// </c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>SNS notification action:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-        /// </c> 
+        ///  <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

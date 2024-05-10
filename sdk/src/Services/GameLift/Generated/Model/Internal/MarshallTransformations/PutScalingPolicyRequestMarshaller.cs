@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetComparisonOperator())
@@ -129,7 +131,14 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetThreshold())
                 {
                     context.Writer.WritePropertyName("Threshold");
-                    context.Writer.Write(publicRequest.Threshold.Value);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold.Value))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold.Value));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.Threshold.Value);
+                    }
                 }
 
                 writer.WriteObjectEnd();

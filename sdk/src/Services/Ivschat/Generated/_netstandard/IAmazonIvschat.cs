@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Ivschat.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.Ivschat
 {
     /// <summary>
@@ -62,22 +63,17 @@ namespace Amazon.Ivschat
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Resources</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// The following resources are part of Amazon IVS Chat:
+    ///  <b>Key Concepts</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <b>LoggingConfiguration</b> — A configuration that allows customers to store and
-    /// record sent messages in a chat room. See the Logging Configuration endpoints for more
-    /// information.
+    /// record sent messages in a chat room.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>Room</b> — The central Amazon IVS Chat resource through which clients connect
-    /// to and exchange chat messages. See the Room endpoints for more information.
+    /// to and exchange chat messages.
     /// </para>
     ///  </li> </ul> 
     /// <para>

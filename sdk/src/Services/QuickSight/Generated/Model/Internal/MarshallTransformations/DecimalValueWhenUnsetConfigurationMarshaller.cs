@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DecimalValueWhenUnsetConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomValue())
             {
                 context.Writer.WritePropertyName("CustomValue");
-                context.Writer.Write(requestObject.CustomValue.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.CustomValue.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CustomValue.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.CustomValue.Value);
+                }
             }
 
             if(requestObject.IsSetValueWhenUnsetOption())

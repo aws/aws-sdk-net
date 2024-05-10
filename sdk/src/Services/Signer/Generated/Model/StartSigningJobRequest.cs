@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Signer.Model
 {
     /// <summary>
@@ -52,6 +53,11 @@ namespace Amazon.Signer.Model
     /// <para>
     /// You specify the name of the source and destination buckets when calling the <c>StartSigningJob</c>
     /// operation.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You must ensure the S3 buckets are from the same Region as the signing profile. Cross-Region
+    /// signing isn't supported.
     /// </para>
     ///  </li> <li> 
     /// <para>

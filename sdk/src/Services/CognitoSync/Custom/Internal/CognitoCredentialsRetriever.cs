@@ -68,6 +68,12 @@ namespace Amazon.CognitoSync.Internal
             }
         }
 #elif AWS_ASYNC_API
+        /// <summary>
+        /// Continue the request pipeline and copy over the cognito identity id.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="executionContext"></param>
+        /// <returns></returns>
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             T result = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);

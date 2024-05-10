@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the opsworks-2013-02-18.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EmailChannelRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConfigurationSet())
             {
                 context.Writer.WritePropertyName("ConfigurationSet");
@@ -67,6 +70,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Identity");
                 context.Writer.Write(requestObject.Identity);
+            }
+
+            if(requestObject.IsSetOrchestrationSendingRoleArn())
+            {
+                context.Writer.WritePropertyName("OrchestrationSendingRoleArn");
+                context.Writer.Write(requestObject.OrchestrationSendingRoleArn);
             }
 
             if(requestObject.IsSetRoleArn())

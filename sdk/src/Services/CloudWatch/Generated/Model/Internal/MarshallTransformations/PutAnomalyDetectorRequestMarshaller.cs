@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,11 +68,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         {
                             if(publicRequestConfigurationlistValue.IsSetEndTime())
                             {
-                                request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601(publicRequestConfigurationlistValue.EndTime));
+                                request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestConfigurationlistValue.EndTime));
                             }
                             if(publicRequestConfigurationlistValue.IsSetStartTime())
                             {
-                                request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601(publicRequestConfigurationlistValue.StartTime));
+                                request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestConfigurationlistValue.StartTime));
                             }
                             publicRequestConfigurationlistValueIndex++;
                         }
@@ -95,6 +96,13 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                             request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
                         publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetMetricCharacteristics())
+                {
+                    if(publicRequest.MetricCharacteristics.IsSetPeriodicSpikes())
+                    {
+                        request.Parameters.Add("MetricCharacteristics" + "." + "PeriodicSpikes", StringUtils.FromBool(publicRequest.MetricCharacteristics.PeriodicSpikes));
                     }
                 }
                 if(publicRequest.IsSetMetricMathAnomalyDetector())
@@ -184,6 +192,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSingleMetricAnomalyDetector())
                 {
+                    if(publicRequest.SingleMetricAnomalyDetector.IsSetAccountId())
+                    {
+                        request.Parameters.Add("SingleMetricAnomalyDetector" + "." + "AccountId", StringUtils.FromString(publicRequest.SingleMetricAnomalyDetector.AccountId));
+                    }
                     if(publicRequest.SingleMetricAnomalyDetector.IsSetDimensions())
                     {
                         int publicRequestSingleMetricAnomalyDetectorlistValueIndex = 1;

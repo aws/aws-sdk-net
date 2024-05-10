@@ -2,6 +2,11 @@
   "noArgOverloads": [
 	"DescribeLogGroups"
   ],
+	"operationModifiers": {
+		"GetLogEvents": {
+			"stopPaginationOnSameToken": true
+		}
+	},
   "dataTypeSwap" : {
     "InputLogEvent" : {
 	  "timestamp" : {

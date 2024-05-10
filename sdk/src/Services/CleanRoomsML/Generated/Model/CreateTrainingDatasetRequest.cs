@@ -26,13 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTrainingDataset operation.
-    /// Defines the information necessary to create a training dataset, or seed audience.
-    /// In Clean Rooms ML, the <c>TrainingDataset</c> is metadata that points to a Glue table,
-    /// which is read only during <c>AudienceModel</c> creation.
+    /// Defines the information necessary to create a training dataset. In Clean Rooms ML,
+    /// the <c>TrainingDataset</c> is metadata that points to a Glue table, which is read
+    /// only during <c>AudienceModel</c> creation.
     /// </summary>
     public partial class CreateTrainingDatasetRequest : AmazonCleanRoomsMLRequest
     {

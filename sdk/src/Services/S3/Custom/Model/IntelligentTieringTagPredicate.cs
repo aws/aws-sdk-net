@@ -26,11 +26,18 @@ namespace Amazon.S3.Model
 	{
         private readonly Tag tag;
 
+        /// <summary>
+        /// Construct an IntelligentTieringTagPredicate
+        /// </summary>
+        /// <param name="tag"></param>
         public IntelligentTieringTagPredicate(Tag tag)
         {
             this.tag = tag;
         }
 
+        /// <summary>
+        /// The tag used for the predicate.
+        /// </summary>
         public Tag Tag
         {
             get { return this.tag; }

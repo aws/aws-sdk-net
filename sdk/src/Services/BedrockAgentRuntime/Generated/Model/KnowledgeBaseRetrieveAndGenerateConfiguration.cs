@@ -26,16 +26,53 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Contains details about the resource being queried.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+    /// request</a> – in the <c>knowledgeBaseConfiguration</c> field
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
+    /// request</a> – in the <c>knowledgeBaseConfiguration</c> field
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class KnowledgeBaseRetrieveAndGenerateConfiguration
     {
+        private GenerationConfiguration _generationConfiguration;
         private string _knowledgeBaseId;
         private string _modelArn;
         private KnowledgeBaseRetrievalConfiguration _retrievalConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property GenerationConfiguration. 
+        /// <para>
+        /// Contains configurations for response generation based on the knowwledge base query
+        /// results.
+        /// </para>
+        /// </summary>
+        public GenerationConfiguration GenerationConfiguration
+        {
+            get { return this._generationConfiguration; }
+            set { this._generationConfiguration = value; }
+        }
+
+        // Check to see if GenerationConfiguration property is set
+        internal bool IsSetGenerationConfiguration()
+        {
+            return this._generationConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 

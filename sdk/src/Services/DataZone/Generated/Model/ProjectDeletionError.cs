@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// Error that occurred during project deletion
+    /// Specifies the error message that is returned if the operation cannot be successfully
+    /// completed.
     /// </summary>
     public partial class ProjectDeletionError
     {
@@ -39,7 +41,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// Project Deletion Error Code
+        /// The code of the project deletion error.
         /// </para>
         /// </summary>
         public string Code
@@ -57,7 +59,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Project Deletion Error Message
+        /// The message of the project deletion error.
         /// </para>
         /// </summary>
         public string Message

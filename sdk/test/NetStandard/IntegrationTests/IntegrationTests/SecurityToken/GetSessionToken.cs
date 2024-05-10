@@ -27,7 +27,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.NotNull(gstResult.Credentials.AccessKeyId);
             Assert.NotNull(gstResult.Credentials.SecretAccessKey);
             Assert.NotNull(gstResult.Credentials.SessionToken);
-            Assert.NotNull(gstResult.Credentials.Expiration);
+            Assert.NotEqual(DateTime.MinValue, gstResult.Credentials.Expiration);
 
             var time = DateTime.Now;
             var approximateExpires = time.AddHours(1);
@@ -55,7 +55,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.NotNull(gstResult.Credentials.AccessKeyId);
                 Assert.NotNull(gstResult.Credentials.SecretAccessKey);
                 Assert.NotNull(gstResult.Credentials.SessionToken);
-                Assert.NotNull(gstResult.Credentials.Expiration);
+                Assert.NotEqual(DateTime.MinValue, gstResult.Credentials.Expiration);
 
                 var time = DateTime.Now;
                 var approximateExpires = time.AddHours(1);
@@ -89,7 +89,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.NotNull(gstResult.Credentials.AccessKeyId);
             Assert.NotNull(gstResult.Credentials.SecretAccessKey);
             Assert.NotNull(gstResult.Credentials.SessionToken);
-            Assert.NotNull(gstResult.Credentials.Expiration);
+            Assert.NotEqual(DateTime.MinValue, gstResult.Credentials.Expiration);
 
             var time = DateTime.Now;
             var approximateExpires = time.AddHours(1);

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.NetStandard", "src\Services\S3\AWSSDK.S3.NetStandard.csproj", "{89D7A8AA-B164-40AF-B492-46A63ECEB964}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudWatchLogs.NetStandard", "src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.NetStandard.csproj", "{0BF01833-13DD-4BD5-84AA-BC8844F46470}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.Custom.NetStandard", "test\NetStandard\UnitTests\AWSSDK.UnitTests.Custom.NetStandard.csproj", "{27D0813B-6FB9-438B-8B8E-C59636A35C30}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DynamoDBv2.NetStandard", "src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.NetStandard.csproj", "{B52234D7-08EA-4D07-A9B7-9F71E6AE5490}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{27D0813B-6FB9-438B-8B8E-C59636A35C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27D0813B-6FB9-438B-8B8E-C59636A35C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27D0813B-6FB9-438B-8B8E-C59636A35C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B52234D7-08EA-4D07-A9B7-9F71E6AE5490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B52234D7-08EA-4D07-A9B7-9F71E6AE5490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B52234D7-08EA-4D07-A9B7-9F71E6AE5490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B52234D7-08EA-4D07-A9B7-9F71E6AE5490}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{7E80E4A1-8FBA-438B-A513-97379A5B20D9} = {4CD78D56-2ABB-4F58-A0CB-08CED1B06370}
 		{0BF01833-13DD-4BD5-84AA-BC8844F46470} = {4CD78D56-2ABB-4F58-A0CB-08CED1B06370}
 		{27D0813B-6FB9-438B-8B8E-C59636A35C30} = {CAEA0944-D530-499D-BC5D-4F3EB68407B3}
+		{B52234D7-08EA-4D07-A9B7-9F71E6AE5490} = {4CD78D56-2ABB-4F58-A0CB-08CED1B06370}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BBAD3467-3B24-41C1-898E-1B34BB9931DE}

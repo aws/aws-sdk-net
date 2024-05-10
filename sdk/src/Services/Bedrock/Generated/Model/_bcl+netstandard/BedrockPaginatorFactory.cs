@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
@@ -41,6 +42,22 @@ namespace Amazon.Bedrock.Model
         public IListCustomModelsPaginator ListCustomModels(ListCustomModelsRequest request) 
         {
             return new ListCustomModelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEvaluationJobs operation
+        ///</summary>
+        public IListEvaluationJobsPaginator ListEvaluationJobs(ListEvaluationJobsRequest request) 
+        {
+            return new ListEvaluationJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGuardrails operation
+        ///</summary>
+        public IListGuardrailsPaginator ListGuardrails(ListGuardrailsRequest request) 
+        {
+            return new ListGuardrailsPaginator(this.client, request);
         }
 
         /// <summary>

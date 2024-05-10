@@ -58,8 +58,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -89,9 +89,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","BadRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"BadRequestException"},
                 }
             };
 
@@ -121,9 +121,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -153,9 +153,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -185,9 +185,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -217,9 +217,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","NotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"NotFoundException"},
                 }
             };
 
@@ -248,8 +248,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -279,9 +279,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","BadRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"BadRequestException"},
                 }
             };
 
@@ -311,9 +311,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -343,9 +343,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -375,9 +375,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","NotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"NotFoundException"},
                 }
             };
 
@@ -423,8 +423,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -471,9 +471,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","BadGatewayException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"BadGatewayException"},
                 }
             };
 
@@ -520,9 +520,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","BadRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"BadRequestException"},
                 }
             };
 
@@ -569,9 +569,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -618,9 +618,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","DependencyFailedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"DependencyFailedException"},
                 }
             };
 
@@ -667,9 +667,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -716,9 +716,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -765,9 +765,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LoopDetectedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LoopDetectedException"},
                 }
             };
 
@@ -814,9 +814,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","NotAcceptableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"NotAcceptableException"},
                 }
             };
 
@@ -863,9 +863,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","NotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"NotFoundException"},
                 }
             };
 
@@ -912,9 +912,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","RequestTimeoutException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"RequestTimeoutException"},
                 }
             };
 
@@ -961,9 +961,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnsupportedMediaTypeException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnsupportedMediaTypeException"},
                 }
             };
 
@@ -992,8 +992,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -1023,9 +1023,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","BadGatewayException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"BadGatewayException"},
                 }
             };
 
@@ -1055,9 +1055,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","BadRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"BadRequestException"},
                 }
             };
 
@@ -1087,9 +1087,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -1119,9 +1119,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","DependencyFailedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"DependencyFailedException"},
                 }
             };
 
@@ -1151,9 +1151,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -1183,9 +1183,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -1215,9 +1215,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LoopDetectedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LoopDetectedException"},
                 }
             };
 
@@ -1247,9 +1247,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","NotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"NotFoundException"},
                 }
             };
 
@@ -1289,8 +1289,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -1331,9 +1331,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","BadGatewayException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"BadGatewayException"},
                 }
             };
 
@@ -1374,9 +1374,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","BadRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"BadRequestException"},
                 }
             };
 
@@ -1417,9 +1417,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -1460,9 +1460,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","DependencyFailedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"DependencyFailedException"},
                 }
             };
 
@@ -1503,9 +1503,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -1546,9 +1546,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -1589,9 +1589,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","NotAcceptableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"NotAcceptableException"},
                 }
             };
 
@@ -1632,9 +1632,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
                     {"x-amz-lex-session-id","x-amz-lex-session-id_Value"},
                     {"x-amz-lex-slots",Convert.ToBase64String(Encoding.UTF8.GetBytes("x-amz-lex-slots_Value"))},
                     {"x-amz-lex-slot-to-elicit","x-amz-lex-slot-to-elicit_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","NotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"NotFoundException"},
                 }
             };
 

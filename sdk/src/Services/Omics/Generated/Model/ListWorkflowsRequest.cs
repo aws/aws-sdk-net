@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -61,7 +62,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The workflows' name.
+        /// Filter the list by workflow name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -100,7 +101,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The workflows' type.
+        /// Filter the list by workflow type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

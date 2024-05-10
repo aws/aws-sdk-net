@@ -193,6 +193,10 @@ namespace Amazon.NeptuneGraph
         /// </summary>
         public static readonly GraphStatus FAILED = new GraphStatus("FAILED");
         /// <summary>
+        /// Constant IMPORTING for GraphStatus
+        /// </summary>
+        public static readonly GraphStatus IMPORTING = new GraphStatus("IMPORTING");
+        /// <summary>
         /// Constant RESETTING for GraphStatus
         /// </summary>
         public static readonly GraphStatus RESETTING = new GraphStatus("RESETTING");

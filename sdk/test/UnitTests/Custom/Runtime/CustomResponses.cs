@@ -51,7 +51,11 @@ namespace AWSSDK.UnitTests
                 if (isOK)
                     return response;
 
+#if BCL
                 throw new HttpErrorResponseException(new HttpWebRequestResponseData(response));
+#else
+                throw new NotImplementedException();
+#endif
             };
         }
 

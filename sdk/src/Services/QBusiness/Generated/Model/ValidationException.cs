@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-    /// input and try again.
+    /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+    /// the correct input and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

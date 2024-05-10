@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 	/// </summary>  
 	public class IntelligentTieringPredicateListFilterUnmarshaller : IUnmarshaller<List<IntelligentTieringFilterPredicate>, XmlUnmarshallerContext>, IUnmarshaller<List<IntelligentTieringFilterPredicate>, JsonUnmarshallerContext>
 	{
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public List<IntelligentTieringFilterPredicate> Unmarshall(XmlUnmarshallerContext context)
         {
             List<IntelligentTieringFilterPredicate> filterPredicateList = new List<IntelligentTieringFilterPredicate>();
@@ -67,6 +72,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return filterPredicateList;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public List<IntelligentTieringFilterPredicate> Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -74,6 +84,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static IntelligentTieringPredicateListFilterUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static IntelligentTieringPredicateListFilterUnmarshaller Instance
         {
             get

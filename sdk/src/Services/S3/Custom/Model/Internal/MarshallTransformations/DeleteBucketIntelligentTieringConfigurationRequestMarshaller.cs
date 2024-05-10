@@ -52,6 +52,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static DeleteBucketIntelligentTieringConfigurationRequestMarshaller _instance;
 
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
         public static DeleteBucketIntelligentTieringConfigurationRequestMarshaller Instance
         {
             get

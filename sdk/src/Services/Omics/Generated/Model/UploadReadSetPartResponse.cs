@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -38,8 +39,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Checksum. 
         /// <para>
-        ///  An identifier used to confirm that parts are being added to the intended upload.
-        /// 
+        /// An identifier used to confirm that parts are being added to the intended upload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

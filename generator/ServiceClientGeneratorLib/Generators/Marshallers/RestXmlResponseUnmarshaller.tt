@@ -9,6 +9,7 @@
     AddCommonUsingStatements();
 #>
 
+#pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -116,7 +117,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
 	}
 #>
-
+            if (context.IsEmptyResponse)
+            {
+                return;
+            }
             while (context.Read())
             {
 				if (context.IsStartElement || context.IsAttribute)
@@ -148,7 +152,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 else
                 {
 #>
-				    if (context.TestExpression("<#=member.MarshallName#>/<#=listMarshallName#>", targetDepth))
+				    if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>/<#=listMarshallName#>", targetDepth))
 				    {
                         if (response.<#=member.PropertyName#> == null)
                         {
@@ -161,10 +165,50 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
 			    }
             }
+            else if(member.Shape.IsMap)
+			{
+                if(member.IsFlattened)
+                {
+#>
+					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
+					{
+                        if (response.<#=member.PropertyName#> == null)
+                        {
+                            response.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
+                        }
+						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+						response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
+						continue;
+					}
+<#
+                }
+                else
+                {
+#>
+					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
+					{
+						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+						response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+						continue;
+					}
+<#
+                }                  
+			}
 			else
 			{
+                if (!member.IsXmlAttribute)
+                {
 #>
-					if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
+					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
+<#
+                }
+                else
+                {
+#>
+                    if (context.TestExpression("@<#=DetermineXmlMarshallName(member)#>", targetDepth - 1))
+<#
+                }
+#>
 					{
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
@@ -177,9 +221,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         if (shouldMarshallPayload)
         {
 #>
-					if (context.TestExpression("<#=payload.MarshallName#>", targetDepth))
+					if (context.TestExpression("<#=DetermineXmlMarshallName(payload)#>", targetDepth))
 					{
-						var unmarshaller = <#= payload.DetermineTypeUnmarshallerInstantiate() #>;
+						var unmarshaller = <#=payload.DetermineTypeUnmarshallerInstantiate()#>;
 						response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context);
 						continue;
 					}
@@ -237,3 +281,30 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
     }
 }
+<#+
+    /* The rules for determining the marshallName for xml services is different than json services
+        1. Use the member locationName if the value doesn't match the member's name
+        2. Use the value of the locationName on the member's target if present
+        3. Use the name of the member's target
+    */
+    protected string DetermineXmlMarshallName(Member member)
+    {
+        var locationName = member.data[ServiceModel.LocationNameKey];
+        if (locationName == null)
+        {
+            var payload = this.Operation.ResponsePayloadMember;
+            var shouldMarshallPayload = (payload != null && payload.IsStructure);
+            if(shouldMarshallPayload)
+                return member.Shape.Name;
+            return member.MarshallName;
+        }
+
+        if (!string.Equals(locationName.ToString(), member.ModeledName, StringComparison.Ordinal))
+        {
+            return locationName.ToString();
+        }
+        var memberTarget = member.Shape.data[ServiceModel.LocationNameKey];
+
+        return memberTarget != null ? memberTarget.ToString() : member.Shape.Name;
+    }
+#>

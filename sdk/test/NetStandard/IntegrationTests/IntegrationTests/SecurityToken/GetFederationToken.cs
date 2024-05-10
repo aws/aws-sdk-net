@@ -27,7 +27,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.NotNull(gftResult.Credentials.AccessKeyId);
             Assert.NotNull(gftResult.Credentials.SecretAccessKey);
             Assert.NotNull(gftResult.Credentials.SessionToken);
-            Assert.NotNull(gftResult.Credentials.Expiration);
+            Assert.NotEqual(DateTime.MinValue, gftResult.Credentials.Expiration);
 
             var time = DateTime.Now;
             var approximateExpires = time.AddHours(1);
@@ -41,8 +41,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.NotNull(gftResult.FederatedUser.FederatedUserId);
             Assert.NotNull(gftResult.FederatedUser.Arn);
 
-            Assert.True(gftResult.FederatedUser.FederatedUserId.EndsWith(gftRequest.Name, StringComparison.OrdinalIgnoreCase));
-            Assert.True(gftResult.FederatedUser.Arn.EndsWith(gftRequest.Name, StringComparison.OrdinalIgnoreCase));
+            Assert.EndsWith(gftRequest.Name, gftResult.FederatedUser.FederatedUserId, StringComparison.OrdinalIgnoreCase);
+            Assert.EndsWith(gftRequest.Name, gftResult.FederatedUser.Arn, StringComparison.OrdinalIgnoreCase);
         }
 
         [Fact]
@@ -68,7 +68,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.NotNull(gftResult.Credentials.AccessKeyId);
             Assert.NotNull(gftResult.Credentials.SecretAccessKey);
             Assert.NotNull(gftResult.Credentials.SessionToken);
-            Assert.NotNull(gftResult.Credentials.Expiration);
+            Assert.NotEqual(DateTime.MinValue, gftResult.Credentials.Expiration);
 
             var time = DateTime.Now;
             var approximateExpires = time.AddHours(1);
@@ -82,8 +82,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.NotNull(gftResult.FederatedUser.FederatedUserId);
             Assert.NotNull(gftResult.FederatedUser.Arn);
 
-            Assert.True(gftResult.FederatedUser.FederatedUserId.EndsWith(gftRequest.Name, StringComparison.OrdinalIgnoreCase));
-            Assert.True(gftResult.FederatedUser.Arn.EndsWith(gftRequest.Name, StringComparison.OrdinalIgnoreCase));
+            Assert.EndsWith(gftRequest.Name, gftResult.FederatedUser.FederatedUserId, StringComparison.OrdinalIgnoreCase);
+            Assert.EndsWith(gftRequest.Name, gftResult.FederatedUser.Arn, StringComparison.OrdinalIgnoreCase);
         }
     }
 }

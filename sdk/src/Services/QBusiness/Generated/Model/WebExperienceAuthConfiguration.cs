@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Provides the authorization configuration information needed to deploy a Amazon Q web
-    /// experience to end users.
+    /// Provides the authorization configuration information needed to deploy a Amazon Q Business
+    /// web experience to end users.
     /// </summary>
     public partial class WebExperienceAuthConfiguration
     {

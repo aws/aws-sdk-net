@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property AppEui. 
         /// <para>
-        /// The AppEUI value.
+        /// The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2 or v1.0.3.
         /// </para>
         /// </summary>
         public string AppEui
@@ -95,7 +96,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property JoinEui. 
         /// <para>
-        /// The JoinEUI value.
+        /// The JoinEUI value. You specify this value instead of the AppEUI when using LoRaWAN
+        /// version v1.0.4.
         /// </para>
         /// </summary>
         public string JoinEui

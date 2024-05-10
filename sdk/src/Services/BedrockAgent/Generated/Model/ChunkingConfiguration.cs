@@ -26,10 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Configures chunking strategy
+    /// Details about how to chunk the documents in the data source. A <i>chunk</i> refers
+    /// to an excerpt from a data source that is returned when the knowledge base that it
+    /// belongs to is queried.
     /// </summary>
     public partial class ChunkingConfiguration
     {
@@ -37,7 +40,25 @@ namespace Amazon.BedrockAgent.Model
         private FixedSizeChunkingConfiguration _fixedSizeChunkingConfiguration;
 
         /// <summary>
-        /// Gets and sets the property ChunkingStrategy.
+        /// Gets and sets the property ChunkingStrategy. 
+        /// <para>
+        /// Knowledge base can split your source data into chunks. A <i>chunk</i> refers to an
+        /// excerpt from a data source that is returned when the knowledge base that it belongs
+        /// to is queried. You have the following options for chunking your data. If you opt for
+        /// <c>NONE</c>, then you may want to pre-process your files by splitting them up such
+        /// that each file corresponds to a chunk.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FIXED_SIZE</c> – Amazon Bedrock splits your source data into chunks of the approximate
+        /// size that you set in the <c>fixedSizeChunkingConfiguration</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NONE</c> – Amazon Bedrock treats each file as one chunk. If you choose this option,
+        /// you may want to pre-process your documents by splitting them into separate files.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ChunkingStrategy ChunkingStrategy
@@ -53,7 +74,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FixedSizeChunkingConfiguration.
+        /// Gets and sets the property FixedSizeChunkingConfiguration. 
+        /// <para>
+        /// Configurations for when you choose fixed-size chunking. If you set the <c>chunkingStrategy</c>
+        /// as <c>NONE</c>, exclude this field.
+        /// </para>
         /// </summary>
         public FixedSizeChunkingConfiguration FixedSizeChunkingConfiguration
         {

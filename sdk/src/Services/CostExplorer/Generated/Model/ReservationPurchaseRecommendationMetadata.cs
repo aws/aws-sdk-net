@@ -26,21 +26,42 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Information about this specific recommendation, such as the timestamp for when Amazon
-    /// Web Services made a specific recommendation.
+    /// Information about a recommendation, such as the timestamp for when Amazon Web Services
+    /// made a specific recommendation.
     /// </summary>
     public partial class ReservationPurchaseRecommendationMetadata
     {
+        private string _additionalMetadata;
         private string _generationTimestamp;
         private string _recommendationId;
 
         /// <summary>
+        /// Gets and sets the property AdditionalMetadata. 
+        /// <para>
+        /// Additional metadata that might be applicable to the recommendation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string AdditionalMetadata
+        {
+            get { return this._additionalMetadata; }
+            set { this._additionalMetadata = value; }
+        }
+
+        // Check to see if AdditionalMetadata property is set
+        internal bool IsSetAdditionalMetadata()
+        {
+            return this._additionalMetadata != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GenerationTimestamp. 
         /// <para>
-        /// The timestamp for when Amazon Web Services made this recommendation.
+        /// The timestamp for when Amazon Web Services made the recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -59,7 +80,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property RecommendationId. 
         /// <para>
-        /// The ID for this specific recommendation.
+        /// The ID for the recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

@@ -82,13 +82,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public DefaultRetention Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
         }
 
         private static DefaultRetentionUnmarshaller _instance;
-        
+
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static DefaultRetentionUnmarshaller Instance
         {
             get

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -36,6 +37,7 @@ namespace Amazon.Omics.Model
         private string _arn;
         private DateTime? _creationTime;
         private string _description;
+        private ETagAlgorithmFamily _eTagAlgorithmFamily;
         private string _fallbackLocation;
         private string _id;
         private string _name;
@@ -99,9 +101,27 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ETagAlgorithmFamily. 
+        /// <para>
+        /// The algorithm family of the ETag.
+        /// </para>
+        /// </summary>
+        public ETagAlgorithmFamily ETagAlgorithmFamily
+        {
+            get { return this._eTagAlgorithmFamily; }
+            set { this._eTagAlgorithmFamily = value; }
+        }
+
+        // Check to see if ETagAlgorithmFamily property is set
+        internal bool IsSetETagAlgorithmFamily()
+        {
+            return this._eTagAlgorithmFamily != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FallbackLocation. 
         /// <para>
-        ///  An S3 location that is used to store files that have failed a direct upload. 
+        /// An S3 location that is used to store files that have failed a direct upload.
         /// </para>
         /// </summary>
         public string FallbackLocation

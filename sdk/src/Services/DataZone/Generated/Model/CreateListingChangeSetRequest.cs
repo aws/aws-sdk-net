@@ -26,11 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateListingChangeSet operation.
-    /// 
+    /// Publishes a listing (a record of an asset at a given time) or removes a listing from
+    /// the catalog.
     /// </summary>
     public partial class CreateListingChangeSetRequest : AmazonDataZoneRequest
     {
@@ -42,7 +44,10 @@ namespace Amazon.DataZone.Model
         private EntityType _entityType;
 
         /// <summary>
-        /// Gets and sets the property Action.
+        /// Gets and sets the property Action. 
+        /// <para>
+        /// Specifies whether to publish or unpublish a listing.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ChangeAction Action
@@ -58,7 +63,11 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that is provided to ensure the idempotency of
+        /// the request.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string ClientToken
@@ -74,7 +83,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainIdentifier.
+        /// Gets and sets the property DomainIdentifier. 
+        /// <para>
+        /// The ID of the Amazon DataZone domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DomainIdentifier
@@ -90,7 +102,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntityIdentifier.
+        /// Gets and sets the property EntityIdentifier. 
+        /// <para>
+        /// The ID of the asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string EntityIdentifier
@@ -106,7 +121,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntityRevision.
+        /// Gets and sets the property EntityRevision. 
+        /// <para>
+        /// The revision of an asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string EntityRevision
@@ -122,7 +140,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntityType.
+        /// Gets and sets the property EntityType. 
+        /// <para>
+        /// The type of an entity.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public EntityType EntityType

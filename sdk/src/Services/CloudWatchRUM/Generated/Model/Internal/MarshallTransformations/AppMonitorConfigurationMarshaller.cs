@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AppMonitorConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowCookies())
             {
                 context.Writer.WritePropertyName("AllowCookies");
@@ -105,7 +108,14 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSessionSampleRate())
             {
                 context.Writer.WritePropertyName("SessionSampleRate");
-                context.Writer.Write(requestObject.SessionSampleRate.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SessionSampleRate.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SessionSampleRate.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.SessionSampleRate.Value);
+                }
             }
 
             if(requestObject.IsSetTelemetries())

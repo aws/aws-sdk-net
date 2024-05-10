@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -42,6 +43,7 @@ namespace Amazon.Omics.Model
         private RunStatus _status;
         private DateTime? _stopTime;
         private int? _storageCapacity;
+        private StorageType _storageType;
         private string _workflowId;
 
         /// <summary>
@@ -196,7 +198,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// The run's storage capacity.
+        /// The run's storage capacity in gibibytes. For dynamic storage, after the run has completed,
+        /// this value is the maximum amount of storage used during the run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
@@ -210,6 +213,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetStorageCapacity()
         {
             return this._storageCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The run's storage type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public StorageType StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>

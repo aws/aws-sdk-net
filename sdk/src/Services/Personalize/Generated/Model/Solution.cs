@@ -26,11 +26,31 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// An object that provides information about a solution. A solution is a trained model
-    /// that can be deployed as a campaign.
+    /// <important> 
+    /// <para>
+    /// After you create a solution, you can’t change its configuration. By default, all new
+    /// solutions use automatic training. With automatic training, you incur training costs
+    /// while your solution is active. You can't stop automatic training for a solution. To
+    /// avoid unnecessary costs, make sure to delete the solution when you are finished. For
+    /// information about training costs, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon
+    /// Personalize pricing</a>.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// An object that provides information about a solution. A solution includes the custom
+    /// recipe, customized parameters, and trained models (Solution Versions) that Amazon
+    /// Personalize uses to generate recommendations. 
+    /// </para>
+    ///  
+    /// <para>
+    /// After you create a solution, you can’t change its configuration. If you need to make
+    /// changes, you can <a href="https://docs.aws.amazon.com/personalize/latest/dg/cloning-solution.html">clone
+    /// the solution</a> with the Amazon Personalize console or create a new one.
+    /// </para>
     /// </summary>
     public partial class Solution
     {
@@ -42,6 +62,7 @@ namespace Amazon.Personalize.Model
         private SolutionVersionSummary _latestSolutionVersion;
         private string _name;
         private bool? _performAutoML;
+        private bool? _performAutoTraining;
         private bool? _performhpo;
         private string _recipeArn;
         private string _solutionArn;
@@ -204,6 +225,31 @@ namespace Amazon.Personalize.Model
         internal bool IsSetPerformAutoML()
         {
             return this._performAutoML.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformAutoTraining. 
+        /// <para>
+        /// Specifies whether the solution automatically creates solution versions. The default
+        /// is <c>True</c> and the solution automatically creates new solution versions every
+        /// 7 days.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about auto training, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
+        /// and configuring a solution</a>.
+        /// </para>
+        /// </summary>
+        public bool? PerformAutoTraining
+        {
+            get { return this._performAutoTraining; }
+            set { this._performAutoTraining = value; }
+        }
+
+        // Check to see if PerformAutoTraining property is set
+        internal bool IsSetPerformAutoTraining()
+        {
+            return this._performAutoTraining.HasValue; 
         }
 
         /// <summary>

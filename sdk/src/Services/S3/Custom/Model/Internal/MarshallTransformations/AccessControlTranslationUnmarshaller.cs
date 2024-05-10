@@ -19,8 +19,16 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// AccessControlTranslation unmarshaller
+    /// </summary>
     public class AccessControlTranslationUnmarshaller : IUnmarshaller<AccessControlTranslation, XmlUnmarshallerContext>, IUnmarshaller<AccessControlTranslation, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AccessControlTranslation Unmarshall(XmlUnmarshallerContext context)
         {
             AccessControlTranslation accessControlTranslation = new AccessControlTranslation();
@@ -50,6 +58,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return accessControlTranslation;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public AccessControlTranslation Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -57,6 +70,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static AccessControlTranslationUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static AccessControlTranslationUnmarshaller Instance
         {
             get

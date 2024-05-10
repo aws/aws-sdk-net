@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeEnvironmentManagedActionHistoryResponse> IPaginator<DescribeEnvironmentManagedActionHistoryResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeEnvironmentManagedActionHistoryResponse> IPaginator<DescribeEnvironmentManagedActionHistoryResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

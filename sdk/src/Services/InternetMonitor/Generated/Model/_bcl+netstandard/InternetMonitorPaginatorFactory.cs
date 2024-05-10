@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
@@ -49,6 +50,14 @@ namespace Amazon.InternetMonitor.Model
         public IListHealthEventsPaginator ListHealthEvents(ListHealthEventsRequest request) 
         {
             return new ListHealthEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListInternetEvents operation
+        ///</summary>
+        public IListInternetEventsPaginator ListInternetEvents(ListInternetEventsRequest request) 
+        {
+            return new ListInternetEventsPaginator(this.client, request);
         }
 
         /// <summary>

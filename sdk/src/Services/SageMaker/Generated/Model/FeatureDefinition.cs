@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -103,7 +104,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must start and end with an alphanumeric character.
+        /// Must start with an alphanumeric character.
         /// </para>
         ///  </li> <li> 
         /// <para>

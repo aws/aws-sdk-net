@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchJobIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFileBatchJobIdentifier())
             {
                 context.Writer.WritePropertyName("fileBatchJobIdentifier");
@@ -52,6 +55,17 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 
                 var marshaller = FileBatchJobIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.FileBatchJobIdentifier, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRestartBatchJobIdentifier())
+            {
+                context.Writer.WritePropertyName("restartBatchJobIdentifier");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RestartBatchJobIdentifierMarshaller.Instance;
+                marshaller.Marshall(requestObject.RestartBatchJobIdentifier, context);
 
                 context.Writer.WriteObjectEnd();
             }

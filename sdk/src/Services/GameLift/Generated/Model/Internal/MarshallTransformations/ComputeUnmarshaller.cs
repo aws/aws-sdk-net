@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -81,6 +82,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputeStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContainerAttributes", targetDepth))
+                {
+                    var unmarshaller = ContainerAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ContainerAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -105,10 +112,22 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.FleetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GameLiftAgentEndpoint", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GameLiftAgentEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GameLiftServiceSdkEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GameLiftServiceSdkEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InstanceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IpAddress", targetDepth))

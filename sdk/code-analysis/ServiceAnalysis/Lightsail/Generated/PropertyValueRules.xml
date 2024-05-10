@@ -127,6 +127,10 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateDistributionRequest.CertificateName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateDistributionRequest.DistributionName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
@@ -711,6 +715,10 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.UpdateDistributionRequest.CertificateName</property>
+    <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.UpdateDistributionRequest.DistributionName</property>

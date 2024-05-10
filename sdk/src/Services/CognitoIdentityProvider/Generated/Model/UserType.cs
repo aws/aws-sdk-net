@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -116,8 +117,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserLastModifiedDate. 
         /// <para>
-        /// The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-        /// 8601</a> format, when the item was modified.
+        /// The date and time when the item was modified. Amazon Cognito returns this timestamp
+        /// in UNIX epoch time format. Your SDK might render the output in a human-readable format
+        /// like ISO 8601 or a Java <c>Date</c> object.
         /// </para>
         /// </summary>
         public DateTime? UserLastModifiedDate

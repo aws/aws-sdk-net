@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TotalImpactFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndValue())
             {
                 context.Writer.WritePropertyName("EndValue");
-                context.Writer.Write(requestObject.EndValue.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.EndValue.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.EndValue.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.EndValue.Value);
+                }
             }
 
             if(requestObject.IsSetNumericOperator())
@@ -60,7 +70,14 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartValue())
             {
                 context.Writer.WritePropertyName("StartValue");
-                context.Writer.Write(requestObject.StartValue.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StartValue.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StartValue.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.StartValue.Value);
+                }
             }
 
         }

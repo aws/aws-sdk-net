@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -38,7 +39,10 @@ namespace Amazon.DataZone.Model
         private string _domainId;
 
         /// <summary>
-        /// Gets and sets the property AssetId.
+        /// Gets and sets the property AssetId. 
+        /// <para>
+        /// The ID of the asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AssetId
@@ -54,7 +58,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AssetRevision.
+        /// Gets and sets the property AssetRevision. 
+        /// <para>
+        /// The revision that is to be made to the asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string AssetRevision
@@ -70,7 +77,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainId.
+        /// Gets and sets the property DomainId. 
+        /// <para>
+        /// The ID of the Amazon DataZone domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DomainId

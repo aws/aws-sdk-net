@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NumberFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLowerInclusive())
             {
                 context.Writer.WritePropertyName("lowerInclusive");
-                context.Writer.Write(requestObject.LowerInclusive.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LowerInclusive.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LowerInclusive.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.LowerInclusive.Value);
+                }
             }
 
             if(requestObject.IsSetUpperInclusive())
             {
                 context.Writer.WritePropertyName("upperInclusive");
-                context.Writer.Write(requestObject.UpperInclusive.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.UpperInclusive.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.UpperInclusive.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.UpperInclusive.Value);
+                }
             }
 
         }

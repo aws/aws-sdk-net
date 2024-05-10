@@ -68,7 +68,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     Assert.Equal(p.FilePath, Path.Combine(basePath, fileName));
                 }
             };
-            await UploadAsync(fileName, 10 * MEG_SIZE, progressValidator).ConfigureAwait(false);
+            await UploadAsync(fileName, 10 * MEG_SIZE, progressValidator);
             progressValidator.AssertOnCompletion();
         }
 
@@ -131,7 +131,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     Assert.Equal(p.FilePath, Path.Combine(basePath, fileName));
                 }
             };
-            await UploadAsync(fileName, 20 * MEG_SIZE, progressValidator).ConfigureAwait(false);
+            await UploadAsync(fileName, 20 * MEG_SIZE, progressValidator);
             progressValidator.AssertOnCompletion();
         }
 
@@ -142,7 +142,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             {
                 BucketName = testBucketName,
                 Key = key
-            }).ConfigureAwait(false);
+            });
 
             var path = Path.Combine(basePath, fileName);
             UtilityMethods.GenerateFile(path, size);
@@ -172,11 +172,11 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             {
                 BucketName = testBucketName,
                 Key = key
-            }).ConfigureAwait(false);
+            });
             Console.WriteLine("Expected Size: {0} , Actual Size {1}", size, metadata.ContentLength);
             Assert.Equal(OCTET_STREAM_CONTENT_TYPE, metadata.Headers.ContentType);
             Assert.Equal(size, metadata.ContentLength);
-            await ValidateFileContentsAsync(testBucketName, key, path).ConfigureAwait(false);
+            await ValidateFileContentsAsync(testBucketName, key, path);
         }
 
         [Fact]
@@ -187,7 +187,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             var progressValidator = new DirectoryProgressValidator<UploadDirectoryProgressArgs>();
             ConfigureProgressValidator(progressValidator);
 
-            await UploadDirectoryAsync(directoryName, 10 * MEG_SIZE, progressValidator, true, false).ConfigureAwait(false);
+            await UploadDirectoryAsync(directoryName, 10 * MEG_SIZE, progressValidator, true, false);
             progressValidator.AssertOnCompletion();
         }
 
@@ -214,7 +214,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 Directory = directoryPath,
                 KeyPrefix = directoryName,
                 SearchPattern = "*",
-                SearchOption = SearchOption.AllDirectories,                
+                SearchOption = SearchOption.AllDirectories,
             };
 
             //if (concurrent)
@@ -251,7 +251,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             var progressValidator = new DirectoryProgressValidator<DownloadDirectoryProgressArgs>();
             ConfigureProgressValidator(progressValidator);
 
-            await DownloadDirectoryAsync(directoryName, progressValidator).ConfigureAwait(false);
+            await DownloadDirectoryAsync(directoryName, progressValidator);
             progressValidator.AssertOnCompletion();
         }
 
@@ -259,7 +259,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         {
             var directoryPath = Path.Combine(basePath, directoryName);
             await UploadDirectoryAsync(directoryName,
-                20 * MEG_SIZE, null, false).ConfigureAwait(false);
+                20 * MEG_SIZE, null, false);
             Directory.Delete(directoryPath, true);
 
             var transferUtility = new TransferUtility(Client);
@@ -274,7 +274,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 request.DownloadedDirectoryProgressEvent += progressValidator.OnProgressEvent;
 
             transferUtility.DownloadDirectory(request);
-            await ValidateDirectoryContents(testBucketName, directoryName, directoryPath).ConfigureAwait(false);
+            await ValidateDirectoryContents(testBucketName, directoryName, directoryPath);
         }
 
         [Fact]
@@ -289,10 +289,10 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     Assert.Equal(p.BucketName, testBucketName);
                     Assert.Equal(p.Key, fileName);
                     Assert.NotNull(p.FilePath);
-                    Assert.True(p.FilePath.Contains(fileName));
+                    Assert.Contains(fileName, p.FilePath);
                 }
             };
-            await DownloadAsync(fileName, 10 * MEG_SIZE, progressValidator).ConfigureAwait(false);
+            await DownloadAsync(fileName, 10 * MEG_SIZE, progressValidator);
             progressValidator.AssertOnCompletion();
         }
 
@@ -308,13 +308,13 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     Assert.Equal(p.BucketName, testBucketName);
                     Assert.Equal(p.Key, fileName);
                     Assert.NotNull(p.FilePath);
-                    Assert.True(p.FilePath.Contains(fileName));
-                    Assert.Equal(p.TotalBytes, 0);
-                    Assert.Equal(p.TransferredBytes, 0);
-                    Assert.Equal(p.PercentDone, 100);
+                    Assert.Contains(fileName, p.FilePath);
+                    Assert.Equal(0, p.TotalBytes);
+                    Assert.Equal(0, p.TransferredBytes);
+                    Assert.Equal(100, p.PercentDone);
                 }
             };
-            await DownloadAsync(fileName, 0, progressValidator).ConfigureAwait(false);
+            await DownloadAsync(fileName, 0, progressValidator);
             progressValidator.AssertOnCompletion();
         }
 
@@ -329,7 +329,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 BucketName = testBucketName,
                 Key = key,
                 FilePath = originalFilePath
-            }).ConfigureAwait(false);
+            });
 
             var downloadedFilePath = originalFilePath + ".dn";
 
@@ -362,7 +362,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 BucketName = testBucketName,
                 Key = key,
                 FilePath = originalFilePath
-            }).ConfigureAwait(false);
+            });
 
             using (var transferUtility = new TransferUtility(Client))
             using (var stream = transferUtility.OpenStream(testBucketName, key))
@@ -391,7 +391,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 BucketName = testBucketName,
                 Key = objectKey,
                 ContentBody = ""
-            }).ConfigureAwait(false);
+            });
 
             var filename = UtilityMethods.GenerateName(objectKey);
             var filePath = Path.Combine(basePath, filename);
@@ -472,20 +472,20 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 await transferUtility.UploadDirectoryAsync(uploadRequest);
             }
 
-            var objects = Client.ListObjectsAsync(new ListObjectsRequest
+            var objects = (await Client.ListObjectsAsync(new ListObjectsRequest
             {
                 BucketName = testBucketName
-            }).Result.S3Objects;
+            })).S3Objects;
 
             foreach(var obj in objects)
             {
-                var tags = Client.GetObjectTaggingAsync(new GetObjectTaggingRequest
+                var tags = (await Client.GetObjectTaggingAsync(new GetObjectTaggingRequest
                 {
                     BucketName = testBucketName,
                     Key = obj.Key
-                }).Result.Tagging;
+                })).Tagging;
 
-                Assert.Equal(1, tags.Count);
+                Assert.Single(tags);
                 Assert.Equal("hello", tags[0].Key);
                 Assert.Equal("world", tags[0].Value);
             }
@@ -568,10 +568,10 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                         BucketName = bucketName,
                         Key = key,
                     };
-                    using (var response = await Client.GetObjectAsync(request).ConfigureAwait(false))
+                    using (var response = await Client.GetObjectAsync(request))
                     {
                         //Assert.AreEqual(contentType, response.Headers.ContentType);
-                        await response.WriteResponseStreamToFileAsync(downloadPath, false, CancellationToken.None).ConfigureAwait(false);
+                        await response.WriteResponseStreamToFileAsync(downloadPath, false, CancellationToken.None);
                     }
                 }
                 catch(AmazonS3Exception e)
@@ -591,7 +591,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 // Get key based on separators of current platform.  If it's windows, replace any windows style
                 // separators with the unix style separators that S3 is expecting.
                 var key = filePath.Substring(directoryPath.LastIndexOf(Path.DirectorySeparatorChar) + 1).Replace("\\", "/");
-                await ValidateFileContentsAsync(bucketName, key, filePath).ConfigureAwait(false);
+                await ValidateFileContentsAsync(bucketName, key, filePath);
             }
         }
 
@@ -640,7 +640,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
                     if (progress.TransferredBytes == progress.TotalBytes)
                     {
-                        Assert.Equal(progress.PercentDone, 100);
+                        Assert.Equal(100, progress.PercentDone);
                         this.IsProgressEventComplete = true;
                     }
 

@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIndex operation.
-    /// Gets information about an existing Amazon Q index.
+    /// Gets information about an existing Amazon Q Business index.
     /// </summary>
     public partial class GetIndexRequest : AmazonQBusinessRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application connected to the index.
+        /// The identifier of the Amazon Q Business application connected to the index.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -59,7 +60,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the Amazon Q index you want information on.
+        /// The identifier of the Amazon Q Business index you want information on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

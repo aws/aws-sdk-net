@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
-    /// An internet service provider (ISP) or network in Amazon CloudWatch Internet Monitor.
+    /// An internet service provider (ISP) or network (ASN) in Amazon CloudWatch Internet
+    /// Monitor.
     /// </summary>
     public partial class Network
     {
@@ -39,7 +41,7 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property ASName. 
         /// <para>
-        /// The internet provider name or network name.
+        /// The name of the internet service provider (ISP) or network (ASN).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

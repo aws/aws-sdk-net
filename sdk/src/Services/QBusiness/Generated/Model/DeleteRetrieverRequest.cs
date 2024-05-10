@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRetriever operation.
-    /// Deletes the retriever used by an Amazon Q application.
+    /// Deletes the retriever used by an Amazon Q Business application.
     /// </summary>
     public partial class DeleteRetrieverRequest : AmazonQBusinessRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application using the retriever.
+        /// The identifier of the Amazon Q Business application using the retriever.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

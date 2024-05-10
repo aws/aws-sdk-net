@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Document requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("Body");
@@ -66,7 +69,14 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOriginalScore())
             {
                 context.Writer.WritePropertyName("OriginalScore");
-                context.Writer.Write(requestObject.OriginalScore.Value);
+                if(StringUtils.IsSpecialFloatValue(requestObject.OriginalScore.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.OriginalScore.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.OriginalScore.Value);
+                }
             }
 
             if(requestObject.IsSetTitle())

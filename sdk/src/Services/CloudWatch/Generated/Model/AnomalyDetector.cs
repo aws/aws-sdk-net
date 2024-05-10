@@ -26,17 +26,25 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// An anomaly detection model associated with a particular CloudWatch metric, statistic,
     /// or metric math expression. You can use the model to display a band of expected, normal
     /// values when the metric is graphed.
+    /// 
+    ///  
+    /// <para>
+    /// If you have enabled unified cross-account observability, and this account is a monitoring
+    /// account, the metric can be in the same account or a source account.
+    /// </para>
     /// </summary>
     public partial class AnomalyDetector
     {
         private AnomalyDetectorConfiguration _configuration;
         private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
+        private MetricCharacteristics _metricCharacteristics;
         private MetricMathAnomalyDetector _metricMathAnomalyDetector;
         private string _metricName;
         private string _awsNamespace;
@@ -82,6 +90,26 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetDimensions()
         {
             return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricCharacteristics. 
+        /// <para>
+        /// This object includes parameters that you can use to provide information about your
+        /// metric to CloudWatch to help it build more accurate anomaly detection models. Currently,
+        /// it includes the <c>PeriodicSpikes</c> parameter.
+        /// </para>
+        /// </summary>
+        public MetricCharacteristics MetricCharacteristics
+        {
+            get { return this._metricCharacteristics; }
+            set { this._metricCharacteristics = value; }
+        }
+
+        // Check to see if MetricCharacteristics property is set
+        internal bool IsSetMetricCharacteristics()
+        {
+            return this._metricCharacteristics != null;
         }
 
         /// <summary>
@@ -183,8 +211,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StateValue. 
         /// <para>
-        /// The current status of the anomaly detector's training. The possible values are <c>TRAINED
-        /// | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</c> 
+        /// The current status of the anomaly detector's training.
         /// </para>
         /// </summary>
         public AnomalyDetectorStateValue StateValue

@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
-    /// Defines the Amazon S3 bucket where the training data for the configured audience is
+    /// Defines the Amazon S3 bucket where the seed audience for the generating audience is
     /// stored.
     /// </summary>
     public partial class AudienceGenerationJobDataSource
@@ -40,7 +41,20 @@ namespace Amazon.CleanRoomsML.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The Amazon S3 bucket where the training data for the configured audience is stored.
+        /// Defines the Amazon S3 bucket where the seed audience for the generating audience is
+        /// stored. A valid data source is a JSON line file in the following format:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>{"user_id": "111111"}</c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>{"user_id": "222222"}</c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>...</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.GuardDuty.Model
         /// coverage details.
         /// </para>
         /// </summary>
-        public List<string> Equals
+        public new List<string> Equals
         {
             get { return this._equals; }
             set { this._equals = value; }

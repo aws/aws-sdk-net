@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -39,7 +40,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Applications. 
         /// <para>
-        /// An array of summary information on the configuration of one or more Amazon Q applications.
+        /// An array of summary information on the configuration of one or more Amazon Q Business
+        /// applications.
         /// </para>
         /// </summary>
         public List<Application> Applications
@@ -57,8 +59,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, Amazon Q returns this token. You can use this token
-        /// in a subsequent request to retrieve the next set of applications.
+        /// If the response is truncated, Amazon Q Business returns this token. You can use this
+        /// token in a subsequent request to retrieve the next set of applications.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

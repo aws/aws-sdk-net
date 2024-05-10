@@ -2505,6 +2505,10 @@ namespace Amazon.Drs
         /// </summary>
         public static readonly VolumeStatus MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE = new VolumeStatus("MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE");
         /// <summary>
+        /// Constant PENDING for VolumeStatus
+        /// </summary>
+        public static readonly VolumeStatus PENDING = new VolumeStatus("PENDING");
+        /// <summary>
         /// Constant REGULAR for VolumeStatus
         /// </summary>
         public static readonly VolumeStatus REGULAR = new VolumeStatus("REGULAR");

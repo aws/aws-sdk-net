@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FilterSliderControl requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDisplayOptions())
             {
                 context.Writer.WritePropertyName("DisplayOptions");
@@ -65,13 +68,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumValue())
             {
                 context.Writer.WritePropertyName("MaximumValue");
-                context.Writer.Write(requestObject.MaximumValue.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaximumValue.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaximumValue.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaximumValue.Value);
+                }
             }
 
             if(requestObject.IsSetMinimumValue())
             {
                 context.Writer.WritePropertyName("MinimumValue");
-                context.Writer.Write(requestObject.MinimumValue.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinimumValue.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinimumValue.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinimumValue.Value);
+                }
             }
 
             if(requestObject.IsSetSourceFilterId())
@@ -83,7 +100,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStepSize())
             {
                 context.Writer.WritePropertyName("StepSize");
-                context.Writer.Write(requestObject.StepSize.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StepSize.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StepSize.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.StepSize.Value);
+                }
             }
 
             if(requestObject.IsSetTitle())

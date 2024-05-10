@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Filter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetResourceArns())
             {
                 context.Writer.WritePropertyName("resourceArns");
@@ -63,6 +66,17 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 foreach(var requestObjectStatusListValue in requestObject.Status)
                 {
                         context.Writer.Write(requestObjectStatusListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTypeListValue in requestObject.Type)
+                {
+                        context.Writer.Write(requestObjectTypeListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }

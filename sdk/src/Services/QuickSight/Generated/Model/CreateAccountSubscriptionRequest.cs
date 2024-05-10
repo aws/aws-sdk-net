@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -73,17 +74,21 @@ namespace Amazon.QuickSight.Model
         private string _accountName;
         private string _activeDirectoryName;
         private List<string> _adminGroup = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _adminProGroup = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AuthenticationMethodOption _authenticationMethod;
         private List<string> _authorGroup = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _authorProGroup = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _awsAccountId;
         private string _contactNumber;
         private string _directoryId;
         private Edition _edition;
         private string _emailAddress;
         private string _firstName;
+        private string _iamIdentityCenterInstanceArn;
         private string _lastName;
         private string _notificationEmail;
         private List<string> _readerGroup = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _readerProGroup = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _realm;
 
         /// <summary>
@@ -130,8 +135,9 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AdminGroup. 
         /// <para>
         /// The admin group associated with your Active Directory or IAM Identity Center account.
-        /// This field is required if <c>ACTIVE_DIRECTORY</c> or <c>IAM_IDENTITY_CENTER</c> is
-        /// the selected authentication method of the new Amazon QuickSight account.
+        /// Either this field or the <c>AdminProGroup</c> field is required if <c>ACTIVE_DIRECTORY</c>
+        /// or <c>IAM_IDENTITY_CENTER</c> is the selected authentication method of the new Amazon
+        /// QuickSight account.
         /// </para>
         ///  
         /// <para>
@@ -154,6 +160,37 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAdminGroup()
         {
             return this._adminGroup != null && (this._adminGroup.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdminProGroup. 
+        /// <para>
+        /// The admin pro group associated with your Active Directory or IAM Identity Center account.
+        /// Either this field or the <c>AdminGroup</c> field is required if <c>ACTIVE_DIRECTORY</c>
+        /// or <c>IAM_IDENTITY_CENTER</c> is the selected authentication method of the new Amazon
+        /// QuickSight account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using IAM Identity Center in Amazon QuickSight, see <a
+        /// href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+        /// IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
+        /// User Guide. For more information about using Active Directory in Amazon QuickSight,
+        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+        /// Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
+        /// User Guide.
+        /// </para>
+        /// </summary>
+        public List<string> AdminProGroup
+        {
+            get { return this._adminProGroup; }
+            set { this._adminProGroup = value; }
+        }
+
+        // Check to see if AdminProGroup property is set
+        internal bool IsSetAdminProGroup()
+        {
+            return this._adminProGroup != null && (this._adminProGroup.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -211,6 +248,35 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAuthorGroup()
         {
             return this._authorGroup != null && (this._authorGroup.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthorProGroup. 
+        /// <para>
+        /// The author pro group associated with your Active Directory or IAM Identity Center
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using IAM Identity Center in Amazon QuickSight, see <a
+        /// href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+        /// IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
+        /// User Guide. For more information about using Active Directory in Amazon QuickSight,
+        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+        /// Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
+        /// User Guide.
+        /// </para>
+        /// </summary>
+        public List<string> AuthorProGroup
+        {
+            get { return this._authorProGroup; }
+            set { this._authorProGroup = value; }
+        }
+
+        // Check to see if AuthorProGroup property is set
+        internal bool IsSetAuthorProGroup()
+        {
+            return this._authorProGroup != null && (this._authorProGroup.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -299,7 +365,6 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Edition Edition
         {
             get { return this._edition; }
@@ -350,6 +415,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFirstName()
         {
             return this._firstName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IAMIdentityCenterInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the IAM Identity Center instance.
+        /// </para>
+        /// </summary>
+        public string IAMIdentityCenterInstanceArn
+        {
+            get { return this._iamIdentityCenterInstanceArn; }
+            set { this._iamIdentityCenterInstanceArn = value; }
+        }
+
+        // Check to see if IAMIdentityCenterInstanceArn property is set
+        internal bool IsSetIAMIdentityCenterInstanceArn()
+        {
+            return this._iamIdentityCenterInstanceArn != null;
         }
 
         /// <summary>
@@ -418,6 +501,35 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetReaderGroup()
         {
             return this._readerGroup != null && (this._readerGroup.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReaderProGroup. 
+        /// <para>
+        /// The reader pro group associated with your Active Directory or IAM Identity Center
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using IAM Identity Center in Amazon QuickSight, see <a
+        /// href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+        /// IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
+        /// User Guide. For more information about using Active Directory in Amazon QuickSight,
+        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+        /// Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
+        /// User Guide.
+        /// </para>
+        /// </summary>
+        public List<string> ReaderProGroup
+        {
+            get { return this._readerProGroup; }
+            set { this._readerProGroup = value; }
+        }
+
+        // Check to see if ReaderProGroup property is set
+        internal bool IsSetReaderProGroup()
+        {
+            return this._readerProGroup != null && (this._readerProGroup.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the bedrock-2023-04-20.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
@@ -29,6 +30,16 @@ namespace Amazon.Bedrock.Model
         /// Paginator for ListCustomModels operation
         ///</summary>
         IListCustomModelsPaginator ListCustomModels(ListCustomModelsRequest request);
+
+        /// <summary>
+        /// Paginator for ListEvaluationJobs operation
+        ///</summary>
+        IListEvaluationJobsPaginator ListEvaluationJobs(ListEvaluationJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListGuardrails operation
+        ///</summary>
+        IListGuardrailsPaginator ListGuardrails(ListGuardrailsRequest request);
 
         /// <summary>
         /// Paginator for ListModelCustomizationJobs operation

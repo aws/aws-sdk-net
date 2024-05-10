@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -39,6 +40,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class FilterControl
     {
+        private FilterCrossSheetControl _crossSheet;
         private FilterDateTimePickerControl _dateTimePicker;
         private FilterDropDownControl _dropdown;
         private FilterListControl _list;
@@ -46,6 +48,25 @@ namespace Amazon.QuickSight.Model
         private FilterSliderControl _slider;
         private FilterTextAreaControl _textArea;
         private FilterTextFieldControl _textField;
+
+        /// <summary>
+        /// Gets and sets the property CrossSheet. 
+        /// <para>
+        /// A control from a filter that is scoped across more than one sheet. This represents
+        /// your filter control on a sheet
+        /// </para>
+        /// </summary>
+        public FilterCrossSheetControl CrossSheet
+        {
+            get { return this._crossSheet; }
+            set { this._crossSheet = value; }
+        }
+
+        // Check to see if CrossSheet property is set
+        internal bool IsSetCrossSheet()
+        {
+            return this._crossSheet != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DateTimePicker. 

@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -55,6 +56,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MatchId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("matchRule", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MatchRule = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

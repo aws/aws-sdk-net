@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -60,6 +61,7 @@ namespace Amazon.RDS.Model
         private bool? _supportsCertificateRotationWithoutRestart;
         private bool? _supportsGlobalDatabases;
         private bool? _supportsIntegrations;
+        private bool? _supportsLimitlessDatabase;
         private bool? _supportsLocalWriteForwarding;
         private bool? _supportsLogExportsToCloudwatchLogs;
         private bool? _supportsParallelQuery;
@@ -603,6 +605,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsIntegrations()
         {
             return this._supportsIntegrations.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsLimitlessDatabase. 
+        /// <para>
+        /// Indicates whether the DB engine version supports Aurora Limitless Database.
+        /// </para>
+        /// </summary>
+        public bool? SupportsLimitlessDatabase
+        {
+            get { return this._supportsLimitlessDatabase; }
+            set { this._supportsLimitlessDatabase = value; }
+        }
+
+        // Check to see if SupportsLimitlessDatabase property is set
+        internal bool IsSetSupportsLimitlessDatabase()
+        {
+            return this._supportsLimitlessDatabase.HasValue; 
         }
 
         /// <summary>

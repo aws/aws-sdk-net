@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        ///  Attributes used to filter for a specific subset of read set part uploads. 
+        /// Attributes used to filter for a specific subset of read set part uploads.
         /// </para>
         /// </summary>
         public ReadSetUploadPartListFilter Filter
@@ -63,7 +64,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of read set upload parts returned in a page. 
+        /// The maximum number of read set upload parts returned in a page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -82,8 +83,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Next token returned in the response of a previous ListReadSetUploadPartsRequest call.
-        /// Used to get the next page of results. 
+        /// Next token returned in the response of a previous ListReadSetUploadPartsRequest call.
+        /// Used to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]
@@ -102,7 +103,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property PartSource. 
         /// <para>
-        ///  The source file for the upload part. 
+        /// The source file for the upload part.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -121,7 +122,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property SequenceStoreId. 
         /// <para>
-        ///  The Sequence Store ID used for the multipart uploads. 
+        /// The Sequence Store ID used for the multipart uploads.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]
@@ -140,7 +141,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property UploadId. 
         /// <para>
-        ///  The ID for the initiated multipart upload. 
+        /// The ID for the initiated multipart upload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]

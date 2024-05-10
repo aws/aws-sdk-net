@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PI.Model
 {
     /// <summary>
@@ -77,6 +78,11 @@ namespace Amazon.PI.Model
         /// <para>
         /// The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance
         /// Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance
+        /// Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

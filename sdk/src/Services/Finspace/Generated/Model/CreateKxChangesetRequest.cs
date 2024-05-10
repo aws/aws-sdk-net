@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.Finspace.Model
         /// Gets and sets the property ChangeRequests. 
         /// <para>
         /// A list of change request objects that are run in order. A change request object consists
-        /// of <c>changeType</c> , <c>s3Path</c>, and <c>dbPath</c>. A changeType can has the
+        /// of <c>changeType</c> , <c>s3Path</c>, and <c>dbPath</c>. A changeType can have the
         /// following values: 
         /// </para>
         ///  <ul> <li> 

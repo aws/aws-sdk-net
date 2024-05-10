@@ -56,7 +56,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
         /// <param name="metadataCachingMode">The document API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
         /// requests. This controls how the cache key is derived, which influences when the SDK will call 
-        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.</param>
+        /// IAmazonDynamoDB.DescribeTable(string) internally to populate the cache.</param>
         public TableBuilder(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, MetadataCachingMode? metadataCachingMode)
             : this (ddbClient, new TableConfig(tableName, conversion, Table.DynamoDBConsumer.DocumentModel, null, isEmptyStringValueEnabled, metadataCachingMode))
         {

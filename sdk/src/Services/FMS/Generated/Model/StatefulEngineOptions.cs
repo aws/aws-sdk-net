@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -35,15 +36,19 @@ namespace Amazon.FMS.Model
     public partial class StatefulEngineOptions
     {
         private RuleOrder _ruleOrder;
+        private StreamExceptionPolicy _streamExceptionPolicy;
 
         /// <summary>
         /// Gets and sets the property RuleOrder. 
         /// <para>
-        /// Indicates how to manage the order of stateful rule evaluation for the policy. <c>DEFAULT_ACTION_ORDER</c>
-        /// is the default behavior. Stateful rules are provided to the rule engine as Suricata
-        /// compatible strings, and Suricata evaluates them based on certain settings. For more
-        /// information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+        /// Indicates how to manage the order of stateful rule evaluation for the policy. Stateful
+        /// rules are provided to the rule engine as Suricata compatible strings, and Suricata
+        /// evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
         /// order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>DEFAULT_ACTION_ORDER</c> 
         /// </para>
         /// </summary>
         public RuleOrder RuleOrder
@@ -56,6 +61,66 @@ namespace Amazon.FMS.Model
         internal bool IsSetRuleOrder()
         {
             return this._ruleOrder != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamExceptionPolicy. 
+        /// <para>
+        /// Indicates how Network Firewall should handle traffic when a network connection breaks
+        /// midstream.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DROP</c> - Fail closed and drop all subsequent traffic going to the firewall.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CONTINUE</c> - Continue to apply rules to subsequent traffic without context from
+        /// traffic before the break. This impacts the behavior of rules that depend on context.
+        /// For example, with a stateful rule that drops HTTP traffic, Network Firewall won't
+        /// match subsequent traffic because the it won't have the context from session initialization,
+        /// which defines the application layer protocol as HTTP. However, a TCP-layer rule using
+        /// a <c>flow:stateless</c> rule would still match, and so would the <c>aws:drop_strict</c>
+        /// default action. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REJECT</c> - Fail closed and drop all subsequent traffic going to the firewall.
+        /// With this option, Network Firewall also sends a TCP reject packet back to the client
+        /// so the client can immediately establish a new session. With the new session, Network
+        /// Firewall will have context and will apply rules appropriately.
+        /// </para>
+        ///  
+        /// <para>
+        /// For applications that are reliant on long-lived TCP connections that trigger Gateway
+        /// Load Balancer idle timeouts, this is the recommended setting. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FMS_IGNORE</c> - Firewall Manager doesn't monitor or modify the Network Firewall
+        /// stream exception policy settings. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stream-exception-policy.html">Stream
+        /// exception policy in your firewall policy</a> in the <i>Network Firewall Developer
+        /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>FMS_IGNORE</c> 
+        /// </para>
+        /// </summary>
+        public StreamExceptionPolicy StreamExceptionPolicy
+        {
+            get { return this._streamExceptionPolicy; }
+            set { this._streamExceptionPolicy = value; }
+        }
+
+        // Check to see if StreamExceptionPolicy property is set
+        internal bool IsSetStreamExceptionPolicy()
+        {
+            return this._streamExceptionPolicy != null;
         }
 
     }

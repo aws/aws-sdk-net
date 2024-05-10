@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResourceTagSet Object
     /// </summary>  
-    public class ResourceTagSetUnmarshaller : IUnmarshaller<ResourceTagSet, XmlUnmarshallerContext>
+    public class ResourceTagSetUnmarshaller : IUnmarshaller<ResourceTagSet, XmlUnmarshallerContext>, IUnmarshaller<ResourceTagSet, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -84,6 +85,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public ResourceTagSet Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static ResourceTagSetUnmarshaller _instance = new ResourceTagSetUnmarshaller();        

@@ -244,7 +244,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Explicitly convert Primitive to SByte
         /// </summary>
         /// <returns>SByte value of this object</returns>
-        [CLSCompliant(false)]
         public override SByte AsSByte()
         {
             return V1Conversion.ConvertFromEntry<SByte>(this);
@@ -254,7 +253,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="data">SByte data to convert</param>
         /// <returns>Primitive representing the data</returns>
-        [CLSCompliant(false)]
         public static implicit operator Primitive(SByte data)
         {
             return V1Conversion.ConvertToEntry<SByte>(data).AsPrimitive();
@@ -264,7 +262,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="p">Primitive to convert</param>
         /// <returns>SByte value of Primitive</returns>
-        [CLSCompliant(false)]
         public static explicit operator SByte(Primitive p)
         {
             return p.AsSByte();
@@ -276,7 +273,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Explicitly convert Primitive to UInt16
         /// </summary>
         /// <returns>UInt16 value of this object</returns>
-        [CLSCompliant(false)]
         public override UInt16 AsUShort()
         {
             return V1Conversion.ConvertFromEntry<UInt16>(this);
@@ -286,7 +282,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="data">UInt16 data to convert</param>
         /// <returns>Primitive representing the data</returns>
-        [CLSCompliant(false)]
         public static implicit operator Primitive(UInt16 data)
         {
             return V1Conversion.ConvertToEntry<UInt16>(data).AsPrimitive();
@@ -296,7 +291,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="p">Primitive to convert</param>
         /// <returns>UInt16 value of Primitive</returns>
-        [CLSCompliant(false)]
         public static explicit operator UInt16(Primitive p)
         {
             return p.AsUShort();
@@ -337,7 +331,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Explicitly convert Primitive to UInt32
         /// </summary>
         /// <returns>UInt32 value of this object</returns>
-        [CLSCompliant(false)]
         public override UInt32 AsUInt()
         {
             return V1Conversion.ConvertFromEntry<UInt32>(this);
@@ -347,7 +340,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="data">UInt32 data to convert</param>
         /// <returns>Primitive representing the data</returns>
-        [CLSCompliant(false)]
         public static implicit operator Primitive(UInt32 data)
         {
             return V1Conversion.ConvertToEntry<UInt32>(data).AsPrimitive();
@@ -357,7 +349,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="p">Primitive to convert</param>
         /// <returns>UInt32 value of Primitive</returns>
-        [CLSCompliant(false)]
         public static explicit operator UInt32(Primitive p)
         {
             return p.AsUInt();
@@ -398,7 +389,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Explicitly convert Primitive to UInt64
         /// </summary>
         /// <returns>UInt64 value of this object</returns>
-        [CLSCompliant(false)]
         public override UInt64 AsULong()
         {
             return V1Conversion.ConvertFromEntry<UInt64>(this);
@@ -408,7 +398,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="data">UInt64 data to convert</param>
         /// <returns>Primitive representing the data</returns>
-        [CLSCompliant(false)]
         public static implicit operator Primitive(UInt64 data)
         {
             return V1Conversion.ConvertToEntry<UInt64>(data).AsPrimitive();
@@ -418,7 +407,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="p">Primitive to convert</param>
         /// <returns>UInt64 value of Primitive</returns>
-        [CLSCompliant(false)]
         public static explicit operator UInt64(Primitive p)
         {
             return p.AsULong();

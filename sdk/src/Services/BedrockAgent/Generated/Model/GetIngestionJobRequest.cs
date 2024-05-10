@@ -26,11 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIngestionJob operation.
-    /// Get an ingestion job
+    /// Gets information about a ingestion job, in which a data source is added to a knowledge
+    /// base.
     /// </summary>
     public partial class GetIngestionJobRequest : AmazonBedrockAgentRequest
     {
@@ -39,7 +41,10 @@ namespace Amazon.BedrockAgent.Model
         private string _knowledgeBaseId;
 
         /// <summary>
-        /// Gets and sets the property DataSourceId.
+        /// Gets and sets the property DataSourceId. 
+        /// <para>
+        /// The unique identifier of the data source in the ingestion job.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DataSourceId
@@ -55,7 +60,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IngestionJobId.
+        /// Gets and sets the property IngestionJobId. 
+        /// <para>
+        /// The unique identifier of the ingestion job.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string IngestionJobId
@@ -71,7 +79,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base for which the ingestion job applies.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string KnowledgeBaseId

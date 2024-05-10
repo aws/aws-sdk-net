@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AacSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Bitrate.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Bitrate.Value);
+                }
             }
 
             if(requestObject.IsSetCodingMode())
@@ -84,7 +94,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
-                context.Writer.Write(requestObject.SampleRate.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SampleRate.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SampleRate.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.SampleRate.Value);
+                }
             }
 
             if(requestObject.IsSetSpec())

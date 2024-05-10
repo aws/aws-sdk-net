@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -262,7 +263,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ImageConfig. 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container
         /// image configuration values</a> that override the values in the container image Docker
         /// file.
         /// </para>

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.AppFabric.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.AppFabric
 {
     /// <summary>

@@ -5,7 +5,6 @@ using Amazon.RDS;
 using Amazon.RDS.Model;
 using Xunit;
 using Amazon.DNXCore.IntegrationTests;
-using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
 {
@@ -66,7 +65,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
                 {
                     foreach (var dbev in describeResponse.DBEngineVersions)
                     {
-                        Assert.True(dbev.DBParameterGroupFamily.Equals(dbParamGroupFamily.DBParameterGroupFamily));
+                        Assert.Equal(dbParamGroupFamily.DBParameterGroupFamily, dbev.DBParameterGroupFamily);
                     }
                 }
             }
@@ -127,7 +126,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
                         DBInstanceIdentifier = dbInstanceIdentifier
                     }).Result;
                 Assert.NotNull(specificIdResponse);
-                Assert.Equal(specificIdResponse.DBInstances.Count, 1);
+                Assert.Single(specificIdResponse.DBInstances);
             }
         } 
     }

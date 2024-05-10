@@ -276,13 +276,13 @@
     <property>Amazon.Pipes.Model.CloudwatchLogsLogDestination.LogGroupArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>^(^arn:aws([a-z]|\-)*:logs:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):log-group:.+)$</pattern>
+    <pattern>^(^arn:aws([a-z]|\-)*:logs:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):log-group:[\.\-_/#A-Za-z0-9]{1,512}(:\*)?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.CloudwatchLogsLogDestinationParameters.LogGroupArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>^(^arn:aws([a-z]|\-)*:logs:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):log-group:.+)$</pattern>
+    <pattern>^(^arn:aws([a-z]|\-)*:logs:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):log-group:[\.\-_/#A-Za-z0-9]{1,512}(:\*)?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.DeadLetterConfig.Arn</property>
@@ -316,13 +316,13 @@
     <property>Amazon.Pipes.Model.FirehoseLogDestination.DeliveryStreamArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>^(^arn:aws([a-z]|\-)*:firehose:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):deliverystream/.+)$</pattern>
+    <pattern>^(^arn:aws([a-z]|\-)*:firehose:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):deliverystream/[a-zA-Z0-9_.-]{1,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.FirehoseLogDestinationParameters.DeliveryStreamArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>^(^arn:aws([a-z]|\-)*:firehose:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):deliverystream/.+)$</pattern>
+    <pattern>^(^arn:aws([a-z]|\-)*:firehose:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):deliverystream/[a-zA-Z0-9_.-]{1,64})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.MQBrokerAccessCredentials.BasicAuth</property>

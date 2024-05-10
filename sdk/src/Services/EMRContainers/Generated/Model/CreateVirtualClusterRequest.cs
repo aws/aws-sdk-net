@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
@@ -41,6 +42,7 @@ namespace Amazon.EMRContainers.Model
         private string _clientToken;
         private ContainerProvider _containerProvider;
         private string _name;
+        private string _securityConfigurationId;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -98,6 +100,25 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityConfigurationId. 
+        /// <para>
+        /// The ID of the security configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string SecurityConfigurationId
+        {
+            get { return this._securityConfigurationId; }
+            set { this._securityConfigurationId = value; }
+        }
+
+        // Check to see if SecurityConfigurationId property is set
+        internal bool IsSetSecurityConfigurationId()
+        {
+            return this._securityConfigurationId != null;
         }
 
         /// <summary>

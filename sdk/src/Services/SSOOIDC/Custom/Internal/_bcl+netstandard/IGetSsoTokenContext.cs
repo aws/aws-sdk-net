@@ -20,6 +20,10 @@ namespace Amazon.SSOOIDC.Internal
     /// </summary>
     public interface IGetSsoTokenContext
     {
+        /// <summary>
+        /// Sleep for given milliseconds.
+        /// </summary>
+        /// <param name="ms"></param>
         void Sleep(int ms);
     }
 }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -79,9 +80,9 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>ipv6-preferred-lease-time</c> - A value (in seconds, minutes, hours, or years)
-    /// for how frequently a running instance with an IPv6 assigned to it goes through DHCPv6
-    /// lease renewal. Acceptable values are between 140 and 2147483647 seconds (approximately
+    ///  <c>ipv6-address-preferred-lease-time</c> - A value (in seconds, minutes, hours, or
+    /// years) for how frequently a running instance with an IPv6 assigned to it goes through
+    /// DHCPv6 lease renewal. Acceptable values are between 140 and 2147483647 seconds (approximately
     /// 68 years). If no value is entered, the default lease time is 140 seconds. If you use
     /// long-term addressing for EC2 instances, you can increase the lease time and avoid
     /// frequent lease renewal requests. Lease renewal typically occurs when half of the lease

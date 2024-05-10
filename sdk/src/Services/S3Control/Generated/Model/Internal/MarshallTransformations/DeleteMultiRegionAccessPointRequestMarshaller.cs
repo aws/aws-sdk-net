@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,18 +67,17 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("DeleteMultiRegionAccessPointRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
+                xmlWriter.WriteStartElement("DeleteMultiRegionAccessPointRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if(publicRequest.IsSetClientToken())
-                    xmlWriter.WriteElementString("ClientToken", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ClientToken));
+                    xmlWriter.WriteElementString("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 else                
-                    xmlWriter.WriteElementString("ClientToken", "http://awss3control.amazonaws.com/doc/2018-08-20/", Guid.NewGuid().ToString());                
+                    xmlWriter.WriteElementString("ClientToken", Guid.NewGuid().ToString());                
 
-                
-                if (publicRequest.Details != null) 
+                if (publicRequest.Details != null)
                 {
-                    xmlWriter.WriteStartElement("Details", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                    xmlWriter.WriteStartElement("Details");
                     if(publicRequest.Details.IsSetName())
-                        xmlWriter.WriteElementString("Name", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Details.Name));                 
+                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Details.Name));
 
                     xmlWriter.WriteEndElement();
                 }

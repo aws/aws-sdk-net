@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,26 +67,23 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateStorageLensGroupRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
-                
-                if (publicRequest.StorageLensGroup != null) 
+                xmlWriter.WriteStartElement("CreateStorageLensGroupRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                if (publicRequest.StorageLensGroup != null)
                 {
-                    xmlWriter.WriteStartElement("StorageLensGroup", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
-                
-                    if (publicRequest.StorageLensGroup.Filter != null) 
+                    xmlWriter.WriteStartElement("StorageLensGroup");
+                    if (publicRequest.StorageLensGroup.Filter != null)
                     {
-                        xmlWriter.WriteStartElement("Filter", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
-                
-                        if (publicRequest.StorageLensGroup.Filter.And != null) 
+                        xmlWriter.WriteStartElement("Filter");
+                        if (publicRequest.StorageLensGroup.Filter.And != null)
                         {
-                            xmlWriter.WriteStartElement("And", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            xmlWriter.WriteStartElement("And");
                             var publicRequestStorageLensGroupFilterAndMatchAnyPrefix = publicRequest.StorageLensGroup.Filter.And.MatchAnyPrefix;
                             if (publicRequestStorageLensGroupFilterAndMatchAnyPrefix != null && (publicRequestStorageLensGroupFilterAndMatchAnyPrefix.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                            {                        
-                                xmlWriter.WriteStartElement("MatchAnyPrefix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                            {
+                                xmlWriter.WriteStartElement("MatchAnyPrefix");
                                 foreach (var publicRequestStorageLensGroupFilterAndMatchAnyPrefixValue in publicRequestStorageLensGroupFilterAndMatchAnyPrefix) 
                                 {
-                                    xmlWriter.WriteStartElement("Prefix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                    xmlWriter.WriteStartElement("Prefix");
                                     xmlWriter.WriteValue(publicRequestStorageLensGroupFilterAndMatchAnyPrefixValue);
                                     xmlWriter.WriteEndElement();
                                 }            
@@ -93,11 +91,11 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             }
                             var publicRequestStorageLensGroupFilterAndMatchAnySuffix = publicRequest.StorageLensGroup.Filter.And.MatchAnySuffix;
                             if (publicRequestStorageLensGroupFilterAndMatchAnySuffix != null && (publicRequestStorageLensGroupFilterAndMatchAnySuffix.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                            {                        
-                                xmlWriter.WriteStartElement("MatchAnySuffix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                            {
+                                xmlWriter.WriteStartElement("MatchAnySuffix");
                                 foreach (var publicRequestStorageLensGroupFilterAndMatchAnySuffixValue in publicRequestStorageLensGroupFilterAndMatchAnySuffix) 
                                 {
-                                    xmlWriter.WriteStartElement("Suffix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                    xmlWriter.WriteStartElement("Suffix");
                                     xmlWriter.WriteValue(publicRequestStorageLensGroupFilterAndMatchAnySuffixValue);
                                     xmlWriter.WriteEndElement();
                                 }            
@@ -105,46 +103,43 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             }
                             var publicRequestStorageLensGroupFilterAndMatchAnyTag = publicRequest.StorageLensGroup.Filter.And.MatchAnyTag;
                             if (publicRequestStorageLensGroupFilterAndMatchAnyTag != null && (publicRequestStorageLensGroupFilterAndMatchAnyTag.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                            {                        
-                                xmlWriter.WriteStartElement("MatchAnyTag", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                            {
+                                xmlWriter.WriteStartElement("MatchAnyTag");
                                 foreach (var publicRequestStorageLensGroupFilterAndMatchAnyTagValue in publicRequestStorageLensGroupFilterAndMatchAnyTag) 
                                 {
-                
-                                if (publicRequestStorageLensGroupFilterAndMatchAnyTagValue != null) 
+                                if (publicRequestStorageLensGroupFilterAndMatchAnyTagValue != null)
                                 {
-                                    xmlWriter.WriteStartElement("Tag", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                    xmlWriter.WriteStartElement("Tag");
                                     if(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.IsSetKey())
-                                        xmlWriter.WriteElementString("Key", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.Key));                 
+                                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.Key));
 
                                     if(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.IsSetValue())
-                                        xmlWriter.WriteElementString("Value", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.Value));                 
+                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.Value));
 
                                     xmlWriter.WriteEndElement();
                                 }
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
-                
-                            if (publicRequest.StorageLensGroup.Filter.And.MatchObjectAge != null) 
+                            if (publicRequest.StorageLensGroup.Filter.And.MatchObjectAge != null)
                             {
-                                xmlWriter.WriteStartElement("MatchObjectAge", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                xmlWriter.WriteStartElement("MatchObjectAge");
                                 if(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.IsSetDaysGreaterThan())
-                                    xmlWriter.WriteElementString("DaysGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.DaysGreaterThan.Value));                 
+                                    xmlWriter.WriteElementString("DaysGreaterThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.DaysGreaterThan.Value));
 
                                 if(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.IsSetDaysLessThan())
-                                    xmlWriter.WriteElementString("DaysLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.DaysLessThan.Value));                 
+                                    xmlWriter.WriteElementString("DaysLessThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.DaysLessThan.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
-                
-                            if (publicRequest.StorageLensGroup.Filter.And.MatchObjectSize != null) 
+                            if (publicRequest.StorageLensGroup.Filter.And.MatchObjectSize != null)
                             {
-                                xmlWriter.WriteStartElement("MatchObjectSize", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                xmlWriter.WriteStartElement("MatchObjectSize");
                                 if(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.IsSetBytesGreaterThan())
-                                    xmlWriter.WriteElementString("BytesGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.BytesGreaterThan.Value));                 
+                                    xmlWriter.WriteElementString("BytesGreaterThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.BytesGreaterThan.Value));
 
                                 if(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.IsSetBytesLessThan())
-                                    xmlWriter.WriteElementString("BytesLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.BytesLessThan.Value));                 
+                                    xmlWriter.WriteElementString("BytesLessThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.BytesLessThan.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -152,11 +147,11 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         }
                         var publicRequestStorageLensGroupFilterMatchAnyPrefix = publicRequest.StorageLensGroup.Filter.MatchAnyPrefix;
                         if (publicRequestStorageLensGroupFilterMatchAnyPrefix != null && (publicRequestStorageLensGroupFilterMatchAnyPrefix.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                        {                        
-                            xmlWriter.WriteStartElement("MatchAnyPrefix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                        {
+                            xmlWriter.WriteStartElement("MatchAnyPrefix");
                             foreach (var publicRequestStorageLensGroupFilterMatchAnyPrefixValue in publicRequestStorageLensGroupFilterMatchAnyPrefix) 
                             {
-                                xmlWriter.WriteStartElement("Prefix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                xmlWriter.WriteStartElement("Prefix");
                                 xmlWriter.WriteValue(publicRequestStorageLensGroupFilterMatchAnyPrefixValue);
                                 xmlWriter.WriteEndElement();
                             }            
@@ -164,11 +159,11 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         }
                         var publicRequestStorageLensGroupFilterMatchAnySuffix = publicRequest.StorageLensGroup.Filter.MatchAnySuffix;
                         if (publicRequestStorageLensGroupFilterMatchAnySuffix != null && (publicRequestStorageLensGroupFilterMatchAnySuffix.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                        {                        
-                            xmlWriter.WriteStartElement("MatchAnySuffix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                        {
+                            xmlWriter.WriteStartElement("MatchAnySuffix");
                             foreach (var publicRequestStorageLensGroupFilterMatchAnySuffixValue in publicRequestStorageLensGroupFilterMatchAnySuffix) 
                             {
-                                xmlWriter.WriteStartElement("Suffix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                xmlWriter.WriteStartElement("Suffix");
                                 xmlWriter.WriteValue(publicRequestStorageLensGroupFilterMatchAnySuffixValue);
                                 xmlWriter.WriteEndElement();
                             }            
@@ -176,60 +171,56 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         }
                         var publicRequestStorageLensGroupFilterMatchAnyTag = publicRequest.StorageLensGroup.Filter.MatchAnyTag;
                         if (publicRequestStorageLensGroupFilterMatchAnyTag != null && (publicRequestStorageLensGroupFilterMatchAnyTag.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                        {                        
-                            xmlWriter.WriteStartElement("MatchAnyTag", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                        {
+                            xmlWriter.WriteStartElement("MatchAnyTag");
                             foreach (var publicRequestStorageLensGroupFilterMatchAnyTagValue in publicRequestStorageLensGroupFilterMatchAnyTag) 
                             {
-                
-                            if (publicRequestStorageLensGroupFilterMatchAnyTagValue != null) 
+                            if (publicRequestStorageLensGroupFilterMatchAnyTagValue != null)
                             {
-                                xmlWriter.WriteStartElement("Tag", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                xmlWriter.WriteStartElement("Tag");
                                 if(publicRequestStorageLensGroupFilterMatchAnyTagValue.IsSetKey())
-                                    xmlWriter.WriteElementString("Key", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestStorageLensGroupFilterMatchAnyTagValue.Key));                 
+                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterMatchAnyTagValue.Key));
 
                                 if(publicRequestStorageLensGroupFilterMatchAnyTagValue.IsSetValue())
-                                    xmlWriter.WriteElementString("Value", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestStorageLensGroupFilterMatchAnyTagValue.Value));                 
+                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterMatchAnyTagValue.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
                             }            
                             xmlWriter.WriteEndElement();            
                         }
-                
-                        if (publicRequest.StorageLensGroup.Filter.MatchObjectAge != null) 
+                        if (publicRequest.StorageLensGroup.Filter.MatchObjectAge != null)
                         {
-                            xmlWriter.WriteStartElement("MatchObjectAge", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            xmlWriter.WriteStartElement("MatchObjectAge");
                             if(publicRequest.StorageLensGroup.Filter.MatchObjectAge.IsSetDaysGreaterThan())
-                                xmlWriter.WriteElementString("DaysGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.MatchObjectAge.DaysGreaterThan.Value));                 
+                                xmlWriter.WriteElementString("DaysGreaterThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.MatchObjectAge.DaysGreaterThan.Value));
 
                             if(publicRequest.StorageLensGroup.Filter.MatchObjectAge.IsSetDaysLessThan())
-                                xmlWriter.WriteElementString("DaysLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.MatchObjectAge.DaysLessThan.Value));                 
+                                xmlWriter.WriteElementString("DaysLessThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.MatchObjectAge.DaysLessThan.Value));
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.StorageLensGroup.Filter.MatchObjectSize != null) 
+                        if (publicRequest.StorageLensGroup.Filter.MatchObjectSize != null)
                         {
-                            xmlWriter.WriteStartElement("MatchObjectSize", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            xmlWriter.WriteStartElement("MatchObjectSize");
                             if(publicRequest.StorageLensGroup.Filter.MatchObjectSize.IsSetBytesGreaterThan())
-                                xmlWriter.WriteElementString("BytesGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.MatchObjectSize.BytesGreaterThan.Value));                 
+                                xmlWriter.WriteElementString("BytesGreaterThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.MatchObjectSize.BytesGreaterThan.Value));
 
                             if(publicRequest.StorageLensGroup.Filter.MatchObjectSize.IsSetBytesLessThan())
-                                xmlWriter.WriteElementString("BytesLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.MatchObjectSize.BytesLessThan.Value));                 
+                                xmlWriter.WriteElementString("BytesLessThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.MatchObjectSize.BytesLessThan.Value));
 
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.StorageLensGroup.Filter.Or != null) 
+                        if (publicRequest.StorageLensGroup.Filter.Or != null)
                         {
-                            xmlWriter.WriteStartElement("Or", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            xmlWriter.WriteStartElement("Or");
                             var publicRequestStorageLensGroupFilterOrMatchAnyPrefix = publicRequest.StorageLensGroup.Filter.Or.MatchAnyPrefix;
                             if (publicRequestStorageLensGroupFilterOrMatchAnyPrefix != null && (publicRequestStorageLensGroupFilterOrMatchAnyPrefix.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                            {                        
-                                xmlWriter.WriteStartElement("MatchAnyPrefix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                            {
+                                xmlWriter.WriteStartElement("MatchAnyPrefix");
                                 foreach (var publicRequestStorageLensGroupFilterOrMatchAnyPrefixValue in publicRequestStorageLensGroupFilterOrMatchAnyPrefix) 
                                 {
-                                    xmlWriter.WriteStartElement("Prefix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                    xmlWriter.WriteStartElement("Prefix");
                                     xmlWriter.WriteValue(publicRequestStorageLensGroupFilterOrMatchAnyPrefixValue);
                                     xmlWriter.WriteEndElement();
                                 }            
@@ -237,11 +228,11 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             }
                             var publicRequestStorageLensGroupFilterOrMatchAnySuffix = publicRequest.StorageLensGroup.Filter.Or.MatchAnySuffix;
                             if (publicRequestStorageLensGroupFilterOrMatchAnySuffix != null && (publicRequestStorageLensGroupFilterOrMatchAnySuffix.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                            {                        
-                                xmlWriter.WriteStartElement("MatchAnySuffix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                            {
+                                xmlWriter.WriteStartElement("MatchAnySuffix");
                                 foreach (var publicRequestStorageLensGroupFilterOrMatchAnySuffixValue in publicRequestStorageLensGroupFilterOrMatchAnySuffix) 
                                 {
-                                    xmlWriter.WriteStartElement("Suffix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                    xmlWriter.WriteStartElement("Suffix");
                                     xmlWriter.WriteValue(publicRequestStorageLensGroupFilterOrMatchAnySuffixValue);
                                     xmlWriter.WriteEndElement();
                                 }            
@@ -249,46 +240,43 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             }
                             var publicRequestStorageLensGroupFilterOrMatchAnyTag = publicRequest.StorageLensGroup.Filter.Or.MatchAnyTag;
                             if (publicRequestStorageLensGroupFilterOrMatchAnyTag != null && (publicRequestStorageLensGroupFilterOrMatchAnyTag.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                            {                        
-                                xmlWriter.WriteStartElement("MatchAnyTag", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                            {
+                                xmlWriter.WriteStartElement("MatchAnyTag");
                                 foreach (var publicRequestStorageLensGroupFilterOrMatchAnyTagValue in publicRequestStorageLensGroupFilterOrMatchAnyTag) 
                                 {
-                
-                                if (publicRequestStorageLensGroupFilterOrMatchAnyTagValue != null) 
+                                if (publicRequestStorageLensGroupFilterOrMatchAnyTagValue != null)
                                 {
-                                    xmlWriter.WriteStartElement("Tag", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                    xmlWriter.WriteStartElement("Tag");
                                     if(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.IsSetKey())
-                                        xmlWriter.WriteElementString("Key", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.Key));                 
+                                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.Key));
 
                                     if(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.IsSetValue())
-                                        xmlWriter.WriteElementString("Value", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.Value));                 
+                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.Value));
 
                                     xmlWriter.WriteEndElement();
                                 }
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
-                
-                            if (publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge != null) 
+                            if (publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge != null)
                             {
-                                xmlWriter.WriteStartElement("MatchObjectAge", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                xmlWriter.WriteStartElement("MatchObjectAge");
                                 if(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.IsSetDaysGreaterThan())
-                                    xmlWriter.WriteElementString("DaysGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.DaysGreaterThan.Value));                 
+                                    xmlWriter.WriteElementString("DaysGreaterThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.DaysGreaterThan.Value));
 
                                 if(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.IsSetDaysLessThan())
-                                    xmlWriter.WriteElementString("DaysLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.DaysLessThan.Value));                 
+                                    xmlWriter.WriteElementString("DaysLessThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.DaysLessThan.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
-                
-                            if (publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize != null) 
+                            if (publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize != null)
                             {
-                                xmlWriter.WriteStartElement("MatchObjectSize", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                xmlWriter.WriteStartElement("MatchObjectSize");
                                 if(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.IsSetBytesGreaterThan())
-                                    xmlWriter.WriteElementString("BytesGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.BytesGreaterThan.Value));                 
+                                    xmlWriter.WriteElementString("BytesGreaterThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.BytesGreaterThan.Value));
 
                                 if(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.IsSetBytesLessThan())
-                                    xmlWriter.WriteElementString("BytesLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.BytesLessThan.Value));                 
+                                    xmlWriter.WriteElementString("BytesLessThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.BytesLessThan.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -297,28 +285,27 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.StorageLensGroup.IsSetName())
-                        xmlWriter.WriteElementString("Name", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.StorageLensGroup.Name));                 
+                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.StorageLensGroup.Name));
 
                     if(publicRequest.StorageLensGroup.IsSetStorageLensGroupArn())
-                        xmlWriter.WriteElementString("StorageLensGroupArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.StorageLensGroup.StorageLensGroupArn));                 
+                        xmlWriter.WriteElementString("StorageLensGroupArn", StringUtils.FromString(publicRequest.StorageLensGroup.StorageLensGroupArn));
 
                     xmlWriter.WriteEndElement();
                 }
                 var publicRequestTags = publicRequest.Tags;
                 if (publicRequestTags != null && (publicRequestTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                {                        
-                    xmlWriter.WriteStartElement("Tags", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                {
+                    xmlWriter.WriteStartElement("Tags");
                     foreach (var publicRequestTagsValue in publicRequestTags) 
                     {
-                
-                    if (publicRequestTagsValue != null) 
+                    if (publicRequestTagsValue != null)
                     {
-                        xmlWriter.WriteStartElement("Tag", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                        xmlWriter.WriteStartElement("Tag");
                         if(publicRequestTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestTagsValue.Key));                 
+                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));
 
                         if(publicRequestTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestTagsValue.Value));                 
+                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));
 
                         xmlWriter.WriteEndElement();
                     }

@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateAgentKnowledgeBase operation.
-    /// Disassociate an existing Knowledge Base from an Amazon Bedrock Agent
+    /// Disassociates a knowledge base from an agent.
     /// </summary>
     public partial class DisassociateAgentKnowledgeBaseRequest : AmazonBedrockAgentRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent from which to disassociate the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +61,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// Draft Version of the Agent.
+        /// The version of the agent from which to disassociate the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=5)]
@@ -79,7 +80,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// Id generated at the server side when a Knowledge Base is associated to an Agent
+        /// The unique identifier of the knowledge base to disassociate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAgentAlias operation.
-    /// Deletes an Alias for a Amazon Bedrock Agent
+    /// Deletes an alias of an agent.
     /// </summary>
     public partial class DeleteAgentAliasRequest : AmazonBedrockAgentRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentAliasId. 
         /// <para>
-        /// Id generated at the server side when an Agent Alias is created
+        /// The unique identifier of the alias to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=10)]
@@ -59,7 +60,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent that the alias belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

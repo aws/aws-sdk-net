@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -35,10 +36,13 @@ namespace Amazon.Glue.Model
     {
         private List<string> _authorizedColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<ColumnRowFilter> _cellFilters = AWSConfigs.InitializeCollections ? new List<ColumnRowFilter>() : null;
+        private bool? _isMultiDialectView;
+        private bool? _isProtected;
         private bool? _isRegisteredWithLakeFormation;
         private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _queryAuthorizationId;
         private string _resourceArn;
+        private string _rowFilter;
         private Table _table;
 
         /// <summary>
@@ -75,6 +79,46 @@ namespace Amazon.Glue.Model
         internal bool IsSetCellFilters()
         {
             return this._cellFilters != null && (this._cellFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsMultiDialectView. 
+        /// <para>
+        /// Specifies whether the view supports the SQL dialects of one or more different query
+        /// engines and can therefore be read by those engines.
+        /// </para>
+        /// </summary>
+        public bool? IsMultiDialectView
+        {
+            get { return this._isMultiDialectView; }
+            set { this._isMultiDialectView = value; }
+        }
+
+        // Check to see if IsMultiDialectView property is set
+        internal bool IsSetIsMultiDialectView()
+        {
+            return this._isMultiDialectView.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsProtected. 
+        /// <para>
+        /// A flag that instructs the engine not to push user-provided operations into the logical
+        /// plan of the view during query planning. However, if set this flag does not guarantee
+        /// that the engine will comply. Refer to the engine's documentation to understand the
+        /// guarantees provided, if any.
+        /// </para>
+        /// </summary>
+        public bool? IsProtected
+        {
+            get { return this._isProtected; }
+            set { this._isProtected = value; }
+        }
+
+        // Check to see if IsProtected property is set
+        internal bool IsSetIsProtected()
+        {
+            return this._isProtected.HasValue; 
         }
 
         /// <summary>
@@ -151,6 +195,27 @@ namespace Amazon.Glue.Model
         internal bool IsSetResourceArn()
         {
             return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RowFilter. 
+        /// <para>
+        /// The filter that applies to the table. For example when applying the filter in SQL,
+        /// it would go in the <c>WHERE</c> clause and can be evaluated by using an <c>AND</c>
+        /// operator with any other predicates applied by the user querying the table.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string RowFilter
+        {
+            get { return this._rowFilter; }
+            set { this._rowFilter = value; }
+        }
+
+        // Check to see if RowFilter property is set
+        internal bool IsSetRowFilter()
+        {
+            return this._rowFilter != null;
         }
 
         /// <summary>

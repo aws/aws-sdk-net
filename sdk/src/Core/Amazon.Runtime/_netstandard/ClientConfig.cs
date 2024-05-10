@@ -25,7 +25,6 @@ namespace Amazon.Runtime
     /// This class is the base class of all the configurations settings to connect
     /// to a service.
     /// </summary>
-    [CLSCompliant(false)]
     public abstract partial class ClientConfig
     {
         private IWebProxy proxy = null;
@@ -110,7 +109,7 @@ namespace Amazon.Runtime
             get;
             set;
         }
-        
+
         /// <summary>
         /// HttpClientFactory used to create new HttpClients.
         /// If null, an HttpClient will be created by the SDK.
@@ -118,7 +117,7 @@ namespace Amazon.Runtime
         /// will have no effect unless they're used explicitly by the HttpClientFactory implementation.
         ///
         /// See https://docs.microsoft.com/en-us/xamarin/cross-platform/macios/http-stack?context=xamarin/ios and
-        /// https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/http-stack?context=xamarin%2Fcross-platform&tabs=macos#ssltls-implementation-build-option
+        /// https://learn.microsoft.com/en-us/xamarin/android/app-fundamentals/http-stack?context=xamarin%2Fcross-platform
         /// for guidance on creating HttpClients for your platform.
         /// </summary>
         public HttpClientFactory HttpClientFactory { get; set; } = AWSConfigs.HttpClientFactory;
@@ -186,7 +185,6 @@ namespace Amazon.Runtime
                 return clientConfig.ProxyCredentials == null && clientConfig.GetWebProxy() == null;
             else
                 return clientConfig.HttpClientFactory.GetConfigUniqueString(clientConfig) != null;
-            return clientConfig.ProxyCredentials == null;
         }
     }
 }

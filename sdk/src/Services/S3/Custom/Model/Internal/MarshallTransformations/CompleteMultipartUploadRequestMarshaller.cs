@@ -154,7 +154,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static CompleteMultipartUploadRequestMarshaller _instance;
 
-	    public static CompleteMultipartUploadRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static CompleteMultipartUploadRequestMarshaller Instance
 	    {
 	        get
 	        {

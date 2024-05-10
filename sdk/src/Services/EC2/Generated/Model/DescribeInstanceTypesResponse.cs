@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -39,8 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceTypes. 
         /// <para>
-        /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// types</a> in the <i>Amazon EC2 User Guide</i>.
+        /// The instance type.
         /// </para>
         /// </summary>
         public List<InstanceTypeInfo> InstanceTypes

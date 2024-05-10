@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAgentAlias operation.
-    /// Updates an existing Alias for an Amazon Bedrock Agent
+    /// Updates configurations for an alias of an agent.
     /// </summary>
     public partial class UpdateAgentAliasRequest : AmazonBedrockAgentRequest
     {
@@ -43,7 +44,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentAliasId. 
         /// <para>
-        /// Id generated at the server side when an Agent Alias is created
+        /// The unique identifier of the alias.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=10)]
@@ -60,7 +61,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentAliasName.
+        /// Gets and sets the property AgentAliasName. 
+        /// <para>
+        /// Specifies a new name for the alias.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentAliasName
@@ -78,7 +82,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -95,7 +99,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Specifies a new description for the alias.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -111,7 +118,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoutingConfiguration.
+        /// Gets and sets the property RoutingConfiguration. 
+        /// <para>
+        /// Contains details about the routing configuration of the alias.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<AgentAliasRoutingConfigurationListItem> RoutingConfiguration

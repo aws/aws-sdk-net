@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -182,13 +183,7 @@ namespace Amazon.FMS.Model
         /// <para>
         /// The type of resource protected by or in scope of the policy. This is in the format
         /// shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-        /// Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples include
-        /// <c>AWS::ElasticLoadBalancingV2::LoadBalancer</c> and <c>AWS::CloudFront::Distribution</c>.
-        /// For a security group common policy, valid values are <c>AWS::EC2::NetworkInterface</c>
-        /// and <c>AWS::EC2::Instance</c>. For a security group content audit policy, valid values
-        /// are <c>AWS::EC2::SecurityGroup</c>, <c>AWS::EC2::NetworkInterface</c>, and <c>AWS::EC2::Instance</c>.
-        /// For a security group usage audit policy, the value is <c>AWS::EC2::SecurityGroup</c>.
-        /// For an Network Firewall policy or DNS Firewall policy, the value is <c>AWS::EC2::VPC</c>.
+        /// Web Services Resource Types Reference</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

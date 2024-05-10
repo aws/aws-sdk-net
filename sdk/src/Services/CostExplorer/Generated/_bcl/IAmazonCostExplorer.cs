@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.CostExplorer.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.CostExplorer
 {
     /// <summary>
@@ -640,9 +641,13 @@ namespace Amazon.CostExplorer
         /// dimensions, such as <c>SERVICE</c> or <c>AZ</c>, in a specific time range. For a complete
         /// list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
         /// operation. Management account in an organization in Organizations have access to all
-        /// member accounts. This API is currently available for the Amazon Elastic Compute Cloud
-        /// – Compute service only.
+        /// member accounts.
         /// 
+        ///  
+        /// <para>
+        /// Hourly granularity is only available for EC2-Instances (Elastic Compute Cloud) resource-level
+        /// data. All other resource-level data is available at daily granularity.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This is an opt-in only feature. You can enable this feature from the Cost Explorer
@@ -682,9 +687,13 @@ namespace Amazon.CostExplorer
         /// dimensions, such as <c>SERVICE</c> or <c>AZ</c>, in a specific time range. For a complete
         /// list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
         /// operation. Management account in an organization in Organizations have access to all
-        /// member accounts. This API is currently available for the Amazon Elastic Compute Cloud
-        /// – Compute service only.
+        /// member accounts.
         /// 
+        ///  
+        /// <para>
+        /// Hourly granularity is only available for EC2-Instances (Elastic Compute Cloud) resource-level
+        /// data. All other resource-level data is available at daily granularity.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This is an opt-in only feature. You can enable this feature from the Cost Explorer
@@ -1686,6 +1695,46 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  ListCostAllocationTagBackfillHistory
+
+
+        /// <summary>
+        /// Retrieves a list of your historical cost allocation tag backfill requests.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCostAllocationTagBackfillHistory service method.</param>
+        /// 
+        /// <returns>The response from the ListCostAllocationTagBackfillHistory service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTagBackfillHistory">REST API Reference for ListCostAllocationTagBackfillHistory Operation</seealso>
+        ListCostAllocationTagBackfillHistoryResponse ListCostAllocationTagBackfillHistory(ListCostAllocationTagBackfillHistoryRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of your historical cost allocation tag backfill requests.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCostAllocationTagBackfillHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCostAllocationTagBackfillHistory service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTagBackfillHistory">REST API Reference for ListCostAllocationTagBackfillHistory Operation</seealso>
+        Task<ListCostAllocationTagBackfillHistoryResponse> ListCostAllocationTagBackfillHistoryAsync(ListCostAllocationTagBackfillHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListCostAllocationTags
 
 
@@ -1895,6 +1944,62 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback">REST API Reference for ProvideAnomalyFeedback Operation</seealso>
         Task<ProvideAnomalyFeedbackResponse> ProvideAnomalyFeedbackAsync(ProvideAnomalyFeedbackRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartCostAllocationTagBackfill
+
+
+        /// <summary>
+        /// Request a cost allocation tag backfill. This will backfill the activation status
+        /// (either <c>active</c> or <c>inactive</c>) for all tag keys from <c>para:BackfillFrom</c>
+        /// up to the when this request is made.
+        /// 
+        ///  
+        /// <para>
+        /// You can request a backfill once every 24 hours. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCostAllocationTagBackfill service method.</param>
+        /// 
+        /// <returns>The response from the StartCostAllocationTagBackfill service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BackfillLimitExceededException">
+        /// A request to backfill is already in progress. Once the previous request is complete,
+        /// you can create another request.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartCostAllocationTagBackfill">REST API Reference for StartCostAllocationTagBackfill Operation</seealso>
+        StartCostAllocationTagBackfillResponse StartCostAllocationTagBackfill(StartCostAllocationTagBackfillRequest request);
+
+
+
+        /// <summary>
+        /// Request a cost allocation tag backfill. This will backfill the activation status
+        /// (either <c>active</c> or <c>inactive</c>) for all tag keys from <c>para:BackfillFrom</c>
+        /// up to the when this request is made.
+        /// 
+        ///  
+        /// <para>
+        /// You can request a backfill once every 24 hours. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCostAllocationTagBackfill service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartCostAllocationTagBackfill service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BackfillLimitExceededException">
+        /// A request to backfill is already in progress. Once the previous request is complete,
+        /// you can create another request.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartCostAllocationTagBackfill">REST API Reference for StartCostAllocationTagBackfill Operation</seealso>
+        Task<StartCostAllocationTagBackfillResponse> StartCostAllocationTagBackfillAsync(StartCostAllocationTagBackfillRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

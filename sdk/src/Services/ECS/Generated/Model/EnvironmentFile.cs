@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -40,8 +41,14 @@ namespace Amazon.ECS.Model
     /// in a container definition, they take precedence over the variables contained within
     /// an environment file. If multiple environment files are specified that contain the
     /// same variable, they're processed from the top down. We recommend that you use unique
-    /// variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
-    /// environment variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/use-environment-file.html">Use
+    /// a file to pass environment variables to a container</a> in the <i>Amazon Elastic Container
+    /// Service Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Environment variable files are objects in Amazon S3 and all Amazon S3 security considerations
+    /// apply. 
     /// </para>
     ///  
     /// <para>
@@ -81,7 +88,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The file type to use. The only supported value is <c>s3</c>.
+        /// The file type to use. Environment files are objects in Amazon S3. The only supported
+        /// value is <c>s3</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

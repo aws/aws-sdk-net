@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.DataSync.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.DataSync
 {
     /// <summary>
@@ -899,13 +900,12 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Configures a transfer task, which defines where and how DataSync moves your data.
+        /// Configures a <i>task</i>, which defines where and how DataSync transfers your data.
         /// 
         ///  
         /// <para>
-        /// A task includes a source location, destination location, and the options for how and
-        /// when you want to transfer your data (such as bandwidth limits, scheduling, among other
-        /// options).
+        /// A task includes a source location, destination location, and transfer options (such
+        /// as bandwidth limits, scheduling, and more).
         /// </para>
         ///  <important> 
         /// <para>
@@ -930,13 +930,12 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Configures a transfer task, which defines where and how DataSync moves your data.
+        /// Configures a <i>task</i>, which defines where and how DataSync transfers your data.
         /// 
         ///  
         /// <para>
-        /// A task includes a source location, destination location, and the options for how and
-        /// when you want to transfer your data (such as bandwidth limits, scheduling, among other
-        /// options).
+        /// A task includes a source location, destination location, and transfer options (such
+        /// as bandwidth limits, scheduling, and more).
         /// </para>
         ///  <important> 
         /// <para>
@@ -1801,7 +1800,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Provides information about an DataSync transfer task.
+        /// Provides information about a <i>task</i>, which defines where and how DataSync transfers
+        /// your data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTask service method.</param>
         /// 
@@ -1818,7 +1818,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Provides information about an DataSync transfer task.
+        /// Provides information about a <i>task</i>, which defines where and how DataSync transfers
+        /// your data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTask service method.</param>
         /// <param name="cancellationToken">
@@ -2921,7 +2922,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Updates the configuration of an DataSync transfer task.
+        /// Updates the configuration of a <i>task</i>, which defines where and how DataSync transfers
+        /// your data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTask service method.</param>
         /// 
@@ -2938,7 +2940,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Updates the configuration of an DataSync transfer task.
+        /// Updates the configuration of a <i>task</i>, which defines where and how DataSync transfers
+        /// your data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTask service method.</param>
         /// <param name="cancellationToken">

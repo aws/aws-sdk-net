@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StepAdjustment requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMetricIntervalLowerBound())
             {
                 context.Writer.WritePropertyName("MetricIntervalLowerBound");
-                context.Writer.Write(requestObject.MetricIntervalLowerBound.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalLowerBound.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalLowerBound.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MetricIntervalLowerBound.Value);
+                }
             }
 
             if(requestObject.IsSetMetricIntervalUpperBound())
             {
                 context.Writer.WritePropertyName("MetricIntervalUpperBound");
-                context.Writer.Write(requestObject.MetricIntervalUpperBound.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalUpperBound.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalUpperBound.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MetricIntervalUpperBound.Value);
+                }
             }
 
             if(requestObject.IsSetScalingAdjustment())

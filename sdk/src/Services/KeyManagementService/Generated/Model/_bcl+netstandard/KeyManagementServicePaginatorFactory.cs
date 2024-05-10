@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
@@ -65,6 +66,14 @@ namespace Amazon.KeyManagementService.Model
         public IListKeyPoliciesPaginator ListKeyPolicies(ListKeyPoliciesRequest request) 
         {
             return new ListKeyPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListKeyRotations operation
+        ///</summary>
+        public IListKeyRotationsPaginator ListKeyRotations(ListKeyRotationsRequest request) 
+        {
+            return new ListKeyRotationsPaginator(this.client, request);
         }
 
         /// <summary>

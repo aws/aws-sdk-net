@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -106,7 +107,7 @@ namespace Amazon.EntityResolution.Model
         /// and <c>KMSArn</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=1)]
         public List<IdMappingWorkflowOutputSource> OutputSourceConfig
         {
             get { return this._outputSourceConfig; }
@@ -123,10 +124,10 @@ namespace Amazon.EntityResolution.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role
-        /// to access resources on your behalf.
+        /// to access Amazon Web Services resources on your behalf.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=32, Max=512)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -143,7 +144,7 @@ namespace Amazon.EntityResolution.Model
         /// Gets and sets the property WorkflowArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the workflow role. Entity Resolution assumes this
-        /// role to access resources on your behalf.
+        /// role to access Amazon Web Services resources on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

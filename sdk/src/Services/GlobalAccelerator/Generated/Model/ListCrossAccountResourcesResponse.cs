@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property CrossAccountResources. 
         /// <para>
-        /// The endpoints attached to an accelerator in a cross-account attachment.
+        /// The cross-account resources used with an accelerator.
         /// </para>
         /// </summary>
         public List<CrossAccountResource> CrossAccountResources

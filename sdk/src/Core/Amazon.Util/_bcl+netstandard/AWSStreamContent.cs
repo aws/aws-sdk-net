@@ -77,6 +77,7 @@ namespace Amazon.Util
         /// Wrapper to allow Services to add StreamContent Headers
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="value"></param>
         /// <returns></returns>
         public void AddHttpContentHeader(string name, string value)
         {

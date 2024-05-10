@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpacesThinClient.Model
 {
     /// <summary>
@@ -47,7 +48,6 @@ namespace Amazon.WorkSpacesThinClient.Model
         private string _serialNumber;
         private SoftwareSetUpdateSchedule _softwareSetUpdateSchedule;
         private DeviceStatus _status;
-        private EmbeddedTag _tags;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -302,25 +302,6 @@ namespace Amazon.WorkSpacesThinClient.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tag keys and optional values for the resource.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public EmbeddedTag Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null;
         }
 
         /// <summary>

@@ -32,9 +32,9 @@ namespace Amazon.DNXCore.IntegrationTests
             }).Wait();
             try
             {
-                Assert.NotNull(await Client.ListJobsAsync(new ListJobsRequest { VaultName = vaultName }).ConfigureAwait(false));
-                Assert.NotNull(await Client.ListMultipartUploadsAsync(new Glacier.Model.ListMultipartUploadsRequest { VaultName = vaultName }).ConfigureAwait(false));
-                Assert.NotNull(await Client.ListVaultsAsync(new ListVaultsRequest()).ConfigureAwait(false));
+                Assert.NotNull(await Client.ListJobsAsync(new ListJobsRequest { VaultName = vaultName }));
+                Assert.NotNull(await Client.ListMultipartUploadsAsync(new Glacier.Model.ListMultipartUploadsRequest { VaultName = vaultName }));
+                Assert.NotNull(await Client.ListVaultsAsync(new ListVaultsRequest()));
             }
             finally
             {
@@ -49,7 +49,7 @@ namespace Amazon.DNXCore.IntegrationTests
             await Client.CreateVaultAsync(new CreateVaultRequest()
             {
                 VaultName = testingVaultName
-            }).ConfigureAwait(false);
+            });
             const string accountID = "-";
             string archiveID = null;
             
@@ -63,7 +63,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 ArchiveDescription = "my first archive"
             };
 
-            var response = await Client.UploadArchiveAsync(uploadArchiveRequest).ConfigureAwait(false);
+            var response = await Client.UploadArchiveAsync(uploadArchiveRequest);
             archiveID = response.ArchiveId;
 
             await Client.DeleteArchiveAsync(new DeleteArchiveRequest { AccountId = accountID, VaultName = testingVaultName, ArchiveId = archiveID });

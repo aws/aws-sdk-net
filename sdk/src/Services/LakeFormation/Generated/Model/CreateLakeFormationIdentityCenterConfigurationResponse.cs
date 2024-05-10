@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
@@ -38,7 +39,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property ApplicationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the integrated application.
+        /// The Amazon Resource Name (ARN) of the Lake Formation application integrated with IAM
+        /// Identity Center.
         /// </para>
         /// </summary>
         public string ApplicationArn

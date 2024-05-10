@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -130,7 +131,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Specifies if the number could be used for text messages, voice, or both.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1, Max=3)]
         public List<string> NumberCapabilities
         {
             get { return this._numberCapabilities; }

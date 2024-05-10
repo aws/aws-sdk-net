@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the networkmanager-2019-07-05.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>

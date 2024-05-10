@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.SupplyChain
 {
     /// <summary>
@@ -379,6 +380,61 @@ namespace Amazon.SupplyChain
             options.ResponseUnmarshaller = GetBillOfMaterialsImportJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBillOfMaterialsImportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SendDataIntegrationEvent
+
+        internal virtual SendDataIntegrationEventResponse SendDataIntegrationEvent(SendDataIntegrationEventRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendDataIntegrationEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDataIntegrationEventResponseUnmarshaller.Instance;
+
+            return Invoke<SendDataIntegrationEventResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Send transactional data events with real-time data for analysis or monitoring.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDataIntegrationEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendDataIntegrationEvent service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/SendDataIntegrationEvent">REST API Reference for SendDataIntegrationEvent Operation</seealso>
+        public virtual Task<SendDataIntegrationEventResponse> SendDataIntegrationEventAsync(SendDataIntegrationEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendDataIntegrationEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDataIntegrationEventResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendDataIntegrationEventResponse>(request, options, cancellationToken);
         }
 
         #endregion

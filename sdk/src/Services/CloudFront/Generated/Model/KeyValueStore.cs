@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The Key Value Store. Use this to separate data from function code, allowing you to
-    /// update data without having to publish a new version of a function. The Key Value Store
+    /// The key value store. Use this to separate data from function code, allowing you to
+    /// update data without having to publish a new version of a function. The key value store
     /// holds keys and their corresponding values.
     /// </summary>
     public partial class KeyValueStore
@@ -45,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Key Value Store.
+        /// The Amazon Resource Name (ARN) of the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +65,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// A comment for the Key Value Store.
+        /// A comment for the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,7 +84,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique Id for the Key Value Store.
+        /// The unique Id for the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,7 +103,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The last-modified time of the Key Value Store.
+        /// The last-modified time of the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -121,7 +122,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Key Value Store.
+        /// The name of the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -140,7 +141,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Key Value Store.
+        /// The status of the key value store.
         /// </para>
         /// </summary>
         public string Status

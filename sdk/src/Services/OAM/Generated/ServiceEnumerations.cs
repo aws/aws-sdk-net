@@ -39,6 +39,10 @@ namespace Amazon.OAM
         /// </summary>
         public static readonly ResourceType AWSCloudWatchMetric = new ResourceType("AWS::CloudWatch::Metric");
         /// <summary>
+        /// Constant AWSInternetMonitorMonitor for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSInternetMonitorMonitor = new ResourceType("AWS::InternetMonitor::Monitor");
+        /// <summary>
         /// Constant AWSLogsLogGroup for ResourceType
         /// </summary>
         public static readonly ResourceType AWSLogsLogGroup = new ResourceType("AWS::Logs::LogGroup");

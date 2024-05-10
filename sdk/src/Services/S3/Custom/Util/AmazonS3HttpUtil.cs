@@ -73,7 +73,9 @@ namespace Amazon.S3
 
         internal static HttpWebRequest GetHeadHttpRequest(IClientConfig config, string url)
         {
+#pragma warning disable SYSLIB0014 // We need to use WebRequest.Create because the SDK still targets .NET Framework 3.5
             var httpRequest = WebRequest.Create(url) as HttpWebRequest;
+#pragma warning restore SYSLIB0014
             httpRequest.Method = "HEAD";
             SetProxyIfAvailableAndConfigured(config, httpRequest);
             return httpRequest;

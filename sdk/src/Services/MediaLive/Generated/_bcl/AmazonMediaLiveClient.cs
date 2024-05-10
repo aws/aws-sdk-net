@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.MediaLive
 {
     /// <summary>
@@ -991,6 +992,322 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  CreateCloudWatchAlarmTemplate
+
+
+        /// <summary>
+        /// Creates a cloudwatch alarm template to dynamically generate cloudwatch metric alarms
+        /// on targeted resource types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudWatchAlarmTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateCloudWatchAlarmTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplate">REST API Reference for CreateCloudWatchAlarmTemplate Operation</seealso>
+        public virtual CreateCloudWatchAlarmTemplateResponse CreateCloudWatchAlarmTemplate(CreateCloudWatchAlarmTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCloudWatchAlarmTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCloudWatchAlarmTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a cloudwatch alarm template to dynamically generate cloudwatch metric alarms
+        /// on targeted resource types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudWatchAlarmTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCloudWatchAlarmTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplate">REST API Reference for CreateCloudWatchAlarmTemplate Operation</seealso>
+        public virtual Task<CreateCloudWatchAlarmTemplateResponse> CreateCloudWatchAlarmTemplateAsync(CreateCloudWatchAlarmTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCloudWatchAlarmTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateCloudWatchAlarmTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCloudWatchAlarmTemplateGroup
+
+
+        /// <summary>
+        /// Creates a cloudwatch alarm template group to group your cloudwatch alarm templates
+        /// and to attach to signal maps for dynamically creating alarms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudWatchAlarmTemplateGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateCloudWatchAlarmTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplateGroup">REST API Reference for CreateCloudWatchAlarmTemplateGroup Operation</seealso>
+        public virtual CreateCloudWatchAlarmTemplateGroupResponse CreateCloudWatchAlarmTemplateGroup(CreateCloudWatchAlarmTemplateGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCloudWatchAlarmTemplateGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a cloudwatch alarm template group to group your cloudwatch alarm templates
+        /// and to attach to signal maps for dynamically creating alarms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudWatchAlarmTemplateGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCloudWatchAlarmTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplateGroup">REST API Reference for CreateCloudWatchAlarmTemplateGroup Operation</seealso>
+        public virtual Task<CreateCloudWatchAlarmTemplateGroupResponse> CreateCloudWatchAlarmTemplateGroupAsync(CreateCloudWatchAlarmTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateCloudWatchAlarmTemplateGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateEventBridgeRuleTemplate
+
+
+        /// <summary>
+        /// Creates an eventbridge rule template to monitor events and send notifications to your
+        /// targeted resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventBridgeRuleTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateEventBridgeRuleTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplate">REST API Reference for CreateEventBridgeRuleTemplate Operation</seealso>
+        public virtual CreateEventBridgeRuleTemplateResponse CreateEventBridgeRuleTemplate(CreateEventBridgeRuleTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventBridgeRuleTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventBridgeRuleTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEventBridgeRuleTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an eventbridge rule template to monitor events and send notifications to your
+        /// targeted resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventBridgeRuleTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEventBridgeRuleTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplate">REST API Reference for CreateEventBridgeRuleTemplate Operation</seealso>
+        public virtual Task<CreateEventBridgeRuleTemplateResponse> CreateEventBridgeRuleTemplateAsync(CreateEventBridgeRuleTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventBridgeRuleTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventBridgeRuleTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateEventBridgeRuleTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateEventBridgeRuleTemplateGroup
+
+
+        /// <summary>
+        /// Creates an eventbridge rule template group to group your eventbridge rule templates
+        /// and to attach to signal maps for dynamically creating notification rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventBridgeRuleTemplateGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateEventBridgeRuleTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplateGroup">REST API Reference for CreateEventBridgeRuleTemplateGroup Operation</seealso>
+        public virtual CreateEventBridgeRuleTemplateGroupResponse CreateEventBridgeRuleTemplateGroup(CreateEventBridgeRuleTemplateGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEventBridgeRuleTemplateGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an eventbridge rule template group to group your eventbridge rule templates
+        /// and to attach to signal maps for dynamically creating notification rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventBridgeRuleTemplateGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEventBridgeRuleTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplateGroup">REST API Reference for CreateEventBridgeRuleTemplateGroup Operation</seealso>
+        public virtual Task<CreateEventBridgeRuleTemplateGroupResponse> CreateEventBridgeRuleTemplateGroupAsync(CreateEventBridgeRuleTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateEventBridgeRuleTemplateGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateInput
 
 
@@ -1400,6 +1717,85 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  CreateSignalMap
+
+
+        /// <summary>
+        /// Initiates the creation of a new signal map. Will discover a new mediaResourceMap based
+        /// on the provided discoveryEntryPointArn.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSignalMap service method.</param>
+        /// 
+        /// <returns>The response from the CreateSignalMap service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSignalMap">REST API Reference for CreateSignalMap Operation</seealso>
+        public virtual CreateSignalMapResponse CreateSignalMap(CreateSignalMapRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSignalMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSignalMapResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSignalMapResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the creation of a new signal map. Will discover a new mediaResourceMap based
+        /// on the provided discoveryEntryPointArn.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSignalMap service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSignalMap service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSignalMap">REST API Reference for CreateSignalMap Operation</seealso>
+        public virtual Task<CreateSignalMapResponse> CreateSignalMapAsync(CreateSignalMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSignalMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSignalMapResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateSignalMapResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTags
 
 
@@ -1550,6 +1946,318 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCloudWatchAlarmTemplate
+
+
+        /// <summary>
+        /// Deletes a cloudwatch alarm template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCloudWatchAlarmTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCloudWatchAlarmTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplate">REST API Reference for DeleteCloudWatchAlarmTemplate Operation</seealso>
+        public virtual DeleteCloudWatchAlarmTemplateResponse DeleteCloudWatchAlarmTemplate(DeleteCloudWatchAlarmTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCloudWatchAlarmTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCloudWatchAlarmTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a cloudwatch alarm template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCloudWatchAlarmTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCloudWatchAlarmTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplate">REST API Reference for DeleteCloudWatchAlarmTemplate Operation</seealso>
+        public virtual Task<DeleteCloudWatchAlarmTemplateResponse> DeleteCloudWatchAlarmTemplateAsync(DeleteCloudWatchAlarmTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCloudWatchAlarmTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteCloudWatchAlarmTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCloudWatchAlarmTemplateGroup
+
+
+        /// <summary>
+        /// Deletes a cloudwatch alarm template group. You must detach this group from all signal
+        /// maps and ensure its existing templates are moved to another group or deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCloudWatchAlarmTemplateGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCloudWatchAlarmTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplateGroup">REST API Reference for DeleteCloudWatchAlarmTemplateGroup Operation</seealso>
+        public virtual DeleteCloudWatchAlarmTemplateGroupResponse DeleteCloudWatchAlarmTemplateGroup(DeleteCloudWatchAlarmTemplateGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCloudWatchAlarmTemplateGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a cloudwatch alarm template group. You must detach this group from all signal
+        /// maps and ensure its existing templates are moved to another group or deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCloudWatchAlarmTemplateGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCloudWatchAlarmTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplateGroup">REST API Reference for DeleteCloudWatchAlarmTemplateGroup Operation</seealso>
+        public virtual Task<DeleteCloudWatchAlarmTemplateGroupResponse> DeleteCloudWatchAlarmTemplateGroupAsync(DeleteCloudWatchAlarmTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteCloudWatchAlarmTemplateGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEventBridgeRuleTemplate
+
+
+        /// <summary>
+        /// Deletes an eventbridge rule template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventBridgeRuleTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEventBridgeRuleTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplate">REST API Reference for DeleteEventBridgeRuleTemplate Operation</seealso>
+        public virtual DeleteEventBridgeRuleTemplateResponse DeleteEventBridgeRuleTemplate(DeleteEventBridgeRuleTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventBridgeRuleTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventBridgeRuleTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventBridgeRuleTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an eventbridge rule template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventBridgeRuleTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEventBridgeRuleTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplate">REST API Reference for DeleteEventBridgeRuleTemplate Operation</seealso>
+        public virtual Task<DeleteEventBridgeRuleTemplateResponse> DeleteEventBridgeRuleTemplateAsync(DeleteEventBridgeRuleTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventBridgeRuleTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventBridgeRuleTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteEventBridgeRuleTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEventBridgeRuleTemplateGroup
+
+
+        /// <summary>
+        /// Deletes an eventbridge rule template group. You must detach this group from all signal
+        /// maps and ensure its existing templates are moved to another group or deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventBridgeRuleTemplateGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEventBridgeRuleTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplateGroup">REST API Reference for DeleteEventBridgeRuleTemplateGroup Operation</seealso>
+        public virtual DeleteEventBridgeRuleTemplateGroupResponse DeleteEventBridgeRuleTemplateGroup(DeleteEventBridgeRuleTemplateGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventBridgeRuleTemplateGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an eventbridge rule template group. You must detach this group from all signal
+        /// maps and ensure its existing templates are moved to another group or deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventBridgeRuleTemplateGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEventBridgeRuleTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplateGroup">REST API Reference for DeleteEventBridgeRuleTemplateGroup Operation</seealso>
+        public virtual Task<DeleteEventBridgeRuleTemplateGroupResponse> DeleteEventBridgeRuleTemplateGroupAsync(DeleteEventBridgeRuleTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteEventBridgeRuleTemplateGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2072,6 +2780,83 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = DeleteScheduleResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteScheduleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSignalMap
+
+
+        /// <summary>
+        /// Deletes the specified signal map.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSignalMap service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSignalMap service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSignalMap">REST API Reference for DeleteSignalMap Operation</seealso>
+        public virtual DeleteSignalMapResponse DeleteSignalMap(DeleteSignalMapRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSignalMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSignalMapResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSignalMapResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified signal map.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSignalMap service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSignalMap service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSignalMap">REST API Reference for DeleteSignalMap Operation</seealso>
+        public virtual Task<DeleteSignalMapResponse> DeleteSignalMapAsync(DeleteSignalMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSignalMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSignalMapResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteSignalMapResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3137,6 +3922,361 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  GetCloudWatchAlarmTemplate
+
+
+        /// <summary>
+        /// Retrieves the specified cloudwatch alarm template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudWatchAlarmTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetCloudWatchAlarmTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplate">REST API Reference for GetCloudWatchAlarmTemplate Operation</seealso>
+        public virtual GetCloudWatchAlarmTemplateResponse GetCloudWatchAlarmTemplate(GetCloudWatchAlarmTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCloudWatchAlarmTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetCloudWatchAlarmTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the specified cloudwatch alarm template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudWatchAlarmTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCloudWatchAlarmTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplate">REST API Reference for GetCloudWatchAlarmTemplate Operation</seealso>
+        public virtual Task<GetCloudWatchAlarmTemplateResponse> GetCloudWatchAlarmTemplateAsync(GetCloudWatchAlarmTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCloudWatchAlarmTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCloudWatchAlarmTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCloudWatchAlarmTemplateGroup
+
+
+        /// <summary>
+        /// Retrieves the specified cloudwatch alarm template group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudWatchAlarmTemplateGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetCloudWatchAlarmTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplateGroup">REST API Reference for GetCloudWatchAlarmTemplateGroup Operation</seealso>
+        public virtual GetCloudWatchAlarmTemplateGroupResponse GetCloudWatchAlarmTemplateGroup(GetCloudWatchAlarmTemplateGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetCloudWatchAlarmTemplateGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the specified cloudwatch alarm template group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudWatchAlarmTemplateGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCloudWatchAlarmTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplateGroup">REST API Reference for GetCloudWatchAlarmTemplateGroup Operation</seealso>
+        public virtual Task<GetCloudWatchAlarmTemplateGroupResponse> GetCloudWatchAlarmTemplateGroupAsync(GetCloudWatchAlarmTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCloudWatchAlarmTemplateGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEventBridgeRuleTemplate
+
+
+        /// <summary>
+        /// Retrieves the specified eventbridge rule template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventBridgeRuleTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetEventBridgeRuleTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplate">REST API Reference for GetEventBridgeRuleTemplate Operation</seealso>
+        public virtual GetEventBridgeRuleTemplateResponse GetEventBridgeRuleTemplate(GetEventBridgeRuleTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventBridgeRuleTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventBridgeRuleTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventBridgeRuleTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the specified eventbridge rule template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventBridgeRuleTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEventBridgeRuleTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplate">REST API Reference for GetEventBridgeRuleTemplate Operation</seealso>
+        public virtual Task<GetEventBridgeRuleTemplateResponse> GetEventBridgeRuleTemplateAsync(GetEventBridgeRuleTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventBridgeRuleTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventBridgeRuleTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetEventBridgeRuleTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEventBridgeRuleTemplateGroup
+
+
+        /// <summary>
+        /// Retrieves the specified eventbridge rule template group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventBridgeRuleTemplateGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetEventBridgeRuleTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplateGroup">REST API Reference for GetEventBridgeRuleTemplateGroup Operation</seealso>
+        public virtual GetEventBridgeRuleTemplateGroupResponse GetEventBridgeRuleTemplateGroup(GetEventBridgeRuleTemplateGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventBridgeRuleTemplateGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the specified eventbridge rule template group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventBridgeRuleTemplateGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEventBridgeRuleTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplateGroup">REST API Reference for GetEventBridgeRuleTemplateGroup Operation</seealso>
+        public virtual Task<GetEventBridgeRuleTemplateGroupResponse> GetEventBridgeRuleTemplateGroupAsync(GetEventBridgeRuleTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetEventBridgeRuleTemplateGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSignalMap
+
+
+        /// <summary>
+        /// Retrieves the specified signal map.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSignalMap service method.</param>
+        /// 
+        /// <returns>The response from the GetSignalMap service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetSignalMap">REST API Reference for GetSignalMap Operation</seealso>
+        public virtual GetSignalMapResponse GetSignalMap(GetSignalMapRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSignalMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSignalMapResponseUnmarshaller.Instance;
+
+            return Invoke<GetSignalMapResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the specified signal map.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSignalMap service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSignalMap service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetSignalMap">REST API Reference for GetSignalMap Operation</seealso>
+        public virtual Task<GetSignalMapResponse> GetSignalMapAsync(GetSignalMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSignalMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSignalMapResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSignalMapResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListChannels
 
 
@@ -3210,6 +4350,290 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCloudWatchAlarmTemplateGroups
+
+
+        /// <summary>
+        /// Lists cloudwatch alarm template groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCloudWatchAlarmTemplateGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListCloudWatchAlarmTemplateGroups service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplateGroups">REST API Reference for ListCloudWatchAlarmTemplateGroups Operation</seealso>
+        public virtual ListCloudWatchAlarmTemplateGroupsResponse ListCloudWatchAlarmTemplateGroups(ListCloudWatchAlarmTemplateGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCloudWatchAlarmTemplateGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCloudWatchAlarmTemplateGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCloudWatchAlarmTemplateGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists cloudwatch alarm template groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCloudWatchAlarmTemplateGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCloudWatchAlarmTemplateGroups service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplateGroups">REST API Reference for ListCloudWatchAlarmTemplateGroups Operation</seealso>
+        public virtual Task<ListCloudWatchAlarmTemplateGroupsResponse> ListCloudWatchAlarmTemplateGroupsAsync(ListCloudWatchAlarmTemplateGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCloudWatchAlarmTemplateGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCloudWatchAlarmTemplateGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCloudWatchAlarmTemplateGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCloudWatchAlarmTemplates
+
+
+        /// <summary>
+        /// Lists cloudwatch alarm templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCloudWatchAlarmTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListCloudWatchAlarmTemplates service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplates">REST API Reference for ListCloudWatchAlarmTemplates Operation</seealso>
+        public virtual ListCloudWatchAlarmTemplatesResponse ListCloudWatchAlarmTemplates(ListCloudWatchAlarmTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCloudWatchAlarmTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCloudWatchAlarmTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCloudWatchAlarmTemplatesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists cloudwatch alarm templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCloudWatchAlarmTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCloudWatchAlarmTemplates service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplates">REST API Reference for ListCloudWatchAlarmTemplates Operation</seealso>
+        public virtual Task<ListCloudWatchAlarmTemplatesResponse> ListCloudWatchAlarmTemplatesAsync(ListCloudWatchAlarmTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCloudWatchAlarmTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCloudWatchAlarmTemplatesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCloudWatchAlarmTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEventBridgeRuleTemplateGroups
+
+
+        /// <summary>
+        /// Lists eventbridge rule template groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventBridgeRuleTemplateGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListEventBridgeRuleTemplateGroups service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplateGroups">REST API Reference for ListEventBridgeRuleTemplateGroups Operation</seealso>
+        public virtual ListEventBridgeRuleTemplateGroupsResponse ListEventBridgeRuleTemplateGroups(ListEventBridgeRuleTemplateGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventBridgeRuleTemplateGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventBridgeRuleTemplateGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventBridgeRuleTemplateGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists eventbridge rule template groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventBridgeRuleTemplateGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEventBridgeRuleTemplateGroups service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplateGroups">REST API Reference for ListEventBridgeRuleTemplateGroups Operation</seealso>
+        public virtual Task<ListEventBridgeRuleTemplateGroupsResponse> ListEventBridgeRuleTemplateGroupsAsync(ListEventBridgeRuleTemplateGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventBridgeRuleTemplateGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventBridgeRuleTemplateGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListEventBridgeRuleTemplateGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEventBridgeRuleTemplates
+
+
+        /// <summary>
+        /// Lists eventbridge rule templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventBridgeRuleTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListEventBridgeRuleTemplates service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplates">REST API Reference for ListEventBridgeRuleTemplates Operation</seealso>
+        public virtual ListEventBridgeRuleTemplatesResponse ListEventBridgeRuleTemplates(ListEventBridgeRuleTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventBridgeRuleTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventBridgeRuleTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventBridgeRuleTemplatesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists eventbridge rule templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventBridgeRuleTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEventBridgeRuleTemplates service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplates">REST API Reference for ListEventBridgeRuleTemplates Operation</seealso>
+        public virtual Task<ListEventBridgeRuleTemplatesResponse> ListEventBridgeRuleTemplatesAsync(ListEventBridgeRuleTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventBridgeRuleTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventBridgeRuleTemplatesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListEventBridgeRuleTemplatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3846,6 +5270,77 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  ListSignalMaps
+
+
+        /// <summary>
+        /// Lists signal maps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSignalMaps service method.</param>
+        /// 
+        /// <returns>The response from the ListSignalMaps service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSignalMaps">REST API Reference for ListSignalMaps Operation</seealso>
+        public virtual ListSignalMapsResponse ListSignalMaps(ListSignalMapsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSignalMapsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSignalMapsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSignalMapsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists signal maps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSignalMaps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSignalMaps service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSignalMaps">REST API Reference for ListSignalMaps Operation</seealso>
+        public virtual Task<ListSignalMapsResponse> ListSignalMapsAsync(ListSignalMapsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSignalMapsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSignalMapsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSignalMapsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -4366,6 +5861,83 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  StartDeleteMonitorDeployment
+
+
+        /// <summary>
+        /// Initiates a deployment to delete the monitor of the specified signal map.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDeleteMonitorDeployment service method.</param>
+        /// 
+        /// <returns>The response from the StartDeleteMonitorDeployment service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartDeleteMonitorDeployment">REST API Reference for StartDeleteMonitorDeployment Operation</seealso>
+        public virtual StartDeleteMonitorDeploymentResponse StartDeleteMonitorDeployment(StartDeleteMonitorDeploymentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDeleteMonitorDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDeleteMonitorDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<StartDeleteMonitorDeploymentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates a deployment to delete the monitor of the specified signal map.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDeleteMonitorDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDeleteMonitorDeployment service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartDeleteMonitorDeployment">REST API Reference for StartDeleteMonitorDeployment Operation</seealso>
+        public virtual Task<StartDeleteMonitorDeploymentResponse> StartDeleteMonitorDeploymentAsync(StartDeleteMonitorDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDeleteMonitorDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDeleteMonitorDeploymentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartDeleteMonitorDeploymentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartInputDevice
 
 
@@ -4560,6 +6132,83 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  StartMonitorDeployment
+
+
+        /// <summary>
+        /// Initiates a deployment to deploy the latest monitor of the specified signal map.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMonitorDeployment service method.</param>
+        /// 
+        /// <returns>The response from the StartMonitorDeployment service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMonitorDeployment">REST API Reference for StartMonitorDeployment Operation</seealso>
+        public virtual StartMonitorDeploymentResponse StartMonitorDeployment(StartMonitorDeploymentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMonitorDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMonitorDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<StartMonitorDeploymentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates a deployment to deploy the latest monitor of the specified signal map.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMonitorDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMonitorDeployment service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMonitorDeployment">REST API Reference for StartMonitorDeployment Operation</seealso>
+        public virtual Task<StartMonitorDeploymentResponse> StartMonitorDeploymentAsync(StartMonitorDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMonitorDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMonitorDeploymentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartMonitorDeploymentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartMultiplex
 
 
@@ -4647,6 +6296,85 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = StartMultiplexResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartMultiplexResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartUpdateSignalMap
+
+
+        /// <summary>
+        /// Initiates an update for the specified signal map. Will discover a new signal map if
+        /// a changed discoveryEntryPointArn is provided.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartUpdateSignalMap service method.</param>
+        /// 
+        /// <returns>The response from the StartUpdateSignalMap service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartUpdateSignalMap">REST API Reference for StartUpdateSignalMap Operation</seealso>
+        public virtual StartUpdateSignalMapResponse StartUpdateSignalMap(StartUpdateSignalMapRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartUpdateSignalMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartUpdateSignalMapResponseUnmarshaller.Instance;
+
+            return Invoke<StartUpdateSignalMapResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates an update for the specified signal map. Will discover a new signal map if
+        /// a changed discoveryEntryPointArn is provided.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartUpdateSignalMap service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartUpdateSignalMap service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartUpdateSignalMap">REST API Reference for StartUpdateSignalMap Operation</seealso>
+        public virtual Task<StartUpdateSignalMapResponse> StartUpdateSignalMapAsync(StartUpdateSignalMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartUpdateSignalMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartUpdateSignalMapResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartUpdateSignalMapResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5276,6 +7004,314 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = UpdateChannelClassResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateChannelClassResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCloudWatchAlarmTemplate
+
+
+        /// <summary>
+        /// Updates the specified cloudwatch alarm template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudWatchAlarmTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCloudWatchAlarmTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplate">REST API Reference for UpdateCloudWatchAlarmTemplate Operation</seealso>
+        public virtual UpdateCloudWatchAlarmTemplateResponse UpdateCloudWatchAlarmTemplate(UpdateCloudWatchAlarmTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCloudWatchAlarmTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCloudWatchAlarmTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the specified cloudwatch alarm template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudWatchAlarmTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCloudWatchAlarmTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplate">REST API Reference for UpdateCloudWatchAlarmTemplate Operation</seealso>
+        public virtual Task<UpdateCloudWatchAlarmTemplateResponse> UpdateCloudWatchAlarmTemplateAsync(UpdateCloudWatchAlarmTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCloudWatchAlarmTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateCloudWatchAlarmTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCloudWatchAlarmTemplateGroup
+
+
+        /// <summary>
+        /// Updates the specified cloudwatch alarm template group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudWatchAlarmTemplateGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCloudWatchAlarmTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplateGroup">REST API Reference for UpdateCloudWatchAlarmTemplateGroup Operation</seealso>
+        public virtual UpdateCloudWatchAlarmTemplateGroupResponse UpdateCloudWatchAlarmTemplateGroup(UpdateCloudWatchAlarmTemplateGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCloudWatchAlarmTemplateGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the specified cloudwatch alarm template group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudWatchAlarmTemplateGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCloudWatchAlarmTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplateGroup">REST API Reference for UpdateCloudWatchAlarmTemplateGroup Operation</seealso>
+        public virtual Task<UpdateCloudWatchAlarmTemplateGroupResponse> UpdateCloudWatchAlarmTemplateGroupAsync(UpdateCloudWatchAlarmTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateCloudWatchAlarmTemplateGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEventBridgeRuleTemplate
+
+
+        /// <summary>
+        /// Updates the specified eventbridge rule template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventBridgeRuleTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEventBridgeRuleTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplate">REST API Reference for UpdateEventBridgeRuleTemplate Operation</seealso>
+        public virtual UpdateEventBridgeRuleTemplateResponse UpdateEventBridgeRuleTemplate(UpdateEventBridgeRuleTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventBridgeRuleTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventBridgeRuleTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEventBridgeRuleTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the specified eventbridge rule template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventBridgeRuleTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEventBridgeRuleTemplate service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplate">REST API Reference for UpdateEventBridgeRuleTemplate Operation</seealso>
+        public virtual Task<UpdateEventBridgeRuleTemplateResponse> UpdateEventBridgeRuleTemplateAsync(UpdateEventBridgeRuleTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventBridgeRuleTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventBridgeRuleTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateEventBridgeRuleTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEventBridgeRuleTemplateGroup
+
+
+        /// <summary>
+        /// Updates the specified eventbridge rule template group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventBridgeRuleTemplateGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEventBridgeRuleTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplateGroup">REST API Reference for UpdateEventBridgeRuleTemplateGroup Operation</seealso>
+        public virtual UpdateEventBridgeRuleTemplateGroupResponse UpdateEventBridgeRuleTemplateGroup(UpdateEventBridgeRuleTemplateGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEventBridgeRuleTemplateGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the specified eventbridge rule template group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventBridgeRuleTemplateGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEventBridgeRuleTemplateGroup service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplateGroup">REST API Reference for UpdateEventBridgeRuleTemplateGroup Operation</seealso>
+        public virtual Task<UpdateEventBridgeRuleTemplateGroupResponse> UpdateEventBridgeRuleTemplateGroupAsync(UpdateEventBridgeRuleTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateEventBridgeRuleTemplateGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion

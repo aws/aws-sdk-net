@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -152,7 +153,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRestoreToTimeUtc())
                 {
-                    request.Parameters.Add("RestoreToTime", StringUtils.FromDateTimeToISO8601(publicRequest.RestoreToTimeUtc));
+                    request.Parameters.Add("RestoreToTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.RestoreToTimeUtc));
                 }
                 if(publicRequest.IsSetRestoreType())
                 {

@@ -48,6 +48,7 @@ namespace Amazon.S3.Internal
             // is one of the inputs to decide if SigV4 is required.
             AmazonS3KmsHandler.EvaluateIfSigV4Required(executionContext.RequestContext.Request);
 
+#pragma warning disable CS0612,CS0618
             var redirect = new AmazonS3Uri(redirectedLocation);
             if (AWSConfigsS3.UseSignatureVersion4 ||
                 request.SignatureVersion == SignatureVersion.SigV4 ||
@@ -61,6 +62,7 @@ namespace Amazon.S3.Internal
                 request.AuthenticationRegion = redirect.Region.SystemName;
                 Signer.SignRequest(executionContext.RequestContext);
             }
+#pragma warning restore CS0612,CS0618
         }
     }
 }

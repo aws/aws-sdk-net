@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -105,11 +106,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.ServiceUpdateTimeRange.IsSetEndTime())
                     {
-                        request.Parameters.Add("ServiceUpdateTimeRange" + "." + "EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.ServiceUpdateTimeRange.EndTime));
+                        request.Parameters.Add("ServiceUpdateTimeRange" + "." + "EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ServiceUpdateTimeRange.EndTime));
                     }
                     if(publicRequest.ServiceUpdateTimeRange.IsSetStartTime())
                     {
-                        request.Parameters.Add("ServiceUpdateTimeRange" + "." + "StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.ServiceUpdateTimeRange.StartTime));
+                        request.Parameters.Add("ServiceUpdateTimeRange" + "." + "StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ServiceUpdateTimeRange.StartTime));
                     }
                 }
                 if(publicRequest.IsSetShowNodeLevelUpdateStatus())

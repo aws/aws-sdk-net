@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
@@ -59,7 +60,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property KeyValueStoreAssociations. 
         /// <para>
-        /// The configuration for the Key Value Store associations.
+        /// The configuration for the key value store associations.
         /// </para>
         /// </summary>
         public KeyValueStoreAssociations KeyValueStoreAssociations

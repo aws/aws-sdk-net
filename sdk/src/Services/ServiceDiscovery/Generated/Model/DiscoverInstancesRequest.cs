@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
@@ -107,7 +108,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property NamespaceName. 
         /// <para>
         /// The <c>HttpName</c> name of the namespace. It's found in the <c>HttpProperties</c>
-        /// member of the <c>Properties</c> member of the namespace.
+        /// member of the <c>Properties</c> member of the namespace. In most cases, <c>Name</c>
+        /// and <c>HttpName</c> match. However, if you reuse <c>Name</c> for namespace creation,
+        /// a generated hash is added to <c>HttpName</c> to distinguish the two.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

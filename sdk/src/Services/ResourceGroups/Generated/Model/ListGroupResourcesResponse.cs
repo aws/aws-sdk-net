@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
@@ -63,9 +64,10 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property QueryErrors. 
         /// <para>
-        /// A list of <c>QueryError</c> objects. Each error is an object that contains <c>ErrorCode</c>
-        /// and <c>Message</c> structures. Possible values for <c>ErrorCode</c> are <c>CLOUDFORMATION_STACK_INACTIVE</c>
-        /// and <c>CLOUDFORMATION_STACK_NOT_EXISTING</c>.
+        /// A list of <c>QueryError</c> objects. Each error contains an <c>ErrorCode</c> and <c>Message</c>.
+        /// Possible values for ErrorCode are <c>CLOUDFORMATION_STACK_INACTIVE</c>, <c>CLOUDFORMATION_STACK_NOT_EXISTING</c>,
+        /// <c>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE</c> and <c>RESOURCE_TYPE_NOT_SUPPORTED</c>.
+        /// 
         /// </para>
         /// </summary>
         public List<QueryError> QueryErrors

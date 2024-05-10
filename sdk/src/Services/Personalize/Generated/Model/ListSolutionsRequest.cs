@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSolutions operation.
-    /// Returns a list of solutions that use the given dataset group. When a dataset group
-    /// is not specified, all the solutions associated with the account are listed. The response
+    /// Returns a list of solutions in a given dataset group. When a dataset group is not
+    /// specified, all the solutions associated with the account are listed. The response
     /// provides the properties for each solution, including the Amazon Resource Name (ARN).
     /// For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.
     /// </summary>

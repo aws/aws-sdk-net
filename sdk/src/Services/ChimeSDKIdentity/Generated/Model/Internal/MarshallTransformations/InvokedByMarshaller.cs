@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InvokedBy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStandardMessages())
             {
                 context.Writer.WritePropertyName("StandardMessages");

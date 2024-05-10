@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,37 +70,35 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateAccessPointRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
+                xmlWriter.WriteStartElement("CreateAccessPointRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if(publicRequest.IsSetBucket())
-                    xmlWriter.WriteElementString("Bucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Bucket));
+                    xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequest.Bucket));
 
                 if(publicRequest.IsSetBucketAccountId())
-                    xmlWriter.WriteElementString("BucketAccountId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.BucketAccountId));
+                    xmlWriter.WriteElementString("BucketAccountId", StringUtils.FromString(publicRequest.BucketAccountId));
 
-                
-                if (publicRequest.PublicAccessBlockConfiguration != null) 
+                if (publicRequest.PublicAccessBlockConfiguration != null)
                 {
-                    xmlWriter.WriteStartElement("PublicAccessBlockConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                    xmlWriter.WriteStartElement("PublicAccessBlockConfiguration");
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicAcls())
-                        xmlWriter.WriteElementString("BlockPublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicAcls.Value));                 
+                        xmlWriter.WriteElementString("BlockPublicAcls", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicAcls.Value));
 
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicPolicy())
-                        xmlWriter.WriteElementString("BlockPublicPolicy", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicPolicy.Value));                 
+                        xmlWriter.WriteElementString("BlockPublicPolicy", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicPolicy.Value));
 
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetIgnorePublicAcls())
-                        xmlWriter.WriteElementString("IgnorePublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.IgnorePublicAcls.Value));                 
+                        xmlWriter.WriteElementString("IgnorePublicAcls", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.IgnorePublicAcls.Value));
 
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetRestrictPublicBuckets())
-                        xmlWriter.WriteElementString("RestrictPublicBuckets", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.RestrictPublicBuckets.Value));                 
+                        xmlWriter.WriteElementString("RestrictPublicBuckets", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.RestrictPublicBuckets.Value));
 
                     xmlWriter.WriteEndElement();
                 }
-                
-                if (publicRequest.VpcConfiguration != null) 
+                if (publicRequest.VpcConfiguration != null)
                 {
-                    xmlWriter.WriteStartElement("VpcConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                    xmlWriter.WriteStartElement("VpcConfiguration");
                     if(publicRequest.VpcConfiguration.IsSetVpcId())
-                        xmlWriter.WriteElementString("VpcId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.VpcConfiguration.VpcId));                 
+                        xmlWriter.WriteElementString("VpcId", StringUtils.FromString(publicRequest.VpcConfiguration.VpcId));
 
                     xmlWriter.WriteEndElement();
                 }

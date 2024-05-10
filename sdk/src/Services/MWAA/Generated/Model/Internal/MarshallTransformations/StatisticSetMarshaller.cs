@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StatisticSet requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaximum())
             {
                 context.Writer.WritePropertyName("Maximum");
-                context.Writer.Write(requestObject.Maximum.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Maximum.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Maximum.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Maximum.Value);
+                }
             }
 
             if(requestObject.IsSetMinimum())
             {
                 context.Writer.WritePropertyName("Minimum");
-                context.Writer.Write(requestObject.Minimum.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Minimum.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Minimum.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Minimum.Value);
+                }
             }
 
             if(requestObject.IsSetSampleCount())
@@ -66,7 +83,14 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSum())
             {
                 context.Writer.WritePropertyName("Sum");
-                context.Writer.Write(requestObject.Sum.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Sum.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Sum.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Sum.Value);
+                }
             }
 
         }

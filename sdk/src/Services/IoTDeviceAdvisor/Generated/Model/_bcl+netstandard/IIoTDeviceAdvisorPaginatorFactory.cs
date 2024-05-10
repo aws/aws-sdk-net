@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the iotdeviceadvisor-2020-09-18.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>

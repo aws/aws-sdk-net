@@ -26,11 +26,18 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMonitor operation.
-    /// Returns details about a specific monitor.
+    /// Returns details about a specific monitor. 
+    /// 
+    ///  
+    /// <para>
+    /// This action requires the <c>monitorName</c> parameter. Run <c>ListMonitors</c> to
+    /// get a list of monitor names. 
+    /// </para>
     /// </summary>
     public partial class GetMonitorRequest : AmazonNetworkMonitorRequest
     {
@@ -42,7 +49,7 @@ namespace Amazon.NetworkMonitor.Model
         /// The name of the monitor that details are returned for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string MonitorName
         {
             get { return this._monitorName; }

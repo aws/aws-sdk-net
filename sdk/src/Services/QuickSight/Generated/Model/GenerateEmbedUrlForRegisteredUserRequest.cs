@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -129,9 +130,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ExperienceConfiguration. 
         /// <para>
-        /// The experience you are embedding. For registered users, you can embed Amazon QuickSight
-        /// dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the
-        /// entire Amazon QuickSight console.
+        /// The experience that you want to embed. For registered users, you can embed Amazon
+        /// QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar,
+        /// the Amazon QuickSight Generative Q&amp;A experience, or the entire Amazon QuickSight
+        /// console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

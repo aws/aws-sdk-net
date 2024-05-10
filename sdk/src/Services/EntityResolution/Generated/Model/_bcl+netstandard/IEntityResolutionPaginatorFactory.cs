@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the entityresolution-2018-05-10.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -34,6 +35,11 @@ namespace Amazon.EntityResolution.Model
         /// Paginator for ListIdMappingWorkflows operation
         ///</summary>
         IListIdMappingWorkflowsPaginator ListIdMappingWorkflows(ListIdMappingWorkflowsRequest request);
+
+        /// <summary>
+        /// Paginator for ListIdNamespaces operation
+        ///</summary>
+        IListIdNamespacesPaginator ListIdNamespaces(ListIdNamespacesRequest request);
 
         /// <summary>
         /// Paginator for ListMatchingJobs operation

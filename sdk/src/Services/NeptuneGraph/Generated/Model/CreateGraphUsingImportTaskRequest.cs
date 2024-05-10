@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
@@ -252,6 +253,12 @@ namespace Amazon.NeptuneGraph.Model
         /// The number of replicas in other AZs to provision on the new graph after import. Default
         /// = 0, Min = 0, Max = 2.
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  Additional charges equivalent to the m-NCUs selected for the graph apply for each
+        /// replica. 
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]
         public int? ReplicaCount

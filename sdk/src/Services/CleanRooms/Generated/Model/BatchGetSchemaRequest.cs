@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// The names for the schema objects to retrieve.&gt;
+        /// The names for the schema objects to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]

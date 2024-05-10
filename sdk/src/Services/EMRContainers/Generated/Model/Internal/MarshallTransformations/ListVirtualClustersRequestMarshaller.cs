@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,10 +67,13 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 request.Parameters.Add("containerProviderType", StringUtils.FromString(publicRequest.ContainerProviderType));
             
             if (publicRequest.IsSetCreatedAfter())
-                request.Parameters.Add("createdAfter", StringUtils.FromDateTimeToISO8601(publicRequest.CreatedAfter));
+                request.Parameters.Add("createdAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreatedAfter));
             
             if (publicRequest.IsSetCreatedBefore())
-                request.Parameters.Add("createdBefore", StringUtils.FromDateTimeToISO8601(publicRequest.CreatedBefore));
+                request.Parameters.Add("createdBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreatedBefore));
+            
+            if (publicRequest.IsSetEksAccessEntryIntegrated())
+                request.Parameters.Add("eksAccessEntryIntegrated", StringUtils.FromBool(publicRequest.EksAccessEntryIntegrated));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));

@@ -342,7 +342,7 @@ namespace AWSSDK.UnitTests
                         decoder.ProcessData(entry.Value, 0, entry.Value.Length);
                         Assert.Fail("Calling decode on a decoder that has failed, should throw and exception");
                     }
-                    catch (EventStreamDecoderIllegalStateException ex)
+                    catch (EventStreamDecoderIllegalStateException)
                     {
                     }
                 }

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -81,11 +82,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetLastUpdatedAfter())
                 {
-                    request.Parameters.Add("LastUpdatedAfter", StringUtils.FromDateTimeToISO8601(publicRequest.LastUpdatedAfter));
+                    request.Parameters.Add("LastUpdatedAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.LastUpdatedAfter));
                 }
                 if(publicRequest.IsSetLastUpdatedBefore())
                 {
-                    request.Parameters.Add("LastUpdatedBefore", StringUtils.FromDateTimeToISO8601(publicRequest.LastUpdatedBefore));
+                    request.Parameters.Add("LastUpdatedBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.LastUpdatedBefore));
                 }
                 if(publicRequest.IsSetLocale())
                 {
