@@ -40,7 +40,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Additional details about why the validation failed.
+        /// Additional information about why the validation failed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

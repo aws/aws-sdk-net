@@ -42,10 +42,10 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the target. If the target type of the target group is <c>INSTANCE</c>, this
-        /// is an instance ID. If the target type is <c>IP</c> , this is an IP address. If the
-        /// target type is <c>LAMBDA</c>, this is the ARN of the Lambda function. If the target
-        /// type is <c>ALB</c>, this is the ARN of the Application Load Balancer.
+        /// The ID of the target. If the target group type is <c>INSTANCE</c>, this is an instance
+        /// ID. If the target group type is <c>IP</c>, this is an IP address. If the target group
+        /// type is <c>LAMBDA</c>, this is the ARN of a Lambda function. If the target type is
+        /// <c>ALB</c>, this is the ARN of an Application Load Balancer.
         /// </para>
         /// </summary>
         public string Id
@@ -104,29 +104,29 @@ namespace Amazon.VPCLattice.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>Draining</c>: The target is being deregistered. No new connections will be sent
-        /// to this target while current connections are being drained. Default draining time
+        ///  <c>DRAINING</c>: The target is being deregistered. No new connections are sent to
+        /// this target while current connections are being drained. The default draining time
         /// is 5 minutes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Unavailable</c>: Health checks are unavailable for the target group.
+        ///  <c>UNAVAILABLE</c>: Health checks are unavailable for the target group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Healthy</c>: The target is healthy. 
+        ///  <c>HEALTHY</c>: The target is healthy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Unhealthy</c>: The target is unhealthy.
+        ///  <c>UNHEALTHY</c>: The target is unhealthy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Initial</c>: Initial health checks on the target are being performed.
+        ///  <c>INITIAL</c>: Initial health checks on the target are being performed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Unused</c>: Target group is not used in a service.
+        ///  <c>UNUSED</c>: Target group is not used in a service.
         /// </para>
         ///  </li> </ul>
         /// </summary>

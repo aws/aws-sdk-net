@@ -39,7 +39,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags.
+        /// Information about the tags.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

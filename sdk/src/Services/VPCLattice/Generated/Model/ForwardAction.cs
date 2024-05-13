@@ -49,10 +49,10 @@ namespace Amazon.VPCLattice.Model
         ///  
         /// <para>
         /// The default value is 1. This means that if only one target group is provided, there
-        /// is no need to set the weight; 100% of traffic will go to that target group.
+        /// is no need to set the weight; 100% of the traffic goes to that target group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2)]
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<WeightedTargetGroup> TargetGroups
         {
             get { return this._targetGroups; }

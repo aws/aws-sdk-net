@@ -33,6 +33,16 @@ namespace Amazon.VPCLattice.Model
     /// Container for the parameters to the BatchUpdateRule operation.
     /// Updates the listener rules in a batch. You can use this operation to change the priority
     /// of listener rules. This can be useful when bulk updating or swapping rule priority.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Required permissions:</b> <c>vpc-lattice:UpdateRule</c> 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/security_iam_service-with-iam.html">How
+    /// Amazon VPC Lattice works with IAM</a> in the <i>Amazon VPC Lattice User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class BatchUpdateRuleRequest : AmazonVPCLatticeRequest
     {

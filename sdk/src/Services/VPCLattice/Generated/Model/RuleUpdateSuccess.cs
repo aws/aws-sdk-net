@@ -45,7 +45,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action for the default rule.
+        /// The action for the rule.
         /// </para>
         /// </summary>
         public RuleAction Action

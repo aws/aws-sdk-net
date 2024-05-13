@@ -44,8 +44,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The rule action. Each rule must include exactly one of the following types of actions:
-        /// <c>forward </c>or <c>fixed-response</c>, and it must be the last action to be performed.
+        /// The rule action.
         /// </para>
         /// </summary>
         public RuleAction Action

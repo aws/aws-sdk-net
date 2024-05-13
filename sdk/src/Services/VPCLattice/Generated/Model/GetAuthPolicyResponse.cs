@@ -98,10 +98,10 @@ namespace Amazon.VPCLattice.Model
         /// Gets and sets the property State. 
         /// <para>
         /// The state of the auth policy. The auth policy is only active when the auth type is
-        /// set to <c>Amazon Web Services_IAM</c>. If you provide a policy, then authentication
-        /// and authorization decisions are made based on this policy and the client's IAM policy.
-        /// If the auth type is <c>NONE</c>, then any auth policy you provide will remain inactive.
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create
+        /// set to <c>AWS_IAM</c>. If you provide a policy, then authentication and authorization
+        /// decisions are made based on this policy and the client's IAM policy. If the auth type
+        /// is <c>NONE</c>, then any auth policy that you provide remains inactive. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create
         /// a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.
         /// </para>
         /// </summary>

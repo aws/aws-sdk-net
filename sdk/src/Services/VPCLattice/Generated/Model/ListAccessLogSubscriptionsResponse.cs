@@ -40,7 +40,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The access log subscriptions.
+        /// Information about the access log subscriptions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
