@@ -30,55 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeEventBus operation.
+    /// Container for the parameters to the UpdateEventBus operation.
+    /// Updates the specified event bus.
     /// </summary>
-    public partial class DescribeEventBusResponse : AmazonWebServiceResponse
+    public partial class UpdateEventBusRequest : AmazonEventBridgeRequest
     {
-        private string _arn;
-        private DateTime? _creationTime;
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
         private string _kmsKeyIdentifier;
-        private DateTime? _lastModifiedTime;
         private string _name;
-        private string _policy;
-
-        /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the account permitted to write events to the current
-        /// account.
-        /// </para>
-        /// </summary>
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property CreationTime. 
-        /// <para>
-        /// The time the event bus was created.
-        /// </para>
-        /// </summary>
-        public DateTime CreationTime
-        {
-            get { return this._creationTime.GetValueOrDefault(); }
-            set { this._creationTime = value; }
-        }
-
-        // Check to see if CreationTime property is set
-        internal bool IsSetCreationTime()
-        {
-            return this._creationTime.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property DeadLetterConfig.
@@ -117,14 +77,48 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property KmsKeyIdentifier. 
         /// <para>
-        /// The identifier of the KMS customer managed key for EventBridge to use to encrypt events
-        /// on this event bus, if one has been specified.
+        /// The identifier of the KMS customer managed key for EventBridge to use, if you choose
+        /// to use a customer managed key to encrypt events on this event bus. The identifier
+        /// can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data
+        /// If you do not specify a customer managed key identifier, EventBridge uses an Amazon
+        /// Web Services owned key to encrypt events on the event bus.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html">Managing
+        /// keys</a> in the <i>Key Management Service Developer Guide</i>. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Archives and schema discovery are not supported for event buses encrypted using a
+        /// customer managed key. EventBridge returns an error if:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateArchive.html">CreateArchive</a>
+        /// </c> on an event bus set to use a customer managed key for encryption.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#CreateDiscoverer">CreateDiscoverer</a>
+        /// </c> on an event bus set to use a customer managed key for encryption.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdatedEventBus.html">UpdatedEventBus</a>
+        /// </c> to set a customer managed key on an event bus with an archives or schema discovery
+        /// enabled.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To enable archives or schema discovery on an event bus, choose to use an Amazon Web
+        /// Services owned key. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data
         /// encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=2048)]
         public string KmsKeyIdentifier
@@ -140,29 +134,12 @@ namespace Amazon.EventBridge.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedTime. 
-        /// <para>
-        /// The time the event bus was last modified.
-        /// </para>
-        /// </summary>
-        public DateTime LastModifiedTime
-        {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
-            set { this._lastModifiedTime = value; }
-        }
-
-        // Check to see if LastModifiedTime property is set
-        internal bool IsSetLastModifiedTime()
-        {
-            return this._lastModifiedTime.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the event bus. Currently, this is always <c>default</c>.
+        /// The name of the event bus.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -173,24 +150,6 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetName()
         {
             return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Policy. 
-        /// <para>
-        /// The policy that enables the external account to send events to your account.
-        /// </para>
-        /// </summary>
-        public string Policy
-        {
-            get { return this._policy; }
-            set { this._policy = value; }
-        }
-
-        // Check to see if Policy property is set
-        internal bool IsSetPolicy()
-        {
-            return this._policy != null;
         }
 
     }

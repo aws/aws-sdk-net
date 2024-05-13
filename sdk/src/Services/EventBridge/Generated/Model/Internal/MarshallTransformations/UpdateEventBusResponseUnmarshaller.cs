@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateEventBus operation
+    /// Response Unmarshaller for UpdateEventBus operation
     /// </summary>  
-    public class CreateEventBusResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateEventBusResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,12 +46,18 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateEventBusResponse response = new CreateEventBusResponse();
+            UpdateEventBusResponse response = new UpdateEventBusResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeadLetterConfig", targetDepth))
                 {
                     var unmarshaller = DeadLetterConfigUnmarshaller.Instance;
@@ -64,16 +70,16 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EventBusArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.EventBusArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("KmsKeyIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KmsKeyIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,21 +113,9 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 {
                     return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidStateException"))
-                {
-                    return InvalidStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OperationDisabledException"))
                 {
                     return OperationDisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceAlreadyExistsException"))
-                {
-                    return ResourceAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -131,9 +125,9 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             return new AmazonEventBridgeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateEventBusResponseUnmarshaller _instance = new CreateEventBusResponseUnmarshaller();        
+        private static UpdateEventBusResponseUnmarshaller _instance = new UpdateEventBusResponseUnmarshaller();        
 
-        internal static CreateEventBusResponseUnmarshaller GetInstance()
+        internal static UpdateEventBusResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +135,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateEventBusResponseUnmarshaller Instance
+        public static UpdateEventBusResponseUnmarshaller Instance
         {
             get
             {

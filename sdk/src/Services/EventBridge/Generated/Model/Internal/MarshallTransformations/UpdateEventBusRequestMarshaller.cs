@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateEventBus Request Marshaller
+    /// UpdateEventBus Request Marshaller
     /// </summary>       
-    public class CreateEventBusRequestMarshaller : IMarshaller<IRequest, CreateEventBusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateEventBusRequestMarshaller : IMarshaller<IRequest, UpdateEventBusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateEventBusRequest)input);
+            return this.Marshall((UpdateEventBusRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateEventBusRequest publicRequest)
+        public IRequest Marshall(UpdateEventBusRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EventBridge");
-            string target = "AWSEvents.CreateEventBus";
+            string target = "AWSEvents.UpdateEventBus";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-07";
@@ -86,12 +86,6 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
-                if(publicRequest.IsSetEventSourceName())
-                {
-                    context.Writer.WritePropertyName("EventSourceName");
-                    context.Writer.Write(publicRequest.EventSourceName);
-                }
-
                 if(publicRequest.IsSetKmsKeyIdentifier())
                 {
                     context.Writer.WritePropertyName("KmsKeyIdentifier");
@@ -104,22 +98,6 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -128,9 +106,9 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateEventBusRequestMarshaller _instance = new CreateEventBusRequestMarshaller();        
+        private static UpdateEventBusRequestMarshaller _instance = new UpdateEventBusRequestMarshaller();        
 
-        internal static CreateEventBusRequestMarshaller GetInstance()
+        internal static UpdateEventBusRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -138,7 +116,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateEventBusRequestMarshaller Instance
+        public static UpdateEventBusRequestMarshaller Instance
         {
             get
             {

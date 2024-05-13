@@ -30,14 +30,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// This is the response object from the CreateEventBus operation.
+    /// This is the response object from the UpdateEventBus operation.
     /// </summary>
-    public partial class CreateEventBusResponse : AmazonWebServiceResponse
+    public partial class UpdateEventBusResponse : AmazonWebServiceResponse
     {
+        private string _arn;
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
-        private string _eventBusArn;
         private string _kmsKeyIdentifier;
+        private string _name;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The event bus Amazon Resource Name (ARN).
+        /// </para>
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeadLetterConfig.
@@ -74,24 +93,6 @@ namespace Amazon.EventBridge.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventBusArn. 
-        /// <para>
-        /// The ARN of the new event bus.
-        /// </para>
-        /// </summary>
-        public string EventBusArn
-        {
-            get { return this._eventBusArn; }
-            set { this._eventBusArn = value; }
-        }
-
-        // Check to see if EventBusArn property is set
-        internal bool IsSetEventBusArn()
-        {
-            return this._eventBusArn != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property KmsKeyIdentifier. 
         /// <para>
         /// The identifier of the KMS customer managed key for EventBridge to use to encrypt events
@@ -114,6 +115,25 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetKmsKeyIdentifier()
         {
             return this._kmsKeyIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The event bus name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
     }

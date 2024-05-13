@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model
     /// Get the information about an existing global endpoint. For more information about
     /// global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
     /// applications Regional-fault tolerant with global endpoints and event replication</a>
-    /// in the <i>Amazon EventBridge User Guide</i>.
+    /// in the <i> <i>Amazon EventBridge User Guide</i> </i>.
     /// </summary>
     public partial class DescribeEndpointRequest : AmazonEventBridgeRequest
     {
