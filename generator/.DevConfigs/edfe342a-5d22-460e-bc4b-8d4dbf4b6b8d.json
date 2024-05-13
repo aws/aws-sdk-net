@@ -1,9 +1,0 @@
-{
-    "core": {
-        "updateMinimum": true,
-        "type": "Minor",
-        "changeLogMessages": [
-            "Update the `SSOTokenManager` to support the Authorization Code Flow with Proof Key for Code Exchange (PKCE) when interacting with IAM Identity Center"
-        ]
-    }
-}

@@ -1,3 +1,13 @@
+### 3.7.809.0 (2024-05-13 18:13 UTC)
+* EventBridge (3.7.303.0)
+	* Amazon EventBridge introduces KMS customer-managed key (CMK) encryption support for custom and partner events published on EventBridge Event Bus (including default bus) and UpdateEventBus API.
+* VPCLattice (3.7.301.0)
+	* This release adds TLS Passthrough support. It also increases max number of target group per rule to 10.
+* Core 3.7.304.0
+	* Update the `SSOTokenManager` to support the Authorization Code Flow with Proof Key for Code Exchange (PKCE) when interacting with IAM Identity Center
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.808.0 (2024-05-10 18:34 UTC)
 * ApplicationDiscoveryService (3.7.301.0)
 	* add v2 smoke tests and smithy smokeTests trait for SDK testing
