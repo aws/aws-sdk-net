@@ -32,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.ECS
@@ -6135,16 +6136,8 @@ namespace Amazon.ECS
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-            var requestContext = new RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonECSEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
         }
 
         #endregion

@@ -33,6 +33,8 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Threading;
+using Amazon.Runtime.Endpoints;
+
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
@@ -962,9 +964,12 @@ namespace Amazon.Util
 #pragma warning restore CS0618 // Type or member is obsolete
         }
 
-        internal static string GetFormattedTimestampISO8601(IClientConfig config)
+        internal static string GetFormattedTimestampISO8601(IClientConfig config, AmazonWebServiceRequest request)
         {
-            return GetFormattedTimestampISO8601(config.CorrectedUtcNow);
+            var endpoint = config.DetermineServiceOperationEndpoint(new ServiceOperationEndpointParameters(request));
+            var correctedUtcNow = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL);
+
+            return GetFormattedTimestampISO8601(correctedUtcNow);
         }
 
         private static string GetFormattedTimestampISO8601(DateTime dateTime)

@@ -143,7 +143,7 @@ namespace Amazon
         /// value will be set to the correction, but it will not be used by the
         /// SDK and clock skew errors will not be retried.
         /// </summary>
-        [Obsolete("This value is deprecated in favor of IClientConfig.ClockOffset")]
+        [Obsolete("This value is deprecated in favor of IClientConfig.ClockOffset, use CorrectClockSkew.GetClockCorrectionForEndpoint(string endpoint) instead.")]
         public static TimeSpan ClockOffset
         {
             get;

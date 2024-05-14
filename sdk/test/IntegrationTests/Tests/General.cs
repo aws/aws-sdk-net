@@ -770,7 +770,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             var oldManualClockCorrection = AWSConfigs.ManualClockCorrection;
             var oldCorrectClockSkew = AWSConfigs.CorrectForClockSkew;
-            var oldClockSkewCorrection = context.Config.ClockOffset;
             var oldUtcNowSource = GetUtcNowSource();
 
             try
@@ -798,7 +797,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 AWSConfigs.ManualClockCorrection = oldManualClockCorrection;
                 AWSConfigs.CorrectForClockSkew = oldCorrectClockSkew;
-                SetClockSkewCorrection(context.Config, oldClockSkewCorrection);
                 SetUtcNowSource(oldUtcNowSource);
             }
         }
@@ -806,33 +804,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private static void TestServiceCallForClockSkew(ClockSkewTestContext context)
         {
             var oldCorrectClockSkew = AWSConfigs.CorrectForClockSkew;
-            var oldClockSkewCorrection = context.Config.ClockOffset;
             var oldUtcNowSource = GetUtcNowSource();
 
             try
             {
                 AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(context.Config, TimeSpan.Zero);
+                SetClockSkewCorrection(TimeSpan.Zero);
                 context.TestAction();
 
 #pragma warning disable CS0618 // Type or member is obsolete
-                Assert.IsTrue(AWSConfigs.ClockOffset == TimeSpan.Zero);
-#pragma warning restore CS0618 // Type or member is obsolete
-                Assert.IsTrue(context.Config.ClockOffset == TimeSpan.Zero);                
+                Assert.IsTrue(AWSConfigs.ClockOffset == TimeSpan.Zero);             
 
-                SetClockSkewCorrection(context.Config, IncorrectPositiveClockSkewOffset);
+                SetClockSkewCorrection(IncorrectPositiveClockSkewOffset);
                 context.TestAction();
 #pragma warning disable CS0618 // Type or member is obsolete
                 Assert.AreNotEqual(IncorrectPositiveClockSkewOffset, AWSConfigs.ClockOffset);
-#pragma warning restore CS0618 // Type or member is obsolete
-                Assert.AreNotEqual(IncorrectPositiveClockSkewOffset, context.Config.ClockOffset);
 
-                SetClockSkewCorrection(context.Config, IncorrectNegativeClockSkewOffset);
+                SetClockSkewCorrection(IncorrectNegativeClockSkewOffset);
                 context.TestAction();
 #pragma warning disable CS0618 // Type or member is obsolete
                 Assert.AreNotEqual(IncorrectPositiveClockSkewOffset, AWSConfigs.ClockOffset);
-#pragma warning restore CS0618 // Type or member is obsolete
-                Assert.AreNotEqual(IncorrectNegativeClockSkewOffset, context.Config.ClockOffset);
 
                 Console.WriteLine("Simulating positive clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);
@@ -840,13 +831,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 AssertExtensions.ExpectException(context.TestAction);
                     
                 AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(context.Config, TimeSpan.Zero);
+                SetClockSkewCorrection(TimeSpan.Zero);
                 context.TestAction();
 
                 Console.WriteLine("Simulating negative clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectNegativeClockSkewOffset);
                 AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(context.Config, TimeSpan.Zero);
+                SetClockSkewCorrection(TimeSpan.Zero);
                 context.TestAction();
 
                 AWSConfigs.CorrectForClockSkew = false;
@@ -855,7 +846,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             finally
             {
                 AWSConfigs.CorrectForClockSkew = oldCorrectClockSkew;
-                SetClockSkewCorrection(context.Config, oldClockSkewCorrection);
                 SetUtcNowSource(oldUtcNowSource);
             }
         }

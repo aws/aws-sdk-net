@@ -23,12 +23,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
             field.SetValue(null, source);
         }
-        public static void SetClockSkewCorrection(IClientConfig config, TimeSpan value)
+        public static void SetClockSkewCorrection(TimeSpan value)
         {
-            var method = typeof(CorrectClockSkew).GetMethod("SetClockCorrectionForEndpoint", BindingFlags.Static | BindingFlags.NonPublic);
-#pragma warning disable CS0618
-            method.Invoke(null, new object[] { config.DetermineServiceURL(), value });
-#pragma warning restore CS0618
+            var property = typeof(CorrectClockSkew).GetProperty("GlobalClockCorrection", BindingFlags.Static | BindingFlags.NonPublic);
+            property.SetValue(null, value);
         }
     }
 }

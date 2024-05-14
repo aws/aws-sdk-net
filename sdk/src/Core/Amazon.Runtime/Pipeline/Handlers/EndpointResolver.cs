@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Endpoints;
 using System;
 
 namespace Amazon.Runtime.Internal
@@ -77,9 +78,8 @@ namespace Amazon.Runtime.Internal
         {
             Uri endpoint = request.AlternateEndpoint != null
                 ? new Uri(ClientConfig.GetUrl(config, request.AlternateEndpoint))
-#pragma warning disable CS0612,CS0618
-                : new Uri(config.DetermineServiceURL());
-#pragma warning restore CS0612,CS0618
+                : new Uri(config.DetermineServiceOperationEndpoint(
+                    new ServiceOperationEndpointParameters(request.OriginalRequest)).URL);
 
             return InjectHostPrefix(config, request, endpoint);
         }

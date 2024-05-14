@@ -24,6 +24,7 @@ using System.IO;
 using Amazon.S3.Util;
 using Amazon.Runtime.Internal;
 using Amazon.Util;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable 1591
 
@@ -129,7 +130,7 @@ namespace Amazon.S3.Internal
                     !(putBucketRequest.IsSetPutBucketConfiguration() && putBucketRequest.PutBucketConfiguration.IsSetLocation()) &&
                     !(putBucketRequest.IsSetBucketRegionName() || putBucketRequest.IsSetBucketRegion()))
                 {
-                    var regionCode = DetermineBucketRegionCode(config);
+                    var regionCode = DetermineBucketRegionCode(config, request);
                     if (regionCode == S3Constants.REGION_US_EAST_1)
                         regionCode = null;
                     else if (regionCode == S3Constants.REGION_EU_WEST_1)
@@ -144,7 +145,7 @@ namespace Amazon.S3.Internal
             {
                 if (deleteBucketRequest.UseClientRegion && !deleteBucketRequest.IsSetBucketRegion())
                 {
-                    var regionCode = DetermineBucketRegionCode(config);
+                    var regionCode = DetermineBucketRegionCode(config, request);
                     if (regionCode == S3Constants.REGION_US_EAST_1)
                         regionCode = null;
                     //else if (regionCode == S3Constants.REGION_EU_WEST_1)
@@ -183,13 +184,14 @@ namespace Amazon.S3.Internal
             }
         }
 
-        static string DetermineBucketRegionCode(IClientConfig config)
+        static string DetermineBucketRegionCode(IClientConfig config, AmazonWebServiceRequest request)
         {
             if (config.RegionEndpoint != null && string.IsNullOrEmpty(config.ServiceURL))
                 return config.RegionEndpoint.SystemName;
-#pragma warning disable CS0612, CS0618
-            return AWSSDKUtils.DetermineRegion(config.DetermineServiceURL());
-#pragma warning restore CS0612,CS0618
+
+            var parameters = new ServiceOperationEndpointParameters(request);
+            var endpoint = config.DetermineServiceOperationEndpoint(parameters);
+            return AWSSDKUtils.DetermineRegion(endpoint.URL);
         }
     }
 }

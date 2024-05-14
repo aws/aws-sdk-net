@@ -15,6 +15,7 @@
 
 using Amazon;
 using Amazon.Runtime;
+using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 
 namespace AWSSDK.UnitTests
@@ -36,5 +37,16 @@ namespace AWSSDK.UnitTests
         public override string RegionEndpointServiceName { get; } = nameof(MockClientConfig);
         public override string ServiceVersion { get; } = "UnitTest";
         public override string UserAgent { get; } = "UnitTest";
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public override Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+        {
+            // Placeholder method that should be implemented if tests call it.
+            throw new System.NotImplementedException();
+        }
     }
 }

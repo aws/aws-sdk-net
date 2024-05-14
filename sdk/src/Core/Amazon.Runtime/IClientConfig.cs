@@ -292,12 +292,11 @@ namespace Amazon.Runtime
         bool ThrottleRetries { get; }
 
         /// <summary>
-        /// Using either the RegionEndpoint or the ServiceURL determine what the URL to the service is.
+        /// Returns the endpoint that will be used for a particular request.
         /// </summary>
-        /// <returns>The URL to the service.</returns>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
-        string DetermineServiceURL();
-
+        /// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters);
         /// <summary>
         /// Given this client configuration, return a DNS suffix for service endpoint url.
         /// </summary>

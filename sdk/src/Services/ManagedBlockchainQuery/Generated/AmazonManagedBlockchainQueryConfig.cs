@@ -21,6 +21,8 @@ using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Endpoints;
 using Amazon.ManagedBlockchainQuery.Internal;
 
 namespace Amazon.ManagedBlockchainQuery
@@ -33,6 +35,9 @@ namespace Amazon.ManagedBlockchainQuery
     {
         private static readonly string UserAgentString =
             InternalSDKUtils.BuildUserAgentString("ManagedBlockchain Query", "3.7.304.25");
+
+        private static readonly AmazonManagedBlockchainQueryEndpointResolver EndpointResolver =
+            new AmazonManagedBlockchainQueryEndpointResolver();
 
         private string _userAgent = UserAgentString;
         ///<summary>
@@ -88,6 +93,25 @@ namespace Amazon.ManagedBlockchainQuery
                 return _userAgent;
             }
         }
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public override Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+        {
+            var requestContext = new RequestContext(false, new AWS4Signer())
+            {
+                ClientConfig = this,
+                OriginalRequest = parameters.Request,
+                Request = new DefaultRequest(parameters.Request, ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            return EndpointResolver.GetEndpoint(executionContext);
+        }
+
 
     }
 }

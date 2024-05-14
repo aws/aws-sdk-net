@@ -386,25 +386,6 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Given this client configuration, return a string form ofthe service endpoint url.
-        /// </summary>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
-        public virtual string DetermineServiceURL()
-        {
-            string url;
-            if (this.ServiceURL != null)
-            {
-                url = this.ServiceURL;
-            }
-            else
-            {
-                url = GetUrl(this, RegionEndpoint);
-            }
-
-            return url;
-        }
-
-        /// <summary>
         /// Given this client configuration, return a DNS suffix for service endpoint url.
         /// </summary>
         [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
@@ -967,42 +948,28 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Returns the current UTC now after clock correction for this endpoint.
+        /// Returns the current UTC now after clock correction for AWSConfigs.ManualClockCorrection.
         /// </summary>
         [Obsolete("Please use CorrectClockSkew.GetCorrectedUtcNowForEndpoint(string endpoint) instead.", false)]
         public DateTime CorrectedUtcNow
         {
             get
             {
-                return CorrectClockSkew.GetCorrectedUtcNowForEndpoint(DetermineServiceURL());
+                // Passing null will cause GetCorrectedUtcNowForEndpoint to skip calculating ClockSkew based on 
+                // endpoint and only use ManualClockCorrection if is set.
+                return CorrectClockSkew.GetCorrectedUtcNowForEndpoint(null);
             }
         }
 
         /// <summary>
-        /// The calculated clock skew correction for a specific endpoint, if there is one.
-        /// This field will be set if a service call resulted in an exception
-        /// and the SDK has determined that there is a difference between local
-        /// and server times.
-        /// 
-        /// If <seealso cref="AWSConfigs.CorrectForClockSkew"/> is set to true, this
-        /// value will still be set to the correction, but it will not be used by the
-        /// SDK and clock skew errors will not be retried.
+        /// Wrapper around <seealso cref="AWSConfigs.ManualClockCorrection"/>
         /// </summary>
+        [Obsolete("Please use CorrectClockSkew.GetClockCorrectionForEndpoint(string endpoint) instead.", false)]
         public TimeSpan ClockOffset
         {
             get
             {
-                if (AWSConfigs.ManualClockCorrection.HasValue)
-                {
-                    return AWSConfigs.ManualClockCorrection.Value;
-                }
-                else
-                {
-#pragma warning disable CS0612,CS0618
-                    string endpoint = DetermineServiceURL();
-#pragma warning restore CS0612,CS0618
-                    return CorrectClockSkew.GetClockCorrectionForEndpoint(endpoint);
-                }
+                return AWSConfigs.ManualClockCorrection.GetValueOrDefault();
             }
         }
 
@@ -1115,6 +1082,13 @@ namespace Amazon.Runtime
                 : (clientTimeout.HasValue ? clientTimeout : null);
         }
 
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public abstract Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters);
+
 #if NETSTANDARD
         /// <summary>
         /// <para>
@@ -1160,7 +1134,7 @@ namespace Amazon.Runtime
             set => _httpClientCacheSize = value;
         }
 #endif
-        
+
         /// <summary>
         /// Overrides the default read-write timeout value.
         /// </summary>
