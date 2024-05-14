@@ -1,3 +1,12 @@
+### 3.7.810.0 (2024-05-14 18:15 UTC)
+* Connect (3.7.318.0)
+	* Amazon Connect provides enhanced search capabilities for flows & flow modules on the Connect admin website and programmatically using APIs. You can search for flows and flow modules by name, description, type, status, and tags, to filter and identify a specific flow in your Connect instances.
+* S3 (3.7.308.0)
+	* Updated a few x-id in the http uri traits
+* Core 3.7.304.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.809.0 (2024-05-13 18:13 UTC)
 * EventBridge (3.7.303.0)
 	* Amazon EventBridge introduces KMS customer-managed key (CMK) encryption support for custom and partner events published on EventBridge Event Bus (including default bus) and UpdateEventBus API.
