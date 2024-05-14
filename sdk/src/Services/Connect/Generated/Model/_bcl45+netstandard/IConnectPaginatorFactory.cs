@@ -262,6 +262,16 @@ namespace Amazon.Connect.Model
         ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request);
 
         /// <summary>
+        /// Paginator for SearchContactFlowModules operation
+        ///</summary>
+        ISearchContactFlowModulesPaginator SearchContactFlowModules(SearchContactFlowModulesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchContactFlows operation
+        ///</summary>
+        ISearchContactFlowsPaginator SearchContactFlows(SearchContactFlowsRequest request);
+
+        /// <summary>
         /// Paginator for SearchContacts operation
         ///</summary>
         ISearchContactsPaginator SearchContacts(SearchContactsRequest request);

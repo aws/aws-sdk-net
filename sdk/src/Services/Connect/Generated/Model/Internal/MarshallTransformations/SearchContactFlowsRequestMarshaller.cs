@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateContactFlow Request Marshaller
+    /// SearchContactFlows Request Marshaller
     /// </summary>       
-    public class CreateContactFlowRequestMarshaller : IMarshaller<IRequest, CreateContactFlowRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class SearchContactFlowsRequestMarshaller : IMarshaller<IRequest, SearchContactFlowsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateContactFlowRequest)input);
+            return this.Marshall((SearchContactFlowsRequest)input);
         }
 
         /// <summary>
@@ -53,65 +53,58 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateContactFlowRequest publicRequest)
+        public IRequest Marshall(SearchContactFlowsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetInstanceId())
-                throw new AmazonConnectException("Request object does not have required field InstanceId set");
-            request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
-            request.ResourcePath = "/contact-flows/{InstanceId}";
+            request.ResourcePath = "/search-contact-flows";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContent())
+                if(publicRequest.IsSetInstanceId())
                 {
-                    context.Writer.WritePropertyName("Content");
-                    context.Writer.Write(publicRequest.Content);
+                    context.Writer.WritePropertyName("InstanceId");
+                    context.Writer.Write(publicRequest.InstanceId);
                 }
 
-                if(publicRequest.IsSetDescription())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetName())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetStatus())
+                if(publicRequest.IsSetSearchCriteria())
                 {
-                    context.Writer.WritePropertyName("Status");
-                    context.Writer.Write(publicRequest.Status);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WritePropertyName("SearchCriteria");
                     context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
+                    var marshaller = ContactFlowSearchCriteriaMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SearchCriteria, context);
+
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetType())
+                if(publicRequest.IsSetSearchFilter())
                 {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
+                    context.Writer.WritePropertyName("SearchFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ContactFlowSearchFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SearchFilter, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -122,9 +115,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateContactFlowRequestMarshaller _instance = new CreateContactFlowRequestMarshaller();        
+        private static SearchContactFlowsRequestMarshaller _instance = new SearchContactFlowsRequestMarshaller();        
 
-        internal static CreateContactFlowRequestMarshaller GetInstance()
+        internal static SearchContactFlowsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -132,7 +125,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateContactFlowRequestMarshaller Instance
+        public static SearchContactFlowsRequestMarshaller Instance
         {
             get
             {

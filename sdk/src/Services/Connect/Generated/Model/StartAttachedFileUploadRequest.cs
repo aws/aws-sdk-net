@@ -216,7 +216,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property UrlExpiryInSeconds. 
         /// <para>
-        /// Optional override for the expiry of the pre-signed S3 URL in seconds.
+        /// Optional override for the expiry of the pre-signed S3 URL in seconds. The default
+        /// value is 300.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=300)]

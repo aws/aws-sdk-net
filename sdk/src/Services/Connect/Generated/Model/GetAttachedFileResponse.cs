@@ -52,11 +52,6 @@ namespace Amazon.Connect.Model
         /// The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
         /// are the only current supported resource.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This value must be a valid ARN.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string AssociatedResourceArn
         {

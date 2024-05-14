@@ -76,6 +76,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContactFlowState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContactFlowStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContactFlowStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ContactFlowType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -4477,6 +4477,20 @@ namespace Amazon.Connect
         /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
         /// Connect Flow language</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
+        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
+        /// been published.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the response, <b>Status</b> indicates the flow status as either <c>SAVED</c> or
+        /// <c>PUBLISHED</c>. The <c>PUBLISHED</c> status will initiate validation on the content.
+        /// <c>SAVED</c> does not initiate validation of the content. <c>SAVED</c> | <c>PUBLISHED</c>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlow service method.</param>
         /// <param name="cancellationToken">
@@ -4529,6 +4543,14 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Describes the specified flow module.
+        /// 
+        ///  
+        /// <para>
+        /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
+        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
+        /// been published.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowModule service method.</param>
         /// <param name="cancellationToken">
@@ -9780,6 +9802,104 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchContactFlowModules
+
+        internal virtual SearchContactFlowModulesResponse SearchContactFlowModules(SearchContactFlowModulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchContactFlowModulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchContactFlowModulesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchContactFlowModulesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches the flow modules in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContactFlowModules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchContactFlowModules service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlowModules">REST API Reference for SearchContactFlowModules Operation</seealso>
+        public virtual Task<SearchContactFlowModulesResponse> SearchContactFlowModulesAsync(SearchContactFlowModulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchContactFlowModulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchContactFlowModulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchContactFlowModulesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchContactFlows
+
+        internal virtual SearchContactFlowsResponse SearchContactFlows(SearchContactFlowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchContactFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchContactFlowsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchContactFlowsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches the contact flows in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContactFlows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchContactFlows service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlows">REST API Reference for SearchContactFlows Operation</seealso>
+        public virtual Task<SearchContactFlowsResponse> SearchContactFlowsAsync(SearchContactFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchContactFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchContactFlowsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchContactFlowsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchContacts
 
         internal virtual SearchContactsResponse SearchContacts(SearchContactsRequest request)
@@ -11817,6 +11937,13 @@ namespace Amazon.Connect
         /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
         /// Connect Flow language</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
+        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
+        /// been published.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowContent service method.</param>
         /// <param name="cancellationToken">
@@ -11920,7 +12047,15 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates specified flow module for the specified Amazon Connect instance.
+        /// Updates specified flow module for the specified Amazon Connect instance. 
+        /// 
+        ///  
+        /// <para>
+        /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
+        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
+        /// been published.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowModuleContent service method.</param>
         /// <param name="cancellationToken">

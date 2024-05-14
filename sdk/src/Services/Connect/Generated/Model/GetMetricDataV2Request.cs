@@ -135,7 +135,7 @@ namespace Amazon.Connect.Model
         /// | <c>AGENT_HIERARCHY_LEVEL_ONE</c> | <c>AGENT_HIERARCHY_LEVEL_TWO</c> | <c>AGENT_HIERARCHY_LEVEL_THREE</c>
         /// | <c>AGENT_HIERARCHY_LEVEL_FOUR</c> | <c>AGENT_HIERARCHY_LEVEL_FIVE</c> | <c>FEATURE</c>
         /// | <c>CASE_TEMPLATE_ARN</c> | <c>CASE_STATUS</c> | <c>contact/segmentAttributes/connect:Subtype</c>
-        /// | <c>ROUTING_STEP_EXPRESSION</c> 
+        /// | <c>ROUTING_STEP_EXPRESSION</c> | <c>Q_CONNECT_ENABLED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -162,6 +162,24 @@ namespace Amazon.Connect.Model
         ///  <c>ROUTING_STEP_EXPRESSION</c> is a valid filter key with a filter value up to 3000
         /// length. This filter is case and order sensitive. JSON string fields must be sorted
         /// in ascending order and JSON array order should be kept as is.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>Q_CONNECT_ENABLED</c>. TRUE and FALSE are the only valid filterValues for the
+        /// <c>Q_CONNECT_ENABLED</c> filter key. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// TRUE includes all contacts that had Amazon Q in Connect enabled as part of the flow.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FALSE includes all contacts that did not have Amazon Q in Connect enabled as part
+        /// of the flow
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This filter is available only for contact record-driven metrics. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -195,7 +213,7 @@ namespace Amazon.Connect.Model
         /// | <c>AGENT_HIERARCHY_LEVEL_ONE</c> | <c>AGENT_HIERARCHY_LEVEL_TWO</c> | <c>AGENT_HIERARCHY_LEVEL_THREE</c>
         /// | <c>AGENT_HIERARCHY_LEVEL_FOUR</c> | <c>AGENT_HIERARCHY_LEVEL_FIVE</c> | <c>CASE_TEMPLATE_ARN</c>
         /// | <c>CASE_STATUS</c> | <c>contact/segmentAttributes/connect:Subtype</c> | <c>ROUTING_STEP_EXPRESSION</c>
-        /// 
+        /// | <c>Q_CONNECT_ENABLED</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=3)]
@@ -316,7 +334,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature, contact/segmentAttributes/connect:Subtype
+        /// Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -455,7 +473,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature, contact/segmentAttributes/connect:Subtype
+        /// Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -468,7 +486,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -486,7 +505,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature, contact/segmentAttributes/connect:Subtype
+        /// Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -526,7 +545,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -574,7 +594,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature, contact/segmentAttributes/connect:Subtype
+        /// Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -592,7 +612,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature, contact/segmentAttributes/connect:Subtype
+        /// Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -611,7 +631,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -643,7 +663,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature, contact/segmentAttributes/connect:Subtype
+        /// Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -661,7 +681,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -675,7 +695,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature, contact/segmentAttributes/connect:Subtype
+        /// Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -693,7 +713,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -710,7 +730,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -733,7 +754,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -752,7 +773,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -771,7 +792,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -784,7 +805,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -801,7 +823,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -820,7 +843,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -839,7 +862,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -858,7 +881,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -889,7 +912,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+        /// contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -906,7 +929,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -928,7 +952,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+        /// Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -949,7 +973,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype
+        /// Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -963,7 +988,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -976,7 +1001,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -989,7 +1015,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1002,7 +1029,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1015,7 +1043,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1028,7 +1057,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1042,7 +1072,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1068,7 +1098,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1087,7 +1118,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature, contact/segmentAttributes/connect:Subtype
+        /// Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1105,7 +1136,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1119,7 +1150,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1150,7 +1181,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1210,7 +1241,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1229,7 +1260,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1248,7 +1279,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1267,7 +1298,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1318,7 +1349,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1348,7 +1379,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1384,7 +1416,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1410,7 +1443,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1428,7 +1462,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1451,7 +1486,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1477,7 +1512,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1490,7 +1526,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1516,7 +1553,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
@@ -1568,7 +1606,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype,
+        /// Q in Connect
         /// </para>
         ///  
         /// <para>
