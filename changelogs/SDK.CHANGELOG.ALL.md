@@ -1,3 +1,17 @@
+### 3.7.811.0 (2024-05-15 18:18 UTC)
+* BedrockAgentRuntime (3.7.307.0)
+	* Updating Bedrock Knowledge Base Metadata & Filters feature with two new filters listContains and stringContains
+* CodeBuild (3.7.307.0)
+	* CodeBuild Reserved Capacity VPC Support
+* DataSync (3.7.303.0)
+	* Task executions now display a CANCELLING status when an execution is in the process of being cancelled.
+* ManagedGrafana (3.7.302.0)
+	* This release adds new ServiceAccount and ServiceAccountToken APIs.
+* MedicalImaging (3.7.302.0)
+	* Added support for importing medical imaging data from Amazon S3 buckets across accounts and regions.
+* SecurityHub (3.7.305.7)
+	* Documentation-only update for AWS Security Hub
+
 ### 3.7.810.0 (2024-05-14 18:15 UTC)
 * Connect (3.7.318.0)
 	* Amazon Connect provides enhanced search capabilities for flows & flow modules on the Connect admin website and programmatically using APIs. You can search for flows and flow modules by name, description, type, status, and tags, to filter and identify a specific flow in your Connect instances.
