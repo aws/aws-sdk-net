@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeWorkspaceAuthentication operation
+    /// Response Unmarshaller for CreateWorkspaceServiceAccountToken operation
     /// </summary>  
-    public class DescribeWorkspaceAuthenticationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateWorkspaceServiceAccountTokenResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,16 +46,28 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeWorkspaceAuthenticationResponse response = new DescribeWorkspaceAuthenticationResponse();
+            CreateWorkspaceServiceAccountTokenResponse response = new CreateWorkspaceServiceAccountTokenResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("authentication", targetDepth))
+                if (context.TestExpression("serviceAccountId", targetDepth))
                 {
-                    var unmarshaller = AuthenticationDescriptionUnmarshaller.Instance;
-                    response.Authentication = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ServiceAccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serviceAccountToken", targetDepth))
+                {
+                    var unmarshaller = ServiceAccountTokenSummaryWithKeyUnmarshaller.Instance;
+                    response.ServiceAccountToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workspaceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorkspaceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -97,6 +109,10 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
+                {
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -109,9 +125,9 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             return new AmazonManagedGrafanaException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeWorkspaceAuthenticationResponseUnmarshaller _instance = new DescribeWorkspaceAuthenticationResponseUnmarshaller();        
+        private static CreateWorkspaceServiceAccountTokenResponseUnmarshaller _instance = new CreateWorkspaceServiceAccountTokenResponseUnmarshaller();        
 
-        internal static DescribeWorkspaceAuthenticationResponseUnmarshaller GetInstance()
+        internal static CreateWorkspaceServiceAccountTokenResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +135,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeWorkspaceAuthenticationResponseUnmarshaller Instance
+        public static CreateWorkspaceServiceAccountTokenResponseUnmarshaller Instance
         {
             get
             {

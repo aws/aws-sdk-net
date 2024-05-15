@@ -30,44 +30,55 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteWorkspaceApiKey operation.
-    /// Deletes a Grafana API key for the workspace.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// In workspaces compatible with Grafana version 9 or above, use workspace service accounts
-    /// instead of API keys. API keys will be removed in a future release.
-    /// </para>
-    ///  </note>
+    /// This is the response object from the ListWorkspaceServiceAccounts operation.
     /// </summary>
-    public partial class DeleteWorkspaceApiKeyRequest : AmazonManagedGrafanaRequest
+    public partial class ListWorkspaceServiceAccountsResponse : AmazonWebServiceResponse
     {
-        private string _keyName;
+        private string _nextToken;
+        private List<ServiceAccountSummary> _serviceAccounts = AWSConfigs.InitializeCollections ? new List<ServiceAccountSummary>() : null;
         private string _workspaceId;
 
         /// <summary>
-        /// Gets and sets the property KeyName. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The name of the API key to delete.
+        /// The token to use when requesting the next set of service accounts.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string KeyName
+        public string NextToken
         {
-            get { return this._keyName; }
-            set { this._keyName = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if KeyName property is set
-        internal bool IsSetKeyName()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._keyName != null;
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceAccounts. 
+        /// <para>
+        /// An array of structures containing information about the service accounts.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<ServiceAccountSummary> ServiceAccounts
+        {
+            get { return this._serviceAccounts; }
+            set { this._serviceAccounts = value; }
+        }
+
+        // Check to see if ServiceAccounts property is set
+        internal bool IsSetServiceAccounts()
+        {
+            return this._serviceAccounts != null && (this._serviceAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace to delete.
+        /// The workspace to which the service accounts are associated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,44 +30,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteWorkspaceApiKey operation.
-    /// Deletes a Grafana API key for the workspace.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// In workspaces compatible with Grafana version 9 or above, use workspace service accounts
-    /// instead of API keys. API keys will be removed in a future release.
-    /// </para>
-    ///  </note>
+    /// This is the response object from the DeleteWorkspaceServiceAccountToken operation.
     /// </summary>
-    public partial class DeleteWorkspaceApiKeyRequest : AmazonManagedGrafanaRequest
+    public partial class DeleteWorkspaceServiceAccountTokenResponse : AmazonWebServiceResponse
     {
-        private string _keyName;
+        private string _serviceAccountId;
+        private string _tokenId;
         private string _workspaceId;
 
         /// <summary>
-        /// Gets and sets the property KeyName. 
+        /// Gets and sets the property ServiceAccountId. 
         /// <para>
-        /// The name of the API key to delete.
+        /// The ID of the service account where the token was deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string KeyName
+        [AWSProperty(Required=true)]
+        public string ServiceAccountId
         {
-            get { return this._keyName; }
-            set { this._keyName = value; }
+            get { return this._serviceAccountId; }
+            set { this._serviceAccountId = value; }
         }
 
-        // Check to see if KeyName property is set
-        internal bool IsSetKeyName()
+        // Check to see if ServiceAccountId property is set
+        internal bool IsSetServiceAccountId()
         {
-            return this._keyName != null;
+            return this._serviceAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TokenId. 
+        /// <para>
+        /// The ID of the token that was deleted.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string TokenId
+        {
+            get { return this._tokenId; }
+            set { this._tokenId = value; }
+        }
+
+        // Check to see if TokenId property is set
+        internal bool IsSetTokenId()
+        {
+            return this._tokenId != null;
         }
 
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace to delete.
+        /// The ID of the workspace where the token was deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

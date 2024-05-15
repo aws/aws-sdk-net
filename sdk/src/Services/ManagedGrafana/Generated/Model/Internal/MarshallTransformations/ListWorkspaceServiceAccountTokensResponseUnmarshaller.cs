@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeWorkspaceAuthentication operation
+    /// Response Unmarshaller for ListWorkspaceServiceAccountTokens operation
     /// </summary>  
-    public class DescribeWorkspaceAuthenticationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListWorkspaceServiceAccountTokensResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,16 +46,34 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeWorkspaceAuthenticationResponse response = new DescribeWorkspaceAuthenticationResponse();
+            ListWorkspaceServiceAccountTokensResponse response = new ListWorkspaceServiceAccountTokensResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("authentication", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
-                    var unmarshaller = AuthenticationDescriptionUnmarshaller.Instance;
-                    response.Authentication = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serviceAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ServiceAccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serviceAccountTokens", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServiceAccountTokenSummary, ServiceAccountTokenSummaryUnmarshaller>(ServiceAccountTokenSummaryUnmarshaller.Instance);
+                    response.ServiceAccountTokens = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workspaceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorkspaceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -109,9 +127,9 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             return new AmazonManagedGrafanaException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeWorkspaceAuthenticationResponseUnmarshaller _instance = new DescribeWorkspaceAuthenticationResponseUnmarshaller();        
+        private static ListWorkspaceServiceAccountTokensResponseUnmarshaller _instance = new ListWorkspaceServiceAccountTokensResponseUnmarshaller();        
 
-        internal static DescribeWorkspaceAuthenticationResponseUnmarshaller GetInstance()
+        internal static ListWorkspaceServiceAccountTokensResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +137,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeWorkspaceAuthenticationResponseUnmarshaller Instance
+        public static ListWorkspaceServiceAccountTokensResponseUnmarshaller Instance
         {
             get
             {

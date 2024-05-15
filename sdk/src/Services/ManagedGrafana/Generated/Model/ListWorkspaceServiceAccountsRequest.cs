@@ -30,44 +30,63 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteWorkspaceApiKey operation.
-    /// Deletes a Grafana API key for the workspace.
+    /// Container for the parameters to the ListWorkspaceServiceAccounts operation.
+    /// Returns a list of service accounts for a workspace.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// In workspaces compatible with Grafana version 9 or above, use workspace service accounts
-    /// instead of API keys. API keys will be removed in a future release.
+    /// Service accounts are only available for workspaces that are compatible with Grafana
+    /// version 9 and above.
     /// </para>
-    ///  </note>
     /// </summary>
-    public partial class DeleteWorkspaceApiKeyRequest : AmazonManagedGrafanaRequest
+    public partial class ListWorkspaceServiceAccountsRequest : AmazonManagedGrafanaRequest
     {
-        private string _keyName;
+        private int? _maxResults;
+        private string _nextToken;
         private string _workspaceId;
 
         /// <summary>
-        /// Gets and sets the property KeyName. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The name of the API key to delete.
+        /// The maximum number of service accounts to include in the results.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string KeyName
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
         {
-            get { return this._keyName; }
-            set { this._keyName = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if KeyName property is set
-        internal bool IsSetKeyName()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._keyName != null;
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of service accounts to return. (You receive this token
+        /// from a previous <c>ListWorkspaceServiceAccounts</c> operation.)
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace to delete.
+        /// The workspace for which to list service accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
