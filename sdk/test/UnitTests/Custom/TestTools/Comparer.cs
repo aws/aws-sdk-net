@@ -208,7 +208,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                     else 
                     {
                         childObj = Unmarshall(reader, propInfo.PropertyType);
-                        if (propInfo.PropertyType == typeof(DateTime))
+                        if (propInfo.PropertyType == typeof(DateTime) || propInfo.PropertyType == typeof(DateTime?))
                         {
                             childObj = ConvertToDateTime(childObj);
                         }

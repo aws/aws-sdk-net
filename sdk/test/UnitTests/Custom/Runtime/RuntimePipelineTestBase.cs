@@ -217,5 +217,12 @@ namespace AWSSDK.UnitTests
         public override void InvokeSync(IExecutionContext executionContext)
         {
         }
+
+#if BCL
+        public override Task<T> InvokeAsync<T>(IExecutionContext executionContext)
+        {
+            return Task.FromResult<T>(new T());
+        }
+#endif
     }
 }

@@ -357,7 +357,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
                         foreach (var o in og.Options)
                         {
                             Assert.IsFalse(string.IsNullOrEmpty(o.OptionName));
-                            if (o.OptionSettings.Count > 0)
+                            if (o.OptionSettings != null && o.OptionSettings.Count > 0)
                             {
                                 foreach (var os in o.OptionSettings)
                                 {

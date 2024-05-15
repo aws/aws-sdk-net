@@ -32,7 +32,7 @@ namespace AWSSDK.CSM.IntegrationTests
             {
                 Service = "S3",
                 ApiCall = "CreateBucket",
-                Domain = "s3.amazonaws.com",
+                Domain = "s3.us-east-1.amazonaws.com",
                 Region = "us-east-1",
                 AttemptCount = config.MaxErrorRetry + 1,
                 SdkException = "IOException",

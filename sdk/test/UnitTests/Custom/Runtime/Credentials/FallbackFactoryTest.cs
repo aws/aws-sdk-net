@@ -445,7 +445,7 @@ namespace AWSSDK.UnitTests
             File.WriteAllText(webIdentityTokenFilePath, dummyToken);
             var equalityCheck = new Func<AssumeRoleWithWebIdentityRequest, bool>(req =>
             {
-                return req.DurationSeconds.Equals(dummyOptions.DurationSeconds ?? 0) &&
+                return req.DurationSeconds.Equals(dummyOptions.DurationSeconds) &&
                 string.Equals(req.Policy, dummyOptions.Policy) &&
                 Equals(req.PolicyArns, dummyOptions.PolicyArns) &&
                 Equals(req.ProviderId, dummyOptions.ProviderId) &&
@@ -513,7 +513,7 @@ namespace AWSSDK.UnitTests
             File.WriteAllText(webIdentityTokenFilePath, dummyToken);
             var equalityCheck = new Func<AssumeRoleWithWebIdentityRequest, bool>(req =>
             {
-                return req.DurationSeconds.Equals(dummyOptions.DurationSeconds ?? 0) &&
+                return req.DurationSeconds.Equals(dummyOptions.DurationSeconds) &&
                 string.Equals(req.Policy, dummyOptions.Policy) &&
                 Equals(req.PolicyArns, dummyOptions.PolicyArns) &&
                 Equals(req.ProviderId, dummyOptions.ProviderId) &&

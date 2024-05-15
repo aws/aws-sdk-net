@@ -11,7 +11,7 @@ namespace AWSSDK_NetStandard.UnitTests
         {
             var boolAV = new AttributeValue();
             Assert.False(boolAV.IsBOOLSet);
-            Assert.False(boolAV.BOOL);
+            Assert.False(boolAV.BOOL.HasValue);
 
             boolAV.BOOL = false;
             Assert.True(boolAV.IsBOOLSet);
@@ -27,7 +27,7 @@ namespace AWSSDK_NetStandard.UnitTests
 
             boolAV.IsBOOLSet = false;
             Assert.False(boolAV.IsBOOLSet);
-            Assert.False(boolAV.BOOL);
+            Assert.False(boolAV.BOOL.HasValue);
         }
     }
 }

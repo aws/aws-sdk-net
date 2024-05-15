@@ -707,8 +707,10 @@ namespace Amazon.Runtime.Internal.Transform
 
         public DateTime? Unmarshall(XmlUnmarshallerContext context)
         {
+            context.Read();
             string text = context.ReadText();
-            if(text == null)
+
+            if (text == null)
             {
                 return null;
             }
@@ -720,7 +722,9 @@ namespace Amazon.Runtime.Internal.Transform
 
         public DateTime? Unmarshall(JsonUnmarshallerContext context)
         {
+            context.Read();
             string text = context.ReadText();
+
             if (text == null)
             {
                 return null;

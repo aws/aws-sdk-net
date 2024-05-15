@@ -44,8 +44,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     Assert.IsNotNull(value);
 
                     Assert.IsNull(value.BinaryValue);
-                    Assert.IsFalse(value.BooleanValue.Value);
-                    Assert.AreEqual(default(DateTime), value.DatetimeValue);
+                    Assert.IsFalse(value.BooleanValue.HasValue);
+                    Assert.IsNull(value.DatetimeValue);
                     Assert.IsNull(value.NumberValue);
                     Assert.AreEqual("bob", value.StringValue);
                 }

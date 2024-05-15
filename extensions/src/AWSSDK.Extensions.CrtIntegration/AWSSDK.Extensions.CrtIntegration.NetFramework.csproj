@@ -37,6 +37,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\sdk\src\Core\AWSSDK.Core.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\sdk\src\Core\AWSSDK.Core.NetFramework.csproj" />
   </ItemGroup>
 </Project>
