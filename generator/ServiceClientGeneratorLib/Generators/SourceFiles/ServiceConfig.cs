@@ -356,7 +356,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line 144 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
  } 
-else 
+else if (this.Config.IsTestService) 
 { 
             
             #line default
@@ -368,12 +368,13 @@ else
         /// <returns>The resolved endpoint for the given request.</returns>
         public override Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
         {
-            // Placeholder method that should be implemented if tests call it.
-            throw new System.NotImplementedException();
+            // If the current service doesn't have an endpoint rule set (which is the case for configs
+            // that are used for testing), we'll return a placeholder endpoint so that unit tests pass.
+            return new Endpoint(""https://example.com"");
         }
 ");
             
-            #line 157 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
+            #line 158 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
 }
             
             #line default
