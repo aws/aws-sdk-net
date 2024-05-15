@@ -61,6 +61,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The port name of the remote connection.
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: 128.
+        /// </para>
         /// </summary>
         public string PortName
         {

@@ -60,6 +60,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The finding provider's original value for the severity.
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum length of 1. Maximum length of 64.
+        /// </para>
         /// </summary>
         public string Original
         {

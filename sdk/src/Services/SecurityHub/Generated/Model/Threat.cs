@@ -45,6 +45,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Provides information about the file paths that were affected by the threat. 
         /// </para>
+        ///  
+        /// <para>
+        /// Array Members: Minimum number of 1 item. Maximum number of 5 items.
+        /// </para>
         /// </summary>
         public List<FilePaths> FilePaths
         {
@@ -81,6 +85,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The name of the threat. 
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1 length. Maximum of 128 length.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -98,6 +106,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Severity. 
         /// <para>
         /// The severity of the threat. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1 length. Maximum of 128 length.
         /// </para>
         /// </summary>
         public string Severity

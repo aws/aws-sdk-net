@@ -43,6 +43,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The text of a note.
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1. Maximum of 512.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Text

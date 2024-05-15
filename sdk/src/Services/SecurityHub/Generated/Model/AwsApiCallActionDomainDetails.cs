@@ -42,6 +42,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The name of the DNS domain that issued the API call.
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: 128.
+        /// </para>
         /// </summary>
         public string Domain
         {

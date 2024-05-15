@@ -44,6 +44,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The name of the infected or suspicious file corresponding to the hash. 
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1 length. Maximum of 128 length.
+        /// </para>
         /// </summary>
         public string FileName
         {
@@ -61,6 +65,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property FilePath. 
         /// <para>
         /// Path to the infected or suspicious file on the resource it was detected on. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1 length. Maximum of 128 length.
         /// </para>
         /// </summary>
         public string FilePath
@@ -80,6 +88,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The hash value for the infected or suspicious file. 
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1 length. Maximum of 128 length.
+        /// </para>
         /// </summary>
         public string Hash
         {
@@ -97,6 +109,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource on which the threat was detected. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1 length. Maximum of 128 length.
         /// </para>
         /// </summary>
         public string ResourceId
