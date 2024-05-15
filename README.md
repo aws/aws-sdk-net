@@ -426,8 +426,6 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Enable Amazon GuardDuty to continuously monitor and process AWS data sources to identify threats to your AWS accounts and workloads. You can add customization by uploading additional threat intelligence lists and IP safe lists. You can list security findings, suspend, and disable the service.
 * [AWSSDK.HealthLake](https://www.nuget.org/packages/AWSSDK.HealthLake/)
 	* This release introduces Amazon HealthLake (preview), a HIPAA-eligible service that enables healthcare and life sciences customers to store, transform, query, and analyze health data in the AWS Cloud.
-* [AWSSDK.Honeycode](https://www.nuget.org/packages/AWSSDK.Honeycode/)
-	* Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.
 * [AWSSDK.IAMRolesAnywhere](https://www.nuget.org/packages/AWSSDK.IAMRolesAnywhere/)
 	* IAM Roles Anywhere allows your workloads such as servers, containers, and applications to obtain temporary AWS credentials and use the same IAM roles and policies that you have configured for your AWS workloads to access AWS resources.
 * [AWSSDK.IdentityManagement](https://www.nuget.org/packages/AWSSDK.IdentityManagement/)

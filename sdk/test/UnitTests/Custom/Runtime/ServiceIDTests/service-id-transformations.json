@@ -670,11 +670,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_HEALTHLAKE"
   },
   {
-    "service_id": "Honeycode",
-    "services_section_name": "honeycode",
-    "service_envvar_name": "AWS_ENDPOINT_URL_HONEYCODE"
-  },
-  {
     "service_id": "IAM",
     "services_section_name": "iam",
     "service_envvar_name": "AWS_ENDPOINT_URL_IAM"
