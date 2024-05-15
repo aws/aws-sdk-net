@@ -130,6 +130,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetListContains())
+            {
+                context.Writer.WritePropertyName("listContains");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FilterAttributeMarshaller.Instance;
+                marshaller.Marshall(requestObject.ListContains, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNotEquals())
             {
                 context.Writer.WritePropertyName("notEquals");
@@ -175,6 +186,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 
                 var marshaller = FilterAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.StartsWith, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetStringContains())
+            {
+                context.Writer.WritePropertyName("stringContains");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FilterAttributeMarshaller.Instance;
+                marshaller.Marshall(requestObject.StringContains, context);
 
                 context.Writer.WriteObjectEnd();
             }
