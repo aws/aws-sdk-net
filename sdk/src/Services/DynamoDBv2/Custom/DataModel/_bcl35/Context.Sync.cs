@@ -64,16 +64,16 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Load/deserialize
 
         /// <summary>
-        /// Loads an object from DynamoDB for the given hash primary key.
-        /// 
-        /// Uses DynamoDBContextConfig configured on the context.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
+        /// Loads an object from DynamoDB for the given hash key.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
         /// <returns>
-        /// Object of type T, populated with properties of item loaded from DynamoDB.
+        /// Object of type T, populated with the properties of the item loaded from DynamoDB.
         /// </returns>
         public T Load<T>(object hashKey)
         {
@@ -81,15 +81,18 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <summary>
-        /// Loads an object from DynamoDB for the given hash primary key and using the given config.
-        /// 
-        /// Passed-in config overrides DynamoDBContextConfig on the context.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
+        /// Loads an object from DynamoDB for the given hash key and using the given config.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
+        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
+        /// the item's primary key for the table must be specified.
+        /// </param>
         /// <returns>
         /// Object of type T, populated with properties of item loaded from DynamoDB.
         /// </returns>
@@ -100,12 +103,12 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Loads an object from DynamoDB for the given hash-and-range primary key.
-        /// 
-        /// Uses DynamoDBContextConfig configured on the context.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
         /// <param name="rangeKey">Range key element of the target item.</param>
         /// <returns>
@@ -118,15 +121,18 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Loads an object from DynamoDB for the given hash-and-range primary key and using the given config.
-        /// 
-        /// Passed-in config overrides DynamoDBContextConfig on the context.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
         /// <param name="rangeKey">Range key element of the target item.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
+        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
+        /// the item's primary key for the table must be specified.
+        /// </param>
         /// <returns>
         /// Object of type T, populated with properties of item loaded from DynamoDB.
         /// </returns>
@@ -136,17 +142,16 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <summary>
-        /// Loads an object from DynamoDB for the given key.
-        /// The keyObject is a partially-specified instance, where the
-        /// hash/range properties are equal to the key of the item you
-        /// want to load.
-        /// 
-        /// Uses DynamoDBContextConfig configured on the context.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
+        /// Loads an object from DynamoDB for the given key and using the given config.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="keyObject">Key object defining the the target item.</param>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
+        /// <param name="keyObject">A partially-specified instance, where the
+        /// hash/range properties are equal to the key of the item you
+        /// want to load.</param>
         /// <returns>
         /// Object of type T, populated with properties of item loaded from DynamoDB.
         /// </returns>
@@ -157,17 +162,19 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Loads an object from DynamoDB for the given key and using the given config.
-        /// The keyObject is a partially-specified instance, where the
-        /// hash/range properties are equal to the key of the item you
-        /// want to load.
-        /// 
-        /// Passed-in config overrides DynamoDBContextConfig on the context.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="keyObject">Key object defining the the target item.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
+        /// <param name="keyObject">A partially-specified instance, where the
+        /// hash/range properties are equal to the key of the item you
+        /// want to load.</param>
+        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
+        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
+        /// the item's primary key for the table must be specified.
+        /// </param>
         /// <returns>
         /// Object of type T, populated with properties of item loaded from DynamoDB.
         /// </returns>

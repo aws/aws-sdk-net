@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Improve documentation for IDynamoDBContext's Load and LoadAsync, highlighting that they always rely on the table's primary key and not an override index."
+            ]
+        }
+    ]
+}
