@@ -129,7 +129,7 @@ namespace Amazon.CodeBuild.Model
         /// The name of the CodeBuild project.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=255)]
+        [AWSProperty(Required=true, Min=2, Max=150)]
         public string ProjectName
         {
             get { return this._projectName; }

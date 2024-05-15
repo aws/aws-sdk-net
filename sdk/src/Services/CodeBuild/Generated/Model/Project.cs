@@ -329,7 +329,7 @@ namespace Amazon.CodeBuild.Model
         /// The name of the build project.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=255)]
+        [AWSProperty(Min=2, Max=150)]
         public string Name
         {
             get { return this._name; }
@@ -529,6 +529,10 @@ namespace Amazon.CodeBuild.Model
         /// it must use the format <c>pr/pull-request-ID</c> (for example <c>pr/25</c>). If a
         /// branch name is specified, the branch's HEAD commit ID is used. If not specified, the
         /// default branch's HEAD commit ID is used.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For GitLab: the commit ID, branch, or Git tag to use.
         /// </para>
         ///  </li> <li> 
         /// <para>

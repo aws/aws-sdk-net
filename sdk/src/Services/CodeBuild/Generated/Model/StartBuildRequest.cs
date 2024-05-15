@@ -662,7 +662,8 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property SourceAuthOverride. 
         /// <para>
         /// An authorization type for this build that overrides the one defined in the build project.
-        /// This override applies only if the build project's source is BitBucket or GitHub.
+        /// This override applies only if the build project's source is BitBucket, GitHub, GitLab,
+        /// or GitLab Self Managed.
         /// </para>
         /// </summary>
         public SourceAuth SourceAuthOverride
@@ -732,6 +733,10 @@ namespace Amazon.CodeBuild.Model
         /// the format <c>pr/pull-request-ID</c> (for example <c>pr/25</c>). If a branch name
         /// is specified, the branch's HEAD commit ID is used. If not specified, the default branch's
         /// HEAD commit ID is used.
+        /// </para>
+        ///  </dd> <dt>GitLab</dt> <dd> 
+        /// <para>
+        /// The commit ID, branch, or Git tag to use.
         /// </para>
         ///  </dd> <dt>Bitbucket</dt> <dd> 
         /// <para>
