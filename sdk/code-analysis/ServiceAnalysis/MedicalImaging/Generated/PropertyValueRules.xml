@@ -223,6 +223,12 @@
     <pattern>[0-9a-z]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MedicalImaging.Model.StartDICOMImportJobRequest.InputOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MedicalImaging.Model.StartDICOMImportJobRequest.InputS3Uri</property>
     <min>1</min>
     <max>1024</max>
