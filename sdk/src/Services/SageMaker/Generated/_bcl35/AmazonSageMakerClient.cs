@@ -4068,7 +4068,7 @@ namespace Amazon.SageMaker
         #region  CreateSpace
 
         /// <summary>
-        /// Creates a space used for real time collaboration in a domain.
+        /// Creates a private space or a space used for real time collaboration in a domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpace service method.</param>
         /// 

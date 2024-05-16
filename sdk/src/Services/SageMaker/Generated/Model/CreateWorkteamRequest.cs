@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         private List<MemberDefinition> _memberDefinitions = AWSConfigs.InitializeCollections ? new List<MemberDefinition>() : null;
         private NotificationConfiguration _notificationConfiguration;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private WorkerAccessConfiguration _workerAccessConfiguration;
         private string _workforceName;
         private string _workteamName;
 
@@ -153,6 +154,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkerAccessConfiguration. 
+        /// <para>
+        /// Use this optional parameter to constrain access to an Amazon S3 resource based on
+        /// the IP address using supported IAM global condition keys. The Amazon S3 resource is
+        /// accessed in the worker portal using a Amazon S3 presigned URL.
+        /// </para>
+        /// </summary>
+        public WorkerAccessConfiguration WorkerAccessConfiguration
+        {
+            get { return this._workerAccessConfiguration; }
+            set { this._workerAccessConfiguration = value; }
+        }
+
+        // Check to see if WorkerAccessConfiguration property is set
+        internal bool IsSetWorkerAccessConfiguration()
+        {
+            return this._workerAccessConfiguration != null;
         }
 
         /// <summary>

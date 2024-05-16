@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSpace operation.
-    /// Creates a space used for real time collaboration in a domain.
+    /// Creates a private space or a space used for real time collaboration in a domain.
     /// </summary>
     public partial class CreateSpaceRequest : AmazonSageMakerRequest
     {

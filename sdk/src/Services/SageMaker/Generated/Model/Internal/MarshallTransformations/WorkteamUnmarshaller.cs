@@ -106,6 +106,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.SubDomain = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WorkerAccessConfiguration", targetDepth))
+                {
+                    var unmarshaller = WorkerAccessConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.WorkerAccessConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WorkforceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

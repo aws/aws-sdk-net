@@ -5115,6 +5115,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type EnabledOrDisabled.
+    /// </summary>
+    public class EnabledOrDisabled : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for EnabledOrDisabled
+        /// </summary>
+        public static readonly EnabledOrDisabled Disabled = new EnabledOrDisabled("Disabled");
+        /// <summary>
+        /// Constant Enabled for EnabledOrDisabled
+        /// </summary>
+        public static readonly EnabledOrDisabled Enabled = new EnabledOrDisabled("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnabledOrDisabled(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnabledOrDisabled FindValue(string value)
+        {
+            return FindValue<EnabledOrDisabled>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnabledOrDisabled(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EndpointConfigSortKey.
     /// </summary>
     public class EndpointConfigSortKey : ConstantClass

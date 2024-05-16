@@ -102,6 +102,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetWorkerAccessConfiguration())
+                {
+                    context.Writer.WritePropertyName("WorkerAccessConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WorkerAccessConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WorkerAccessConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetWorkteamName())
                 {
                     context.Writer.WritePropertyName("WorkteamName");
