@@ -247,9 +247,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Client.DeleteHealthCheck(new DeleteHealthCheckRequest() { HealthCheckId = healthCheckId });
 
             listResponse = Client.ListHealthChecks();
-            Assert.IsNull(listResponse.HealthChecks.FirstOrDefault(x => x.Id == healthCheckId));
-
-
+            if (listResponse.HealthChecks != null)
+            {
+                Assert.IsNull(listResponse.HealthChecks.FirstOrDefault(x => x.Id == healthCheckId));
+            }
         }
 
         [TestMethod]

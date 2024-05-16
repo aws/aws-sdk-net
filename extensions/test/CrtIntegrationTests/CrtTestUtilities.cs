@@ -2,6 +2,7 @@
 using System;
 using Amazon;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Endpoints;
 
 namespace CrtIntegrationTests
 {
@@ -29,6 +30,11 @@ namespace CrtIntegrationTests
             {
                 return new DefaultConfiguration();
             }
+        }
+
+        public override Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+        {
+            return new Endpoint("https://example.com");
         }
     }
 }

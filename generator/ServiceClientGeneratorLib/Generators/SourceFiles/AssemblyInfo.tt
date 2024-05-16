@@ -46,7 +46,3 @@ using System.Runtime.CompilerServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("<#=this.Config.ServiceVersion #>")]
 [assembly: AssemblyFileVersion("<#=this.Config.ServiceFileVersion #>")]
-
-#if BCL
-[assembly: System.Security.AllowPartiallyTrustedCallers]
-#endif

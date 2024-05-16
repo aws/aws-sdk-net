@@ -102,7 +102,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void TestAWS2ToAWS4RedirectBeforeDNSPropagation()
         {
-            var useast1Client = new AmazonS3Client(RegionEndpoint.USEast1);
+            var useast1Client = new AmazonS3Client(new AmazonS3Config
+            {
+                RegionEndpoint = RegionEndpoint.USEast1,
+                USEast1RegionalEndpointValue = S3UsEast1RegionalEndpointValue.Legacy,
+            });
+
             var eucentral1Client = new AmazonS3Client(RegionEndpoint.EUCentral1);
 
             var bucketName = S3TestUtils.CreateBucketWithWait(eucentral1Client);

@@ -504,7 +504,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void TemporaryRedirectForS3Operations()
         {            
             var testBucketName = UtilityMethods.GenerateName(UtilityMethods.SDK_TEST_PREFIX);
-            using (var client = new AmazonS3Client())
+            var config = new AmazonS3Config
+            {
+                USEast1RegionalEndpointValue = S3UsEast1RegionalEndpointValue.Legacy,
+            };
+
+            using (var client = new AmazonS3Client(config))
             {
                 var bucket = client.PutBucket(new PutBucketRequest
                 {

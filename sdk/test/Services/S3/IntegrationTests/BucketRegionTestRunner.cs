@@ -1,4 +1,5 @@
 ﻿using Amazon;
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
@@ -56,7 +57,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var usEast1ClientConfig = new AmazonS3Config()
             {
                 SignatureVersion = useSigV4 ? "4" : "2",
-                RegionEndpoint = RegionEndpoint.USEast1
+                RegionEndpoint = RegionEndpoint.USEast1,
+                USEast1RegionalEndpointValue = S3UsEast1RegionalEndpointValue.Legacy,
             };
             USEast1Client = new AmazonS3Client(usEast1ClientConfig);
 
