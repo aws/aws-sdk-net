@@ -64,10 +64,6 @@ namespace ServiceClientGenerator
                     projectProperties.RootNamespace = "Amazon";
                     projectProperties.AssemblyName = assemblyName;
                     projectProperties.SourceDirectories = GetCoreProjectSourceFolders(projectFileConfiguration, coreFilesRoot);
-                    projectProperties.IndividualFileIncludes = new List<string>
-                    {
-                        "endpoints.json",
-                    };
                     projectProperties.KeyFilePath = Utils.PathCombineAlt("..", "..", "awssdk.dll.snk");
                     projectProperties.SupressWarnings = "419,1570,1591;CA1822";
                     projectProperties.NugetPackagesLocation = Utils.PathCombineAlt("..", "..", "packages");

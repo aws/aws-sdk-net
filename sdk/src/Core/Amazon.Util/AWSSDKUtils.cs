@@ -652,7 +652,7 @@ namespace Amazon.Util
         public static string DetermineRegion(string url)
         {
             var regionEndpoint = RegionFinder.Instance.FindRegion(url);
-            return regionEndpoint?.RegionName;
+            return regionEndpoint?.SystemName;
         }
 
         /// <summary>
