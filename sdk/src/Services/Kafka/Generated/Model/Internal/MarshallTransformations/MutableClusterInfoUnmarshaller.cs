@@ -64,6 +64,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("brokerCountUpdateInfo", targetDepth))
+                {
+                    var unmarshaller = BrokerCountUpdateInfoUnmarshaller.Instance;
+                    unmarshalledObject.BrokerCountUpdateInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("brokerEBSVolumeInfo", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<BrokerEBSVolumeInfo, BrokerEBSVolumeInfoUnmarshaller>(BrokerEBSVolumeInfoUnmarshaller.Instance);
