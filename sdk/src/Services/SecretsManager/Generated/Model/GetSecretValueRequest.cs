@@ -75,7 +75,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// The ARN or name of the secret to retrieve.
+        /// The ARN or name of the secret to retrieve. To retrieve a secret from another account,
+        /// you must use an ARN.
         /// </para>
         ///  
         /// <para>
