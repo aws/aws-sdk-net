@@ -42,7 +42,6 @@ namespace Amazon
     {
         private const string loggingKey = "logging";
         private const string defaultsKey = "defaults";
-        private const string endpointDefinitionKey = "endpointDefinition";
         private const string regionKey = "region";
         private const string proxy = "proxy";
         private const string profileNameKey = "profileName";
@@ -64,13 +63,6 @@ namespace Amazon
         {
             get { return (CSMSection)this[csmConfigKey]; }
             set { this[csmConfigKey] = value; }
-        }
-
-        [ConfigurationProperty(endpointDefinitionKey)]
-        public string EndpointDefinition
-        {
-            get { return (string)this[endpointDefinitionKey]; }
-            set { this[endpointDefinitionKey] = value; }
         }
 
         [ConfigurationProperty(regionKey)]

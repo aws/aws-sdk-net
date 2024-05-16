@@ -22,9 +22,8 @@ using Amazon.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
+using System.Linq;
 using System.Threading;
-using ThirdParty.Json.LitJson;
 
 namespace Amazon
 {
@@ -35,29 +34,88 @@ namespace Amazon
     public partial class RegionEndpoint
     {
         #region Statics
+
+        /// <summary>
+        /// A hardcoded list for regions that support SigV2 for S3 endpoints to preserve legacy behavior. 
+        /// New regions shouldn't support SigV2 as it is a deprecated signature version.
+        /// </summary>
+        private static readonly HashSet<string> _sigV2SupportedRegions = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            "ap-northeast-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "eu-west-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-west-1",
+            "us-west-2",
+        };
+
         private static Dictionary<string, RegionEndpoint> _hashBySystemName = new Dictionary<string, RegionEndpoint>(StringComparer.OrdinalIgnoreCase);
-        private static ReaderWriterLockSlim _regionEndpointOverrideLock = new ReaderWriterLockSlim(); // controls access to _hashRegionEndpointOverride
+        private static ReaderWriterLockSlim _readerWriterLock = new ReaderWriterLockSlim();
 
-        /// <summary>
-        /// Represents the endpoint overridding rules in the endpoints.json
-        /// Is used to map private region (ie us-east-1-regional) to public regions (us-east-1)
-        /// For signing purposes. Map is keyed by region SystemName.
-        /// </summary>
-        private static Dictionary<string, RegionEndpoint> _hashRegionEndpointOverride = new Dictionary<string, RegionEndpoint>();
+        private static HashSet<string> _allRegionRegex = new HashSet<string>();
 
-        /// <summary>
-        /// Enumerate through all the regions.
-        /// </summary>
         public static IEnumerable<RegionEndpoint> EnumerableAllRegions
         {
             get
             {
-                List<RegionEndpoint> list = new List<RegionEndpoint>();
-                foreach (IRegionEndpoint endpoint in RegionEndpointProvider.AllRegionEndpoints)
+                try
                 {
-                    list.Add(GetEndpoint(endpoint.RegionName, endpoint.DisplayName));
+                    _readerWriterLock.EnterReadLock();
+                    return _hashBySystemName.Values.ToList();
                 }
-                return list;
+                finally
+                {
+                    _readerWriterLock.ExitReadLock();
+                }
+            }
+        }
+
+        public static IEnumerable<string> AllRegionRegex
+        {
+            get
+            {
+                try
+                {
+                    _readerWriterLock.EnterReadLock();
+                    return _allRegionRegex.ToList();
+                }
+                finally
+                {
+                    _readerWriterLock.ExitReadLock();
+                }
+            }
+        }
+
+        private static RegionEndpoint GetRegionEndpoint(string systemName, string displayName, string partitionName, string partitionDnsSuffix, string regionRegex, string hostnameTemplate)
+        {
+            try
+            {
+                _readerWriterLock.EnterReadLock();
+                if (_hashBySystemName.TryGetValue(systemName, out var regionEndpoint))
+                    return regionEndpoint;
+            }
+            finally
+            {
+                _readerWriterLock.ExitReadLock();
+            }
+
+            try
+            {
+                _readerWriterLock.EnterWriteLock();
+                if (_hashBySystemName.TryGetValue(systemName, out var regionEndpoint))
+                    return regionEndpoint;
+
+                regionEndpoint = new RegionEndpoint(systemName, displayName, partitionName, partitionDnsSuffix, regionRegex, hostnameTemplate);
+                _hashBySystemName.Add(systemName, regionEndpoint);
+                _allRegionRegex.Add(regionRegex);
+
+                return regionEndpoint;
+            }
+            finally
+            {
+                _readerWriterLock.ExitWriteLock();
             }
         }
 
@@ -67,8 +125,35 @@ namespace Amazon
         /// <param name="systemName">The system name of the service like "us-west-1"</param>
         /// <returns></returns>
         public static RegionEndpoint GetBySystemName(string systemName)
-        {   
-            return GetEndpoint(systemName, null);
+        {
+            RegionEndpoint similarRegionEndpoint = null;
+            try
+            {
+                _readerWriterLock.EnterReadLock();
+
+                if (_hashBySystemName.TryGetValue(systemName, out var regionEndpoint))
+                    return regionEndpoint;
+
+                similarRegionEndpoint = _hashBySystemName.Values.FirstOrDefault(r => systemName.Contains(r.SystemName));
+                if (similarRegionEndpoint == null)
+                {
+                    // If we couldn't find similar region we wil assume it belongs to aws partition.
+                    similarRegionEndpoint = _hashBySystemName.Values.First(r => r.PartitionName == "aws");
+                }
+            }
+            finally
+            {
+                _readerWriterLock.ExitReadLock();
+            }
+            // Assume the queried region is probably a variant of the similar region and belongs to the same
+            // partition of the similar region, we can use the similar region values to add it to the endpoints.
+            return GetRegionEndpoint(
+                    systemName,
+                    "Unknown",
+                    similarRegionEndpoint.PartitionName,
+                    similarRegionEndpoint.PartitionDnsSuffix,
+                    similarRegionEndpoint.SystemName,
+                    similarRegionEndpoint.HostnameTemplate);
         }
 
         /// <summary>
@@ -79,247 +164,32 @@ namespace Amazon
         [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         public static RegionEndpoint GetRegionEndpointOverride(RegionEndpoint regionEndpoint)
         {
-            try
-            {
-                _regionEndpointOverrideLock.EnterReadLock();
+            // We only override the .NET/S3-specific legacy USEast1Regional region
+            if (regionEndpoint.SystemName == USEast1Regional.SystemName)
+                return GetBySystemName(USEast1.SystemName);
 
-                if (!_hashRegionEndpointOverride.TryGetValue(regionEndpoint.SystemName,
-                    out var regionEndpointOverride))
-                {
-                    return null;
-                }
-
-                return regionEndpointOverride;
-            }
-            finally
-            {
-                _regionEndpointOverrideLock.ExitReadLock();
-            }
+            return null;
         }
 
-        /// <summary>
-        /// Force the SDK to load and apply the given endpoints details
-        /// (eg: an updated endpoints.json file).
-        /// Service clients created after this call will be set up with
-        /// endpoints based on this information.
-        ///
-        /// This function should only be used at application startup, before
-        /// creating service clients.
-        ///
-        /// Known Caveats:
-        /// * static readonly fields (eg: <see cref="RegionEndpoint.USEast1"/>) are not updated.
-        ///   If you use this function, you should use <see cref="RegionEndpoint.GetEndpoint"/> with
-        ///   explicit region system names to ensure you work with RegionEndpoint objects containing
-        ///   the reloaded data. RegionEndpoint objects returned from GetEndpoint will generally 
-        ///   fail Equality comparisons against the static fields.
-        /// * Service clients created before calling Reload have no guarantee around
-        ///   which endpoint data will be used.
-        /// </summary>
-        /// <param name="stream">Stream containing an Endpoints manifest to reload in the SDK.
-        /// Pass null in to reset the SDK, so that it uses its built-in manifest instead.</param>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
-        public static void Reload(Stream stream)
-        {
-            if (stream == null)
-            {
-                _regionEndpointProvider = null;
-            }
-            else
-            {
-                JsonData rootData = null;
-                using (StreamReader reader = new StreamReader(stream))
-                {
-                    rootData = JsonMapper.ToObject(reader);
-                }
-
-                var manifestVersion = rootData?["version"]?.ToString();
-                if (manifestVersion == "3")
-                {
-                    _regionEndpointProvider = new RegionEndpointProviderV3(rootData);
-                }
-                else
-                {
-                    throw new NotSupportedException("Endpoints data format is not supported by reload");
-                }
-            }
-
-            // Reset static lookup maps that may contain objects relating to old endpoint data
-            lock (_hashBySystemName)
-            {
-                _hashBySystemName.Clear();
-
-                // Add the .NET/S3-specific legacy region back to the lookup map
-                GetEndpoint("us-east-1-regional", "US East (Virginia) regional");
-            }
-
-            ResetRegionEndpointOverride();
-        }
-
-        /// <summary>
-        /// Rebuilds the endpoint override map, referencing the SDK's current Region Endpoint data.
-        /// </summary>
-        private static void ResetRegionEndpointOverride()
-        {
-            try
-            {
-                _regionEndpointOverrideLock.EnterWriteLock();
-
-                _hashRegionEndpointOverride.Clear();
-                _hashRegionEndpointOverride.Add(USEast1Regional.SystemName, GetEndpoint(USEast1.SystemName, null));
-            }
-            finally
-            {
-                _regionEndpointOverrideLock.ExitWriteLock();
-            }
-        }
-
-        /// <summary>
-        /// Returns the DNS suffix for the given partition, or
-        /// an empty string if a matching partition was not found in endpoints.json
-        /// </summary>
-        /// <param name="partition">partition</param>
-        /// <returns>DNS suffix for the given partition, empty string if a matching partition was not found</returns>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
-        public static string GetDnsSuffixForPartition(string partition)
-        {
-            return RegionEndpointProvider.GetDnsSuffixForPartition(partition);
-        }
-
-        private static RegionEndpoint GetEndpoint(string systemName, string displayName)
-        {
-            RegionEndpoint regionEndpoint = null;
-            if (displayName == null)
-            {
-                lock (_hashBySystemName)
-                {
-                    if (_hashBySystemName.TryGetValue(systemName, out regionEndpoint))
-                        return regionEndpoint;
-                }
-
-                // GetRegionEndpoint will always return a non-null value. If the the region(systemName) is unknown,
-                // the providers will create a fallback instance that will generate an endpoint to the best
-                // of its knowledge.
-                displayName = RegionEndpointProvider.GetRegionEndpoint(systemName).DisplayName;
-            }
-            
-            lock (_hashBySystemName)
-            {
-                if (_hashBySystemName.TryGetValue(systemName, out regionEndpoint))
-                    return regionEndpoint;
-
-                regionEndpoint = new RegionEndpoint(systemName, displayName);
-                _hashBySystemName.Add(regionEndpoint.SystemName, regionEndpoint);
-            }
-
-            return regionEndpoint;
-        }
-
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
-        private static IRegionEndpointProvider _regionEndpointProvider;
-        private static IRegionEndpointProvider RegionEndpointProvider
-        {
-            get
-            {
-                if (_regionEndpointProvider == null)
-                {
-                    // If the existing customer provided the endpoints.json file via
-                    // <aws endpointDefinition=""/>, it's in v2 format.  We we will create
-                    // a v2 provider which does a fall through during LoadEndpointDefinitions()
-                    // and loads from the override file provided by the user.
-                    //
-                    // Else, we are loading from the assembly resource.  In which case we use the 
-                    // latest provider.
-                    //
-                    // It's actually a bug that _regionEndpointProvider is a static member variable
-                    // since the IEndpointProvider should respect the AWSConfigs.EndpointDefinition
-                    // _at_ the time of the service client instantiation.  However, since this is
-                    // the existing behavior with v2 endpoint file format, we will preserve this behavior as is.
-                    if (!string.IsNullOrEmpty(AWSConfigs.EndpointDefinition))
-                    {
-                        _regionEndpointProvider = new RegionEndpointProviderV2();
-                    }
-                    else
-                    {
-                        _regionEndpointProvider = new RegionEndpointProviderV3();
-                    }
-                }
-                return _regionEndpointProvider;
-            }
-        }
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
         #endregion
 
-        private RegionEndpoint(string systemName, string displayName)
+        public string SystemName { get; private set; }
+        public string DisplayName { get; private set; }
+        public string PartitionName { get; private set; }
+        public string PartitionDnsSuffix { get; private set; }
+        public string RegionRegex { get; private set; }
+        public string HostnameTemplate { get; private set; }
+
+        private RegionEndpoint(string systemName, string displayName, string partitionName, string partitionDnsSuffix, string regionRegex, string hostnameTemplate)
         {
-            this.SystemName = systemName;
-#pragma warning disable CS0612,CS0618
-            this.OriginalSystemName = systemName;
-#pragma warning restore CS0612,CS0618
-            this.DisplayName = displayName;
+            SystemName = systemName;
+            DisplayName = displayName;
+            PartitionName = partitionName;
+            PartitionDnsSuffix = partitionDnsSuffix;
+            RegionRegex = regionRegex;
+            HostnameTemplate = hostnameTemplate;
         }
 
-        /// <summary>
-        /// Gets the system name of a region.
-        /// </summary>
-        public string SystemName
-        {
-            get;
-            private set;
-        }
-
-        [Obsolete("It should not be necessary to use this property.  To support upgrading to Endpoint Variants, " +
-                  "ClientConfig will manipulate the assigned RegionEndpoint.  To support the Polly PreSigner, it's still necessary" +
-                  "to check the OriginalSystemName to determine if a PseudoRegion was assigned.",error: false)]
-        public string OriginalSystemName
-        {
-            get;
-            internal set;
-        }
-
-        /// <summary>
-        /// Gets the display name of a region.
-        /// </summary>
-        public string DisplayName
-        {
-            get;
-            private set;
-        }
-
-        /// <summary>
-        /// Gets the partition name the region is in. For example for us-east-1 the partition name is aws. For cn-northwest-1 the partition name is aws-cn.
-        /// </summary>
-        public string PartitionName
-        {
-            get
-            {
-#pragma warning disable CS0612,CS0618
-                var regionEndpointV3 = this.InternedRegionEndpoint as RegionEndpointV3;
-#pragma warning restore CS0612,CS0618
-                return regionEndpointV3?.PartitionName;
-            }
-        }
-
-        /// <summary>
-        /// Gets the dns suffix for the region endpoints in a partition. For example the aws partition's suffix is amazonaws.com. The aws-cn partition's suffix is amazonaws.com.cn.
-        /// </summary>
-        public string PartitionDnsSuffix
-        {
-            get
-            {
-#pragma warning disable CS0612,CS0618
-                var regionEndpointV3 = this.InternedRegionEndpoint as RegionEndpointV3;
-#pragma warning restore CS0612,CS0618
-                return regionEndpointV3?.PartitionDnsSuffix;
-            }
-        }
-
-        private IRegionEndpoint InternedRegionEndpoint
-        {
-            get
-            {
-                return RegionEndpointProvider.GetRegionEndpoint(SystemName);
-            }
-        }
 
         /// <summary>
         /// Gets the endpoint for a service in a region.
@@ -341,28 +211,6 @@ namespace Amazon
         }
 
         /// <summary>
-        /// Gets the endpoint for a service in a region, optionally selecting a dualstack compatible endpoint.
-        /// </summary>
-        /// <param name="serviceName">
-        /// The services system name. Service system names can be obtained from the
-        /// RegionEndpointServiceName member of the ClientConfig-derived class for the service.
-        /// </param>
-        /// <param name="dualStack">
-        /// If true a dualstack endpoint is returned. It is the user's responsibility to verify that the given service
-        /// supports a dualstack endpoint for the region.
-        /// </param>
-        /// <param>
-        /// For forwards compatibility, if the service being requested for isn't known in the region, this method 
-        /// will generate an endpoint using the AWS endpoint heuristics. In this case, it is not guaranteed the
-        /// endpoint will point to a valid service endpoint.
-        /// </param>
-        [Obsolete("Use GetEndpointForService(string serviceName, GetEndpointForServiceOptions options) instead", error: false)]
-        public Endpoint GetEndpointForService(string serviceName, bool dualStack)
-        {
-            return GetEndpointForService(serviceName, new GetEndpointForServiceOptions {DualStack = dualStack});
-        }
-
-        /// <summary>
         /// Gets the endpoint for a service in a region.
         /// <para />
         /// For forwards compatibility, if the service being requested for isn't known in the region, this method 
@@ -379,7 +227,17 @@ namespace Amazon
         [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         public Endpoint GetEndpointForService(string serviceName, GetEndpointForServiceOptions options)
         {
-            return InternedRegionEndpoint.GetEndpointForService(serviceName, options);
+            // Do a fallback of creating an unknown endpoint based on the
+            // current region's hostname template.
+
+            string hostname = HostnameTemplate.Replace("{service}", serviceName)
+                                 .Replace("{region}", SystemName)
+                                 .Replace("{dnsSuffix}", PartitionDnsSuffix);
+
+            var signatureVersionOverride = 
+                (serviceName == "s3" && _sigV2SupportedRegions.Contains(SystemName)) ? "2" : null;
+
+            return new RegionEndpoint.Endpoint(hostname, null, signatureVersionOverride, PartitionDnsSuffix, deprecated: false);
         }
 
         public override string ToString()

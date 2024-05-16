@@ -16,7 +16,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using Amazon.Internal;
 using Amazon.Runtime.Internal.Util;
@@ -29,12 +28,12 @@ namespace Amazon.Util.Internal
     /// endpoints.json are used to find the region.
     /// If regular expressions also fail, then a default region is returned.
     /// </summary>
-    public class RegionFinder : IDisposable
+    public class RegionFinder
     {
         internal class EndpointSegment
         {
             public string Value { get; set; }
-            public IRegionEndpoint RegionEndpoint { get; set; }
+            public RegionEndpoint RegionEndpoint { get; set; }
             public bool UseThisValue { get; set; }
             public List<EndpointSegment> Children { get; set; }
         }
@@ -50,19 +49,13 @@ namespace Amazon.Util.Internal
 
         private readonly EndpointSegment _root;
         private readonly Logger _logger;
-        private readonly Dictionary<string, IRegionEndpoint> _regionEndpoints;
-#pragma warning disable CS0612,CS0618
-        private readonly RegionEndpointProviderV3 _regionEndpointProviderV3;
-#pragma warning restore CS0612,CS0618
+        private readonly Dictionary<string, RegionEndpoint> _regionEndpoints;
         #endregion
 
         #region Constructors
 
         internal RegionFinder()
         {
-#pragma warning disable CS0612,CS0618
-            _regionEndpointProviderV3 = new RegionEndpointProviderV3();
-#pragma warning restore CS0612,CS0618
             _regionEndpoints = BuildRegionEndpoints();
             _root = BuildRoot();
             _logger = Logger.GetLogger(typeof(RegionFinder));
@@ -80,7 +73,7 @@ namespace Amazon.Util.Internal
         /// </summary>
         /// <param name="endpoint">Endpoint string</param>
         /// <returns>First successfully parsed region from right to left in the given endpoint or default region</returns>
-        public IRegionEndpoint FindRegion(string endpoint)
+        public RegionEndpoint FindRegion(string endpoint)
         {
             if (string.IsNullOrEmpty(endpoint))
             {
@@ -100,7 +93,7 @@ namespace Amazon.Util.Internal
             var fuzzyRegion = FindFuzzyRegion(endpoint);
             if (fuzzyRegion != null)
             {
-                _logger.InfoFormat($"{fuzzyRegion.RegionName} fuzzy region found in endpoint {endpoint}");
+                _logger.InfoFormat($"{fuzzyRegion.SystemName} fuzzy region found in endpoint {endpoint}");
                 return fuzzyRegion;
             }
 
@@ -143,9 +136,9 @@ namespace Amazon.Util.Internal
         /// </summary>
         /// <param name="endpoint"></param>
         /// <returns>First matched region from right to left in the given endpoint or null</returns>
-        public IRegionEndpoint FindFuzzyRegion(string endpoint)
+        public static RegionEndpoint FindFuzzyRegion(string endpoint)
         {
-            foreach (var regionRegex in _regionEndpointProviderV3.AllRegionRegex)
+            foreach (var regionRegex in RegionEndpoint.AllRegionRegex)
             {
                 // A typical region regex looks like "^(us|eu|ap|sa|ca|me|af)\\-\\w+\\-\\d+$"
                 // Remove the start (^) and end ($) keyword to allow regex matching without defined start and end pattern
@@ -154,9 +147,7 @@ namespace Amazon.Util.Internal
                 var match = Regex.Match(endpoint, trimmedRegionRegex, RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.RightToLeft);
                 if (match.Success)
                 {
-#pragma warning disable CS0612,CS0618
-                    return new RegionEndpointProviderV2.RegionEndpoint(match.Value, "Unknown");
-#pragma warning restore CS0612,CS0618
+                    return RegionEndpoint.GetBySystemName(match.Value);
                 }
             }
 
@@ -184,12 +175,12 @@ namespace Amazon.Util.Internal
 
         #region Private methods
 
-        private Dictionary<string, IRegionEndpoint> BuildRegionEndpoints()
+        private Dictionary<string, RegionEndpoint> BuildRegionEndpoints()
         {
-            var allRegionEndpoints = new Dictionary<string, IRegionEndpoint>();
-            foreach (var regionEndpoint in _regionEndpointProviderV3.AllRegionEndpoints)
+            var allRegionEndpoints = new Dictionary<string, RegionEndpoint>();
+            foreach (var regionEndpoint in RegionEndpoint.EnumerableAllRegions)
             {
-                allRegionEndpoints[regionEndpoint.RegionName] = regionEndpoint;
+                allRegionEndpoints[regionEndpoint.SystemName] = regionEndpoint;
             }
 
             return allRegionEndpoints;
@@ -270,7 +261,6 @@ namespace Amazon.Util.Internal
         #endregion
 
         private static readonly RegionFinder _instance = new RegionFinder();
-        private bool disposedValue;
 
         /// <summary>
         /// Gets the singleton.
@@ -281,28 +271,6 @@ namespace Amazon.Util.Internal
             {
                 return _instance;
             }
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!disposedValue)
-            {
-                if (disposing)
-                {
-                    if(_regionEndpointProviderV3 != null)
-                    {
-                        _regionEndpointProviderV3.Dispose();
-                    }
-                }
-
-                disposedValue = true;
-            }
-        }
-
-        public void Dispose()
-        {
-            Dispose(disposing: true);
-            GC.SuppressFinalize(this);
         }
     }
 }

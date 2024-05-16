@@ -1543,6 +1543,10 @@ namespace ServiceClientGenerator
 
             foreach (JsonData partition in endpointsJson["partitions"])
             {
+                var partitionName = partition["partition"].ToString();
+                var partitionDnsSuffix = partition["dnsSuffix"].ToString();
+                var hostnameTemplate = partition["defaults"]["hostname"].ToString();
+                var regionRegex = partition["regionRegex"].ToString();
                 JsonData regions = partition["regions"];
                 foreach (var regionCode in regions.PropertyNames)
                 {
@@ -1552,7 +1556,11 @@ namespace ServiceClientGenerator
                         Name = nameConverter(regionCode),
                         RegionCode = regionCode,
                         ConvertedRegionCode = codeConverter == null ? regionCode : codeConverter(regionCode),
-                        RegionName = regionName
+                        RegionName = regionName,
+                        PartitionName = partitionName,
+                        PartitionDnsSuffix = partitionDnsSuffix,
+                        RegionRegex = regionRegex,
+                        HostnameTemplate = hostnameTemplate,
                     });
                 }
             }

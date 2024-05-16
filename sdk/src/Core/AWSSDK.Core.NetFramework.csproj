@@ -47,12 +47,6 @@
     <Compile Remove="**/_netstandard/**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Include="endpoints.json">
-        <LogicalName>Amazon.endpoints.json</LogicalName>
-    </EmbeddedResource>
-  </ItemGroup>
-
 <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.3">
         <PrivateAssets>all</PrivateAssets>

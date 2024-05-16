@@ -55,7 +55,7 @@ namespace AWSSDK.UnitTests
         [DataRow("us-west-2", ("https://vpce-example.elasticloadbalancing.us-west-2.vpce.amazonaws.com"))]
         public void FindRegion_Endpoint_ReturnsRegion(string expectedRegion, string url)
         {
-            Assert.AreEqual(expectedRegion, RegionFinder.Instance.FindRegion(url).RegionName);
+            Assert.AreEqual(expectedRegion, RegionFinder.Instance.FindRegion(url).SystemName);
         }
 
         [TestMethod]
@@ -65,7 +65,7 @@ namespace AWSSDK.UnitTests
         [DataRow("us-east-1", "https://s3.us-west-2.us-east-1.amazonaws.com/")]
         public void FindRegion_EndpointContainingMultipleRegions_ReturnsFirstRegionFromRight(string expectedRegion, string url)
         {
-            Assert.AreEqual(expectedRegion, RegionFinder.Instance.FindRegion(url).RegionName);
+            Assert.AreEqual(expectedRegion, RegionFinder.Instance.FindRegion(url).SystemName);
         }
 
         [TestMethod]
@@ -76,7 +76,7 @@ namespace AWSSDK.UnitTests
         [DataRow("us-east-1", "https://s3.us-east-1.amazonaws.com/")]
         public void FindRegion_MixedCaseEndpoint_ReturnsLowerCaseRegion(string expectedRegion, string url)
         {
-            Assert.AreEqual(expectedRegion, RegionFinder.Instance.FindRegion(url).RegionName);
+            Assert.AreEqual(expectedRegion, RegionFinder.Instance.FindRegion(url).SystemName);
         }
 
         [TestMethod]
@@ -85,7 +85,7 @@ namespace AWSSDK.UnitTests
         [DataRow("us-gov-west-1", "https://iam.us-gov.c2s.ic.gov/")]
         public void FindRegion_EndpointContainingUSGov_ReturnsDefaultGovRegion(string expectedRegion, string url)
         {
-            Assert.AreEqual(expectedRegion, RegionFinder.Instance.FindRegion(url).RegionName);
+            Assert.AreEqual(expectedRegion, RegionFinder.Instance.FindRegion(url).SystemName);
         }
 
         [TestMethod]
@@ -97,7 +97,7 @@ namespace AWSSDK.UnitTests
         [DataRow("us-east-1", "https://s3-external-1.amazonaws.com/")]
         public void FindRegion_EndpointNotContainingRegion_ReturnsDefaultRegion(string expectedRegion, string url)
         {
-            Assert.AreEqual(expectedRegion, RegionFinder.Instance.FindRegion(url).RegionName);
+            Assert.AreEqual(expectedRegion, RegionFinder.Instance.FindRegion(url).SystemName);
         }
 
         [TestMethod]
@@ -127,7 +127,7 @@ namespace AWSSDK.UnitTests
                     {
                         var expectedRegion = $"{area}-{direction}-{number}";
                         var endpoint = $"https://s3.{expectedRegion}.amazonaws.com";
-                        var actualRegion = RegionFinder.Instance.FindFuzzyRegion(endpoint).RegionName;
+                        var actualRegion = RegionFinder.FindFuzzyRegion(endpoint).SystemName;
                         Assert.AreEqual(expectedRegion, actualRegion);
                     }
                 }
@@ -141,7 +141,7 @@ namespace AWSSDK.UnitTests
                     {
                         var expectedRegion = $"us-{optional}-{direction}-{number}";
                         var endpoint = $"https://s3.{expectedRegion}.amazonaws.com";
-                        var actualRegion = RegionFinder.Instance.FindFuzzyRegion(endpoint).RegionName;
+                        var actualRegion = RegionFinder.FindFuzzyRegion(endpoint).SystemName;
                         Assert.AreEqual(expectedRegion, actualRegion);
                     }
                 }

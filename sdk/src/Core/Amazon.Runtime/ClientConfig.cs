@@ -253,9 +253,6 @@ namespace Amazon.Runtime
                     this.regionEndpoint =
                         RegionEndpoint.GetBySystemName(
                             value.SystemName.Replace("fips-", "").Replace("-fips", ""));
-#pragma warning disable CS0612,CS0618
-                    this.RegionEndpoint.OriginalSystemName = value.SystemName;
-#pragma warning restore CS0612,CS0618
                 }
             }
         }

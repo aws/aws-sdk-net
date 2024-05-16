@@ -82,7 +82,6 @@ namespace Amazon
         internal static LoggingOptions _logging = GetLoggingSetting();
         internal static ResponseLoggingOption _responseLogging = GetConfigEnum<ResponseLoggingOption>(ResponseLoggingKey);
         internal static bool _logMetrics = GetConfigBool(LogMetricsKey);
-        internal static string _endpointDefinition = GetConfig(EndpointDefinitionKey);
         internal static string _awsProfileName = GetConfig(AWSProfileNameKey);
         internal static string _awsAccountsLocation = GetConfig(AWSProfilesLocationKey);
         internal static bool _useSdkCache = GetConfigBool(UseSdkCacheKey, defaultValue: true);
@@ -344,31 +343,6 @@ namespace Amazon
         {
             get { return _rootConfig.Logging.LogMetrics; }
             set { _rootConfig.Logging.LogMetrics = value; }
-        }
-
-        #endregion
-
-        #region Endpoint Configuration
-
-        /// <summary>
-        /// Key for the EndpointDefinition property.
-        /// <seealso cref="Amazon.AWSConfigs.EndpointDefinition"/>
-        /// </summary>
-        public const string EndpointDefinitionKey = "AWSEndpointDefinition";
-
-        /// <summary>
-        /// Configures if the SDK should use a custom configuration file that defines the regions and endpoints.
-        /// <code>
-        /// &lt;configSections&gt;
-        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK.Core"/&gt;
-        /// &lt;/configSections&gt;
-        /// &lt;aws endpointDefinition="c:\config\endpoints.json" /&gt;
-        /// </code>
-        /// </summary>
-        public static string EndpointDefinition
-        {
-            get { return _rootConfig.EndpointDefinition; }
-            set { _rootConfig.EndpointDefinition = value; }
         }
 
         #endregion

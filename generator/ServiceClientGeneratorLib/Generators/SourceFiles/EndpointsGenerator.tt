@@ -28,18 +28,20 @@ namespace Amazon
     /// </summary>
     public partial class RegionEndpoint
     {
+<# foreach (var endpoint in Endpoints) { #>
+<# if (endpoint.RegionCode == "us-east-1") { #>
+
         /// <summary>
         /// The US East (Virginia) regional endpoint.
         /// S3-specific, use for backward compatibility only.
         /// </summary>
-        private static readonly RegionEndpoint USEast1Regional = GetEndpoint("us-east-1-regional", "US East (Virginia) regional");
+        private static readonly RegionEndpoint USEast1Regional = GetRegionEndpoint("us-east-1-regional", "US East (Virginia) regional", "<#= endpoint.PartitionName #>", "<#= endpoint.PartitionDnsSuffix #>", @"<#= endpoint.RegionRegex #>", "<#= endpoint.HostnameTemplate #>");
+<# } #>
 
-<# foreach (var endpoint in Endpoints) { #>
         /// <summary>
         /// The <#= endpoint.RegionName #> endpoint.
         /// </summary>
-        public static readonly RegionEndpoint <#= endpoint.Name #> = GetEndpoint("<#= endpoint.RegionCode #>", "<#= endpoint.RegionName #>");
-
+        public static readonly RegionEndpoint <#= endpoint.Name #> = GetRegionEndpoint("<#= endpoint.RegionCode #>", "<#= endpoint.RegionName #>", "<#= endpoint.PartitionName #>", "<#= endpoint.PartitionDnsSuffix #>", @"<#= endpoint.RegionRegex #>", "<#= endpoint.HostnameTemplate #>");
 <# } #>
     }
 }
