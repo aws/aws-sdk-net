@@ -142,10 +142,22 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     unmarshalledObject.LoggingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaxWebservers", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxWebservers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxWorkers", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.MaxWorkers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MinWebservers", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MinWebservers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinWorkers", targetDepth))
