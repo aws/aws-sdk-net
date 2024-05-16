@@ -32,7 +32,7 @@ namespace Amazon.CognitoIdentityProvider
     public partial class AmazonCognitoIdentityProviderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Cognito Identity Provider", "3.7.305.4");
+            InternalSDKUtils.BuildUserAgentString("Cognito Identity Provider", "3.7.305.5");
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -1,3 +1,22 @@
+### 3.7.812.0 (2024-05-16 18:21 UTC)
+* ACMPCA (3.7.302.0)
+	* This release adds support for waiters to fail on AccessDeniedException when having insufficient permissions
+* Connect (3.7.318.1)
+	* Adding Contact Flow metrics to the GetMetricDataV2 API
+* Kafka (3.7.303.0)
+	* AWS MSK support for Broker Removal.
+* MWAA (3.7.304.0)
+	* Amazon MWAA now supports Airflow web server auto scaling to automatically handle increased demand from REST APIs, Command Line Interface (CLI), or more Airflow User Interface (UI) users. Customers can specify maximum and minimum web server instances during environment creation and update workflow.
+* QuickSight (3.7.311.0)
+	* This release adds DescribeKeyRegistration and UpdateKeyRegistration APIs to manage QuickSight Customer Managed Keys (CMK).
+* SageMaker (3.7.323.0)
+	* Introduced WorkerAccessConfiguration to SageMaker Workteam. This allows customers to configure resource access for workers in a workteam.
+* SecretsManager (3.7.302.67)
+	* Documentation updates for AWS Secrets Manager
+* Core 3.7.304.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.811.0 (2024-05-15 18:18 UTC)
 * BedrockAgentRuntime (3.7.307.0)
 	* Updating Bedrock Knowledge Base Metadata & Filters feature with two new filters listContains and stringContains
