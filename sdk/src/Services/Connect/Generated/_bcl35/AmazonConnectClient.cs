@@ -2768,7 +2768,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Creates a prompt. For more information about prompts, such as supported file types
         /// and maximum length, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create
-        /// prompts</a> in the <i>Amazon Connect Administrator's Guide</i>.
+        /// prompts</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrompt service method.</param>
         /// 
@@ -9034,7 +9034,7 @@ namespace Amazon.Connect
         /// <para>
         /// For a description of the historical metrics that are supported by <c>GetMetricDataV2</c>
         /// and <c>GetMetricData</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-        /// metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.
+        /// metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricDataV2 service method.</param>
