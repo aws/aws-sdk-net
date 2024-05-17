@@ -65,7 +65,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Specifies the domain of the storage system that is used for file transfers.
+        /// Specifies the domain of the storage system that is used for file transfers. There
+        /// are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic
+        /// File System (Amazon EFS). The default value is S3.
         /// </para>
         /// </summary>
         public Domain Domain
