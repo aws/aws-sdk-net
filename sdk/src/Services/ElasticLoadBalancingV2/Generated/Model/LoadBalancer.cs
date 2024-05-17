@@ -162,9 +162,17 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The type of IP addresses used by the subnets for your load balancer. The possible
-        /// values are <c>ipv4</c> (for IPv4 addresses) and <c>dualstack</c> (for IPv4 and IPv6
-        /// addresses).
+        /// [Application Load Balancers] The type of IP addresses used for public or private connections
+        /// by the subnets attached to your load balancer. The possible values are <c>ipv4</c>
+        /// (for only IPv4 addresses), <c>dualstack</c> (for IPv4 and IPv6 addresses), and <c>dualstack-without-public-ipv4</c>
+        /// (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).
+        /// </para>
+        ///  
+        /// <para>
+        /// [Network Load Balancers and Gateway Load Balancers] The type of IP addresses used
+        /// for public or private connections by the subnets attached to your load balancer. The
+        /// possible values are <c>ipv4</c> (for only IPv4 addresses) and <c>dualstack</c> (for
+        /// IPv4 and IPv6 addresses).
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType
