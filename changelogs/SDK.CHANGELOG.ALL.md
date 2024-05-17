@@ -1,4 +1,6 @@
 ### 3.7.813.0 (2024-05-17 18:20 UTC)
+* AlexaForBusiness (Removed)
+	* Alexa for Business has been removed from the SDK because it has been discontinued.
 * ApplicationAutoScaling (3.7.302.0)
 	* add v2 smoke tests and smithy smokeTests trait for SDK testing.
 * CodeBuild (3.7.308.0)
