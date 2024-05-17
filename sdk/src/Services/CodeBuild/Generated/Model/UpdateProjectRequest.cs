@@ -484,11 +484,11 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
-        /// The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
-        /// timing out any related build that did not get marked as completed.
+        /// The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait
+        /// before timing out any related build that did not get marked as completed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=480)]
+        [AWSProperty(Min=5, Max=2160)]
         public int TimeoutInMinutes
         {
             get { return this._timeoutInMinutes.GetValueOrDefault(); }

@@ -774,11 +774,11 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutesOverride. 
         /// <para>
-        /// The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for
+        /// The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for
         /// this build only, the latest setting already defined in the build project.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=480)]
+        [AWSProperty(Min=5, Max=2160)]
         public int TimeoutInMinutesOverride
         {
             get { return this._timeoutInMinutesOverride.GetValueOrDefault(); }

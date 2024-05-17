@@ -727,7 +727,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
-        /// How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing
+        /// How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing
         /// out this build if it does not get marked as completed.
         /// </para>
         /// </summary>

@@ -41,7 +41,7 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateProjectRequest.TimeoutInMinutes</property>
     <min>5</min>
-    <max>480</max>
+    <max>2160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateReportGroupRequest.Name</property>
@@ -253,12 +253,12 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.StartBuildRequest.TimeoutInMinutesOverride</property>
     <min>5</min>
-    <max>480</max>
+    <max>2160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.StartBuildBatchRequest.BuildTimeoutInMinutesOverride</property>
     <min>5</min>
-    <max>480</max>
+    <max>2160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.StartBuildBatchRequest.EncryptionKeyOverride</property>
@@ -330,7 +330,7 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.UpdateProjectRequest.TimeoutInMinutes</property>
     <min>5</min>
-    <max>480</max>
+    <max>2160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.UpdateProjectVisibilityRequest.ProjectArn</property>
@@ -559,7 +559,7 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.Project.TimeoutInMinutes</property>
     <min>5</min>
-    <max>480</max>
+    <max>2160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.ProjectBuildBatchConfig.ServiceRole</property>
