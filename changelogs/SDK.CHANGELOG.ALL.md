@@ -1,3 +1,18 @@
+### 3.7.813.0 (2024-05-17 18:20 UTC)
+* ApplicationAutoScaling (3.7.302.0)
+	* add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* CodeBuild (3.7.308.0)
+	* Aws CodeBuild now supports 36 hours build timeout
+* ElasticLoadBalancingV2 (3.7.303.0)
+	* This release adds dualstack-without-public-ipv4 IP address type for ALB.
+* LakeFormation (3.7.304.0)
+	* Introduces a new API, GetDataLakePrincipal, that returns the identity of the invoking principal
+* Transfer (3.7.307.0)
+	* Enable use of CloudFormation traits in Smithy model to improve generated CloudFormation schema from the Smithy API model.
+* Core 3.7.304.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.812.0 (2024-05-16 18:21 UTC)
 * ACMPCA (3.7.302.0)
 	* This release adds support for waiters to fail on AccessDeniedException when having insufficient permissions
