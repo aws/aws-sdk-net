@@ -1,10 +1,14 @@
 ### 3.7.813.0 (2024-05-17 18:20 UTC)
+* AlexaForBusiness (Removed)
+	* Alexa for Business has been removed from the SDK because it has been discontinued.
 * ApplicationAutoScaling (3.7.302.0)
 	* add v2 smoke tests and smithy smokeTests trait for SDK testing.
 * CodeBuild (3.7.308.0)
 	* Aws CodeBuild now supports 36 hours build timeout
 * ElasticLoadBalancingV2 (3.7.303.0)
 	* This release adds dualstack-without-public-ipv4 IP address type for ALB.
+* Honeycode (Removed)
+	* AWS Honeycode has been removed from the SDK because it has been discontinued.
 * LakeFormation (3.7.304.0)
 	* Introduces a new API, GetDataLakePrincipal, that returns the identity of the invoking principal
 * Transfer (3.7.307.0)
