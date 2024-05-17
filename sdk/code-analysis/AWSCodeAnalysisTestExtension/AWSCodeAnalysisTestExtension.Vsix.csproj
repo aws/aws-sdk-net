@@ -64,10 +64,6 @@
       <Project>{1073C7DB-B519-4074-AF6D-3A881198BB67}</Project>
       <Name>AWSSDK.ACMPCA.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/AlexaForBusiness/AWSSDK.AlexaForBusiness.CodeAnalysis.csproj">
-      <Project>{19BEAEA3-E3CE-4346-B51E-D22E7A319DE5}</Project>
-      <Name>AWSSDK.AlexaForBusiness.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Amplify/AWSSDK.Amplify.CodeAnalysis.csproj">
       <Project>{FE28FA91-1F9C-417B-844C-AF73189EFA3A}</Project>
       <Name>AWSSDK.Amplify.CodeAnalysis</Name>
@@ -635,10 +631,6 @@
     <ProjectReference Include="../ServiceAnalysis/HealthLake/AWSSDK.HealthLake.CodeAnalysis.csproj">
       <Project>{B08CE3C3-4F9A-46C5-B7BB-371C9752CAFA}</Project>
       <Name>AWSSDK.HealthLake.CodeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/Honeycode/AWSSDK.Honeycode.CodeAnalysis.csproj">
-      <Project>{7514CF83-2AF7-4EAC-9006-24E159F9D62A}</Project>
-      <Name>AWSSDK.Honeycode.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IAMRolesAnywhere/AWSSDK.IAMRolesAnywhere.CodeAnalysis.csproj">
       <Project>{213EDD5C-6DB2-491B-B26C-A946922F8007}</Project>
