@@ -334,8 +334,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property RotationEnabled. 
         /// <para>
-        /// Specifies whether automatic rotation is turned on for this secret. If the secret has
-        /// never been configured for rotation, Secrets Manager returns null.
+        /// Specifies whether automatic rotation is turned on for this secret.
         /// </para>
         ///  
         /// <para>
