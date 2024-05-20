@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Trace Object
+    /// Response Unmarshaller for GuardrailWordPolicyAssessment Object
     /// </summary>  
-    public class TraceUnmarshaller : IUnmarshaller<Trace, XmlUnmarshallerContext>, IUnmarshaller<Trace, JsonUnmarshallerContext>
+    public class GuardrailWordPolicyAssessmentUnmarshaller : IUnmarshaller<GuardrailWordPolicyAssessment, XmlUnmarshallerContext>, IUnmarshaller<GuardrailWordPolicyAssessment, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Trace IUnmarshaller<Trace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GuardrailWordPolicyAssessment IUnmarshaller<GuardrailWordPolicyAssessment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Trace Unmarshall(JsonUnmarshallerContext context)
+        public GuardrailWordPolicyAssessment Unmarshall(JsonUnmarshallerContext context)
         {
-            Trace unmarshalledObject = new Trace();
+            GuardrailWordPolicyAssessment unmarshalledObject = new GuardrailWordPolicyAssessment();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,34 +64,16 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("failureTrace", targetDepth))
+                if (context.TestExpression("customWords", targetDepth))
                 {
-                    var unmarshaller = FailureTraceUnmarshaller.Instance;
-                    unmarshalledObject.FailureTrace = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<GuardrailCustomWord, GuardrailCustomWordUnmarshaller>(GuardrailCustomWordUnmarshaller.Instance);
+                    unmarshalledObject.CustomWords = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("guardrailTrace", targetDepth))
+                if (context.TestExpression("managedWordLists", targetDepth))
                 {
-                    var unmarshaller = GuardrailTraceUnmarshaller.Instance;
-                    unmarshalledObject.GuardrailTrace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("orchestrationTrace", targetDepth))
-                {
-                    var unmarshaller = OrchestrationTraceUnmarshaller.Instance;
-                    unmarshalledObject.OrchestrationTrace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("postProcessingTrace", targetDepth))
-                {
-                    var unmarshaller = PostProcessingTraceUnmarshaller.Instance;
-                    unmarshalledObject.PostProcessingTrace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("preProcessingTrace", targetDepth))
-                {
-                    var unmarshaller = PreProcessingTraceUnmarshaller.Instance;
-                    unmarshalledObject.PreProcessingTrace = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<GuardrailManagedWord, GuardrailManagedWordUnmarshaller>(GuardrailManagedWordUnmarshaller.Instance);
+                    unmarshalledObject.ManagedWordLists = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -99,12 +81,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static TraceUnmarshaller _instance = new TraceUnmarshaller();        
+        private static GuardrailWordPolicyAssessmentUnmarshaller _instance = new GuardrailWordPolicyAssessmentUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TraceUnmarshaller Instance
+        public static GuardrailWordPolicyAssessmentUnmarshaller Instance
         {
             get
             {

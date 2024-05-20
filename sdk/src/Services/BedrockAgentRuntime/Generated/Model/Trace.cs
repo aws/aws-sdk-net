@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class Trace
     {
         private FailureTrace _failureTrace;
+        private GuardrailTrace _guardrailTrace;
         private OrchestrationTrace _orchestrationTrace;
         private PostProcessingTrace _postProcessingTrace;
         private PreProcessingTrace _preProcessingTrace;
@@ -59,6 +60,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetFailureTrace()
         {
             return this._failureTrace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GuardrailTrace. 
+        /// <para>
+        /// The trace details for a trace defined in the Guardrail filter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public GuardrailTrace GuardrailTrace
+        {
+            get { return this._guardrailTrace; }
+            set { this._guardrailTrace = value; }
+        }
+
+        // Check to see if GuardrailTrace property is set
+        internal bool IsSetGuardrailTrace()
+        {
+            return this._guardrailTrace != null;
         }
 
         /// <summary>
