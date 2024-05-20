@@ -94,6 +94,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("guardrailConfiguration", targetDepth))
+                {
+                    var unmarshaller = GuardrailConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.GuardrailConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -100,6 +100,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FoundationModel);
                 }
 
+                if(publicRequest.IsSetGuardrailConfiguration())
+                {
+                    context.Writer.WritePropertyName("guardrailConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GuardrailConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.GuardrailConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIdleSessionTTLInSeconds())
                 {
                     context.Writer.WritePropertyName("idleSessionTTLInSeconds");

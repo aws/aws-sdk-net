@@ -124,6 +124,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.FoundationModel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("guardrailConfiguration", targetDepth))
+                {
+                    var unmarshaller = GuardrailConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.GuardrailConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("idleSessionTTLInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

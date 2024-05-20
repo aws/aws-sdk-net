@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AgentSummary Object
+    /// Response Unmarshaller for GuardrailConfiguration Object
     /// </summary>  
-    public class AgentSummaryUnmarshaller : IUnmarshaller<AgentSummary, XmlUnmarshallerContext>, IUnmarshaller<AgentSummary, JsonUnmarshallerContext>
+    public class GuardrailConfigurationUnmarshaller : IUnmarshaller<GuardrailConfiguration, XmlUnmarshallerContext>, IUnmarshaller<GuardrailConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AgentSummary IUnmarshaller<AgentSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GuardrailConfiguration IUnmarshaller<GuardrailConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgentSummary Unmarshall(JsonUnmarshallerContext context)
+        public GuardrailConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            AgentSummary unmarshalledObject = new AgentSummary();
+            GuardrailConfiguration unmarshalledObject = new GuardrailConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,46 +64,16 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("agentId", targetDepth))
+                if (context.TestExpression("guardrailIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GuardrailIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("agentName", targetDepth))
+                if (context.TestExpression("guardrailVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("agentStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("guardrailConfiguration", targetDepth))
-                {
-                    var unmarshaller = GuardrailConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.GuardrailConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latestAgentVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LatestAgentVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("updatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GuardrailVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -111,12 +81,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static AgentSummaryUnmarshaller _instance = new AgentSummaryUnmarshaller();        
+        private static GuardrailConfigurationUnmarshaller _instance = new GuardrailConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AgentSummaryUnmarshaller Instance
+        public static GuardrailConfigurationUnmarshaller Instance
         {
             get
             {

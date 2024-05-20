@@ -44,7 +44,7 @@ namespace Amazon.BedrockAgent.Model
         /// knowledge base.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=1011)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string EmbeddingModelArn
         {
             get { return this._embeddingModelArn; }

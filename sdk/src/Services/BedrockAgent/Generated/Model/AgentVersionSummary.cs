@@ -39,6 +39,7 @@ namespace Amazon.BedrockAgent.Model
         private string _agentVersion;
         private DateTime? _createdAt;
         private string _description;
+        private GuardrailConfiguration _guardrailConfiguration;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -134,6 +135,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GuardrailConfiguration. 
+        /// <para>
+        /// The details of the guardrails configuration in the agent version summary.
+        /// </para>
+        /// </summary>
+        public GuardrailConfiguration GuardrailConfiguration
+        {
+            get { return this._guardrailConfiguration; }
+            set { this._guardrailConfiguration = value; }
+        }
+
+        // Check to see if GuardrailConfiguration property is set
+        internal bool IsSetGuardrailConfiguration()
+        {
+            return this._guardrailConfiguration != null;
         }
 
         /// <summary>
