@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// An operation performed by the control.
+    /// A summary of information about the specified control operation.
     /// </summary>
-    public partial class ControlOperation
+    public partial class ControlOperationSummary
     {
         private string _controlIdentifier;
         private string _enabledControlIdentifier;
@@ -47,7 +47,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property ControlIdentifier. 
         /// <para>
-        /// The <c>controlIdentifier</c> of the control for the operation.
+        /// The <c>controlIdentifier</c> of a control.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -66,7 +66,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property EnabledControlIdentifier. 
         /// <para>
-        /// The <c>controlIdentifier</c> of the enabled control.
+        /// The <c>controlIdentifier</c> of an enabled control.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -85,7 +85,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time that the operation finished.
+        /// The time at which the control operation was completed.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -103,7 +103,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property OperationIdentifier. 
         /// <para>
-        /// The identifier of the specified operation.
+        /// The unique identifier of a control operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -122,7 +122,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property OperationType. 
         /// <para>
-        /// One of <c>ENABLE_CONTROL</c> or <c>DISABLE_CONTROL</c>.
+        /// The type of operation.
         /// </para>
         /// </summary>
         public ControlOperationType OperationType
@@ -140,7 +140,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time that the operation began.
+        /// The time at which a control operation began.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -158,7 +158,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// One of <c>IN_PROGRESS</c>, <c>SUCEEDED</c>, or <c>FAILED</c>.
+        /// The status of the specified control operation.
         /// </para>
         /// </summary>
         public ControlOperationStatus Status
@@ -176,8 +176,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// If the operation result is <c>FAILED</c>, this string contains a message explaining
-        /// why the operation failed.
+        /// A speficic message displayed as part of the control status.
         /// </para>
         /// </summary>
         public string StatusMessage
@@ -195,7 +194,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property TargetIdentifier. 
         /// <para>
-        /// The target upon which the control operation is working.
+        /// The unique identifier of the target of a control operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

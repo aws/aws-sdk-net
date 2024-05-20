@@ -32,7 +32,9 @@ namespace Amazon.ControlTower.Model
     /// <summary>
     /// Container for the parameters to the EnableBaseline operation.
     /// Enable (apply) a <c>Baseline</c> to a Target. This API starts an asynchronous operation
-    /// to deploy resources specified by the <c>Baseline</c> to the specified Target.
+    /// to deploy resources specified by the <c>Baseline</c> to the specified Target. For
+    /// usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html">
+    /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
     /// </summary>
     public partial class EnableBaselineRequest : AmazonControlTowerRequest
     {

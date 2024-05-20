@@ -30,26 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListEnabledControls operation.
-    /// Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational
-    /// unit and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-    /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
+    /// Container for the parameters to the ListControlOperations operation.
+    /// Provides a list of operations in progress or queued.
     /// </summary>
-    public partial class ListEnabledControlsRequest : AmazonControlTowerRequest
+    public partial class ListControlOperationsRequest : AmazonControlTowerRequest
     {
-        private EnabledControlFilter _filter;
+        private ControlOperationFilter _filter;
         private int? _maxResults;
         private string _nextToken;
-        private string _targetIdentifier;
 
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// An input filter for the <c>ListCEnabledControls</c> API that lets you select the types
-        /// of control operations to view.
+        /// An input filter for the <c>ListControlOperations</c> API that lets you select the
+        /// types of control operations to view.
         /// </para>
         /// </summary>
-        public EnabledControlFilter Filter
+        public ControlOperationFilter Filter
         {
             get { return this._filter; }
             set { this._filter = value; }
@@ -64,10 +61,10 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// How many results to return per API call.
+        /// The maximum number of results to be shown.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -83,7 +80,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to continue the list from a previous API call with the same parameters.
+        /// A pagination token.
         /// </para>
         /// </summary>
         public string NextToken
@@ -96,27 +93,6 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TargetIdentifier. 
-        /// <para>
-        /// The ARN of the organizational unit. For information on how to find the <c>targetIdentifier</c>,
-        /// see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-        /// overview page</a>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string TargetIdentifier
-        {
-            get { return this._targetIdentifier; }
-            set { this._targetIdentifier = value; }
-        }
-
-        // Check to see if TargetIdentifier property is set
-        internal bool IsSetTargetIdentifier()
-        {
-            return this._targetIdentifier != null;
         }
 
     }

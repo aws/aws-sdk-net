@@ -32,7 +32,7 @@ namespace Amazon.ControlTower.Model
     /// <summary>
     /// Container for the parameters to the GetLandingZoneOperation operation.
     /// Returns the status of the specified landing zone operation. Details for an operation
-    /// are available for 60 days.
+    /// are available for 90 days.
     /// </summary>
     public partial class GetLandingZoneOperationRequest : AmazonControlTowerRequest
     {

@@ -33,7 +33,9 @@ namespace Amazon.ControlTower.Model
     /// Container for the parameters to the DisableBaseline operation.
     /// Disable an <c>EnabledBaseline</c> resource on the specified Target. This API starts
     /// an asynchronous operation to remove all resources deployed as part of the baseline
-    /// enablement. The resource will vary depending on the enabled baseline.
+    /// enablement. The resource will vary depending on the enabled baseline. For usage examples,
+    /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html">
+    /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
     /// </summary>
     public partial class DisableBaselineRequest : AmazonControlTowerRequest
     {

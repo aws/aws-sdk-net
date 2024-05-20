@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ControlOperation Object
+    /// Response Unmarshaller for ControlOperationSummary Object
     /// </summary>  
-    public class ControlOperationUnmarshaller : IUnmarshaller<ControlOperation, XmlUnmarshallerContext>, IUnmarshaller<ControlOperation, JsonUnmarshallerContext>
+    public class ControlOperationSummaryUnmarshaller : IUnmarshaller<ControlOperationSummary, XmlUnmarshallerContext>, IUnmarshaller<ControlOperationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ControlOperation IUnmarshaller<ControlOperation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ControlOperationSummary IUnmarshaller<ControlOperationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ControlOperation Unmarshall(JsonUnmarshallerContext context)
+        public ControlOperationSummary Unmarshall(JsonUnmarshallerContext context)
         {
-            ControlOperation unmarshalledObject = new ControlOperation();
+            ControlOperationSummary unmarshalledObject = new ControlOperationSummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -123,12 +123,12 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         }
 
 
-        private static ControlOperationUnmarshaller _instance = new ControlOperationUnmarshaller();        
+        private static ControlOperationSummaryUnmarshaller _instance = new ControlOperationSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ControlOperationUnmarshaller Instance
+        public static ControlOperationSummaryUnmarshaller Instance
         {
             get
             {

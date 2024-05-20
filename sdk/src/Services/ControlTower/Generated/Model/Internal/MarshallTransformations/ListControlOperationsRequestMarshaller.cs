@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListEnabledControls Request Marshaller
+    /// ListControlOperations Request Marshaller
     /// </summary>       
-    public class ListEnabledControlsRequestMarshaller : IMarshaller<IRequest, ListEnabledControlsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListControlOperationsRequestMarshaller : IMarshaller<IRequest, ListControlOperationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListEnabledControlsRequest)input);
+            return this.Marshall((ListControlOperationsRequest)input);
         }
 
         /// <summary>
@@ -53,14 +53,14 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListEnabledControlsRequest publicRequest)
+        public IRequest Marshall(ListControlOperationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ControlTower");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/list-enabled-controls";
+            request.ResourcePath = "/list-control-operations";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -72,7 +72,7 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("filter");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = EnabledControlFilterMarshaller.Instance;
+                    var marshaller = ControlOperationFilterMarshaller.Instance;
                     marshaller.Marshall(publicRequest.Filter, context);
 
                     context.Writer.WriteObjectEnd();
@@ -90,12 +90,6 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetTargetIdentifier())
-                {
-                    context.Writer.WritePropertyName("targetIdentifier");
-                    context.Writer.Write(publicRequest.TargetIdentifier);
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -104,9 +98,9 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListEnabledControlsRequestMarshaller _instance = new ListEnabledControlsRequestMarshaller();        
+        private static ListControlOperationsRequestMarshaller _instance = new ListControlOperationsRequestMarshaller();        
 
-        internal static ListEnabledControlsRequestMarshaller GetInstance()
+        internal static ListControlOperationsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +108,7 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListEnabledControlsRequestMarshaller Instance
+        public static ListControlOperationsRequestMarshaller Instance
         {
             get
             {

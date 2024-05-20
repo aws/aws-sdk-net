@@ -30,32 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListBaselines operation.
-    /// Returns a summary list of all available baselines. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html">
-    /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
+    /// This is the response object from the ListControlOperations operation.
     /// </summary>
-    public partial class ListBaselinesRequest : AmazonControlTowerRequest
+    public partial class ListControlOperationsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<ControlOperationSummary> _controlOperations = AWSConfigs.InitializeCollections ? new List<ControlOperationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property ControlOperations. 
         /// <para>
-        /// The maximum number of results to be shown.
+        /// Returns a list of output from control operations. PLACEHOLDER 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=4, Max=100)]
-        public int MaxResults
+        [AWSProperty(Required=true)]
+        public List<ControlOperationSummary> ControlOperations
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._controlOperations; }
+            set { this._controlOperations = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if ControlOperations property is set
+        internal bool IsSetControlOperations()
         {
-            return this._maxResults.HasValue; 
+            return this._controlOperations != null && (this._controlOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
