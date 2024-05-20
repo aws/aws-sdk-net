@@ -1,3 +1,19 @@
+### 3.7.814.0 (2024-05-20 18:27 UTC)
+* BedrockAgent (3.7.309.0)
+	* This release adds support for using Guardrails with Bedrock Agents.
+* BedrockAgentRuntime (3.7.308.0)
+	* This release adds support for using Guardrails with Bedrock Agents.
+* ControlTower (3.7.305.0)
+	* Added ListControlOperations API and filtering support for ListEnabledControls API. Updates also includes added metadata for enabled controls and control operations.
+* DynamoDBv2 (3.7.303.9)
+	* Improve documentation for IDynamoDBContext's Load and LoadAsync, highlighting that they always rely on the table's primary key and not an override index.
+* OSIS (3.7.302.0)
+	* Add support for creating an OpenSearch Ingestion pipeline that is attached to a provided VPC. Add information about the destinations of an OpenSearch Ingestion pipeline to the GetPipeline and ListPipelines APIs.
+* RDS (3.7.313.0)
+	* This release adds support for EngineLifecycleSupport on DBInstances, DBClusters, and GlobalClusters.
+* SecretsManager (3.7.303.0)
+	* add v2 smoke tests and smithy smokeTests trait for SDK testing
+
 ### 3.7.813.0 (2024-05-17 18:20 UTC)
 * AlexaForBusiness (Removed)
 	* Alexa for Business has been removed from the SDK because it has been discontinued.
