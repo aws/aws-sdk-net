@@ -83,6 +83,7 @@ namespace Amazon.RDS.Model
         private List<string> _enabledCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Endpoint _endpoint;
         private string _engine;
+        private string _engineLifecycleSupport;
         private string _engineVersion;
         private string _enhancedMonitoringResourceArn;
         private bool? _iamDatabaseAuthenticationEnabled;
@@ -935,6 +936,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngine()
         {
             return this._engine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineLifecycleSupport. 
+        /// <para>
+        /// The life cycle type for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see CreateDBInstance.
+        /// </para>
+        /// </summary>
+        public string EngineLifecycleSupport
+        {
+            get { return this._engineLifecycleSupport; }
+            set { this._engineLifecycleSupport = value; }
+        }
+
+        // Check to see if EngineLifecycleSupport property is set
+        internal bool IsSetEngineLifecycleSupport()
+        {
+            return this._engineLifecycleSupport != null;
         }
 
         /// <summary>

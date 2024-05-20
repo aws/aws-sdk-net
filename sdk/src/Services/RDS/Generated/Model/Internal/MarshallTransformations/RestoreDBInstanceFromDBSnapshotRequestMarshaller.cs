@@ -173,6 +173,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
                 }
+                if(publicRequest.IsSetEngineLifecycleSupport())
+                {
+                    request.Parameters.Add("EngineLifecycleSupport", StringUtils.FromString(publicRequest.EngineLifecycleSupport));
+                }
                 if(publicRequest.IsSetIops())
                 {
                     request.Parameters.Add("Iops", StringUtils.FromInt(publicRequest.Iops));

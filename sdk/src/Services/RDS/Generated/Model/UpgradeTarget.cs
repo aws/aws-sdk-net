@@ -53,6 +53,10 @@ namespace Amazon.RDS.Model
         /// Indicates whether the target version is applied to any source DB instances that have
         /// <c>AutoMinorVersionUpgrade</c> set to true.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter is dynamic, and is set by RDS.
+        /// </para>
         /// </summary>
         public bool AutoUpgrade
         {
