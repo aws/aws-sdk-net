@@ -70,10 +70,34 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                     unmarshalledObject.BlueprintName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DisplayDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DisplayDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PipelineConfigurationBody", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PipelineConfigurationBody = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Service", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Service = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UseCase", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UseCase = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

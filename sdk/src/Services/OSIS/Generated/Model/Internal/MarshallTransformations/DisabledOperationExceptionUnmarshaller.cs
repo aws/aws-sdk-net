@@ -35,64 +35,47 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OSIS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VpcOptions Object
+    /// Response Unmarshaller for DisabledOperationException Object
     /// </summary>  
-    public class VpcOptionsUnmarshaller : IUnmarshaller<VpcOptions, XmlUnmarshallerContext>, IUnmarshaller<VpcOptions, JsonUnmarshallerContext>
+    public class DisabledOperationExceptionUnmarshaller : IErrorResponseUnmarshaller<DisabledOperationException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VpcOptions IUnmarshaller<VpcOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public DisabledOperationException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns>The unmarshalled object</returns>
-        public VpcOptions Unmarshall(JsonUnmarshallerContext context)
+        /// <param name="errorResponse"></param>
+        /// <returns></returns>
+        public DisabledOperationException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            VpcOptions unmarshalledObject = new VpcOptions();
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
+            DisabledOperationException unmarshalledObject = new DisabledOperationException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("SecurityGroupIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SubnetIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VpcAttachmentOptions", targetDepth))
-                {
-                    var unmarshaller = VpcAttachmentOptionsUnmarshaller.Instance;
-                    unmarshalledObject.VpcAttachmentOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
+          
             return unmarshalledObject;
         }
 
-
-        private static VpcOptionsUnmarshaller _instance = new VpcOptionsUnmarshaller();        
+        private static DisabledOperationExceptionUnmarshaller _instance = new DisabledOperationExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VpcOptionsUnmarshaller Instance
+        public static DisabledOperationExceptionUnmarshaller Instance
         {
             get
             {

@@ -37,6 +37,7 @@ namespace Amazon.OSIS.Model
     {
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private VpcAttachmentOptions _vpcAttachmentOptions;
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
@@ -74,6 +75,24 @@ namespace Amazon.OSIS.Model
         internal bool IsSetSubnetIds()
         {
             return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcAttachmentOptions. 
+        /// <para>
+        /// Options for attaching a VPC to a pipeline.
+        /// </para>
+        /// </summary>
+        public VpcAttachmentOptions VpcAttachmentOptions
+        {
+            get { return this._vpcAttachmentOptions; }
+            set { this._vpcAttachmentOptions = value; }
+        }
+
+        // Check to see if VpcAttachmentOptions property is set
+        internal bool IsSetVpcAttachmentOptions()
+        {
+            return this._vpcAttachmentOptions != null;
         }
 
     }

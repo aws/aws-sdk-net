@@ -70,6 +70,12 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Destinations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PipelineDestination, PipelineDestinationUnmarshaller>(PipelineDestinationUnmarshaller.Instance);
+                    unmarshalledObject.Destinations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

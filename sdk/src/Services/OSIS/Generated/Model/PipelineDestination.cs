@@ -30,47 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OSIS.Model
 {
     /// <summary>
-    /// This is the response object from the GetPipelineBlueprint operation.
+    /// An object representing the destination of a pipeline.
     /// </summary>
-    public partial class GetPipelineBlueprintResponse : AmazonWebServiceResponse
+    public partial class PipelineDestination
     {
-        private PipelineBlueprint _blueprint;
-        private string _format;
+        private string _endpoint;
+        private string _serviceName;
 
         /// <summary>
-        /// Gets and sets the property Blueprint. 
+        /// Gets and sets the property Endpoint. 
         /// <para>
-        /// The requested blueprint in YAML format.
+        /// The endpoint receiving data from the pipeline.
         /// </para>
         /// </summary>
-        public PipelineBlueprint Blueprint
+        public string Endpoint
         {
-            get { return this._blueprint; }
-            set { this._blueprint = value; }
+            get { return this._endpoint; }
+            set { this._endpoint = value; }
         }
 
-        // Check to see if Blueprint property is set
-        internal bool IsSetBlueprint()
+        // Check to see if Endpoint property is set
+        internal bool IsSetEndpoint()
         {
-            return this._blueprint != null;
+            return this._endpoint != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Format. 
+        /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The format of the blueprint.
+        /// The name of the service receiving data from the pipeline.
         /// </para>
         /// </summary>
-        public string Format
+        public string ServiceName
         {
-            get { return this._format; }
-            set { this._format = value; }
+            get { return this._serviceName; }
+            set { this._serviceName = value; }
         }
 
-        // Check to see if Format property is set
-        internal bool IsSetFormat()
+        // Check to see if ServiceName property is set
+        internal bool IsSetServiceName()
         {
-            return this._format != null;
+            return this._serviceName != null;
         }
 
     }

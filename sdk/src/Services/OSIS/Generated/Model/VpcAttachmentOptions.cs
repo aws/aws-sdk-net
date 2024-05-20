@@ -30,47 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OSIS.Model
 {
     /// <summary>
-    /// This is the response object from the GetPipelineBlueprint operation.
+    /// Options for attaching a VPC to pipeline.
     /// </summary>
-    public partial class GetPipelineBlueprintResponse : AmazonWebServiceResponse
+    public partial class VpcAttachmentOptions
     {
-        private PipelineBlueprint _blueprint;
-        private string _format;
+        private bool? _attachToVpc;
+        private string _cidrBlock;
 
         /// <summary>
-        /// Gets and sets the property Blueprint. 
+        /// Gets and sets the property AttachToVpc. 
         /// <para>
-        /// The requested blueprint in YAML format.
+        /// Whether a VPC is attached to the pipeline.
         /// </para>
         /// </summary>
-        public PipelineBlueprint Blueprint
+        [AWSProperty(Required=true)]
+        public bool AttachToVpc
         {
-            get { return this._blueprint; }
-            set { this._blueprint = value; }
+            get { return this._attachToVpc.GetValueOrDefault(); }
+            set { this._attachToVpc = value; }
         }
 
-        // Check to see if Blueprint property is set
-        internal bool IsSetBlueprint()
+        // Check to see if AttachToVpc property is set
+        internal bool IsSetAttachToVpc()
         {
-            return this._blueprint != null;
+            return this._attachToVpc.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Format. 
+        /// Gets and sets the property CidrBlock. 
         /// <para>
-        /// The format of the blueprint.
+        /// The CIDR block to be reserved for OpenSearch Ingestion to create elastic network interfaces
+        /// (ENIs).
         /// </para>
         /// </summary>
-        public string Format
+        public string CidrBlock
         {
-            get { return this._format; }
-            set { this._format = value; }
+            get { return this._cidrBlock; }
+            set { this._cidrBlock = value; }
         }
 
-        // Check to see if Format property is set
-        internal bool IsSetFormat()
+        // Check to see if CidrBlock property is set
+        internal bool IsSetCidrBlock()
         {
-            return this._format != null;
+            return this._cidrBlock != null;
         }
 
     }

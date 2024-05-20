@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OSIS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VpcOptions Object
+    /// Response Unmarshaller for VpcAttachmentOptions Object
     /// </summary>  
-    public class VpcOptionsUnmarshaller : IUnmarshaller<VpcOptions, XmlUnmarshallerContext>, IUnmarshaller<VpcOptions, JsonUnmarshallerContext>
+    public class VpcAttachmentOptionsUnmarshaller : IUnmarshaller<VpcAttachmentOptions, XmlUnmarshallerContext>, IUnmarshaller<VpcAttachmentOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VpcOptions IUnmarshaller<VpcOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VpcAttachmentOptions IUnmarshaller<VpcAttachmentOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public VpcOptions Unmarshall(JsonUnmarshallerContext context)
+        public VpcAttachmentOptions Unmarshall(JsonUnmarshallerContext context)
         {
-            VpcOptions unmarshalledObject = new VpcOptions();
+            VpcAttachmentOptions unmarshalledObject = new VpcAttachmentOptions();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,22 +64,16 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("SecurityGroupIds", targetDepth))
+                if (context.TestExpression("AttachToVpc", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AttachToVpc = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SubnetIds", targetDepth))
+                if (context.TestExpression("CidrBlock", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VpcAttachmentOptions", targetDepth))
-                {
-                    var unmarshaller = VpcAttachmentOptionsUnmarshaller.Instance;
-                    unmarshalledObject.VpcAttachmentOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,12 +81,12 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         }
 
 
-        private static VpcOptionsUnmarshaller _instance = new VpcOptionsUnmarshaller();        
+        private static VpcAttachmentOptionsUnmarshaller _instance = new VpcAttachmentOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VpcOptionsUnmarshaller Instance
+        public static VpcAttachmentOptionsUnmarshaller Instance
         {
             get
             {

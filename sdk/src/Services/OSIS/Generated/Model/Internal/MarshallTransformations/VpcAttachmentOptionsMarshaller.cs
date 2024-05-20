@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OSIS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VpcOptions Marshaller
+    /// VpcAttachmentOptions Marshaller
     /// </summary>
-    public class VpcOptionsMarshaller : IRequestMarshaller<VpcOptions, JsonMarshallerContext> 
+    public class VpcAttachmentOptionsMarshaller : IRequestMarshaller<VpcAttachmentOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,41 +44,20 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VpcOptions requestObject, JsonMarshallerContext context)
+        public void Marshall(VpcAttachmentOptions requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetSecurityGroupIds())
+            if(requestObject.IsSetAttachToVpc())
             {
-                context.Writer.WritePropertyName("SecurityGroupIds");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
-                {
-                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("AttachToVpc");
+                context.Writer.Write(requestObject.AttachToVpc);
             }
 
-            if(requestObject.IsSetSubnetIds())
+            if(requestObject.IsSetCidrBlock())
             {
-                context.Writer.WritePropertyName("SubnetIds");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
-                {
-                        context.Writer.Write(requestObjectSubnetIdsListValue);
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetVpcAttachmentOptions())
-            {
-                context.Writer.WritePropertyName("VpcAttachmentOptions");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = VpcAttachmentOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.VpcAttachmentOptions, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("CidrBlock");
+                context.Writer.Write(requestObject.CidrBlock);
             }
 
         }
@@ -86,7 +65,7 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static VpcOptionsMarshaller Instance = new VpcOptionsMarshaller();
+        public readonly static VpcAttachmentOptionsMarshaller Instance = new VpcAttachmentOptionsMarshaller();
 
     }
 }
