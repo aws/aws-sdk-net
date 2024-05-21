@@ -1,3 +1,19 @@
+### 3.7.815.0 (2024-05-21 18:19 UTC)
+* CloudFront (3.7.303.0)
+	* Model update; no change to SDK functionality.
+* Glue (3.7.311.0)
+	* Add Maintenance window to CreateJob and UpdateJob APIs and JobRun response. Add a new Job Run State for EXPIRED.
+* Lightsail (3.7.305.0)
+	* This release adds support for Amazon Lightsail instances to switch between dual-stack or IPv4 only and IPv6-only public IP address types.
+* MailManager (3.7.300.0)
+	* This release includes a new Amazon SES feature called Mail Manager, which is a set of email gateway capabilities designed to help customers strengthen their organization's email infrastructure, simplify email workflow management, and streamline email compliance control.
+* PI (3.7.301.0)
+	* Performance Insights added a new input parameter called AuthorizedActions to support the fine-grained access feature. Performance Insights also restricted the acceptable input characters.
+* RDS (3.7.313.1)
+	* Updates Amazon RDS documentation for Db2 license through AWS Marketplace.
+* StorageGateway (3.7.302.0)
+	* Added new SMBSecurityStrategy enum named MandatoryEncryptionNoAes128, new mode enforces encryption and disables AES 128-bit algorithums.
+
 ### 3.7.814.0 (2024-05-20 18:27 UTC)
 * BedrockAgent (3.7.309.0)
 	* This release adds support for using Guardrails with Bedrock Agents.
