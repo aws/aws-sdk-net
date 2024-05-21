@@ -847,6 +847,10 @@ namespace Amazon.StorageGateway
         /// </summary>
         public static readonly SMBSecurityStrategy MandatoryEncryption = new SMBSecurityStrategy("MandatoryEncryption");
         /// <summary>
+        /// Constant MandatoryEncryptionNoAes128 for SMBSecurityStrategy
+        /// </summary>
+        public static readonly SMBSecurityStrategy MandatoryEncryptionNoAes128 = new SMBSecurityStrategy("MandatoryEncryptionNoAes128");
+        /// <summary>
         /// Constant MandatorySigning for SMBSecurityStrategy
         /// </summary>
         public static readonly SMBSecurityStrategy MandatorySigning = new SMBSecurityStrategy("MandatorySigning");
