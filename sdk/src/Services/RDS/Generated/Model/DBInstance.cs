@@ -1127,7 +1127,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property LicenseModel. 
         /// <para>
         /// The license model information for this DB instance. This setting doesn't apply to
-        /// RDS Custom DB instances.
+        /// Amazon Aurora or RDS Custom DB instances.
         /// </para>
         /// </summary>
         public string LicenseModel
