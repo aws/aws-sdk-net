@@ -96,6 +96,8 @@ of these tests, charges can occur. To reduce charges occurred by running the tes
 
 Unit tests can be found in the **AWSSDK.UnitTests** project.
 
+Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol tests ensure that each AWS protocol is working as expected. Each supported protocol is [listed here](https://smithy.io/2.0/aws/protocols/index.html). These tests are safe to run as they do not call real AWS services. You can run these tests by either opening the solution file and running the tests or via the `dotnet` cli by invoking `dotnet test AWSSDK.ProtocolTests.NetStandard.csproj`. The structure for the protocol test cases can be found [here in the smithy docs](https://smithy.io/2.0/additional-specs/http-protocol-compliance-tests.html).
+
 ### NuGet Packages
 
 * [AWSSDK.AccessAnalyzer](https://www.nuget.org/packages/AWSSDK.AccessAnalyzer/)

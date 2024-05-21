@@ -30,3 +30,7 @@ cd ProtocolTestsGenerator
 ```
 dotnet test AWSSDK.ProtocolTests.Net45.csproj
 ```
+
+## Debugging Protocol Tests
+
+1. If one of the protocol tests is broken, you can debug it by opening the `.sln` file under `sdk/test/ProtocolTests`, navigating to the test that is failing, placing a breakpoint and debugging as usual.
