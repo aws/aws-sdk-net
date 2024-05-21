@@ -36,11 +36,39 @@ namespace Amazon.PI.Model
     /// </summary>
     public partial class ListAvailableResourceDimensionsRequest : AmazonPIRequest
     {
+        private List<string> _authorizedActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identifier;
         private int? _maxResults;
         private List<string> _metrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
         private ServiceType _serviceType;
+
+        /// <summary>
+        /// Gets and sets the property AuthorizedActions. 
+        /// <para>
+        /// The actions to discover the dimensions you are authorized to access. If you specify
+        /// multiple actions, then the response will contain the dimensions common for all the
+        /// actions.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you don't specify this request parameter or provide an empty list, the response
+        /// contains all the available dimensions for the target database engine whether or not
+        /// you are authorized to access them.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<string> AuthorizedActions
+        {
+            get { return this._authorizedActions; }
+            set { this._authorizedActions = value; }
+        }
+
+        // Check to see if AuthorizedActions property is set
+        internal bool IsSetAuthorizedActions()
+        {
+            return this._authorizedActions != null && (this._authorizedActions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Identifier. 
