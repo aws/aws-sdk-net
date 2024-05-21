@@ -544,6 +544,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.
 * [AWSSDK.Macie2](https://www.nuget.org/packages/AWSSDK.Macie2/)
 	* This release introduces a new major version of the Amazon Macie API. You can use this version of the API to develop tools and applications that interact with the new Amazon Macie.
+* [AWSSDK.MailManager](https://www.nuget.org/packages/AWSSDK.MailManager/)
+	* This release includes a new Amazon SES feature called Mail Manager, which is a set of email gateway capabilities designed to help customers strengthen their organization's email infrastructure, simplify email workflow management, and streamline email compliance control.
 * [AWSSDK.MainframeModernization](https://www.nuget.org/packages/AWSSDK.MainframeModernization/)
 	* AWS Mainframe Modernization service is a managed mainframe service and set of tools for planning, migrating, modernizing, and running mainframe workloads on AWS
 * [AWSSDK.ManagedBlockchain](https://www.nuget.org/packages/AWSSDK.ManagedBlockchain/)
