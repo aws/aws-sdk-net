@@ -148,6 +148,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaintenanceWindow", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaintenanceWindow = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxCapacity", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;

@@ -291,6 +291,10 @@
     <pattern>^\w+\.\w+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateJobRequest.MaintenanceWindow</property>
+    <pattern>^(Sun|Mon|Tue|Wed|Thu|Fri|Sat):([01]?[0-9]|2[0-3])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateJobRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -4024,6 +4028,10 @@
     <pattern>^\w+\.\w+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.Job.MaintenanceWindow</property>
+    <pattern>^(Sun|Mon|Tue|Wed|Thu|Fri|Sat):([01]?[0-9]|2[0-3])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.Job.Name</property>
     <min>1</min>
     <max>255</max>
@@ -4075,6 +4083,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.JobRun.MaintenanceWindow</property>
+    <pattern>^(Sun|Mon|Tue|Wed|Thu|Fri|Sat):([01]?[0-9]|2[0-3])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.JobRun.PreviousRunId</property>
     <min>1</min>
     <max>255</max>
@@ -4107,6 +4119,10 @@
     <min>1</min>
     <max>255</max>
     <pattern>^\w+\.\w+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.JobUpdate.MaintenanceWindow</property>
+    <pattern>^(Sun|Mon|Tue|Wed|Thu|Fri|Sat):([01]?[0-9]|2[0-3])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobUpdate.SecurityConfiguration</property>

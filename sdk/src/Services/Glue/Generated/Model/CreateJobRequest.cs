@@ -45,6 +45,7 @@ namespace Amazon.Glue.Model
         private ExecutionProperty _executionProperty;
         private string _glueVersion;
         private string _logUri;
+        private string _maintenanceWindow;
         private double? _maxCapacity;
         private int? _maxRetries;
         private string _name;
@@ -311,6 +312,32 @@ namespace Amazon.Glue.Model
         internal bool IsSetLogUri()
         {
             return this._logUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceWindow. 
+        /// <para>
+        /// This field specifies a day of the week and hour for a maintenance window for streaming
+        /// jobs. Glue periodically performs maintenance activities. During these maintenance
+        /// windows, Glue will need to restart your streaming jobs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Glue will restart the job within 3 hours of the specified maintenance window. For
+        /// instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs
+        /// will be restarted between 10:00AM GMT to 1:00PM GMT.
+        /// </para>
+        /// </summary>
+        public string MaintenanceWindow
+        {
+            get { return this._maintenanceWindow; }
+            set { this._maintenanceWindow = value; }
+        }
+
+        // Check to see if MaintenanceWindow property is set
+        internal bool IsSetMaintenanceWindow()
+        {
+            return this._maintenanceWindow != null;
         }
 
         /// <summary>

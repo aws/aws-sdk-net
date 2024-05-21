@@ -48,6 +48,7 @@ namespace Amazon.Glue.Model
         private JobRunState _jobRunState;
         private DateTime? _lastModifiedOn;
         private string _logGroupName;
+        private string _maintenanceWindow;
         private double? _maxCapacity;
         private NotificationProperty _notificationProperty;
         private int? _numberOfWorkers;
@@ -172,13 +173,14 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DPUSeconds. 
         /// <para>
-        /// This field populates only for Auto Scaling job runs, and represents the total time
-        /// each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU
-        /// factor (1 for <c>G.1X</c>, 2 for <c>G.2X</c>, or 0.25 for <c>G.025X</c> workers).
-        /// This value may be different than the <c>executionEngineRuntime</c> * <c>MaxCapacity</c>
-        /// as in the case of Auto Scaling jobs, as the number of executors running at a given
-        /// time may be less than the <c>MaxCapacity</c>. Therefore, it is possible that the value
-        /// of <c>DPUSeconds</c> is less than <c>executionEngineRuntime</c> * <c>MaxCapacity</c>.
+        /// This field can be set for either job runs with execution class <c>FLEX</c> or when
+        /// Auto Scaling is enabled, and represents the total time each executor ran during the
+        /// lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <c>G.1X</c>,
+        /// 2 for <c>G.2X</c>, or 0.25 for <c>G.025X</c> workers). This value may be different
+        /// than the <c>executionEngineRuntime</c> * <c>MaxCapacity</c> as in the case of Auto
+        /// Scaling jobs, as the number of executors running at a given time may be less than
+        /// the <c>MaxCapacity</c>. Therefore, it is possible that the value of <c>DPUSeconds</c>
+        /// is less than <c>executionEngineRuntime</c> * <c>MaxCapacity</c>.
         /// </para>
         /// </summary>
         public double DPUSeconds
@@ -397,6 +399,32 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaintenanceWindow. 
+        /// <para>
+        /// This field specifies a day of the week and hour for a maintenance window for streaming
+        /// jobs. Glue periodically performs maintenance activities. During these maintenance
+        /// windows, Glue will need to restart your streaming jobs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Glue will restart the job within 3 hours of the specified maintenance window. For
+        /// instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs
+        /// will be restarted between 10:00AM GMT to 1:00PM GMT.
+        /// </para>
+        /// </summary>
+        public string MaintenanceWindow
+        {
+            get { return this._maintenanceWindow; }
+            set { this._maintenanceWindow = value; }
+        }
+
+        // Check to see if MaintenanceWindow property is set
+        internal bool IsSetMaintenanceWindow()
+        {
+            return this._maintenanceWindow != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
         /// For Glue version 1.0 or earlier jobs, using the standard worker type, the number of
@@ -567,8 +595,21 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880
-        /// minutes (48 hours).
+        /// The maximum value for timeout for batch jobs is 7 days or 10080 minutes. The default
+        /// is 2880 minutes (48 hours) for batch jobs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Any existing Glue jobs that have a greater timeout value are defaulted to 7 days.
+        /// For instance you have specified a timeout of 20 days for a batch job, it will be stopped
+        /// on the 7th day.
+        /// </para>
+        ///  
+        /// <para>
+        /// Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the
+        /// value is left blank, the job will be restarted after 7 days based if you have not
+        /// setup a maintenance window. If you have setup maintenance window, it will be restarted
+        /// during the maintenance window after 7 days.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

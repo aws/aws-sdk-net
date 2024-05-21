@@ -144,6 +144,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LogUri);
             }
 
+            if(requestObject.IsSetMaintenanceWindow())
+            {
+                context.Writer.WritePropertyName("MaintenanceWindow");
+                context.Writer.Write(requestObject.MaintenanceWindow);
+            }
+
             if(requestObject.IsSetMaxCapacity())
             {
                 context.Writer.WritePropertyName("MaxCapacity");
