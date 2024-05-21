@@ -108,8 +108,9 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property FromBlueprintId. 
         /// <para>
-        /// The blueprint ID from which you created the snapshot (<c>os_debian_8_3</c>). A blueprint
-        /// is a virtual private server (or <i>instance</i>) image used to create instances quickly.
+        /// The blueprint ID from which you created the snapshot (<c>amazon_linux_2023</c>). A
+        /// blueprint is a virtual private server (or <i>instance</i>) image used to create instances
+        /// quickly.
         /// </para>
         /// </summary>
         public string FromBlueprintId
@@ -127,7 +128,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property FromBundleId. 
         /// <para>
-        /// The bundle ID from which you created the snapshot (<c>micro_1_0</c>).
+        /// The bundle ID from which you created the snapshot (<c>micro_x_x</c>).
         /// </para>
         /// </summary>
         public string FromBundleId
