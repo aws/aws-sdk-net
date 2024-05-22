@@ -78,6 +78,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DeletionMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DeletionMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DeletionTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

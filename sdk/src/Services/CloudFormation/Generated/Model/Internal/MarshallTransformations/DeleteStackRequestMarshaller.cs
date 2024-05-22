@@ -63,6 +63,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));
                 }
+                if(publicRequest.IsSetDeletionMode())
+                {
+                    request.Parameters.Add("DeletionMode", StringUtils.FromString(publicRequest.DeletionMode));
+                }
                 if(publicRequest.IsSetRetainResources())
                 {
                     int publicRequestlistValueIndex = 1;
