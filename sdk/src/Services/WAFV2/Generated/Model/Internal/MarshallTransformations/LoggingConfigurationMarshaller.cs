@@ -70,6 +70,18 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLogScope())
+            {
+                context.Writer.WritePropertyName("LogScope");
+                context.Writer.Write(requestObject.LogScope);
+            }
+
+            if(requestObject.IsSetLogType())
+            {
+                context.Writer.WritePropertyName("LogType");
+                context.Writer.Write(requestObject.LogType);
+            }
+
             if(requestObject.IsSetManagedByFirewallManager())
             {
                 context.Writer.WritePropertyName("ManagedByFirewallManager");

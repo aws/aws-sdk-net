@@ -78,6 +78,18 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.LoggingFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LogScope", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogScope = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LogType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ManagedByFirewallManager", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

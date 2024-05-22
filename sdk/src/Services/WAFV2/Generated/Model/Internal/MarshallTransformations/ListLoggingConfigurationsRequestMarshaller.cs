@@ -75,6 +75,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Limit);
                 }
 
+                if(publicRequest.IsSetLogScope())
+                {
+                    context.Writer.WritePropertyName("LogScope");
+                    context.Writer.Write(publicRequest.LogScope);
+                }
+
                 if(publicRequest.IsSetNextMarker())
                 {
                     context.Writer.WritePropertyName("NextMarker");
