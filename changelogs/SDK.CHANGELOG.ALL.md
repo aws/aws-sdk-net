@@ -1,3 +1,19 @@
+### 3.7.816.0 (2024-05-22 18:18 UTC)
+* Chatbot (3.7.301.0)
+	* This change adds support for tagging Chatbot configurations.
+* CloudFormation (3.7.308.0)
+	* Added DeletionMode FORCE_DELETE_STACK for deleting a stack that is stuck in DELETE_FAILED state due to resource deletion failure.
+* KeyManagementService (3.7.303.0)
+	* This release includes feature to import customer's asymmetric (RSA, ECC and SM2) and HMAC keys into KMS in China.
+* OpenSearchService (3.7.307.0)
+	* This release adds support for enabling or disabling a data source configured as part of Zero-ETL integration with Amazon S3, by setting its status.
+* WAFV2 (3.7.305.0)
+	* You can now use Security Lake to collect web ACL traffic data.
+* Core 3.7.304.4
+	* Fix protocol tests
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.815.0 (2024-05-21 18:19 UTC)
 * CloudFront (3.7.303.0)
 	* Model update; no change to SDK functionality.
