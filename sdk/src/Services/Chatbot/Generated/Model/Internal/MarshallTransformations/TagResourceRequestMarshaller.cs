@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateChimeWebhookConfiguration Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateChimeWebhookConfigurationRequestMarshaller : IMarshaller<IRequest, CreateChimeWebhookConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateChimeWebhookConfigurationRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -53,47 +53,24 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateChimeWebhookConfigurationRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Chatbot");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-11";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/create-chime-webhook-configuration";
+            request.ResourcePath = "/tag-resource";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationName())
+                if(publicRequest.IsSetResourceARN())
                 {
-                    context.Writer.WritePropertyName("ConfigurationName");
-                    context.Writer.Write(publicRequest.ConfigurationName);
-                }
-
-                if(publicRequest.IsSetIamRoleArn())
-                {
-                    context.Writer.WritePropertyName("IamRoleArn");
-                    context.Writer.Write(publicRequest.IamRoleArn);
-                }
-
-                if(publicRequest.IsSetLoggingLevel())
-                {
-                    context.Writer.WritePropertyName("LoggingLevel");
-                    context.Writer.Write(publicRequest.LoggingLevel);
-                }
-
-                if(publicRequest.IsSetSnsTopicArns())
-                {
-                    context.Writer.WritePropertyName("SnsTopicArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSnsTopicArnsListValue in publicRequest.SnsTopicArns)
-                    {
-                            context.Writer.Write(publicRequestSnsTopicArnsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("ResourceARN");
+                    context.Writer.Write(publicRequest.ResourceARN);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -112,18 +89,6 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetWebhookDescription())
-                {
-                    context.Writer.WritePropertyName("WebhookDescription");
-                    context.Writer.Write(publicRequest.WebhookDescription);
-                }
-
-                if(publicRequest.IsSetWebhookUrl())
-                {
-                    context.Writer.WritePropertyName("WebhookUrl");
-                    context.Writer.Write(publicRequest.WebhookUrl);
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -132,9 +97,9 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateChimeWebhookConfigurationRequestMarshaller _instance = new CreateChimeWebhookConfigurationRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateChimeWebhookConfigurationRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +107,7 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateChimeWebhookConfigurationRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

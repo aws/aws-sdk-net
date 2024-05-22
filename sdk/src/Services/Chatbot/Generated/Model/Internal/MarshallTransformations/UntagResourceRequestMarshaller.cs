@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateChimeWebhookConfiguration Request Marshaller
+    /// UntagResource Request Marshaller
     /// </summary>       
-    public class CreateChimeWebhookConfigurationRequestMarshaller : IMarshaller<IRequest, CreateChimeWebhookConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UntagResourceRequestMarshaller : IMarshaller<IRequest, UntagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateChimeWebhookConfigurationRequest)input);
+            return this.Marshall((UntagResourceRequest)input);
         }
 
         /// <summary>
@@ -53,75 +53,35 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateChimeWebhookConfigurationRequest publicRequest)
+        public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Chatbot");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-11";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/create-chime-webhook-configuration";
+            request.ResourcePath = "/untag-resource";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationName())
+                if(publicRequest.IsSetResourceARN())
                 {
-                    context.Writer.WritePropertyName("ConfigurationName");
-                    context.Writer.Write(publicRequest.ConfigurationName);
+                    context.Writer.WritePropertyName("ResourceARN");
+                    context.Writer.Write(publicRequest.ResourceARN);
                 }
 
-                if(publicRequest.IsSetIamRoleArn())
+                if(publicRequest.IsSetTagKeys())
                 {
-                    context.Writer.WritePropertyName("IamRoleArn");
-                    context.Writer.Write(publicRequest.IamRoleArn);
-                }
-
-                if(publicRequest.IsSetLoggingLevel())
-                {
-                    context.Writer.WritePropertyName("LoggingLevel");
-                    context.Writer.Write(publicRequest.LoggingLevel);
-                }
-
-                if(publicRequest.IsSetSnsTopicArns())
-                {
-                    context.Writer.WritePropertyName("SnsTopicArns");
+                    context.Writer.WritePropertyName("TagKeys");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSnsTopicArnsListValue in publicRequest.SnsTopicArns)
+                    foreach(var publicRequestTagKeysListValue in publicRequest.TagKeys)
                     {
-                            context.Writer.Write(publicRequestSnsTopicArnsListValue);
+                            context.Writer.Write(publicRequestTagKeysListValue);
                     }
                     context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetWebhookDescription())
-                {
-                    context.Writer.WritePropertyName("WebhookDescription");
-                    context.Writer.Write(publicRequest.WebhookDescription);
-                }
-
-                if(publicRequest.IsSetWebhookUrl())
-                {
-                    context.Writer.WritePropertyName("WebhookUrl");
-                    context.Writer.Write(publicRequest.WebhookUrl);
                 }
 
                 writer.WriteObjectEnd();
@@ -132,9 +92,9 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateChimeWebhookConfigurationRequestMarshaller _instance = new CreateChimeWebhookConfigurationRequestMarshaller();        
+        private static UntagResourceRequestMarshaller _instance = new UntagResourceRequestMarshaller();        
 
-        internal static CreateChimeWebhookConfigurationRequestMarshaller GetInstance()
+        internal static UntagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +102,7 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateChimeWebhookConfigurationRequestMarshaller Instance
+        public static UntagResourceRequestMarshaller Instance
         {
             get
             {
