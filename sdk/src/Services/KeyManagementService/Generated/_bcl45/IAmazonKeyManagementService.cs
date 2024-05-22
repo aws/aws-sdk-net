@@ -11299,7 +11299,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The public key (or "wrapping key") of an RSA key pair that KMS generates.
+        /// The public key (or "wrapping key") of an asymmetric key pair that KMS generates.
         /// </para>
         ///  
         /// <para>
@@ -11462,7 +11462,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The public key (or "wrapping key") of an RSA key pair that KMS generates.
+        /// The public key (or "wrapping key") of an asymmetric key pair that KMS generates.
         /// </para>
         ///  
         /// <para>
