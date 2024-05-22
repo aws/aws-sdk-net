@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public HttpGatewayRouteRewrite Unmarshall(JsonUnmarshallerContext context)
         {
             HttpGatewayRouteRewrite unmarshalledObject = new HttpGatewayRouteRewrite();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

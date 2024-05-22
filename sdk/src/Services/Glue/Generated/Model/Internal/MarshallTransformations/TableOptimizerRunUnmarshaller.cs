@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public TableOptimizerRun Unmarshall(JsonUnmarshallerContext context)
         {
             TableOptimizerRun unmarshalledObject = new TableOptimizerRun();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

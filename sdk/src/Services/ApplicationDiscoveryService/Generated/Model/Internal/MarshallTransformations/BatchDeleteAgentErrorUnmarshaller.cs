@@ -57,6 +57,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         public BatchDeleteAgentError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchDeleteAgentError unmarshalledObject = new BatchDeleteAgentError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

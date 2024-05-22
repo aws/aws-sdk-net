@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public EventVariableSummary Unmarshall(JsonUnmarshallerContext context)
         {
             EventVariableSummary unmarshalledObject = new EventVariableSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

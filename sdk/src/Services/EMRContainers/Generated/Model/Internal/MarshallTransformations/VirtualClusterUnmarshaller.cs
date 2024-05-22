@@ -57,6 +57,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         public VirtualCluster Unmarshall(JsonUnmarshallerContext context)
         {
             VirtualCluster unmarshalledObject = new VirtualCluster();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

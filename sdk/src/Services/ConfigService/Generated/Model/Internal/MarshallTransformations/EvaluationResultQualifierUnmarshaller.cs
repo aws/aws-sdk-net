@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public EvaluationResultQualifier Unmarshall(JsonUnmarshallerContext context)
         {
             EvaluationResultQualifier unmarshalledObject = new EvaluationResultQualifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public AuthChallengeRequest Unmarshall(JsonUnmarshallerContext context)
         {
             AuthChallengeRequest unmarshalledObject = new AuthChallengeRequest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

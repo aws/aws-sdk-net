@@ -57,6 +57,8 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         public RecurringPaymentTerm Unmarshall(JsonUnmarshallerContext context)
         {
             RecurringPaymentTerm unmarshalledObject = new RecurringPaymentTerm();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public FieldValidationMessage Unmarshall(JsonUnmarshallerContext context)
         {
             FieldValidationMessage unmarshalledObject = new FieldValidationMessage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

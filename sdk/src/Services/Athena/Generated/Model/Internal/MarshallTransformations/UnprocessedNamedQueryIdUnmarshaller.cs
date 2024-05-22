@@ -57,6 +57,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         public UnprocessedNamedQueryId Unmarshall(JsonUnmarshallerContext context)
         {
             UnprocessedNamedQueryId unmarshalledObject = new UnprocessedNamedQueryId();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

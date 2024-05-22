@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TreeMapVisual Unmarshall(JsonUnmarshallerContext context)
         {
             TreeMapVisual unmarshalledObject = new TreeMapVisual();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

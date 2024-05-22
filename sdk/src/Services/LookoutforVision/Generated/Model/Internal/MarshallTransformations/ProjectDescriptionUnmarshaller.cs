@@ -57,6 +57,8 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         public ProjectDescription Unmarshall(JsonUnmarshallerContext context)
         {
             ProjectDescription unmarshalledObject = new ProjectDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

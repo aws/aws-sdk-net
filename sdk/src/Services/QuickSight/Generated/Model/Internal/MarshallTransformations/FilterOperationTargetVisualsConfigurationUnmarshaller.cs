@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FilterOperationTargetVisualsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             FilterOperationTargetVisualsConfiguration unmarshalledObject = new FilterOperationTargetVisualsConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public FilesLimit Unmarshall(JsonUnmarshallerContext context)
         {
             FilesLimit unmarshalledObject = new FilesLimit();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

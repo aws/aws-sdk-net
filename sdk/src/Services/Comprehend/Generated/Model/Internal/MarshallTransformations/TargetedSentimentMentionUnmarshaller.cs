@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public TargetedSentimentMention Unmarshall(JsonUnmarshallerContext context)
         {
             TargetedSentimentMention unmarshalledObject = new TargetedSentimentMention();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

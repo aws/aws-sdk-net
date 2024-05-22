@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public GameServerInstance Unmarshall(JsonUnmarshallerContext context)
         {
             GameServerInstance unmarshalledObject = new GameServerInstance();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public MonitoredResourceIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             MonitoredResourceIdentifier unmarshalledObject = new MonitoredResourceIdentifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

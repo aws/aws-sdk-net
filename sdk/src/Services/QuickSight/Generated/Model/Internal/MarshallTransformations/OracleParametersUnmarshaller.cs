@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public OracleParameters Unmarshall(JsonUnmarshallerContext context)
         {
             OracleParameters unmarshalledObject = new OracleParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         public ScriptBatchJobIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             ScriptBatchJobIdentifier unmarshalledObject = new ScriptBatchJobIdentifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

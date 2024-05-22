@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public CoverageEksClusterDetails Unmarshall(JsonUnmarshallerContext context)
         {
             CoverageEksClusterDetails unmarshalledObject = new CoverageEksClusterDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

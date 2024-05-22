@@ -57,6 +57,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         public SMBFileShareInfo Unmarshall(JsonUnmarshallerContext context)
         {
             SMBFileShareInfo unmarshalledObject = new SMBFileShareInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

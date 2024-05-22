@@ -57,6 +57,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         public RelatedItemContent Unmarshall(JsonUnmarshallerContext context)
         {
             RelatedItemContent unmarshalledObject = new RelatedItemContent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

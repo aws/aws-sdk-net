@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public DeploymentRecommendation Unmarshall(JsonUnmarshallerContext context)
         {
             DeploymentRecommendation unmarshalledObject = new DeploymentRecommendation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

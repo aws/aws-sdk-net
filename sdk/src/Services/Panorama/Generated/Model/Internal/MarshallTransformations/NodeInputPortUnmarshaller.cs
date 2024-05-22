@@ -57,6 +57,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         public NodeInputPort Unmarshall(JsonUnmarshallerContext context)
         {
             NodeInputPort unmarshalledObject = new NodeInputPort();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

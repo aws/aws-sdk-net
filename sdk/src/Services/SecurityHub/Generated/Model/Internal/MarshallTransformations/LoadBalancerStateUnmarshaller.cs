@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public LoadBalancerState Unmarshall(JsonUnmarshallerContext context)
         {
             LoadBalancerState unmarshalledObject = new LoadBalancerState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

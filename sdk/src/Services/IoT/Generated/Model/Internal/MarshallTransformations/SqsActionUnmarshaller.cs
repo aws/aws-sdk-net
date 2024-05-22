@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public SqsAction Unmarshall(JsonUnmarshallerContext context)
         {
             SqsAction unmarshalledObject = new SqsAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

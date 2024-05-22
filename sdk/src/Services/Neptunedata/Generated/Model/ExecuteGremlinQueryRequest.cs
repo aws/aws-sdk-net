@@ -112,7 +112,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if Serializer property is set
         internal bool IsSetSerializer()
         {
-            return this._serializer != null;
+            return !string.IsNullOrEmpty(this._serializer);
         }
 
     }

@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public SegmentReference Unmarshall(JsonUnmarshallerContext context)
         {
             SegmentReference unmarshalledObject = new SegmentReference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

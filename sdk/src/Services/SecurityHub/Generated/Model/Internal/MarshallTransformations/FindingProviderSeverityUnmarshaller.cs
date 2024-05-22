@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public FindingProviderSeverity Unmarshall(JsonUnmarshallerContext context)
         {
             FindingProviderSeverity unmarshalledObject = new FindingProviderSeverity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

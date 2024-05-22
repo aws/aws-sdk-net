@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         public CollectionErrorDetail Unmarshall(JsonUnmarshallerContext context)
         {
             CollectionErrorDetail unmarshalledObject = new CollectionErrorDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

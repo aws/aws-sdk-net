@@ -57,6 +57,8 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         public IpAddressMember Unmarshall(JsonUnmarshallerContext context)
         {
             IpAddressMember unmarshalledObject = new IpAddressMember();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

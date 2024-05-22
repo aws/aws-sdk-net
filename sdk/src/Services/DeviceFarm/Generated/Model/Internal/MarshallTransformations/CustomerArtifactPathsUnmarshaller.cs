@@ -57,6 +57,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         public CustomerArtifactPaths Unmarshall(JsonUnmarshallerContext context)
         {
             CustomerArtifactPaths unmarshalledObject = new CustomerArtifactPaths();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

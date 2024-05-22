@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public TranscriptSourceSetting Unmarshall(JsonUnmarshallerContext context)
         {
             TranscriptSourceSetting unmarshalledObject = new TranscriptSourceSetting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public RecommendationJobPayloadConfig Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendationJobPayloadConfig unmarshalledObject = new RecommendationJobPayloadConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

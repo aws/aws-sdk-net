@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public UpdateParam Unmarshall(JsonUnmarshallerContext context)
         {
             UpdateParam unmarshalledObject = new UpdateParam();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

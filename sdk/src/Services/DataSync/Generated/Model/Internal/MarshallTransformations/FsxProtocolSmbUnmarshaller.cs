@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public FsxProtocolSmb Unmarshall(JsonUnmarshallerContext context)
         {
             FsxProtocolSmb unmarshalledObject = new FsxProtocolSmb();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

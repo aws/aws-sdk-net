@@ -57,6 +57,8 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         public ColumnDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             ColumnDefinition unmarshalledObject = new ColumnDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

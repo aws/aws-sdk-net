@@ -57,6 +57,8 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
         public RxNormAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             RxNormAttribute unmarshalledObject = new RxNormAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

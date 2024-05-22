@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public UpdateWirelessGatewayTaskEntry Unmarshall(JsonUnmarshallerContext context)
         {
             UpdateWirelessGatewayTaskEntry unmarshalledObject = new UpdateWirelessGatewayTaskEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

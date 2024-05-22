@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public GitHubConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             GitHubConfiguration unmarshalledObject = new GitHubConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

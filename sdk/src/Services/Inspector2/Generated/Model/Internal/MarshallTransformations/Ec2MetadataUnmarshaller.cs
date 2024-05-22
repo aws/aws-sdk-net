@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public Ec2Metadata Unmarshall(JsonUnmarshallerContext context)
         {
             Ec2Metadata unmarshalledObject = new Ec2Metadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

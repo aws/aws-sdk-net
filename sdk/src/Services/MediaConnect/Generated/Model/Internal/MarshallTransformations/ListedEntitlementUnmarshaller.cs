@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public ListedEntitlement Unmarshall(JsonUnmarshallerContext context)
         {
             ListedEntitlement unmarshalledObject = new ListedEntitlement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

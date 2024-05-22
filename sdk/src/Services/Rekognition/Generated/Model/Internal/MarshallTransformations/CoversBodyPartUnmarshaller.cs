@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public CoversBodyPart Unmarshall(JsonUnmarshallerContext context)
         {
             CoversBodyPart unmarshalledObject = new CoversBodyPart();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

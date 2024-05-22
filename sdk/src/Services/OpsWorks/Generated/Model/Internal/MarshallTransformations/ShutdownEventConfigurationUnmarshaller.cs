@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public ShutdownEventConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ShutdownEventConfiguration unmarshalledObject = new ShutdownEventConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

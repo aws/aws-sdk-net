@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         public BatchParameters Unmarshall(JsonUnmarshallerContext context)
         {
             BatchParameters unmarshalledObject = new BatchParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

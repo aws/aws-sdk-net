@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public ExportS3DataInput Unmarshall(JsonUnmarshallerContext context)
         {
             ExportS3DataInput unmarshalledObject = new ExportS3DataInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

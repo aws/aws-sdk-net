@@ -57,6 +57,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         public RelatedItem Unmarshall(JsonUnmarshallerContext context)
         {
             RelatedItem unmarshalledObject = new RelatedItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

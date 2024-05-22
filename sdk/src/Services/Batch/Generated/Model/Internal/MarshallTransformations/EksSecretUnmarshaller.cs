@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public EksSecret Unmarshall(JsonUnmarshallerContext context)
         {
             EksSecret unmarshalledObject = new EksSecret();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

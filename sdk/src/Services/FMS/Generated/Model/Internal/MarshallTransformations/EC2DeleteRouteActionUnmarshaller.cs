@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public EC2DeleteRouteAction Unmarshall(JsonUnmarshallerContext context)
         {
             EC2DeleteRouteAction unmarshalledObject = new EC2DeleteRouteAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

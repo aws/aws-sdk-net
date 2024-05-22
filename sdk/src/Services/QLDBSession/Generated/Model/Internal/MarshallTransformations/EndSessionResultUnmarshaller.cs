@@ -57,6 +57,8 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
         public EndSessionResult Unmarshall(JsonUnmarshallerContext context)
         {
             EndSessionResult unmarshalledObject = new EndSessionResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

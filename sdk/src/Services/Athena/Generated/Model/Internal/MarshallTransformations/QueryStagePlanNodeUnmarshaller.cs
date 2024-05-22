@@ -57,6 +57,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         public QueryStagePlanNode Unmarshall(JsonUnmarshallerContext context)
         {
             QueryStagePlanNode unmarshalledObject = new QueryStagePlanNode();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
         public PracticeRunConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             PracticeRunConfiguration unmarshalledObject = new PracticeRunConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

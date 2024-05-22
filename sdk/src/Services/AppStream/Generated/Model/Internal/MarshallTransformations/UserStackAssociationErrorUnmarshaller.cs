@@ -57,6 +57,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public UserStackAssociationError Unmarshall(JsonUnmarshallerContext context)
         {
             UserStackAssociationError unmarshalledObject = new UserStackAssociationError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

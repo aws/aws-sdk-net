@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public PipeTargetRedshiftDataParameters Unmarshall(JsonUnmarshallerContext context)
         {
             PipeTargetRedshiftDataParameters unmarshalledObject = new PipeTargetRedshiftDataParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

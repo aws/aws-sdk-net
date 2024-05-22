@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public QuestionDifference Unmarshall(JsonUnmarshallerContext context)
         {
             QuestionDifference unmarshalledObject = new QuestionDifference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

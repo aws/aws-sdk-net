@@ -57,6 +57,8 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
         public FlowTemplateDescription Unmarshall(JsonUnmarshallerContext context)
         {
             FlowTemplateDescription unmarshalledObject = new FlowTemplateDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

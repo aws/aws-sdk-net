@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public SqlApplicationConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             SqlApplicationConfigurationDescription unmarshalledObject = new SqlApplicationConfigurationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

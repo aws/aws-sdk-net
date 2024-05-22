@@ -57,6 +57,8 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         public GroupResult Unmarshall(JsonUnmarshallerContext context)
         {
             GroupResult unmarshalledObject = new GroupResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

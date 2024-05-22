@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public QueryComputePaymentConfig Unmarshall(JsonUnmarshallerContext context)
         {
             QueryComputePaymentConfig unmarshalledObject = new QueryComputePaymentConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

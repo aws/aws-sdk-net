@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public TimedMetadataInsertion Unmarshall(JsonUnmarshallerContext context)
         {
             TimedMetadataInsertion unmarshalledObject = new TimedMetadataInsertion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

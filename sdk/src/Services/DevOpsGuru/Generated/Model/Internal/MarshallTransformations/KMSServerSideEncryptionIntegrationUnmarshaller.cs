@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public KMSServerSideEncryptionIntegration Unmarshall(JsonUnmarshallerContext context)
         {
             KMSServerSideEncryptionIntegration unmarshalledObject = new KMSServerSideEncryptionIntegration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

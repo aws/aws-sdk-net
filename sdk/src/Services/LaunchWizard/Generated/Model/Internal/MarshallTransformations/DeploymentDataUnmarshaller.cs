@@ -57,6 +57,8 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
         public DeploymentData Unmarshall(JsonUnmarshallerContext context)
         {
             DeploymentData unmarshalledObject = new DeploymentData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

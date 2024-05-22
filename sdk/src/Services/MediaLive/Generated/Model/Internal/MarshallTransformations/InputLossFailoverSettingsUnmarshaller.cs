@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public InputLossFailoverSettings Unmarshall(JsonUnmarshallerContext context)
         {
             InputLossFailoverSettings unmarshalledObject = new InputLossFailoverSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

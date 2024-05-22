@@ -57,6 +57,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public DataLocationResource Unmarshall(JsonUnmarshallerContext context)
         {
             DataLocationResource unmarshalledObject = new DataLocationResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

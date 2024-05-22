@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public ForecastResult Unmarshall(JsonUnmarshallerContext context)
         {
             ForecastResult unmarshalledObject = new ForecastResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

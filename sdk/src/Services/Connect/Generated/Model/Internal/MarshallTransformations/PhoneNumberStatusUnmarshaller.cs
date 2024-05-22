@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public PhoneNumberStatus Unmarshall(JsonUnmarshallerContext context)
         {
             PhoneNumberStatus unmarshalledObject = new PhoneNumberStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

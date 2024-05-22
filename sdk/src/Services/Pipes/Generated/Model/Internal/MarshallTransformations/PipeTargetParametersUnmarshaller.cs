@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public PipeTargetParameters Unmarshall(JsonUnmarshallerContext context)
         {
             PipeTargetParameters unmarshalledObject = new PipeTargetParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

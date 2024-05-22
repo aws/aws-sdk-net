@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public NameServersUpdateState Unmarshall(JsonUnmarshallerContext context)
         {
             NameServersUpdateState unmarshalledObject = new NameServersUpdateState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

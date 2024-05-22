@@ -57,6 +57,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         public ManagedPersistenceMonitoringConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ManagedPersistenceMonitoringConfiguration unmarshalledObject = new ManagedPersistenceMonitoringConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

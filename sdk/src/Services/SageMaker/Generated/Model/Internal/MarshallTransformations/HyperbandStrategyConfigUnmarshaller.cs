@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public HyperbandStrategyConfig Unmarshall(JsonUnmarshallerContext context)
         {
             HyperbandStrategyConfig unmarshalledObject = new HyperbandStrategyConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

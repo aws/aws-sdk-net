@@ -57,6 +57,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public DataRetrievalPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             DataRetrievalPolicy unmarshalledObject = new DataRetrievalPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public HudiTarget Unmarshall(JsonUnmarshallerContext context)
         {
             HudiTarget unmarshalledObject = new HudiTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

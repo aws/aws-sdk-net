@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public ExpirationSettings Unmarshall(JsonUnmarshallerContext context)
         {
             ExpirationSettings unmarshalledObject = new ExpirationSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

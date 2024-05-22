@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public ContinuousBackupsDescription Unmarshall(JsonUnmarshallerContext context)
         {
             ContinuousBackupsDescription unmarshalledObject = new ContinuousBackupsDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public InforNexusConnectorProfileProperties Unmarshall(JsonUnmarshallerContext context)
         {
             InforNexusConnectorProfileProperties unmarshalledObject = new InforNexusConnectorProfileProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

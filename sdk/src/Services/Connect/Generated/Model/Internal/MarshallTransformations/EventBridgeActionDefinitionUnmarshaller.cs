@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public EventBridgeActionDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             EventBridgeActionDefinition unmarshalledObject = new EventBridgeActionDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

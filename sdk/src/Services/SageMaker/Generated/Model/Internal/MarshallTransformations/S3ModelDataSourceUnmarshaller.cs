@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public S3ModelDataSource Unmarshall(JsonUnmarshallerContext context)
         {
             S3ModelDataSource unmarshalledObject = new S3ModelDataSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

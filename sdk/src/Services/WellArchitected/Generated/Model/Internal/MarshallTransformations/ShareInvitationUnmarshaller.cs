@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public ShareInvitation Unmarshall(JsonUnmarshallerContext context)
         {
             ShareInvitation unmarshalledObject = new ShareInvitation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

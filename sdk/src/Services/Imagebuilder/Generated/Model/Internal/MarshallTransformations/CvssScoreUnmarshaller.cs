@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public CvssScore Unmarshall(JsonUnmarshallerContext context)
         {
             CvssScore unmarshalledObject = new CvssScore();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

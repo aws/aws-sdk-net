@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public PropertyValue Unmarshall(JsonUnmarshallerContext context)
         {
             PropertyValue unmarshalledObject = new PropertyValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

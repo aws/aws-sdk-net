@@ -57,6 +57,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public ReportPlan Unmarshall(JsonUnmarshallerContext context)
         {
             ReportPlan unmarshalledObject = new ReportPlan();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

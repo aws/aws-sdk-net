@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DateMeasureField Unmarshall(JsonUnmarshallerContext context)
         {
             DateMeasureField unmarshalledObject = new DateMeasureField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

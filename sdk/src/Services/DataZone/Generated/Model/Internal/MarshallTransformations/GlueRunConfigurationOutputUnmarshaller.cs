@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public GlueRunConfigurationOutput Unmarshall(JsonUnmarshallerContext context)
         {
             GlueRunConfigurationOutput unmarshalledObject = new GlueRunConfigurationOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

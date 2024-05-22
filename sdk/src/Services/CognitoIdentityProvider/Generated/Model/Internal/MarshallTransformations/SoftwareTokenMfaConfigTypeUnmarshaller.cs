@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public SoftwareTokenMfaConfigType Unmarshall(JsonUnmarshallerContext context)
         {
             SoftwareTokenMfaConfigType unmarshalledObject = new SoftwareTokenMfaConfigType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

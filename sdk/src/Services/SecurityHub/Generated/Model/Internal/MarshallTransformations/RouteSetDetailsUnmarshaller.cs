@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public RouteSetDetails Unmarshall(JsonUnmarshallerContext context)
         {
             RouteSetDetails unmarshalledObject = new RouteSetDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

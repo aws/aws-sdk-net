@@ -57,6 +57,8 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
         public RecommendationResourcesAggregates Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendationResourcesAggregates unmarshalledObject = new RecommendationResourcesAggregates();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

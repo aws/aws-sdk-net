@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public ServiceIntegrationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceIntegrationConfig unmarshalledObject = new ServiceIntegrationConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

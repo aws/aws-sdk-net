@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public GuardianOptions Unmarshall(JsonUnmarshallerContext context)
         {
             GuardianOptions unmarshalledObject = new GuardianOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

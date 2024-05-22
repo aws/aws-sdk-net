@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public S3CsvSource Unmarshall(JsonUnmarshallerContext context)
         {
             S3CsvSource unmarshalledObject = new S3CsvSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

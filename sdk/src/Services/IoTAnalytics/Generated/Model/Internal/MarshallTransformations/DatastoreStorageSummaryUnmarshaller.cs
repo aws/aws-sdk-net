@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public DatastoreStorageSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DatastoreStorageSummary unmarshalledObject = new DatastoreStorageSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

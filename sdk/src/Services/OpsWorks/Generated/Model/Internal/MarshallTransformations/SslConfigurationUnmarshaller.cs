@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public SslConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SslConfiguration unmarshalledObject = new SslConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

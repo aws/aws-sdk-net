@@ -57,6 +57,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         public BackendAPIAuthType Unmarshall(JsonUnmarshallerContext context)
         {
             BackendAPIAuthType unmarshalledObject = new BackendAPIAuthType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public ExternalModel Unmarshall(JsonUnmarshallerContext context)
         {
             ExternalModel unmarshalledObject = new ExternalModel();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

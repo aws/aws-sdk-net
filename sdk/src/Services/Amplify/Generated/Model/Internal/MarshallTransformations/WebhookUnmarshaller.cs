@@ -57,6 +57,8 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         public Webhook Unmarshall(JsonUnmarshallerContext context)
         {
             Webhook unmarshalledObject = new Webhook();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

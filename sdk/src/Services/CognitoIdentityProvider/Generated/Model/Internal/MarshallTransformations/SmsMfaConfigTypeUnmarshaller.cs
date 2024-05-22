@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public SmsMfaConfigType Unmarshall(JsonUnmarshallerContext context)
         {
             SmsMfaConfigType unmarshalledObject = new SmsMfaConfigType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

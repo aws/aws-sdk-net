@@ -57,6 +57,8 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
         public MetricPolicyRule Unmarshall(JsonUnmarshallerContext context)
         {
             MetricPolicyRule unmarshalledObject = new MetricPolicyRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

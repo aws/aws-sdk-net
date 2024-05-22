@@ -57,6 +57,8 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public DropAction Unmarshall(JsonUnmarshallerContext context)
         {
             DropAction unmarshalledObject = new DropAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

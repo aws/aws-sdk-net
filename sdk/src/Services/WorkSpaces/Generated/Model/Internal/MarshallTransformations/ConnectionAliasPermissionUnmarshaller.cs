@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public ConnectionAliasPermission Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectionAliasPermission unmarshalledObject = new ConnectionAliasPermission();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public CheckpointConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             CheckpointConfigurationDescription unmarshalledObject = new CheckpointConfigurationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

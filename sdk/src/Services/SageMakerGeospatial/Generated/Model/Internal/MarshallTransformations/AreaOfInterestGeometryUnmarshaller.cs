@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public AreaOfInterestGeometry Unmarshall(JsonUnmarshallerContext context)
         {
             AreaOfInterestGeometry unmarshalledObject = new AreaOfInterestGeometry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

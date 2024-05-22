@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public ConfluencePageToIndexFieldMapping Unmarshall(JsonUnmarshallerContext context)
         {
             ConfluencePageToIndexFieldMapping unmarshalledObject = new ConfluencePageToIndexFieldMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

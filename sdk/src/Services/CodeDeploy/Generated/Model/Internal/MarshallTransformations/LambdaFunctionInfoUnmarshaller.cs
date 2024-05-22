@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public LambdaFunctionInfo Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaFunctionInfo unmarshalledObject = new LambdaFunctionInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

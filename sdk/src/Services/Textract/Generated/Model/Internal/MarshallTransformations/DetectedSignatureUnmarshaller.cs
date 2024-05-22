@@ -57,6 +57,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         public DetectedSignature Unmarshall(JsonUnmarshallerContext context)
         {
             DetectedSignature unmarshalledObject = new DetectedSignature();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

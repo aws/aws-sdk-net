@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public PivotFieldSortOptions Unmarshall(JsonUnmarshallerContext context)
         {
             PivotFieldSortOptions unmarshalledObject = new PivotFieldSortOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public AutoMLResolvedAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             AutoMLResolvedAttributes unmarshalledObject = new AutoMLResolvedAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

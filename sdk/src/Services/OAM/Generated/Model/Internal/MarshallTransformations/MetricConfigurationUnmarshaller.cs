@@ -57,6 +57,8 @@ namespace Amazon.OAM.Model.Internal.MarshallTransformations
         public MetricConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             MetricConfiguration unmarshalledObject = new MetricConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

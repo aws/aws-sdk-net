@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public CompositionDetails Unmarshall(JsonUnmarshallerContext context)
         {
             CompositionDetails unmarshalledObject = new CompositionDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

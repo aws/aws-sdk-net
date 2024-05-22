@@ -57,6 +57,8 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public ImportFailureListItem Unmarshall(JsonUnmarshallerContext context)
         {
             ImportFailureListItem unmarshalledObject = new ImportFailureListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

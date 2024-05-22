@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEcsServiceCapacityProviderStrategyDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEcsServiceCapacityProviderStrategyDetails unmarshalledObject = new AwsEcsServiceCapacityProviderStrategyDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

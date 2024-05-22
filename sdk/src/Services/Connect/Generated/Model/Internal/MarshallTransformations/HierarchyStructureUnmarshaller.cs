@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public HierarchyStructure Unmarshall(JsonUnmarshallerContext context)
         {
             HierarchyStructure unmarshalledObject = new HierarchyStructure();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public RuleAction Unmarshall(JsonUnmarshallerContext context)
         {
             RuleAction unmarshalledObject = new RuleAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

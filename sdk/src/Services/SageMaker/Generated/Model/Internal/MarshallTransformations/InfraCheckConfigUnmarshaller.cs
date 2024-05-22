@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public InfraCheckConfig Unmarshall(JsonUnmarshallerContext context)
         {
             InfraCheckConfig unmarshalledObject = new InfraCheckConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

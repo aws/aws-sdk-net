@@ -57,6 +57,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public ControlInputParameter Unmarshall(JsonUnmarshallerContext context)
         {
             ControlInputParameter unmarshalledObject = new ControlInputParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

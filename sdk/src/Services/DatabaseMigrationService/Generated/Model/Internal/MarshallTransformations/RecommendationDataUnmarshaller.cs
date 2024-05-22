@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public RecommendationData Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendationData unmarshalledObject = new RecommendationData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

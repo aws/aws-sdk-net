@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public SearchTypesResultItem Unmarshall(JsonUnmarshallerContext context)
         {
             SearchTypesResultItem unmarshalledObject = new SearchTypesResultItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

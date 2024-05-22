@@ -57,6 +57,8 @@ namespace Amazon.OAM.Model.Internal.MarshallTransformations
         public LogGroupConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LogGroupConfiguration unmarshalledObject = new LogGroupConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

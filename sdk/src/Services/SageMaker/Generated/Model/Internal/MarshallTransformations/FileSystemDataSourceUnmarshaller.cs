@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public FileSystemDataSource Unmarshall(JsonUnmarshallerContext context)
         {
             FileSystemDataSource unmarshalledObject = new FileSystemDataSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

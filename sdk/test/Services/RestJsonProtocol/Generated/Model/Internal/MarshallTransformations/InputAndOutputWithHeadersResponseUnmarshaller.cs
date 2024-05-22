@@ -81,7 +81,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("X-StringSet"))
                 response.HeaderStringSet = MultiValueHeaderParser.ToStringList(context.ResponseData.GetHeaderValue("X-StringSet"));
             if (context.ResponseData.IsHeaderPresent("X-TimestampList"))
-                response.HeaderTimestampList = MultiValueHeaderParser.ToDateTimeList(context.ResponseData.GetHeaderValue("X-TimestampList"), "UnixTimestamp");
+                response.HeaderTimestampList = MultiValueHeaderParser.ToDateTimeList(context.ResponseData.GetHeaderValue("X-TimestampList"), "RFC822");
             if (context.ResponseData.IsHeaderPresent("X-Boolean1"))
                 response.HeaderTrueBool = bool.Parse(context.ResponseData.GetHeaderValue("X-Boolean1"));
 

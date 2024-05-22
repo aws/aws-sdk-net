@@ -57,6 +57,8 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
         public ConfiguredTeam Unmarshall(JsonUnmarshallerContext context)
         {
             ConfiguredTeam unmarshalledObject = new ConfiguredTeam();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

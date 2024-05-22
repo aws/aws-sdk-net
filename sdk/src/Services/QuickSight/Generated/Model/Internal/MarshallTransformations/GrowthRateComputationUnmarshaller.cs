@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public GrowthRateComputation Unmarshall(JsonUnmarshallerContext context)
         {
             GrowthRateComputation unmarshalledObject = new GrowthRateComputation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

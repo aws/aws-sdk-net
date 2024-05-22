@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public GaugeChartConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             GaugeChartConfiguration unmarshalledObject = new GaugeChartConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

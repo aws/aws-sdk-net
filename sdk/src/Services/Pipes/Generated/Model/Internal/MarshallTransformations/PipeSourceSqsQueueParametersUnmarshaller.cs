@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public PipeSourceSqsQueueParameters Unmarshall(JsonUnmarshallerContext context)
         {
             PipeSourceSqsQueueParameters unmarshalledObject = new PipeSourceSqsQueueParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public YAxisOptions Unmarshall(JsonUnmarshallerContext context)
         {
             YAxisOptions unmarshalledObject = new YAxisOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

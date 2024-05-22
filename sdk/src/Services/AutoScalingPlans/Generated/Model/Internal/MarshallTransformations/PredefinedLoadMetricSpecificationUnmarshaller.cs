@@ -57,6 +57,8 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
         public PredefinedLoadMetricSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             PredefinedLoadMetricSpecification unmarshalledObject = new PredefinedLoadMetricSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

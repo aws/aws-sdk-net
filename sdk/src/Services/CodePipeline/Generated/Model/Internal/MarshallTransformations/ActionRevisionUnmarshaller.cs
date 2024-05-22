@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public ActionRevision Unmarshall(JsonUnmarshallerContext context)
         {
             ActionRevision unmarshalledObject = new ActionRevision();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

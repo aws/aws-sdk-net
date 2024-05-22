@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public SnaplockConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SnaplockConfiguration unmarshalledObject = new SnaplockConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public ResourceMetrics Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceMetrics unmarshalledObject = new ResourceMetrics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

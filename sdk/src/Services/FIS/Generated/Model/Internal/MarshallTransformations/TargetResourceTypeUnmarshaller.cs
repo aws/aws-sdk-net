@@ -57,6 +57,8 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         public TargetResourceType Unmarshall(JsonUnmarshallerContext context)
         {
             TargetResourceType unmarshalledObject = new TargetResourceType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

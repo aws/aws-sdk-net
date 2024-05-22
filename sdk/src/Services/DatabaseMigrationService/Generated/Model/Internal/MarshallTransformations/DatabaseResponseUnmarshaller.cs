@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public DatabaseResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DatabaseResponse unmarshalledObject = new DatabaseResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

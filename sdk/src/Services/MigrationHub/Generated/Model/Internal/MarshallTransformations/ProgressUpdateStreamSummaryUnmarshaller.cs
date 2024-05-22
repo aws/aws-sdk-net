@@ -57,6 +57,8 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
         public ProgressUpdateStreamSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ProgressUpdateStreamSummary unmarshalledObject = new ProgressUpdateStreamSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

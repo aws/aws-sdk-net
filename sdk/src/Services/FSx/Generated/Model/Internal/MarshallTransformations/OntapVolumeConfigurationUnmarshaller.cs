@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public OntapVolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             OntapVolumeConfiguration unmarshalledObject = new OntapVolumeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public RetrievalConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             RetrievalConfiguration unmarshalledObject = new RetrievalConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

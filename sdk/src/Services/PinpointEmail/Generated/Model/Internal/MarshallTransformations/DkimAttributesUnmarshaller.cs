@@ -57,6 +57,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         public DkimAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             DkimAttributes unmarshalledObject = new DkimAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

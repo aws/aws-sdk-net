@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public FlinkApplicationConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             FlinkApplicationConfigurationDescription unmarshalledObject = new FlinkApplicationConfigurationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

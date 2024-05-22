@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public AccountModification Unmarshall(JsonUnmarshallerContext context)
         {
             AccountModification unmarshalledObject = new AccountModification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

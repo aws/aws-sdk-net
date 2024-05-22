@@ -57,6 +57,8 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         public RepositoryExternalConnectionInfo Unmarshall(JsonUnmarshallerContext context)
         {
             RepositoryExternalConnectionInfo unmarshalledObject = new RepositoryExternalConnectionInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

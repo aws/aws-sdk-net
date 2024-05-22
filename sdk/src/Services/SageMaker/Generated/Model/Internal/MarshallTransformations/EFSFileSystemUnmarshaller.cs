@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public EFSFileSystem Unmarshall(JsonUnmarshallerContext context)
         {
             EFSFileSystem unmarshalledObject = new EFSFileSystem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

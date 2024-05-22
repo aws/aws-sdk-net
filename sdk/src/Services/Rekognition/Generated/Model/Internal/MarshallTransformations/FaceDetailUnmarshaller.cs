@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public FaceDetail Unmarshall(JsonUnmarshallerContext context)
         {
             FaceDetail unmarshalledObject = new FaceDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

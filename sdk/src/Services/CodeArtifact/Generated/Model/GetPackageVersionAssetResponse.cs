@@ -73,7 +73,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if AssetName property is set
         internal bool IsSetAssetName()
         {
-            return this._assetName != null;
+            return !string.IsNullOrEmpty(this._assetName);
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if PackageVersion property is set
         internal bool IsSetPackageVersion()
         {
-            return this._packageVersion != null;
+            return !string.IsNullOrEmpty(this._packageVersion);
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if PackageVersionRevision property is set
         internal bool IsSetPackageVersionRevision()
         {
-            return this._packageVersionRevision != null;
+            return !string.IsNullOrEmpty(this._packageVersionRevision);
         }
 
         #region Dispose Pattern

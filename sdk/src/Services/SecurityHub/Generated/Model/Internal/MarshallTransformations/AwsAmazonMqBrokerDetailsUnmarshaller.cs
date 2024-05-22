@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsAmazonMqBrokerDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsAmazonMqBrokerDetails unmarshalledObject = new AwsAmazonMqBrokerDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

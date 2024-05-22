@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public ComputeEnvironmentOrder Unmarshall(JsonUnmarshallerContext context)
         {
             ComputeEnvironmentOrder unmarshalledObject = new ComputeEnvironmentOrder();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

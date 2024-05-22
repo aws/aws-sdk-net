@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public TransitGatewayRegistrationStateReason Unmarshall(JsonUnmarshallerContext context)
         {
             TransitGatewayRegistrationStateReason unmarshalledObject = new TransitGatewayRegistrationStateReason();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

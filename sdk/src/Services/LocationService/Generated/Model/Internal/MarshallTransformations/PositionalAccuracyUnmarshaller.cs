@@ -57,6 +57,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public PositionalAccuracy Unmarshall(JsonUnmarshallerContext context)
         {
             PositionalAccuracy unmarshalledObject = new PositionalAccuracy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

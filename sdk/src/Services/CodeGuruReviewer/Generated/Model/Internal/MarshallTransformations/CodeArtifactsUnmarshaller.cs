@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         public CodeArtifacts Unmarshall(JsonUnmarshallerContext context)
         {
             CodeArtifacts unmarshalledObject = new CodeArtifacts();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

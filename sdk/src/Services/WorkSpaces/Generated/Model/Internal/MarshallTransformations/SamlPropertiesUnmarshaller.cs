@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public SamlProperties Unmarshall(JsonUnmarshallerContext context)
         {
             SamlProperties unmarshalledObject = new SamlProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

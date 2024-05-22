@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails unmarshalledObject = new AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

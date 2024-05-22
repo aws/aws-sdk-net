@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public ActiveDirectoryBackupAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             ActiveDirectoryBackupAttributes unmarshalledObject = new ActiveDirectoryBackupAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

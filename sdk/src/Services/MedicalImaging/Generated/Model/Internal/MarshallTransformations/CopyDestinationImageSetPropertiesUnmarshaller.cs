@@ -57,6 +57,8 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         public CopyDestinationImageSetProperties Unmarshall(JsonUnmarshallerContext context)
         {
             CopyDestinationImageSetProperties unmarshalledObject = new CopyDestinationImageSetProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

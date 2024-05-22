@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         public FrameMetricDatum Unmarshall(JsonUnmarshallerContext context)
         {
             FrameMetricDatum unmarshalledObject = new FrameMetricDatum();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

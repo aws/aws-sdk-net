@@ -103,7 +103,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.ListArgWithXmlNameMember)
                     {
-                        request.Parameters.Add("ListArgWithXmlNameMember" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        request.Parameters.Add("ListArgWithXmlNameMember" + "." + "item" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
                 }

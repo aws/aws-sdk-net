@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public ContainerDistributionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ContainerDistributionConfiguration unmarshalledObject = new ContainerDistributionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

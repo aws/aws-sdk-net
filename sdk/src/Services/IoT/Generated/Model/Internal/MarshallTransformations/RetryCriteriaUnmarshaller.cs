@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public RetryCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             RetryCriteria unmarshalledObject = new RetryCriteria();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

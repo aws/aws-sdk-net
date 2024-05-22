@@ -57,6 +57,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         public CrossRegionCopyDeprecateRule Unmarshall(JsonUnmarshallerContext context)
         {
             CrossRegionCopyDeprecateRule unmarshalledObject = new CrossRegionCopyDeprecateRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

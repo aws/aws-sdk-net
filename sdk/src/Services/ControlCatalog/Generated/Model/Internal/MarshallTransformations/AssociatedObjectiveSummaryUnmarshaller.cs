@@ -57,6 +57,8 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         public AssociatedObjectiveSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AssociatedObjectiveSummary unmarshalledObject = new AssociatedObjectiveSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

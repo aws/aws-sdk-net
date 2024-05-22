@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public DomainSettings Unmarshall(JsonUnmarshallerContext context)
         {
             DomainSettings unmarshalledObject = new DomainSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

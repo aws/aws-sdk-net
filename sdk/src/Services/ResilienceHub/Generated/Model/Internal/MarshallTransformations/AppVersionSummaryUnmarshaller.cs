@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public AppVersionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AppVersionSummary unmarshalledObject = new AppVersionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

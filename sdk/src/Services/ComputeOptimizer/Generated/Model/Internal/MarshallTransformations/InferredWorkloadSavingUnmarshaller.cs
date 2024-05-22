@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public InferredWorkloadSaving Unmarshall(JsonUnmarshallerContext context)
         {
             InferredWorkloadSaving unmarshalledObject = new InferredWorkloadSaving();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

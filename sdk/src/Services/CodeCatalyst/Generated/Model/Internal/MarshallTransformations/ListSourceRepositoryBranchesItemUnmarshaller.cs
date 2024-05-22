@@ -57,6 +57,8 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         public ListSourceRepositoryBranchesItem Unmarshall(JsonUnmarshallerContext context)
         {
             ListSourceRepositoryBranchesItem unmarshalledObject = new ListSourceRepositoryBranchesItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

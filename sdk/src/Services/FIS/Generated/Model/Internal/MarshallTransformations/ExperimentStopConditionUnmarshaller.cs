@@ -57,6 +57,8 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         public ExperimentStopCondition Unmarshall(JsonUnmarshallerContext context)
         {
             ExperimentStopCondition unmarshalledObject = new ExperimentStopCondition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         public PermissionGroupByUser Unmarshall(JsonUnmarshallerContext context)
         {
             PermissionGroupByUser unmarshalledObject = new PermissionGroupByUser();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

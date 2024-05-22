@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public LabelingSetGenerationTaskRunProperties Unmarshall(JsonUnmarshallerContext context)
         {
             LabelingSetGenerationTaskRunProperties unmarshalledObject = new LabelingSetGenerationTaskRunProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         public ListCustomLineItemFlatChargeDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ListCustomLineItemFlatChargeDetails unmarshalledObject = new ListCustomLineItemFlatChargeDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

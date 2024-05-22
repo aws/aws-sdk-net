@@ -57,6 +57,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         public InitialCapacityConfig Unmarshall(JsonUnmarshallerContext context)
         {
             InitialCapacityConfig unmarshalledObject = new InitialCapacityConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

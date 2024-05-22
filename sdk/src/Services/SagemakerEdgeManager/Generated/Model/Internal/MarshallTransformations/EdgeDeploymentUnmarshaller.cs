@@ -57,6 +57,8 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
         public EdgeDeployment Unmarshall(JsonUnmarshallerContext context)
         {
             EdgeDeployment unmarshalledObject = new EdgeDeployment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

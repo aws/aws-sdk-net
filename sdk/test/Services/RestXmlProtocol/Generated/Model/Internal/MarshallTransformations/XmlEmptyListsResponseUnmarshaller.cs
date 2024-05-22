@@ -85,7 +85,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         response.EnumList.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
-                    if (context.TestExpression("flattenedList/item", targetDepth))
+                    if (context.TestExpression("flattenedList", targetDepth))
                     {
                         if (response.FlattenedList == null)
                         {
@@ -95,7 +95,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         response.FlattenedList.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
-                    if (context.TestExpression("customName/item", targetDepth))
+                    if (context.TestExpression("customName", targetDepth))
                     {
                         if (response.FlattenedList2 == null)
                         {
@@ -105,7 +105,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         response.FlattenedList2.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
-                    if (context.TestExpression("flattenedListWithMemberNamespace/member", targetDepth))
+                    if (context.TestExpression("flattenedListWithMemberNamespace", targetDepth))
                     {
                         if (response.FlattenedListWithMemberNamespace == null)
                         {
@@ -115,7 +115,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         response.FlattenedListWithMemberNamespace.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
-                    if (context.TestExpression("flattenedListWithNamespace/member", targetDepth))
+                    if (context.TestExpression("flattenedListWithNamespace", targetDepth))
                     {
                         if (response.FlattenedListWithNamespace == null)
                         {
@@ -125,7 +125,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         response.FlattenedListWithNamespace.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
-                    if (context.TestExpression("flattenedStructureList/item", targetDepth))
+                    if (context.TestExpression("flattenedStructureList", targetDepth))
                     {
                         if (response.FlattenedStructureList == null)
                         {

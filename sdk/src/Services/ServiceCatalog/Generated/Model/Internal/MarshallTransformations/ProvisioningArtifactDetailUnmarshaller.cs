@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public ProvisioningArtifactDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ProvisioningArtifactDetail unmarshalledObject = new ProvisioningArtifactDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

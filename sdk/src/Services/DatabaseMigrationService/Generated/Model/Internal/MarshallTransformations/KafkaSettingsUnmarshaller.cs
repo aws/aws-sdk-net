@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public KafkaSettings Unmarshall(JsonUnmarshallerContext context)
         {
             KafkaSettings unmarshalledObject = new KafkaSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         public S3EncryptionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             S3EncryptionConfiguration unmarshalledObject = new S3EncryptionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

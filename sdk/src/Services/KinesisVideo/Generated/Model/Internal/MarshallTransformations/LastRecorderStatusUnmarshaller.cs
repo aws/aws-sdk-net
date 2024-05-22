@@ -57,6 +57,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         public LastRecorderStatus Unmarshall(JsonUnmarshallerContext context)
         {
             LastRecorderStatus unmarshalledObject = new LastRecorderStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

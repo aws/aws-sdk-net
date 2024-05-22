@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public QueueTransition Unmarshall(JsonUnmarshallerContext context)
         {
             QueueTransition unmarshalledObject = new QueueTransition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

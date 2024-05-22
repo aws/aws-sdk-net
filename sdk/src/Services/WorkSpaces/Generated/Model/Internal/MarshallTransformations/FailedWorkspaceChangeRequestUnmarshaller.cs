@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public FailedWorkspaceChangeRequest Unmarshall(JsonUnmarshallerContext context)
         {
             FailedWorkspaceChangeRequest unmarshalledObject = new FailedWorkspaceChangeRequest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

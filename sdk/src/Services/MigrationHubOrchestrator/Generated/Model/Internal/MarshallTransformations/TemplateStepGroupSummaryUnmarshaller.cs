@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
         public TemplateStepGroupSummary Unmarshall(JsonUnmarshallerContext context)
         {
             TemplateStepGroupSummary unmarshalledObject = new TemplateStepGroupSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

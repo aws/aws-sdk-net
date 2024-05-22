@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         public ScheduledSplitsLaunchDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             ScheduledSplitsLaunchDefinition unmarshalledObject = new ScheduledSplitsLaunchDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

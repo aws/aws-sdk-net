@@ -57,6 +57,8 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         public GrantConstraints Unmarshall(JsonUnmarshallerContext context)
         {
             GrantConstraints unmarshalledObject = new GrantConstraints();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

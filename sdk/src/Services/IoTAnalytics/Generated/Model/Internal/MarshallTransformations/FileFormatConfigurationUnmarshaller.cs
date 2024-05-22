@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public FileFormatConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             FileFormatConfiguration unmarshalledObject = new FileFormatConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

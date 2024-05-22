@@ -57,6 +57,8 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         public AnswerMachineDetectionConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AnswerMachineDetectionConfig unmarshalledObject = new AnswerMachineDetectionConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

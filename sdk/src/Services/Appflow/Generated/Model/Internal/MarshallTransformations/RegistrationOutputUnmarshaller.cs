@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public RegistrationOutput Unmarshall(JsonUnmarshallerContext context)
         {
             RegistrationOutput unmarshalledObject = new RegistrationOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

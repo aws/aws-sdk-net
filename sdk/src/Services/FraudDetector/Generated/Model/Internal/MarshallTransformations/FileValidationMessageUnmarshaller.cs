@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public FileValidationMessage Unmarshall(JsonUnmarshallerContext context)
         {
             FileValidationMessage unmarshalledObject = new FileValidationMessage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

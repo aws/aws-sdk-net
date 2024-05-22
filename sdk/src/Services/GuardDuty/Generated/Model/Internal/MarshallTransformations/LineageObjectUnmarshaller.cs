@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public LineageObject Unmarshall(JsonUnmarshallerContext context)
         {
             LineageObject unmarshalledObject = new LineageObject();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

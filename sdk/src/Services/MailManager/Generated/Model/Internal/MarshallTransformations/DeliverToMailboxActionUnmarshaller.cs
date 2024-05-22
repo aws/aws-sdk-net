@@ -57,6 +57,8 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public DeliverToMailboxAction Unmarshall(JsonUnmarshallerContext context)
         {
             DeliverToMailboxAction unmarshalledObject = new DeliverToMailboxAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

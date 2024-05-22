@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public LaunchPermissionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LaunchPermissionConfiguration unmarshalledObject = new LaunchPermissionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

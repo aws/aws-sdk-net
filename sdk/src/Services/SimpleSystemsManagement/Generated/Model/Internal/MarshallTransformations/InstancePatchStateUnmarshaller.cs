@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public InstancePatchState Unmarshall(JsonUnmarshallerContext context)
         {
             InstancePatchState unmarshalledObject = new InstancePatchState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

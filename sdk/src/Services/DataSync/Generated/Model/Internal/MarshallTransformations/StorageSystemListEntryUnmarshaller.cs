@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public StorageSystemListEntry Unmarshall(JsonUnmarshallerContext context)
         {
             StorageSystemListEntry unmarshalledObject = new StorageSystemListEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

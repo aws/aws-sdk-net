@@ -57,6 +57,8 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         public InstanceTypeCapacity Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceTypeCapacity unmarshalledObject = new InstanceTypeCapacity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

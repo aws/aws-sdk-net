@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public AwsCloudMapInstanceAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             AwsCloudMapInstanceAttribute unmarshalledObject = new AwsCloudMapInstanceAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

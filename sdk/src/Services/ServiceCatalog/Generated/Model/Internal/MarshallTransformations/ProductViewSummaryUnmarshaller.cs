@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public ProductViewSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ProductViewSummary unmarshalledObject = new ProductViewSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public AwsJobRateIncreaseCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             AwsJobRateIncreaseCriteria unmarshalledObject = new AwsJobRateIncreaseCriteria();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

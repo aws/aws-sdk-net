@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         public ConnectionBasicAuthResponseParameters Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectionBasicAuthResponseParameters unmarshalledObject = new ConnectionBasicAuthResponseParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         public GroupingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             GroupingConfiguration unmarshalledObject = new GroupingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

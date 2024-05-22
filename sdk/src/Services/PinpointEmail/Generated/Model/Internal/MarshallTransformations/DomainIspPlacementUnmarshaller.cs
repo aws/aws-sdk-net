@@ -57,6 +57,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         public DomainIspPlacement Unmarshall(JsonUnmarshallerContext context)
         {
             DomainIspPlacement unmarshalledObject = new DomainIspPlacement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

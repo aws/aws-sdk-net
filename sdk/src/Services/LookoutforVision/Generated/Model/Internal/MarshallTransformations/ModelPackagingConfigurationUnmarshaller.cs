@@ -57,6 +57,8 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         public ModelPackagingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ModelPackagingConfiguration unmarshalledObject = new ModelPackagingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DimensionField Unmarshall(JsonUnmarshallerContext context)
         {
             DimensionField unmarshalledObject = new DimensionField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

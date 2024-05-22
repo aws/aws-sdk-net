@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public RegisteredCustomerManagedKey Unmarshall(JsonUnmarshallerContext context)
         {
             RegisteredCustomerManagedKey unmarshalledObject = new RegisteredCustomerManagedKey();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

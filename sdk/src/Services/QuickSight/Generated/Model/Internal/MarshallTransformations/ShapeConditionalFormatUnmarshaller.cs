@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ShapeConditionalFormat Unmarshall(JsonUnmarshallerContext context)
         {
             ShapeConditionalFormat unmarshalledObject = new ShapeConditionalFormat();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

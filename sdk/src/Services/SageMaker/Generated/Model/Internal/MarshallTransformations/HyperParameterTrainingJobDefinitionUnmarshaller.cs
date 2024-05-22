@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public HyperParameterTrainingJobDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             HyperParameterTrainingJobDefinition unmarshalledObject = new HyperParameterTrainingJobDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

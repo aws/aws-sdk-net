@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public KeywordFilter Unmarshall(JsonUnmarshallerContext context)
         {
             KeywordFilter unmarshalledObject = new KeywordFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

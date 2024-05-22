@@ -57,6 +57,8 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         public AssertionAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             AssertionAttributes unmarshalledObject = new AssertionAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

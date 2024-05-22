@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public RuleGroupReferenceStatement Unmarshall(JsonUnmarshallerContext context)
         {
             RuleGroupReferenceStatement unmarshalledObject = new RuleGroupReferenceStatement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public EventBridgeDataSourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             EventBridgeDataSourceConfig unmarshalledObject = new EventBridgeDataSourceConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public TaskSearchSummary Unmarshall(JsonUnmarshallerContext context)
         {
             TaskSearchSummary unmarshalledObject = new TaskSearchSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

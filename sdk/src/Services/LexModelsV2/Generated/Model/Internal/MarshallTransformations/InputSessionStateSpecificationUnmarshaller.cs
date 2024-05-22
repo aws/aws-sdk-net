@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public InputSessionStateSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             InputSessionStateSpecification unmarshalledObject = new InputSessionStateSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

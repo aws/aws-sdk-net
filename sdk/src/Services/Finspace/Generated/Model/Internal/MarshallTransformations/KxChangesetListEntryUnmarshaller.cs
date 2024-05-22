@@ -57,6 +57,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public KxChangesetListEntry Unmarshall(JsonUnmarshallerContext context)
         {
             KxChangesetListEntry unmarshalledObject = new KxChangesetListEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

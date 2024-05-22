@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
         public AccountFindingsMetric Unmarshall(JsonUnmarshallerContext context)
         {
             AccountFindingsMetric unmarshalledObject = new AccountFindingsMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

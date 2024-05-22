@@ -57,6 +57,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         public SdkConfigurationProperty Unmarshall(JsonUnmarshallerContext context)
         {
             SdkConfigurationProperty unmarshalledObject = new SdkConfigurationProperty();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

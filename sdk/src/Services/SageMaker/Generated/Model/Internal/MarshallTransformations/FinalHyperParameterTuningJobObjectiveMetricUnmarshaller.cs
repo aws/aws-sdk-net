@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public FinalHyperParameterTuningJobObjectiveMetric Unmarshall(JsonUnmarshallerContext context)
         {
             FinalHyperParameterTuningJobObjectiveMetric unmarshalledObject = new FinalHyperParameterTuningJobObjectiveMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

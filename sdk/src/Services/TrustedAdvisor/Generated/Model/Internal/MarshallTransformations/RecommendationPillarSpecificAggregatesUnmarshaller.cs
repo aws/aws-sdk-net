@@ -57,6 +57,8 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
         public RecommendationPillarSpecificAggregates Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendationPillarSpecificAggregates unmarshalledObject = new RecommendationPillarSpecificAggregates();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

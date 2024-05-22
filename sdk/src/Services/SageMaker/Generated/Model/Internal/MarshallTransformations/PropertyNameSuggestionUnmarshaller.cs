@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public PropertyNameSuggestion Unmarshall(JsonUnmarshallerContext context)
         {
             PropertyNameSuggestion unmarshalledObject = new PropertyNameSuggestion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

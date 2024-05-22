@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public CustomCode Unmarshall(JsonUnmarshallerContext context)
         {
             CustomCode unmarshalledObject = new CustomCode();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

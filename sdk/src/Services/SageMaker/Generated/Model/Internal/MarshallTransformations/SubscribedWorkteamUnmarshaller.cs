@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public SubscribedWorkteam Unmarshall(JsonUnmarshallerContext context)
         {
             SubscribedWorkteam unmarshalledObject = new SubscribedWorkteam();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

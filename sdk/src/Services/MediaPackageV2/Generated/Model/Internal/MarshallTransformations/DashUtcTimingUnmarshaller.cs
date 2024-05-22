@@ -57,6 +57,8 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         public DashUtcTiming Unmarshall(JsonUnmarshallerContext context)
         {
             DashUtcTiming unmarshalledObject = new DashUtcTiming();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

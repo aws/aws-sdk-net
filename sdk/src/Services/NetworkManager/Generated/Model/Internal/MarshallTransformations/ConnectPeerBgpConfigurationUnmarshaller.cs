@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public ConnectPeerBgpConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectPeerBgpConfiguration unmarshalledObject = new ConnectPeerBgpConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

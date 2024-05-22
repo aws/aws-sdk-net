@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public CompositeSlotTypeSetting Unmarshall(JsonUnmarshallerContext context)
         {
             CompositeSlotTypeSetting unmarshalledObject = new CompositeSlotTypeSetting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

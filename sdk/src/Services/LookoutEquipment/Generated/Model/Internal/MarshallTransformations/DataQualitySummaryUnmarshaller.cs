@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public DataQualitySummary Unmarshall(JsonUnmarshallerContext context)
         {
             DataQualitySummary unmarshalledObject = new DataQualitySummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

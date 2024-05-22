@@ -57,6 +57,8 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public S3ExportDestinationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             S3ExportDestinationConfiguration unmarshalledObject = new S3ExportDestinationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

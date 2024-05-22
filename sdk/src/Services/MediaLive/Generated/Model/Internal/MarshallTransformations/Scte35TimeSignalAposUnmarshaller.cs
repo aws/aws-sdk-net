@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public Scte35TimeSignalApos Unmarshall(JsonUnmarshallerContext context)
         {
             Scte35TimeSignalApos unmarshalledObject = new Scte35TimeSignalApos();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

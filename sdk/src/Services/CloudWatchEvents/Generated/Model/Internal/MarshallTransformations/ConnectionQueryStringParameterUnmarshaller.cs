@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         public ConnectionQueryStringParameter Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectionQueryStringParameter unmarshalledObject = new ConnectionQueryStringParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

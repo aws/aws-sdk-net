@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public PeriodToDateComputation Unmarshall(JsonUnmarshallerContext context)
         {
             PeriodToDateComputation unmarshalledObject = new PeriodToDateComputation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

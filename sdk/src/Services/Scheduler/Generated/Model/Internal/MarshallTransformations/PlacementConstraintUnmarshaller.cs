@@ -57,6 +57,8 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
         public PlacementConstraint Unmarshall(JsonUnmarshallerContext context)
         {
             PlacementConstraint unmarshalledObject = new PlacementConstraint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         public EvaluationErrorItem Unmarshall(JsonUnmarshallerContext context)
         {
             EvaluationErrorItem unmarshalledObject = new EvaluationErrorItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public AdditionalDataset Unmarshall(JsonUnmarshallerContext context)
         {
             AdditionalDataset unmarshalledObject = new AdditionalDataset();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

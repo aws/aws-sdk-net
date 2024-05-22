@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public RelationalDatabaseDataSourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             RelationalDatabaseDataSourceConfig unmarshalledObject = new RelationalDatabaseDataSourceConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

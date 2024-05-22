@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public RdsFieldMapping Unmarshall(JsonUnmarshallerContext context)
         {
             RdsFieldMapping unmarshalledObject = new RdsFieldMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public TextWithHighlights Unmarshall(JsonUnmarshallerContext context)
         {
             TextWithHighlights unmarshalledObject = new TextWithHighlights();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

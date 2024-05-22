@@ -57,6 +57,8 @@ namespace Amazon.ForecastQueryService.Model.Internal.MarshallTransformations
         public DataPoint Unmarshall(JsonUnmarshallerContext context)
         {
             DataPoint unmarshalledObject = new DataPoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

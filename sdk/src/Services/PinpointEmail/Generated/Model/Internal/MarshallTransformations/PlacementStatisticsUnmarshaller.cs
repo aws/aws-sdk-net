@@ -57,6 +57,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         public PlacementStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             PlacementStatistics unmarshalledObject = new PlacementStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

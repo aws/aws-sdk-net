@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SankeyDiagramFieldWells Unmarshall(JsonUnmarshallerContext context)
         {
             SankeyDiagramFieldWells unmarshalledObject = new SankeyDiagramFieldWells();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public PercentageDisplayFormatConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             PercentageDisplayFormatConfiguration unmarshalledObject = new PercentageDisplayFormatConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

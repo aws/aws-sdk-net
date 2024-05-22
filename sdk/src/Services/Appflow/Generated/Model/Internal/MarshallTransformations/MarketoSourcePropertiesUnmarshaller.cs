@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public MarketoSourceProperties Unmarshall(JsonUnmarshallerContext context)
         {
             MarketoSourceProperties unmarshalledObject = new MarketoSourceProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

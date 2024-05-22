@@ -57,6 +57,8 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
         public ResourceSetOutput Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceSetOutput unmarshalledObject = new ResourceSetOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

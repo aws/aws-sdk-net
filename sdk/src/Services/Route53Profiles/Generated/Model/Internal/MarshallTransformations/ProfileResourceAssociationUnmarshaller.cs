@@ -57,6 +57,8 @@ namespace Amazon.Route53Profiles.Model.Internal.MarshallTransformations
         public ProfileResourceAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             ProfileResourceAssociation unmarshalledObject = new ProfileResourceAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

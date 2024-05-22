@@ -57,6 +57,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         public ConflictExceptionErrorArgument Unmarshall(JsonUnmarshallerContext context)
         {
             ConflictExceptionErrorArgument unmarshalledObject = new ConflictExceptionErrorArgument();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

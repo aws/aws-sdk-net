@@ -57,6 +57,8 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
         public FraudsterRegistrationJobSummary Unmarshall(JsonUnmarshallerContext context)
         {
             FraudsterRegistrationJobSummary unmarshalledObject = new FraudsterRegistrationJobSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

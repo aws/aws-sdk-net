@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public CognitoUserPoolConfig Unmarshall(JsonUnmarshallerContext context)
         {
             CognitoUserPoolConfig unmarshalledObject = new CognitoUserPoolConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public BigQueryParameters Unmarshall(JsonUnmarshallerContext context)
         {
             BigQueryParameters unmarshalledObject = new BigQueryParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

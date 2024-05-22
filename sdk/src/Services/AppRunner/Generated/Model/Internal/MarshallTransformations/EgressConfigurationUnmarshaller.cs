@@ -57,6 +57,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         public EgressConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EgressConfiguration unmarshalledObject = new EgressConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

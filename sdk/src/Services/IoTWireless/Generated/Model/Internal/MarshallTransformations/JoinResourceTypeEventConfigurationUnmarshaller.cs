@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public JoinResourceTypeEventConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             JoinResourceTypeEventConfiguration unmarshalledObject = new JoinResourceTypeEventConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

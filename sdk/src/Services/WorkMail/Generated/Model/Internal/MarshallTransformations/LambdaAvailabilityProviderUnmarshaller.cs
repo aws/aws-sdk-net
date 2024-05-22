@@ -57,6 +57,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         public LambdaAvailabilityProvider Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaAvailabilityProvider unmarshalledObject = new LambdaAvailabilityProvider();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

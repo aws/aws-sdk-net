@@ -57,6 +57,8 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         public ErrorReportConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ErrorReportConfiguration unmarshalledObject = new ErrorReportConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

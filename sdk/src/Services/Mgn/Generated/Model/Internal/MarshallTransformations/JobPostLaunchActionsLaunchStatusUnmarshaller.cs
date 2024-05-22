@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public JobPostLaunchActionsLaunchStatus Unmarshall(JsonUnmarshallerContext context)
         {
             JobPostLaunchActionsLaunchStatus unmarshalledObject = new JobPostLaunchActionsLaunchStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

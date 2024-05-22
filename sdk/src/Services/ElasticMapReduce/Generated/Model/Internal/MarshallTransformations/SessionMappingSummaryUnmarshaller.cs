@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public SessionMappingSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SessionMappingSummary unmarshalledObject = new SessionMappingSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

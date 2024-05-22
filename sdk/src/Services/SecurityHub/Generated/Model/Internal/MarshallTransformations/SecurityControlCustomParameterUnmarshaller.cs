@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public SecurityControlCustomParameter Unmarshall(JsonUnmarshallerContext context)
         {
             SecurityControlCustomParameter unmarshalledObject = new SecurityControlCustomParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

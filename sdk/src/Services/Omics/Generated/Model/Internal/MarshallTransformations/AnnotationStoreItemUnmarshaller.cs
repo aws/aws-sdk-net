@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public AnnotationStoreItem Unmarshall(JsonUnmarshallerContext context)
         {
             AnnotationStoreItem unmarshalledObject = new AnnotationStoreItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

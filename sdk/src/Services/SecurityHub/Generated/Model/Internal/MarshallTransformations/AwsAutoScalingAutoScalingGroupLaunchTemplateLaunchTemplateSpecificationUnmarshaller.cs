@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification unmarshalledObject = new AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

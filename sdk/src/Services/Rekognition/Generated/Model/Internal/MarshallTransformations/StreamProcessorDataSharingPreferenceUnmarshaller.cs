@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public StreamProcessorDataSharingPreference Unmarshall(JsonUnmarshallerContext context)
         {
             StreamProcessorDataSharingPreference unmarshalledObject = new StreamProcessorDataSharingPreference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

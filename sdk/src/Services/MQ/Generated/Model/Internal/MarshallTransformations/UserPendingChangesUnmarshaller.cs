@@ -57,6 +57,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         public UserPendingChanges Unmarshall(JsonUnmarshallerContext context)
         {
             UserPendingChanges unmarshalledObject = new UserPendingChanges();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

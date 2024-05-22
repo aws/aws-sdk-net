@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public RunLogLocation Unmarshall(JsonUnmarshallerContext context)
         {
             RunLogLocation unmarshalledObject = new RunLogLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

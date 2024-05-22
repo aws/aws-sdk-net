@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public LaunchActionParameter Unmarshall(JsonUnmarshallerContext context)
         {
             LaunchActionParameter unmarshalledObject = new LaunchActionParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

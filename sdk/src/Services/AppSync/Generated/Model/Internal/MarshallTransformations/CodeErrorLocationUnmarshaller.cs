@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public CodeErrorLocation Unmarshall(JsonUnmarshallerContext context)
         {
             CodeErrorLocation unmarshalledObject = new CodeErrorLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

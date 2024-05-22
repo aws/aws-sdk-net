@@ -57,6 +57,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         public RecurrenceSettings Unmarshall(JsonUnmarshallerContext context)
         {
             RecurrenceSettings unmarshalledObject = new RecurrenceSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

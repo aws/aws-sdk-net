@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public WorkspaceResourceAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             WorkspaceResourceAssociation unmarshalledObject = new WorkspaceResourceAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

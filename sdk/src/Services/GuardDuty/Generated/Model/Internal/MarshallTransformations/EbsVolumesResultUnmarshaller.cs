@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public EbsVolumesResult Unmarshall(JsonUnmarshallerContext context)
         {
             EbsVolumesResult unmarshalledObject = new EbsVolumesResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

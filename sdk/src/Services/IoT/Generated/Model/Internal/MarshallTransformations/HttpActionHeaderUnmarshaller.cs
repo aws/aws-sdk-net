@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public HttpActionHeader Unmarshall(JsonUnmarshallerContext context)
         {
             HttpActionHeader unmarshalledObject = new HttpActionHeader();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

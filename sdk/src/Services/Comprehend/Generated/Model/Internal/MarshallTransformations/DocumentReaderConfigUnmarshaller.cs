@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public DocumentReaderConfig Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentReaderConfig unmarshalledObject = new DocumentReaderConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public AndStatement Unmarshall(JsonUnmarshallerContext context)
         {
             AndStatement unmarshalledObject = new AndStatement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

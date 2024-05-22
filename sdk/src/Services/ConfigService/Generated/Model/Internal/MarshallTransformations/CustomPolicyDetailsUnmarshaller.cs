@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public CustomPolicyDetails Unmarshall(JsonUnmarshallerContext context)
         {
             CustomPolicyDetails unmarshalledObject = new CustomPolicyDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

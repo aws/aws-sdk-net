@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public SizeConstraintStatement Unmarshall(JsonUnmarshallerContext context)
         {
             SizeConstraintStatement unmarshalledObject = new SizeConstraintStatement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public PipeSourceKinesisStreamParameters Unmarshall(JsonUnmarshallerContext context)
         {
             PipeSourceKinesisStreamParameters unmarshalledObject = new PipeSourceKinesisStreamParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

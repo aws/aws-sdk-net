@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public PipelineExecutionStep Unmarshall(JsonUnmarshallerContext context)
         {
             PipelineExecutionStep unmarshalledObject = new PipelineExecutionStep();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

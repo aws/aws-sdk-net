@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         public GuardrailPiiEntityFilter Unmarshall(JsonUnmarshallerContext context)
         {
             GuardrailPiiEntityFilter unmarshalledObject = new GuardrailPiiEntityFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

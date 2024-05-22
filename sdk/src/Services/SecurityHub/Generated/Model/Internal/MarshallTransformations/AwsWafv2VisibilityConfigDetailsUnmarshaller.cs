@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsWafv2VisibilityConfigDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsWafv2VisibilityConfigDetails unmarshalledObject = new AwsWafv2VisibilityConfigDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public InputSwitchScheduleActionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             InputSwitchScheduleActionSettings unmarshalledObject = new InputSwitchScheduleActionSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
         public ChimeWebhookConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ChimeWebhookConfiguration unmarshalledObject = new ChimeWebhookConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

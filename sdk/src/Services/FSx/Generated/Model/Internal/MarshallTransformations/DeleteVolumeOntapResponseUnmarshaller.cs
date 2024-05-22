@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public DeleteVolumeOntapResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DeleteVolumeOntapResponse unmarshalledObject = new DeleteVolumeOntapResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

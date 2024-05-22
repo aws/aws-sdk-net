@@ -57,6 +57,8 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         public ByteMatchTuple Unmarshall(JsonUnmarshallerContext context)
         {
             ByteMatchTuple unmarshalledObject = new ByteMatchTuple();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

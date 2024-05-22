@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails unmarshalledObject = new AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
         public CodeLine Unmarshall(JsonUnmarshallerContext context)
         {
             CodeLine unmarshalledObject = new CodeLine();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public InsightFeedback Unmarshall(JsonUnmarshallerContext context)
         {
             InsightFeedback unmarshalledObject = new InsightFeedback();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

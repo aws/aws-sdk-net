@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public ConcatenationSink Unmarshall(JsonUnmarshallerContext context)
         {
             ConcatenationSink unmarshalledObject = new ConcatenationSink();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

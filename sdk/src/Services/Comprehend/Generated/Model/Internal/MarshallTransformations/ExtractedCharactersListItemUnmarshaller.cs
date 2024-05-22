@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public ExtractedCharactersListItem Unmarshall(JsonUnmarshallerContext context)
         {
             ExtractedCharactersListItem unmarshalledObject = new ExtractedCharactersListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

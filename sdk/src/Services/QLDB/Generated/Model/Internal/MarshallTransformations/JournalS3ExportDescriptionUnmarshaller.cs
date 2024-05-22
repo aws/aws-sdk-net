@@ -57,6 +57,8 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         public JournalS3ExportDescription Unmarshall(JsonUnmarshallerContext context)
         {
             JournalS3ExportDescription unmarshalledObject = new JournalS3ExportDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

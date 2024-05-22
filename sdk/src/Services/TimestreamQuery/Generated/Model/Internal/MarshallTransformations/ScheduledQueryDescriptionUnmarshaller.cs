@@ -57,6 +57,8 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         public ScheduledQueryDescription Unmarshall(JsonUnmarshallerContext context)
         {
             ScheduledQueryDescription unmarshalledObject = new ScheduledQueryDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

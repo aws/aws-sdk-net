@@ -57,6 +57,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         public DeviceJob Unmarshall(JsonUnmarshallerContext context)
         {
             DeviceJob unmarshalledObject = new DeviceJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

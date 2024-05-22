@@ -57,6 +57,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         public AnalysisResultLocation Unmarshall(JsonUnmarshallerContext context)
         {
             AnalysisResultLocation unmarshalledObject = new AnalysisResultLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

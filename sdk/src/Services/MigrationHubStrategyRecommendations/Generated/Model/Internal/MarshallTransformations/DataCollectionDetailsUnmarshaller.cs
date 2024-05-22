@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public DataCollectionDetails Unmarshall(JsonUnmarshallerContext context)
         {
             DataCollectionDetails unmarshalledObject = new DataCollectionDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

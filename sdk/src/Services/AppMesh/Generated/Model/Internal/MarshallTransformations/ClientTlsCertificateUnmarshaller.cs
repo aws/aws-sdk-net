@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public ClientTlsCertificate Unmarshall(JsonUnmarshallerContext context)
         {
             ClientTlsCertificate unmarshalledObject = new ClientTlsCertificate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

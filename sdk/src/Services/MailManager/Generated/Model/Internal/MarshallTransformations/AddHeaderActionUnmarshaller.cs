@@ -57,6 +57,8 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public AddHeaderAction Unmarshall(JsonUnmarshallerContext context)
         {
             AddHeaderAction unmarshalledObject = new AddHeaderAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

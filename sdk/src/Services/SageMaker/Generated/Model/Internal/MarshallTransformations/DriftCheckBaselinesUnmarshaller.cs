@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public DriftCheckBaselines Unmarshall(JsonUnmarshallerContext context)
         {
             DriftCheckBaselines unmarshalledObject = new DriftCheckBaselines();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public SlotMigration Unmarshall(JsonUnmarshallerContext context)
         {
             SlotMigration unmarshalledObject = new SlotMigration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

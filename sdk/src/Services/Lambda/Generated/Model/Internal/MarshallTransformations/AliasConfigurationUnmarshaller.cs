@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public AliasConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AliasConfiguration unmarshalledObject = new AliasConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

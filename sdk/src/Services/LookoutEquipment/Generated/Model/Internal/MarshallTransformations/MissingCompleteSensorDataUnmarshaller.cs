@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public MissingCompleteSensorData Unmarshall(JsonUnmarshallerContext context)
         {
             MissingCompleteSensorData unmarshalledObject = new MissingCompleteSensorData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         public HumanWorkflowConfig Unmarshall(JsonUnmarshallerContext context)
         {
             HumanWorkflowConfig unmarshalledObject = new HumanWorkflowConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

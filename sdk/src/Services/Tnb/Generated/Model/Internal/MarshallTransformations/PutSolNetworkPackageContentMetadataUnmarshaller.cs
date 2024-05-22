@@ -57,6 +57,8 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         public PutSolNetworkPackageContentMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             PutSolNetworkPackageContentMetadata unmarshalledObject = new PutSolNetworkPackageContentMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

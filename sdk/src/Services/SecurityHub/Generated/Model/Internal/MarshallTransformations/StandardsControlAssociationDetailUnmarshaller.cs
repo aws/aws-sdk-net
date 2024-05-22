@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public StandardsControlAssociationDetail Unmarshall(JsonUnmarshallerContext context)
         {
             StandardsControlAssociationDetail unmarshalledObject = new StandardsControlAssociationDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

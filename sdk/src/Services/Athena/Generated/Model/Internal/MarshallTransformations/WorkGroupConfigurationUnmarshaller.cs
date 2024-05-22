@@ -57,6 +57,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         public WorkGroupConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             WorkGroupConfiguration unmarshalledObject = new WorkGroupConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

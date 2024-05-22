@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsS3AccountPublicAccessBlockDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsS3AccountPublicAccessBlockDetails unmarshalledObject = new AwsS3AccountPublicAccessBlockDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

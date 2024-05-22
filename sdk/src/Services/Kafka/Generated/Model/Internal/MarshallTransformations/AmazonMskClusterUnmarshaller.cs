@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public AmazonMskCluster Unmarshall(JsonUnmarshallerContext context)
         {
             AmazonMskCluster unmarshalledObject = new AmazonMskCluster();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

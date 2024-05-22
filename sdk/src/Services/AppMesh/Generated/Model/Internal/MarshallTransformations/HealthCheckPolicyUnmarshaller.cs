@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public HealthCheckPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             HealthCheckPolicy unmarshalledObject = new HealthCheckPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

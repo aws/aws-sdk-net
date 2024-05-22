@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public ColorConversion3DLUTSetting Unmarshall(JsonUnmarshallerContext context)
         {
             ColorConversion3DLUTSetting unmarshalledObject = new ColorConversion3DLUTSetting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

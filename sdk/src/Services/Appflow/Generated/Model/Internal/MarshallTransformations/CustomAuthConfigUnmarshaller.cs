@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public CustomAuthConfig Unmarshall(JsonUnmarshallerContext context)
         {
             CustomAuthConfig unmarshalledObject = new CustomAuthConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

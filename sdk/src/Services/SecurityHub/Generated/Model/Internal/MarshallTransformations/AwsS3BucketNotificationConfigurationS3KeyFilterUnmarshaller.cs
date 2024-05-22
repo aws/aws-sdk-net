@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsS3BucketNotificationConfigurationS3KeyFilter Unmarshall(JsonUnmarshallerContext context)
         {
             AwsS3BucketNotificationConfigurationS3KeyFilter unmarshalledObject = new AwsS3BucketNotificationConfigurationS3KeyFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

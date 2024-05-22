@@ -57,6 +57,8 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public IngressBooleanExpression Unmarshall(JsonUnmarshallerContext context)
         {
             IngressBooleanExpression unmarshalledObject = new IngressBooleanExpression();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

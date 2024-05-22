@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         public DeleteVpcEndpointDetail Unmarshall(JsonUnmarshallerContext context)
         {
             DeleteVpcEndpointDetail unmarshalledObject = new DeleteVpcEndpointDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

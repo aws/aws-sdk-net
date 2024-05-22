@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public SourceNetwork Unmarshall(JsonUnmarshallerContext context)
         {
             SourceNetwork unmarshalledObject = new SourceNetwork();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

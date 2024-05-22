@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public CloudMaskingConfigInput Unmarshall(JsonUnmarshallerContext context)
         {
             CloudMaskingConfigInput unmarshalledObject = new CloudMaskingConfigInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

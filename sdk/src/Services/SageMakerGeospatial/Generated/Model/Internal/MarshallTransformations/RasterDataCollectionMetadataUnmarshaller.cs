@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public RasterDataCollectionMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             RasterDataCollectionMetadata unmarshalledObject = new RasterDataCollectionMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

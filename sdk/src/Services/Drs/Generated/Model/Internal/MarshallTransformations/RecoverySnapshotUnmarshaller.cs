@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public RecoverySnapshot Unmarshall(JsonUnmarshallerContext context)
         {
             RecoverySnapshot unmarshalledObject = new RecoverySnapshot();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

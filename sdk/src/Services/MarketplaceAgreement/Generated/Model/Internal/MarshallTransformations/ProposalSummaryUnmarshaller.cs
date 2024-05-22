@@ -57,6 +57,8 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         public ProposalSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ProposalSummary unmarshalledObject = new ProposalSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public MultiplexProgramPipelineDetail Unmarshall(JsonUnmarshallerContext context)
         {
             MultiplexProgramPipelineDetail unmarshalledObject = new MultiplexProgramPipelineDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

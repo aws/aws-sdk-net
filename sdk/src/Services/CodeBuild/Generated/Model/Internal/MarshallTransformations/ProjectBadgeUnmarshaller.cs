@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public ProjectBadge Unmarshall(JsonUnmarshallerContext context)
         {
             ProjectBadge unmarshalledObject = new ProjectBadge();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

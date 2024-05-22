@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public VisualMenuOption Unmarshall(JsonUnmarshallerContext context)
         {
             VisualMenuOption unmarshalledObject = new VisualMenuOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

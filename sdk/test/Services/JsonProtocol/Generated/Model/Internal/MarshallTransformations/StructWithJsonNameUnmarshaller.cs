@@ -57,6 +57,8 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
         public StructWithJsonName Unmarshall(JsonUnmarshallerContext context)
         {
             StructWithJsonName unmarshalledObject = new StructWithJsonName();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public HookConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             HookConfiguration unmarshalledObject = new HookConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

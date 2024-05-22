@@ -57,6 +57,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public AvailabilityZone Unmarshall(JsonUnmarshallerContext context)
         {
             AvailabilityZone unmarshalledObject = new AvailabilityZone();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

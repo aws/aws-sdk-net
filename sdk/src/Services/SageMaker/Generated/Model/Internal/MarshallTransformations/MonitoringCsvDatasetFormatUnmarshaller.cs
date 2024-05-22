@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public MonitoringCsvDatasetFormat Unmarshall(JsonUnmarshallerContext context)
         {
             MonitoringCsvDatasetFormat unmarshalledObject = new MonitoringCsvDatasetFormat();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

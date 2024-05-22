@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public NoteUpdate Unmarshall(JsonUnmarshallerContext context)
         {
             NoteUpdate unmarshalledObject = new NoteUpdate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

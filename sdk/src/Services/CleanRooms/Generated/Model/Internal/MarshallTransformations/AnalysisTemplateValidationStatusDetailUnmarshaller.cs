@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public AnalysisTemplateValidationStatusDetail Unmarshall(JsonUnmarshallerContext context)
         {
             AnalysisTemplateValidationStatusDetail unmarshalledObject = new AnalysisTemplateValidationStatusDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

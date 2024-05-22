@@ -57,6 +57,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public AthenaSourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AthenaSourceConfig unmarshalledObject = new AthenaSourceConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

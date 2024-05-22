@@ -57,6 +57,8 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         public IpAddressResponse Unmarshall(JsonUnmarshallerContext context)
         {
             IpAddressResponse unmarshalledObject = new IpAddressResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

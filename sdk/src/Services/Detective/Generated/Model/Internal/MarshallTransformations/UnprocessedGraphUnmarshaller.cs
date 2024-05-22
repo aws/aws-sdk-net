@@ -57,6 +57,8 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         public UnprocessedGraph Unmarshall(JsonUnmarshallerContext context)
         {
             UnprocessedGraph unmarshalledObject = new UnprocessedGraph();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public StopExecutionTrigger Unmarshall(JsonUnmarshallerContext context)
         {
             StopExecutionTrigger unmarshalledObject = new StopExecutionTrigger();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

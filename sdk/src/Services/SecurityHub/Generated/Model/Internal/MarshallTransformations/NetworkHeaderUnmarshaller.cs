@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public NetworkHeader Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkHeader unmarshalledObject = new NetworkHeader();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public RelationshipValue Unmarshall(JsonUnmarshallerContext context)
         {
             RelationshipValue unmarshalledObject = new RelationshipValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

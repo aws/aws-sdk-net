@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public RevisionDestinationEntry Unmarshall(JsonUnmarshallerContext context)
         {
             RevisionDestinationEntry unmarshalledObject = new RevisionDestinationEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

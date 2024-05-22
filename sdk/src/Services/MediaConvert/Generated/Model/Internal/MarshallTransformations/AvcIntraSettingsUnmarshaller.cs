@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public AvcIntraSettings Unmarshall(JsonUnmarshallerContext context)
         {
             AvcIntraSettings unmarshalledObject = new AvcIntraSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

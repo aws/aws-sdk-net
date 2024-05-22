@@ -57,6 +57,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public PartListElement Unmarshall(JsonUnmarshallerContext context)
         {
             PartListElement unmarshalledObject = new PartListElement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

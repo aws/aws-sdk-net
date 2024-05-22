@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public StreamRecord Unmarshall(JsonUnmarshallerContext context)
         {
             StreamRecord unmarshalledObject = new StreamRecord();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

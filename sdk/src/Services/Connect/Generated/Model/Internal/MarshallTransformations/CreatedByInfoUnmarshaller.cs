@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public CreatedByInfo Unmarshall(JsonUnmarshallerContext context)
         {
             CreatedByInfo unmarshalledObject = new CreatedByInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

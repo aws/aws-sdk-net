@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public PostDialogCodeHookInvocationSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             PostDialogCodeHookInvocationSpecification unmarshalledObject = new PostDialogCodeHookInvocationSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

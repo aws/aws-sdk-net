@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public KubernetesConfigurationResult Unmarshall(JsonUnmarshallerContext context)
         {
             KubernetesConfigurationResult unmarshalledObject = new KubernetesConfigurationResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

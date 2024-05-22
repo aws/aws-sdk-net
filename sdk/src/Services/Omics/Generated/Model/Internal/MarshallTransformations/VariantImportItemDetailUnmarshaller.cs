@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public VariantImportItemDetail Unmarshall(JsonUnmarshallerContext context)
         {
             VariantImportItemDetail unmarshalledObject = new VariantImportItemDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

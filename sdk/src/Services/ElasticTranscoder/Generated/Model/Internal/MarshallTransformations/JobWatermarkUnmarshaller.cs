@@ -57,6 +57,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         public JobWatermark Unmarshall(JsonUnmarshallerContext context)
         {
             JobWatermark unmarshalledObject = new JobWatermark();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

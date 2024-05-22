@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public HlsS3Settings Unmarshall(JsonUnmarshallerContext context)
         {
             HlsS3Settings unmarshalledObject = new HlsS3Settings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

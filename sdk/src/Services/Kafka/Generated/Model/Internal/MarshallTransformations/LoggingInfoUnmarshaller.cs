@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public LoggingInfo Unmarshall(JsonUnmarshallerContext context)
         {
             LoggingInfo unmarshalledObject = new LoggingInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

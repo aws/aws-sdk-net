@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public PermissionModel Unmarshall(JsonUnmarshallerContext context)
         {
             PermissionModel unmarshalledObject = new PermissionModel();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

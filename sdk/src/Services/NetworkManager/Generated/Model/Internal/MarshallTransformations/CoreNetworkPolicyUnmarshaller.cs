@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public CoreNetworkPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             CoreNetworkPolicy unmarshalledObject = new CoreNetworkPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

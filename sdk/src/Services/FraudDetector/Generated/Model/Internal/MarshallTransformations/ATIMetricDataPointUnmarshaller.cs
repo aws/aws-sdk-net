@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public ATIMetricDataPoint Unmarshall(JsonUnmarshallerContext context)
         {
             ATIMetricDataPoint unmarshalledObject = new ATIMetricDataPoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

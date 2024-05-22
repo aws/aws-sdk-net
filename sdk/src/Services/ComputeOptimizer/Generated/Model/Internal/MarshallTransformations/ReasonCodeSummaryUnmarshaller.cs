@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public ReasonCodeSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ReasonCodeSummary unmarshalledObject = new ReasonCodeSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

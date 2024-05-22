@@ -57,6 +57,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public InterruptionFilter Unmarshall(JsonUnmarshallerContext context)
         {
             InterruptionFilter unmarshalledObject = new InterruptionFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

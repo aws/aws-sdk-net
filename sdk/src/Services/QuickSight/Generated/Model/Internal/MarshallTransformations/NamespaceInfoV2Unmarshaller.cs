@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public NamespaceInfoV2 Unmarshall(JsonUnmarshallerContext context)
         {
             NamespaceInfoV2 unmarshalledObject = new NamespaceInfoV2();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

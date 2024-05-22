@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public RedshiftInstanceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             RedshiftInstanceDetails unmarshalledObject = new RedshiftInstanceDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

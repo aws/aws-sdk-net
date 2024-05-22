@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SelectedSheetsFilterScopeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SelectedSheetsFilterScopeConfiguration unmarshalledObject = new SelectedSheetsFilterScopeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         public TestGridVpcConfig Unmarshall(JsonUnmarshallerContext context)
         {
             TestGridVpcConfig unmarshalledObject = new TestGridVpcConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

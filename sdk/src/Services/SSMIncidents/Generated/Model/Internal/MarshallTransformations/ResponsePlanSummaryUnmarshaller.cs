@@ -57,6 +57,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         public ResponsePlanSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ResponsePlanSummary unmarshalledObject = new ResponsePlanSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

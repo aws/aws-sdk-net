@@ -57,6 +57,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public CsvOutputOptions Unmarshall(JsonUnmarshallerContext context)
         {
             CsvOutputOptions unmarshalledObject = new CsvOutputOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

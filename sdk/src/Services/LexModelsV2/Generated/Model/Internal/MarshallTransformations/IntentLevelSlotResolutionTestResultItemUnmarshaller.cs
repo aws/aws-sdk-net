@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public IntentLevelSlotResolutionTestResultItem Unmarshall(JsonUnmarshallerContext context)
         {
             IntentLevelSlotResolutionTestResultItem unmarshalledObject = new IntentLevelSlotResolutionTestResultItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

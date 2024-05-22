@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public FargateDetails Unmarshall(JsonUnmarshallerContext context)
         {
             FargateDetails unmarshalledObject = new FargateDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

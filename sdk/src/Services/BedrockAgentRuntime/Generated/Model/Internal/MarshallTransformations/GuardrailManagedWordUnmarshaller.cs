@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         public GuardrailManagedWord Unmarshall(JsonUnmarshallerContext context)
         {
             GuardrailManagedWord unmarshalledObject = new GuardrailManagedWord();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

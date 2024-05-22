@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public SecurityProfileIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             SecurityProfileIdentifier unmarshalledObject = new SecurityProfileIdentifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

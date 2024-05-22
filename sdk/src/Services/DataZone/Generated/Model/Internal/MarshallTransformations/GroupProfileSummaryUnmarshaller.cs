@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public GroupProfileSummary Unmarshall(JsonUnmarshallerContext context)
         {
             GroupProfileSummary unmarshalledObject = new GroupProfileSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

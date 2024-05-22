@@ -57,6 +57,8 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         public CapabilityConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CapabilityConfiguration unmarshalledObject = new CapabilityConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

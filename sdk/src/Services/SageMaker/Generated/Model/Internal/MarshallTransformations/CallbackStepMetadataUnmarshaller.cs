@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public CallbackStepMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             CallbackStepMetadata unmarshalledObject = new CallbackStepMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public DirectSchemaChangePolicy Unmarshall(JsonUnmarshallerContext context)
         {
             DirectSchemaChangePolicy unmarshalledObject = new DirectSchemaChangePolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

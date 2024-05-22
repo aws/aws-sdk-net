@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public LambdaTarget Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaTarget unmarshalledObject = new LambdaTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

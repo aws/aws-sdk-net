@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public LiveTailSessionStart Unmarshall(JsonUnmarshallerContext context)
         {
             LiveTailSessionStart unmarshalledObject = new LiveTailSessionStart();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

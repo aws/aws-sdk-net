@@ -57,6 +57,8 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
         public SupportedHour Unmarshall(JsonUnmarshallerContext context)
         {
             SupportedHour unmarshalledObject = new SupportedHour();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public UnsuccessfulFaceDeletion Unmarshall(JsonUnmarshallerContext context)
         {
             UnsuccessfulFaceDeletion unmarshalledObject = new UnsuccessfulFaceDeletion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

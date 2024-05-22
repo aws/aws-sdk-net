@@ -57,6 +57,8 @@ namespace Amazon.OAM.Model.Internal.MarshallTransformations
         public ListAttachedLinksItem Unmarshall(JsonUnmarshallerContext context)
         {
             ListAttachedLinksItem unmarshalledObject = new ListAttachedLinksItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

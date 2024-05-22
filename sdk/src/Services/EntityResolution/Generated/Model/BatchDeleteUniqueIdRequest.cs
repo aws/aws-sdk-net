@@ -54,7 +54,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if InputSource property is set
         internal bool IsSetInputSource()
         {
-            return this._inputSource != null;
+            return !string.IsNullOrEmpty(this._inputSource);
         }
 
         /// <summary>

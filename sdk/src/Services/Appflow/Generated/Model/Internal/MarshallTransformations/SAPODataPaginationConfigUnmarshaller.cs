@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public SAPODataPaginationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             SAPODataPaginationConfig unmarshalledObject = new SAPODataPaginationConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

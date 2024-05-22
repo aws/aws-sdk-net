@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public PodIdentityAssociationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             PodIdentityAssociationSummary unmarshalledObject = new PodIdentityAssociationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

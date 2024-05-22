@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SectionPageBreakConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SectionPageBreakConfiguration unmarshalledObject = new SectionPageBreakConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

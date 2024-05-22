@@ -57,6 +57,8 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         public DeviceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             DeviceConfig unmarshalledObject = new DeviceConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

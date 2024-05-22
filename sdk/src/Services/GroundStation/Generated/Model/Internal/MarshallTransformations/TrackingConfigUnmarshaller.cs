@@ -57,6 +57,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public TrackingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             TrackingConfig unmarshalledObject = new TrackingConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

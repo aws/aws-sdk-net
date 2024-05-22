@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public S3Presign Unmarshall(JsonUnmarshallerContext context)
         {
             S3Presign unmarshalledObject = new S3Presign();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

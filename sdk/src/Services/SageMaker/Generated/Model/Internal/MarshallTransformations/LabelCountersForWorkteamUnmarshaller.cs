@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public LabelCountersForWorkteam Unmarshall(JsonUnmarshallerContext context)
         {
             LabelCountersForWorkteam unmarshalledObject = new LabelCountersForWorkteam();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

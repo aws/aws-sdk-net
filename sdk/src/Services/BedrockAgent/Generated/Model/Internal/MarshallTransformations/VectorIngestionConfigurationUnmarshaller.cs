@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public VectorIngestionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             VectorIngestionConfiguration unmarshalledObject = new VectorIngestionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

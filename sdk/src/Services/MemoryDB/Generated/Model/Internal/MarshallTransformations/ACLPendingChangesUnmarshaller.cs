@@ -57,6 +57,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public ACLPendingChanges Unmarshall(JsonUnmarshallerContext context)
         {
             ACLPendingChanges unmarshalledObject = new ACLPendingChanges();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

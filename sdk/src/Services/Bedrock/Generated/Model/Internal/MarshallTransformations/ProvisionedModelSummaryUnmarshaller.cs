@@ -57,6 +57,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         public ProvisionedModelSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ProvisionedModelSummary unmarshalledObject = new ProvisionedModelSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

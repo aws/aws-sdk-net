@@ -57,6 +57,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         public AlternateSoftwareMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             AlternateSoftwareMetadata unmarshalledObject = new AlternateSoftwareMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public Bandwidth Unmarshall(JsonUnmarshallerContext context)
         {
             Bandwidth unmarshalledObject = new Bandwidth();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

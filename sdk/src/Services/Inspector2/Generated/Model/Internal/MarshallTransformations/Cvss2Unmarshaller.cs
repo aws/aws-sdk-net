@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public Cvss2 Unmarshall(JsonUnmarshallerContext context)
         {
             Cvss2 unmarshalledObject = new Cvss2();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public LiveConnectorRTMPConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LiveConnectorRTMPConfiguration unmarshalledObject = new LiveConnectorRTMPConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

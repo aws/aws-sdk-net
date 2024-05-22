@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public IdMappingTechniques Unmarshall(JsonUnmarshallerContext context)
         {
             IdMappingTechniques unmarshalledObject = new IdMappingTechniques();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

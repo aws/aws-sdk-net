@@ -57,6 +57,8 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         public EncryptionKey Unmarshall(JsonUnmarshallerContext context)
         {
             EncryptionKey unmarshalledObject = new EncryptionKey();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

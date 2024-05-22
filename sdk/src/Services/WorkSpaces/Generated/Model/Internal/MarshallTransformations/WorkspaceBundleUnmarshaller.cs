@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public WorkspaceBundle Unmarshall(JsonUnmarshallerContext context)
         {
             WorkspaceBundle unmarshalledObject = new WorkspaceBundle();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

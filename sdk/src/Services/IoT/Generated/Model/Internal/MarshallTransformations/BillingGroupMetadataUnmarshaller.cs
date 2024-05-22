@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public BillingGroupMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             BillingGroupMetadata unmarshalledObject = new BillingGroupMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

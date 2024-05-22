@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public AvailSettings Unmarshall(JsonUnmarshallerContext context)
         {
             AvailSettings unmarshalledObject = new AvailSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

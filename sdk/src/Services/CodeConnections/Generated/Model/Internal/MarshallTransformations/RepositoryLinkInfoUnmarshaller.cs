@@ -57,6 +57,8 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
         public RepositoryLinkInfo Unmarshall(JsonUnmarshallerContext context)
         {
             RepositoryLinkInfo unmarshalledObject = new RepositoryLinkInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
         public SimulationAppMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             SimulationAppMetadata unmarshalledObject = new SimulationAppMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

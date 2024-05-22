@@ -57,6 +57,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public DatetimeOptions Unmarshall(JsonUnmarshallerContext context)
         {
             DatetimeOptions unmarshalledObject = new DatetimeOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

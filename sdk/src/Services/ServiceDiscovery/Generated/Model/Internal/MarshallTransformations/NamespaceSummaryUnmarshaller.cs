@@ -57,6 +57,8 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         public NamespaceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             NamespaceSummary unmarshalledObject = new NamespaceSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

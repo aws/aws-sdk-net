@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public ErrorRootCauseService Unmarshall(JsonUnmarshallerContext context)
         {
             ErrorRootCauseService unmarshalledObject = new ErrorRootCauseService();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

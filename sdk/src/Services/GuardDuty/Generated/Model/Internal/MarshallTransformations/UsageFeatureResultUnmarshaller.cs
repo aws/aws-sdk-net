@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public UsageFeatureResult Unmarshall(JsonUnmarshallerContext context)
         {
             UsageFeatureResult unmarshalledObject = new UsageFeatureResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

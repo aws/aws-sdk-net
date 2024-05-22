@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public TimeSignalMessage Unmarshall(JsonUnmarshallerContext context)
         {
             TimeSignalMessage unmarshalledObject = new TimeSignalMessage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

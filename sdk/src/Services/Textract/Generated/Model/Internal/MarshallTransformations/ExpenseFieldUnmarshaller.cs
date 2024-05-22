@@ -57,6 +57,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         public ExpenseField Unmarshall(JsonUnmarshallerContext context)
         {
             ExpenseField unmarshalledObject = new ExpenseField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

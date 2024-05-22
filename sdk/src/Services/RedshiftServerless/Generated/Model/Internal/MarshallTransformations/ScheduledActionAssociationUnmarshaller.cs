@@ -57,6 +57,8 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         public ScheduledActionAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             ScheduledActionAssociation unmarshalledObject = new ScheduledActionAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public SegmentDetection Unmarshall(JsonUnmarshallerContext context)
         {
             SegmentDetection unmarshalledObject = new SegmentDetection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

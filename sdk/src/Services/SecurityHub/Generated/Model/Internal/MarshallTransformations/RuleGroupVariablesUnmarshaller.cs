@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public RuleGroupVariables Unmarshall(JsonUnmarshallerContext context)
         {
             RuleGroupVariables unmarshalledObject = new RuleGroupVariables();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

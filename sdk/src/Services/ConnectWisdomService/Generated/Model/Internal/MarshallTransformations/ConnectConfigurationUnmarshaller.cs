@@ -57,6 +57,8 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         public ConnectConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectConfiguration unmarshalledObject = new ConnectConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

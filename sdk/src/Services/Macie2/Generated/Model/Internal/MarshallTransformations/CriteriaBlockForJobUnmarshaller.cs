@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public CriteriaBlockForJob Unmarshall(JsonUnmarshallerContext context)
         {
             CriteriaBlockForJob unmarshalledObject = new CriteriaBlockForJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

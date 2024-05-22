@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public FirewallPolicyStatefulRuleGroupReferencesDetails Unmarshall(JsonUnmarshallerContext context)
         {
             FirewallPolicyStatefulRuleGroupReferencesDetails unmarshalledObject = new FirewallPolicyStatefulRuleGroupReferencesDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

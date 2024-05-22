@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public ValidationExceptionField Unmarshall(JsonUnmarshallerContext context)
         {
             ValidationExceptionField unmarshalledObject = new ValidationExceptionField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

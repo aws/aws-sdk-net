@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public IsBinaryFile Unmarshall(JsonUnmarshallerContext context)
         {
             IsBinaryFile unmarshalledObject = new IsBinaryFile();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

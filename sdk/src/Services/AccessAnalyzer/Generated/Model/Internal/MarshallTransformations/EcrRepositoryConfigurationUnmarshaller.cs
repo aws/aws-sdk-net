@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public EcrRepositoryConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EcrRepositoryConfiguration unmarshalledObject = new EcrRepositoryConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

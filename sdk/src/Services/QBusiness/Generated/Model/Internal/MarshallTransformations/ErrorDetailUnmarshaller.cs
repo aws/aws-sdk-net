@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public ErrorDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ErrorDetail unmarshalledObject = new ErrorDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

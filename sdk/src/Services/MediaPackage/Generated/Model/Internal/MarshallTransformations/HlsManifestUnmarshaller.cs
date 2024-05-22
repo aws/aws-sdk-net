@@ -57,6 +57,8 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         public HlsManifest Unmarshall(JsonUnmarshallerContext context)
         {
             HlsManifest unmarshalledObject = new HlsManifest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

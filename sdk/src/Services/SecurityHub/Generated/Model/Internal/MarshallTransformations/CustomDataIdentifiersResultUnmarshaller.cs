@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public CustomDataIdentifiersResult Unmarshall(JsonUnmarshallerContext context)
         {
             CustomDataIdentifiersResult unmarshalledObject = new CustomDataIdentifiersResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

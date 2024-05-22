@@ -57,6 +57,8 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         public Monitor Unmarshall(JsonUnmarshallerContext context)
         {
             Monitor unmarshalledObject = new Monitor();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

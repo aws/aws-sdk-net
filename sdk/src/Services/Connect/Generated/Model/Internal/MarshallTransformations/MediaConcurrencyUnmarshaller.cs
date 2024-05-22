@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public MediaConcurrency Unmarshall(JsonUnmarshallerContext context)
         {
             MediaConcurrency unmarshalledObject = new MediaConcurrency();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

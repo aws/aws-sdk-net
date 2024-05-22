@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public SingleSelectQuestionRuleCategoryAutomation Unmarshall(JsonUnmarshallerContext context)
         {
             SingleSelectQuestionRuleCategoryAutomation unmarshalledObject = new SingleSelectQuestionRuleCategoryAutomation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

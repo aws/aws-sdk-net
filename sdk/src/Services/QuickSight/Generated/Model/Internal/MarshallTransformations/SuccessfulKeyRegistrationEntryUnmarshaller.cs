@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SuccessfulKeyRegistrationEntry Unmarshall(JsonUnmarshallerContext context)
         {
             SuccessfulKeyRegistrationEntry unmarshalledObject = new SuccessfulKeyRegistrationEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

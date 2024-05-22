@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public NegativeFormat Unmarshall(JsonUnmarshallerContext context)
         {
             NegativeFormat unmarshalledObject = new NegativeFormat();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

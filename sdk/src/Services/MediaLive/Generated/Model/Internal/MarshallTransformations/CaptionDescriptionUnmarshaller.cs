@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public CaptionDescription Unmarshall(JsonUnmarshallerContext context)
         {
             CaptionDescription unmarshalledObject = new CaptionDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

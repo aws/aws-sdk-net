@@ -57,6 +57,8 @@ namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
         public MyUnion Unmarshall(JsonUnmarshallerContext context)
         {
             MyUnion unmarshalledObject = new MyUnion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public ClusterServiceConnectDefaults Unmarshall(JsonUnmarshallerContext context)
         {
             ClusterServiceConnectDefaults unmarshalledObject = new ClusterServiceConnectDefaults();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

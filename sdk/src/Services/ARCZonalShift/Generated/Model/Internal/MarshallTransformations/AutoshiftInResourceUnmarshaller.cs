@@ -57,6 +57,8 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
         public AutoshiftInResource Unmarshall(JsonUnmarshallerContext context)
         {
             AutoshiftInResource unmarshalledObject = new AutoshiftInResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

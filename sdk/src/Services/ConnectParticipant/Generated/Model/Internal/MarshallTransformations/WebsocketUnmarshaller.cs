@@ -57,6 +57,8 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         public Websocket Unmarshall(JsonUnmarshallerContext context)
         {
             Websocket unmarshalledObject = new Websocket();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

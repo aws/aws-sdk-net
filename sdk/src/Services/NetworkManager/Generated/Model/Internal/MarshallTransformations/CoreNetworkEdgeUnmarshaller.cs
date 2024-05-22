@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public CoreNetworkEdge Unmarshall(JsonUnmarshallerContext context)
         {
             CoreNetworkEdge unmarshalledObject = new CoreNetworkEdge();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

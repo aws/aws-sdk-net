@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public TextInputSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             TextInputSpecification unmarshalledObject = new TextInputSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

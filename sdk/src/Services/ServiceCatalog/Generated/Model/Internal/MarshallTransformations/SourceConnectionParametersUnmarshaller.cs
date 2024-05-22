@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public SourceConnectionParameters Unmarshall(JsonUnmarshallerContext context)
         {
             SourceConnectionParameters unmarshalledObject = new SourceConnectionParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

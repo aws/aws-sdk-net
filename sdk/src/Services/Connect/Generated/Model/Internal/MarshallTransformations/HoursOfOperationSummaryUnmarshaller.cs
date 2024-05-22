@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public HoursOfOperationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             HoursOfOperationSummary unmarshalledObject = new HoursOfOperationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

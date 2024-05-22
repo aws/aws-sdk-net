@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public RemediationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             RemediationConfiguration unmarshalledObject = new RemediationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

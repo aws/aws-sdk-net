@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public ComponentRecommendation Unmarshall(JsonUnmarshallerContext context)
         {
             ComponentRecommendation unmarshalledObject = new ComponentRecommendation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

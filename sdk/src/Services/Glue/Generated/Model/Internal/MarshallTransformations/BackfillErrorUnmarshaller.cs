@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public BackfillError Unmarshall(JsonUnmarshallerContext context)
         {
             BackfillError unmarshalledObject = new BackfillError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

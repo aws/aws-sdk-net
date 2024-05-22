@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public EbsVolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EbsVolumeConfiguration unmarshalledObject = new EbsVolumeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

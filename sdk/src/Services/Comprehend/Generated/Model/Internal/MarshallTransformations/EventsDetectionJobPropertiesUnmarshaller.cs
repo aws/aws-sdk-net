@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public EventsDetectionJobProperties Unmarshall(JsonUnmarshallerContext context)
         {
             EventsDetectionJobProperties unmarshalledObject = new EventsDetectionJobProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

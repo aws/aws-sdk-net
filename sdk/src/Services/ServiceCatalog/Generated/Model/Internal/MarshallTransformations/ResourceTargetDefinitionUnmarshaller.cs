@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public ResourceTargetDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceTargetDefinition unmarshalledObject = new ResourceTargetDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

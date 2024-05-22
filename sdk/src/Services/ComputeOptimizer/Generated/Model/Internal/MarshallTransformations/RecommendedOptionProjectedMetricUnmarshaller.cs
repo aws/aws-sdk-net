@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public RecommendedOptionProjectedMetric Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendedOptionProjectedMetric unmarshalledObject = new RecommendedOptionProjectedMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public ActionTypeUrls Unmarshall(JsonUnmarshallerContext context)
         {
             ActionTypeUrls unmarshalledObject = new ActionTypeUrls();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public PublishFindingToSnsParams Unmarshall(JsonUnmarshallerContext context)
         {
             PublishFindingToSnsParams unmarshalledObject = new PublishFindingToSnsParams();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

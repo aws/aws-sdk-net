@@ -57,6 +57,8 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         public RuntimeHints Unmarshall(JsonUnmarshallerContext context)
         {
             RuntimeHints unmarshalledObject = new RuntimeHints();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

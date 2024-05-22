@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public TableCreationParameters Unmarshall(JsonUnmarshallerContext context)
         {
             TableCreationParameters unmarshalledObject = new TableCreationParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public LakeFormationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LakeFormationConfiguration unmarshalledObject = new LakeFormationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

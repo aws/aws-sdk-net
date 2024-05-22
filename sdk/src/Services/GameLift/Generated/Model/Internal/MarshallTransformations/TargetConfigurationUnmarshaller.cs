@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public TargetConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TargetConfiguration unmarshalledObject = new TargetConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

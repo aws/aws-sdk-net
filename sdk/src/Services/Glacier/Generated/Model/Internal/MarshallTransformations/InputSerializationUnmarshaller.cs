@@ -57,6 +57,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public InputSerialization Unmarshall(JsonUnmarshallerContext context)
         {
             InputSerialization unmarshalledObject = new InputSerialization();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

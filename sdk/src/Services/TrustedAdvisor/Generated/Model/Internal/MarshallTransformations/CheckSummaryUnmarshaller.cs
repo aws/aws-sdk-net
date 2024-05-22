@@ -57,6 +57,8 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
         public CheckSummary Unmarshall(JsonUnmarshallerContext context)
         {
             CheckSummary unmarshalledObject = new CheckSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

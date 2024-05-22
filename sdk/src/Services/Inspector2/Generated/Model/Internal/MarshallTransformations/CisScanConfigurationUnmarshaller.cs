@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public CisScanConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CisScanConfiguration unmarshalledObject = new CisScanConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

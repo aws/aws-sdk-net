@@ -57,6 +57,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         public AssessmentTemplate Unmarshall(JsonUnmarshallerContext context)
         {
             AssessmentTemplate unmarshalledObject = new AssessmentTemplate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

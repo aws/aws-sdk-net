@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public MongoDbAtlasConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             MongoDbAtlasConfiguration unmarshalledObject = new MongoDbAtlasConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

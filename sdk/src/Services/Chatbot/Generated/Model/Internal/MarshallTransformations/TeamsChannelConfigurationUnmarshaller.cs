@@ -57,6 +57,8 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
         public TeamsChannelConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TeamsChannelConfiguration unmarshalledObject = new TeamsChannelConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

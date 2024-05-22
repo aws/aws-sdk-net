@@ -57,6 +57,8 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
         public AwsVpcConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AwsVpcConfiguration unmarshalledObject = new AwsVpcConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

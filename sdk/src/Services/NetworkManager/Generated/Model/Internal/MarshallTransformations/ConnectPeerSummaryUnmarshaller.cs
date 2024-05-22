@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public ConnectPeerSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectPeerSummary unmarshalledObject = new ConnectPeerSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

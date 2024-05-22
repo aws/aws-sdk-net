@@ -57,6 +57,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         public TimelineEvent Unmarshall(JsonUnmarshallerContext context)
         {
             TimelineEvent unmarshalledObject = new TimelineEvent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

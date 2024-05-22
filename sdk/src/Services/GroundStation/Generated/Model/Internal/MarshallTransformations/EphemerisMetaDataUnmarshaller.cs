@@ -57,6 +57,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public EphemerisMetaData Unmarshall(JsonUnmarshallerContext context)
         {
             EphemerisMetaData unmarshalledObject = new EphemerisMetaData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

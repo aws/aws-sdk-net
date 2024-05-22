@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         public CapacityLimits Unmarshall(JsonUnmarshallerContext context)
         {
             CapacityLimits unmarshalledObject = new CapacityLimits();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

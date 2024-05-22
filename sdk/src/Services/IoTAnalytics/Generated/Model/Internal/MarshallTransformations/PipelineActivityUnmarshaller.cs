@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public PipelineActivity Unmarshall(JsonUnmarshallerContext context)
         {
             PipelineActivity unmarshalledObject = new PipelineActivity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

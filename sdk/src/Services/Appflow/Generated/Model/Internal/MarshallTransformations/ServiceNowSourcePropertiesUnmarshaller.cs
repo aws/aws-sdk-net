@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public ServiceNowSourceProperties Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceNowSourceProperties unmarshalledObject = new ServiceNowSourceProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

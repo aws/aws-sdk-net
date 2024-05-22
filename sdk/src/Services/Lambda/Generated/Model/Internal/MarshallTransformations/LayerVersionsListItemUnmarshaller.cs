@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public LayerVersionsListItem Unmarshall(JsonUnmarshallerContext context)
         {
             LayerVersionsListItem unmarshalledObject = new LayerVersionsListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

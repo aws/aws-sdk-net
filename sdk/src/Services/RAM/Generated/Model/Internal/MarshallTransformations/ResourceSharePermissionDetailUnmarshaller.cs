@@ -57,6 +57,8 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         public ResourceSharePermissionDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceSharePermissionDetail unmarshalledObject = new ResourceSharePermissionDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

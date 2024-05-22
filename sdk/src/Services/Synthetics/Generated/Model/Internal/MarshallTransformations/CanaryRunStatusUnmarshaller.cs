@@ -57,6 +57,8 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         public CanaryRunStatus Unmarshall(JsonUnmarshallerContext context)
         {
             CanaryRunStatus unmarshalledObject = new CanaryRunStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

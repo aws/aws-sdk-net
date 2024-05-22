@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public WindowStartTime Unmarshall(JsonUnmarshallerContext context)
         {
             WindowStartTime unmarshalledObject = new WindowStartTime();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

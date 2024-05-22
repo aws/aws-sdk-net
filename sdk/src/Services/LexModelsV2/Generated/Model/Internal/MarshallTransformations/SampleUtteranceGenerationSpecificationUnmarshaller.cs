@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public SampleUtteranceGenerationSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             SampleUtteranceGenerationSpecification unmarshalledObject = new SampleUtteranceGenerationSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public CompatibleKafkaVersion Unmarshall(JsonUnmarshallerContext context)
         {
             CompatibleKafkaVersion unmarshalledObject = new CompatibleKafkaVersion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

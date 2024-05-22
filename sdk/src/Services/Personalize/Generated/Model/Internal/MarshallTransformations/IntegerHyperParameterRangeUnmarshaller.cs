@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public IntegerHyperParameterRange Unmarshall(JsonUnmarshallerContext context)
         {
             IntegerHyperParameterRange unmarshalledObject = new IntegerHyperParameterRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

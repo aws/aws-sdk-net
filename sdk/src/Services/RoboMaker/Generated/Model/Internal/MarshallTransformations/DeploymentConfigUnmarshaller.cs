@@ -57,6 +57,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         public DeploymentConfig Unmarshall(JsonUnmarshallerContext context)
         {
             DeploymentConfig unmarshalledObject = new DeploymentConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

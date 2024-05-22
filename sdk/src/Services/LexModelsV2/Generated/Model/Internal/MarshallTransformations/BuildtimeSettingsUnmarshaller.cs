@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public BuildtimeSettings Unmarshall(JsonUnmarshallerContext context)
         {
             BuildtimeSettings unmarshalledObject = new BuildtimeSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

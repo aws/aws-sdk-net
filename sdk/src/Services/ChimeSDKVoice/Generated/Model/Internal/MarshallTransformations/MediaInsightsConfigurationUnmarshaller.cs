@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         public MediaInsightsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             MediaInsightsConfiguration unmarshalledObject = new MediaInsightsConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

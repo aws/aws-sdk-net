@@ -57,6 +57,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public CapacityConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CapacityConfiguration unmarshalledObject = new CapacityConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

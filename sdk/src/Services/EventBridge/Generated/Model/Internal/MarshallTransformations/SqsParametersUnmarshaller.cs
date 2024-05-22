@@ -57,6 +57,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         public SqsParameters Unmarshall(JsonUnmarshallerContext context)
         {
             SqsParameters unmarshalledObject = new SqsParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

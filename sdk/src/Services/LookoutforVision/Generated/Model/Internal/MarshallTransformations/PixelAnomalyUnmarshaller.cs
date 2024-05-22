@@ -57,6 +57,8 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         public PixelAnomaly Unmarshall(JsonUnmarshallerContext context)
         {
             PixelAnomaly unmarshalledObject = new PixelAnomaly();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         public OSUpdateSettings Unmarshall(JsonUnmarshallerContext context)
         {
             OSUpdateSettings unmarshalledObject = new OSUpdateSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

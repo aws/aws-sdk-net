@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public HistogramEntry Unmarshall(JsonUnmarshallerContext context)
         {
             HistogramEntry unmarshalledObject = new HistogramEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public WorkerAccessConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             WorkerAccessConfiguration unmarshalledObject = new WorkerAccessConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

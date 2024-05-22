@@ -57,6 +57,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         public InspectionDataRequest Unmarshall(JsonUnmarshallerContext context)
         {
             InspectionDataRequest unmarshalledObject = new InspectionDataRequest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

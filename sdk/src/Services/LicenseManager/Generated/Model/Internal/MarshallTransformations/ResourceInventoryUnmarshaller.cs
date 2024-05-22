@@ -57,6 +57,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         public ResourceInventory Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceInventory unmarshalledObject = new ResourceInventory();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

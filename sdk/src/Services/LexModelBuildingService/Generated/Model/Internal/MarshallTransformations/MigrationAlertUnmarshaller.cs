@@ -57,6 +57,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         public MigrationAlert Unmarshall(JsonUnmarshallerContext context)
         {
             MigrationAlert unmarshalledObject = new MigrationAlert();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

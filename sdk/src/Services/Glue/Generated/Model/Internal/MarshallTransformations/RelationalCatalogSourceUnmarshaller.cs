@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public RelationalCatalogSource Unmarshall(JsonUnmarshallerContext context)
         {
             RelationalCatalogSource unmarshalledObject = new RelationalCatalogSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FontConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             FontConfiguration unmarshalledObject = new FontConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

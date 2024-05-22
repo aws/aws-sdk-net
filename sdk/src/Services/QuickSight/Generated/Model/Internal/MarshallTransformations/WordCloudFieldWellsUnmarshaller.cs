@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public WordCloudFieldWells Unmarshall(JsonUnmarshallerContext context)
         {
             WordCloudFieldWells unmarshalledObject = new WordCloudFieldWells();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

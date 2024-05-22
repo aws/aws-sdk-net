@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FreeFormLayoutElementBackgroundStyle Unmarshall(JsonUnmarshallerContext context)
         {
             FreeFormLayoutElementBackgroundStyle unmarshalledObject = new FreeFormLayoutElementBackgroundStyle();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public InputFileLocation Unmarshall(JsonUnmarshallerContext context)
         {
             InputFileLocation unmarshalledObject = new InputFileLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

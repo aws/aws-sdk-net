@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         public SipMediaApplicationAlexaSkillConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SipMediaApplicationAlexaSkillConfiguration unmarshalledObject = new SipMediaApplicationAlexaSkillConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

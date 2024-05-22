@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ShadowModelVariantConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ShadowModelVariantConfig unmarshalledObject = new ShadowModelVariantConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

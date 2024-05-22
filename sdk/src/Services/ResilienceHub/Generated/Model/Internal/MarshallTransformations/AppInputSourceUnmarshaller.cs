@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public AppInputSource Unmarshall(JsonUnmarshallerContext context)
         {
             AppInputSource unmarshalledObject = new AppInputSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

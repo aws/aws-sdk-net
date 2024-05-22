@@ -57,6 +57,8 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         public DimensionGroupDetail Unmarshall(JsonUnmarshallerContext context)
         {
             DimensionGroupDetail unmarshalledObject = new DimensionGroupDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

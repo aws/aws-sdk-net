@@ -57,6 +57,8 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public RelayAuthentication Unmarshall(JsonUnmarshallerContext context)
         {
             RelayAuthentication unmarshalledObject = new RelayAuthentication();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

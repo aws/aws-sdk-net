@@ -61,7 +61,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if GrafanaToken property is set
         internal bool IsSetGrafanaToken()
         {
-            return this._grafanaToken != null;
+            return !string.IsNullOrEmpty(this._grafanaToken);
         }
 
         /// <summary>

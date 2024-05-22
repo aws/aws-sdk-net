@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public VehicleMiddleware Unmarshall(JsonUnmarshallerContext context)
         {
             VehicleMiddleware unmarshalledObject = new VehicleMiddleware();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public EcsClusterDetails Unmarshall(JsonUnmarshallerContext context)
         {
             EcsClusterDetails unmarshalledObject = new EcsClusterDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

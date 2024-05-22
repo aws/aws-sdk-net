@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public CdiInputSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             CdiInputSpecification unmarshalledObject = new CdiInputSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

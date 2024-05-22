@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SnapshotJobS3Result Unmarshall(JsonUnmarshallerContext context)
         {
             SnapshotJobS3Result unmarshalledObject = new SnapshotJobS3Result();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

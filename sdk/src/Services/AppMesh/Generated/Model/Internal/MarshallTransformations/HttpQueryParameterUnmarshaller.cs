@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public HttpQueryParameter Unmarshall(JsonUnmarshallerContext context)
         {
             HttpQueryParameter unmarshalledObject = new HttpQueryParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

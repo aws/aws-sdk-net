@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public MonitorSummary Unmarshall(JsonUnmarshallerContext context)
         {
             MonitorSummary unmarshalledObject = new MonitorSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

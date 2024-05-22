@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEc2VpnConnectionOptionsTunnelOptionsDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEc2VpnConnectionOptionsTunnelOptionsDetails unmarshalledObject = new AwsEc2VpnConnectionOptionsTunnelOptionsDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

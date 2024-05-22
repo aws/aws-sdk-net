@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public CatalogImportStatus Unmarshall(JsonUnmarshallerContext context)
         {
             CatalogImportStatus unmarshalledObject = new CatalogImportStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

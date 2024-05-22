@@ -57,6 +57,8 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
         public AccountPreferences Unmarshall(JsonUnmarshallerContext context)
         {
             AccountPreferences unmarshalledObject = new AccountPreferences();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

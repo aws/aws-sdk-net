@@ -57,6 +57,8 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         public EncryptionAlgorithmOptions Unmarshall(JsonUnmarshallerContext context)
         {
             EncryptionAlgorithmOptions unmarshalledObject = new EncryptionAlgorithmOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public AggregatedLogOddsMetric Unmarshall(JsonUnmarshallerContext context)
         {
             AggregatedLogOddsMetric unmarshalledObject = new AggregatedLogOddsMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public ConfigurationAggregator Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigurationAggregator unmarshalledObject = new ConfigurationAggregator();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

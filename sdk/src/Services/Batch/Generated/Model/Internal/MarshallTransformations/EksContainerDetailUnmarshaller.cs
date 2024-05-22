@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public EksContainerDetail Unmarshall(JsonUnmarshallerContext context)
         {
             EksContainerDetail unmarshalledObject = new EksContainerDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

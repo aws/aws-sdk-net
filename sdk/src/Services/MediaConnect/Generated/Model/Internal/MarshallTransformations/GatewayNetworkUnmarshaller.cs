@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public GatewayNetwork Unmarshall(JsonUnmarshallerContext context)
         {
             GatewayNetwork unmarshalledObject = new GatewayNetwork();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

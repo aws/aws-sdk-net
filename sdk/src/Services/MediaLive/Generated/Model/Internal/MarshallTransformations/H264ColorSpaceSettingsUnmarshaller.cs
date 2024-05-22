@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public H264ColorSpaceSettings Unmarshall(JsonUnmarshallerContext context)
         {
             H264ColorSpaceSettings unmarshalledObject = new H264ColorSpaceSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public ConditionExpression Unmarshall(JsonUnmarshallerContext context)
         {
             ConditionExpression unmarshalledObject = new ConditionExpression();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

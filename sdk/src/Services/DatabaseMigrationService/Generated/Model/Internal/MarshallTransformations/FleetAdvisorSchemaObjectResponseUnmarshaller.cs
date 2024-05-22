@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public FleetAdvisorSchemaObjectResponse Unmarshall(JsonUnmarshallerContext context)
         {
             FleetAdvisorSchemaObjectResponse unmarshalledObject = new FleetAdvisorSchemaObjectResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

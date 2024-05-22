@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public LoadBalancerTlsCertificateDnsRecordCreationState Unmarshall(JsonUnmarshallerContext context)
         {
             LoadBalancerTlsCertificateDnsRecordCreationState unmarshalledObject = new LoadBalancerTlsCertificateDnsRecordCreationState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

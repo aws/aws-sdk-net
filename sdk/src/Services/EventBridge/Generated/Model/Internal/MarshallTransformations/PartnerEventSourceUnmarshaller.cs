@@ -57,6 +57,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         public PartnerEventSource Unmarshall(JsonUnmarshallerContext context)
         {
             PartnerEventSource unmarshalledObject = new PartnerEventSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

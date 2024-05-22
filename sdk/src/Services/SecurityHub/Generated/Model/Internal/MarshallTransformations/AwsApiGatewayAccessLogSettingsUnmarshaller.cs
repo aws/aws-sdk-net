@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsApiGatewayAccessLogSettings Unmarshall(JsonUnmarshallerContext context)
         {
             AwsApiGatewayAccessLogSettings unmarshalledObject = new AwsApiGatewayAccessLogSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

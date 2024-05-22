@@ -57,6 +57,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         public S3BatchJobIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             S3BatchJobIdentifier unmarshalledObject = new S3BatchJobIdentifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

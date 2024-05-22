@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public InstanceGroupStateChangeReason Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceGroupStateChangeReason unmarshalledObject = new InstanceGroupStateChangeReason();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public RateLimitQueryString Unmarshall(JsonUnmarshallerContext context)
         {
             RateLimitQueryString unmarshalledObject = new RateLimitQueryString();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

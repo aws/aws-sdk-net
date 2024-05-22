@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public ResourceStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceStatus unmarshalledObject = new ResourceStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

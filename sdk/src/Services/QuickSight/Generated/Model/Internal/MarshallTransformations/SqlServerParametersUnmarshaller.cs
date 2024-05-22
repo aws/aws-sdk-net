@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SqlServerParameters Unmarshall(JsonUnmarshallerContext context)
         {
             SqlServerParameters unmarshalledObject = new SqlServerParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

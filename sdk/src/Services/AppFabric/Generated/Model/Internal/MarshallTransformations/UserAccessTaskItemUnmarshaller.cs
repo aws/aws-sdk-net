@@ -57,6 +57,8 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
         public UserAccessTaskItem Unmarshall(JsonUnmarshallerContext context)
         {
             UserAccessTaskItem unmarshalledObject = new UserAccessTaskItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

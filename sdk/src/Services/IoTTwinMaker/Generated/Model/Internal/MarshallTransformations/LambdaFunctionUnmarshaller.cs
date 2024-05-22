@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public LambdaFunction Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaFunction unmarshalledObject = new LambdaFunction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

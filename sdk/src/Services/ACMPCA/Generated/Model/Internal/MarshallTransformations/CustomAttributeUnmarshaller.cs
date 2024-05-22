@@ -57,6 +57,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         public CustomAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             CustomAttribute unmarshalledObject = new CustomAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

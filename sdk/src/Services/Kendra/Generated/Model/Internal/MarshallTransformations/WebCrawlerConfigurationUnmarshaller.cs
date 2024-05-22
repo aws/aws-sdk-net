@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public WebCrawlerConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             WebCrawlerConfiguration unmarshalledObject = new WebCrawlerConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public MergeOperations Unmarshall(JsonUnmarshallerContext context)
         {
             MergeOperations unmarshalledObject = new MergeOperations();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

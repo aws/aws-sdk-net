@@ -57,6 +57,8 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         public EnabledServicePrincipal Unmarshall(JsonUnmarshallerContext context)
         {
             EnabledServicePrincipal unmarshalledObject = new EnabledServicePrincipal();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

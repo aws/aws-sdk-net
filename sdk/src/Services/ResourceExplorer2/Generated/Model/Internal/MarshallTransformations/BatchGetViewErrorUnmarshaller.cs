@@ -57,6 +57,8 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
         public BatchGetViewError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchGetViewError unmarshalledObject = new BatchGetViewError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

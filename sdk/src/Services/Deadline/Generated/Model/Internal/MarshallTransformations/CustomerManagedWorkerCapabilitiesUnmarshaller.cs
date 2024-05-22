@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public CustomerManagedWorkerCapabilities Unmarshall(JsonUnmarshallerContext context)
         {
             CustomerManagedWorkerCapabilities unmarshalledObject = new CustomerManagedWorkerCapabilities();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

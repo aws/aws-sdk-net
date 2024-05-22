@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public InferenceAccelerator Unmarshall(JsonUnmarshallerContext context)
         {
             InferenceAccelerator unmarshalledObject = new InferenceAccelerator();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

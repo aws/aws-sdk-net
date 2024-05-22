@@ -57,6 +57,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         public CaptionSource Unmarshall(JsonUnmarshallerContext context)
         {
             CaptionSource unmarshalledObject = new CaptionSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

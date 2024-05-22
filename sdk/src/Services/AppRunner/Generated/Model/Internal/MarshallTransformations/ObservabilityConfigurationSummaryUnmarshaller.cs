@@ -57,6 +57,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         public ObservabilityConfigurationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ObservabilityConfigurationSummary unmarshalledObject = new ObservabilityConfigurationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

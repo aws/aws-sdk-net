@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public SftpConnectorConfig Unmarshall(JsonUnmarshallerContext context)
         {
             SftpConnectorConfig unmarshalledObject = new SftpConnectorConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

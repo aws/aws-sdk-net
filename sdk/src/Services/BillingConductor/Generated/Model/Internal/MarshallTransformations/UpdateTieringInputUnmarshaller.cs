@@ -57,6 +57,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         public UpdateTieringInput Unmarshall(JsonUnmarshallerContext context)
         {
             UpdateTieringInput unmarshalledObject = new UpdateTieringInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

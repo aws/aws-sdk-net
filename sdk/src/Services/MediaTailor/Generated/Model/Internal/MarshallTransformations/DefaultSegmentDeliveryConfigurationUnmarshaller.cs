@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public DefaultSegmentDeliveryConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DefaultSegmentDeliveryConfiguration unmarshalledObject = new DefaultSegmentDeliveryConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public AppComponentCompliance Unmarshall(JsonUnmarshallerContext context)
         {
             AppComponentCompliance unmarshalledObject = new AppComponentCompliance();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

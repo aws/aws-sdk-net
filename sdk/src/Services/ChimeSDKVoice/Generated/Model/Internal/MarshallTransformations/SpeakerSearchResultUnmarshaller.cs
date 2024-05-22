@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         public SpeakerSearchResult Unmarshall(JsonUnmarshallerContext context)
         {
             SpeakerSearchResult unmarshalledObject = new SpeakerSearchResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

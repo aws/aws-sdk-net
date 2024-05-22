@@ -57,6 +57,8 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         public LoggingConfigurationMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             LoggingConfigurationMetadata unmarshalledObject = new LoggingConfigurationMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public ListMessageMoveTasksResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
             ListMessageMoveTasksResultEntry unmarshalledObject = new ListMessageMoveTasksResultEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

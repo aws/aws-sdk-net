@@ -57,6 +57,8 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
         public Datapoint Unmarshall(JsonUnmarshallerContext context)
         {
             Datapoint unmarshalledObject = new Datapoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

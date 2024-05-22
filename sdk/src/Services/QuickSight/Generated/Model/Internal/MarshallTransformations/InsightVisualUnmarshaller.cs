@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public InsightVisual Unmarshall(JsonUnmarshallerContext context)
         {
             InsightVisual unmarshalledObject = new InsightVisual();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

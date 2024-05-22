@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public ListenerTlsValidationContextTrust Unmarshall(JsonUnmarshallerContext context)
         {
             ListenerTlsValidationContextTrust unmarshalledObject = new ListenerTlsValidationContextTrust();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

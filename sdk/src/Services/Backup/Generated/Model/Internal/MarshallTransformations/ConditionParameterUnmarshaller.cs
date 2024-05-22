@@ -57,6 +57,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public ConditionParameter Unmarshall(JsonUnmarshallerContext context)
         {
             ConditionParameter unmarshalledObject = new ConditionParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

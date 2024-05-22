@@ -57,6 +57,8 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
         public LaunchOverrides Unmarshall(JsonUnmarshallerContext context)
         {
             LaunchOverrides unmarshalledObject = new LaunchOverrides();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

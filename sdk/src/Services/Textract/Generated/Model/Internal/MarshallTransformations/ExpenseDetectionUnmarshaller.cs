@@ -57,6 +57,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         public ExpenseDetection Unmarshall(JsonUnmarshallerContext context)
         {
             ExpenseDetection unmarshalledObject = new ExpenseDetection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

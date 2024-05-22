@@ -57,6 +57,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         public AnalyzeIDDetections Unmarshall(JsonUnmarshallerContext context)
         {
             AnalyzeIDDetections unmarshalledObject = new AnalyzeIDDetections();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

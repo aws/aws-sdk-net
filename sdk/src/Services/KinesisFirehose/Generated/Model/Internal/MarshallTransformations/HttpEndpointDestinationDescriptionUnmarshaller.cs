@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public HttpEndpointDestinationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             HttpEndpointDestinationDescription unmarshalledObject = new HttpEndpointDestinationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public AutocommitPeriod Unmarshall(JsonUnmarshallerContext context)
         {
             AutocommitPeriod unmarshalledObject = new AutocommitPeriod();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

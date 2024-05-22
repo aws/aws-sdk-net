@@ -57,6 +57,8 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
         public S3OutputConfigurations Unmarshall(JsonUnmarshallerContext context)
         {
             S3OutputConfigurations unmarshalledObject = new S3OutputConfigurations();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

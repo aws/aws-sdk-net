@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails unmarshalledObject = new AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

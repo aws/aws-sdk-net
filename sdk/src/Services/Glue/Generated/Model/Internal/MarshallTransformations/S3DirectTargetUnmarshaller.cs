@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public S3DirectTarget Unmarshall(JsonUnmarshallerContext context)
         {
             S3DirectTarget unmarshalledObject = new S3DirectTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

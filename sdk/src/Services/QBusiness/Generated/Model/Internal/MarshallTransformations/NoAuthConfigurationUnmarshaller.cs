@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public NoAuthConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             NoAuthConfiguration unmarshalledObject = new NoAuthConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public CertificateConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CertificateConfiguration unmarshalledObject = new CertificateConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

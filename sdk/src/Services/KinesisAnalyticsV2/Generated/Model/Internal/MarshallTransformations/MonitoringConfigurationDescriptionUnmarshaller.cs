@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public MonitoringConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             MonitoringConfigurationDescription unmarshalledObject = new MonitoringConfigurationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

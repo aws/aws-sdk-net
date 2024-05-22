@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         public LaunchExecution Unmarshall(JsonUnmarshallerContext context)
         {
             LaunchExecution unmarshalledObject = new LaunchExecution();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

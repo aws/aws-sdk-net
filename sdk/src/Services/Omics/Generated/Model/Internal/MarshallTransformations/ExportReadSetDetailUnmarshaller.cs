@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public ExportReadSetDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ExportReadSetDetail unmarshalledObject = new ExportReadSetDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

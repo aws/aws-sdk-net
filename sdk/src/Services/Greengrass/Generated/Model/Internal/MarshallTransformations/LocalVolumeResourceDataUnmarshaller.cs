@@ -57,6 +57,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         public LocalVolumeResourceData Unmarshall(JsonUnmarshallerContext context)
         {
             LocalVolumeResourceData unmarshalledObject = new LocalVolumeResourceData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

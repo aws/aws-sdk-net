@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AmazonOpenSearchParameters Unmarshall(JsonUnmarshallerContext context)
         {
             AmazonOpenSearchParameters unmarshalledObject = new AmazonOpenSearchParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

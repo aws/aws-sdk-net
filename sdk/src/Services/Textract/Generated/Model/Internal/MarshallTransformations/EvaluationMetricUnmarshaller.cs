@@ -57,6 +57,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         public EvaluationMetric Unmarshall(JsonUnmarshallerContext context)
         {
             EvaluationMetric unmarshalledObject = new EvaluationMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

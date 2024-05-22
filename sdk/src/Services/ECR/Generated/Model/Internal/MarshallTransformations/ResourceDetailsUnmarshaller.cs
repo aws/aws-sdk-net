@@ -57,6 +57,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         public ResourceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceDetails unmarshalledObject = new ResourceDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

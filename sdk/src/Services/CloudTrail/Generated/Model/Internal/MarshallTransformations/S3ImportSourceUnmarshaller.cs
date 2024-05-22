@@ -57,6 +57,8 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public S3ImportSource Unmarshall(JsonUnmarshallerContext context)
         {
             S3ImportSource unmarshalledObject = new S3ImportSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

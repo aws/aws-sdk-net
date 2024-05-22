@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AnalysisError Unmarshall(JsonUnmarshallerContext context)
         {
             AnalysisError unmarshalledObject = new AnalysisError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

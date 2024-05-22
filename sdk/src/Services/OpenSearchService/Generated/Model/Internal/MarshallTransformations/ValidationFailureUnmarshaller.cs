@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public ValidationFailure Unmarshall(JsonUnmarshallerContext context)
         {
             ValidationFailure unmarshalledObject = new ValidationFailure();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

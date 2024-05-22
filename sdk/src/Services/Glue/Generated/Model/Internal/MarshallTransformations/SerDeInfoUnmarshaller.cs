@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public SerDeInfo Unmarshall(JsonUnmarshallerContext context)
         {
             SerDeInfo unmarshalledObject = new SerDeInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

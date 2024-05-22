@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public RecommendationRelatedCloudWatchMetricsSourceDetail Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendationRelatedCloudWatchMetricsSourceDetail unmarshalledObject = new RecommendationRelatedCloudWatchMetricsSourceDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public LineageConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LineageConfiguration unmarshalledObject = new LineageConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

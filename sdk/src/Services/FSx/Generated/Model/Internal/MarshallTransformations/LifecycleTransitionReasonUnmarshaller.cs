@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public LifecycleTransitionReason Unmarshall(JsonUnmarshallerContext context)
         {
             LifecycleTransitionReason unmarshalledObject = new LifecycleTransitionReason();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public TaskStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             TaskStatistics unmarshalledObject = new TaskStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

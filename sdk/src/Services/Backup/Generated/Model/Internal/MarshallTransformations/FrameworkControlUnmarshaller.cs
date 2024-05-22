@@ -57,6 +57,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public FrameworkControl Unmarshall(JsonUnmarshallerContext context)
         {
             FrameworkControl unmarshalledObject = new FrameworkControl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

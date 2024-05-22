@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public IncrementalRefresh Unmarshall(JsonUnmarshallerContext context)
         {
             IncrementalRefresh unmarshalledObject = new IncrementalRefresh();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

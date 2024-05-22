@@ -57,6 +57,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public DetectedMetricSource Unmarshall(JsonUnmarshallerContext context)
         {
             DetectedMetricSource unmarshalledObject = new DetectedMetricSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

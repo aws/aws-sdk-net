@@ -57,6 +57,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public RangedConnectionDetails Unmarshall(JsonUnmarshallerContext context)
         {
             RangedConnectionDetails unmarshalledObject = new RangedConnectionDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

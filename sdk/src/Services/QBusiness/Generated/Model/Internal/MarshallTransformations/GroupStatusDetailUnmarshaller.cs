@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public GroupStatusDetail Unmarshall(JsonUnmarshallerContext context)
         {
             GroupStatusDetail unmarshalledObject = new GroupStatusDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

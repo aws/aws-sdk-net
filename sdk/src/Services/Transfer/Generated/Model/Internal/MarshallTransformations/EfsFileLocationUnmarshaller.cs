@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public EfsFileLocation Unmarshall(JsonUnmarshallerContext context)
         {
             EfsFileLocation unmarshalledObject = new EfsFileLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

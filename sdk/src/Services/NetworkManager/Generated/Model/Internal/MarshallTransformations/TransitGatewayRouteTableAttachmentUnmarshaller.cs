@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public TransitGatewayRouteTableAttachment Unmarshall(JsonUnmarshallerContext context)
         {
             TransitGatewayRouteTableAttachment unmarshalledObject = new TransitGatewayRouteTableAttachment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

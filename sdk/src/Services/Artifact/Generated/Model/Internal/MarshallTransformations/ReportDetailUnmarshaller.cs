@@ -57,6 +57,8 @@ namespace Amazon.Artifact.Model.Internal.MarshallTransformations
         public ReportDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ReportDetail unmarshalledObject = new ReportDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         public FailedCampaignStateResponse Unmarshall(JsonUnmarshallerContext context)
         {
             FailedCampaignStateResponse unmarshalledObject = new FailedCampaignStateResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

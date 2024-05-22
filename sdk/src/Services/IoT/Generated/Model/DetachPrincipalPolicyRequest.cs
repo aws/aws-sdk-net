@@ -90,7 +90,7 @@ namespace Amazon.IoT.Model
         // Check to see if Principal property is set
         internal bool IsSetPrincipal()
         {
-            return this._principal != null;
+            return !string.IsNullOrEmpty(this._principal);
         }
 
     }

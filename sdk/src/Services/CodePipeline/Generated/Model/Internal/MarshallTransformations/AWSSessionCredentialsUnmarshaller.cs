@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public AWSSessionCredentials Unmarshall(JsonUnmarshallerContext context)
         {
             AWSSessionCredentials unmarshalledObject = new AWSSessionCredentials();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

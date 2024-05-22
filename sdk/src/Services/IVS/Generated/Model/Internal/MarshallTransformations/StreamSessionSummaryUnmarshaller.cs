@@ -57,6 +57,8 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         public StreamSessionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             StreamSessionSummary unmarshalledObject = new StreamSessionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

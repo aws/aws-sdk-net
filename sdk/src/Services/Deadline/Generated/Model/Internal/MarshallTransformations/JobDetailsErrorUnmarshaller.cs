@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public JobDetailsError Unmarshall(JsonUnmarshallerContext context)
         {
             JobDetailsError unmarshalledObject = new JobDetailsError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

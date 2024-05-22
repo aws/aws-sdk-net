@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ChannelSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             ChannelSpecification unmarshalledObject = new ChannelSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

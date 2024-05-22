@@ -57,6 +57,8 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         public EventAggregate Unmarshall(JsonUnmarshallerContext context)
         {
             EventAggregate unmarshalledObject = new EventAggregate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public IamRegistrationResponse Unmarshall(JsonUnmarshallerContext context)
         {
             IamRegistrationResponse unmarshalledObject = new IamRegistrationResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

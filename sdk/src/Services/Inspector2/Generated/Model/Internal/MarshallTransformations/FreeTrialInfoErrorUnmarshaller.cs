@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public FreeTrialInfoError Unmarshall(JsonUnmarshallerContext context)
         {
             FreeTrialInfoError unmarshalledObject = new FreeTrialInfoError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

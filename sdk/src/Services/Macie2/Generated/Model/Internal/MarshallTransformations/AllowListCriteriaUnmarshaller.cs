@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public AllowListCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             AllowListCriteria unmarshalledObject = new AllowListCriteria();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

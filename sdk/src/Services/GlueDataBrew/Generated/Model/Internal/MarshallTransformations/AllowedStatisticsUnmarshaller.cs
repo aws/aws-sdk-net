@@ -57,6 +57,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public AllowedStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             AllowedStatistics unmarshalledObject = new AllowedStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

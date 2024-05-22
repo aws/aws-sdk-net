@@ -57,6 +57,8 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         public PersistentStorage Unmarshall(JsonUnmarshallerContext context)
         {
             PersistentStorage unmarshalledObject = new PersistentStorage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

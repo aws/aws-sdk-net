@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public MeasurementProcessingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             MeasurementProcessingConfig unmarshalledObject = new MeasurementProcessingConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

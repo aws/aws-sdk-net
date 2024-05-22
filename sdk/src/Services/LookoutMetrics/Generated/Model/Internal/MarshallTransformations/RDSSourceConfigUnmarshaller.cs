@@ -57,6 +57,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public RDSSourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             RDSSourceConfig unmarshalledObject = new RDSSourceConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

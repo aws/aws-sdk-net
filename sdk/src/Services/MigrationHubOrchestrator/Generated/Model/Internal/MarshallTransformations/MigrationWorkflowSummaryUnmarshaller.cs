@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
         public MigrationWorkflowSummary Unmarshall(JsonUnmarshallerContext context)
         {
             MigrationWorkflowSummary unmarshalledObject = new MigrationWorkflowSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

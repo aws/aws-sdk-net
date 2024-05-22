@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public AccountQuota Unmarshall(JsonUnmarshallerContext context)
         {
             AccountQuota unmarshalledObject = new AccountQuota();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ColumnLevelPermissionRule Unmarshall(JsonUnmarshallerContext context)
         {
             ColumnLevelPermissionRule unmarshalledObject = new ColumnLevelPermissionRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

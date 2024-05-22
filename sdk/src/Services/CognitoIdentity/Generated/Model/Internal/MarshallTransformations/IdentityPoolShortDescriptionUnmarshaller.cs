@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         public IdentityPoolShortDescription Unmarshall(JsonUnmarshallerContext context)
         {
             IdentityPoolShortDescription unmarshalledObject = new IdentityPoolShortDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

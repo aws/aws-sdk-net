@@ -57,6 +57,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         public PricingRuleListElement Unmarshall(JsonUnmarshallerContext context)
         {
             PricingRuleListElement unmarshalledObject = new PricingRuleListElement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

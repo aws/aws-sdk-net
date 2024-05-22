@@ -57,6 +57,8 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         public PackageGroupReference Unmarshall(JsonUnmarshallerContext context)
         {
             PackageGroupReference unmarshalledObject = new PackageGroupReference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

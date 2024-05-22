@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public SuccessResponseHandlingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             SuccessResponseHandlingConfig unmarshalledObject = new SuccessResponseHandlingConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

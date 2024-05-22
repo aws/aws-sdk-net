@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ThroughputConfigDescription Unmarshall(JsonUnmarshallerContext context)
         {
             ThroughputConfigDescription unmarshalledObject = new ThroughputConfigDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

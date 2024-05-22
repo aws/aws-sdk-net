@@ -57,6 +57,8 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         public ProvisionedCapacityDescription Unmarshall(JsonUnmarshallerContext context)
         {
             ProvisionedCapacityDescription unmarshalledObject = new ProvisionedCapacityDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public WindowsFileSystemConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             WindowsFileSystemConfiguration unmarshalledObject = new WindowsFileSystemConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

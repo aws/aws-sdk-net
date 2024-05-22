@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public SnapshotOptionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
             SnapshotOptionsStatus unmarshalledObject = new SnapshotOptionsStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

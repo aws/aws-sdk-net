@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public SuccessfulRequest Unmarshall(JsonUnmarshallerContext context)
         {
             SuccessfulRequest unmarshalledObject = new SuccessfulRequest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

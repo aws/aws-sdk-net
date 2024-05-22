@@ -57,6 +57,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         public RoutingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             RoutingConfig unmarshalledObject = new RoutingConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

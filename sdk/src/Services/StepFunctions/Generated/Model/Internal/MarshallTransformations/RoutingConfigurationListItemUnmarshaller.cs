@@ -57,6 +57,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         public RoutingConfigurationListItem Unmarshall(JsonUnmarshallerContext context)
         {
             RoutingConfigurationListItem unmarshalledObject = new RoutingConfigurationListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public ViewOffNadirInput Unmarshall(JsonUnmarshallerContext context)
         {
             ViewOffNadirInput unmarshalledObject = new ViewOffNadirInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         public ScalableTargetAction Unmarshall(JsonUnmarshallerContext context)
         {
             ScalableTargetAction unmarshalledObject = new ScalableTargetAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

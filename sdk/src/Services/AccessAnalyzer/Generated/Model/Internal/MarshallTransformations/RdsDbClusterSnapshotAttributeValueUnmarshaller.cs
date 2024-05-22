@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public RdsDbClusterSnapshotAttributeValue Unmarshall(JsonUnmarshallerContext context)
         {
             RdsDbClusterSnapshotAttributeValue unmarshalledObject = new RdsDbClusterSnapshotAttributeValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public IdentificationHints Unmarshall(JsonUnmarshallerContext context)
         {
             IdentificationHints unmarshalledObject = new IdentificationHints();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

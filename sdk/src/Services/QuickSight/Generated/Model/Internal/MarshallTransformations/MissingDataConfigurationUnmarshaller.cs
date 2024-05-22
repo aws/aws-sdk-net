@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public MissingDataConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             MissingDataConfiguration unmarshalledObject = new MissingDataConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

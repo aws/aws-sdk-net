@@ -57,6 +57,8 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         public VpcAttachmentOptions Unmarshall(JsonUnmarshallerContext context)
         {
             VpcAttachmentOptions unmarshalledObject = new VpcAttachmentOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

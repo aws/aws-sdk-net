@@ -57,6 +57,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         public OfferingPromotion Unmarshall(JsonUnmarshallerContext context)
         {
             OfferingPromotion unmarshalledObject = new OfferingPromotion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

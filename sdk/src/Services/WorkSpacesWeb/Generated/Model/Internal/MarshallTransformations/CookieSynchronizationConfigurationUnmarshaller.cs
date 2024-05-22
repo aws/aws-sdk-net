@@ -57,6 +57,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         public CookieSynchronizationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CookieSynchronizationConfiguration unmarshalledObject = new CookieSynchronizationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

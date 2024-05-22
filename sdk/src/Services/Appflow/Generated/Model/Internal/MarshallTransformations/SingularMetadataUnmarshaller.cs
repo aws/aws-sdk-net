@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public SingularMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             SingularMetadata unmarshalledObject = new SingularMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public TemporaryCredential Unmarshall(JsonUnmarshallerContext context)
         {
             TemporaryCredential unmarshalledObject = new TemporaryCredential();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

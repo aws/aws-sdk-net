@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         public InputParallelism Unmarshall(JsonUnmarshallerContext context)
         {
             InputParallelism unmarshalledObject = new InputParallelism();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

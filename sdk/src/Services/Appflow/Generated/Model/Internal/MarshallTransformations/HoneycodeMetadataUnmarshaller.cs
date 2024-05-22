@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public HoneycodeMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             HoneycodeMetadata unmarshalledObject = new HoneycodeMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
         public SSMValidationParameters Unmarshall(JsonUnmarshallerContext context)
         {
             SSMValidationParameters unmarshalledObject = new SSMValidationParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

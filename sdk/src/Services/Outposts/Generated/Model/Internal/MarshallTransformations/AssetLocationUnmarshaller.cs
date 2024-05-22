@@ -57,6 +57,8 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         public AssetLocation Unmarshall(JsonUnmarshallerContext context)
         {
             AssetLocation unmarshalledObject = new AssetLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

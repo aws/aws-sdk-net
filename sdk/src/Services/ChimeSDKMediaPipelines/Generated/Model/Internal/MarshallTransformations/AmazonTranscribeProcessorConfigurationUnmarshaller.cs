@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public AmazonTranscribeProcessorConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AmazonTranscribeProcessorConfiguration unmarshalledObject = new AmazonTranscribeProcessorConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

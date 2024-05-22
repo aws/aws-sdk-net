@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public CodeVulnerabilitiesFilePath Unmarshall(JsonUnmarshallerContext context)
         {
             CodeVulnerabilitiesFilePath unmarshalledObject = new CodeVulnerabilitiesFilePath();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

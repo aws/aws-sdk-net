@@ -57,6 +57,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         public ScalingPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             ScalingPolicy unmarshalledObject = new ScalingPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

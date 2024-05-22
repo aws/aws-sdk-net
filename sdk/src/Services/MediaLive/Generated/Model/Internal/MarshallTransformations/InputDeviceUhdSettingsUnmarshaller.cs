@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public InputDeviceUhdSettings Unmarshall(JsonUnmarshallerContext context)
         {
             InputDeviceUhdSettings unmarshalledObject = new InputDeviceUhdSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

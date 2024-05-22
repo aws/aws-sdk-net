@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsAppSyncGraphQlApiDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsAppSyncGraphQlApiDetails unmarshalledObject = new AwsAppSyncGraphQlApiDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

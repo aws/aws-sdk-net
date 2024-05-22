@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public AttachedFileError Unmarshall(JsonUnmarshallerContext context)
         {
             AttachedFileError unmarshalledObject = new AttachedFileError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public VideoOverlayInput Unmarshall(JsonUnmarshallerContext context)
         {
             VideoOverlayInput unmarshalledObject = new VideoOverlayInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public SiteMapsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SiteMapsConfiguration unmarshalledObject = new SiteMapsConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public StepStateChangeReason Unmarshall(JsonUnmarshallerContext context)
         {
             StepStateChangeReason unmarshalledObject = new StepStateChangeReason();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

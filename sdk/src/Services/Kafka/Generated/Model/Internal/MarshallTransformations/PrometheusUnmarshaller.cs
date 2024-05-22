@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public Prometheus Unmarshall(JsonUnmarshallerContext context)
         {
             Prometheus unmarshalledObject = new Prometheus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

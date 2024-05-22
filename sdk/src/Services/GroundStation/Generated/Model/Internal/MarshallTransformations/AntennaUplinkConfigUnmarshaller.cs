@@ -57,6 +57,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public AntennaUplinkConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AntennaUplinkConfig unmarshalledObject = new AntennaUplinkConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

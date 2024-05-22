@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public TaskListItem Unmarshall(JsonUnmarshallerContext context)
         {
             TaskListItem unmarshalledObject = new TaskListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

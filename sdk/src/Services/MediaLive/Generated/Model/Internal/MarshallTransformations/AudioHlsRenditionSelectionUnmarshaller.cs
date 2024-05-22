@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public AudioHlsRenditionSelection Unmarshall(JsonUnmarshallerContext context)
         {
             AudioHlsRenditionSelection unmarshalledObject = new AudioHlsRenditionSelection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

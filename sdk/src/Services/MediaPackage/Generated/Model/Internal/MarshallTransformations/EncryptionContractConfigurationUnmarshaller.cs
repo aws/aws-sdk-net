@@ -57,6 +57,8 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         public EncryptionContractConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EncryptionContractConfiguration unmarshalledObject = new EncryptionContractConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

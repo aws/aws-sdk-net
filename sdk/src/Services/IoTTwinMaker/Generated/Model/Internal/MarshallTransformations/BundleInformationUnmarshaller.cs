@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public BundleInformation Unmarshall(JsonUnmarshallerContext context)
         {
             BundleInformation unmarshalledObject = new BundleInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

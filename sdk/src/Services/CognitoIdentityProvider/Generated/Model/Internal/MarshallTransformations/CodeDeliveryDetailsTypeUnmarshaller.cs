@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public CodeDeliveryDetailsType Unmarshall(JsonUnmarshallerContext context)
         {
             CodeDeliveryDetailsType unmarshalledObject = new CodeDeliveryDetailsType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

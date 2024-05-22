@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsCloudFrontDistributionDefaultCacheBehavior Unmarshall(JsonUnmarshallerContext context)
         {
             AwsCloudFrontDistributionDefaultCacheBehavior unmarshalledObject = new AwsCloudFrontDistributionDefaultCacheBehavior();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FailedKeyRegistrationEntry Unmarshall(JsonUnmarshallerContext context)
         {
             FailedKeyRegistrationEntry unmarshalledObject = new FailedKeyRegistrationEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

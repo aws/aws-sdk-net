@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public AnalyticsUtteranceAttributeResult Unmarshall(JsonUnmarshallerContext context)
         {
             AnalyticsUtteranceAttributeResult unmarshalledObject = new AnalyticsUtteranceAttributeResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

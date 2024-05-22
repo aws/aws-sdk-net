@@ -57,6 +57,8 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         public AppRegistryConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AppRegistryConfiguration unmarshalledObject = new AppRegistryConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

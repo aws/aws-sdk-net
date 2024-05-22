@@ -57,6 +57,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public CertificateBasedAuthProperties Unmarshall(JsonUnmarshallerContext context)
         {
             CertificateBasedAuthProperties unmarshalledObject = new CertificateBasedAuthProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

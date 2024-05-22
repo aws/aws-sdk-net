@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public ArtifactDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ArtifactDetail unmarshalledObject = new ArtifactDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

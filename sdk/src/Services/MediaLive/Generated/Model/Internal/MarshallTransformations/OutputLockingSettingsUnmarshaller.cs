@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public OutputLockingSettings Unmarshall(JsonUnmarshallerContext context)
         {
             OutputLockingSettings unmarshalledObject = new OutputLockingSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

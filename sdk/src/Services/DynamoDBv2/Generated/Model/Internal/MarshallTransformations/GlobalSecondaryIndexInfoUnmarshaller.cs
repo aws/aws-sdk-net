@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public GlobalSecondaryIndexInfo Unmarshall(JsonUnmarshallerContext context)
         {
             GlobalSecondaryIndexInfo unmarshalledObject = new GlobalSecondaryIndexInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
         public CaseDetails Unmarshall(JsonUnmarshallerContext context)
         {
             CaseDetails unmarshalledObject = new CaseDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

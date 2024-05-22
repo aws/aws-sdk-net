@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         public GuardrailWordPolicyAssessment Unmarshall(JsonUnmarshallerContext context)
         {
             GuardrailWordPolicyAssessment unmarshalledObject = new GuardrailWordPolicyAssessment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

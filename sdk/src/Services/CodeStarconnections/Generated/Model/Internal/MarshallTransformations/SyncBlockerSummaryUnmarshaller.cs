@@ -57,6 +57,8 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         public SyncBlockerSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SyncBlockerSummary unmarshalledObject = new SyncBlockerSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

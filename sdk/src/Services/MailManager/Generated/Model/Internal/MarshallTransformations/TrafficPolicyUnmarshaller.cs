@@ -57,6 +57,8 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public TrafficPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             TrafficPolicy unmarshalledObject = new TrafficPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

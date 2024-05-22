@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public ExportMetadataModelAssessmentResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
             ExportMetadataModelAssessmentResultEntry unmarshalledObject = new ExportMetadataModelAssessmentResultEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

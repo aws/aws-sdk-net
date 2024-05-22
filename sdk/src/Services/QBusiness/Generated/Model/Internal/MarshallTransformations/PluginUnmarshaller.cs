@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public Plugin Unmarshall(JsonUnmarshallerContext context)
         {
             Plugin unmarshalledObject = new Plugin();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public S3BucketTranscriptSource Unmarshall(JsonUnmarshallerContext context)
         {
             S3BucketTranscriptSource unmarshalledObject = new S3BucketTranscriptSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

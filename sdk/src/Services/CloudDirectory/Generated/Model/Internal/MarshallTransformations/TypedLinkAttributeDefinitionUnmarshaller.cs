@@ -57,6 +57,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         public TypedLinkAttributeDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             TypedLinkAttributeDefinition unmarshalledObject = new TypedLinkAttributeDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public ReplicationStartingPosition Unmarshall(JsonUnmarshallerContext context)
         {
             ReplicationStartingPosition unmarshalledObject = new ReplicationStartingPosition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

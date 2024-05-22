@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public CampaignDateRangeKpiResponse Unmarshall(JsonUnmarshallerContext context)
         {
             CampaignDateRangeKpiResponse unmarshalledObject = new CampaignDateRangeKpiResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

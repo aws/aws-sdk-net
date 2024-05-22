@@ -57,6 +57,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         public UploaderConfig Unmarshall(JsonUnmarshallerContext context)
         {
             UploaderConfig unmarshalledObject = new UploaderConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

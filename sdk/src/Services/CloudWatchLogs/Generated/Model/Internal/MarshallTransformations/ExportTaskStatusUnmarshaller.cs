@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public ExportTaskStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ExportTaskStatus unmarshalledObject = new ExportTaskStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

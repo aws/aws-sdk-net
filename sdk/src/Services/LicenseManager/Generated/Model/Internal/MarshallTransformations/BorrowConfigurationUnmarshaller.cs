@@ -57,6 +57,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         public BorrowConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             BorrowConfiguration unmarshalledObject = new BorrowConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

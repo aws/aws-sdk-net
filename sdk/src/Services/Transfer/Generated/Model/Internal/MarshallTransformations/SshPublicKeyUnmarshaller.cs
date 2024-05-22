@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public SshPublicKey Unmarshall(JsonUnmarshallerContext context)
         {
             SshPublicKey unmarshalledObject = new SshPublicKey();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

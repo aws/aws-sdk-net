@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public CaptionSourceFramerate Unmarshall(JsonUnmarshallerContext context)
         {
             CaptionSourceFramerate unmarshalledObject = new CaptionSourceFramerate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

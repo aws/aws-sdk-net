@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public OnPremisesTagSet Unmarshall(JsonUnmarshallerContext context)
         {
             OnPremisesTagSet unmarshalledObject = new OnPremisesTagSet();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

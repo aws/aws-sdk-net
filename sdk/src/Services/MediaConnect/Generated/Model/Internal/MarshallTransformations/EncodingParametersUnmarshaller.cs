@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public EncodingParameters Unmarshall(JsonUnmarshallerContext context)
         {
             EncodingParameters unmarshalledObject = new EncodingParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

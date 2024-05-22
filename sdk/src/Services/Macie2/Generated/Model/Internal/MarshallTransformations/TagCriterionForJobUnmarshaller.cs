@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public TagCriterionForJob Unmarshall(JsonUnmarshallerContext context)
         {
             TagCriterionForJob unmarshalledObject = new TagCriterionForJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         public RuntimeVersion Unmarshall(JsonUnmarshallerContext context)
         {
             RuntimeVersion unmarshalledObject = new RuntimeVersion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

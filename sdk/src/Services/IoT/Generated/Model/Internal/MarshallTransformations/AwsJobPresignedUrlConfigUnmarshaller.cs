@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public AwsJobPresignedUrlConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AwsJobPresignedUrlConfig unmarshalledObject = new AwsJobPresignedUrlConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public StorageConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             StorageConfiguration unmarshalledObject = new StorageConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

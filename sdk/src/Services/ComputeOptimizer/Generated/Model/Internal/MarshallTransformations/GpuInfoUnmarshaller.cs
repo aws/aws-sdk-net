@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public GpuInfo Unmarshall(JsonUnmarshallerContext context)
         {
             GpuInfo unmarshalledObject = new GpuInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

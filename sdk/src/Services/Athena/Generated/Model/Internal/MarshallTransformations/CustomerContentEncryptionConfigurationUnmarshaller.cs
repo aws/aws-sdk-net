@@ -57,6 +57,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         public CustomerContentEncryptionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CustomerContentEncryptionConfiguration unmarshalledObject = new CustomerContentEncryptionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

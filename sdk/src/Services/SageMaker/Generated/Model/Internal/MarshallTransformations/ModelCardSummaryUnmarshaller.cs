@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ModelCardSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ModelCardSummary unmarshalledObject = new ModelCardSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public AdditionalLimit Unmarshall(JsonUnmarshallerContext context)
         {
             AdditionalLimit unmarshalledObject = new AdditionalLimit();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

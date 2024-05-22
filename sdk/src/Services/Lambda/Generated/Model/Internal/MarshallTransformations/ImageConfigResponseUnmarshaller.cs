@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public ImageConfigResponse Unmarshall(JsonUnmarshallerContext context)
         {
             ImageConfigResponse unmarshalledObject = new ImageConfigResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

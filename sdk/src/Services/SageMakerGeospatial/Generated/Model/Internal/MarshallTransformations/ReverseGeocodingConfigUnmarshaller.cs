@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public ReverseGeocodingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ReverseGeocodingConfig unmarshalledObject = new ReverseGeocodingConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

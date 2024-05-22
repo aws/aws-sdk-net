@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public PermissionSetProvisioningStatusMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             PermissionSetProvisioningStatusMetadata unmarshalledObject = new PermissionSetProvisioningStatusMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

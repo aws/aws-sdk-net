@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public AccessPreviewFinding Unmarshall(JsonUnmarshallerContext context)
         {
             AccessPreviewFinding unmarshalledObject = new AccessPreviewFinding();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

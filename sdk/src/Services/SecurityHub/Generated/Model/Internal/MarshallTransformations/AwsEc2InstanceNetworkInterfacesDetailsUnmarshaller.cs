@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEc2InstanceNetworkInterfacesDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEc2InstanceNetworkInterfacesDetails unmarshalledObject = new AwsEc2InstanceNetworkInterfacesDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

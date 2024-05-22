@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public TransformEncryption Unmarshall(JsonUnmarshallerContext context)
         {
             TransformEncryption unmarshalledObject = new TransformEncryption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

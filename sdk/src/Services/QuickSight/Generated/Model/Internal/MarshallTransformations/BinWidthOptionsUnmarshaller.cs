@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public BinWidthOptions Unmarshall(JsonUnmarshallerContext context)
         {
             BinWidthOptions unmarshalledObject = new BinWidthOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

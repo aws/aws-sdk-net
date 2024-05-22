@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public ProcessorConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ProcessorConfiguration unmarshalledObject = new ProcessorConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

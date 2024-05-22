@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public WebhookDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             WebhookDefinition unmarshalledObject = new WebhookDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

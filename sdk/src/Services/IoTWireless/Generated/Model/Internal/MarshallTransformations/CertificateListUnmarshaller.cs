@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public CertificateList Unmarshall(JsonUnmarshallerContext context)
         {
             CertificateList unmarshalledObject = new CertificateList();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

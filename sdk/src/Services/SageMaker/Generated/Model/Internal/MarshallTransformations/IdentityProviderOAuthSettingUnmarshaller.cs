@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public IdentityProviderOAuthSetting Unmarshall(JsonUnmarshallerContext context)
         {
             IdentityProviderOAuthSetting unmarshalledObject = new IdentityProviderOAuthSetting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

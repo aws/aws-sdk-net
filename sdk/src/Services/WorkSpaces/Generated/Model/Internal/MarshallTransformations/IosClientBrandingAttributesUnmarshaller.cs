@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public IosClientBrandingAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             IosClientBrandingAttributes unmarshalledObject = new IosClientBrandingAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

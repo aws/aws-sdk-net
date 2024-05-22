@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public QueryCompileErrorLocation Unmarshall(JsonUnmarshallerContext context)
         {
             QueryCompileErrorLocation unmarshalledObject = new QueryCompileErrorLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

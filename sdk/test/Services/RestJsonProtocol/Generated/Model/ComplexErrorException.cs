@@ -142,7 +142,7 @@ namespace Amazon.RestJsonProtocol.Model
         // Check to see if Header property is set
         internal bool IsSetHeader()
         {
-            return this._header != null;
+            return !string.IsNullOrEmpty(this._header);
         }
 
         /// <summary>

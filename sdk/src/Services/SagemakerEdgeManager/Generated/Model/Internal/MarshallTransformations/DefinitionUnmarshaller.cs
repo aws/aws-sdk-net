@@ -57,6 +57,8 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
         public Definition Unmarshall(JsonUnmarshallerContext context)
         {
             Definition unmarshalledObject = new Definition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

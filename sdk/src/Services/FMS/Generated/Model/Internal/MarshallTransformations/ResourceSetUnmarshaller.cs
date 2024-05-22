@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public ResourceSet Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceSet unmarshalledObject = new ResourceSet();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

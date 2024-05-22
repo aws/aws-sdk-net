@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public RetentionPeriod Unmarshall(JsonUnmarshallerContext context)
         {
             RetentionPeriod unmarshalledObject = new RetentionPeriod();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

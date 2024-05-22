@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public AggregatedValue Unmarshall(JsonUnmarshallerContext context)
         {
             AggregatedValue unmarshalledObject = new AggregatedValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

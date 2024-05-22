@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AttributeAggregationFunction Unmarshall(JsonUnmarshallerContext context)
         {
             AttributeAggregationFunction unmarshalledObject = new AttributeAggregationFunction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

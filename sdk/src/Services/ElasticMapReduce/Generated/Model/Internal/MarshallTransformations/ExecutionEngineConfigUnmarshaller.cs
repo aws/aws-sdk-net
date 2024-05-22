@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public ExecutionEngineConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ExecutionEngineConfig unmarshalledObject = new ExecutionEngineConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

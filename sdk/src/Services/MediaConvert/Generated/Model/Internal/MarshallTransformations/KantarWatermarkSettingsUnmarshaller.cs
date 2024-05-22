@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public KantarWatermarkSettings Unmarshall(JsonUnmarshallerContext context)
         {
             KantarWatermarkSettings unmarshalledObject = new KantarWatermarkSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public RefreshFrequency Unmarshall(JsonUnmarshallerContext context)
         {
             RefreshFrequency unmarshalledObject = new RefreshFrequency();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

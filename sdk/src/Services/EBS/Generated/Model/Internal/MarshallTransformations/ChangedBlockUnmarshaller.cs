@@ -57,6 +57,8 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
         public ChangedBlock Unmarshall(JsonUnmarshallerContext context)
         {
             ChangedBlock unmarshalledObject = new ChangedBlock();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

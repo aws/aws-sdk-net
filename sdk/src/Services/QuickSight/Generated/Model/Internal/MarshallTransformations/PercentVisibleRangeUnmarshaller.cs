@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public PercentVisibleRange Unmarshall(JsonUnmarshallerContext context)
         {
             PercentVisibleRange unmarshalledObject = new PercentVisibleRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

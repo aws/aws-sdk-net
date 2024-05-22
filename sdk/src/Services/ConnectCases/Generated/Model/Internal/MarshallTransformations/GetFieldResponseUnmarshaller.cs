@@ -57,6 +57,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         public GetFieldResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GetFieldResponse unmarshalledObject = new GetFieldResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

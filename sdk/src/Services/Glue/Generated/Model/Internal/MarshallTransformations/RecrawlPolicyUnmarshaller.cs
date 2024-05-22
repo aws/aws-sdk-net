@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public RecrawlPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             RecrawlPolicy unmarshalledObject = new RecrawlPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

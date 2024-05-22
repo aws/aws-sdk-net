@@ -57,6 +57,8 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         public AudienceGenerationJobDataSource Unmarshall(JsonUnmarshallerContext context)
         {
             AudienceGenerationJobDataSource unmarshalledObject = new AudienceGenerationJobDataSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

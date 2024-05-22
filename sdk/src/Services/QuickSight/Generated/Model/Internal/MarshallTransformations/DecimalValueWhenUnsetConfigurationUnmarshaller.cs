@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DecimalValueWhenUnsetConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DecimalValueWhenUnsetConfiguration unmarshalledObject = new DecimalValueWhenUnsetConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

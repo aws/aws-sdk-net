@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public ComplianceByConfigRule Unmarshall(JsonUnmarshallerContext context)
         {
             ComplianceByConfigRule unmarshalledObject = new ComplianceByConfigRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

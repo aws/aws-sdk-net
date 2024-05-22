@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public LabelingJobOutputConfig Unmarshall(JsonUnmarshallerContext context)
         {
             LabelingJobOutputConfig unmarshalledObject = new LabelingJobOutputConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

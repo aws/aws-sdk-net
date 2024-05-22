@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public EndAssociatedTasksActionDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             EndAssociatedTasksActionDefinition unmarshalledObject = new EndAssociatedTasksActionDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

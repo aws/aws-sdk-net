@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public WaveAggregatedStatus Unmarshall(JsonUnmarshallerContext context)
         {
             WaveAggregatedStatus unmarshalledObject = new WaveAggregatedStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

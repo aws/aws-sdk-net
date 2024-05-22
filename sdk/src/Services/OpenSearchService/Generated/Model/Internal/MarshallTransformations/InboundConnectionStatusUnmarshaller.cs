@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public InboundConnectionStatus Unmarshall(JsonUnmarshallerContext context)
         {
             InboundConnectionStatus unmarshalledObject = new InboundConnectionStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

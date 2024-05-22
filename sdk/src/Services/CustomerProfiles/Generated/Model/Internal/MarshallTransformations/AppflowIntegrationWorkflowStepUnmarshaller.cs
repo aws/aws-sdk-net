@@ -57,6 +57,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         public AppflowIntegrationWorkflowStep Unmarshall(JsonUnmarshallerContext context)
         {
             AppflowIntegrationWorkflowStep unmarshalledObject = new AppflowIntegrationWorkflowStep();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

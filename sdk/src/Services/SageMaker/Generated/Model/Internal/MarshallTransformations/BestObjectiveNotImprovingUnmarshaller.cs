@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public BestObjectiveNotImproving Unmarshall(JsonUnmarshallerContext context)
         {
             BestObjectiveNotImproving unmarshalledObject = new BestObjectiveNotImproving();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

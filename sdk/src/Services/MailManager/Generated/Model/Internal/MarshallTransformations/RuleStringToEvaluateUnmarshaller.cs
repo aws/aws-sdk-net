@@ -57,6 +57,8 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public RuleStringToEvaluate Unmarshall(JsonUnmarshallerContext context)
         {
             RuleStringToEvaluate unmarshalledObject = new RuleStringToEvaluate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

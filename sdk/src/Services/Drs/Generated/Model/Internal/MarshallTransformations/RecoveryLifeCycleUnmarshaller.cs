@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public RecoveryLifeCycle Unmarshall(JsonUnmarshallerContext context)
         {
             RecoveryLifeCycle unmarshalledObject = new RecoveryLifeCycle();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

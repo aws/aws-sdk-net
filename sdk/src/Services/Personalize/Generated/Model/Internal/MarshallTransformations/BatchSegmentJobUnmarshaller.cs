@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public BatchSegmentJob Unmarshall(JsonUnmarshallerContext context)
         {
             BatchSegmentJob unmarshalledObject = new BatchSegmentJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

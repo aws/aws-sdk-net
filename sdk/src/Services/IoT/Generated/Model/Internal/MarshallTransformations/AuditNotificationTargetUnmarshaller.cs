@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public AuditNotificationTarget Unmarshall(JsonUnmarshallerContext context)
         {
             AuditNotificationTarget unmarshalledObject = new AuditNotificationTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

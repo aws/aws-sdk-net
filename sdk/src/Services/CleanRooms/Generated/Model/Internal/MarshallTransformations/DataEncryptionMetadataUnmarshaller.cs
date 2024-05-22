@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public DataEncryptionMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             DataEncryptionMetadata unmarshalledObject = new DataEncryptionMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

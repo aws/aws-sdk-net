@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public SipRuleTargetApplication Unmarshall(JsonUnmarshallerContext context)
         {
             SipRuleTargetApplication unmarshalledObject = new SipRuleTargetApplication();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

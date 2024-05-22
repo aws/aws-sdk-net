@@ -57,6 +57,8 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
         public AuthorizationData Unmarshall(JsonUnmarshallerContext context)
         {
             AuthorizationData unmarshalledObject = new AuthorizationData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

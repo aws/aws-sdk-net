@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public CmafGroupSettings Unmarshall(JsonUnmarshallerContext context)
         {
             CmafGroupSettings unmarshalledObject = new CmafGroupSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

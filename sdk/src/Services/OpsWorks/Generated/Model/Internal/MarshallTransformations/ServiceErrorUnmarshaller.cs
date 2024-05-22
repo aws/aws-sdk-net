@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public ServiceError Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceError unmarshalledObject = new ServiceError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

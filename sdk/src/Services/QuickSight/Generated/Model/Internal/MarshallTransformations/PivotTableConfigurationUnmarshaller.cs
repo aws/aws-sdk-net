@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public PivotTableConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             PivotTableConfiguration unmarshalledObject = new PivotTableConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

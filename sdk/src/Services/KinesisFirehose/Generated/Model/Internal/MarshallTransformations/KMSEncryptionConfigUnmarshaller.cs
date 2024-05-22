@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public KMSEncryptionConfig Unmarshall(JsonUnmarshallerContext context)
         {
             KMSEncryptionConfig unmarshalledObject = new KMSEncryptionConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

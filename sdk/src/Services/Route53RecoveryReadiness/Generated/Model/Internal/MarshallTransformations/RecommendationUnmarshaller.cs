@@ -57,6 +57,8 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
         public Recommendation Unmarshall(JsonUnmarshallerContext context)
         {
             Recommendation unmarshalledObject = new Recommendation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

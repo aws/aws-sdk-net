@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public DynamodbDataSourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             DynamodbDataSourceConfig unmarshalledObject = new DynamodbDataSourceConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

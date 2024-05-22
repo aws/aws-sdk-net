@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public ListenerTimeout Unmarshall(JsonUnmarshallerContext context)
         {
             ListenerTimeout unmarshalledObject = new ListenerTimeout();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

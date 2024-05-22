@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public ImportAssetsFromS3ResponseDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ImportAssetsFromS3ResponseDetails unmarshalledObject = new ImportAssetsFromS3ResponseDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

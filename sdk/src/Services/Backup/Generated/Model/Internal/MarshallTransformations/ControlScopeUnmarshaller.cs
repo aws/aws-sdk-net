@@ -57,6 +57,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public ControlScope Unmarshall(JsonUnmarshallerContext context)
         {
             ControlScope unmarshalledObject = new ControlScope();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

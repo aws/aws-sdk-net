@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public CancelStepsInfo Unmarshall(JsonUnmarshallerContext context)
         {
             CancelStepsInfo unmarshalledObject = new CancelStepsInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

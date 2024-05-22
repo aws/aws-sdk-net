@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public RuleBasedProperties Unmarshall(JsonUnmarshallerContext context)
         {
             RuleBasedProperties unmarshalledObject = new RuleBasedProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

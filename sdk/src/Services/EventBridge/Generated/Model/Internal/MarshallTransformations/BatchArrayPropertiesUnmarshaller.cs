@@ -57,6 +57,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         public BatchArrayProperties Unmarshall(JsonUnmarshallerContext context)
         {
             BatchArrayProperties unmarshalledObject = new BatchArrayProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

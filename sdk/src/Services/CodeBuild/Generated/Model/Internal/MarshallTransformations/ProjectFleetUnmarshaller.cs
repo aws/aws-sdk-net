@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public ProjectFleet Unmarshall(JsonUnmarshallerContext context)
         {
             ProjectFleet unmarshalledObject = new ProjectFleet();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

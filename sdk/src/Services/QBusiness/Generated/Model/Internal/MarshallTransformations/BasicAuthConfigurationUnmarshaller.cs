@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public BasicAuthConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             BasicAuthConfiguration unmarshalledObject = new BasicAuthConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

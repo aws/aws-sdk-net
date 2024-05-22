@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public TestSetGenerationDataSource Unmarshall(JsonUnmarshallerContext context)
         {
             TestSetGenerationDataSource unmarshalledObject = new TestSetGenerationDataSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

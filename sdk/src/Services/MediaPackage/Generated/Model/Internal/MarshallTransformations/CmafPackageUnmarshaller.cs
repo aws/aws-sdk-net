@@ -57,6 +57,8 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         public CmafPackage Unmarshall(JsonUnmarshallerContext context)
         {
             CmafPackage unmarshalledObject = new CmafPackage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

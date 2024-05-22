@@ -57,6 +57,8 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
         public MLModel Unmarshall(JsonUnmarshallerContext context)
         {
             MLModel unmarshalledObject = new MLModel();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

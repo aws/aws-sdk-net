@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public ESInstanceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ESInstanceDetails unmarshalledObject = new ESInstanceDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         public TrainingDatasetSummary Unmarshall(JsonUnmarshallerContext context)
         {
             TrainingDatasetSummary unmarshalledObject = new TrainingDatasetSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

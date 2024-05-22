@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public AutoMLDataSplitConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AutoMLDataSplitConfig unmarshalledObject = new AutoMLDataSplitConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public PredefinedAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             PredefinedAttribute unmarshalledObject = new PredefinedAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

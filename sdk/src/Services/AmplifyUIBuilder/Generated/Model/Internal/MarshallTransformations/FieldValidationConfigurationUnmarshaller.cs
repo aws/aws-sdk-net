@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public FieldValidationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             FieldValidationConfiguration unmarshalledObject = new FieldValidationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public RecommendationSet Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendationSet unmarshalledObject = new RecommendationSet();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

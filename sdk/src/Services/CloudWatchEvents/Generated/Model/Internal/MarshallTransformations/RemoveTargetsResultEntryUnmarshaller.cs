@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         public RemoveTargetsResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
             RemoveTargetsResultEntry unmarshalledObject = new RemoveTargetsResultEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

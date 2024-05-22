@@ -57,6 +57,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         public LicenseServiceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LicenseServiceConfiguration unmarshalledObject = new LicenseServiceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

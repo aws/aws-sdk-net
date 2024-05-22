@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public ConfigExportDeliveryInfo Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigExportDeliveryInfo unmarshalledObject = new ConfigExportDeliveryInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

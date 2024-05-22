@@ -57,6 +57,8 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         public AuthenticationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AuthenticationSummary unmarshalledObject = new AuthenticationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

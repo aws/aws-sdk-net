@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public SegmentImportResource Unmarshall(JsonUnmarshallerContext context)
         {
             SegmentImportResource unmarshalledObject = new SegmentImportResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

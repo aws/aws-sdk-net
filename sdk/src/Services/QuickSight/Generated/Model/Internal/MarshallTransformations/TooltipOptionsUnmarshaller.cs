@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TooltipOptions Unmarshall(JsonUnmarshallerContext context)
         {
             TooltipOptions unmarshalledObject = new TooltipOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

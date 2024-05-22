@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AdHocFilteringOption Unmarshall(JsonUnmarshallerContext context)
         {
             AdHocFilteringOption unmarshalledObject = new AdHocFilteringOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

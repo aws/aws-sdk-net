@@ -57,6 +57,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         public PsDetailAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             PsDetailAttributes unmarshalledObject = new PsDetailAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

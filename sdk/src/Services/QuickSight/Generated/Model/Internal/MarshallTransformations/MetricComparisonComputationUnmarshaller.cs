@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public MetricComparisonComputation Unmarshall(JsonUnmarshallerContext context)
         {
             MetricComparisonComputation unmarshalledObject = new MetricComparisonComputation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

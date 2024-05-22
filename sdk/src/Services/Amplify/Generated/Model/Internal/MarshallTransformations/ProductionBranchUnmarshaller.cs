@@ -57,6 +57,8 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         public ProductionBranch Unmarshall(JsonUnmarshallerContext context)
         {
             ProductionBranch unmarshalledObject = new ProductionBranch();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         public ExecutionTimedOutEventDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ExecutionTimedOutEventDetails unmarshalledObject = new ExecutionTimedOutEventDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

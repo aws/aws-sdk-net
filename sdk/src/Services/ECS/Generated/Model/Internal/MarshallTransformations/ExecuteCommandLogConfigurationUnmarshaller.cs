@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public ExecuteCommandLogConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ExecuteCommandLogConfiguration unmarshalledObject = new ExecuteCommandLogConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

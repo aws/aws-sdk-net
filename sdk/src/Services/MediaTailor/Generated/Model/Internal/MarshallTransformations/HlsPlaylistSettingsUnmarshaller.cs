@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public HlsPlaylistSettings Unmarshall(JsonUnmarshallerContext context)
         {
             HlsPlaylistSettings unmarshalledObject = new HlsPlaylistSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

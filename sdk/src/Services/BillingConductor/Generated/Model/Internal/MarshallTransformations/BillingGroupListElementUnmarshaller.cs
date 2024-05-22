@@ -57,6 +57,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         public BillingGroupListElement Unmarshall(JsonUnmarshallerContext context)
         {
             BillingGroupListElement unmarshalledObject = new BillingGroupListElement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

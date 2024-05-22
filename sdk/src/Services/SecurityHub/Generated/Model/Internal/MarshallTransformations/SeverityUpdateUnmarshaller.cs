@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public SeverityUpdate Unmarshall(JsonUnmarshallerContext context)
         {
             SeverityUpdate unmarshalledObject = new SeverityUpdate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

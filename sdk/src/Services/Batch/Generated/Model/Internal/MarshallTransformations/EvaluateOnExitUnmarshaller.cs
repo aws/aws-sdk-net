@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public EvaluateOnExit Unmarshall(JsonUnmarshallerContext context)
         {
             EvaluateOnExit unmarshalledObject = new EvaluateOnExit();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

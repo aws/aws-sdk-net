@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public GreengrassV2 Unmarshall(JsonUnmarshallerContext context)
         {
             GreengrassV2 unmarshalledObject = new GreengrassV2();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

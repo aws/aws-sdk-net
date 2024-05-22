@@ -57,6 +57,8 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
         public SNOMEDCTAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             SNOMEDCTAttribute unmarshalledObject = new SNOMEDCTAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

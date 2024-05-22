@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public JobMessages Unmarshall(JsonUnmarshallerContext context)
         {
             JobMessages unmarshalledObject = new JobMessages();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

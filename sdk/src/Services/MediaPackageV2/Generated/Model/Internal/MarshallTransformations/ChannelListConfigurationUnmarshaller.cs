@@ -57,6 +57,8 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         public ChannelListConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ChannelListConfiguration unmarshalledObject = new ChannelListConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

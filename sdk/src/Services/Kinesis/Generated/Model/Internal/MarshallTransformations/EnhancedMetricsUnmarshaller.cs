@@ -57,6 +57,8 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         public EnhancedMetrics Unmarshall(JsonUnmarshallerContext context)
         {
             EnhancedMetrics unmarshalledObject = new EnhancedMetrics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

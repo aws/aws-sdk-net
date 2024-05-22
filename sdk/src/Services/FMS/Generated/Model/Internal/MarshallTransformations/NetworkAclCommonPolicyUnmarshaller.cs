@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public NetworkAclCommonPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkAclCommonPolicy unmarshalledObject = new NetworkAclCommonPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

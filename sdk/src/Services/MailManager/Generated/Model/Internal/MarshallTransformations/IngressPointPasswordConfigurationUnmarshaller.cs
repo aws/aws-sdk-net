@@ -57,6 +57,8 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public IngressPointPasswordConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             IngressPointPasswordConfiguration unmarshalledObject = new IngressPointPasswordConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

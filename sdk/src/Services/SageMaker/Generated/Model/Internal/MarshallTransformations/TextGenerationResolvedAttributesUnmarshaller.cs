@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public TextGenerationResolvedAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             TextGenerationResolvedAttributes unmarshalledObject = new TextGenerationResolvedAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

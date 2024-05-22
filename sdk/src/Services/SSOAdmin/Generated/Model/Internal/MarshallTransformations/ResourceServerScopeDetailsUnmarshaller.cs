@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public ResourceServerScopeDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceServerScopeDetails unmarshalledObject = new ResourceServerScopeDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

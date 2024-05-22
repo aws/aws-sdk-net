@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public KinesisStreamConfig Unmarshall(JsonUnmarshallerContext context)
         {
             KinesisStreamConfig unmarshalledObject = new KinesisStreamConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

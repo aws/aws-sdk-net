@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TableFieldLinkContentConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TableFieldLinkContentConfiguration unmarshalledObject = new TableFieldLinkContentConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

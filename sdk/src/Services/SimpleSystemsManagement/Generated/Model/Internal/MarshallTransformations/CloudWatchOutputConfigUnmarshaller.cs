@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public CloudWatchOutputConfig Unmarshall(JsonUnmarshallerContext context)
         {
             CloudWatchOutputConfig unmarshalledObject = new CloudWatchOutputConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

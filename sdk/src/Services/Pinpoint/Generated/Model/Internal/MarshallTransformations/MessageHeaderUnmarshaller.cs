@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public MessageHeader Unmarshall(JsonUnmarshallerContext context)
         {
             MessageHeader unmarshalledObject = new MessageHeader();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

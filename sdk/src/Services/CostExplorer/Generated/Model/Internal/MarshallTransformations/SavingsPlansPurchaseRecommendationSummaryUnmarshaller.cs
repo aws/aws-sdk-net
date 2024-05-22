@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public SavingsPlansPurchaseRecommendationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SavingsPlansPurchaseRecommendationSummary unmarshalledObject = new SavingsPlansPurchaseRecommendationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

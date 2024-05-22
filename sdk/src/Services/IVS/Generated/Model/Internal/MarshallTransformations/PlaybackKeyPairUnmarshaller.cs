@@ -57,6 +57,8 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         public PlaybackKeyPair Unmarshall(JsonUnmarshallerContext context)
         {
             PlaybackKeyPair unmarshalledObject = new PlaybackKeyPair();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

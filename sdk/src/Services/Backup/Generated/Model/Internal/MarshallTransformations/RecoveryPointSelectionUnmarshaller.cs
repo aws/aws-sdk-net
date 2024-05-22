@@ -57,6 +57,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public RecoveryPointSelection Unmarshall(JsonUnmarshallerContext context)
         {
             RecoveryPointSelection unmarshalledObject = new RecoveryPointSelection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

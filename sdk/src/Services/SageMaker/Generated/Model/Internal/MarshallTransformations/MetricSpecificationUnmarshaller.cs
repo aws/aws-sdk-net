@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public MetricSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             MetricSpecification unmarshalledObject = new MetricSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

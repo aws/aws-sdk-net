@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public EmbeddedDestinationSettings Unmarshall(JsonUnmarshallerContext context)
         {
             EmbeddedDestinationSettings unmarshalledObject = new EmbeddedDestinationSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

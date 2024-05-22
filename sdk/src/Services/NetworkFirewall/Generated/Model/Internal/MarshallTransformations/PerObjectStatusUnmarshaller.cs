@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public PerObjectStatus Unmarshall(JsonUnmarshallerContext context)
         {
             PerObjectStatus unmarshalledObject = new PerObjectStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

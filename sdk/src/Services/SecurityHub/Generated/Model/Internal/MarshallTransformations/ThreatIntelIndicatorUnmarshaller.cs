@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public ThreatIntelIndicator Unmarshall(JsonUnmarshallerContext context)
         {
             ThreatIntelIndicator unmarshalledObject = new ThreatIntelIndicator();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

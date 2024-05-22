@@ -57,6 +57,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         public CrlConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CrlConfiguration unmarshalledObject = new CrlConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

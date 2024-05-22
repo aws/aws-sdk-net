@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public AccessKeyDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AccessKeyDetails unmarshalledObject = new AccessKeyDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

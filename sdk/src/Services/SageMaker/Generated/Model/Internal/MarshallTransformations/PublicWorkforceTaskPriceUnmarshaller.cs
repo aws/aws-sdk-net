@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public PublicWorkforceTaskPrice Unmarshall(JsonUnmarshallerContext context)
         {
             PublicWorkforceTaskPrice unmarshalledObject = new PublicWorkforceTaskPrice();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

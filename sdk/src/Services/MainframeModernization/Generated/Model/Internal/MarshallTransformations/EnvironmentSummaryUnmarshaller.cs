@@ -57,6 +57,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         public EnvironmentSummary Unmarshall(JsonUnmarshallerContext context)
         {
             EnvironmentSummary unmarshalledObject = new EnvironmentSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

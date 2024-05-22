@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public OnDemandThroughput Unmarshall(JsonUnmarshallerContext context)
         {
             OnDemandThroughput unmarshalledObject = new OnDemandThroughput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

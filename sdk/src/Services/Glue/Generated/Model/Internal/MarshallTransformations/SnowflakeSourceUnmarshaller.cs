@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public SnowflakeSource Unmarshall(JsonUnmarshallerContext context)
         {
             SnowflakeSource unmarshalledObject = new SnowflakeSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

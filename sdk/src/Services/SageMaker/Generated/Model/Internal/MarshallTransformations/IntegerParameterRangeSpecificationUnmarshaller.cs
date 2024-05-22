@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public IntegerParameterRangeSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             IntegerParameterRangeSpecification unmarshalledObject = new IntegerParameterRangeSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

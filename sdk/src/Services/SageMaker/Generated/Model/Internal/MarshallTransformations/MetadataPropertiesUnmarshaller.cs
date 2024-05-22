@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public MetadataProperties Unmarshall(JsonUnmarshallerContext context)
         {
             MetadataProperties unmarshalledObject = new MetadataProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

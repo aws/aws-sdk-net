@@ -57,6 +57,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         public SchemaFacet Unmarshall(JsonUnmarshallerContext context)
         {
             SchemaFacet unmarshalledObject = new SchemaFacet();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

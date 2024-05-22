@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public FileAccessLog Unmarshall(JsonUnmarshallerContext context)
         {
             FileAccessLog unmarshalledObject = new FileAccessLog();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

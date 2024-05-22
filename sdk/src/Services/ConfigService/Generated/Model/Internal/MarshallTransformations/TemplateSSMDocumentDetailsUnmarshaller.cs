@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public TemplateSSMDocumentDetails Unmarshall(JsonUnmarshallerContext context)
         {
             TemplateSSMDocumentDetails unmarshalledObject = new TemplateSSMDocumentDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

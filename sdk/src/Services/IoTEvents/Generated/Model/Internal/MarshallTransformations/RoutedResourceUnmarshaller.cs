@@ -57,6 +57,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         public RoutedResource Unmarshall(JsonUnmarshallerContext context)
         {
             RoutedResource unmarshalledObject = new RoutedResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

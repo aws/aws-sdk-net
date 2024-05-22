@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public EventOrchestration Unmarshall(JsonUnmarshallerContext context)
         {
             EventOrchestration unmarshalledObject = new EventOrchestration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

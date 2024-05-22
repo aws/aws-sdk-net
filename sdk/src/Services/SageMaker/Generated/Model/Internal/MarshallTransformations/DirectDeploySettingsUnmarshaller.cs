@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public DirectDeploySettings Unmarshall(JsonUnmarshallerContext context)
         {
             DirectDeploySettings unmarshalledObject = new DirectDeploySettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

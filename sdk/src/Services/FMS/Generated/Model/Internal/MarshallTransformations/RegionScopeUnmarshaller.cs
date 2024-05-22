@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public RegionScope Unmarshall(JsonUnmarshallerContext context)
         {
             RegionScope unmarshalledObject = new RegionScope();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

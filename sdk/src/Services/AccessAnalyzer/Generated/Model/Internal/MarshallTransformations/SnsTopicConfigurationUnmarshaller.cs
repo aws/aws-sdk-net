@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public SnsTopicConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SnsTopicConfiguration unmarshalledObject = new SnsTopicConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

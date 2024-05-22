@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public QueryDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             QueryDefinition unmarshalledObject = new QueryDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public DynatraceConnectorProfileProperties Unmarshall(JsonUnmarshallerContext context)
         {
             DynatraceConnectorProfileProperties unmarshalledObject = new DynatraceConnectorProfileProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

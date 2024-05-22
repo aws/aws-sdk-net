@@ -57,6 +57,8 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
         public BucketInfo Unmarshall(JsonUnmarshallerContext context)
         {
             BucketInfo unmarshalledObject = new BucketInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

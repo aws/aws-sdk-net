@@ -57,6 +57,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         public DeletionWarning Unmarshall(JsonUnmarshallerContext context)
         {
             DeletionWarning unmarshalledObject = new DeletionWarning();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         public RequiredField Unmarshall(JsonUnmarshallerContext context)
         {
             RequiredField unmarshalledObject = new RequiredField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

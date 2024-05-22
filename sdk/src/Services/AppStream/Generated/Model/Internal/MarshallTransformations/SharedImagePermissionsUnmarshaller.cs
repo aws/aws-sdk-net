@@ -57,6 +57,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public SharedImagePermissions Unmarshall(JsonUnmarshallerContext context)
         {
             SharedImagePermissions unmarshalledObject = new SharedImagePermissions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

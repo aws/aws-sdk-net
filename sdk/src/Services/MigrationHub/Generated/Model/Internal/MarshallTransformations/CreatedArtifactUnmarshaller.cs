@@ -57,6 +57,8 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
         public CreatedArtifact Unmarshall(JsonUnmarshallerContext context)
         {
             CreatedArtifact unmarshalledObject = new CreatedArtifact();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

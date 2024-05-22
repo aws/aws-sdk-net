@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public TransitGatewayPeering Unmarshall(JsonUnmarshallerContext context)
         {
             TransitGatewayPeering unmarshalledObject = new TransitGatewayPeering();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         public ChangeLog Unmarshall(JsonUnmarshallerContext context)
         {
             ChangeLog unmarshalledObject = new ChangeLog();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

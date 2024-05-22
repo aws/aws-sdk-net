@@ -57,6 +57,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         public PagerDutyIncidentConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             PagerDutyIncidentConfiguration unmarshalledObject = new PagerDutyIncidentConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

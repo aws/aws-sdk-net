@@ -57,6 +57,8 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         public SecretVersionsListEntry Unmarshall(JsonUnmarshallerContext context)
         {
             SecretVersionsListEntry unmarshalledObject = new SecretVersionsListEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

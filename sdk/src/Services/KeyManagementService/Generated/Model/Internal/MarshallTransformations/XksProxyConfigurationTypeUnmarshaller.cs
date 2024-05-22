@@ -57,6 +57,8 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         public XksProxyConfigurationType Unmarshall(JsonUnmarshallerContext context)
         {
             XksProxyConfigurationType unmarshalledObject = new XksProxyConfigurationType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

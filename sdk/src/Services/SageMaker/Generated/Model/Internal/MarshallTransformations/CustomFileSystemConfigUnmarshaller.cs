@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public CustomFileSystemConfig Unmarshall(JsonUnmarshallerContext context)
         {
             CustomFileSystemConfig unmarshalledObject = new CustomFileSystemConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

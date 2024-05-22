@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public ValidationData Unmarshall(JsonUnmarshallerContext context)
         {
             ValidationData unmarshalledObject = new ValidationData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

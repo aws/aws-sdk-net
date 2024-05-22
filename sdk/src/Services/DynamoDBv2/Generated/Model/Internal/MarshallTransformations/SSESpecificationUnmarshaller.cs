@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public SSESpecification Unmarshall(JsonUnmarshallerContext context)
         {
             SSESpecification unmarshalledObject = new SSESpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

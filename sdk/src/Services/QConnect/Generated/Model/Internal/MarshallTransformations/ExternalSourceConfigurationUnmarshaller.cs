@@ -57,6 +57,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         public ExternalSourceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ExternalSourceConfiguration unmarshalledObject = new ExternalSourceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

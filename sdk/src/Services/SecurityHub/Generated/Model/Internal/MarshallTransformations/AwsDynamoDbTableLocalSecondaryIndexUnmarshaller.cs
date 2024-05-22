@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsDynamoDbTableLocalSecondaryIndex Unmarshall(JsonUnmarshallerContext context)
         {
             AwsDynamoDbTableLocalSecondaryIndex unmarshalledObject = new AwsDynamoDbTableLocalSecondaryIndex();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

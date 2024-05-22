@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public SnapshotDetails Unmarshall(JsonUnmarshallerContext context)
         {
             SnapshotDetails unmarshalledObject = new SnapshotDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public ReplicationDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ReplicationDetails unmarshalledObject = new ReplicationDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

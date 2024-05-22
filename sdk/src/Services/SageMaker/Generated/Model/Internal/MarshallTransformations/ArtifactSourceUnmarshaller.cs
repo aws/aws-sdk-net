@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ArtifactSource Unmarshall(JsonUnmarshallerContext context)
         {
             ArtifactSource unmarshalledObject = new ArtifactSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

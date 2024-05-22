@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public DataDeletionJob Unmarshall(JsonUnmarshallerContext context)
         {
             DataDeletionJob unmarshalledObject = new DataDeletionJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

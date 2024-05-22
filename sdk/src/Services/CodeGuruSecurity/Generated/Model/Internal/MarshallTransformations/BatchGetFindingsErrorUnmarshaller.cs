@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
         public BatchGetFindingsError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchGetFindingsError unmarshalledObject = new BatchGetFindingsError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         public ResourcePathComponent Unmarshall(JsonUnmarshallerContext context)
         {
             ResourcePathComponent unmarshalledObject = new ResourcePathComponent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public CategoryProperties Unmarshall(JsonUnmarshallerContext context)
         {
             CategoryProperties unmarshalledObject = new CategoryProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

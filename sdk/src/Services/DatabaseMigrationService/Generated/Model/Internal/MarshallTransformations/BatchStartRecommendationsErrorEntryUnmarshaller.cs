@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public BatchStartRecommendationsErrorEntry Unmarshall(JsonUnmarshallerContext context)
         {
             BatchStartRecommendationsErrorEntry unmarshalledObject = new BatchStartRecommendationsErrorEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

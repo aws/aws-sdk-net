@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public ImportFindingsError Unmarshall(JsonUnmarshallerContext context)
         {
             ImportFindingsError unmarshalledObject = new ImportFindingsError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

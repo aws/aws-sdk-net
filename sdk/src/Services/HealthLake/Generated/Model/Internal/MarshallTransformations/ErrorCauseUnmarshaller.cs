@@ -57,6 +57,8 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         public ErrorCause Unmarshall(JsonUnmarshallerContext context)
         {
             ErrorCause unmarshalledObject = new ErrorCause();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

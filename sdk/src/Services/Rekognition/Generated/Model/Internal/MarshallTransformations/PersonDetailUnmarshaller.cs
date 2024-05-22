@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public PersonDetail Unmarshall(JsonUnmarshallerContext context)
         {
             PersonDetail unmarshalledObject = new PersonDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

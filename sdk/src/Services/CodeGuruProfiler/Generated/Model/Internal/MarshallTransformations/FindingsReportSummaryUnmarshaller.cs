@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         public FindingsReportSummary Unmarshall(JsonUnmarshallerContext context)
         {
             FindingsReportSummary unmarshalledObject = new FindingsReportSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

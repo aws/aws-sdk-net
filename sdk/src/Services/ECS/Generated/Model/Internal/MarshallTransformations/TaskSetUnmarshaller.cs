@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public TaskSet Unmarshall(JsonUnmarshallerContext context)
         {
             TaskSet unmarshalledObject = new TaskSet();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

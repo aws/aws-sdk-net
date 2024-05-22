@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public LambdaFunctionSinkConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaFunctionSinkConfiguration unmarshalledObject = new LambdaFunctionSinkConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

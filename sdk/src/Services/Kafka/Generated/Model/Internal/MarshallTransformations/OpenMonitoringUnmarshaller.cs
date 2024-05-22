@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public OpenMonitoring Unmarshall(JsonUnmarshallerContext context)
         {
             OpenMonitoring unmarshalledObject = new OpenMonitoring();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

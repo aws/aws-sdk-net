@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public BorderStyle Unmarshall(JsonUnmarshallerContext context)
         {
             BorderStyle unmarshalledObject = new BorderStyle();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

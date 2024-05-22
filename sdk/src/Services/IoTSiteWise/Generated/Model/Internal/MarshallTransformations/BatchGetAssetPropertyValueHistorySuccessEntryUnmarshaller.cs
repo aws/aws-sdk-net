@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public BatchGetAssetPropertyValueHistorySuccessEntry Unmarshall(JsonUnmarshallerContext context)
         {
             BatchGetAssetPropertyValueHistorySuccessEntry unmarshalledObject = new BatchGetAssetPropertyValueHistorySuccessEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public Ec2Config Unmarshall(JsonUnmarshallerContext context)
         {
             Ec2Config unmarshalledObject = new Ec2Config();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

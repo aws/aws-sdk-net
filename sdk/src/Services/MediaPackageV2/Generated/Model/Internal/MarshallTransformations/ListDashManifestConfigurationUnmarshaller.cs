@@ -57,6 +57,8 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         public ListDashManifestConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ListDashManifestConfiguration unmarshalledObject = new ListDashManifestConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

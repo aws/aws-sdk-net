@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public PutAssetPropertyValueEntry Unmarshall(JsonUnmarshallerContext context)
         {
             PutAssetPropertyValueEntry unmarshalledObject = new PutAssetPropertyValueEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

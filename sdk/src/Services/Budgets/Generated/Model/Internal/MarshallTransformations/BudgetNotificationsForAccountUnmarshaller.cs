@@ -57,6 +57,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         public BudgetNotificationsForAccount Unmarshall(JsonUnmarshallerContext context)
         {
             BudgetNotificationsForAccount unmarshalledObject = new BudgetNotificationsForAccount();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

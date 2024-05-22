@@ -57,6 +57,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         public BatchPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             BatchPolicy unmarshalledObject = new BatchPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

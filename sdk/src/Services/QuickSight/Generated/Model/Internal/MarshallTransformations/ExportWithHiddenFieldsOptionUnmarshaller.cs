@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ExportWithHiddenFieldsOption Unmarshall(JsonUnmarshallerContext context)
         {
             ExportWithHiddenFieldsOption unmarshalledObject = new ExportWithHiddenFieldsOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

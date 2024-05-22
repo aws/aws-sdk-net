@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public RetentionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             RetentionConfiguration unmarshalledObject = new RetentionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

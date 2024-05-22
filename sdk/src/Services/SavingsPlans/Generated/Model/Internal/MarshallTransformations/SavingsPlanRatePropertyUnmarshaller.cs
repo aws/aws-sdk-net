@@ -57,6 +57,8 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
         public SavingsPlanRateProperty Unmarshall(JsonUnmarshallerContext context)
         {
             SavingsPlanRateProperty unmarshalledObject = new SavingsPlanRateProperty();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

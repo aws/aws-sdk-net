@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public BehaviorCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             BehaviorCriteria unmarshalledObject = new BehaviorCriteria();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

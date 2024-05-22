@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public OFITrainingMetricsValue Unmarshall(JsonUnmarshallerContext context)
         {
             OFITrainingMetricsValue unmarshalledObject = new OFITrainingMetricsValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

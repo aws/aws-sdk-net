@@ -57,6 +57,8 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         public AccessTokenSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AccessTokenSummary unmarshalledObject = new AccessTokenSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

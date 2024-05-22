@@ -57,6 +57,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         public AttackVolumeStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             AttackVolumeStatistics unmarshalledObject = new AttackVolumeStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

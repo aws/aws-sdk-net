@@ -57,6 +57,8 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         public ExternalUrlConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ExternalUrlConfig unmarshalledObject = new ExternalUrlConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

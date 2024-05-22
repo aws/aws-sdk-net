@@ -57,6 +57,8 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         public DataLakeUpdateException Unmarshall(JsonUnmarshallerContext context)
         {
             DataLakeUpdateException unmarshalledObject = new DataLakeUpdateException();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         public RepositorySyncAttempt Unmarshall(JsonUnmarshallerContext context)
         {
             RepositorySyncAttempt unmarshalledObject = new RepositorySyncAttempt();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

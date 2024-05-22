@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AssetBundleImportJobError Unmarshall(JsonUnmarshallerContext context)
         {
             AssetBundleImportJobError unmarshalledObject = new AssetBundleImportJobError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

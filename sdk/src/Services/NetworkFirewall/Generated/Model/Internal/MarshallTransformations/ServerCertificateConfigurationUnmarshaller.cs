@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public ServerCertificateConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ServerCertificateConfiguration unmarshalledObject = new ServerCertificateConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

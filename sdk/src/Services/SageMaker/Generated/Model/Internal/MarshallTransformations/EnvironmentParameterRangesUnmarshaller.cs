@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public EnvironmentParameterRanges Unmarshall(JsonUnmarshallerContext context)
         {
             EnvironmentParameterRanges unmarshalledObject = new EnvironmentParameterRanges();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         public BrokerEngineType Unmarshall(JsonUnmarshallerContext context)
         {
             BrokerEngineType unmarshalledObject = new BrokerEngineType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

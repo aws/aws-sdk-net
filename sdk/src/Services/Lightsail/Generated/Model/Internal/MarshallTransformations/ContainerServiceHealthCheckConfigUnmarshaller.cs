@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public ContainerServiceHealthCheckConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ContainerServiceHealthCheckConfig unmarshalledObject = new ContainerServiceHealthCheckConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

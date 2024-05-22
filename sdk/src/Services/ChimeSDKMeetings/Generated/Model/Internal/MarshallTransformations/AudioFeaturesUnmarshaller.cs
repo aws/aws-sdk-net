@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         public AudioFeatures Unmarshall(JsonUnmarshallerContext context)
         {
             AudioFeatures unmarshalledObject = new AudioFeatures();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

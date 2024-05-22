@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public OidcMemberDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             OidcMemberDefinition unmarshalledObject = new OidcMemberDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

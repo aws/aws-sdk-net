@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsKinesisStreamStreamEncryptionDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsKinesisStreamStreamEncryptionDetails unmarshalledObject = new AwsKinesisStreamStreamEncryptionDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

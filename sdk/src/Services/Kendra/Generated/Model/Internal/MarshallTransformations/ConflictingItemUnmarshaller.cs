@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public ConflictingItem Unmarshall(JsonUnmarshallerContext context)
         {
             ConflictingItem unmarshalledObject = new ConflictingItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

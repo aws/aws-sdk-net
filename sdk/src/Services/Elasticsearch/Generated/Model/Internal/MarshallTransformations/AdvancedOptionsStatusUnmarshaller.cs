@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public AdvancedOptionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
             AdvancedOptionsStatus unmarshalledObject = new AdvancedOptionsStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

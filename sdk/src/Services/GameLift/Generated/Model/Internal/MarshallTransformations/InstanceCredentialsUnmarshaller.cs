@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public InstanceCredentials Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceCredentials unmarshalledObject = new InstanceCredentials();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

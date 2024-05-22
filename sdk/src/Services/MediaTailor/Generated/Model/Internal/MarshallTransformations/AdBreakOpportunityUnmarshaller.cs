@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public AdBreakOpportunity Unmarshall(JsonUnmarshallerContext context)
         {
             AdBreakOpportunity unmarshalledObject = new AdBreakOpportunity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public IdMappingWorkflowInputSource Unmarshall(JsonUnmarshallerContext context)
         {
             IdMappingWorkflowInputSource unmarshalledObject = new IdMappingWorkflowInputSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

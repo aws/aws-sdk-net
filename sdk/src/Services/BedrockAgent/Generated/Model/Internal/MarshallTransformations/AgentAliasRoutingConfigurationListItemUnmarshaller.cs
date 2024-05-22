@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public AgentAliasRoutingConfigurationListItem Unmarshall(JsonUnmarshallerContext context)
         {
             AgentAliasRoutingConfigurationListItem unmarshalledObject = new AgentAliasRoutingConfigurationListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

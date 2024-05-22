@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public GetResourcePoliciesResponseEntry Unmarshall(JsonUnmarshallerContext context)
         {
             GetResourcePoliciesResponseEntry unmarshalledObject = new GetResourcePoliciesResponseEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

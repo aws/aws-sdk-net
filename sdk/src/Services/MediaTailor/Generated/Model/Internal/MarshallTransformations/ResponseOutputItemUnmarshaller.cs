@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public ResponseOutputItem Unmarshall(JsonUnmarshallerContext context)
         {
             ResponseOutputItem unmarshalledObject = new ResponseOutputItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

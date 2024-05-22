@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public GetJobEntityError Unmarshall(JsonUnmarshallerContext context)
         {
             GetJobEntityError unmarshalledObject = new GetJobEntityError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

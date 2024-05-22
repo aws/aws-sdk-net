@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public ReplaceNetworkAclAssociationAction Unmarshall(JsonUnmarshallerContext context)
         {
             ReplaceNetworkAclAssociationAction unmarshalledObject = new ReplaceNetworkAclAssociationAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

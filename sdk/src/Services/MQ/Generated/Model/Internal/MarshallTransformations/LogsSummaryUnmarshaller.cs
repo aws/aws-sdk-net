@@ -57,6 +57,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         public LogsSummary Unmarshall(JsonUnmarshallerContext context)
         {
             LogsSummary unmarshalledObject = new LogsSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

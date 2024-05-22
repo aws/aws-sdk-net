@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public VPCDerivedInfoStatus Unmarshall(JsonUnmarshallerContext context)
         {
             VPCDerivedInfoStatus unmarshalledObject = new VPCDerivedInfoStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

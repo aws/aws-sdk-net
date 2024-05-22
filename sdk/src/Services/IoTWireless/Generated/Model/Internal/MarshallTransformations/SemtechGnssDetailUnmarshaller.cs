@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public SemtechGnssDetail Unmarshall(JsonUnmarshallerContext context)
         {
             SemtechGnssDetail unmarshalledObject = new SemtechGnssDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

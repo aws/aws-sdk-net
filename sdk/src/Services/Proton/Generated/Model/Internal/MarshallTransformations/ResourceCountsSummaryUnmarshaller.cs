@@ -57,6 +57,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         public ResourceCountsSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceCountsSummary unmarshalledObject = new ResourceCountsSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

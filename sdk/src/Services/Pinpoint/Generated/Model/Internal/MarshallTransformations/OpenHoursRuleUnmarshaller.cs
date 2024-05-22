@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public OpenHoursRule Unmarshall(JsonUnmarshallerContext context)
         {
             OpenHoursRule unmarshalledObject = new OpenHoursRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public DataQualityEvaluationRunAdditionalRunOptions Unmarshall(JsonUnmarshallerContext context)
         {
             DataQualityEvaluationRunAdditionalRunOptions unmarshalledObject = new DataQualityEvaluationRunAdditionalRunOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

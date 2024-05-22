@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public ComponentVersion Unmarshall(JsonUnmarshallerContext context)
         {
             ComponentVersion unmarshalledObject = new ComponentVersion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

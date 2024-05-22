@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public MeetingFeaturesConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             MeetingFeaturesConfiguration unmarshalledObject = new MeetingFeaturesConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

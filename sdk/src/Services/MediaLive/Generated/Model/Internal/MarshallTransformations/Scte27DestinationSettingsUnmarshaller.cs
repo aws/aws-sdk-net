@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public Scte27DestinationSettings Unmarshall(JsonUnmarshallerContext context)
         {
             Scte27DestinationSettings unmarshalledObject = new Scte27DestinationSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

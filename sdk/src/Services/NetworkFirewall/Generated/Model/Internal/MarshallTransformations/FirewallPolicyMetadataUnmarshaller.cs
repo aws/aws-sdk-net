@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public FirewallPolicyMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             FirewallPolicyMetadata unmarshalledObject = new FirewallPolicyMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

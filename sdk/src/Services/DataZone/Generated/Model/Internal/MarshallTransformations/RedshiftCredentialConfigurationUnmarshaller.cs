@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public RedshiftCredentialConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             RedshiftCredentialConfiguration unmarshalledObject = new RedshiftCredentialConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

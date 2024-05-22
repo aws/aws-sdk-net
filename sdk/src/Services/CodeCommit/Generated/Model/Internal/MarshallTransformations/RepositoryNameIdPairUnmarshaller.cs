@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public RepositoryNameIdPair Unmarshall(JsonUnmarshallerContext context)
         {
             RepositoryNameIdPair unmarshalledObject = new RepositoryNameIdPair();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

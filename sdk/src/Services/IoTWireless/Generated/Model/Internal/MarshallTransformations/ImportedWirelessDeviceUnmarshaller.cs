@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public ImportedWirelessDevice Unmarshall(JsonUnmarshallerContext context)
         {
             ImportedWirelessDevice unmarshalledObject = new ImportedWirelessDevice();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

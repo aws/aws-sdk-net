@@ -57,6 +57,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         public CountsSummary Unmarshall(JsonUnmarshallerContext context)
         {
             CountsSummary unmarshalledObject = new CountsSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public CustomPluginConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CustomPluginConfiguration unmarshalledObject = new CustomPluginConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

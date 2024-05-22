@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ModelDashboardModel Unmarshall(JsonUnmarshallerContext context)
         {
             ModelDashboardModel unmarshalledObject = new ModelDashboardModel();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

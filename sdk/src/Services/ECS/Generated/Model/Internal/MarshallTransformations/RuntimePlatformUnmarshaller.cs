@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public RuntimePlatform Unmarshall(JsonUnmarshallerContext context)
         {
             RuntimePlatform unmarshalledObject = new RuntimePlatform();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

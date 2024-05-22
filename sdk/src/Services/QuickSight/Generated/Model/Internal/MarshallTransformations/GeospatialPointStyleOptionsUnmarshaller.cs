@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public GeospatialPointStyleOptions Unmarshall(JsonUnmarshallerContext context)
         {
             GeospatialPointStyleOptions unmarshalledObject = new GeospatialPointStyleOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         public EdiPartyName Unmarshall(JsonUnmarshallerContext context)
         {
             EdiPartyName unmarshalledObject = new EdiPartyName();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

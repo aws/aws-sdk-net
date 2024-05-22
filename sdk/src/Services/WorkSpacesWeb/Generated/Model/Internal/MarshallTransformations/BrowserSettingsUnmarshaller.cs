@@ -57,6 +57,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         public BrowserSettings Unmarshall(JsonUnmarshallerContext context)
         {
             BrowserSettings unmarshalledObject = new BrowserSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public ArchiveStringToEvaluate Unmarshall(JsonUnmarshallerContext context)
         {
             ArchiveStringToEvaluate unmarshalledObject = new ArchiveStringToEvaluate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

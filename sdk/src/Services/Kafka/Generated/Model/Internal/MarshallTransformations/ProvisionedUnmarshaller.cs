@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public Provisioned Unmarshall(JsonUnmarshallerContext context)
         {
             Provisioned unmarshalledObject = new Provisioned();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

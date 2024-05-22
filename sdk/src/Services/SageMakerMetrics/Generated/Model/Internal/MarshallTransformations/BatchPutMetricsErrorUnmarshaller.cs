@@ -57,6 +57,8 @@ namespace Amazon.SageMakerMetrics.Model.Internal.MarshallTransformations
         public BatchPutMetricsError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchPutMetricsError unmarshalledObject = new BatchPutMetricsError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

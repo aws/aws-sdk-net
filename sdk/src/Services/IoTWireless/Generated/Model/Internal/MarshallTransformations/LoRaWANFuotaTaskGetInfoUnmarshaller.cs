@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public LoRaWANFuotaTaskGetInfo Unmarshall(JsonUnmarshallerContext context)
         {
             LoRaWANFuotaTaskGetInfo unmarshalledObject = new LoRaWANFuotaTaskGetInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

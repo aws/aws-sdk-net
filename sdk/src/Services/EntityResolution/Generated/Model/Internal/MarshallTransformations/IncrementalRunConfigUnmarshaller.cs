@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public IncrementalRunConfig Unmarshall(JsonUnmarshallerContext context)
         {
             IncrementalRunConfig unmarshalledObject = new IncrementalRunConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

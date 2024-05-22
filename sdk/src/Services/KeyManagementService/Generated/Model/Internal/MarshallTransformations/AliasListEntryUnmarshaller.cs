@@ -57,6 +57,8 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         public AliasListEntry Unmarshall(JsonUnmarshallerContext context)
         {
             AliasListEntry unmarshalledObject = new AliasListEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

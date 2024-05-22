@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public EncoderSettings Unmarshall(JsonUnmarshallerContext context)
         {
             EncoderSettings unmarshalledObject = new EncoderSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

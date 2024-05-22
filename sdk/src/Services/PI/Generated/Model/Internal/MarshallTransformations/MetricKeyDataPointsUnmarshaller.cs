@@ -57,6 +57,8 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         public MetricKeyDataPoints Unmarshall(JsonUnmarshallerContext context)
         {
             MetricKeyDataPoints unmarshalledObject = new MetricKeyDataPoints();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

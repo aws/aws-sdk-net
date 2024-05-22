@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public GraphQLRenderConfig Unmarshall(JsonUnmarshallerContext context)
         {
             GraphQLRenderConfig unmarshalledObject = new GraphQLRenderConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

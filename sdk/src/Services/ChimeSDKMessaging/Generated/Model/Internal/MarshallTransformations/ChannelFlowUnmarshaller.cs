@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public ChannelFlow Unmarshall(JsonUnmarshallerContext context)
         {
             ChannelFlow unmarshalledObject = new ChannelFlow();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

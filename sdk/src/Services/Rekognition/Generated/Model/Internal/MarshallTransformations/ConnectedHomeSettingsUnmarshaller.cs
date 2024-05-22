@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public ConnectedHomeSettings Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectedHomeSettings unmarshalledObject = new ConnectedHomeSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

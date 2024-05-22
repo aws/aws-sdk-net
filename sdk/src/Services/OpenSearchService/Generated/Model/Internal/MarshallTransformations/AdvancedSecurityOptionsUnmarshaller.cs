@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public AdvancedSecurityOptions Unmarshall(JsonUnmarshallerContext context)
         {
             AdvancedSecurityOptions unmarshalledObject = new AdvancedSecurityOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

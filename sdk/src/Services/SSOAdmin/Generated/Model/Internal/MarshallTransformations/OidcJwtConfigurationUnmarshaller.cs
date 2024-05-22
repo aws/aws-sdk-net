@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public OidcJwtConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             OidcJwtConfiguration unmarshalledObject = new OidcJwtConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

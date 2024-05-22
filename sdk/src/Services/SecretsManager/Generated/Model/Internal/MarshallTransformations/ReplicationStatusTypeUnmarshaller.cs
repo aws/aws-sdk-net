@@ -57,6 +57,8 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         public ReplicationStatusType Unmarshall(JsonUnmarshallerContext context)
         {
             ReplicationStatusType unmarshalledObject = new ReplicationStatusType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

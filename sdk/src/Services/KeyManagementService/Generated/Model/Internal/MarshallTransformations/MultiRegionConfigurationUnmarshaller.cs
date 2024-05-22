@@ -57,6 +57,8 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         public MultiRegionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             MultiRegionConfiguration unmarshalledObject = new MultiRegionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

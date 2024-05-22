@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public JobExecutionsRolloutConfig Unmarshall(JsonUnmarshallerContext context)
         {
             JobExecutionsRolloutConfig unmarshalledObject = new JobExecutionsRolloutConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

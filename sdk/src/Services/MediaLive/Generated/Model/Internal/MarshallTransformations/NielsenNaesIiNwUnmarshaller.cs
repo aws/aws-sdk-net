@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public NielsenNaesIiNw Unmarshall(JsonUnmarshallerContext context)
         {
             NielsenNaesIiNw unmarshalledObject = new NielsenNaesIiNw();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

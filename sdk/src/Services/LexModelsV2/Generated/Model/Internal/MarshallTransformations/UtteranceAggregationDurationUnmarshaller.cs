@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public UtteranceAggregationDuration Unmarshall(JsonUnmarshallerContext context)
         {
             UtteranceAggregationDuration unmarshalledObject = new UtteranceAggregationDuration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

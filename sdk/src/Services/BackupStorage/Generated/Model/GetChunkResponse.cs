@@ -52,7 +52,7 @@ namespace Amazon.BackupStorage.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return this._checksum != null;
+            return !string.IsNullOrEmpty(this._checksum);
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.BackupStorage.Model
         // Check to see if ChecksumAlgorithm property is set
         internal bool IsSetChecksumAlgorithm()
         {
-            return this._checksumAlgorithm != null;
+            return !string.IsNullOrEmpty(this._checksumAlgorithm);
         }
 
         /// <summary>

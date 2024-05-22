@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public OpenZFSNfsExport Unmarshall(JsonUnmarshallerContext context)
         {
             OpenZFSNfsExport unmarshalledObject = new OpenZFSNfsExport();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

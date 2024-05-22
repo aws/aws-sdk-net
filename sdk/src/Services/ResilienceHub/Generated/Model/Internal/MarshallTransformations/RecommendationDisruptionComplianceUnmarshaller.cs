@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public RecommendationDisruptionCompliance Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendationDisruptionCompliance unmarshalledObject = new RecommendationDisruptionCompliance();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

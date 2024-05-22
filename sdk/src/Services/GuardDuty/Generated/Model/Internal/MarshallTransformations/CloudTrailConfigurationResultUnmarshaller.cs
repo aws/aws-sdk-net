@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public CloudTrailConfigurationResult Unmarshall(JsonUnmarshallerContext context)
         {
             CloudTrailConfigurationResult unmarshalledObject = new CloudTrailConfigurationResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

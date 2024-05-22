@@ -57,6 +57,8 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         public ResourceIdPreference Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceIdPreference unmarshalledObject = new ResourceIdPreference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

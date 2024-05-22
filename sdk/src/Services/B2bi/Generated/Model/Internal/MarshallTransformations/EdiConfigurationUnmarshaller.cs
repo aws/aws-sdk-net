@@ -57,6 +57,8 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         public EdiConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EdiConfiguration unmarshalledObject = new EdiConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         public DomainSuggestion Unmarshall(JsonUnmarshallerContext context)
         {
             DomainSuggestion unmarshalledObject = new DomainSuggestion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

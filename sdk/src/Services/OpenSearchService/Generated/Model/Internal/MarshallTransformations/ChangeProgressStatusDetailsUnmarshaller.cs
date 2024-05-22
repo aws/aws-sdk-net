@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public ChangeProgressStatusDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ChangeProgressStatusDetails unmarshalledObject = new ChangeProgressStatusDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

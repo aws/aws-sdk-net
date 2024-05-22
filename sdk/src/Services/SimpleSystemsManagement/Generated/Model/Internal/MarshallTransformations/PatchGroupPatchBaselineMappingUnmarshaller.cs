@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public PatchGroupPatchBaselineMapping Unmarshall(JsonUnmarshallerContext context)
         {
             PatchGroupPatchBaselineMapping unmarshalledObject = new PatchGroupPatchBaselineMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

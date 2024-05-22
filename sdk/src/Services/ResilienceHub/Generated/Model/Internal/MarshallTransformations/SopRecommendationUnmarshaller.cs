@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public SopRecommendation Unmarshall(JsonUnmarshallerContext context)
         {
             SopRecommendation unmarshalledObject = new SopRecommendation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

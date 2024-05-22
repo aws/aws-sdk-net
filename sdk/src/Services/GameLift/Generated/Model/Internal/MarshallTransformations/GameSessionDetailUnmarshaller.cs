@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public GameSessionDetail Unmarshall(JsonUnmarshallerContext context)
         {
             GameSessionDetail unmarshalledObject = new GameSessionDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public RollingDateConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             RollingDateConfiguration unmarshalledObject = new RollingDateConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public S3DestinationSettings Unmarshall(JsonUnmarshallerContext context)
         {
             S3DestinationSettings unmarshalledObject = new S3DestinationSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

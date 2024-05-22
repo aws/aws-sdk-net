@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRdsDbSubnetGroup Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRdsDbSubnetGroup unmarshalledObject = new AwsRdsDbSubnetGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

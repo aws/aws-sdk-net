@@ -57,6 +57,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public ListGeofenceCollectionsResponseEntry Unmarshall(JsonUnmarshallerContext context)
         {
             ListGeofenceCollectionsResponseEntry unmarshalledObject = new ListGeofenceCollectionsResponseEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
         public FlexibleTimeWindow Unmarshall(JsonUnmarshallerContext context)
         {
             FlexibleTimeWindow unmarshalledObject = new FlexibleTimeWindow();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

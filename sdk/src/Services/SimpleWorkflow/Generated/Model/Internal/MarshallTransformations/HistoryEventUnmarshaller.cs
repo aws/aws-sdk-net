@@ -57,6 +57,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         public HistoryEvent Unmarshall(JsonUnmarshallerContext context)
         {
             HistoryEvent unmarshalledObject = new HistoryEvent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

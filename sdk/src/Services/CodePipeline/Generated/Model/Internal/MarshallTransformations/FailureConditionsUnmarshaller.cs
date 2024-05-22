@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public FailureConditions Unmarshall(JsonUnmarshallerContext context)
         {
             FailureConditions unmarshalledObject = new FailureConditions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

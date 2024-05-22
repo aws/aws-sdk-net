@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public PipeTargetBatchJobParameters Unmarshall(JsonUnmarshallerContext context)
         {
             PipeTargetBatchJobParameters unmarshalledObject = new PipeTargetBatchJobParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

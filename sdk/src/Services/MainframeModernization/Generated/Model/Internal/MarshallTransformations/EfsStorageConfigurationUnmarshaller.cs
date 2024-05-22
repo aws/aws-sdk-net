@@ -57,6 +57,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         public EfsStorageConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EfsStorageConfiguration unmarshalledObject = new EfsStorageConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

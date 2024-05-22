@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public DatasetImportJobSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DatasetImportJobSummary unmarshalledObject = new DatasetImportJobSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

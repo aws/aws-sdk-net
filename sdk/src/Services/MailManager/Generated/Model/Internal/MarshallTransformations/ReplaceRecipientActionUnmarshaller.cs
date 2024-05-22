@@ -57,6 +57,8 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public ReplaceRecipientAction Unmarshall(JsonUnmarshallerContext context)
         {
             ReplaceRecipientAction unmarshalledObject = new ReplaceRecipientAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

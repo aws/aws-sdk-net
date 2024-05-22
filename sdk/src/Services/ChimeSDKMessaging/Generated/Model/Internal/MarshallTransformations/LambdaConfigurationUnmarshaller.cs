@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public LambdaConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaConfiguration unmarshalledObject = new LambdaConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

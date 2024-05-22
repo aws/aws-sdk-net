@@ -57,6 +57,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         public ApplicationDPUSizes Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationDPUSizes unmarshalledObject = new ApplicationDPUSizes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

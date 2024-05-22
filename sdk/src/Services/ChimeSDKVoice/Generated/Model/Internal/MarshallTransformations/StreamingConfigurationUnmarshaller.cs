@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         public StreamingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             StreamingConfiguration unmarshalledObject = new StreamingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

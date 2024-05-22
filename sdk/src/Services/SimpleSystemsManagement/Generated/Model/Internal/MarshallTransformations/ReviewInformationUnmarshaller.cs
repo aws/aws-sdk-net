@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public ReviewInformation Unmarshall(JsonUnmarshallerContext context)
         {
             ReviewInformation unmarshalledObject = new ReviewInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

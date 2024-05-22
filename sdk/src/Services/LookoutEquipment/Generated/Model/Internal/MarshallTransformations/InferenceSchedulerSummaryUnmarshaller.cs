@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public InferenceSchedulerSummary Unmarshall(JsonUnmarshallerContext context)
         {
             InferenceSchedulerSummary unmarshalledObject = new InferenceSchedulerSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

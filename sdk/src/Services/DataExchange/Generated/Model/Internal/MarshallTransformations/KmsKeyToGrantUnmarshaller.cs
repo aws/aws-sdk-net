@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public KmsKeyToGrant Unmarshall(JsonUnmarshallerContext context)
         {
             KmsKeyToGrant unmarshalledObject = new KmsKeyToGrant();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

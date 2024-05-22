@@ -57,6 +57,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         public MappedResourceConfigurationListItem Unmarshall(JsonUnmarshallerContext context)
         {
             MappedResourceConfigurationListItem unmarshalledObject = new MappedResourceConfigurationListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

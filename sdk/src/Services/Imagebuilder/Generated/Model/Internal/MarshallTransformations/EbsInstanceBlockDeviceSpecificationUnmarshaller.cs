@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public EbsInstanceBlockDeviceSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             EbsInstanceBlockDeviceSpecification unmarshalledObject = new EbsInstanceBlockDeviceSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

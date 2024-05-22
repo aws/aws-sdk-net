@@ -57,6 +57,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public AdvancedBackupSetting Unmarshall(JsonUnmarshallerContext context)
         {
             AdvancedBackupSetting unmarshalledObject = new AdvancedBackupSetting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

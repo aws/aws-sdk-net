@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public AllowListSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AllowListSummary unmarshalledObject = new AllowListSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

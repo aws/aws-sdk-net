@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public ErrorHandlingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ErrorHandlingConfig unmarshalledObject = new ErrorHandlingConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

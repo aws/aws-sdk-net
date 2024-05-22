@@ -57,6 +57,8 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
         public DeviceEvent Unmarshall(JsonUnmarshallerContext context)
         {
             DeviceEvent unmarshalledObject = new DeviceEvent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

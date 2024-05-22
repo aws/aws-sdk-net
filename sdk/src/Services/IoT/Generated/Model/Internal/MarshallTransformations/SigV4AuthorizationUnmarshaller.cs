@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public SigV4Authorization Unmarshall(JsonUnmarshallerContext context)
         {
             SigV4Authorization unmarshalledObject = new SigV4Authorization();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         public ActiveDirectoryComputerAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             ActiveDirectoryComputerAttribute unmarshalledObject = new ActiveDirectoryComputerAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public JobWorkerExecutorConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             JobWorkerExecutorConfiguration unmarshalledObject = new JobWorkerExecutorConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

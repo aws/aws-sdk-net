@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public GitTagFilterCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             GitTagFilterCriteria unmarshalledObject = new GitTagFilterCriteria();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

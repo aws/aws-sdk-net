@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public ExecutionParameter Unmarshall(JsonUnmarshallerContext context)
         {
             ExecutionParameter unmarshalledObject = new ExecutionParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

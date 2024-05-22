@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public ChimeSdkMeetingConcatenationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ChimeSdkMeetingConcatenationConfiguration unmarshalledObject = new ChimeSdkMeetingConcatenationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

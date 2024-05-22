@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public RuntimeContext Unmarshall(JsonUnmarshallerContext context)
         {
             RuntimeContext unmarshalledObject = new RuntimeContext();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

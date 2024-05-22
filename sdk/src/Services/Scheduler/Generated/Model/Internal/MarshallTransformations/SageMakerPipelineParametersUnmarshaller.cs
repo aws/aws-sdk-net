@@ -57,6 +57,8 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
         public SageMakerPipelineParameters Unmarshall(JsonUnmarshallerContext context)
         {
             SageMakerPipelineParameters unmarshalledObject = new SageMakerPipelineParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         public MetricGoal Unmarshall(JsonUnmarshallerContext context)
         {
             MetricGoal unmarshalledObject = new MetricGoal();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         public InstanceOnboardingJobStatus Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceOnboardingJobStatus unmarshalledObject = new InstanceOnboardingJobStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

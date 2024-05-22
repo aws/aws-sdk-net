@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public ThingGroupMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             ThingGroupMetadata unmarshalledObject = new ThingGroupMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public ExpectedRoute Unmarshall(JsonUnmarshallerContext context)
         {
             ExpectedRoute unmarshalledObject = new ExpectedRoute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

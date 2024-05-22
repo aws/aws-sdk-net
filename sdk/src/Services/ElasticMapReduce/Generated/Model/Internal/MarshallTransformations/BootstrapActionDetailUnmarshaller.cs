@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public BootstrapActionDetail Unmarshall(JsonUnmarshallerContext context)
         {
             BootstrapActionDetail unmarshalledObject = new BootstrapActionDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

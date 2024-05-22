@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public UserIdentityInfoLite Unmarshall(JsonUnmarshallerContext context)
         {
             UserIdentityInfoLite unmarshalledObject = new UserIdentityInfoLite();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

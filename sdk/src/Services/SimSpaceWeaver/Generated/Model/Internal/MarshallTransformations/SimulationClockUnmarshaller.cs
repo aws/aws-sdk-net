@@ -57,6 +57,8 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
         public SimulationClock Unmarshall(JsonUnmarshallerContext context)
         {
             SimulationClock unmarshalledObject = new SimulationClock();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

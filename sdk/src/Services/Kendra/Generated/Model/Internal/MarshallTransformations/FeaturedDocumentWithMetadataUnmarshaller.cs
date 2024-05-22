@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public FeaturedDocumentWithMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             FeaturedDocumentWithMetadata unmarshalledObject = new FeaturedDocumentWithMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

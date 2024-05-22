@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         public MetricDefinitionRequest Unmarshall(JsonUnmarshallerContext context)
         {
             MetricDefinitionRequest unmarshalledObject = new MetricDefinitionRequest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

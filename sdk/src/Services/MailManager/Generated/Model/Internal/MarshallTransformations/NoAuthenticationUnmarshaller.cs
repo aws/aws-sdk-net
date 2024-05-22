@@ -57,6 +57,8 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public NoAuthentication Unmarshall(JsonUnmarshallerContext context)
         {
             NoAuthentication unmarshalledObject = new NoAuthentication();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

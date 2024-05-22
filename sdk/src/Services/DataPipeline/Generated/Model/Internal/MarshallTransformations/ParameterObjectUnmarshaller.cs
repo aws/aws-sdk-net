@@ -57,6 +57,8 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
         public ParameterObject Unmarshall(JsonUnmarshallerContext context)
         {
             ParameterObject unmarshalledObject = new ParameterObject();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

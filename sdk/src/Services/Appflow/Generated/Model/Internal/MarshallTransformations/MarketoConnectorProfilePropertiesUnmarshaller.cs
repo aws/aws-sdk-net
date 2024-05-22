@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public MarketoConnectorProfileProperties Unmarshall(JsonUnmarshallerContext context)
         {
             MarketoConnectorProfileProperties unmarshalledObject = new MarketoConnectorProfileProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

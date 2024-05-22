@@ -57,6 +57,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         public InTransitEncryptionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             InTransitEncryptionConfiguration unmarshalledObject = new InTransitEncryptionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

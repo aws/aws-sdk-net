@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AxisLinearScale Unmarshall(JsonUnmarshallerContext context)
         {
             AxisLinearScale unmarshalledObject = new AxisLinearScale();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

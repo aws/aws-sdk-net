@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public DerivedInformation Unmarshall(JsonUnmarshallerContext context)
         {
             DerivedInformation unmarshalledObject = new DerivedInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

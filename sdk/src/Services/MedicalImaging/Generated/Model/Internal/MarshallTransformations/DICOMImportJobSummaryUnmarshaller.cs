@@ -57,6 +57,8 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         public DICOMImportJobSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DICOMImportJobSummary unmarshalledObject = new DICOMImportJobSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

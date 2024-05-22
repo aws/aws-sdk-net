@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public PortfolioShareDetail Unmarshall(JsonUnmarshallerContext context)
         {
             PortfolioShareDetail unmarshalledObject = new PortfolioShareDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

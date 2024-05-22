@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsS3BucketWebsiteConfigurationRedirectTo Unmarshall(JsonUnmarshallerContext context)
         {
             AwsS3BucketWebsiteConfigurationRedirectTo unmarshalledObject = new AwsS3BucketWebsiteConfigurationRedirectTo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

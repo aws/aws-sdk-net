@@ -57,6 +57,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         public RecursiveShapesInputOutputNested2 Unmarshall(JsonUnmarshallerContext context)
         {
             RecursiveShapesInputOutputNested2 unmarshalledObject = new RecursiveShapesInputOutputNested2();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

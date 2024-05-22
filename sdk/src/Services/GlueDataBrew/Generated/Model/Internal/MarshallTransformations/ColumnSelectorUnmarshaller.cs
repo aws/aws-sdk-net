@@ -57,6 +57,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public ColumnSelector Unmarshall(JsonUnmarshallerContext context)
         {
             ColumnSelector unmarshalledObject = new ColumnSelector();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

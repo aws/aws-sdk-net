@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public ContactFlow Unmarshall(JsonUnmarshallerContext context)
         {
             ContactFlow unmarshalledObject = new ContactFlow();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

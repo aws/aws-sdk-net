@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public AggregateConformancePackCompliance Unmarshall(JsonUnmarshallerContext context)
         {
             AggregateConformancePackCompliance unmarshalledObject = new AggregateConformancePackCompliance();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

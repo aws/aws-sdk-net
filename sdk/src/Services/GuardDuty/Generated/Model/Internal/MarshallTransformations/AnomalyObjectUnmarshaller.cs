@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public AnomalyObject Unmarshall(JsonUnmarshallerContext context)
         {
             AnomalyObject unmarshalledObject = new AnomalyObject();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

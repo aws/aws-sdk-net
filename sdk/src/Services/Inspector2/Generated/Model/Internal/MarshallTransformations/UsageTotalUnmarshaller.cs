@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public UsageTotal Unmarshall(JsonUnmarshallerContext context)
         {
             UsageTotal unmarshalledObject = new UsageTotal();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

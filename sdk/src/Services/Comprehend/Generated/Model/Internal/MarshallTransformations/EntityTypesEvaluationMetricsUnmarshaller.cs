@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public EntityTypesEvaluationMetrics Unmarshall(JsonUnmarshallerContext context)
         {
             EntityTypesEvaluationMetrics unmarshalledObject = new EntityTypesEvaluationMetrics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

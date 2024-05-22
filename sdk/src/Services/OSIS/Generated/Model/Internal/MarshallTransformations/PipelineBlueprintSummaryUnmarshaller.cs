@@ -57,6 +57,8 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         public PipelineBlueprintSummary Unmarshall(JsonUnmarshallerContext context)
         {
             PipelineBlueprintSummary unmarshalledObject = new PipelineBlueprintSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

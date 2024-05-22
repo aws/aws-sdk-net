@@ -57,6 +57,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public EngineVersionInfo Unmarshall(JsonUnmarshallerContext context)
         {
             EngineVersionInfo unmarshalledObject = new EngineVersionInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

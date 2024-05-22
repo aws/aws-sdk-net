@@ -50,7 +50,7 @@ namespace Amazon.RestXmlProtocol.Model
         // Check to see if A property is set
         internal bool IsSetA()
         {
-            return this._a != null;
+            return !string.IsNullOrEmpty(this._a);
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.RestXmlProtocol.Model
         // Check to see if B property is set
         internal bool IsSetB()
         {
-            return this._b != null;
+            return !string.IsNullOrEmpty(this._b);
         }
 
         /// <summary>

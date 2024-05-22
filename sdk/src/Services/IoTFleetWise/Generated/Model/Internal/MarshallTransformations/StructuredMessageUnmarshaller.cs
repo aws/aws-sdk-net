@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public StructuredMessage Unmarshall(JsonUnmarshallerContext context)
         {
             StructuredMessage unmarshalledObject = new StructuredMessage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

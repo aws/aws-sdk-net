@@ -57,6 +57,8 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         public DataLakeAutoEnableNewAccountConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DataLakeAutoEnableNewAccountConfiguration unmarshalledObject = new DataLakeAutoEnableNewAccountConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         public DataReplicationMetadataOutput Unmarshall(JsonUnmarshallerContext context)
         {
             DataReplicationMetadataOutput unmarshalledObject = new DataReplicationMetadataOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

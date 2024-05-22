@@ -57,6 +57,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         public AutoScalingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AutoScalingConfiguration unmarshalledObject = new AutoScalingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

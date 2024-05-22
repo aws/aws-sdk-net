@@ -57,6 +57,8 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         public SequenceNumberRange Unmarshall(JsonUnmarshallerContext context)
         {
             SequenceNumberRange unmarshalledObject = new SequenceNumberRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

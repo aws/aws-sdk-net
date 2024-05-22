@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public DefaultSpaceSettings Unmarshall(JsonUnmarshallerContext context)
         {
             DefaultSpaceSettings unmarshalledObject = new DefaultSpaceSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

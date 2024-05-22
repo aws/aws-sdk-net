@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public JiraSelectedQuestionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             JiraSelectedQuestionConfiguration unmarshalledObject = new JiraSelectedQuestionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

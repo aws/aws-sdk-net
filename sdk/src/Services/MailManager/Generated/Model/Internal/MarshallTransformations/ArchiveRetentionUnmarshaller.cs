@@ -57,6 +57,8 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public ArchiveRetention Unmarshall(JsonUnmarshallerContext context)
         {
             ArchiveRetention unmarshalledObject = new ArchiveRetention();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

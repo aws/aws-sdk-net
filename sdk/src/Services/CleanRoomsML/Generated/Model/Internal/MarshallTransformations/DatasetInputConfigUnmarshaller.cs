@@ -57,6 +57,8 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         public DatasetInputConfig Unmarshall(JsonUnmarshallerContext context)
         {
             DatasetInputConfig unmarshalledObject = new DatasetInputConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

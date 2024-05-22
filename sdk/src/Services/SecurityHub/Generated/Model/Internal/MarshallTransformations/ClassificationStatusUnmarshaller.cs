@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public ClassificationStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ClassificationStatus unmarshalledObject = new ClassificationStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

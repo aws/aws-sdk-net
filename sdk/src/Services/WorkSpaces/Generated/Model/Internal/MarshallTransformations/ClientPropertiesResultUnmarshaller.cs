@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public ClientPropertiesResult Unmarshall(JsonUnmarshallerContext context)
         {
             ClientPropertiesResult unmarshalledObject = new ClientPropertiesResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

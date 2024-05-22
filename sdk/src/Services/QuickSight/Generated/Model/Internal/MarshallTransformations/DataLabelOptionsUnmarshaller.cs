@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DataLabelOptions Unmarshall(JsonUnmarshallerContext context)
         {
             DataLabelOptions unmarshalledObject = new DataLabelOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

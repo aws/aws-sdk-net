@@ -57,6 +57,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         public ParametricCloudWatchMonitoringConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ParametricCloudWatchMonitoringConfiguration unmarshalledObject = new ParametricCloudWatchMonitoringConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

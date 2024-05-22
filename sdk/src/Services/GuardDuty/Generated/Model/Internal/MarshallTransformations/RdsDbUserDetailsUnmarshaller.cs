@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public RdsDbUserDetails Unmarshall(JsonUnmarshallerContext context)
         {
             RdsDbUserDetails unmarshalledObject = new RdsDbUserDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

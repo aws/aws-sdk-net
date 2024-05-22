@@ -57,6 +57,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         public CloudWatchDimensionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CloudWatchDimensionConfiguration unmarshalledObject = new CloudWatchDimensionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

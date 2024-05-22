@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public S3DestinationAccessControl Unmarshall(JsonUnmarshallerContext context)
         {
             S3DestinationAccessControl unmarshalledObject = new S3DestinationAccessControl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

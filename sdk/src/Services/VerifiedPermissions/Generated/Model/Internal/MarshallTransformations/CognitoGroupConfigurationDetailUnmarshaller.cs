@@ -57,6 +57,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         public CognitoGroupConfigurationDetail Unmarshall(JsonUnmarshallerContext context)
         {
             CognitoGroupConfigurationDetail unmarshalledObject = new CognitoGroupConfigurationDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

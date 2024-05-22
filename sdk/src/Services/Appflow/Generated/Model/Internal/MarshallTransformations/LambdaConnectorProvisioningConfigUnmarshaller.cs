@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public LambdaConnectorProvisioningConfig Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaConnectorProvisioningConfig unmarshalledObject = new LambdaConnectorProvisioningConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public RegistrationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             RegistrationConfig unmarshalledObject = new RegistrationConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

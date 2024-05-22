@@ -57,6 +57,8 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
         public ScalingPlanResource Unmarshall(JsonUnmarshallerContext context)
         {
             ScalingPlanResource unmarshalledObject = new ScalingPlanResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

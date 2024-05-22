@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public AudioDolbyEDecode Unmarshall(JsonUnmarshallerContext context)
         {
             AudioDolbyEDecode unmarshalledObject = new AudioDolbyEDecode();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

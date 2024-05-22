@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public PipelineLockingSettings Unmarshall(JsonUnmarshallerContext context)
         {
             PipelineLockingSettings unmarshalledObject = new PipelineLockingSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

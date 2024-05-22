@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public ExternalMetricsPreference Unmarshall(JsonUnmarshallerContext context)
         {
             ExternalMetricsPreference unmarshalledObject = new ExternalMetricsPreference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

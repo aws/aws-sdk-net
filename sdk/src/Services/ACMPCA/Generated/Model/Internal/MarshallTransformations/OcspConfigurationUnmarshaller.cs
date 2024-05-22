@@ -57,6 +57,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         public OcspConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             OcspConfiguration unmarshalledObject = new OcspConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

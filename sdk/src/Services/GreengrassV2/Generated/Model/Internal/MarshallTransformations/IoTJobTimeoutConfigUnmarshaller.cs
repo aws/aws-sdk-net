@@ -57,6 +57,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         public IoTJobTimeoutConfig Unmarshall(JsonUnmarshallerContext context)
         {
             IoTJobTimeoutConfig unmarshalledObject = new IoTJobTimeoutConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public LogicalTableSource Unmarshall(JsonUnmarshallerContext context)
         {
             LogicalTableSource unmarshalledObject = new LogicalTableSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

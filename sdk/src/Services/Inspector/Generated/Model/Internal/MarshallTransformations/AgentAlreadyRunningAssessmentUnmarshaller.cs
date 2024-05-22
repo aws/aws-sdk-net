@@ -57,6 +57,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         public AgentAlreadyRunningAssessment Unmarshall(JsonUnmarshallerContext context)
         {
             AgentAlreadyRunningAssessment unmarshalledObject = new AgentAlreadyRunningAssessment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

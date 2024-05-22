@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public SelectAttributesActivity Unmarshall(JsonUnmarshallerContext context)
         {
             SelectAttributesActivity unmarshalledObject = new SelectAttributesActivity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

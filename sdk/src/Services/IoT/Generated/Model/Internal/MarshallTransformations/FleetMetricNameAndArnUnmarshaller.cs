@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public FleetMetricNameAndArn Unmarshall(JsonUnmarshallerContext context)
         {
             FleetMetricNameAndArn unmarshalledObject = new FleetMetricNameAndArn();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

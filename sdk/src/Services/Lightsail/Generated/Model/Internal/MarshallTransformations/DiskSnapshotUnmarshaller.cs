@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public DiskSnapshot Unmarshall(JsonUnmarshallerContext context)
         {
             DiskSnapshot unmarshalledObject = new DiskSnapshot();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public SearchSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SearchSummary unmarshalledObject = new SearchSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

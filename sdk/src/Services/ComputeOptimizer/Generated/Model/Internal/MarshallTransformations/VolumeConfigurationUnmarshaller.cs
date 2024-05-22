@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public VolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             VolumeConfiguration unmarshalledObject = new VolumeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

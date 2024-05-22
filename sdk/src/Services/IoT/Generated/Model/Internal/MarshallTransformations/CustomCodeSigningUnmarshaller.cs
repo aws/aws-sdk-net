@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public CustomCodeSigning Unmarshall(JsonUnmarshallerContext context)
         {
             CustomCodeSigning unmarshalledObject = new CustomCodeSigning();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

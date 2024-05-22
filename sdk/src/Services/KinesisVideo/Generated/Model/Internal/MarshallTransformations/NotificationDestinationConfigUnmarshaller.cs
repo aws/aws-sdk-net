@@ -57,6 +57,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         public NotificationDestinationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             NotificationDestinationConfig unmarshalledObject = new NotificationDestinationConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

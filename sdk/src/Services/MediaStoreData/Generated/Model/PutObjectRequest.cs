@@ -83,7 +83,7 @@ namespace Amazon.MediaStoreData.Model
         // Check to see if CacheControl property is set
         internal bool IsSetCacheControl()
         {
-            return this._cacheControl != null;
+            return !string.IsNullOrEmpty(this._cacheControl);
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.MediaStoreData.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.MediaStoreData.Model
         // Check to see if StorageClass property is set
         internal bool IsSetStorageClass()
         {
-            return this._storageClass != null;
+            return !string.IsNullOrEmpty(this._storageClass);
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Amazon.MediaStoreData.Model
         // Check to see if UploadAvailability property is set
         internal bool IsSetUploadAvailability()
         {
-            return this._uploadAvailability != null;
+            return !string.IsNullOrEmpty(this._uploadAvailability);
         }
 
         /// <summary>

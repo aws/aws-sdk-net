@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRdsDbClusterSnapshotDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRdsDbClusterSnapshotDetails unmarshalledObject = new AwsRdsDbClusterSnapshotDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

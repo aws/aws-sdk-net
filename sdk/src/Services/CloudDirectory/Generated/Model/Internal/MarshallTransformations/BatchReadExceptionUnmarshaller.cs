@@ -57,6 +57,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         public BatchReadException Unmarshall(JsonUnmarshallerContext context)
         {
             BatchReadException unmarshalledObject = new BatchReadException();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

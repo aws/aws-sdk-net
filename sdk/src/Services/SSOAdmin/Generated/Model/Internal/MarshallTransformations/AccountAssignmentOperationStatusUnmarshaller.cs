@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public AccountAssignmentOperationStatus Unmarshall(JsonUnmarshallerContext context)
         {
             AccountAssignmentOperationStatus unmarshalledObject = new AccountAssignmentOperationStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

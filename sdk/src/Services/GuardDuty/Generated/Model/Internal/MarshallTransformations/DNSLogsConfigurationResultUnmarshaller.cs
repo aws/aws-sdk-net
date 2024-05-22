@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public DNSLogsConfigurationResult Unmarshall(JsonUnmarshallerContext context)
         {
             DNSLogsConfigurationResult unmarshalledObject = new DNSLogsConfigurationResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

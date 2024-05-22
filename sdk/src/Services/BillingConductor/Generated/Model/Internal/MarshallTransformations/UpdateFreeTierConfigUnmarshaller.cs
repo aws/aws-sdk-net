@@ -57,6 +57,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         public UpdateFreeTierConfig Unmarshall(JsonUnmarshallerContext context)
         {
             UpdateFreeTierConfig unmarshalledObject = new UpdateFreeTierConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

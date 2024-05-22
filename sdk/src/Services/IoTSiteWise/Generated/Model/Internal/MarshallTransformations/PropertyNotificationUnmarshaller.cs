@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public PropertyNotification Unmarshall(JsonUnmarshallerContext context)
         {
             PropertyNotification unmarshalledObject = new PropertyNotification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

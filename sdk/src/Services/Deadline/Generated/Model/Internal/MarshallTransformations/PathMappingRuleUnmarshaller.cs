@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public PathMappingRule Unmarshall(JsonUnmarshallerContext context)
         {
             PathMappingRule unmarshalledObject = new PathMappingRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public HubContentInfo Unmarshall(JsonUnmarshallerContext context)
         {
             HubContentInfo unmarshalledObject = new HubContentInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

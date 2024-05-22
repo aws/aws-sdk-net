@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public InsightCategorySpecificSummary Unmarshall(JsonUnmarshallerContext context)
         {
             InsightCategorySpecificSummary unmarshalledObject = new InsightCategorySpecificSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

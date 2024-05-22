@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public PosixUser Unmarshall(JsonUnmarshallerContext context)
         {
             PosixUser unmarshalledObject = new PosixUser();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

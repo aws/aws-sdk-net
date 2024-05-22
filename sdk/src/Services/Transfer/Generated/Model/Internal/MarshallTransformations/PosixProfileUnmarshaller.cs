@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public PosixProfile Unmarshall(JsonUnmarshallerContext context)
         {
             PosixProfile unmarshalledObject = new PosixProfile();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

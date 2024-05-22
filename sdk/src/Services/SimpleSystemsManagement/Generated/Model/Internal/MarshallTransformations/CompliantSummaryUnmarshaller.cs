@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public CompliantSummary Unmarshall(JsonUnmarshallerContext context)
         {
             CompliantSummary unmarshalledObject = new CompliantSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

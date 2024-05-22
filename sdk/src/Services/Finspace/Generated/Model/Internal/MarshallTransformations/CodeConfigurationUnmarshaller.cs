@@ -57,6 +57,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public CodeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CodeConfiguration unmarshalledObject = new CodeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

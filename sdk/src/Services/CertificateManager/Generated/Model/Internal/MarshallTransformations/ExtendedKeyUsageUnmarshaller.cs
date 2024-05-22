@@ -57,6 +57,8 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         public ExtendedKeyUsage Unmarshall(JsonUnmarshallerContext context)
         {
             ExtendedKeyUsage unmarshalledObject = new ExtendedKeyUsage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

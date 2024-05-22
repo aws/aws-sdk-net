@@ -57,6 +57,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         public StreamConfigurationSessionStorage Unmarshall(JsonUnmarshallerContext context)
         {
             StreamConfigurationSessionStorage unmarshalledObject = new StreamConfigurationSessionStorage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

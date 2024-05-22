@@ -57,6 +57,8 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
         public LogPattern Unmarshall(JsonUnmarshallerContext context)
         {
             LogPattern unmarshalledObject = new LogPattern();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

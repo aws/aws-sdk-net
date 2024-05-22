@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public MariaDbDataProviderSettings Unmarshall(JsonUnmarshallerContext context)
         {
             MariaDbDataProviderSettings unmarshalledObject = new MariaDbDataProviderSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

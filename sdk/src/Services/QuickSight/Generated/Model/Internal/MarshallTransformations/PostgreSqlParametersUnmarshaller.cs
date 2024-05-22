@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public PostgreSqlParameters Unmarshall(JsonUnmarshallerContext context)
         {
             PostgreSqlParameters unmarshalledObject = new PostgreSqlParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

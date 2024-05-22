@@ -57,6 +57,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         public FolderConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             FolderConfiguration unmarshalledObject = new FolderConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public LambdaExecutorConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaExecutorConfiguration unmarshalledObject = new LambdaExecutorConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

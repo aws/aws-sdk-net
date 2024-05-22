@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public VoiceChannelResponse Unmarshall(JsonUnmarshallerContext context)
         {
             VoiceChannelResponse unmarshalledObject = new VoiceChannelResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

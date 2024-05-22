@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public SessionSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             SessionSpecification unmarshalledObject = new SessionSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

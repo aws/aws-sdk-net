@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public GatewayListItem Unmarshall(JsonUnmarshallerContext context)
         {
             GatewayListItem unmarshalledObject = new GatewayListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

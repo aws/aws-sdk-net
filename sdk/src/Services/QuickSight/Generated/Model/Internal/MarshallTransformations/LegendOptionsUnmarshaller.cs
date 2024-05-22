@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public LegendOptions Unmarshall(JsonUnmarshallerContext context)
         {
             LegendOptions unmarshalledObject = new LegendOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

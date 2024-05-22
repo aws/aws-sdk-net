@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public ResourceDrift Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceDrift unmarshalledObject = new ResourceDrift();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

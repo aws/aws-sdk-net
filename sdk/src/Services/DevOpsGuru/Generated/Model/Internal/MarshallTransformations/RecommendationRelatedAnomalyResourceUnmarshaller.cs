@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public RecommendationRelatedAnomalyResource Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendationRelatedAnomalyResource unmarshalledObject = new RecommendationRelatedAnomalyResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

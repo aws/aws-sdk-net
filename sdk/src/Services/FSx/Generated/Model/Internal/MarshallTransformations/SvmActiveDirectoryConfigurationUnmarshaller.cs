@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public SvmActiveDirectoryConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SvmActiveDirectoryConfiguration unmarshalledObject = new SvmActiveDirectoryConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

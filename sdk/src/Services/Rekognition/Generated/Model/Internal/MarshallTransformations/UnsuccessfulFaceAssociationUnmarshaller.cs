@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public UnsuccessfulFaceAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             UnsuccessfulFaceAssociation unmarshalledObject = new UnsuccessfulFaceAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public TemporalFilterSettings Unmarshall(JsonUnmarshallerContext context)
         {
             TemporalFilterSettings unmarshalledObject = new TemporalFilterSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

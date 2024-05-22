@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public S3ExpressDirectoryBucketConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             S3ExpressDirectoryBucketConfiguration unmarshalledObject = new S3ExpressDirectoryBucketConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public SegmentDimensions Unmarshall(JsonUnmarshallerContext context)
         {
             SegmentDimensions unmarshalledObject = new SegmentDimensions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

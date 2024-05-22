@@ -57,6 +57,8 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         public ResourceSyncEvent Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceSyncEvent unmarshalledObject = new ResourceSyncEvent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

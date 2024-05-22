@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public ConnectorEntityField Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectorEntityField unmarshalledObject = new ConnectorEntityField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

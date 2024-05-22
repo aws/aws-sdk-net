@@ -57,6 +57,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         public ListDomainItem Unmarshall(JsonUnmarshallerContext context)
         {
             ListDomainItem unmarshalledObject = new ListDomainItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

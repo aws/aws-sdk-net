@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public VersionControlInfo Unmarshall(JsonUnmarshallerContext context)
         {
             VersionControlInfo unmarshalledObject = new VersionControlInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

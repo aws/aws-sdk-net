@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public NoiseReducerTemporalFilterSettings Unmarshall(JsonUnmarshallerContext context)
         {
             NoiseReducerTemporalFilterSettings unmarshalledObject = new NoiseReducerTemporalFilterSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

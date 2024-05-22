@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public UtteranceLevelTestResultItem Unmarshall(JsonUnmarshallerContext context)
         {
             UtteranceLevelTestResultItem unmarshalledObject = new UtteranceLevelTestResultItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

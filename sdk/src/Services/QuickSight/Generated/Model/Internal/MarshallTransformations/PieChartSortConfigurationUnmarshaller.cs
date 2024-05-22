@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public PieChartSortConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             PieChartSortConfiguration unmarshalledObject = new PieChartSortConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

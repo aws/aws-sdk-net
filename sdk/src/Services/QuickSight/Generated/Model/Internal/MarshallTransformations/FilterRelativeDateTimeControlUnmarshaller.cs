@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FilterRelativeDateTimeControl Unmarshall(JsonUnmarshallerContext context)
         {
             FilterRelativeDateTimeControl unmarshalledObject = new FilterRelativeDateTimeControl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

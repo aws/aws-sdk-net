@@ -57,6 +57,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         public TestGridSession Unmarshall(JsonUnmarshallerContext context)
         {
             TestGridSession unmarshalledObject = new TestGridSession();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

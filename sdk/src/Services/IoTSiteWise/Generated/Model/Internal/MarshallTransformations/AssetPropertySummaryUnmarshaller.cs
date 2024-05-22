@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public AssetPropertySummary Unmarshall(JsonUnmarshallerContext context)
         {
             AssetPropertySummary unmarshalledObject = new AssetPropertySummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

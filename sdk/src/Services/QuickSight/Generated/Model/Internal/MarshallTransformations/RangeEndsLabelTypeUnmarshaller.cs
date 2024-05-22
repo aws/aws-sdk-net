@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public RangeEndsLabelType Unmarshall(JsonUnmarshallerContext context)
         {
             RangeEndsLabelType unmarshalledObject = new RangeEndsLabelType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

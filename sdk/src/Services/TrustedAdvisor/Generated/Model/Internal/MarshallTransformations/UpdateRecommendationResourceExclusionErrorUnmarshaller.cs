@@ -57,6 +57,8 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
         public UpdateRecommendationResourceExclusionError Unmarshall(JsonUnmarshallerContext context)
         {
             UpdateRecommendationResourceExclusionError unmarshalledObject = new UpdateRecommendationResourceExclusionError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

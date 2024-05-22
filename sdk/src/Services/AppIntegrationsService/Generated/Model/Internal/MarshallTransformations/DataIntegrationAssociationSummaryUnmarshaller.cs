@@ -57,6 +57,8 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         public DataIntegrationAssociationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DataIntegrationAssociationSummary unmarshalledObject = new DataIntegrationAssociationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public RecipeReference Unmarshall(JsonUnmarshallerContext context)
         {
             RecipeReference unmarshalledObject = new RecipeReference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

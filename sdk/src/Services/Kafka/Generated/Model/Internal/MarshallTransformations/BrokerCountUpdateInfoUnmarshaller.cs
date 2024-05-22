@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public BrokerCountUpdateInfo Unmarshall(JsonUnmarshallerContext context)
         {
             BrokerCountUpdateInfo unmarshalledObject = new BrokerCountUpdateInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

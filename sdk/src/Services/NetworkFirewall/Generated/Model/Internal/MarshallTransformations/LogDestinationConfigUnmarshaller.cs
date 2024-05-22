@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public LogDestinationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             LogDestinationConfig unmarshalledObject = new LogDestinationConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsDynamoDbTableProjection Unmarshall(JsonUnmarshallerContext context)
         {
             AwsDynamoDbTableProjection unmarshalledObject = new AwsDynamoDbTableProjection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

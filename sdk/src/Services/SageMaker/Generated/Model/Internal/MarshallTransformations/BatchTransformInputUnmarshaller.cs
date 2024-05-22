@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public BatchTransformInput Unmarshall(JsonUnmarshallerContext context)
         {
             BatchTransformInput unmarshalledObject = new BatchTransformInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

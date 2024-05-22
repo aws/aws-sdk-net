@@ -57,6 +57,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         public WorkflowExecutionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             WorkflowExecutionConfiguration unmarshalledObject = new WorkflowExecutionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

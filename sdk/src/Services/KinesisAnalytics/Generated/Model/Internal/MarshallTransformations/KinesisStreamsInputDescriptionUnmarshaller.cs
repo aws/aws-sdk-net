@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         public KinesisStreamsInputDescription Unmarshall(JsonUnmarshallerContext context)
         {
             KinesisStreamsInputDescription unmarshalledObject = new KinesisStreamsInputDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

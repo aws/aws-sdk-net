@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         public GuardrailTrace Unmarshall(JsonUnmarshallerContext context)
         {
             GuardrailTrace unmarshalledObject = new GuardrailTrace();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

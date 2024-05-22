@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public TimeSeriesForecastingJobConfig Unmarshall(JsonUnmarshallerContext context)
         {
             TimeSeriesForecastingJobConfig unmarshalledObject = new TimeSeriesForecastingJobConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

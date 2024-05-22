@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AuthorizedTargetsByService Unmarshall(JsonUnmarshallerContext context)
         {
             AuthorizedTargetsByService unmarshalledObject = new AuthorizedTargetsByService();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

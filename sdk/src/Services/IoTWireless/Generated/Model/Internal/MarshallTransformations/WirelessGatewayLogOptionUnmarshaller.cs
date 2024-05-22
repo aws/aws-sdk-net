@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public WirelessGatewayLogOption Unmarshall(JsonUnmarshallerContext context)
         {
             WirelessGatewayLogOption unmarshalledObject = new WirelessGatewayLogOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

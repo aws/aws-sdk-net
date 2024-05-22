@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public PredefinedHierarchy Unmarshall(JsonUnmarshallerContext context)
         {
             PredefinedHierarchy unmarshalledObject = new PredefinedHierarchy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

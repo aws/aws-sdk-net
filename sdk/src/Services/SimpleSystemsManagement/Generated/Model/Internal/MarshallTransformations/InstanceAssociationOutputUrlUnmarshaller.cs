@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public InstanceAssociationOutputUrl Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceAssociationOutputUrl unmarshalledObject = new InstanceAssociationOutputUrl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
