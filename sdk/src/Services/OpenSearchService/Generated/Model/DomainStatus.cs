@@ -277,7 +277,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainEndpointV2HostedZoneId. 
         /// <para>
-        /// The DualStack Hosted Zone Id for the domain. 
+        /// The dual stack hosted zone ID for the domain. 
         /// </para>
         /// </summary>
         public string DomainEndpointV2HostedZoneId

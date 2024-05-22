@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchService.Model
         private DataSourceType _dataSourceType;
         private string _description;
         private string _name;
+        private DataSourceStatus _status;
 
         /// <summary>
         /// Gets and sets the property DataSourceType. 
@@ -92,6 +93,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the data source.
+        /// </para>
+        /// </summary>
+        public DataSourceStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }
