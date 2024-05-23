@@ -32,7 +32,7 @@ namespace Amazon.ControlCatalog
     public partial class AmazonControlCatalogConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ControlCatalog", "3.7.300.23");
+            InternalSDKUtils.BuildUserAgentString("ControlCatalog", "3.7.300.24");
 
         private string _userAgent = UserAgentString;
         ///<summary>

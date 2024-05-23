@@ -1,3 +1,13 @@
+### 3.7.817.0 (2024-05-23 18:14 UTC)
+* EMRServerless (3.7.303.0)
+	* This release adds the capability to run interactive workloads using Apache Livy Endpoint.
+* OpsWorks (3.7.300.95)
+	* Documentation-only update for OpsWorks Stacks.
+* Core 3.7.304.5
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.816.0 (2024-05-22 18:18 UTC)
 * Chatbot (3.7.301.0)
 	* This change adds support for tagging Chatbot configurations.
