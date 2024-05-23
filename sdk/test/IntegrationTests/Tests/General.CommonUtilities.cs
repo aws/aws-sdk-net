@@ -25,7 +25,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
         public static void SetClockSkewCorrection(TimeSpan value)
         {
-            var property = typeof(CorrectClockSkew).GetProperty("GlobalClockCorrection", BindingFlags.Static | BindingFlags.NonPublic);
+            var property = typeof(AWSConfigs).GetProperty("ClockOffset", BindingFlags.Static | BindingFlags.Public);
             property.SetValue(null, value);
         }
     }

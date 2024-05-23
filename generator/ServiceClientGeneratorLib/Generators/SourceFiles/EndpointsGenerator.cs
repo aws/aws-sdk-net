@@ -89,7 +89,7 @@ namespace Amazon
             this.Write("\", @\"");
             
             #line 38 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.RegionRegex));
+            this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.PartitionRegionRegex));
             
             #line default
             #line hidden
@@ -153,7 +153,7 @@ namespace Amazon
             this.Write("\", @\"");
             
             #line 44 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.RegionRegex));
+            this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.PartitionRegionRegex));
             
             #line default
             #line hidden

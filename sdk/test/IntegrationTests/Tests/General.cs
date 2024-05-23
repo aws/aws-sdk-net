@@ -813,17 +813,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 context.TestAction();
 
 #pragma warning disable CS0618 // Type or member is obsolete
-                Assert.IsTrue(AWSConfigs.ClockOffset == TimeSpan.Zero);             
+                Assert.IsTrue(AWSConfigs.ClockOffset == TimeSpan.Zero);
 
                 SetClockSkewCorrection(IncorrectPositiveClockSkewOffset);
                 context.TestAction();
 #pragma warning disable CS0618 // Type or member is obsolete
-                Assert.AreNotEqual(IncorrectPositiveClockSkewOffset, AWSConfigs.ClockOffset);
+                Assert.AreEqual(IncorrectPositiveClockSkewOffset, AWSConfigs.ClockOffset);
 
                 SetClockSkewCorrection(IncorrectNegativeClockSkewOffset);
                 context.TestAction();
 #pragma warning disable CS0618 // Type or member is obsolete
-                Assert.AreNotEqual(IncorrectPositiveClockSkewOffset, AWSConfigs.ClockOffset);
+                Assert.AreEqual(IncorrectNegativeClockSkewOffset, AWSConfigs.ClockOffset);
 
                 Console.WriteLine("Simulating positive clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);
