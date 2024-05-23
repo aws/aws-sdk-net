@@ -300,7 +300,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property ElasticIp. 
         /// <para>
         /// The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP address </a>.
+        /// IP address</a>.
         /// </para>
         /// </summary>
         public string ElasticIp
@@ -318,8 +318,17 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Hostname. 
         /// <para>
-        /// The instance host name.
+        /// The instance host name. The following are character limits for instance host names.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Linux-based instances: 63 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Windows-based instances: 15 characters
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Hostname
         {
@@ -355,15 +364,15 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property InstallUpdatesOnBoot. 
         /// <para>
         /// Whether to install operating system and package updates when the instance boots. The
-        /// default value is <c>true</c>. If this value is set to <c>false</c>, you must then
-        /// update your instances manually by using <a>CreateDeployment</a> to run the <c>update_dependencies</c>
+        /// default value is <c>true</c>. If this value is set to <c>false</c>, you must update
+        /// instances manually by using <a>CreateDeployment</a> to run the <c>update_dependencies</c>
         /// stack command or by manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu)
         /// on the instances. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// We strongly recommend using the default value of <c>true</c>, to ensure that your
-        /// instances have the latest security updates.
+        /// We strongly recommend using the default value of <c>true</c> to ensure that your instances
+        /// have the latest security updates.
         /// </para>
         ///  </note>
         /// </summary>
@@ -600,7 +609,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ReportedAgentVersion. 
         /// <para>
-        /// The instance's reported AWS OpsWorks Stacks agent version.
+        /// The instance's reported OpsWorks Stacks agent version.
         /// </para>
         /// </summary>
         public string ReportedAgentVersion

@@ -69,7 +69,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The new name.
+        /// The new name. Volume names can be a maximum of 128 characters.
         /// </para>
         /// </summary>
         public string Name

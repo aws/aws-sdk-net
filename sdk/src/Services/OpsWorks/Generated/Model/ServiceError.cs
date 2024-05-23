@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Describes an AWS OpsWorks Stacks service error.
+    /// Describes an OpsWorks Stacks service error.
     /// </summary>
     public partial class ServiceError
     {
