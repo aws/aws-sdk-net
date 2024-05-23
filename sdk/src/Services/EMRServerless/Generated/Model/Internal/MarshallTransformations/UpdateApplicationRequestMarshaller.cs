@@ -139,6 +139,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetInteractiveConfiguration())
+                {
+                    context.Writer.WritePropertyName("interactiveConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InteractiveConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InteractiveConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaximumCapacity())
                 {
                     context.Writer.WritePropertyName("maximumCapacity");
