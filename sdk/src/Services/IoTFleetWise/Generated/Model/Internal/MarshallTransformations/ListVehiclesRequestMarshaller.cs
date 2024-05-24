@@ -69,6 +69,28 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAttributeNames())
+                {
+                    context.Writer.WritePropertyName("attributeNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAttributeNamesListValue in publicRequest.AttributeNames)
+                    {
+                            context.Writer.Write(publicRequestAttributeNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetAttributeValues())
+                {
+                    context.Writer.WritePropertyName("attributeValues");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAttributeValuesListValue in publicRequest.AttributeValues)
+                    {
+                            context.Writer.Write(publicRequestAttributeValuesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
