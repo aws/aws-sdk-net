@@ -44,6 +44,17 @@ namespace ServiceClientGenerator
             this.PropertyModifier = null;
             this.PropertyInjector = propertyInjector;
         }
+        
+        public Member(ServiceModel model, Shape owningShape, JsonData originalMember, string name, string defaultMarshallName, CustomizationsModel.PropertyInjector propertyInjector)
+                        : base(model, propertyInjector.Data)
+        {
+            this.OwningShape = owningShape;
+            this.OriginalMember = originalMember;
+            _name = name;
+            _defaultMarshallName = defaultMarshallName;
+            this.PropertyModifier = null;
+            this.PropertyInjector = propertyInjector;
+        }
 
         public Member(ServiceModel model, Shape owningShape, string name, string defaultMarshallName, JsonData data, CustomizationsModel.PropertyModifier propertyModifier)
             : base(model, data)
@@ -56,6 +67,11 @@ namespace ServiceClientGenerator
         }
 
         public Shape OwningShape { get; protected set; }
+
+        /// <summary>
+        /// If a member is excluded and injected with another member. The OriginalMember represents the JsonData of the original excluded member.
+        /// </summary>
+        public JsonData OriginalMember { get; protected set; }
 
         // injected members are not subject to renaming, exclusion etc
         public bool IsInjected
@@ -1185,7 +1201,8 @@ namespace ServiceClientGenerator
         {
             get
             {
-                var parameter = data.SafeGet("contextParam");
+                JsonData parameter;
+                parameter = this.OriginalMember == null ? data.SafeGet("contextParam") : this.OriginalMember.SafeGet("contextParam");
                 return parameter == null ? null : new ContextParameter { name = parameter.SafeGetString("name") };
             }
         }

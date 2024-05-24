@@ -364,7 +364,19 @@ namespace ServiceClientGenerator
                     var injectedProperties = shapeModifier.InjectedPropertyNames;
                     foreach (var p in injectedProperties)
                     {
-                        map.Add(new Member(this.model, this, p, p, shapeModifier.InjectedPropertyData(p)));
+                        var injectedPropertyData = shapeModifier.InjectedPropertyData(p);
+                        JsonData originalMember;
+                        if (injectedPropertyData.Data[CustomizationsModel.OriginalMemberKey] != null)
+                        {
+                            var shapeData = this.model.FindShapeData(this.Name);
+                            originalMember = shapeData["members"][injectedPropertyData.Data[CustomizationsModel.OriginalMemberKey].ToString()];
+                            map.Add(new Member(this.model, this, originalMember, p, p, shapeModifier.InjectedPropertyData(p)));
+                        }
+                        else
+                        {
+                            map.Add(new Member(this.model, this, p, p, shapeModifier.InjectedPropertyData(p)));
+                        }
+
                     }
                 }
 
