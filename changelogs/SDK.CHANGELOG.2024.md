@@ -1,3 +1,11 @@
+### 3.7.818.0 (2024-05-24 18:38 UTC)
+* DynamoDBv2 (3.7.303.12)
+	* Documentation only updates for DynamoDB.
+* IoTFleetWise (3.7.304.0)
+	* AWS IoT FleetWise now supports listing vehicles with attributes filter, ListVehicles API is updated to support additional attributes filter.
+* ManagedBlockchain (3.7.301.88)
+	* This is a minor documentation update to address the impact of the shut down of the Goerli and Polygon networks.
+
 ### 3.7.817.0 (2024-05-23 18:14 UTC)
 * EMRServerless (3.7.303.0)
 	* This release adds the capability to run interactive workloads using Apache Livy Endpoint.
