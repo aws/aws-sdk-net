@@ -219,8 +219,18 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Item is identified by its hash primary key.
         /// </summary>
         /// <param name="hashKey">Hash key of the item to delete.</param>
+        public void AddDeleteKey(object hashKey)
+        {
+            AddDeleteKey(hashKey, conditionExpression: null);
+        }
+
+        /// <summary>
+        /// Add a single item to be deleted in the current transaction operation.
+        /// Item is identified by its hash primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete.</param>
         /// <param name="conditionExpression">Condition to check before the operation.</param>
-        public void AddDeleteKey(object hashKey, Expression conditionExpression = null)
+        public void AddDeleteKey(object hashKey, Expression conditionExpression)
         {
             AddDeleteKey(hashKey, rangeKey: null, conditionExpression);
         }
@@ -231,8 +241,19 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="hashKey">Hash key of the item to delete.</param>
         /// <param name="rangeKey">Range key of the item to delete.</param>
+        public void AddDeleteKey(object hashKey, object rangeKey)
+        {
+            AddDeleteKey(hashKey, rangeKey, conditionExpression: null);
+        }
+
+        /// <summary>
+        /// Add a single item to be deleted in the current transaction operation.
+        /// Item is identified by its hash-and-range primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete.</param>
+        /// <param name="rangeKey">Range key of the item to delete.</param>
         /// <param name="conditionExpression">Condition to check before the operation.</param>
-        public void AddDeleteKey(object hashKey, object rangeKey, Expression conditionExpression = null)
+        public void AddDeleteKey(object hashKey, object rangeKey, Expression conditionExpression)
         {
             var operationConfig = conditionExpression != null
                 ? new TransactWriteItemOperationConfig
