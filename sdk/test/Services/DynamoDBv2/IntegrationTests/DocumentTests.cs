@@ -1444,6 +1444,44 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             {
                 var transactWrite = hashTable.CreateTransactWrite();
+                AssertExtensions.ExpectException<ArgumentException>(() => transactWrite.AddKeyToUpdate(hashKey: 7001,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #garbage = :garbage",
+                        ExpressionAttributeNames = { ["#garbage"] = "Garbage" },
+                        ExpressionAttributeValues = { [":garbage"] = "asdf" }
+                    },
+                    new TransactWriteItemOperationConfig
+                    {
+                        ConditionalExpression = new Expression
+                        {
+                            ExpressionStatement = "#garbage <> :garbage",
+                            ExpressionAttributeNames = { ["#garbage"] = "Garbage2" },
+                            ExpressionAttributeValues = { [":garbage"] = "asdf" }
+                        },
+                        ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                    }));
+                AssertExtensions.ExpectException<ArgumentException>(() => transactWrite.AddKeyToUpdate(hashKey: 7001,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #garbage = :garbage",
+                        ExpressionAttributeNames = { ["#garbage"] = "Garbage" },
+                        ExpressionAttributeValues = { [":garbage"] = "asdf" }
+                    },
+                    new TransactWriteItemOperationConfig
+                    {
+                        ConditionalExpression = new Expression
+                        {
+                            ExpressionStatement = "#garbage <> :garbage",
+                            ExpressionAttributeNames = { ["#garbage"] = "Garbage" },
+                            ExpressionAttributeValues = { [":garbage"] = "hjkl" }
+                        },
+                        ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                    }));
+            }
+
+            {
+                var transactWrite = hashTable.CreateTransactWrite();
                 transactWrite.AddKeyToUpdate(hashKey: 7001,
                     new Expression
                     {
