@@ -370,11 +370,25 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 // If the value is different for the same key between the two expressions, an exception is thrown
                 // This ensures no exception is thrown when the attribute names and values of the update expression are merged into the request object
                 if (!TryFilterDuplicates(updateExpression.ExpressionAttributeValues,
-                        operationConfig.ConditionalExpression.ExpressionAttributeValues, out var attributeValues) ||
-                    !TryFilterDuplicates(updateExpression.ExpressionAttributeNames,
-                        operationConfig.ConditionalExpression.ExpressionAttributeNames, out var attributeNames))
+                        operationConfig.ConditionalExpression.ExpressionAttributeValues, out var attributeValues,
+                        out var conflictingValueKeys))
                 {
-                    throw new ArgumentException("Conflicting values for key", "updateExpression");
+                    throw new ArgumentException(
+                        "Conflicting attribute values found between the update expression and the condition expression. " +
+                        "Use a different key instead of each affected attribute value key in one of the expressions. " +
+                        $"Affected attribute value keys: {string.Join(", ", conflictingValueKeys)}.",
+                        "updateExpression");
+                }
+
+                if (!TryFilterDuplicates(updateExpression.ExpressionAttributeNames,
+                        operationConfig.ConditionalExpression.ExpressionAttributeNames, out var attributeNames,
+                        out var conflictingNameKeys))
+                {
+                    throw new ArgumentException(
+                        "Conflicting attribute names found between the update expression and the condition expression. " +
+                        "Use a different key instead of each affected attribute name key in one of the expressions. " +
+                        $"Affected attribute name keys: {string.Join(", ", conflictingNameKeys)}.",
+                        "updateExpression");
                 }
 
                 updateExpression = new Expression
@@ -409,9 +423,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         private static bool TryFilterDuplicates<T>(Dictionary<string, T> src, Dictionary<string, T> other,
-            out Dictionary<string, T> dest)
+            out Dictionary<string, T> dest, out List<string> conflictingKeys)
         {
             dest = new Dictionary<string, T>();
+            conflictingKeys = new List<string>();
 
             foreach (var kvp in src)
             {
@@ -419,8 +434,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     if (!otherValue.Equals(kvp.Value))
                     {
-                        dest = null;
-                        return false;
+                        conflictingKeys.Add(kvp.Key);
                     }
                 }
                 else
@@ -429,7 +443,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
             }
 
-            return true;
+            return conflictingKeys.Count == 0;
         }
 
         #endregion
