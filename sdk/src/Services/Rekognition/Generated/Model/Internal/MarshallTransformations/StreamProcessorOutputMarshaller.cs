@@ -46,6 +46,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamProcessorOutput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKinesisDataStream())
             {
                 context.Writer.WritePropertyName("KinesisDataStream");
@@ -77,4 +79,3 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

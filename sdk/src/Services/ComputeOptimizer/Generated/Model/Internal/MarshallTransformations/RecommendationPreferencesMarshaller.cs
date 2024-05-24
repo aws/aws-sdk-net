@@ -46,6 +46,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RecommendationPreferences requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCpuVendorArchitectures())
             {
                 context.Writer.WritePropertyName("cpuVendorArchitectures");
@@ -66,4 +68,3 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

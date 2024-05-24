@@ -57,6 +57,8 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         public JobStoppingCondition Unmarshall(JsonUnmarshallerContext context)
         {
             JobStoppingCondition unmarshalledObject = new JobStoppingCondition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

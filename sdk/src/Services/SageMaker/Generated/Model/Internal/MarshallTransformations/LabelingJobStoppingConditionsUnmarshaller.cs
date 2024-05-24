@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public LabelingJobStoppingConditions Unmarshall(JsonUnmarshallerContext context)
         {
             LabelingJobStoppingConditions unmarshalledObject = new LabelingJobStoppingConditions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

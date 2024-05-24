@@ -46,6 +46,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IntegrationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAppflowIntegration())
             {
                 context.Writer.WritePropertyName("AppflowIntegration");
@@ -66,4 +68,3 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -64,10 +64,10 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             
             if (publicRequest.IsSetAfterTimestamp())
-                request.Parameters.Add("afterTimestamp", StringUtils.FromDateTimeToISO8601(publicRequest.AfterTimestamp));
+                request.Parameters.Add("afterTimestamp", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.AfterTimestamp));
             
             if (publicRequest.IsSetBeforeTimestamp())
-                request.Parameters.Add("beforeTimestamp", StringUtils.FromDateTimeToISO8601(publicRequest.BeforeTimestamp));
+                request.Parameters.Add("beforeTimestamp", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.BeforeTimestamp));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -108,4 +108,3 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

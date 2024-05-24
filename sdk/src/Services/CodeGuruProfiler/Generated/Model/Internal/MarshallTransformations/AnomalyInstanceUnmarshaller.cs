@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         public AnomalyInstance Unmarshall(JsonUnmarshallerContext context)
         {
             AnomalyInstance unmarshalledObject = new AnomalyInstance();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         public ConfigParameter Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigParameter unmarshalledObject = new ConfigParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

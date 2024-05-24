@@ -57,6 +57,8 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
         public ScalingInstruction Unmarshall(JsonUnmarshallerContext context)
         {
             ScalingInstruction unmarshalledObject = new ScalingInstruction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -167,4 +169,3 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

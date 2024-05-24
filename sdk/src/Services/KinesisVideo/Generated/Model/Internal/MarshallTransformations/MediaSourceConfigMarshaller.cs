@@ -46,6 +46,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MediaSourceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMediaUriSecretArn())
             {
                 context.Writer.WritePropertyName("MediaUriSecretArn");
@@ -67,4 +69,3 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

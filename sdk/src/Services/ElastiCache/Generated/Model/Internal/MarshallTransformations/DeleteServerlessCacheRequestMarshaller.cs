@@ -63,12 +63,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("FinalSnapshotName", StringUtils.FromString(publicRequest.FinalSnapshotName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServerlessCacheName())
                 {
                     request.Parameters.Add("ServerlessCacheName", StringUtils.FromString(publicRequest.ServerlessCacheName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

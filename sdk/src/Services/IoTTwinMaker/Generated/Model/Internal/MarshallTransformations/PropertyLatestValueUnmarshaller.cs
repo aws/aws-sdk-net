@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public PropertyLatestValue Unmarshall(JsonUnmarshallerContext context)
         {
             PropertyLatestValue unmarshalledObject = new PropertyLatestValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

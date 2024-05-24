@@ -46,6 +46,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IoTJobRateIncreaseCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNumberOfNotifiedThings())
             {
                 context.Writer.WritePropertyName("numberOfNotifiedThings");
@@ -67,4 +69,3 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

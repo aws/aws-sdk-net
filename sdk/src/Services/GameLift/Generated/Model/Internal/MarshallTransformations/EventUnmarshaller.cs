@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public Event Unmarshall(JsonUnmarshallerContext context)
         {
             Event unmarshalledObject = new Event();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Count", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Count = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EventCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -119,4 +127,3 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

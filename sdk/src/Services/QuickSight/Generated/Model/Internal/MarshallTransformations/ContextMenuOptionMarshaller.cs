@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContextMenuOption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailabilityStatus())
             {
                 context.Writer.WritePropertyName("AvailabilityStatus");
@@ -61,4 +63,3 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

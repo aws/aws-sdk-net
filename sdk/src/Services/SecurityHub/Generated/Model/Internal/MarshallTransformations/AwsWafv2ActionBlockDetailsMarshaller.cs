@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsWafv2ActionBlockDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomResponse())
             {
                 context.Writer.WritePropertyName("CustomResponse");
@@ -66,4 +68,3 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

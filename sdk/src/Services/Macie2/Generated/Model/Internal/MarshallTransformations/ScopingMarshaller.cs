@@ -46,6 +46,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Scoping requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExcludes())
             {
                 context.Writer.WritePropertyName("excludes");
@@ -77,4 +79,3 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

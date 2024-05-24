@@ -46,6 +46,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MavenReference requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArtifactId())
             {
                 context.Writer.WritePropertyName("ArtifactId");
@@ -73,4 +75,3 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

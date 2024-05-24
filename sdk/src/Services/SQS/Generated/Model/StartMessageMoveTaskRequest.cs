@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SQS.Model
 {
     /// <summary>
@@ -46,10 +47,6 @@ namespace Amazon.SQS.Model
     /// queue is the DLQ, while the destination queue can be the original source queue (from
     /// which the messages were driven to the dead-letter-queue), or a custom destination
     /// queue.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Currently, only standard queues support redrive. FIFO queues don't support redrive.
     /// </para>
     ///  </li> <li> 
     /// <para>

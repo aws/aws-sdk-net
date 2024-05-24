@@ -46,6 +46,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConnectConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInstanceId())
             {
                 context.Writer.WritePropertyName("instanceId");
@@ -61,4 +63,3 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public ApplicationCodeConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationCodeConfigurationDescription unmarshalledObject = new ApplicationCodeConfigurationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

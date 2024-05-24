@@ -57,6 +57,8 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         public KeySummary Unmarshall(JsonUnmarshallerContext context)
         {
             KeySummary unmarshalledObject = new KeySummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

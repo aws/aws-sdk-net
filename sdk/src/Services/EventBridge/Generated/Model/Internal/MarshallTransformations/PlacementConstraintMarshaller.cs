@@ -46,6 +46,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PlacementConstraint requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExpression())
             {
                 context.Writer.WritePropertyName("expression");
@@ -67,4 +69,3 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

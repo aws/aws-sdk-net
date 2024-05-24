@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public ConsumedCapacity Unmarshall(JsonUnmarshallerContext context)
         {
             ConsumedCapacity unmarshalledObject = new ConsumedCapacity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -125,4 +127,3 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

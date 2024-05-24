@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public RedisSettings Unmarshall(JsonUnmarshallerContext context)
         {
             RedisSettings unmarshalledObject = new RedisSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -125,4 +127,3 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

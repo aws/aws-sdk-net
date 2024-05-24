@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TableSortConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPaginationConfiguration())
             {
                 context.Writer.WritePropertyName("PaginationConfiguration");
@@ -82,4 +84,3 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

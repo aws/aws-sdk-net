@@ -57,6 +57,8 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
         public Environment Unmarshall(JsonUnmarshallerContext context)
         {
             Environment unmarshalledObject = new Environment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -137,4 +139,3 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

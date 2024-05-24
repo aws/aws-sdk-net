@@ -57,6 +57,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         public HumanLoopActivationOutput Unmarshall(JsonUnmarshallerContext context)
         {
             HumanLoopActivationOutput unmarshalledObject = new HumanLoopActivationOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

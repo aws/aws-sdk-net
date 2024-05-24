@@ -57,6 +57,8 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
         public BadRequestDetails Unmarshall(JsonUnmarshallerContext context)
         {
             BadRequestDetails unmarshalledObject = new BadRequestDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

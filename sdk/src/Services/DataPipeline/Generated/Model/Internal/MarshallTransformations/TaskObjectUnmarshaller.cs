@@ -57,6 +57,8 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
         public TaskObject Unmarshall(JsonUnmarshallerContext context)
         {
             TaskObject unmarshalledObject = new TaskObject();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

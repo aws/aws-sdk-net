@@ -46,6 +46,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LogsConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchLogs())
             {
                 context.Writer.WritePropertyName("cloudWatchLogs");
@@ -77,4 +79,3 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

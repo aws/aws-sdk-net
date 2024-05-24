@@ -46,6 +46,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoRaWANConnectionStatusResourceTypeEventConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetWirelessGatewayEventTopic())
             {
                 context.Writer.WritePropertyName("WirelessGatewayEventTopic");
@@ -61,4 +63,3 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

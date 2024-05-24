@@ -46,6 +46,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SelfManagedEventSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndpoints())
             {
                 context.Writer.WritePropertyName("Endpoints");
@@ -74,4 +76,3 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

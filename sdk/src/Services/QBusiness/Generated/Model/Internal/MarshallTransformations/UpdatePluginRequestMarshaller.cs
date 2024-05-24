@@ -70,6 +70,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAuthConfiguration())
@@ -79,6 +80,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 
                     var marshaller = PluginAuthConfigurationMarshaller.Instance;
                     marshaller.Marshall(publicRequest.AuthConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetCustomPluginConfiguration())
+                {
+                    context.Writer.WritePropertyName("customPluginConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomPluginConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomPluginConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -129,4 +141,3 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

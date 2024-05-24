@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MarginStyle requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetShow())
             {
                 context.Writer.WritePropertyName("Show");
@@ -61,4 +63,3 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

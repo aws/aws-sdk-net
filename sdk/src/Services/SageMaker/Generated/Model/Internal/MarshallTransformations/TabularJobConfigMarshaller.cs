@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TabularJobConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCandidateGenerationConfig())
             {
                 context.Writer.WritePropertyName("CandidateGenerationConfig");
@@ -113,4 +115,3 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

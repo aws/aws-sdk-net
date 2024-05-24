@@ -46,6 +46,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FormStyleConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTokenReference())
             {
                 context.Writer.WritePropertyName("tokenReference");
@@ -67,4 +69,3 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

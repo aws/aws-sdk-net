@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public Ec2InstanceAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             Ec2InstanceAttributes unmarshalledObject = new Ec2InstanceAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -149,4 +151,3 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

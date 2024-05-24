@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public BatchGetAssetPropertyAggregatesErrorInfo Unmarshall(JsonUnmarshallerContext context)
         {
             BatchGetAssetPropertyAggregatesErrorInfo unmarshalledObject = new BatchGetAssetPropertyAggregatesErrorInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

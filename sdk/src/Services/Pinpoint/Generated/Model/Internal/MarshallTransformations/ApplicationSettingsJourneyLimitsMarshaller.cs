@@ -46,6 +46,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ApplicationSettingsJourneyLimits requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDailyCap())
             {
                 context.Writer.WritePropertyName("DailyCap");
@@ -78,4 +80,3 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

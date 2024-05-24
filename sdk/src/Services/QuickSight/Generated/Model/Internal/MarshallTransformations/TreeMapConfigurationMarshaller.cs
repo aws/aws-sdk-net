@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TreeMapConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetColorLabelOptions())
             {
                 context.Writer.WritePropertyName("ColorLabelOptions");
@@ -165,4 +167,3 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

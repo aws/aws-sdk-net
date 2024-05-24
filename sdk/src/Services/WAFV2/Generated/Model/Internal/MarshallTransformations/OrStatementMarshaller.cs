@@ -46,6 +46,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OrStatement requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStatements())
             {
                 context.Writer.WritePropertyName("Statements");
@@ -71,4 +73,3 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

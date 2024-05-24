@@ -67,24 +67,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLoadBalancerOptions())
                 {
                     if(publicRequest.LoadBalancerOptions.IsSetPort())
                     {
                         request.Parameters.Add("LoadBalancerOptions" + "." + "Port", StringUtils.FromInt(publicRequest.LoadBalancerOptions.Port));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.LoadBalancerOptions.IsSetProtocol())
                     {
                         request.Parameters.Add("LoadBalancerOptions" + "." + "Protocol", StringUtils.FromString(publicRequest.LoadBalancerOptions.Protocol));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.LoadBalancerOptions.IsSetSubnetIds())
                     {
                         int publicRequestLoadBalancerOptionslistValueIndex = 1;
@@ -94,33 +90,26 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestLoadBalancerOptionslistValueIndex++;
                         }
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkInterfaceOptions())
                 {
                     if(publicRequest.NetworkInterfaceOptions.IsSetPort())
                     {
                         request.Parameters.Add("NetworkInterfaceOptions" + "." + "Port", StringUtils.FromInt(publicRequest.NetworkInterfaceOptions.Port));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.NetworkInterfaceOptions.IsSetProtocol())
                     {
                         request.Parameters.Add("NetworkInterfaceOptions" + "." + "Protocol", StringUtils.FromString(publicRequest.NetworkInterfaceOptions.Protocol));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVerifiedAccessEndpointId())
                 {
                     request.Parameters.Add("VerifiedAccessEndpointId", StringUtils.FromString(publicRequest.VerifiedAccessEndpointId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVerifiedAccessGroupId())
                 {
                     request.Parameters.Add("VerifiedAccessGroupId", StringUtils.FromString(publicRequest.VerifiedAccessGroupId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

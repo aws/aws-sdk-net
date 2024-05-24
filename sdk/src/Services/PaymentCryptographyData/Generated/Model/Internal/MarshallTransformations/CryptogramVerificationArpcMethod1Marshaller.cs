@@ -46,6 +46,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CryptogramVerificationArpcMethod1 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthResponseCode())
             {
                 context.Writer.WritePropertyName("AuthResponseCode");
@@ -61,4 +63,3 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

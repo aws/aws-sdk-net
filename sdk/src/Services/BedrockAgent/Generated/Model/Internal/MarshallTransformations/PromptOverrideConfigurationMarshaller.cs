@@ -46,6 +46,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PromptOverrideConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOverrideLambda())
             {
                 context.Writer.WritePropertyName("overrideLambda");
@@ -77,4 +79,3 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

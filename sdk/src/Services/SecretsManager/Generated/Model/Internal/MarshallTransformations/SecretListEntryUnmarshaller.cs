@@ -57,6 +57,8 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         public SecretListEntry Unmarshall(JsonUnmarshallerContext context)
         {
             SecretListEntry unmarshalledObject = new SecretListEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -185,4 +187,3 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

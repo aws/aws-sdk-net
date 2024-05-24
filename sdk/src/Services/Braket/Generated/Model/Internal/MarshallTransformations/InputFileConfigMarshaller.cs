@@ -46,6 +46,8 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputFileConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChannelName())
             {
                 context.Writer.WritePropertyName("channelName");
@@ -78,4 +80,3 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

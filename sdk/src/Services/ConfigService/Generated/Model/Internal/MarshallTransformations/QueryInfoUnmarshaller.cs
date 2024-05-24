@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public QueryInfo Unmarshall(JsonUnmarshallerContext context)
         {
             QueryInfo unmarshalledObject = new QueryInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

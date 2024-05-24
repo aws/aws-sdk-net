@@ -46,6 +46,8 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputDataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEncryptionKey())
             {
                 context.Writer.WritePropertyName("EncryptionKey");
@@ -72,4 +74,3 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MountPoint requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContainerPath())
             {
                 context.Writer.WritePropertyName("containerPath");
@@ -73,4 +75,3 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

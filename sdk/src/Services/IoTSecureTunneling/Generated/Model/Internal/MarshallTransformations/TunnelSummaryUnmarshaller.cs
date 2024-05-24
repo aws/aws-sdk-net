@@ -57,6 +57,8 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
         public TunnelSummary Unmarshall(JsonUnmarshallerContext context)
         {
             TunnelSummary unmarshalledObject = new TunnelSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

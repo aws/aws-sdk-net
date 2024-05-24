@@ -46,6 +46,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3StorageOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDirectoryListingOptimization())
             {
                 context.Writer.WritePropertyName("DirectoryListingOptimization");
@@ -61,4 +63,3 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

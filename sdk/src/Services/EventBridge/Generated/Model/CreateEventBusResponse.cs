@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
@@ -33,7 +34,44 @@ namespace Amazon.EventBridge.Model
     /// </summary>
     public partial class CreateEventBusResponse : AmazonWebServiceResponse
     {
+        private DeadLetterConfig _deadLetterConfig;
+        private string _description;
         private string _eventBusArn;
+        private string _kmsKeyIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property DeadLetterConfig.
+        /// </summary>
+        public DeadLetterConfig DeadLetterConfig
+        {
+            get { return this._deadLetterConfig; }
+            set { this._deadLetterConfig = value; }
+        }
+
+        // Check to see if DeadLetterConfig property is set
+        internal bool IsSetDeadLetterConfig()
+        {
+            return this._deadLetterConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The event bus description.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EventBusArn. 
@@ -51,6 +89,31 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetEventBusArn()
         {
             return this._eventBusArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyIdentifier. 
+        /// <para>
+        /// The identifier of the KMS customer managed key for EventBridge to use to encrypt events
+        /// on this event bus, if one has been specified.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data
+        /// encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string KmsKeyIdentifier
+        {
+            get { return this._kmsKeyIdentifier; }
+            set { this._kmsKeyIdentifier = value; }
+        }
+
+        // Check to see if KmsKeyIdentifier property is set
+        internal bool IsSetKmsKeyIdentifier()
+        {
+            return this._kmsKeyIdentifier != null;
         }
 
     }

@@ -31,6 +31,10 @@ namespace Amazon.SQS
     {
 
         /// <summary>
+        /// Constant All for MessageSystemAttributeName
+        /// </summary>
+        public static readonly MessageSystemAttributeName All = new MessageSystemAttributeName("All");
+        /// <summary>
         /// Constant ApproximateFirstReceiveTimestamp for MessageSystemAttributeName
         /// </summary>
         public static readonly MessageSystemAttributeName ApproximateFirstReceiveTimestamp = new MessageSystemAttributeName("ApproximateFirstReceiveTimestamp");

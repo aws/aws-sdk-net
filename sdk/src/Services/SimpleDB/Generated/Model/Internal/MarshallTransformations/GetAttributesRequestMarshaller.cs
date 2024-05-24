@@ -68,22 +68,18 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetConsistentRead())
                 {
                     request.Parameters.Add("ConsistentRead", StringUtils.FromBool(publicRequest.ConsistentRead));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDomainName())
                 {
                     request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetItemName())
                 {
                     request.Parameters.Add("ItemName", StringUtils.FromString(publicRequest.ItemName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

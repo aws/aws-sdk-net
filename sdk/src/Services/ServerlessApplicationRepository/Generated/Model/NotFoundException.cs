@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServerlessApplicationRepository.Model
 {
     /// <summary>
@@ -37,7 +38,6 @@ namespace Amazon.ServerlessApplicationRepository.Model
     #endif
     public partial class NotFoundException : AmazonServerlessApplicationRepositoryException
     {
-        private string _errorCode;
 
         /// <summary>
         /// Constructs a new NotFoundException with the specified error
@@ -123,24 +123,6 @@ namespace Amazon.ServerlessApplicationRepository.Model
             info.AddValue("ErrorCode", this.ErrorCode);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property ErrorCode. 
-        /// <para>
-        /// 404
-        /// </para>
-        /// </summary>
-        public string ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
-        }
 
     }
 }

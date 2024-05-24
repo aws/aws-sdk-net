@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BackupStorage.Model
 {
     /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.BackupStorage.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return this._checksum != null;
+            return !string.IsNullOrEmpty(this._checksum);
         }
 
         /// <summary>
@@ -67,7 +68,7 @@ namespace Amazon.BackupStorage.Model
         // Check to see if ChecksumAlgorithm property is set
         internal bool IsSetChecksumAlgorithm()
         {
-            return this._checksumAlgorithm != null;
+            return !string.IsNullOrEmpty(this._checksumAlgorithm);
         }
 
         /// <summary>
@@ -115,6 +116,9 @@ namespace Amazon.BackupStorage.Model
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed)

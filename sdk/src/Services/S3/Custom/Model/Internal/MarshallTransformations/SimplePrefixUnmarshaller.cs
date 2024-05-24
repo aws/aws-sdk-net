@@ -48,6 +48,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SimplePrefix Unmarshall(JsonUnmarshallerContext context)
         {
             return null;

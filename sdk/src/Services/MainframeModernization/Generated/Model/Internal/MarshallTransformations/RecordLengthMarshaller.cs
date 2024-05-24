@@ -46,6 +46,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RecordLength requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMax())
             {
                 context.Writer.WritePropertyName("max");
@@ -67,4 +69,3 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

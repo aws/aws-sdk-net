@@ -57,6 +57,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         public AssessmentTarget Unmarshall(JsonUnmarshallerContext context)
         {
             AssessmentTarget unmarshalledObject = new AssessmentTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

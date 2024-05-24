@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsEcsTaskVolumeDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHost())
             {
                 context.Writer.WritePropertyName("Host");
@@ -72,4 +74,3 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

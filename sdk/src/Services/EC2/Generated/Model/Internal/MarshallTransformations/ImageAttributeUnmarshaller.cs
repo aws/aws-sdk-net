@@ -72,6 +72,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.BootMode = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("deregistrationProtection/value", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DeregistrationProtection = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("description/value", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -183,4 +189,3 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,12 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
-    /// Describes the action for a rule. Each rule must include exactly one of the following
-    /// types of actions: <c>forward </c>or <c>fixed-response</c>, and it must be the last
-    /// action to be performed.
+    /// Describes the action for a rule.
     /// </summary>
     public partial class RuleAction
     {
@@ -41,7 +40,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property FixedResponse. 
         /// <para>
-        ///  Describes the rule action that returns a custom HTTP response. 
+        /// The fixed response action. The rule returns a custom HTTP response.
         /// </para>
         /// </summary>
         public FixedResponseAction FixedResponse

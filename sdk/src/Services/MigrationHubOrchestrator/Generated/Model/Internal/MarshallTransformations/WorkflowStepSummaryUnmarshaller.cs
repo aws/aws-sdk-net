@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
         public WorkflowStepSummary Unmarshall(JsonUnmarshallerContext context)
         {
             WorkflowStepSummary unmarshalledObject = new WorkflowStepSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -161,4 +163,3 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

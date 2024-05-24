@@ -46,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StringFormatConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNullValueFormatConfiguration())
             {
                 context.Writer.WritePropertyName("NullValueFormatConfiguration");
@@ -77,4 +79,3 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

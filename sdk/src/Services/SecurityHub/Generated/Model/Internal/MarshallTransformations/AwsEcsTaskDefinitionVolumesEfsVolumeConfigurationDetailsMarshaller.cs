@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthorizationConfig())
             {
                 context.Writer.WritePropertyName("AuthorizationConfig");
@@ -90,4 +92,3 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

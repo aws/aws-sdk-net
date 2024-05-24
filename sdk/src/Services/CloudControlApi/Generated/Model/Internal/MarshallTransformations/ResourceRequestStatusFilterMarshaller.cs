@@ -46,6 +46,8 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceRequestStatusFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOperations())
             {
                 context.Writer.WritePropertyName("Operations");
@@ -77,4 +79,3 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

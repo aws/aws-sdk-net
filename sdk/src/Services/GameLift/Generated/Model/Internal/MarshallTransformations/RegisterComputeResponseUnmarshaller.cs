@@ -97,6 +97,10 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NotReadyException"))
+                {
+                    return NotReadyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedException"))
                 {
                     return UnauthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -125,4 +129,3 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

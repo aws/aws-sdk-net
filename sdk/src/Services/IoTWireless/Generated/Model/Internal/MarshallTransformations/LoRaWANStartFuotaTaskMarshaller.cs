@@ -46,10 +46,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoRaWANStartFuotaTask requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("StartTime");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.StartTime));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartTime));
             }
 
         }
@@ -61,4 +63,3 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InlineCustomDocumentEnrichmentConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCondition())
             {
                 context.Writer.WritePropertyName("Condition");
@@ -83,4 +85,3 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsBackupRecoveryPointCreatedByDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsBackupRecoveryPointCreatedByDetails unmarshalledObject = new AwsBackupRecoveryPointCreatedByDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

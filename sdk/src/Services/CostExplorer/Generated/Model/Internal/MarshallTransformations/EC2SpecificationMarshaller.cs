@@ -46,6 +46,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EC2Specification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOfferingClass())
             {
                 context.Writer.WritePropertyName("OfferingClass");
@@ -61,4 +63,3 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

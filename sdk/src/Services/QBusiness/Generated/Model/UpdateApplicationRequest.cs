@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -38,6 +39,7 @@ namespace Amazon.QBusiness.Model
         private AttachmentsConfiguration _attachmentsConfiguration;
         private string _description;
         private string _displayName;
+        private string _identityCenterInstanceArn;
         private string _roleArn;
 
         /// <summary>
@@ -113,6 +115,26 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterInstanceArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either
+        /// creating for—or connecting to—your Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=1224)]
+        public string IdentityCenterInstanceArn
+        {
+            get { return this._identityCenterInstanceArn; }
+            set { this._identityCenterInstanceArn = value; }
+        }
+
+        // Check to see if IdentityCenterInstanceArn property is set
+        internal bool IsSetIdentityCenterInstanceArn()
+        {
+            return this._identityCenterInstanceArn != null;
         }
 
         /// <summary>

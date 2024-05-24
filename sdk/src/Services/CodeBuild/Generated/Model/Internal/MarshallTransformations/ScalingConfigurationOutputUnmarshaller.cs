@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public ScalingConfigurationOutput Unmarshall(JsonUnmarshallerContext context)
         {
             ScalingConfigurationOutput unmarshalledObject = new ScalingConfigurationOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

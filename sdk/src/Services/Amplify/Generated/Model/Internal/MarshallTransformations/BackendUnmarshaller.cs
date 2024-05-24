@@ -57,6 +57,8 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         public Backend Unmarshall(JsonUnmarshallerContext context)
         {
             Backend unmarshalledObject = new Backend();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

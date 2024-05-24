@@ -63,7 +63,6 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 {
                     request.Parameters.Add("Message", StringUtils.FromString(publicRequest.Message));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMessageAttributes())
                 {
                     int mapIndex = 1;
@@ -78,57 +77,46 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                             {
                                 request.Parameters.Add("MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "BinaryValue", StringUtils.FromMemoryStream(value.BinaryValue));
                             }
-#pragma warning restore CS0612,CS0618
                             if(value.IsSetDataType())
                             {
                                 request.Parameters.Add("MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "DataType", StringUtils.FromString(value.DataType));
                             }
-#pragma warning restore CS0612,CS0618
                             if(value.IsSetStringValue())
                             {
                                 request.Parameters.Add("MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "StringValue", StringUtils.FromString(value.StringValue));
                             }
-#pragma warning restore CS0612,CS0618
                         }
                         mapIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMessageDeduplicationId())
                 {
                     request.Parameters.Add("MessageDeduplicationId", StringUtils.FromString(publicRequest.MessageDeduplicationId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMessageGroupId())
                 {
                     request.Parameters.Add("MessageGroupId", StringUtils.FromString(publicRequest.MessageGroupId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMessageStructure())
                 {
                     request.Parameters.Add("MessageStructure", StringUtils.FromString(publicRequest.MessageStructure));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPhoneNumber())
                 {
                     request.Parameters.Add("PhoneNumber", StringUtils.FromString(publicRequest.PhoneNumber));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSubject())
                 {
                     request.Parameters.Add("Subject", StringUtils.FromString(publicRequest.Subject));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetArn())
                 {
                     request.Parameters.Add("TargetArn", StringUtils.FromString(publicRequest.TargetArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTopicArn())
                 {
                     request.Parameters.Add("TopicArn", StringUtils.FromString(publicRequest.TopicArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

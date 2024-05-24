@@ -46,6 +46,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AccessControlAttributeValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("Source");
@@ -66,4 +68,3 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

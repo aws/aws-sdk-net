@@ -61,7 +61,7 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
 
             
             if (publicRequest.IsSetQueryTimestampList())
-                request.ParameterCollection.Add("item", publicRequest.QueryTimestampList.ConvertAll<string>(item => StringUtils.FromDateTimeToISO8601(item)));
+                request.ParameterCollection.Add("item", publicRequest.QueryTimestampList.ConvertAll<string>(item => StringUtils.FromDateTimeToISO8601WithOptionalMs(item)));
             request.ResourcePath = "/path";
             request.UseQueryString = true;
 
@@ -87,4 +87,3 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

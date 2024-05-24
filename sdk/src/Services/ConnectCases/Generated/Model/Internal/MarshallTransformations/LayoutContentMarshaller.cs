@@ -46,6 +46,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LayoutContent requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBasic())
             {
                 context.Writer.WritePropertyName("basic");
@@ -66,4 +68,3 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

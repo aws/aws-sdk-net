@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property CustomDomainName. 
         /// <para>
-        /// The custom domain name of the service. 
+        /// The custom domain name of the service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]

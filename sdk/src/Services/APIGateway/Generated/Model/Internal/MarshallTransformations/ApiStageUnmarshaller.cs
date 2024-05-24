@@ -57,6 +57,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         public ApiStage Unmarshall(JsonUnmarshallerContext context)
         {
             ApiStage unmarshalledObject = new ApiStage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

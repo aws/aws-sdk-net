@@ -46,6 +46,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchListObjectAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFacetFilter())
             {
                 context.Writer.WritePropertyName("FacetFilter");
@@ -89,4 +91,3 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoRaWANGatewayVersion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetModel())
             {
                 context.Writer.WritePropertyName("Model");
@@ -73,4 +75,3 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

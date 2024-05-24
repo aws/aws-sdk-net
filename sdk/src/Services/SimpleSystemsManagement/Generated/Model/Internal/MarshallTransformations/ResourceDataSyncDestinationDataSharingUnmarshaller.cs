@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public ResourceDataSyncDestinationDataSharing Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceDataSyncDestinationDataSharing unmarshalledObject = new ResourceDataSyncDestinationDataSharing();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

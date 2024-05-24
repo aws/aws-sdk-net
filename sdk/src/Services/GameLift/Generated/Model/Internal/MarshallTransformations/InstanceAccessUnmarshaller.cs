@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public InstanceAccess Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceAccess unmarshalledObject = new InstanceAccess();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

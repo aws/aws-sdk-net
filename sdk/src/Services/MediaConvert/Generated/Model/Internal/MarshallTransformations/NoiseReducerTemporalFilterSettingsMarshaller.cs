@@ -46,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NoiseReducerTemporalFilterSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAggressiveMode())
             {
                 context.Writer.WritePropertyName("aggressiveMode");
@@ -85,4 +87,3 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

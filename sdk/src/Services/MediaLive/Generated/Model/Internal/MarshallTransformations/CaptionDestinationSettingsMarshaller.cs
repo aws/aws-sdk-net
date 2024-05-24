@@ -46,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CaptionDestinationSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAribDestinationSettings())
             {
                 context.Writer.WritePropertyName("aribDestinationSettings");
@@ -198,4 +200,3 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

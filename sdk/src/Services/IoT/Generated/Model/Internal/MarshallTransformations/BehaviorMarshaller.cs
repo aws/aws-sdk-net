@@ -46,6 +46,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Behavior requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCriteria())
             {
                 context.Writer.WritePropertyName("criteria");
@@ -101,4 +103,3 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

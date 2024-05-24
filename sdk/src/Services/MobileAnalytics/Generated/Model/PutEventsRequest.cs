@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MobileAnalytics.Model
 {
     /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.MobileAnalytics.Model
         // Check to see if ClientContext property is set
         internal bool IsSetClientContext()
         {
-            return this._clientContext != null;
+            return !string.IsNullOrEmpty(this._clientContext);
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.MobileAnalytics.Model
         // Check to see if ClientContextEncoding property is set
         internal bool IsSetClientContextEncoding()
         {
-            return this._clientContextEncoding != null;
+            return !string.IsNullOrEmpty(this._clientContextEncoding);
         }
 
         /// <summary>

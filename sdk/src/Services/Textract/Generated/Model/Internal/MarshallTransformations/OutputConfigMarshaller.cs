@@ -46,6 +46,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Bucket())
             {
                 context.Writer.WritePropertyName("S3Bucket");
@@ -67,4 +69,3 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

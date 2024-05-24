@@ -46,6 +46,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CodeSigningSignature requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInlineDocument())
             {
                 context.Writer.WritePropertyName("inlineDocument");
@@ -61,4 +63,3 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

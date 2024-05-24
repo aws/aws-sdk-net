@@ -46,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(M3u8Settings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAudioFramesPerPes())
             {
                 context.Writer.WritePropertyName("audioFramesPerPes");
@@ -169,4 +171,3 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

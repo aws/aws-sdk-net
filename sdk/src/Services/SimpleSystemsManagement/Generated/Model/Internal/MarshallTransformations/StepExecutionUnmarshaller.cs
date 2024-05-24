@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public StepExecution Unmarshall(JsonUnmarshallerContext context)
         {
             StepExecution unmarshalledObject = new StepExecution();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -227,4 +229,3 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

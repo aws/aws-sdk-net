@@ -46,6 +46,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CoreDefinitionVersion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCores())
             {
                 context.Writer.WritePropertyName("Cores");
@@ -71,4 +73,3 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

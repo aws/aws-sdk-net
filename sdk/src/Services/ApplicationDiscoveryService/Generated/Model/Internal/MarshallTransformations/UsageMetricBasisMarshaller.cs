@@ -46,6 +46,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <returns></returns>
         public void Marshall(UsageMetricBasis requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
@@ -55,7 +57,14 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             if(requestObject.IsSetPercentageAdjust())
             {
                 context.Writer.WritePropertyName("percentageAdjust");
-                context.Writer.Write(requestObject.PercentageAdjust);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentageAdjust))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentageAdjust));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.PercentageAdjust);
+                }
             }
 
         }
@@ -67,4 +76,3 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
     }
 }
-#pragma warning restore CS0612,CS0618

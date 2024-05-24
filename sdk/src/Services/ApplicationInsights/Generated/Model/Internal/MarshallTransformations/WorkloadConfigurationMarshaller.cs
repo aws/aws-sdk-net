@@ -46,6 +46,8 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkloadConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConfiguration())
             {
                 context.Writer.WritePropertyName("Configuration");
@@ -73,4 +75,3 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

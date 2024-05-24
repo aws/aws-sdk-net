@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public RedshiftTarget Unmarshall(JsonUnmarshallerContext context)
         {
             RedshiftTarget unmarshalledObject = new RedshiftTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -125,4 +127,3 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public QuerySuggestionsBlockListSummary Unmarshall(JsonUnmarshallerContext context)
         {
             QuerySuggestionsBlockListSummary unmarshalledObject = new QuerySuggestionsBlockListSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

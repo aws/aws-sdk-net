@@ -46,6 +46,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RuleAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActionType())
             {
                 context.Writer.WritePropertyName("ActionType");
@@ -149,4 +151,3 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

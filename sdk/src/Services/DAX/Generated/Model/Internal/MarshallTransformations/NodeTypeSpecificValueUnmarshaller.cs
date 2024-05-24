@@ -57,6 +57,8 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
         public NodeTypeSpecificValue Unmarshall(JsonUnmarshallerContext context)
         {
             NodeTypeSpecificValue unmarshalledObject = new NodeTypeSpecificValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

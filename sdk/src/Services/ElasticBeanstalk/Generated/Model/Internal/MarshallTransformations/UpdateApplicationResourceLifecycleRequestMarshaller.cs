@@ -63,14 +63,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceLifecycleConfig())
                 {
                     if(publicRequest.ResourceLifecycleConfig.IsSetServiceRole())
                     {
                         request.Parameters.Add("ResourceLifecycleConfig" + "." + "ServiceRole", StringUtils.FromString(publicRequest.ResourceLifecycleConfig.ServiceRole));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ResourceLifecycleConfig.IsSetVersionLifecycleConfig())
                     {
                         if(publicRequest.ResourceLifecycleConfig.VersionLifecycleConfig.IsSetMaxAgeRule())
@@ -79,42 +77,32 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("ResourceLifecycleConfig" + "." + "VersionLifecycleConfig" + "." + "MaxAgeRule" + "." + "DeleteSourceFromS3", StringUtils.FromBool(publicRequest.ResourceLifecycleConfig.VersionLifecycleConfig.MaxAgeRule.DeleteSourceFromS3));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequest.ResourceLifecycleConfig.VersionLifecycleConfig.MaxAgeRule.IsSetEnabled())
                             {
                                 request.Parameters.Add("ResourceLifecycleConfig" + "." + "VersionLifecycleConfig" + "." + "MaxAgeRule" + "." + "Enabled", StringUtils.FromBool(publicRequest.ResourceLifecycleConfig.VersionLifecycleConfig.MaxAgeRule.Enabled));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequest.ResourceLifecycleConfig.VersionLifecycleConfig.MaxAgeRule.IsSetMaxAgeInDays())
                             {
                                 request.Parameters.Add("ResourceLifecycleConfig" + "." + "VersionLifecycleConfig" + "." + "MaxAgeRule" + "." + "MaxAgeInDays", StringUtils.FromInt(publicRequest.ResourceLifecycleConfig.VersionLifecycleConfig.MaxAgeRule.MaxAgeInDays));
                             }
-#pragma warning restore CS0612,CS0618
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.ResourceLifecycleConfig.VersionLifecycleConfig.IsSetMaxCountRule())
                         {
                             if(publicRequest.ResourceLifecycleConfig.VersionLifecycleConfig.MaxCountRule.IsSetDeleteSourceFromS3())
                             {
                                 request.Parameters.Add("ResourceLifecycleConfig" + "." + "VersionLifecycleConfig" + "." + "MaxCountRule" + "." + "DeleteSourceFromS3", StringUtils.FromBool(publicRequest.ResourceLifecycleConfig.VersionLifecycleConfig.MaxCountRule.DeleteSourceFromS3));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequest.ResourceLifecycleConfig.VersionLifecycleConfig.MaxCountRule.IsSetEnabled())
                             {
                                 request.Parameters.Add("ResourceLifecycleConfig" + "." + "VersionLifecycleConfig" + "." + "MaxCountRule" + "." + "Enabled", StringUtils.FromBool(publicRequest.ResourceLifecycleConfig.VersionLifecycleConfig.MaxCountRule.Enabled));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequest.ResourceLifecycleConfig.VersionLifecycleConfig.MaxCountRule.IsSetMaxCount())
                             {
                                 request.Parameters.Add("ResourceLifecycleConfig" + "." + "VersionLifecycleConfig" + "." + "MaxCountRule" + "." + "MaxCount", StringUtils.FromInt(publicRequest.ResourceLifecycleConfig.VersionLifecycleConfig.MaxCountRule.MaxCount));
                             }
-#pragma warning restore CS0612,CS0618
                         }
-#pragma warning restore CS0612,CS0618
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

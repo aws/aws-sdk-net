@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the cognito-idp-2016-04-18.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>

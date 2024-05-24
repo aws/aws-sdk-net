@@ -46,6 +46,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OnDemandCapacityReservationOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCapacityReservationPreference())
             {
                 context.Writer.WritePropertyName("CapacityReservationPreference");
@@ -73,4 +75,3 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

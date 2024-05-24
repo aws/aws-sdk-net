@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public RepositoryTriggerExecutionFailure Unmarshall(JsonUnmarshallerContext context)
         {
             RepositoryTriggerExecutionFailure unmarshalledObject = new RepositoryTriggerExecutionFailure();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

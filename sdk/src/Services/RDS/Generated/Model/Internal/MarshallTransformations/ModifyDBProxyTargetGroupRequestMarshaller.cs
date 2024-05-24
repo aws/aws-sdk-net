@@ -65,22 +65,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("ConnectionPoolConfig" + "." + "ConnectionBorrowTimeout", StringUtils.FromInt(publicRequest.ConnectionPoolConfig.ConnectionBorrowTimeout));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ConnectionPoolConfig.IsSetInitQuery())
                     {
                         request.Parameters.Add("ConnectionPoolConfig" + "." + "InitQuery", StringUtils.FromString(publicRequest.ConnectionPoolConfig.InitQuery));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ConnectionPoolConfig.IsSetMaxConnectionsPercent())
                     {
                         request.Parameters.Add("ConnectionPoolConfig" + "." + "MaxConnectionsPercent", StringUtils.FromInt(publicRequest.ConnectionPoolConfig.MaxConnectionsPercent));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ConnectionPoolConfig.IsSetMaxIdleConnectionsPercent())
                     {
                         request.Parameters.Add("ConnectionPoolConfig" + "." + "MaxIdleConnectionsPercent", StringUtils.FromInt(publicRequest.ConnectionPoolConfig.MaxIdleConnectionsPercent));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ConnectionPoolConfig.IsSetSessionPinningFilters())
                     {
                         int publicRequestConnectionPoolConfiglistValueIndex = 1;
@@ -90,24 +86,19 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                             publicRequestConnectionPoolConfiglistValueIndex++;
                         }
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBProxyName())
                 {
                     request.Parameters.Add("DBProxyName", StringUtils.FromString(publicRequest.DBProxyName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNewName())
                 {
                     request.Parameters.Add("NewName", StringUtils.FromString(publicRequest.NewName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetGroupName())
                 {
                     request.Parameters.Add("TargetGroupName", StringUtils.FromString(publicRequest.TargetGroupName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

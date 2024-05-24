@@ -46,6 +46,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PipelineActivity requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddAttributes())
             {
                 context.Writer.WritePropertyName("addAttributes");
@@ -165,4 +167,3 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

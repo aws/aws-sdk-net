@@ -46,6 +46,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Secondary requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRoute())
             {
                 context.Writer.WritePropertyName("Route");
@@ -61,4 +63,3 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

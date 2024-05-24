@@ -46,6 +46,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Cors requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowCredentials())
             {
                 context.Writer.WritePropertyName("AllowCredentials");
@@ -111,4 +113,3 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

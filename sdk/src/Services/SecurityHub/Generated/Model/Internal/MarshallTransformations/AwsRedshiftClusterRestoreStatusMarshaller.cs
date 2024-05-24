@@ -46,10 +46,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsRedshiftClusterRestoreStatus requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCurrentRestoreRateInMegaBytesPerSecond())
             {
                 context.Writer.WritePropertyName("CurrentRestoreRateInMegaBytesPerSecond");
-                context.Writer.Write(requestObject.CurrentRestoreRateInMegaBytesPerSecond);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.CurrentRestoreRateInMegaBytesPerSecond))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CurrentRestoreRateInMegaBytesPerSecond));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.CurrentRestoreRateInMegaBytesPerSecond);
+                }
             }
 
             if(requestObject.IsSetElapsedTimeInSeconds())
@@ -91,4 +100,3 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -67,6 +67,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAirflowConfigurationOptions())
@@ -130,10 +131,22 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMaxWebservers())
+                {
+                    context.Writer.WritePropertyName("MaxWebservers");
+                    context.Writer.Write(publicRequest.MaxWebservers);
+                }
+
                 if(publicRequest.IsSetMaxWorkers())
                 {
                     context.Writer.WritePropertyName("MaxWorkers");
                     context.Writer.Write(publicRequest.MaxWorkers);
+                }
+
+                if(publicRequest.IsSetMinWebservers())
+                {
+                    context.Writer.WritePropertyName("MinWebservers");
+                    context.Writer.Write(publicRequest.MinWebservers);
                 }
 
                 if(publicRequest.IsSetMinWorkers())
@@ -257,4 +270,3 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

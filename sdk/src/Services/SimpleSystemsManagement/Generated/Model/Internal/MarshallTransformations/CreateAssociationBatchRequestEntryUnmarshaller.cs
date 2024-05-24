@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public CreateAssociationBatchRequestEntry Unmarshall(JsonUnmarshallerContext context)
         {
             CreateAssociationBatchRequestEntry unmarshalledObject = new CreateAssociationBatchRequestEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -203,4 +205,3 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

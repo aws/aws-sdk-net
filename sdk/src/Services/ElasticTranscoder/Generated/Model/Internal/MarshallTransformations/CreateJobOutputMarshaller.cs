@@ -46,6 +46,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateJobOutput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlbumArt())
             {
                 context.Writer.WritePropertyName("AlbumArt");
@@ -161,4 +163,3 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

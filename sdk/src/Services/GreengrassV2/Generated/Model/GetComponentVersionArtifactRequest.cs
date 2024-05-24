@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
@@ -38,6 +39,8 @@ namespace Amazon.GreengrassV2.Model
     {
         private string _arn;
         private string _artifactName;
+        private IotEndpointType _iotEndpointType;
+        private S3EndpointType _s3EndpointType;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -83,6 +86,50 @@ namespace Amazon.GreengrassV2.Model
         internal bool IsSetArtifactName()
         {
             return this._artifactName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IotEndpointType. 
+        /// <para>
+        /// Determines if the Amazon S3 URL returned is a FIPS pre-signed URL endpoint. Specify
+        /// <c>fips</c> if you want the returned Amazon S3 pre-signed URL to point to an Amazon
+        /// S3 FIPS endpoint. If you don't specify a value, the default is <c>standard</c>.
+        /// </para>
+        /// </summary>
+        public IotEndpointType IotEndpointType
+        {
+            get { return this._iotEndpointType; }
+            set { this._iotEndpointType = value; }
+        }
+
+        // Check to see if IotEndpointType property is set
+        internal bool IsSetIotEndpointType()
+        {
+            return !string.IsNullOrEmpty(this._iotEndpointType);
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3EndpointType. 
+        /// <para>
+        /// Specifies the endpoint to use when getting Amazon S3 pre-signed URLs.
+        /// </para>
+        ///  
+        /// <para>
+        /// All Amazon Web Services Regions except US East (N. Virginia) use <c>REGIONAL</c> in
+        /// all cases. In the US East (N. Virginia) Region the default is <c>GLOBAL</c>, but you
+        /// can change it to <c>REGIONAL</c> with this parameter.
+        /// </para>
+        /// </summary>
+        public S3EndpointType S3EndpointType
+        {
+            get { return this._s3EndpointType; }
+            set { this._s3EndpointType = value; }
+        }
+
+        // Check to see if S3EndpointType property is set
+        internal bool IsSetS3EndpointType()
+        {
+            return this._s3EndpointType != null;
         }
 
     }

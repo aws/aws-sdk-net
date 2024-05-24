@@ -46,6 +46,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OracleSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccessAlternateDirectly())
             {
                 context.Writer.WritePropertyName("AccessAlternateDirectly");
@@ -318,4 +320,3 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

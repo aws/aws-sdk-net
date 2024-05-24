@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptunedata.Model
 {
     /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if Serializer property is set
         internal bool IsSetSerializer()
         {
-            return this._serializer != null;
+            return !string.IsNullOrEmpty(this._serializer);
         }
 
     }

@@ -46,6 +46,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataEncryptionMetadata requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowCleartext())
             {
                 context.Writer.WritePropertyName("allowCleartext");
@@ -79,4 +81,3 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

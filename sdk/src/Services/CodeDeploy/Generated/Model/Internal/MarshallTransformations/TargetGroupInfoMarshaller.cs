@@ -46,6 +46,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TargetGroupInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
@@ -61,4 +63,3 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BaiduChannelRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApiKey())
             {
                 context.Writer.WritePropertyName("ApiKey");
@@ -73,4 +75,3 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

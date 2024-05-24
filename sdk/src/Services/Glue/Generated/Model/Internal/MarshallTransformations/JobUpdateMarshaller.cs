@@ -46,6 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllocatedCapacity())
             {
                 context.Writer.WritePropertyName("AllocatedCapacity");
@@ -142,10 +144,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LogUri);
             }
 
+            if(requestObject.IsSetMaintenanceWindow())
+            {
+                context.Writer.WritePropertyName("MaintenanceWindow");
+                context.Writer.Write(requestObject.MaintenanceWindow);
+            }
+
             if(requestObject.IsSetMaxCapacity())
             {
                 context.Writer.WritePropertyName("MaxCapacity");
-                context.Writer.Write(requestObject.MaxCapacity);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxCapacity))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxCapacity));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaxCapacity);
+                }
             }
 
             if(requestObject.IsSetMaxRetries())
@@ -229,4 +244,3 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

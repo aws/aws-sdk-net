@@ -63,54 +63,44 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CustomerGatewayId", StringUtils.FromString(publicRequest.CustomerGatewayId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptions())
                 {
                     if(publicRequest.Options.IsSetEnableAcceleration())
                     {
                         request.Parameters.Add("Options" + "." + "EnableAcceleration", StringUtils.FromBool(publicRequest.Options.EnableAcceleration));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetLocalIpv4NetworkCidr())
                     {
                         request.Parameters.Add("Options" + "." + "LocalIpv4NetworkCidr", StringUtils.FromString(publicRequest.Options.LocalIpv4NetworkCidr));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetLocalIpv6NetworkCidr())
                     {
                         request.Parameters.Add("Options" + "." + "LocalIpv6NetworkCidr", StringUtils.FromString(publicRequest.Options.LocalIpv6NetworkCidr));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetOutsideIpAddressType())
                     {
                         request.Parameters.Add("Options" + "." + "OutsideIpAddressType", StringUtils.FromString(publicRequest.Options.OutsideIpAddressType));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetRemoteIpv4NetworkCidr())
                     {
                         request.Parameters.Add("Options" + "." + "RemoteIpv4NetworkCidr", StringUtils.FromString(publicRequest.Options.RemoteIpv4NetworkCidr));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetRemoteIpv6NetworkCidr())
                     {
                         request.Parameters.Add("Options" + "." + "RemoteIpv6NetworkCidr", StringUtils.FromString(publicRequest.Options.RemoteIpv6NetworkCidr));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetStaticRoutesOnly())
                     {
                         request.Parameters.Add("Options" + "." + "StaticRoutesOnly", StringUtils.FromBool(publicRequest.Options.StaticRoutesOnly));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetTransportTransitGatewayAttachmentId())
                     {
                         request.Parameters.Add("Options" + "." + "TransportTransitGatewayAttachmentId", StringUtils.FromString(publicRequest.Options.TransportTransitGatewayAttachmentId));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetTunnelInsideIpVersion())
                     {
                         request.Parameters.Add("Options" + "." + "TunnelInsideIpVersion", StringUtils.FromString(publicRequest.Options.TunnelInsideIpVersion));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetTunnelOptions())
                     {
                         int publicRequestOptionslistValueIndex = 1;
@@ -120,17 +110,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "DPDTimeoutAction", StringUtils.FromString(publicRequestOptionslistValue.DPDTimeoutAction));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetDPDTimeoutSeconds())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "DPDTimeoutSeconds", StringUtils.FromInt(publicRequestOptionslistValue.DPDTimeoutSeconds));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetEnableTunnelLifecycleControl())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "EnableTunnelLifecycleControl", StringUtils.FromBool(publicRequestOptionslistValue.EnableTunnelLifecycleControl));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetIKEVersions())
                             {
                                 int publicRequestOptionslistValuelistValueIndex = 1;
@@ -140,11 +127,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "IKEVersion" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
                                     }
-#pragma warning restore CS0612,CS0618
                                     publicRequestOptionslistValuelistValueIndex++;
                                 }
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetLogOptions())
                             {
                                 if(publicRequestOptionslistValue.LogOptions.IsSetCloudWatchLogOptions())
@@ -153,21 +138,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogEnabled", StringUtils.FromBool(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogEnabled));
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogGroupArn())
                                     {
                                         request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogGroupArn", StringUtils.FromString(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogGroupArn));
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogOutputFormat())
                                     {
                                         request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogOutputFormat", StringUtils.FromString(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogOutputFormat));
                                     }
-#pragma warning restore CS0612,CS0618
                                 }
-#pragma warning restore CS0612,CS0618
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetPhase1DHGroupNumbers())
                             {
                                 int publicRequestOptionslistValuelistValueIndex = 1;
@@ -177,11 +157,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1DHGroupNumber" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromInt(publicRequestOptionslistValuelistValue.Value));
                                     }
-#pragma warning restore CS0612,CS0618
                                     publicRequestOptionslistValuelistValueIndex++;
                                 }
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetPhase1EncryptionAlgorithms())
                             {
                                 int publicRequestOptionslistValuelistValueIndex = 1;
@@ -191,11 +169,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1EncryptionAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
                                     }
-#pragma warning restore CS0612,CS0618
                                     publicRequestOptionslistValuelistValueIndex++;
                                 }
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetPhase1IntegrityAlgorithms())
                             {
                                 int publicRequestOptionslistValuelistValueIndex = 1;
@@ -205,16 +181,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1IntegrityAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
                                     }
-#pragma warning restore CS0612,CS0618
                                     publicRequestOptionslistValuelistValueIndex++;
                                 }
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetPhase1LifetimeSeconds())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1LifetimeSeconds", StringUtils.FromInt(publicRequestOptionslistValue.Phase1LifetimeSeconds));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetPhase2DHGroupNumbers())
                             {
                                 int publicRequestOptionslistValuelistValueIndex = 1;
@@ -224,11 +197,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2DHGroupNumber" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromInt(publicRequestOptionslistValuelistValue.Value));
                                     }
-#pragma warning restore CS0612,CS0618
                                     publicRequestOptionslistValuelistValueIndex++;
                                 }
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetPhase2EncryptionAlgorithms())
                             {
                                 int publicRequestOptionslistValuelistValueIndex = 1;
@@ -238,11 +209,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2EncryptionAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
                                     }
-#pragma warning restore CS0612,CS0618
                                     publicRequestOptionslistValuelistValueIndex++;
                                 }
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetPhase2IntegrityAlgorithms())
                             {
                                 int publicRequestOptionslistValuelistValueIndex = 1;
@@ -252,57 +221,45 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2IntegrityAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
                                     }
-#pragma warning restore CS0612,CS0618
                                     publicRequestOptionslistValuelistValueIndex++;
                                 }
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetPhase2LifetimeSeconds())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2LifetimeSeconds", StringUtils.FromInt(publicRequestOptionslistValue.Phase2LifetimeSeconds));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetPreSharedKey())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "PreSharedKey", StringUtils.FromString(publicRequestOptionslistValue.PreSharedKey));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetRekeyFuzzPercentage())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "RekeyFuzzPercentage", StringUtils.FromInt(publicRequestOptionslistValue.RekeyFuzzPercentage));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetRekeyMarginTimeSeconds())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "RekeyMarginTimeSeconds", StringUtils.FromInt(publicRequestOptionslistValue.RekeyMarginTimeSeconds));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetReplayWindowSize())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "ReplayWindowSize", StringUtils.FromInt(publicRequestOptionslistValue.ReplayWindowSize));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetStartupAction())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "StartupAction", StringUtils.FromString(publicRequestOptionslistValue.StartupAction));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetTunnelInsideCidr())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "TunnelInsideCidr", StringUtils.FromString(publicRequestOptionslistValue.TunnelInsideCidr));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestOptionslistValue.IsSetTunnelInsideIpv6Cidr())
                             {
                                 request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "TunnelInsideIpv6Cidr", StringUtils.FromString(publicRequestOptionslistValue.TunnelInsideIpv6Cidr));
                             }
-#pragma warning restore CS0612,CS0618
                             publicRequestOptionslistValueIndex++;
                         }
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -312,7 +269,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -322,35 +278,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
-#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTransitGatewayId())
                 {
                     request.Parameters.Add("TransitGatewayId", StringUtils.FromString(publicRequest.TransitGatewayId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetType())
                 {
                     request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpnGatewayId())
                 {
                     request.Parameters.Add("VpnGatewayId", StringUtils.FromString(publicRequest.VpnGatewayId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

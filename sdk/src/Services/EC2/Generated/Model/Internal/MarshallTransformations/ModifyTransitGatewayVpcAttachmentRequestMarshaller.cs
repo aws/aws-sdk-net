@@ -68,31 +68,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptions())
                 {
                     if(publicRequest.Options.IsSetApplianceModeSupport())
                     {
                         request.Parameters.Add("Options" + "." + "ApplianceModeSupport", StringUtils.FromString(publicRequest.Options.ApplianceModeSupport));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetDnsSupport())
                     {
                         request.Parameters.Add("Options" + "." + "DnsSupport", StringUtils.FromString(publicRequest.Options.DnsSupport));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetIpv6Support())
                     {
                         request.Parameters.Add("Options" + "." + "Ipv6Support", StringUtils.FromString(publicRequest.Options.Ipv6Support));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetSecurityGroupReferencingSupport())
                     {
                         request.Parameters.Add("Options" + "." + "SecurityGroupReferencingSupport", StringUtils.FromString(publicRequest.Options.SecurityGroupReferencingSupport));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveSubnetIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -102,12 +96,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTransitGatewayAttachmentId())
                 {
                     request.Parameters.Add("TransitGatewayAttachmentId", StringUtils.FromString(publicRequest.TransitGatewayAttachmentId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

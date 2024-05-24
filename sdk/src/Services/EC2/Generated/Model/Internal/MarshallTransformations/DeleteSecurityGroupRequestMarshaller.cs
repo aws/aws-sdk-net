@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("GroupId", StringUtils.FromString(publicRequest.GroupId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGroupName())
                 {
                     request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

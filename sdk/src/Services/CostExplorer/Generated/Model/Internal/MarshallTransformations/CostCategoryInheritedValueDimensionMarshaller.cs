@@ -46,6 +46,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CostCategoryInheritedValueDimension requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDimensionKey())
             {
                 context.Writer.WritePropertyName("DimensionKey");
@@ -67,4 +69,3 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

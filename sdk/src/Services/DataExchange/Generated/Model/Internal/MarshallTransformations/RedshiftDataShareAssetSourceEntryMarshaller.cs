@@ -46,6 +46,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RedshiftDataShareAssetSourceEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataShareArn())
             {
                 context.Writer.WritePropertyName("DataShareArn");
@@ -61,4 +63,3 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

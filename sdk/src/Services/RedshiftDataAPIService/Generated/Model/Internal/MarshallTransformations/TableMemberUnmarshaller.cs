@@ -57,6 +57,8 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         public TableMember Unmarshall(JsonUnmarshallerContext context)
         {
             TableMember unmarshalledObject = new TableMember();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

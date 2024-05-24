@@ -46,6 +46,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FilterByAsset requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAssetExternalId())
             {
                 context.Writer.WritePropertyName("assetExternalId");
@@ -79,4 +81,3 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

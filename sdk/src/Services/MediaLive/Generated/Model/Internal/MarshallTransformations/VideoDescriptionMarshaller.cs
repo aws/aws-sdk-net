@@ -46,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VideoDescription requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCodecSettings())
             {
                 context.Writer.WritePropertyName("codecSettings");
@@ -102,4 +104,3 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

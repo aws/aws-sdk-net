@@ -458,7 +458,7 @@ namespace ServiceClientGenerator
                 {
                     string projectFilePattern = string.Format("*.{0}.csproj", configuration.Name);
                     foreach (var projectFile in Directory.GetFiles(testProjectsRoot, projectFilePattern, SearchOption.AllDirectories)                        
-                        .Where(projectFile => !Path.GetFileNameWithoutExtension(projectFile).Contains("Utilities") &&
+                        .Where(projectFile => (Path.GetFileNameWithoutExtension(projectFile).Contains("UnitTestUtilities") || !Path.GetFileNameWithoutExtension(projectFile).Contains("Utilities")) &&
                         !Path.GetFullPath(projectFile).Contains("Services") &&
                         !Path.GetFullPath(projectFile).Contains("CSM"))
                         .OrderBy(f => f))

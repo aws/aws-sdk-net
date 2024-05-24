@@ -63,42 +63,36 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceName())
                 {
                     request.Parameters.Add("ResourceName", StringUtils.FromString(publicRequest.ResourceName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceType())
                 {
                     request.Parameters.Add("ResourceType", StringUtils.FromString(publicRequest.ResourceType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagKeys())
                 {
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.TagKeys)
                     {
-                        request.Parameters.Add("TagKeys" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        request.Parameters.Add("TagKeys" + "." + "TagKey" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagValues())
                 {
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.TagValues)
                     {
-                        request.Parameters.Add("TagValues" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        request.Parameters.Add("TagValues" + "." + "TagValue" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

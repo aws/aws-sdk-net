@@ -46,6 +46,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OrganizationKubernetesAuditLogsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoEnable())
             {
                 context.Writer.WritePropertyName("autoEnable");
@@ -61,4 +63,3 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

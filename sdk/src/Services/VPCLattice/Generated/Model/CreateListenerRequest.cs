@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -70,11 +71,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property DefaultAction. 
         /// <para>
-        /// The action for the default rule. Each listener has a default rule. Each rule consists
-        /// of a priority, one or more actions, and one or more conditions. The default rule is
-        /// the rule that's used if no other rules match. Each rule must include exactly one of
-        /// the following types of actions: <c>forward </c>or <c>fixed-response</c>, and it must
-        /// be the last action to be performed. 
+        /// The action for the default rule. Each listener has a default rule. The default rule
+        /// is used if no other rules match.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -114,8 +112,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The listener port. You can specify a value from <c>1</c> to <c>65535</c>. For HTTP,
-        /// the default is <c>80</c>. For HTTPS, the default is <c>443</c>.
+        /// The listener port. You can specify a value from 1 to 65535. For HTTP, the default
+        /// is 80. For HTTPS, the default is 443.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
@@ -134,7 +132,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The listener protocol HTTP or HTTPS.
+        /// The listener protocol.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -46,6 +46,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Logging requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Logs())
             {
                 context.Writer.WritePropertyName("s3Logs");
@@ -66,4 +68,3 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

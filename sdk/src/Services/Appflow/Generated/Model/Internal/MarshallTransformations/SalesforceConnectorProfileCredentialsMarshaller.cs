@@ -46,6 +46,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SalesforceConnectorProfileCredentials requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccessToken())
             {
                 context.Writer.WritePropertyName("accessToken");
@@ -96,4 +98,3 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

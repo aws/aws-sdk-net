@@ -57,6 +57,8 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransfo
         public LinuxSubscriptionsDiscoverySettings Unmarshall(JsonUnmarshallerContext context)
         {
             LinuxSubscriptionsDiscoverySettings unmarshalledObject = new LinuxSubscriptionsDiscoverySettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransfo
         }
     }
 }
-#pragma warning restore CS0612,CS0618

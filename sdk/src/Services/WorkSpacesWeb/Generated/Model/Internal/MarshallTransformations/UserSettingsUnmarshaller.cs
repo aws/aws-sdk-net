@@ -57,6 +57,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         public UserSettings Unmarshall(JsonUnmarshallerContext context)
         {
             UserSettings unmarshalledObject = new UserSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("additionalEncryptionContext", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalEncryptionContext = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("associatedPortalArns", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -80,6 +88,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CopyAllowed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("customerManagedKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomerManagedKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("disconnectTimeoutInMinutes", targetDepth))
@@ -143,4 +157,3 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

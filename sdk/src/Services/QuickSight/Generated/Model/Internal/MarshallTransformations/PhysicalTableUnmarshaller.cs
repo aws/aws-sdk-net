@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public PhysicalTable Unmarshall(JsonUnmarshallerContext context)
         {
             PhysicalTable unmarshalledObject = new PhysicalTable();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

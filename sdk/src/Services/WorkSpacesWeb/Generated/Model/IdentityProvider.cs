@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpacesWeb.Model
 {
     /// <summary>
@@ -177,7 +178,20 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>IDPSignout</c> <i>optional</i> 
+        ///  <c>IDPSignout</c> (boolean) <i>optional</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IDPInit</c> (boolean) <i>optional</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RequestSigningAlgorithm</c> (string) <i>optional</i> - Only accepts <c>rsa-sha256</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EncryptedResponses</c> (boolean) <i>optional</i> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

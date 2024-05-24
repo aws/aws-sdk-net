@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public FormEntryOutput Unmarshall(JsonUnmarshallerContext context)
         {
             FormEntryOutput unmarshalledObject = new FormEntryOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

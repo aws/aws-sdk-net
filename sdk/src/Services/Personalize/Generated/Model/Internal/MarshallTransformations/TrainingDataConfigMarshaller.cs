@@ -46,6 +46,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TrainingDataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExcludedDatasetColumns())
             {
                 context.Writer.WritePropertyName("excludedDatasetColumns");
@@ -74,4 +76,3 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

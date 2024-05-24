@@ -46,6 +46,8 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StartSessionRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLedgerName())
             {
                 context.Writer.WritePropertyName("LedgerName");
@@ -61,4 +63,3 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.TimestreamWrite
 {
     /// <summary>
@@ -281,6 +282,11 @@ namespace Amazon.TimestreamWrite
 
         #region  EndpointOperation Override
 
+        /// <summary>
+        /// Resolve endpoint for service api request.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         protected override IEnumerable<DiscoveryEndpointBase> EndpointOperation(EndpointOperationContextBase context)
         {
             return EndpointDiscoveryResolver.ResolveEndpoints(context, () =>

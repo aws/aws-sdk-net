@@ -46,6 +46,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ToxicityDetectionSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetToxicityCategories())
             {
                 context.Writer.WritePropertyName("ToxicityCategories");
@@ -66,4 +68,3 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

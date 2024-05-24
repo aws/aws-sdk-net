@@ -46,6 +46,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EbsSnapshotConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGroups())
             {
                 context.Writer.WritePropertyName("groups");
@@ -83,4 +85,3 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public Ec2ReservedInstancesConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             Ec2ReservedInstancesConfiguration unmarshalledObject = new Ec2ReservedInstancesConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -179,4 +181,3 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

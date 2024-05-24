@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         public ApiInvocationInput Unmarshall(JsonUnmarshallerContext context)
         {
             ApiInvocationInput unmarshalledObject = new ApiInvocationInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

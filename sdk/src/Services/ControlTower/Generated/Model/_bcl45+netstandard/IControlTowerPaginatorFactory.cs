@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the controltower-2018-05-10.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
@@ -29,6 +30,11 @@ namespace Amazon.ControlTower.Model
         /// Paginator for ListBaselines operation
         ///</summary>
         IListBaselinesPaginator ListBaselines(ListBaselinesRequest request);
+
+        /// <summary>
+        /// Paginator for ListControlOperations operation
+        ///</summary>
+        IListControlOperationsPaginator ListControlOperations(ListControlOperationsRequest request);
 
         /// <summary>
         /// Paginator for ListEnabledBaselines operation

@@ -57,6 +57,8 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
         public FlowExecutionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             FlowExecutionSummary unmarshalledObject = new FlowExecutionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public ProviderIdNameSpaceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ProviderIdNameSpaceConfiguration unmarshalledObject = new ProviderIdNameSpaceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

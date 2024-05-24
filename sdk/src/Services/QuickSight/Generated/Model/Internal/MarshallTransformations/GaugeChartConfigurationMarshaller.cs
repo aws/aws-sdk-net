@@ -46,6 +46,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GaugeChartConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetColorConfiguration())
+            {
+                context.Writer.WritePropertyName("ColorConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GaugeChartColorConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ColorConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDataLabels())
             {
                 context.Writer.WritePropertyName("DataLabels");
@@ -121,4 +134,3 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

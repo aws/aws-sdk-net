@@ -26,14 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// A range of IP addresses and port settings that allow inbound traffic to connect to
-    /// server processes on an instance in a fleet. New game sessions are assigned an IP address/port
-    /// number combination, which must fall into the fleet's allowed ranges. Fleets with custom
-    /// game builds must have permissions explicitly set. For Realtime Servers fleets, Amazon
-    /// GameLift automatically opens two port ranges, one for TCP messaging and one for UDP.
+    /// processes on an instance in a fleet. Processes are assigned an IP address/port number
+    /// combination, which must fall into the fleet's allowed ranges. For container fleets,
+    /// the port settings must use the same port numbers as the fleet's connection ports.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges,
+    /// one for TCP messaging and one for UDP.
+    /// </para>
     /// </summary>
     public partial class IpPermission
     {

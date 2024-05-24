@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public ParameterConstraints Unmarshall(JsonUnmarshallerContext context)
         {
             ParameterConstraints unmarshalledObject = new ParameterConstraints();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -125,4 +127,3 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

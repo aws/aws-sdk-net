@@ -24,23 +24,23 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.OpsWorks.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.OpsWorks
 {
     /// <summary>
     /// <para>Interface for accessing OpsWorks</para>
     ///
-    /// AWS OpsWorks 
+    /// OpsWorks 
     /// <para>
-    /// Welcome to the <i>AWS OpsWorks Stacks API Reference</i>. This guide provides descriptions,
-    /// syntax, and usage examples for AWS OpsWorks Stacks actions and data types, including
-    /// common parameters and error codes. 
+    /// Welcome to the <i>OpsWorks Stacks API Reference</i>. This guide provides descriptions,
+    /// syntax, and usage examples for OpsWorks Stacks actions and data types, including common
+    /// parameters and error codes. 
     /// </para>
     ///  
     /// <para>
-    /// AWS OpsWorks Stacks is an application management service that provides an integrated
-    /// experience for overseeing the complete application lifecycle. For information about
-    /// this product, go to the <a href="http://aws.amazon.com/opsworks/">AWS OpsWorks</a>
-    /// details page. 
+    /// OpsWorks Stacks is an application management service that provides an integrated experience
+    /// for managing the complete application lifecycle. For information about OpsWorks, see
+    /// the <a href="http://aws.amazon.com/opsworks/">OpsWorks</a> information page.
     /// </para>
     ///  
     /// <para>
@@ -48,42 +48,42 @@ namespace Amazon.OpsWorks
     /// </para>
     ///  
     /// <para>
-    /// The most common way to use the AWS OpsWorks Stacks API is by using the AWS Command
-    /// Line Interface (CLI) or by using one of the AWS SDKs to implement applications in
-    /// your preferred language. For more information, see:
+    /// Use the OpsWorks Stacks API by using the Command Line Interface (CLI) or by using
+    /// one of the Amazon Web Services SDKs to implement applications in your preferred language.
+    /// For more information, see:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS
-    /// CLI</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html">AWS
-    /// SDK for Java</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm">AWS
-    /// SDK for .NET</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html">AWS
-    /// SDK for PHP 2</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="http://docs.aws.amazon.com/sdkforruby/api/">AWS SDK for Ruby</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS SDK for Node.js</a>
+    ///  <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">CLI</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK for Python(Boto)</a>
+    ///  <a href="https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html">SDK
+    /// for Java</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/sdkfornet/v3/apidocs/items/OpsWorks/NOpsWorks.html">SDK
+    /// for .NET</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.OpsWorks.OpsWorksClient.html">SDK
+    /// for PHP</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/sdkforruby/api/">SDK for Ruby</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://aws.amazon.com/documentation/sdkforjavascript/">Amazon Web Services
+    /// SDK for Node.js</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">SDK for Python (Boto)</a>
     /// 
     /// </para>
     ///  </li> </ul> 
@@ -92,9 +92,9 @@ namespace Amazon.OpsWorks
     /// </para>
     ///  
     /// <para>
-    /// AWS OpsWorks Stacks supports the following endpoints, all HTTPS. You must connect
-    /// to one of the following endpoints. Stacks can only be accessed or managed within the
-    /// endpoint in which they are created.
+    /// OpsWorks Stacks supports the following endpoints, all HTTPS. You must connect to one
+    /// of the following endpoints. Stacks can only be accessed or managed within the endpoint
+    /// in which they are created.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -114,7 +114,8 @@ namespace Amazon.OpsWorks
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// opsworks.ca-central-1.amazonaws.com (API only; not available in the AWS console)
+    /// opsworks.ca-central-1.amazonaws.com (API only; not available in the Amazon Web Services
+    /// Management Console)
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -204,11 +205,11 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot use this action with instances that were created with AWS OpsWorks Stacks.
+        /// You cannot use this action with instances that were created with OpsWorks Stacks.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Required Permissions</b>: To use this action, an AWS Identity and Access Management
+        ///  <b>Required Permissions</b>: To use this action, an Identity and Access Management
         /// (IAM) user must have a Manage permissions level for the stack or an attached policy
         /// that explicitly grants permissions. For more information on user permissions, see
         /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
@@ -374,16 +375,16 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Attaches an Elastic Load Balancing load balancer to a specified layer. AWS OpsWorks
-        /// Stacks does not support Application Load Balancer. You can only use Classic Load Balancer
-        /// with AWS OpsWorks Stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic
+        /// Attaches an Elastic Load Balancing load balancer to a specified layer. OpsWorks Stacks
+        /// does not support Application Load Balancer. You can only use Classic Load Balancer
+        /// with OpsWorks Stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic
         /// Load Balancing</a>.
         /// 
         ///  <note> 
         /// <para>
         /// You must create the Elastic Load Balancing instance separately, by using the Elastic
-        /// Load Balancing console, API, or CLI. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html">
-        /// Elastic Load Balancing Developer Guide</a>.
+        /// Load Balancing console, API, or CLI. For more information, see the <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html">Elastic
+        /// Load Balancing Developer Guide</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1159,8 +1160,8 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Deregisters a specified Elastic IP address. The address can then be registered by
-        /// another stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+        /// Deregisters a specified Elastic IP address. The address can be registered by another
+        /// stack after it is deregistered. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
         /// Management</a>.
         /// 
         ///  
@@ -1215,9 +1216,9 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Deregister a registered Amazon EC2 or on-premises instance. This action removes the
-        /// instance from the stack and returns it to your control. This action cannot be used
-        /// with instances that were created with AWS OpsWorks Stacks.
+        /// Deregister an instance from OpsWorks Stacks. The instance can be a registered instance
+        /// (Amazon EC2 or on-premises) or an instance created with OpsWorks. This action removes
+        /// the instance from the stack and returns it to your control.
         /// 
         ///  
         /// <para>
@@ -1381,8 +1382,8 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Describes the available AWS OpsWorks Stacks agent versions. You must specify a stack
-        /// ID or a configuration manager. <c>DescribeAgentVersions</c> returns a list of available
+        /// Describes the available OpsWorks Stacks agent versions. You must specify a stack ID
+        /// or a configuration manager. <c>DescribeAgentVersions</c> returns a list of available
         /// agent versions for the specified stack or configuration manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAgentVersions service method.</param>
@@ -1605,8 +1606,8 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes Amazon ECS clusters that are registered with a stack. If you specify only
         /// a stack ID, you can use the <c>MaxResults</c> and <c>NextToken</c> parameters to paginate
-        /// the response. However, AWS OpsWorks Stacks currently supports only one cluster per
-        /// layer, so the result set has a maximum of one element.
+        /// the response. However, OpsWorks Stacks currently supports only one cluster per layer,
+        /// so the result set has a maximum of one element.
         /// 
         ///  
         /// <para>
@@ -2045,7 +2046,7 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Describes the operating systems that are supported by AWS OpsWorks Stacks.
+        /// Describes the operating systems that are supported by OpsWorks Stacks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOperatingSystems service method.</param>
         /// 
@@ -2255,7 +2256,7 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Describes AWS OpsWorks Stacks service errors.
+        /// Describes OpsWorks Stacks service errors.
         /// 
         ///  
         /// <para>
@@ -2281,7 +2282,7 @@ namespace Amazon.OpsWorks
         DescribeServiceErrorsResponse DescribeServiceErrors();
 
         /// <summary>
-        /// Describes AWS OpsWorks Stacks service errors.
+        /// Describes OpsWorks Stacks service errors.
         /// 
         ///  
         /// <para>
@@ -3147,17 +3148,17 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Registers instances that were created outside of AWS OpsWorks Stacks with a specified
+        /// Registers instances that were created outside of OpsWorks Stacks with a specified
         /// stack.
         /// 
         ///  <note> 
         /// <para>
         /// We do not recommend using this action to register instances. The complete registration
-        /// operation includes two tasks: installing the AWS OpsWorks Stacks agent on the instance,
+        /// operation includes two tasks: installing the OpsWorks Stacks agent on the instance,
         /// and registering the instance with the stack. <c>RegisterInstance</c> handles only
-        /// the second step. You should instead use the AWS CLI <c>register</c> command, which
-        /// performs the entire registration operation. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
-        /// Registering an Instance with an AWS OpsWorks Stacks Stack</a>.
+        /// the second step. You should instead use the CLI <c>register</c> command, which performs
+        /// the entire registration operation. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
+        /// Registering an Instance with an OpsWorks Stacks Stack</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3724,9 +3725,9 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks Stacks. For
-        /// more information about how tagging works, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a>
-        /// in the AWS OpsWorks User Guide.
+        /// Apply cost-allocation tags to a specified stack or layer in OpsWorks Stacks. For more
+        /// information about how tagging works, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a>
+        /// in the OpsWorks User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -3774,7 +3775,7 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Unassigns a registered instance from all layers that are using the instance. The instance
         /// remains in the stack as an unassigned instance, and can be assigned to another layer
-        /// as needed. You cannot use this action with instances that were created with AWS OpsWorks
+        /// as needed. You cannot use this action with instances that were created with OpsWorks
         /// Stacks.
         /// 
         ///  

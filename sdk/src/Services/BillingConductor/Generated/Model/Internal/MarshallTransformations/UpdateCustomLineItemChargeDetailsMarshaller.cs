@@ -46,6 +46,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateCustomLineItemChargeDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFlat())
             {
                 context.Writer.WritePropertyName("Flat");
@@ -93,4 +95,3 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

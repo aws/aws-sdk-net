@@ -63,12 +63,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PermissionsBoundary", StringUtils.FromString(publicRequest.PermissionsBoundary));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRoleName())
                 {
                     request.Parameters.Add("RoleName", StringUtils.FromString(publicRequest.RoleName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

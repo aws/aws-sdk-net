@@ -46,6 +46,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DomainEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
@@ -99,4 +101,3 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

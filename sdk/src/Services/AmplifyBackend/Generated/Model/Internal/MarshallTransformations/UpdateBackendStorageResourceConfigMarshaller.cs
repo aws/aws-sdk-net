@@ -46,6 +46,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateBackendStorageResourceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPermissions())
             {
                 context.Writer.WritePropertyName("permissions");
@@ -72,4 +74,3 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

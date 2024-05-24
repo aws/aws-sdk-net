@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputTransformer requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInputPathsMap())
             {
                 context.Writer.WritePropertyName("InputPathsMap");
@@ -75,4 +77,3 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

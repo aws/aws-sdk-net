@@ -46,6 +46,8 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CodeDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCodeCommit())
             {
                 context.Writer.WritePropertyName("codeCommit");
@@ -77,4 +79,3 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

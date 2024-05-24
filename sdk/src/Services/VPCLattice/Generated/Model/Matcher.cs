@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
-    /// The codes to use when checking for a successful response from a target for health
-    /// checks.
+    /// Describes the codes to use when checking for a successful response from a target for
+    /// health checks.
     /// </summary>
     public partial class Matcher
     {

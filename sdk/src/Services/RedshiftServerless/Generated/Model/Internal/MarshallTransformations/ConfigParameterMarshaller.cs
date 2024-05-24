@@ -46,6 +46,8 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConfigParameter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetParameterKey())
             {
                 context.Writer.WritePropertyName("parameterKey");
@@ -67,4 +69,3 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -20,7 +20,7 @@
     <property>Amazon.TimestreamQuery.Model.CreateScheduledQueryRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>[a-zA-Z0-9|!\-_*'\(\)]([a-zA-Z0-9]|[!\-_*'\(\)\/.])+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamQuery.Model.CreateScheduledQueryRequest.QueryString</property>
@@ -165,7 +165,7 @@
     <property>Amazon.TimestreamQuery.Model.ScheduledQuery.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>[a-zA-Z0-9|!\-_*'\(\)]([a-zA-Z0-9]|[!\-_*'\(\)\/.])+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamQuery.Model.ScheduledQueryDescription.Arn</property>
@@ -181,7 +181,7 @@
     <property>Amazon.TimestreamQuery.Model.ScheduledQueryDescription.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>[a-zA-Z0-9|!\-_*'\(\)]([a-zA-Z0-9]|[!\-_*'\(\)\/.])+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamQuery.Model.ScheduledQueryDescription.QueryString</property>

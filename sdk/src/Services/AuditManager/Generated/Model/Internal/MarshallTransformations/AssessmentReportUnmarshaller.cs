@@ -57,6 +57,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         public AssessmentReport Unmarshall(JsonUnmarshallerContext context)
         {
             AssessmentReport unmarshalledObject = new AssessmentReport();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -137,4 +139,3 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

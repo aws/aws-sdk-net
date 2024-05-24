@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsAmazonMqBrokerLdapServerMetadataDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsAmazonMqBrokerLdapServerMetadataDetails unmarshalledObject = new AwsAmazonMqBrokerLdapServerMetadataDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -143,4 +145,3 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

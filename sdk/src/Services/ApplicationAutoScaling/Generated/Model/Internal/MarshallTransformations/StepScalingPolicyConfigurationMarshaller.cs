@@ -46,6 +46,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StepScalingPolicyConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdjustmentType())
             {
                 context.Writer.WritePropertyName("AdjustmentType");
@@ -95,4 +97,3 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

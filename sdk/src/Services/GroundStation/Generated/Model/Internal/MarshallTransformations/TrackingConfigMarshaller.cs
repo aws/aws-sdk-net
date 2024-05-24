@@ -46,6 +46,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TrackingConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutotrack())
             {
                 context.Writer.WritePropertyName("autotrack");
@@ -61,4 +63,3 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

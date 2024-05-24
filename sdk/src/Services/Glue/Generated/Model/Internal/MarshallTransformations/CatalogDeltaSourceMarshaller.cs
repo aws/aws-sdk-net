@@ -46,6 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CatalogDeltaSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalDeltaOptions())
             {
                 context.Writer.WritePropertyName("AdditionalDeltaOptions");
@@ -103,4 +105,3 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

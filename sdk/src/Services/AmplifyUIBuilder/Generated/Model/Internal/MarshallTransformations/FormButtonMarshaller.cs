@@ -46,6 +46,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FormButton requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChildren())
             {
                 context.Writer.WritePropertyName("children");
@@ -78,4 +80,3 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

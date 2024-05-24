@@ -66,18 +66,15 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     {
                         if(publicRequestlistValue.IsSetSnapshotClusterIdentifier())
                         {
-                            request.Parameters.Add("Identifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SnapshotClusterIdentifier", StringUtils.FromString(publicRequestlistValue.SnapshotClusterIdentifier));
+                            request.Parameters.Add("Identifiers" + "." + "DeleteClusterSnapshotMessage" + "." + publicRequestlistValueIndex + "." + "SnapshotClusterIdentifier", StringUtils.FromString(publicRequestlistValue.SnapshotClusterIdentifier));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetSnapshotIdentifier())
                         {
-                            request.Parameters.Add("Identifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SnapshotIdentifier", StringUtils.FromString(publicRequestlistValue.SnapshotIdentifier));
+                            request.Parameters.Add("Identifiers" + "." + "DeleteClusterSnapshotMessage" + "." + publicRequestlistValueIndex + "." + "SnapshotIdentifier", StringUtils.FromString(publicRequestlistValue.SnapshotIdentifier));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

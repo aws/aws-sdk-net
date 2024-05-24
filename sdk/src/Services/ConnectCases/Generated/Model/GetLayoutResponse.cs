@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
@@ -34,6 +35,9 @@ namespace Amazon.ConnectCases.Model
     public partial class GetLayoutResponse : AmazonWebServiceResponse
     {
         private LayoutContent _content;
+        private DateTime? _createdTime;
+        private bool? _deleted;
+        private DateTime? _lastModifiedTime;
         private string _layoutArn;
         private string _layoutId;
         private string _name;
@@ -57,6 +61,60 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedTime. 
+        /// <para>
+        /// Timestamp at which the resource was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedTime
+        {
+            get { return this._createdTime.GetValueOrDefault(); }
+            set { this._createdTime = value; }
+        }
+
+        // Check to see if CreatedTime property is set
+        internal bool IsSetCreatedTime()
+        {
+            return this._createdTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Deleted. 
+        /// <para>
+        /// Denotes whether or not the resource has been deleted.
+        /// </para>
+        /// </summary>
+        public bool Deleted
+        {
+            get { return this._deleted.GetValueOrDefault(); }
+            set { this._deleted = value; }
+        }
+
+        // Check to see if Deleted property is set
+        internal bool IsSetDeleted()
+        {
+            return this._deleted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// Timestamp at which the resource was created or last modified.
+        /// </para>
+        /// </summary>
+        public DateTime LastModifiedTime
+        {
+            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
         }
 
         /// <summary>

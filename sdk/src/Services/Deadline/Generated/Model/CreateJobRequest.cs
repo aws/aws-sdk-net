@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Deadline.Model
 {
     /// <summary>
@@ -83,7 +84,7 @@ namespace Amazon.Deadline.Model
         // Check to see if ClientToken property is set
         internal bool IsSetClientToken()
         {
-            return this._clientToken != null;
+            return !string.IsNullOrEmpty(this._clientToken);
         }
 
         /// <summary>

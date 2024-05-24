@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.TimestreamQuery.Model
     public partial class ExecutionStats
     {
         private long? _bytesMetered;
+        private long? _cumulativeBytesScanned;
         private long? _dataWrites;
         private long? _executionTimeInMillis;
         private long? _queryResultRows;
@@ -55,6 +57,24 @@ namespace Amazon.TimestreamQuery.Model
         internal bool IsSetBytesMetered()
         {
             return this._bytesMetered.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CumulativeBytesScanned. 
+        /// <para>
+        /// Bytes scanned for a single scheduled query run.
+        /// </para>
+        /// </summary>
+        public long CumulativeBytesScanned
+        {
+            get { return this._cumulativeBytesScanned.GetValueOrDefault(); }
+            set { this._cumulativeBytesScanned = value; }
+        }
+
+        // Check to see if CumulativeBytesScanned property is set
+        internal bool IsSetCumulativeBytesScanned()
+        {
+            return this._cumulativeBytesScanned.HasValue; 
         }
 
         /// <summary>

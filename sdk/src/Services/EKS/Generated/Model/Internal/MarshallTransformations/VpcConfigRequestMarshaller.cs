@@ -46,6 +46,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VpcConfigRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndpointPrivateAccess())
             {
                 context.Writer.WritePropertyName("endpointPrivateAccess");
@@ -100,4 +102,3 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RedshiftDestinationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchLoggingOptions())
             {
                 context.Writer.WritePropertyName("CloudWatchLoggingOptions");
@@ -151,4 +153,3 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

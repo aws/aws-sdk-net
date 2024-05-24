@@ -46,6 +46,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReportConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetReportS3Configuration())
             {
                 context.Writer.WritePropertyName("ReportS3Configuration");
@@ -66,4 +68,3 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

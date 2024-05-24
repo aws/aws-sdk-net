@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AdvancedDataProtectionMetrics Object
     /// </summary>  
-    public class AdvancedDataProtectionMetricsUnmarshaller : IUnmarshaller<AdvancedDataProtectionMetrics, XmlUnmarshallerContext>
+    public class AdvancedDataProtectionMetricsUnmarshaller : IUnmarshaller<AdvancedDataProtectionMetrics, XmlUnmarshallerContext>, IUnmarshaller<AdvancedDataProtectionMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,6 +70,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public AdvancedDataProtectionMetrics Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static AdvancedDataProtectionMetricsUnmarshaller _instance = new AdvancedDataProtectionMetricsUnmarshaller();        
 
@@ -85,4 +95,3 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

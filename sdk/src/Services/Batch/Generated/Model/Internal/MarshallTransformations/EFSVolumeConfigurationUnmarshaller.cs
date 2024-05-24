@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public EFSVolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EFSVolumeConfiguration unmarshalledObject = new EFSVolumeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

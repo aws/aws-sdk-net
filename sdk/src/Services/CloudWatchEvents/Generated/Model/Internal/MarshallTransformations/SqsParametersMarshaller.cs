@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SqsParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMessageGroupId())
             {
                 context.Writer.WritePropertyName("MessageGroupId");
@@ -61,4 +63,3 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

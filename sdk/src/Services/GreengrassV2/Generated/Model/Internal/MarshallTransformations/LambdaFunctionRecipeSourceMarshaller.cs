@@ -46,6 +46,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LambdaFunctionRecipeSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComponentDependencies())
             {
                 context.Writer.WritePropertyName("componentDependencies");
@@ -119,4 +121,3 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// Describes the data source that contains the data to upload to a dataset.
+    /// Describes the data source that contains the data to upload to a dataset, or the list
+    /// of records to delete from Amazon Personalize.
     /// </summary>
     public partial class DataSource
     {
@@ -38,8 +40,24 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property DataLocation. 
         /// <para>
-        /// The path to the Amazon S3 bucket where the data that you want to upload to your dataset
-        /// is stored. For example: 
+        /// For dataset import jobs, the path to the Amazon S3 bucket where the data that you
+        /// want to upload to your dataset is stored. For data deletion jobs, the path to the
+        /// Amazon S3 bucket that stores the list of records to delete. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For example: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>s3://bucket-name/folder-name/fileName.csv</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If your CSV files are in a folder in your Amazon S3 bucket and you want your import
+        /// job or data deletion job to consider multiple files, you can specify the path to the
+        /// folder. With a data deletion job, Amazon Personalize uses all files in the folder
+        /// and any sub folder. Use the following syntax with a <c>/</c> after the folder name:
         /// </para>
         ///  
         /// <para>

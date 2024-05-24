@@ -6,8 +6,16 @@ using System.Text;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// Metrics unmarshaller
+    /// </summary>
     public class MetricsUnmarshaller : IUnmarshaller<Metrics, XmlUnmarshallerContext>, IUnmarshaller<Metrics, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Metrics Unmarshall(XmlUnmarshallerContext context)
         {
             Metrics metrics = new Metrics();
@@ -41,6 +49,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return metrics;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Metrics Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -48,6 +61,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static MetricsUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static MetricsUnmarshaller Instance
         {
             get

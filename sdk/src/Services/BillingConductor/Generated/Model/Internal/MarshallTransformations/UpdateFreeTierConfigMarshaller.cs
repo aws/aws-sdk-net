@@ -46,6 +46,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateFreeTierConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActivated())
             {
                 context.Writer.WritePropertyName("Activated");
@@ -61,4 +63,3 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

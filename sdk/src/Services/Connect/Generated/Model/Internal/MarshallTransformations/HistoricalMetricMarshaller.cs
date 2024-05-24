@@ -46,6 +46,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HistoricalMetric requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
@@ -84,4 +86,3 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

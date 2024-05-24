@@ -57,6 +57,8 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         public ScraperSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ScraperSummary unmarshalledObject = new ScraperSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -149,4 +151,3 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

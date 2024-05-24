@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.KeyManagementService
 {
     /// <summary>
@@ -7063,7 +7064,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The public key (or "wrapping key") of an RSA key pair that KMS generates.
+        /// The public key (or "wrapping key") of an asymmetric key pair that KMS generates.
         /// </para>
         ///  
         /// <para>

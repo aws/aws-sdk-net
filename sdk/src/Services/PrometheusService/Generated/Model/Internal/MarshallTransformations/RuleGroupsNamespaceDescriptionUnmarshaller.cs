@@ -57,6 +57,8 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         public RuleGroupsNamespaceDescription Unmarshall(JsonUnmarshallerContext context)
         {
             RuleGroupsNamespaceDescription unmarshalledObject = new RuleGroupsNamespaceDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -125,4 +127,3 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

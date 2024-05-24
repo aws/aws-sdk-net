@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SelectedStep requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStepName())
             {
                 context.Writer.WritePropertyName("StepName");
@@ -61,4 +63,3 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

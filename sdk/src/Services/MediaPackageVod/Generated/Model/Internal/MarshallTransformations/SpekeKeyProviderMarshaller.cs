@@ -46,6 +46,8 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SpekeKeyProvider requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEncryptionContractConfiguration())
             {
                 context.Writer.WritePropertyName("encryptionContractConfiguration");
@@ -89,4 +91,3 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

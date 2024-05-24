@@ -46,6 +46,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatastorePartitions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPartitions())
             {
                 context.Writer.WritePropertyName("partitions");
@@ -71,4 +73,3 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glacier.Model
 {
     /// <summary>
@@ -50,7 +51,7 @@ namespace Amazon.Glacier.Model
         // Check to see if CapacityId property is set
         internal bool IsSetCapacityId()
         {
-            return this._capacityId != null;
+            return !string.IsNullOrEmpty(this._capacityId);
         }
 
     }

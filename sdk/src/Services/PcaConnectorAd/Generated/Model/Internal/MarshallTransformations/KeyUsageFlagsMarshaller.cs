@@ -46,6 +46,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KeyUsageFlags requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataEncipherment())
             {
                 context.Writer.WritePropertyName("DataEncipherment");
@@ -85,4 +87,3 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

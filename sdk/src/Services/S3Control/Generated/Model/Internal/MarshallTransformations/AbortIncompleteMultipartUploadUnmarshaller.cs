@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AbortIncompleteMultipartUpload Object
     /// </summary>  
-    public class AbortIncompleteMultipartUploadUnmarshaller : IUnmarshaller<AbortIncompleteMultipartUpload, XmlUnmarshallerContext>
+    public class AbortIncompleteMultipartUploadUnmarshaller : IUnmarshaller<AbortIncompleteMultipartUpload, XmlUnmarshallerContext>, IUnmarshaller<AbortIncompleteMultipartUpload, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,6 +70,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public AbortIncompleteMultipartUpload Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static AbortIncompleteMultipartUploadUnmarshaller _instance = new AbortIncompleteMultipartUploadUnmarshaller();        
 
@@ -85,4 +95,3 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

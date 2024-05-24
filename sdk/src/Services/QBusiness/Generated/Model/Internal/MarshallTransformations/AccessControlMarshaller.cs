@@ -46,6 +46,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AccessControl requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMemberRelation())
             {
                 context.Writer.WritePropertyName("memberRelation");
@@ -77,4 +79,3 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

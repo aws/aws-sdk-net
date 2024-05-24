@@ -60,7 +60,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("scheduledActions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    var unmarshaller = new ListUnmarshaller<ScheduledActionAssociation, ScheduledActionAssociationUnmarshaller>(ScheduledActionAssociationUnmarshaller.Instance);
                     response.ScheduledActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -127,4 +127,3 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

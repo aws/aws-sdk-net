@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DistributionIdList Object
     /// </summary>  
-    public class DistributionIdListUnmarshaller : IUnmarshaller<DistributionIdList, XmlUnmarshallerContext>
+    public class DistributionIdListUnmarshaller : IUnmarshaller<DistributionIdList, XmlUnmarshallerContext>, IUnmarshaller<DistributionIdList, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -104,6 +104,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public DistributionIdList Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static DistributionIdListUnmarshaller _instance = new DistributionIdListUnmarshaller();        
 
@@ -119,4 +129,3 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

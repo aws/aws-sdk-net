@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public Channel Unmarshall(JsonUnmarshallerContext context)
         {
             Channel unmarshalledObject = new Channel();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -131,4 +133,3 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

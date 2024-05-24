@@ -66,6 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetMaxResults())
@@ -142,4 +143,3 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Filter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetField())
             {
                 context.Writer.WritePropertyName("field");
@@ -73,4 +75,3 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -25,6 +25,10 @@ namespace Amazon.S3.Model
     /// </summary>
     public sealed class IntelligentTieringAndOperator : IntelligentTieringNAryOperator
     {
+        /// <summary>
+        /// Construct an instance of IntelligentTieringAndOperator
+        /// </summary>
+        /// <param name="operands"></param>
         public IntelligentTieringAndOperator(List<IntelligentTieringFilterPredicate> operands) :
             base(operands)
         { }

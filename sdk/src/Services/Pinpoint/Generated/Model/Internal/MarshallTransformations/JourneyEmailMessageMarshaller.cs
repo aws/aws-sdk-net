@@ -46,6 +46,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JourneyEmailMessage requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFromAddress())
             {
                 context.Writer.WritePropertyName("FromAddress");
@@ -61,4 +63,3 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

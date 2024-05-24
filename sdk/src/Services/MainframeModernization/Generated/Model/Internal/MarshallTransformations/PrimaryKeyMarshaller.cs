@@ -46,6 +46,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PrimaryKey requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLength())
             {
                 context.Writer.WritePropertyName("length");
@@ -73,4 +75,3 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

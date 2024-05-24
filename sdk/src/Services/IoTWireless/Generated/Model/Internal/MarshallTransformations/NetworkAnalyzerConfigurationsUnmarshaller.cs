@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public NetworkAnalyzerConfigurations Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkAnalyzerConfigurations unmarshalledObject = new NetworkAnalyzerConfigurations();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

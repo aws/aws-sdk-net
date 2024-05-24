@@ -57,6 +57,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         public EnrollmentFlagsV2 Unmarshall(JsonUnmarshallerContext context)
         {
             EnrollmentFlagsV2 unmarshalledObject = new EnrollmentFlagsV2();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

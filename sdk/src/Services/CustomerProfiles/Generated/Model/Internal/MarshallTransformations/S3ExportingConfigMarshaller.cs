@@ -46,6 +46,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3ExportingConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3BucketName())
             {
                 context.Writer.WritePropertyName("S3BucketName");
@@ -67,4 +69,3 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

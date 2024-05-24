@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public EventSourceMappingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EventSourceMappingConfiguration unmarshalledObject = new EventSourceMappingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -245,4 +247,3 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

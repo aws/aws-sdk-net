@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the ssm-sap-2018-05-10.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
@@ -39,6 +40,11 @@ namespace Amazon.SsmSap.Model
         /// Paginator for ListDatabases operation
         ///</summary>
         IListDatabasesPaginator ListDatabases(ListDatabasesRequest request);
+
+        /// <summary>
+        /// Paginator for ListOperationEvents operation
+        ///</summary>
+        IListOperationEventsPaginator ListOperationEvents(ListOperationEventsRequest request);
 
         /// <summary>
         /// Paginator for ListOperations operation

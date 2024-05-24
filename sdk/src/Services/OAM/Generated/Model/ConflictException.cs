@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OAM.Model
 {
     /// <summary>
@@ -138,7 +139,7 @@ namespace Amazon.OAM.Model
         // Check to see if AmznErrorType property is set
         internal bool IsSetAmznErrorType()
         {
-            return this._amznErrorType != null;
+            return !string.IsNullOrEmpty(this._amznErrorType);
         }
 
     }

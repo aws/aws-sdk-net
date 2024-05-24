@@ -66,6 +66,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAction())
@@ -113,6 +114,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("FirewallDomainListId");
                     context.Writer.Write(publicRequest.FirewallDomainListId);
+                }
+
+                if(publicRequest.IsSetFirewallDomainRedirectionAction())
+                {
+                    context.Writer.WritePropertyName("FirewallDomainRedirectionAction");
+                    context.Writer.Write(publicRequest.FirewallDomainRedirectionAction);
                 }
 
                 if(publicRequest.IsSetFirewallRuleGroupId())
@@ -167,4 +174,3 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

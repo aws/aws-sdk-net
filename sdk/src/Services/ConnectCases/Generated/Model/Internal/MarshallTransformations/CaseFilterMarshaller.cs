@@ -46,6 +46,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CaseFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAndAll())
             {
                 context.Writer.WritePropertyName("andAll");
@@ -109,4 +111,3 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

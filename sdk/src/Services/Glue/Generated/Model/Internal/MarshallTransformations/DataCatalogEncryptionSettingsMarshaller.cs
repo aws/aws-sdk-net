@@ -46,6 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataCatalogEncryptionSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConnectionPasswordEncryption())
             {
                 context.Writer.WritePropertyName("ConnectionPasswordEncryption");
@@ -77,4 +79,3 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(User requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetProperties())
             {
                 context.Writer.WritePropertyName("properties");
@@ -67,4 +69,3 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

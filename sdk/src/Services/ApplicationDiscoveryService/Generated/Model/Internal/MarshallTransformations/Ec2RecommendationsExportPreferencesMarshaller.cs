@@ -46,6 +46,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <returns></returns>
         public void Marshall(Ec2RecommendationsExportPreferences requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCpuPerformanceMetricBasis())
             {
                 context.Writer.WritePropertyName("cpuPerformanceMetricBasis");
@@ -117,4 +119,3 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
     }
 }
-#pragma warning restore CS0612,CS0618

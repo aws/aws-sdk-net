@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FragmentSelector requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFragmentSelectorType())
             {
                 context.Writer.WritePropertyName("FragmentSelectorType");
@@ -72,4 +74,3 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

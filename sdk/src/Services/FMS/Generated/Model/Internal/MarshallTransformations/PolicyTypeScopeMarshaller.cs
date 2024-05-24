@@ -46,6 +46,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PolicyTypeScope requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllPolicyTypesEnabled())
             {
                 context.Writer.WritePropertyName("AllPolicyTypesEnabled");
@@ -72,4 +74,3 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

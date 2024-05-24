@@ -46,6 +46,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SegmentCondition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSegmentId())
             {
                 context.Writer.WritePropertyName("SegmentId");
@@ -61,4 +63,3 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

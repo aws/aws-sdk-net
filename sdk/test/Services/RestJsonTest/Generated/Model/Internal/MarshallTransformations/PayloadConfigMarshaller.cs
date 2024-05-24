@@ -46,6 +46,8 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PayloadConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetData())
             {
                 context.Writer.WritePropertyName("data");
@@ -61,4 +63,3 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SuiteDefinitionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDevicePermissionRoleArn())
             {
                 context.Writer.WritePropertyName("devicePermissionRoleArn");
@@ -107,4 +109,3 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

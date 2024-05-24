@@ -26,11 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTask operation.
-    /// Provides information about an DataSync transfer task.
+    /// Provides information about a <i>task</i>, which defines where and how DataSync transfers
+    /// your data.
     /// </summary>
     public partial class DescribeTaskRequest : AmazonDataSyncRequest
     {
@@ -39,7 +41,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// Specifies the Amazon Resource Name (ARN) of the transfer task.
+        /// Specifies the Amazon Resource Name (ARN) of the transfer task that you want information
+        /// about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

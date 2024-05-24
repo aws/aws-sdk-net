@@ -57,6 +57,8 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         public DatastoreProperties Unmarshall(JsonUnmarshallerContext context)
         {
             DatastoreProperties unmarshalledObject = new DatastoreProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -149,4 +151,3 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

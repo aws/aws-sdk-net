@@ -46,6 +46,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FsxProtocol requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNFS())
             {
                 context.Writer.WritePropertyName("NFS");
@@ -77,4 +79,3 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

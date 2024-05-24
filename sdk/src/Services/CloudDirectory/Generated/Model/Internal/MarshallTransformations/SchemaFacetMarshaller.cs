@@ -46,6 +46,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SchemaFacet requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFacetName())
             {
                 context.Writer.WritePropertyName("FacetName");
@@ -67,4 +69,3 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

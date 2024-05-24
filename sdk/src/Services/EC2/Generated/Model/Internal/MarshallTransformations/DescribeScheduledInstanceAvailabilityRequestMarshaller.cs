@@ -68,7 +68,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -78,57 +77,46 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFirstSlotStartTimeRange())
                 {
                     if(publicRequest.FirstSlotStartTimeRange.IsSetEarliestTimeUtc())
                     {
-                        request.Parameters.Add("FirstSlotStartTimeRange" + "." + "EarliestTime", StringUtils.FromDateTimeToISO8601(publicRequest.FirstSlotStartTimeRange.EarliestTimeUtc));
+                        request.Parameters.Add("FirstSlotStartTimeRange" + "." + "EarliestTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.FirstSlotStartTimeRange.EarliestTimeUtc));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.FirstSlotStartTimeRange.IsSetLatestTimeUtc())
                     {
-                        request.Parameters.Add("FirstSlotStartTimeRange" + "." + "LatestTime", StringUtils.FromDateTimeToISO8601(publicRequest.FirstSlotStartTimeRange.LatestTimeUtc));
+                        request.Parameters.Add("FirstSlotStartTimeRange" + "." + "LatestTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.FirstSlotStartTimeRange.LatestTimeUtc));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxSlotDurationInHours())
                 {
                     request.Parameters.Add("MaxSlotDurationInHours", StringUtils.FromInt(publicRequest.MaxSlotDurationInHours));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMinSlotDurationInHours())
                 {
                     request.Parameters.Add("MinSlotDurationInHours", StringUtils.FromInt(publicRequest.MinSlotDurationInHours));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRecurrence())
                 {
                     if(publicRequest.Recurrence.IsSetFrequency())
                     {
                         request.Parameters.Add("Recurrence" + "." + "Frequency", StringUtils.FromString(publicRequest.Recurrence.Frequency));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Recurrence.IsSetInterval())
                     {
                         request.Parameters.Add("Recurrence" + "." + "Interval", StringUtils.FromInt(publicRequest.Recurrence.Interval));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Recurrence.IsSetOccurrenceDays())
                     {
                         int publicRequestRecurrencelistValueIndex = 1;
@@ -138,19 +126,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestRecurrencelistValueIndex++;
                         }
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Recurrence.IsSetOccurrenceRelativeToEnd())
                     {
                         request.Parameters.Add("Recurrence" + "." + "OccurrenceRelativeToEnd", StringUtils.FromBool(publicRequest.Recurrence.OccurrenceRelativeToEnd));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Recurrence.IsSetOccurrenceUnit())
                     {
                         request.Parameters.Add("Recurrence" + "." + "OccurrenceUnit", StringUtils.FromString(publicRequest.Recurrence.OccurrenceUnit));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

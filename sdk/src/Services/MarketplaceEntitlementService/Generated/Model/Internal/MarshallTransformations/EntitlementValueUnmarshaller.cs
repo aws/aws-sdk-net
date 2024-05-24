@@ -57,6 +57,8 @@ namespace Amazon.MarketplaceEntitlementService.Model.Internal.MarshallTransforma
         public EntitlementValue Unmarshall(JsonUnmarshallerContext context)
         {
             EntitlementValue unmarshalledObject = new EntitlementValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.MarketplaceEntitlementService.Model.Internal.MarshallTransforma
         }
     }
 }
-#pragma warning restore CS0612,CS0618

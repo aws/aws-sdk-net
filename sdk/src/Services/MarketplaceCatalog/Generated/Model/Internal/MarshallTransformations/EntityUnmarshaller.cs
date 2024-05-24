@@ -57,6 +57,8 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         public Entity Unmarshall(JsonUnmarshallerContext context)
         {
             Entity unmarshalledObject = new Entity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

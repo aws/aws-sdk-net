@@ -166,11 +166,11 @@ using Amazon.Runtime.Internal.Util;
 					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
 				}
 
-				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{keyToUse}"))
 				{
 					headersFor<#=member.PropertyName#>.Add(
 						keyToUse,
-						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}")
+						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{keyToUse}")
 					);
 				}
 			}
@@ -190,11 +190,11 @@ using Amazon.Runtime.Internal.Util;
 					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
 				}
 
-				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{keyToUse}"))
 				{
 					headersFor<#=member.PropertyName#>.Add(
 						keyToUse,
-						context.ResponseData.GetHeaderValue($"{nameResponseHeaders}").Split(',').ToList()
+						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{keyToUse}").Split(',').ToList()
 					);
 				}
 			}
@@ -249,11 +249,11 @@ using Amazon.Runtime.Internal.Util;
 					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
 				}
 
-				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{keyToUse}"))
 				{
 					headersFor<#=member.PropertyName#>.Add(
 						keyToUse,
-						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}")
+						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{keyToUse}")
 					);
 				}
 			}
@@ -273,11 +273,11 @@ using Amazon.Runtime.Internal.Util;
 					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
 				}
 
-				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{keyToUse}"))
 				{
 					headersFor<#=member.PropertyName#>.Add(
 						keyToUse,
-						context.ResponseData.GetHeaderValue($"{nameResponseHeaders}").Split(',').ToList()
+						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{keyToUse}").Split(',').ToList()
 					);
 				}
 			}
@@ -293,17 +293,43 @@ using Amazon.Runtime.Internal.Util;
 
 <#+
 				}
-				else if (member.Shape.IsInt)
+				else if (member.Shape.IsList)
 				{
+					if(member.Shape.ListShape.IsMap || member.Shape.ListShape.IsList)
+					{
+						throw new Exception(string.Format("ListShape of {0}, type {1} is not supported within a List for response headers as Map or List is invalid.", member.Shape.ListShape.Name, member.Shape.ListShape.Type));
+					}
+					else if(member.Shape.ListShape.IsString)
+					{						
 #>
-				response.<#=member.PropertyName#> = int.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), CultureInfo.InvariantCulture);
+				response.<#=member.PropertyName#> = MultiValueHeaderParser.ToStringList(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"));
 <#+
-				}
-				else if (member.Shape.IsLong)
-				{
+					}
+					else if(member.Shape.ListShape.IsDateTime)
+					{
+						var timestampFormat = member.Shape.ListShape.GetTimestampFormat(MarshallLocation.Headers);
+						if(timestampFormat == TimestampFormat.ISO8601 || timestampFormat == TimestampFormat.RFC822 || timestampFormat == TimestampFormat.UnixTimestamp)
+						{							
 #>
-				response.<#=member.PropertyName#> = long.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), CultureInfo.InvariantCulture);
+				response.<#=member.PropertyName#> = MultiValueHeaderParser.ToDateTimeList(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), "<#=timestampFormat#>");
 <#+
+						}
+						else
+						{
+							throw new Exception(string.Format("Unable to determine the TimestampFormat for member {0}, type {1}.", member.Shape.ListShape.Name, member.Shape.ListShape.Type));
+						}
+					}
+					else if(member.Shape.ListShape.IsPrimitiveType)
+					{
+						//Example: "X-IntegerList": "1, 2, 3"
+#>
+				response.<#=member.PropertyName#> = MultiValueHeaderParser.ToValueTypeList<<#=member.Shape.ListShape.GetPrimitiveType().ToLower()#>>(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"));
+<#+					
+					}
+					else
+					{
+						throw new Exception(string.Format("ListShape of {0}, type {1} is not supported within a List for response headers.", member.Shape.ListShape.Name, member.Shape.ListShape.Type));
+					}
 				}
 				else if (member.Shape.IsDateTime)
 				{
@@ -325,6 +351,12 @@ using Amazon.Runtime.Internal.Util;
 						throw new Exception(string.Format("Unable to determine the TimestampFormat for member {0}, type {1}.", member.Shape.Name, member.Shape.Type));
 					}
 				}
+				else if (member.Shape.IsPrimitiveType)
+				{
+#>
+				response.<#=member.PropertyName#> = <#=member.Shape.GetPrimitiveType().ToLower()#>.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>")<#=(member.Shape.IsBoolean)?"":", CultureInfo.InvariantCulture"#>);
+<#+
+				}
 				else
 				{
 					throw new Exception("Member " + member.Shape.Name + " cannot be handled because its type, " + member.Shape.Type + ", is not handled. Please update BaseResponseUnmarshaller.tt.");
@@ -343,4 +375,33 @@ using Amazon.Runtime.Internal.Util;
 <#+						
 		}
 	}
+#>
+<#+
+    /* The rules for determining the marshallName for xml-based services is different than json services. Xml based
+		services are defined as any service which marshalls/unmarshalls an xml document. This includes AWSQueryResponse,
+		AWSQueryEC2Response, and RestXml request and responses. This method should not be used in any other scenario.
+        1. Use the member locationName if the value doesn't match the member's name
+        2. Use the value of the locationName on the member's target if present
+        3. Use the name of the member's target
+    */
+    protected string DetermineXmlMarshallName(Member member)
+    {
+        var locationName = member.data[ServiceModel.LocationNameKey];
+        if (locationName == null)
+        {
+            var payload = this.Operation.ResponsePayloadMember;
+            var shouldMarshallPayload = (payload != null && payload.IsStructure);
+            if(shouldMarshallPayload)
+                return member.Shape.Name;
+            return member.MarshallName;
+        }
+        // the locationName and modeled name must only be different for those members which are marshalled on the body.
+        if (!string.Equals(locationName.ToString(), member.ModeledName, StringComparison.Ordinal) || member.MarshallLocation != MarshallLocation.Body)
+        {
+            return locationName.ToString();
+        }
+        var memberTarget = member.Shape.data[ServiceModel.LocationNameKey];
+
+        return memberTarget != null ? memberTarget.ToString() : member.Shape.Name;
+    }
 #>

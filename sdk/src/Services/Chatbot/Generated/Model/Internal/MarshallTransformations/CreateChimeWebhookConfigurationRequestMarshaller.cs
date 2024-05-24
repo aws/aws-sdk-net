@@ -64,6 +64,7 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetConfigurationName())
@@ -91,6 +92,22 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
                     foreach(var publicRequestSnsTopicArnsListValue in publicRequest.SnsTopicArns)
                     {
                             context.Writer.Write(publicRequestSnsTopicArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
                 }
@@ -135,4 +152,3 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

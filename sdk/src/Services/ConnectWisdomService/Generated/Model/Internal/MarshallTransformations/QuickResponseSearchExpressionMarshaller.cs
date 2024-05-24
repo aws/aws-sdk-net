@@ -46,6 +46,8 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(QuickResponseSearchExpression requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilters())
             {
                 context.Writer.WritePropertyName("filters");
@@ -98,4 +100,3 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

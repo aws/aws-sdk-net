@@ -46,6 +46,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SensitivityInspectionTemplateExcludes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetManagedDataIdentifierIds())
             {
                 context.Writer.WritePropertyName("managedDataIdentifierIds");
@@ -66,4 +68,3 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

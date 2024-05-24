@@ -46,6 +46,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContactChannelAddress requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSimpleAddress())
             {
                 context.Writer.WritePropertyName("SimpleAddress");
@@ -61,4 +63,3 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

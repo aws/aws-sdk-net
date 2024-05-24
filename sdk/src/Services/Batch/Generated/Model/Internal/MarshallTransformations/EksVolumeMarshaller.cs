@@ -46,6 +46,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EksVolume requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEmptyDir())
             {
                 context.Writer.WritePropertyName("emptyDir");
@@ -94,4 +96,3 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

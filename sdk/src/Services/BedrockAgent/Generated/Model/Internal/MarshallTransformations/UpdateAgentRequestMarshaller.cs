@@ -67,6 +67,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAgentName())
@@ -97,6 +98,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("foundationModel");
                     context.Writer.Write(publicRequest.FoundationModel);
+                }
+
+                if(publicRequest.IsSetGuardrailConfiguration())
+                {
+                    context.Writer.WritePropertyName("guardrailConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GuardrailConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.GuardrailConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetIdleSessionTTLInSeconds())
@@ -150,4 +162,3 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

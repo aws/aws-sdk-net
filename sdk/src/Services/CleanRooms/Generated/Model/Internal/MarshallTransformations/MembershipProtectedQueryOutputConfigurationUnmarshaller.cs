@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public MembershipProtectedQueryOutputConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             MembershipProtectedQueryOutputConfiguration unmarshalledObject = new MembershipProtectedQueryOutputConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

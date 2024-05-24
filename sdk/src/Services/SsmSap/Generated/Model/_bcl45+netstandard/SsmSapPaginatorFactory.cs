@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
@@ -57,6 +58,14 @@ namespace Amazon.SsmSap.Model
         public IListDatabasesPaginator ListDatabases(ListDatabasesRequest request) 
         {
             return new ListDatabasesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListOperationEvents operation
+        ///</summary>
+        public IListOperationEventsPaginator ListOperationEvents(ListOperationEventsRequest request) 
+        {
+            return new ListOperationEventsPaginator(this.client, request);
         }
 
         /// <summary>

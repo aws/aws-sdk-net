@@ -46,6 +46,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Hive requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInitQueryFile())
             {
                 context.Writer.WritePropertyName("initQueryFile");
@@ -73,4 +75,3 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

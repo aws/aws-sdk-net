@@ -46,6 +46,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MySqlDataProviderSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCertificateArn())
             {
                 context.Writer.WritePropertyName("CertificateArn");
@@ -79,4 +81,3 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

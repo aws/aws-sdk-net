@@ -57,6 +57,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         public LoginAuthConfigReqObj Unmarshall(JsonUnmarshallerContext context)
         {
             LoginAuthConfigReqObj unmarshalledObject = new LoginAuthConfigReqObj();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

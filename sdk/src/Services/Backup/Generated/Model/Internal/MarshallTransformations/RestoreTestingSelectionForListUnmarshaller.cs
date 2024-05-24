@@ -57,6 +57,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public RestoreTestingSelectionForList Unmarshall(JsonUnmarshallerContext context)
         {
             RestoreTestingSelectionForList unmarshalledObject = new RestoreTestingSelectionForList();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public EventDataStore Unmarshall(JsonUnmarshallerContext context)
         {
             EventDataStore unmarshalledObject = new EventDataStore();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -143,4 +145,3 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

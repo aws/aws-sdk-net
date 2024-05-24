@@ -63,17 +63,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PolicyArn", StringUtils.FromString(publicRequest.PolicyArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicyDocument())
                 {
                     request.Parameters.Add("PolicyDocument", StringUtils.FromString(publicRequest.PolicyDocument));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSetAsDefault())
                 {
                     request.Parameters.Add("SetAsDefault", StringUtils.FromBool(publicRequest.SetAsDefault));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

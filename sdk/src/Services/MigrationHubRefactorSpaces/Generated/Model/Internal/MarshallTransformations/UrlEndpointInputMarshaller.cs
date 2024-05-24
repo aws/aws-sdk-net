@@ -46,6 +46,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         /// <returns></returns>
         public void Marshall(UrlEndpointInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHealthUrl())
             {
                 context.Writer.WritePropertyName("HealthUrl");
@@ -67,4 +69,3 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
 
     }
 }
-#pragma warning restore CS0612,CS0618

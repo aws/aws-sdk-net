@@ -46,6 +46,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Section requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFieldGroup())
             {
                 context.Writer.WritePropertyName("fieldGroup");
@@ -66,4 +68,3 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

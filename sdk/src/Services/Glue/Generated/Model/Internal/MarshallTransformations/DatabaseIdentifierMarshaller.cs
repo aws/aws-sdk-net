@@ -46,6 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatabaseIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCatalogId())
             {
                 context.Writer.WritePropertyName("CatalogId");
@@ -73,4 +75,3 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

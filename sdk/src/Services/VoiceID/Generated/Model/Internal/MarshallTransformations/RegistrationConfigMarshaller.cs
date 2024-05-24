@@ -46,6 +46,8 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RegistrationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDuplicateRegistrationAction())
             {
                 context.Writer.WritePropertyName("DuplicateRegistrationAction");
@@ -78,4 +80,3 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

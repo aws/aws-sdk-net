@@ -46,6 +46,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProfileQuestionUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetQuestionId())
             {
                 context.Writer.WritePropertyName("QuestionId");
@@ -72,4 +74,3 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

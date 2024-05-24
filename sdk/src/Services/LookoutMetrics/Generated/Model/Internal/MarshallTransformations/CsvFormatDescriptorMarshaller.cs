@@ -46,6 +46,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CsvFormatDescriptor requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCharset())
             {
                 context.Writer.WritePropertyName("Charset");
@@ -96,4 +98,3 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

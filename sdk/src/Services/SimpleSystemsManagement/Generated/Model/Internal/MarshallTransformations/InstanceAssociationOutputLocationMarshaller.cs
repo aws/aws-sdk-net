@@ -46,6 +46,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceAssociationOutputLocation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Location())
             {
                 context.Writer.WritePropertyName("S3Location");
@@ -66,4 +68,3 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ModelQuality requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConstraints())
             {
                 context.Writer.WritePropertyName("Constraints");
@@ -77,4 +79,3 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

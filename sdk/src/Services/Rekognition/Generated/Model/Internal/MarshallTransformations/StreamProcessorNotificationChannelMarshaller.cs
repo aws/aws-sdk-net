@@ -46,6 +46,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamProcessorNotificationChannel requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSNSTopicArn())
             {
                 context.Writer.WritePropertyName("SNSTopicArn");
@@ -61,4 +63,3 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

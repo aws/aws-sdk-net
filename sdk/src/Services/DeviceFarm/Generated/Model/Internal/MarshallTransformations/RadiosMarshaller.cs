@@ -46,6 +46,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Radios requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBluetooth())
             {
                 context.Writer.WritePropertyName("bluetooth");
@@ -79,4 +81,3 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         public AssessmentMetadataItem Unmarshall(JsonUnmarshallerContext context)
         {
             AssessmentMetadataItem unmarshalledObject = new AssessmentMetadataItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -131,4 +133,3 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

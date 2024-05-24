@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public LoadBalancerTlsCertificateDomainValidationRecord Unmarshall(JsonUnmarshallerContext context)
         {
             LoadBalancerTlsCertificateDomainValidationRecord unmarshalledObject = new LoadBalancerTlsCertificateDomainValidationRecord();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

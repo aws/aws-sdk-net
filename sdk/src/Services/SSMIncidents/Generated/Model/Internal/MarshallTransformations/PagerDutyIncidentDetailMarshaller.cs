@@ -46,6 +46,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PagerDutyIncidentDetail requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoResolve())
             {
                 context.Writer.WritePropertyName("autoResolve");
@@ -73,4 +75,3 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

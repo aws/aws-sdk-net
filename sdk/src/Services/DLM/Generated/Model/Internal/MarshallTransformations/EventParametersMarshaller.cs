@@ -46,6 +46,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EventParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDescriptionRegex())
             {
                 context.Writer.WritePropertyName("DescriptionRegex");
@@ -78,4 +80,3 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

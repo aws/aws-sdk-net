@@ -46,6 +46,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoggerDefinitionVersion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLoggers())
             {
                 context.Writer.WritePropertyName("Loggers");
@@ -71,4 +73,3 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

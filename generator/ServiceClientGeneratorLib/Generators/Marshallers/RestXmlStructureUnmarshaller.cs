@@ -67,10 +67,17 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write(", XmlUnmarshallerContext>\r\n    {\r\n        /// <summary>\r\n        /// Unmarshaller" +
-                    " the response from the service to the response class.\r\n        /// </summary>  \r" +
-                    "\n        /// <param name=\"context\"></param>\r\n        /// <returns></returns>\r\n  " +
-                    "      public ");
+            this.Write(", XmlUnmarshallerContext>, IUnmarshaller<");
+            
+            #line 18 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
+            
+            #line default
+            #line hidden
+            this.Write(", JsonUnmarshallerContext>\r\n    {\r\n        /// <summary>\r\n        /// Unmarshalle" +
+                    "r the response from the service to the response class.\r\n        /// </summary>  " +
+                    "\r\n        /// <param name=\"context\"></param>\r\n        /// <returns></returns>\r\n " +
+                    "       public ");
             
             #line 25 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
@@ -241,34 +248,63 @@ namespace ServiceClientGenerator.Generators.Marshallers
 			}
 			else
 			{
+            if(!member.IsXmlAttribute)
+            {
 
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\tif (context.TestExpression(\"");
             
-            #line 92 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 94 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
             
             #line default
             #line hidden
-            this.Write("\", targetDepth))\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tvar unmarshaller = ");
+            this.Write("\", targetDepth))\r\n");
             
-            #line 94 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 95 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+
+            }
+            else
+            {
+
+            
+            #line default
+            #line hidden
+            this.Write("                    if (context.TestExpression(\"@");
+            
+            #line 100 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
+            
+            #line default
+            #line hidden
+            this.Write("\", targetDepth - 1))\r\n");
+            
+            #line 101 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+
+            }
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t\t\t{\r\n\t\t\t\t\t\tvar unmarshaller = ");
+            
+            #line 105 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\tunmarshalledObject.");
             
-            #line 95 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 106 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = unmarshaller.Unmarshall(context);\r\n\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t}\r\n");
             
-            #line 98 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 109 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
 			}
         }
@@ -285,17 +321,30 @@ namespace ServiceClientGenerator.Generators.Marshallers
             }          
             return unmarshalledObject;
         }
-
-");
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name=""context""></param>
+        /// <returns></returns>
+        public ");
             
-            #line 112 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 128 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
+            
+            #line default
+            #line hidden
+            this.Write(" Unmarshall(JsonUnmarshallerContext context)\r\n        {\r\n            throw new No" +
+                    "tImplementedException();\r\n        }\r\n\r\n");
+            
+            #line 133 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
     this.AddStructureSingletonMethod();
 
             
             #line default
             #line hidden
-            this.Write("    }\r\n}\r\n#pragma warning restore CS0612,CS0618");
+            this.Write("    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

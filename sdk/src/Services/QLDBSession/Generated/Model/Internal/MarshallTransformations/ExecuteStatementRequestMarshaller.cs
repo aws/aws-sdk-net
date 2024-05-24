@@ -46,6 +46,8 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExecuteStatementRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
@@ -83,4 +85,3 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NonTalkTimeFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAbsoluteTimeRange())
             {
                 context.Writer.WritePropertyName("AbsoluteTimeRange");
@@ -89,4 +91,3 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

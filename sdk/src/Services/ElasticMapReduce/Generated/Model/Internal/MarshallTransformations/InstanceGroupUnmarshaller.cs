@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public InstanceGroup Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceGroup unmarshalledObject = new InstanceGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -191,4 +193,3 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

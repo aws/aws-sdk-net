@@ -46,6 +46,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HttpRouteMatch requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHeaders())
             {
                 context.Writer.WritePropertyName("headers");
@@ -122,4 +124,3 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

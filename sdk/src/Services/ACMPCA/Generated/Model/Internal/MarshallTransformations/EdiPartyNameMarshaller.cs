@@ -46,6 +46,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EdiPartyName requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNameAssigner())
             {
                 context.Writer.WritePropertyName("NameAssigner");
@@ -67,4 +69,3 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

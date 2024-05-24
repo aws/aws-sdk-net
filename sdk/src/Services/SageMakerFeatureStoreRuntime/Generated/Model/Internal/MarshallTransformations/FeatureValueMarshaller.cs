@@ -46,6 +46,8 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
         /// <returns></returns>
         public void Marshall(FeatureValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFeatureName())
             {
                 context.Writer.WritePropertyName("FeatureName");
@@ -78,4 +80,3 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Operation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEquation())
             {
                 context.Writer.WritePropertyName("Equation");
@@ -73,4 +75,3 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

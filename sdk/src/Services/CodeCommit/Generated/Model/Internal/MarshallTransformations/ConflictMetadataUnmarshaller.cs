@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public ConflictMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             ConflictMetadata unmarshalledObject = new ConflictMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -143,4 +145,3 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

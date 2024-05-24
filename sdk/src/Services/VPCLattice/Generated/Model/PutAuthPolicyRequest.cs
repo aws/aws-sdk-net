@@ -26,11 +26,19 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAuthPolicy operation.
-    /// Creates or updates the auth policy.
+    /// Creates or updates the auth policy. The policy string in JSON must not contain newlines
+    /// or blank lines.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html">Auth
+    /// policies</a> in the <i>Amazon VPC Lattice User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class PutAuthPolicyRequest : AmazonVPCLatticeRequest
     {
@@ -40,7 +48,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The auth policy.
+        /// The auth policy. The policy string in JSON must not contain newlines or blank lines.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000)]

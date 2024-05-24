@@ -46,6 +46,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VpcInformation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("SecurityGroupIds");
@@ -66,4 +68,3 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

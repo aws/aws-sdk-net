@@ -57,6 +57,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         public GrantedLicense Unmarshall(JsonUnmarshallerContext context)
         {
             GrantedLicense unmarshalledObject = new GrantedLicense();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -173,4 +175,3 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DocumentIdOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDefaultDocumentIdFormat())
             {
                 context.Writer.WritePropertyName("DefaultDocumentIdFormat");
@@ -61,4 +63,3 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

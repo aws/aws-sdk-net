@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DomainSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDockerSettings())
             {
                 context.Writer.WritePropertyName("DockerSettings");
@@ -94,4 +96,3 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

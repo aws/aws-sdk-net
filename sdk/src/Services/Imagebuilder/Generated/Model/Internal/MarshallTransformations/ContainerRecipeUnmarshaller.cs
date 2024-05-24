@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public ContainerRecipe Unmarshall(JsonUnmarshallerContext context)
         {
             ContainerRecipe unmarshalledObject = new ContainerRecipe();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -185,4 +187,3 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

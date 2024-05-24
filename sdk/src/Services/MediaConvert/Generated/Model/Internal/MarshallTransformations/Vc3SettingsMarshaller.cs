@@ -46,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Vc3Settings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFramerateControl())
             {
                 context.Writer.WritePropertyName("framerateControl");
@@ -109,4 +111,3 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

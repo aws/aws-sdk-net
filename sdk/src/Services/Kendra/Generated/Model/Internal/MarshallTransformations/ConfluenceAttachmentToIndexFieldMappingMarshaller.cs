@@ -46,6 +46,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConfluenceAttachmentToIndexFieldMapping requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataSourceFieldName())
             {
                 context.Writer.WritePropertyName("DataSourceFieldName");
@@ -73,4 +75,3 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateEncryption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlgorithm())
             {
                 context.Writer.WritePropertyName("algorithm");
@@ -109,4 +111,3 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StartTextDetectionFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRegionsOfInterest())
             {
                 context.Writer.WritePropertyName("RegionsOfInterest");
@@ -82,4 +84,3 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

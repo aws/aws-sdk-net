@@ -46,6 +46,8 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHealth())
             {
                 context.Writer.WritePropertyName("health");
@@ -61,4 +63,3 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -34,9 +35,28 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class SimpleEmail
     {
+        private List<MessageHeader> _headers = AWSConfigs.InitializeCollections ? new List<MessageHeader>() : null;
         private SimpleEmailPart _htmlPart;
         private SimpleEmailPart _subject;
         private SimpleEmailPart _textPart;
+
+        /// <summary>
+        /// Gets and sets the property Headers. 
+        /// <para>
+        /// The list of MessageHeaders for the email. You can have up to 15 Headers.
+        /// </para>
+        /// </summary>
+        public List<MessageHeader> Headers
+        {
+            get { return this._headers; }
+            set { this._headers = value; }
+        }
+
+        // Check to see if Headers property is set
+        internal bool IsSetHeaders()
+        {
+            return this._headers != null && (this._headers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property HtmlPart. 

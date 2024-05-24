@@ -46,6 +46,8 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudienceDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Destination())
             {
                 context.Writer.WritePropertyName("s3Destination");
@@ -66,4 +68,3 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

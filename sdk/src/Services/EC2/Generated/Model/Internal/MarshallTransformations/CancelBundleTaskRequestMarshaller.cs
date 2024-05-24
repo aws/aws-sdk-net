@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("BundleId", StringUtils.FromString(publicRequest.BundleId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

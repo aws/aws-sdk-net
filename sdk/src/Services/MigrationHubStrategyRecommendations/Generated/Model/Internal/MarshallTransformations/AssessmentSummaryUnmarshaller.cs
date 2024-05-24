@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public AssessmentSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AssessmentSummary unmarshalledObject = new AssessmentSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -149,4 +151,3 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         }
     }
 }
-#pragma warning restore CS0612,CS0618

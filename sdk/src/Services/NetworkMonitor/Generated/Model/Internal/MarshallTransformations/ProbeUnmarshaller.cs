@@ -57,6 +57,8 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
         public Probe Unmarshall(JsonUnmarshallerContext context)
         {
             Probe unmarshalledObject = new Probe();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -161,4 +163,3 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IotEventsInputIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInputName())
             {
                 context.Writer.WritePropertyName("inputName");
@@ -61,4 +63,3 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

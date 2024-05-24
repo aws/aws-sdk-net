@@ -46,6 +46,8 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3Configuration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
@@ -67,4 +69,3 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

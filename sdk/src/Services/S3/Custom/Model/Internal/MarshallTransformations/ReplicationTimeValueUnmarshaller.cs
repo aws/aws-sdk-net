@@ -6,8 +6,16 @@ using System.Text;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// ReplicationTimeValue unmarshaller
+    /// </summary>
     public class ReplicationTimeValueUnmarshaller : IUnmarshaller<ReplicationTimeValue, XmlUnmarshallerContext>, IUnmarshaller<ReplicationTimeValue, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ReplicationTimeValue Unmarshall(XmlUnmarshallerContext context)
         {
             ReplicationTimeValue replicationTimeValue = new ReplicationTimeValue();
@@ -35,6 +43,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return replicationTimeValue;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ReplicationTimeValue Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -42,6 +55,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static ReplicationTimeValueUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ReplicationTimeValueUnmarshaller Instance
         {
             get

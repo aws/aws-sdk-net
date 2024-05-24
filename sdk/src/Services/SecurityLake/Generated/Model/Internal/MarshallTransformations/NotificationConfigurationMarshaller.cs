@@ -46,6 +46,8 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NotificationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHttpsNotificationConfiguration())
             {
                 context.Writer.WritePropertyName("httpsNotificationConfiguration");
@@ -77,4 +79,3 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

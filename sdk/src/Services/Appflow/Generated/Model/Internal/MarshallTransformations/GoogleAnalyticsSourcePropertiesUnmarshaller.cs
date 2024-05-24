@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public GoogleAnalyticsSourceProperties Unmarshall(JsonUnmarshallerContext context)
         {
             GoogleAnalyticsSourceProperties unmarshalledObject = new GoogleAnalyticsSourceProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

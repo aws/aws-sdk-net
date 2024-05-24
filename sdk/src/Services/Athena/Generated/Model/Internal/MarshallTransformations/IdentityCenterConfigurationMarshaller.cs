@@ -46,6 +46,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IdentityCenterConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnableIdentityCenter())
             {
                 context.Writer.WritePropertyName("EnableIdentityCenter");
@@ -67,4 +69,3 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

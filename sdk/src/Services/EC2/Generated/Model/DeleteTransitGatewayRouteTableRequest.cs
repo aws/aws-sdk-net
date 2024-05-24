@@ -26,12 +26,15 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTransitGatewayRouteTable operation.
-    /// Deletes the specified transit gateway route table. You must disassociate the route
-    /// table from any transit gateway route tables before you can delete it.
+    /// Deletes the specified transit gateway route table. If there are any route tables associated
+    /// with the transit gateway route table, you must first run <a>DisassociateRouteTable</a>
+    /// before you can delete the transit gateway route table. This removes any route tables
+    /// associated with the transit gateway route table.
     /// </summary>
     public partial class DeleteTransitGatewayRouteTableRequest : AmazonEC2Request
     {

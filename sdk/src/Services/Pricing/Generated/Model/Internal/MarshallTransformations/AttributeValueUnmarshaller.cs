@@ -57,6 +57,8 @@ namespace Amazon.Pricing.Model.Internal.MarshallTransformations
         public AttributeValue Unmarshall(JsonUnmarshallerContext context)
         {
             AttributeValue unmarshalledObject = new AttributeValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.Pricing.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

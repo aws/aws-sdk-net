@@ -78,6 +78,10 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 {
                     return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DisabledOperationException"))
+                {
+                    return DisabledOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
                 {
                     return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -114,4 +118,3 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

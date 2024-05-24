@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -83,13 +84,13 @@ namespace Amazon.OpsWorks.Model
         ///  
         /// <para>
         /// For the <c>HaproxyStatsPassword</c>, <c>MysqlRootPassword</c>, and <c>GangliaPassword</c>
-        /// attributes, AWS OpsWorks Stacks returns <c>*****FILTERED*****</c> instead of the actual
+        /// attributes, OpsWorks Stacks returns <c>*****FILTERED*****</c> instead of the actual
         /// value
         /// </para>
         ///  
         /// <para>
-        /// For an ECS Cluster layer, AWS OpsWorks Stacks the <c>EcsClusterArn</c> attribute is
-        /// set to the cluster's ARN.
+        /// For an ECS Cluster layer, OpsWorks Stacks the <c>EcsClusterArn</c> attribute is set
+        /// to the cluster's ARN.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -258,12 +259,12 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DefaultRecipes. 
         /// <para>
-        /// AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>,
-        /// <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks
-        /// Stacks runs a set of standard recipes for each event. You can also provide custom
-        /// recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes
-        /// after the standard recipes. <c>LayerCustomRecipes</c> specifies the custom recipes
-        /// for a particular layer to be run in response to each of the five events.
+        /// OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>,
+        /// <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, OpsWorks Stacks
+        /// runs a set of standard recipes for each event. You can also provide custom recipes
+        /// for any or all layers and events. OpsWorks Stacks runs custom event recipes after
+        /// the standard recipes. <c>LayerCustomRecipes</c> specifies the custom recipes for a
+        /// particular layer to be run in response to each of the five events.
         /// </para>
         ///  
         /// <para>
@@ -388,7 +389,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The layer name.
+        /// The layer name. Layer names can be a maximum of 32 characters.
         /// </para>
         /// </summary>
         public string Name

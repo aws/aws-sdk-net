@@ -46,6 +46,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobSchedule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDayOfTheWeek())
             {
                 context.Writer.WritePropertyName("DayOfTheWeek");
@@ -67,4 +69,3 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

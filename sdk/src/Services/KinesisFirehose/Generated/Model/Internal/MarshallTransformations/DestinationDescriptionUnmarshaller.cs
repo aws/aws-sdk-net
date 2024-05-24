@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public DestinationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             DestinationDescription unmarshalledObject = new DestinationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -143,4 +145,3 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

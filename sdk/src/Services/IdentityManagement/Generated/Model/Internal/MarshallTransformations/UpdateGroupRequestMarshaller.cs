@@ -63,17 +63,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNewGroupName())
                 {
                     request.Parameters.Add("NewGroupName", StringUtils.FromString(publicRequest.NewGroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNewPath())
                 {
                     request.Parameters.Add("NewPath", StringUtils.FromString(publicRequest.NewPath));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

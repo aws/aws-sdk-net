@@ -46,6 +46,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DashConfigurationForPut requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMpdLocation())
             {
                 context.Writer.WritePropertyName("MpdLocation");
@@ -67,4 +69,3 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

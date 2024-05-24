@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -102,7 +103,7 @@ namespace Amazon.SageMaker.Model
         /// can access this file system in Amazon SageMaker Studio.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2)]
+        [AWSProperty(Max=10)]
         public List<CustomFileSystemConfig> CustomFileSystemConfigs
         {
             get { return this._customFileSystemConfigs; }

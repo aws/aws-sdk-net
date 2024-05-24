@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.LakeFormation
 {
     /// <summary>
@@ -1784,6 +1785,69 @@ namespace Amazon.LakeFormation
         public virtual GetDataCellsFilterResponse EndGetDataCellsFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDataCellsFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDataLakePrincipal
+
+        /// <summary>
+        /// Returns the identity of the invoking principal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakePrincipal service method.</param>
+        /// 
+        /// <returns>The response from the GetDataLakePrincipal service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal">REST API Reference for GetDataLakePrincipal Operation</seealso>
+        public virtual GetDataLakePrincipalResponse GetDataLakePrincipal(GetDataLakePrincipalRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataLakePrincipalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataLakePrincipalResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataLakePrincipalResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataLakePrincipal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakePrincipal operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataLakePrincipal
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal">REST API Reference for GetDataLakePrincipal Operation</seealso>
+        public virtual IAsyncResult BeginGetDataLakePrincipal(GetDataLakePrincipalRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataLakePrincipalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataLakePrincipalResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataLakePrincipal operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataLakePrincipal.</param>
+        /// 
+        /// <returns>Returns a  GetDataLakePrincipalResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal">REST API Reference for GetDataLakePrincipal Operation</seealso>
+        public virtual GetDataLakePrincipalResponse EndGetDataLakePrincipal(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDataLakePrincipalResponse>(asyncResult);
         }
 
         #endregion

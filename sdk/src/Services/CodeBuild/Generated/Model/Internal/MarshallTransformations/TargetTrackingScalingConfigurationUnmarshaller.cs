@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public TargetTrackingScalingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TargetTrackingScalingConfiguration unmarshalledObject = new TargetTrackingScalingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

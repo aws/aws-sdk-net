@@ -46,6 +46,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateRemoteAccessSessionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBillingMethod())
             {
                 context.Writer.WritePropertyName("billingMethod");
@@ -72,4 +74,3 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

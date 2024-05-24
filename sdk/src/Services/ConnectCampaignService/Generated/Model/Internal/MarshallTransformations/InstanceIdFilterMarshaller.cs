@@ -46,6 +46,8 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceIdFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOperator())
             {
                 context.Writer.WritePropertyName("operator");
@@ -67,4 +69,3 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

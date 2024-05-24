@@ -46,6 +46,8 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Nameserver requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGlueIps())
             {
                 context.Writer.WritePropertyName("GlueIps");
@@ -72,4 +74,3 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

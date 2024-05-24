@@ -46,6 +46,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TraceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetVendor())
             {
                 context.Writer.WritePropertyName("Vendor");
@@ -61,4 +63,3 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

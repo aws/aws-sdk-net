@@ -46,6 +46,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SubscribedPrincipalInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetProject())
             {
                 context.Writer.WritePropertyName("project");
@@ -66,4 +68,3 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConsumptionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBorrowConfiguration())
             {
                 context.Writer.WritePropertyName("BorrowConfiguration");
@@ -83,4 +85,3 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

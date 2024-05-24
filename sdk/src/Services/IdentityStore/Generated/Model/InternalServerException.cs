@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
@@ -37,7 +38,6 @@ namespace Amazon.IdentityStore.Model
     #endif
     public partial class InternalServerException : AmazonIdentityStoreException
     {
-        private string _requestId;
         private int? _retryAfterSeconds;
 
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
@@ -128,27 +128,6 @@ namespace Amazon.IdentityStore.Model
             info.AddValue("RetryAfterSeconds", this.RetryAfterSeconds);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property RequestId. 
-        /// <para>
-        /// The identifier for each request. This value is a globally unique ID that is generated
-        /// by the identity store service for each sent request, and is then returned inside the
-        /// exception if the request fails.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=36)]
-        public string RequestId
-        {
-            get { return this._requestId; }
-            set { this._requestId = value; }
-        }
-
-        // Check to see if RequestId property is set
-        internal bool IsSetRequestId()
-        {
-            return this._requestId != null;
-        }
 
         /// <summary>
         /// Gets and sets the property RetryAfterSeconds. 

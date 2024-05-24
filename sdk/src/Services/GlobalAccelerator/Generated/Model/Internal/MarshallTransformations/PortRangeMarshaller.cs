@@ -46,6 +46,8 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PortRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFromPort())
             {
                 context.Writer.WritePropertyName("FromPort");
@@ -67,4 +69,3 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

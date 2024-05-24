@@ -36,6 +36,10 @@ namespace Amazon.S3.Model
         private int? days;
         private bool? expiredObjectDeleteMarker;
 
+        /// <summary>
+        /// Indicates at what date the object is to be moved or deleted. The date value must conform
+        /// to the ISO 8601 format. The time is always midnight UTC.
+        /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. Use DateUtc instead.", false)]
         public DateTime Date
         {

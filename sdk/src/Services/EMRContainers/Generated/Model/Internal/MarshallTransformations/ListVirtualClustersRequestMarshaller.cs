@@ -67,10 +67,10 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 request.Parameters.Add("containerProviderType", StringUtils.FromString(publicRequest.ContainerProviderType));
             
             if (publicRequest.IsSetCreatedAfter())
-                request.Parameters.Add("createdAfter", StringUtils.FromDateTimeToISO8601(publicRequest.CreatedAfter));
+                request.Parameters.Add("createdAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreatedAfter));
             
             if (publicRequest.IsSetCreatedBefore())
-                request.Parameters.Add("createdBefore", StringUtils.FromDateTimeToISO8601(publicRequest.CreatedBefore));
+                request.Parameters.Add("createdBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreatedBefore));
             
             if (publicRequest.IsSetEksAccessEntryIntegrated())
                 request.Parameters.Add("eksAccessEntryIntegrated", StringUtils.FromBool(publicRequest.EksAccessEntryIntegrated));
@@ -108,4 +108,3 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

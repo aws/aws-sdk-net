@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoEnableIO.Value", StringUtils.FromBool(publicRequest.AutoEnableIO));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVolumeId())
                 {
                     request.Parameters.Add("VolumeId", StringUtils.FromString(publicRequest.VolumeId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

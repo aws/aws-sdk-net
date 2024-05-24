@@ -21,6 +21,9 @@ using System.IO;
 
 namespace Amazon.S3.Model
 {
+    /// <summary>
+    /// The InventoryS3BucketDestination contains information where the inventory results will be saved in S3.
+    /// </summary>
     public class InventoryS3BucketDestination
     {
         private string accountId;
@@ -37,7 +40,10 @@ namespace Amazon.S3.Model
             set { this.accountId = value; }
         }
 
-        // Check to see if AccountId property is set
+        /// <summary>
+        /// Check to see if AccountId property is set
+        /// </summary>
+        /// <returns></returns>
         public bool IsSetAccountId()
         {
             return !(string.IsNullOrEmpty(this.accountId));

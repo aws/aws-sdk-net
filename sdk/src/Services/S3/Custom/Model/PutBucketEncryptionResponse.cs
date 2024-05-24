@@ -21,6 +21,9 @@ using Amazon.Runtime;
 
 namespace Amazon.S3
 {
+    /// <summary>
+    /// The response from the PutBucketEncryption operation.
+    /// </summary>
     public partial class PutBucketEncryptionResponse : AmazonWebServiceResponse
     {
     }

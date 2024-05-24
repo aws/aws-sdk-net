@@ -68,12 +68,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTerminateInstances())
                 {
                     request.Parameters.Add("TerminateInstances", StringUtils.FromBool(publicRequest.TerminateInstances));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

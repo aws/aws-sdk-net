@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public DomainStatus Unmarshall(JsonUnmarshallerContext context)
         {
             DomainStatus unmarshalledObject = new DomainStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -128,6 +130,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DomainEndpointOptionsUnmarshaller.Instance;
                     unmarshalledObject.DomainEndpointOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DomainEndpointV2HostedZoneId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DomainEndpointV2HostedZoneId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DomainId", targetDepth))
@@ -269,4 +277,3 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

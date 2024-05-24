@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
@@ -75,6 +76,7 @@ namespace Amazon.BedrockAgent.Model
         private string _customerEncryptionKeyArn;
         private string _description;
         private string _foundationModel;
+        private GuardrailConfiguration _guardrailConfiguration;
         private int? _idleSessionTTLInSeconds;
         private string _instruction;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
@@ -199,6 +201,24 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GuardrailConfiguration. 
+        /// <para>
+        /// The unique Guardrail configuration assigned to the agent when it is created.
+        /// </para>
+        /// </summary>
+        public GuardrailConfiguration GuardrailConfiguration
+        {
+            get { return this._guardrailConfiguration; }
+            set { this._guardrailConfiguration = value; }
+        }
+
+        // Check to see if GuardrailConfiguration property is set
+        internal bool IsSetGuardrailConfiguration()
+        {
+            return this._guardrailConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IdleSessionTTLInSeconds. 
         /// <para>
         /// The number of seconds for which Amazon Bedrock keeps information about a user's conversation
@@ -231,7 +251,7 @@ namespace Amazon.BedrockAgent.Model
         /// users.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=40, Max=1200)]
+        [AWSProperty(Sensitive=true, Min=40, Max=4000)]
         public string Instruction
         {
             get { return this._instruction; }

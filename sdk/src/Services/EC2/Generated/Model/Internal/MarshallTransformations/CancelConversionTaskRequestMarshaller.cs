@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConversionTaskId", StringUtils.FromString(publicRequest.ConversionTaskId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReasonMessage())
                 {
                     request.Parameters.Add("ReasonMessage", StringUtils.FromString(publicRequest.ReasonMessage));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -46,6 +46,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SourceServerConnectorAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConnectorArn())
             {
                 context.Writer.WritePropertyName("connectorArn");
@@ -67,4 +69,3 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -73,6 +73,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static PutBucketResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static PutBucketResponseUnmarshaller Instance
         {
             get

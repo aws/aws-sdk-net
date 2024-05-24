@@ -46,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(M2tsScte35Esam requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetScte35EsamPid())
             {
                 context.Writer.WritePropertyName("scte35EsamPid");
@@ -61,4 +63,3 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

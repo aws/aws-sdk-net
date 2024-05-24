@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public DeviceRegistrationStateResourceTypeEventConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DeviceRegistrationStateResourceTypeEventConfiguration unmarshalledObject = new DeviceRegistrationStateResourceTypeEventConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

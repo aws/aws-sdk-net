@@ -46,6 +46,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Task requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConnectorOperator())
             {
                 context.Writer.WritePropertyName("connectorOperator");
@@ -103,4 +105,3 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

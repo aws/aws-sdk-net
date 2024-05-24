@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -55,6 +56,7 @@ namespace Amazon.EC2.Model
         private NitroEnclavesSupport _nitroEnclavesSupport;
         private NitroTpmInfo _nitroTpmInfo;
         private NitroTpmSupport _nitroTpmSupport;
+        private PhcSupport _phcSupport;
         private PlacementGroupInfo _placementGroupInfo;
         private ProcessorInfo _processorInfo;
         private List<string> _supportedBootModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -460,6 +462,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNitroTpmSupport()
         {
             return this._nitroTpmSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PhcSupport. 
+        /// <para>
+        /// Indicates whether a local Precision Time Protocol (PTP) hardware clock (PHC) is supported.
+        /// </para>
+        /// </summary>
+        public PhcSupport PhcSupport
+        {
+            get { return this._phcSupport; }
+            set { this._phcSupport = value; }
+        }
+
+        // Check to see if PhcSupport property is set
+        internal bool IsSetPhcSupport()
+        {
+            return this._phcSupport != null;
         }
 
         /// <summary>

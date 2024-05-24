@@ -46,6 +46,8 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DestinationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetServices())
             {
                 context.Writer.WritePropertyName("services");
@@ -72,4 +74,3 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

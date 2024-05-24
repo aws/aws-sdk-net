@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -47,9 +48,10 @@ namespace Amazon.VPCLattice.Model
     /// </para>
     ///  
     /// <para>
-    /// Once a security group is added to the VPC association it cannot be removed. You can
-    /// add or update the security groups being used for the VPC association once a security
-    /// group is attached. To remove all security groups you must reassociate the VPC.
+    /// If you add a security group to the service network and VPC association, the association
+    /// must continue to always have at least one security group. You can add or edit security
+    /// groups at any time. However, to remove all security groups, you must first delete
+    /// the association and recreate it without security groups.
     /// </para>
     /// </summary>
     public partial class CreateServiceNetworkVpcAssociationRequest : AmazonVPCLatticeRequest

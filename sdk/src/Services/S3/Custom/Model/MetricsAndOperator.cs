@@ -31,6 +31,10 @@ namespace Amazon.S3.Model
     /// and any number of MetricsTagPredicates.
     public sealed class MetricsAndOperator : MetricsNAryOperator
     {
+        /// <summary>
+        /// Construct an instance of MetricsAndOperator
+        /// </summary>
+        /// <param name="operands"></param>
         public MetricsAndOperator(List<MetricsFilterPredicate> operands):
             base(operands)
         { }

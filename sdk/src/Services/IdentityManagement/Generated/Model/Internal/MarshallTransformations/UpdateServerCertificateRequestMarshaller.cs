@@ -63,17 +63,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NewPath", StringUtils.FromString(publicRequest.NewPath));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNewServerCertificateName())
                 {
                     request.Parameters.Add("NewServerCertificateName", StringUtils.FromString(publicRequest.NewServerCertificateName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServerCertificateName())
                 {
                     request.Parameters.Add("ServerCertificateName", StringUtils.FromString(publicRequest.ServerCertificateName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

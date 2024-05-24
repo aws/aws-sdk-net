@@ -46,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CaptionDescription requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCaptionSelectorName())
             {
                 context.Writer.WritePropertyName("captionSelectorName");
@@ -90,4 +92,3 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

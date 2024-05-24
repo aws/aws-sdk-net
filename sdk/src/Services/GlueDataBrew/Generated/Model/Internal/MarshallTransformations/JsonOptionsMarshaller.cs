@@ -46,6 +46,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JsonOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMultiLine())
             {
                 context.Writer.WritePropertyName("MultiLine");
@@ -61,4 +63,3 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

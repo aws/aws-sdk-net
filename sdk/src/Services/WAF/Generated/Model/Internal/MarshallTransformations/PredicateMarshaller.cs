@@ -46,6 +46,8 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Predicate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataId())
             {
                 context.Writer.WritePropertyName("DataId");
@@ -73,4 +75,3 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

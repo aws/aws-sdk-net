@@ -46,6 +46,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EndpointFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCreationTimeAfter())
             {
                 context.Writer.WritePropertyName("CreationTimeAfter");
@@ -79,4 +81,3 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

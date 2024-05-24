@@ -46,6 +46,8 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ImportOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNeptune())
             {
                 context.Writer.WritePropertyName("neptune");
@@ -66,4 +68,3 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

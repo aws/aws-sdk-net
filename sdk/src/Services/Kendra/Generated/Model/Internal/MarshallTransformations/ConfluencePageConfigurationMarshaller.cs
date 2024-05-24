@@ -46,6 +46,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConfluencePageConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPageFieldMappings())
             {
                 context.Writer.WritePropertyName("PageFieldMappings");
@@ -71,4 +73,3 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

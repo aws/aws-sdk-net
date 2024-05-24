@@ -46,6 +46,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KeyUsageProperty requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPropertyFlags())
             {
                 context.Writer.WritePropertyName("PropertyFlags");
@@ -72,4 +74,3 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

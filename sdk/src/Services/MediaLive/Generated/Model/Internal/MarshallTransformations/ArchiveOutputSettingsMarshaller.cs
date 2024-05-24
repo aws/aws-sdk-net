@@ -46,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ArchiveOutputSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContainerSettings())
             {
                 context.Writer.WritePropertyName("containerSettings");
@@ -78,4 +80,3 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EncryptionContractConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPresetSpeke20Audio())
             {
                 context.Writer.WritePropertyName("presetSpeke20Audio");
@@ -67,4 +69,3 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IssueDetectionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRuleName())
             {
                 context.Writer.WritePropertyName("RuleName");
@@ -61,4 +63,3 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

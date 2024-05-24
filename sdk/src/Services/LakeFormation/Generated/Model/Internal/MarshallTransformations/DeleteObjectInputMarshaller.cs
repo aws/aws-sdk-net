@@ -46,6 +46,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeleteObjectInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetETag())
             {
                 context.Writer.WritePropertyName("ETag");
@@ -78,4 +80,3 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

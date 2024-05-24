@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.CodeBuild.Model
         /// The name of the CodeBuild project.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=255)]
+        [AWSProperty(Required=true, Min=2, Max=150)]
         public string ProjectName
         {
             get { return this._projectName; }

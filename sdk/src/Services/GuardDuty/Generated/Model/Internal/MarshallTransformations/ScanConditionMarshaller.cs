@@ -46,6 +46,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScanCondition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMapEquals())
             {
                 context.Writer.WritePropertyName("mapEquals");
@@ -71,4 +73,3 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

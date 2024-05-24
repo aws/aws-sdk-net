@@ -46,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimecodeBurninSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFontSize())
             {
                 context.Writer.WritePropertyName("fontSize");
@@ -73,4 +75,3 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

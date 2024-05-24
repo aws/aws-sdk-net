@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EBS.Model
 {
     /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.EBS.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return this._checksum != null;
+            return !string.IsNullOrEmpty(this._checksum);
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.EBS.Model
         // Check to see if ChecksumAggregationMethod property is set
         internal bool IsSetChecksumAggregationMethod()
         {
-            return this._checksumAggregationMethod != null;
+            return !string.IsNullOrEmpty(this._checksumAggregationMethod);
         }
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.EBS.Model
         // Check to see if ChecksumAlgorithm property is set
         internal bool IsSetChecksumAlgorithm()
         {
-            return this._checksumAlgorithm != null;
+            return !string.IsNullOrEmpty(this._checksumAlgorithm);
         }
 
         /// <summary>

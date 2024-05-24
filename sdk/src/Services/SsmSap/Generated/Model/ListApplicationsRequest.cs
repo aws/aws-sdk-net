@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
@@ -61,7 +62,7 @@ namespace Amazon.SsmSap.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value. 
+        /// results, make another call with the returned nextToken value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

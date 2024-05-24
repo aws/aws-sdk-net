@@ -70,6 +70,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetRules())
@@ -116,4 +117,3 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

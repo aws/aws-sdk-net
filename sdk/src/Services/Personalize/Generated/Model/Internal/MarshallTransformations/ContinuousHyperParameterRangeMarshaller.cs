@@ -46,16 +46,32 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContinuousHyperParameterRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("maxValue");
-                context.Writer.Write(requestObject.MaxValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaxValue);
+                }
             }
 
             if(requestObject.IsSetMinValue())
             {
                 context.Writer.WritePropertyName("minValue");
-                context.Writer.Write(requestObject.MinValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinValue);
+                }
             }
 
             if(requestObject.IsSetName())
@@ -73,4 +89,3 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

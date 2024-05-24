@@ -46,6 +46,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VirtualGatewayAccessLog requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFile())
             {
                 context.Writer.WritePropertyName("file");
@@ -66,4 +68,3 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

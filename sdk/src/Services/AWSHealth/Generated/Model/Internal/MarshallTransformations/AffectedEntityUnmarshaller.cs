@@ -57,6 +57,8 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         public AffectedEntity Unmarshall(JsonUnmarshallerContext context)
         {
             AffectedEntity unmarshalledObject = new AffectedEntity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -131,4 +133,3 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

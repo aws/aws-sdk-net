@@ -46,6 +46,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OpenSearchAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndpoint())
             {
                 context.Writer.WritePropertyName("endpoint");
@@ -85,4 +87,3 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

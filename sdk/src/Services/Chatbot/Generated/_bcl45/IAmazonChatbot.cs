@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Chatbot.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.Chatbot
 {
     /// <summary>
@@ -955,6 +956,150 @@ namespace Amazon.Chatbot
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListMicrosoftTeamsUserIdentities">REST API Reference for ListMicrosoftTeamsUserIdentities Operation</seealso>
         Task<ListMicrosoftTeamsUserIdentitiesResponse> ListMicrosoftTeamsUserIdentitiesAsync(ListMicrosoftTeamsUserIdentitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Retrieves the list of tags applied to a configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Customer/consumer-facing internal service exception. https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were not able to find the resource for your request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ServiceUnavailableException">
+        /// We can’t process your request right now because of a server issue. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the list of tags applied to a configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Customer/consumer-facing internal service exception. https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were not able to find the resource for your request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ServiceUnavailableException">
+        /// We can’t process your request right now because of a server issue. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Applies the supplied tags to a configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Customer/consumer-facing internal service exception. https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were not able to find the resource for your request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ServiceUnavailableException">
+        /// We can’t process your request right now because of a server issue. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.TooManyTagsException">
+        /// The supplied list of tags contains too many tags.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Applies the supplied tags to a configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Customer/consumer-facing internal service exception. https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were not able to find the resource for your request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ServiceUnavailableException">
+        /// We can’t process your request right now because of a server issue. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.TooManyTagsException">
+        /// The supplied list of tags contains too many tags.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes the supplied tags from a configuration
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Customer/consumer-facing internal service exception. https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were not able to find the resource for your request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ServiceUnavailableException">
+        /// We can’t process your request right now because of a server issue. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Removes the supplied tags from a configuration
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Customer/consumer-facing internal service exception. https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were not able to find the resource for your request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ServiceUnavailableException">
+        /// We can’t process your request right now because of a server issue. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

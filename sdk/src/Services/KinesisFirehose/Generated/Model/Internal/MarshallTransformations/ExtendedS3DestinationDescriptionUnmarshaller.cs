@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public ExtendedS3DestinationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             ExtendedS3DestinationDescription unmarshalledObject = new ExtendedS3DestinationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -173,4 +175,3 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

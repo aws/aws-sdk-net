@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConcatenationSink requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3BucketSinkConfiguration())
             {
                 context.Writer.WritePropertyName("S3BucketSinkConfiguration");
@@ -72,4 +74,3 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

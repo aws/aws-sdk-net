@@ -46,6 +46,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoRaWANJoinEventNotificationConfigurations requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDevEuiEventTopic())
             {
                 context.Writer.WritePropertyName("DevEuiEventTopic");
@@ -61,4 +63,3 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

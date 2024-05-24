@@ -46,6 +46,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ImageTestsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetImageTestsEnabled())
             {
                 context.Writer.WritePropertyName("imageTestsEnabled");
@@ -67,4 +69,3 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

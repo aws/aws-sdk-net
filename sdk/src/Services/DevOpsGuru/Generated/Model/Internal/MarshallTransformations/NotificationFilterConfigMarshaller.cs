@@ -46,6 +46,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NotificationFilterConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMessageTypes())
             {
                 context.Writer.WritePropertyName("MessageTypes");
@@ -77,4 +79,3 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

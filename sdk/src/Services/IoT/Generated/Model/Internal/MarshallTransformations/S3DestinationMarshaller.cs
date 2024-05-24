@@ -46,6 +46,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3Destination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucket())
             {
                 context.Writer.WritePropertyName("bucket");
@@ -67,4 +69,3 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

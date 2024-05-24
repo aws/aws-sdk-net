@@ -57,6 +57,8 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         public DeploymentStrategy Unmarshall(JsonUnmarshallerContext context)
         {
             DeploymentStrategy unmarshalledObject = new DeploymentStrategy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -131,4 +133,3 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

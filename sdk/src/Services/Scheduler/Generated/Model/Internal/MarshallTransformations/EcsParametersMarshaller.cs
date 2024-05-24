@@ -46,6 +46,8 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EcsParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCapacityProviderStrategy())
             {
                 context.Writer.WritePropertyName("CapacityProviderStrategy");
@@ -187,4 +189,3 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppConfigData.Model
 {
     /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.AppConfigData.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>
@@ -100,7 +101,7 @@ namespace Amazon.AppConfigData.Model
         // Check to see if NextPollConfigurationToken property is set
         internal bool IsSetNextPollConfigurationToken()
         {
-            return this._nextPollConfigurationToken != null;
+            return !string.IsNullOrEmpty(this._nextPollConfigurationToken);
         }
 
         /// <summary>
@@ -140,7 +141,7 @@ namespace Amazon.AppConfigData.Model
         // Check to see if VersionLabel property is set
         internal bool IsSetVersionLabel()
         {
-            return this._versionLabel != null;
+            return !string.IsNullOrEmpty(this._versionLabel);
         }
 
     }

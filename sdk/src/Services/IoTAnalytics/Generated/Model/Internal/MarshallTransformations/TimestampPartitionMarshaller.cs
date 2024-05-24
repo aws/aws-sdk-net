@@ -46,6 +46,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimestampPartition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributeName())
             {
                 context.Writer.WritePropertyName("attributeName");
@@ -67,4 +69,3 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

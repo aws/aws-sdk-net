@@ -57,6 +57,8 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
         public ModuleLoggingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ModuleLoggingConfiguration unmarshalledObject = new ModuleLoggingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

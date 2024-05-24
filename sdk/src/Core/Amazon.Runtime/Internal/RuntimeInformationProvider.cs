@@ -34,16 +34,14 @@ namespace Amazon.Runtime.Internal
     public class RuntimeInformationProvider : IRuntimeInformationProvider
     {
         /// <inheritdoc/>
-        /// <remarks>
-        /// SDK does not do intelligent checks like checking package references or reflection to determine whether
-        /// the current project is a mobile project because of performance reasons. Moving forward, when .NET 6 support is added,
-        /// it should use OperatingSystem.IsAndroid <see href="https://docs.microsoft.com/en-us/dotnet/api/system.operatingsystem.isandroid"/>
-        /// or OperatingSystem.IsIOS <see href="https://docs.microsoft.com/en-us/dotnet/api/system.operatingsystem.isios"/> to determine
-        /// whether the current application is running on Mobile or not.
-        /// </remarks>
         public bool IsMobile()
         {
+#if NET8_0_OR_GREATER
+            var isMobile = OperatingSystem.IsAndroid() || OperatingSystem.IsIOS();
+            return isMobile;
+#else
             return false;
+#endif
         }
     }
 }

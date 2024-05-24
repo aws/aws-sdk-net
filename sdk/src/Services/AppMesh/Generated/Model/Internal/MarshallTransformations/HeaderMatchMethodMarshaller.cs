@@ -46,6 +46,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HeaderMatchMethod requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExact())
             {
                 context.Writer.WritePropertyName("exact");
@@ -90,4 +92,3 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProtectedQuerySQLParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAnalysisTemplateArn())
             {
                 context.Writer.WritePropertyName("analysisTemplateArn");
@@ -81,4 +83,3 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

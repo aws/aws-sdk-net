@@ -46,6 +46,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EndpointEventBus requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEventBusArn())
             {
                 context.Writer.WritePropertyName("EventBusArn");
@@ -61,4 +63,3 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

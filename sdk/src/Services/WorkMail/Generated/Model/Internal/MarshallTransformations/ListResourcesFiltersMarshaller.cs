@@ -46,6 +46,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListResourcesFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNamePrefix())
             {
                 context.Writer.WritePropertyName("NamePrefix");
@@ -73,4 +75,3 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -63,17 +63,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxSessionDuration())
                 {
                     request.Parameters.Add("MaxSessionDuration", StringUtils.FromInt(publicRequest.MaxSessionDuration));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRoleName())
                 {
                     request.Parameters.Add("RoleName", StringUtils.FromString(publicRequest.RoleName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -46,6 +46,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IngestionInputConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3InputConfiguration())
             {
                 context.Writer.WritePropertyName("S3InputConfiguration");
@@ -66,4 +68,3 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public ApplicationComponentStatusSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationComponentStatusSummary unmarshalledObject = new ApplicationComponentStatusSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         }
     }
 }
-#pragma warning restore CS0612,CS0618

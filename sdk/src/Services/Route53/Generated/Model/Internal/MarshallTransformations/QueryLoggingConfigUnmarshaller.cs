@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for QueryLoggingConfig Object
     /// </summary>  
-    public class QueryLoggingConfigUnmarshaller : IUnmarshaller<QueryLoggingConfig, XmlUnmarshallerContext>
+    public class QueryLoggingConfigUnmarshaller : IUnmarshaller<QueryLoggingConfig, XmlUnmarshallerContext>, IUnmarshaller<QueryLoggingConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,6 +82,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public QueryLoggingConfig Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static QueryLoggingConfigUnmarshaller _instance = new QueryLoggingConfigUnmarshaller();        
 
@@ -97,4 +107,3 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -63,12 +63,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetForceFailover())
                 {
                     request.Parameters.Add("ForceFailover", StringUtils.FromBool(publicRequest.ForceFailover));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

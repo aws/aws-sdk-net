@@ -46,6 +46,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FsxStorageConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFileSystemId())
             {
                 context.Writer.WritePropertyName("file-system-id");
@@ -67,4 +69,3 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

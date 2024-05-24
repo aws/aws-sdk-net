@@ -57,6 +57,8 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
         public JobExecutionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             JobExecutionSummary unmarshalledObject = new JobExecutionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

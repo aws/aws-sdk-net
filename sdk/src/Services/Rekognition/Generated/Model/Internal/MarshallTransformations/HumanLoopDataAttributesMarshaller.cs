@@ -46,6 +46,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HumanLoopDataAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContentClassifiers())
             {
                 context.Writer.WritePropertyName("ContentClassifiers");
@@ -66,4 +68,3 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

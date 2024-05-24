@@ -46,6 +46,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Message requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("Body");
@@ -77,4 +79,3 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GrpcRetryPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGrpcRetryEvents())
             {
                 context.Writer.WritePropertyName("grpcRetryEvents");
@@ -105,4 +107,3 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

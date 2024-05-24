@@ -46,6 +46,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateSvmActiveDirectoryConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNetBiosName())
             {
                 context.Writer.WritePropertyName("NetBiosName");
@@ -72,4 +74,3 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

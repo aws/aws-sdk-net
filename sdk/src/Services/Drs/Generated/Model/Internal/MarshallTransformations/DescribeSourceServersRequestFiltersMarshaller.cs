@@ -46,6 +46,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DescribeSourceServersRequestFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHardwareId())
             {
                 context.Writer.WritePropertyName("hardwareId");
@@ -83,4 +85,3 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

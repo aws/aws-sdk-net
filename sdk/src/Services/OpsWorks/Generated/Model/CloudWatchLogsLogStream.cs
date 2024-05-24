@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Describes the Amazon CloudWatch logs configuration for a layer. For detailed information
+    /// Describes the CloudWatch Logs configuration for a layer. For detailed information
     /// about members of this data type, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
     /// Logs Agent Reference</a>.
     /// </summary>

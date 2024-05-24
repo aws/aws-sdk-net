@@ -57,6 +57,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         public DisassociateResourceResponseElement Unmarshall(JsonUnmarshallerContext context)
         {
             DisassociateResourceResponseElement unmarshalledObject = new DisassociateResourceResponseElement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SessionState requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInvocationId())
             {
                 context.Writer.WritePropertyName("invocationId");
@@ -105,4 +107,3 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

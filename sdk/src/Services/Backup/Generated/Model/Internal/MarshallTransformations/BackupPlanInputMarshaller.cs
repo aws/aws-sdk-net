@@ -46,6 +46,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BackupPlanInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdvancedBackupSettings())
             {
                 context.Writer.WritePropertyName("AdvancedBackupSettings");
@@ -93,4 +95,3 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

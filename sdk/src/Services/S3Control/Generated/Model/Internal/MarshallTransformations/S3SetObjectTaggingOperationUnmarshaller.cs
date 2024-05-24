@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3SetObjectTaggingOperation Object
     /// </summary>  
-    public class S3SetObjectTaggingOperationUnmarshaller : IUnmarshaller<S3SetObjectTaggingOperation, XmlUnmarshallerContext>
+    public class S3SetObjectTaggingOperationUnmarshaller : IUnmarshaller<S3SetObjectTaggingOperation, XmlUnmarshallerContext>, IUnmarshaller<S3SetObjectTaggingOperation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public S3SetObjectTaggingOperation Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static S3SetObjectTaggingOperationUnmarshaller _instance = new S3SetObjectTaggingOperationUnmarshaller();        
 
@@ -89,4 +99,3 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

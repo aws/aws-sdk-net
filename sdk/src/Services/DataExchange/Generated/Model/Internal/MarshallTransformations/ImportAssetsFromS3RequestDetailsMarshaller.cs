@@ -46,6 +46,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ImportAssetsFromS3RequestDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAssetSources())
             {
                 context.Writer.WritePropertyName("AssetSources");
@@ -83,4 +85,3 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

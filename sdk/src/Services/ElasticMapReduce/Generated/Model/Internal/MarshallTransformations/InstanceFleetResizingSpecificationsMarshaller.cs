@@ -46,6 +46,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceFleetResizingSpecifications requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOnDemandResizeSpecification())
             {
                 context.Writer.WritePropertyName("OnDemandResizeSpecification");
@@ -77,4 +79,3 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

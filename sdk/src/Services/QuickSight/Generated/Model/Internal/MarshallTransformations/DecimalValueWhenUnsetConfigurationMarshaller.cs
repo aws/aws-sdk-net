@@ -46,10 +46,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DecimalValueWhenUnsetConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomValue())
             {
                 context.Writer.WritePropertyName("CustomValue");
-                context.Writer.Write(requestObject.CustomValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.CustomValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CustomValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.CustomValue);
+                }
             }
 
             if(requestObject.IsSetValueWhenUnsetOption())
@@ -67,4 +76,3 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

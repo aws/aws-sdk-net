@@ -46,6 +46,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GcpMySQLSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAfterConnectScript())
             {
                 context.Writer.WritePropertyName("AfterConnectScript");
@@ -139,4 +141,3 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

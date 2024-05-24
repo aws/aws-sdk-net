@@ -46,6 +46,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(QueryResultsS3AccessGrantsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthenticationType())
             {
                 context.Writer.WritePropertyName("AuthenticationType");
@@ -73,4 +75,3 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KmsEncryptionConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCmkType())
             {
                 context.Writer.WritePropertyName("CmkType");
@@ -67,4 +69,3 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

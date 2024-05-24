@@ -46,6 +46,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InvocationResultMember requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApiResult())
             {
                 context.Writer.WritePropertyName("apiResult");
@@ -77,4 +79,3 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

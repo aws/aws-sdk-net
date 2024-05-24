@@ -46,6 +46,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdatedSessionActionInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCompletedStatus())
             {
                 context.Writer.WritePropertyName("completedStatus");
@@ -55,7 +57,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndedAt())
             {
                 context.Writer.WritePropertyName("endedAt");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.EndedAt));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.EndedAt));
             }
 
             if(requestObject.IsSetProcessExitCode())
@@ -73,19 +75,26 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProgressPercent())
             {
                 context.Writer.WritePropertyName("progressPercent");
-                context.Writer.Write(requestObject.ProgressPercent);
+                if(StringUtils.IsSpecialFloatValue(requestObject.ProgressPercent))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ProgressPercent));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ProgressPercent);
+                }
             }
 
             if(requestObject.IsSetStartedAt())
             {
                 context.Writer.WritePropertyName("startedAt");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.StartedAt));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartedAt));
             }
 
             if(requestObject.IsSetUpdatedAt())
             {
                 context.Writer.WritePropertyName("updatedAt");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.UpdatedAt));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.UpdatedAt));
             }
 
         }
@@ -97,4 +106,3 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

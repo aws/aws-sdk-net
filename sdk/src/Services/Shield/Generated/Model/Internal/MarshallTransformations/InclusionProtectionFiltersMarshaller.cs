@@ -46,6 +46,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InclusionProtectionFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetProtectionNames())
             {
                 context.Writer.WritePropertyName("ProtectionNames");
@@ -88,4 +90,3 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

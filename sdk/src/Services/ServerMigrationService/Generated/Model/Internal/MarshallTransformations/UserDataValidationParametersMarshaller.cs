@@ -46,6 +46,8 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UserDataValidationParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetScriptType())
             {
                 context.Writer.WritePropertyName("scriptType");
@@ -72,4 +74,3 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

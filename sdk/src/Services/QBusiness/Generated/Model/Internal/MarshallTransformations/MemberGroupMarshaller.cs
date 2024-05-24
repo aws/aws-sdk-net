@@ -46,6 +46,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MemberGroup requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGroupName())
             {
                 context.Writer.WritePropertyName("groupName");
@@ -67,4 +69,3 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

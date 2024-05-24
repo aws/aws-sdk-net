@@ -57,6 +57,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         public AwsEcrContainerImageDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEcrContainerImageDetails unmarshalledObject = new AwsEcrContainerImageDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -131,4 +133,3 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

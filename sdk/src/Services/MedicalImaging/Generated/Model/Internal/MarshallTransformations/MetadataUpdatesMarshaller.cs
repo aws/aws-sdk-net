@@ -46,6 +46,8 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetadataUpdates requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDICOMUpdates())
             {
                 context.Writer.WritePropertyName("DICOMUpdates");
@@ -66,4 +68,3 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

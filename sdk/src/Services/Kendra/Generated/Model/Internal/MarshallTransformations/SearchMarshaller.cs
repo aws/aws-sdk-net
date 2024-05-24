@@ -46,6 +46,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Search requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDisplayable())
             {
                 context.Writer.WritePropertyName("Displayable");
@@ -79,4 +81,3 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

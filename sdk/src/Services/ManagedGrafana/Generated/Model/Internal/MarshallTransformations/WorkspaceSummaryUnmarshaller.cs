@@ -57,6 +57,8 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         public WorkspaceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             WorkspaceSummary unmarshalledObject = new WorkspaceSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -161,4 +163,3 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RetrievalFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAndAll())
             {
                 context.Writer.WritePropertyName("andAll");
@@ -128,6 +130,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetListContains())
+            {
+                context.Writer.WritePropertyName("listContains");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FilterAttributeMarshaller.Instance;
+                marshaller.Marshall(requestObject.ListContains, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNotEquals())
             {
                 context.Writer.WritePropertyName("notEquals");
@@ -177,6 +190,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetStringContains())
+            {
+                context.Writer.WritePropertyName("stringContains");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FilterAttributeMarshaller.Instance;
+                marshaller.Marshall(requestObject.StringContains, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
@@ -186,4 +210,3 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

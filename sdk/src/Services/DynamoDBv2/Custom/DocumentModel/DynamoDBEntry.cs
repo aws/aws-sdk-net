@@ -269,7 +269,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Explicitly convert DynamoDBEntry to SByte
         /// </summary>
         /// <returns>SByte value of this object</returns>
-        [CLSCompliant(false)]
         public virtual SByte AsSByte()
         {
             throw new InvalidCastException();
@@ -279,7 +278,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="data">SByte data to convert</param>
         /// <returns>DynamoDBEntry representing the data</returns>
-        [CLSCompliant(false)]
         public static implicit operator DynamoDBEntry(SByte data)
         {
             return new UnconvertedDynamoDBEntry(data);
@@ -289,7 +287,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="p">DynamoDBEntry to convert</param>
         /// <returns>SByte value of DynamoDBEntry</returns>
-        [CLSCompliant(false)]
         public static explicit operator SByte(DynamoDBEntry p)
         {
             return p.AsSByte();
@@ -299,7 +296,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Explicitly convert DynamoDBEntry to UInt16
         /// </summary>
         /// <returns>UInt16 value of this object</returns>
-        [CLSCompliant(false)]
         public virtual UInt16 AsUShort()
         {
             throw new InvalidCastException();
@@ -309,7 +305,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="data">UInt16 data to convert</param>
         /// <returns>DynamoDBEntry representing the data</returns>
-        [CLSCompliant(false)]
         public static implicit operator DynamoDBEntry(UInt16 data)
         {
             return new UnconvertedDynamoDBEntry(data);
@@ -319,7 +314,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="p">DynamoDBEntry to convert</param>
         /// <returns>UInt16 value of DynamoDBEntry</returns>
-        [CLSCompliant(false)]
         public static explicit operator UInt16(DynamoDBEntry p)
         {
             return p.AsUShort();
@@ -356,7 +350,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Explicitly convert DynamoDBEntry to UInt32
         /// </summary>
         /// <returns>UInt32 value of this object</returns>
-        [CLSCompliant(false)]
         public virtual UInt32 AsUInt()
         {
             throw new InvalidCastException();
@@ -366,7 +359,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="data">UInt32 data to convert</param>
         /// <returns>DynamoDBEntry representing the data</returns>
-        [CLSCompliant(false)]
         public static implicit operator DynamoDBEntry(UInt32 data)
         {
             return new UnconvertedDynamoDBEntry(data);
@@ -376,7 +368,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="p">DynamoDBEntry to convert</param>
         /// <returns>UInt32 value of DynamoDBEntry</returns>
-        [CLSCompliant(false)]
         public static explicit operator UInt32(DynamoDBEntry p)
         {
             return p.AsUInt();
@@ -413,7 +404,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Explicitly convert DynamoDBEntry to UInt64
         /// </summary>
         /// <returns>UInt64 value of this object</returns>
-        [CLSCompliant(false)]
         public virtual UInt64 AsULong()
         {
             throw new InvalidCastException();
@@ -423,7 +413,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="data">UInt64 data to convert</param>
         /// <returns>DynamoDBEntry representing the data</returns>
-        [CLSCompliant(false)]
         public static implicit operator DynamoDBEntry(UInt64 data)
         {
             return new UnconvertedDynamoDBEntry(data);
@@ -433,7 +422,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="p">DynamoDBEntry to convert</param>
         /// <returns>UInt64 value of DynamoDBEntry</returns>
-        [CLSCompliant(false)]
         public static explicit operator UInt64(DynamoDBEntry p)
         {
             return p.AsULong();
@@ -1071,6 +1059,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// The entry is converted to a converted DynamoDBEntry either by the
     /// consuming Document or Table.
     /// </summary>
+
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class UnconvertedDynamoDBEntry : DynamoDBEntry
     {
         private object Value;

@@ -785,7 +785,7 @@
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.MedicalScribeSettings.MaxSpeakerLabels</property>
     <min>2</min>
-    <max>10</max>
+    <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.MedicalScribeSettings.VocabularyFilterName</property>
@@ -830,7 +830,7 @@
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.MedicalTranscriptionSetting.MaxSpeakerLabels</property>
     <min>2</min>
-    <max>10</max>
+    <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.MedicalTranscriptionSetting.VocabularyName</property>
@@ -877,7 +877,7 @@
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.Settings.MaxSpeakerLabels</property>
     <min>2</min>
-    <max>10</max>
+    <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.Settings.VocabularyFilterName</property>

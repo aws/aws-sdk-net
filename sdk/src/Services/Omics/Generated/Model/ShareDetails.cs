@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// The details of a share.
+    /// The details of a resource share.
     /// </summary>
     public partial class ShareDetails
     {
@@ -37,6 +38,7 @@ namespace Amazon.Omics.Model
         private string _ownerId;
         private string _principalSubscriber;
         private string _resourceArn;
+        private string _resourceId;
         private string _shareId;
         private string _shareName;
         private ShareStatus _status;
@@ -46,7 +48,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        ///  The timestamp for when the share was created. 
+        /// The timestamp of when the resource share was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -64,7 +66,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        ///  The account ID for the data owner. The owner creates the share offer. 
+        /// The account ID for the data owner. The owner creates the resource share.
         /// </para>
         /// </summary>
         public string OwnerId
@@ -82,8 +84,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property PrincipalSubscriber. 
         /// <para>
-        ///  The principal subscriber is the account the analytics store data is being shared
-        /// with. 
+        /// The principal subscriber is the account that is sharing the resource.
         /// </para>
         /// </summary>
         public string PrincipalSubscriber
@@ -101,7 +102,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The resource Arn of the analytics store being shared. 
+        /// The Arn of the shared resource. 
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -117,9 +118,27 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// The ID of the shared resource. 
+        /// </para>
+        /// </summary>
+        public string ResourceId
+        {
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
+        }
+
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
+        {
+            return this._resourceId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareId. 
         /// <para>
-        ///  The ID for a share offer for an analytics store . 
+        /// The ID of the resource share.
         /// </para>
         /// </summary>
         public string ShareId
@@ -137,7 +156,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ShareName. 
         /// <para>
-        ///  The name of the share. 
+        /// The name of the resource share.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -156,7 +175,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of a share. 
+        /// The status of the share.
         /// </para>
         /// </summary>
         public ShareStatus Status
@@ -174,8 +193,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        ///  The status message for a share. It provides more details on the status of the share.
-        /// 
+        /// The status message for a resource share. It provides additional details about the
+        /// share status.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -194,7 +213,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        ///  The timestamp of the share update. 
+        /// The timestamp of the resource share update.
         /// </para>
         /// </summary>
         public DateTime UpdateTime

@@ -46,16 +46,18 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DateFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndInclusive())
             {
                 context.Writer.WritePropertyName("EndInclusive");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.EndInclusive));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.EndInclusive));
             }
 
             if(requestObject.IsSetStartInclusive())
             {
                 context.Writer.WritePropertyName("StartInclusive");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.StartInclusive));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartInclusive));
             }
 
         }
@@ -67,4 +69,3 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

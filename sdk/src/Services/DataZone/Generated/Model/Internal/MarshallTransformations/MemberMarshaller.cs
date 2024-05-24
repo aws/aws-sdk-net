@@ -46,6 +46,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Member requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGroupIdentifier())
             {
                 context.Writer.WritePropertyName("groupIdentifier");
@@ -67,4 +69,3 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

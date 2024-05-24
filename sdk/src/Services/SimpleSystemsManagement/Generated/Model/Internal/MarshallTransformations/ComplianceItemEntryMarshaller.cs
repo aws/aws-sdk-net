@@ -46,6 +46,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ComplianceItemEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDetails())
             {
                 context.Writer.WritePropertyName("Details");
@@ -93,4 +95,3 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

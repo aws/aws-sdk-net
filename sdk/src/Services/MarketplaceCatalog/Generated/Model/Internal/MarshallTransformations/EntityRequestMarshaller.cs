@@ -46,6 +46,8 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EntityRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCatalog())
             {
                 context.Writer.WritePropertyName("Catalog");
@@ -67,4 +69,3 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

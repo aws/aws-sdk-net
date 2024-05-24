@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance's AWS OpsWorks Stacks ID.
+        /// The instance's OpsWorks Stacks ID.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -98,7 +99,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The length of time (in minutes) that the grant is valid. When the grant expires, at
         /// the end of this period, the user will no longer be able to use the credentials to
-        /// log in. If they are logged in at the time, they will be automatically logged out.
+        /// log in. If they are logged in at the time, they are automatically logged out.
         /// </para>
         /// </summary>
         public int ValidForInMinutes

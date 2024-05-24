@@ -46,6 +46,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Processor requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
@@ -77,4 +79,3 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

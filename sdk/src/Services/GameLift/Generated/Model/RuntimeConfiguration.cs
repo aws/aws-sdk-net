@@ -26,20 +26,32 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// A collection of server process configurations that describe the set of processes to
-    /// run on each instance in a fleet. Server processes run either an executable in a custom
-    /// game build or a Realtime Servers script. Amazon GameLift launches the configured processes,
-    /// manages their life cycle, and replaces them as needed. Each instance checks regularly
-    /// for an updated runtime configuration. 
+    /// <b>This data type has been expanded to use with the Amazon GameLift containers feature,
+    /// which is currently in public preview.</b> 
     /// 
     ///  
     /// <para>
-    /// A Amazon GameLift instance is limited to 50 processes running concurrently. To calculate
-    /// the total number of processes in a runtime configuration, add the values of the <c>ConcurrentExecutions</c>
-    /// parameter for each server process. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">
+    /// A set of instructions that define the set of server processes to run on computes in
+    /// a fleet. Server processes run either an executable in a custom game build or a Realtime
+    /// Servers script. Amazon GameLift launches the processes, manages their life cycle,
+    /// and replaces them as needed. Computes check regularly for an updated runtime configuration.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// On a container fleet, the Amazon GameLift Agent uses the runtime configuration to
+    /// manage the lifecycle of server processes in a replica container group.
+    /// </para>
+    ///  
+    /// <para>
+    /// An Amazon GameLift instance is limited to 50 processes running concurrently. To calculate
+    /// the total number of processes defined in a runtime configuration, add the values of
+    /// the <c>ConcurrentExecutions</c> parameter for each server process. Learn more about
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">
     /// Running Multiple Processes on a Fleet</a>.
     /// </para>
     /// </summary>
@@ -74,9 +86,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MaxConcurrentGameSessionActivations. 
         /// <para>
-        /// The number of game sessions in status <c>ACTIVATING</c> to allow on an instance. This
-        /// setting limits the instance resources that can be used for new game activations at
-        /// any one time.
+        /// The number of game sessions in status <c>ACTIVATING</c> to allow on an instance or
+        /// container. This setting limits the instance resources that can be used for new game
+        /// activations at any one time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
@@ -96,7 +108,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ServerProcesses. 
         /// <para>
         /// A collection of server process configurations that identify what server processes
-        /// to run on each instance in a fleet.
+        /// to run on fleet computes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

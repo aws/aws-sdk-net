@@ -46,6 +46,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         /// <returns></returns>
         public void Marshall(DatabasePreferences requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDatabaseManagementPreference())
             {
                 context.Writer.WritePropertyName("databaseManagementPreference");
@@ -72,4 +74,3 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 
     }
 }
-#pragma warning restore CS0612,CS0618

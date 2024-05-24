@@ -57,6 +57,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         public CrlDistributionPointExtensionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CrlDistributionPointExtensionConfiguration unmarshalledObject = new CrlDistributionPointExtensionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

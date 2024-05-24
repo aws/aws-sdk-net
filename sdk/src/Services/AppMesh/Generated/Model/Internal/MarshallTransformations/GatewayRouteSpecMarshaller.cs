@@ -46,6 +46,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GatewayRouteSpec requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGrpcRoute())
             {
                 context.Writer.WritePropertyName("grpcRoute");
@@ -94,4 +96,3 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

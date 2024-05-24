@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMakerRuntime.Model
 {
     /// <summary>
@@ -100,7 +101,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if Accept property is set
         internal bool IsSetAccept()
         {
-            return this._accept != null;
+            return !string.IsNullOrEmpty(this._accept);
         }
 
         /// <summary>
@@ -144,7 +145,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>
@@ -182,7 +183,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if CustomAttributes property is set
         internal bool IsSetCustomAttributes()
         {
-            return this._customAttributes != null;
+            return !string.IsNullOrEmpty(this._customAttributes);
         }
 
         /// <summary>
@@ -223,7 +224,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if InferenceComponentName property is set
         internal bool IsSetInferenceComponentName()
         {
-            return this._inferenceComponentName != null;
+            return !string.IsNullOrEmpty(this._inferenceComponentName);
         }
 
         /// <summary>
@@ -242,7 +243,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if InferenceId property is set
         internal bool IsSetInferenceId()
         {
-            return this._inferenceId != null;
+            return !string.IsNullOrEmpty(this._inferenceId);
         }
 
         /// <summary>
@@ -262,7 +263,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if TargetContainerHostname property is set
         internal bool IsSetTargetContainerHostname()
         {
-            return this._targetContainerHostname != null;
+            return !string.IsNullOrEmpty(this._targetContainerHostname);
         }
 
         /// <summary>
@@ -290,7 +291,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if TargetVariant property is set
         internal bool IsSetTargetVariant()
         {
-            return this._targetVariant != null;
+            return !string.IsNullOrEmpty(this._targetVariant);
         }
 
     }

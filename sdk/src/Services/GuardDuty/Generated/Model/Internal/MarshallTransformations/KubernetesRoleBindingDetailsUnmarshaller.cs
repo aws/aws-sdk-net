@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public KubernetesRoleBindingDetails Unmarshall(JsonUnmarshallerContext context)
         {
             KubernetesRoleBindingDetails unmarshalledObject = new KubernetesRoleBindingDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

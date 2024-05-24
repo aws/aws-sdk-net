@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
@@ -99,7 +100,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Manifest. 
         /// <para>
-        /// The landing zone <c>manifest.yaml</c> text file that specifies the landing zone configurations.
+        /// The landing zone manifest JSON text file that specifies the landing zone configurations.
         /// 
         /// </para>
         /// </summary>

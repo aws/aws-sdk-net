@@ -25,13 +25,29 @@ using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Amazon.Util.Internal
-{
+{        
+    /// <summary>
+    /// An interface for <see cref="RuntimeInformationWrapper"/> which allows for mocking the <see cref="RuntimeInformation"/> class.
+    /// A wrapper is necessary because the class is static.
+    /// </summary>
+    internal interface IRuntimeInformationWrapper
+    {
+        string FrameworkDescription { get; }
+    }
+
+    internal class RuntimeInformationWrapper : IRuntimeInformationWrapper
+    {
+        public string FrameworkDescription => RuntimeInformation.FrameworkDescription;
+    }
+
     public static partial class InternalSDKUtils
     {
         private const string UnknownPlaceholder = "Unknown";
         private const string UnknownPlatform = "unknown_platform";
 
         private static string _userAgentBaseName = "aws-sdk-dotnet-coreclr";
+
+        private static IRuntimeInformationWrapper _runtimeInformationWrapper = new RuntimeInformationWrapper();
 
 
         private static string GetValidSubstringOrUnknown(string str, int start, int end)
@@ -57,8 +73,13 @@ namespace Amazon.Util.Internal
         {
             try
             {
-                var desc = RuntimeInformation.FrameworkDescription.Trim();
-                return string.Format(CultureInfo.InvariantCulture, ".NET_Core#{0}", GetValidSubstringOrUnknown(desc, desc.LastIndexOf(' ') + 1, desc.Length));
+                var desc = _runtimeInformationWrapper.FrameworkDescription.Trim();
+                var version = GetValidSubstringOrUnknown(desc, desc.LastIndexOf(' ') + 1, desc.Length);
+                if (!Version.TryParse(version, out var _))
+                {
+                    return "Unknown" + $" md/framework-raw-version#{desc.Replace(' ', '_')}";
+                }
+                return string.Format(CultureInfo.InvariantCulture, ".NET_Core#{0}", version);
             }
             catch
             {
@@ -116,6 +137,16 @@ namespace Amazon.Util.Internal
             {
                 return UnknownPlaceholder;
             }
+        }
+        // Method to set the runtime information wrapper for testing
+        internal static void SetRuntimeInformationWrapper(IRuntimeInformationWrapper wrapper)
+        {
+            _runtimeInformationWrapper = wrapper;
+        }
+
+        internal static void ResetRuntimeInformationWrapper()
+        {
+            _runtimeInformationWrapper = new RuntimeInformationWrapper();
         }
     }
 }

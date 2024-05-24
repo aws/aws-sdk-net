@@ -53,7 +53,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static GetBucketWebsiteRequestMarshaller _instance;
 
-	    public static GetBucketWebsiteRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static GetBucketWebsiteRequestMarshaller Instance
 	    {
 	        get
 	        {

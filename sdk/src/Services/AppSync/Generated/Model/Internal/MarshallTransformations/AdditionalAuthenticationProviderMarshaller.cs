@@ -46,6 +46,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AdditionalAuthenticationProvider requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthenticationType())
             {
                 context.Writer.WritePropertyName("authenticationType");
@@ -94,4 +96,3 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

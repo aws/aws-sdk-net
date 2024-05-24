@@ -46,6 +46,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EnvironmentProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPropertyGroups())
             {
                 context.Writer.WritePropertyName("PropertyGroups");
@@ -71,4 +73,3 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

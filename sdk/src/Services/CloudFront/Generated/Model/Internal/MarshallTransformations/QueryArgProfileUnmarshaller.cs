@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for QueryArgProfile Object
     /// </summary>  
-    public class QueryArgProfileUnmarshaller : IUnmarshaller<QueryArgProfile, XmlUnmarshallerContext>
+    public class QueryArgProfileUnmarshaller : IUnmarshaller<QueryArgProfile, XmlUnmarshallerContext>, IUnmarshaller<QueryArgProfile, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,6 +76,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public QueryArgProfile Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static QueryArgProfileUnmarshaller _instance = new QueryArgProfileUnmarshaller();        
 
@@ -91,4 +101,3 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceAccessPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPermission())
             {
                 context.Writer.WritePropertyName("Permission");
@@ -67,4 +69,3 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

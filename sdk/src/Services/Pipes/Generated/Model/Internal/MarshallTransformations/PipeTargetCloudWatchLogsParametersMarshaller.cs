@@ -46,6 +46,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PipeTargetCloudWatchLogsParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLogStreamName())
             {
                 context.Writer.WritePropertyName("LogStreamName");
@@ -67,4 +69,3 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

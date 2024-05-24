@@ -57,6 +57,8 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
         public AccountRecommendationLifecycleSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AccountRecommendationLifecycleSummary unmarshalledObject = new AccountRecommendationLifecycleSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -131,4 +133,3 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Route53Profiles.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.Route53Profiles
 {
     /// <summary>
@@ -49,7 +50,8 @@ namespace Amazon.Route53Profiles
 
         /// <summary>
         /// Associates a Route 53 Profiles profile with a VPC. A VPC can have only one Profile
-        /// associated with it, but a Profile can be associated with up to 5000 VPCs.
+        /// associated with it, but a Profile can be associated with 1000 of VPCs (and you can
+        /// request a higher quota). For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities">https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateProfile service method.</param>
         /// <param name="cancellationToken">

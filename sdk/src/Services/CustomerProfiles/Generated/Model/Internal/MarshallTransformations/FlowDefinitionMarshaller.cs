@@ -46,6 +46,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FlowDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
@@ -111,4 +113,3 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

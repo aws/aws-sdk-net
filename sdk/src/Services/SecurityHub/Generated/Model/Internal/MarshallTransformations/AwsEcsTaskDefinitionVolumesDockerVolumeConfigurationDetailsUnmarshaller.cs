@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails unmarshalledObject = new AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

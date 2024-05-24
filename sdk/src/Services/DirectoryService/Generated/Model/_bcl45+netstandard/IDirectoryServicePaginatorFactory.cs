@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the ds-2015-04-16.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>

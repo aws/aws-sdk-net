@@ -57,6 +57,8 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
         public ControlCondition Unmarshall(JsonUnmarshallerContext context)
         {
             ControlCondition unmarshalledObject = new ControlCondition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

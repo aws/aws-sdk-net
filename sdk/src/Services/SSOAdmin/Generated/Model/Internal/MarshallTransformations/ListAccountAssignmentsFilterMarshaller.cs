@@ -46,6 +46,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListAccountAssignmentsFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccountId())
             {
                 context.Writer.WritePropertyName("AccountId");
@@ -61,4 +63,3 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

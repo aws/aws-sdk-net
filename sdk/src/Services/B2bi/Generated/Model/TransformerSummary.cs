@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.B2bi.Model
 {
     /// <summary>
@@ -107,8 +108,8 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property MappingTemplate. 
         /// <para>
-        /// Returns the name of the mapping template for the transformer. This template is used
-        /// to convert the input document into the correct set of objects.
+        /// Returns the mapping template for the transformer. This template is used to map the
+        /// parsed EDI file using JSONata or XSLT.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=350000)]

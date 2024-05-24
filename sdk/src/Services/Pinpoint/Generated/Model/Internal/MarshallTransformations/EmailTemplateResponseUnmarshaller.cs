@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public EmailTemplateResponse Unmarshall(JsonUnmarshallerContext context)
         {
             EmailTemplateResponse unmarshalledObject = new EmailTemplateResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -80,6 +82,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultSubstitutions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Headers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MessageHeader, MessageHeaderUnmarshaller>(MessageHeaderUnmarshaller.Instance);
+                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("HtmlPart", targetDepth))
@@ -161,4 +169,3 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

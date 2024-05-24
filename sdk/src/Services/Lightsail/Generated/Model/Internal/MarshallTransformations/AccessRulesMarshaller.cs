@@ -46,6 +46,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AccessRules requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowPublicOverrides())
             {
                 context.Writer.WritePropertyName("allowPublicOverrides");
@@ -67,4 +69,3 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

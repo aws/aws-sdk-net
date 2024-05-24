@@ -46,6 +46,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkGroupConfigurationUpdates requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalConfiguration())
             {
                 context.Writer.WritePropertyName("AdditionalConfiguration");
@@ -153,4 +155,3 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

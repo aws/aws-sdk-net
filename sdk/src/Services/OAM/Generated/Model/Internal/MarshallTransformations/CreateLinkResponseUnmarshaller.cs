@@ -76,6 +76,12 @@ namespace Amazon.OAM.Model.Internal.MarshallTransformations
                     response.LabelTemplate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LinkConfiguration", targetDepth))
+                {
+                    var unmarshaller = LinkConfigurationUnmarshaller.Instance;
+                    response.LinkConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceTypes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -161,4 +167,3 @@ namespace Amazon.OAM.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

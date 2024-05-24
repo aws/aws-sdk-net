@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public OrganizationConformancePackDetailedStatus Unmarshall(JsonUnmarshallerContext context)
         {
             OrganizationConformancePackDetailedStatus unmarshalledObject = new OrganizationConformancePackDetailedStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

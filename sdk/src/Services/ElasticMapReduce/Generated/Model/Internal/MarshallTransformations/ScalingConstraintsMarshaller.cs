@@ -46,6 +46,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScalingConstraints requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxCapacity())
             {
                 context.Writer.WritePropertyName("MaxCapacity");
@@ -67,4 +69,3 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BackTestConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRunBackTestMode())
             {
                 context.Writer.WritePropertyName("RunBackTestMode");
@@ -61,4 +63,3 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

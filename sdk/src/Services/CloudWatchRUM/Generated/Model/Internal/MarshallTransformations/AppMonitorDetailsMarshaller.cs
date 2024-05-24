@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AppMonitorDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
@@ -73,4 +75,3 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

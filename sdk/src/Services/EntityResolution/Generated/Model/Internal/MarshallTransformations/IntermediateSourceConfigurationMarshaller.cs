@@ -46,6 +46,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IntermediateSourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIntermediateS3Path())
             {
                 context.Writer.WritePropertyName("intermediateS3Path");
@@ -61,4 +63,3 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

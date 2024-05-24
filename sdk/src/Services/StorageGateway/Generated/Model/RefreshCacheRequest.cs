@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -113,6 +114,11 @@ namespace Amazon.StorageGateway.Model
         /// is [<c>"/"</c>]. The default refreshes objects and folders at the root of the Amazon
         /// S3 bucket. If <c>Recursive</c> is set to <c>true</c>, the entire S3 bucket that the
         /// file share has access to is refreshed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Do not include <c>/</c> when specifying folder names. For example, you would specify
+        /// <c>samplefolder</c> rather than <c>samplefolder/</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

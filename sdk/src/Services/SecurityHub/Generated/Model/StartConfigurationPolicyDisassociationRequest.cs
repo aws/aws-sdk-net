@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -45,8 +46,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ConfigurationPolicyIdentifier. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration
-        /// policy. 
+        ///  The Amazon Resource Name (ARN) of a configuration policy, the universally unique
+        /// identifier (UUID) of a configuration policy, or a value of <c>SELF_MANAGED_SECURITY_HUB</c>
+        /// for a self-managed configuration. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

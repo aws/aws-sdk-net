@@ -46,6 +46,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TrainingData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAssets())
             {
                 context.Writer.WritePropertyName("Assets");
@@ -71,4 +73,3 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

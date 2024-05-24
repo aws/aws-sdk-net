@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public LifecyclePolicyDetailExclusionRulesAmis Unmarshall(JsonUnmarshallerContext context)
         {
             LifecyclePolicyDetailExclusionRulesAmis unmarshalledObject = new LifecyclePolicyDetailExclusionRulesAmis();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

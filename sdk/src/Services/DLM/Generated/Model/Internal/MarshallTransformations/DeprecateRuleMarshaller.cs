@@ -46,6 +46,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeprecateRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCount())
             {
                 context.Writer.WritePropertyName("Count");
@@ -73,4 +75,3 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

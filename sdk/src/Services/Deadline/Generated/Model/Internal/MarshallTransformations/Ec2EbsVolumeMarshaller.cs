@@ -46,6 +46,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Ec2EbsVolume requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("iops");
@@ -73,4 +75,3 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

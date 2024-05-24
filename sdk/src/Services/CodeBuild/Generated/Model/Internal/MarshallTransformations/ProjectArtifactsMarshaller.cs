@@ -46,6 +46,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProjectArtifacts requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArtifactIdentifier())
             {
                 context.Writer.WritePropertyName("artifactIdentifier");
@@ -115,4 +117,3 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EvaluationParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBackTestWindowOffset())
             {
                 context.Writer.WritePropertyName("BackTestWindowOffset");
@@ -67,4 +69,3 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

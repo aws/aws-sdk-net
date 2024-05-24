@@ -63,12 +63,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CertificateIdentifier", StringUtils.FromString(publicRequest.CertificateIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveCustomerOverride())
                 {
                     request.Parameters.Add("RemoveCustomerOverride", StringUtils.FromBool(publicRequest.RemoveCustomerOverride));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

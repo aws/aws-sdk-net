@@ -63,36 +63,29 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CallAs", StringUtils.FromString(publicRequest.CallAs));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStackName())
                 {
                     request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStackSetName())
                 {
                     request.Parameters.Add("StackSetName", StringUtils.FromString(publicRequest.StackSetName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateBody())
                 {
                     request.Parameters.Add("TemplateBody", StringUtils.FromString(publicRequest.TemplateBody));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateSummaryConfig())
                 {
                     if(publicRequest.TemplateSummaryConfig.IsSetTreatUnrecognizedResourceTypesAsWarnings())
                     {
                         request.Parameters.Add("TemplateSummaryConfig" + "." + "TreatUnrecognizedResourceTypesAsWarnings", StringUtils.FromBool(publicRequest.TemplateSummaryConfig.TreatUnrecognizedResourceTypesAsWarnings));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateURL())
                 {
                     request.Parameters.Add("TemplateURL", StringUtils.FromString(publicRequest.TemplateURL));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

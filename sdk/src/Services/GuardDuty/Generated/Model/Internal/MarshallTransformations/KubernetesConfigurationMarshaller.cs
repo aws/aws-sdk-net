@@ -46,6 +46,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KubernetesConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuditLogs())
             {
                 context.Writer.WritePropertyName("auditLogs");
@@ -66,4 +68,3 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

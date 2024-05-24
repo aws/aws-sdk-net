@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Describes supported operating systems in AWS OpsWorks Stacks.
+    /// Describes supported operating systems in OpsWorks Stacks.
     /// </summary>
     public partial class OperatingSystem
     {
@@ -44,7 +45,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ConfigurationManagers. 
         /// <para>
-        /// Supported configuration manager name and versions for an AWS OpsWorks Stacks operating
+        /// Supported configuration manager name and versions for an OpsWorks Stacks operating
         /// system.
         /// </para>
         /// </summary>
@@ -63,7 +64,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of a supported operating system, such as <c>Amazon Linux 2018.03</c>.
+        /// The ID of a supported operating system, such as <c>Amazon Linux 2</c>.
         /// </para>
         /// </summary>
         public string Id
@@ -81,7 +82,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the operating system, such as <c>Amazon Linux 2018.03</c>.
+        /// The name of the operating system, such as <c>Amazon Linux 2</c>.
         /// </para>
         /// </summary>
         public string Name

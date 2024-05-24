@@ -66,6 +66,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAttributeNames())
@@ -92,6 +93,17 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                     foreach(var publicRequestMessageAttributeNamesListValue in publicRequest.MessageAttributeNames)
                     {
                             context.Writer.Write(publicRequestMessageAttributeNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetMessageSystemAttributeNames())
+                {
+                    context.Writer.WritePropertyName("MessageSystemAttributeNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMessageSystemAttributeNamesListValue in publicRequest.MessageSystemAttributeNames)
+                    {
+                            context.Writer.Write(publicRequestMessageSystemAttributeNamesListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
@@ -148,4 +160,3 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         public Meeting Unmarshall(JsonUnmarshallerContext context)
         {
             Meeting unmarshalledObject = new Meeting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -137,4 +139,3 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -641,9 +641,17 @@ namespace Amazon.ResilienceHub
     {
 
         /// <summary>
+        /// Constant Added for DifferenceType
+        /// </summary>
+        public static readonly DifferenceType Added = new DifferenceType("Added");
+        /// <summary>
         /// Constant NotEqual for DifferenceType
         /// </summary>
         public static readonly DifferenceType NotEqual = new DifferenceType("NotEqual");
+        /// <summary>
+        /// Constant Removed for DifferenceType
+        /// </summary>
+        public static readonly DifferenceType Removed = new DifferenceType("Removed");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -798,6 +806,10 @@ namespace Amazon.ResilienceHub
     public class DriftType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AppComponentResiliencyComplianceStatus for DriftType
+        /// </summary>
+        public static readonly DriftType AppComponentResiliencyComplianceStatus = new DriftType("AppComponentResiliencyComplianceStatus");
         /// <summary>
         /// Constant ApplicationCompliance for DriftType
         /// </summary>

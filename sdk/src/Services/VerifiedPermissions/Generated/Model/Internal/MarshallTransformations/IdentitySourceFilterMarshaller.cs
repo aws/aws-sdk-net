@@ -46,6 +46,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IdentitySourceFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPrincipalEntityType())
             {
                 context.Writer.WritePropertyName("principalEntityType");
@@ -61,4 +63,3 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

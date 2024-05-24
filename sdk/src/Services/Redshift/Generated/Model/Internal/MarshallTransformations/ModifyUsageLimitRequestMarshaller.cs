@@ -63,17 +63,14 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Amount", StringUtils.FromLong(publicRequest.Amount));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetBreachAction())
                 {
                     request.Parameters.Add("BreachAction", StringUtils.FromString(publicRequest.BreachAction));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUsageLimitId())
                 {
                     request.Parameters.Add("UsageLimitId", StringUtils.FromString(publicRequest.UsageLimitId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

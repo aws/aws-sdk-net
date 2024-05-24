@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the servicecatalog-2015-12-10.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>

@@ -29,11 +29,18 @@ namespace Amazon.S3.Model
     {
         private readonly Tag tag;
 
+        /// <summary>
+        /// Constructs an instance of AnalyticsTagPredicate
+        /// </summary>
+        /// <param name="tag"></param>
         public AnalyticsTagPredicate(Tag tag)
         {
             this.tag = tag;
         }
 
+        /// <summary>
+        /// The tag to use for the predicate
+        /// </summary>
         public Tag Tag
         {
             get { return this.tag; }

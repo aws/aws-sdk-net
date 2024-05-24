@@ -46,6 +46,8 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateExperimentTemplateStopConditionInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("source");
@@ -67,4 +69,3 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

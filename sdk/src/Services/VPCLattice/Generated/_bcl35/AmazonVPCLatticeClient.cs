@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.VPCLattice
 {
     /// <summary>
@@ -273,6 +274,16 @@ namespace Amazon.VPCLattice
         /// <summary>
         /// Updates the listener rules in a batch. You can use this operation to change the priority
         /// of listener rules. This can be useful when bulk updating or swapping rule priority.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions:</b> <c>vpc-lattice:UpdateRule</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/security_iam_service-with-iam.html">How
+        /// Amazon VPC Lattice works with IAM</a> in the <i>Amazon VPC Lattice User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateRule service method.</param>
         /// 
@@ -347,7 +358,7 @@ namespace Amazon.VPCLattice
         /// <summary>
         /// Enables access logs to be sent to Amazon CloudWatch, Amazon S3, and Amazon Kinesis
         /// Data Firehose. The service network owner can use the access logs to audit the services
-        /// in the network. The service network owner will only see access logs from clients and
+        /// in the network. The service network owner can only see access logs from clients and
         /// services that are associated with their service network. Access log entries represent
         /// traffic originated from VPCs associated with that network. For more information, see
         /// <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/monitoring-access-logs.html">Access
@@ -748,7 +759,8 @@ namespace Amazon.VPCLattice
         #region  CreateServiceNetworkServiceAssociation
 
         /// <summary>
-        /// Associates a service with a service network.
+        /// Associates a service with a service network. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations">Manage
+        /// service associations</a> in the <i>Amazon VPC Lattice User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -858,9 +870,10 @@ namespace Amazon.VPCLattice
         /// </para>
         ///  
         /// <para>
-        /// Once a security group is added to the VPC association it cannot be removed. You can
-        /// add or update the security groups being used for the VPC association once a security
-        /// group is attached. To remove all security groups you must reassociate the VPC.
+        /// If you add a security group to the service network and VPC association, the association
+        /// must continue to always have at least one security group. You can add or edit security
+        /// groups at any time. However, to remove all security groups, you must first delete
+        /// the association and recreate it without security groups.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServiceNetworkVpcAssociation service method.</param>
@@ -1090,11 +1103,10 @@ namespace Amazon.VPCLattice
         #region  DeleteAuthPolicy
 
         /// <summary>
-        /// Deletes the specified auth policy. If an auth is set to <c>Amazon Web Services_IAM</c>
-        /// and the auth policy is deleted, all requests will be denied by default. If you are
-        /// trying to remove the auth policy completely, you must set the auth_type to <c>NONE</c>.
-        /// If auth is enabled on the resource, but no auth policy is set, all requests will be
-        /// denied.
+        /// Deletes the specified auth policy. If an auth is set to <c>AWS_IAM</c> and the auth
+        /// policy is deleted, all requests are denied. If you are trying to remove the auth policy
+        /// completely, you must set the auth type to <c>NONE</c>. If auth is enabled on the resource,
+        /// but no auth policy is set, all requests are denied.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAuthPolicy service method.</param>
         /// 
@@ -1542,7 +1554,7 @@ namespace Amazon.VPCLattice
 
         /// <summary>
         /// Deletes the association between a specified service and the specific service network.
-        /// This request will fail if an association is still in progress.
+        /// This operation fails if an association is still in progress.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServiceNetworkServiceAssociation service method.</param>
         /// 
@@ -2041,7 +2053,7 @@ namespace Amazon.VPCLattice
 
         /// <summary>
         /// Retrieves information about the resource policy. The resource policy is an IAM policy
-        /// created by AWS RAM on behalf of the resource owner when they share a resource.
+        /// created on behalf of the resource owner when they share a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// 
@@ -2807,8 +2819,8 @@ namespace Amazon.VPCLattice
         /// Every association in Amazon VPC Lattice is given a unique Amazon Resource Name (ARN),
         /// such as when a service network is associated with a VPC or when a service is associated
         /// with a service network. If the association is for a resource that is shared with another
-        /// account, the association will include the local account ID as the prefix in the ARN
-        /// for each account the resource is shared with.
+        /// account, the association includes the local account ID as the prefix in the ARN for
+        /// each account the resource is shared with.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkServiceAssociations service method.</param>
@@ -3213,7 +3225,14 @@ namespace Amazon.VPCLattice
         #region  PutAuthPolicy
 
         /// <summary>
-        /// Creates or updates the auth policy.
+        /// Creates or updates the auth policy. The policy string in JSON must not contain newlines
+        /// or blank lines.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html">Auth
+        /// policies</a> in the <i>Amazon VPC Lattice User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAuthPolicy service method.</param>
         /// 
@@ -3931,8 +3950,11 @@ namespace Amazon.VPCLattice
         #region  UpdateServiceNetworkVpcAssociation
 
         /// <summary>
-        /// Updates the service network and VPC association. Once you add a security group, it
-        /// cannot be removed.
+        /// Updates the service network and VPC association. If you add a security group to the
+        /// service network and VPC association, the association must continue to always have
+        /// at least one security group. You can add or edit security groups at any time. However,
+        /// to remove all security groups, you must first delete the association and recreate
+        /// it without security groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServiceNetworkVpcAssociation service method.</param>
         /// 

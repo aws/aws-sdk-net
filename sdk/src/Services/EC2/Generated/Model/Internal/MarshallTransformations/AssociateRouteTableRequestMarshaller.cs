@@ -63,17 +63,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("GatewayId", StringUtils.FromString(publicRequest.GatewayId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRouteTableId())
                 {
                     request.Parameters.Add("RouteTableId", StringUtils.FromString(publicRequest.RouteTableId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSubnetId())
                 {
                     request.Parameters.Add("SubnetId", StringUtils.FromString(publicRequest.SubnetId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -58,6 +58,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     response.Citations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("guardrailAction", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GuardrailAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("output", targetDepth))
                 {
                     var unmarshaller = RetrieveAndGenerateOutputUnmarshaller.Instance;
@@ -153,4 +159,3 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

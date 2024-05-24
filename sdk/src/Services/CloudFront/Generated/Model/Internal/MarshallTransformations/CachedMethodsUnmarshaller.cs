@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CachedMethods Object
     /// </summary>  
-    public class CachedMethodsUnmarshaller : IUnmarshaller<CachedMethods, XmlUnmarshallerContext>
+    public class CachedMethodsUnmarshaller : IUnmarshaller<CachedMethods, XmlUnmarshallerContext>, IUnmarshaller<CachedMethods, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public CachedMethods Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static CachedMethodsUnmarshaller _instance = new CachedMethodsUnmarshaller();        
 
@@ -95,4 +105,3 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

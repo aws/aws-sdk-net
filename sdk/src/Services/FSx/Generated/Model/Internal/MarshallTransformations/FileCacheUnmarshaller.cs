@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public FileCache Unmarshall(JsonUnmarshallerContext context)
         {
             FileCache unmarshalledObject = new FileCache();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -179,4 +181,3 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AssetBundleImportJobThemeOverridePermissions Unmarshall(JsonUnmarshallerContext context)
         {
             AssetBundleImportJobThemeOverridePermissions unmarshalledObject = new AssetBundleImportJobThemeOverridePermissions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

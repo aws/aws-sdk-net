@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public ConfiguredTableAnalysisRulePolicy Unmarshall(JsonUnmarshallerContext context)
         {
             ConfiguredTableAnalysisRulePolicy unmarshalledObject = new ConfiguredTableAnalysisRulePolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

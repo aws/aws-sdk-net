@@ -46,6 +46,8 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputProcessingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInputLambdaProcessor())
             {
                 context.Writer.WritePropertyName("InputLambdaProcessor");
@@ -66,4 +68,3 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

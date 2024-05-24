@@ -46,6 +46,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProvisionedRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBrokerNodeGroupInfo())
             {
                 context.Writer.WritePropertyName("brokerNodeGroupInfo");
@@ -145,4 +147,3 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

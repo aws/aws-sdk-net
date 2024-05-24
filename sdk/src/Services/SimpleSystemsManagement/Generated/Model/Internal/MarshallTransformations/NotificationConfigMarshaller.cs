@@ -46,6 +46,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NotificationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNotificationArn())
             {
                 context.Writer.WritePropertyName("NotificationArn");
@@ -78,4 +80,3 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailabilityZone())
             {
                 context.Writer.WritePropertyName("availabilityZone");
@@ -85,4 +87,3 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

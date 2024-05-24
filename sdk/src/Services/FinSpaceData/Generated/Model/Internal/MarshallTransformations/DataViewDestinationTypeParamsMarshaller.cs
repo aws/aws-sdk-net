@@ -46,6 +46,8 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataViewDestinationTypeParams requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestinationType())
             {
                 context.Writer.WritePropertyName("destinationType");
@@ -81,4 +83,3 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

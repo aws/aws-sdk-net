@@ -46,6 +46,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchCreateIndex requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBatchReferenceName())
             {
                 context.Writer.WritePropertyName("BatchReferenceName");
@@ -100,4 +102,3 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

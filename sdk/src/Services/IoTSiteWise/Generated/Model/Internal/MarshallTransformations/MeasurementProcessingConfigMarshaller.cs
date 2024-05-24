@@ -46,6 +46,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MeasurementProcessingConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetForwardingConfig())
             {
                 context.Writer.WritePropertyName("forwardingConfig");
@@ -66,4 +68,3 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

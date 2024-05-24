@@ -46,6 +46,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ApiStage requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApiId())
             {
                 context.Writer.WritePropertyName("apiId");
@@ -86,4 +88,3 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

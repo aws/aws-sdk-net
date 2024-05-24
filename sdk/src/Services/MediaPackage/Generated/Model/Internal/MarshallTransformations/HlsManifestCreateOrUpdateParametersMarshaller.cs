@@ -46,6 +46,8 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HlsManifestCreateOrUpdateParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdMarkers())
             {
                 context.Writer.WritePropertyName("adMarkers");
@@ -114,4 +116,3 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.TimestreamQuery.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.TimestreamQuery
 {
     /// <summary>
@@ -61,7 +62,7 @@ namespace Amazon.TimestreamQuery
         /// You are not authorized to perform this action.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// Timestream was unable to fully process this request because of an internal server
+        /// The service was unable to fully process this request because of an internal server
         /// error.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
@@ -123,7 +124,7 @@ namespace Amazon.TimestreamQuery
         /// Unable to poll results for a cancelled query.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// Timestream was unable to fully process this request because of an internal server
+        /// The service was unable to fully process this request because of an internal server
         /// error.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
@@ -182,7 +183,7 @@ namespace Amazon.TimestreamQuery
         /// You are not authorized to perform this action.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// Timestream was unable to fully process this request because of an internal server
+        /// The service was unable to fully process this request because of an internal server
         /// error.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
@@ -228,6 +229,65 @@ namespace Amazon.TimestreamQuery
 
         #endregion
         
+        #region  DescribeAccountSettings
+
+
+        /// <summary>
+        /// Describes the settings for your account that include the query pricing model and the
+        /// configured maximum TCUs the service can use for your query workload.
+        /// 
+        ///  
+        /// <para>
+        /// You're charged only for the duration of compute units used for your workloads.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountSettings service method, as returned by TimestreamQuery.</returns>
+        /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
+        /// The service was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
+        /// The requested endpoint was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeAccountSettings">REST API Reference for DescribeAccountSettings Operation</seealso>
+        DescribeAccountSettingsResponse DescribeAccountSettings(DescribeAccountSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountSettings operation on AmazonTimestreamQueryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccountSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeAccountSettings">REST API Reference for DescribeAccountSettings Operation</seealso>
+        IAsyncResult BeginDescribeAccountSettings(DescribeAccountSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccountSettings.</param>
+        /// 
+        /// <returns>Returns a  DescribeAccountSettingsResult from TimestreamQuery.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeAccountSettings">REST API Reference for DescribeAccountSettings Operation</seealso>
+        DescribeAccountSettingsResponse EndDescribeAccountSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeEndpoints
 
 
@@ -265,7 +325,7 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the DescribeEndpoints service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// Timestream was unable to fully process this request because of an internal server
+        /// The service was unable to fully process this request because of an internal server
         /// error.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
@@ -318,7 +378,7 @@ namespace Amazon.TimestreamQuery
         /// You are not authorized to perform this action.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// Timestream was unable to fully process this request because of an internal server
+        /// The service was unable to fully process this request because of an internal server
         /// error.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
@@ -377,7 +437,7 @@ namespace Amazon.TimestreamQuery
         /// You are not authorized to perform this action.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// Timestream was unable to fully process this request because of an internal server
+        /// The service was unable to fully process this request because of an internal server
         /// error.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
@@ -437,7 +497,7 @@ namespace Amazon.TimestreamQuery
         /// You are not authorized to perform this action.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// Timestream was unable to fully process this request because of an internal server
+        /// The service was unable to fully process this request because of an internal server
         /// error.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
@@ -547,7 +607,7 @@ namespace Amazon.TimestreamQuery
         /// You are not authorized to perform this action.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// Timestream was unable to fully process this request because of an internal server
+        /// The service was unable to fully process this request because of an internal server
         /// error.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
@@ -642,7 +702,7 @@ namespace Amazon.TimestreamQuery
         /// Unable to poll results for a cancelled query.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// Timestream was unable to fully process this request because of an internal server
+        /// The service was unable to fully process this request because of an internal server
         /// error.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
@@ -797,6 +857,71 @@ namespace Amazon.TimestreamQuery
 
         #endregion
         
+        #region  UpdateAccountSettings
+
+
+        /// <summary>
+        /// Transitions your account to use TCUs for query pricing and modifies the maximum query
+        /// compute units that you've configured. If you reduce the value of <c>MaxQueryTCU</c>
+        /// to a desired configuration, the new value can take up to 24 hours to be effective.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After you've transitioned your account to use TCUs for query pricing, you can't transition
+        /// to using bytes scanned for query pricing.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAccountSettings service method, as returned by TimestreamQuery.</returns>
+        /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
+        /// The service was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
+        /// The requested endpoint was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
+        /// Invalid or malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings operation on AmazonTimestreamQueryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAccountSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        IAsyncResult BeginUpdateAccountSettings(UpdateAccountSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAccountSettings.</param>
+        /// 
+        /// <returns>Returns a  UpdateAccountSettingsResult from TimestreamQuery.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        UpdateAccountSettingsResponse EndUpdateAccountSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateScheduledQuery
 
 
@@ -810,7 +935,7 @@ namespace Amazon.TimestreamQuery
         /// You are not authorized to perform this action.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// Timestream was unable to fully process this request because of an internal server
+        /// The service was unable to fully process this request because of an internal server
         /// error.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">

@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsApiGatewayCanarySettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeploymentId())
             {
                 context.Writer.WritePropertyName("DeploymentId");
@@ -55,7 +57,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentTraffic())
             {
                 context.Writer.WritePropertyName("PercentTraffic");
-                context.Writer.Write(requestObject.PercentTraffic);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentTraffic))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentTraffic));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.PercentTraffic);
+                }
             }
 
             if(requestObject.IsSetStageVariableOverrides())
@@ -87,4 +96,3 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

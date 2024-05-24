@@ -46,6 +46,8 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SchemaUnion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTabularSchemaConfig())
             {
                 context.Writer.WritePropertyName("tabularSchemaConfig");
@@ -66,4 +68,3 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

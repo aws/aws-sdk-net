@@ -57,6 +57,8 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
         public DestinationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             DestinationConfig unmarshalledObject = new DestinationConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

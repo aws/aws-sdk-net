@@ -46,6 +46,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         /// <returns></returns>
         public void Marshall(BusinessGoals requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLicenseCostReduction())
             {
                 context.Writer.WritePropertyName("licenseCostReduction");
@@ -79,4 +81,3 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 
     }
 }
-#pragma warning restore CS0612,CS0618

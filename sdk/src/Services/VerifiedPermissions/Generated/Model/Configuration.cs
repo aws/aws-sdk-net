@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// </para>
     ///  
     /// <para>
-    /// You must specify a <c>userPoolArn</c>, and optionally, a <c>ClientId</c>.
+    /// Specifies a <c>userPoolArn</c>, a <c>groupConfiguration</c>, and a <c>ClientId</c>.
     /// </para>
     ///  </note> 
     /// <para>

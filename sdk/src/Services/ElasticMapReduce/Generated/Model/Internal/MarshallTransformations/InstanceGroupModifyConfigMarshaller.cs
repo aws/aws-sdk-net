@@ -46,6 +46,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceGroupModifyConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConfigurations())
             {
                 context.Writer.WritePropertyName("Configurations");
@@ -111,4 +113,3 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

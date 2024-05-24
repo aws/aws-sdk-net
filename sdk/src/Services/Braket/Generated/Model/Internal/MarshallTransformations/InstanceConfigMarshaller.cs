@@ -46,6 +46,8 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("instanceCount");
@@ -73,4 +75,3 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

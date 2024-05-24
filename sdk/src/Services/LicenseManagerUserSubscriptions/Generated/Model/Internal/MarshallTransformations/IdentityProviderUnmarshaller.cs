@@ -57,6 +57,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         public IdentityProvider Unmarshall(JsonUnmarshallerContext context)
         {
             IdentityProvider unmarshalledObject = new IdentityProvider();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         }
     }
 }
-#pragma warning restore CS0612,CS0618

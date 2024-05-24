@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the appconfig-2019-10-09.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AppConfig.Model
 {
     /// <summary>

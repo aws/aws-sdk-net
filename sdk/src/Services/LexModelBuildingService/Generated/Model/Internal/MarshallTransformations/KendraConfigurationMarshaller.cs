@@ -46,6 +46,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KendraConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKendraIndex())
             {
                 context.Writer.WritePropertyName("kendraIndex");
@@ -73,4 +75,3 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

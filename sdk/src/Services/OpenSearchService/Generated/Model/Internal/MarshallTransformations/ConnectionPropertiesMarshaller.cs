@@ -46,6 +46,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConnectionProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCrossClusterSearch())
             {
                 context.Writer.WritePropertyName("CrossClusterSearch");
@@ -72,4 +74,3 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

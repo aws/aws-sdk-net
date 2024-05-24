@@ -46,6 +46,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TelemetryRecord requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBackendConnectionErrors())
             {
                 context.Writer.WritePropertyName("BackendConnectionErrors");
@@ -96,4 +98,3 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

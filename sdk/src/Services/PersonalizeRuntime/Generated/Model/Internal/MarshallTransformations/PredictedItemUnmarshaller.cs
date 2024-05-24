@@ -57,6 +57,8 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
         public PredictedItem Unmarshall(JsonUnmarshallerContext context)
         {
             PredictedItem unmarshalledObject = new PredictedItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -80,6 +82,12 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PromotionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("reason", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("score", targetDepth))
@@ -107,4 +115,3 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataQuery requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetQueryStatement())
             {
                 context.Writer.WritePropertyName("QueryStatement");
@@ -83,4 +85,3 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

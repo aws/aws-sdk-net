@@ -46,6 +46,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TargetLocation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccounts())
             {
                 context.Writer.WritePropertyName("Accounts");
@@ -106,4 +108,3 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

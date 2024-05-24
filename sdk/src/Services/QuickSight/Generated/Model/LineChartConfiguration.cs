@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -280,7 +281,7 @@ namespace Amazon.QuickSight.Model
         /// The series item configuration of a line chart.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Max=2000)]
         public List<SeriesItem> Series
         {
             get { return this._series; }

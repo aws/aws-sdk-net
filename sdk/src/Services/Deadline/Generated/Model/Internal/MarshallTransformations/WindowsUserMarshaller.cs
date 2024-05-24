@@ -46,6 +46,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WindowsUser requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPasswordArn())
             {
                 context.Writer.WritePropertyName("passwordArn");
@@ -67,4 +69,3 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

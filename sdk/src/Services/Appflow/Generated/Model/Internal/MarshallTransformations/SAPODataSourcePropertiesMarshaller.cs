@@ -46,6 +46,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SAPODataSourceProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetObjectPath())
             {
                 context.Writer.WritePropertyName("objectPath");
@@ -83,4 +85,3 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

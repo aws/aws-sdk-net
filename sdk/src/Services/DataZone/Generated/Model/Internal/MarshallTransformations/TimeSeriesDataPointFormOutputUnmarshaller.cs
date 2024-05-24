@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public TimeSeriesDataPointFormOutput Unmarshall(JsonUnmarshallerContext context)
         {
             TimeSeriesDataPointFormOutput unmarshalledObject = new TimeSeriesDataPointFormOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

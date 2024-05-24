@@ -46,6 +46,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConfiguredTableAnalysisRulePolicyV1 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAggregation())
             {
                 context.Writer.WritePropertyName("aggregation");
@@ -88,4 +90,3 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

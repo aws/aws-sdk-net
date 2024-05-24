@@ -46,6 +46,8 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Credential requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApiKeyCredential())
             {
                 context.Writer.WritePropertyName("apiKeyCredential");
@@ -77,4 +79,3 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

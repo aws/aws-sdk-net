@@ -27,6 +27,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BearerTokenAuthTest.Model
 {
     /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.BearerTokenAuthTest.Model
         // Check to see if TestId property is set
         internal bool IsSetTestId()
         {
-            return this._testId != null;
+            return !string.IsNullOrEmpty(this._testId);
         }
 
         /// <summary>

@@ -46,6 +46,8 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EdiType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetX12Details())
             {
                 context.Writer.WritePropertyName("x12Details");
@@ -66,4 +68,3 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

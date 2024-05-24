@@ -46,6 +46,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OEMEphemeris requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOemData())
             {
                 context.Writer.WritePropertyName("oemData");
@@ -72,4 +74,3 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

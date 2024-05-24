@@ -46,6 +46,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TGWOnDeviceServiceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStorageLimit())
             {
                 context.Writer.WritePropertyName("StorageLimit");
@@ -67,4 +69,3 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

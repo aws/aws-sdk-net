@@ -46,6 +46,8 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DefinitionDocument requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLanguage())
             {
                 context.Writer.WritePropertyName("language");
@@ -67,4 +69,3 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

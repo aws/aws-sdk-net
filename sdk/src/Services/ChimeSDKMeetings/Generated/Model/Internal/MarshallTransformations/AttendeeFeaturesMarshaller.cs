@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AttendeeFeatures requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxCount())
             {
                 context.Writer.WritePropertyName("MaxCount");
@@ -61,4 +63,3 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         public RetentionPeriod Unmarshall(JsonUnmarshallerContext context)
         {
             RetentionPeriod unmarshalledObject = new RetentionPeriod();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

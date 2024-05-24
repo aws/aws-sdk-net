@@ -46,6 +46,8 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EnabledControlParameter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");
@@ -67,4 +69,3 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

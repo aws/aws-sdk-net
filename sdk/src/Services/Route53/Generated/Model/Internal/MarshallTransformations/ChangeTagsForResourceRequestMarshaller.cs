@@ -68,22 +68,21 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("ChangeTagsForResourceRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
+                xmlWriter.WriteStartElement("ChangeTagsForResourceRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 var publicRequestAddTags = publicRequest.AddTags;
                 if (publicRequestAddTags != null && (publicRequestAddTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                {                        
-                    xmlWriter.WriteStartElement("AddTags", "https://route53.amazonaws.com/doc/2013-04-01/");
+                {
+                    xmlWriter.WriteStartElement("AddTags");
                     foreach (var publicRequestAddTagsValue in publicRequestAddTags) 
                     {
-                
-                    if (publicRequestAddTagsValue != null) 
+                    if (publicRequestAddTagsValue != null)
                     {
-                        xmlWriter.WriteStartElement("Tag", "https://route53.amazonaws.com/doc/2013-04-01/");            
+                        xmlWriter.WriteStartElement("Tag");
                         if(publicRequestAddTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestAddTagsValue.Key));                 
+                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestAddTagsValue.Key));                 
 
                         if(publicRequestAddTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestAddTagsValue.Value));                 
+                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestAddTagsValue.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }
@@ -92,11 +91,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 }
                 var publicRequestRemoveTagKeys = publicRequest.RemoveTagKeys;
                 if (publicRequestRemoveTagKeys != null && (publicRequestRemoveTagKeys.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                {                        
-                    xmlWriter.WriteStartElement("RemoveTagKeys", "https://route53.amazonaws.com/doc/2013-04-01/");
+                {
+                    xmlWriter.WriteStartElement("RemoveTagKeys");
                     foreach (var publicRequestRemoveTagKeysValue in publicRequestRemoveTagKeys) 
                     {
-                        xmlWriter.WriteStartElement("Key", "https://route53.amazonaws.com/doc/2013-04-01/");
+                        xmlWriter.WriteStartElement("Key");
                         xmlWriter.WriteValue(publicRequestRemoveTagKeysValue);
                         xmlWriter.WriteEndElement();
                     }            
@@ -139,4 +138,3 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
     }    
 }
-#pragma warning restore CS0612,CS0618

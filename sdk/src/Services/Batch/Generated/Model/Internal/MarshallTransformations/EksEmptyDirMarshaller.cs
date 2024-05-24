@@ -46,6 +46,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EksEmptyDir requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMedium())
             {
                 context.Writer.WritePropertyName("medium");
@@ -67,4 +69,3 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

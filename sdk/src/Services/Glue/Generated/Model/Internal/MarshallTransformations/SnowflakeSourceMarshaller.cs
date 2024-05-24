@@ -46,6 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SnowflakeSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetData())
             {
                 context.Writer.WritePropertyName("Data");
@@ -88,4 +90,3 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

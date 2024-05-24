@@ -46,6 +46,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ClientCertAuthSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOCSPUrl())
             {
                 context.Writer.WritePropertyName("OCSPUrl");
@@ -61,4 +63,3 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

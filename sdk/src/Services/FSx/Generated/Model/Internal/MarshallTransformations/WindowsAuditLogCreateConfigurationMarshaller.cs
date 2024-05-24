@@ -46,6 +46,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WindowsAuditLogCreateConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuditLogDestination())
             {
                 context.Writer.WritePropertyName("AuditLogDestination");
@@ -73,4 +75,3 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

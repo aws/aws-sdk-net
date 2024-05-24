@@ -46,6 +46,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputConfigurationRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInputPort())
             {
                 context.Writer.WritePropertyName("inputPort");
@@ -72,4 +74,3 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

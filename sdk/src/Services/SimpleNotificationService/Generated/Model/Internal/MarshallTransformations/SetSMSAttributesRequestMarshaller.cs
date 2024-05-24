@@ -74,7 +74,6 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                         mapIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -46,6 +46,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateConnectionBasicAuthRequestParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("Password");
@@ -67,4 +69,3 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

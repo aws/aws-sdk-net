@@ -46,6 +46,8 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DestinationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudWatchLogs())
             {
                 context.Writer.WritePropertyName("cloudWatchLogs");
@@ -88,4 +90,3 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

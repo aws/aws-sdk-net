@@ -24,6 +24,9 @@ using Amazon.Runtime.Internal;
 
 namespace Amazon.ElasticFileSystem.Internal
 {
+    /// <summary>
+    /// Custom handler for setting the idempotency properties.
+    /// </summary>
     public class IdempotencyHandler : PipelineHandler
     {
         /// <summary>
@@ -68,6 +71,10 @@ namespace Amazon.ElasticFileSystem.Internal
             return base.InvokeAsync(executionContext);
         }
 #endif
+        /// <summary>
+        /// PreInvoke that sets the CreationToken for the CreateFileSystemRequest
+        /// </summary>
+        /// <param name="executionContext"></param>
         protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             if (executionContext.RequestContext.OriginalRequest is CreateFileSystemRequest)

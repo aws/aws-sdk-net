@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -59,6 +60,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Protocol. 
         /// <para>
         /// The protocol used for the component.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1. Maximum of 16.
         /// </para>
         /// </summary>
         public string Protocol

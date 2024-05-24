@@ -63,6 +63,7 @@ namespace Amazon.S3.Transfer.Internal
             getRequest.ServerSideEncryptionCustomerProvidedKey = request.ServerSideEncryptionCustomerProvidedKey;
             getRequest.ServerSideEncryptionCustomerProvidedKeyMD5 = request.ServerSideEncryptionCustomerProvidedKeyMD5;
             getRequest.ChecksumMode = request.ChecksumMode;
+            getRequest.RequestPayer = request.RequestPayer;
 
             return getRequest;
         }

@@ -57,6 +57,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public AnomalyDetectorDataQualityMetric Unmarshall(JsonUnmarshallerContext context)
         {
             AnomalyDetectorDataQualityMetric unmarshalledObject = new AnomalyDetectorDataQualityMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

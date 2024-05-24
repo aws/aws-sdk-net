@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
@@ -37,7 +38,8 @@ namespace Amazon.EventBridge.Model
     /// The maximum size for a PutEvents event entry is 256 KB. Entry size is calculated including
     /// the event and any necessary characters and keys of the JSON representation of the
     /// event. To learn more, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevent-size.html">Calculating
-    /// PutEvents event entry size</a> in the <i>Amazon EventBridge User Guide</i> 
+    /// PutEvents event entry size</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>
+    /// 
     /// </para>
     ///  
     /// <para>

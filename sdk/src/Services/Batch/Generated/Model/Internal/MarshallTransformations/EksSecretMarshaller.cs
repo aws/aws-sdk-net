@@ -46,6 +46,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EksSecret requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOptional())
             {
                 context.Writer.WritePropertyName("optional");
@@ -67,4 +69,3 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

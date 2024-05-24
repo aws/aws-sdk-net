@@ -46,6 +46,8 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ParameterConstraints requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRequired())
             {
                 context.Writer.WritePropertyName("required");
@@ -61,4 +63,3 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

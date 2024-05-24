@@ -46,6 +46,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamNameCondition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComparisonOperator())
             {
                 context.Writer.WritePropertyName("ComparisonOperator");
@@ -67,4 +69,3 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

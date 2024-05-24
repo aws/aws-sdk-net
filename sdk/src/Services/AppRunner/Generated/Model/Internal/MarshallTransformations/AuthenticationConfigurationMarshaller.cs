@@ -46,6 +46,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AuthenticationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccessRoleArn())
             {
                 context.Writer.WritePropertyName("AccessRoleArn");
@@ -67,4 +69,3 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

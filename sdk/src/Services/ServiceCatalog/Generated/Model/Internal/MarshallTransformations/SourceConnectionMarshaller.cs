@@ -46,6 +46,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SourceConnection requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConnectionParameters())
             {
                 context.Writer.WritePropertyName("ConnectionParameters");
@@ -72,4 +74,3 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

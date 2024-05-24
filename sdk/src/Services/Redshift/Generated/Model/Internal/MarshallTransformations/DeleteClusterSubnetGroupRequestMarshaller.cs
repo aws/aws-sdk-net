@@ -63,7 +63,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterSubnetGroupName", StringUtils.FromString(publicRequest.ClusterSubnetGroupName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

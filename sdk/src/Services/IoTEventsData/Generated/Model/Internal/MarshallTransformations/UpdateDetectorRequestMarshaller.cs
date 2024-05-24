@@ -46,6 +46,8 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateDetectorRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDetectorModelName())
             {
                 context.Writer.WritePropertyName("detectorModelName");
@@ -84,4 +86,3 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

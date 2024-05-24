@@ -46,6 +46,8 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PlacementTemplate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDefaultAttributes())
             {
                 context.Writer.WritePropertyName("defaultAttributes");
@@ -88,4 +90,3 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

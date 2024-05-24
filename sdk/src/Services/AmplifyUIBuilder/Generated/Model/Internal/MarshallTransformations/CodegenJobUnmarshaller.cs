@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public CodegenJob Unmarshall(JsonUnmarshallerContext context)
         {
             CodegenJob unmarshalledObject = new CodegenJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -167,4 +169,3 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

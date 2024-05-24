@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -203,6 +204,12 @@ namespace Amazon.Lightsail.Model
         /// an instance. For example, an error is indicated when an instance could not be reached.
         /// When you specify <c>icmp</c> as the <c>protocol</c>, you must specify the ICMP type
         /// using the <c>fromPort</c> parameter, and ICMP code using the <c>toPort</c> parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>icmp6</c> - Internet Control Message Protocol (ICMP) for IPv6. When you specify
+        /// <c>icmp6</c> as the <c>protocol</c>, you must specify the ICMP type using the <c>fromPort</c>
+        /// parameter, and ICMP code using the <c>toPort</c> parameter.
         /// </para>
         ///  </li> </ul>
         /// </summary>

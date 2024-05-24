@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public SavingsPlansPurchaseRecommendationMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             SavingsPlansPurchaseRecommendationMetadata unmarshalledObject = new SavingsPlansPurchaseRecommendationMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

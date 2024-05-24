@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FunctionAssociation Object
     /// </summary>  
-    public class FunctionAssociationUnmarshaller : IUnmarshaller<FunctionAssociation, XmlUnmarshallerContext>
+    public class FunctionAssociationUnmarshaller : IUnmarshaller<FunctionAssociation, XmlUnmarshallerContext>, IUnmarshaller<FunctionAssociation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,6 +76,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public FunctionAssociation Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static FunctionAssociationUnmarshaller _instance = new FunctionAssociationUnmarshaller();        
 
@@ -91,4 +101,3 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

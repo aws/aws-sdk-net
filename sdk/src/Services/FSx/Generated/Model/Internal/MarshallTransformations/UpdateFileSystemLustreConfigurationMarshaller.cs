@@ -46,6 +46,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateFileSystemLustreConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoImportPolicy())
             {
                 context.Writer.WritePropertyName("AutoImportPolicy");
@@ -113,4 +115,3 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

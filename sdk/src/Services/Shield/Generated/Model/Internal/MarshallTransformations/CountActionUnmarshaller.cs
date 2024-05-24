@@ -57,6 +57,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         public CountAction Unmarshall(JsonUnmarshallerContext context)
         {
             CountAction unmarshalledObject = new CountAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -83,4 +85,3 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

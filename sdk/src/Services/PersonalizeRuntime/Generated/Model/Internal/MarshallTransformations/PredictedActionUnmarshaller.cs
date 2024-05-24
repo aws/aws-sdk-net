@@ -57,6 +57,8 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
         public PredictedAction Unmarshall(JsonUnmarshallerContext context)
         {
             PredictedAction unmarshalledObject = new PredictedAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

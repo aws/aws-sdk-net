@@ -66,8 +66,21 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetLogScope())
+                {
+                    context.Writer.WritePropertyName("LogScope");
+                    context.Writer.Write(publicRequest.LogScope);
+                }
+
+                if(publicRequest.IsSetLogType())
+                {
+                    context.Writer.WritePropertyName("LogType");
+                    context.Writer.Write(publicRequest.LogType);
+                }
+
                 if(publicRequest.IsSetResourceArn())
                 {
                     context.Writer.WritePropertyName("ResourceArn");
@@ -102,4 +115,3 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

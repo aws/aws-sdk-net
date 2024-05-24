@@ -46,6 +46,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IoTJobTimeoutConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInProgressTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("inProgressTimeoutInMinutes");
@@ -61,4 +63,3 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

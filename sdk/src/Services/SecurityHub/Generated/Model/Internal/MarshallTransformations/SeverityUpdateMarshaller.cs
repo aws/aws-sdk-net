@@ -46,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SeverityUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLabel())
             {
                 context.Writer.WritePropertyName("Label");
@@ -61,7 +63,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProduct())
             {
                 context.Writer.WritePropertyName("Product");
-                context.Writer.Write(requestObject.Product);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Product))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Product));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Product);
+                }
             }
 
         }
@@ -73,4 +82,3 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

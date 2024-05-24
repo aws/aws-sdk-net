@@ -46,6 +46,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FleetConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomerManaged())
             {
                 context.Writer.WritePropertyName("customerManaged");
@@ -77,4 +79,3 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public PipelineExecutionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             PipelineExecutionSummary unmarshalledObject = new PipelineExecutionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -70,6 +72,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("executionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -80,6 +88,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PipelineExecutionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rollbackMetadata", targetDepth))
+                {
+                    var unmarshaller = PipelineRollbackMetadataUnmarshaller.Instance;
+                    unmarshalledObject.RollbackMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sourceRevisions", targetDepth))
@@ -98,6 +112,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("statusSummary", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("stopTrigger", targetDepth))
@@ -131,4 +151,3 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SQS.Model
 {
     /// <summary>
@@ -38,10 +39,6 @@ namespace Amazon.SQS.Model
     /// queues (DLQs)</a> only. In this context, the source queue is the dead-letter queue
     /// (DLQ), while the destination queue can be the original source queue (from which the
     /// messages were driven to the dead-letter-queue), or a custom destination queue. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Currently, only standard queues are supported.
     /// </para>
     ///  </li> <li> 
     /// <para>

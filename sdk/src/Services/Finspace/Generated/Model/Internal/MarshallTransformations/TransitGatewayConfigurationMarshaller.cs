@@ -46,6 +46,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TransitGatewayConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttachmentNetworkAclConfiguration())
             {
                 context.Writer.WritePropertyName("attachmentNetworkAclConfiguration");
@@ -83,4 +85,3 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

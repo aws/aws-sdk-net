@@ -46,6 +46,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BackendConnectionErrors requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConnectionRefusedCount())
             {
                 context.Writer.WritePropertyName("ConnectionRefusedCount");
@@ -91,4 +93,3 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

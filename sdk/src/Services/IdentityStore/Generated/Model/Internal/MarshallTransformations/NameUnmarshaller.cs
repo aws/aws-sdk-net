@@ -57,6 +57,8 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
         public Name Unmarshall(JsonUnmarshallerContext context)
         {
             Name unmarshalledObject = new Name();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

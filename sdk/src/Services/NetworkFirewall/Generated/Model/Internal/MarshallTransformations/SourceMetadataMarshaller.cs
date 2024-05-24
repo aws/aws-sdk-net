@@ -46,6 +46,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SourceMetadata requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSourceArn())
             {
                 context.Writer.WritePropertyName("SourceArn");
@@ -67,4 +69,3 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

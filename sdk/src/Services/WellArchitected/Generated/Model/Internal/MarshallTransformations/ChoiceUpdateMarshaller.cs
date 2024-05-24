@@ -46,6 +46,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ChoiceUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNotes())
             {
                 context.Writer.WritePropertyName("Notes");
@@ -73,4 +75,3 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

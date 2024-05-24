@@ -46,16 +46,32 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DoubleColumnStatisticsData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaximumValue())
             {
                 context.Writer.WritePropertyName("MaximumValue");
-                context.Writer.Write(requestObject.MaximumValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaximumValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaximumValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaximumValue);
+                }
             }
 
             if(requestObject.IsSetMinimumValue())
             {
                 context.Writer.WritePropertyName("MinimumValue");
-                context.Writer.Write(requestObject.MinimumValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinimumValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinimumValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinimumValue);
+                }
             }
 
             if(requestObject.IsSetNumberOfDistinctValues())
@@ -79,4 +95,3 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

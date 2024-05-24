@@ -46,6 +46,8 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatasetSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGroundTruthManifest())
             {
                 context.Writer.WritePropertyName("GroundTruthManifest");
@@ -66,4 +68,3 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

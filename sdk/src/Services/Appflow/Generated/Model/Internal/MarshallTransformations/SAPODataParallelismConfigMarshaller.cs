@@ -46,6 +46,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SAPODataParallelismConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxParallelism())
             {
                 context.Writer.WritePropertyName("maxParallelism");
@@ -61,4 +63,3 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

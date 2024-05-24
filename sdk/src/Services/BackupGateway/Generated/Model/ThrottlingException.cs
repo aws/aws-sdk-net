@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BackupGateway.Model
 {
     /// <summary>
@@ -37,7 +38,6 @@ namespace Amazon.BackupGateway.Model
     #endif
     public partial class ThrottlingException : AmazonBackupGatewayException
     {
-        private string _errorCode;
 
         /// <summary>
         /// Constructs a new ThrottlingException with the specified error
@@ -123,26 +123,6 @@ namespace Amazon.BackupGateway.Model
             info.AddValue("ErrorCode", this.ErrorCode);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property ErrorCode. 
-        /// <para>
-        /// Error: TPS has been limited to protect against intentional or unintentional high request
-        /// volumes.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
-        }
 
     }
 }

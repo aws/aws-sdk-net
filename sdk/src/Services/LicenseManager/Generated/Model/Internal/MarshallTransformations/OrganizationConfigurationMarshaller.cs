@@ -46,6 +46,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OrganizationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnableIntegration())
             {
                 context.Writer.WritePropertyName("EnableIntegration");
@@ -61,4 +63,3 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

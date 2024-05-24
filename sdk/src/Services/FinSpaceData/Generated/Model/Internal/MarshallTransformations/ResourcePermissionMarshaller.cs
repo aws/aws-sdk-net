@@ -46,6 +46,8 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourcePermission requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPermission())
             {
                 context.Writer.WritePropertyName("permission");
@@ -61,4 +63,3 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

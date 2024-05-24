@@ -46,6 +46,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CanDbcDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCanDbcFiles())
             {
                 context.Writer.WritePropertyName("canDbcFiles");
@@ -86,4 +88,3 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

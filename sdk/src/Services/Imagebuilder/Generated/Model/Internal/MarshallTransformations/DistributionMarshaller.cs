@@ -46,6 +46,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Distribution requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAmiDistributionConfiguration())
             {
                 context.Writer.WritePropertyName("amiDistributionConfiguration");
@@ -137,4 +139,3 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

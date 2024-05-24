@@ -63,7 +63,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ResourceScanId", StringUtils.FromString(publicRequest.ResourceScanId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

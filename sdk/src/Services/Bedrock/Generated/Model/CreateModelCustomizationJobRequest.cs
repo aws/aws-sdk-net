@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
@@ -36,10 +37,13 @@ namespace Amazon.Bedrock.Model
     /// <para>
     /// You specify the base foundation model and the location of the training data. After
     /// the model-customization job completes successfully, your custom model resource will
-    /// be ready to use. Training data contains input and output text for each record in a
-    /// JSONL format. Optionally, you can specify validation data in the same format as the
-    /// training data. Amazon Bedrock returns validation loss metrics and output generations
+    /// be ready to use. Amazon Bedrock returns validation loss metrics and output generations
     /// after the job completes. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For information on the format of training and validation data, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html">Prepare
+    /// the datasets</a>.
     /// </para>
     ///  
     /// <para>
@@ -50,7 +54,7 @@ namespace Amazon.Bedrock.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-    /// models</a> in the Bedrock User Guide.
+    /// models</a> in the Amazon Bedrock User Guide.
     /// </para>
     /// </summary>
     public partial class CreateModelCustomizationJobRequest : AmazonBedrockRequest
@@ -92,8 +96,10 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Unique token value that you can provide. The GetModelCustomizationJob response includes
-        /// the same token value.
+        /// A unique, case-sensitive identifier to ensure that the API request completes no more
+        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
+        /// request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// idempotency</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -149,7 +155,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property CustomModelName. 
         /// <para>
-        /// Enter a name for the custom model.
+        /// A name for the resulting custom model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -168,7 +174,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property CustomModelTags. 
         /// <para>
-        /// Assign tags to the custom model.
+        /// Tags to attach to the resulting custom model.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -187,7 +193,9 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property HyperParameters. 
         /// <para>
-        /// Parameters related to tuning the model.
+        /// Parameters related to tuning the model. For details on the format for different models,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+        /// model hyperparameters</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -206,7 +214,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// Enter a unique name for the fine-tuning job.
+        /// A name for the fine-tuning job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -225,7 +233,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobTags. 
         /// <para>
-        /// Assign tags to the job.
+        /// Tags to attach to the job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -263,11 +271,11 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform
-        /// tasks on your behalf. For example, during model training, Amazon Bedrock needs your
-        /// permission to read input data from an S3 bucket, write model artifacts to an S3 bucket.
-        /// To pass this role to Amazon Bedrock, the caller of this API must have the <c>iam:PassRole</c>
-        /// permission. 
+        /// The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume
+        /// to perform tasks on your behalf. For example, during model training, Amazon Bedrock
+        /// needs your permission to read input data from an S3 bucket, write model artifacts
+        /// to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must
+        /// have the <c>iam:PassRole</c> permission. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

@@ -46,6 +46,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StorageConnector requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConnectorType())
             {
                 context.Writer.WritePropertyName("ConnectorType");
@@ -78,4 +80,3 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

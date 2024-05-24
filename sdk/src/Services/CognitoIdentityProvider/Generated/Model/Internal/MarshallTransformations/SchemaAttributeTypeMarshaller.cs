@@ -46,6 +46,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SchemaAttributeType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributeDataType())
             {
                 context.Writer.WritePropertyName("AttributeDataType");
@@ -107,4 +109,3 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

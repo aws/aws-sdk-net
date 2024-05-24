@@ -46,6 +46,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateLabelsPayload requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddOrUpdateLabels())
             {
                 context.Writer.WritePropertyName("addOrUpdateLabels");
@@ -80,4 +82,3 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

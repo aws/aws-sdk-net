@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CertificateArn", StringUtils.FromString(publicRequest.CertificateArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRoleArn())
                 {
                     request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

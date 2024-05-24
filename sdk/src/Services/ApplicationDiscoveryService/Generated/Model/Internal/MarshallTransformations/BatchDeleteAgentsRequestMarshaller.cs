@@ -66,6 +66,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDeleteAgents())
@@ -112,4 +113,3 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
     }
 }
-#pragma warning restore CS0612,CS0618

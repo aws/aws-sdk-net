@@ -46,6 +46,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ActionIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActionId())
             {
                 context.Writer.WritePropertyName("actionId");
@@ -67,4 +69,3 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

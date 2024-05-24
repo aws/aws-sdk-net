@@ -46,6 +46,8 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeploymentModel requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDesiredState())
             {
                 context.Writer.WritePropertyName("DesiredState");
@@ -103,4 +105,3 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

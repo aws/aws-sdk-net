@@ -57,6 +57,8 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         public AssociatedDomainSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AssociatedDomainSummary unmarshalledObject = new AssociatedDomainSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

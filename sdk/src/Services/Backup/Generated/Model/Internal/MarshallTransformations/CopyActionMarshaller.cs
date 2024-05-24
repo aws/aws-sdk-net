@@ -46,6 +46,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CopyAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestinationBackupVaultArn())
             {
                 context.Writer.WritePropertyName("DestinationBackupVaultArn");
@@ -72,4 +74,3 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

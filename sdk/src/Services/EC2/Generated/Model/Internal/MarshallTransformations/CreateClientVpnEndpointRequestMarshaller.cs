@@ -70,74 +70,58 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "ActiveDirectory" + "." + "DirectoryId", StringUtils.FromString(publicRequestlistValue.ActiveDirectory.DirectoryId));
                             }
-#pragma warning restore CS0612,CS0618
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetFederatedAuthentication())
                         {
                             if(publicRequestlistValue.FederatedAuthentication.IsSetSAMLProviderArn())
                             {
                                 request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "FederatedAuthentication" + "." + "SAMLProviderArn", StringUtils.FromString(publicRequestlistValue.FederatedAuthentication.SAMLProviderArn));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.FederatedAuthentication.IsSetSelfServiceSAMLProviderArn())
                             {
                                 request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "FederatedAuthentication" + "." + "SelfServiceSAMLProviderArn", StringUtils.FromString(publicRequestlistValue.FederatedAuthentication.SelfServiceSAMLProviderArn));
                             }
-#pragma warning restore CS0612,CS0618
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetMutualAuthentication())
                         {
                             if(publicRequestlistValue.MutualAuthentication.IsSetClientRootCertificateChainArn())
                             {
                                 request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "MutualAuthentication" + "." + "ClientRootCertificateChainArn", StringUtils.FromString(publicRequestlistValue.MutualAuthentication.ClientRootCertificateChainArn));
                             }
-#pragma warning restore CS0612,CS0618
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetType())
                         {
                             request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClientCidrBlock())
                 {
                     request.Parameters.Add("ClientCidrBlock", StringUtils.FromString(publicRequest.ClientCidrBlock));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClientConnectOptions())
                 {
                     if(publicRequest.ClientConnectOptions.IsSetEnabled())
                     {
                         request.Parameters.Add("ClientConnectOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.ClientConnectOptions.Enabled));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ClientConnectOptions.IsSetLambdaFunctionArn())
                     {
                         request.Parameters.Add("ClientConnectOptions" + "." + "LambdaFunctionArn", StringUtils.FromString(publicRequest.ClientConnectOptions.LambdaFunctionArn));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClientLoginBannerOptions())
                 {
                     if(publicRequest.ClientLoginBannerOptions.IsSetBannerText())
                     {
                         request.Parameters.Add("ClientLoginBannerOptions" + "." + "BannerText", StringUtils.FromString(publicRequest.ClientLoginBannerOptions.BannerText));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ClientLoginBannerOptions.IsSetEnabled())
                     {
                         request.Parameters.Add("ClientLoginBannerOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.ClientLoginBannerOptions.Enabled));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
@@ -146,31 +130,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetConnectionLogOptions())
                 {
                     if(publicRequest.ConnectionLogOptions.IsSetCloudwatchLogGroup())
                     {
                         request.Parameters.Add("ConnectionLogOptions" + "." + "CloudwatchLogGroup", StringUtils.FromString(publicRequest.ConnectionLogOptions.CloudwatchLogGroup));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ConnectionLogOptions.IsSetCloudwatchLogStream())
                     {
                         request.Parameters.Add("ConnectionLogOptions" + "." + "CloudwatchLogStream", StringUtils.FromString(publicRequest.ConnectionLogOptions.CloudwatchLogStream));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ConnectionLogOptions.IsSetEnabled())
                     {
                         request.Parameters.Add("ConnectionLogOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.ConnectionLogOptions.Enabled));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDnsServers())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -180,7 +158,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -190,27 +167,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSelfServicePortal())
                 {
                     request.Parameters.Add("SelfServicePortal", StringUtils.FromString(publicRequest.SelfServicePortal));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServerCertificateArn())
                 {
                     request.Parameters.Add("ServerCertificateArn", StringUtils.FromString(publicRequest.ServerCertificateArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSessionTimeoutHours())
                 {
                     request.Parameters.Add("SessionTimeoutHours", StringUtils.FromInt(publicRequest.SessionTimeoutHours));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSplitTunnel())
                 {
                     request.Parameters.Add("SplitTunnel", StringUtils.FromBool(publicRequest.SplitTunnel));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -220,7 +192,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -230,35 +201,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
-#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTransportProtocol())
                 {
                     request.Parameters.Add("TransportProtocol", StringUtils.FromString(publicRequest.TransportProtocol));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcId())
                 {
                     request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpnPort())
                 {
                     request.Parameters.Add("VpnPort", StringUtils.FromInt(publicRequest.VpnPort));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

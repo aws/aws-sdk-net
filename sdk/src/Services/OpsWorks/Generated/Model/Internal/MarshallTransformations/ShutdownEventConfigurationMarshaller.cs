@@ -46,6 +46,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ShutdownEventConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDelayUntilElbConnectionsDrained())
             {
                 context.Writer.WritePropertyName("DelayUntilElbConnectionsDrained");
@@ -67,4 +69,3 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LocalVolumeResourceData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestinationPath())
             {
                 context.Writer.WritePropertyName("DestinationPath");
@@ -78,4 +80,3 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RadiusSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthenticationProtocol())
             {
                 context.Writer.WritePropertyName("AuthenticationProtocol");
@@ -108,4 +110,3 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

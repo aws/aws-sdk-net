@@ -46,6 +46,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DimensionMapping requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestinationColumn())
             {
                 context.Writer.WritePropertyName("DestinationColumn");
@@ -67,4 +69,3 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

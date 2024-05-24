@@ -46,6 +46,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         /// <returns></returns>
         public void Marshall(ApplicationPreferences requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetManagementPreference())
             {
                 context.Writer.WritePropertyName("managementPreference");
@@ -66,4 +68,3 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 
     }
 }
-#pragma warning restore CS0612,CS0618

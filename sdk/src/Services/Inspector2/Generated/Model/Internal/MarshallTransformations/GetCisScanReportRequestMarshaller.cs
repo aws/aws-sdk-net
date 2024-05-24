@@ -64,8 +64,15 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetReportFormat())
+                {
+                    context.Writer.WritePropertyName("reportFormat");
+                    context.Writer.Write(publicRequest.ReportFormat);
+                }
+
                 if(publicRequest.IsSetScanArn())
                 {
                     context.Writer.WritePropertyName("scanArn");
@@ -111,4 +118,3 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

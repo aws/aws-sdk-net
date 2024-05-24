@@ -57,6 +57,8 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         public AssociatedPermission Unmarshall(JsonUnmarshallerContext context)
         {
             AssociatedPermission unmarshalledObject = new AssociatedPermission();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -131,4 +133,3 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

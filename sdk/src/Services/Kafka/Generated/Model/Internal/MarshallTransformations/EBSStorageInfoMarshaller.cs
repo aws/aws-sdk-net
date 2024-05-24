@@ -46,6 +46,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EBSStorageInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetProvisionedThroughput())
             {
                 context.Writer.WritePropertyName("provisionedThroughput");
@@ -72,4 +74,3 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

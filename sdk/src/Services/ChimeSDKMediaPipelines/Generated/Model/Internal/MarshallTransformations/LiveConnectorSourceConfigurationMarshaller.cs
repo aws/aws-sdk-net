@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LiveConnectorSourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChimeSdkMeetingLiveConnectorConfiguration())
             {
                 context.Writer.WritePropertyName("ChimeSdkMeetingLiveConnectorConfiguration");
@@ -72,4 +74,3 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

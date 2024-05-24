@@ -46,6 +46,8 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RootCertificatePublicKey requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKeyAttributes())
             {
                 context.Writer.WritePropertyName("KeyAttributes");
@@ -72,4 +74,3 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

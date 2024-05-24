@@ -46,6 +46,8 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TagFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTagKey())
             {
                 context.Writer.WritePropertyName("tagKey");
@@ -72,4 +74,3 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -63,12 +63,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNewReplicaCount())
                 {
                     request.Parameters.Add("NewReplicaCount", StringUtils.FromInt(publicRequest.NewReplicaCount));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReplicaConfiguration())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -76,38 +74,33 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     {
                         if(publicRequestlistValue.IsSetNewReplicaCount())
                         {
-                            request.Parameters.Add("ReplicaConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NewReplicaCount", StringUtils.FromInt(publicRequestlistValue.NewReplicaCount));
+                            request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "NewReplicaCount", StringUtils.FromInt(publicRequestlistValue.NewReplicaCount));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetNodeGroupId())
                         {
-                            request.Parameters.Add("ReplicaConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NodeGroupId", StringUtils.FromString(publicRequestlistValue.NodeGroupId));
+                            request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "NodeGroupId", StringUtils.FromString(publicRequestlistValue.NodeGroupId));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetPreferredAvailabilityZones())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
                             foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PreferredAvailabilityZones)
                             {
-                                request.Parameters.Add("ReplicaConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PreferredAvailabilityZones" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "PreferredAvailabilityZones" + "." + "PreferredAvailabilityZone" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetPreferredOutpostArns())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
                             foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PreferredOutpostArns)
                             {
-                                request.Parameters.Add("ReplicaConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PreferredOutpostArns" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "PreferredOutpostArns" + "." + "PreferredOutpostArn" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReplicasToRemove())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -117,12 +110,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReplicationGroupId())
                 {
                     request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

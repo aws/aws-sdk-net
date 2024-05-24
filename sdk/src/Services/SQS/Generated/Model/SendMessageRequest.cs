@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SQS.Model
 {
     /// <summary>
@@ -274,7 +275,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The length of <c>MessageGroupId</c> is 128 characters. Valid values: alphanumeric
+        /// The maximum length of <c>MessageGroupId</c> is 128 characters. Valid values: alphanumeric
         /// characters and punctuation <c>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</c>.
         /// </para>
         ///  

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginAccessControl Object
     /// </summary>  
-    public class OriginAccessControlUnmarshaller : IUnmarshaller<OriginAccessControl, XmlUnmarshallerContext>
+    public class OriginAccessControlUnmarshaller : IUnmarshaller<OriginAccessControl, XmlUnmarshallerContext>, IUnmarshaller<OriginAccessControl, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,6 +76,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public OriginAccessControl Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static OriginAccessControlUnmarshaller _instance = new OriginAccessControlUnmarshaller();        
 
@@ -91,4 +101,3 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

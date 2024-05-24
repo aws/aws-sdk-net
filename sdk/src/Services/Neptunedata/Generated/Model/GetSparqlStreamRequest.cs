@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptunedata.Model
 {
     /// <summary>
@@ -107,7 +108,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if Encoding property is set
         internal bool IsSetEncoding()
         {
-            return this._encoding != null;
+            return !string.IsNullOrEmpty(this._encoding);
         }
 
         /// <summary>

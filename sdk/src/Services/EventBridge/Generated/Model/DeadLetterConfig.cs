@@ -26,11 +26,18 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// A <c>DeadLetterConfig</c> object that contains information about a dead-letter queue
-    /// configuration.
+    /// Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter
+    /// queue (DLQ).
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="eventbridge/latest/userguide/eb-rule-dlq.html">Event
+    /// retry policy and using dead-letter queues</a> in the <i>EventBridge User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DeadLetterConfig
     {

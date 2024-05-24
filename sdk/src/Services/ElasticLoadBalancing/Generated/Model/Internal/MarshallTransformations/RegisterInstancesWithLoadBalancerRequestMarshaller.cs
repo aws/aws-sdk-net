@@ -68,16 +68,13 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Instances" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InstanceId", StringUtils.FromString(publicRequestlistValue.InstanceId));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLoadBalancerName())
                 {
                     request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

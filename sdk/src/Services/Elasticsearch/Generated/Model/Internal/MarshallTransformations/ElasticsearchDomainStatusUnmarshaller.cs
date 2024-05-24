@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public ElasticsearchDomainStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ElasticsearchDomainStatus unmarshalledObject = new ElasticsearchDomainStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -245,4 +247,3 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

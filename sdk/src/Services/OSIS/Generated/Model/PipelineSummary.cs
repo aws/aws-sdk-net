@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OSIS.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.OSIS.Model
     public partial class PipelineSummary
     {
         private DateTime? _createdAt;
+        private List<PipelineDestination> _destinations = AWSConfigs.InitializeCollections ? new List<PipelineDestination>() : null;
         private DateTime? _lastUpdatedAt;
         private int? _maxUnits;
         private int? _minUnits;
@@ -59,6 +61,24 @@ namespace Amazon.OSIS.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Destinations. 
+        /// <para>
+        /// A list of destinations to which the pipeline writes data.
+        /// </para>
+        /// </summary>
+        public List<PipelineDestination> Destinations
+        {
+            get { return this._destinations; }
+            set { this._destinations = value; }
+        }
+
+        // Check to see if Destinations property is set
+        internal bool IsSetDestinations()
+        {
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

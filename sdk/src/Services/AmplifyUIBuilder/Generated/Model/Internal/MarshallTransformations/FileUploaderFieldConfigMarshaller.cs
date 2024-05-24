@@ -46,6 +46,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FileUploaderFieldConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAcceptedFileTypes())
             {
                 context.Writer.WritePropertyName("acceptedFileTypes");
@@ -96,4 +98,3 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

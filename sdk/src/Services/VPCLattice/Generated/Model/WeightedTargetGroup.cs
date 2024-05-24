@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Weight. 
         /// <para>
-        /// Only required if you specify multiple target groups for a forward action. The "weight"
+        /// Only required if you specify multiple target groups for a forward action. The weight
         /// determines how requests are distributed to the target group. For example, if you specify
         /// two target groups, each with a weight of 10, each target group receives half the requests.
         /// If you specify two target groups, one with a weight of 10 and the other with a weight

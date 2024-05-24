@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public LoRaWANUpdateGatewayTaskCreate Unmarshall(JsonUnmarshallerContext context)
         {
             LoRaWANUpdateGatewayTaskCreate unmarshalledObject = new LoRaWANUpdateGatewayTaskCreate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

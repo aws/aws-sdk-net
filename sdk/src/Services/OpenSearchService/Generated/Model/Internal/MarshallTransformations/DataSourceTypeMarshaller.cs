@@ -46,6 +46,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSourceType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3GlueDataCatalog())
             {
                 context.Writer.WritePropertyName("S3GlueDataCatalog");
@@ -66,4 +68,3 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

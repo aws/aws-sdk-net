@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public Studio Unmarshall(JsonUnmarshallerContext context)
         {
             Studio unmarshalledObject = new Studio();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -209,4 +211,3 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

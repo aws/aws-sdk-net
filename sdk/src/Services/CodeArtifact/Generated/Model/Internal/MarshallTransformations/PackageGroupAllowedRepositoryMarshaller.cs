@@ -46,6 +46,8 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PackageGroupAllowedRepository requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOriginRestrictionType())
             {
                 context.Writer.WritePropertyName("originRestrictionType");
@@ -67,4 +69,3 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

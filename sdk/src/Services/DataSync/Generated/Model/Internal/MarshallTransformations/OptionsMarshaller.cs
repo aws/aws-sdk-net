@@ -46,6 +46,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Options requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAtime())
             {
                 context.Writer.WritePropertyName("Atime");
@@ -145,4 +147,3 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ApplicationSnapshotConfigurationUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSnapshotsEnabledUpdate())
             {
                 context.Writer.WritePropertyName("SnapshotsEnabledUpdate");
@@ -61,4 +63,3 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

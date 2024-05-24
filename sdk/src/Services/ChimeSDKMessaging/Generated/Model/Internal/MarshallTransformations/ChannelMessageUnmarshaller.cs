@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public ChannelMessage Unmarshall(JsonUnmarshallerContext context)
         {
             ChannelMessage unmarshalledObject = new ChannelMessage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -179,4 +181,3 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

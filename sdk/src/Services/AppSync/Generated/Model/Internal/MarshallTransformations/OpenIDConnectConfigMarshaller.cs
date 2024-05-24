@@ -46,6 +46,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OpenIDConnectConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthTTL())
             {
                 context.Writer.WritePropertyName("authTTL");
@@ -79,4 +81,3 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

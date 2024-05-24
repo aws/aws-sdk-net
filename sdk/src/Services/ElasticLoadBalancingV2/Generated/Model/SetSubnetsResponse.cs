@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -56,6 +57,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 
         /// <summary>
         /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// [Application Load Balancers] The IP address type.
+        /// </para>
+        ///  
         /// <para>
         /// [Network Load Balancers] The IP address type.
         /// </para>

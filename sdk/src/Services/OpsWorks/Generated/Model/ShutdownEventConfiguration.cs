@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -59,8 +60,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ExecutionTimeout. 
         /// <para>
-        /// The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown
-        /// event before shutting down an instance.
+        /// The time, in seconds, that OpsWorks Stacks waits after triggering a Shutdown event
+        /// before shutting down an instance.
         /// </para>
         /// </summary>
         public int ExecutionTimeout

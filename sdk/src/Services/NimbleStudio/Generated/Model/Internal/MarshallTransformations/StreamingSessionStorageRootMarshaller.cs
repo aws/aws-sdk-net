@@ -46,6 +46,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamingSessionStorageRoot requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLinux())
             {
                 context.Writer.WritePropertyName("linux");
@@ -67,4 +69,3 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

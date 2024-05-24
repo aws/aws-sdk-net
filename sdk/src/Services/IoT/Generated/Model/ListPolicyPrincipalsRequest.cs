@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -123,7 +124,7 @@ namespace Amazon.IoT.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this._policyName != null;
+            return !string.IsNullOrEmpty(this._policyName);
         }
 
     }

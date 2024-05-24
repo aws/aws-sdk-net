@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -38,6 +39,7 @@ namespace Amazon.CodeBuild.Model
         private ComputeType _computeType;
         private DateTime? _created;
         private EnvironmentType _environmentType;
+        private string _fleetServiceRole;
         private string _id;
         private DateTime? _lastModified;
         private string _name;
@@ -45,6 +47,7 @@ namespace Amazon.CodeBuild.Model
         private ScalingConfigurationOutput _scalingConfiguration;
         private FleetStatus _status;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -244,6 +247,25 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FleetServiceRole. 
+        /// <para>
+        /// The service role associated with the compute fleet.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string FleetServiceRole
+        {
+            get { return this._fleetServiceRole; }
+            set { this._fleetServiceRole = value; }
+        }
+
+        // Check to see if FleetServiceRole property is set
+        internal bool IsSetFleetServiceRole()
+        {
+            return this._fleetServiceRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The ID of the compute fleet.
@@ -313,7 +335,15 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// For overflow behavior <c>ON_DEMAND</c>, your overflow builds run on CodeBuild on-demand.
         /// </para>
-        ///  </li> </ul>
+        ///  <note> 
+        /// <para>
+        /// If you choose to set your overflow behavior to on-demand while creating a VPC-connected
+        /// fleet, make sure that you add the required VPC permissions to your project service
+        /// role. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface">Example
+        /// policy statement to allow CodeBuild access to Amazon Web Services services required
+        /// to create a VPC network interface</a>.
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
         public FleetOverflowBehavior OverflowBehavior
         {
@@ -385,6 +415,21 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig.
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

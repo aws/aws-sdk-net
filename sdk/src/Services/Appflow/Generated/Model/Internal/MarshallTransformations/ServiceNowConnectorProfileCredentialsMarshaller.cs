@@ -46,6 +46,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServiceNowConnectorProfileCredentials requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOAuth2Credentials())
             {
                 context.Writer.WritePropertyName("oAuth2Credentials");
@@ -78,4 +80,3 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

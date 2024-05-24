@@ -57,6 +57,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public BatchPermissionsFailureEntry Unmarshall(JsonUnmarshallerContext context)
         {
             BatchPermissionsFailureEntry unmarshalledObject = new BatchPermissionsFailureEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

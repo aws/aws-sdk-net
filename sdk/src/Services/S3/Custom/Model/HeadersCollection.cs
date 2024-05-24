@@ -158,7 +158,6 @@ namespace Amazon.S3.Model
         /// see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.
         /// </para>
         /// </summary>
-        /// 
         public DateTime? ExpiresUtc
         {
             get 
@@ -177,6 +176,12 @@ namespace Amazon.S3.Model
             }
         }
 
+        /// <summary>
+        /// <para>
+        /// The date and time at which the object is no longer cacheable. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.
+        /// </para>
+        /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. Use ExpiresUtc instead.", false)]
         public DateTime? Expires
         {

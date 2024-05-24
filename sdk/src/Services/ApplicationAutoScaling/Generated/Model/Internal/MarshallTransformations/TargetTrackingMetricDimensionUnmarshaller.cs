@@ -57,6 +57,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         public TargetTrackingMetricDimension Unmarshall(JsonUnmarshallerContext context)
         {
             TargetTrackingMetricDimension unmarshalledObject = new TargetTrackingMetricDimension();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

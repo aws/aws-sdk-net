@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -123,7 +124,7 @@ namespace Amazon.TranscribeService.Model
         /// field to true.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=10)]
+        [AWSProperty(Min=2, Max=30)]
         public int MaxSpeakerLabels
         {
             get { return this._maxSpeakerLabels.GetValueOrDefault(); }

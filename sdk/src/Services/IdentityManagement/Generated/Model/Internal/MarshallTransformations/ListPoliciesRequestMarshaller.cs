@@ -63,32 +63,26 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxItems())
                 {
                     request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOnlyAttached())
                 {
                     request.Parameters.Add("OnlyAttached", StringUtils.FromBool(publicRequest.OnlyAttached));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPathPrefix())
                 {
                     request.Parameters.Add("PathPrefix", StringUtils.FromString(publicRequest.PathPrefix));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicyUsageFilter())
                 {
                     request.Parameters.Add("PolicyUsageFilter", StringUtils.FromString(publicRequest.PolicyUsageFilter));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetScope())
                 {
                     request.Parameters.Add("Scope", StringUtils.FromString(publicRequest.Scope));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

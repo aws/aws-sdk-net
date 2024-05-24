@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Invalidation Object
     /// </summary>  
-    public class InvalidationUnmarshaller : IUnmarshaller<Invalidation, XmlUnmarshallerContext>
+    public class InvalidationUnmarshaller : IUnmarshaller<Invalidation, XmlUnmarshallerContext>, IUnmarshaller<Invalidation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,6 +88,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public Invalidation Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static InvalidationUnmarshaller _instance = new InvalidationUnmarshaller();        
 
@@ -103,4 +113,3 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

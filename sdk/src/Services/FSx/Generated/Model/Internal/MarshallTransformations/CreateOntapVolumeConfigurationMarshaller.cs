@@ -46,6 +46,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateOntapVolumeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAggregateConfiguration())
             {
                 context.Writer.WritePropertyName("AggregateConfiguration");
@@ -148,4 +150,3 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

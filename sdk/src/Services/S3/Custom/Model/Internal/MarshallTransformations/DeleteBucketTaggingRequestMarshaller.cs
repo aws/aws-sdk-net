@@ -52,7 +52,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static DeleteBucketTaggingRequestMarshaller _instance;
 
-	    public static DeleteBucketTaggingRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static DeleteBucketTaggingRequestMarshaller Instance
 	    {
 	        get
 	        {

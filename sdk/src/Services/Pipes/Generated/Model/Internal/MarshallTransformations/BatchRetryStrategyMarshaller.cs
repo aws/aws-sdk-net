@@ -46,6 +46,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchRetryStrategy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttempts())
             {
                 context.Writer.WritePropertyName("Attempts");
@@ -61,4 +63,3 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

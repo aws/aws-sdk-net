@@ -57,6 +57,8 @@ namespace Amazon.Artifact.Model.Internal.MarshallTransformations
         public ReportSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ReportSummary unmarshalledObject = new ReportSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -167,4 +169,3 @@ namespace Amazon.Artifact.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

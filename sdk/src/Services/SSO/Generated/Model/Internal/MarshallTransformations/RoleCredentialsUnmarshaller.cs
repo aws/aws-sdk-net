@@ -57,6 +57,8 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
         public RoleCredentials Unmarshall(JsonUnmarshallerContext context)
         {
             RoleCredentials unmarshalledObject = new RoleCredentials();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

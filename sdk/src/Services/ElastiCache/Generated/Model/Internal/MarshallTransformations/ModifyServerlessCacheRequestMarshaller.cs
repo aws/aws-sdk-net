@@ -67,75 +67,60 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("CacheUsageLimits" + "." + "DataStorage" + "." + "Maximum", StringUtils.FromInt(publicRequest.CacheUsageLimits.DataStorage.Maximum));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.CacheUsageLimits.DataStorage.IsSetMinimum())
                         {
                             request.Parameters.Add("CacheUsageLimits" + "." + "DataStorage" + "." + "Minimum", StringUtils.FromInt(publicRequest.CacheUsageLimits.DataStorage.Minimum));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.CacheUsageLimits.DataStorage.IsSetUnit())
                         {
                             request.Parameters.Add("CacheUsageLimits" + "." + "DataStorage" + "." + "Unit", StringUtils.FromString(publicRequest.CacheUsageLimits.DataStorage.Unit));
                         }
-#pragma warning restore CS0612,CS0618
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.CacheUsageLimits.IsSetECPUPerSecond())
                     {
                         if(publicRequest.CacheUsageLimits.ECPUPerSecond.IsSetMaximum())
                         {
                             request.Parameters.Add("CacheUsageLimits" + "." + "ECPUPerSecond" + "." + "Maximum", StringUtils.FromInt(publicRequest.CacheUsageLimits.ECPUPerSecond.Maximum));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.CacheUsageLimits.ECPUPerSecond.IsSetMinimum())
                         {
                             request.Parameters.Add("CacheUsageLimits" + "." + "ECPUPerSecond" + "." + "Minimum", StringUtils.FromInt(publicRequest.CacheUsageLimits.ECPUPerSecond.Minimum));
                         }
-#pragma warning restore CS0612,CS0618
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDailySnapshotTime())
                 {
                     request.Parameters.Add("DailySnapshotTime", StringUtils.FromString(publicRequest.DailySnapshotTime));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveUserGroup())
                 {
                     request.Parameters.Add("RemoveUserGroup", StringUtils.FromBool(publicRequest.RemoveUserGroup));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.SecurityGroupIds)
                     {
-                        request.Parameters.Add("SecurityGroupIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        request.Parameters.Add("SecurityGroupIds" + "." + "SecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServerlessCacheName())
                 {
                     request.Parameters.Add("ServerlessCacheName", StringUtils.FromString(publicRequest.ServerlessCacheName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotRetentionLimit())
                 {
                     request.Parameters.Add("SnapshotRetentionLimit", StringUtils.FromInt(publicRequest.SnapshotRetentionLimit));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserGroupId())
                 {
                     request.Parameters.Add("UserGroupId", StringUtils.FromString(publicRequest.UserGroupId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

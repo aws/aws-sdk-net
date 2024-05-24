@@ -63,12 +63,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceArn())
                 {
                     request.Parameters.Add("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

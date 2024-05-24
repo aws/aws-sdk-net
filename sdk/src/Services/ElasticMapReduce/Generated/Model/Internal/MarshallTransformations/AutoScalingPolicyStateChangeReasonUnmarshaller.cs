@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public AutoScalingPolicyStateChangeReason Unmarshall(JsonUnmarshallerContext context)
         {
             AutoScalingPolicyStateChangeReason unmarshalledObject = new AutoScalingPolicyStateChangeReason();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

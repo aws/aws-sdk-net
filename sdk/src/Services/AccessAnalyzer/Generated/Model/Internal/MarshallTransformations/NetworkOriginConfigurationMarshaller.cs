@@ -46,6 +46,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NetworkOriginConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInternetConfiguration())
             {
                 context.Writer.WritePropertyName("internetConfiguration");
@@ -77,4 +79,3 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

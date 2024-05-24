@@ -46,6 +46,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AccountTakeoverActionsType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHighAction())
             {
                 context.Writer.WritePropertyName("HighAction");
@@ -88,4 +90,3 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

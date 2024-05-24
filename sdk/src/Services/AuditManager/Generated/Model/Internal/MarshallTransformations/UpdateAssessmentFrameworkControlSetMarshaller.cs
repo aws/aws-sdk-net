@@ -46,6 +46,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateAssessmentFrameworkControlSet requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetControls())
             {
                 context.Writer.WritePropertyName("controls");
@@ -83,4 +85,3 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

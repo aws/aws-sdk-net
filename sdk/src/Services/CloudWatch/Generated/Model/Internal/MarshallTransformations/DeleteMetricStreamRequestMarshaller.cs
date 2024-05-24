@@ -63,7 +63,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

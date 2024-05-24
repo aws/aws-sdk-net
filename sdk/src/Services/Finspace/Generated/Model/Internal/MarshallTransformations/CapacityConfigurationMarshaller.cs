@@ -46,6 +46,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CapacityConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNodeCount())
             {
                 context.Writer.WritePropertyName("nodeCount");
@@ -67,4 +69,3 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

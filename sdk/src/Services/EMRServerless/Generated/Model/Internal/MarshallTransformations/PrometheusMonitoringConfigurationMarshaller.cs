@@ -46,6 +46,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PrometheusMonitoringConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRemoteWriteUrl())
             {
                 context.Writer.WritePropertyName("remoteWriteUrl");
@@ -61,4 +63,3 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

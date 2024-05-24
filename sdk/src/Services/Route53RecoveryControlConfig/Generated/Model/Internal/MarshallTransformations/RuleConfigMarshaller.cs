@@ -46,6 +46,8 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
         /// <returns></returns>
         public void Marshall(RuleConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInverted())
             {
                 context.Writer.WritePropertyName("Inverted");
@@ -73,4 +75,3 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
 
     }
 }
-#pragma warning restore CS0612,CS0618

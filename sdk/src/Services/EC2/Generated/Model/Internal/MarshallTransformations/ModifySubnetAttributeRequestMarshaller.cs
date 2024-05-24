@@ -63,57 +63,46 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AssignIpv6AddressOnCreation.Value", StringUtils.FromBool(publicRequest.AssignIpv6AddressOnCreation));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCustomerOwnedIpv4Pool())
                 {
                     request.Parameters.Add("CustomerOwnedIpv4Pool", StringUtils.FromString(publicRequest.CustomerOwnedIpv4Pool));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDisableLniAtDeviceIndex())
                 {
                     request.Parameters.Add("DisableLniAtDeviceIndex.Value", StringUtils.FromBool(publicRequest.DisableLniAtDeviceIndex));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnableDns64())
                 {
                     request.Parameters.Add("EnableDns64.Value", StringUtils.FromBool(publicRequest.EnableDns64));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnableLniAtDeviceIndex())
                 {
                     request.Parameters.Add("EnableLniAtDeviceIndex", StringUtils.FromInt(publicRequest.EnableLniAtDeviceIndex));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnableResourceNameDnsAAAARecordOnLaunch())
                 {
                     request.Parameters.Add("EnableResourceNameDnsAAAARecordOnLaunch.Value", StringUtils.FromBool(publicRequest.EnableResourceNameDnsAAAARecordOnLaunch));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnableResourceNameDnsARecordOnLaunch())
                 {
                     request.Parameters.Add("EnableResourceNameDnsARecordOnLaunch.Value", StringUtils.FromBool(publicRequest.EnableResourceNameDnsARecordOnLaunch));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMapCustomerOwnedIpOnLaunch())
                 {
                     request.Parameters.Add("MapCustomerOwnedIpOnLaunch.Value", StringUtils.FromBool(publicRequest.MapCustomerOwnedIpOnLaunch));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMapPublicIpOnLaunch())
                 {
                     request.Parameters.Add("MapPublicIpOnLaunch.Value", StringUtils.FromBool(publicRequest.MapPublicIpOnLaunch));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrivateDnsHostnameTypeOnLaunch())
                 {
                     request.Parameters.Add("PrivateDnsHostnameTypeOnLaunch", StringUtils.FromString(publicRequest.PrivateDnsHostnameTypeOnLaunch));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSubnetId())
                 {
                     request.Parameters.Add("SubnetId", StringUtils.FromString(publicRequest.SubnetId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

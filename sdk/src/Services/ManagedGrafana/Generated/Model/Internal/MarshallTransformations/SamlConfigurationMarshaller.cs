@@ -46,6 +46,8 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SamlConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowedOrganizations())
             {
                 context.Writer.WritePropertyName("allowedOrganizations");
@@ -105,4 +107,3 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

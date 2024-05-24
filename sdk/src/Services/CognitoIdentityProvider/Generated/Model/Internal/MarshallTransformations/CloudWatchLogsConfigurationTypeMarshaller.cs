@@ -46,6 +46,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudWatchLogsConfigurationType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLogGroupArn())
             {
                 context.Writer.WritePropertyName("LogGroupArn");
@@ -61,4 +63,3 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

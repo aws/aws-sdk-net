@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glacier.Model
 {
     /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Glacier.Model
         // Check to see if JobId property is set
         internal bool IsSetJobId()
         {
-            return this._jobId != null;
+            return !string.IsNullOrEmpty(this._jobId);
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.Glacier.Model
         // Check to see if JobOutputPath property is set
         internal bool IsSetJobOutputPath()
         {
-            return this._jobOutputPath != null;
+            return !string.IsNullOrEmpty(this._jobOutputPath);
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this._location != null;
+            return !string.IsNullOrEmpty(this._location);
         }
 
     }

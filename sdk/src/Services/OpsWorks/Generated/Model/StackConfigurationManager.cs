@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name. This parameter must be set to "Chef".
+        /// The name. This parameter must be set to <c>Chef</c>.
         /// </para>
         /// </summary>
         public string Name
@@ -58,7 +59,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks,
-        /// and to 12.2 for Windows stacks. The default value for Linux stacks is 11.4.
+        /// and to 12.2 for Windows stacks. The default value for Linux stacks is 12.
         /// </para>
         /// </summary>
         public string Version

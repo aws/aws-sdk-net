@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -206,6 +207,11 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// The type of hardware or software platform on which the gateway is running.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Tape Gateway is no longer available on Snow Family devices.
+        /// </para>
+        ///  </note>
         /// </summary>
         public HostEnvironment HostEnvironment
         {

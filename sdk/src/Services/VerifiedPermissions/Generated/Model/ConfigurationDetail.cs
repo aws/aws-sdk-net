@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
@@ -46,8 +47,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// <para>
         /// Contains configuration details of a Amazon Cognito user pool that Verified Permissions
         /// can use as a source of authenticated identities as entities. It specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Name (ARN)</a> of a Amazon Cognito user pool and one or more application
-        /// client IDs.
+        /// Resource Name (ARN)</a> of a Amazon Cognito user pool, the policy store entity that
+        /// you want to assign to user groups, and one or more application client IDs.
         /// </para>
         ///  
         /// <para>

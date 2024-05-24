@@ -46,6 +46,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Property requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEoCloudCover())
             {
                 context.Writer.WritePropertyName("EoCloudCover");
@@ -121,4 +123,3 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

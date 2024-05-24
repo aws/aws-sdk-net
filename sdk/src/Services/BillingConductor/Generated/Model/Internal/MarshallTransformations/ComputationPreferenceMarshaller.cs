@@ -46,6 +46,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ComputationPreference requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPricingPlanArn())
             {
                 context.Writer.WritePropertyName("PricingPlanArn");
@@ -61,4 +63,3 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

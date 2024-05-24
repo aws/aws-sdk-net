@@ -46,6 +46,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PinGenerationAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIbm3624NaturalPin())
             {
                 context.Writer.WritePropertyName("Ibm3624NaturalPin");
@@ -121,4 +123,3 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

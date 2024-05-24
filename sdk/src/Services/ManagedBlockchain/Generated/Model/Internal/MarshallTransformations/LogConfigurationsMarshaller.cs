@@ -46,6 +46,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LogConfigurations requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudwatch())
             {
                 context.Writer.WritePropertyName("Cloudwatch");
@@ -66,4 +68,3 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

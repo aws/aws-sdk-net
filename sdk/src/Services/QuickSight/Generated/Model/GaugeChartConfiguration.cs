@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,12 +34,31 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class GaugeChartConfiguration
     {
+        private GaugeChartColorConfiguration _colorConfiguration;
         private DataLabelOptions _dataLabels;
         private GaugeChartFieldWells _fieldWells;
         private GaugeChartOptions _gaugeChartOptions;
         private VisualInteractionOptions _interactions;
         private TooltipOptions _tooltipOptions;
         private VisualPalette _visualPalette;
+
+        /// <summary>
+        /// Gets and sets the property ColorConfiguration. 
+        /// <para>
+        /// The color configuration of a <c>GaugeChartVisual</c>.
+        /// </para>
+        /// </summary>
+        public GaugeChartColorConfiguration ColorConfiguration
+        {
+            get { return this._colorConfiguration; }
+            set { this._colorConfiguration = value; }
+        }
+
+        // Check to see if ColorConfiguration property is set
+        internal bool IsSetColorConfiguration()
+        {
+            return this._colorConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataLabels. 

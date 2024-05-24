@@ -46,6 +46,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AmexCardSecurityCodeVersion2 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCardExpiryDate())
             {
                 context.Writer.WritePropertyName("CardExpiryDate");
@@ -67,4 +69,3 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProtocolDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAs2Transports())
             {
                 context.Writer.WritePropertyName("As2Transports");
@@ -84,4 +86,3 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

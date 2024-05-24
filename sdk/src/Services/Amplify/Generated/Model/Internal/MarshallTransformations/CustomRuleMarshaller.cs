@@ -46,6 +46,8 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCondition())
             {
                 context.Writer.WritePropertyName("condition");
@@ -79,4 +81,3 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

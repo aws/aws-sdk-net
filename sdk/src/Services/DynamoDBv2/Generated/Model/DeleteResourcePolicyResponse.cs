@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property RevisionId. 
         /// <para>
-        /// A unique string that represents the revision ID of the policy. If you are comparing
+        /// A unique string that represents the revision ID of the policy. If you're comparing
         /// revision IDs, make sure to always use string comparison logic.
         /// </para>
         ///  

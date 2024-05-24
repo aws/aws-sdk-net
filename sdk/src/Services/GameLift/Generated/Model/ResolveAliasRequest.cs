@@ -26,12 +26,19 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ResolveAlias operation.
-    /// Retrieves the fleet ID that an alias is currently pointing to.
+    /// Attempts to retrieve a fleet ID that is associated with an alias. Specify a unique
+    /// alias identifier.
     /// 
+    ///  
+    /// <para>
+    /// If the alias has a <c>SIMPLE</c> routing strategy, Amazon GameLift returns a fleet
+    /// ID. If the alias has a <c>TERMINAL</c> routing strategy, the result is a <c>TerminalRoutingStrategyException</c>.
+    /// </para>
     ///  
     /// <para>
     ///  <b>Related actions</b> 

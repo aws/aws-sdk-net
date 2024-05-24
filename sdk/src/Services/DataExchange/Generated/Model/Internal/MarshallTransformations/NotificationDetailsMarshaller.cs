@@ -46,6 +46,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NotificationDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataUpdate())
             {
                 context.Writer.WritePropertyName("DataUpdate");
@@ -88,4 +90,3 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public ModelDiagnosticsS3OutputConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ModelDiagnosticsS3OutputConfiguration unmarshalledObject = new ModelDiagnosticsS3OutputConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

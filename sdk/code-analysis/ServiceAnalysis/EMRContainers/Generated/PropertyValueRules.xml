@@ -127,6 +127,36 @@
     <pattern>[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.CreateSecurityConfigurationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.CreateSecurityConfigurationRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.CreateSecurityConfigurationResponse.Arn</property>
+    <min>60</min>
+    <max>1024</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):emr-containers:.+:(\d{12}):\/securityconfigurations\/[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.CreateSecurityConfigurationResponse.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.CreateSecurityConfigurationResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.CreateVirtualClusterRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -137,6 +167,12 @@
     <min>1</min>
     <max>64</max>
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.CreateVirtualClusterRequest.SecurityConfigurationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.CreateVirtualClusterResponse.Arn</property>
@@ -230,6 +266,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.DescribeManagedEndpointRequest.VirtualClusterId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.DescribeSecurityConfigurationRequest.Id</property>
     <min>1</min>
     <max>64</max>
     <pattern>[0-9a-z]+</pattern>
@@ -332,6 +374,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.ListManagedEndpointsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.ListSecurityConfigurationsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.ListSecurityConfigurationsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
     <pattern>.*\S.*</pattern>
@@ -658,6 +712,18 @@
     <pattern>([\.\-_/A-Za-z0-9]+|\$\{[a-zA-Z]\w*\})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.LakeFormationConfiguration.AuthorizedSessionTagValue</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9 ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.LakeFormationConfiguration.QueryEngineRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.ParametricCloudWatchMonitoringConfiguration.LogGroupName</property>
     <min>1</min>
     <max>512</max>
@@ -686,6 +752,42 @@
     <min>1</min>
     <max>10280</max>
     <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.SecureNamespaceInfo.ClusterId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.SecureNamespaceInfo.Namespace</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-z0-9]([-a-z0-9]*[a-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.SecurityConfiguration.Arn</property>
+    <min>60</min>
+    <max>1024</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):emr-containers:.+:(\d{12}):\/securityconfigurations\/[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.SecurityConfiguration.CreatedBy</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):(iam|sts)::(\d{12})?:[\w/+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.SecurityConfiguration.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.SecurityConfiguration.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.SparkSqlJobDriver.EntryPoint</property>
@@ -718,6 +820,18 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.TLSCertificateConfiguration.PrivateCertificateSecretArn</property>
+    <min>3</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):secretsmanager:.+:(\d{12}):secret:[0-9a-zA-Z/_+=.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.TLSCertificateConfiguration.PublicCertificateSecretArn</property>
+    <min>3</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):secretsmanager:.+:(\d{12}):secret:[0-9a-zA-Z/_+=.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.VirtualCluster.Arn</property>
     <min>60</min>
     <max>1024</max>
@@ -734,5 +848,11 @@
     <min>1</min>
     <max>64</max>
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.VirtualCluster.SecurityConfigurationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
   </property-value-rule>
 </property-value-rules>

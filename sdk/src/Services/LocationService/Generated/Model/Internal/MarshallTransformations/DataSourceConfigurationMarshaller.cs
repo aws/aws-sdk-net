@@ -46,6 +46,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIntendedUse())
             {
                 context.Writer.WritePropertyName("IntendedUse");
@@ -61,4 +63,3 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

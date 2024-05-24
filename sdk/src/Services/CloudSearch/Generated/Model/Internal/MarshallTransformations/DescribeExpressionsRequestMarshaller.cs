@@ -63,12 +63,10 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Deployed", StringUtils.FromBool(publicRequest.Deployed));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDomainName())
                 {
                     request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExpressionNames())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,7 +76,6 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

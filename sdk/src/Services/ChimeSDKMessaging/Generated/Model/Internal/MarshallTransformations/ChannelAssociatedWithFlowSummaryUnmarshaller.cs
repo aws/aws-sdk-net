@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public ChannelAssociatedWithFlowSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ChannelAssociatedWithFlowSummary unmarshalledObject = new ChannelAssociatedWithFlowSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

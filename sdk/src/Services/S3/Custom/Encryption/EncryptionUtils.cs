@@ -304,6 +304,7 @@ namespace Amazon.S3.Encryption
         {
             if (metadata[XAmzKeyV2] != null)
             {
+#pragma warning disable CS0612,CS0618
                 var xAmzWrapAlgMetadataValue = metadata[XAmzWrapAlg];
                 if (!XAmzWrapAlgValue.Equals(xAmzWrapAlgMetadataValue))
                     throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
@@ -315,6 +316,7 @@ namespace Amazon.S3.Encryption
                     throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
                         "Value '{0}' for metadata key '{1}' is invalid.  {2} only supports '{3}' as the content encryption algorithm. {4}",
                         xAmzCEKAlgMetadataValue, XAmzCEKAlg, typeof(AmazonS3EncryptionClient).Name, XAmzCEKAlgValue, ModeMessage));
+#pragma warning restore CS0612,CS0618
             }
         }
 

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -136,7 +137,8 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// Amazon QuickSight custom permissions are applied through IAM policies. Therefore,
         /// they override the permissions typically granted by assigning Amazon QuickSight users
-        /// to one of the default security cohorts in Amazon QuickSight (admin, author, reader).
+        /// to one of the default security cohorts in Amazon QuickSight (admin, author, reader,
+        /// admin pro, author pro, reader pro).
         /// </para>
         ///  
         /// <para>
@@ -247,19 +249,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IdentityType. 
         /// <para>
-        /// Amazon QuickSight supports several ways of managing the identity of users. This parameter
-        /// accepts two values:
+        /// The identity type that your Amazon QuickSight account uses to manage the identity
+        /// of users.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>IAM</c>: A user whose identity maps to an existing IAM user or role. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>QUICKSIGHT</c>: A user whose identity is owned and managed internally by Amazon
-        /// QuickSight. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public IdentityType IdentityType
@@ -371,6 +363,23 @@ namespace Amazon.QuickSight.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>ADMIN</c>: A user who is an author, who can also manage Amazon QuickSight settings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>READER_PRO</c>: Reader Pro adds Generative BI capabilities to the Reader role.
+        /// Reader Pros have access to Amazon Q in Amazon QuickSight, can build stories with Amazon
+        /// Q, and can generate executive summaries from dashboards.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AUTHOR_PRO</c>: Author Pro adds Generative BI capabilities to the Author role.
+        /// Author Pros can author dashboards with natural language with Amazon Q, build stories
+        /// with Amazon Q, create Topics for Q&amp;A, and generate executive summaries from dashboards.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ADMIN_PRO</c>: Admin Pros are Author Pros who can also manage Amazon QuickSight
+        /// administrative settings. Admin Pro users are billed at Author Pro pricing.
         /// </para>
         ///  </li> <li> 
         /// <para>

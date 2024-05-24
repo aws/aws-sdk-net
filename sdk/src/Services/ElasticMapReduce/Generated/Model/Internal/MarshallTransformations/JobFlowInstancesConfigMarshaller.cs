@@ -46,6 +46,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobFlowInstancesConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalMasterSecurityGroups())
             {
                 context.Writer.WritePropertyName("AdditionalMasterSecurityGroups");
@@ -203,4 +205,3 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

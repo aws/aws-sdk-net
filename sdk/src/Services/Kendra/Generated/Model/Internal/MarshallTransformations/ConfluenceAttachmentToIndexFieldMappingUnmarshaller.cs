@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public ConfluenceAttachmentToIndexFieldMapping Unmarshall(JsonUnmarshallerContext context)
         {
             ConfluenceAttachmentToIndexFieldMapping unmarshalledObject = new ConfluenceAttachmentToIndexFieldMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

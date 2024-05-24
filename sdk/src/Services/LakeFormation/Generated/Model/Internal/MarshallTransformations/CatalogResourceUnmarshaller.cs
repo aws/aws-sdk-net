@@ -57,6 +57,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public CatalogResource Unmarshall(JsonUnmarshallerContext context)
         {
             CatalogResource unmarshalledObject = new CatalogResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -83,4 +85,3 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

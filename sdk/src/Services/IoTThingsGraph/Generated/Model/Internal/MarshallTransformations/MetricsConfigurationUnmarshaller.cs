@@ -57,6 +57,8 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
         public MetricsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             MetricsConfiguration unmarshalledObject = new MetricsConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

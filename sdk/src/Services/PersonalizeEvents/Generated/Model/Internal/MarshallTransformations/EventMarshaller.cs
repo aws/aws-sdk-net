@@ -46,6 +46,8 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Event requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEventId())
             {
                 context.Writer.WritePropertyName("eventId");
@@ -61,7 +63,14 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventValue())
             {
                 context.Writer.WritePropertyName("eventValue");
-                context.Writer.Write(requestObject.EventValue);
+                if(StringUtils.IsSpecialFloatValue(requestObject.EventValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.EventValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.EventValue);
+                }
             }
 
             if(requestObject.IsSetImpression())
@@ -119,4 +128,3 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

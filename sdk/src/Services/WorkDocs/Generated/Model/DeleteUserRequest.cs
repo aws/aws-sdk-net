@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
@@ -61,7 +62,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if AuthenticationToken property is set
         internal bool IsSetAuthenticationToken()
         {
-            return this._authenticationToken != null;
+            return !string.IsNullOrEmpty(this._authenticationToken);
         }
 
         /// <summary>

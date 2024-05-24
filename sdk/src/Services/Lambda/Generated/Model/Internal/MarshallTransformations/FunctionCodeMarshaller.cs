@@ -46,6 +46,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FunctionCode requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetImageUri())
             {
                 context.Writer.WritePropertyName("ImageUri");
@@ -85,4 +87,3 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

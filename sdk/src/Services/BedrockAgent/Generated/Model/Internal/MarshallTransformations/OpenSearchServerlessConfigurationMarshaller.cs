@@ -46,6 +46,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OpenSearchServerlessConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCollectionArn())
             {
                 context.Writer.WritePropertyName("collectionArn");
@@ -78,4 +80,3 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

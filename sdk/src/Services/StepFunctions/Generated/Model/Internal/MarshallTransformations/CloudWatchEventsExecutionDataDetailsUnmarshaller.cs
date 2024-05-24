@@ -57,6 +57,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         public CloudWatchEventsExecutionDataDetails Unmarshall(JsonUnmarshallerContext context)
         {
             CloudWatchEventsExecutionDataDetails unmarshalledObject = new CloudWatchEventsExecutionDataDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

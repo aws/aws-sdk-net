@@ -61,10 +61,10 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 
             
             if (publicRequest.IsSetCreationTimeAfter())
-                request.Parameters.Add("creationTimeAfter", StringUtils.FromDateTimeToISO8601(publicRequest.CreationTimeAfter));
+                request.Parameters.Add("creationTimeAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreationTimeAfter));
             
             if (publicRequest.IsSetCreationTimeBefore())
-                request.Parameters.Add("creationTimeBefore", StringUtils.FromDateTimeToISO8601(publicRequest.CreationTimeBefore));
+                request.Parameters.Add("creationTimeBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreationTimeBefore));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -108,4 +108,3 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

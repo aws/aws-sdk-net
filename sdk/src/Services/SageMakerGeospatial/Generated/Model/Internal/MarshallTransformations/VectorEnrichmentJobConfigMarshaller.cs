@@ -46,6 +46,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VectorEnrichmentJobConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMapMatchingConfig())
             {
                 context.Writer.WritePropertyName("MapMatchingConfig");
@@ -77,4 +79,3 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

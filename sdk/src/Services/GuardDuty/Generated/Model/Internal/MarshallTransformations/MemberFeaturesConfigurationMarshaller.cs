@@ -46,6 +46,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MemberFeaturesConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalConfiguration())
             {
                 context.Writer.WritePropertyName("additionalConfiguration");
@@ -83,4 +85,3 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

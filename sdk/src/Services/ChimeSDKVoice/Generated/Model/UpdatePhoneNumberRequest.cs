@@ -26,13 +26,15 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePhoneNumber operation.
-    /// Updates phone number details, such as product type or calling name, for the specified
-    /// phone number ID. You can update one phone number detail at a time. For example, you
-    /// can update either the product type or the calling name in one action.
+    /// Updates phone number details, such as product type, calling name, or phone number
+    /// name for the specified phone number ID. You can update one phone number detail at
+    /// a time. For example, you can update either the product type, calling name, or phone
+    /// number name in one action.
     /// 
     ///  
     /// <para>
@@ -74,7 +76,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Specifies the name assigned to one or more phone numbers.
+        /// Specifies the updated name assigned to one or more phone numbers.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=256)]

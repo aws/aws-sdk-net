@@ -46,6 +46,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MSKSourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthenticationConfiguration())
             {
                 context.Writer.WritePropertyName("AuthenticationConfiguration");
@@ -78,4 +80,3 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

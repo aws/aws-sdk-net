@@ -46,6 +46,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PortalResource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
@@ -61,4 +63,3 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

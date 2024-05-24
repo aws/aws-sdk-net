@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MessageAttributeValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStringValues())
             {
                 context.Writer.WritePropertyName("StringValues");
@@ -66,4 +68,3 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

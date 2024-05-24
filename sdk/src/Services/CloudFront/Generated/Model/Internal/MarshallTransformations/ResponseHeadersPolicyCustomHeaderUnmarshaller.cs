@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResponseHeadersPolicyCustomHeader Object
     /// </summary>  
-    public class ResponseHeadersPolicyCustomHeaderUnmarshaller : IUnmarshaller<ResponseHeadersPolicyCustomHeader, XmlUnmarshallerContext>
+    public class ResponseHeadersPolicyCustomHeaderUnmarshaller : IUnmarshaller<ResponseHeadersPolicyCustomHeader, XmlUnmarshallerContext>, IUnmarshaller<ResponseHeadersPolicyCustomHeader, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,6 +82,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public ResponseHeadersPolicyCustomHeader Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static ResponseHeadersPolicyCustomHeaderUnmarshaller _instance = new ResponseHeadersPolicyCustomHeaderUnmarshaller();        
 
@@ -97,4 +107,3 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CmafGroupSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalManifests())
             {
                 context.Writer.WritePropertyName("additionalManifests");
@@ -158,7 +160,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinFinalSegmentLength())
             {
                 context.Writer.WritePropertyName("minFinalSegmentLength");
-                context.Writer.Write(requestObject.MinFinalSegmentLength);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinFinalSegmentLength))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinFinalSegmentLength));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinFinalSegmentLength);
+                }
             }
 
             if(requestObject.IsSetMpdManifestBandwidthType())
@@ -242,4 +251,3 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

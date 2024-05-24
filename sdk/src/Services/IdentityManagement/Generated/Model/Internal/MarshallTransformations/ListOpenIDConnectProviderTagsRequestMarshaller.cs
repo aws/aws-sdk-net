@@ -63,17 +63,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxItems())
                 {
                     request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOpenIDConnectProviderArn())
                 {
                     request.Parameters.Add("OpenIDConnectProviderArn", StringUtils.FromString(publicRequest.OpenIDConnectProviderArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

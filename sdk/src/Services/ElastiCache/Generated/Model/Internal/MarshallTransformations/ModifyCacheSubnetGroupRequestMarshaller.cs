@@ -63,22 +63,19 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CacheSubnetGroupDescription", StringUtils.FromString(publicRequest.CacheSubnetGroupDescription));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCacheSubnetGroupName())
                 {
                     request.Parameters.Add("CacheSubnetGroupName", StringUtils.FromString(publicRequest.CacheSubnetGroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSubnetIds())
                 {
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.SubnetIds)
                     {
-                        request.Parameters.Add("SubnetIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        request.Parameters.Add("SubnetIds" + "." + "SubnetIdentifier" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

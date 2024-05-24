@@ -26,11 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListShares operation.
-    /// Lists all shares associated with an account.
+    /// Retrieves the resource shares associated with an account. Use the filter parameter
+    /// to retrieve a specific subset of the shares.
     /// </summary>
     public partial class ListSharesRequest : AmazonOmicsRequest
     {
@@ -42,7 +44,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        ///  Attributes used to filter for a specific subset of shares. 
+        /// Attributes that you use to filter for a specific subset of resource shares.
         /// </para>
         /// </summary>
         public Filter Filter
@@ -60,7 +62,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of shares to return in one page of results. 
+        /// The maximum number of shares to return in one page of results.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -78,8 +80,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Next token returned in the response of a previous ListReadSetUploadPartsRequest call.
-        /// Used to get the next page of results. 
+        /// Next token returned in the response of a previous ListReadSetUploadPartsRequest call.
+        /// Used to get the next page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -97,7 +99,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ResourceOwner. 
         /// <para>
-        ///  The account that owns the analytics store shared. 
+        /// The account that owns the resource shares.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

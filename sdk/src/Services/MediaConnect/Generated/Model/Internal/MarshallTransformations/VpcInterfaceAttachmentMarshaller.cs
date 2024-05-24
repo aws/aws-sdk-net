@@ -46,6 +46,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VpcInterfaceAttachment requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetVpcInterfaceName())
             {
                 context.Writer.WritePropertyName("vpcInterfaceName");
@@ -61,4 +63,3 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

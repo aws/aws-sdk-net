@@ -46,6 +46,8 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReportDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalArtifacts())
             {
                 context.Writer.WritePropertyName("AdditionalArtifacts");
@@ -148,4 +150,3 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

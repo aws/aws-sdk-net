@@ -46,6 +46,8 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ValueHolder requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIonText())
             {
                 context.Writer.WritePropertyName("IonText");
@@ -61,4 +63,3 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

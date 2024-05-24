@@ -46,6 +46,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SnapshotOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutomatedSnapshotStartHour())
             {
                 context.Writer.WritePropertyName("AutomatedSnapshotStartHour");
@@ -61,4 +63,3 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

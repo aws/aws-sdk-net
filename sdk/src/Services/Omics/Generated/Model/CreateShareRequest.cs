@@ -26,12 +26,32 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateShare operation.
-    /// Creates a share offer that can be accepted outside the account by a subscriber. The
-    /// share is created by the owner and accepted by the principal subscriber.
+    /// Creates a cross-account shared resource. The resource owner makes an offer to share
+    /// the resource with the principal subscriber (an AWS user with a different account than
+    /// the resource owner).
+    /// 
+    ///  
+    /// <para>
+    /// The following resources support cross-account sharing:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Healthomics variant stores
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Healthomics annotation stores
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Private workflows
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateShareRequest : AmazonOmicsRequest
     {
@@ -42,8 +62,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property PrincipalSubscriber. 
         /// <para>
-        ///  The principal subscriber is the account being given access to the analytics store
-        /// data through the share offer. 
+        /// The principal subscriber is the account being offered shared access to the resource.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +82,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The resource ARN for the analytics store to be shared. 
+        /// The ARN of the resource to be shared.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +101,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ShareName. 
         /// <para>
-        ///  A name given to the share. 
+        /// A name that the owner defines for the share.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

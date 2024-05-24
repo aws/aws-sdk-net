@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -733,7 +734,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter doesn't apply to RDS Custom DB instances.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         ///  
         /// <para>
@@ -785,6 +786,13 @@ namespace Amazon.RDS.Model
         /// be deleted when deletion protection is enabled. By default, deletion protection isn't
         /// enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to Amazon Aurora DB instances. You can enable or disable
+        /// deletion protection for the DB cluster. For more information, see <c>ModifyDBCluster</c>.
+        /// DB instances in a DB cluster can be deleted even when deletion protection is enabled
+        /// for the DB cluster.
         /// </para>
         /// </summary>
         public bool DeletionProtection

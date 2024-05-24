@@ -46,6 +46,8 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InfluxDBv2Parameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFluxLogEnabled())
             {
                 context.Writer.WritePropertyName("fluxLogEnabled");
@@ -97,4 +99,3 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

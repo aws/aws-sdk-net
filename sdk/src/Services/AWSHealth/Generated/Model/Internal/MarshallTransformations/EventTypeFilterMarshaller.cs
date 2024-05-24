@@ -46,6 +46,8 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EventTypeFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEventTypeCategories())
             {
                 context.Writer.WritePropertyName("eventTypeCategories");
@@ -88,4 +90,3 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

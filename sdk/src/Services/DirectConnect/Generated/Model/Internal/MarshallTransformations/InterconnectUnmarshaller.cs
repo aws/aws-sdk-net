@@ -57,6 +57,8 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         public Interconnect Unmarshall(JsonUnmarshallerContext context)
         {
             Interconnect unmarshalledObject = new Interconnect();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -173,4 +175,3 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

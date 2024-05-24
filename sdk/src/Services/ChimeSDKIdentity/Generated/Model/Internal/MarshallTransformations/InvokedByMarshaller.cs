@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InvokedBy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStandardMessages())
             {
                 context.Writer.WritePropertyName("StandardMessages");
@@ -67,4 +69,3 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

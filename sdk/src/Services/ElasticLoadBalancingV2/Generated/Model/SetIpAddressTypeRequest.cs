@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -40,9 +41,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The IP address type. The possible values are <c>ipv4</c> (for IPv4 addresses) and
-        /// <c>dualstack</c> (for IPv4 and IPv6 addresses). You can’t specify <c>dualstack</c>
-        /// for a load balancer with a UDP or TCP_UDP listener.
+        /// Note: Internal load balancers must use the <c>ipv4</c> IP address type.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Application Load Balancers] The IP address type. The possible values are <c>ipv4</c>
+        /// (for only IPv4 addresses), <c>dualstack</c> (for IPv4 and IPv6 addresses), and <c>dualstack-without-public-ipv4</c>
+        /// (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).
+        /// </para>
+        ///  
+        /// <para>
+        /// [Network Load Balancers] The IP address type. The possible values are <c>ipv4</c>
+        /// (for only IPv4 addresses) and <c>dualstack</c> (for IPv4 and IPv6 addresses). You
+        /// can’t specify <c>dualstack</c> for a load balancer with a UDP or TCP_UDP listener.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Gateway Load Balancers] The IP address type. The possible values are <c>ipv4</c>
+        /// (for only IPv4 addresses) and <c>dualstack</c> (for IPv4 and IPv6 addresses).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

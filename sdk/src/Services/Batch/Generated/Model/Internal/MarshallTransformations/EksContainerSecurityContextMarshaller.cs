@@ -46,6 +46,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EksContainerSecurityContext requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowPrivilegeEscalation())
             {
                 context.Writer.WritePropertyName("allowPrivilegeEscalation");
@@ -91,4 +93,3 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

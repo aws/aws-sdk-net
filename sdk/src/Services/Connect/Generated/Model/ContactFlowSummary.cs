@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -41,6 +42,7 @@ namespace Amazon.Connect.Model
     {
         private string _arn;
         private ContactFlowState _contactFlowState;
+        private ContactFlowStatus _contactFlowStatus;
         private ContactFlowType _contactFlowType;
         private string _id;
         private string _name;
@@ -79,6 +81,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetContactFlowState()
         {
             return this._contactFlowState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactFlowStatus. 
+        /// <para>
+        /// The status of the contact flow.
+        /// </para>
+        /// </summary>
+        public ContactFlowStatus ContactFlowStatus
+        {
+            get { return this._contactFlowStatus; }
+            set { this._contactFlowStatus = value; }
+        }
+
+        // Check to see if ContactFlowStatus property is set
+        internal bool IsSetContactFlowStatus()
+        {
+            return this._contactFlowStatus != null;
         }
 
         /// <summary>

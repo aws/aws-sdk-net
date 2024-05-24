@@ -46,6 +46,8 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UsageRecord requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomerIdentifier())
             {
                 context.Writer.WritePropertyName("CustomerIdentifier");
@@ -95,4 +97,3 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

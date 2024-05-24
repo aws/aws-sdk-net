@@ -46,6 +46,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IngressConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIsPubliclyAccessible())
             {
                 context.Writer.WritePropertyName("IsPubliclyAccessible");
@@ -61,4 +63,3 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

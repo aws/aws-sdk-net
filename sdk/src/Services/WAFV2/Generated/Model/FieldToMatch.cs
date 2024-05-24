@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -73,6 +74,12 @@ namespace Amazon.WAFV2.Model
     /// In this documentation, the descriptions of the individual fields talk about specifying
     /// the web request component to inspect, but for field redaction, you are specifying
     /// the component type to redact from the logs. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you have request sampling enabled, the redacted fields configuration for logging
+    /// has no impact on sampling. The only way to exclude fields from request sampling is
+    /// by disabling sampling in the web ACL visibility configuration. 
     /// </para>
     ///  </li> </ul> </li> </ul>
     /// </summary>
@@ -232,6 +239,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property JA3Fingerprint. 
         /// <para>
+        /// Available for use with Amazon CloudFront distributions and Application Load Balancers.
         /// Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character
         /// hash derived from the TLS Client Hello of an incoming request. This fingerprint serves
         /// as a unique identifier for the client's TLS configuration. WAF calculates and logs

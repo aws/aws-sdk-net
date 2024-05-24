@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StorageLensDataExport Object
     /// </summary>  
-    public class StorageLensDataExportUnmarshaller : IUnmarshaller<StorageLensDataExport, XmlUnmarshallerContext>
+    public class StorageLensDataExportUnmarshaller : IUnmarshaller<StorageLensDataExport, XmlUnmarshallerContext>, IUnmarshaller<StorageLensDataExport, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,6 +76,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public StorageLensDataExport Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static StorageLensDataExportUnmarshaller _instance = new StorageLensDataExportUnmarshaller();        
 
@@ -91,4 +101,3 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

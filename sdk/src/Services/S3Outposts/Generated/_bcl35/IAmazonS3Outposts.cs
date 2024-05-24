@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.S3Outposts.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.S3Outposts
 {
     /// <summary>

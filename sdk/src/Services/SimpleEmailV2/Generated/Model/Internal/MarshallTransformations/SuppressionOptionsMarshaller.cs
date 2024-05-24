@@ -46,6 +46,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SuppressionOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSuppressedReasons())
             {
                 context.Writer.WritePropertyName("SuppressedReasons");
@@ -66,4 +68,3 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

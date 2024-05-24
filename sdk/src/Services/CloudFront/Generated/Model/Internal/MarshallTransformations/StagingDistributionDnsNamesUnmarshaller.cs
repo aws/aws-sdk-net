@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StagingDistributionDnsNames Object
     /// </summary>  
-    public class StagingDistributionDnsNamesUnmarshaller : IUnmarshaller<StagingDistributionDnsNames, XmlUnmarshallerContext>
+    public class StagingDistributionDnsNamesUnmarshaller : IUnmarshaller<StagingDistributionDnsNames, XmlUnmarshallerContext>, IUnmarshaller<StagingDistributionDnsNames, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public StagingDistributionDnsNames Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static StagingDistributionDnsNamesUnmarshaller _instance = new StagingDistributionDnsNamesUnmarshaller();        
 
@@ -95,4 +105,3 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

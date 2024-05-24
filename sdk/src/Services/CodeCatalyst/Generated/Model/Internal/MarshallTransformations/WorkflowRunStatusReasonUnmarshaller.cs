@@ -57,6 +57,8 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         public WorkflowRunStatusReason Unmarshall(JsonUnmarshallerContext context)
         {
             WorkflowRunStatusReason unmarshalledObject = new WorkflowRunStatusReason();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -83,4 +85,3 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

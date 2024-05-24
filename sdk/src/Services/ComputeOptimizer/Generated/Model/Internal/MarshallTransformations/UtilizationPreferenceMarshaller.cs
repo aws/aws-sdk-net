@@ -46,6 +46,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UtilizationPreference requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("metricName");
@@ -72,4 +74,3 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

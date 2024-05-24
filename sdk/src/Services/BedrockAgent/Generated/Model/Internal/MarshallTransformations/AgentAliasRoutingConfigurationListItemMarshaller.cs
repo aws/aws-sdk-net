@@ -46,10 +46,18 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AgentAliasRoutingConfigurationListItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAgentVersion())
             {
                 context.Writer.WritePropertyName("agentVersion");
                 context.Writer.Write(requestObject.AgentVersion);
+            }
+
+            if(requestObject.IsSetProvisionedThroughput())
+            {
+                context.Writer.WritePropertyName("provisionedThroughput");
+                context.Writer.Write(requestObject.ProvisionedThroughput);
             }
 
         }
@@ -61,4 +69,3 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

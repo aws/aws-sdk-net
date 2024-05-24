@@ -46,6 +46,8 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TextTranslationJobFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetJobName())
             {
                 context.Writer.WritePropertyName("JobName");
@@ -79,4 +81,3 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

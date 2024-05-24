@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public CrossClusterSearchConnectionProperties Unmarshall(JsonUnmarshallerContext context)
         {
             CrossClusterSearchConnectionProperties unmarshalledObject = new CrossClusterSearchConnectionProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

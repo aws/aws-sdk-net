@@ -64,6 +64,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDomain())
@@ -123,4 +124,3 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
 
     }
 }
-#pragma warning restore CS0612,CS0618

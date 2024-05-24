@@ -46,6 +46,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HttpHeader requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHeaderName())
             {
                 context.Writer.WritePropertyName("headerName");
@@ -67,4 +69,3 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

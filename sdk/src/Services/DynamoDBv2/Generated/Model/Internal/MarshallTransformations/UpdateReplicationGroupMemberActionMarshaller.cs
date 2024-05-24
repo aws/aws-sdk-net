@@ -46,6 +46,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateReplicationGroupMemberAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGlobalSecondaryIndexes())
             {
                 context.Writer.WritePropertyName("GlobalSecondaryIndexes");
@@ -66,6 +68,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("KMSMasterKeyId");
                 context.Writer.Write(requestObject.KMSMasterKeyId);
+            }
+
+            if(requestObject.IsSetOnDemandThroughputOverride())
+            {
+                context.Writer.WritePropertyName("OnDemandThroughputOverride");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OnDemandThroughputOverrideMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnDemandThroughputOverride, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetProvisionedThroughputOverride())
@@ -100,4 +113,3 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

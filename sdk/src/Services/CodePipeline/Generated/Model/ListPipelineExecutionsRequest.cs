@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -34,9 +35,28 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class ListPipelineExecutionsRequest : AmazonCodePipelineRequest
     {
+        private PipelineExecutionFilter _filter;
         private int? _maxResults;
         private string _nextToken;
         private string _pipelineName;
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// The pipeline execution to filter on.
+        /// </para>
+        /// </summary>
+        public PipelineExecutionFilter Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

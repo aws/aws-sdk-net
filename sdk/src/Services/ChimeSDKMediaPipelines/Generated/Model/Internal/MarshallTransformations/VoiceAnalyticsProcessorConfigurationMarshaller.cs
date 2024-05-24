@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VoiceAnalyticsProcessorConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSpeakerSearchStatus())
             {
                 context.Writer.WritePropertyName("SpeakerSearchStatus");
@@ -67,4 +69,3 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

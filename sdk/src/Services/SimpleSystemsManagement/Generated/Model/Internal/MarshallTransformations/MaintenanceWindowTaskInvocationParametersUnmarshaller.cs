@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public MaintenanceWindowTaskInvocationParameters Unmarshall(JsonUnmarshallerContext context)
         {
             MaintenanceWindowTaskInvocationParameters unmarshalledObject = new MaintenanceWindowTaskInvocationParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoSync.Model
 {
     /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.CognitoSync.Model
         // Check to see if ClientContext property is set
         internal bool IsSetClientContext()
         {
-            return this._clientContext != null;
+            return !string.IsNullOrEmpty(this._clientContext);
         }
 
         /// <summary>

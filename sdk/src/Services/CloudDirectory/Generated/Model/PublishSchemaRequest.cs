@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if DevelopmentSchemaArn property is set
         internal bool IsSetDevelopmentSchemaArn()
         {
-            return this._developmentSchemaArn != null;
+            return !string.IsNullOrEmpty(this._developmentSchemaArn);
         }
 
         /// <summary>

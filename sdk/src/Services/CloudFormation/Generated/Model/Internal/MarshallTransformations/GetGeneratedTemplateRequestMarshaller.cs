@@ -63,12 +63,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Format", StringUtils.FromString(publicRequest.Format));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGeneratedTemplateName())
                 {
                     request.Parameters.Add("GeneratedTemplateName", StringUtils.FromString(publicRequest.GeneratedTemplateName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

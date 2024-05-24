@@ -68,7 +68,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCertificates())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,16 +77,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Certificates" + "." + "member" + "." + publicRequestlistValueIndex + "." + "CertificateArn", StringUtils.FromString(publicRequestlistValue.CertificateArn));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetIsDefault())
                         {
                             request.Parameters.Add("Certificates" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IsDefault", StringUtils.FromBool(publicRequestlistValue.IsDefault));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDefaultActions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -110,44 +106,35 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                                     mapIndex++;
                                 }
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetOnUnauthenticatedRequest())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "OnUnauthenticatedRequest", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.OnUnauthenticatedRequest));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetScope())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "Scope", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.Scope));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetSessionCookieName())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "SessionCookieName", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.SessionCookieName));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetSessionTimeout())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "SessionTimeout", StringUtils.FromLong(publicRequestlistValue.AuthenticateCognitoConfig.SessionTimeout));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetUserPoolArn())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "UserPoolArn", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.UserPoolArn));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetUserPoolClientId())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "UserPoolClientId", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.UserPoolClientId));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetUserPoolDomain())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "UserPoolDomain", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.UserPoolDomain));
                             }
-#pragma warning restore CS0612,CS0618
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetAuthenticateOidcConfig())
                         {
                             if(publicRequestlistValue.AuthenticateOidcConfig.IsSetAuthenticationRequestExtraParams())
@@ -165,83 +152,66 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                                     mapIndex++;
                                 }
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateOidcConfig.IsSetAuthorizationEndpoint())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "AuthorizationEndpoint", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.AuthorizationEndpoint));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateOidcConfig.IsSetClientId())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "ClientId", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.ClientId));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateOidcConfig.IsSetClientSecret())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "ClientSecret", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.ClientSecret));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateOidcConfig.IsSetIssuer())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "Issuer", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.Issuer));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateOidcConfig.IsSetOnUnauthenticatedRequest())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "OnUnauthenticatedRequest", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.OnUnauthenticatedRequest));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateOidcConfig.IsSetScope())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "Scope", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.Scope));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateOidcConfig.IsSetSessionCookieName())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "SessionCookieName", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.SessionCookieName));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateOidcConfig.IsSetSessionTimeout())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "SessionTimeout", StringUtils.FromLong(publicRequestlistValue.AuthenticateOidcConfig.SessionTimeout));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateOidcConfig.IsSetTokenEndpoint())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "TokenEndpoint", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.TokenEndpoint));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateOidcConfig.IsSetUseExistingClientSecret())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "UseExistingClientSecret", StringUtils.FromBool(publicRequestlistValue.AuthenticateOidcConfig.UseExistingClientSecret));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.AuthenticateOidcConfig.IsSetUserInfoEndpoint())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "UserInfoEndpoint", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.UserInfoEndpoint));
                             }
-#pragma warning restore CS0612,CS0618
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetFixedResponseConfig())
                         {
                             if(publicRequestlistValue.FixedResponseConfig.IsSetContentType())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FixedResponseConfig" + "." + "ContentType", StringUtils.FromString(publicRequestlistValue.FixedResponseConfig.ContentType));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.FixedResponseConfig.IsSetMessageBody())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FixedResponseConfig" + "." + "MessageBody", StringUtils.FromString(publicRequestlistValue.FixedResponseConfig.MessageBody));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.FixedResponseConfig.IsSetStatusCode())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FixedResponseConfig" + "." + "StatusCode", StringUtils.FromString(publicRequestlistValue.FixedResponseConfig.StatusCode));
                             }
-#pragma warning restore CS0612,CS0618
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetForwardConfig())
                         {
                             if(publicRequestlistValue.ForwardConfig.IsSetTargetGroups())
@@ -253,124 +223,98 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroups" + "." + "member" + "." + publicRequestlistValueForwardConfiglistValueIndex + "." + "TargetGroupArn", StringUtils.FromString(publicRequestlistValueForwardConfiglistValue.TargetGroupArn));
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestlistValueForwardConfiglistValue.IsSetWeight())
                                     {
                                         request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroups" + "." + "member" + "." + publicRequestlistValueForwardConfiglistValueIndex + "." + "Weight", StringUtils.FromInt(publicRequestlistValueForwardConfiglistValue.Weight));
                                     }
-#pragma warning restore CS0612,CS0618
                                     publicRequestlistValueForwardConfiglistValueIndex++;
                                 }
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.ForwardConfig.IsSetTargetGroupStickinessConfig())
                             {
                                 if(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.IsSetDurationSeconds())
                                 {
                                     request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroupStickinessConfig" + "." + "DurationSeconds", StringUtils.FromInt(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.DurationSeconds));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.IsSetEnabled())
                                 {
                                     request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroupStickinessConfig" + "." + "Enabled", StringUtils.FromBool(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.Enabled));
                                 }
-#pragma warning restore CS0612,CS0618
                             }
-#pragma warning restore CS0612,CS0618
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetOrder())
                         {
                             request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Order", StringUtils.FromInt(publicRequestlistValue.Order));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetRedirectConfig())
                         {
                             if(publicRequestlistValue.RedirectConfig.IsSetHost())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Host", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Host));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.RedirectConfig.IsSetPath())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Path", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Path));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.RedirectConfig.IsSetPort())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Port", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Port));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.RedirectConfig.IsSetProtocol())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Protocol", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Protocol));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.RedirectConfig.IsSetQuery())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Query", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Query));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.RedirectConfig.IsSetStatusCode())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "StatusCode", StringUtils.FromString(publicRequestlistValue.RedirectConfig.StatusCode));
                             }
-#pragma warning restore CS0612,CS0618
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTargetGroupArn())
                         {
                             request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TargetGroupArn", StringUtils.FromString(publicRequestlistValue.TargetGroupArn));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetType())
                         {
                             request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLoadBalancerArn())
                 {
                     request.Parameters.Add("LoadBalancerArn", StringUtils.FromString(publicRequest.LoadBalancerArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMutualAuthentication())
                 {
                     if(publicRequest.MutualAuthentication.IsSetIgnoreClientCertificateExpiry())
                     {
                         request.Parameters.Add("MutualAuthentication" + "." + "IgnoreClientCertificateExpiry", StringUtils.FromBool(publicRequest.MutualAuthentication.IgnoreClientCertificateExpiry));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.MutualAuthentication.IsSetMode())
                     {
                         request.Parameters.Add("MutualAuthentication" + "." + "Mode", StringUtils.FromString(publicRequest.MutualAuthentication.Mode));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.MutualAuthentication.IsSetTrustStoreArn())
                     {
                         request.Parameters.Add("MutualAuthentication" + "." + "TrustStoreArn", StringUtils.FromString(publicRequest.MutualAuthentication.TrustStoreArn));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPort())
                 {
                     request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetProtocol())
                 {
                     request.Parameters.Add("Protocol", StringUtils.FromString(publicRequest.Protocol));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSslPolicy())
                 {
                     request.Parameters.Add("SslPolicy", StringUtils.FromString(publicRequest.SslPolicy));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -380,16 +324,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

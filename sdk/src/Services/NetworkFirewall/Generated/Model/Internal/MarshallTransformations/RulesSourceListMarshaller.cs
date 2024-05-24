@@ -46,6 +46,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RulesSourceList requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGeneratedRulesType())
             {
                 context.Writer.WritePropertyName("GeneratedRulesType");
@@ -83,4 +85,3 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

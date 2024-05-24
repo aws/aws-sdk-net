@@ -46,10 +46,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PercentileAggregation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPercentileValue())
             {
                 context.Writer.WritePropertyName("PercentileValue");
-                context.Writer.Write(requestObject.PercentileValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentileValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentileValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.PercentileValue);
+                }
             }
 
         }
@@ -61,4 +70,3 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

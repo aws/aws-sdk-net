@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
@@ -116,7 +117,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this._description != null;
+            return !string.IsNullOrEmpty(this._description);
         }
 
         /// <summary>
@@ -176,7 +177,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if VersionLabel property is set
         internal bool IsSetVersionLabel()
         {
-            return this._versionLabel != null;
+            return !string.IsNullOrEmpty(this._versionLabel);
         }
 
     }

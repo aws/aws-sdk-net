@@ -46,6 +46,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InventoryFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCondition())
             {
                 context.Writer.WritePropertyName("Condition");
@@ -73,4 +75,3 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

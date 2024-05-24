@@ -61,14 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAnalysisStartTimeBegin())
                 {
-                    request.Parameters.Add("AnalysisStartTimeBegin", StringUtils.FromDateTimeToISO8601(publicRequest.AnalysisStartTimeBegin));
+                    request.Parameters.Add("AnalysisStartTimeBegin", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.AnalysisStartTimeBegin));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAnalysisStartTimeEnd())
                 {
-                    request.Parameters.Add("AnalysisStartTimeEnd", StringUtils.FromDateTimeToISO8601(publicRequest.AnalysisStartTimeEnd));
+                    request.Parameters.Add("AnalysisStartTimeEnd", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.AnalysisStartTimeEnd));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFilters())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,7 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -88,16 +85,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkInsightsAccessScopeAnalysisIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -107,17 +101,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkInsightsAccessScopeId())
                 {
                     request.Parameters.Add("NetworkInsightsAccessScopeId", StringUtils.FromString(publicRequest.NetworkInsightsAccessScopeId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

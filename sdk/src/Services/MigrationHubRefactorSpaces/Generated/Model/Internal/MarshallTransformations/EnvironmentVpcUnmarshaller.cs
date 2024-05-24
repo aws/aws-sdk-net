@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         public EnvironmentVpc Unmarshall(JsonUnmarshallerContext context)
         {
             EnvironmentVpc unmarshalledObject = new EnvironmentVpc();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -125,4 +127,3 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         }
     }
 }
-#pragma warning restore CS0612,CS0618

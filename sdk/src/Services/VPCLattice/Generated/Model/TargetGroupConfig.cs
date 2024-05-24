@@ -26,11 +26,17 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
-    /// Describes the configuration of a target group. Lambda functions don't support target
-    /// group configuration.
+    /// Describes the configuration of a target group.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/target-groups.html">Target
+    /// groups</a> in the <i>Amazon VPC Lattice User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class TargetGroupConfig
     {
@@ -45,7 +51,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property HealthCheck. 
         /// <para>
-        /// The health check configuration.
+        /// The health check configuration. Not supported if the target group type is <c>LAMBDA</c>
+        /// or <c>ALB</c>.
         /// </para>
         /// </summary>
         public HealthCheckConfig HealthCheck
@@ -63,9 +70,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The type of IP address used for the target group. The possible values are <c>ipv4</c>
-        /// and <c>ipv6</c>. This is an optional parameter. If not specified, the IP address type
-        /// defaults to <c>ipv4</c>.
+        /// The type of IP address used for the target group. Supported only if the target group
+        /// type is <c>IP</c>. The default is <c>IPV4</c>.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType
@@ -83,7 +89,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property LambdaEventStructureVersion. 
         /// <para>
-        /// Lambda event structure version
+        /// The version of the event structure that your Lambda function receives. Supported only
+        /// if the target group type is <c>LAMBDA</c>. The default is <c>V1</c>.
         /// </para>
         /// </summary>
         public LambdaEventStructureVersion LambdaEventStructureVersion
@@ -101,8 +108,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port on which the targets are listening. For HTTP, the default is <c>80</c>. For
-        /// HTTPS, the default is <c>443</c> 
+        /// The port on which the targets are listening. For HTTP, the default is 80. For HTTPS,
+        /// the default is 443. Not supported if the target group type is <c>LAMBDA</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
@@ -121,8 +128,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol to use for routing traffic to the targets. Default is the protocol of
-        /// a target group.
+        /// The protocol to use for routing traffic to the targets. The default is the protocol
+        /// of the target group. Not supported if the target group type is <c>LAMBDA</c>.
         /// </para>
         /// </summary>
         public TargetGroupProtocol Protocol
@@ -140,7 +147,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ProtocolVersion. 
         /// <para>
-        /// The protocol version. Default value is <c>HTTP1</c>.
+        /// The protocol version. The default is <c>HTTP1</c>. Not supported if the target group
+        /// type is <c>LAMBDA</c>.
         /// </para>
         /// </summary>
         public TargetGroupProtocolVersion ProtocolVersion
@@ -158,7 +166,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property VpcIdentifier. 
         /// <para>
-        /// The ID of the VPC.
+        /// The ID of the VPC. Not supported if the target group type is <c>LAMBDA</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=50)]

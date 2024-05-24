@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.BedrockRuntime
 {
     /// <summary>
     /// <para>Implementation for accessing BedrockRuntime</para>
     ///
-    /// Describes the API operations for running inference using Bedrock models.
+    /// Describes the API operations for running inference using Amazon Bedrock models.
     /// </summary>
     public partial class AmazonBedrockRuntimeClient : AmazonServiceClient, IAmazonBedrockRuntime
     {
@@ -248,18 +249,18 @@ namespace Amazon.BedrockRuntime
         #region  InvokeModel
 
         /// <summary>
-        /// Invokes the specified Bedrock model to run inference using the input provided in the
-        /// request body. You use InvokeModel to run inference for text models, image models,
-        /// and embedding models.
+        /// Invokes the specified Amazon Bedrock model to run inference using the prompt and inference
+        /// parameters provided in the request body. You use model inference to generate text,
+        /// images, and embeddings.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
-        /// inference</a> in the Bedrock User Guide.
+        /// For example code, see <i>Invoke model code examples</i> in the <i>Amazon Bedrock User
+        /// Guide</i>. 
         /// </para>
         ///  
         /// <para>
-        /// For example requests, see Examples (after the Errors section).
+        /// This operation requires permission for the <c>bedrock:InvokeModel</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeModel service method.</param>
@@ -341,17 +342,27 @@ namespace Amazon.BedrockRuntime
         #region  InvokeModelWithResponseStream
 
         /// <summary>
-        /// Invoke the specified Bedrock model to run inference using the input provided. Return
-        /// the response in a stream.
+        /// Invoke the specified Amazon Bedrock model to run inference using the prompt and inference
+        /// parameters provided in the request body. The response is returned in a stream.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
-        /// inference</a> in the Bedrock User Guide.
+        /// To see if a model supports streaming, call <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html">GetFoundationModel</a>
+        /// and check the <c>responseStreamingSupported</c> field in the response.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The CLI doesn't support <c>InvokeModelWithResponseStream</c>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For example code, see <i>Invoke model with streaming code example</i> in the <i>Amazon
+        /// Bedrock User Guide</i>. 
         /// </para>
         ///  
         /// <para>
-        /// For an example request and response, see Examples (after the Errors section).
+        /// This operation requires permissions to perform the <c>bedrock:InvokeModelWithResponseStream</c>
+        /// action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeModelWithResponseStream service method.</param>
@@ -370,7 +381,7 @@ namespace Amazon.BedrockRuntime
         /// The model specified in the request is not ready to serve inference requests.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelStreamErrorException">
-        /// An error occurred while streaming the response.
+        /// An error occurred while streaming the response. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelTimeoutException">
         /// The request took too long to process. Processing time exceeded the model timeout length.

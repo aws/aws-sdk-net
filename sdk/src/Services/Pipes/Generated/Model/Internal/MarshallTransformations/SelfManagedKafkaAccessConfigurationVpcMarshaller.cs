@@ -46,6 +46,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SelfManagedKafkaAccessConfigurationVpc requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSecurityGroup())
             {
                 context.Writer.WritePropertyName("SecurityGroup");
@@ -77,4 +79,3 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

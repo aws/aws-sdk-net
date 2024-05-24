@@ -46,6 +46,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SalesforceKnowledgeArticleConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomKnowledgeArticleTypeConfigurations())
             {
                 context.Writer.WritePropertyName("CustomKnowledgeArticleTypeConfigurations");
@@ -93,4 +95,3 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

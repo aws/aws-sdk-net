@@ -57,6 +57,8 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
         public PodIdentityAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             PodIdentityAssociation unmarshalledObject = new PodIdentityAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

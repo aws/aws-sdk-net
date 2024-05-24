@@ -46,16 +46,32 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ArcAxisDisplayRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMax())
             {
                 context.Writer.WritePropertyName("Max");
-                context.Writer.Write(requestObject.Max);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Max))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Max));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Max);
+                }
             }
 
             if(requestObject.IsSetMin())
             {
                 context.Writer.WritePropertyName("Min");
-                context.Writer.Write(requestObject.Min);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Min))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Min));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Min);
+                }
             }
 
         }
@@ -67,4 +83,3 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

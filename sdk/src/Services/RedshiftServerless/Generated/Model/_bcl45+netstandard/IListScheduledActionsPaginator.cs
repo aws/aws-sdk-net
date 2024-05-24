@@ -18,6 +18,7 @@
  */
 using Amazon.Runtime;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
@@ -33,6 +34,6 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Enumerable containing all of the ScheduledActions
         /// </summary>
-        IPaginatedEnumerable<string> ScheduledActions { get; }
+        IPaginatedEnumerable<ScheduledActionAssociation> ScheduledActions { get; }
     }
 }

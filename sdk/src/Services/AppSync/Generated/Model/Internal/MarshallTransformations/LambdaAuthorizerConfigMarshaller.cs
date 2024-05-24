@@ -46,6 +46,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LambdaAuthorizerConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthorizerResultTtlInSeconds())
             {
                 context.Writer.WritePropertyName("authorizerResultTtlInSeconds");
@@ -73,4 +75,3 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

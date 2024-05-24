@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public AutoExportRevisionDestinationEntry Unmarshall(JsonUnmarshallerContext context)
         {
             AutoExportRevisionDestinationEntry unmarshalledObject = new AutoExportRevisionDestinationEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

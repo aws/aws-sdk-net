@@ -46,6 +46,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReleaseConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDurationSinceLastAccess())
             {
                 context.Writer.WritePropertyName("DurationSinceLastAccess");
@@ -66,4 +68,3 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

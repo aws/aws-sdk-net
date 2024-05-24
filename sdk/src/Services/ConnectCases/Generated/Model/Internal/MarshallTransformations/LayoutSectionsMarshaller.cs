@@ -46,6 +46,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LayoutSections requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSections())
             {
                 context.Writer.WritePropertyName("sections");
@@ -71,4 +73,3 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

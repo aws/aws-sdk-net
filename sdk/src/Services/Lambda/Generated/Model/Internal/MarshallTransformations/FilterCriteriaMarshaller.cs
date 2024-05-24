@@ -46,6 +46,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FilterCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilters())
             {
                 context.Writer.WritePropertyName("Filters");
@@ -71,4 +73,3 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

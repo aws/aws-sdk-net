@@ -46,6 +46,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CookieSynchronizationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowlist())
             {
                 context.Writer.WritePropertyName("allowlist");
@@ -87,4 +89,3 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,16 +46,32 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TruckDimensions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("Height");
-                context.Writer.Write(requestObject.Height);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Height))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Height));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Height);
+                }
             }
 
             if(requestObject.IsSetLength())
             {
                 context.Writer.WritePropertyName("Length");
-                context.Writer.Write(requestObject.Length);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Length))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Length));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Length);
+                }
             }
 
             if(requestObject.IsSetUnit())
@@ -67,7 +83,14 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("Width");
-                context.Writer.Write(requestObject.Width);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Width))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Width));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Width);
+                }
             }
 
         }
@@ -79,4 +102,3 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

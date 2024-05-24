@@ -46,6 +46,8 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RetentionPeriod requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRetentionPeriodUnit())
             {
                 context.Writer.WritePropertyName("RetentionPeriodUnit");
@@ -67,4 +69,3 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the resource-explorer-2-2022-07-28.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>

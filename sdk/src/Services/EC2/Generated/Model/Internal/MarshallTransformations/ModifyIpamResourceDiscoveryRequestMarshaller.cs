@@ -68,21 +68,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("AddOperatingRegion" + "." + publicRequestlistValueIndex + "." + "RegionName", StringUtils.FromString(publicRequestlistValue.RegionName));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpamResourceDiscoveryId())
                 {
                     request.Parameters.Add("IpamResourceDiscoveryId", StringUtils.FromString(publicRequest.IpamResourceDiscoveryId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveOperatingRegions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -92,11 +88,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("RemoveOperatingRegion" + "." + publicRequestlistValueIndex + "." + "RegionName", StringUtils.FromString(publicRequestlistValue.RegionName));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -46,6 +46,8 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3DestinationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("bucketName");
@@ -61,4 +63,3 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

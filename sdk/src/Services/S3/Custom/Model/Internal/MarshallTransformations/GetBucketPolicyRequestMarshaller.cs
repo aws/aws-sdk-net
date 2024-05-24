@@ -53,7 +53,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static GetBucketPolicyRequestMarshaller _instance;
 
-	    public static GetBucketPolicyRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static GetBucketPolicyRequestMarshaller Instance
 	    {
 	        get
 	        {

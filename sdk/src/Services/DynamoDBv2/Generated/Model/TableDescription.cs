@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -45,6 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         private string _latestStreamArn;
         private string _latestStreamLabel;
         private List<LocalSecondaryIndexDescription> _localSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<LocalSecondaryIndexDescription>() : null;
+        private OnDemandThroughput _onDemandThroughput;
         private ProvisionedThroughputDescription _provisionedThroughput;
         private List<ReplicaDescription> _replicas = AWSConfigs.InitializeCollections ? new List<ReplicaDescription>() : null;
         private RestoreSummary _restoreSummary;
@@ -513,6 +515,26 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetLocalSecondaryIndexes()
         {
             return this._localSecondaryIndexes != null && (this._localSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDemandThroughput. 
+        /// <para>
+        /// The maximum number of read and write units for the specified on-demand table. If you
+        /// use this parameter, you must specify <c>MaxReadRequestUnits</c>, <c>MaxWriteRequestUnits</c>,
+        /// or both.
+        /// </para>
+        /// </summary>
+        public OnDemandThroughput OnDemandThroughput
+        {
+            get { return this._onDemandThroughput; }
+            set { this._onDemandThroughput = value; }
+        }
+
+        // Check to see if OnDemandThroughput property is set
+        internal bool IsSetOnDemandThroughput()
+        {
+            return this._onDemandThroughput != null;
         }
 
         /// <summary>

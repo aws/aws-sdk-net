@@ -57,6 +57,8 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         public CloudWatchLogsLogDeliveryDescription Unmarshall(JsonUnmarshallerContext context)
         {
             CloudWatchLogsLogDeliveryDescription unmarshalledObject = new CloudWatchLogsLogDeliveryDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

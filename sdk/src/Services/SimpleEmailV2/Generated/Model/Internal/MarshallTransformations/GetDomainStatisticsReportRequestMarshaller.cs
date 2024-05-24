@@ -64,10 +64,10 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             request.AddPathResource("{Domain}", StringUtils.FromString(publicRequest.Domain));
             
             if (publicRequest.IsSetEndDate())
-                request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601(publicRequest.EndDate));
+                request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDate));
             
             if (publicRequest.IsSetStartDate())
-                request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601(publicRequest.StartDate));
+                request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDate));
             request.ResourcePath = "/v2/email/deliverability-dashboard/statistics-report/{Domain}";
             request.UseQueryString = true;
 
@@ -93,4 +93,3 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

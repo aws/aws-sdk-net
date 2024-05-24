@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.Lambda.Model
         // Check to see if ClientContextBase64 property is set
         internal bool IsSetClientContextBase64()
         {
-            return this._clientContextBase64 != null;
+            return !string.IsNullOrEmpty(this._clientContextBase64);
         }
 
         /// <summary>
@@ -191,7 +192,7 @@ namespace Amazon.Lambda.Model
         // Check to see if InvocationType property is set
         internal bool IsSetInvocationType()
         {
-            return this._invocationType != null;
+            return !string.IsNullOrEmpty(this._invocationType);
         }
 
         /// <summary>
@@ -210,7 +211,7 @@ namespace Amazon.Lambda.Model
         // Check to see if LogType property is set
         internal bool IsSetLogType()
         {
-            return this._logType != null;
+            return !string.IsNullOrEmpty(this._logType);
         }
 
         /// <summary>

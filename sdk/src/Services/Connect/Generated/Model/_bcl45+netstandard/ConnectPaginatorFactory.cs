@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -409,6 +410,22 @@ namespace Amazon.Connect.Model
         public ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request) 
         {
             return new SearchAvailablePhoneNumbersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchContactFlowModules operation
+        ///</summary>
+        public ISearchContactFlowModulesPaginator SearchContactFlowModules(SearchContactFlowModulesRequest request) 
+        {
+            return new SearchContactFlowModulesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchContactFlows operation
+        ///</summary>
+        public ISearchContactFlowsPaginator SearchContactFlows(SearchContactFlowsRequest request) 
+        {
+            return new SearchContactFlowsPaginator(this.client, request);
         }
 
         /// <summary>

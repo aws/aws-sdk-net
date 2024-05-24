@@ -68,7 +68,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -78,60 +77,48 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpamPoolId())
                 {
                     request.Parameters.Add("IpamPoolId", StringUtils.FromString(publicRequest.IpamPoolId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpamScopeId())
                 {
                     request.Parameters.Add("IpamScopeId", StringUtils.FromString(publicRequest.IpamScopeId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceId())
                 {
                     request.Parameters.Add("ResourceId", StringUtils.FromString(publicRequest.ResourceId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceOwner())
                 {
                     request.Parameters.Add("ResourceOwner", StringUtils.FromString(publicRequest.ResourceOwner));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceTag())
                 {
                     if(publicRequest.ResourceTag.IsSetKey())
                     {
                         request.Parameters.Add("ResourceTag" + "." + "Key", StringUtils.FromString(publicRequest.ResourceTag.Key));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ResourceTag.IsSetValue())
                     {
                         request.Parameters.Add("ResourceTag" + "." + "Value", StringUtils.FromString(publicRequest.ResourceTag.Value));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceType())
                 {
                     request.Parameters.Add("ResourceType", StringUtils.FromString(publicRequest.ResourceType));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

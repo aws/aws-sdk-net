@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public EntityRecognizerProperties Unmarshall(JsonUnmarshallerContext context)
         {
             EntityRecognizerProperties unmarshalledObject = new EntityRecognizerProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -191,4 +193,3 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

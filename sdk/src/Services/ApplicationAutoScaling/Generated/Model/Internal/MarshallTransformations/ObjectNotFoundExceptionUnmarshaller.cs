@@ -84,4 +84,3 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

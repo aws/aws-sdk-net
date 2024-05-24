@@ -57,6 +57,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         public ConfigurationTag Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigurationTag unmarshalledObject = new ConfigurationTag();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         public DNISEmergencyCallingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DNISEmergencyCallingConfiguration unmarshalledObject = new DNISEmergencyCallingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AssertionAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEmail())
             {
                 context.Writer.WritePropertyName("email");
@@ -91,4 +93,3 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

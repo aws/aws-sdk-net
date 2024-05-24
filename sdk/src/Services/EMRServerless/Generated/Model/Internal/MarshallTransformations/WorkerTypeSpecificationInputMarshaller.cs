@@ -46,6 +46,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkerTypeSpecificationInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetImageConfiguration())
             {
                 context.Writer.WritePropertyName("imageConfiguration");
@@ -66,4 +68,3 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

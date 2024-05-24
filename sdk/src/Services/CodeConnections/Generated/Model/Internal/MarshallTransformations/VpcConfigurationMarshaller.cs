@@ -46,6 +46,8 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VpcConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("SecurityGroupIds");
@@ -89,4 +91,3 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

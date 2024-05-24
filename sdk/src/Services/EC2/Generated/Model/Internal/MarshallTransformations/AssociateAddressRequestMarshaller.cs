@@ -63,32 +63,26 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllocationId", StringUtils.FromString(publicRequest.AllocationId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAllowReassociation())
                 {
                     request.Parameters.Add("AllowReassociation", StringUtils.FromBool(publicRequest.AllowReassociation));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkInterfaceId())
                 {
                     request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrivateIpAddress())
                 {
                     request.Parameters.Add("PrivateIpAddress", StringUtils.FromString(publicRequest.PrivateIpAddress));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPublicIp())
                 {
                     request.Parameters.Add("PublicIp", StringUtils.FromString(publicRequest.PublicIp));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -46,6 +46,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StartCodegenJobData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoGenerateForms())
             {
                 context.Writer.WritePropertyName("autoGenerateForms");
@@ -108,4 +110,3 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TokenExchangeGrant requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
         }
 
         /// <summary>
@@ -55,4 +57,3 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Original. 
         /// <para>
         /// The finding provider's original value for the severity.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum length of 1. Maximum length of 64.
         /// </para>
         /// </summary>
         public string Original

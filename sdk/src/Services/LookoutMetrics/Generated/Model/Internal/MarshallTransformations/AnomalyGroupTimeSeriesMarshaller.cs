@@ -46,6 +46,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AnomalyGroupTimeSeries requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAnomalyGroupId())
             {
                 context.Writer.WritePropertyName("AnomalyGroupId");
@@ -67,4 +69,3 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

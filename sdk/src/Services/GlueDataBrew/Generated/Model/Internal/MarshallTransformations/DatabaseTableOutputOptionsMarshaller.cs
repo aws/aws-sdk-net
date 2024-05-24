@@ -46,6 +46,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatabaseTableOutputOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTableName())
             {
                 context.Writer.WritePropertyName("TableName");
@@ -72,4 +74,3 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

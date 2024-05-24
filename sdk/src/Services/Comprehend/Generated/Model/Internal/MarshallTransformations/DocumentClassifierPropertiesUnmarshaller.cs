@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public DocumentClassifierProperties Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentClassifierProperties unmarshalledObject = new DocumentClassifierProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -197,4 +199,3 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.BedrockAgent.Model
         /// knowledge base.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=1011)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string EmbeddingModelArn
         {
             get { return this._embeddingModelArn; }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class AvailConfiguration
     {
         private AvailSettings _availSettings;
+        private Scte35SegmentationScope _scte35SegmentationScope;
 
         /// <summary>
         /// Gets and sets the property AvailSettings. Controls how SCTE-35 messages create cues.
@@ -51,6 +53,28 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetAvailSettings()
         {
             return this._availSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scte35SegmentationScope. Configures whether SCTE 35 passthrough
+        /// triggers segment breaks in all output groups that use segmented outputs. Insertion
+        /// of a SCTE 35 message typically results in a segment break, in addition to the regular
+        /// cadence of breaks. The segment breaks appear in video outputs, audio outputs, and
+        /// captions outputs (if any).ALL_OUTPUT_GROUPS: Default. Insert the segment break in
+        /// in all output groups that have segmented outputs. This is the legacy behavior.SCTE35_ENABLED_OUTPUT_GROUPS:
+        /// Insert the segment break only in output groups that have SCTE 35 passthrough enabled.
+        /// This is the recommended value, because it reduces unnecessary segment breaks.
+        /// </summary>
+        public Scte35SegmentationScope Scte35SegmentationScope
+        {
+            get { return this._scte35SegmentationScope; }
+            set { this._scte35SegmentationScope = value; }
+        }
+
+        // Check to see if Scte35SegmentationScope property is set
+        internal bool IsSetScte35SegmentationScope()
+        {
+            return this._scte35SegmentationScope != null;
         }
 
     }

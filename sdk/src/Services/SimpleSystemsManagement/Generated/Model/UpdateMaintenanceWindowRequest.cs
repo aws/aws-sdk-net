@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -294,6 +295,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// window to become active. <c>StartDate</c> allows you to delay activation of the maintenance
         /// window until the specified future date.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When using a rate schedule, if you provide a start date that occurs in the past, the
+        /// current date and time are used as the start date. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public string StartDate
         {

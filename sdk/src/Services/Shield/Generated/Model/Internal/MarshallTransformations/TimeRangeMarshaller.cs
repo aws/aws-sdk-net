@@ -46,6 +46,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimeRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFromInclusive())
             {
                 context.Writer.WritePropertyName("FromInclusive");
@@ -67,4 +69,3 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

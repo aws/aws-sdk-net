@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
@@ -36,9 +37,29 @@ namespace Amazon.ControlTower.Model
     /// </summary>
     public partial class ListEnabledControlsRequest : AmazonControlTowerRequest
     {
+        private EnabledControlFilter _filter;
         private int? _maxResults;
         private string _nextToken;
         private string _targetIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// An input filter for the <c>ListCEnabledControls</c> API that lets you select the types
+        /// of control operations to view.
+        /// </para>
+        /// </summary>
+        public EnabledControlFilter Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -85,7 +106,7 @@ namespace Amazon.ControlTower.Model
         /// overview page</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
+        [AWSProperty(Min=20, Max=2048)]
         public string TargetIdentifier
         {
             get { return this._targetIdentifier; }

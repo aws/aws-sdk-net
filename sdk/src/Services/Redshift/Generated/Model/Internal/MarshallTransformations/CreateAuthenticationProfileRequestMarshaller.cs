@@ -63,12 +63,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AuthenticationProfileContent", StringUtils.FromString(publicRequest.AuthenticationProfileContent));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAuthenticationProfileName())
                 {
                     request.Parameters.Add("AuthenticationProfileName", StringUtils.FromString(publicRequest.AuthenticationProfileName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

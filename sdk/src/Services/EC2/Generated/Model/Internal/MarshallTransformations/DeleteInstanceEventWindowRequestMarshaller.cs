@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ForceDelete", StringUtils.FromBool(publicRequest.ForceDelete));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceEventWindowId())
                 {
                     request.Parameters.Add("InstanceEventWindowId", StringUtils.FromString(publicRequest.InstanceEventWindowId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

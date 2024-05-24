@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InferenceComponentComputeResourceRequirements requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxMemoryRequiredInMb())
             {
                 context.Writer.WritePropertyName("MaxMemoryRequiredInMb");
@@ -61,13 +63,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfAcceleratorDevicesRequired())
             {
                 context.Writer.WritePropertyName("NumberOfAcceleratorDevicesRequired");
-                context.Writer.Write(requestObject.NumberOfAcceleratorDevicesRequired);
+                if(StringUtils.IsSpecialFloatValue(requestObject.NumberOfAcceleratorDevicesRequired))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.NumberOfAcceleratorDevicesRequired));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.NumberOfAcceleratorDevicesRequired);
+                }
             }
 
             if(requestObject.IsSetNumberOfCpuCoresRequired())
             {
                 context.Writer.WritePropertyName("NumberOfCpuCoresRequired");
-                context.Writer.Write(requestObject.NumberOfCpuCoresRequired);
+                if(StringUtils.IsSpecialFloatValue(requestObject.NumberOfCpuCoresRequired))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.NumberOfCpuCoresRequired));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.NumberOfCpuCoresRequired);
+                }
             }
 
         }
@@ -79,4 +95,3 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(QueriesConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetQueries())
             {
                 context.Writer.WritePropertyName("Queries");
@@ -71,4 +73,3 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

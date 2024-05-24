@@ -63,12 +63,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AccessString", StringUtils.FromString(publicRequest.AccessString));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAppendAccessString())
                 {
                     request.Parameters.Add("AppendAccessString", StringUtils.FromString(publicRequest.AppendAccessString));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAuthenticationMode())
                 {
                     if(publicRequest.AuthenticationMode.IsSetPasswords())
@@ -80,19 +78,15 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                             publicRequestAuthenticationModelistValueIndex++;
                         }
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.AuthenticationMode.IsSetType())
                     {
                         request.Parameters.Add("AuthenticationMode" + "." + "Type", StringUtils.FromString(publicRequest.AuthenticationMode.Type));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNoPasswordRequired())
                 {
                     request.Parameters.Add("NoPasswordRequired", StringUtils.FromBool(publicRequest.NoPasswordRequired));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPasswords())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -102,12 +96,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserId())
                 {
                     request.Parameters.Add("UserId", StringUtils.FromString(publicRequest.UserId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

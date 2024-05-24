@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public Homogeneous Unmarshall(JsonUnmarshallerContext context)
         {
             Homogeneous unmarshalledObject = new Homogeneous();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         }
     }
 }
-#pragma warning restore CS0612,CS0618

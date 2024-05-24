@@ -68,50 +68,40 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Attribute" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetReplace())
                         {
                             request.Parameters.Add("Attribute" + "." + publicRequestlistValueIndex + "." + "Replace", StringUtils.FromBool(publicRequestlistValue.Replace));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Attribute" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDomainName())
                 {
                     request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExpected())
                 {
                     if(publicRequest.Expected.IsSetExists())
                     {
                         request.Parameters.Add("Expected" + "." + "Exists", StringUtils.FromBool(publicRequest.Expected.Exists));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Expected.IsSetName())
                     {
                         request.Parameters.Add("Expected" + "." + "Name", StringUtils.FromString(publicRequest.Expected.Name));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Expected.IsSetValue())
                     {
                         request.Parameters.Add("Expected" + "." + "Value", StringUtils.FromString(publicRequest.Expected.Value));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetItemName())
                 {
                     request.Parameters.Add("ItemName", StringUtils.FromString(publicRequest.ItemName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -64,18 +65,18 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// The default AWS OpsWorks Stacks agent version. You have the following options:
+        /// The default OpsWorks Stacks agent version. You have the following options:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Auto-update - Set this parameter to <c>LATEST</c>. AWS OpsWorks Stacks automatically
-        /// installs new agent versions on the stack's instances as soon as they are available.
+        /// Auto-update - Set this parameter to <c>LATEST</c>. OpsWorks Stacks automatically installs
+        /// new agent versions on the stack's instances as soon as they are available.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Fixed version - Set this parameter to your preferred agent version. To update the
-        /// agent version, you must edit the stack configuration and specify a new version. AWS
-        /// OpsWorks Stacks then automatically installs that version on the stack's instances.
+        /// agent version, you must edit the stack configuration and specify a new version. OpsWorks
+        /// Stacks installs that version on the stack's instances.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -260,14 +261,14 @@ namespace Amazon.OpsWorks.Model
         ///  <ul> <li> 
         /// <para>
         /// A supported Linux operating system: An Amazon Linux version, such as <c>Amazon Linux
-        /// 2018.03</c>, <c>Amazon Linux 2017.09</c>, <c>Amazon Linux 2017.03</c>, <c>Amazon Linux
-        /// 2016.09</c>, <c>Amazon Linux 2016.03</c>, <c>Amazon Linux 2015.09</c>, or <c>Amazon
-        /// Linux 2015.03</c>.
+        /// 2</c>, <c>Amazon Linux 2018.03</c>, <c>Amazon Linux 2017.09</c>, <c>Amazon Linux 2017.03</c>,
+        /// <c>Amazon Linux 2016.09</c>, <c>Amazon Linux 2016.03</c>, <c>Amazon Linux 2015.09</c>,
+        /// or <c>Amazon Linux 2015.03</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A supported Ubuntu operating system, such as <c>Ubuntu 16.04 LTS</c>, <c>Ubuntu 14.04
-        /// LTS</c>, or <c>Ubuntu 12.04 LTS</c>.
+        /// A supported Ubuntu operating system, such as <c>Ubuntu 18.04 LTS</c>, <c>Ubuntu 16.04
+        /// LTS</c>, <c>Ubuntu 14.04 LTS</c>, or <c>Ubuntu 12.04 LTS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -293,9 +294,10 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default option is the stack's current operating system. For more information about
-        /// supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-        /// OpsWorks Stacks Operating Systems</a>.
+        /// The default option is the stack's current operating system. Not all operating systems
+        /// are supported with all versions of Chef. For more information about supported operating
+        /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks
+        /// Stacks Operating Systems</a>.
         /// </para>
         /// </summary>
         public string DefaultOs
@@ -335,8 +337,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DefaultSshKeyName. 
         /// <para>
         /// A default Amazon EC2 key-pair name. The default value is <c>none</c>. If you specify
-        /// a key-pair name, AWS OpsWorks Stacks installs the public key on the instance and you
-        /// can use the private key with an SSH client to log in to the instance. For more information,
+        /// a key-pair name, OpsWorks Stacks installs the public key on the instance and you can
+        /// use the private key with an SSH client to log in to the instance. For more information,
         /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html">
         /// Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html">
         /// Managing SSH Access</a>. You can override this setting by specifying a different key
@@ -452,7 +454,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The stack's new name.
+        /// The stack's new name. Stack names can be a maximum of 64 characters.
         /// </para>
         /// </summary>
         public string Name
@@ -525,27 +527,27 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property UseOpsworksSecurityGroups. 
         /// <para>
-        /// Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's
+        /// Whether to associate the OpsWorks Stacks built-in security groups with the stack's
         /// layers.
         /// </para>
         ///  
         /// <para>
-        /// AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each
+        /// OpsWorks Stacks provides a standard set of built-in security groups, one for each
         /// layer, which are associated with layers by default. <c>UseOpsworksSecurityGroups</c>
         /// allows you to provide your own custom security groups instead of using the built-in
         /// groups. <c>UseOpsworksSecurityGroups</c> has the following settings: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// True - AWS OpsWorks Stacks automatically associates the appropriate built-in security
+        /// True - OpsWorks Stacks automatically associates the appropriate built-in security
         /// group with each layer (default setting). You can associate additional security groups
         /// with a layer after you create it, but you cannot delete the built-in security group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// False - AWS OpsWorks Stacks does not associate built-in security groups with layers.
-        /// You must create appropriate EC2 security groups and associate a security group with
-        /// each layer that you create. However, you can still manually associate a built-in security
+        /// False - OpsWorks Stacks does not associate built-in security groups with layers. You
+        /// must create appropriate EC2 security groups and associate a security group with each
+        /// layer that you create. However, you can still manually associate a built-in security
         /// group with a layer on. Custom security groups are required only for those layers that
         /// need custom settings.
         /// </para>

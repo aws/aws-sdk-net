@@ -46,6 +46,8 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DashPackage requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdsOnDeliveryRestrictions())
             {
                 context.Writer.WritePropertyName("adsOnDeliveryRestrictions");
@@ -171,4 +173,3 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

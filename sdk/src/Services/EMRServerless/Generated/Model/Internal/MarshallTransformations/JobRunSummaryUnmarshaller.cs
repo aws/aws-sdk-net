@@ -57,6 +57,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         public JobRunSummary Unmarshall(JsonUnmarshallerContext context)
         {
             JobRunSummary unmarshalledObject = new JobRunSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -155,4 +157,3 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

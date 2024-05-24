@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for JobDescriptor Object
     /// </summary>  
-    public class JobDescriptorUnmarshaller : IUnmarshaller<JobDescriptor, XmlUnmarshallerContext>
+    public class JobDescriptorUnmarshaller : IUnmarshaller<JobDescriptor, XmlUnmarshallerContext>, IUnmarshaller<JobDescriptor, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -182,6 +182,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public JobDescriptor Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static JobDescriptorUnmarshaller _instance = new JobDescriptorUnmarshaller();        
 
@@ -197,4 +207,3 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

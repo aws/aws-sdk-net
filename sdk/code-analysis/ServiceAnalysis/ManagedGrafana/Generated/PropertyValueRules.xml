@@ -66,6 +66,37 @@
     <pattern>^g-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.CreateWorkspaceServiceAccountRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.CreateWorkspaceServiceAccountRequest.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.CreateWorkspaceServiceAccountResponse.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.CreateWorkspaceServiceAccountTokenRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.CreateWorkspaceServiceAccountTokenRequest.SecondsToLive</property>
+    <min>1</min>
+    <max>2592000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.CreateWorkspaceServiceAccountTokenRequest.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.CreateWorkspaceServiceAccountTokenResponse.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedGrafana.Model.DeleteWorkspaceRequest.WorkspaceId</property>
     <pattern>^g-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -85,6 +116,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedGrafana.Model.DeleteWorkspaceApiKeyResponse.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.DeleteWorkspaceServiceAccountRequest.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.DeleteWorkspaceServiceAccountResponse.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.DeleteWorkspaceServiceAccountTokenRequest.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.DeleteWorkspaceServiceAccountTokenResponse.WorkspaceId</property>
     <pattern>^g-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -145,6 +192,32 @@
     <property>Amazon.ManagedGrafana.Model.ListWorkspacesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.ListWorkspaceServiceAccountsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.ListWorkspaceServiceAccountsRequest.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.ListWorkspaceServiceAccountsResponse.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.ListWorkspaceServiceAccountTokensRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.ListWorkspaceServiceAccountTokensRequest.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedGrafana.Model.ListWorkspaceServiceAccountTokensResponse.WorkspaceId</property>
+    <pattern>^g-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedGrafana.Model.UpdatePermissionsRequest.WorkspaceId</property>

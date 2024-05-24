@@ -46,6 +46,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(APISchema requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPayload())
             {
                 context.Writer.WritePropertyName("payload");
@@ -72,4 +74,3 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

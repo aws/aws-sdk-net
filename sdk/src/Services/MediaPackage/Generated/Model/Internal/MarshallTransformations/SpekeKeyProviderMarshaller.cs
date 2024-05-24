@@ -46,6 +46,8 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SpekeKeyProvider requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCertificateArn())
             {
                 context.Writer.WritePropertyName("certificateArn");
@@ -101,4 +103,3 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

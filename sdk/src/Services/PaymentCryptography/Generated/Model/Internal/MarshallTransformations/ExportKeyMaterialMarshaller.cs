@@ -46,6 +46,8 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExportKeyMaterial requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKeyCryptogram())
             {
                 context.Writer.WritePropertyName("KeyCryptogram");
@@ -88,4 +90,3 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

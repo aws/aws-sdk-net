@@ -76,13 +76,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ObjectLockRetention Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
         }
 
         private static ObjectLockRetentionUnmarshaller _instance;
-        
+
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ObjectLockRetentionUnmarshaller Instance
         {
             get

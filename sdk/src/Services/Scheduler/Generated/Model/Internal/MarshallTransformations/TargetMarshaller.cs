@@ -46,6 +46,8 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Target requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
@@ -150,4 +152,3 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

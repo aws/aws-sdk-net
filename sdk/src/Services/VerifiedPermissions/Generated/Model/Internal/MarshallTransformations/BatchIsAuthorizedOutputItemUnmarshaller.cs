@@ -57,6 +57,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         public BatchIsAuthorizedOutputItem Unmarshall(JsonUnmarshallerContext context)
         {
             BatchIsAuthorizedOutputItem unmarshalledObject = new BatchIsAuthorizedOutputItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

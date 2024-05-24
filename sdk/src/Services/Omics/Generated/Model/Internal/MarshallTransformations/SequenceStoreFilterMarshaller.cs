@@ -46,16 +46,18 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SequenceStoreFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCreatedAfter())
             {
                 context.Writer.WritePropertyName("createdAfter");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.CreatedAfter));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CreatedAfter));
             }
 
             if(requestObject.IsSetCreatedBefore())
             {
                 context.Writer.WritePropertyName("createdBefore");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.CreatedBefore));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CreatedBefore));
             }
 
             if(requestObject.IsSetName())
@@ -73,4 +75,3 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

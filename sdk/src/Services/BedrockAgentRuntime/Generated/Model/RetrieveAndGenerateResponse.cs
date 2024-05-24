@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class RetrieveAndGenerateResponse : AmazonWebServiceResponse
     {
         private List<Citation> _citations = AWSConfigs.InitializeCollections ? new List<Citation>() : null;
+        private GuadrailAction _guardrailAction;
         private RetrieveAndGenerateOutput _output;
         private string _sessionId;
 
@@ -54,6 +56,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetCitations()
         {
             return this._citations != null && (this._citations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GuardrailAction. 
+        /// <para>
+        /// Specifies if there is a guardrail intervention in the response.
+        /// </para>
+        /// </summary>
+        public GuadrailAction GuardrailAction
+        {
+            get { return this._guardrailAction; }
+            set { this._guardrailAction = value; }
+        }
+
+        // Check to see if GuardrailAction property is set
+        internal bool IsSetGuardrailAction()
+        {
+            return this._guardrailAction != null;
         }
 
         /// <summary>

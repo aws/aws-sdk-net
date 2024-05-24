@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -87,6 +88,7 @@ namespace Amazon.RDS.Model
         private bool? _enableCustomerOwnedIp;
         private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
+        private string _engineLifecycleSupport;
         private int? _iops;
         private string _licenseModel;
         private bool? _multiAZ;
@@ -985,6 +987,54 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineLifecycleSupport. 
+        /// <para>
+        /// The life cycle type for this DB instance.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// By default, this value is set to <c>open-source-rds-extended-support</c>, which enrolls
+        /// your DB instance into Amazon RDS Extended Support. At the end of standard support,
+        /// you can avoid charges for Extended Support by setting the value to <c>open-source-rds-extended-support-disabled</c>.
+        /// In this case, RDS automatically upgrades your restored DB instance to a higher engine
+        /// version, if the major engine version is past its end of standard support date.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can use this setting to enroll your DB instance into Amazon RDS Extended Support.
+        /// With RDS Extended Support, you can run the selected major engine version on your DB
+        /// instance past the end of standard support for that engine version. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+        /// Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora
+        /// DB instances, the life cycle type is managed by the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>open-source-rds-extended-support | open-source-rds-extended-support-disabled</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>open-source-rds-extended-support</c> 
+        /// </para>
+        /// </summary>
+        public string EngineLifecycleSupport
+        {
+            get { return this._engineLifecycleSupport; }
+            set { this._engineLifecycleSupport = value; }
+        }
+
+        // Check to see if EngineLifecycleSupport property is set
+        internal bool IsSetEngineLifecycleSupport()
+        {
+            return this._engineLifecycleSupport != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
         /// Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations
@@ -1021,18 +1071,49 @@ namespace Amazon.RDS.Model
         /// <para>
         /// License model information for the restored DB instance.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// License models for RDS for Db2 require additional configuration. The Bring Your Own
+        /// License (BYOL) model requires a custom parameter group. The Db2 license through Amazon
+        /// Web Services Marketplace model requires an Amazon Web Services Marketplace subscription.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS
+        /// for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.
         /// </para>
         ///  
         /// <para>
-        /// Default: Same as source.
+        /// Valid Values:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Valid Values: <c>license-included</c> | <c>bring-your-own-license</c> | <c>general-public-license</c>
-        /// 
+        /// RDS for Db2 - <c>bring-your-own-license | marketplace-license</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for MariaDB - <c>general-public-license</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for Microsoft SQL Server - <c>license-included</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for MySQL - <c>general-public-license</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for Oracle - <c>bring-your-own-license | license-included</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for PostgreSQL - <c>postgresql-license</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: Same as the source.
         /// </para>
         /// </summary>
         public string LicenseModel

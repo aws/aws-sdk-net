@@ -46,6 +46,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TrustedTokenIssuerConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOidcJwtConfiguration())
             {
                 context.Writer.WritePropertyName("OidcJwtConfiguration");
@@ -66,4 +68,3 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

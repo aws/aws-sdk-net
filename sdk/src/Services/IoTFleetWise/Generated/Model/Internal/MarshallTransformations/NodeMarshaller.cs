@@ -46,6 +46,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Node requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActuator())
             {
                 context.Writer.WritePropertyName("actuator");
@@ -121,4 +123,3 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

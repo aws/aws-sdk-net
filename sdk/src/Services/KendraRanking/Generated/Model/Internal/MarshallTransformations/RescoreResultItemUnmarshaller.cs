@@ -57,6 +57,8 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
         public RescoreResultItem Unmarshall(JsonUnmarshallerContext context)
         {
             RescoreResultItem unmarshalledObject = new RescoreResultItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

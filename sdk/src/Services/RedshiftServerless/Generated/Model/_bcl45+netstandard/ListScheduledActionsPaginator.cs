@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
@@ -44,8 +45,8 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Enumerable containing all of the ScheduledActions
         /// </summary>
-        public IPaginatedEnumerable<string> ScheduledActions => 
-            new PaginatedResultKeyResponse<ListScheduledActionsResponse, string>(this, (i) => i.ScheduledActions ?? new List<string>());
+        public IPaginatedEnumerable<ScheduledActionAssociation> ScheduledActions => 
+            new PaginatedResultKeyResponse<ListScheduledActionsResponse, ScheduledActionAssociation>(this, (i) => i.ScheduledActions ?? new List<ScheduledActionAssociation>());
 
         internal ListScheduledActionsPaginator(IAmazonRedshiftServerless client, ListScheduledActionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.RedshiftServerless.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListScheduledActionsResponse> IPaginator<ListScheduledActionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListScheduledActionsResponse> IPaginator<ListScheduledActionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public CreateS3DataAccessFromS3BucketResponseDetails Unmarshall(JsonUnmarshallerContext context)
         {
             CreateS3DataAccessFromS3BucketResponseDetails unmarshalledObject = new CreateS3DataAccessFromS3BucketResponseDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

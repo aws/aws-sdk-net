@@ -46,6 +46,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EndpointConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTypes())
             {
                 context.Writer.WritePropertyName("types");
@@ -77,4 +79,3 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

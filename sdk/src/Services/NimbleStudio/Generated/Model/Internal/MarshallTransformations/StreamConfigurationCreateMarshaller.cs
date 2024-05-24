@@ -46,6 +46,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamConfigurationCreate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutomaticTerminationMode())
             {
                 context.Writer.WritePropertyName("automaticTerminationMode");
@@ -140,4 +142,3 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

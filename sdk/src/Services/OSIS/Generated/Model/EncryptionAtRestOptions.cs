@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OSIS.Model
 {
     /// <summary>
-    /// Options to control how OpenSearch encrypts all data-at-rest.
+    /// Options to control how OpenSearch encrypts buffer data.
     /// </summary>
     public partial class EncryptionAtRestOptions
     {
@@ -38,8 +39,8 @@ namespace Amazon.OSIS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The ARN of the KMS key used to encrypt data-at-rest in OpenSearch Ingestion. By default,
-        /// data is encrypted using an AWS owned key.
+        /// The ARN of the KMS key used to encrypt buffer data. By default, data is encrypted
+        /// using an Amazon Web Services owned key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=2048)]

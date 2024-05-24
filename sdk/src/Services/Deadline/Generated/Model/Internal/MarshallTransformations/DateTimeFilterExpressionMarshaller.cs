@@ -46,10 +46,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DateTimeFilterExpression requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDateTime())
             {
                 context.Writer.WritePropertyName("dateTime");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.DateTime));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.DateTime));
             }
 
             if(requestObject.IsSetName())
@@ -73,4 +75,3 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

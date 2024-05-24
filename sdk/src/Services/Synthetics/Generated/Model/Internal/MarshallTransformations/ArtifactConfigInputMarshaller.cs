@@ -46,6 +46,8 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ArtifactConfigInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Encryption())
             {
                 context.Writer.WritePropertyName("S3Encryption");
@@ -66,4 +68,3 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

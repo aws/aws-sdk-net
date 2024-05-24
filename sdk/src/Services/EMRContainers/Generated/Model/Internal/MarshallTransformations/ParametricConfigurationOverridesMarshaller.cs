@@ -46,6 +46,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ParametricConfigurationOverrides requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApplicationConfiguration())
             {
                 context.Writer.WritePropertyName("applicationConfiguration");
@@ -82,4 +84,3 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

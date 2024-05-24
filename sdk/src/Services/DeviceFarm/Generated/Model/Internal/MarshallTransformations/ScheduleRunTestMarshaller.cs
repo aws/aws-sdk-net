@@ -46,6 +46,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScheduleRunTest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilter())
             {
                 context.Writer.WritePropertyName("filter");
@@ -93,4 +95,3 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

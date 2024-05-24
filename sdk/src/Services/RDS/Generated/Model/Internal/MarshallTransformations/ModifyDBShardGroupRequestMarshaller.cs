@@ -63,12 +63,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBShardGroupIdentifier", StringUtils.FromString(publicRequest.DBShardGroupIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxACU())
                 {
                     request.Parameters.Add("MaxACU", StringUtils.FromDouble(publicRequest.MaxACU));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

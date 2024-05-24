@@ -218,6 +218,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             }
         }
 
+        /// <summary>
+        /// Return false for reading the entire response
+        /// </summary>
+        /// <param name="response"></param>
+        /// <param name="readEntireResponse"></param>
+        /// <returns></returns>
         protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
         {
             return false;
@@ -228,4 +234,3 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public override bool HasStreamingProperty => true;
     }
 }
-#pragma warning restore CS0612,CS0618

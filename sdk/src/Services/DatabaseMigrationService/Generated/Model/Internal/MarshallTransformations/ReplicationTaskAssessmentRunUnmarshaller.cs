@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public ReplicationTaskAssessmentRun Unmarshall(JsonUnmarshallerContext context)
         {
             ReplicationTaskAssessmentRun unmarshalledObject = new ReplicationTaskAssessmentRun();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -155,4 +157,3 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

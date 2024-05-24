@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         public UriPathRouteInput Unmarshall(JsonUnmarshallerContext context)
         {
             UriPathRouteInput unmarshalledObject = new UriPathRouteInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         }
     }
 }
-#pragma warning restore CS0612,CS0618

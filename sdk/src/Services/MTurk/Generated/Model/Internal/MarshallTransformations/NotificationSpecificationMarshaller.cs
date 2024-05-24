@@ -46,6 +46,8 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NotificationSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("Destination");
@@ -84,4 +86,3 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

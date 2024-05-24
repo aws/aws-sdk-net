@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
-    /// Represents an object when updating a rule.
+    /// Describes a rule update.
     /// </summary>
     public partial class RuleUpdate
     {

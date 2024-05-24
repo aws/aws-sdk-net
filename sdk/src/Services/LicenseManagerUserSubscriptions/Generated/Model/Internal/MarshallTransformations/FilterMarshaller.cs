@@ -46,6 +46,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         /// <returns></returns>
         public void Marshall(Filter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttribute())
             {
                 context.Writer.WritePropertyName("Attribute");
@@ -73,4 +75,3 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
 
     }
 }
-#pragma warning restore CS0612,CS0618

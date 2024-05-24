@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ElasticChannelConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaximumSubChannels())
             {
                 context.Writer.WritePropertyName("MaximumSubChannels");
@@ -73,4 +75,3 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

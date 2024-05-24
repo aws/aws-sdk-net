@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property BlueprintId. 
         /// <para>
-        /// The ID for the virtual private server image (<c>app_wordpress_4_4</c> or <c>app_lamp_7_0</c>).
+        /// The ID for the virtual private server image (<c>app_wordpress_x_x</c> or <c>app_lamp_x_x</c>).
         /// </para>
         /// </summary>
         public string BlueprintId

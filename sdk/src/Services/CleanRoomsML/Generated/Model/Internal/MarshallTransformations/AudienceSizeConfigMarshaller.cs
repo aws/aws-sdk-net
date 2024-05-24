@@ -46,6 +46,8 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudienceSizeConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAudienceSizeBins())
             {
                 context.Writer.WritePropertyName("audienceSizeBins");
@@ -72,4 +74,3 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

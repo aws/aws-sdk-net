@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -79,8 +80,8 @@ namespace Amazon.VPCLattice.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status. You can retry the operation if the status is <c>DELETE_FAILED</c>. However,
-        /// if you retry it when the status is <c>DELETE_IN_PROGRESS</c>, there is no change in
-        /// the status.
+        /// if you retry it while the status is <c>DELETE_IN_PROGRESS</c>, there is no change
+        /// in the status.
         /// </para>
         /// </summary>
         public ServiceNetworkVpcAssociationStatus Status

@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public RouteHasOutOfScopeEndpointViolation Unmarshall(JsonUnmarshallerContext context)
         {
             RouteHasOutOfScopeEndpointViolation unmarshalledObject = new RouteHasOutOfScopeEndpointViolation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -155,4 +157,3 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

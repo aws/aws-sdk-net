@@ -46,6 +46,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RecipeStep requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("Action");
@@ -82,4 +84,3 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

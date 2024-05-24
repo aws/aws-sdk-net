@@ -46,6 +46,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InviteAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPrincipal())
             {
                 context.Writer.WritePropertyName("Principal");
@@ -61,4 +63,3 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.SSOOIDC
 {
     /// <summary>
@@ -396,8 +397,8 @@ namespace Amazon.SSOOIDC
         /// <summary>
         /// Creates and returns access and refresh tokens for clients and applications that are
         /// authenticated using IAM entities. The access token can be used to fetch short-term
-        /// credentials for the assigned AWS accounts or to access application APIs using <c>bearer</c>
-        /// authentication.
+        /// credentials for the assigned Amazon Web Services accounts or to access application
+        /// APIs using <c>bearer</c> authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTokenWithIAM service method.</param>
         /// 
@@ -508,12 +509,18 @@ namespace Amazon.SSOOIDC
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidClientMetadataException">
         /// Indicates that the client information sent in the request during registration is invalid.
         /// </exception>
+        /// <exception cref="Amazon.SSOOIDC.Model.InvalidRedirectUriException">
+        /// Indicates that one or more redirect URI in the request is not supported for this operation.
+        /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidRequestException">
         /// Indicates that something is wrong with the input to the request. For example, a required
         /// parameter might be missing or out of range.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidScopeException">
         /// Indicates that the scope provided in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
+        /// Indicates that the grant type in the request is not supported by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/RegisterClient">REST API Reference for RegisterClient Operation</seealso>
         public virtual RegisterClientResponse RegisterClient(RegisterClientRequest request)

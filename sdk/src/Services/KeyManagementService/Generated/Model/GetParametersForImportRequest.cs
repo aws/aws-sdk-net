@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
@@ -62,7 +63,7 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The public key (or "wrapping key") of an RSA key pair that KMS generates.
+    /// The public key (or "wrapping key") of an asymmetric key pair that KMS generates.
     /// </para>
     ///  
     /// <para>
@@ -195,8 +196,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property WrappingAlgorithm. 
         /// <para>
-        /// The algorithm you will use with the RSA public key (<c>PublicKey</c>) in the response
-        /// to protect your key material during import. For more information, see <a href="kms/latest/developerguide/importing-keys-get-public-key-and-token.html#select-wrapping-algorithm">Select
+        /// The algorithm you will use with the asymmetric public key (<c>PublicKey</c>) in the
+        /// response to protect your key material during import. For more information, see <a
+        /// href="kms/latest/developerguide/importing-keys-get-public-key-and-token.html#select-wrapping-algorithm">Select
         /// a wrapping algorithm</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
@@ -204,12 +206,20 @@ namespace Amazon.KeyManagementService.Model
         /// For RSA_AES wrapping algorithms, you encrypt your key material with an AES key that
         /// you generate, then encrypt your AES key with the RSA public key from KMS. For RSAES
         /// wrapping algorithms, you encrypt your key material directly with the RSA public key
-        /// from KMS.
+        /// from KMS. For SM2PKE wrapping algorithms, you encrypt your key material directly with
+        /// the SM2 public key from KMS.
         /// </para>
         ///  
         /// <para>
         /// The wrapping algorithms that you can use depend on the type of key material that you
-        /// are importing. To import an RSA private key, you must use an RSA_AES wrapping algorithm.
+        /// are importing. To import an RSA private key, you must use an RSA_AES wrapping algorithm,
+        /// except in China Regions, where you must use the SM2PKE wrapping algorithm to import
+        /// an RSA private key.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SM2PKE wrapping algorithm is available only in China Regions. The <c>RSA_AES_KEY_WRAP_SHA_256</c>
+        /// and <c>RSA_AES_KEY_WRAP_SHA_1</c> wrapping algorithms are not supported in China Regions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -244,6 +254,11 @@ namespace Amazon.KeyManagementService.Model
         ///  <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support
         /// the RSAES_PKCS1_V1_5 wrapping algorithm.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>SM2PKE</b> (China Regions only) — supported for wrapping RSA, ECC, and SM2 key
+        /// material.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -262,18 +277,21 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property WrappingKeySpec. 
         /// <para>
-        /// The type of RSA public key to return in the response. You will use this wrapping key
-        /// with the specified wrapping algorithm to protect your key material during import.
-        /// 
+        /// The type of public key to return in the response. You will use this wrapping key with
+        /// the specified wrapping algorithm to protect your key material during import. 
         /// </para>
         ///  
         /// <para>
-        /// Use the longest RSA wrapping key that is practical. 
+        /// Use the longest wrapping key that is practical. 
         /// </para>
         ///  
         /// <para>
         /// You cannot use an RSA_2048 public key to directly wrap an ECC_NIST_P521 private key.
         /// Instead, use an RSA_AES wrapping algorithm or choose a longer RSA public key.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SM2 wrapping key spec is available only in China Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

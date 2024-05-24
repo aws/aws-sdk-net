@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
@@ -50,7 +51,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if AmznClientToken property is set
         internal bool IsSetAmznClientToken()
         {
-            return this._amznClientToken != null;
+            return !string.IsNullOrEmpty(this._amznClientToken);
         }
 
         /// <summary>

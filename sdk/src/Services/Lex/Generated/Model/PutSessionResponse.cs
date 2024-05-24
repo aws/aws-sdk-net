@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lex.Model
 {
     /// <summary>
@@ -62,7 +63,7 @@ namespace Amazon.Lex.Model
         // Check to see if ActiveContexts property is set
         internal bool IsSetActiveContexts()
         {
-            return this._activeContexts != null;
+            return !string.IsNullOrEmpty(this._activeContexts);
         }
 
         /// <summary>
@@ -98,7 +99,7 @@ namespace Amazon.Lex.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>
@@ -141,7 +142,7 @@ namespace Amazon.Lex.Model
         // Check to see if DialogState property is set
         internal bool IsSetDialogState()
         {
-            return this._dialogState != null;
+            return !string.IsNullOrEmpty(this._dialogState);
         }
 
         /// <summary>
@@ -165,7 +166,7 @@ namespace Amazon.Lex.Model
         // Check to see if EncodedMessage property is set
         internal bool IsSetEncodedMessage()
         {
-            return this._encodedMessage != null;
+            return !string.IsNullOrEmpty(this._encodedMessage);
         }
 
         /// <summary>
@@ -183,7 +184,7 @@ namespace Amazon.Lex.Model
         // Check to see if IntentName property is set
         internal bool IsSetIntentName()
         {
-            return this._intentName != null;
+            return !string.IsNullOrEmpty(this._intentName);
         }
 
         /// <summary>
@@ -209,7 +210,7 @@ namespace Amazon.Lex.Model
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this._message != null;
+            return !string.IsNullOrEmpty(this._message);
         }
 
         /// <summary>
@@ -245,7 +246,7 @@ namespace Amazon.Lex.Model
         // Check to see if MessageFormat property is set
         internal bool IsSetMessageFormat()
         {
-            return this._messageFormat != null;
+            return !string.IsNullOrEmpty(this._messageFormat);
         }
 
         /// <summary>
@@ -263,7 +264,7 @@ namespace Amazon.Lex.Model
         // Check to see if SessionAttributes property is set
         internal bool IsSetSessionAttributes()
         {
-            return this._sessionAttributes != null;
+            return !string.IsNullOrEmpty(this._sessionAttributes);
         }
 
         /// <summary>
@@ -281,7 +282,7 @@ namespace Amazon.Lex.Model
         // Check to see if SessionId property is set
         internal bool IsSetSessionId()
         {
-            return this._sessionId != null;
+            return !string.IsNullOrEmpty(this._sessionId);
         }
 
         /// <summary>
@@ -311,7 +312,7 @@ namespace Amazon.Lex.Model
         // Check to see if Slots property is set
         internal bool IsSetSlots()
         {
-            return this._slots != null;
+            return !string.IsNullOrEmpty(this._slots);
         }
 
         /// <summary>
@@ -330,7 +331,7 @@ namespace Amazon.Lex.Model
         // Check to see if SlotToElicit property is set
         internal bool IsSetSlotToElicit()
         {
-            return this._slotToElicit != null;
+            return !string.IsNullOrEmpty(this._slotToElicit);
         }
 
         #region Dispose Pattern
@@ -346,6 +347,9 @@ namespace Amazon.Lex.Model
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed)

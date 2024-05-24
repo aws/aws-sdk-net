@@ -46,6 +46,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IdMappingJobOutputSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKMSArn())
             {
                 context.Writer.WritePropertyName("KMSArn");
@@ -73,4 +75,3 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -63,12 +63,10 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSuggesterName())
                 {
                     request.Parameters.Add("SuggesterName", StringUtils.FromString(publicRequest.SuggesterName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

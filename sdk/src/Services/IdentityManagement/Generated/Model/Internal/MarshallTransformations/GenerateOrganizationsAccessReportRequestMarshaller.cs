@@ -63,12 +63,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EntityPath", StringUtils.FromString(publicRequest.EntityPath));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOrganizationsPolicyId())
                 {
                     request.Parameters.Add("OrganizationsPolicyId", StringUtils.FromString(publicRequest.OrganizationsPolicyId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudWatchLogsDestinationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLogGroup())
             {
                 context.Writer.WritePropertyName("logGroup");
@@ -61,4 +63,3 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

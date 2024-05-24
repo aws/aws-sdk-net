@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         public UnprocessedIdentityId Unmarshall(JsonUnmarshallerContext context)
         {
             UnprocessedIdentityId unmarshalledObject = new UnprocessedIdentityId();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OrganizationDataSourceConfigurations requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKubernetes())
             {
                 context.Writer.WritePropertyName("kubernetes");
@@ -88,4 +90,3 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

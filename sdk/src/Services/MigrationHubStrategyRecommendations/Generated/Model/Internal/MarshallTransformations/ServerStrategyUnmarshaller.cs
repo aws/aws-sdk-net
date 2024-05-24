@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public ServerStrategy Unmarshall(JsonUnmarshallerContext context)
         {
             ServerStrategy unmarshalledObject = new ServerStrategy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         }
     }
 }
-#pragma warning restore CS0612,CS0618

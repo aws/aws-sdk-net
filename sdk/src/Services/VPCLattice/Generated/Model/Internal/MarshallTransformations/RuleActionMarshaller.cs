@@ -46,6 +46,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RuleAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFixedResponse())
             {
                 context.Writer.WritePropertyName("fixedResponse");
@@ -77,4 +79,3 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

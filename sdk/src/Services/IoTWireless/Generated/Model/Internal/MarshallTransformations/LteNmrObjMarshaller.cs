@@ -46,6 +46,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LteNmrObj requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEarfcn())
             {
                 context.Writer.WritePropertyName("Earfcn");
@@ -73,7 +75,14 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRsrq())
             {
                 context.Writer.WritePropertyName("Rsrq");
-                context.Writer.Write(requestObject.Rsrq);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Rsrq))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Rsrq));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Rsrq);
+                }
             }
 
         }
@@ -85,4 +94,3 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

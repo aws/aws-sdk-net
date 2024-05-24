@@ -46,6 +46,8 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreationInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOwnerGid())
             {
                 context.Writer.WritePropertyName("OwnerGid");
@@ -73,4 +75,3 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

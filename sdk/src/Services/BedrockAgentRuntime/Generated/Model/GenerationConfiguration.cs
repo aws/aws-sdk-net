@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
@@ -45,7 +46,67 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class GenerationConfiguration
     {
+        private Dictionary<string, Amazon.Runtime.Documents.Document> _additionalModelRequestFields = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
+        private GuardrailConfiguration _guardrailConfiguration;
+        private InferenceConfig _inferenceConfig;
         private PromptTemplate _promptTemplate;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalModelRequestFields. 
+        /// <para>
+        ///  Additional model parameters and corresponding values not included in the textInferenceConfig
+        /// structure for a knowledge base. This allows users to provide custom model parameters
+        /// specific to the language model being used. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, Amazon.Runtime.Documents.Document> AdditionalModelRequestFields
+        {
+            get { return this._additionalModelRequestFields; }
+            set { this._additionalModelRequestFields = value; }
+        }
+
+        // Check to see if AdditionalModelRequestFields property is set
+        internal bool IsSetAdditionalModelRequestFields()
+        {
+            return this._additionalModelRequestFields != null && (this._additionalModelRequestFields.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GuardrailConfiguration. 
+        /// <para>
+        /// The configuration details for the guardrail.
+        /// </para>
+        /// </summary>
+        public GuardrailConfiguration GuardrailConfiguration
+        {
+            get { return this._guardrailConfiguration; }
+            set { this._guardrailConfiguration = value; }
+        }
+
+        // Check to see if GuardrailConfiguration property is set
+        internal bool IsSetGuardrailConfiguration()
+        {
+            return this._guardrailConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceConfig. 
+        /// <para>
+        ///  Configuration settings for inference when using RetrieveAndGenerate to generate responses
+        /// while using a knowledge base as a source. 
+        /// </para>
+        /// </summary>
+        public InferenceConfig InferenceConfig
+        {
+            get { return this._inferenceConfig; }
+            set { this._inferenceConfig = value; }
+        }
+
+        // Check to see if InferenceConfig property is set
+        internal bool IsSetInferenceConfig()
+        {
+            return this._inferenceConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PromptTemplate. 

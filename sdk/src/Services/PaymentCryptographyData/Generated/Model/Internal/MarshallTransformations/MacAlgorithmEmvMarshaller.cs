@@ -46,6 +46,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MacAlgorithmEmv requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMajorKeyDerivationMode())
             {
                 context.Writer.WritePropertyName("MajorKeyDerivationMode");
@@ -90,4 +92,3 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

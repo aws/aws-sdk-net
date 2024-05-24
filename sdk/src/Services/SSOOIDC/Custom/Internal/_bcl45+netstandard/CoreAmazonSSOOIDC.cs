@@ -15,6 +15,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
@@ -27,9 +29,13 @@ using Amazon.Util.Internal;
 
 namespace Amazon.SSOOIDC.Internal
 {
+    /// <summary>
+    /// Utilities methods for SSO OIDC
+    /// </summary>
     public static class CoreAmazonSSOOIDC
     {
-        private const string CreateTokenGrantType = "urn:ietf:params:oauth:grant-type:device_code";
+        private const string CreateTokenDefaultGrantType = "urn:ietf:params:oauth:grant-type:device_code";
+        private const string CreateTokenPKCEGrantType = "authorization_code";
         private const int DefaultPollingIntervalSeconds = 5;
         private const int PollingSlowdownIncrementSeconds = 5;
 
@@ -42,17 +48,41 @@ namespace Amazon.SSOOIDC.Internal
         }
 
 #if BCL
+        /// <summary>
+        /// Get SSO token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public static GetSsoTokenResponse GetSsoToken(IAmazonSSOOIDC client, GetSsoTokenRequest request)
         {
             return GetSsoToken(client, request, new GetSsoTokenContext());
         }
 
+        /// <summary>
+        /// Get SSO Token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public static GetSsoTokenResponse GetSsoToken(IAmazonSSOOIDC client, GetSsoTokenRequest request, IGetSsoTokenContext context)
         {
+            // PkceFlowOptions is a newer property that must be specified when using the PKCE flow. If it's null, we'll default to the device code flow.
+            var useDeviceCodeFlow = request.PkceFlowOptions == null;
+
+            // Identity Center supports using the start URL as the issuer URL (if one was not provided).
+            var issuerUrl = request.PkceFlowOptions?.IssuerUrl ?? request.StartUrl;
+
+            CreateTokenRequest createTokenRequest;
+            CreateTokenResponse createTokenResponse;
+            string codeVerifier = null;
+
             var registerClientRequest = new RegisterClientRequest
             {
                 ClientName = request.ClientName,
                 ClientType = request.ClientType,
+                IssuerUrl = issuerUrl,
             };
 
             if (request.Scopes != null)
@@ -60,84 +90,154 @@ namespace Amazon.SSOOIDC.Internal
                 registerClientRequest.Scopes = new List<string>(request.Scopes);
             }
 
-            InternalSDKUtils.ApplyValues(registerClientRequest, request.AdditionalProperties);
+            if (request.PkceFlowOptions?.GrantTypes != null)
+            {
+                registerClientRequest.GrantTypes = new List<string>(request.PkceFlowOptions.GrantTypes);
+            }
 
+            if (request.PkceFlowOptions?.RedirectUri != null)
+            {
+                // Even though the API allows multiple redirect URIs, we can only specify one when calling CreateToken.
+                registerClientRequest.RedirectUris = new List<string> { request.PkceFlowOptions.RedirectUri };
+            }
+
+            InternalSDKUtils.ApplyValues(registerClientRequest, request.AdditionalProperties);
             var registerClientResponse = client.RegisterClient(registerClientRequest);
 
-
-            var startDeviceAuthorizationRequest = new StartDeviceAuthorizationRequest
+            if (useDeviceCodeFlow)
             {
-                ClientSecret = registerClientResponse.ClientSecret,
-                ClientId = registerClientResponse.ClientId,
-                StartUrl = request.StartUrl,
-            };
-            InternalSDKUtils.ApplyValues(startDeviceAuthorizationRequest, request.AdditionalProperties);
+                var startDeviceAuthorizationRequest = new StartDeviceAuthorizationRequest
+                {
+                    ClientSecret = registerClientResponse.ClientSecret,
+                    ClientId = registerClientResponse.ClientId,
+                    StartUrl = request.StartUrl,
+                };
+                InternalSDKUtils.ApplyValues(startDeviceAuthorizationRequest, request.AdditionalProperties);
 
-            var startDeviceAuthorizationResponse = client.StartDeviceAuthorization(startDeviceAuthorizationRequest);
+                var startDeviceAuthorizationResponse = client.StartDeviceAuthorization(startDeviceAuthorizationRequest);
 
+                // Spec: The expiration time must be calculated by adding the number of seconds 
+                // returned by StartDeviceAuthorization (ExpiresIn) to the current time.
+                DateTime deviceCodeExpiration = DateTime.UtcNow.AddSeconds(startDeviceAuthorizationResponse.ExpiresIn);
 
-            // Spec: The expiration time must be calculated by adding the number of seconds 
-            // returned by StartDeviceAuthorization (ExpiresIn) to the current time.
-            DateTime deviceCodeExpiration = DateTime.UtcNow.AddSeconds(startDeviceAuthorizationResponse.ExpiresIn);
+                request.SsoVerificationCallback(new SsoVerificationArguments
+                {
+                    UserCode = startDeviceAuthorizationResponse.UserCode,
+                    VerificationUri = startDeviceAuthorizationResponse.VerificationUri,
+                    VerificationUriComplete = startDeviceAuthorizationResponse.VerificationUriComplete,
+                });
 
-            request.SsoVerificationCallback(new SsoVerificationArguments
+                createTokenRequest = new CreateTokenRequest
+                {
+                    ClientId = registerClientResponse.ClientId,
+                    ClientSecret = registerClientResponse.ClientSecret,
+                    GrantType = CreateTokenDefaultGrantType,
+                    DeviceCode = startDeviceAuthorizationResponse.DeviceCode,
+                };
+                InternalSDKUtils.ApplyValues(createTokenRequest, request.AdditionalProperties);
+
+                createTokenResponse = PollForSsoToken(client, createTokenRequest, startDeviceAuthorizationResponse.Interval, deviceCodeExpiration, context);
+            }
+            else
             {
-                UserCode = startDeviceAuthorizationResponse.UserCode,
-                VerificationUri = startDeviceAuthorizationResponse.VerificationUri,
-                VerificationUriComplete = startDeviceAuthorizationResponse.VerificationUriComplete,
-            });
+                codeVerifier = GenerateCodeVerifier();
 
+                // In order to get an authorization code, we must create an URL using the client metadata and PKCE flow parameters.
+                // The hostname is the OIDC service endpoint, so we'll use DetermineServiceOperationEndpoint to find the correct region.
+                var oidcEndpoint = client.DetermineServiceOperationEndpoint(registerClientRequest);
+                var url = BuildAuthorizationUrl(registerClientResponse.ClientId, oidcEndpoint.URL, request.PkceFlowOptions.RedirectUri, codeVerifier);
+                var authorizationCode = request.PkceFlowOptions.RetrieveAuthorizationCodeCallback(url);
 
-            var createTokenRequest = new CreateTokenRequest
-            {
-                ClientId = registerClientResponse.ClientId,
-                ClientSecret = registerClientResponse.ClientSecret,
-                GrantType = CreateTokenGrantType,
-                DeviceCode = startDeviceAuthorizationResponse.DeviceCode,
-            };
-            InternalSDKUtils.ApplyValues(request, request.AdditionalProperties);
+                createTokenRequest = new CreateTokenRequest
+                {
+                    ClientId = registerClientResponse.ClientId,
+                    ClientSecret = registerClientResponse.ClientSecret,
+                    GrantType = CreateTokenPKCEGrantType,
+                    RedirectUri = request.PkceFlowOptions.RedirectUri,
+                    Code = authorizationCode,
+                    CodeVerifier = codeVerifier,
+                };
+                InternalSDKUtils.ApplyValues(createTokenRequest, request.AdditionalProperties);
 
-            var ssoToken = PollForSsoToken(client,
-                createTokenRequest,
-                startDeviceAuthorizationResponse.Interval,
-                deviceCodeExpiration,
-                context);
+                createTokenResponse = client.CreateToken(createTokenRequest);
+            }
+
             var clientSecretExpiresAtString = XmlConvert.ToString(AWSSDKUtils.ConvertFromUnixEpochSeconds((int)registerClientResponse.ClientSecretExpiresAt), XmlDateTimeSerializationMode.Utc);
             return new GetSsoTokenResponse
             {
-                AccessToken = ssoToken.AccessToken,
+                AccessToken = createTokenResponse.AccessToken,
                 Region = client.Config.RegionEndpoint.SystemName,
                 ClientId = registerClientResponse.ClientId,
                 ClientSecret = registerClientResponse.ClientSecret,
                 RegistrationExpiresAt = clientSecretExpiresAtString,
-                RefreshToken = ssoToken.RefreshToken,
-                ExpiresAt = DateTime.UtcNow.AddSeconds(ssoToken.ExpiresIn),
-                StartUrl = request.StartUrl
+                RefreshToken = createTokenResponse.RefreshToken,
+                ExpiresAt = DateTime.UtcNow.AddSeconds(createTokenResponse.ExpiresIn),
+                StartUrl = request.StartUrl,
+                CodeVerifier = codeVerifier
             };
         }
 #endif
 
+        /// <summary>
+        /// Get SSO Token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public static Task<GetSsoTokenResponse> GetSsoTokenAsync(IAmazonSSOOIDC client, GetSsoTokenRequest request)
         {
             return GetSsoTokenAsync(client, request, new GetSsoTokenContext());
         }
 
+        /// <summary>
+        /// Get SSO Token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public static Task<GetSsoTokenResponse> GetSsoTokenAsync(IAmazonSSOOIDC client, GetSsoTokenRequest request, CancellationToken cancellationToken)
         {
             return GetSsoTokenAsync(client, request, new GetSsoTokenContext(), cancellationToken);
         }
 
+        /// <summary>
+        /// Get SSO Token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public static async Task<GetSsoTokenResponse> GetSsoTokenAsync(IAmazonSSOOIDC client, GetSsoTokenRequest request, IGetSsoTokenContext context)
         {
             return await GetSsoTokenAsync(client, request, context, cancellationToken: default).ConfigureAwait(false);
         }
 
+        /// <summary>
+        /// Get SSO Token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="context"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public static async Task<GetSsoTokenResponse> GetSsoTokenAsync(IAmazonSSOOIDC client, GetSsoTokenRequest request, IGetSsoTokenContext context, CancellationToken cancellationToken)
         {
+            // PkceFlowOptions is a newer property that must be specified when using the PKCE flow. If it's null, we'll default to the device code flow.
+            var useDeviceCodeFlow = request.PkceFlowOptions == null;
+
+            // Identity Center supports using the start URL as the issuer URL (if one was not provided).
+            var issuerUrl = request.PkceFlowOptions?.IssuerUrl ?? request.StartUrl;
+
+            CreateTokenRequest createTokenRequest;
+            CreateTokenResponse createTokenResponse;
+            string codeVerifier = null;
+
             var registerClientRequest = new RegisterClientRequest
             {
                 ClientName = request.ClientName,
                 ClientType = request.ClientType,
+                IssuerUrl = issuerUrl,
             };
 
             if (request.Scopes != null)
@@ -145,65 +245,111 @@ namespace Amazon.SSOOIDC.Internal
                 registerClientRequest.Scopes = new List<string>(request.Scopes);
             }
 
-            InternalSDKUtils.ApplyValues(registerClientRequest, request.AdditionalProperties);
+            if (request.PkceFlowOptions?.GrantTypes != null)
+            {
+                registerClientRequest.GrantTypes = new List<string>(request.PkceFlowOptions.GrantTypes);
+            }
 
+            if (request.PkceFlowOptions?.RedirectUri != null)
+            {
+                // Even though the API allows multiple redirect URIs, we can only specify one when calling CreateToken.
+                registerClientRequest.RedirectUris = new List<string> { request.PkceFlowOptions.RedirectUri };
+            }
+
+            InternalSDKUtils.ApplyValues(registerClientRequest, request.AdditionalProperties);
             var registerClientResponse = await client.RegisterClientAsync(registerClientRequest, cancellationToken).ConfigureAwait(false);
 
-            var startDeviceAuthorizationRequest = new StartDeviceAuthorizationRequest
+            if (useDeviceCodeFlow)
             {
-                ClientSecret = registerClientResponse.ClientSecret,
-                ClientId = registerClientResponse.ClientId,
-                StartUrl = request.StartUrl,
-            };
-            InternalSDKUtils.ApplyValues(startDeviceAuthorizationRequest, request.AdditionalProperties);
+                var startDeviceAuthorizationRequest = new StartDeviceAuthorizationRequest
+                {
+                    ClientSecret = registerClientResponse.ClientSecret,
+                    ClientId = registerClientResponse.ClientId,
+                    StartUrl = request.StartUrl,
+                };
+                InternalSDKUtils.ApplyValues(startDeviceAuthorizationRequest, request.AdditionalProperties);
 
-            var startDeviceAuthorizationResponse =
-                await client.StartDeviceAuthorizationAsync(startDeviceAuthorizationRequest, cancellationToken).ConfigureAwait(false);
+                var startDeviceAuthorizationResponse =
+                    await client.StartDeviceAuthorizationAsync(startDeviceAuthorizationRequest, cancellationToken).ConfigureAwait(false);
 
-            // Spec: The expiration time must be calculated by adding the number of seconds 
-            // returned by StartDeviceAuthorization (ExpiresIn) to the current time.
-            DateTime deviceCodeExpiration = DateTime.UtcNow.AddSeconds(startDeviceAuthorizationResponse.ExpiresIn);
+                // Spec: The expiration time must be calculated by adding the number of seconds 
+                // returned by StartDeviceAuthorization (ExpiresIn) to the current time.
+                DateTime deviceCodeExpiration = DateTime.UtcNow.AddSeconds(startDeviceAuthorizationResponse.ExpiresIn);
 
-            request.SsoVerificationCallback(new SsoVerificationArguments
+                request.SsoVerificationCallback(new SsoVerificationArguments
+                {
+                    UserCode = startDeviceAuthorizationResponse.UserCode,
+                    VerificationUri = startDeviceAuthorizationResponse.VerificationUri,
+                    VerificationUriComplete = startDeviceAuthorizationResponse.VerificationUriComplete,
+                });
+
+                createTokenRequest = new CreateTokenRequest
+                {
+                    ClientId = registerClientResponse.ClientId,
+                    ClientSecret = registerClientResponse.ClientSecret,
+                    GrantType = CreateTokenDefaultGrantType,
+                    DeviceCode = startDeviceAuthorizationResponse.DeviceCode,
+                };
+                InternalSDKUtils.ApplyValues(createTokenRequest, request.AdditionalProperties);
+
+                createTokenResponse = await PollForSsoTokenAsync(
+                    client,
+                    createTokenRequest,
+                    startDeviceAuthorizationResponse.Interval,
+                    deviceCodeExpiration,
+                    context,
+                    cancellationToken
+                ).ConfigureAwait(false);
+            }
+            else
             {
-                UserCode = startDeviceAuthorizationResponse.UserCode,
-                VerificationUri = startDeviceAuthorizationResponse.VerificationUri,
-                VerificationUriComplete = startDeviceAuthorizationResponse.VerificationUriComplete,
-            });
+                codeVerifier = GenerateCodeVerifier();
 
-            var createTokenRequest = new CreateTokenRequest
-            {
-                ClientId = registerClientResponse.ClientId,
-                ClientSecret = registerClientResponse.ClientSecret,
-                GrantType = CreateTokenGrantType,
-                DeviceCode = startDeviceAuthorizationResponse.DeviceCode,
-            };
-            InternalSDKUtils.ApplyValues(request, request.AdditionalProperties);
+                // In order to get an authorization code, we must create an URL using the client metadata and PKCE flow parameters.
+                // The hostname is the OIDC service endpoint, so we'll use DetermineServiceOperationEndpoint to find the correct region.
+                var oidcEndpoint = client.DetermineServiceOperationEndpoint(registerClientRequest);
+                var url = BuildAuthorizationUrl(registerClientResponse.ClientId, oidcEndpoint.URL, request.PkceFlowOptions.RedirectUri, codeVerifier);
 
-            var ssoToken = await PollForSsoTokenAsync(
-                client,
-                createTokenRequest,
-                startDeviceAuthorizationResponse.Interval,
-                deviceCodeExpiration,
-                context,
-                cancellationToken
-            ).ConfigureAwait(false);
-            
+                var authorizationCode = await request.PkceFlowOptions
+                    .RetrieveAuthorizationCodeCallbackAsync(url, cancellationToken)
+                    .ConfigureAwait(false);
+
+                createTokenRequest = new CreateTokenRequest
+                {
+                    ClientId = registerClientResponse.ClientId,
+                    ClientSecret = registerClientResponse.ClientSecret,
+                    GrantType = CreateTokenPKCEGrantType,
+                    RedirectUri = request.PkceFlowOptions.RedirectUri,
+                    Code = authorizationCode,
+                    CodeVerifier = codeVerifier,
+                };
+                InternalSDKUtils.ApplyValues(createTokenRequest, request.AdditionalProperties);
+
+                createTokenResponse = await client.CreateTokenAsync(createTokenRequest, cancellationToken).ConfigureAwait(false);
+            }
+
             var clientSecretExpiresAtString = XmlConvert.ToString(AWSSDKUtils.ConvertFromUnixEpochSeconds((int)registerClientResponse.ClientSecretExpiresAt), XmlDateTimeSerializationMode.Utc);
             return new GetSsoTokenResponse
             {
-                AccessToken = ssoToken.AccessToken,
+                AccessToken = createTokenResponse.AccessToken,
                 Region = client.Config.RegionEndpoint.SystemName,
                 ClientId = registerClientResponse.ClientId,
                 ClientSecret = registerClientResponse.ClientSecret,
                 RegistrationExpiresAt = clientSecretExpiresAtString,
-                RefreshToken = ssoToken.RefreshToken,
-                ExpiresAt = DateTime.UtcNow.AddSeconds(ssoToken.ExpiresIn),
-                StartUrl = request.StartUrl
+                RefreshToken = createTokenResponse.RefreshToken,
+                ExpiresAt = DateTime.UtcNow.AddSeconds(createTokenResponse.ExpiresIn),
+                StartUrl = request.StartUrl,
+                CodeVerifier = codeVerifier
             };
         }
 
 #if BCL
+        /// <summary>
+        /// Refresh SSO Token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="previousResponse"></param>
+        /// <returns></returns>
         public static GetSsoTokenResponse RefreshToken(
             IAmazonSSOOIDC client,
             GetSsoTokenResponse previousResponse)
@@ -229,7 +375,12 @@ namespace Amazon.SSOOIDC.Internal
             };
         }
 #endif
-
+        /// <summary>
+        /// Refresh SSO Token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="previousResponse"></param>
+        /// <returns></returns>
         public static async Task<GetSsoTokenResponse> RefreshTokenAsync(
             IAmazonSSOOIDC client,
             GetSsoTokenResponse previousResponse)
@@ -250,7 +401,7 @@ namespace Amazon.SSOOIDC.Internal
                 Region = previousResponse.Region,
                 RegistrationExpiresAt = previousResponse.RegistrationExpiresAt,
                 ClientId = previousResponse.ClientId,
-                ClientSecret = previousResponse.ClientSecret,                
+                ClientSecret = previousResponse.ClientSecret,
                 StartUrl = previousResponse.StartUrl
             };
         }
@@ -259,7 +410,7 @@ namespace Amazon.SSOOIDC.Internal
         private static CreateTokenResponse PollForSsoToken(IAmazonSSOOIDC client,
             CreateTokenRequest createTokenRequest,
             int pollingIntervalSeconds,
-            DateTime deviceCodeExpiration, 
+            DateTime deviceCodeExpiration,
             IGetSsoTokenContext context)
         {
             var logger = Logger.GetLogger(typeof(CoreAmazonSSOOIDC));
@@ -372,6 +523,76 @@ namespace Amazon.SSOOIDC.Internal
 
                 context.Sleep(intervalSec * 1000);
             } // while(polling)
+        }
+
+
+        /// <summary>
+        /// Generates a high-entropy cryptographic random string using the following characters: <c>[A-Z] / [a-z] / [0-9] / "-" / "." / "_" / "~"</c>
+        /// </summary>
+        /// <remarks>Based on https://stackoverflow.com/a/1344255</remarks>
+        private static string GenerateCodeVerifier()
+        {
+            const int codeLength = 100;
+            var allowedValues = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-._~".ToCharArray();
+
+            var data = new byte[4 * codeLength];
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(data);
+            }
+
+            var result = new StringBuilder(codeLength);
+            for (int i = 0; i < codeLength; i++)
+            {
+                var rnd = BitConverter.ToUInt32(data, i * 4);
+                var idx = rnd % allowedValues.Length;
+
+                result.Append(allowedValues[idx]);
+            }
+
+            return result.ToString();
+        }
+
+        /// <summary>
+        /// Creates a code challenge by performing a SHA256 hash and Base64 encoding the provided code verifier.
+        /// </summary>
+        private static string GenerateCodeChallenge(string codeVerifier)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                var hash = sha256.ComputeHash(Encoding.ASCII.GetBytes(codeVerifier));
+
+                // The code challenge must be safe to use in URLs, so we'll replace / remove invalid characters.
+                return Convert.ToBase64String(hash)
+                    .Replace('+', '-')
+                    .Replace('/', '_')
+                    .TrimEnd('=');
+            }
+        }
+
+        private static Uri BuildAuthorizationUrl(string clientId, string oidcUrl, string redirectUri, string codeVerifier)
+        {
+            var encodedRedirectUri = Uri.EscapeDataString(redirectUri);
+            var codeChallenge = GenerateCodeChallenge(codeVerifier);
+
+            // From RFC: opaque value used by the client to maintain state between the request and callback (used for preventing cross-site request forgery).
+            var state = Guid.NewGuid().ToString("N");
+
+            var queryString = new StringBuilder();
+            queryString.Append("response_type=code");
+            queryString.Append("&client_id=").Append(clientId);
+            queryString.Append("&redirect_uri=").Append(encodedRedirectUri);
+            queryString.Append("&state=").Append(state);
+            queryString.Append("&code_challenge=").Append(codeChallenge);
+            queryString.Append("&code_challenge_method=S256");
+
+            var builder = new UriBuilder(oidcUrl)
+            {
+                Path = "/authorize",
+                Query = queryString.ToString()
+            };
+
+            return builder.Uri;
         }
     }
 }

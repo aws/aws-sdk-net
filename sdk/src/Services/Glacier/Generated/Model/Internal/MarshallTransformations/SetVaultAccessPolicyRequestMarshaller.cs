@@ -68,6 +68,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 var context = new JsonMarshallerContext(request, writer);
                 context.Writer.WriteObjectStart();
 
@@ -102,4 +103,3 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

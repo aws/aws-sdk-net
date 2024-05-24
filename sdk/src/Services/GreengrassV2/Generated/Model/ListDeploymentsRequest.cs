@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
@@ -74,6 +75,10 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to be returned per paginated request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>50</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

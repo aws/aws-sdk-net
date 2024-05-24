@@ -46,6 +46,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIotSiteWiseConfiguration())
             {
                 context.Writer.WritePropertyName("iotSiteWiseConfiguration");
@@ -94,4 +96,3 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

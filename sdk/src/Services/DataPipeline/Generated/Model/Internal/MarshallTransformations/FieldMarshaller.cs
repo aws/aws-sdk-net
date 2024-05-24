@@ -46,6 +46,8 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Field requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");
@@ -73,4 +75,3 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

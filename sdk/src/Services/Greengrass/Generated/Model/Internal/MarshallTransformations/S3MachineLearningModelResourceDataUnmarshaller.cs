@@ -57,6 +57,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         public S3MachineLearningModelResourceData Unmarshall(JsonUnmarshallerContext context)
         {
             S3MachineLearningModelResourceData unmarshalledObject = new S3MachineLearningModelResourceData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

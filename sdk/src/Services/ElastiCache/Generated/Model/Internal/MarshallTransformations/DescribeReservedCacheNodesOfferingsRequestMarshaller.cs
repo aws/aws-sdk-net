@@ -63,37 +63,30 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CacheNodeType", StringUtils.FromString(publicRequest.CacheNodeType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDuration())
                 {
                     request.Parameters.Add("Duration", StringUtils.FromString(publicRequest.Duration));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOfferingType())
                 {
                     request.Parameters.Add("OfferingType", StringUtils.FromString(publicRequest.OfferingType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetProductDescription())
                 {
                     request.Parameters.Add("ProductDescription", StringUtils.FromString(publicRequest.ProductDescription));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReservedCacheNodesOfferingId())
                 {
                     request.Parameters.Add("ReservedCacheNodesOfferingId", StringUtils.FromString(publicRequest.ReservedCacheNodesOfferingId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

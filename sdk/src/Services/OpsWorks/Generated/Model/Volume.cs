@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -180,7 +181,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The volume name.
+        /// The volume name. Volume names are a maximum of 128 characters.
         /// </para>
         /// </summary>
         public string Name
@@ -216,8 +217,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-        /// and Endpoints</a>.
+        /// The Amazon Web Services Region. For more information about Amazon Web Services Regions,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+        /// Endpoints</a>.
         /// </para>
         /// </summary>
         public string Region
@@ -310,11 +312,11 @@ namespace Amazon.OpsWorks.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>st1</c> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD
-        /// volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.
+        /// volumes must have a minimum size of 125 GiB and a maximum size of 16384 GiB.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>sc1</c> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a
+        ///  <c>sc1</c> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a
         /// maximum size of 16384 GiB.
         /// </para>
         ///  </li> </ul>

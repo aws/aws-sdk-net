@@ -46,6 +46,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KxDataviewSegmentConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDbPaths())
             {
                 context.Writer.WritePropertyName("dbPaths");
@@ -78,4 +80,3 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

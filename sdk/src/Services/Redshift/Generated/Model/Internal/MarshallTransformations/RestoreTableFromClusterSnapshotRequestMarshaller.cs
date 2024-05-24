@@ -63,47 +63,38 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnableCaseSensitiveIdentifier())
                 {
                     request.Parameters.Add("EnableCaseSensitiveIdentifier", StringUtils.FromBool(publicRequest.EnableCaseSensitiveIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNewTableName())
                 {
                     request.Parameters.Add("NewTableName", StringUtils.FromString(publicRequest.NewTableName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotIdentifier())
                 {
                     request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(publicRequest.SnapshotIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceDatabaseName())
                 {
                     request.Parameters.Add("SourceDatabaseName", StringUtils.FromString(publicRequest.SourceDatabaseName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceSchemaName())
                 {
                     request.Parameters.Add("SourceSchemaName", StringUtils.FromString(publicRequest.SourceSchemaName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceTableName())
                 {
                     request.Parameters.Add("SourceTableName", StringUtils.FromString(publicRequest.SourceTableName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetDatabaseName())
                 {
                     request.Parameters.Add("TargetDatabaseName", StringUtils.FromString(publicRequest.TargetDatabaseName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetSchemaName())
                 {
                     request.Parameters.Add("TargetSchemaName", StringUtils.FromString(publicRequest.TargetSchemaName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

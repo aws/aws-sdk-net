@@ -46,6 +46,8 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContactDetail requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddressLine1())
             {
                 context.Writer.WritePropertyName("AddressLine1");
@@ -149,4 +151,3 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

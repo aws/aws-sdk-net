@@ -355,6 +355,10 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </summary>
         public static readonly IpAddressType Dualstack = new IpAddressType("dualstack");
         /// <summary>
+        /// Constant DualstackWithoutPublicIpv4 for IpAddressType
+        /// </summary>
+        public static readonly IpAddressType DualstackWithoutPublicIpv4 = new IpAddressType("dualstack-without-public-ipv4");
+        /// <summary>
         /// Constant Ipv4 for IpAddressType
         /// </summary>
         public static readonly IpAddressType Ipv4 = new IpAddressType("ipv4");

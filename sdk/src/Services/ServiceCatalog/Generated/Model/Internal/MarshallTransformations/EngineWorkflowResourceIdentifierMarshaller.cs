@@ -46,6 +46,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EngineWorkflowResourceIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetUniqueTag())
             {
                 context.Writer.WritePropertyName("UniqueTag");
@@ -66,4 +68,3 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

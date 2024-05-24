@@ -46,6 +46,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServerCertificateConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCertificateAuthorityArn())
             {
                 context.Writer.WritePropertyName("CertificateAuthorityArn");
@@ -104,4 +106,3 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

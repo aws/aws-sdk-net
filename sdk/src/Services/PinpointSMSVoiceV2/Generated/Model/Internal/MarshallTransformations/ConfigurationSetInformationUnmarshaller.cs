@@ -57,6 +57,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         public ConfigurationSetInformation Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigurationSetInformation unmarshalledObject = new ConfigurationSetInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -100,6 +102,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventDestinations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProtectConfigurationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProtectConfigurationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
@@ -119,4 +127,3 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

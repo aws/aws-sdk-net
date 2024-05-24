@@ -46,6 +46,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Event requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRevisionPublished())
             {
                 context.Writer.WritePropertyName("RevisionPublished");
@@ -66,4 +68,3 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

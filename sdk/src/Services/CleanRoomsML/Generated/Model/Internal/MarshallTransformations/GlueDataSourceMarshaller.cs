@@ -46,6 +46,8 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GlueDataSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCatalogId())
             {
                 context.Writer.WritePropertyName("catalogId");
@@ -73,4 +75,3 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

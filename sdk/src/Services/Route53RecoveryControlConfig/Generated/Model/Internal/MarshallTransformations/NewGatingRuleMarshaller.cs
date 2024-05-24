@@ -46,6 +46,8 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
         /// <returns></returns>
         public void Marshall(NewGatingRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetControlPanelArn())
             {
                 context.Writer.WritePropertyName("ControlPanelArn");
@@ -106,4 +108,3 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
 
     }
 }
-#pragma warning restore CS0612,CS0618

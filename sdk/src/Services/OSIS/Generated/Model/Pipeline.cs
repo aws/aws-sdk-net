@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OSIS.Model
 {
     /// <summary>
@@ -35,6 +36,7 @@ namespace Amazon.OSIS.Model
     {
         private BufferOptions _bufferOptions;
         private DateTime? _createdAt;
+        private List<PipelineDestination> _destinations = AWSConfigs.InitializeCollections ? new List<PipelineDestination>() : null;
         private EncryptionAtRestOptions _encryptionAtRestOptions;
         private List<string> _ingestEndpointUrls = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _lastUpdatedAt;
@@ -81,6 +83,24 @@ namespace Amazon.OSIS.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Destinations. 
+        /// <para>
+        /// Destinations to which the pipeline writes data.
+        /// </para>
+        /// </summary>
+        public List<PipelineDestination> Destinations
+        {
+            get { return this._destinations; }
+            set { this._destinations = value; }
+        }
+
+        // Check to see if Destinations property is set
+        internal bool IsSetDestinations()
+        {
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -245,7 +265,8 @@ namespace Amazon.OSIS.Model
         /// <summary>
         /// Gets and sets the property ServiceVpcEndpoints. 
         /// <para>
-        /// A list of VPC endpoints that OpenSearch Ingestion has created to other AWS services.
+        /// A list of VPC endpoints that OpenSearch Ingestion has created to other Amazon Web
+        /// Services services.
         /// </para>
         /// </summary>
         public List<ServiceVpcEndpoint> ServiceVpcEndpoints

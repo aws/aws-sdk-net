@@ -46,6 +46,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceCreationLimitPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNewGameSessionsPerCreator())
             {
                 context.Writer.WritePropertyName("NewGameSessionsPerCreator");
@@ -67,4 +69,3 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

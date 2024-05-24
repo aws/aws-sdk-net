@@ -50,6 +50,10 @@ namespace Amazon.KeyManagementService
         /// Constant RSAES_PKCS1_V1_5 for AlgorithmSpec
         /// </summary>
         public static readonly AlgorithmSpec RSAES_PKCS1_V1_5 = new AlgorithmSpec("RSAES_PKCS1_V1_5");
+        /// <summary>
+        /// Constant SM2PKE for AlgorithmSpec
+        /// </summary>
+        public static readonly AlgorithmSpec SM2PKE = new AlgorithmSpec("SM2PKE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1428,6 +1432,10 @@ namespace Amazon.KeyManagementService
         /// Constant RSA_4096 for WrappingKeySpec
         /// </summary>
         public static readonly WrappingKeySpec RSA_4096 = new WrappingKeySpec("RSA_4096");
+        /// <summary>
+        /// Constant SM2 for WrappingKeySpec
+        /// </summary>
+        public static readonly WrappingKeySpec SM2 = new WrappingKeySpec("SM2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

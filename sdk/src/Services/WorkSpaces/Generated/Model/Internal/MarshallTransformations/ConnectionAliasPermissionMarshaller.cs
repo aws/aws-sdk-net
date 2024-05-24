@@ -46,6 +46,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConnectionAliasPermission requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowAssociation())
             {
                 context.Writer.WritePropertyName("AllowAssociation");
@@ -67,4 +69,3 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

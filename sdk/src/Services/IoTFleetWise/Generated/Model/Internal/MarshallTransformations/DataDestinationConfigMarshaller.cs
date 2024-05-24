@@ -46,6 +46,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataDestinationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Config())
             {
                 context.Writer.WritePropertyName("s3Config");
@@ -77,4 +79,3 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

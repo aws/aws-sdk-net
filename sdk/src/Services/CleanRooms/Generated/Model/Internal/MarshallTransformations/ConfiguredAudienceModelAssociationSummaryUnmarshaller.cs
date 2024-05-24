@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public ConfiguredAudienceModelAssociationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ConfiguredAudienceModelAssociationSummary unmarshalledObject = new ConfiguredAudienceModelAssociationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -149,4 +151,3 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -63,26 +63,21 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetScalingParameters())
                 {
                     if(publicRequest.ScalingParameters.IsSetDesiredInstanceType())
                     {
                         request.Parameters.Add("ScalingParameters" + "." + "DesiredInstanceType", StringUtils.FromString(publicRequest.ScalingParameters.DesiredInstanceType));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ScalingParameters.IsSetDesiredPartitionCount())
                     {
                         request.Parameters.Add("ScalingParameters" + "." + "DesiredPartitionCount", StringUtils.FromInt(publicRequest.ScalingParameters.DesiredPartitionCount));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ScalingParameters.IsSetDesiredReplicationCount())
                     {
                         request.Parameters.Add("ScalingParameters" + "." + "DesiredReplicationCount", StringUtils.FromInt(publicRequest.ScalingParameters.DesiredReplicationCount));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

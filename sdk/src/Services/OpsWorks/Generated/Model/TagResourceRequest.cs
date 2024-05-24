@@ -26,13 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks Stacks. For
-    /// more information about how tagging works, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a>
-    /// in the AWS OpsWorks User Guide.
+    /// Apply cost-allocation tags to a specified stack or layer in OpsWorks Stacks. For more
+    /// information about how tagging works, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a>
+    /// in the OpsWorks User Guide.
     /// </summary>
     public partial class TagResourceRequest : AmazonOpsWorksRequest
     {

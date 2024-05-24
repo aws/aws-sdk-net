@@ -46,6 +46,8 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ParallelDataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("Format");
@@ -67,4 +69,3 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

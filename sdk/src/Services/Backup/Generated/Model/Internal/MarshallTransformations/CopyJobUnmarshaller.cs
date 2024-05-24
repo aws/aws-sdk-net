@@ -57,6 +57,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public CopyJob Unmarshall(JsonUnmarshallerContext context)
         {
             CopyJob unmarshalledObject = new CopyJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -215,4 +217,3 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

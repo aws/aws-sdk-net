@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.SageMaker
 {
     /// <summary>
@@ -4436,7 +4437,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a space used for real time collaboration in a domain.
+        /// Creates a private space or a space used for real time collaboration in a domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpace service method.</param>
         /// 
@@ -4460,7 +4461,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a space used for real time collaboration in a domain.
+        /// Creates a private space or a space used for real time collaboration in a domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpace service method.</param>
         /// <param name="cancellationToken">

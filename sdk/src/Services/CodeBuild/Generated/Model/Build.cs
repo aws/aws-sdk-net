@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -726,8 +727,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
-        /// How long, in minutes, for CodeBuild to wait before timing out this build if it does
-        /// not get marked as completed.
+        /// How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing
+        /// out this build if it does not get marked as completed.
         /// </para>
         /// </summary>
         public int TimeoutInMinutes

@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AttachmentId", StringUtils.FromString(publicRequest.AttachmentId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetForce())
                 {
                     request.Parameters.Add("Force", StringUtils.FromBool(publicRequest.Force));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -46,6 +46,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CampaignConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnableMetadataWithRecommendations())
             {
                 context.Writer.WritePropertyName("enableMetadataWithRecommendations");
@@ -81,4 +83,3 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

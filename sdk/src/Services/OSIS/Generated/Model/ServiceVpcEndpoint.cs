@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OSIS.Model
 {
     /// <summary>
@@ -57,7 +58,7 @@ namespace Amazon.OSIS.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointId. 
         /// <para>
-        /// The ID of the VPC endpoint that was created.
+        /// The unique identifier of the VPC endpoint that was created.
         /// </para>
         /// </summary>
         public string VpcEndpointId

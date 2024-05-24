@@ -46,6 +46,8 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RecipientInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttestationDocument())
             {
                 context.Writer.WritePropertyName("AttestationDocument");
@@ -67,4 +69,3 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

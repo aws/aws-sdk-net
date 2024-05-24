@@ -64,10 +64,22 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.AuthConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("buildStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.BuildStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("customPluginConfiguration", targetDepth))
+                {
+                    var unmarshaller = CustomPluginConfigurationUnmarshaller.Instance;
+                    response.CustomPluginConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("displayName", targetDepth))
@@ -179,4 +191,3 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

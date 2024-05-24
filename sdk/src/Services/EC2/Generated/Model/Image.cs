@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -38,6 +39,7 @@ namespace Amazon.EC2.Model
         private BootModeValues _bootMode;
         private string _creationDate;
         private string _deprecationTime;
+        private string _deregistrationProtection;
         private string _description;
         private bool? _enaSupport;
         private HypervisorType _hypervisor;
@@ -47,6 +49,7 @@ namespace Amazon.EC2.Model
         private ImageTypeValues _imageType;
         private ImdsSupportValues _imdsSupport;
         private string _kernelId;
+        private string _lastLaunchedTime;
         private string _name;
         private string _ownerId;
         private PlatformValues _platform;
@@ -156,6 +159,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDeprecationTime()
         {
             return this._deprecationTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeregistrationProtection. 
+        /// <para>
+        /// Indicates whether deregistration protection is enabled for the AMI.
+        /// </para>
+        /// </summary>
+        public string DeregistrationProtection
+        {
+            get { return this._deregistrationProtection; }
+            set { this._deregistrationProtection = value; }
+        }
+
+        // Check to see if DeregistrationProtection property is set
+        internal bool IsSetDeregistrationProtection()
+        {
+            return this._deregistrationProtection != null;
         }
 
         /// <summary>
@@ -324,6 +345,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetKernelId()
         {
             return this._kernelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastLaunchedTime. 
+        /// <para>
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is
+        /// used to launch an instance, there is a 24-hour delay before that usage is reported.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>lastLaunchedTime</c> data is available starting April 2017.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string LastLaunchedTime
+        {
+            get { return this._lastLaunchedTime; }
+            set { this._lastLaunchedTime = value; }
+        }
+
+        // Check to see if LastLaunchedTime property is set
+        internal bool IsSetLastLaunchedTime()
+        {
+            return this._lastLaunchedTime != null;
         }
 
         /// <summary>

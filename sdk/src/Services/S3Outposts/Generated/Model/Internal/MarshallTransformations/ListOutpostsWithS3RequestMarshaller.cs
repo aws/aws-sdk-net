@@ -90,4 +90,3 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

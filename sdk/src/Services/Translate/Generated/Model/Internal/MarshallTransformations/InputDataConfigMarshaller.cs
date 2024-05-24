@@ -46,6 +46,8 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputDataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContentType())
             {
                 context.Writer.WritePropertyName("ContentType");
@@ -67,4 +69,3 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

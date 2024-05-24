@@ -46,6 +46,8 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScalingInstruction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomizedLoadMetricSpecification())
             {
                 context.Writer.WritePropertyName("CustomizedLoadMetricSpecification");
@@ -159,4 +161,3 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

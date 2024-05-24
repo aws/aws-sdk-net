@@ -46,6 +46,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateBackendAuthPasswordPolicyConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalConstraints())
             {
                 context.Writer.WritePropertyName("additionalConstraints");
@@ -60,7 +62,14 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinimumLength())
             {
                 context.Writer.WritePropertyName("minimumLength");
-                context.Writer.Write(requestObject.MinimumLength);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinimumLength))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinimumLength));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinimumLength);
+                }
             }
 
         }
@@ -72,4 +81,3 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

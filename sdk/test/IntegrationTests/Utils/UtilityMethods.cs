@@ -178,7 +178,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                     action();
                     return false;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     throw;
                 }

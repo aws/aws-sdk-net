@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the pipes-2015-10-07.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model
 {
     /// <summary>

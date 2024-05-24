@@ -46,6 +46,8 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RoleMapping requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAmbiguousRoleResolution())
             {
                 context.Writer.WritePropertyName("AmbiguousRoleResolution");
@@ -78,4 +80,3 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

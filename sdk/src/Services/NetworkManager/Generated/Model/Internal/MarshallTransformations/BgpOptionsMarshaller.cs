@@ -46,6 +46,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BgpOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPeerAsn())
             {
                 context.Writer.WritePropertyName("PeerAsn");
@@ -61,4 +63,3 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

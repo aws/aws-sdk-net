@@ -46,6 +46,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AdapterVersionDatasetConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetManifestS3Object())
             {
                 context.Writer.WritePropertyName("ManifestS3Object");
@@ -66,4 +68,3 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

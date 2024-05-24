@@ -26,17 +26,25 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFindings operation.
-    /// <c>UpdateFindings</c> is deprecated. Instead of <c>UpdateFindings</c>, use <c>BatchUpdateFindings</c>.
+    /// <c>UpdateFindings</c> is a deprecated operation. Instead of <c>UpdateFindings</c>,
+    /// use the <c>BatchUpdateFindings</c> operation.
     /// 
     ///  
     /// <para>
     /// Updates the <c>Note</c> and <c>RecordState</c> of the Security Hub-aggregated findings
     /// that the filter attributes specify. Any member account that can view the finding also
     /// sees the update to the finding.
+    /// </para>
+    ///  
+    /// <para>
+    /// Finding updates made with <c>UpdateFindings</c> might not be persisted if the same
+    /// finding is later updated by the finding provider through the <c>BatchImportFindings</c>
+    /// operation.
     /// </para>
     /// </summary>
     public partial class UpdateFindingsRequest : AmazonSecurityHubRequest

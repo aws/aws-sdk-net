@@ -46,6 +46,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CodeSigningPolicies requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetUntrustedArtifactOnDeployment())
             {
                 context.Writer.WritePropertyName("UntrustedArtifactOnDeployment");
@@ -61,4 +63,3 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

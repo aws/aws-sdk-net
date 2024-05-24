@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// An error occurred while streaming the response.
+    /// An error occurred while streaming the response. Retry your request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

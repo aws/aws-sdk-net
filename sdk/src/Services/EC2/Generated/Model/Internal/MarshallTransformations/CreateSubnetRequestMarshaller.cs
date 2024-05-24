@@ -63,52 +63,42 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAvailabilityZoneId())
                 {
                     request.Parameters.Add("AvailabilityZoneId", StringUtils.FromString(publicRequest.AvailabilityZoneId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCidrBlock())
                 {
                     request.Parameters.Add("CidrBlock", StringUtils.FromString(publicRequest.CidrBlock));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv4IpamPoolId())
                 {
                     request.Parameters.Add("Ipv4IpamPoolId", StringUtils.FromString(publicRequest.Ipv4IpamPoolId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv4NetmaskLength())
                 {
                     request.Parameters.Add("Ipv4NetmaskLength", StringUtils.FromInt(publicRequest.Ipv4NetmaskLength));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv6CidrBlock())
                 {
                     request.Parameters.Add("Ipv6CidrBlock", StringUtils.FromString(publicRequest.Ipv6CidrBlock));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv6IpamPoolId())
                 {
                     request.Parameters.Add("Ipv6IpamPoolId", StringUtils.FromString(publicRequest.Ipv6IpamPoolId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv6Native())
                 {
                     request.Parameters.Add("Ipv6Native", StringUtils.FromBool(publicRequest.Ipv6Native));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv6NetmaskLength())
                 {
                     request.Parameters.Add("Ipv6NetmaskLength", StringUtils.FromInt(publicRequest.Ipv6NetmaskLength));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOutpostArn())
                 {
                     request.Parameters.Add("OutpostArn", StringUtils.FromString(publicRequest.OutpostArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -118,7 +108,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -128,25 +117,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
-#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcId())
                 {
                     request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -57,6 +57,8 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public BatchResultErrorEntry Unmarshall(JsonUnmarshallerContext context)
         {
             BatchResultErrorEntry unmarshalledObject = new BatchResultErrorEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

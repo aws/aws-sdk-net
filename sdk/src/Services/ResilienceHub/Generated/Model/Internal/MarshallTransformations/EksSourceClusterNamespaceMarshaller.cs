@@ -46,6 +46,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EksSourceClusterNamespace requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEksClusterArn())
             {
                 context.Writer.WritePropertyName("eksClusterArn");
@@ -67,4 +69,3 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

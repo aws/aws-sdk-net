@@ -46,6 +46,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConnectivityInfo requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPublicAccess())
             {
                 context.Writer.WritePropertyName("publicAccess");
@@ -77,4 +79,3 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

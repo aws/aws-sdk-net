@@ -1693,6 +1693,60 @@ namespace Amazon.Omics
 
 
     /// <summary>
+    /// Constants used for properties of type ShareResourceType.
+    /// </summary>
+    public class ShareResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANNOTATION_STORE for ShareResourceType
+        /// </summary>
+        public static readonly ShareResourceType ANNOTATION_STORE = new ShareResourceType("ANNOTATION_STORE");
+        /// <summary>
+        /// Constant VARIANT_STORE for ShareResourceType
+        /// </summary>
+        public static readonly ShareResourceType VARIANT_STORE = new ShareResourceType("VARIANT_STORE");
+        /// <summary>
+        /// Constant WORKFLOW for ShareResourceType
+        /// </summary>
+        public static readonly ShareResourceType WORKFLOW = new ShareResourceType("WORKFLOW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShareResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShareResourceType FindValue(string value)
+        {
+            return FindValue<ShareResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShareResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ShareStatus.
     /// </summary>
     public class ShareStatus : ConstantClass
@@ -1752,6 +1806,56 @@ namespace Amazon.Omics
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ShareStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageType.
+    /// </summary>
+    public class StorageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DYNAMIC for StorageType
+        /// </summary>
+        public static readonly StorageType DYNAMIC = new StorageType("DYNAMIC");
+        /// <summary>
+        /// Constant STATIC for StorageType
+        /// </summary>
+        public static readonly StorageType STATIC = new StorageType("STATIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageType FindValue(string value)
+        {
+            return FindValue<StorageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageType(string value)
         {
             return FindValue(value);
         }

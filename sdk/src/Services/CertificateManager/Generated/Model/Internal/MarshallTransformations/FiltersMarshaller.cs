@@ -46,6 +46,8 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Filters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExtendedKeyUsage())
             {
                 context.Writer.WritePropertyName("extendedKeyUsage");
@@ -88,4 +90,3 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

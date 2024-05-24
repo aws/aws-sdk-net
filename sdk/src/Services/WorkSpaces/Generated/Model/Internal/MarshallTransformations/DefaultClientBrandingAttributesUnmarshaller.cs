@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public DefaultClientBrandingAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             DefaultClientBrandingAttributes unmarshalledObject = new DefaultClientBrandingAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

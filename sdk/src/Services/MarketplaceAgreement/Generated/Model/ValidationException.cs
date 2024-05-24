@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
@@ -38,7 +39,6 @@ namespace Amazon.MarketplaceAgreement.Model
     {
         private List<ValidationExceptionField> _fields = AWSConfigs.InitializeCollections ? new List<ValidationExceptionField>() : null;
         private ValidationExceptionReason _reason;
-        private string _requestId;
 
         /// <summary>
         /// Constructs a new ValidationException with the specified error
@@ -163,25 +163,6 @@ namespace Amazon.MarketplaceAgreement.Model
         internal bool IsSetReason()
         {
             return this._reason != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RequestId. 
-        /// <para>
-        /// The unique identifier associated with the error.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string RequestId
-        {
-            get { return this._requestId; }
-            set { this._requestId = value; }
-        }
-
-        // Check to see if RequestId property is set
-        internal bool IsSetRequestId()
-        {
-            return this._requestId != null;
         }
 
     }

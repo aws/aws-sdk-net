@@ -66,6 +66,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetBaseCapacity())
@@ -84,6 +85,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("environmentType");
                     context.Writer.Write(publicRequest.EnvironmentType);
+                }
+
+                if(publicRequest.IsSetFleetServiceRole())
+                {
+                    context.Writer.WritePropertyName("fleetServiceRole");
+                    context.Writer.Write(publicRequest.FleetServiceRole);
                 }
 
                 if(publicRequest.IsSetName())
@@ -125,6 +132,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetVpcConfig())
+                {
+                    context.Writer.WritePropertyName("vpcConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -153,4 +171,3 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

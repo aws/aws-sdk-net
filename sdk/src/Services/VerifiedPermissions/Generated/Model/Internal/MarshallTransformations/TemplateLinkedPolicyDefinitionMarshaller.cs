@@ -46,6 +46,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TemplateLinkedPolicyDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPolicyTemplateId())
             {
                 context.Writer.WritePropertyName("policyTemplateId");
@@ -83,4 +85,3 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -63,12 +63,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 {
                     request.Parameters.Add("DataProtectionPolicy", StringUtils.FromString(publicRequest.DataProtectionPolicy));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceArn())
                 {
                     request.Parameters.Add("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -34,7 +35,63 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class DeleteLoggingConfigurationRequest : AmazonWAFV2Request
     {
+        private LogScope _logScope;
+        private LogType _logType;
         private string _resourceArn;
+
+        /// <summary>
+        /// Gets and sets the property LogScope. 
+        /// <para>
+        /// The owner of the logging configuration, which must be set to <c>CUSTOMER</c> for the
+        /// configurations that you manage. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The log scope <c>SECURITY_LAKE</c> indicates a configuration that is managed through
+        /// Amazon Security Lake. You can use Security Lake to collect log and event data from
+        /// various sources for normalization, analysis, and management. For information, see
+        /// <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting
+        /// data from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>CUSTOMER</c> 
+        /// </para>
+        /// </summary>
+        public LogScope LogScope
+        {
+            get { return this._logScope; }
+            set { this._logScope = value; }
+        }
+
+        // Check to see if LogScope property is set
+        internal bool IsSetLogScope()
+        {
+            return this._logScope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogType. 
+        /// <para>
+        /// Used to distinguish between various logging options. Currently, there is one option.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>WAF_LOGS</c> 
+        /// </para>
+        /// </summary>
+        public LogType LogType
+        {
+            get { return this._logType; }
+            set { this._logType = value; }
+        }
+
+        // Check to see if LogType property is set
+        internal bool IsSetLogType()
+        {
+            return this._logType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 

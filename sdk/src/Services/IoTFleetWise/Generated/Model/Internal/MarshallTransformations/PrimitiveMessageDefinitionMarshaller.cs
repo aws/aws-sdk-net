@@ -46,6 +46,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PrimitiveMessageDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRos2PrimitiveMessageDefinition())
             {
                 context.Writer.WritePropertyName("ros2PrimitiveMessageDefinition");
@@ -66,4 +68,3 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

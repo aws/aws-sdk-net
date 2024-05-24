@@ -46,6 +46,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MagneticStoreWriteProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnableMagneticStoreWrites())
             {
                 context.Writer.WritePropertyName("EnableMagneticStoreWrites");
@@ -72,4 +74,3 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

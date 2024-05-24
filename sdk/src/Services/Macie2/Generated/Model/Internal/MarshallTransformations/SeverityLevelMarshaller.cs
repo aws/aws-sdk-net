@@ -46,6 +46,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SeverityLevel requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOccurrencesThreshold())
             {
                 context.Writer.WritePropertyName("occurrencesThreshold");
@@ -67,4 +69,3 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

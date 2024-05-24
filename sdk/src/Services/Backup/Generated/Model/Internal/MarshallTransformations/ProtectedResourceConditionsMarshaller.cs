@@ -46,6 +46,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProtectedResourceConditions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStringEquals())
             {
                 context.Writer.WritePropertyName("StringEquals");
@@ -87,4 +89,3 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

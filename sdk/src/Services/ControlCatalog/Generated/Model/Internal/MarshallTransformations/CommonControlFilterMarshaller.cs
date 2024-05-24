@@ -46,6 +46,8 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CommonControlFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetObjectives())
             {
                 context.Writer.WritePropertyName("Objectives");
@@ -71,4 +73,3 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

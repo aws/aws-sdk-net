@@ -64,6 +64,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetBillingEntity())
@@ -81,7 +82,14 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetModifierPercentage())
                 {
                     context.Writer.WritePropertyName("ModifierPercentage");
-                    context.Writer.Write(publicRequest.ModifierPercentage);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.ModifierPercentage))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.ModifierPercentage));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.ModifierPercentage);
+                    }
                 }
 
                 if(publicRequest.IsSetName())
@@ -178,4 +186,3 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

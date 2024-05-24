@@ -46,6 +46,19 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PolicyOption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetNetworkAclCommonPolicy())
+            {
+                context.Writer.WritePropertyName("NetworkAclCommonPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NetworkAclCommonPolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.NetworkAclCommonPolicy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNetworkFirewallPolicy())
             {
                 context.Writer.WritePropertyName("NetworkFirewallPolicy");
@@ -77,4 +90,3 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

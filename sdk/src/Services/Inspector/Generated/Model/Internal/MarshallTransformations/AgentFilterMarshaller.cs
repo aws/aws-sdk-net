@@ -46,6 +46,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AgentFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAgentHealthCodes())
             {
                 context.Writer.WritePropertyName("agentHealthCodes");
@@ -77,4 +79,3 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

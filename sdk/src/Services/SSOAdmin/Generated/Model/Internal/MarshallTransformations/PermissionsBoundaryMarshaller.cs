@@ -46,6 +46,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PermissionsBoundary requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomerManagedPolicyReference())
             {
                 context.Writer.WritePropertyName("CustomerManagedPolicyReference");
@@ -72,4 +74,3 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

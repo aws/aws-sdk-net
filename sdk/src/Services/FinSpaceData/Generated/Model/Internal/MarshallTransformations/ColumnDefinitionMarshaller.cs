@@ -46,6 +46,8 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ColumnDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetColumnDescription())
             {
                 context.Writer.WritePropertyName("columnDescription");
@@ -73,4 +75,3 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

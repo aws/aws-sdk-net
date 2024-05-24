@@ -26,10 +26,22 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Set of fields associated with a provisioned throughput.
+    /// A summary of information about a Provisioned Throughput.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListProvisionedModelThroughputs.html#API_ListProvisionedModelThroughputs_ResponseSyntax">ListProvisionedThroughputs
+    /// response</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ProvisionedModelSummary
     {
@@ -49,7 +61,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property CommitmentDuration. 
         /// <para>
-        /// Commitment duration for the provisioned throughput.
+        /// The duration for which the Provisioned Throughput was committed.
         /// </para>
         /// </summary>
         public CommitmentDuration CommitmentDuration
@@ -67,7 +79,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property CommitmentExpirationTime. 
         /// <para>
-        /// Commitment expiration time for the provisioned throughput.
+        /// The timestamp for when the commitment term of the Provisioned Throughput expires.
         /// </para>
         /// </summary>
         public DateTime CommitmentExpirationTime
@@ -85,7 +97,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time that this provisioned throughput was created. 
+        /// The time that the Provisioned Throughput was created. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,7 +116,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property DesiredModelArn. 
         /// <para>
-        /// Desired model ARN.
+        /// The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned
+        /// Throughput. This value differs from the <c>modelArn</c> if updating hasn't completed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]
@@ -123,7 +136,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property DesiredModelUnits. 
         /// <para>
-        /// Desired model units.
+        /// The number of model units that was requested to be allocated to the Provisioned Throughput.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -142,7 +155,9 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property FoundationModelArn. 
         /// <para>
-        /// Foundation model ARN.
+        /// The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput
+        /// was created, or of the base model that the custom model for which the Provisioned
+        /// Throughput was created was customized.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -161,7 +176,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The time that this provisioned throughput was last modified. 
+        /// The time that the Provisioned Throughput was last modified. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -180,7 +195,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ModelArn. 
         /// <para>
-        /// The ARN of the model associated with this provisioned throughput.
+        /// The Amazon Resource Name (ARN) of the model associated with the Provisioned Throughput.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]
@@ -199,7 +214,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ModelUnits. 
         /// <para>
-        /// The number of model units allocated.
+        /// The number of model units allocated to the Provisioned Throughput.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -218,7 +233,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ProvisionedModelArn. 
         /// <para>
-        /// The ARN of the provisioned throughput.
+        /// The Amazon Resource Name (ARN) of the Provisioned Throughput.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -237,7 +252,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ProvisionedModelName. 
         /// <para>
-        /// The name of the provisioned throughput.
+        /// The name of the Provisioned Throughput.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -256,7 +271,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status of the provisioned throughput.
+        /// The status of the Provisioned Throughput.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

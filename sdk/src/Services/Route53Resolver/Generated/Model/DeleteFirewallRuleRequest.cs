@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
@@ -134,6 +135,13 @@ namespace Amazon.Route53Resolver.Model
         ///  </li> <li> 
         /// <para>
         /// TXT: Verifies email senders and application-specific values.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A query type you define by using the DNS type ID, for example 28 for AAAA. The values
+        /// must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28.
+        /// For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List
+        /// of DNS record types</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

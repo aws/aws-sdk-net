@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public NetworkFirewallUnexpectedFirewallRoutesViolation Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkFirewallUnexpectedFirewallRoutesViolation unmarshalledObject = new NetworkFirewallUnexpectedFirewallRoutesViolation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

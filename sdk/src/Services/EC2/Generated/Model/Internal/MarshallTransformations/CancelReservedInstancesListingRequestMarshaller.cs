@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ReservedInstancesListingId", StringUtils.FromString(publicRequest.ReservedInstancesListingId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

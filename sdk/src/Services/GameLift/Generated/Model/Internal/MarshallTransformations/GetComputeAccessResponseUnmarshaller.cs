@@ -82,6 +82,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     response.FleetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Target", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Target = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -145,4 +151,3 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

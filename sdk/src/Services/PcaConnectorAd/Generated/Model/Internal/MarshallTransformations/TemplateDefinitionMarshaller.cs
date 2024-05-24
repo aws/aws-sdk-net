@@ -46,6 +46,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TemplateDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTemplateV2())
             {
                 context.Writer.WritePropertyName("TemplateV2");
@@ -88,4 +90,3 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

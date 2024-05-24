@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.IVSRealTime.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.IVSRealTime
 {
     /// <summary>
@@ -1724,6 +1725,9 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the UpdateStage service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">

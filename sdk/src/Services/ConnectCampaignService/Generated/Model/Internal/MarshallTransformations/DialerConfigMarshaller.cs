@@ -46,6 +46,8 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DialerConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAgentlessDialerConfig())
             {
                 context.Writer.WritePropertyName("agentlessDialerConfig");
@@ -88,4 +90,3 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

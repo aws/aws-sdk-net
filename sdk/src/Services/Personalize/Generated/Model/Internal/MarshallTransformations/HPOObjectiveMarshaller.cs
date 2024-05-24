@@ -46,6 +46,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HPOObjective requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("metricName");
@@ -73,4 +75,3 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

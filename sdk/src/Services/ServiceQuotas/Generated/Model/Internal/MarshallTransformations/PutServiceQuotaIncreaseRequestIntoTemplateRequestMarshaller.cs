@@ -66,6 +66,7 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAwsRegion())
@@ -77,7 +78,14 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDesiredValue())
                 {
                     context.Writer.WritePropertyName("DesiredValue");
-                    context.Writer.Write(publicRequest.DesiredValue);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.DesiredValue))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DesiredValue));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.DesiredValue);
+                    }
                 }
 
                 if(publicRequest.IsSetQuotaCode())
@@ -120,4 +128,3 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

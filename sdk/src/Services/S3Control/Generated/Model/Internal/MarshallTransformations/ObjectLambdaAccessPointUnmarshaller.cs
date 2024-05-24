@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ObjectLambdaAccessPoint Object
     /// </summary>  
-    public class ObjectLambdaAccessPointUnmarshaller : IUnmarshaller<ObjectLambdaAccessPoint, XmlUnmarshallerContext>
+    public class ObjectLambdaAccessPointUnmarshaller : IUnmarshaller<ObjectLambdaAccessPoint, XmlUnmarshallerContext>, IUnmarshaller<ObjectLambdaAccessPoint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,6 +82,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public ObjectLambdaAccessPoint Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static ObjectLambdaAccessPointUnmarshaller _instance = new ObjectLambdaAccessPointUnmarshaller();        
 
@@ -97,4 +107,3 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

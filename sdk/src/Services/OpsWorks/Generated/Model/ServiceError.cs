@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Describes an AWS OpsWorks Stacks service error.
+    /// Describes an OpsWorks Stacks service error.
     /// </summary>
     public partial class ServiceError
     {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class ReplicaGlobalSecondaryIndex
     {
         private string _indexName;
+        private OnDemandThroughputOverride _onDemandThroughputOverride;
         private ProvisionedThroughputOverride _provisionedThroughputOverride;
 
         /// <summary>
@@ -53,6 +55,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetIndexName()
         {
             return this._indexName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDemandThroughputOverride. 
+        /// <para>
+        /// Overrides the maximum on-demand throughput settings for the specified global secondary
+        /// index in the specified replica table.
+        /// </para>
+        /// </summary>
+        public OnDemandThroughputOverride OnDemandThroughputOverride
+        {
+            get { return this._onDemandThroughputOverride; }
+            set { this._onDemandThroughputOverride = value; }
+        }
+
+        // Check to see if OnDemandThroughputOverride property is set
+        internal bool IsSetOnDemandThroughputOverride()
+        {
+            return this._onDemandThroughputOverride != null;
         }
 
         /// <summary>

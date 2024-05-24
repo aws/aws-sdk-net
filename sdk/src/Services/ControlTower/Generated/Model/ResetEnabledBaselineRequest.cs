@@ -26,12 +26,15 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetEnabledBaseline operation.
     /// Re-enables an <c>EnabledBaseline</c> resource. For example, this API can re-apply
     /// the existing <c>Baseline</c> after a new member account is moved to the target OU.
+    /// For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html">
+    /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
     /// </summary>
     public partial class ResetEnabledBaselineRequest : AmazonControlTowerRequest
     {

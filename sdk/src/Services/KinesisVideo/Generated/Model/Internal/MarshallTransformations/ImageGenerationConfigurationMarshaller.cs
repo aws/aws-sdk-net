@@ -46,6 +46,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ImageGenerationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestinationConfig())
             {
                 context.Writer.WritePropertyName("DestinationConfig");
@@ -116,4 +118,3 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

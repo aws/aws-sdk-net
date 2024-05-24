@@ -46,6 +46,8 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(X12Details requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTransactionSet())
             {
                 context.Writer.WritePropertyName("transactionSet");
@@ -67,4 +69,3 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

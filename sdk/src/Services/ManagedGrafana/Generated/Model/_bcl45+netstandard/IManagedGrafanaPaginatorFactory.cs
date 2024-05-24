@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the grafana-2020-08-18.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
@@ -39,5 +40,15 @@ namespace Amazon.ManagedGrafana.Model
         /// Paginator for ListWorkspaces operation
         ///</summary>
         IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkspaceServiceAccounts operation
+        ///</summary>
+        IListWorkspaceServiceAccountsPaginator ListWorkspaceServiceAccounts(ListWorkspaceServiceAccountsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkspaceServiceAccountTokens operation
+        ///</summary>
+        IListWorkspaceServiceAccountTokensPaginator ListWorkspaceServiceAccountTokens(ListWorkspaceServiceAccountTokensRequest request);
     }
 }

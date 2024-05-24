@@ -46,6 +46,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LogicalResourceId requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEksSourceName())
             {
                 context.Writer.WritePropertyName("eksSourceName");
@@ -85,4 +87,3 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

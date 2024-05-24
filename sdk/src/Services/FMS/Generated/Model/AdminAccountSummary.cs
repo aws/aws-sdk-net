@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -83,7 +84,7 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the request to onboard a member account as an Firewall Manager
-        /// administator.
+        /// administrator.
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -46,6 +46,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EmailContent requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRaw())
             {
                 context.Writer.WritePropertyName("Raw");
@@ -88,4 +90,3 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

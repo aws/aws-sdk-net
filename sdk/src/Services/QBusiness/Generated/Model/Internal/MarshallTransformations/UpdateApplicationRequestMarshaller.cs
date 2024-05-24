@@ -67,6 +67,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAttachmentsConfiguration())
@@ -90,6 +91,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("displayName");
                     context.Writer.Write(publicRequest.DisplayName);
+                }
+
+                if(publicRequest.IsSetIdentityCenterInstanceArn())
+                {
+                    context.Writer.WritePropertyName("identityCenterInstanceArn");
+                    context.Writer.Write(publicRequest.IdentityCenterInstanceArn);
                 }
 
                 if(publicRequest.IsSetRoleArn())
@@ -126,4 +133,3 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

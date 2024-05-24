@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -50,6 +51,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property DestinationDomain. 
         /// <para>
         /// The destination domain of network-related information about a finding.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1. Maximum of 128.
         /// </para>
         /// </summary>
         public string DestinationDomain
@@ -159,6 +164,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The protocol of network-related information about a finding.
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1. Maximum of 16.
+        /// </para>
         /// </summary>
         public string Protocol
         {
@@ -176,6 +185,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property SourceDomain. 
         /// <para>
         /// The source domain of network-related information about a finding.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1. Maximum of 128.
         /// </para>
         /// </summary>
         public string SourceDomain

@@ -46,6 +46,8 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VmwareToAwsTagMapping requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAwsTagKey())
             {
                 context.Writer.WritePropertyName("AwsTagKey");
@@ -79,4 +81,3 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

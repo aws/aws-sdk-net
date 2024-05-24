@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3Origin Object
     /// </summary>  
-    public class S3OriginUnmarshaller : IUnmarshaller<S3Origin, XmlUnmarshallerContext>
+    public class S3OriginUnmarshaller : IUnmarshaller<S3Origin, XmlUnmarshallerContext>, IUnmarshaller<S3Origin, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,6 +76,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public S3Origin Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static S3OriginUnmarshaller _instance = new S3OriginUnmarshaller();        
 
@@ -91,4 +101,3 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         public SubStatementData Unmarshall(JsonUnmarshallerContext context)
         {
             SubStatementData unmarshalledObject = new SubStatementData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -149,4 +151,3 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

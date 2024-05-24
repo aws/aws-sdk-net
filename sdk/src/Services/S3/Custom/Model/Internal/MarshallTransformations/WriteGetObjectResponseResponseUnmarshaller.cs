@@ -20,8 +20,16 @@ using System.Text;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// WriteGetObjectResponseResponse unmarshaller
+    /// </summary>
     public class WriteGetObjectResponseResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             WriteGetObjectResponseResponse response = new WriteGetObjectResponseResponse();
@@ -31,6 +39,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static WriteGetObjectResponseResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static WriteGetObjectResponseResponseUnmarshaller Instance
         {
             get

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.QBusiness.Model
     public partial class PluginAuthConfiguration
     {
         private BasicAuthConfiguration _basicAuthConfiguration;
+        private NoAuthConfiguration _noAuthConfiguration;
         private OAuth2ClientCredentialConfiguration _oAuth2ClientCredentialConfiguration;
 
         /// <summary>
@@ -52,6 +54,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetBasicAuthConfiguration()
         {
             return this._basicAuthConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NoAuthConfiguration. 
+        /// <para>
+        /// Information about invoking a custom plugin without any authentication.
+        /// </para>
+        /// </summary>
+        public NoAuthConfiguration NoAuthConfiguration
+        {
+            get { return this._noAuthConfiguration; }
+            set { this._noAuthConfiguration = value; }
+        }
+
+        // Check to see if NoAuthConfiguration property is set
+        internal bool IsSetNoAuthConfiguration()
+        {
+            return this._noAuthConfiguration != null;
         }
 
         /// <summary>

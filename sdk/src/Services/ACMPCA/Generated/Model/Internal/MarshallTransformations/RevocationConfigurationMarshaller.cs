@@ -46,6 +46,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RevocationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCrlConfiguration())
             {
                 context.Writer.WritePropertyName("CrlConfiguration");
@@ -77,4 +79,3 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

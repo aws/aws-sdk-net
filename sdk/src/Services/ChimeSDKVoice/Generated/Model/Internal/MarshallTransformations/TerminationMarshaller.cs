@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Termination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCallingRegions())
             {
                 context.Writer.WritePropertyName("CallingRegions");
@@ -95,4 +97,3 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

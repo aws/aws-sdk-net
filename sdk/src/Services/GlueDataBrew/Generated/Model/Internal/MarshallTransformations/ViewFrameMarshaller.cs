@@ -46,6 +46,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ViewFrame requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAnalytics())
             {
                 context.Writer.WritePropertyName("Analytics");
@@ -96,4 +98,3 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

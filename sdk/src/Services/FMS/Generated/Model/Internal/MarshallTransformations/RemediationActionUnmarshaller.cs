@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public RemediationAction Unmarshall(JsonUnmarshallerContext context)
         {
             RemediationAction unmarshalledObject = new RemediationAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,24 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CreateNetworkAclAction", targetDepth))
+                {
+                    var unmarshaller = CreateNetworkAclActionUnmarshaller.Instance;
+                    unmarshalledObject.CreateNetworkAclAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreateNetworkAclEntriesAction", targetDepth))
+                {
+                    var unmarshaller = CreateNetworkAclEntriesActionUnmarshaller.Instance;
+                    unmarshalledObject.CreateNetworkAclEntriesAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DeleteNetworkAclEntriesAction", targetDepth))
+                {
+                    var unmarshaller = DeleteNetworkAclEntriesActionUnmarshaller.Instance;
+                    unmarshalledObject.DeleteNetworkAclEntriesAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -118,6 +138,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     unmarshalledObject.FMSPolicyUpdateFirewallCreationConfigAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReplaceNetworkAclAssociationAction", targetDepth))
+                {
+                    var unmarshaller = ReplaceNetworkAclAssociationActionUnmarshaller.Instance;
+                    unmarshalledObject.ReplaceNetworkAclAssociationAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
@@ -137,4 +163,3 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

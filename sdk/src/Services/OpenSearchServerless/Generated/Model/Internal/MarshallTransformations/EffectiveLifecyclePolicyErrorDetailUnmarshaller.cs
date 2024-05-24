@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         public EffectiveLifecyclePolicyErrorDetail Unmarshall(JsonUnmarshallerContext context)
         {
             EffectiveLifecyclePolicyErrorDetail unmarshalledObject = new EffectiveLifecyclePolicyErrorDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

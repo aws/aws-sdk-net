@@ -46,6 +46,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CrlDistributionPointExtensionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOmitExtension())
             {
                 context.Writer.WritePropertyName("OmitExtension");
@@ -61,4 +63,3 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

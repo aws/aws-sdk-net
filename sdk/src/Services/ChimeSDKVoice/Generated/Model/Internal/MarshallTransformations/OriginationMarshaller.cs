@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Origination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDisabled())
             {
                 context.Writer.WritePropertyName("Disabled");
@@ -77,4 +79,3 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

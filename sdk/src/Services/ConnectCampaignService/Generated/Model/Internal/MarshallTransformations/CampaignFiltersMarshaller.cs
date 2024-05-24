@@ -46,6 +46,8 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CampaignFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInstanceIdFilter())
             {
                 context.Writer.WritePropertyName("instanceIdFilter");
@@ -66,4 +68,3 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

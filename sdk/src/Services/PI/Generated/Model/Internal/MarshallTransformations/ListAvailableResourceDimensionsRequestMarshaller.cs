@@ -66,8 +66,20 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAuthorizedActions())
+                {
+                    context.Writer.WritePropertyName("AuthorizedActions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAuthorizedActionsListValue in publicRequest.AuthorizedActions)
+                    {
+                            context.Writer.Write(publicRequestAuthorizedActionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetIdentifier())
                 {
                     context.Writer.WritePropertyName("Identifier");
@@ -131,4 +143,3 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KinesisStreamSourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKinesisStreamARN())
             {
                 context.Writer.WritePropertyName("KinesisStreamARN");
@@ -67,4 +69,3 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

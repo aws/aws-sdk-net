@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -34,8 +35,28 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class GetCisScanReportRequest : AmazonInspector2Request
     {
+        private CisReportFormat _reportFormat;
         private string _scanArn;
         private List<string> _targetAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ReportFormat. 
+        /// <para>
+        ///  The format of the report. Valid values are <c>PDF</c> and <c>CSV</c>. If no value
+        /// is specified, the report format defaults to <c>PDF</c>. 
+        /// </para>
+        /// </summary>
+        public CisReportFormat ReportFormat
+        {
+            get { return this._reportFormat; }
+            set { this._reportFormat = value; }
+        }
+
+        // Check to see if ReportFormat property is set
+        internal bool IsSetReportFormat()
+        {
+            return this._reportFormat != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ScanArn. 

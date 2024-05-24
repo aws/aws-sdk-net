@@ -46,6 +46,8 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Query requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSelectors())
             {
                 context.Writer.WritePropertyName("selectors");
@@ -71,4 +73,3 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

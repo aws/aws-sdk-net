@@ -63,12 +63,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DashboardBody", StringUtils.FromString(publicRequest.DashboardBody));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDashboardName())
                 {
                     request.Parameters.Add("DashboardName", StringUtils.FromString(publicRequest.DashboardName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

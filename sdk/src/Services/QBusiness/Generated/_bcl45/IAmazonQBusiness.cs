@@ -26,17 +26,12 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.QBusiness.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.QBusiness
 {
     /// <summary>
     /// <para>Interface for accessing QBusiness</para>
     ///
-    /// <note> 
-    /// <para>
-    /// Amazon Q is in preview release and is subject to change.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// This is the <i>Amazon Q Business</i> API Reference. Amazon Q Business is a fully managed,
     /// generative-AI powered enterprise chat assistant that you can deploy within your organization.
     /// Amazon Q Business enhances employee productivity by supporting key tasks such as question-answering,
@@ -45,7 +40,7 @@ namespace Amazon.QBusiness
     /// that are presented in a conversational manner. For an introduction to the service,
     /// see the <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/what-is.html">
     /// <i>Amazon Q Business User Guide</i> </a>.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// For an overview of the Amazon Q Business APIs, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/api-ref.html#api-overview">Overview
@@ -428,6 +423,16 @@ namespace Amazon.QBusiness
 
         /// <summary>
         /// Creates an Amazon Q Business application.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// There are new tiers for Amazon Q Business. Not all features in Amazon Q Business Pro
+        /// are also available in Amazon Q Business Lite. For information on what's included in
+        /// Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon
+        /// Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription
+        /// tiers to users.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// 
@@ -466,6 +471,16 @@ namespace Amazon.QBusiness
 
         /// <summary>
         /// Creates an Amazon Q Business application.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// There are new tiers for Amazon Q Business. Not all features in Amazon Q Business Pro
+        /// are also available in Amazon Q Business Lite. For information on what's included in
+        /// Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon
+        /// Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription
+        /// tiers to users.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// <param name="cancellationToken">

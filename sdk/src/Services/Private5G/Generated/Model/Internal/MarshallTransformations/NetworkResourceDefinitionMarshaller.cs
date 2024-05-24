@@ -46,6 +46,8 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NetworkResourceDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCount())
             {
                 context.Writer.WritePropertyName("count");
@@ -83,4 +85,3 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

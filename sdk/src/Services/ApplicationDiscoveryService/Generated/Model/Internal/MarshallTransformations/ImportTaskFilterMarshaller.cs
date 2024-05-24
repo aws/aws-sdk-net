@@ -46,6 +46,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <returns></returns>
         public void Marshall(ImportTaskFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
@@ -72,4 +74,3 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
     }
 }
-#pragma warning restore CS0612,CS0618

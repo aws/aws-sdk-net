@@ -46,6 +46,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TLSInspectionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetServerCertificateConfigurations())
             {
                 context.Writer.WritePropertyName("ServerCertificateConfigurations");
@@ -71,4 +73,3 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

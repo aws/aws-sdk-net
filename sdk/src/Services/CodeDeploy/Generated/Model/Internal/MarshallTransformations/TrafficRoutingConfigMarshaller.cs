@@ -46,6 +46,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TrafficRoutingConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTimeBasedCanary())
             {
                 context.Writer.WritePropertyName("timeBasedCanary");
@@ -83,4 +85,3 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

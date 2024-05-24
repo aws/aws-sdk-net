@@ -28,6 +28,7 @@ namespace Amazon.Lambda
         /// <exception cref="InvalidRequestContentException"/>
         /// <exception cref="ResourceNotFoundException"/>
         /// <exception cref="ServiceException"/>
+        [Obsolete("API InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest) is deprecated, use InvokeResponse Invoke(InvokeRequest), or Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead. For .NET Core, Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest, CancellationToken) is deprecated, use Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead.")]
         public InvokeAsyncResponse InvokeAsync(string functionName)
         {
             return this.InvokeAsync(functionName, "{}");
@@ -47,6 +48,7 @@ namespace Amazon.Lambda
         /// <exception cref="InvalidRequestContentException"/>
         /// <exception cref="ResourceNotFoundException"/>
         /// <exception cref="ServiceException"/>
+        [Obsolete("API InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest) is deprecated, use InvokeResponse Invoke(InvokeRequest), or Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead. For .NET Core, Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest, CancellationToken) is deprecated, use Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead.")]
         public InvokeAsyncResponse InvokeAsync(string functionName, string invokeArgs)
         {
 #pragma warning disable 618

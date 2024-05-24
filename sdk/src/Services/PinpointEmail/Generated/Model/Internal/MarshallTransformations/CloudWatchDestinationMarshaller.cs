@@ -46,6 +46,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudWatchDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDimensionConfigurations())
             {
                 context.Writer.WritePropertyName("DimensionConfigurations");
@@ -71,4 +73,3 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

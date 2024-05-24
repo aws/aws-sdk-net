@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -34,7 +35,6 @@ namespace Amazon.MediaLive.Model
     public partial class DescribeInputDeviceThumbnailResponse : AmazonWebServiceResponse, IDisposable
     {
         private Stream _body;
-        private long? _contentLength;
         private ContentType _contentType;
         private string _eTag;
         private DateTime? _lastModified;
@@ -56,21 +56,6 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContentLength. The length of the content.
-        /// </summary>
-        public long ContentLength
-        {
-            get { return this._contentLength.GetValueOrDefault(); }
-            set { this._contentLength = value; }
-        }
-
-        // Check to see if ContentLength property is set
-        internal bool IsSetContentLength()
-        {
-            return this._contentLength.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property ContentType. Specifies the media type of the thumbnail.
         /// </summary>
         public ContentType ContentType
@@ -82,7 +67,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>
@@ -97,7 +82,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this._eTag != null;
+            return !string.IsNullOrEmpty(this._eTag);
         }
 
         /// <summary>
@@ -129,6 +114,9 @@ namespace Amazon.MediaLive.Model
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed)

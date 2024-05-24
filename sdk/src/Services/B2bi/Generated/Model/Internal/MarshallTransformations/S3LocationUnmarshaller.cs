@@ -57,6 +57,8 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         public S3Location Unmarshall(JsonUnmarshallerContext context)
         {
             S3Location unmarshalledObject = new S3Location();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

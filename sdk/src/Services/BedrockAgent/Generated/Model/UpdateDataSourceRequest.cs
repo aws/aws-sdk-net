@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
@@ -41,6 +42,7 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class UpdateDataSourceRequest : AmazonBedrockAgentRequest
     {
+        private DataDeletionPolicy _dataDeletionPolicy;
         private DataSourceConfiguration _dataSourceConfiguration;
         private string _dataSourceId;
         private string _description;
@@ -48,6 +50,24 @@ namespace Amazon.BedrockAgent.Model
         private string _name;
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
         private VectorIngestionConfiguration _vectorIngestionConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property DataDeletionPolicy. 
+        /// <para>
+        /// The data deletion policy of the updated data source.
+        /// </para>
+        /// </summary>
+        public DataDeletionPolicy DataDeletionPolicy
+        {
+            get { return this._dataDeletionPolicy; }
+            set { this._dataDeletionPolicy = value; }
+        }
+
+        // Check to see if DataDeletionPolicy property is set
+        internal bool IsSetDataDeletionPolicy()
+        {
+            return this._dataDeletionPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataSourceConfiguration. 

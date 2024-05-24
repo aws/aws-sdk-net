@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -35,6 +36,7 @@ namespace Amazon.Pinpoint.Model
     public partial class EmailTemplateRequest
     {
         private string _defaultSubstitutions;
+        private List<MessageHeader> _headers = AWSConfigs.InitializeCollections ? new List<MessageHeader>() : null;
         private string _htmlPart;
         private string _recommenderId;
         private string _subject;
@@ -62,6 +64,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetDefaultSubstitutions()
         {
             return this._defaultSubstitutions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Headers. 
+        /// <para>
+        /// The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a>
+        /// for the email. You can have up to 15 Headers.
+        /// </para>
+        /// </summary>
+        public List<MessageHeader> Headers
+        {
+            get { return this._headers; }
+            set { this._headers = value; }
+        }
+
+        // Check to see if Headers property is set
+        internal bool IsSetHeaders()
+        {
+            return this._headers != null && (this._headers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

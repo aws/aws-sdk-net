@@ -46,6 +46,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ObjectAttributeRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributeKey())
             {
                 context.Writer.WritePropertyName("AttributeKey");
@@ -77,4 +79,3 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

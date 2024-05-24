@@ -46,6 +46,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListAnomaliesForInsightFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetServiceCollection())
             {
                 context.Writer.WritePropertyName("ServiceCollection");
@@ -66,4 +68,3 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

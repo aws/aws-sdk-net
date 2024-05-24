@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
@@ -41,8 +42,9 @@ namespace Amazon.RedshiftServerless.Model
         /// <para>
         /// The key of the parameter. The options are <c>auto_mv</c>, <c>datestyle</c>, <c>enable_case_sensitive_identifier</c>,
         /// <c>enable_user_activity_logging</c>, <c>query_group</c>, <c>search_path</c>, <c>require_ssl</c>,
-        /// and query monitoring metrics that let you define performance boundaries. For more
-        /// information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">Query
+        /// <c>use_fips_ssl</c>, and query monitoring metrics that let you define performance
+        /// boundaries. For more information about query monitoring rules and available metrics,
+        /// see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">Query
         /// monitoring metrics for Amazon Redshift Serverless</a>.
         /// </para>
         /// </summary>

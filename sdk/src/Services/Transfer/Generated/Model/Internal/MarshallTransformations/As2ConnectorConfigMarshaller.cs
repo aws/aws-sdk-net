@@ -46,6 +46,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(As2ConnectorConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBasicAuthSecretId())
             {
                 context.Writer.WritePropertyName("BasicAuthSecretId");
@@ -109,4 +111,3 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

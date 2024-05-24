@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -37,7 +38,6 @@ namespace Amazon.DataSync.Model
     public partial class InvalidRequestException : AmazonDataSyncException
     {
         private string _datasyncErrorCode;
-        private string _errorCode;
 
         /// <summary>
         /// Constructs a new InvalidRequestException with the specified error
@@ -139,21 +139,6 @@ namespace Amazon.DataSync.Model
         internal bool IsSetDatasyncErrorCode()
         {
             return this._datasyncErrorCode != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ErrorCode.
-        /// </summary>
-        public string ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
         }
 
     }

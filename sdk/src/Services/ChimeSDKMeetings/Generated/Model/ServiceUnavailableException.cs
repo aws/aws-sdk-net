@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMeetings.Model
 {
     /// <summary>
@@ -37,7 +38,6 @@ namespace Amazon.ChimeSDKMeetings.Model
     public partial class ServiceUnavailableException : AmazonChimeSDKMeetingsException
     {
         private string _code;
-        private string _requestId;
         private string _retryAfterSeconds;
 
         /// <summary>
@@ -146,25 +146,6 @@ namespace Amazon.ChimeSDKMeetings.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequestId. 
-        /// <para>
-        /// The request id associated with the call responsible for the exception.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=4096)]
-        public string RequestId
-        {
-            get { return this._requestId; }
-            set { this._requestId = value; }
-        }
-
-        // Check to see if RequestId property is set
-        internal bool IsSetRequestId()
-        {
-            return this._requestId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property RetryAfterSeconds. 
         /// <para>
         /// The number of seconds the caller should wait before retrying.
@@ -179,7 +160,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         // Check to see if RetryAfterSeconds property is set
         internal bool IsSetRetryAfterSeconds()
         {
-            return this._retryAfterSeconds != null;
+            return !string.IsNullOrEmpty(this._retryAfterSeconds);
         }
 
     }

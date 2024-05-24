@@ -63,12 +63,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AcceptTermsAndConditions", StringUtils.FromBool(publicRequest.AcceptTermsAndConditions));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetConnectionArn())
                 {
                     request.Parameters.Add("ConnectionArn", StringUtils.FromString(publicRequest.ConnectionArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

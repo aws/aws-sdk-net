@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -82,8 +83,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Ec2InstanceIds. 
         /// <para>
-        /// A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic
-        /// for.
+        /// A list of the EC2 instances for which the Elastic Load Balancing instance is managing
+        /// traffic.
         /// </para>
         /// </summary>
         public List<string> Ec2InstanceIds
@@ -101,7 +102,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ElasticLoadBalancerName. 
         /// <para>
-        /// The Elastic Load Balancing instance's name.
+        /// The Elastic Load Balancing instance name.
         /// </para>
         /// </summary>
         public string ElasticLoadBalancerName
@@ -119,7 +120,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property LayerId. 
         /// <para>
-        /// The ID of the layer that the instance is attached to.
+        /// The ID of the layer to which the instance is attached.
         /// </para>
         /// </summary>
         public string LayerId
@@ -137,7 +138,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The instance's AWS region.
+        /// The instance's Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string Region
@@ -155,7 +156,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
-        /// The ID of the stack that the instance is associated with.
+        /// The ID of the stack with which the instance is associated.
         /// </para>
         /// </summary>
         public string StackId

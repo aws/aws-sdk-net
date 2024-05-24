@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GeoMatchParams requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAreaCode())
             {
                 context.Writer.WritePropertyName("AreaCode");
@@ -67,4 +69,3 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

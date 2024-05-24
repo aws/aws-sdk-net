@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -80,7 +81,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the certificate. 
+        /// The Amazon Resource Name (ARN) of the certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

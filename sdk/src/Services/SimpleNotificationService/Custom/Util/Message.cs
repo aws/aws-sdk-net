@@ -426,7 +426,9 @@ namespace Amazon.SimpleNotificationService.Util
                     {
                         try
                         {
+#pragma warning disable SYSLIB0014 // Need to use HttpWebRequest while the SDK targets .NET Framework 3.5
                             HttpWebRequest request = HttpWebRequest.Create(this.SigningCertURL) as HttpWebRequest;
+#pragma warning restore SYSLIB0014
 #if BCL
                             using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 #else

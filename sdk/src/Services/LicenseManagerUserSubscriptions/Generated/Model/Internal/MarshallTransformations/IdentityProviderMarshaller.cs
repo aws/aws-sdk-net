@@ -46,6 +46,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         /// <returns></returns>
         public void Marshall(IdentityProvider requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActiveDirectoryIdentityProvider())
             {
                 context.Writer.WritePropertyName("ActiveDirectoryIdentityProvider");
@@ -66,4 +68,3 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
 
     }
 }
-#pragma warning restore CS0612,CS0618

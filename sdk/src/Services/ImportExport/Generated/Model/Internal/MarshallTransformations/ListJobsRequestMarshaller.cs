@@ -63,17 +63,14 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("APIVersion", StringUtils.FromString(publicRequest.APIVersion));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxJobs())
                 {
                     request.Parameters.Add("MaxJobs", StringUtils.FromInt(publicRequest.MaxJobs));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

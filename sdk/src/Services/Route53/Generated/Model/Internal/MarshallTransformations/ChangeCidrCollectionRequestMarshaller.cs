@@ -65,33 +65,32 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("ChangeCidrCollectionRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
+                xmlWriter.WriteStartElement("ChangeCidrCollectionRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetCollectionVersion())
-                    xmlWriter.WriteElementString("CollectionVersion", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromLong(publicRequest.CollectionVersion));                    
+                    xmlWriter.WriteElementString("CollectionVersion", StringUtils.FromLong(publicRequest.CollectionVersion));
 
                 var publicRequestChanges = publicRequest.Changes;
                 if (publicRequestChanges != null && (publicRequestChanges.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                {                        
-                    xmlWriter.WriteStartElement("Changes", "https://route53.amazonaws.com/doc/2013-04-01/");
+                {
+                    xmlWriter.WriteStartElement("Changes");
                     foreach (var publicRequestChangesValue in publicRequestChanges) 
                     {
-                
-                    if (publicRequestChangesValue != null) 
+                    if (publicRequestChangesValue != null)
                     {
-                        xmlWriter.WriteStartElement("member", "https://route53.amazonaws.com/doc/2013-04-01/");            
+                        xmlWriter.WriteStartElement("member");
                         if(publicRequestChangesValue.IsSetLocationName())
-                            xmlWriter.WriteElementString("LocationName", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangesValue.LocationName));                 
+                            xmlWriter.WriteElementString("LocationName", StringUtils.FromString(publicRequestChangesValue.LocationName));                 
 
                         if(publicRequestChangesValue.IsSetAction())
-                            xmlWriter.WriteElementString("Action", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangesValue.Action));                 
+                            xmlWriter.WriteElementString("Action", StringUtils.FromString(publicRequestChangesValue.Action));                 
 
                         var publicRequestChangesValueCidrList = publicRequestChangesValue.CidrList;
                         if (publicRequestChangesValueCidrList != null && (publicRequestChangesValueCidrList.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                        {                        
-                            xmlWriter.WriteStartElement("CidrList", "https://route53.amazonaws.com/doc/2013-04-01/");
+                        {
+                            xmlWriter.WriteStartElement("CidrList");
                             foreach (var publicRequestChangesValueCidrListValue in publicRequestChangesValueCidrList) 
                             {
-                                xmlWriter.WriteStartElement("Cidr", "https://route53.amazonaws.com/doc/2013-04-01/");
+                                xmlWriter.WriteStartElement("Cidr");
                                 xmlWriter.WriteValue(publicRequestChangesValueCidrListValue);
                                 xmlWriter.WriteEndElement();
                             }            
@@ -139,4 +138,3 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
     }    
 }
-#pragma warning restore CS0612,CS0618

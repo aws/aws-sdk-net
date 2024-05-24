@@ -57,6 +57,8 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
         public Subject Unmarshall(JsonUnmarshallerContext context)
         {
             Subject unmarshalledObject = new Subject();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

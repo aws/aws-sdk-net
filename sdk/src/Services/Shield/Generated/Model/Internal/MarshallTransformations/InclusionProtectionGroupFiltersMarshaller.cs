@@ -46,6 +46,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InclusionProtectionGroupFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAggregations())
             {
                 context.Writer.WritePropertyName("Aggregations");
@@ -99,4 +101,3 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

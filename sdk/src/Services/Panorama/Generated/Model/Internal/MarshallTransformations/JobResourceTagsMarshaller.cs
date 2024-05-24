@@ -46,6 +46,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobResourceTags requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("ResourceType");
@@ -75,4 +77,3 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

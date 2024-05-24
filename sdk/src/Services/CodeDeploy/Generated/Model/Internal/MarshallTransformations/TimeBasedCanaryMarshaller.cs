@@ -46,6 +46,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimeBasedCanary requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCanaryInterval())
             {
                 context.Writer.WritePropertyName("canaryInterval");
@@ -67,4 +69,3 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         public SearchSchemaSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SearchSchemaSummary unmarshalledObject = new SearchSchemaSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

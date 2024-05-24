@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public CompromisedCredentialsActionsType Unmarshall(JsonUnmarshallerContext context)
         {
             CompromisedCredentialsActionsType unmarshalledObject = new CompromisedCredentialsActionsType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

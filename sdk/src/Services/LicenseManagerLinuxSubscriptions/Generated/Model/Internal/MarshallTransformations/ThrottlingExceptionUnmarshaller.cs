@@ -84,4 +84,3 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransfo
         }
     }
 }
-#pragma warning restore CS0612,CS0618

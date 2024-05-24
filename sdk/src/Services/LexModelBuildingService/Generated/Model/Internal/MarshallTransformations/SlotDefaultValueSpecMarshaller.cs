@@ -46,6 +46,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SlotDefaultValueSpec requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDefaultValueList())
             {
                 context.Writer.WritePropertyName("defaultValueList");
@@ -71,4 +73,3 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

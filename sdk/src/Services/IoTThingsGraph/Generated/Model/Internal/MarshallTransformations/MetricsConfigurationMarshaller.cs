@@ -46,6 +46,8 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetricsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCloudMetricEnabled())
             {
                 context.Writer.WritePropertyName("cloudMetricEnabled");
@@ -67,4 +69,3 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

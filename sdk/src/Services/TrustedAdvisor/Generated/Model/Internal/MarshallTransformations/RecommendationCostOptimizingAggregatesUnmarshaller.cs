@@ -57,6 +57,8 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
         public RecommendationCostOptimizingAggregates Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendationCostOptimizingAggregates unmarshalledObject = new RecommendationCostOptimizingAggregates();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

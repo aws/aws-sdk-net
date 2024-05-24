@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public TLSInspectionConfigurationResponse Unmarshall(JsonUnmarshallerContext context)
         {
             TLSInspectionConfigurationResponse unmarshalledObject = new TLSInspectionConfigurationResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -149,4 +151,3 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

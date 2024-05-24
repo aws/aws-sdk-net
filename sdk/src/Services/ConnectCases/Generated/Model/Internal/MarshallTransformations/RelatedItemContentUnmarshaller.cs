@@ -57,6 +57,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         public RelatedItemContent Unmarshall(JsonUnmarshallerContext context)
         {
             RelatedItemContent unmarshalledObject = new RelatedItemContent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ContactContentUnmarshaller.Instance;
                     unmarshalledObject.Contact = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("file", targetDepth))
+                {
+                    var unmarshaller = FileContentUnmarshaller.Instance;
+                    unmarshalledObject.File = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,4 +103,3 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateExperimentTemplateExperimentOptionsInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccountTargeting())
             {
                 context.Writer.WritePropertyName("accountTargeting");
@@ -67,4 +69,3 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

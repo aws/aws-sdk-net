@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
@@ -41,6 +42,14 @@ namespace Amazon.ControlTower.Model
         public IListBaselinesPaginator ListBaselines(ListBaselinesRequest request) 
         {
             return new ListBaselinesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListControlOperations operation
+        ///</summary>
+        public IListControlOperationsPaginator ListControlOperations(ListControlOperationsRequest request) 
+        {
+            return new ListControlOperationsPaginator(this.client, request);
         }
 
         /// <summary>

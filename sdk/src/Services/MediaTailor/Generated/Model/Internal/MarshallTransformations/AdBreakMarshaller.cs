@@ -46,6 +46,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AdBreak requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdBreakMetadata())
             {
                 context.Writer.WritePropertyName("AdBreakMetadata");
@@ -116,4 +118,3 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

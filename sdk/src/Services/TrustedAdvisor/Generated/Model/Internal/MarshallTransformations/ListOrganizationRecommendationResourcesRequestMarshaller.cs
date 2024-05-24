@@ -66,6 +66,9 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAffectedAccountId())
                 request.Parameters.Add("affectedAccountId", StringUtils.FromString(publicRequest.AffectedAccountId));
             
+            if (publicRequest.IsSetExclusionStatus())
+                request.Parameters.Add("exclusionStatus", StringUtils.FromString(publicRequest.ExclusionStatus));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
@@ -102,4 +105,3 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

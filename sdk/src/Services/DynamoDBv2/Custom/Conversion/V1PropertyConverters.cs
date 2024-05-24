@@ -140,6 +140,10 @@ namespace Amazon.DynamoDBv2
     /// The default value for this field is the standard V1 conversion.
     /// </summary>
     /// <typeparam name="TElement"></typeparam>
+
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     public class ListToSetPropertyConverter<TElement> : SetPropertyConverter<List<TElement>, TElement>
     { }
 

@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLatest())
                 {
                     request.Parameters.Add("Latest", StringUtils.FromBool(publicRequest.Latest));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

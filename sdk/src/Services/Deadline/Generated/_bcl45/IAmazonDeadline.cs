@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Deadline.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.Deadline
 {
     /// <summary>

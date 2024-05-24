@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
@@ -62,9 +63,9 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Manifest. 
         /// <para>
-        /// The <c>manifest.yaml</c> file is a text file that describes your Amazon Web Services
-        /// resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The
-        /// manifest file</a>.
+        /// The manifest JSON file is a text file that describes your Amazon Web Services resources.
+        /// For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
+        /// your landing zone</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

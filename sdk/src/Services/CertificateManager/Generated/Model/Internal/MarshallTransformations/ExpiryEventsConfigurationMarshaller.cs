@@ -46,6 +46,8 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExpiryEventsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDaysBeforeExpiry())
             {
                 context.Writer.WritePropertyName("DaysBeforeExpiry");
@@ -61,4 +63,3 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

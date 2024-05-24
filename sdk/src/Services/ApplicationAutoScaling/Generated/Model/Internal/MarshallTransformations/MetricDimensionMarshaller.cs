@@ -46,6 +46,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetricDimension requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
@@ -67,4 +69,3 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EventFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailabilityZones())
             {
                 context.Writer.WritePropertyName("availabilityZones");
@@ -221,4 +223,3 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NtpPayload requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNtpServers())
             {
                 context.Writer.WritePropertyName("NtpServers");
@@ -66,4 +68,3 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

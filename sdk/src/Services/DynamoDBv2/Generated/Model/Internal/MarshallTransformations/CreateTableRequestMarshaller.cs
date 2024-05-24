@@ -66,6 +66,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAttributeDefinitions())
@@ -142,6 +143,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetOnDemandThroughput())
+                {
+                    context.Writer.WritePropertyName("OnDemandThroughput");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OnDemandThroughputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OnDemandThroughput, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetProvisionedThroughput())
@@ -239,4 +251,3 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

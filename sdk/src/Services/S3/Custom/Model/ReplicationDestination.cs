@@ -50,7 +50,10 @@ namespace Amazon.S3.Model
             set { this.accessControlTranslation = value; }
         }
 
-        // Check to see if AccessControlTranslation property is set
+        /// <summary>
+        /// Check to see if AccessControlTranslation property is set
+        /// </summary>
+        /// <returns></returns>
         public bool IsSetAccessControlTranslation()
         {
             return this.accessControlTranslation != null;
@@ -73,7 +76,10 @@ namespace Amazon.S3.Model
             set { this.accountId = value; }
         }
 
-        // Check to see if AccountId property is set
+        /// <summary>
+        /// Check to see if AccountId property is set
+        /// </summary>
+        /// <returns></returns>
         public bool IsSetAccountId()
         {
             return !(string.IsNullOrEmpty(this.accountId));
@@ -114,7 +120,10 @@ namespace Amazon.S3.Model
             set { this.encryptionConfiguration = value; }
         }
 
-        // Check to see if EncryptionConfiguration property is set
+        /// <summary>
+        /// Check to see if EncryptionConfiguration property is set
+        /// </summary>
+        /// <returns></returns>
         public bool IsSetEncryptionConfiguration()
         {
             return this.encryptionConfiguration != null;

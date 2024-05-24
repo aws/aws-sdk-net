@@ -46,6 +46,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SourceAuth requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetResource())
             {
                 context.Writer.WritePropertyName("resource");
@@ -67,4 +69,3 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

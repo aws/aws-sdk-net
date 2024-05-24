@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public HlsGroupSettings Unmarshall(JsonUnmarshallerContext context)
         {
             HlsGroupSettings unmarshalledObject = new HlsGroupSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -341,4 +343,3 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

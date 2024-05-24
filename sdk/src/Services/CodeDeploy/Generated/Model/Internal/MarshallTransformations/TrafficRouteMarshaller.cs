@@ -46,6 +46,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TrafficRoute requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetListenerArns())
             {
                 context.Writer.WritePropertyName("listenerArns");
@@ -66,4 +68,3 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

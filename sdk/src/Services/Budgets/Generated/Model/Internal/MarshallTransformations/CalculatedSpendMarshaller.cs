@@ -46,6 +46,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CalculatedSpend requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActualSpend())
             {
                 context.Writer.WritePropertyName("ActualSpend");
@@ -77,4 +79,3 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

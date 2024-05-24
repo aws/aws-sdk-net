@@ -57,6 +57,8 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         public SuccessfulCampaignStateResponse Unmarshall(JsonUnmarshallerContext context)
         {
             SuccessfulCampaignStateResponse unmarshalledObject = new SuccessfulCampaignStateResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

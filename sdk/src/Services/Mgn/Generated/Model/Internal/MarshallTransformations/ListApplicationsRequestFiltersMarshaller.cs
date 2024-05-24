@@ -46,6 +46,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListApplicationsRequestFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApplicationIDs())
             {
                 context.Writer.WritePropertyName("applicationIDs");
@@ -83,4 +85,3 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

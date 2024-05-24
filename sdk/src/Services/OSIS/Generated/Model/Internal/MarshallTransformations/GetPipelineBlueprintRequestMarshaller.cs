@@ -62,7 +62,11 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetBlueprintName())
                 throw new AmazonOSISException("Request object does not have required field BlueprintName set");
             request.AddPathResource("{BlueprintName}", StringUtils.FromString(publicRequest.BlueprintName));
+            
+            if (publicRequest.IsSetFormat())
+                request.Parameters.Add("format", StringUtils.FromString(publicRequest.Format));
             request.ResourcePath = "/2022-01-01/osis/getPipelineBlueprint/{BlueprintName}";
+            request.UseQueryString = true;
 
             return request;
         }
@@ -86,4 +90,3 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

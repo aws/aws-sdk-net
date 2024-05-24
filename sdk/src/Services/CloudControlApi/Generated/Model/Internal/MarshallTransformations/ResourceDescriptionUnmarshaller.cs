@@ -57,6 +57,8 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
         public ResourceDescription Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceDescription unmarshalledObject = new ResourceDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

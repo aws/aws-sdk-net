@@ -46,6 +46,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResultConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAclConfiguration())
             {
                 context.Writer.WritePropertyName("AclConfiguration");
@@ -89,4 +91,3 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

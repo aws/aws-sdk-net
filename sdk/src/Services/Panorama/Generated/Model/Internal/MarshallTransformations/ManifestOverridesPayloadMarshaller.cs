@@ -46,6 +46,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ManifestOverridesPayload requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPayloadData())
             {
                 context.Writer.WritePropertyName("PayloadData");
@@ -61,4 +63,3 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

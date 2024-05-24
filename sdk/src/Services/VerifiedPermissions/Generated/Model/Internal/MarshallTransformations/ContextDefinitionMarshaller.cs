@@ -46,6 +46,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContextDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContextMap())
             {
                 context.Writer.WritePropertyName("contextMap");
@@ -74,4 +76,3 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReportDestinationS3 requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucketAccessRoleArn())
             {
                 context.Writer.WritePropertyName("BucketAccessRoleArn");
@@ -73,4 +75,3 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ConflictResolution requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeleteFiles())
             {
                 context.Writer.WritePropertyName("deleteFiles");
@@ -103,4 +105,3 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

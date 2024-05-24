@@ -64,6 +64,7 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetClientId())
@@ -82,6 +83,12 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("code");
                     context.Writer.Write(publicRequest.Code);
+                }
+
+                if(publicRequest.IsSetCodeVerifier())
+                {
+                    context.Writer.WritePropertyName("codeVerifier");
+                    context.Writer.Write(publicRequest.CodeVerifier);
                 }
 
                 if(publicRequest.IsSetDeviceCode())
@@ -147,4 +154,3 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

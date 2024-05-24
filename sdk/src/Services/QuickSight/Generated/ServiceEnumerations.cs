@@ -7891,6 +7891,56 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type PurchaseMode.
+    /// </summary>
+    public class PurchaseMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO_PURCHASE for PurchaseMode
+        /// </summary>
+        public static readonly PurchaseMode AUTO_PURCHASE = new PurchaseMode("AUTO_PURCHASE");
+        /// <summary>
+        /// Constant MANUAL for PurchaseMode
+        /// </summary>
+        public static readonly PurchaseMode MANUAL = new PurchaseMode("MANUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PurchaseMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PurchaseMode FindValue(string value)
+        {
+            return FindValue<PurchaseMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PurchaseMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RadarChartAxesRangeScale.
     /// </summary>
     public class RadarChartAxesRangeScale : ConstantClass
@@ -8573,13 +8623,25 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly Role ADMIN = new Role("ADMIN");
         /// <summary>
+        /// Constant ADMIN_PRO for Role
+        /// </summary>
+        public static readonly Role ADMIN_PRO = new Role("ADMIN_PRO");
+        /// <summary>
         /// Constant AUTHOR for Role
         /// </summary>
         public static readonly Role AUTHOR = new Role("AUTHOR");
         /// <summary>
+        /// Constant AUTHOR_PRO for Role
+        /// </summary>
+        public static readonly Role AUTHOR_PRO = new Role("AUTHOR_PRO");
+        /// <summary>
         /// Constant READER for Role
         /// </summary>
         public static readonly Role READER = new Role("READER");
+        /// <summary>
+        /// Constant READER_PRO for Role
+        /// </summary>
+        public static readonly Role READER_PRO = new Role("READER_PRO");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -11329,13 +11391,25 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly UserRole ADMIN = new UserRole("ADMIN");
         /// <summary>
+        /// Constant ADMIN_PRO for UserRole
+        /// </summary>
+        public static readonly UserRole ADMIN_PRO = new UserRole("ADMIN_PRO");
+        /// <summary>
         /// Constant AUTHOR for UserRole
         /// </summary>
         public static readonly UserRole AUTHOR = new UserRole("AUTHOR");
         /// <summary>
+        /// Constant AUTHOR_PRO for UserRole
+        /// </summary>
+        public static readonly UserRole AUTHOR_PRO = new UserRole("AUTHOR_PRO");
+        /// <summary>
         /// Constant READER for UserRole
         /// </summary>
         public static readonly UserRole READER = new UserRole("READER");
+        /// <summary>
+        /// Constant READER_PRO for UserRole
+        /// </summary>
+        public static readonly UserRole READER_PRO = new UserRole("READER_PRO");
         /// <summary>
         /// Constant RESTRICTED_AUTHOR for UserRole
         /// </summary>

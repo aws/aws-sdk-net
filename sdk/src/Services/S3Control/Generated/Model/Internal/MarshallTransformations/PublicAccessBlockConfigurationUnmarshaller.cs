@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PublicAccessBlockConfiguration Object
     /// </summary>  
-    public class PublicAccessBlockConfigurationUnmarshaller : IUnmarshaller<PublicAccessBlockConfiguration, XmlUnmarshallerContext>
+    public class PublicAccessBlockConfigurationUnmarshaller : IUnmarshaller<PublicAccessBlockConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PublicAccessBlockConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,6 +88,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public PublicAccessBlockConfiguration Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static PublicAccessBlockConfigurationUnmarshaller _instance = new PublicAccessBlockConfigurationUnmarshaller();        
 
@@ -103,4 +113,3 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

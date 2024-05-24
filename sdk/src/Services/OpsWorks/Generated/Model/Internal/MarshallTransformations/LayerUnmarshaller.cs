@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public Layer Unmarshall(JsonUnmarshallerContext context)
         {
             Layer unmarshalledObject = new Layer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -221,4 +223,3 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         /// <returns></returns>
         public void Marshall(Heterogeneous requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTargetDatabaseEngine())
             {
                 context.Writer.WritePropertyName("targetDatabaseEngine");
@@ -66,4 +68,3 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 
     }
 }
-#pragma warning restore CS0612,CS0618

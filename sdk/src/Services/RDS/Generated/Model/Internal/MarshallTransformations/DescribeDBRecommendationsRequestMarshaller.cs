@@ -66,48 +66,40 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         if(publicRequestlistValue.IsSetName())
                         {
-                            request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                            request.Parameters.Add("Filters" + "." + "Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
                             foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
                             {
-                                request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Values" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                request.Parameters.Add("Filters" + "." + "Filter" + "." + publicRequestlistValueIndex + "." + "Values" + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLastUpdatedAfter())
                 {
-                    request.Parameters.Add("LastUpdatedAfter", StringUtils.FromDateTimeToISO8601(publicRequest.LastUpdatedAfter));
+                    request.Parameters.Add("LastUpdatedAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.LastUpdatedAfter));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLastUpdatedBefore())
                 {
-                    request.Parameters.Add("LastUpdatedBefore", StringUtils.FromDateTimeToISO8601(publicRequest.LastUpdatedBefore));
+                    request.Parameters.Add("LastUpdatedBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.LastUpdatedBefore));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLocale())
                 {
                     request.Parameters.Add("Locale", StringUtils.FromString(publicRequest.Locale));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

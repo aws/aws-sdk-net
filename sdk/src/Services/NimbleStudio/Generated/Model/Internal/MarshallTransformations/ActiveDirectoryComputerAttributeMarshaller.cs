@@ -46,6 +46,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ActiveDirectoryComputerAttribute requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
@@ -67,4 +69,3 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

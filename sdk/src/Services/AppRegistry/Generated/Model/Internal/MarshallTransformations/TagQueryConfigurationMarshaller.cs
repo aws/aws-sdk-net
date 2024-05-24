@@ -46,6 +46,8 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TagQueryConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTagKey())
             {
                 context.Writer.WritePropertyName("tagKey");
@@ -61,4 +63,3 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

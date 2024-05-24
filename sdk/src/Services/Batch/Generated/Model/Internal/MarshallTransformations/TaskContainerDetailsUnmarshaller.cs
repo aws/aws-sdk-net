@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public TaskContainerDetails Unmarshall(JsonUnmarshallerContext context)
         {
             TaskContainerDetails unmarshalledObject = new TaskContainerDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -203,4 +205,3 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

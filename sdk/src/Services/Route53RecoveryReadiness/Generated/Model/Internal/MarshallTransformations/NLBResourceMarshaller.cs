@@ -46,6 +46,8 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NLBResource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("arn");
@@ -61,4 +63,3 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

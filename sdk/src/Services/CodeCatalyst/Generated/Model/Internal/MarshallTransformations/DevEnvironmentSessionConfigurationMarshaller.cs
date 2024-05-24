@@ -46,6 +46,8 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DevEnvironmentSessionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExecuteCommandSessionConfiguration())
             {
                 context.Writer.WritePropertyName("executeCommandSessionConfiguration");
@@ -72,4 +74,3 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

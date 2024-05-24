@@ -46,6 +46,8 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DateTimeRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFrom())
             {
                 context.Writer.WritePropertyName("from");
@@ -67,4 +69,3 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

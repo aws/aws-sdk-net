@@ -46,6 +46,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WeeklySetting requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDayOfWeek())
             {
                 context.Writer.WritePropertyName("DayOfWeek");
@@ -72,4 +74,3 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3Location requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("BucketName");
@@ -73,4 +75,3 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PreferredResource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExcludeList())
             {
                 context.Writer.WritePropertyName("excludeList");
@@ -83,4 +85,3 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

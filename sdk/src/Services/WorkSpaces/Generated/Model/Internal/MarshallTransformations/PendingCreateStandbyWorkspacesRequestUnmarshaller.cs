@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public PendingCreateStandbyWorkspacesRequest Unmarshall(JsonUnmarshallerContext context)
         {
             PendingCreateStandbyWorkspacesRequest unmarshalledObject = new PendingCreateStandbyWorkspacesRequest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

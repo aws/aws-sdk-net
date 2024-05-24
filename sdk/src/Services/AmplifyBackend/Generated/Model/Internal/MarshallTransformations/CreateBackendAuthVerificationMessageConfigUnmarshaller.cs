@@ -57,6 +57,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         public CreateBackendAuthVerificationMessageConfig Unmarshall(JsonUnmarshallerContext context)
         {
             CreateBackendAuthVerificationMessageConfig unmarshalledObject = new CreateBackendAuthVerificationMessageConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

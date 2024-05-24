@@ -66,6 +66,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetFeatures())
@@ -99,7 +100,14 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinConfidence())
                 {
                     context.Writer.WritePropertyName("MinConfidence");
-                    context.Writer.Write(publicRequest.MinConfidence);
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.MinConfidence))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.MinConfidence));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MinConfidence);
+                    }
                 }
 
                 if(publicRequest.IsSetSettings())
@@ -141,4 +149,3 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

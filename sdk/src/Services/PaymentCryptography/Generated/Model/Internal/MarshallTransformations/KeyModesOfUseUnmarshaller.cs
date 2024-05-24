@@ -57,6 +57,8 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         public KeyModesOfUse Unmarshall(JsonUnmarshallerContext context)
         {
             KeyModesOfUse unmarshalledObject = new KeyModesOfUse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -137,4 +139,3 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

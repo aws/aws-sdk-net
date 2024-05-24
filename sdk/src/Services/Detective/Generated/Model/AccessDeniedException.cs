@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Detective.Model
 {
     /// <summary>
@@ -37,7 +38,6 @@ namespace Amazon.Detective.Model
     #endif
     public partial class AccessDeniedException : AmazonDetectiveException
     {
-        private ErrorCode _errorCode;
         private string _errorCodeReason;
         private ErrorCode _subErrorCode;
         private string _subErrorCodeReason;
@@ -132,24 +132,6 @@ namespace Amazon.Detective.Model
             info.AddValue("SubErrorCodeReason", this.SubErrorCodeReason);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property ErrorCode. 
-        /// <para>
-        /// The SDK default error code associated with the access denied exception.
-        /// </para>
-        /// </summary>
-        public ErrorCode ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
-        }
 
         /// <summary>
         /// Gets and sets the property ErrorCodeReason. 

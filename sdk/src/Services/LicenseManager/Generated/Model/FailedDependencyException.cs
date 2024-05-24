@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
@@ -36,7 +37,6 @@ namespace Amazon.LicenseManager.Model
     #endif
     public partial class FailedDependencyException : AmazonLicenseManagerException
     {
-        private string _errorCode;
 
         /// <summary>
         /// Constructs a new FailedDependencyException with the specified error
@@ -122,21 +122,6 @@ namespace Amazon.LicenseManager.Model
             info.AddValue("ErrorCode", this.ErrorCode);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property ErrorCode.
-        /// </summary>
-        public string ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
-        }
 
     }
 }

@@ -63,37 +63,30 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("BearerToken", StringUtils.FromString(publicRequest.BearerToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClientRequestToken())
                 {
                     request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCurrentOperationStatus())
                 {
                     request.Parameters.Add("CurrentOperationStatus", StringUtils.FromString(publicRequest.CurrentOperationStatus));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetErrorCode())
                 {
                     request.Parameters.Add("ErrorCode", StringUtils.FromString(publicRequest.ErrorCode));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOperationStatus())
                 {
                     request.Parameters.Add("OperationStatus", StringUtils.FromString(publicRequest.OperationStatus));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceModel())
                 {
                     request.Parameters.Add("ResourceModel", StringUtils.FromString(publicRequest.ResourceModel));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStatusMessage())
                 {
                     request.Parameters.Add("StatusMessage", StringUtils.FromString(publicRequest.StatusMessage));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -61,6 +62,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The DNS domain that is associated with the DNS request.
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: 128.
+        /// </para>
         /// </summary>
         public string Domain
         {
@@ -78,6 +83,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Protocol. 
         /// <para>
         /// The protocol that was used for the DNS request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum length of 1. Maximum length of 64.
         /// </para>
         /// </summary>
         public string Protocol

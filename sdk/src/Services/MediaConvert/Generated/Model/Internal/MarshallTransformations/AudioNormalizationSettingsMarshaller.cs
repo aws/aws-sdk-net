@@ -46,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudioNormalizationSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlgorithm())
             {
                 context.Writer.WritePropertyName("algorithm");
@@ -79,13 +81,27 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetLkfs())
             {
                 context.Writer.WritePropertyName("targetLkfs");
-                context.Writer.Write(requestObject.TargetLkfs);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetLkfs))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetLkfs));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TargetLkfs);
+                }
             }
 
             if(requestObject.IsSetTruePeakLimiterThreshold())
             {
                 context.Writer.WritePropertyName("truePeakLimiterThreshold");
-                context.Writer.Write(requestObject.TruePeakLimiterThreshold);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TruePeakLimiterThreshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TruePeakLimiterThreshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TruePeakLimiterThreshold);
+                }
             }
 
         }
@@ -97,4 +113,3 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

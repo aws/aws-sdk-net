@@ -46,6 +46,8 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         /// <returns></returns>
         public void Marshall(RollbackTrigger requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("arn");
@@ -67,4 +69,3 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
 
     }
 }
-#pragma warning restore CS0612,CS0618

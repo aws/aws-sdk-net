@@ -63,17 +63,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeleteSourceBundle())
                 {
                     request.Parameters.Add("DeleteSourceBundle", StringUtils.FromBool(publicRequest.DeleteSourceBundle));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVersionLabel())
                 {
                     request.Parameters.Add("VersionLabel", StringUtils.FromString(publicRequest.VersionLabel));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

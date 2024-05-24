@@ -26,14 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAlias operation.
-    /// Updates properties for an alias. To update properties, specify the alias ID to be
-    /// updated and provide the information to be changed. To reassign an alias to another
-    /// fleet, provide an updated routing strategy. If successful, the updated alias record
-    /// is returned.
+    /// Updates properties for an alias. Specify the unique identifier of the alias to be
+    /// updated and the new property values. When reassigning an alias to a new fleet, provide
+    /// an updated routing strategy. If successful, the updated alias record is returned.
     /// 
     ///  
     /// <para>

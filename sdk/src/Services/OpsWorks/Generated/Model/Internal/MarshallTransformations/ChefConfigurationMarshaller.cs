@@ -46,6 +46,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ChefConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBerkshelfVersion())
             {
                 context.Writer.WritePropertyName("BerkshelfVersion");
@@ -67,4 +69,3 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

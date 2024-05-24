@@ -69,6 +69,7 @@ namespace ServiceClientGenerator
         public const string LocationNameKey = "locationName";
         public const string QueryNameKey = "queryName";
         public const string XmlNamespaceUriKey = "uri";
+        public const string XmlNamespacePrefixKey = "prefix";
         public const string XmlNamespaceKey = "xmlNamespace";
         public const string EndpointDiscoveryIdKey = "endpointdiscoveryid";
 

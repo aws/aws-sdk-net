@@ -63,47 +63,38 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DatabaseInstallationFilesS3BucketName", StringUtils.FromString(publicRequest.DatabaseInstallationFilesS3BucketName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDatabaseInstallationFilesS3Prefix())
                 {
                     request.Parameters.Add("DatabaseInstallationFilesS3Prefix", StringUtils.FromString(publicRequest.DatabaseInstallationFilesS3Prefix));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEngine())
                 {
                     request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEngineVersion())
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetImageId())
                 {
                     request.Parameters.Add("ImageId", StringUtils.FromString(publicRequest.ImageId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetKMSKeyId())
                 {
                     request.Parameters.Add("KMSKeyId", StringUtils.FromString(publicRequest.KMSKeyId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetManifest())
                 {
                     request.Parameters.Add("Manifest", StringUtils.FromString(publicRequest.Manifest));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceCustomDbEngineVersionIdentifier())
                 {
                     request.Parameters.Add("SourceCustomDbEngineVersionIdentifier", StringUtils.FromString(publicRequest.SourceCustomDbEngineVersionIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -111,23 +102,19 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         if(publicRequestlistValue.IsSetKey())
                         {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                            request.Parameters.Add("Tags" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                            request.Parameters.Add("Tags" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUseAwsProvidedLatestImage())
                 {
                     request.Parameters.Add("UseAwsProvidedLatestImage", StringUtils.FromBool(publicRequest.UseAwsProvidedLatestImage));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

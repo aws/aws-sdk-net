@@ -68,31 +68,25 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("RevocationContents" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RevocationType", StringUtils.FromString(publicRequestlistValue.RevocationType));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetS3Bucket())
                         {
                             request.Parameters.Add("RevocationContents" + "." + "member" + "." + publicRequestlistValueIndex + "." + "S3Bucket", StringUtils.FromString(publicRequestlistValue.S3Bucket));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetS3Key())
                         {
                             request.Parameters.Add("RevocationContents" + "." + "member" + "." + publicRequestlistValueIndex + "." + "S3Key", StringUtils.FromString(publicRequestlistValue.S3Key));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetS3ObjectVersion())
                         {
                             request.Parameters.Add("RevocationContents" + "." + "member" + "." + publicRequestlistValueIndex + "." + "S3ObjectVersion", StringUtils.FromString(publicRequestlistValue.S3ObjectVersion));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTrustStoreArn())
                 {
                     request.Parameters.Add("TrustStoreArn", StringUtils.FromString(publicRequest.TrustStoreArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

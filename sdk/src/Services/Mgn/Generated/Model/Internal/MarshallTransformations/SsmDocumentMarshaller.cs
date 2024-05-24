@@ -46,6 +46,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SsmDocument requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActionName())
             {
                 context.Writer.WritePropertyName("actionName");
@@ -122,4 +124,3 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

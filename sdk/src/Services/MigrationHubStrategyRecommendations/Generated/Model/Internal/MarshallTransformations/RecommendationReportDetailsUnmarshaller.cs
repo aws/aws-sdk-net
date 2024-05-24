@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public RecommendationReportDetails Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendationReportDetails unmarshalledObject = new RecommendationReportDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         }
     }
 }
-#pragma warning restore CS0612,CS0618

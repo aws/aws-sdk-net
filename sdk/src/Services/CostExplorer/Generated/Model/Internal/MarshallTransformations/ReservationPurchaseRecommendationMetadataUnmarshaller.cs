@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public ReservationPurchaseRecommendationMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             ReservationPurchaseRecommendationMetadata unmarshalledObject = new ReservationPurchaseRecommendationMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdditionalMetadata", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GenerationTimestamp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -95,4 +103,3 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

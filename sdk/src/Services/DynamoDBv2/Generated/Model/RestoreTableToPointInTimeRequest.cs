@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -106,6 +107,7 @@ namespace Amazon.DynamoDBv2.Model
         private BillingMode _billingModeOverride;
         private List<GlobalSecondaryIndex> _globalSecondaryIndexOverride = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndex>() : null;
         private List<LocalSecondaryIndex> _localSecondaryIndexOverride = AWSConfigs.InitializeCollections ? new List<LocalSecondaryIndex>() : null;
+        private OnDemandThroughput _onDemandThroughputOverride;
         private ProvisionedThroughput _provisionedThroughputOverride;
         private DateTime? _restoreDateTime;
         private string _sourceTableArn;
@@ -170,6 +172,21 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetLocalSecondaryIndexOverride()
         {
             return this._localSecondaryIndexOverride != null && (this._localSecondaryIndexOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDemandThroughputOverride.
+        /// </summary>
+        public OnDemandThroughput OnDemandThroughputOverride
+        {
+            get { return this._onDemandThroughputOverride; }
+            set { this._onDemandThroughputOverride = value; }
+        }
+
+        // Check to see if OnDemandThroughputOverride property is set
+        internal bool IsSetOnDemandThroughputOverride()
+        {
+            return this._onDemandThroughputOverride != null;
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -150,6 +151,11 @@ namespace Amazon.ECR.Model
         ///  </li> <li> 
         /// <para>
         /// Microsoft Azure Container Registry (<c>azure-container-registry</c>) - <c>&lt;custom&gt;.azurecr.io</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GitLab Container Registry (<c>gitlab-container-registry</c>) - <c>registry.gitlab.com</c>
         /// 
         /// </para>
         ///  </li> </ul>

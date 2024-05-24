@@ -57,6 +57,8 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public ChangeMessageVisibilityBatchResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
             ChangeMessageVisibilityBatchResultEntry unmarshalledObject = new ChangeMessageVisibilityBatchResultEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

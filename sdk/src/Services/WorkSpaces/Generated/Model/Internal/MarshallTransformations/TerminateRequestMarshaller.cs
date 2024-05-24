@@ -46,6 +46,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TerminateRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetWorkspaceId())
             {
                 context.Writer.WritePropertyName("WorkspaceId");
@@ -61,4 +63,3 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SchemaDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllColumns())
             {
                 context.Writer.WritePropertyName("allColumns");
@@ -119,4 +121,3 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

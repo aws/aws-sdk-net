@@ -46,6 +46,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PolicyDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStatic())
             {
                 context.Writer.WritePropertyName("static");
@@ -77,4 +79,3 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

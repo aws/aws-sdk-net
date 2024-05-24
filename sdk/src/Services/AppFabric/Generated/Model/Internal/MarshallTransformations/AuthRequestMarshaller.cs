@@ -46,6 +46,8 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AuthRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCode())
             {
                 context.Writer.WritePropertyName("code");
@@ -67,4 +69,3 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

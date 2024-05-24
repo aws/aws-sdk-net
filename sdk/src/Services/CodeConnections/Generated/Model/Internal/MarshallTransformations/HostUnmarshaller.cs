@@ -57,6 +57,8 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
         public Host Unmarshall(JsonUnmarshallerContext context)
         {
             Host unmarshalledObject = new Host();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -125,4 +127,3 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

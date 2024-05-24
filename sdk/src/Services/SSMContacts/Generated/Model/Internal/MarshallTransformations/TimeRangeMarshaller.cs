@@ -46,6 +46,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TimeRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndTime())
             {
                 context.Writer.WritePropertyName("EndTime");
@@ -67,4 +69,3 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -63,7 +63,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DbClusterResourceId", StringUtils.FromString(publicRequest.DbClusterResourceId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

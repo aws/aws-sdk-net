@@ -57,6 +57,8 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
         public PayloadPart Unmarshall(JsonUnmarshallerContext context)
         {
             PayloadPart unmarshalledObject = new PayloadPart();
+            if (context.IsEmptyResponse)
+                return null;
             unmarshalledObject.Bytes = context.Stream as MemoryStream;
             return unmarshalledObject;
         }
@@ -76,4 +78,3 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OnDeviceServiceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEKSOnDeviceService())
             {
                 context.Writer.WritePropertyName("EKSOnDeviceService");
@@ -99,4 +101,3 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

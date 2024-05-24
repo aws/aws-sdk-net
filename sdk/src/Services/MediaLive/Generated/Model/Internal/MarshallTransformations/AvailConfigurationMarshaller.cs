@@ -46,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AvailConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailSettings())
             {
                 context.Writer.WritePropertyName("availSettings");
@@ -57,6 +59,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetScte35SegmentationScope())
+            {
+                context.Writer.WritePropertyName("scte35SegmentationScope");
+                context.Writer.Write(requestObject.Scte35SegmentationScope);
+            }
+
         }
 
         /// <summary>
@@ -66,4 +74,3 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

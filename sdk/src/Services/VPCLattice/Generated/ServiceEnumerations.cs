@@ -288,6 +288,10 @@ namespace Amazon.VPCLattice
         /// Constant HTTPS for ListenerProtocol
         /// </summary>
         public static readonly ListenerProtocol HTTPS = new ListenerProtocol("HTTPS");
+        /// <summary>
+        /// Constant TLS_PASSTHROUGH for ListenerProtocol
+        /// </summary>
+        public static readonly ListenerProtocol TLS_PASSTHROUGH = new ListenerProtocol("TLS_PASSTHROUGH");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -532,6 +536,10 @@ namespace Amazon.VPCLattice
         /// Constant HTTPS for TargetGroupProtocol
         /// </summary>
         public static readonly TargetGroupProtocol HTTPS = new TargetGroupProtocol("HTTPS");
+        /// <summary>
+        /// Constant TCP for TargetGroupProtocol
+        /// </summary>
+        public static readonly TargetGroupProtocol TCP = new TargetGroupProtocol("TCP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

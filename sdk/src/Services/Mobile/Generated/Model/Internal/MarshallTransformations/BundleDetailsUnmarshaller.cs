@@ -57,6 +57,8 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
         public BundleDetails Unmarshall(JsonUnmarshallerContext context)
         {
             BundleDetails unmarshalledObject = new BundleDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

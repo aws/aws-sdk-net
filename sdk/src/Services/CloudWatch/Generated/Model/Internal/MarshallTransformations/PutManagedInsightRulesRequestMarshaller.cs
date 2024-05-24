@@ -68,7 +68,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceARN", StringUtils.FromString(publicRequestlistValue.ResourceARN));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -78,25 +77,20 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Tags" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Tags" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
-#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTemplateName())
                         {
                             request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TemplateName", StringUtils.FromString(publicRequestlistValue.TemplateName));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -57,6 +57,8 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         public DirectConnectGatewayAssociationProposal Unmarshall(JsonUnmarshallerContext context)
         {
             DirectConnectGatewayAssociationProposal unmarshalledObject = new DirectConnectGatewayAssociationProposal();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -125,4 +127,3 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

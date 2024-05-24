@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
@@ -37,6 +38,7 @@ namespace Amazon.BedrockAgent.Model
         private string _agentName;
         private AgentStatus _agentStatus;
         private string _description;
+        private GuardrailConfiguration _guardrailConfiguration;
         private string _latestAgentVersion;
         private DateTime? _updatedAt;
 
@@ -114,6 +116,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GuardrailConfiguration. 
+        /// <para>
+        /// The details of the guardrails configuration in the agent summary.
+        /// </para>
+        /// </summary>
+        public GuardrailConfiguration GuardrailConfiguration
+        {
+            get { return this._guardrailConfiguration; }
+            set { this._guardrailConfiguration = value; }
+        }
+
+        // Check to see if GuardrailConfiguration property is set
+        internal bool IsSetGuardrailConfiguration()
+        {
+            return this._guardrailConfiguration != null;
         }
 
         /// <summary>

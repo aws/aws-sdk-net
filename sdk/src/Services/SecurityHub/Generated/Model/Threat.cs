@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -43,6 +44,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property FilePaths. 
         /// <para>
         /// Provides information about the file paths that were affected by the threat. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Array Members: Minimum number of 1 item. Maximum number of 5 items.
         /// </para>
         /// </summary>
         public List<FilePaths> FilePaths
@@ -80,6 +85,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The name of the threat. 
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1 length. Maximum of 128 length.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -97,6 +106,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Severity. 
         /// <para>
         /// The severity of the threat. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1 length. Maximum of 128 length.
         /// </para>
         /// </summary>
         public string Severity

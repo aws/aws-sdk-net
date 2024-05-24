@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -38,14 +39,15 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property InitialTopicId. 
         /// <para>
-        /// The QuickSight Q topic ID of the topic that you want the anonymous user to see first.
-        /// This ID is included in the output URL. When the URL in response is accessed, Amazon
-        /// QuickSight renders the Q search bar with this topic pre-selected.
+        /// The Amazon QuickSight Q topic ID of the legacy topic that you want the anonymous user
+        /// to see first. This ID is included in the output URL. When the URL in response is accessed,
+        /// Amazon QuickSight renders the Q search bar with this legacy topic pre-selected.
         /// </para>
         ///  
         /// <para>
-        /// The Amazon Resource Name (ARN) of this Q topic must be included in the <c>AuthorizedResourceArns</c>
-        /// parameter. Otherwise, the request will fail with <c>InvalidParameterValueException</c>.
+        /// The Amazon Resource Name (ARN) of this Q legacy topic must be included in the <c>AuthorizedResourceArns</c>
+        /// parameter. Otherwise, the request fails with an <c>InvalidParameterValueException</c>
+        /// error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

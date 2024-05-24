@@ -909,6 +909,10 @@ namespace Amazon.CodeBuild
     {
 
         /// <summary>
+        /// Constant ACTION_REQUIRED for FleetContextCode
+        /// </summary>
+        public static readonly FleetContextCode ACTION_REQUIRED = new FleetContextCode("ACTION_REQUIRED");
+        /// <summary>
         /// Constant CREATE_FAILED for FleetContextCode
         /// </summary>
         public static readonly FleetContextCode CREATE_FAILED = new FleetContextCode("CREATE_FAILED");

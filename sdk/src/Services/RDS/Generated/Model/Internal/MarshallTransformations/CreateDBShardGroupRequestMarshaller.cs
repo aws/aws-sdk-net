@@ -63,27 +63,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ComputeRedundancy", StringUtils.FromInt(publicRequest.ComputeRedundancy));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBClusterIdentifier())
                 {
                     request.Parameters.Add("DBClusterIdentifier", StringUtils.FromString(publicRequest.DBClusterIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBShardGroupIdentifier())
                 {
                     request.Parameters.Add("DBShardGroupIdentifier", StringUtils.FromString(publicRequest.DBShardGroupIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxACU())
                 {
                     request.Parameters.Add("MaxACU", StringUtils.FromDouble(publicRequest.MaxACU));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

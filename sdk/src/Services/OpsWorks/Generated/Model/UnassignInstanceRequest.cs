@@ -26,13 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the UnassignInstance operation.
     /// Unassigns a registered instance from all layers that are using the instance. The instance
     /// remains in the stack as an unassigned instance, and can be assigned to another layer
-    /// as needed. You cannot use this action with instances that were created with AWS OpsWorks
+    /// as needed. You cannot use this action with instances that were created with OpsWorks
     /// Stacks.
     /// 
     ///  

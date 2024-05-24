@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.TrustedAdvisor
 {
     /// <summary>
@@ -267,6 +268,56 @@ namespace Amazon.TrustedAdvisor
         #endregion
 
 
+        #region  BatchUpdateRecommendationResourceExclusion
+
+        internal virtual BatchUpdateRecommendationResourceExclusionResponse BatchUpdateRecommendationResourceExclusion(BatchUpdateRecommendationResourceExclusionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateRecommendationResourceExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateRecommendationResourceExclusionResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateRecommendationResourceExclusionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update one or more exclusion status for a list of recommendation resources
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateRecommendationResourceExclusion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateRecommendationResourceExclusion service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ConflictException">
+        /// Exception that the request was denied due to conflictions in state
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/BatchUpdateRecommendationResourceExclusion">REST API Reference for BatchUpdateRecommendationResourceExclusion Operation</seealso>
+        public virtual Task<BatchUpdateRecommendationResourceExclusionResponse> BatchUpdateRecommendationResourceExclusionAsync(BatchUpdateRecommendationResourceExclusionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateRecommendationResourceExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateRecommendationResourceExclusionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchUpdateRecommendationResourceExclusionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetOrganizationRecommendation
 
         internal virtual GetOrganizationRecommendationResponse GetOrganizationRecommendation(GetOrganizationRecommendationRequest request)
@@ -676,7 +727,7 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// Update the lifecyle of a Recommendation within an Organization. This API only supports
+        /// Update the lifecycle of a Recommendation within an Organization. This API only supports
         /// prioritized recommendations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationRecommendationLifecycle service method.</param>

@@ -46,6 +46,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudWatchConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLargeDataDeliveryS3Config())
             {
                 context.Writer.WritePropertyName("largeDataDeliveryS3Config");
@@ -78,4 +80,3 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

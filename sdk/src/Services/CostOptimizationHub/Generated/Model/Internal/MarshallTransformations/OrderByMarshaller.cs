@@ -46,6 +46,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OrderBy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDimension())
             {
                 context.Writer.WritePropertyName("dimension");
@@ -67,4 +69,3 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

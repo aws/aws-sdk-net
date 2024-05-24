@@ -46,6 +46,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobTemplateData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConfigurationOverrides())
             {
                 context.Writer.WritePropertyName("configurationOverrides");
@@ -122,4 +124,3 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

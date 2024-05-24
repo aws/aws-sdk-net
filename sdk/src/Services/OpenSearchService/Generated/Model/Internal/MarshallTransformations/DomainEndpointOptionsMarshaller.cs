@@ -46,6 +46,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DomainEndpointOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomEndpoint())
             {
                 context.Writer.WritePropertyName("CustomEndpoint");
@@ -85,4 +87,3 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

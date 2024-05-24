@@ -46,6 +46,8 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ClientSideTimestamps requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("status");
@@ -61,4 +63,3 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

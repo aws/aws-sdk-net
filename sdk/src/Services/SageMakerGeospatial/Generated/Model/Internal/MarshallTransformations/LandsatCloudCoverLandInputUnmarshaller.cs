@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public LandsatCloudCoverLandInput Unmarshall(JsonUnmarshallerContext context)
         {
             LandsatCloudCoverLandInput unmarshalledObject = new LandsatCloudCoverLandInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

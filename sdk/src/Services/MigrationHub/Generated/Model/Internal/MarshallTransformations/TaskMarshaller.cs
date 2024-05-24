@@ -46,6 +46,8 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Task requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetProgressPercent())
             {
                 context.Writer.WritePropertyName("ProgressPercent");
@@ -73,4 +75,3 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

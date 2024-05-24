@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
-    /// The health check configuration of a target group. Health check configurations aren't
-    /// used for <c>LAMBDA</c> and <c>ALB</c> target groups.
+    /// Describes the health check configuration of a target group. Health check configurations
+    /// aren't used for target groups of type <c>LAMBDA</c> or <c>ALB</c>.
     /// </summary>
     public partial class HealthCheckConfig
     {
@@ -126,8 +127,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Matcher. 
         /// <para>
-        /// The codes to use when checking for a successful response from a target. These are
-        /// called <i>Success codes</i> in the console.
+        /// The codes to use when checking for a successful response from a target.
         /// </para>
         /// </summary>
         public Matcher Matcher

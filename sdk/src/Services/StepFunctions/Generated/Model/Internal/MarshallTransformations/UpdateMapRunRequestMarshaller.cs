@@ -66,6 +66,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetMapRunArn())
@@ -89,7 +90,14 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetToleratedFailurePercentage())
                 {
                     context.Writer.WritePropertyName("toleratedFailurePercentage");
-                    context.Writer.Write(publicRequest.ToleratedFailurePercentage);
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.ToleratedFailurePercentage))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ToleratedFailurePercentage));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.ToleratedFailurePercentage);
+                    }
                 }
 
                 writer.WriteObjectEnd();
@@ -120,4 +128,3 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

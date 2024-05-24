@@ -63,32 +63,26 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Accept", StringUtils.FromBool(publicRequest.Accept));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAdditionalInfo())
                 {
                     request.Parameters.Add("AdditionalInfo", StringUtils.FromString(publicRequest.AdditionalInfo));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCapacityReservationId())
                 {
                     request.Parameters.Add("CapacityReservationId", StringUtils.FromString(publicRequest.CapacityReservationId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndDate())
                 {
-                    request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601(publicRequest.EndDate));
+                    request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDate));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndDateType())
                 {
                     request.Parameters.Add("EndDateType", StringUtils.FromString(publicRequest.EndDateType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceCount())
                 {
                     request.Parameters.Add("InstanceCount", StringUtils.FromInt(publicRequest.InstanceCount));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

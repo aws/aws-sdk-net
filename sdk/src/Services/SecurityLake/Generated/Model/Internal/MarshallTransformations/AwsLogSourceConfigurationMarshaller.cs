@@ -46,6 +46,8 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsLogSourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccounts())
             {
                 context.Writer.WritePropertyName("accounts");
@@ -89,4 +91,3 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

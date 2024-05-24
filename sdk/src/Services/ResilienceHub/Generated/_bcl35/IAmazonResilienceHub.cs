@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.ResilienceHub.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.ResilienceHub
 {
     /// <summary>
@@ -1791,6 +1792,61 @@ namespace Amazon.ResilienceHub
         /// <returns>Returns a  ListAppAssessmentComplianceDriftsResult from ResilienceHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentComplianceDrifts">REST API Reference for ListAppAssessmentComplianceDrifts Operation</seealso>
         ListAppAssessmentComplianceDriftsResponse EndListAppAssessmentComplianceDrifts(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAppAssessmentResourceDrifts
+
+
+        /// <summary>
+        /// Indicates the list of resource drifts that were detected while running an assessment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAppAssessmentResourceDrifts service method.</param>
+        /// 
+        /// <returns>The response from the ListAppAssessmentResourceDrifts service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentResourceDrifts">REST API Reference for ListAppAssessmentResourceDrifts Operation</seealso>
+        ListAppAssessmentResourceDriftsResponse ListAppAssessmentResourceDrifts(ListAppAssessmentResourceDriftsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAppAssessmentResourceDrifts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAppAssessmentResourceDrifts operation on AmazonResilienceHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAppAssessmentResourceDrifts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentResourceDrifts">REST API Reference for ListAppAssessmentResourceDrifts Operation</seealso>
+        IAsyncResult BeginListAppAssessmentResourceDrifts(ListAppAssessmentResourceDriftsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAppAssessmentResourceDrifts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAppAssessmentResourceDrifts.</param>
+        /// 
+        /// <returns>Returns a  ListAppAssessmentResourceDriftsResult from ResilienceHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentResourceDrifts">REST API Reference for ListAppAssessmentResourceDrifts Operation</seealso>
+        ListAppAssessmentResourceDriftsResponse EndListAppAssessmentResourceDrifts(IAsyncResult asyncResult);
 
         #endregion
         

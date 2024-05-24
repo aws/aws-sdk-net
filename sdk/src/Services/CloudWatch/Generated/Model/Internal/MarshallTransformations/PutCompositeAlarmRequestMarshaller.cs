@@ -63,22 +63,18 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ActionsEnabled", StringUtils.FromBool(publicRequest.ActionsEnabled));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetActionsSuppressor())
                 {
                     request.Parameters.Add("ActionsSuppressor", StringUtils.FromString(publicRequest.ActionsSuppressor));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetActionsSuppressorExtensionPeriod())
                 {
                     request.Parameters.Add("ActionsSuppressorExtensionPeriod", StringUtils.FromInt(publicRequest.ActionsSuppressorExtensionPeriod));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetActionsSuppressorWaitPeriod())
                 {
                     request.Parameters.Add("ActionsSuppressorWaitPeriod", StringUtils.FromInt(publicRequest.ActionsSuppressorWaitPeriod));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAlarmActions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -88,22 +84,18 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAlarmDescription())
                 {
                     request.Parameters.Add("AlarmDescription", StringUtils.FromString(publicRequest.AlarmDescription));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAlarmName())
                 {
                     request.Parameters.Add("AlarmName", StringUtils.FromString(publicRequest.AlarmName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAlarmRule())
                 {
                     request.Parameters.Add("AlarmRule", StringUtils.FromString(publicRequest.AlarmRule));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInsufficientDataActions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -113,7 +105,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOKActions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -123,7 +114,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -133,16 +123,13 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

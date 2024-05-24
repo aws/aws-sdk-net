@@ -46,6 +46,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HistoricalOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBudgetAdjustmentPeriod())
             {
                 context.Writer.WritePropertyName("BudgetAdjustmentPeriod");
@@ -67,4 +69,3 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

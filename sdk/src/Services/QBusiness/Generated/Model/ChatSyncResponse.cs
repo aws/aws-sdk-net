@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.QBusiness.Model
     public partial class ChatSyncResponse : AmazonWebServiceResponse
     {
         private ActionReview _actionReview;
+        private AuthChallengeRequest _authChallengeRequest;
         private string _conversationId;
         private List<AttachmentOutput> _failedAttachments = AWSConfigs.InitializeCollections ? new List<AttachmentOutput>() : null;
         private List<SourceAttribution> _sourceAttributions = AWSConfigs.InitializeCollections ? new List<SourceAttribution>() : null;
@@ -58,6 +60,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetActionReview()
         {
             return this._actionReview != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthChallengeRequest. 
+        /// <para>
+        /// An authentication verification event activated by an end user request to use a custom
+        /// plugin.
+        /// </para>
+        /// </summary>
+        public AuthChallengeRequest AuthChallengeRequest
+        {
+            get { return this._authChallengeRequest; }
+            set { this._authChallengeRequest = value; }
+        }
+
+        // Check to see if AuthChallengeRequest property is set
+        internal bool IsSetAuthChallengeRequest()
+        {
+            return this._authChallengeRequest != null;
         }
 
         /// <summary>

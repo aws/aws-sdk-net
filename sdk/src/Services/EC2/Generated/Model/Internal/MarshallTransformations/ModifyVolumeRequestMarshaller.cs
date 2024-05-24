@@ -63,32 +63,26 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Iops", StringUtils.FromInt(publicRequest.Iops));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMultiAttachEnabled())
                 {
                     request.Parameters.Add("MultiAttachEnabled", StringUtils.FromBool(publicRequest.MultiAttachEnabled));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSize())
                 {
                     request.Parameters.Add("Size", StringUtils.FromInt(publicRequest.Size));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetThroughput())
                 {
                     request.Parameters.Add("Throughput", StringUtils.FromInt(publicRequest.Throughput));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVolumeId())
                 {
                     request.Parameters.Add("VolumeId", StringUtils.FromString(publicRequest.VolumeId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVolumeType())
                 {
                     request.Parameters.Add("VolumeType", StringUtils.FromString(publicRequest.VolumeType));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

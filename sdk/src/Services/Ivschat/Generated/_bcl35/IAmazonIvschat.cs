@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Ivschat.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.Ivschat
 {
     /// <summary>

@@ -46,10 +46,19 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AttributeValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetN())
             {
                 context.Writer.WritePropertyName("N");
-                context.Writer.Write(requestObject.N);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.N))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.N));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.N);
+                }
             }
 
             if(requestObject.IsSetS())
@@ -92,4 +101,3 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

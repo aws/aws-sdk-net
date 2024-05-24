@@ -24,9 +24,7 @@ using System.Threading;
 using System.Threading.Tasks;
 #endif
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Globalization;
-using System.Text;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.Runtime.Internal.Util;
 
@@ -53,7 +51,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Table.DynamoDBConsumer TableConsumer { get { return Config.Consumer; } }
         internal DynamoDBEntryConversion Conversion { get { return Config.Conversion; } }
-        internal bool IsEmptyStringValueEnabled { get {return Config.IsEmptyStringValueEnabled; } }
+        internal bool IsEmptyStringValueEnabled { get { return Config.IsEmptyStringValueEnabled; } }
         internal IEnumerable<string> StoreAsEpoch { get { return Config.AttributesToStoreAsEpoch; } }
         internal IEnumerable<string> KeyNames { get { return Keys.Keys; } }
 
@@ -136,7 +134,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 // different credentials identify the same physical table
                 return SdkCache.GetCache<string, TableDescription>(null, TableInfoCacheIdentifier, StringComparer.Ordinal);
             }
-            
+
             // Assuming CachingMode.Default, use the SdkCache's default credentials, region and service url to form the cache key.
             // Each of these could identify a different physical table
             return SdkCache.GetCache<string, TableDescription>(DDBClient, TableInfoCacheIdentifier, StringComparer.Ordinal);
@@ -463,9 +461,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return DynamoDBEntryType.Numeric;
             }
 
-            // Get the converter that would be used for this property
-            flatConfig.Conversion.TryGetConverter(property.MemberType, out Converter converter);
-
             // Converters can only convert an actual value, we can't just look up the resulting type 
             // so create a default value and attempt to convert it
             object hypotheticalValue;
@@ -478,8 +473,26 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 hypotheticalValue = Activator.CreateInstance(property.MemberType);
             }
 
-            // This will throw an exception if the conversion fails, or if the resulting entry isn't a primitive
-            return converter.ToEntry(hypotheticalValue).ToPrimitive().Type;
+            DynamoDBEntry convertedEntry;
+            try
+            {
+                if (property.Converter != null)
+                {
+                    // If the property has a property converter, use it to convert the hypothetical value
+                    convertedEntry = property.Converter.ToEntry(hypotheticalValue);
+                }
+                else
+                {
+                    // This will throw an exception if the conversion fails, or if the resulting entry isn't a primitive
+                    convertedEntry = flatConfig.Conversion.ConvertToEntry(property.MemberType, hypotheticalValue);
+                }
+
+                return convertedEntry.ToPrimitive().Type;
+            }
+            catch (Exception e)
+            {
+                throw new InvalidOperationException($"Failed to determine the DynamoDB primitive type for property {property.PropertyName} of type {property.MemberType}.", e);
+            }
         }
 
         /// <summary>
@@ -532,7 +545,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                 table.Attributes.Add(new AttributeDefinition { AttributeName = property.AttributeName, AttributeType = PrimitiveToScalar(primitiveType) });
             }
-            
+
             //
             // Add Local Secondary Indices in the table metadata
             //
@@ -688,7 +701,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
         /// <param name="metadataCachingMode">The document API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
         /// requests. This controls how the cache key is derived, which influences when the SDK will call 
-        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.</param>
+        /// IAmazonDynamoDB.DescribeTable(string) internally to populate the cache.</param>
         /// <returns>Table object representing the specified table.</returns>
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, MetadataCachingMode metadataCachingMode)
         {
@@ -783,23 +796,23 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
         /// <param name="metadataCachingMode">The document API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
         /// requests. This controls how the cache key is derived, which influences when the SDK will call 
-        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.</param>
+        /// IAmazonDynamoDB.DescribeTable(string) internally to populate the cache.</param>
         /// <param name="table">Loaded table.</param>
         /// <returns>
         /// True if table was successfully loaded; otherwise false.
         /// </returns>
-        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, 
-                                        string tableName, 
-                                        DynamoDBEntryConversion conversion, 
-                                        bool isEmptyStringValueEnabled, 
-                                        MetadataCachingMode? metadataCachingMode, 
+        public static bool TryLoadTable(IAmazonDynamoDB ddbClient,
+                                        string tableName,
+                                        DynamoDBEntryConversion conversion,
+                                        bool isEmptyStringValueEnabled,
+                                        MetadataCachingMode? metadataCachingMode,
                                         out Table table)
         {
-            var config = new TableConfig(tableName, 
-                                         conversion, 
-                                         DynamoDBConsumer.DocumentModel, 
-                                         storeAsEpoch: null, 
-                                         isEmptyStringValueEnabled: isEmptyStringValueEnabled, 
+            var config = new TableConfig(tableName,
+                                         conversion,
+                                         DynamoDBConsumer.DocumentModel,
+                                         storeAsEpoch: null,
+                                         isEmptyStringValueEnabled: isEmptyStringValueEnabled,
                                          metadataCachingMode: metadataCachingMode);
 
             return TryLoadTable(ddbClient, config, out table);

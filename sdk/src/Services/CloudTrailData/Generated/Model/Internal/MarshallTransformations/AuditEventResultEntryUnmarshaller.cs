@@ -57,6 +57,8 @@ namespace Amazon.CloudTrailData.Model.Internal.MarshallTransformations
         public AuditEventResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
             AuditEventResultEntry unmarshalledObject = new AuditEventResultEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.CloudTrailData.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

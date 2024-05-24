@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public PipeSourceDynamoDBStreamParameters Unmarshall(JsonUnmarshallerContext context)
         {
             PipeSourceDynamoDBStreamParameters unmarshalledObject = new PipeSourceDynamoDBStreamParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -131,4 +133,3 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

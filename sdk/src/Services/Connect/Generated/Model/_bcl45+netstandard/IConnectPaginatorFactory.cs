@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the connect-2017-08-08.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -259,6 +260,16 @@ namespace Amazon.Connect.Model
         /// Paginator for SearchAvailablePhoneNumbers operation
         ///</summary>
         ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request);
+
+        /// <summary>
+        /// Paginator for SearchContactFlowModules operation
+        ///</summary>
+        ISearchContactFlowModulesPaginator SearchContactFlowModules(SearchContactFlowModulesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchContactFlows operation
+        ///</summary>
+        ISearchContactFlowsPaginator SearchContactFlows(SearchContactFlowsRequest request);
 
         /// <summary>
         /// Paginator for SearchContacts operation

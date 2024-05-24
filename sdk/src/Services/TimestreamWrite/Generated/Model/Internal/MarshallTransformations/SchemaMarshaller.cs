@@ -46,6 +46,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Schema requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCompositePartitionKey())
             {
                 context.Writer.WritePropertyName("CompositePartitionKey");
@@ -71,4 +73,3 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

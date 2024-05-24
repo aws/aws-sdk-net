@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MWAA.Model
 {
     /// <summary>
@@ -42,7 +43,9 @@ namespace Amazon.MWAA.Model
         private string _executionRoleArn;
         private string _kmsKey;
         private LoggingConfigurationInput _loggingConfiguration;
+        private int? _maxWebservers;
         private int? _maxWorkers;
+        private int? _minWebservers;
         private int? _minWorkers;
         private string _name;
         private NetworkConfiguration _networkConfiguration;
@@ -155,8 +158,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property EnvironmentClass. 
         /// <para>
-        /// The environment class type. Valid values: <c>mw1.small</c>, <c>mw1.medium</c>, <c>mw1.large</c>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
+        /// The environment class type. Valid values: <c>mw1.small</c>, <c>mw1.medium</c>, <c>mw1.large</c>,
+        /// <c>mw1.xlarge</c>, and <c>mw1.2xlarge</c>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
         /// MWAA environment class</a>.
         /// </para>
         /// </summary>
@@ -238,6 +241,36 @@ namespace Amazon.MWAA.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxWebservers. 
+        /// <para>
+        ///  The maximum number of web servers that you want to run in your environment. Amazon
+        /// MWAA scales the number of Apache Airflow web servers up to the number you specify
+        /// for <c>MaxWebservers</c> when you interact with your Apache Airflow environment using
+        /// Apache Airflow REST API, or the Apache Airflow CLI. For example, in scenarios where
+        /// your workload requires network calls to the Apache Airflow REST API with a high transaction-per-second
+        /// (TPS) rate, Amazon MWAA will increase the number of web servers up to the number set
+        /// in <c>MaxWebserers</c>. As TPS rates decrease Amazon MWAA disposes of the additional
+        /// web servers, and scales down to the number set in <c>MinxWebserers</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: Accepts between <c>2</c> and <c>5</c>. Defaults to <c>2</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2)]
+        public int MaxWebservers
+        {
+            get { return this._maxWebservers.GetValueOrDefault(); }
+            set { this._maxWebservers = value; }
+        }
+
+        // Check to see if MaxWebservers property is set
+        internal bool IsSetMaxWebservers()
+        {
+            return this._maxWebservers.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxWorkers. 
         /// <para>
         /// The maximum number of workers that you want to run in your environment. MWAA scales
@@ -258,6 +291,34 @@ namespace Amazon.MWAA.Model
         internal bool IsSetMaxWorkers()
         {
             return this._maxWorkers.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinWebservers. 
+        /// <para>
+        ///  The minimum number of web servers that you want to run in your environment. Amazon
+        /// MWAA scales the number of Apache Airflow web servers up to the number you specify
+        /// for <c>MaxWebservers</c> when you interact with your Apache Airflow environment using
+        /// Apache Airflow REST API, or the Apache Airflow CLI. As the transaction-per-second
+        /// rate, and the network load, decrease, Amazon MWAA disposes of the additional web servers,
+        /// and scales down to the number set in <c>MinxWebserers</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: Accepts between <c>2</c> and <c>5</c>. Defaults to <c>2</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2)]
+        public int MinWebservers
+        {
+            get { return this._minWebservers.GetValueOrDefault(); }
+            set { this._minWebservers = value; }
+        }
+
+        // Check to see if MinWebservers property is set
+        internal bool IsSetMinWebservers()
+        {
+            return this._minWebservers.HasValue; 
         }
 
         /// <summary>
@@ -417,11 +478,11 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// v2 - Accepts between 2 to 5. Defaults to 2.
+        /// v2 - Accepts between <c>2</c> to <c>5</c>. Defaults to <c>2</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// v1 - Accepts 1.
+        /// v1 - Accepts <c>1</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -64,6 +65,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// For a control, the industry or regulatory framework requirements that are related
         /// to the control. The check for that control is aligned with these requirements.
+        /// </para>
+        ///  
+        /// <para>
+        /// Array Members: Maximum number of 32 items.
         /// </para>
         /// </summary>
         public List<string> RelatedRequirements
@@ -141,8 +146,8 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  <c>NOT_AVAILABLE</c> - Check could not be performed due to a service outage, API
         /// error, or because the result of the Config evaluation was <c>NOT_APPLICABLE</c>. If
-        /// the Config evaluation result was <c>NOT_APPLICABLE</c>, then after 3 days, Security
-        /// Hub automatically archives the finding.
+        /// the Config evaluation result was <c>NOT_APPLICABLE</c> for a Security Hub control,
+        /// Security Hub automatically archives the finding after 3 days.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

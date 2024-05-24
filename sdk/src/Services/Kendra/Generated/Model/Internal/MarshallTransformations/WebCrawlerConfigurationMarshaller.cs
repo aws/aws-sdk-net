@@ -46,6 +46,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WebCrawlerConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthenticationConfiguration())
             {
                 context.Writer.WritePropertyName("AuthenticationConfiguration");
@@ -66,7 +68,14 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxContentSizePerPageInMegaBytes())
             {
                 context.Writer.WritePropertyName("MaxContentSizePerPageInMegaBytes");
-                context.Writer.Write(requestObject.MaxContentSizePerPageInMegaBytes);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MaxContentSizePerPageInMegaBytes))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxContentSizePerPageInMegaBytes));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaxContentSizePerPageInMegaBytes);
+                }
             }
 
             if(requestObject.IsSetMaxLinksPerPage())
@@ -134,4 +143,3 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

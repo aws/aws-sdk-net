@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public ResourceViolation Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceViolation unmarshalledObject = new ResourceViolation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -110,6 +112,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = FirewallSubnetMissingVPCEndpointViolationUnmarshaller.Instance;
                     unmarshalledObject.FirewallSubnetMissingVPCEndpointViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InvalidNetworkAclEntriesViolation", targetDepth))
+                {
+                    var unmarshaller = InvalidNetworkAclEntriesViolationUnmarshaller.Instance;
+                    unmarshalledObject.InvalidNetworkAclEntriesViolation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NetworkFirewallBlackHoleRouteDetectedViolation", targetDepth))
@@ -221,4 +229,3 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

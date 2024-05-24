@@ -46,6 +46,8 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AlternateIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExternalId())
             {
                 context.Writer.WritePropertyName("ExternalId");
@@ -77,4 +79,3 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

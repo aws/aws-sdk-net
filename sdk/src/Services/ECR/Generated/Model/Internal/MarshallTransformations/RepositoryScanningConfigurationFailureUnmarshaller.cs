@@ -57,6 +57,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         public RepositoryScanningConfigurationFailure Unmarshall(JsonUnmarshallerContext context)
         {
             RepositoryScanningConfigurationFailure unmarshalledObject = new RepositoryScanningConfigurationFailure();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

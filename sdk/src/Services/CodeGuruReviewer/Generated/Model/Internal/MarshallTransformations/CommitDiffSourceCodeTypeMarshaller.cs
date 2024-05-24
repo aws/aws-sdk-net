@@ -46,6 +46,8 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CommitDiffSourceCodeType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestinationCommit())
             {
                 context.Writer.WritePropertyName("DestinationCommit");
@@ -73,4 +75,3 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

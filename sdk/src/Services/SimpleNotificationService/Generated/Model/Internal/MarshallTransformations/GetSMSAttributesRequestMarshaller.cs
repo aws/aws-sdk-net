@@ -68,7 +68,6 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

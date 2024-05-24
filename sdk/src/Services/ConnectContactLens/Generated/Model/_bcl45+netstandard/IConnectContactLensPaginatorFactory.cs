@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the connect-contact-lens-2020-08-21.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectContactLens.Model
 {
     /// <summary>

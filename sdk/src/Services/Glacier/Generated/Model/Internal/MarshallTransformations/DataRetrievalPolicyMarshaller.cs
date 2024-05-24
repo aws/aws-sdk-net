@@ -46,6 +46,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataRetrievalPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRules())
             {
                 context.Writer.WritePropertyName("Rules");
@@ -71,4 +73,3 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

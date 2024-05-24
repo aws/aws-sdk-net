@@ -46,6 +46,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LifecyclePolicyPreviewFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTagStatus())
             {
                 context.Writer.WritePropertyName("tagStatus");
@@ -61,4 +63,3 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

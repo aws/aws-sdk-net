@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -33,6 +34,7 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class CallAnalyticsJobSummary
     {
+        private CallAnalyticsJobDetails _callAnalyticsJobDetails;
         private string _callAnalyticsJobName;
         private CallAnalyticsJobStatus _callAnalyticsJobStatus;
         private DateTime? _completionTime;
@@ -40,6 +42,25 @@ namespace Amazon.TranscribeService.Model
         private string _failureReason;
         private LanguageCode _languageCode;
         private DateTime? _startTime;
+
+        /// <summary>
+        /// Gets and sets the property CallAnalyticsJobDetails. 
+        /// <para>
+        /// Provides detailed information about a call analytics job, including information about
+        /// skipped analytics features.
+        /// </para>
+        /// </summary>
+        public CallAnalyticsJobDetails CallAnalyticsJobDetails
+        {
+            get { return this._callAnalyticsJobDetails; }
+            set { this._callAnalyticsJobDetails = value; }
+        }
+
+        // Check to see if CallAnalyticsJobDetails property is set
+        internal bool IsSetCallAnalyticsJobDetails()
+        {
+            return this._callAnalyticsJobDetails != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CallAnalyticsJobName. 

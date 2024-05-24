@@ -46,6 +46,8 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataLakeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("encryptionConfiguration");
@@ -94,4 +96,3 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

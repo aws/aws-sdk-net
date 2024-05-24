@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
@@ -48,7 +49,8 @@ namespace Amazon.BedrockAgent.Model
         /// Defines the prompt template with which to replace the default prompt template. You
         /// can use placeholder variables in the base prompt template to customize the prompt.
         /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
-        /// template placeholder variables</a>.
+        /// template placeholder variables</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts-configure.html">Configure
+        /// the prompt templates</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]

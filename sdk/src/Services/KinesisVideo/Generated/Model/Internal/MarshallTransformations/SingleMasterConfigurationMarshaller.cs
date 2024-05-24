@@ -46,6 +46,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SingleMasterConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMessageTtlSeconds())
             {
                 context.Writer.WritePropertyName("MessageTtlSeconds");
@@ -61,4 +63,3 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

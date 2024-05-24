@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -95,7 +96,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property BlueprintId. 
         /// <para>
-        /// The blueprint ID (<c>os_amlinux_2016_03</c>).
+        /// The blueprint ID (<c>amazon_linux_2023</c>).
         /// </para>
         /// </summary>
         public string BlueprintId
@@ -113,7 +114,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property BlueprintName. 
         /// <para>
-        /// The friendly name of the blueprint (<c>Amazon Linux</c>).
+        /// The friendly name of the blueprint (<c>Amazon Linux 2023</c>).
         /// </para>
         /// </summary>
         public string BlueprintName
@@ -131,7 +132,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property BundleId. 
         /// <para>
-        /// The bundle for the instance (<c>micro_1_0</c>).
+        /// The bundle for the instance (<c>micro_x_x</c>).
         /// </para>
         /// </summary>
         public string BundleId
@@ -189,8 +190,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The possible values are <c>ipv4</c> for IPv4 only, and <c>dualstack</c> for IPv4 and
-        /// IPv6.
+        /// The possible values are <c>ipv4</c> for IPv4 only, <c>ipv6</c> for IPv6 only, and
+        /// <c>dualstack</c> for IPv4 and IPv6.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType
@@ -280,7 +281,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name the user gave the instance (<c>Amazon_Linux-1GB-Ohio-1</c>).
+        /// The name the user gave the instance (<c>Amazon_Linux_2023-1</c>).
         /// </para>
         /// </summary>
         public string Name

@@ -46,6 +46,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CSVInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComments())
             {
                 context.Writer.WritePropertyName("Comments");
@@ -91,4 +93,3 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

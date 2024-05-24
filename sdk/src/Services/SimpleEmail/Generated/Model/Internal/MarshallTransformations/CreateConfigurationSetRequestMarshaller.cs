@@ -65,9 +65,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("ConfigurationSet" + "." + "Name", StringUtils.FromString(publicRequest.ConfigurationSet.Name));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

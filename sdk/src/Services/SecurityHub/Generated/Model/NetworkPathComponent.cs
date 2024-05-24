@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -42,6 +43,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ComponentId. 
         /// <para>
         /// The identifier of a component in the network path.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1. Maximum of 32.
         /// </para>
         /// </summary>
         public string ComponentId
@@ -60,6 +65,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ComponentType. 
         /// <para>
         /// The type of component.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1. Maximum of 32.
         /// </para>
         /// </summary>
         public string ComponentType

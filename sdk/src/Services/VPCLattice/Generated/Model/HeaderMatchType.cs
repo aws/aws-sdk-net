@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
-    /// Describes a header match type. Only one can be provided.
+    /// Describes a header match type.
     /// </summary>
     public partial class HeaderMatchType
     {
@@ -40,7 +41,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Contains. 
         /// <para>
-        /// Specifies a contains type match.
+        /// A contains type match.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -59,7 +60,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Exact. 
         /// <para>
-        /// Specifies an exact type match.
+        /// An exact type match.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -78,7 +79,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// Specifies a prefix type match. Matches the value with the prefix.
+        /// A prefix type match. Matches the value with the prefix.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

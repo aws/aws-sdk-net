@@ -57,6 +57,8 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         public ConfigurableUpfrontPricingTerm Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigurableUpfrontPricingTerm unmarshalledObject = new ConfigurableUpfrontPricingTerm();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

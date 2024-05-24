@@ -571,6 +571,38 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppInstanceType MlG5Xlarge = new AppInstanceType("ml.g5.xlarge");
         /// <summary>
+        /// Constant MlG612xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG612xlarge = new AppInstanceType("ml.g6.12xlarge");
+        /// <summary>
+        /// Constant MlG616xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG616xlarge = new AppInstanceType("ml.g6.16xlarge");
+        /// <summary>
+        /// Constant MlG624xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG624xlarge = new AppInstanceType("ml.g6.24xlarge");
+        /// <summary>
+        /// Constant MlG62xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG62xlarge = new AppInstanceType("ml.g6.2xlarge");
+        /// <summary>
+        /// Constant MlG648xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG648xlarge = new AppInstanceType("ml.g6.48xlarge");
+        /// <summary>
+        /// Constant MlG64xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG64xlarge = new AppInstanceType("ml.g6.4xlarge");
+        /// <summary>
+        /// Constant MlG68xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG68xlarge = new AppInstanceType("ml.g6.8xlarge");
+        /// <summary>
+        /// Constant MlG6Xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG6Xlarge = new AppInstanceType("ml.g6.xlarge");
+        /// <summary>
         /// Constant MlGeospatialInteractive for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlGeospatialInteractive = new AppInstanceType("ml.geospatial.interactive");
@@ -5083,6 +5115,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type EnabledOrDisabled.
+    /// </summary>
+    public class EnabledOrDisabled : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for EnabledOrDisabled
+        /// </summary>
+        public static readonly EnabledOrDisabled Disabled = new EnabledOrDisabled("Disabled");
+        /// <summary>
+        /// Constant Enabled for EnabledOrDisabled
+        /// </summary>
+        public static readonly EnabledOrDisabled Enabled = new EnabledOrDisabled("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnabledOrDisabled(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnabledOrDisabled FindValue(string value)
+        {
+            return FindValue<EnabledOrDisabled>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnabledOrDisabled(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EndpointConfigSortKey.
     /// </summary>
     public class EndpointConfigSortKey : ConstantClass
@@ -7750,6 +7832,38 @@ namespace Amazon.SageMaker
         /// Constant MlG5Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlG5Xlarge = new InstanceType("ml.g5.xlarge");
+        /// <summary>
+        /// Constant MlG612xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG612xlarge = new InstanceType("ml.g6.12xlarge");
+        /// <summary>
+        /// Constant MlG616xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG616xlarge = new InstanceType("ml.g6.16xlarge");
+        /// <summary>
+        /// Constant MlG624xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG624xlarge = new InstanceType("ml.g6.24xlarge");
+        /// <summary>
+        /// Constant MlG62xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG62xlarge = new InstanceType("ml.g6.2xlarge");
+        /// <summary>
+        /// Constant MlG648xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG648xlarge = new InstanceType("ml.g6.48xlarge");
+        /// <summary>
+        /// Constant MlG64xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG64xlarge = new InstanceType("ml.g6.4xlarge");
+        /// <summary>
+        /// Constant MlG68xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG68xlarge = new InstanceType("ml.g6.8xlarge");
+        /// <summary>
+        /// Constant MlG6Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6Xlarge = new InstanceType("ml.g6.xlarge");
         /// <summary>
         /// Constant MlInf124xlarge for InstanceType
         /// </summary>
@@ -11027,7 +11141,7 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Constant Equals for Operator
         /// </summary>
-        public static readonly Operator Equals = new Operator("Equals");
+        public new static readonly Operator Equals = new Operator("Equals");
         /// <summary>
         /// Constant Exists for Operator
         /// </summary>
@@ -12384,6 +12498,38 @@ namespace Amazon.SageMaker
         /// Constant MlG5Xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlG5Xlarge = new ProductionVariantInstanceType("ml.g5.xlarge");
+        /// <summary>
+        /// Constant MlG612xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG612xlarge = new ProductionVariantInstanceType("ml.g6.12xlarge");
+        /// <summary>
+        /// Constant MlG616xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG616xlarge = new ProductionVariantInstanceType("ml.g6.16xlarge");
+        /// <summary>
+        /// Constant MlG624xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG624xlarge = new ProductionVariantInstanceType("ml.g6.24xlarge");
+        /// <summary>
+        /// Constant MlG62xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG62xlarge = new ProductionVariantInstanceType("ml.g6.2xlarge");
+        /// <summary>
+        /// Constant MlG648xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG648xlarge = new ProductionVariantInstanceType("ml.g6.48xlarge");
+        /// <summary>
+        /// Constant MlG64xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG64xlarge = new ProductionVariantInstanceType("ml.g6.4xlarge");
+        /// <summary>
+        /// Constant MlG68xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG68xlarge = new ProductionVariantInstanceType("ml.g6.8xlarge");
+        /// <summary>
+        /// Constant MlG6Xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG6Xlarge = new ProductionVariantInstanceType("ml.g6.xlarge");
         /// <summary>
         /// Constant MlInf124xlarge for ProductionVariantInstanceType
         /// </summary>
@@ -17043,6 +17189,78 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TransformInstanceType MlC5Xlarge = new TransformInstanceType("ml.c5.xlarge");
         /// <summary>
+        /// Constant MlC6i12xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC6i12xlarge = new TransformInstanceType("ml.c6i.12xlarge");
+        /// <summary>
+        /// Constant MlC6i16xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC6i16xlarge = new TransformInstanceType("ml.c6i.16xlarge");
+        /// <summary>
+        /// Constant MlC6i24xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC6i24xlarge = new TransformInstanceType("ml.c6i.24xlarge");
+        /// <summary>
+        /// Constant MlC6i2xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC6i2xlarge = new TransformInstanceType("ml.c6i.2xlarge");
+        /// <summary>
+        /// Constant MlC6i32xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC6i32xlarge = new TransformInstanceType("ml.c6i.32xlarge");
+        /// <summary>
+        /// Constant MlC6i4xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC6i4xlarge = new TransformInstanceType("ml.c6i.4xlarge");
+        /// <summary>
+        /// Constant MlC6i8xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC6i8xlarge = new TransformInstanceType("ml.c6i.8xlarge");
+        /// <summary>
+        /// Constant MlC6iLarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC6iLarge = new TransformInstanceType("ml.c6i.large");
+        /// <summary>
+        /// Constant MlC6iXlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC6iXlarge = new TransformInstanceType("ml.c6i.xlarge");
+        /// <summary>
+        /// Constant MlC7i12xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC7i12xlarge = new TransformInstanceType("ml.c7i.12xlarge");
+        /// <summary>
+        /// Constant MlC7i16xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC7i16xlarge = new TransformInstanceType("ml.c7i.16xlarge");
+        /// <summary>
+        /// Constant MlC7i24xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC7i24xlarge = new TransformInstanceType("ml.c7i.24xlarge");
+        /// <summary>
+        /// Constant MlC7i2xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC7i2xlarge = new TransformInstanceType("ml.c7i.2xlarge");
+        /// <summary>
+        /// Constant MlC7i48xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC7i48xlarge = new TransformInstanceType("ml.c7i.48xlarge");
+        /// <summary>
+        /// Constant MlC7i4xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC7i4xlarge = new TransformInstanceType("ml.c7i.4xlarge");
+        /// <summary>
+        /// Constant MlC7i8xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC7i8xlarge = new TransformInstanceType("ml.c7i.8xlarge");
+        /// <summary>
+        /// Constant MlC7iLarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC7iLarge = new TransformInstanceType("ml.c7i.large");
+        /// <summary>
+        /// Constant MlC7iXlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC7iXlarge = new TransformInstanceType("ml.c7i.xlarge");
+        /// <summary>
         /// Constant MlG4dn12xlarge for TransformInstanceType
         /// </summary>
         public static readonly TransformInstanceType MlG4dn12xlarge = new TransformInstanceType("ml.g4dn.12xlarge");
@@ -17066,6 +17284,38 @@ namespace Amazon.SageMaker
         /// Constant MlG4dnXlarge for TransformInstanceType
         /// </summary>
         public static readonly TransformInstanceType MlG4dnXlarge = new TransformInstanceType("ml.g4dn.xlarge");
+        /// <summary>
+        /// Constant MlG512xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG512xlarge = new TransformInstanceType("ml.g5.12xlarge");
+        /// <summary>
+        /// Constant MlG516xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG516xlarge = new TransformInstanceType("ml.g5.16xlarge");
+        /// <summary>
+        /// Constant MlG524xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG524xlarge = new TransformInstanceType("ml.g5.24xlarge");
+        /// <summary>
+        /// Constant MlG52xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG52xlarge = new TransformInstanceType("ml.g5.2xlarge");
+        /// <summary>
+        /// Constant MlG548xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG548xlarge = new TransformInstanceType("ml.g5.48xlarge");
+        /// <summary>
+        /// Constant MlG54xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG54xlarge = new TransformInstanceType("ml.g5.4xlarge");
+        /// <summary>
+        /// Constant MlG58xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG58xlarge = new TransformInstanceType("ml.g5.8xlarge");
+        /// <summary>
+        /// Constant MlG5Xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG5Xlarge = new TransformInstanceType("ml.g5.xlarge");
         /// <summary>
         /// Constant MlM410xlarge for TransformInstanceType
         /// </summary>
@@ -17111,6 +17361,78 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TransformInstanceType MlM5Xlarge = new TransformInstanceType("ml.m5.xlarge");
         /// <summary>
+        /// Constant MlM6i12xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM6i12xlarge = new TransformInstanceType("ml.m6i.12xlarge");
+        /// <summary>
+        /// Constant MlM6i16xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM6i16xlarge = new TransformInstanceType("ml.m6i.16xlarge");
+        /// <summary>
+        /// Constant MlM6i24xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM6i24xlarge = new TransformInstanceType("ml.m6i.24xlarge");
+        /// <summary>
+        /// Constant MlM6i2xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM6i2xlarge = new TransformInstanceType("ml.m6i.2xlarge");
+        /// <summary>
+        /// Constant MlM6i32xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM6i32xlarge = new TransformInstanceType("ml.m6i.32xlarge");
+        /// <summary>
+        /// Constant MlM6i4xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM6i4xlarge = new TransformInstanceType("ml.m6i.4xlarge");
+        /// <summary>
+        /// Constant MlM6i8xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM6i8xlarge = new TransformInstanceType("ml.m6i.8xlarge");
+        /// <summary>
+        /// Constant MlM6iLarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM6iLarge = new TransformInstanceType("ml.m6i.large");
+        /// <summary>
+        /// Constant MlM6iXlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM6iXlarge = new TransformInstanceType("ml.m6i.xlarge");
+        /// <summary>
+        /// Constant MlM7i12xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM7i12xlarge = new TransformInstanceType("ml.m7i.12xlarge");
+        /// <summary>
+        /// Constant MlM7i16xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM7i16xlarge = new TransformInstanceType("ml.m7i.16xlarge");
+        /// <summary>
+        /// Constant MlM7i24xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM7i24xlarge = new TransformInstanceType("ml.m7i.24xlarge");
+        /// <summary>
+        /// Constant MlM7i2xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM7i2xlarge = new TransformInstanceType("ml.m7i.2xlarge");
+        /// <summary>
+        /// Constant MlM7i48xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM7i48xlarge = new TransformInstanceType("ml.m7i.48xlarge");
+        /// <summary>
+        /// Constant MlM7i4xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM7i4xlarge = new TransformInstanceType("ml.m7i.4xlarge");
+        /// <summary>
+        /// Constant MlM7i8xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM7i8xlarge = new TransformInstanceType("ml.m7i.8xlarge");
+        /// <summary>
+        /// Constant MlM7iLarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM7iLarge = new TransformInstanceType("ml.m7i.large");
+        /// <summary>
+        /// Constant MlM7iXlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM7iXlarge = new TransformInstanceType("ml.m7i.xlarge");
+        /// <summary>
         /// Constant MlP216xlarge for TransformInstanceType
         /// </summary>
         public static readonly TransformInstanceType MlP216xlarge = new TransformInstanceType("ml.p2.16xlarge");
@@ -17134,6 +17456,78 @@ namespace Amazon.SageMaker
         /// Constant MlP38xlarge for TransformInstanceType
         /// </summary>
         public static readonly TransformInstanceType MlP38xlarge = new TransformInstanceType("ml.p3.8xlarge");
+        /// <summary>
+        /// Constant MlR6i12xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR6i12xlarge = new TransformInstanceType("ml.r6i.12xlarge");
+        /// <summary>
+        /// Constant MlR6i16xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR6i16xlarge = new TransformInstanceType("ml.r6i.16xlarge");
+        /// <summary>
+        /// Constant MlR6i24xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR6i24xlarge = new TransformInstanceType("ml.r6i.24xlarge");
+        /// <summary>
+        /// Constant MlR6i2xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR6i2xlarge = new TransformInstanceType("ml.r6i.2xlarge");
+        /// <summary>
+        /// Constant MlR6i32xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR6i32xlarge = new TransformInstanceType("ml.r6i.32xlarge");
+        /// <summary>
+        /// Constant MlR6i4xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR6i4xlarge = new TransformInstanceType("ml.r6i.4xlarge");
+        /// <summary>
+        /// Constant MlR6i8xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR6i8xlarge = new TransformInstanceType("ml.r6i.8xlarge");
+        /// <summary>
+        /// Constant MlR6iLarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR6iLarge = new TransformInstanceType("ml.r6i.large");
+        /// <summary>
+        /// Constant MlR6iXlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR6iXlarge = new TransformInstanceType("ml.r6i.xlarge");
+        /// <summary>
+        /// Constant MlR7i12xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR7i12xlarge = new TransformInstanceType("ml.r7i.12xlarge");
+        /// <summary>
+        /// Constant MlR7i16xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR7i16xlarge = new TransformInstanceType("ml.r7i.16xlarge");
+        /// <summary>
+        /// Constant MlR7i24xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR7i24xlarge = new TransformInstanceType("ml.r7i.24xlarge");
+        /// <summary>
+        /// Constant MlR7i2xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR7i2xlarge = new TransformInstanceType("ml.r7i.2xlarge");
+        /// <summary>
+        /// Constant MlR7i48xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR7i48xlarge = new TransformInstanceType("ml.r7i.48xlarge");
+        /// <summary>
+        /// Constant MlR7i4xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR7i4xlarge = new TransformInstanceType("ml.r7i.4xlarge");
+        /// <summary>
+        /// Constant MlR7i8xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR7i8xlarge = new TransformInstanceType("ml.r7i.8xlarge");
+        /// <summary>
+        /// Constant MlR7iLarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR7iLarge = new TransformInstanceType("ml.r7i.large");
+        /// <summary>
+        /// Constant MlR7iXlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlR7iXlarge = new TransformInstanceType("ml.r7i.xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

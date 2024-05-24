@@ -57,6 +57,8 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
         public UpdateResult Unmarshall(JsonUnmarshallerContext context)
         {
             UpdateResult unmarshalledObject = new UpdateResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

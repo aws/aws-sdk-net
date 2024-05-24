@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.SecurityHub.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.SecurityHub
 {
     /// <summary>
@@ -5805,13 +5806,20 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// <c>UpdateFindings</c> is deprecated. Instead of <c>UpdateFindings</c>, use <c>BatchUpdateFindings</c>.
+        /// <c>UpdateFindings</c> is a deprecated operation. Instead of <c>UpdateFindings</c>,
+        /// use the <c>BatchUpdateFindings</c> operation.
         /// 
         ///  
         /// <para>
         /// Updates the <c>Note</c> and <c>RecordState</c> of the Security Hub-aggregated findings
         /// that the filter attributes specify. Any member account that can view the finding also
         /// sees the update to the finding.
+        /// </para>
+        ///  
+        /// <para>
+        /// Finding updates made with <c>UpdateFindings</c> might not be persisted if the same
+        /// finding is later updated by the finding provider through the <c>BatchImportFindings</c>
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindings service method.</param>
@@ -5841,13 +5849,20 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// <c>UpdateFindings</c> is deprecated. Instead of <c>UpdateFindings</c>, use <c>BatchUpdateFindings</c>.
+        /// <c>UpdateFindings</c> is a deprecated operation. Instead of <c>UpdateFindings</c>,
+        /// use the <c>BatchUpdateFindings</c> operation.
         /// 
         ///  
         /// <para>
         /// Updates the <c>Note</c> and <c>RecordState</c> of the Security Hub-aggregated findings
         /// that the filter attributes specify. Any member account that can view the finding also
         /// sees the update to the finding.
+        /// </para>
+        ///  
+        /// <para>
+        /// Finding updates made with <c>UpdateFindings</c> might not be persisted if the same
+        /// finding is later updated by the finding provider through the <c>BatchImportFindings</c>
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindings service method.</param>

@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public BatchGetCollaborationAnalysisTemplateError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchGetCollaborationAnalysisTemplateError unmarshalledObject = new BatchGetCollaborationAnalysisTemplateError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

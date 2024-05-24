@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.Connect.Model
         /// Valid metric filter keys: <c>INITIATION_METHOD</c>, <c>DISCONNECT_REASON</c>. These
         /// are the same values as the <c>InitiationMethod</c> and <c>DisconnectReason</c> in
         /// the contact record. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-        /// in the <i>Amazon Connect Administrator's Guide</i>. 
+        /// in the <i>Amazon Connect Administrator Guide</i>. 
         /// </para>
         /// </summary>
         public string MetricFilterKey

@@ -5,6 +5,7 @@
     "endpointPrefix":"cognito-idp",
     "jsonVersion":"1.1",
     "protocol":"json",
+    "protocols":["json"],
     "serviceFullName":"Amazon Cognito Identity Provider",
     "serviceId":"Cognito Identity Provider",
     "signatureVersion":"v4",
@@ -1673,6 +1674,7 @@
         {"shape":"UsernameExistsException"},
         {"shape":"TooManyRequestsException"},
         {"shape":"InternalErrorException"},
+        {"shape":"LimitExceededException"},
         {"shape":"InvalidSmsRoleAccessPolicyException"},
         {"shape":"InvalidSmsRoleTrustRelationshipException"},
         {"shape":"InvalidEmailRoleAccessPolicyException"},
@@ -5697,7 +5699,8 @@
         "COMPROMISED",
         "UNKNOWN",
         "RESET_REQUIRED",
-        "FORCE_CHANGE_PASSWORD"
+        "FORCE_CHANGE_PASSWORD",
+        "EXTERNAL_PROVIDER"
       ]
     },
     "UserType":{

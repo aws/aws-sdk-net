@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chatbot.Model
 {
     /// <summary>
@@ -41,6 +42,7 @@ namespace Amazon.Chatbot.Model
         private string _iamRoleArn;
         private string _loggingLevel;
         private List<string> _snsTopicArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _teamId;
         private string _teamName;
         private string _tenantId;
@@ -159,6 +161,21 @@ namespace Amazon.Chatbot.Model
         internal bool IsSetSnsTopicArns()
         {
             return this._snsTopicArns != null && (this._snsTopicArns.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. A list of tags to apply to the configuration.
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

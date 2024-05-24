@@ -46,6 +46,8 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Configuration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConnectConfiguration())
             {
                 context.Writer.WritePropertyName("connectConfiguration");
@@ -66,4 +68,3 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

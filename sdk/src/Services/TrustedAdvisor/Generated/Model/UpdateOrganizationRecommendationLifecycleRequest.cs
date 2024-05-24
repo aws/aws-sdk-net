@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TrustedAdvisor.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateOrganizationRecommendationLifecycle operation.
-    /// Update the lifecyle of a Recommendation within an Organization. This API only supports
+    /// Update the lifecycle of a Recommendation within an Organization. This API only supports
     /// prioritized recommendations.
     /// </summary>
     public partial class UpdateOrganizationRecommendationLifecycleRequest : AmazonTrustedAdvisorRequest

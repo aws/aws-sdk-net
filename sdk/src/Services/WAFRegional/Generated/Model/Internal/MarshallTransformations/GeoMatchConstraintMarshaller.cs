@@ -46,6 +46,8 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GeoMatchConstraint requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
@@ -67,4 +69,3 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

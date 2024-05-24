@@ -46,6 +46,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeliveryChannel requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConfigSnapshotDeliveryProperties())
             {
                 context.Writer.WritePropertyName("configSnapshotDeliveryProperties");
@@ -96,4 +98,3 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

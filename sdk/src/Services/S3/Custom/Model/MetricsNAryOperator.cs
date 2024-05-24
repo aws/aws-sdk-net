@@ -28,11 +28,18 @@ namespace Amazon.S3.Model
     {
         private readonly List<MetricsFilterPredicate> operands;
 
+        /// <summary>
+        /// Construct an instance of MetricsNAryOperator
+        /// </summary>
+        /// <param name="operands"></param>
         protected MetricsNAryOperator(List<MetricsFilterPredicate> operands)
         {
             this.operands = operands;
         }
 
+        /// <summary>
+        /// The operands for the operator
+        /// </summary>
         public List<MetricsFilterPredicate> Operands
         {
             get { return this.operands; }

@@ -46,6 +46,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CsvConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetColumnSeparator())
             {
                 context.Writer.WritePropertyName("ColumnSeparator");
@@ -85,4 +87,3 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

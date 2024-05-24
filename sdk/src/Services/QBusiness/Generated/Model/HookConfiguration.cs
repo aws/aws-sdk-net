@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -34,13 +35,13 @@ namespace Amazon.QBusiness.Model
     /// 
     ///  
     /// <para>
-    /// You can configure your Lambda function using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a>
-    /// if you want to apply advanced alterations on the original or raw documents.
+    /// You can configure your Lambda function using the <c>PreExtractionHookConfiguration</c>
+    /// parameter if you want to apply advanced alterations on the original or raw documents.
     /// </para>
     ///  
     /// <para>
     /// If you want to apply advanced alterations on the Amazon Q Business structured documents,
-    /// you must configure your Lambda function using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.
+    /// you must configure your Lambda function using <c>PostExtractionHookConfiguration</c>.
     /// </para>
     ///  
     /// <para>

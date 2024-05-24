@@ -46,6 +46,8 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TargetAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCreateSnapshot())
             {
                 context.Writer.WritePropertyName("createSnapshot");
@@ -66,4 +68,3 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

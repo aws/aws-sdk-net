@@ -46,6 +46,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ColumnWildcard requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExcludedColumnNames())
             {
                 context.Writer.WritePropertyName("ExcludedColumnNames");
@@ -66,4 +68,3 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

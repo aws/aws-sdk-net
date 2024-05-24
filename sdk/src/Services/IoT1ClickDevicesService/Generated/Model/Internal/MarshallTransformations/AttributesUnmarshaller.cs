@@ -57,6 +57,8 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
         public Attributes Unmarshall(JsonUnmarshallerContext context)
         {
             Attributes unmarshalledObject = new Attributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -83,4 +85,3 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

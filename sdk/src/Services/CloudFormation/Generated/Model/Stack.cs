@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -36,6 +37,7 @@ namespace Amazon.CloudFormation.Model
         private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _changeSetId;
         private DateTime? _creationTime;
+        private DeletionMode _deletionMode;
         private DateTime? _deletionTime;
         private string _description;
         private DetailedStatus _detailedStatus;
@@ -112,6 +114,35 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionMode. 
+        /// <para>
+        /// Specifies the deletion mode for the stack. Possible values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>STANDARD</c> - Use the standard behavior. Specifying this value is the same as
+        /// not specifying this parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FORCE_DELETE_STACK</c> - Delete the stack if it's stuck in a <c>DELETE_FAILED</c>
+        /// state due to resource deletion failure.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DeletionMode DeletionMode
+        {
+            get { return this._deletionMode; }
+            set { this._deletionMode = value; }
+        }
+
+        // Check to see if DeletionMode property is set
+        internal bool IsSetDeletionMode()
+        {
+            return this._deletionMode != null;
         }
 
         /// <summary>

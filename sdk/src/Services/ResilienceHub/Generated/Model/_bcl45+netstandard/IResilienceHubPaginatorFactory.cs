@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the resiliencehub-2020-04-30.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -34,6 +35,11 @@ namespace Amazon.ResilienceHub.Model
         /// Paginator for ListAppAssessmentComplianceDrifts operation
         ///</summary>
         IListAppAssessmentComplianceDriftsPaginator ListAppAssessmentComplianceDrifts(ListAppAssessmentComplianceDriftsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAppAssessmentResourceDrifts operation
+        ///</summary>
+        IListAppAssessmentResourceDriftsPaginator ListAppAssessmentResourceDrifts(ListAppAssessmentResourceDriftsRequest request);
 
         /// <summary>
         /// Paginator for ListAppAssessments operation

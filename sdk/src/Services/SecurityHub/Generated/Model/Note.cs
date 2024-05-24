@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -41,6 +42,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Text. 
         /// <para>
         /// The text of a note.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1. Maximum of 512.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

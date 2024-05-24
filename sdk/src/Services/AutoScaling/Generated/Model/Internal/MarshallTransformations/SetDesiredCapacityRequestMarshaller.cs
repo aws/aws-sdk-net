@@ -63,17 +63,14 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDesiredCapacity())
                 {
                     request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(publicRequest.DesiredCapacity));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHonorCooldown())
                 {
                     request.Parameters.Add("HonorCooldown", StringUtils.FromBool(publicRequest.HonorCooldown));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

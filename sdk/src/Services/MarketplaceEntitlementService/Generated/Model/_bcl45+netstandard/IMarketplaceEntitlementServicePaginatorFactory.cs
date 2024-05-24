@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the entitlement.marketplace-2017-01-11.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceEntitlementService.Model
 {
     /// <summary>

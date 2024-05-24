@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public DominantLanguageDetectionJobProperties Unmarshall(JsonUnmarshallerContext context)
         {
             DominantLanguageDetectionJobProperties unmarshalledObject = new DominantLanguageDetectionJobProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -155,4 +157,3 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

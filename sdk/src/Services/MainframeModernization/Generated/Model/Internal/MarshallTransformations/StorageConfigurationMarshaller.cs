@@ -46,6 +46,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StorageConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEfs())
             {
                 context.Writer.WritePropertyName("efs");
@@ -77,4 +79,3 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

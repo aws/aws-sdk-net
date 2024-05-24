@@ -46,6 +46,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AnalysisSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("text");
@@ -61,4 +63,3 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

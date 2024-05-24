@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -36,6 +37,7 @@ namespace Amazon.Connect.Model
     #endif
     public partial class InvalidRequestException : AmazonConnectException
     {
+        private InvalidRequestExceptionReason _reason;
 
         /// <summary>
         /// Constructs a new InvalidRequestException with the specified error
@@ -97,6 +99,7 @@ namespace Amazon.Connect.Model
         protected InvalidRequestException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (InvalidRequestExceptionReason)info.GetValue("Reason", typeof(InvalidRequestExceptionReason));
         }
 
         /// <summary>
@@ -117,8 +120,24 @@ namespace Amazon.Connect.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Reason.
+        /// </summary>
+        public InvalidRequestExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }

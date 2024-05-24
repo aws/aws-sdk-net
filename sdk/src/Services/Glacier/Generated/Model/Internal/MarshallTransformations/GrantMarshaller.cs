@@ -46,6 +46,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Grant requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGrantee())
             {
                 context.Writer.WritePropertyName("Grantee");
@@ -72,4 +74,3 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

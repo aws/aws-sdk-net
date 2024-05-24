@@ -57,6 +57,8 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
         public ProjectSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ProjectSummary unmarshalledObject = new ProjectSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

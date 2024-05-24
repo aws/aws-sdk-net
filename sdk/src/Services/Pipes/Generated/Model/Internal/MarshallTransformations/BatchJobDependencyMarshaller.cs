@@ -46,6 +46,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchJobDependency requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetJobId())
             {
                 context.Writer.WritePropertyName("JobId");
@@ -67,4 +69,3 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

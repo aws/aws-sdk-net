@@ -46,6 +46,8 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EventFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("Source");
@@ -61,4 +63,3 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

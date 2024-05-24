@@ -46,6 +46,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScriptDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExecutableParameters())
             {
                 context.Writer.WritePropertyName("ExecutableParameters");
@@ -84,4 +86,3 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

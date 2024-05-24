@@ -46,6 +46,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SMBLocalGroups requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGatewayAdmins())
             {
                 context.Writer.WritePropertyName("GatewayAdmins");
@@ -66,4 +68,3 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

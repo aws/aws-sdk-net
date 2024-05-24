@@ -46,6 +46,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutomaticTapeCreationRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMinimumNumTapes())
             {
                 context.Writer.WritePropertyName("MinimumNumTapes");
@@ -85,4 +87,3 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

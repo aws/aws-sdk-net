@@ -46,6 +46,8 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudWatchLogDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLogGroup())
             {
                 context.Writer.WritePropertyName("LogGroup");
@@ -61,4 +63,3 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

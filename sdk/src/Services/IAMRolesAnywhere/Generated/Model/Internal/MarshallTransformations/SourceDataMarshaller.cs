@@ -46,6 +46,8 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SourceData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAcmPcaArn())
             {
                 context.Writer.WritePropertyName("acmPcaArn");
@@ -67,4 +69,3 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchDetachTypedLink requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTypedLinkSpecifier())
             {
                 context.Writer.WritePropertyName("TypedLinkSpecifier");
@@ -66,4 +68,3 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

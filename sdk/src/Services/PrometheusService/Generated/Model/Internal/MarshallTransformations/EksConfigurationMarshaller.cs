@@ -46,6 +46,8 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EksConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetClusterArn())
             {
                 context.Writer.WritePropertyName("clusterArn");
@@ -83,4 +85,3 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

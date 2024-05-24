@@ -185,7 +185,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
             var headers = await TestPutAndGet(request);
             Assert.Equal("disposition", headers.ContentDisposition);
-            Assert.False(headers.Keys.Contains("Content-Encoding", StringComparer.OrdinalIgnoreCase));
+            Assert.DoesNotContain("Content-Encoding", headers.Keys, StringComparer.OrdinalIgnoreCase);
             Assert.Null(headers.ContentEncoding);
         }
 

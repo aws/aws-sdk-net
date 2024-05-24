@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MedicalImaging.Model
 {
     /// <summary>
@@ -40,6 +41,7 @@ namespace Amazon.MedicalImaging.Model
         private string _clientToken;
         private string _dataAccessRoleArn;
         private string _datastoreId;
+        private string _inputOwnerAccountId;
         private string _inputs3Uri;
         private string _jobName;
         private string _outputs3Uri;
@@ -100,6 +102,25 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetDatastoreId()
         {
             return this._datastoreId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputOwnerAccountId. 
+        /// <para>
+        /// The account ID of the source S3 bucket owner.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string InputOwnerAccountId
+        {
+            get { return this._inputOwnerAccountId; }
+            set { this._inputOwnerAccountId = value; }
+        }
+
+        // Check to see if InputOwnerAccountId property is set
+        internal bool IsSetInputOwnerAccountId()
+        {
+            return this._inputOwnerAccountId != null;
         }
 
         /// <summary>

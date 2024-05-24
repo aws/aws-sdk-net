@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Additional details about why the validation failed.
+        /// Additional information about why the validation failed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

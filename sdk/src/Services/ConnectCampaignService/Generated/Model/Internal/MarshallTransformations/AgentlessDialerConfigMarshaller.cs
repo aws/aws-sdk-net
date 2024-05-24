@@ -46,10 +46,19 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AgentlessDialerConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDialingCapacity())
             {
                 context.Writer.WritePropertyName("dialingCapacity");
-                context.Writer.Write(requestObject.DialingCapacity);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DialingCapacity))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DialingCapacity));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.DialingCapacity);
+                }
             }
 
         }
@@ -61,4 +70,3 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

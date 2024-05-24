@@ -71,11 +71,7 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
             }
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
-            if (request.ContentStream != null && request.ContentStream.Length == 0)
-            {
-                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
-            }
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";
             request.UseQueryString = true;
 
             return request;
@@ -100,4 +96,3 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

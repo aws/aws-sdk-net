@@ -63,42 +63,34 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Affinity", StringUtils.FromString(publicRequest.Affinity));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGroupId())
                 {
                     request.Parameters.Add("GroupId", StringUtils.FromString(publicRequest.GroupId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGroupName())
                 {
                     request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHostId())
                 {
                     request.Parameters.Add("HostId", StringUtils.FromString(publicRequest.HostId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHostResourceGroupArn())
                 {
                     request.Parameters.Add("HostResourceGroupArn", StringUtils.FromString(publicRequest.HostResourceGroupArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPartitionNumber())
                 {
                     request.Parameters.Add("PartitionNumber", StringUtils.FromInt(publicRequest.PartitionNumber));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTenancy())
                 {
                     request.Parameters.Add("Tenancy", StringUtils.FromString(publicRequest.Tenancy));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

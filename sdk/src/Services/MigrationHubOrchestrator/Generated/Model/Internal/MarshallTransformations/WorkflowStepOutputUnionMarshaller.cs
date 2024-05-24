@@ -46,6 +46,8 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkflowStepOutputUnion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIntegerValue())
             {
                 context.Writer.WritePropertyName("integerValue");
@@ -78,4 +80,3 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

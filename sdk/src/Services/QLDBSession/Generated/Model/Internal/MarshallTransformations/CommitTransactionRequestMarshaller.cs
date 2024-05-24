@@ -46,6 +46,8 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CommitTransactionRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCommitDigest())
             {
                 context.Writer.WritePropertyName("CommitDigest");
@@ -67,4 +69,3 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

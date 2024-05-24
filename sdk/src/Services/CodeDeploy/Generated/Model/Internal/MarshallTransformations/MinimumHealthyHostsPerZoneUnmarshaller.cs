@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public MinimumHealthyHostsPerZone Unmarshall(JsonUnmarshallerContext context)
         {
             MinimumHealthyHostsPerZone unmarshalledObject = new MinimumHealthyHostsPerZone();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

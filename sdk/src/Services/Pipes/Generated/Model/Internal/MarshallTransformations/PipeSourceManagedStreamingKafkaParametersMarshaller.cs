@@ -46,6 +46,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PipeSourceManagedStreamingKafkaParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBatchSize())
             {
                 context.Writer.WritePropertyName("BatchSize");
@@ -96,4 +98,3 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

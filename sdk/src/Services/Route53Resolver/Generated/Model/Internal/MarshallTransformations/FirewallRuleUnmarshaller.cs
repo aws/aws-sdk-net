@@ -57,6 +57,8 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         public FirewallRule Unmarshall(JsonUnmarshallerContext context)
         {
             FirewallRule unmarshalledObject = new FirewallRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -112,6 +114,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     unmarshalledObject.FirewallDomainListId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FirewallDomainRedirectionAction", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FirewallDomainRedirectionAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FirewallRuleGroupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -161,4 +169,3 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

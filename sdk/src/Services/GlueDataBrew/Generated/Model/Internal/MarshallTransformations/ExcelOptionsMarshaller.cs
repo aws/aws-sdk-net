@@ -46,6 +46,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExcelOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHeaderRow())
             {
                 context.Writer.WritePropertyName("HeaderRow");
@@ -83,4 +85,3 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

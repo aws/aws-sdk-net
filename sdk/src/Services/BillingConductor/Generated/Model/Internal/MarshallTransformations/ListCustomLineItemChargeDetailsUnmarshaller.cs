@@ -57,6 +57,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         public ListCustomLineItemChargeDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ListCustomLineItemChargeDetails unmarshalledObject = new ListCustomLineItemChargeDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

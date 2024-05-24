@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property BundleId. 
         /// <para>
-        /// The bundle ID (<c>micro_1_0</c>).
+        /// The bundle ID (<c>micro_x_x</c>).
         /// </para>
         /// </summary>
         public string BundleId
@@ -105,7 +106,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The Amazon EC2 instance type (<c>t2.micro</c>).
+        /// The instance type (<c>micro</c>).
         /// </para>
         /// </summary>
         public string InstanceType

@@ -60,7 +60,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             int targetDepth = originalDepth + 1;
             if (context.IsStartOfDocument) 
                    targetDepth += 1;
-
+            if (context.IsEmptyResponse)
+            {
+                return;
+            }
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
@@ -140,4 +143,3 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

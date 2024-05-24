@@ -46,6 +46,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IamActionDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGroups())
             {
                 context.Writer.WritePropertyName("Groups");
@@ -94,4 +96,3 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

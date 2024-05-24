@@ -46,10 +46,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataUpdateRequestDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataUpdatedAt())
             {
                 context.Writer.WritePropertyName("DataUpdatedAt");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.DataUpdatedAt));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.DataUpdatedAt));
             }
 
         }
@@ -61,4 +63,3 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -68,7 +68,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAddSecurityGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,7 +77,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAddSubnetIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -88,36 +86,29 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDnsOptions())
                 {
                     if(publicRequest.DnsOptions.IsSetDnsRecordIpType())
                     {
                         request.Parameters.Add("DnsOptions" + "." + "DnsRecordIpType", StringUtils.FromString(publicRequest.DnsOptions.DnsRecordIpType));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.DnsOptions.IsSetPrivateDnsOnlyForInboundResolverEndpoint())
                     {
                         request.Parameters.Add("DnsOptions" + "." + "PrivateDnsOnlyForInboundResolverEndpoint", StringUtils.FromBool(publicRequest.DnsOptions.PrivateDnsOnlyForInboundResolverEndpoint));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpAddressType())
                 {
                     request.Parameters.Add("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicyDocument())
                 {
                     request.Parameters.Add("PolicyDocument", StringUtils.FromString(publicRequest.PolicyDocument));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrivateDnsEnabled())
                 {
                     request.Parameters.Add("PrivateDnsEnabled", StringUtils.FromBool(publicRequest.PrivateDnsEnabled));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveRouteTableIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -127,7 +118,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveSecurityGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -137,7 +127,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveSubnetIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -147,12 +136,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResetPolicy())
                 {
                     request.Parameters.Add("ResetPolicy", StringUtils.FromBool(publicRequest.ResetPolicy));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSubnetConfigurations())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -162,26 +149,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("SubnetConfiguration" + "." + publicRequestlistValueIndex + "." + "Ipv4", StringUtils.FromString(publicRequestlistValue.Ipv4));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetIpv6())
                         {
                             request.Parameters.Add("SubnetConfiguration" + "." + publicRequestlistValueIndex + "." + "Ipv6", StringUtils.FromString(publicRequestlistValue.Ipv6));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetSubnetId())
                         {
                             request.Parameters.Add("SubnetConfiguration" + "." + publicRequestlistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestlistValue.SubnetId));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcEndpointId())
                 {
                     request.Parameters.Add("VpcEndpointId", StringUtils.FromString(publicRequest.VpcEndpointId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

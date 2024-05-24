@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public PolicyOption Unmarshall(JsonUnmarshallerContext context)
         {
             PolicyOption unmarshalledObject = new PolicyOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("NetworkAclCommonPolicy", targetDepth))
+                {
+                    var unmarshaller = NetworkAclCommonPolicyUnmarshaller.Instance;
+                    unmarshalledObject.NetworkAclCommonPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NetworkFirewallPolicy", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallPolicyUnmarshaller.Instance;
@@ -95,4 +103,3 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SQS.Model
 {
     /// <summary>
@@ -104,6 +105,7 @@ namespace Amazon.SQS.Model
         private List<string> _attributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxNumberOfMessages;
         private List<string> _messageAttributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _messageSystemAttributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _queueUrl;
         private string _receiveRequestAttemptId;
         private int? _visibilityTimeout;
@@ -124,7 +126,13 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AttributeNames. 
+        /// Gets and sets the property AttributeNames. <important> 
+        /// <para>
+        ///  This parameter has been deprecated but will be supported for backward compatibility.
+        /// To provide attribute names, you are encouraged to use <c>MessageSystemAttributeNames</c>.
+        /// 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// A list of attributes that need to be returned along with each message. These attributes
         /// include:
@@ -189,6 +197,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [Obsolete("AttributeNames has been replaced by MessageSystemAttributeNames")]
         public List<string> AttributeNames
         {
             get { return this._attributeNames; }
@@ -270,6 +279,84 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MessageSystemAttributeNames. 
+        /// <para>
+        /// A list of attributes that need to be returned along with each message. These attributes
+        /// include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>All</c> – Returns all values.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ApproximateFirstReceiveTimestamp</c> – Returns the time the message was first
+        /// received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
+        /// in milliseconds).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ApproximateReceiveCount</c> – Returns the number of times a message has been received
+        /// across all queues but not deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWSTraceHeader</c> – Returns the X-Ray trace header string. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SenderId</c> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For a user, returns the user ID, for example <c>ABCDEFGHI1JKLMNOPQ23R</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an IAM role, returns the IAM role ID, for example <c>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</c>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>SentTimestamp</c> – Returns the time the message was sent to the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch
+        /// time</a> in milliseconds).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SqsManagedSseEnabled</c> – Enables server-side queue encryption using SQS owned
+        /// encryption keys. Only one server-side encryption option is supported per queue (for
+        /// example, <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+        /// or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MessageDeduplicationId</c> – Returns the value provided by the producer that calls
+        /// the <c> <a>SendMessage</a> </c> action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MessageGroupId</c> – Returns the value provided by the producer that calls the
+        /// <c> <a>SendMessage</a> </c> action. Messages with the same <c>MessageGroupId</c> are
+        /// returned in sequence.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SequenceNumber</c> – Returns the value provided by Amazon SQS.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<string> MessageSystemAttributeNames
+        {
+            get { return this._messageSystemAttributeNames; }
+            set { this._messageSystemAttributeNames = value; }
+        }
+
+        // Check to see if MessageSystemAttributeNames property is set
+        internal bool IsSetMessageSystemAttributeNames()
+        {
+            return this._messageSystemAttributeNames != null && (this._messageSystemAttributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property QueueUrl. 
         /// <para>
         /// The URL of the Amazon SQS queue from which messages are received.
@@ -314,11 +401,6 @@ namespace Amazon.SQS.Model
         /// <para>
         /// When you set <c>FifoQueue</c>, a caller of the <c>ReceiveMessage</c> action can provide
         /// a <c>ReceiveRequestAttemptId</c> explicitly.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If a caller of the <c>ReceiveMessage</c> action doesn't provide a <c>ReceiveRequestAttemptId</c>,
-        /// Amazon SQS generates a <c>ReceiveRequestAttemptId</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -406,8 +488,8 @@ namespace Amazon.SQS.Model
         /// <para>
         /// The duration (in seconds) for which the call waits for a message to arrive in the
         /// queue before returning. If a message is available, the call returns sooner than <c>WaitTimeSeconds</c>.
-        /// If no messages are available and the wait time expires, the call returns successfully
-        /// with an empty list of messages.
+        /// If no messages are available and the wait time expires, the call does not return a
+        /// message list.
         /// </para>
         ///  <important> 
         /// <para>

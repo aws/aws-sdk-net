@@ -46,6 +46,8 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DiscoveredResource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConfigurationId())
             {
                 context.Writer.WritePropertyName("ConfigurationId");
@@ -67,4 +69,3 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

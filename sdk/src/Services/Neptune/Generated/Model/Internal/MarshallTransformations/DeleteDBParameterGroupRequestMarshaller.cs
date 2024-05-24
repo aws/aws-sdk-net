@@ -63,7 +63,6 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBParameterGroupName", StringUtils.FromString(publicRequest.DBParameterGroupName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

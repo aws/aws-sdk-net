@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -82,6 +83,7 @@ namespace Amazon.RDS.Model
         private List<string> _enabledCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Endpoint _endpoint;
         private string _engine;
+        private string _engineLifecycleSupport;
         private string _engineVersion;
         private string _enhancedMonitoringResourceArn;
         private bool? _iamDatabaseAuthenticationEnabled;
@@ -937,6 +939,28 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineLifecycleSupport. 
+        /// <para>
+        /// The life cycle type for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see CreateDBInstance.
+        /// </para>
+        /// </summary>
+        public string EngineLifecycleSupport
+        {
+            get { return this._engineLifecycleSupport; }
+            set { this._engineLifecycleSupport = value; }
+        }
+
+        // Check to see if EngineLifecycleSupport property is set
+        internal bool IsSetEngineLifecycleSupport()
+        {
+            return this._engineLifecycleSupport != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The version of the database engine.
@@ -1103,7 +1127,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property LicenseModel. 
         /// <para>
         /// The license model information for this DB instance. This setting doesn't apply to
-        /// RDS Custom DB instances.
+        /// Amazon Aurora or RDS Custom DB instances.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -1835,8 +1859,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Timezone. 
         /// <para>
         /// The time zone of the DB instance. In most cases, the <c>Timezone</c> element is empty.
-        /// <c>Timezone</c> content appears only for Microsoft SQL Server DB instances that were
-        /// created with a time zone specified.
+        /// <c>Timezone</c> content appears only for RDS for Db2 and RDS for SQL Server DB instances
+        /// that were created with a time zone specified.
         /// </para>
         /// </summary>
         public string Timezone

@@ -63,12 +63,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ServiceSpecificCredentialId", StringUtils.FromString(publicRequest.ServiceSpecificCredentialId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserName())
                 {
                     request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

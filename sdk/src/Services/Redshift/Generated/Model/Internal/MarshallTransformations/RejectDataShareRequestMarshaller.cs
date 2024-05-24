@@ -63,7 +63,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DataShareArn", StringUtils.FromString(publicRequest.DataShareArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

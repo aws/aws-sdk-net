@@ -63,17 +63,14 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConsistentRead", StringUtils.FromBool(publicRequest.ConsistentRead));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSelectExpression())
                 {
                     request.Parameters.Add("SelectExpression", StringUtils.FromString(publicRequest.SelectExpression));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

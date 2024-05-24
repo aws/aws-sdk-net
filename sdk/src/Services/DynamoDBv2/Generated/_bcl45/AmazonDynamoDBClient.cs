@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.DynamoDBv2
 {
     /// <summary>
@@ -291,6 +292,11 @@ namespace Amazon.DynamoDBv2
 
         #region  EndpointOperation Override
 
+        /// <summary>
+        /// Resolve endpoint for service api request.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         protected override IEnumerable<DiscoveryEndpointBase> EndpointOperation(EndpointOperationContextBase context)
         {
             return EndpointDiscoveryResolver.ResolveEndpoints(context, () =>
@@ -6538,11 +6544,11 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// After a <c>GetResourcePolicy</c> request returns a policy created using the <c>PutResourcePolicy</c>
-        /// request, you can assume the policy will start getting applied in the authorization
-        /// of requests to the resource. Because this process is eventually consistent, it will
-        /// take some time to apply the policy to all requests to a resource. Policies that you
-        /// attach while creating a table using the <c>CreateTable</c> request will always be
-        /// applied to all requests for that table.
+        /// request, the policy will be applied in the authorization of requests to the resource.
+        /// Because this process is eventually consistent, it will take some time to apply the
+        /// policy to all requests to a resource. Policies that you attach while creating a table
+        /// using the <c>CreateTable</c> request will always be applied to all requests for that
+        /// table.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
@@ -6613,11 +6619,11 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// After a <c>GetResourcePolicy</c> request returns a policy created using the <c>PutResourcePolicy</c>
-        /// request, you can assume the policy will start getting applied in the authorization
-        /// of requests to the resource. Because this process is eventually consistent, it will
-        /// take some time to apply the policy to all requests to a resource. Policies that you
-        /// attach while creating a table using the <c>CreateTable</c> request will always be
-        /// applied to all requests for that table.
+        /// request, the policy will be applied in the authorization of requests to the resource.
+        /// Because this process is eventually consistent, it will take some time to apply the
+        /// policy to all requests to a resource. Policies that you attach while creating a table
+        /// using the <c>CreateTable</c> request will always be applied to all requests for that
+        /// table.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
@@ -8051,7 +8057,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         ///  <c>PutResourcePolicy</c> is an idempotent operation; running it multiple times on
         /// the same resource using the same policy document will return the same revision ID.
-        /// If you specify an <c>ExpectedRevisionId</c> which doesn't match the current policy's
+        /// If you specify an <c>ExpectedRevisionId</c> that doesn't match the current policy's
         /// <c>RevisionId</c>, the <c>PolicyNotFoundException</c> will be returned.
         /// </para>
         ///  <note> 
@@ -8146,7 +8152,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         ///  <c>PutResourcePolicy</c> is an idempotent operation; running it multiple times on
         /// the same resource using the same policy document will return the same revision ID.
-        /// If you specify an <c>ExpectedRevisionId</c> which doesn't match the current policy's
+        /// If you specify an <c>ExpectedRevisionId</c> that doesn't match the current policy's
         /// <c>RevisionId</c>, the <c>PolicyNotFoundException</c> will be returned.
         /// </para>
         ///  <note> 

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
@@ -33,11 +34,30 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class StorageConfiguration
     {
+        private MongoDbAtlasConfiguration _mongoDbAtlasConfiguration;
         private OpenSearchServerlessConfiguration _opensearchServerlessConfiguration;
         private PineconeConfiguration _pineconeConfiguration;
         private RdsConfiguration _rdsConfiguration;
         private RedisEnterpriseCloudConfiguration _redisEnterpriseCloudConfiguration;
         private KnowledgeBaseStorageType _type;
+
+        /// <summary>
+        /// Gets and sets the property MongoDbAtlasConfiguration. 
+        /// <para>
+        /// Contains the storage configuration of the knowledge base in MongoDB Atlas.
+        /// </para>
+        /// </summary>
+        public MongoDbAtlasConfiguration MongoDbAtlasConfiguration
+        {
+            get { return this._mongoDbAtlasConfiguration; }
+            set { this._mongoDbAtlasConfiguration = value; }
+        }
+
+        // Check to see if MongoDbAtlasConfiguration property is set
+        internal bool IsSetMongoDbAtlasConfiguration()
+        {
+            return this._mongoDbAtlasConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OpensearchServerlessConfiguration. 

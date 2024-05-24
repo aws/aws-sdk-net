@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
-    /// A list of user groups and entities from an Amazon Cognito user pool identity source.
+    /// The type of entity that a policy store maps to groups from an Amazon Cognito user
+    /// pool identity source.
     /// 
     ///  
     /// <para>

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the iotwireless-2020-11-22.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>

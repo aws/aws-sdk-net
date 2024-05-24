@@ -57,6 +57,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         public TargetTrackingMetricDataQuery Unmarshall(JsonUnmarshallerContext context)
         {
             TargetTrackingMetricDataQuery unmarshalledObject = new TargetTrackingMetricDataQuery();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public Anomaly Unmarshall(JsonUnmarshallerContext context)
         {
             Anomaly unmarshalledObject = new Anomaly();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -197,4 +199,3 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

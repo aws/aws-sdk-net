@@ -46,6 +46,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NodeFabricLogPublishingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChaincodeLogs())
             {
                 context.Writer.WritePropertyName("ChaincodeLogs");
@@ -77,4 +79,3 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

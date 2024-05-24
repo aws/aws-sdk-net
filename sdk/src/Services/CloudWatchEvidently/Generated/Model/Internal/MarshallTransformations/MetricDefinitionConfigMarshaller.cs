@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetricDefinitionConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEntityIdKey())
             {
                 context.Writer.WritePropertyName("entityIdKey");
@@ -85,4 +87,3 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

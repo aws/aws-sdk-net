@@ -46,6 +46,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WirelessConnection requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIsWifiEnabled())
             {
                 context.Writer.WritePropertyName("IsWifiEnabled");
@@ -61,4 +63,3 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

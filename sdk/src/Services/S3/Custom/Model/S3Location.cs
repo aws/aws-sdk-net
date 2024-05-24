@@ -43,6 +43,9 @@ namespace Amazon.S3.Model
             return this.Prefix != null;
         }
 
+        /// <summary>
+        /// The server-side encryption that will be applied to the restore results.
+        /// </summary>
         public S3Encryption Encryption { get; set; }
 
         internal bool IsSetEncryption()

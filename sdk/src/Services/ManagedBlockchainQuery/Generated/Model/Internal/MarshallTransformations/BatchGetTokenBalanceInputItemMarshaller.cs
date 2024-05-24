@@ -46,6 +46,8 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchGetTokenBalanceInputItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAtBlockchainInstant())
             {
                 context.Writer.WritePropertyName("atBlockchainInstant");
@@ -88,4 +90,3 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

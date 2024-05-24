@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceCreditSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,16 +72,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("InstanceCreditSpecification" + "." + publicRequestlistValueIndex + "." + "CpuCredits", StringUtils.FromString(publicRequestlistValue.CpuCredits));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetInstanceId())
                         {
                             request.Parameters.Add("InstanceCreditSpecification" + "." + publicRequestlistValueIndex + "." + "InstanceId", StringUtils.FromString(publicRequestlistValue.InstanceId));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

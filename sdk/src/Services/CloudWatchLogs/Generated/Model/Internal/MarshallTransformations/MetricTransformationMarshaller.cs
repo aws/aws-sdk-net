@@ -46,10 +46,19 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetricTransformation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDefaultValue())
             {
                 context.Writer.WritePropertyName("defaultValue");
-                context.Writer.Write(requestObject.DefaultValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DefaultValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DefaultValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.DefaultValue);
+                }
             }
 
             if(requestObject.IsSetDimensions())
@@ -99,4 +108,3 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

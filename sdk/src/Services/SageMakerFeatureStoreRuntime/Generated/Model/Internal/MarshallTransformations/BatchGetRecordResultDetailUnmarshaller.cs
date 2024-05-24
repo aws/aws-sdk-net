@@ -57,6 +57,8 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
         public BatchGetRecordResultDetail Unmarshall(JsonUnmarshallerContext context)
         {
             BatchGetRecordResultDetail unmarshalledObject = new BatchGetRecordResultDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
         }
     }
 }
-#pragma warning restore CS0612,CS0618

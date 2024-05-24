@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public FleetCapacity Unmarshall(JsonUnmarshallerContext context)
         {
             FleetCapacity unmarshalledObject = new FleetCapacity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -94,6 +96,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReplicaContainerGroupCounts", targetDepth))
+                {
+                    var unmarshaller = ReplicaContainerGroupCountsUnmarshaller.Instance;
+                    unmarshalledObject.ReplicaContainerGroupCounts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
@@ -113,4 +121,3 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

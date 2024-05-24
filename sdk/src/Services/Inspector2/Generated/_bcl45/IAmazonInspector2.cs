@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Inspector2.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.Inspector2
 {
     /// <summary>
@@ -1337,6 +1338,10 @@ namespace Amazon.Inspector2
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
         /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
         /// </exception>
@@ -1363,6 +1368,10 @@ namespace Amazon.Inspector2
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.

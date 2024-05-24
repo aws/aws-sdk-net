@@ -46,6 +46,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchJobIdentifier requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFileBatchJobIdentifier())
             {
                 context.Writer.WritePropertyName("fileBatchJobIdentifier");
@@ -99,4 +101,3 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

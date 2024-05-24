@@ -63,12 +63,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("BlueGreenDeploymentIdentifier", StringUtils.FromString(publicRequest.BlueGreenDeploymentIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeleteTarget())
                 {
                     request.Parameters.Add("DeleteTarget", StringUtils.FromBool(publicRequest.DeleteTarget));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

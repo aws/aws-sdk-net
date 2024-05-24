@@ -63,17 +63,15 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CacheClusterId", StringUtils.FromString(publicRequest.CacheClusterId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCacheNodeIdsToReboot())
                 {
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.CacheNodeIdsToReboot)
                     {
-                        request.Parameters.Add("CacheNodeIdsToReboot" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        request.Parameters.Add("CacheNodeIdsToReboot" + "." + "CacheNodeId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

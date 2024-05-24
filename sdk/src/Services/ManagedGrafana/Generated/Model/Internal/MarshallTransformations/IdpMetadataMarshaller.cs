@@ -46,6 +46,8 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IdpMetadata requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("url");
@@ -67,4 +69,3 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

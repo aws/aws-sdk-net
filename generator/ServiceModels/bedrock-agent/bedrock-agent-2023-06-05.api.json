@@ -829,6 +829,7 @@
         "description":{"shape":"Description"},
         "failureReasons":{"shape":"FailureReasons"},
         "foundationModel":{"shape":"ModelIdentifier"},
+        "guardrailConfiguration":{"shape":"GuardrailConfiguration"},
         "idleSessionTTLInSeconds":{"shape":"SessionTTL"},
         "instruction":{"shape":"Instruction"},
         "preparedAt":{"shape":"DateTimestamp"},
@@ -886,6 +887,7 @@
         "clientToken":{"shape":"ClientToken"},
         "createdAt":{"shape":"DateTimestamp"},
         "description":{"shape":"Description"},
+        "failureReasons":{"shape":"FailureReasons"},
         "routingConfiguration":{"shape":"AgentAliasRoutingConfiguration"},
         "updatedAt":{"shape":"DateTimestamp"}
       }
@@ -924,9 +926,9 @@
     },
     "AgentAliasRoutingConfigurationListItem":{
       "type":"structure",
-      "required":["agentVersion"],
       "members":{
-        "agentVersion":{"shape":"Version"}
+        "agentVersion":{"shape":"Version"},
+        "provisionedThroughput":{"shape":"ProvisionedModelIdentifier"}
       }
     },
     "AgentAliasStatus":{
@@ -1015,7 +1017,7 @@
       "type":"string",
       "max":2048,
       "min":0,
-      "pattern":"^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/(service-role/)?AmazonBedrockExecutionRoleForAgents_.+$"
+      "pattern":"^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+$"
     },
     "AgentStatus":{
       "type":"string",
@@ -1049,6 +1051,7 @@
         "agentName":{"shape":"Name"},
         "agentStatus":{"shape":"AgentStatus"},
         "description":{"shape":"Description"},
+        "guardrailConfiguration":{"shape":"GuardrailConfiguration"},
         "latestAgentVersion":{"shape":"Version"},
         "updatedAt":{"shape":"DateTimestamp"}
       }
@@ -1077,6 +1080,7 @@
         "description":{"shape":"Description"},
         "failureReasons":{"shape":"FailureReasons"},
         "foundationModel":{"shape":"ModelIdentifier"},
+        "guardrailConfiguration":{"shape":"GuardrailConfiguration"},
         "idleSessionTTLInSeconds":{"shape":"SessionTTL"},
         "instruction":{"shape":"Instruction"},
         "promptOverrideConfiguration":{"shape":"PromptOverrideConfiguration"},
@@ -1106,6 +1110,7 @@
         "agentVersion":{"shape":"Version"},
         "createdAt":{"shape":"DateTimestamp"},
         "description":{"shape":"Description"},
+        "guardrailConfiguration":{"shape":"GuardrailConfiguration"},
         "updatedAt":{"shape":"DateTimestamp"}
       }
     },
@@ -1147,13 +1152,19 @@
     },
     "BedrockEmbeddingModelArn":{
       "type":"string",
-      "max":1011,
+      "max":2048,
       "min":20,
-      "pattern":"^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}))$"
+      "pattern":"^(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|([0-9]{12}:provisioned-model/[a-z0-9]{12})))|([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|(([0-9a-zA-Z][_-]?)+)$"
     },
     "Boolean":{
       "type":"boolean",
       "box":true
+    },
+    "BucketOwnerAccountId":{
+      "type":"string",
+      "max":12,
+      "min":12,
+      "pattern":"^[0-9]{12}$"
     },
     "ChunkingConfiguration":{
       "type":"structure",
@@ -1273,6 +1284,7 @@
         "customerEncryptionKeyArn":{"shape":"KmsKeyArn"},
         "description":{"shape":"Description"},
         "foundationModel":{"shape":"ModelIdentifier"},
+        "guardrailConfiguration":{"shape":"GuardrailConfiguration"},
         "idleSessionTTLInSeconds":{"shape":"SessionTTL"},
         "instruction":{"shape":"Instruction"},
         "promptOverrideConfiguration":{"shape":"PromptOverrideConfiguration"},
@@ -1298,6 +1310,7 @@
           "shape":"ClientToken",
           "idempotencyToken":true
         },
+        "dataDeletionPolicy":{"shape":"DataDeletionPolicy"},
         "dataSourceConfiguration":{"shape":"DataSourceConfiguration"},
         "description":{"shape":"Description"},
         "knowledgeBaseId":{
@@ -1356,6 +1369,13 @@
       "type":"string",
       "enum":["RETURN_CONTROL"]
     },
+    "DataDeletionPolicy":{
+      "type":"string",
+      "enum":[
+        "RETAIN",
+        "DELETE"
+      ]
+    },
     "DataSource":{
       "type":"structure",
       "required":[
@@ -1369,9 +1389,11 @@
       ],
       "members":{
         "createdAt":{"shape":"DateTimestamp"},
+        "dataDeletionPolicy":{"shape":"DataDeletionPolicy"},
         "dataSourceConfiguration":{"shape":"DataSourceConfiguration"},
         "dataSourceId":{"shape":"Id"},
         "description":{"shape":"Description"},
+        "failureReasons":{"shape":"FailureReasons"},
         "knowledgeBaseId":{"shape":"Id"},
         "name":{"shape":"Name"},
         "serverSideEncryptionConfiguration":{"shape":"ServerSideEncryptionConfiguration"},
@@ -1392,7 +1414,8 @@
       "type":"string",
       "enum":[
         "AVAILABLE",
-        "DELETING"
+        "DELETING",
+        "DELETE_UNSUCCESSFUL"
       ]
     },
     "DataSourceSummaries":{
@@ -1925,6 +1948,23 @@
         "knowledgeBase":{"shape":"KnowledgeBase"}
       }
     },
+    "GuardrailConfiguration":{
+      "type":"structure",
+      "members":{
+        "guardrailIdentifier":{"shape":"GuardrailIdentifier"},
+        "guardrailVersion":{"shape":"GuardrailVersion"}
+      }
+    },
+    "GuardrailIdentifier":{
+      "type":"string",
+      "max":2048,
+      "min":0,
+      "pattern":"^(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))$"
+    },
+    "GuardrailVersion":{
+      "type":"string",
+      "pattern":"^(([0-9]{1,8})|(DRAFT))$"
+    },
     "Id":{
       "type":"string",
       "pattern":"^[0-9a-zA-Z]{10}$"
@@ -2066,7 +2106,7 @@
     },
     "Instruction":{
       "type":"string",
-      "max":1200,
+      "max":4000,
       "min":40,
       "sensitive":true
     },
@@ -2146,7 +2186,8 @@
         "ACTIVE",
         "DELETING",
         "UPDATING",
-        "FAILED"
+        "FAILED",
+        "DELETE_UNSUCCESSFUL"
       ]
     },
     "KnowledgeBaseStorageType":{
@@ -2155,7 +2196,8 @@
         "OPENSEARCH_SERVERLESS",
         "PINECONE",
         "REDIS_ENTERPRISE_CLOUD",
-        "RDS"
+        "RDS",
+        "MONGO_DB_ATLAS"
       ]
     },
     "KnowledgeBaseSummaries":{
@@ -2405,6 +2447,69 @@
       "min":1,
       "pattern":"^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}(([:][a-z0-9-]{1,63}){0,2})?/[a-z0-9]{12})|(:foundation-model/([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2})))|(([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.]?[a-z0-9-]{1,63})([:][a-z0-9-]{1,63}){0,2}))|(([0-9a-zA-Z][_-]?)+)$"
     },
+    "MongoDbAtlasCollectionName":{
+      "type":"string",
+      "max":63,
+      "min":0,
+      "pattern":"^.*$"
+    },
+    "MongoDbAtlasConfiguration":{
+      "type":"structure",
+      "required":[
+        "collectionName",
+        "credentialsSecretArn",
+        "databaseName",
+        "endpoint",
+        "fieldMapping",
+        "vectorIndexName"
+      ],
+      "members":{
+        "collectionName":{"shape":"MongoDbAtlasCollectionName"},
+        "credentialsSecretArn":{"shape":"SecretArn"},
+        "databaseName":{"shape":"MongoDbAtlasDatabaseName"},
+        "endpoint":{"shape":"MongoDbAtlasEndpoint"},
+        "endpointServiceName":{"shape":"MongoDbAtlasEndpointServiceName"},
+        "fieldMapping":{"shape":"MongoDbAtlasFieldMapping"},
+        "vectorIndexName":{"shape":"MongoDbAtlasIndexName"}
+      }
+    },
+    "MongoDbAtlasDatabaseName":{
+      "type":"string",
+      "max":63,
+      "min":0,
+      "pattern":"^.*$"
+    },
+    "MongoDbAtlasEndpoint":{
+      "type":"string",
+      "max":2048,
+      "min":0,
+      "pattern":"^.*$"
+    },
+    "MongoDbAtlasEndpointServiceName":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"^(?:arn:aws(?:-us-gov|-cn|-iso|-iso-[a-z])*:.+:.*:\\d+:.+/.+$|[a-zA-Z0-9*]+[a-zA-Z0-9._-]*)$"
+    },
+    "MongoDbAtlasFieldMapping":{
+      "type":"structure",
+      "required":[
+        "metadataField",
+        "textField",
+        "vectorField"
+      ],
+      "members":{
+        "metadataField":{"shape":"FieldName"},
+        "textField":{"shape":"FieldName"},
+        "vectorField":{"shape":"FieldName"}
+      }
+    },
+    "MongoDbAtlasIndexName":{
+      "type":"string",
+      "max":2048,
+      "min":0,
+      "pattern":"^.*$"
+    },
     "Name":{
       "type":"string",
       "pattern":"^([0-9a-zA-Z][_-]?){1,100}$"
@@ -2590,6 +2695,12 @@
         "KNOWLEDGE_BASE_RESPONSE_GENERATION"
       ]
     },
+    "ProvisionedModelIdentifier":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"^((([0-9a-zA-Z][_-]?){1,63})|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:provisioned-model/[a-z0-9]{12}))$"
+    },
     "RdsArn":{
       "type":"string",
       "pattern":"^arn:aws(|-cn|-us-gov):rds:[a-zA-Z0-9-]*:[0-9]{12}:cluster:[a-zA-Z0-9-]{1,63}$"
@@ -2717,6 +2828,7 @@
       "required":["bucketArn"],
       "members":{
         "bucketArn":{"shape":"S3BucketArn"},
+        "bucketOwnerAccountId":{"shape":"BucketOwnerAccountId"},
         "inclusionPrefixes":{"shape":"S3Prefixes"}
       }
     },
@@ -2819,6 +2931,7 @@
       "type":"structure",
       "required":["type"],
       "members":{
+        "mongoDbAtlasConfiguration":{"shape":"MongoDbAtlasConfiguration"},
         "opensearchServerlessConfiguration":{"shape":"OpenSearchServerlessConfiguration"},
         "pineconeConfiguration":{"shape":"PineconeConfiguration"},
         "rdsConfiguration":{"shape":"RdsConfiguration"},
@@ -3062,6 +3175,7 @@
         "customerEncryptionKeyArn":{"shape":"KmsKeyArn"},
         "description":{"shape":"Description"},
         "foundationModel":{"shape":"ModelIdentifier"},
+        "guardrailConfiguration":{"shape":"GuardrailConfiguration"},
         "idleSessionTTLInSeconds":{"shape":"SessionTTL"},
         "instruction":{"shape":"Instruction"},
         "promptOverrideConfiguration":{"shape":"PromptOverrideConfiguration"}
@@ -3083,6 +3197,7 @@
         "name"
       ],
       "members":{
+        "dataDeletionPolicy":{"shape":"DataDeletionPolicy"},
         "dataSourceConfiguration":{"shape":"DataSourceConfiguration"},
         "dataSourceId":{
           "shape":"Id",

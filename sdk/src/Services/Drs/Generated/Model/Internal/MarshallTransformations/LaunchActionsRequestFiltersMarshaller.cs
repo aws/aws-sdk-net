@@ -46,6 +46,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LaunchActionsRequestFilters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActionIds())
             {
                 context.Writer.WritePropertyName("actionIds");
@@ -66,4 +68,3 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

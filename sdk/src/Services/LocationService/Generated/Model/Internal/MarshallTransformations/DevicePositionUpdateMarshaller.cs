@@ -46,6 +46,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DevicePositionUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccuracy())
             {
                 context.Writer.WritePropertyName("Accuracy");
@@ -91,7 +93,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSampleTime())
             {
                 context.Writer.WritePropertyName("SampleTime");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.SampleTime));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.SampleTime));
             }
 
         }
@@ -103,4 +105,3 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

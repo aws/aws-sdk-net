@@ -46,6 +46,8 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KafkaCluster requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApacheKafkaCluster())
             {
                 context.Writer.WritePropertyName("apacheKafkaCluster");
@@ -66,4 +68,3 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExpirationSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExpirationCriterion())
             {
                 context.Writer.WritePropertyName("ExpirationCriterion");
@@ -67,4 +69,3 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -27,6 +27,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lex.Model
 {
     /// <summary>
@@ -187,7 +188,7 @@ namespace Amazon.Lex.Model
         // Check to see if Accept property is set
         internal bool IsSetAccept()
         {
-            return this._accept != null;
+            return !string.IsNullOrEmpty(this._accept);
         }
 
         /// <summary>
@@ -212,7 +213,7 @@ namespace Amazon.Lex.Model
         // Check to see if ActiveContexts property is set
         internal bool IsSetActiveContexts()
         {
-            return this._activeContexts != null;
+            return !string.IsNullOrEmpty(this._activeContexts);
         }
 
         /// <summary>
@@ -308,7 +309,7 @@ namespace Amazon.Lex.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>
@@ -370,7 +371,7 @@ namespace Amazon.Lex.Model
         // Check to see if RequestAttributes property is set
         internal bool IsSetRequestAttributes()
         {
-            return this._requestAttributes != null;
+            return !string.IsNullOrEmpty(this._requestAttributes);
         }
 
         /// <summary>
@@ -401,7 +402,7 @@ namespace Amazon.Lex.Model
         // Check to see if SessionAttributes property is set
         internal bool IsSetSessionAttributes()
         {
-            return this._sessionAttributes != null;
+            return !string.IsNullOrEmpty(this._sessionAttributes);
         }
 
         /// <summary>

@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails unmarshalledObject = new AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

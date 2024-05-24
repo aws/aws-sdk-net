@@ -67,6 +67,7 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetArchitecture())
@@ -135,6 +136,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 
                         context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetInteractiveConfiguration())
+                {
+                    context.Writer.WritePropertyName("interactiveConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InteractiveConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InteractiveConfiguration, context);
+
                     context.Writer.WriteObjectEnd();
                 }
 
@@ -240,4 +252,3 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

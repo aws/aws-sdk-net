@@ -46,6 +46,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Filters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAncestorIds())
             {
                 context.Writer.WritePropertyName("AncestorIds");
@@ -170,4 +172,3 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

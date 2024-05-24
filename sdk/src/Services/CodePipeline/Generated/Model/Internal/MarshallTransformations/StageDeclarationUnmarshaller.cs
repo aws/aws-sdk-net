@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public StageDeclaration Unmarshall(JsonUnmarshallerContext context)
         {
             StageDeclaration unmarshalledObject = new StageDeclaration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -82,6 +84,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("onFailure", targetDepth))
+                {
+                    var unmarshaller = FailureConditionsUnmarshaller.Instance;
+                    unmarshalledObject.OnFailure = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
@@ -101,4 +109,3 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

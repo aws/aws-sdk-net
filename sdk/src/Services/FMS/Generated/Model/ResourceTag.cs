@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -37,6 +38,15 @@ namespace Amazon.FMS.Model
     /// scope, a resource must have all the specified tags to be included or excluded. For
     /// more information, see <a href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working
     /// with Tag Editor</a>.
+    /// 
+    ///  
+    /// <para>
+    /// Every resource tag must have a string value, either a non-empty string or an empty
+    /// string. If you don't provide a value for a resource tag, Firewall Manager saves the
+    /// value as an empty string: "". When Firewall Manager compares tags, it only matches
+    /// two tags if they have the same key and the same value. A tag with an empty string
+    /// value only matches with tags that also have an empty string value. 
+    /// </para>
     /// </summary>
     public partial class ResourceTag
     {
@@ -65,7 +75,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The resource tag value.
+        /// The resource tag value. To specify an empty string value, either don't provide this
+        /// or specify it as "". 
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

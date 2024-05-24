@@ -46,10 +46,18 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3DataSourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucketArn())
             {
                 context.Writer.WritePropertyName("bucketArn");
                 context.Writer.Write(requestObject.BucketArn);
+            }
+
+            if(requestObject.IsSetBucketOwnerAccountId())
+            {
+                context.Writer.WritePropertyName("bucketOwnerAccountId");
+                context.Writer.Write(requestObject.BucketOwnerAccountId);
             }
 
             if(requestObject.IsSetInclusionPrefixes())
@@ -72,4 +80,3 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

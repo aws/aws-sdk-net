@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FunctionMetadata Object
     /// </summary>  
-    public class FunctionMetadataUnmarshaller : IUnmarshaller<FunctionMetadata, XmlUnmarshallerContext>
+    public class FunctionMetadataUnmarshaller : IUnmarshaller<FunctionMetadata, XmlUnmarshallerContext>, IUnmarshaller<FunctionMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,6 +88,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public FunctionMetadata Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static FunctionMetadataUnmarshaller _instance = new FunctionMetadataUnmarshaller();        
 
@@ -103,4 +113,3 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public AmazonRedshiftAdvancedOption Unmarshall(JsonUnmarshallerContext context)
         {
             AmazonRedshiftAdvancedOption unmarshalledObject = new AmazonRedshiftAdvancedOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
@@ -84,7 +85,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>
@@ -104,7 +105,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if InputMode property is set
         internal bool IsSetInputMode()
         {
-            return this._inputMode != null;
+            return !string.IsNullOrEmpty(this._inputMode);
         }
 
         /// <summary>
@@ -136,7 +137,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if InputTranscript property is set
         internal bool IsSetInputTranscript()
         {
-            return this._inputTranscript != null;
+            return !string.IsNullOrEmpty(this._inputTranscript);
         }
 
         /// <summary>
@@ -167,7 +168,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if Interpretations property is set
         internal bool IsSetInterpretations()
         {
-            return this._interpretations != null;
+            return !string.IsNullOrEmpty(this._interpretations);
         }
 
         /// <summary>
@@ -194,7 +195,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null;
+            return !string.IsNullOrEmpty(this._messages);
         }
 
         /// <summary>
@@ -213,7 +214,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if RecognizedBotMember property is set
         internal bool IsSetRecognizedBotMember()
         {
-            return this._recognizedBotMember != null;
+            return !string.IsNullOrEmpty(this._recognizedBotMember);
         }
 
         /// <summary>
@@ -237,7 +238,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if RequestAttributes property is set
         internal bool IsSetRequestAttributes()
         {
-            return this._requestAttributes != null;
+            return !string.IsNullOrEmpty(this._requestAttributes);
         }
 
         /// <summary>
@@ -256,7 +257,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if SessionId property is set
         internal bool IsSetSessionId()
         {
-            return this._sessionId != null;
+            return !string.IsNullOrEmpty(this._sessionId);
         }
 
         /// <summary>
@@ -286,7 +287,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if SessionStateValue property is set
         internal bool IsSetSessionStateValue()
         {
-            return this._sessionStateValue != null;
+            return !string.IsNullOrEmpty(this._sessionStateValue);
         }
 
         #region Dispose Pattern
@@ -302,6 +303,9 @@ namespace Amazon.LexRuntimeV2.Model
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed)

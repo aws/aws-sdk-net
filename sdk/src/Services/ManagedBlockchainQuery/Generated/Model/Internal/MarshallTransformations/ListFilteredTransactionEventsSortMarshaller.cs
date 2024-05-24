@@ -46,6 +46,8 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ListFilteredTransactionEventsSort requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSortBy())
             {
                 context.Writer.WritePropertyName("sortBy");
@@ -67,4 +69,3 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

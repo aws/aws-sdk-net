@@ -46,6 +46,8 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomModelTrainingParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSourceS3DirectoryPath())
             {
                 context.Writer.WritePropertyName("sourceS3DirectoryPath");
@@ -73,4 +75,3 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

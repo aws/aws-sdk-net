@@ -76,7 +76,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
             if (publicRequest.IsSetUpdatedEarlierThan())
-                request.Parameters.Add("updatedEarlierThan", StringUtils.FromDateTimeToISO8601(publicRequest.UpdatedEarlierThan));
+                request.Parameters.Add("updatedEarlierThan", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.UpdatedEarlierThan));
             request.ResourcePath = "/applications/{applicationId}/indices/{indexId}/groups";
             request.UseQueryString = true;
 
@@ -102,4 +102,3 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

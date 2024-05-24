@@ -46,6 +46,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ImagePermissions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowFleet())
             {
                 context.Writer.WritePropertyName("allowFleet");
@@ -67,4 +69,3 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Actuator requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowedValues())
             {
                 context.Writer.WritePropertyName("allowedValues");
@@ -96,13 +98,27 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMax())
             {
                 context.Writer.WritePropertyName("max");
-                context.Writer.Write(requestObject.Max);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Max))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Max));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Max);
+                }
             }
 
             if(requestObject.IsSetMin())
             {
                 context.Writer.WritePropertyName("min");
-                context.Writer.Write(requestObject.Min);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Min))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Min));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Min);
+                }
             }
 
             if(requestObject.IsSetStructFullyQualifiedName())
@@ -126,4 +142,3 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

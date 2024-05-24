@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
@@ -48,7 +49,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property InvocationId. 
         /// <para>
-        /// The identifier of the invocation.
+        /// The identifier of the invocation of an action. This value must match the <c>invocationId</c>
+        /// returned in the <c>InvokeAgent</c> response for the action whose results are provided
+        /// in the <c>returnControlInvocationResults</c> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+        /// control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+        /// session context</a>.
         /// </para>
         /// </summary>
         public string InvocationId
@@ -87,8 +92,16 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ReturnControlInvocationResults. 
         /// <para>
-        /// Contains information about the results from the action group invocation.
+        /// Contains information about the results from the action group invocation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+        /// control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+        /// session context</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you include this field, the <c>inputText</c> field will be ignored.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
         public List<InvocationResultMember> ReturnControlInvocationResults

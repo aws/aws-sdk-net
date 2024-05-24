@@ -63,12 +63,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnvironmentName())
                 {
                     request.Parameters.Add("EnvironmentName", StringUtils.FromString(publicRequest.EnvironmentName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,36 +76,29 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Options" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetOptionName())
                         {
                             request.Parameters.Add("Options" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetResourceName())
                         {
                             request.Parameters.Add("Options" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceName", StringUtils.FromString(publicRequestlistValue.ResourceName));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPlatformArn())
                 {
                     request.Parameters.Add("PlatformArn", StringUtils.FromString(publicRequest.PlatformArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSolutionStackName())
                 {
                     request.Parameters.Add("SolutionStackName", StringUtils.FromString(publicRequest.SolutionStackName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateName())
                 {
                     request.Parameters.Add("TemplateName", StringUtils.FromString(publicRequest.TemplateName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

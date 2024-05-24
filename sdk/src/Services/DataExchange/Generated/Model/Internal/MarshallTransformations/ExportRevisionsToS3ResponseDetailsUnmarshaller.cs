@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public ExportRevisionsToS3ResponseDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ExportRevisionsToS3ResponseDetails unmarshalledObject = new ExportRevisionsToS3ResponseDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

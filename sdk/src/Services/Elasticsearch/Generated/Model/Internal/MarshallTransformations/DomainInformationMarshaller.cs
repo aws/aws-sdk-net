@@ -46,6 +46,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DomainInformation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");
@@ -73,4 +75,3 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

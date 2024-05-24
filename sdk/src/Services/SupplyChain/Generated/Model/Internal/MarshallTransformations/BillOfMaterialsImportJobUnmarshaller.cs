@@ -57,6 +57,8 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
         public BillOfMaterialsImportJob Unmarshall(JsonUnmarshallerContext context)
         {
             BillOfMaterialsImportJob unmarshalledObject = new BillOfMaterialsImportJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

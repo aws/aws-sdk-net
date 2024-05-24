@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Polly.Model
 {
     /// <summary>
@@ -66,8 +67,8 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Specifies the engine (<c>standard</c>, <c>neural</c> or <c>long-form</c>) used by
-        /// Amazon Polly when processing input text for speech synthesis. 
+        /// Specifies the engine (<c>standard</c>, <c>neural</c>, <c>long-form</c> or <c>generative</c>)
+        /// used by Amazon Polly when processing input text for speech synthesis. 
         /// </para>
         /// </summary>
         public Engine Engine

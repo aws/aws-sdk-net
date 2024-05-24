@@ -57,6 +57,8 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         public Certificates Unmarshall(JsonUnmarshallerContext context)
         {
             Certificates unmarshalledObject = new Certificates();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

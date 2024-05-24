@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the mwaa-2020-07-01.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MWAA.Model
 {
     /// <summary>

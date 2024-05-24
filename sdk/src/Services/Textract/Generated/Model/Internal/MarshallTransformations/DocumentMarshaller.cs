@@ -46,6 +46,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Document requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBytes())
             {
                 context.Writer.WritePropertyName("Bytes");
@@ -72,4 +74,3 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

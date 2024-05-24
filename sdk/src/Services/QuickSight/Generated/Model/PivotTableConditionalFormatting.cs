@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// Conditional formatting options for a <c>PivotTableVisual</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Max=500)]
         public List<PivotTableConditionalFormattingOption> ConditionalFormattingOptions
         {
             get { return this._conditionalFormattingOptions; }

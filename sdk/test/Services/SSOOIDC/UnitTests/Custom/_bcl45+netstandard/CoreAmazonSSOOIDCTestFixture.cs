@@ -14,8 +14,11 @@
  */
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
+using System.Threading.Tasks;
 using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.SharedInterfaces;
@@ -35,15 +38,31 @@ namespace AWSSDK.UnitTests
     public class CoreAmazonSSOOIDCTestFixture : IDisposable
     {
         public int SsoVerificationCallbackCount { get; private set; }
+        
+        public int RetrieveAuthorizationCodeCallbackCount { get; private set; }
+
         public readonly Mock<IAmazonSSOOIDC> OidcClient = new Mock<IAmazonSSOOIDC>();
         public readonly Mock<IGetSsoTokenContext> GetSsoTokenContext = new Mock<IGetSsoTokenContext>();
 
         public readonly GetSsoTokenRequest GetSsoTokenRequest;
+        public readonly GetSsoTokenRequest GetSsoTokenRequestWithPkceSuccess;
+        public readonly GetSsoTokenRequest GetSsoTokenRequestWithPkceError;
 
         public readonly RegisterClientRequest RegisterClientRequest = new RegisterClientRequest()
         {
             ClientName = "client-name",
             ClientType = "client-type",
+            IssuerUrl = "start-url",
+        };
+
+        public readonly RegisterClientRequest RegisterClientWithPkceRequest = new RegisterClientRequest()
+        {
+            ClientName = "client-name",
+            ClientType = "client-type",
+            IssuerUrl = "issuer-url",
+            Scopes = new List<string> { "codewhisperer:completions" },
+            GrantTypes = new List<string> { "authorization_code", "refresh_token" },
+            RedirectUris = new List<string> { "http://127.0.0.1:8000" },
         };
 
         public readonly RegisterClientResponse RegisterClientResponse = new RegisterClientResponse()
@@ -77,6 +96,16 @@ namespace AWSSDK.UnitTests
             DeviceCode = "device-code",
         };
 
+        public readonly CreateTokenRequest CreateTokenWithPkceRequest = new CreateTokenRequest()
+        {
+            ClientId = "client-id",
+            ClientSecret = "client-secret",
+            GrantType = "authorization_code",
+            RedirectUri = "http://127.0.0.1:8000",
+            Code = "authorization-code",
+            CodeVerifier = "code-challenge-verifier",
+        };
+
         public readonly CreateTokenResponse CreateTokenResponse = new CreateTokenResponse()
         {
             AccessToken = "access-token",
@@ -93,6 +122,36 @@ namespace AWSSDK.UnitTests
                 StartUrl = "start-url",
             };
 
+            GetSsoTokenRequestWithPkceSuccess = new GetSsoTokenRequest
+            {
+                ClientType = "client-type",
+                ClientName = "client-name",
+                Scopes = new[] { "codewhisperer:completions" },
+                PkceFlowOptions = new PkceFlowOptions
+                {
+                    IssuerUrl = "issuer-url",
+                    RedirectUri = "http://127.0.0.1:8000",
+                    GrantTypes = new[] { "authorization_code", "refresh_token" },
+                    RetrieveAuthorizationCodeCallback = RetrieveAuthorizationCodeCallback,
+                    RetrieveAuthorizationCodeCallbackAsync = RetrieveAuthorizationCodeCallbackAsync
+                },
+            };
+
+            GetSsoTokenRequestWithPkceError = new GetSsoTokenRequest
+            {
+                ClientType = "client-type",
+                ClientName = "client-name",
+                Scopes = new[] { "codewhisperer:completions" },
+                PkceFlowOptions = new PkceFlowOptions
+                {
+                    IssuerUrl = "issuer-url",
+                    RedirectUri = "http://127.0.0.1:8000",
+                    GrantTypes = new[] { "authorization_code", "refresh_token" },
+                    RetrieveAuthorizationCodeCallback = RetrieveAuthorizationCodeExceptionCallback,
+                    RetrieveAuthorizationCodeCallbackAsync = RetrieveAuthorizationCodeExceptionCallbackAsync
+                },
+            };
+
             WithValidConfig();
             WithRegisterClientSuccess();
             WithStartDeviceAuthorizationSuccess();
@@ -107,6 +166,10 @@ namespace AWSSDK.UnitTests
                 {
                     RegionEndpoint = RegionEndpoint.USWest2
                 });
+
+            OidcClient
+                .Setup(x => x.DetermineServiceOperationEndpoint(It.IsAny<AmazonWebServiceRequest>()))
+                .Returns(new Amazon.Runtime.Endpoints.Endpoint("https://oidc.us-west-2.amazonaws.com/"));
         }
 
         // Sets up RegisterClient calls to succeed
@@ -226,11 +289,58 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(this.StartDeviceAuthorizationResponse.VerificationUriComplete, args.VerificationUriComplete);
         }
 
+        private string RetrieveAuthorizationCodeCallback(Uri uri)
+        {
+            RetrieveAuthorizationCodeCallbackCount++;
+            ValidateAuthorizationUrl(uri);
+
+            return "authorization-code";
+        }
+
+        private string RetrieveAuthorizationCodeExceptionCallback(Uri uri)
+        {
+            RetrieveAuthorizationCodeCallbackCount++;
+            throw new Exception("Unable to retrieve code from authorization server");
+        }
+
+        private Task<string> RetrieveAuthorizationCodeCallbackAsync(Uri uri, CancellationToken token)
+        {
+            RetrieveAuthorizationCodeCallbackCount++;
+            ValidateAuthorizationUrl(uri);
+            
+            return Task.FromResult("authorization-code");
+        }
+
+        private Task<string> RetrieveAuthorizationCodeExceptionCallbackAsync(Uri uri, CancellationToken token)
+        {
+            RetrieveAuthorizationCodeCallbackCount++;
+            throw new Exception("Unable to retrieve code from authorization server");
+        }
+
+        private void ValidateAuthorizationUrl(Uri uri)
+        {
+            Assert.AreEqual("oidc.us-west-2.amazonaws.com", uri.Host);
+            Assert.AreEqual("/authorize", uri.AbsolutePath);
+
+            // The authorization URL returned to the client should contain some expected parameters (per RFC 7636), so we'll validate they're present in the query string.
+            // This section could be simpler with "HttpUtility.ParseQueryString", but it'd require adding a reference to "System.Web".
+            Assert.IsTrue(uri.Query.Contains("response_type=code"));
+            Assert.IsTrue(uri.Query.Contains("client_id="));
+            Assert.IsTrue(uri.Query.Contains("redirect_uri="));
+            Assert.IsTrue(uri.Query.Contains("state="));
+            Assert.IsTrue(uri.Query.Contains("code_challenge="));
+            Assert.IsTrue(uri.Query.Contains("code_challenge_method=S256"));
+        }
+
         private static Expression<Func<RegisterClientRequest, bool>> MatchesRequest(
             RegisterClientRequest expectedRequest)
         {
             return request => request.ClientName == expectedRequest.ClientName &&
-                              request.ClientType == expectedRequest.ClientType;
+                              request.ClientType == expectedRequest.ClientType &&
+                              request.IssuerUrl == expectedRequest.IssuerUrl &&
+                              request.Scopes.SequenceEqual(expectedRequest.Scopes) &&
+                              request.GrantTypes.SequenceEqual(expectedRequest.GrantTypes) &&
+                              request.RedirectUris.SequenceEqual(expectedRequest.RedirectUris);
         }
 
         private static Expression<Func<StartDeviceAuthorizationRequest, bool>> MatchesRequest(
@@ -246,7 +356,13 @@ namespace AWSSDK.UnitTests
             return request => request.ClientId == expectedRequest.ClientId &&
                               request.ClientSecret == expectedRequest.ClientSecret &&
                               request.GrantType == expectedRequest.GrantType &&
-                              request.DeviceCode == expectedRequest.DeviceCode;
+                              request.DeviceCode == expectedRequest.DeviceCode &&
+                              request.RedirectUri == expectedRequest.RedirectUri &&
+                              request.Code == expectedRequest.Code &&
+                              
+                              // The actual code verifier is a random string, so we'll just check that when using the PKCE flow the
+                              // request sent by the SSO OIDC client contains a non-null value.
+                              (expectedRequest.CodeVerifier == null || request.CodeVerifier != null);
         }
 
         public void Dispose() 

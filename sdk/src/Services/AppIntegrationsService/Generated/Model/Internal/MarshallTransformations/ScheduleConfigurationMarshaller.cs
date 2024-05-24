@@ -46,6 +46,8 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScheduleConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFirstExecutionFrom())
             {
                 context.Writer.WritePropertyName("FirstExecutionFrom");
@@ -73,4 +75,3 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

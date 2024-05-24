@@ -46,6 +46,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProviderProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIntermediateSourceConfiguration())
             {
                 context.Writer.WritePropertyName("intermediateSourceConfiguration");
@@ -78,4 +80,3 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

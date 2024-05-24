@@ -63,7 +63,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Enabled", StringUtils.FromBool(publicRequest.Enabled));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

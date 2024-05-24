@@ -46,6 +46,8 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkflowStepAutomationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCommand())
             {
                 context.Writer.WritePropertyName("command");
@@ -95,4 +97,3 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

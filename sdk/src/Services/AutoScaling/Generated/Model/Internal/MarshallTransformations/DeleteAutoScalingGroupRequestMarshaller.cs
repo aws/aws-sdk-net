@@ -63,12 +63,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetForceDelete())
                 {
                     request.Parameters.Add("ForceDelete", StringUtils.FromBool(publicRequest.ForceDelete));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

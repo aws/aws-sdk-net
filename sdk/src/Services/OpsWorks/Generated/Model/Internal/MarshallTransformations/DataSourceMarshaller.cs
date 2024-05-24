@@ -46,6 +46,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
@@ -73,4 +75,3 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -57,6 +57,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         public ProductUserSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ProductUserSummary unmarshalledObject = new ProductUserSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -131,4 +133,3 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         }
     }
 }
-#pragma warning restore CS0612,CS0618

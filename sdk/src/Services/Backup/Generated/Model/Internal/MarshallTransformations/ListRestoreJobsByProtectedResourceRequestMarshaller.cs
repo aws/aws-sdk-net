@@ -64,10 +64,10 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
             
             if (publicRequest.IsSetByRecoveryPointCreationDateAfter())
-                request.Parameters.Add("recoveryPointCreationDateAfter", StringUtils.FromDateTimeToISO8601(publicRequest.ByRecoveryPointCreationDateAfter));
+                request.Parameters.Add("recoveryPointCreationDateAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ByRecoveryPointCreationDateAfter));
             
             if (publicRequest.IsSetByRecoveryPointCreationDateBefore())
-                request.Parameters.Add("recoveryPointCreationDateBefore", StringUtils.FromDateTimeToISO8601(publicRequest.ByRecoveryPointCreationDateBefore));
+                request.Parameters.Add("recoveryPointCreationDateBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ByRecoveryPointCreationDateBefore));
             
             if (publicRequest.IsSetByStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.ByStatus));
@@ -102,4 +102,3 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Target requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChannelTargetInfo())
             {
                 context.Writer.WritePropertyName("ChannelTargetInfo");
@@ -77,4 +79,3 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

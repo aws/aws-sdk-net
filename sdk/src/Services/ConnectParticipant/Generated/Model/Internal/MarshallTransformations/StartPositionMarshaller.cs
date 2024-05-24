@@ -46,6 +46,8 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StartPosition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAbsoluteTime())
             {
                 context.Writer.WritePropertyName("AbsoluteTime");
@@ -73,4 +75,3 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

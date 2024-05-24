@@ -57,6 +57,8 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
         public RoutingControl Unmarshall(JsonUnmarshallerContext context)
         {
             RoutingControl unmarshalledObject = new RoutingControl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

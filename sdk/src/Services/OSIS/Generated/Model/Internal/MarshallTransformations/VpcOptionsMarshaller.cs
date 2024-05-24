@@ -46,6 +46,8 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VpcOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("SecurityGroupIds");
@@ -68,6 +70,17 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetVpcAttachmentOptions())
+            {
+                context.Writer.WritePropertyName("VpcAttachmentOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VpcAttachmentOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.VpcAttachmentOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
@@ -77,4 +90,3 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

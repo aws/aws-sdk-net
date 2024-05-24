@@ -63,7 +63,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("UserId", StringUtils.FromString(publicRequest.UserId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

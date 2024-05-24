@@ -46,6 +46,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VotingPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApprovalThresholdPolicy())
             {
                 context.Writer.WritePropertyName("ApprovalThresholdPolicy");
@@ -66,4 +68,3 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

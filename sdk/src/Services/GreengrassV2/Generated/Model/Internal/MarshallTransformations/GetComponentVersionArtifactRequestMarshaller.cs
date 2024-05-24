@@ -65,7 +65,16 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetArtifactName())
                 throw new AmazonGreengrassV2Exception("Request object does not have required field ArtifactName set");
             request.AddPathResource("{artifactName+}", StringUtils.FromString(publicRequest.ArtifactName.TrimStart('/')));
+            
+            if (publicRequest.IsSetS3EndpointType())
+                request.Parameters.Add("s3EndpointType", StringUtils.FromString(publicRequest.S3EndpointType));
             request.ResourcePath = "/greengrass/v2/components/{arn}/artifacts/{artifactName+}";
+        
+            if (publicRequest.IsSetIotEndpointType()) 
+            {
+                request.Headers["x-amz-iot-endpoint-type"] = publicRequest.IotEndpointType;
+            }
+            request.UseQueryString = true;
 
             return request;
         }
@@ -89,4 +98,3 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

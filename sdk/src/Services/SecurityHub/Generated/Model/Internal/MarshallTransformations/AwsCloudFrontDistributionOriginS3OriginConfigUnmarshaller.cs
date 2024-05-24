@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsCloudFrontDistributionOriginS3OriginConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AwsCloudFrontDistributionOriginS3OriginConfig unmarshalledObject = new AwsCloudFrontDistributionOriginS3OriginConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

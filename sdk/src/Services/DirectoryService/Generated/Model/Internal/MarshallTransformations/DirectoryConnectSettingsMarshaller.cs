@@ -46,6 +46,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DirectoryConnectSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCustomerDnsIps())
             {
                 context.Writer.WritePropertyName("CustomerDnsIps");
@@ -89,4 +91,3 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

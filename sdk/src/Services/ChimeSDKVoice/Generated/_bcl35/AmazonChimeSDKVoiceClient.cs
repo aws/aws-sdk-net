@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.ChimeSDKVoice
 {
     /// <summary>
@@ -507,7 +508,15 @@ namespace Amazon.ChimeSDKVoice
         #region  BatchUpdatePhoneNumber
 
         /// <summary>
-        /// Updates one or more phone numbers.
+        /// Updates phone number product types, calling names, or phone number names. You can
+        /// update one attribute at a time for each <c>UpdatePhoneNumberRequestItem</c>. For example,
+        /// you can update the product type, the calling name, or phone name. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot have a duplicate <c>phoneNumberId</c> in a request.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdatePhoneNumber service method.</param>
         /// 
@@ -3050,6 +3059,14 @@ namespace Amazon.ChimeSDKVoice
 
         /// <summary>
         /// Gets the Alexa Skill configuration for the SIP media application.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Due to changes made by the Amazon Alexa service, this API is no longer available for
+        /// use. For more information, refer to the <a href="https://developer.amazon.com/en-US/alexa/alexasmartproperties">Alexa
+        /// Smart Properties</a> page.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSipMediaApplicationAlexaSkillConfiguration service method.</param>
         /// 
@@ -3076,6 +3093,7 @@ namespace Amazon.ChimeSDKVoice
         /// The client isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplicationAlexaSkillConfiguration">REST API Reference for GetSipMediaApplicationAlexaSkillConfiguration Operation</seealso>
+        [Obsolete("Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties).")]
         public virtual GetSipMediaApplicationAlexaSkillConfigurationResponse GetSipMediaApplicationAlexaSkillConfiguration(GetSipMediaApplicationAlexaSkillConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -3097,6 +3115,7 @@ namespace Amazon.ChimeSDKVoice
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSipMediaApplicationAlexaSkillConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplicationAlexaSkillConfiguration">REST API Reference for GetSipMediaApplicationAlexaSkillConfiguration Operation</seealso>
+        [Obsolete("Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties).")]
         public virtual IAsyncResult BeginGetSipMediaApplicationAlexaSkillConfiguration(GetSipMediaApplicationAlexaSkillConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -3114,6 +3133,7 @@ namespace Amazon.ChimeSDKVoice
         /// 
         /// <returns>Returns a  GetSipMediaApplicationAlexaSkillConfigurationResult from ChimeSDKVoice.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplicationAlexaSkillConfiguration">REST API Reference for GetSipMediaApplicationAlexaSkillConfiguration Operation</seealso>
+        [Obsolete("Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties).")]
         public virtual GetSipMediaApplicationAlexaSkillConfigurationResponse EndGetSipMediaApplicationAlexaSkillConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSipMediaApplicationAlexaSkillConfigurationResponse>(asyncResult);
@@ -5232,6 +5252,14 @@ namespace Amazon.ChimeSDKVoice
 
         /// <summary>
         /// Updates the Alexa Skill configuration for the SIP media application.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Due to changes made by the Amazon Alexa service, this API is no longer available for
+        /// use. For more information, refer to the <a href="https://developer.amazon.com/en-US/alexa/alexasmartproperties">Alexa
+        /// Smart Properties</a> page.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSipMediaApplicationAlexaSkillConfiguration service method.</param>
         /// 
@@ -5258,6 +5286,7 @@ namespace Amazon.ChimeSDKVoice
         /// The client isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutSipMediaApplicationAlexaSkillConfiguration">REST API Reference for PutSipMediaApplicationAlexaSkillConfiguration Operation</seealso>
+        [Obsolete("Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties).")]
         public virtual PutSipMediaApplicationAlexaSkillConfigurationResponse PutSipMediaApplicationAlexaSkillConfiguration(PutSipMediaApplicationAlexaSkillConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -5279,6 +5308,7 @@ namespace Amazon.ChimeSDKVoice
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutSipMediaApplicationAlexaSkillConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutSipMediaApplicationAlexaSkillConfiguration">REST API Reference for PutSipMediaApplicationAlexaSkillConfiguration Operation</seealso>
+        [Obsolete("Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties).")]
         public virtual IAsyncResult BeginPutSipMediaApplicationAlexaSkillConfiguration(PutSipMediaApplicationAlexaSkillConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -5296,6 +5326,7 @@ namespace Amazon.ChimeSDKVoice
         /// 
         /// <returns>Returns a  PutSipMediaApplicationAlexaSkillConfigurationResult from ChimeSDKVoice.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutSipMediaApplicationAlexaSkillConfiguration">REST API Reference for PutSipMediaApplicationAlexaSkillConfiguration Operation</seealso>
+        [Obsolete("Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties).")]
         public virtual PutSipMediaApplicationAlexaSkillConfigurationResponse EndPutSipMediaApplicationAlexaSkillConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutSipMediaApplicationAlexaSkillConfigurationResponse>(asyncResult);
@@ -6654,9 +6685,10 @@ namespace Amazon.ChimeSDKVoice
         #region  UpdatePhoneNumber
 
         /// <summary>
-        /// Updates phone number details, such as product type or calling name, for the specified
-        /// phone number ID. You can update one phone number detail at a time. For example, you
-        /// can update either the product type or the calling name in one action.
+        /// Updates phone number details, such as product type, calling name, or phone number
+        /// name for the specified phone number ID. You can update one phone number detail at
+        /// a time. For example, you can update either the product type, calling name, or phone
+        /// number name in one action.
         /// 
         ///  
         /// <para>

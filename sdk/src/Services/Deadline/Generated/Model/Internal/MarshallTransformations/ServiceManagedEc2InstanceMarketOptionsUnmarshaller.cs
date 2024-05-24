@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public ServiceManagedEc2InstanceMarketOptions Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceManagedEc2InstanceMarketOptions unmarshalledObject = new ServiceManagedEc2InstanceMarketOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

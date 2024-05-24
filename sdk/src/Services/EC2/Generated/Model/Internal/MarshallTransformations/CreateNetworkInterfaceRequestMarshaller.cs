@@ -67,36 +67,29 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetConnectionTrackingSpecification())
                 {
                     if(publicRequest.ConnectionTrackingSpecification.IsSetTcpEstablishedTimeout())
                     {
                         request.Parameters.Add("ConnectionTrackingSpecification" + "." + "TcpEstablishedTimeout", StringUtils.FromInt(publicRequest.ConnectionTrackingSpecification.TcpEstablishedTimeout));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ConnectionTrackingSpecification.IsSetUdpStreamTimeout())
                     {
                         request.Parameters.Add("ConnectionTrackingSpecification" + "." + "UdpStreamTimeout", StringUtils.FromInt(publicRequest.ConnectionTrackingSpecification.UdpStreamTimeout));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ConnectionTrackingSpecification.IsSetUdpTimeout())
                     {
                         request.Parameters.Add("ConnectionTrackingSpecification" + "." + "UdpTimeout", StringUtils.FromInt(publicRequest.ConnectionTrackingSpecification.UdpTimeout));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnablePrimaryIpv6())
                 {
                     request.Parameters.Add("EnablePrimaryIpv6", StringUtils.FromBool(publicRequest.EnablePrimaryIpv6));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGroups())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -106,17 +99,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInterfaceType())
                 {
                     request.Parameters.Add("InterfaceType", StringUtils.FromString(publicRequest.InterfaceType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv4PrefixCount())
                 {
                     request.Parameters.Add("Ipv4PrefixCount", StringUtils.FromInt(publicRequest.Ipv4PrefixCount));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv4Prefixes())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -126,16 +116,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Ipv4Prefix" + "." + publicRequestlistValueIndex + "." + "Ipv4Prefix", StringUtils.FromString(publicRequestlistValue.Ipv4Prefix));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv6AddressCount())
                 {
                     request.Parameters.Add("Ipv6AddressCount", StringUtils.FromInt(publicRequest.Ipv6AddressCount));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv6Addresses())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -145,21 +132,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Ipv6Addresses" + "." + publicRequestlistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValue.Ipv6Address));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetIsPrimaryIpv6())
                         {
                             request.Parameters.Add("Ipv6Addresses" + "." + publicRequestlistValueIndex + "." + "IsPrimaryIpv6", StringUtils.FromBool(publicRequestlistValue.IsPrimaryIpv6));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv6PrefixCount())
                 {
                     request.Parameters.Add("Ipv6PrefixCount", StringUtils.FromInt(publicRequest.Ipv6PrefixCount));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpv6Prefixes())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -169,16 +152,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Ipv6Prefix" + "." + publicRequestlistValueIndex + "." + "Ipv6Prefix", StringUtils.FromString(publicRequestlistValue.Ipv6Prefix));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrivateIpAddress())
                 {
                     request.Parameters.Add("PrivateIpAddress", StringUtils.FromString(publicRequest.PrivateIpAddress));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrivateIpAddresses())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -188,26 +168,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("PrivateIpAddresses" + "." + publicRequestlistValueIndex + "." + "Primary", StringUtils.FromBool(publicRequestlistValue.Primary));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetPrivateIpAddress())
                         {
                             request.Parameters.Add("PrivateIpAddresses" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestlistValue.PrivateIpAddress));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSecondaryPrivateIpAddressCount())
                 {
                     request.Parameters.Add("SecondaryPrivateIpAddressCount", StringUtils.FromInt(publicRequest.SecondaryPrivateIpAddressCount));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSubnetId())
                 {
                     request.Parameters.Add("SubnetId", StringUtils.FromString(publicRequest.SubnetId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -217,7 +192,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -227,20 +201,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
-#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

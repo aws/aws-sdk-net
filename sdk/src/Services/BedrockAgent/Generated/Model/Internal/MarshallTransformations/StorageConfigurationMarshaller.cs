@@ -46,6 +46,19 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StorageConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetMongoDbAtlasConfiguration())
+            {
+                context.Writer.WritePropertyName("mongoDbAtlasConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MongoDbAtlasConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.MongoDbAtlasConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOpensearchServerlessConfiguration())
             {
                 context.Writer.WritePropertyName("opensearchServerlessConfiguration");
@@ -105,4 +118,3 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

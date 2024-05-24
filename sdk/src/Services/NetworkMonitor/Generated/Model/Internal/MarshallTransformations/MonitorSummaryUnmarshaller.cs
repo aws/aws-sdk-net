@@ -57,6 +57,8 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
         public MonitorSummary Unmarshall(JsonUnmarshallerContext context)
         {
             MonitorSummary unmarshalledObject = new MonitorSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

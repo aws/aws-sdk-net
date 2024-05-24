@@ -46,6 +46,8 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LineItemRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCatalogItemId())
             {
                 context.Writer.WritePropertyName("CatalogItemId");
@@ -67,4 +69,3 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Shares. 
         /// <para>
-        ///  The shares available and their meta details. 
+        /// The shares available and their metadata details.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

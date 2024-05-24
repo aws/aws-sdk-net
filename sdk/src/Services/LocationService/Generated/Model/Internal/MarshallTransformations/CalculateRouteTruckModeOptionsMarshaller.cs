@@ -46,6 +46,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CalculateRouteTruckModeOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvoidFerries())
             {
                 context.Writer.WritePropertyName("AvoidFerries");
@@ -89,4 +91,3 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

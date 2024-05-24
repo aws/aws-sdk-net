@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// In the <c>returnControlInvocationResults</c> of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+    /// In the <c>returnControlInvocationResults</c> of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_RequestSyntax">InvokeAgent
     /// request</a> 
     /// </para>
     ///  </li> </ul>
@@ -129,8 +130,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ResponseBody. 
         /// <para>
-        /// The response body from the API operation. The key of the object is the content type.
-        /// The response may be returned directly or from the Lambda function.
+        /// The response body from the API operation. The key of the object is the content type
+        /// (currently, only <c>TEXT</c> is supported). The response may be returned directly
+        /// or from the Lambda function.
         /// </para>
         /// </summary>
         public Dictionary<string, ContentBody> ResponseBody

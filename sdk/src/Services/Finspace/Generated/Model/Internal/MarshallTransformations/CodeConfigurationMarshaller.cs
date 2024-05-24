@@ -46,6 +46,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CodeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3Bucket())
             {
                 context.Writer.WritePropertyName("s3Bucket");
@@ -73,4 +75,3 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

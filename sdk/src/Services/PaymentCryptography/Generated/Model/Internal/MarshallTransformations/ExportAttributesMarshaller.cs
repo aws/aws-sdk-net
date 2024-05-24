@@ -46,6 +46,8 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExportAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetExportDukptInitialKey())
             {
                 context.Writer.WritePropertyName("ExportDukptInitialKey");
@@ -72,4 +74,3 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

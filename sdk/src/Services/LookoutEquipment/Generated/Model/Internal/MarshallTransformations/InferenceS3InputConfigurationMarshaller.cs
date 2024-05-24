@@ -46,6 +46,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InferenceS3InputConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBucket())
             {
                 context.Writer.WritePropertyName("Bucket");
@@ -67,4 +69,3 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

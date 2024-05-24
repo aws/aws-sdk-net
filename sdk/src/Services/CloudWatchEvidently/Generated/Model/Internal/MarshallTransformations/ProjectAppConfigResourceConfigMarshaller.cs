@@ -46,6 +46,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProjectAppConfigResourceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApplicationId())
             {
                 context.Writer.WritePropertyName("applicationId");
@@ -67,4 +69,3 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

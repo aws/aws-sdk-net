@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaStoreData.Model
 {
     /// <summary>
@@ -34,7 +35,6 @@ namespace Amazon.MediaStoreData.Model
     public partial class DescribeObjectResponse : AmazonWebServiceResponse
     {
         private string _cacheControl;
-        private long? _contentLength;
         private string _contentType;
         private string _eTag;
         private DateTime? _lastModified;
@@ -59,26 +59,7 @@ namespace Amazon.MediaStoreData.Model
         // Check to see if CacheControl property is set
         internal bool IsSetCacheControl()
         {
-            return this._cacheControl != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ContentLength. 
-        /// <para>
-        /// The length of the object in bytes.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0)]
-        public long ContentLength
-        {
-            get { return this._contentLength.GetValueOrDefault(); }
-            set { this._contentLength = value; }
-        }
-
-        // Check to see if ContentLength property is set
-        internal bool IsSetContentLength()
-        {
-            return this._contentLength.HasValue; 
+            return !string.IsNullOrEmpty(this._cacheControl);
         }
 
         /// <summary>
@@ -96,7 +77,7 @@ namespace Amazon.MediaStoreData.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>
@@ -115,7 +96,7 @@ namespace Amazon.MediaStoreData.Model
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this._eTag != null;
+            return !string.IsNullOrEmpty(this._eTag);
         }
 
         /// <summary>

@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public TrustedTokenIssuerMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             TrustedTokenIssuerMetadata unmarshalledObject = new TrustedTokenIssuerMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

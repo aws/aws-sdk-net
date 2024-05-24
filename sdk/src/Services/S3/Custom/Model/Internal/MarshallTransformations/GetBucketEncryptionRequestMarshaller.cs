@@ -50,6 +50,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetBucketEncryptionRequestMarshaller _instance;
 
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
         public static GetBucketEncryptionRequestMarshaller Instance
         {
             get

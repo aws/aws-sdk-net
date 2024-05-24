@@ -46,6 +46,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VolumeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("iops");
@@ -73,4 +75,3 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

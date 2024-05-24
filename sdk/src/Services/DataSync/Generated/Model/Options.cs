@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -37,7 +38,12 @@ namespace Amazon.DataSync.Model
     ///  
     /// <para>
     /// Each option has a default value. Unless you need to, you don't have to configure any
-    /// of these options before starting your task.
+    /// option before calling <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You also can override your task options for each task execution. For example, you
+    /// might want to adjust the <c>LogLevel</c> for an individual execution.
     /// </para>
     /// </summary>
     public partial class Options
@@ -574,6 +580,11 @@ namespace Amazon.DataSync.Model
         /// <para>
         ///  <c>POINT_IN_TIME_CONSISTENT</c> (default) - At the end of the transfer, DataSync
         /// scans the entire source and destination to verify that both locations are fully synchronized.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">manifest</a>,
+        /// DataSync only scans and verifies what's listed in the manifest.
         /// </para>
         ///  
         /// <para>

@@ -46,6 +46,8 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Tag requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");
@@ -67,4 +69,3 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

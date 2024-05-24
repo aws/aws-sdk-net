@@ -63,12 +63,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBInstanceAutomatedBackupsArn", StringUtils.FromString(publicRequest.DBInstanceAutomatedBackupsArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDbiResourceId())
                 {
                     request.Parameters.Add("DbiResourceId", StringUtils.FromString(publicRequest.DbiResourceId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -46,6 +46,8 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoggingConfigurationInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDagProcessingLogs())
             {
                 context.Writer.WritePropertyName("DagProcessingLogs");
@@ -110,4 +112,3 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

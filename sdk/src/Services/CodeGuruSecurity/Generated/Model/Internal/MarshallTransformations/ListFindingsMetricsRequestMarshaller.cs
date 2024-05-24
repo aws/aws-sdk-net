@@ -61,7 +61,7 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
 
             
             if (publicRequest.IsSetEndDate())
-                request.Parameters.Add("endDate", StringUtils.FromDateTimeToISO8601(publicRequest.EndDate));
+                request.Parameters.Add("endDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDate));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -70,7 +70,7 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
             if (publicRequest.IsSetStartDate())
-                request.Parameters.Add("startDate", StringUtils.FromDateTimeToISO8601(publicRequest.StartDate));
+                request.Parameters.Add("startDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDate));
             request.ResourcePath = "/metrics/findings";
             request.UseQueryString = true;
 
@@ -96,4 +96,3 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

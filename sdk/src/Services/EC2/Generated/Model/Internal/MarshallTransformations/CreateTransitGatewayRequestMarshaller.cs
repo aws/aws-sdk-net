@@ -63,44 +63,36 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptions())
                 {
                     if(publicRequest.Options.IsSetAmazonSideAsn())
                     {
                         request.Parameters.Add("Options" + "." + "AmazonSideAsn", StringUtils.FromLong(publicRequest.Options.AmazonSideAsn));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetAutoAcceptSharedAttachments())
                     {
                         request.Parameters.Add("Options" + "." + "AutoAcceptSharedAttachments", StringUtils.FromString(publicRequest.Options.AutoAcceptSharedAttachments));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetDefaultRouteTableAssociation())
                     {
                         request.Parameters.Add("Options" + "." + "DefaultRouteTableAssociation", StringUtils.FromString(publicRequest.Options.DefaultRouteTableAssociation));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetDefaultRouteTablePropagation())
                     {
                         request.Parameters.Add("Options" + "." + "DefaultRouteTablePropagation", StringUtils.FromString(publicRequest.Options.DefaultRouteTablePropagation));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetDnsSupport())
                     {
                         request.Parameters.Add("Options" + "." + "DnsSupport", StringUtils.FromString(publicRequest.Options.DnsSupport));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetMulticastSupport())
                     {
                         request.Parameters.Add("Options" + "." + "MulticastSupport", StringUtils.FromString(publicRequest.Options.MulticastSupport));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetSecurityGroupReferencingSupport())
                     {
                         request.Parameters.Add("Options" + "." + "SecurityGroupReferencingSupport", StringUtils.FromString(publicRequest.Options.SecurityGroupReferencingSupport));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetTransitGatewayCidrBlocks())
                     {
                         int publicRequestOptionslistValueIndex = 1;
@@ -110,14 +102,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestOptionslistValueIndex++;
                         }
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetVpnEcmpSupport())
                     {
                         request.Parameters.Add("Options" + "." + "VpnEcmpSupport", StringUtils.FromString(publicRequest.Options.VpnEcmpSupport));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -127,7 +116,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -137,20 +125,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
-#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

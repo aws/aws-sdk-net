@@ -46,6 +46,8 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AppValidationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAppValidationStrategy())
             {
                 context.Writer.WritePropertyName("appValidationStrategy");
@@ -84,4 +86,3 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

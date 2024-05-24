@@ -18,6 +18,7 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
     <NoWarn>CS1591</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
 	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>	
 	<OutputPath>bin/$(Configuration)/net35</OutputPath>
   </PropertyGroup>

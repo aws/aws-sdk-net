@@ -67,6 +67,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetComparisonOperator())
@@ -132,7 +133,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetThreshold())
                 {
                     context.Writer.WritePropertyName("threshold");
-                    context.Writer.Write(publicRequest.Threshold);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.Threshold);
+                    }
                 }
 
                 if(publicRequest.IsSetTreatMissingData())
@@ -169,4 +177,3 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

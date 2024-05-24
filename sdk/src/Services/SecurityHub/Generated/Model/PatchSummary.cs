@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -51,6 +52,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The number of patches from the compliance standard that failed to install.
         /// </para>
+        ///  
+        /// <para>
+        /// The value can be an integer from <c>0</c> to <c>100000</c>.
+        /// </para>
         /// </summary>
         public int FailedCount
         {
@@ -69,6 +74,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The identifier of the compliance standard that was used to determine the patch compliance
         /// status.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum length of 1. Maximum length of 256.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -89,6 +98,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The number of patches from the compliance standard that were installed successfully.
         /// </para>
+        ///  
+        /// <para>
+        /// The value can be an integer from <c>0</c> to <c>100000</c>.
+        /// </para>
         /// </summary>
         public int InstalledCount
         {
@@ -106,6 +119,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property InstalledOtherCount. 
         /// <para>
         /// The number of installed patches that are not part of the compliance standard.
+        /// </para>
+        ///  
+        /// <para>
+        /// The value can be an integer from <c>0</c> to <c>100000</c>.
         /// </para>
         /// </summary>
         public int InstalledOtherCount
@@ -126,6 +143,10 @@ namespace Amazon.SecurityHub.Model
         /// The number of patches that were applied, but that require the instance to be rebooted
         /// in order to be marked as installed.
         /// </para>
+        ///  
+        /// <para>
+        /// The value can be an integer from <c>0</c> to <c>100000</c>.
+        /// </para>
         /// </summary>
         public int InstalledPendingReboot
         {
@@ -144,6 +165,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The number of patches that are installed but are also on a list of patches that the
         /// customer rejected.
+        /// </para>
+        ///  
+        /// <para>
+        /// The value can be an integer from <c>0</c> to <c>100000</c>.
         /// </para>
         /// </summary>
         public int InstalledRejectedCount
@@ -164,6 +189,10 @@ namespace Amazon.SecurityHub.Model
         /// The number of patches that are part of the compliance standard but are not installed.
         /// The count includes patches that failed to install.
         /// </para>
+        ///  
+        /// <para>
+        /// The value can be an integer from <c>0</c> to <c>100000</c>.
+        /// </para>
         /// </summary>
         public int MissingCount
         {
@@ -181,7 +210,11 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Operation. 
         /// <para>
         /// The type of patch operation performed. For Patch Manager, the values are <c>SCAN</c>
-        /// and <c>INSTALL</c>. 
+        /// and <c>INSTALL</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum length of 1. Maximum length of 256.
         /// </para>
         /// </summary>
         public string Operation
@@ -292,6 +325,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property RebootOption. 
         /// <para>
         /// The reboot option specified for the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum length of 1. Maximum length of 256.
         /// </para>
         /// </summary>
         public string RebootOption

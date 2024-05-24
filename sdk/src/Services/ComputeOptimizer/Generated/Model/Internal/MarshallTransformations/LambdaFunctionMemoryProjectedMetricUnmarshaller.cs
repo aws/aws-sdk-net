@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public LambdaFunctionMemoryProjectedMetric Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaFunctionMemoryProjectedMetric unmarshalledObject = new LambdaFunctionMemoryProjectedMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

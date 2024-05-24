@@ -66,12 +66,20 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetMaxLineCoveragePercentage())
                 {
                     context.Writer.WritePropertyName("maxLineCoveragePercentage");
-                    context.Writer.Write(publicRequest.MaxLineCoveragePercentage);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxLineCoveragePercentage))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxLineCoveragePercentage));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MaxLineCoveragePercentage);
+                    }
                 }
 
                 if(publicRequest.IsSetMaxResults())
@@ -83,7 +91,14 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinLineCoveragePercentage())
                 {
                     context.Writer.WritePropertyName("minLineCoveragePercentage");
-                    context.Writer.Write(publicRequest.MinLineCoveragePercentage);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MinLineCoveragePercentage))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MinLineCoveragePercentage));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MinLineCoveragePercentage);
+                    }
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -138,4 +153,3 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

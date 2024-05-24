@@ -46,6 +46,8 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HumanLoopInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInputContent())
             {
                 context.Writer.WritePropertyName("InputContent");
@@ -61,4 +63,3 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

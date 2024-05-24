@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Omics.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.Omics
 {
     /// <summary>
@@ -124,7 +125,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Accepts a share for an analytics store.
+        /// Accept a resource share request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptShare service method.</param>
         /// 
@@ -156,7 +157,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Accepts a share for an analytics store.
+        /// Accept a resource share request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptShare service method.</param>
         /// <param name="cancellationToken">
@@ -946,8 +947,27 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Creates a share offer that can be accepted outside the account by a subscriber. The
-        /// share is created by the owner and accepted by the principal subscriber.
+        /// Creates a cross-account shared resource. The resource owner makes an offer to share
+        /// the resource with the principal subscriber (an AWS user with a different account than
+        /// the resource owner).
+        /// 
+        ///  
+        /// <para>
+        /// The following resources support cross-account sharing:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Healthomics variant stores
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Healthomics annotation stores
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Private workflows
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateShare service method.</param>
         /// 
@@ -979,8 +999,27 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Creates a share offer that can be accepted outside the account by a subscriber. The
-        /// share is created by the owner and accepted by the principal subscriber.
+        /// Creates a cross-account shared resource. The resource owner makes an offer to share
+        /// the resource with the principal subscriber (an AWS user with a different account than
+        /// the resource owner).
+        /// 
+        ///  
+        /// <para>
+        /// The following resources support cross-account sharing:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Healthomics variant stores
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Healthomics annotation stores
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Private workflows
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateShare service method.</param>
         /// <param name="cancellationToken">
@@ -1654,7 +1693,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes a share of an analytics store.
+        /// Deletes a resource share. If you are the resource owner, the subscriber will no longer
+        /// have access to the shared resource. If you are the subscriber, this operation deletes
+        /// your access to the share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteShare service method.</param>
         /// 
@@ -1686,7 +1727,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes a share of an analytics store.
+        /// Deletes a resource share. If you are the resource owner, the subscriber will no longer
+        /// have access to the shared resource. If you are the subscriber, this operation deletes
+        /// your access to the share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteShare service method.</param>
         /// <param name="cancellationToken">
@@ -2633,6 +2676,11 @@ namespace Amazon.Omics
 
         /// <summary>
         /// Gets information about a workflow run.
+        /// 
+        ///  
+        /// <para>
+        /// If a workflow is shared with you, you cannot export information about the run.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRun service method.</param>
         /// 
@@ -2668,6 +2716,11 @@ namespace Amazon.Omics
 
         /// <summary>
         /// Gets information about a workflow run.
+        /// 
+        ///  
+        /// <para>
+        /// If a workflow is shared with you, you cannot export information about the run.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRun service method.</param>
         /// <param name="cancellationToken">
@@ -2924,7 +2977,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves the metadata for a share.
+        /// Retrieves the metadata for the specified resource share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetShare service method.</param>
         /// 
@@ -2956,7 +3009,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves the metadata for a share.
+        /// Retrieves the metadata for the specified resource share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetShare service method.</param>
         /// <param name="cancellationToken">
@@ -3111,6 +3164,11 @@ namespace Amazon.Omics
 
         /// <summary>
         /// Gets information about a workflow.
+        /// 
+        ///  
+        /// <para>
+        /// If a workflow is shared with you, you cannot export the workflow.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflow service method.</param>
         /// 
@@ -3146,6 +3204,11 @@ namespace Amazon.Omics
 
         /// <summary>
         /// Gets information about a workflow.
+        /// 
+        ///  
+        /// <para>
+        /// If a workflow is shared with you, you cannot export the workflow.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflow service method.</param>
         /// <param name="cancellationToken">
@@ -4244,7 +4307,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Lists all shares associated with an account.
+        /// Retrieves the resource shares associated with an account. Use the filter parameter
+        /// to retrieve a specific subset of the shares.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListShares service method.</param>
         /// 
@@ -4276,7 +4340,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Lists all shares associated with an account.
+        /// Retrieves the resource shares associated with an account. Use the filter parameter
+        /// to retrieve a specific subset of the shares.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListShares service method.</param>
         /// <param name="cancellationToken">
@@ -4933,9 +4998,21 @@ namespace Amazon.Omics
         /// 
         ///  
         /// <para>
+        /// StartRun will not support re-run for a workflow that is shared with you.
+        /// </para>
+        ///  
+        /// <para>
         /// The total number of runs in your account is subject to a quota per Region. To avoid
         /// needing to delete runs manually, you can set the retention mode to <c>REMOVE</c>.
         /// Runs with this setting are deleted automatically when the run quoata is exceeded.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, the run uses STATIC storage. For STATIC storage, set the <c>storageCapacity</c>
+        /// field. You can set the storage type to DYNAMIC. You do not set <c>storageCapacity</c>,
+        /// because HealthOmics dynamically scales the storage up or down as required. For more
+        /// information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
+        /// workflows</a> in the <i>AWS HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartRun service method.</param>
@@ -4976,9 +5053,21 @@ namespace Amazon.Omics
         /// 
         ///  
         /// <para>
+        /// StartRun will not support re-run for a workflow that is shared with you.
+        /// </para>
+        ///  
+        /// <para>
         /// The total number of runs in your account is subject to a quota per Region. To avoid
         /// needing to delete runs manually, you can set the retention mode to <c>REMOVE</c>.
         /// Runs with this setting are deleted automatically when the run quoata is exceeded.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, the run uses STATIC storage. For STATIC storage, set the <c>storageCapacity</c>
+        /// field. You can set the storage type to DYNAMIC. You do not set <c>storageCapacity</c>,
+        /// because HealthOmics dynamically scales the storage up or down as required. For more
+        /// information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
+        /// workflows</a> in the <i>AWS HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartRun service method.</param>

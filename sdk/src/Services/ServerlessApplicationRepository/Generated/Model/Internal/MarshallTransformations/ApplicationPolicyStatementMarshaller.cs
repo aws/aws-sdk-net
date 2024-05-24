@@ -46,6 +46,8 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         /// <returns></returns>
         public void Marshall(ApplicationPolicyStatement requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActions())
             {
                 context.Writer.WritePropertyName("actions");
@@ -94,4 +96,3 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
 
     }
 }
-#pragma warning restore CS0612,CS0618

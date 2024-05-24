@@ -16,36 +16,36 @@
 using Amazon.Runtime;
 using Amazon;
 using Moq;
-using Xunit;
-using System;
 using Amazon.Runtime.Internal;
 using Amazon.Util;
 using Amazon.Util.Internal;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AWSSDK.UnitTests.Runtime
 {
+    [TestClass]
     public class DefaultConfigurationAutoModeResolverTests
     {
         private const string ExecutionEnvironmentEnvVar = "AWS_EXECUTION_ENV";
-        private readonly DefaultConfigurationAutoModeResolver _resolver;
+        private DefaultConfigurationAutoModeResolver _resolver;
         private readonly Mock<IRuntimeInformationProvider> _runtimeInformationProvider = new Mock<IRuntimeInformationProvider>();
         private readonly Mock<IEnvironmentVariableRetriever> _environmentVariableRetriever = new Mock<IEnvironmentVariableRetriever>();
 
-        public DefaultConfigurationAutoModeResolverTests()
+        [TestInitialize]
+        public void InitializeResolver()
         {
             _resolver = new DefaultConfigurationAutoModeResolver(_runtimeInformationProvider.Object, _environmentVariableRetriever.Object);
-            _runtimeInformationProvider.Setup(p => p.IsMobile()).Returns(false);
         }
 
-        [Theory]
-        [InlineData(true, "AWS_Lambda_java8", "us-east-1", null, null, null, "us-east-1", DefaultConfigurationMode.Mobile)]
-        [InlineData(false, "AWS_Lambda_java8", "us-east-1", null, null, null, "us-east-1", DefaultConfigurationMode.InRegion)]
-        [InlineData(false, "AWS_Lambda_java8", null, "us-west-2", null, null, "us-east-1", DefaultConfigurationMode.CrossRegion)]
-        [InlineData(false, "AWS_Lambda_java8", null, null, null, "us-west-2", "us-east-1", DefaultConfigurationMode.CrossRegion)]
-        [InlineData(false, null, "us-east-1", null, null, "us-east-1", "us-east-1", DefaultConfigurationMode.InRegion)]
-        [InlineData(false, null, null, null, "false", "us-west-2", "us-east-1", DefaultConfigurationMode.CrossRegion)]
-        [InlineData(false, null, null, null, "false", null, "us-west-2", DefaultConfigurationMode.Standard)]
-        [InlineData(false, null, null, null, "true", null, "us-west-2", DefaultConfigurationMode.Standard)]
+        [DataTestMethod]
+        [DataRow(true, "AWS_Lambda_java8", "us-east-1", null, null, null, "us-east-1", DefaultConfigurationMode.Mobile)]
+        [DataRow(false, "AWS_Lambda_java8", "us-east-1", null, null, null, "us-east-1", DefaultConfigurationMode.InRegion)]
+        [DataRow(false, "AWS_Lambda_java8", null, "us-west-2", null, null, "us-east-1", DefaultConfigurationMode.CrossRegion)]
+        [DataRow(false, "AWS_Lambda_java8", null, null, null, "us-west-2", "us-east-1", DefaultConfigurationMode.CrossRegion)]
+        [DataRow(false, null, "us-east-1", null, null, "us-east-1", "us-east-1", DefaultConfigurationMode.InRegion)]
+        [DataRow(false, null, null, null, "false", "us-west-2", "us-east-1", DefaultConfigurationMode.CrossRegion)]
+        [DataRow(false, null, null, null, "false", null, "us-west-2", DefaultConfigurationMode.Standard)]
+        [DataRow(false, null, null, null, "true", null, "us-west-2", DefaultConfigurationMode.Standard)]
         public void Resolve(
             bool isMobile,
             string exeEnvVar,
@@ -71,8 +71,7 @@ namespace AWSSDK.UnitTests.Runtime
             var imdsRegionEndpoint = imdsRegion != null ? RegionEndpoint.GetBySystemName(imdsRegion) : null;
 
             var mode = _resolver.Resolve(clientRegionEndpoint, () => imdsRegionEndpoint);
-
-            Assert.Equal(expectedMode, mode);
+            Assert.AreEqual(expectedMode, mode);
         }
     }
 }

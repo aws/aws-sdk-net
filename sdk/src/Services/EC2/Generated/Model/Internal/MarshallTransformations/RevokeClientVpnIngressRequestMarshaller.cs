@@ -63,22 +63,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AccessGroupId", StringUtils.FromString(publicRequest.AccessGroupId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClientVpnEndpointId())
                 {
                     request.Parameters.Add("ClientVpnEndpointId", StringUtils.FromString(publicRequest.ClientVpnEndpointId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRevokeAllGroups())
                 {
                     request.Parameters.Add("RevokeAllGroups", StringUtils.FromBool(publicRequest.RevokeAllGroups));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetNetworkCidr())
                 {
                     request.Parameters.Add("TargetNetworkCidr", StringUtils.FromString(publicRequest.TargetNetworkCidr));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

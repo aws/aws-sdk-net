@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -65,11 +66,11 @@ namespace Amazon.DynamoDBv2.Model
     ///  
     /// <para>
     /// After a <c>GetResourcePolicy</c> request returns a policy created using the <c>PutResourcePolicy</c>
-    /// request, you can assume the policy will start getting applied in the authorization
-    /// of requests to the resource. Because this process is eventually consistent, it will
-    /// take some time to apply the policy to all requests to a resource. Policies that you
-    /// attach while creating a table using the <c>CreateTable</c> request will always be
-    /// applied to all requests for that table.
+    /// request, the policy will be applied in the authorization of requests to the resource.
+    /// Because this process is eventually consistent, it will take some time to apply the
+    /// policy to all requests to a resource. Policies that you attach while creating a table
+    /// using the <c>CreateTable</c> request will always be applied to all requests for that
+    /// table.
     /// </para>
     /// </summary>
     public partial class GetResourcePolicyRequest : AmazonDynamoDBRequest

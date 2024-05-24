@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsWafRegionalWebAclRulesListActionDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsWafRegionalWebAclRulesListActionDetails unmarshalledObject = new AwsWafRegionalWebAclRulesListActionDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

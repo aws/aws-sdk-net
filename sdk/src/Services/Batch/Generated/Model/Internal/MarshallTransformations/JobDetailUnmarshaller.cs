@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public JobDetail Unmarshall(JsonUnmarshallerContext context)
         {
             JobDetail unmarshalledObject = new JobDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -257,4 +259,3 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

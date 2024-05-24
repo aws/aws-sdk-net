@@ -61,11 +61,13 @@ namespace ServiceClientGenerator
         // List members in EC2 are always considered flattened, so we drop the 'member' prefix
         public static string DetermineAWSQueryListMemberPrefix(Member member)
         {
-            if (member.model.IsEC2Protocol || member.Shape.IsFlattened)
+            if (member.model.IsEC2Protocol || member.Shape.IsFlattened || member.IsFlattened)
                 return string.Empty;
 
             if (member.Shape.IsList)
-                return "member";
+            {
+                return member.Shape.ListMarshallName == null ? "member" : member.Shape.ListMarshallName;
+            }
 
             if (member.Shape.IsMap)
                 return "entry";
@@ -281,7 +283,7 @@ namespace ServiceClientGenerator
             }
             else if (member.IsMap)
             {
-                if (!member.Shape.IsFlattened)
+                if (!member.IsFlattened)
                     testExpression += "/entry";
             }
             else

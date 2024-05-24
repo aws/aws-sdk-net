@@ -46,6 +46,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ManualEvidence requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEvidenceFileName())
             {
                 context.Writer.WritePropertyName("evidenceFileName");
@@ -73,4 +75,3 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

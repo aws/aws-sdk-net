@@ -46,6 +46,8 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BandwidthRateLimitInterval requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAverageUploadRateLimitInBitsPerSec())
             {
                 context.Writer.WritePropertyName("AverageUploadRateLimitInBitsPerSec");
@@ -96,4 +98,3 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

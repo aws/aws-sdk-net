@@ -57,6 +57,8 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
         public DeviceTemplate Unmarshall(JsonUnmarshallerContext context)
         {
             DeviceTemplate unmarshalledObject = new DeviceTemplate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

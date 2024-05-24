@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ActivityMetrics Object
     /// </summary>  
-    public class ActivityMetricsUnmarshaller : IUnmarshaller<ActivityMetrics, XmlUnmarshallerContext>
+    public class ActivityMetricsUnmarshaller : IUnmarshaller<ActivityMetrics, XmlUnmarshallerContext>, IUnmarshaller<ActivityMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,6 +70,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public ActivityMetrics Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static ActivityMetricsUnmarshaller _instance = new ActivityMetricsUnmarshaller();        
 
@@ -85,4 +95,3 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

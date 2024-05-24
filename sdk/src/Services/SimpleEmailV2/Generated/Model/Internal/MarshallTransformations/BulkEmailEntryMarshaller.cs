@@ -46,6 +46,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BulkEmailEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("Destination");
@@ -66,6 +68,22 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.ReplacementEmailContent, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetReplacementHeaders())
+            {
+                context.Writer.WritePropertyName("ReplacementHeaders");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectReplacementHeadersListValue in requestObject.ReplacementHeaders)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MessageHeaderMarshaller.Instance;
+                    marshaller.Marshall(requestObjectReplacementHeadersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetReplacementTags())
@@ -93,4 +111,3 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -68,7 +68,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -78,21 +77,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOfferingClass())
                 {
                     request.Parameters.Add("OfferingClass", StringUtils.FromString(publicRequest.OfferingClass));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOfferingType())
                 {
                     request.Parameters.Add("OfferingType", StringUtils.FromString(publicRequest.OfferingType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReservedInstancesIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -102,7 +97,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

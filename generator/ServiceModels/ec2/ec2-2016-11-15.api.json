@@ -3429,6 +3429,15 @@
       "input":{"shape":"DisableImageDeprecationRequest"},
       "output":{"shape":"DisableImageDeprecationResult"}
     },
+    "DisableImageDeregistrationProtection":{
+      "name":"DisableImageDeregistrationProtection",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DisableImageDeregistrationProtectionRequest"},
+      "output":{"shape":"DisableImageDeregistrationProtectionResult"}
+    },
     "DisableIpamOrganizationAdminAccount":{
       "name":"DisableIpamOrganizationAdminAccount",
       "http":{
@@ -3696,6 +3705,15 @@
       "input":{"shape":"EnableImageDeprecationRequest"},
       "output":{"shape":"EnableImageDeprecationResult"}
     },
+    "EnableImageDeregistrationProtection":{
+      "name":"EnableImageDeregistrationProtection",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"EnableImageDeregistrationProtectionRequest"},
+      "output":{"shape":"EnableImageDeregistrationProtectionResult"}
+    },
     "EnableIpamOrganizationAdminAccount":{
       "name":"EnableIpamOrganizationAdminAccount",
       "http":{
@@ -3945,6 +3963,15 @@
       },
       "input":{"shape":"GetInstanceMetadataDefaultsRequest"},
       "output":{"shape":"GetInstanceMetadataDefaultsResult"}
+    },
+    "GetInstanceTpmEkPub":{
+      "name":"GetInstanceTpmEkPub",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetInstanceTpmEkPubRequest"},
+      "output":{"shape":"GetInstanceTpmEkPubResult"}
     },
     "GetInstanceTypesFromInstanceRequirements":{
       "name":"GetInstanceTypesFromInstanceRequirements",
@@ -17394,6 +17421,10 @@
         "SourceDestCheck":{
           "shape":"AttributeBooleanValue",
           "locationName":"sourceDestCheck"
+        },
+        "AssociatePublicIpAddress":{
+          "shape":"Boolean",
+          "locationName":"associatePublicIpAddress"
         }
       }
     },
@@ -20081,6 +20112,23 @@
         }
       }
     },
+    "DisableImageDeregistrationProtectionRequest":{
+      "type":"structure",
+      "required":["ImageId"],
+      "members":{
+        "ImageId":{"shape":"ImageId"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "DisableImageDeregistrationProtectionResult":{
+      "type":"structure",
+      "members":{
+        "Return":{
+          "shape":"String",
+          "locationName":"return"
+        }
+      }
+    },
     "DisableImageRequest":{
       "type":"structure",
       "required":["ImageId"],
@@ -21016,6 +21064,24 @@
         "locationName":"item"
       }
     },
+    "EkPubKeyFormat":{
+      "type":"string",
+      "enum":[
+        "der",
+        "tpmt"
+      ]
+    },
+    "EkPubKeyType":{
+      "type":"string",
+      "enum":[
+        "rsa-2048",
+        "ecc-sec-p384"
+      ]
+    },
+    "EkPubKeyValue":{
+      "type":"string",
+      "sensitive":true
+    },
     "ElasticGpuAssociation":{
       "type":"structure",
       "members":{
@@ -21514,6 +21580,24 @@
       "members":{
         "Return":{
           "shape":"Boolean",
+          "locationName":"return"
+        }
+      }
+    },
+    "EnableImageDeregistrationProtectionRequest":{
+      "type":"structure",
+      "required":["ImageId"],
+      "members":{
+        "ImageId":{"shape":"ImageId"},
+        "WithCooldown":{"shape":"Boolean"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "EnableImageDeregistrationProtectionResult":{
+      "type":"structure",
+      "members":{
+        "Return":{
+          "shape":"String",
           "locationName":"return"
         }
       }
@@ -23649,6 +23733,41 @@
         }
       }
     },
+    "GetInstanceTpmEkPubRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "KeyType",
+        "KeyFormat"
+      ],
+      "members":{
+        "InstanceId":{"shape":"InstanceId"},
+        "KeyType":{"shape":"EkPubKeyType"},
+        "KeyFormat":{"shape":"EkPubKeyFormat"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "GetInstanceTpmEkPubResult":{
+      "type":"structure",
+      "members":{
+        "InstanceId":{
+          "shape":"InstanceId",
+          "locationName":"instanceId"
+        },
+        "KeyType":{
+          "shape":"EkPubKeyType",
+          "locationName":"keyType"
+        },
+        "KeyFormat":{
+          "shape":"EkPubKeyFormat",
+          "locationName":"keyFormat"
+        },
+        "KeyValue":{
+          "shape":"EkPubKeyValue",
+          "locationName":"keyValue"
+        }
+      }
+    },
     "GetInstanceTypesFromInstanceRequirementsRequest":{
       "type":"structure",
       "required":[
@@ -25310,6 +25429,14 @@
         "SourceInstanceId":{
           "shape":"String",
           "locationName":"sourceInstanceId"
+        },
+        "DeregistrationProtection":{
+          "shape":"String",
+          "locationName":"deregistrationProtection"
+        },
+        "LastLaunchedTime":{
+          "shape":"String",
+          "locationName":"lastLaunchedTime"
         }
       }
     },
@@ -25367,6 +25494,10 @@
         "ImdsSupport":{
           "shape":"AttributeValue",
           "locationName":"imdsSupport"
+        },
+        "DeregistrationProtection":{
+          "shape":"AttributeValue",
+          "locationName":"deregistrationProtection"
         }
       }
     },
@@ -25384,7 +25515,8 @@
         "tpmSupport",
         "uefiData",
         "lastLaunchedTime",
-        "imdsSupport"
+        "imdsSupport",
+        "deregistrationProtection"
       ]
     },
     "ImageBlockPublicAccessDisabledState":{
@@ -28697,6 +28829,10 @@
         "NeuronInfo":{
           "shape":"NeuronInfo",
           "locationName":"neuronInfo"
+        },
+        "PhcSupport":{
+          "shape":"PhcSupport",
+          "locationName":"phcSupport"
         }
       }
     },
@@ -33208,7 +33344,8 @@
         },
         "EnaSrdSpecification":{"shape":"EnaSrdSpecification"},
         "EnablePrimaryIpv6":{"shape":"Boolean"},
-        "ConnectionTrackingSpecification":{"shape":"ConnectionTrackingSpecificationRequest"}
+        "ConnectionTrackingSpecification":{"shape":"ConnectionTrackingSpecificationRequest"},
+        "AssociatePublicIpAddress":{"shape":"Boolean"}
       }
     },
     "ModifyPrivateDnsNameOptionsRequest":{
@@ -35139,7 +35276,8 @@
         "description",
         "groupSet",
         "sourceDestCheck",
-        "attachment"
+        "attachment",
+        "associatePublicIpAddress"
       ]
     },
     "NetworkInterfaceCount":{
@@ -36095,6 +36233,13 @@
       "members":{
         "Value":{"shape":"String"}
       }
+    },
+    "PhcSupport":{
+      "type":"string",
+      "enum":[
+        "unsupported",
+        "supported"
+      ]
     },
     "Placement":{
       "type":"structure",

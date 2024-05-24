@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public ImportAssetsFromLakeFormationTagPolicyResponseDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ImportAssetsFromLakeFormationTagPolicyResponseDetails unmarshalledObject = new ImportAssetsFromLakeFormationTagPolicyResponseDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -49,6 +50,14 @@ namespace Amazon.ResilienceHub.Model
         public IListAppAssessmentComplianceDriftsPaginator ListAppAssessmentComplianceDrifts(ListAppAssessmentComplianceDriftsRequest request) 
         {
             return new ListAppAssessmentComplianceDriftsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAppAssessmentResourceDrifts operation
+        ///</summary>
+        public IListAppAssessmentResourceDriftsPaginator ListAppAssessmentResourceDrifts(ListAppAssessmentResourceDriftsRequest request) 
+        {
+            return new ListAppAssessmentResourceDriftsPaginator(this.client, request);
         }
 
         /// <summary>

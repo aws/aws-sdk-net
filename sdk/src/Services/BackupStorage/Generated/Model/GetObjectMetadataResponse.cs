@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BackupStorage.Model
 {
     /// <summary>
@@ -66,7 +67,7 @@ namespace Amazon.BackupStorage.Model
         // Check to see if MetadataBlobChecksum property is set
         internal bool IsSetMetadataBlobChecksum()
         {
-            return this._metadataBlobChecksum != null;
+            return !string.IsNullOrEmpty(this._metadataBlobChecksum);
         }
 
         /// <summary>
@@ -81,7 +82,7 @@ namespace Amazon.BackupStorage.Model
         // Check to see if MetadataBlobChecksumAlgorithm property is set
         internal bool IsSetMetadataBlobChecksumAlgorithm()
         {
-            return this._metadataBlobChecksumAlgorithm != null;
+            return !string.IsNullOrEmpty(this._metadataBlobChecksumAlgorithm);
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.BackupStorage.Model
         // Check to see if MetadataString property is set
         internal bool IsSetMetadataString()
         {
-            return this._metadataString != null;
+            return !string.IsNullOrEmpty(this._metadataString);
         }
 
         #region Dispose Pattern
@@ -127,6 +128,9 @@ namespace Amazon.BackupStorage.Model
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed)

@@ -46,6 +46,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SuspendedState requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDynamicScalingInSuspended())
             {
                 context.Writer.WritePropertyName("DynamicScalingInSuspended");
@@ -73,4 +75,3 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

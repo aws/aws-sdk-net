@@ -46,6 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KafkaStreamingSourceOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddRecordTimestamp())
             {
                 context.Writer.WritePropertyName("AddRecordTimestamp");
@@ -145,7 +147,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartingTimestamp())
             {
                 context.Writer.WritePropertyName("StartingTimestamp");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.StartingTimestamp));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartingTimestamp));
             }
 
             if(requestObject.IsSetSubscribePattern())
@@ -169,4 +171,3 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

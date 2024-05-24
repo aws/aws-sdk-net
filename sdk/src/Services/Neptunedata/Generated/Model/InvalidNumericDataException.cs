@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptunedata.Model
 {
     /// <summary>
@@ -38,7 +39,6 @@ namespace Amazon.Neptunedata.Model
     {
         private string _code;
         private string _detailedMessage;
-        private string _requestId;
 
         /// <summary>
         /// Constructs a new InvalidNumericDataException with the specified error
@@ -165,25 +165,6 @@ namespace Amazon.Neptunedata.Model
         internal bool IsSetDetailedMessage()
         {
             return this._detailedMessage != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RequestId. 
-        /// <para>
-        /// The ID of the request in question.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string RequestId
-        {
-            get { return this._requestId; }
-            set { this._requestId = value; }
-        }
-
-        // Check to see if RequestId property is set
-        internal bool IsSetRequestId()
-        {
-            return this._requestId != null;
         }
 
     }

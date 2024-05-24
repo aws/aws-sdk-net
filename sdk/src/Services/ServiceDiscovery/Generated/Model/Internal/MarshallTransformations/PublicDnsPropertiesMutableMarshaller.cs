@@ -46,6 +46,8 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PublicDnsPropertiesMutable requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSOA())
             {
                 context.Writer.WritePropertyName("SOA");
@@ -66,4 +68,3 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

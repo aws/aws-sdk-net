@@ -46,6 +46,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ArchiveRetainRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRetentionArchiveTier())
             {
                 context.Writer.WritePropertyName("RetentionArchiveTier");
@@ -66,4 +68,3 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CodeRepository requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCodeConfiguration())
             {
                 context.Writer.WritePropertyName("CodeConfiguration");
@@ -89,4 +91,3 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

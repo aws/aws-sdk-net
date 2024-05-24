@@ -26,14 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLocationObjectStorage operation.
-    /// Updates some parameters of an existing object storage location that DataSync accesses
-    /// for a transfer. For information about creating a self-managed object storage location,
-    /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
-    /// a location for object storage</a>.
+    /// Updates some parameters of an existing DataSync location for an object storage system.
     /// </summary>
     public partial class UpdateLocationObjectStorageRequest : AmazonDataSyncRequest
     {
@@ -128,10 +126,37 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ServerCertificate. 
         /// <para>
-        /// Specifies a certificate to authenticate with an object storage system that uses a
-        /// private or self-signed certificate authority (CA). You must specify a Base64-encoded
-        /// <c>.pem</c> file (for example, <c>file:///home/user/.ssh/storage_sys_certificate.pem</c>).
-        /// The certificate can be up to 32768 bytes (before Base64 encoding).
+        /// Specifies a certificate chain for DataSync to authenticate with your object storage
+        /// system if the system uses a private or self-signed certificate authority (CA). You
+        /// must specify a single <c>.pem</c> file with a full certificate chain (for example,
+        /// <c>file:///home/user/.ssh/object_storage_certificates.pem</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// The certificate chain might include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The object storage system's certificate
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// All intermediate certificates (if there are any)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The root certificate of the signing CA
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can concatenate your certificates into a <c>.pem</c> file (which can be up to
+        /// 32768 bytes before base64 encoding). The following example <c>cat</c> command creates
+        /// an <c>object_storage_certificates.pem</c> file that includes three certificates:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>cat object_server_certificate.pem intermediate_certificate.pem ca_root_certificate.pem
+        /// &gt; object_storage_certificates.pem</c> 
         /// </para>
         ///  
         /// <para>
@@ -139,7 +164,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// Updating the certificate doesn't interfere with tasks that you have in progress.
+        /// Updating this parameter doesn't interfere with tasks that you have in progress.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32768)]

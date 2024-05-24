@@ -46,6 +46,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NetworkFabricConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEdition())
             {
                 context.Writer.WritePropertyName("Edition");
@@ -61,4 +63,3 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

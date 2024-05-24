@@ -46,6 +46,8 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeviceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDevice())
             {
                 context.Writer.WritePropertyName("device");
@@ -61,4 +63,3 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
@@ -51,7 +52,8 @@ namespace Amazon.BedrockAgent.Model
         /// Gets and sets the property ActionGroupExecutor. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Lambda function containing the business logic
-        /// that is carried out upon invoking the action.
+        /// that is carried out upon invoking the action or the custom control method for handling
+        /// the information elicited from the user.
         /// </para>
         /// </summary>
         public ActionGroupExecutor ActionGroupExecutor

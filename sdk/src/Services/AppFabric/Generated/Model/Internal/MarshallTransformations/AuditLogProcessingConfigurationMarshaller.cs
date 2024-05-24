@@ -46,6 +46,8 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AuditLogProcessingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("format");
@@ -67,4 +69,3 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

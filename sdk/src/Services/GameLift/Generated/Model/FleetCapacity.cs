@@ -26,21 +26,19 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Current resource capacity settings in a specified fleet or location. The location
-    /// value might refer to a fleet's remote location or its home Region. 
+    /// Current resource capacity settings for managed EC2 fleets and container fleets. For
+    /// multi-location fleets, location values might refer to a fleet's remote location or
+    /// its home Region. 
     /// 
     ///  
     /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
-    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>
-    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a>
+    ///  <b>Returned by:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a>
     /// 
     /// </para>
     /// </summary>
@@ -51,6 +49,7 @@ namespace Amazon.GameLift.Model
         private EC2InstanceCounts _instanceCounts;
         private EC2InstanceType _instanceType;
         private string _location;
+        private ReplicaContainerGroupCounts _replicaContainerGroupCounts;
 
         /// <summary>
         /// Gets and sets the property FleetArn. 
@@ -91,7 +90,12 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceCounts.
+        /// Gets and sets the property InstanceCounts. 
+        /// <para>
+        /// The current number of instances in the fleet, listed by instance status. Counts for
+        /// pending and terminating instances might be non-zero if the fleet is adjusting to a
+        /// scaling event or if access to resources is temporarily affected.
+        /// </para>
         /// </summary>
         public EC2InstanceCounts InstanceCounts
         {
@@ -108,10 +112,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The Amazon EC2 instance type that is used for all instances in a fleet. The instance
-        /// type determines the computing resources in use, including CPU, memory, storage, and
-        /// networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
-        /// Elastic Compute Cloud Instance Types</a> for detailed descriptions.
+        /// The Amazon EC2 instance type that is used for instances in a fleet. Instance type
+        /// determines the computing resources in use, including CPU, memory, storage, and networking
+        /// capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute
+        /// Cloud Instance Types</a> for detailed descriptions.
         /// </para>
         /// </summary>
         public EC2InstanceType InstanceType
@@ -144,6 +148,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaContainerGroupCounts. 
+        /// <para>
+        ///  <b>This property is used with the Amazon GameLift containers feature, which is currently
+        /// in public preview.</b> The number and status of replica container groups in a container
+        /// fleet.
+        /// </para>
+        /// </summary>
+        public ReplicaContainerGroupCounts ReplicaContainerGroupCounts
+        {
+            get { return this._replicaContainerGroupCounts; }
+            set { this._replicaContainerGroupCounts = value; }
+        }
+
+        // Check to see if ReplicaContainerGroupCounts property is set
+        internal bool IsSetReplicaContainerGroupCounts()
+        {
+            return this._replicaContainerGroupCounts != null;
         }
 
     }

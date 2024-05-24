@@ -66,6 +66,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAccountId())
@@ -126,6 +127,22 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NotificationType);
                 }
 
+                if(publicRequest.IsSetResourceTags())
+                {
+                    context.Writer.WritePropertyName("ResourceTags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceTagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestResourceTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetSubscribers())
                 {
                     context.Writer.WritePropertyName("Subscribers");
@@ -170,4 +187,3 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

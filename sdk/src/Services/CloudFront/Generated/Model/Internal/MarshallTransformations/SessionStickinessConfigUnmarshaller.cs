@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SessionStickinessConfig Object
     /// </summary>  
-    public class SessionStickinessConfigUnmarshaller : IUnmarshaller<SessionStickinessConfig, XmlUnmarshallerContext>
+    public class SessionStickinessConfigUnmarshaller : IUnmarshaller<SessionStickinessConfig, XmlUnmarshallerContext>, IUnmarshaller<SessionStickinessConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,6 +76,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public SessionStickinessConfig Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static SessionStickinessConfigUnmarshaller _instance = new SessionStickinessConfigUnmarshaller();        
 
@@ -91,4 +101,3 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

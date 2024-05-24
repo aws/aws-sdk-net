@@ -46,6 +46,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RightsizingRecommendationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBenefitsConsidered())
             {
                 context.Writer.WritePropertyName("BenefitsConsidered");
@@ -67,4 +69,3 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

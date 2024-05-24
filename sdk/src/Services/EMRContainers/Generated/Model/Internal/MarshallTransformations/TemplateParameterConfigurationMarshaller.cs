@@ -46,6 +46,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TemplateParameterConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDefaultValue())
             {
                 context.Writer.WritePropertyName("defaultValue");
@@ -67,4 +69,3 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

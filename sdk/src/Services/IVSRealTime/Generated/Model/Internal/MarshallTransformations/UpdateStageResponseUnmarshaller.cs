@@ -85,6 +85,10 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("PendingVerification"))
                 {
                     return PendingVerificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -125,4 +129,3 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

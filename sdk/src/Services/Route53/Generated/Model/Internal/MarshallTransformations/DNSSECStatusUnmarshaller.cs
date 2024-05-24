@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DNSSECStatus Object
     /// </summary>  
-    public class DNSSECStatusUnmarshaller : IUnmarshaller<DNSSECStatus, XmlUnmarshallerContext>
+    public class DNSSECStatusUnmarshaller : IUnmarshaller<DNSSECStatus, XmlUnmarshallerContext>, IUnmarshaller<DNSSECStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,6 +76,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public DNSSECStatus Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static DNSSECStatusUnmarshaller _instance = new DNSSECStatusUnmarshaller();        
 
@@ -91,4 +101,3 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

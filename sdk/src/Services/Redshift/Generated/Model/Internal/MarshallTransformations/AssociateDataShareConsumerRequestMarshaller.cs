@@ -63,27 +63,22 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllowWrites", StringUtils.FromBool(publicRequest.AllowWrites));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAssociateEntireAccount())
                 {
                     request.Parameters.Add("AssociateEntireAccount", StringUtils.FromBool(publicRequest.AssociateEntireAccount));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetConsumerArn())
                 {
                     request.Parameters.Add("ConsumerArn", StringUtils.FromString(publicRequest.ConsumerArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetConsumerRegion())
                 {
                     request.Parameters.Add("ConsumerRegion", StringUtils.FromString(publicRequest.ConsumerRegion));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDataShareArn())
                 {
                     request.Parameters.Add("DataShareArn", StringUtils.FromString(publicRequest.DataShareArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

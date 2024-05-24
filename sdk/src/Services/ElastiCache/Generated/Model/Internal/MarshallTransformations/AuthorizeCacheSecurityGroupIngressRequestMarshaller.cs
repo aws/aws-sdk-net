@@ -63,17 +63,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CacheSecurityGroupName", StringUtils.FromString(publicRequest.CacheSecurityGroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEC2SecurityGroupName())
                 {
                     request.Parameters.Add("EC2SecurityGroupName", StringUtils.FromString(publicRequest.EC2SecurityGroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEC2SecurityGroupOwnerId())
                 {
                     request.Parameters.Add("EC2SecurityGroupOwnerId", StringUtils.FromString(publicRequest.EC2SecurityGroupOwnerId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

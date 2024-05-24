@@ -63,7 +63,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConfigurationSetName", StringUtils.FromString(publicRequest.ConfigurationSetName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEventDestination())
                 {
                     if(publicRequest.EventDestination.IsSetCloudWatchDestination())
@@ -77,42 +76,33 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("EventDestination" + "." + "CloudWatchDestination" + "." + "DimensionConfigurations" + "." + "member" + "." + publicRequestEventDestinationCloudWatchDestinationlistValueIndex + "." + "DefaultDimensionValue", StringUtils.FromString(publicRequestEventDestinationCloudWatchDestinationlistValue.DefaultDimensionValue));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestEventDestinationCloudWatchDestinationlistValue.IsSetDimensionName())
                                 {
                                     request.Parameters.Add("EventDestination" + "." + "CloudWatchDestination" + "." + "DimensionConfigurations" + "." + "member" + "." + publicRequestEventDestinationCloudWatchDestinationlistValueIndex + "." + "DimensionName", StringUtils.FromString(publicRequestEventDestinationCloudWatchDestinationlistValue.DimensionName));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestEventDestinationCloudWatchDestinationlistValue.IsSetDimensionValueSource())
                                 {
                                     request.Parameters.Add("EventDestination" + "." + "CloudWatchDestination" + "." + "DimensionConfigurations" + "." + "member" + "." + publicRequestEventDestinationCloudWatchDestinationlistValueIndex + "." + "DimensionValueSource", StringUtils.FromString(publicRequestEventDestinationCloudWatchDestinationlistValue.DimensionValueSource));
                                 }
-#pragma warning restore CS0612,CS0618
                                 publicRequestEventDestinationCloudWatchDestinationlistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.EventDestination.IsSetEnabled())
                     {
                         request.Parameters.Add("EventDestination" + "." + "Enabled", StringUtils.FromBool(publicRequest.EventDestination.Enabled));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.EventDestination.IsSetKinesisFirehoseDestination())
                     {
                         if(publicRequest.EventDestination.KinesisFirehoseDestination.IsSetDeliveryStreamARN())
                         {
                             request.Parameters.Add("EventDestination" + "." + "KinesisFirehoseDestination" + "." + "DeliveryStreamARN", StringUtils.FromString(publicRequest.EventDestination.KinesisFirehoseDestination.DeliveryStreamARN));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.EventDestination.KinesisFirehoseDestination.IsSetIAMRoleARN())
                         {
                             request.Parameters.Add("EventDestination" + "." + "KinesisFirehoseDestination" + "." + "IAMRoleARN", StringUtils.FromString(publicRequest.EventDestination.KinesisFirehoseDestination.IAMRoleARN));
                         }
-#pragma warning restore CS0612,CS0618
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.EventDestination.IsSetMatchingEventTypes())
                     {
                         int publicRequestEventDestinationlistValueIndex = 1;
@@ -122,23 +112,18 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                             publicRequestEventDestinationlistValueIndex++;
                         }
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.EventDestination.IsSetName())
                     {
                         request.Parameters.Add("EventDestination" + "." + "Name", StringUtils.FromString(publicRequest.EventDestination.Name));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.EventDestination.IsSetSNSDestination())
                     {
                         if(publicRequest.EventDestination.SNSDestination.IsSetTopicARN())
                         {
                             request.Parameters.Add("EventDestination" + "." + "SNSDestination" + "." + "TopicARN", StringUtils.FromString(publicRequest.EventDestination.SNSDestination.TopicARN));
                         }
-#pragma warning restore CS0612,CS0618
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

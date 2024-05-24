@@ -57,6 +57,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         public DomainDeliverabilityTrackingOption Unmarshall(JsonUnmarshallerContext context)
         {
             DomainDeliverabilityTrackingOption unmarshalledObject = new DomainDeliverabilityTrackingOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -33,6 +34,9 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class RemediationAction
     {
+        private CreateNetworkAclAction _createNetworkAclAction;
+        private CreateNetworkAclEntriesAction _createNetworkAclEntriesAction;
+        private DeleteNetworkAclEntriesAction _deleteNetworkAclEntriesAction;
         private string _description;
         private EC2AssociateRouteTableAction _ec2AssociateRouteTableAction;
         private EC2CopyRouteTableAction _ec2CopyRouteTableAction;
@@ -42,6 +46,61 @@ namespace Amazon.FMS.Model
         private EC2ReplaceRouteAction _ec2ReplaceRouteAction;
         private EC2ReplaceRouteTableAssociationAction _ec2ReplaceRouteTableAssociationAction;
         private FMSPolicyUpdateFirewallCreationConfigAction _fmsPolicyUpdateFirewallCreationConfigAction;
+        private ReplaceNetworkAclAssociationAction _replaceNetworkAclAssociationAction;
+
+        /// <summary>
+        /// Gets and sets the property CreateNetworkAclAction. 
+        /// <para>
+        /// Information about the <c>CreateNetworkAcl</c> action in Amazon EC2.
+        /// </para>
+        /// </summary>
+        public CreateNetworkAclAction CreateNetworkAclAction
+        {
+            get { return this._createNetworkAclAction; }
+            set { this._createNetworkAclAction = value; }
+        }
+
+        // Check to see if CreateNetworkAclAction property is set
+        internal bool IsSetCreateNetworkAclAction()
+        {
+            return this._createNetworkAclAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateNetworkAclEntriesAction. 
+        /// <para>
+        /// Information about the <c>CreateNetworkAclEntries</c> action in Amazon EC2.
+        /// </para>
+        /// </summary>
+        public CreateNetworkAclEntriesAction CreateNetworkAclEntriesAction
+        {
+            get { return this._createNetworkAclEntriesAction; }
+            set { this._createNetworkAclEntriesAction = value; }
+        }
+
+        // Check to see if CreateNetworkAclEntriesAction property is set
+        internal bool IsSetCreateNetworkAclEntriesAction()
+        {
+            return this._createNetworkAclEntriesAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteNetworkAclEntriesAction. 
+        /// <para>
+        /// Information about the <c>DeleteNetworkAclEntries</c> action in Amazon EC2.
+        /// </para>
+        /// </summary>
+        public DeleteNetworkAclEntriesAction DeleteNetworkAclEntriesAction
+        {
+            get { return this._deleteNetworkAclEntriesAction; }
+            set { this._deleteNetworkAclEntriesAction = value; }
+        }
+
+        // Check to see if DeleteNetworkAclEntriesAction property is set
+        internal bool IsSetDeleteNetworkAclEntriesAction()
+        {
+            return this._deleteNetworkAclEntriesAction != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -204,6 +263,24 @@ namespace Amazon.FMS.Model
         internal bool IsSetFMSPolicyUpdateFirewallCreationConfigAction()
         {
             return this._fmsPolicyUpdateFirewallCreationConfigAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplaceNetworkAclAssociationAction. 
+        /// <para>
+        /// Information about the <c>ReplaceNetworkAclAssociation</c> action in Amazon EC2. 
+        /// </para>
+        /// </summary>
+        public ReplaceNetworkAclAssociationAction ReplaceNetworkAclAssociationAction
+        {
+            get { return this._replaceNetworkAclAssociationAction; }
+            set { this._replaceNetworkAclAssociationAction = value; }
+        }
+
+        // Check to see if ReplaceNetworkAclAssociationAction property is set
+        internal bool IsSetReplaceNetworkAclAssociationAction()
+        {
+            return this._replaceNetworkAclAssociationAction != null;
         }
 
     }

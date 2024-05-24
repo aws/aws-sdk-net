@@ -46,6 +46,8 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DICOMUpdates requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRemovableAttributes())
             {
                 context.Writer.WritePropertyName("removableAttributes");
@@ -67,4 +69,3 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

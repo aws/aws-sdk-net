@@ -46,6 +46,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PackageImportJobInputConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPackageVersionInputConfig())
             {
                 context.Writer.WritePropertyName("PackageVersionInputConfig");
@@ -66,4 +68,3 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

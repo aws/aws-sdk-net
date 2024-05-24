@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
-    /// Information about an action that returns a custom HTTP response.
+    /// Describes an action that returns a custom HTTP response.
     /// </summary>
     public partial class FixedResponseAction
     {

@@ -63,17 +63,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Encoding", StringUtils.FromString(publicRequest.Encoding));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSSHPublicKeyId())
                 {
                     request.Parameters.Add("SSHPublicKeyId", StringUtils.FromString(publicRequest.SSHPublicKeyId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserName())
                 {
                     request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

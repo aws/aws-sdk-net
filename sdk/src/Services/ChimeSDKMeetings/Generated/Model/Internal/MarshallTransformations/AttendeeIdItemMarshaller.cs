@@ -46,6 +46,8 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AttendeeIdItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttendeeId())
             {
                 context.Writer.WritePropertyName("AttendeeId");
@@ -61,4 +63,3 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

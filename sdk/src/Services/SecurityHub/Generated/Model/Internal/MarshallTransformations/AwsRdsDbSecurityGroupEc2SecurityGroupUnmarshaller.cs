@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRdsDbSecurityGroupEc2SecurityGroup Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRdsDbSecurityGroupEc2SecurityGroup unmarshalledObject = new AwsRdsDbSecurityGroupEc2SecurityGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

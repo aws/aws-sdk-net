@@ -46,6 +46,8 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PublicDnsNamespaceProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDnsProperties())
             {
                 context.Writer.WritePropertyName("DnsProperties");
@@ -66,4 +68,3 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

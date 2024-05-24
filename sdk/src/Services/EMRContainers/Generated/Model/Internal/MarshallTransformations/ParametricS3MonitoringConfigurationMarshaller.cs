@@ -46,6 +46,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ParametricS3MonitoringConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLogUri())
             {
                 context.Writer.WritePropertyName("logUri");
@@ -61,4 +63,3 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

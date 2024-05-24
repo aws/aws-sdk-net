@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the m2-2021-04-28.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>

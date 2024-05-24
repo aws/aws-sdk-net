@@ -64,13 +64,13 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.AddPathResource("{channelName}", StringUtils.FromString(publicRequest.ChannelName));
             
             if (publicRequest.IsSetEndTimeUtc())
-                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
+                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTimeUtc));
             
             if (publicRequest.IsSetMaxMessages())
                 request.Parameters.Add("maxMessages", StringUtils.FromInt(publicRequest.MaxMessages));
             
             if (publicRequest.IsSetStartTimeUtc())
-                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
+                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeUtc));
             request.ResourcePath = "/channels/{channelName}/sample";
             request.UseQueryString = true;
 
@@ -96,4 +96,3 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

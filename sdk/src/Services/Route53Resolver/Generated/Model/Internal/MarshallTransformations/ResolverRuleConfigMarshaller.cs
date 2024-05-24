@@ -46,6 +46,8 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResolverRuleConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
@@ -83,4 +85,3 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

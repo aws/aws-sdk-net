@@ -63,17 +63,14 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Identity", StringUtils.FromString(publicRequest.Identity));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNotificationType())
                 {
                     request.Parameters.Add("NotificationType", StringUtils.FromString(publicRequest.NotificationType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnsTopic())
                 {
                     request.Parameters.Add("SnsTopic", StringUtils.FromString(publicRequest.SnsTopic));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

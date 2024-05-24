@@ -46,6 +46,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KxCacheStorageConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetSize())
             {
                 context.Writer.WritePropertyName("size");
@@ -67,4 +69,3 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoScalingPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTargetTrackingScalingPolicyConfiguration())
             {
                 context.Writer.WritePropertyName("targetTrackingScalingPolicyConfiguration");
@@ -66,4 +68,3 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

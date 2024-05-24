@@ -63,17 +63,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CurrentVersion", StringUtils.FromLong(publicRequest.CurrentVersion));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrefixListId())
                 {
                     request.Parameters.Add("PrefixListId", StringUtils.FromString(publicRequest.PrefixListId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPreviousVersion())
                 {
                     request.Parameters.Add("PreviousVersion", StringUtils.FromLong(publicRequest.PreviousVersion));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

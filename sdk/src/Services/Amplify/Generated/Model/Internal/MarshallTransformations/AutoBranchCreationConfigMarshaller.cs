@@ -46,6 +46,8 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoBranchCreationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBasicAuthCredentials())
             {
                 context.Writer.WritePropertyName("basicAuthCredentials");
@@ -123,4 +125,3 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

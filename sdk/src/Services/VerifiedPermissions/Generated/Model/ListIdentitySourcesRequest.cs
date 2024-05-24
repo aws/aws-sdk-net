@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.VerifiedPermissions.Model
         ///  
         /// <para>
         /// If you do not specify this parameter, the operation defaults to 10 identity sources
-        /// per response. You can specify a maximum of 200 identity sources per response.
+        /// per response. You can specify a maximum of 50 identity sources per response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

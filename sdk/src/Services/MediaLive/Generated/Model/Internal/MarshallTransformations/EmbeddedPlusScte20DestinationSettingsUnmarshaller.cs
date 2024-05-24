@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public EmbeddedPlusScte20DestinationSettings Unmarshall(JsonUnmarshallerContext context)
         {
             EmbeddedPlusScte20DestinationSettings unmarshalledObject = new EmbeddedPlusScte20DestinationSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -83,4 +85,3 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -63,12 +63,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ForwardingEnabled", StringUtils.FromBool(publicRequest.ForwardingEnabled));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIdentity())
                 {
                     request.Parameters.Add("Identity", StringUtils.FromString(publicRequest.Identity));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CidrRoutingConfig Object
     /// </summary>  
-    public class CidrRoutingConfigUnmarshaller : IUnmarshaller<CidrRoutingConfig, XmlUnmarshallerContext>
+    public class CidrRoutingConfigUnmarshaller : IUnmarshaller<CidrRoutingConfig, XmlUnmarshallerContext>, IUnmarshaller<CidrRoutingConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,6 +76,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public CidrRoutingConfig Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static CidrRoutingConfigUnmarshaller _instance = new CidrRoutingConfigUnmarshaller();        
 
@@ -91,4 +101,3 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

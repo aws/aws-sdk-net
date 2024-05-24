@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Drs.Model
 {
     /// <summary>
@@ -164,7 +165,7 @@ namespace Amazon.Drs.Model
         // Check to see if RetryAfterSeconds property is set
         internal bool IsSetRetryAfterSeconds()
         {
-            return this._retryAfterSeconds != null;
+            return !string.IsNullOrEmpty(this._retryAfterSeconds);
         }
 
         /// <summary>

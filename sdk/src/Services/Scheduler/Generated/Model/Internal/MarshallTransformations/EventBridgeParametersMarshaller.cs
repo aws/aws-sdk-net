@@ -46,6 +46,8 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EventBridgeParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDetailType())
             {
                 context.Writer.WritePropertyName("DetailType");
@@ -67,4 +69,3 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

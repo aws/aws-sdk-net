@@ -46,6 +46,14 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AnswerMachineDetectionConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetAwaitAnswerMachinePrompt())
+            {
+                context.Writer.WritePropertyName("awaitAnswerMachinePrompt");
+                context.Writer.Write(requestObject.AwaitAnswerMachinePrompt);
+            }
+
             if(requestObject.IsSetEnableAnswerMachineDetection())
             {
                 context.Writer.WritePropertyName("enableAnswerMachineDetection");
@@ -61,4 +69,3 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

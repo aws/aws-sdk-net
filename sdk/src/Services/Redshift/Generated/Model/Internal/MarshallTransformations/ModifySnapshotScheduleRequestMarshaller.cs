@@ -64,16 +64,14 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.ScheduleDefinitions)
                     {
-                        request.Parameters.Add("ScheduleDefinitions" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        request.Parameters.Add("ScheduleDefinitions" + "." + "ScheduleDefinition" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetScheduleIdentifier())
                 {
                     request.Parameters.Add("ScheduleIdentifier", StringUtils.FromString(publicRequest.ScheduleIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

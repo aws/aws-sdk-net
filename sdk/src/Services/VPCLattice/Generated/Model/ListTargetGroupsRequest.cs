@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -99,7 +100,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property VpcIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the service.
+        /// The ID or Amazon Resource Name (ARN) of the VPC.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=50)]

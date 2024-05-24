@@ -57,6 +57,8 @@ namespace Amazon.CloudFrontKeyValueStore.Model.Internal.MarshallTransformations
         public ListKeysResponseListItem Unmarshall(JsonUnmarshallerContext context)
         {
             ListKeysResponseListItem unmarshalledObject = new ListKeysResponseListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -95,4 +97,3 @@ namespace Amazon.CloudFrontKeyValueStore.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

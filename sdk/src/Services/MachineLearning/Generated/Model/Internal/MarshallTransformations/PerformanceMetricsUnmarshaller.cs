@@ -57,6 +57,8 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
         public PerformanceMetrics Unmarshall(JsonUnmarshallerContext context)
         {
             PerformanceMetrics unmarshalledObject = new PerformanceMetrics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

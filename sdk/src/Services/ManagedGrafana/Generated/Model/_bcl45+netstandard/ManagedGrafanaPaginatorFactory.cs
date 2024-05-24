@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
@@ -57,6 +58,22 @@ namespace Amazon.ManagedGrafana.Model
         public IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request) 
         {
             return new ListWorkspacesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWorkspaceServiceAccounts operation
+        ///</summary>
+        public IListWorkspaceServiceAccountsPaginator ListWorkspaceServiceAccounts(ListWorkspaceServiceAccountsRequest request) 
+        {
+            return new ListWorkspaceServiceAccountsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWorkspaceServiceAccountTokens operation
+        ///</summary>
+        public IListWorkspaceServiceAccountTokensPaginator ListWorkspaceServiceAccountTokens(ListWorkspaceServiceAccountTokensRequest request) 
+        {
+            return new ListWorkspaceServiceAccountTokensPaginator(this.client, request);
         }
     }
 }

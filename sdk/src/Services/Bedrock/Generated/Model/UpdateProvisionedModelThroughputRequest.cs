@@ -26,12 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProvisionedModelThroughput operation.
-    /// Update a provisioned throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
-    /// throughput</a> in the Bedrock User Guide.
+    /// Updates the name or associated model for a Provisioned Throughput. For more information,
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+    /// Throughput</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class UpdateProvisionedModelThroughputRequest : AmazonBedrockRequest
     {
@@ -42,8 +44,24 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property DesiredModelId. 
         /// <para>
-        /// The ARN of the new model to associate with this provisioned throughput.
+        /// The Amazon Resource Name (ARN) of the new model to associate with this Provisioned
+        /// Throughput. You can't specify this field if this Provisioned Throughput is associated
+        /// with a base model.
         /// </para>
+        ///  
+        /// <para>
+        /// If this Provisioned Throughput is associated with a custom model, you can specify
+        /// one of the following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The base model from which the custom model was customized.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Another custom model that was customized from the same base model as the custom model.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string DesiredModelId
@@ -61,7 +79,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property DesiredProvisionedModelName. 
         /// <para>
-        /// The new name for this provisioned throughput.
+        /// The new name for this Provisioned Throughput.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -80,7 +98,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ProvisionedModelId. 
         /// <para>
-        /// The ARN or name of the provisioned throughput to update.
+        /// The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

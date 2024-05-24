@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -62,6 +63,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Labels. 
         /// <para>
         ///  An array of tags used to identify the detector associated with the finding. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Array Members: Minimum number of 0 items. Maximum number of 10 items.
         /// </para>
         /// </summary>
         public List<string> Labels

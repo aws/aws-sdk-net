@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Detective.Model
 {
     /// <summary>
@@ -36,7 +37,6 @@ namespace Amazon.Detective.Model
     #endif
     public partial class ValidationException : AmazonDetectiveException
     {
-        private ErrorCode _errorCode;
         private string _errorCodeReason;
 
         /// <summary>
@@ -125,24 +125,6 @@ namespace Amazon.Detective.Model
             info.AddValue("ErrorCodeReason", this.ErrorCodeReason);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property ErrorCode. 
-        /// <para>
-        /// The error code associated with the validation failure.
-        /// </para>
-        /// </summary>
-        public ErrorCode ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
-        }
 
         /// <summary>
         /// Gets and sets the property ErrorCodeReason. 

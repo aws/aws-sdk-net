@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AgentInstallerUrl. 
         /// <para>
-        /// The AWS OpsWorks Stacks agent installer's URL.
+        /// The OpsWorks Stacks agent installer's URL.
         /// </para>
         /// </summary>
         public string AgentInstallerUrl

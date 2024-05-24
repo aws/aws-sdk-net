@@ -46,6 +46,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateGlobalSecondaryIndexAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIndexName())
             {
                 context.Writer.WritePropertyName("IndexName");
@@ -66,6 +68,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetOnDemandThroughput())
+            {
+                context.Writer.WritePropertyName("OnDemandThroughput");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OnDemandThroughputMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnDemandThroughput, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetProjection())
@@ -99,4 +112,3 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

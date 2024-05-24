@@ -46,6 +46,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LongRangeType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndValue())
             {
                 context.Writer.WritePropertyName("EndValue");
@@ -67,4 +69,3 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

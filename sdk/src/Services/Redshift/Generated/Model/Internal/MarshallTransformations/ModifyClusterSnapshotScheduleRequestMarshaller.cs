@@ -63,17 +63,14 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDisassociateSchedule())
                 {
                     request.Parameters.Add("DisassociateSchedule", StringUtils.FromBool(publicRequest.DisassociateSchedule));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetScheduleIdentifier())
                 {
                     request.Parameters.Add("ScheduleIdentifier", StringUtils.FromString(publicRequest.ScheduleIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

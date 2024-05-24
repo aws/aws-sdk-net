@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public LandCoverSegmentationConfigInput Unmarshall(JsonUnmarshallerContext context)
         {
             LandCoverSegmentationConfigInput unmarshalledObject = new LandCoverSegmentationConfigInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -83,4 +85,3 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

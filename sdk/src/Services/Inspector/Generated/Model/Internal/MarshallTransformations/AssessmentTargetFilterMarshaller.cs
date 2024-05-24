@@ -46,6 +46,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AssessmentTargetFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAssessmentTargetNamePattern())
             {
                 context.Writer.WritePropertyName("assessmentTargetNamePattern");
@@ -61,4 +63,3 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

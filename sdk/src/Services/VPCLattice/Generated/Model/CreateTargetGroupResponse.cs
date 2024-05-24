@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -62,8 +63,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
-        /// The target group configuration. If <c>type</c> is set to <c>LAMBDA</c>, this parameter
-        /// doesn't apply.
+        /// The target group configuration.
         /// </para>
         /// </summary>
         public TargetGroupConfig Config
@@ -119,9 +119,9 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The operation's status. You can retry the operation if the status is <c>CREATE_FAILED</c>.
-        /// However, if you retry it while the status is <c>CREATE_IN_PROGRESS</c>, there is no
-        /// change in the status. 
+        /// The status. You can retry the operation if the status is <c>CREATE_FAILED</c>. However,
+        /// if you retry it while the status is <c>CREATE_IN_PROGRESS</c>, there is no change
+        /// in the status.
         /// </para>
         /// </summary>
         public TargetGroupStatus Status

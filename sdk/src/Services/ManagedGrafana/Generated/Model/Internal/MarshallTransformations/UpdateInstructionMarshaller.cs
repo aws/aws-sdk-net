@@ -46,6 +46,8 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateInstruction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("action");
@@ -83,4 +85,3 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

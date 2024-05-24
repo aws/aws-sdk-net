@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOperatingSystems operation.
-    /// Describes the operating systems that are supported by AWS OpsWorks Stacks.
+    /// Describes the operating systems that are supported by OpsWorks Stacks.
     /// </summary>
     public partial class DescribeOperatingSystemsRequest : AmazonOpsWorksRequest
     {

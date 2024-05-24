@@ -57,6 +57,8 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
         public InfluxDBv2Parameters Unmarshall(JsonUnmarshallerContext context)
         {
             InfluxDBv2Parameters unmarshalledObject = new InfluxDBv2Parameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -125,4 +127,3 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

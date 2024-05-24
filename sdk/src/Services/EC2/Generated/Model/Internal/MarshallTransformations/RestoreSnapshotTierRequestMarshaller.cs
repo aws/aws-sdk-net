@@ -63,17 +63,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PermanentRestore", StringUtils.FromBool(publicRequest.PermanentRestore));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotId())
                 {
                     request.Parameters.Add("SnapshotId", StringUtils.FromString(publicRequest.SnapshotId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemporaryRestoreDays())
                 {
                     request.Parameters.Add("TemporaryRestoreDays", StringUtils.FromInt(publicRequest.TemporaryRestoreDays));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

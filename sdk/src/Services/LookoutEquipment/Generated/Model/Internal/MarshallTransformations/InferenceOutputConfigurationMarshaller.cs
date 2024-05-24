@@ -46,6 +46,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InferenceOutputConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
@@ -72,4 +74,3 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

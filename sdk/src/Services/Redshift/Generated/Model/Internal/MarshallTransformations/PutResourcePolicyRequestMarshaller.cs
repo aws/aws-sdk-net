@@ -63,12 +63,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Policy", StringUtils.FromString(publicRequest.Policy));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceArn())
                 {
                     request.Parameters.Add("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

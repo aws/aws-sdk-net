@@ -46,6 +46,8 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VisualReferenceInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBaseCanaryRunId())
             {
                 context.Writer.WritePropertyName("BaseCanaryRunId");
@@ -77,4 +79,3 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

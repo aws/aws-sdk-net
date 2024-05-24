@@ -68,17 +68,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxDrainDurationSeconds())
                 {
                     request.Parameters.Add("MaxDrainDurationSeconds", StringUtils.FromInt(publicRequest.MaxDrainDurationSeconds));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNatGatewayId())
                 {
                     request.Parameters.Add("NatGatewayId", StringUtils.FromString(publicRequest.NatGatewayId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

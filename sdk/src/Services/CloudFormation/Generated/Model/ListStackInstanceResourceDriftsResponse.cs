@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -62,7 +63,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Summaries. 
         /// <para>
-        /// A list of <c>StackInstanceResourceDriftSummary</c> structures that contain information
+        /// A list of <c>StackInstanceResourceDriftsSummary</c> structures that contain information
         /// about the specified stack instances.
         /// </para>
         /// </summary>

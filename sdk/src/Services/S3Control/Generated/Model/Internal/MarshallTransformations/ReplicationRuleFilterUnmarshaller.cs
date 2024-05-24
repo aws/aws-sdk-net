@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReplicationRuleFilter Object
     /// </summary>  
-    public class ReplicationRuleFilterUnmarshaller : IUnmarshaller<ReplicationRuleFilter, XmlUnmarshallerContext>
+    public class ReplicationRuleFilterUnmarshaller : IUnmarshaller<ReplicationRuleFilter, XmlUnmarshallerContext>, IUnmarshaller<ReplicationRuleFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,6 +82,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public ReplicationRuleFilter Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static ReplicationRuleFilterUnmarshaller _instance = new ReplicationRuleFilterUnmarshaller();        
 
@@ -97,4 +107,3 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

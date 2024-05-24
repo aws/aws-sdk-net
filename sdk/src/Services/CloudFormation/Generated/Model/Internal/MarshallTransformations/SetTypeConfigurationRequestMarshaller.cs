@@ -63,27 +63,22 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Configuration", StringUtils.FromString(publicRequest.Configuration));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetConfigurationAlias())
                 {
                     request.Parameters.Add("ConfigurationAlias", StringUtils.FromString(publicRequest.ConfigurationAlias));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetType())
                 {
                     request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTypeArn())
                 {
                     request.Parameters.Add("TypeArn", StringUtils.FromString(publicRequest.TypeArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTypeName())
                 {
                     request.Parameters.Add("TypeName", StringUtils.FromString(publicRequest.TypeName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

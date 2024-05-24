@@ -57,6 +57,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         public Endpoint Unmarshall(JsonUnmarshallerContext context)
         {
             Endpoint unmarshalledObject = new Endpoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -191,4 +193,3 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

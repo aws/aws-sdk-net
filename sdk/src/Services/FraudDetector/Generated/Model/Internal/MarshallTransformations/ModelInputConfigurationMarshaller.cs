@@ -46,6 +46,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ModelInputConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCsvInputTemplate())
             {
                 context.Writer.WritePropertyName("csvInputTemplate");
@@ -85,4 +87,3 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

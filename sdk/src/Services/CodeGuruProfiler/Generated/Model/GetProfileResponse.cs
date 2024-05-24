@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if ContentEncoding property is set
         internal bool IsSetContentEncoding()
         {
-            return this._contentEncoding != null;
+            return !string.IsNullOrEmpty(this._contentEncoding);
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>

@@ -46,6 +46,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoRaWANGateway requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBeaconing())
             {
                 context.Writer.WritePropertyName("Beaconing");
@@ -82,7 +84,14 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxEirp())
             {
                 context.Writer.WritePropertyName("MaxEirp");
-                context.Writer.Write(requestObject.MaxEirp);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MaxEirp))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxEirp));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaxEirp);
+                }
             }
 
             if(requestObject.IsSetNetIdFilters())
@@ -122,4 +131,3 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

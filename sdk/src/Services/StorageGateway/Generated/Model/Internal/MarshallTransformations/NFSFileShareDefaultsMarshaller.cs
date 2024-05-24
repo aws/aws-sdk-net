@@ -46,6 +46,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NFSFileShareDefaults requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDirectoryMode())
             {
                 context.Writer.WritePropertyName("DirectoryMode");
@@ -79,4 +81,3 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

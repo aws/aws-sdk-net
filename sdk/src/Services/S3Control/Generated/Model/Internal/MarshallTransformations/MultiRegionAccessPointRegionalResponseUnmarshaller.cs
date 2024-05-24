@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MultiRegionAccessPointRegionalResponse Object
     /// </summary>  
-    public class MultiRegionAccessPointRegionalResponseUnmarshaller : IUnmarshaller<MultiRegionAccessPointRegionalResponse, XmlUnmarshallerContext>
+    public class MultiRegionAccessPointRegionalResponseUnmarshaller : IUnmarshaller<MultiRegionAccessPointRegionalResponse, XmlUnmarshallerContext>, IUnmarshaller<MultiRegionAccessPointRegionalResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,6 +76,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public MultiRegionAccessPointRegionalResponse Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static MultiRegionAccessPointRegionalResponseUnmarshaller _instance = new MultiRegionAccessPointRegionalResponseUnmarshaller();        
 
@@ -91,4 +101,3 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

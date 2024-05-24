@@ -39,6 +39,7 @@ using Amazon.Runtime.EventStreams.Utils;
 }
 #>
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace <#=this.Config.Namespace#>.Model
 {
 <#  
@@ -151,8 +152,16 @@ namespace <#=this.Config.Namespace#>.Model
                 {
                     if (member.IsExcluded)
                         continue;
+
+                    // If the shape is an exception then skip adding RequestId and ErrorCode because those properties comes from the base class.
+                    if (this.Structure is ExceptionShape && (member.PropertyName == "RequestId" || member.PropertyName == "ErrorCode"))
+                        continue;
+
+                    // If the shape is a response then skip adding ContentLength because the property comes from the base class.
+                    if (this.StructureType == StructureType.Response && member.PropertyName == "ContentLength")
+                        continue;
 #>
-        private <#=member.DetermineType()#><#= member.IsNullable ? "?" : "" #> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
+        private <#=member.DetermineType()#><#= member.IsNullable && !member.UseNullable ? "?" : "" #> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
 <#
                 }
 #>
@@ -180,6 +189,14 @@ namespace <#=this.Config.Namespace#>.Model
                 foreach(var member in this.Structure.Members)
                 {
                     if (member.IsExcluded)
+                        continue;
+
+                    // If the shape is an exception then skip adding RequestId and ErrorCode because those properties come from the base class.
+                    if (this.Structure is ExceptionShape && (member.PropertyName == "RequestId" || member.PropertyName == "ErrorCode"))
+                        continue;
+
+                    // If the shape is a response then skip adding ContentLength because the property comes from the base class.
+                    if (this.StructureType == StructureType.Response && member.PropertyName == "ContentLength")
                         continue;
 #>
 <# this.FormatPropertyDocumentation(member); #>
@@ -214,8 +231,11 @@ namespace <#=this.Config.Namespace#>.Model
         [AWSProperty(<#=string.Join(", ", propertyAttributes)#>)]
 <#
                     }
+
+                    // Because some services have model properties named "Equals" which conflicts with .NET's Equals operation. Add the "new" keyword to override the behavior.
+                    // The Retryable is there because the CloudHsmServiceException exception from CloudHSM models Retryable with a different return then what comes from the base class.
 #>
-        <#=member.AccessModifier#> <#=member.DetermineType()#><#=member.UseNullable ? "?" : ""#> <#=member.PropertyName#>
+        <#=member.AccessModifier#> <#=member.PropertyName.Equals("Equals") || (this.Structure is ExceptionShape && member.PropertyName.Equals("Retryable")) ? "new " : ""#><#=member.DetermineType()#> <#=member.PropertyName#>
         {
 <#
                     if(member.IsNullable && !member.UseNullable)
@@ -309,9 +329,18 @@ namespace <#=this.Config.Namespace#>.Model
                     }
                     else
                     {
+                        if(member.Shape.IsString && (member.MarshallLocation == MarshallLocation.Header || member.MarshallLocation == MarshallLocation.Headers))
+                        {
+#>
+            return !string.IsNullOrEmpty(this.<#=member.VariableName#>);
+<#
+                        }
+                        else
+                        {
 #>
             return this.<#=member.VariableName#> != null;
 <#
+                        }
                     }
 #>
         }
@@ -512,6 +541,9 @@ namespace <#=this.Config.Namespace#>.Model
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed)
@@ -545,7 +577,6 @@ namespace <#=this.Config.Namespace#>.Model
 #>
     }
 }
-
 
 <#+
     // Set to true when the service model specifies a shape that should be wrapped in a response. ElastiCache CreateCacheCluster is an example of this.

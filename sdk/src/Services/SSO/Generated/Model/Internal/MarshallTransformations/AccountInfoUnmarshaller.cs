@@ -57,6 +57,8 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
         public AccountInfo Unmarshall(JsonUnmarshallerContext context)
         {
             AccountInfo unmarshalledObject = new AccountInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

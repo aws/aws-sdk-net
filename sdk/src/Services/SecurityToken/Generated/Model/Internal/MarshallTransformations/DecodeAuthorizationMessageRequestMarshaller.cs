@@ -63,7 +63,6 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EncodedMessage", StringUtils.FromString(publicRequest.EncodedMessage));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

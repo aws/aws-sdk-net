@@ -58,6 +58,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.ActionReview = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("authChallengeRequest", targetDepth))
+                {
+                    var unmarshaller = AuthChallengeRequestUnmarshaller.Instance;
+                    response.AuthChallengeRequest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("conversationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -169,4 +175,3 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -68,46 +68,37 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExtendedStatistic())
                 {
                     request.Parameters.Add("ExtendedStatistic", StringUtils.FromString(publicRequest.ExtendedStatistic));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMetricName())
                 {
                     request.Parameters.Add("MetricName", StringUtils.FromString(publicRequest.MetricName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNamespace())
                 {
                     request.Parameters.Add("Namespace", StringUtils.FromString(publicRequest.Namespace));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPeriod())
                 {
                     request.Parameters.Add("Period", StringUtils.FromInt(publicRequest.Period));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStatistic())
                 {
                     request.Parameters.Add("Statistic", StringUtils.FromString(publicRequest.Statistic));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUnit())
                 {
                     request.Parameters.Add("Unit", StringUtils.FromString(publicRequest.Unit));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

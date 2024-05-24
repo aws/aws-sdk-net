@@ -46,6 +46,8 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Tag requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");
@@ -67,4 +69,3 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

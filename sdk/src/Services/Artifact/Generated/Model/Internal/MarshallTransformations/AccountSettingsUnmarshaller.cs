@@ -57,6 +57,8 @@ namespace Amazon.Artifact.Model.Internal.MarshallTransformations
         public AccountSettings Unmarshall(JsonUnmarshallerContext context)
         {
             AccountSettings unmarshalledObject = new AccountSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.Artifact.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

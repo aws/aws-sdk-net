@@ -64,6 +64,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAvailabilityZoneName())
@@ -110,7 +111,14 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetProvisionedThroughputInMibps())
                 {
                     context.Writer.WritePropertyName("ProvisionedThroughputInMibps");
-                    context.Writer.Write(publicRequest.ProvisionedThroughputInMibps);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.ProvisionedThroughputInMibps);
+                    }
                 }
 
                 if(publicRequest.IsSetTags())
@@ -163,4 +171,3 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

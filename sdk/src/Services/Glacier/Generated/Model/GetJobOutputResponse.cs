@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glacier.Model
 {
     /// <summary>
@@ -57,7 +58,7 @@ namespace Amazon.Glacier.Model
         // Check to see if AcceptRanges property is set
         internal bool IsSetAcceptRanges()
         {
-            return this._acceptRanges != null;
+            return !string.IsNullOrEmpty(this._acceptRanges);
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveDescription property is set
         internal bool IsSetArchiveDescription()
         {
-            return this._archiveDescription != null;
+            return !string.IsNullOrEmpty(this._archiveDescription);
         }
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return this._checksum != null;
+            return !string.IsNullOrEmpty(this._checksum);
         }
 
         /// <summary>
@@ -152,7 +153,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ContentRange property is set
         internal bool IsSetContentRange()
         {
-            return this._contentRange != null;
+            return !string.IsNullOrEmpty(this._contentRange);
         }
 
         /// <summary>
@@ -174,7 +175,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>
@@ -209,6 +210,9 @@ namespace Amazon.Glacier.Model
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed)

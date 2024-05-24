@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -699,9 +700,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
-        /// The launch template to use to launch the instances. Any parameters that you specify
-        /// in <a>RunInstances</a> override the same parameters in the launch template. You can
-        /// specify either the name or ID of a launch template, but not both.
+        /// The launch template. Any additional parameters that you specify for the new instance
+        /// overwrite the corresponding parameters included in the launch template.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplate

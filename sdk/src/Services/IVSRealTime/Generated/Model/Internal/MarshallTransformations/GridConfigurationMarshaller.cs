@@ -46,6 +46,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GridConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFeaturedParticipantAttribute())
             {
                 context.Writer.WritePropertyName("featuredParticipantAttribute");
@@ -85,4 +87,3 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

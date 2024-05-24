@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -163,7 +164,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>JA3Fingerprint</c>: Match against the request's JA3 fingerprint. The JA3 fingerprint
+        ///  <c>JA3Fingerprint</c>: Available for use with Amazon CloudFront distributions and
+        /// Application Load Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint
         /// is a 32-character hash derived from the TLS Client Hello of an incoming request. This
         /// fingerprint serves as a unique identifier for the client's TLS configuration. You
         /// can use this choice only with a string match <c>ByteMatchStatement</c> with the <c>PositionalConstraint</c>

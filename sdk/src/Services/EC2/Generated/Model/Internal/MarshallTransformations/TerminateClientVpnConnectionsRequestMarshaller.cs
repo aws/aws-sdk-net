@@ -63,17 +63,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientVpnEndpointId", StringUtils.FromString(publicRequest.ClientVpnEndpointId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetConnectionId())
                 {
                     request.Parameters.Add("ConnectionId", StringUtils.FromString(publicRequest.ConnectionId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUsername())
                 {
                     request.Parameters.Add("Username", StringUtils.FromString(publicRequest.Username));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

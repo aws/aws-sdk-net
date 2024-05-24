@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.Omics.Model
         // Check to see if Range property is set
         internal bool IsSetRange()
         {
-            return this._range != null;
+            return !string.IsNullOrEmpty(this._range);
         }
 
         /// <summary>

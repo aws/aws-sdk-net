@@ -46,6 +46,8 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3DataSpec requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDataLocationS3())
             {
                 context.Writer.WritePropertyName("DataLocationS3");
@@ -79,4 +81,3 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

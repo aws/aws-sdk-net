@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.ManagedGrafana
 {
     /// <summary>
@@ -278,8 +279,10 @@ namespace Amazon.ManagedGrafana
         #region  AssociateLicense
 
         /// <summary>
-        /// Assigns a Grafana Enterprise license to a workspace. Upgrading to Grafana Enterprise
-        /// incurs additional fees. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html">Upgrade
+        /// Assigns a Grafana Enterprise license to a workspace. To upgrade, you must use <c>ENTERPRISE</c>
+        /// for the <c>licenseType</c>, and pass in a valid Grafana Labs token for the <c>grafanaToken</c>.
+        /// Upgrading to Grafana Enterprise incurs additional fees. For more information, see
+        /// <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html">Upgrade
         /// a workspace to Grafana Enterprise</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateLicense service method.</param>
@@ -432,6 +435,13 @@ namespace Amazon.ManagedGrafana
         /// Creates a Grafana API key for the workspace. This key can be used to authenticate
         /// requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a>
         /// for available APIs and example requests.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// In workspaces compatible with Grafana version 9 or above, use workspace service accounts
+        /// instead of API keys. API keys will be removed in a future release.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaceApiKey service method.</param>
         /// 
@@ -499,6 +509,196 @@ namespace Amazon.ManagedGrafana
         public virtual CreateWorkspaceApiKeyResponse EndCreateWorkspaceApiKey(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateWorkspaceApiKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateWorkspaceServiceAccount
+
+        /// <summary>
+        /// Creates a service account for the workspace. A service account can be used to call
+        /// Grafana HTTP APIs, and run automated workloads. After creating the service account
+        /// with the correct <c>GrafanaRole</c> for your use case, use <c>CreateWorkspaceServiceAccountToken</c>
+        /// to create a token that can be used to authenticate and authorize Grafana HTTP API
+        /// calls.
+        /// 
+        ///  
+        /// <para>
+        /// You can only create service accounts for workspaces that are compatible with Grafana
+        /// version 9 and above.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For more information about service accounts, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">Service
+        /// accounts</a> in the <i>Amazon Managed Grafana User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the Grafana HTTP APIs, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">Using
+        /// Grafana HTTP APIs</a> in the <i>Amazon Managed Grafana User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaceServiceAccount service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorkspaceServiceAccount service method, as returned by ManagedGrafana.</returns>
+        /// <exception cref="Amazon.ManagedGrafana.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.InternalServerException">
+        /// Unexpected error while processing the request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccount">REST API Reference for CreateWorkspaceServiceAccount Operation</seealso>
+        public virtual CreateWorkspaceServiceAccountResponse CreateWorkspaceServiceAccount(CreateWorkspaceServiceAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceServiceAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceServiceAccountResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkspaceServiceAccountResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWorkspaceServiceAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaceServiceAccount operation on AmazonManagedGrafanaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWorkspaceServiceAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccount">REST API Reference for CreateWorkspaceServiceAccount Operation</seealso>
+        public virtual IAsyncResult BeginCreateWorkspaceServiceAccount(CreateWorkspaceServiceAccountRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceServiceAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceServiceAccountResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWorkspaceServiceAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWorkspaceServiceAccount.</param>
+        /// 
+        /// <returns>Returns a  CreateWorkspaceServiceAccountResult from ManagedGrafana.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccount">REST API Reference for CreateWorkspaceServiceAccount Operation</seealso>
+        public virtual CreateWorkspaceServiceAccountResponse EndCreateWorkspaceServiceAccount(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateWorkspaceServiceAccountResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateWorkspaceServiceAccountToken
+
+        /// <summary>
+        /// Creates a token that can be used to authenticate and authorize Grafana HTTP API operations
+        /// for the given <a href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">workspace
+        /// service account</a>. The service account acts as a user for the API operations, and
+        /// defines the permissions that are used by the API.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// When you create the service account token, you will receive a key that is used when
+        /// calling Grafana APIs. Do not lose this key, as it will not be retrievable again.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do lose the key, you can delete the token and recreate it to receive a new
+        /// key. This will disable the initial key.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Service accounts are only available for workspaces that are compatible with Grafana
+        /// version 9 and above.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaceServiceAccountToken service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorkspaceServiceAccountToken service method, as returned by ManagedGrafana.</returns>
+        /// <exception cref="Amazon.ManagedGrafana.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.InternalServerException">
+        /// Unexpected error while processing the request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccountToken">REST API Reference for CreateWorkspaceServiceAccountToken Operation</seealso>
+        public virtual CreateWorkspaceServiceAccountTokenResponse CreateWorkspaceServiceAccountToken(CreateWorkspaceServiceAccountTokenRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceServiceAccountTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceServiceAccountTokenResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkspaceServiceAccountTokenResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWorkspaceServiceAccountToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaceServiceAccountToken operation on AmazonManagedGrafanaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWorkspaceServiceAccountToken
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccountToken">REST API Reference for CreateWorkspaceServiceAccountToken Operation</seealso>
+        public virtual IAsyncResult BeginCreateWorkspaceServiceAccountToken(CreateWorkspaceServiceAccountTokenRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceServiceAccountTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceServiceAccountTokenResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWorkspaceServiceAccountToken operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWorkspaceServiceAccountToken.</param>
+        /// 
+        /// <returns>Returns a  CreateWorkspaceServiceAccountTokenResult from ManagedGrafana.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccountToken">REST API Reference for CreateWorkspaceServiceAccountToken Operation</seealso>
+        public virtual CreateWorkspaceServiceAccountTokenResponse EndCreateWorkspaceServiceAccountToken(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateWorkspaceServiceAccountTokenResponse>(asyncResult);
         }
 
         #endregion
@@ -579,6 +779,13 @@ namespace Amazon.ManagedGrafana
 
         /// <summary>
         /// Deletes a Grafana API key for the workspace.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// In workspaces compatible with Grafana version 9 or above, use workspace service accounts
+        /// instead of API keys. API keys will be removed in a future release.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceApiKey service method.</param>
         /// 
@@ -643,6 +850,173 @@ namespace Amazon.ManagedGrafana
         public virtual DeleteWorkspaceApiKeyResponse EndDeleteWorkspaceApiKey(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteWorkspaceApiKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteWorkspaceServiceAccount
+
+        /// <summary>
+        /// Deletes a workspace service account from the workspace.
+        /// 
+        ///  
+        /// <para>
+        /// This will delete any tokens created for the service account, as well. If the tokens
+        /// are currently in use, the will fail to authenticate / authorize after they are deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// Service accounts are only available for workspaces that are compatible with Grafana
+        /// version 9 and above.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceServiceAccount service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkspaceServiceAccount service method, as returned by ManagedGrafana.</returns>
+        /// <exception cref="Amazon.ManagedGrafana.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.InternalServerException">
+        /// Unexpected error while processing the request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccount">REST API Reference for DeleteWorkspaceServiceAccount Operation</seealso>
+        public virtual DeleteWorkspaceServiceAccountResponse DeleteWorkspaceServiceAccount(DeleteWorkspaceServiceAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceServiceAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceServiceAccountResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkspaceServiceAccountResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorkspaceServiceAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceServiceAccount operation on AmazonManagedGrafanaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWorkspaceServiceAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccount">REST API Reference for DeleteWorkspaceServiceAccount Operation</seealso>
+        public virtual IAsyncResult BeginDeleteWorkspaceServiceAccount(DeleteWorkspaceServiceAccountRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceServiceAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceServiceAccountResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWorkspaceServiceAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWorkspaceServiceAccount.</param>
+        /// 
+        /// <returns>Returns a  DeleteWorkspaceServiceAccountResult from ManagedGrafana.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccount">REST API Reference for DeleteWorkspaceServiceAccount Operation</seealso>
+        public virtual DeleteWorkspaceServiceAccountResponse EndDeleteWorkspaceServiceAccount(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWorkspaceServiceAccountResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteWorkspaceServiceAccountToken
+
+        /// <summary>
+        /// Deletes a token for the workspace service account.
+        /// 
+        ///  
+        /// <para>
+        /// This will disable the key associated with the token. If any automation is currently
+        /// using the key, it will no longer be authenticated or authorized to perform actions
+        /// with the Grafana HTTP APIs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Service accounts are only available for workspaces that are compatible with Grafana
+        /// version 9 and above.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceServiceAccountToken service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkspaceServiceAccountToken service method, as returned by ManagedGrafana.</returns>
+        /// <exception cref="Amazon.ManagedGrafana.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.InternalServerException">
+        /// Unexpected error while processing the request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccountToken">REST API Reference for DeleteWorkspaceServiceAccountToken Operation</seealso>
+        public virtual DeleteWorkspaceServiceAccountTokenResponse DeleteWorkspaceServiceAccountToken(DeleteWorkspaceServiceAccountTokenRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceServiceAccountTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceServiceAccountTokenResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkspaceServiceAccountTokenResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorkspaceServiceAccountToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceServiceAccountToken operation on AmazonManagedGrafanaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWorkspaceServiceAccountToken
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccountToken">REST API Reference for DeleteWorkspaceServiceAccountToken Operation</seealso>
+        public virtual IAsyncResult BeginDeleteWorkspaceServiceAccountToken(DeleteWorkspaceServiceAccountTokenRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceServiceAccountTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceServiceAccountTokenResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWorkspaceServiceAccountToken operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWorkspaceServiceAccountToken.</param>
+        /// 
+        /// <returns>Returns a  DeleteWorkspaceServiceAccountTokenResult from ManagedGrafana.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccountToken">REST API Reference for DeleteWorkspaceServiceAccountToken Operation</seealso>
+        public virtual DeleteWorkspaceServiceAccountTokenResponse EndDeleteWorkspaceServiceAccountToken(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWorkspaceServiceAccountTokenResponse>(asyncResult);
         }
 
         #endregion
@@ -727,6 +1101,9 @@ namespace Amazon.ManagedGrafana
         /// <returns>The response from the DescribeWorkspaceAuthentication service method, as returned by ManagedGrafana.</returns>
         /// <exception cref="Amazon.ManagedGrafana.Model.AccessDeniedException">
         /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
         /// </exception>
         /// <exception cref="Amazon.ManagedGrafana.Model.InternalServerException">
         /// Unexpected error while processing the request. Retry the request.
@@ -1195,6 +1572,167 @@ namespace Amazon.ManagedGrafana
         public virtual ListWorkspacesResponse EndListWorkspaces(IAsyncResult asyncResult)
         {
             return EndInvoke<ListWorkspacesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListWorkspaceServiceAccounts
+
+        /// <summary>
+        /// Returns a list of service accounts for a workspace.
+        /// 
+        ///  
+        /// <para>
+        /// Service accounts are only available for workspaces that are compatible with Grafana
+        /// version 9 and above.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspaceServiceAccounts service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkspaceServiceAccounts service method, as returned by ManagedGrafana.</returns>
+        /// <exception cref="Amazon.ManagedGrafana.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.InternalServerException">
+        /// Unexpected error while processing the request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccounts">REST API Reference for ListWorkspaceServiceAccounts Operation</seealso>
+        public virtual ListWorkspaceServiceAccountsResponse ListWorkspaceServiceAccounts(ListWorkspaceServiceAccountsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkspaceServiceAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspaceServiceAccountsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkspaceServiceAccountsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorkspaceServiceAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspaceServiceAccounts operation on AmazonManagedGrafanaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorkspaceServiceAccounts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccounts">REST API Reference for ListWorkspaceServiceAccounts Operation</seealso>
+        public virtual IAsyncResult BeginListWorkspaceServiceAccounts(ListWorkspaceServiceAccountsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkspaceServiceAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspaceServiceAccountsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWorkspaceServiceAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorkspaceServiceAccounts.</param>
+        /// 
+        /// <returns>Returns a  ListWorkspaceServiceAccountsResult from ManagedGrafana.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccounts">REST API Reference for ListWorkspaceServiceAccounts Operation</seealso>
+        public virtual ListWorkspaceServiceAccountsResponse EndListWorkspaceServiceAccounts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListWorkspaceServiceAccountsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListWorkspaceServiceAccountTokens
+
+        /// <summary>
+        /// Returns a list of tokens for a workspace service account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This does not return the key for each token. You cannot access keys after they are
+        /// created. To create a new key, delete the token and recreate it.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Service accounts are only available for workspaces that are compatible with Grafana
+        /// version 9 and above.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspaceServiceAccountTokens service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkspaceServiceAccountTokens service method, as returned by ManagedGrafana.</returns>
+        /// <exception cref="Amazon.ManagedGrafana.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.InternalServerException">
+        /// Unexpected error while processing the request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccountTokens">REST API Reference for ListWorkspaceServiceAccountTokens Operation</seealso>
+        public virtual ListWorkspaceServiceAccountTokensResponse ListWorkspaceServiceAccountTokens(ListWorkspaceServiceAccountTokensRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkspaceServiceAccountTokensRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspaceServiceAccountTokensResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkspaceServiceAccountTokensResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorkspaceServiceAccountTokens operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspaceServiceAccountTokens operation on AmazonManagedGrafanaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorkspaceServiceAccountTokens
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccountTokens">REST API Reference for ListWorkspaceServiceAccountTokens Operation</seealso>
+        public virtual IAsyncResult BeginListWorkspaceServiceAccountTokens(ListWorkspaceServiceAccountTokensRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkspaceServiceAccountTokensRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspaceServiceAccountTokensResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWorkspaceServiceAccountTokens operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorkspaceServiceAccountTokens.</param>
+        /// 
+        /// <returns>Returns a  ListWorkspaceServiceAccountTokensResult from ManagedGrafana.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccountTokens">REST API Reference for ListWorkspaceServiceAccountTokens Operation</seealso>
+        public virtual ListWorkspaceServiceAccountTokensResponse EndListWorkspaceServiceAccountTokens(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListWorkspaceServiceAccountTokensResponse>(asyncResult);
         }
 
         #endregion

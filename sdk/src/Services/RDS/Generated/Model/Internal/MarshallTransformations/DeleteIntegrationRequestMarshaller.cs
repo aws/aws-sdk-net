@@ -63,7 +63,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("IntegrationIdentifier", StringUtils.FromString(publicRequest.IntegrationIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

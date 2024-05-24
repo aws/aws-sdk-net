@@ -63,17 +63,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnvironmentId())
                 {
                     request.Parameters.Add("EnvironmentId", StringUtils.FromString(publicRequest.EnvironmentId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptionSettings())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -83,50 +80,40 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetOptionName())
                         {
                             request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetResourceName())
                         {
                             request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceName", StringUtils.FromString(publicRequestlistValue.ResourceName));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPlatformArn())
                 {
                     request.Parameters.Add("PlatformArn", StringUtils.FromString(publicRequest.PlatformArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSolutionStackName())
                 {
                     request.Parameters.Add("SolutionStackName", StringUtils.FromString(publicRequest.SolutionStackName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceConfiguration())
                 {
                     if(publicRequest.SourceConfiguration.IsSetApplicationName())
                     {
                         request.Parameters.Add("SourceConfiguration" + "." + "ApplicationName", StringUtils.FromString(publicRequest.SourceConfiguration.ApplicationName));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.SourceConfiguration.IsSetTemplateName())
                     {
                         request.Parameters.Add("SourceConfiguration" + "." + "TemplateName", StringUtils.FromString(publicRequest.SourceConfiguration.TemplateName));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -136,21 +123,17 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateName())
                 {
                     request.Parameters.Add("TemplateName", StringUtils.FromString(publicRequest.TemplateName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

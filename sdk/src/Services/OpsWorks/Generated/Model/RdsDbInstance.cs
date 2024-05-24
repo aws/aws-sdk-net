@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -64,7 +65,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DbInstanceIdentifier. 
         /// <para>
-        /// The DB instance identifier.
+        /// The database instance identifier.
         /// </para>
         /// </summary>
         public string DbInstanceIdentifier
@@ -82,7 +83,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DbPassword. 
         /// <para>
-        /// AWS OpsWorks Stacks returns <c>*****FILTERED*****</c> instead of the actual value.
+        /// OpsWorks Stacks returns <c>*****FILTERED*****</c> instead of the actual value.
         /// </para>
         /// </summary>
         public string DbPassword
@@ -136,9 +137,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property MissingOnRds. 
         /// <para>
-        /// Set to <c>true</c> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance.
-        /// AWS OpsWorks Stacks attempts to discover the instance only once. If this value is
-        /// set to <c>true</c>, you must deregister the instance, and then register it again.
+        /// Set to <c>true</c> if OpsWorks Stacks is unable to discover the Amazon RDS instance.
+        /// OpsWorks Stacks attempts to discover the instance only once. If this value is set
+        /// to <c>true</c>, you must deregister the instance, and then register it again.
         /// </para>
         /// </summary>
         public bool MissingOnRds
@@ -174,7 +175,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The instance's AWS region.
+        /// The instance's Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string Region

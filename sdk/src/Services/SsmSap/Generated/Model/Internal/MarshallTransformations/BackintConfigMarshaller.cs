@@ -46,6 +46,8 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BackintConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBackintMode())
             {
                 context.Writer.WritePropertyName("BackintMode");
@@ -67,4 +69,3 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -90,7 +90,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static PutBucketRequestPaymentRequestMarshaller _instance;
 
-	    public static PutBucketRequestPaymentRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static PutBucketRequestPaymentRequestMarshaller Instance
 	    {
 	        get
 	        {

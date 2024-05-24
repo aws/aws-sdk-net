@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Accepts property is set
         internal bool IsSetAccepts()
         {
-            return this._accepts != null;
+            return !string.IsNullOrEmpty(this._accepts);
         }
 
         /// <summary>

@@ -63,22 +63,18 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CaCertificatesBundleS3Bucket", StringUtils.FromString(publicRequest.CaCertificatesBundleS3Bucket));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCaCertificatesBundleS3Key())
                 {
                     request.Parameters.Add("CaCertificatesBundleS3Key", StringUtils.FromString(publicRequest.CaCertificatesBundleS3Key));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCaCertificatesBundleS3ObjectVersion())
                 {
                     request.Parameters.Add("CaCertificatesBundleS3ObjectVersion", StringUtils.FromString(publicRequest.CaCertificatesBundleS3ObjectVersion));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTrustStoreArn())
                 {
                     request.Parameters.Add("TrustStoreArn", StringUtils.FromString(publicRequest.TrustStoreArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

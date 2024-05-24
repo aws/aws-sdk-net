@@ -46,6 +46,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ModelOutputConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCsvIndexToVariableMap())
             {
                 context.Writer.WritePropertyName("csvIndexToVariableMap");
@@ -89,4 +91,3 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

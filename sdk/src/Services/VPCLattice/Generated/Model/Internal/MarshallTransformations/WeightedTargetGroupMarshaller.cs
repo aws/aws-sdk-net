@@ -46,6 +46,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WeightedTargetGroup requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTargetGroupIdentifier())
             {
                 context.Writer.WritePropertyName("targetGroupIdentifier");
@@ -67,4 +69,3 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

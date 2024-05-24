@@ -57,7 +57,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-
+            if (context.IsEmptyResponse)
+            {
+                return;
+            }
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
@@ -153,4 +156,3 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

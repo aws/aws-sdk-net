@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
@@ -33,6 +34,8 @@ namespace Amazon.ControlTower.Model
     /// Returns the details of an asynchronous baseline operation, as initiated by any of
     /// these APIs: <c>EnableBaseline</c>, <c>DisableBaseline</c>, <c>UpdateEnabledBaseline</c>,
     /// <c>ResetEnabledBaseline</c>. A status message is displayed in case of operation failure.
+    /// For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html">
+    /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
     /// </summary>
     public partial class GetBaselineOperationRequest : AmazonControlTowerRequest
     {

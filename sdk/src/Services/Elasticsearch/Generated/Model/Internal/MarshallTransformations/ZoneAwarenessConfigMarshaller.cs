@@ -46,6 +46,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ZoneAwarenessConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailabilityZoneCount())
             {
                 context.Writer.WritePropertyName("AvailabilityZoneCount");
@@ -61,4 +63,3 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

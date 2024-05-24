@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFleetPortSettings operation.
-    /// Updates permissions that allow inbound traffic to connect to game sessions that are
-    /// being hosted on instances in the fleet. 
+    /// Updates permissions that allow inbound traffic to connect to game sessions in the
+    /// fleet. 
     /// 
     ///  
     /// <para>
@@ -39,6 +40,11 @@ namespace Amazon.GameLift.Model
     /// be made. List the permissions you want to add in <c>InboundPermissionAuthorizations</c>,
     /// and permissions you want to remove in <c>InboundPermissionRevocations</c>. Permissions
     /// to be removed must match existing fleet permissions. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For a container fleet, inbound permissions must specify port numbers that are defined
+    /// in the fleet's connection port settings.
     /// </para>
     ///  
     /// <para>

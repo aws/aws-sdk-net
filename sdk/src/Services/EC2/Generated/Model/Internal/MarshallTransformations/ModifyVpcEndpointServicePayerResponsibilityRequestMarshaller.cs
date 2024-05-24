@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PayerResponsibility", StringUtils.FromString(publicRequest.PayerResponsibility));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServiceId())
                 {
                     request.Parameters.Add("ServiceId", StringUtils.FromString(publicRequest.ServiceId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

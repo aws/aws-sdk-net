@@ -57,6 +57,8 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         public VersionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             VersionSummary unmarshalledObject = new VersionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -107,4 +109,3 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -40,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private NotificationConfiguration _notificationConfiguration;
         private List<string> _productListingIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _subDomain;
+        private WorkerAccessConfiguration _workerAccessConfiguration;
         private string _workforceArn;
         private string _workteamArn;
         private string _workteamName;
@@ -178,6 +180,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSubDomain()
         {
             return this._subDomain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkerAccessConfiguration. 
+        /// <para>
+        /// Describes any access constraints that have been defined for Amazon S3 resources.
+        /// </para>
+        /// </summary>
+        public WorkerAccessConfiguration WorkerAccessConfiguration
+        {
+            get { return this._workerAccessConfiguration; }
+            set { this._workerAccessConfiguration = value; }
+        }
+
+        // Check to see if WorkerAccessConfiguration property is set
+        internal bool IsSetWorkerAccessConfiguration()
+        {
+            return this._workerAccessConfiguration != null;
         }
 
         /// <summary>

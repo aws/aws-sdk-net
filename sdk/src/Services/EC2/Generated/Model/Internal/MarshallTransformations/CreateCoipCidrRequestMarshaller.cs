@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Cidr", StringUtils.FromString(publicRequest.Cidr));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCoipPoolId())
                 {
                     request.Parameters.Add("CoipPoolId", StringUtils.FromString(publicRequest.CoipPoolId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

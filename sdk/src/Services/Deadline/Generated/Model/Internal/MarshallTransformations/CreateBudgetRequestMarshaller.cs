@@ -67,6 +67,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetActions())
@@ -88,7 +89,14 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetApproximateDollarLimit())
                 {
                     context.Writer.WritePropertyName("approximateDollarLimit");
-                    context.Writer.Write(publicRequest.ApproximateDollarLimit);
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.ApproximateDollarLimit))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ApproximateDollarLimit));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.ApproximateDollarLimit);
+                    }
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -160,4 +168,3 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

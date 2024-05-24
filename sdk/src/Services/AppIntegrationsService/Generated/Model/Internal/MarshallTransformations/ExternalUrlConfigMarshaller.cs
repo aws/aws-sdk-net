@@ -46,6 +46,8 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExternalUrlConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccessUrl())
             {
                 context.Writer.WritePropertyName("AccessUrl");
@@ -72,4 +74,3 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -46,6 +46,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KMSServerSideEncryptionIntegrationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetKMSKeyId())
             {
                 context.Writer.WritePropertyName("KMSKeyId");
@@ -73,4 +75,3 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

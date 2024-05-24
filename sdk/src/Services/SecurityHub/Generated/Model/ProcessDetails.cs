@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -91,6 +92,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The name of the process.
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1. Maximum of 64.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -126,6 +131,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Path. 
         /// <para>
         /// The path to the process executable.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1. Maximum of 512.
         /// </para>
         /// </summary>
         public string Path

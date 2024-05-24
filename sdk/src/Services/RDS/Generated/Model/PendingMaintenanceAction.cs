@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -43,8 +44,17 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The type of pending maintenance action that is available for the resource. Valid actions
-        /// are <c>system-update</c>, <c>db-upgrade</c>, <c>hardware-maintenance</c>, and <c>ca-certificate-rotation</c>.
+        /// The type of pending maintenance action that is available for the resource. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about maintenance actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining
+        /// a DB instance</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values:<c> system-update | db-upgrade | hardware-maintenance | ca-certificate-rotation</c>
+        /// 
         /// </para>
         /// </summary>
         public string Action

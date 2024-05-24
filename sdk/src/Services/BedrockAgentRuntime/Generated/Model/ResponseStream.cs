@@ -30,6 +30,7 @@ using Amazon.Runtime.EventStreams.Internal;
 using Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.EventStreams.Utils;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
@@ -39,9 +40,9 @@ namespace Amazon.BedrockAgentRuntime.Model
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
     public sealed class ResponseStream : EnumerableEventStream<IEventStreamEvent, BedrockAgentRuntimeEventStreamException>
     {
-        ///summary>
+        /// <summary>
         ///The mapping of event message to a generator function to construct the matching EventStream event
-        ///</summary>
+        /// </summary>
         protected override IDictionary<string,Func<IEventStreamMessage, IEventStreamEvent>> EventMapping {get;} =
         new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
@@ -78,8 +79,19 @@ namespace Amazon.BedrockAgentRuntime.Model
             get { return _isProcessing; }
             set { _isProcessing = value; }
         }
+
+        /// <summary>
+        /// Event that encompasses all events.
+        /// </summary>
         public override event EventHandler<EventStreamEventReceivedArgs<IEventStreamEvent>> EventReceived;
+
+        /// <summary>
+        /// Event that encompasses exceptions.
+        /// </summary>
         public override event EventHandler<EventStreamExceptionReceivedArgs<BedrockAgentRuntimeEventStreamException>> ExceptionReceived;
+        /// <summary>
+        /// Event for the initial response.
+        /// </summary>
         public event EventHandler<EventStreamEventReceivedArgs<InitialResponseEvent>> InitialResponseReceived;
         ///<summary>
         ///Raised when an Chunk event is received
@@ -93,9 +105,20 @@ namespace Amazon.BedrockAgentRuntime.Model
         ///Raised when an Trace event is received
         ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<TracePart>> TraceReceived;
+
+        /// <summary>
+        /// Construct an instance
+        /// </summary>
+        /// <param name="stream"></param>        
         public ResponseStream(Stream stream) : this (stream, null)
         {
         }
+
+        /// <summary>
+        /// Construct an instance
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <param name="eventStreamDecoder"></param>
         public ResponseStream(Stream stream, IEventStreamDecoder eventStreamDecoder) : base(stream, eventStreamDecoder)
         {
             base.EventReceived += (sender,args) => EventReceived?.Invoke(this, args);

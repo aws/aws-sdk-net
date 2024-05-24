@@ -70,7 +70,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             request.AddPathResource("{entityType}", StringUtils.FromString(publicRequest.EntityType));
             
             if (publicRequest.IsSetEndedAt())
-                request.Parameters.Add("endedAt", StringUtils.FromDateTimeToISO8601(publicRequest.EndedAt));
+                request.Parameters.Add("endedAt", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndedAt));
             
             if (publicRequest.IsSetFormName())
                 request.Parameters.Add("formName", StringUtils.FromString(publicRequest.FormName));
@@ -82,7 +82,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
             if (publicRequest.IsSetStartedAt())
-                request.Parameters.Add("startedAt", StringUtils.FromDateTimeToISO8601(publicRequest.StartedAt));
+                request.Parameters.Add("startedAt", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartedAt));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/entities/{entityType}/{entityIdentifier}/time-series-data-points";
             request.UseQueryString = true;
 
@@ -108,4 +108,3 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

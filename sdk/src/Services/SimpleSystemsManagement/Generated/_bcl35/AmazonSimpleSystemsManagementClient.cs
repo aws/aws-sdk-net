@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.SimpleSystemsManagement
 {
     /// <summary>
@@ -1190,7 +1191,7 @@ namespace Amazon.SimpleSystemsManagement
         /// User Guide</i>.
         /// </summary>
         /// <param name="content">The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create an SSM document (console)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create an SSM document (command line)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create an SSM document (API)</a>  </li> </ul></param>
-        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <c>aws</c>  </li> <li>  <c>amazon</c>  </li> <li>  <c>amzn</c>  </li> </ul> </important></param>
+        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <c>aws</c>  </li> <li>  <c>amazon</c>  </li> <li>  <c>amzn</c>  </li> <li>  <c>AWSEC2</c>  </li> <li>  <c>AWSConfigRemediation</c>  </li> <li>  <c>AWSSupport</c>  </li> </ul> </important></param>
         /// 
         /// <returns>The response from the CreateDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentAlreadyExistsException">
@@ -4292,6 +4293,104 @@ namespace Amazon.SimpleSystemsManagement
         public virtual DescribeInstancePatchStatesForPatchGroupResponse EndDescribeInstancePatchStatesForPatchGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstancePatchStatesForPatchGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeInstanceProperties
+
+        /// <summary>
+        /// An API operation used by the Systems Manager console to display information about
+        /// Systems Manager managed nodes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceProperties service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceProperties service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidActivationIdException">
+        /// The activation ID isn't valid. Verify the you entered the correct ActivationId or
+        /// ActivationCode and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified SSM document doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You don't have permission to access the managed node.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM
+        /// Agent is running.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The managed node isn't in a valid state. Valid states are: <c>Running</c>, <c>Pending</c>,
+        /// <c>Stopped</c>, and <c>Stopping</c>. Invalid states are: <c>Shutting-down</c> and
+        /// <c>Terminated</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstancePropertyFilterValueException">
+        /// The specified filter value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceProperties">REST API Reference for DescribeInstanceProperties Operation</seealso>
+        public virtual DescribeInstancePropertiesResponse DescribeInstanceProperties(DescribeInstancePropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstancePropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstancePropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstancePropertiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceProperties operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceProperties
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceProperties">REST API Reference for DescribeInstanceProperties Operation</seealso>
+        public virtual IAsyncResult BeginDescribeInstanceProperties(DescribeInstancePropertiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstancePropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstancePropertiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceProperties.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstancePropertiesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceProperties">REST API Reference for DescribeInstanceProperties Operation</seealso>
+        public virtual DescribeInstancePropertiesResponse EndDescribeInstanceProperties(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInstancePropertiesResponse>(asyncResult);
         }
 
         #endregion

@@ -57,6 +57,8 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         public ParameterDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             ParameterDefinition unmarshalledObject = new ParameterDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -161,4 +163,3 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         }
     }
 }
-#pragma warning restore CS0612,CS0618

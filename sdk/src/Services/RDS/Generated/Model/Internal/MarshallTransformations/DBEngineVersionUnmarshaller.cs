@@ -252,6 +252,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.SupportsIntegrations = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SupportsLimitlessDatabase", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsLimitlessDatabase = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SupportsLocalWriteForwarding", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -333,4 +339,3 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

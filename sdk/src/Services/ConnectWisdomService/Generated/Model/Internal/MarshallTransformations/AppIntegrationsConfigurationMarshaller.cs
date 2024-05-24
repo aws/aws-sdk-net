@@ -46,6 +46,8 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AppIntegrationsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAppIntegrationArn())
             {
                 context.Writer.WritePropertyName("appIntegrationArn");
@@ -72,4 +74,3 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

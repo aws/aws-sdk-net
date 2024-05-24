@@ -46,6 +46,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ElasticsearchClusterConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetColdStorageOptions())
             {
                 context.Writer.WritePropertyName("ColdStorageOptions");
@@ -131,4 +133,3 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

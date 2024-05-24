@@ -46,6 +46,8 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AddressIdentifierFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTransactionEventToAddress())
             {
                 context.Writer.WritePropertyName("transactionEventToAddress");
@@ -66,4 +68,3 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

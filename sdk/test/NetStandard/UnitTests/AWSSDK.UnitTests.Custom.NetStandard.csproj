@@ -13,7 +13,7 @@ This project file should not be used as part of a release pipeline.
         <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants)</DefineConstants>
         <!--Namespace must match UnitTests.NetStandard.csproj to remain interoperable with embedded resources -->
         <RootNamespace>UnitTests.NetStandard</RootNamespace>
-
+		<AssemblyName>AWSSDK.UnitTests.Custom.NetStandard</AssemblyName>
         <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
         <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
         <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -23,10 +23,23 @@ This project file should not be used as part of a release pipeline.
         <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
-        <NoWarn>CS1591</NoWarn>
+        <NoWarn>CS1591,CS0612,CS0618,NU1701</NoWarn>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
+		<SignAssembly>true</SignAssembly>
         <LangVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">8.0</LangVersion>
     </PropertyGroup>
-
+	<Choose>
+		<When Condition=" '$(AWSKeyFile)' == '' ">
+			<PropertyGroup>
+				<AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+			</PropertyGroup>
+		</When>
+		<Otherwise>
+			<PropertyGroup>
+				<AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+			</PropertyGroup>
+		</Otherwise>
+	</Choose>
     <ItemGroup>
         <EmbeddedResource Include="sample.rsa.private.key.txt" />
         <EmbeddedResource Include="endpoint.customization.json" />
@@ -41,15 +54,16 @@ This project file should not be used as part of a release pipeline.
         <ProjectReference Include="..\Common\AWSSDK.CommonTest.NetStandard.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
-        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-        <PackageReference Include="xunit" Version="2.4.2" />
-        <PackageReference Include="Moq" Version="4.18.4" />
-    </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
+		<PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
+		<PackageReference Include="xunit" Version="2.4.2" />
+		<PackageReference Include="Moq" Version="4.18.4" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" >
+		    <PrivateAssets>all</PrivateAssets>
+		    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
 
     <ItemGroup>
         <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />

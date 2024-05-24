@@ -57,6 +57,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         public SageMakerMachineLearningModelResourceData Unmarshall(JsonUnmarshallerContext context)
         {
             SageMakerMachineLearningModelResourceData unmarshalledObject = new SageMakerMachineLearningModelResourceData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -101,4 +103,3 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -405,6 +405,10 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly ComputeType ANYWHERE = new ComputeType("ANYWHERE");
         /// <summary>
+        /// Constant CONTAINER for ComputeType
+        /// </summary>
+        public static readonly ComputeType CONTAINER = new ComputeType("CONTAINER");
+        /// <summary>
         /// Constant EC2 for ComputeType
         /// </summary>
         public static readonly ComputeType EC2 = new ComputeType("EC2");
@@ -438,6 +442,214 @@ namespace Amazon.GameLift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ComputeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerDependencyCondition.
+    /// </summary>
+    public class ContainerDependencyCondition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for ContainerDependencyCondition
+        /// </summary>
+        public static readonly ContainerDependencyCondition COMPLETE = new ContainerDependencyCondition("COMPLETE");
+        /// <summary>
+        /// Constant HEALTHY for ContainerDependencyCondition
+        /// </summary>
+        public static readonly ContainerDependencyCondition HEALTHY = new ContainerDependencyCondition("HEALTHY");
+        /// <summary>
+        /// Constant START for ContainerDependencyCondition
+        /// </summary>
+        public static readonly ContainerDependencyCondition START = new ContainerDependencyCondition("START");
+        /// <summary>
+        /// Constant SUCCESS for ContainerDependencyCondition
+        /// </summary>
+        public static readonly ContainerDependencyCondition SUCCESS = new ContainerDependencyCondition("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerDependencyCondition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerDependencyCondition FindValue(string value)
+        {
+            return FindValue<ContainerDependencyCondition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerDependencyCondition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerGroupDefinitionStatus.
+    /// </summary>
+    public class ContainerGroupDefinitionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COPYING for ContainerGroupDefinitionStatus
+        /// </summary>
+        public static readonly ContainerGroupDefinitionStatus COPYING = new ContainerGroupDefinitionStatus("COPYING");
+        /// <summary>
+        /// Constant FAILED for ContainerGroupDefinitionStatus
+        /// </summary>
+        public static readonly ContainerGroupDefinitionStatus FAILED = new ContainerGroupDefinitionStatus("FAILED");
+        /// <summary>
+        /// Constant READY for ContainerGroupDefinitionStatus
+        /// </summary>
+        public static readonly ContainerGroupDefinitionStatus READY = new ContainerGroupDefinitionStatus("READY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerGroupDefinitionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerGroupDefinitionStatus FindValue(string value)
+        {
+            return FindValue<ContainerGroupDefinitionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerGroupDefinitionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerOperatingSystem.
+    /// </summary>
+    public class ContainerOperatingSystem : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMAZON_LINUX_2023 for ContainerOperatingSystem
+        /// </summary>
+        public static readonly ContainerOperatingSystem AMAZON_LINUX_2023 = new ContainerOperatingSystem("AMAZON_LINUX_2023");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerOperatingSystem(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerOperatingSystem FindValue(string value)
+        {
+            return FindValue<ContainerOperatingSystem>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerOperatingSystem(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerSchedulingStrategy.
+    /// </summary>
+    public class ContainerSchedulingStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAEMON for ContainerSchedulingStrategy
+        /// </summary>
+        public static readonly ContainerSchedulingStrategy DAEMON = new ContainerSchedulingStrategy("DAEMON");
+        /// <summary>
+        /// Constant REPLICA for ContainerSchedulingStrategy
+        /// </summary>
+        public static readonly ContainerSchedulingStrategy REPLICA = new ContainerSchedulingStrategy("REPLICA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerSchedulingStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerSchedulingStrategy FindValue(string value)
+        {
+            return FindValue<ContainerSchedulingStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerSchedulingStrategy(string value)
         {
             return FindValue(value);
         }

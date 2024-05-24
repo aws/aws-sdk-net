@@ -46,6 +46,8 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Destination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAmpConfiguration())
             {
                 context.Writer.WritePropertyName("ampConfiguration");
@@ -66,4 +68,3 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

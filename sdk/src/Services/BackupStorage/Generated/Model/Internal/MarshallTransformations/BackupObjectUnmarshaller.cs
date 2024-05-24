@@ -57,6 +57,8 @@ namespace Amazon.BackupStorage.Model.Internal.MarshallTransformations
         public BackupObject Unmarshall(JsonUnmarshallerContext context)
         {
             BackupObject unmarshalledObject = new BackupObject();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -119,4 +121,3 @@ namespace Amazon.BackupStorage.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.Personalize
 {
     /// <summary>
@@ -755,6 +756,207 @@ namespace Amazon.Personalize
             options.ResponseUnmarshaller = CreateCampaignResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateCampaignResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDataDeletionJob
+
+
+        /// <summary>
+        /// Creates a batch job that deletes all references to specific users from an Amazon Personalize
+        /// dataset group in batches. You specify the users to delete in a CSV file of userIds
+        /// in an Amazon S3 bucket. After a job completes, Amazon Personalize no longer trains
+        /// on the users’ data and no longer considers the users when generating user segments.
+        /// For more information about creating a data deletion job, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/delete-records.html">Deleting
+        /// users</a>.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Your input file must be a CSV file with a single USER_ID column that lists the users
+        /// IDs. For more information about preparing the CSV file, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/prepare-deletion-input-file.html">Preparing
+        /// your data deletion file and uploading it to Amazon S3</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To give Amazon Personalize permission to access your input CSV file of userIds, you
+        /// must specify an IAM service role that has permission to read from the data source.
+        /// This role needs <c>GetObject</c> and <c>ListBucket</c> permissions for the bucket
+        /// and its content. These permissions are the same as importing data. For information
+        /// on granting access to your Amazon S3 bucket, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
+        /// Amazon Personalize Access to Amazon S3 Resources</a>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  After you create a job, it can take up to a day to delete all references to the users
+        /// from datasets and models. Until the job completes, Amazon Personalize continues to
+        /// use the data when training. And if you use a User Segmentation recipe, the users might
+        /// appear in user segments. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Status</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A data deletion job can have one of the following statuses:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// PENDING &gt; IN_PROGRESS &gt; COMPLETED -or- FAILED
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To get the status of the data deletion job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataDeletionJob.html">DescribeDataDeletionJob</a>
+        /// API operation and specify the Amazon Resource Name (ARN) of the job. If the status
+        /// is FAILED, the response includes a <c>failureReason</c> key, which describes why the
+        /// job failed.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related APIs</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDataDeletionJobs.html">ListDataDeletionJobs</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataDeletionJob.html">DescribeDataDeletionJob</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataDeletionJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataDeletionJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDataDeletionJob">REST API Reference for CreateDataDeletionJob Operation</seealso>
+        public virtual CreateDataDeletionJobResponse CreateDataDeletionJob(CreateDataDeletionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataDeletionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataDeletionJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataDeletionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a batch job that deletes all references to specific users from an Amazon Personalize
+        /// dataset group in batches. You specify the users to delete in a CSV file of userIds
+        /// in an Amazon S3 bucket. After a job completes, Amazon Personalize no longer trains
+        /// on the users’ data and no longer considers the users when generating user segments.
+        /// For more information about creating a data deletion job, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/delete-records.html">Deleting
+        /// users</a>.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Your input file must be a CSV file with a single USER_ID column that lists the users
+        /// IDs. For more information about preparing the CSV file, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/prepare-deletion-input-file.html">Preparing
+        /// your data deletion file and uploading it to Amazon S3</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To give Amazon Personalize permission to access your input CSV file of userIds, you
+        /// must specify an IAM service role that has permission to read from the data source.
+        /// This role needs <c>GetObject</c> and <c>ListBucket</c> permissions for the bucket
+        /// and its content. These permissions are the same as importing data. For information
+        /// on granting access to your Amazon S3 bucket, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
+        /// Amazon Personalize Access to Amazon S3 Resources</a>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  After you create a job, it can take up to a day to delete all references to the users
+        /// from datasets and models. Until the job completes, Amazon Personalize continues to
+        /// use the data when training. And if you use a User Segmentation recipe, the users might
+        /// appear in user segments. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Status</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A data deletion job can have one of the following statuses:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// PENDING &gt; IN_PROGRESS &gt; COMPLETED -or- FAILED
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To get the status of the data deletion job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataDeletionJob.html">DescribeDataDeletionJob</a>
+        /// API operation and specify the Amazon Resource Name (ARN) of the job. If the status
+        /// is FAILED, the response includes a <c>failureReason</c> key, which describes why the
+        /// job failed.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related APIs</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDataDeletionJobs.html">ListDataDeletionJobs</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataDeletionJob.html">DescribeDataDeletionJob</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataDeletionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataDeletionJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.TooManyTagsException">
+        /// You have exceeded the maximum number of tags you can apply to this resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDataDeletionJob">REST API Reference for CreateDataDeletionJob Operation</seealso>
+        public virtual Task<CreateDataDeletionJobResponse> CreateDataDeletionJobAsync(CreateDataDeletionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataDeletionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataDeletionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDataDeletionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3673,6 +3875,61 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  DescribeDataDeletionJob
+
+
+        /// <summary>
+        /// Describes the data deletion job created by <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataDeletionJob.html">CreateDataDeletionJob</a>,
+        /// including the job status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataDeletionJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDataDeletionJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDataDeletionJob">REST API Reference for DescribeDataDeletionJob Operation</seealso>
+        public virtual DescribeDataDeletionJobResponse DescribeDataDeletionJob(DescribeDataDeletionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDataDeletionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataDeletionJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDataDeletionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the data deletion job created by <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataDeletionJob.html">CreateDataDeletionJob</a>,
+        /// including the job status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataDeletionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDataDeletionJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDataDeletionJob">REST API Reference for DescribeDataDeletionJob Operation</seealso>
+        public virtual Task<DescribeDataDeletionJobResponse> DescribeDataDeletionJobAsync(DescribeDataDeletionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDataDeletionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataDeletionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDataDeletionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDataset
 
 
@@ -4710,6 +4967,69 @@ namespace Amazon.Personalize
             options.ResponseUnmarshaller = ListCampaignsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListCampaignsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataDeletionJobs
+
+
+        /// <summary>
+        /// Returns a list of data deletion jobs for a dataset group ordered by creation time,
+        /// with the most recent first. When a dataset group is not specified, all the data deletion
+        /// jobs associated with the account are listed. The response provides the properties
+        /// for each job, including the Amazon Resource Name (ARN). For more information on data
+        /// deletion jobs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/delete-records.html">Deleting
+        /// users</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataDeletionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListDataDeletionJobs service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDataDeletionJobs">REST API Reference for ListDataDeletionJobs Operation</seealso>
+        public virtual ListDataDeletionJobsResponse ListDataDeletionJobs(ListDataDeletionJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataDeletionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataDeletionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataDeletionJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of data deletion jobs for a dataset group ordered by creation time,
+        /// with the most recent first. When a dataset group is not specified, all the data deletion
+        /// jobs associated with the account are listed. The response provides the properties
+        /// for each job, including the Amazon Resource Name (ARN). For more information on data
+        /// deletion jobs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/delete-records.html">Deleting
+        /// users</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataDeletionJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataDeletionJobs service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDataDeletionJobs">REST API Reference for ListDataDeletionJobs Operation</seealso>
+        public virtual Task<ListDataDeletionJobsResponse> ListDataDeletionJobsAsync(ListDataDeletionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataDeletionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataDeletionJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDataDeletionJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion

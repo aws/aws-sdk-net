@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -55,9 +56,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// To query by parameter label, use <c>"Name": "name:label"</c>. To query by parameter
         /// version, use <c>"Name": "name:version"</c>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// For more information about shared parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+        /// The results for <c>GetParameters</c> requests are listed in alphabetical order in
+        /// query responses.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For information about shared parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
         /// with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>

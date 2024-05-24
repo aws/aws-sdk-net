@@ -2729,6 +2729,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly JobRunState ERROR = new JobRunState("ERROR");
         /// <summary>
+        /// Constant EXPIRED for JobRunState
+        /// </summary>
+        public static readonly JobRunState EXPIRED = new JobRunState("EXPIRED");
+        /// <summary>
         /// Constant FAILED for JobRunState
         /// </summary>
         public static readonly JobRunState FAILED = new JobRunState("FAILED");

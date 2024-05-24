@@ -1,0 +1,132 @@
+{
+  "version": "1.0",
+  "outputDirectory": "../../../sdk/test/ProtocolTests/Generated",
+  "projections": {
+    "RestJsonProtocol": {
+      "transforms": [
+        {
+          "name": "includeServices",
+          "args": {
+            "services": [
+              "aws.protocoltests.restjson#RestJson"
+            ]
+          }
+        }
+      ],
+      "plugins": {
+        "dotnet-protocol-test-codegen": {
+          "service": "aws.protocoltests.restjson#RestJson",
+          "packageVersion": "0.0.1"
+        }
+      }
+    },
+    "JSONRPC10": {
+      "transforms": [
+        {
+          "name": "includeServices",
+          "args": {
+            "services": [
+              "aws.protocoltests.json10#JsonRpc10"
+            ]
+          }
+        }
+      ],
+      "plugins": {
+        "dotnet-protocol-test-codegen": {
+          "service": "aws.protocoltests.json10#JsonRpc10",
+          "packageVersion": "0.0.1"
+        }
+      }
+    },
+    "JsonProtocol": {
+      "transforms": [
+        {
+          "name": "includeServices",
+          "args": {
+            "services": [
+              "aws.protocoltests.json#JsonProtocol"
+            ]
+          }
+        }
+      ],
+      "plugins": {
+        "dotnet-protocol-test-codegen": {
+          "service": "aws.protocoltests.json#JsonProtocol",
+          "packageVersion": "0.0.1"
+        }
+      }
+    },
+    "QueryProtocol": {
+      "transforms": [
+        {
+          "name": "includeServices",
+          "args": {
+            "services": [
+              "aws.protocoltests.query#AwsQuery"
+            ]
+          }
+        }
+      ],
+      "plugins": {
+        "dotnet-protocol-test-codegen": {
+          "service": "aws.protocoltests.query#AwsQuery",
+          "packageVersion": "0.0.1"
+        }
+      }
+    },
+    "EC2Protocol": {
+      "transforms": [
+        {
+          "name": "includeServices",
+          "args": {
+            "services": [
+              "aws.protocoltests.ec2#AwsEc2"
+            ]
+          }
+        }
+      ],
+      "plugins": {
+        "dotnet-protocol-test-codegen": {
+          "service": "aws.protocoltests.ec2#AwsEc2",
+          "packageVersion": "0.0.1"
+        }
+      }
+    },
+    "RestXmlProtocol": {
+      "transforms": [
+        {
+          "name": "includeServices",
+          "args": {
+            "services": [
+              "aws.protocoltests.restxml#RestXml"
+            ]
+          }
+        }
+      ],
+      "plugins": {
+        "dotnet-protocol-test-codegen": {
+          "service": "aws.protocoltests.restxml#RestXml",
+          "packageVersion": "0.0.1"
+        }
+      }
+    },
+    "RestXmlProtocolNamespace": {
+      "transforms": [
+        {
+          "name": "includeServices",
+          "args": {
+            "services": [
+              "aws.protocoltests.restxml.xmlns#RestXmlWithNamespace"
+            ]
+          }
+        }
+      ],
+      "plugins": {
+        "dotnet-protocol-test-codegen": {
+          "service": "aws.protocoltests.restxml.xmlns#RestXmlWithNamespace",
+          "packageVersion": "0.0.1"
+        }
+      }
+    }
+  }
+}

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -44,8 +45,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify either the <c>LaunchTemplateId</c> or the <c>LaunchTemplateName</c>,
-        /// but not both.
+        /// You must specify either the launch template ID or the launch template name, but not
+        /// both.
         /// </para>
         /// </summary>
         public string LaunchTemplateId
@@ -67,8 +68,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify either the <c>LaunchTemplateName</c> or the <c>LaunchTemplateId</c>,
-        /// but not both.
+        /// You must specify either the launch template ID or the launch template name, but not
+        /// both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]

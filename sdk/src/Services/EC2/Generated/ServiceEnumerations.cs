@@ -4625,6 +4625,106 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type EkPubKeyFormat.
+    /// </summary>
+    public class EkPubKeyFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Der for EkPubKeyFormat
+        /// </summary>
+        public static readonly EkPubKeyFormat Der = new EkPubKeyFormat("der");
+        /// <summary>
+        /// Constant Tpmt for EkPubKeyFormat
+        /// </summary>
+        public static readonly EkPubKeyFormat Tpmt = new EkPubKeyFormat("tpmt");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EkPubKeyFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EkPubKeyFormat FindValue(string value)
+        {
+            return FindValue<EkPubKeyFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EkPubKeyFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EkPubKeyType.
+    /// </summary>
+    public class EkPubKeyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EccSecP384 for EkPubKeyType
+        /// </summary>
+        public static readonly EkPubKeyType EccSecP384 = new EkPubKeyType("ecc-sec-p384");
+        /// <summary>
+        /// Constant Rsa2048 for EkPubKeyType
+        /// </summary>
+        public static readonly EkPubKeyType Rsa2048 = new EkPubKeyType("rsa-2048");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EkPubKeyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EkPubKeyType FindValue(string value)
+        {
+            return FindValue<EkPubKeyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EkPubKeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ElasticGpuState.
     /// </summary>
     public class ElasticGpuState : ConstantClass
@@ -6616,6 +6716,10 @@ namespace Amazon.EC2
         /// Constant BootMode for ImageAttributeName
         /// </summary>
         public static readonly ImageAttributeName BootMode = new ImageAttributeName("bootMode");
+        /// <summary>
+        /// Constant DeregistrationProtection for ImageAttributeName
+        /// </summary>
+        public static readonly ImageAttributeName DeregistrationProtection = new ImageAttributeName("deregistrationProtection");
         /// <summary>
         /// Constant Description for ImageAttributeName
         /// </summary>
@@ -14391,6 +14495,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant AssociatePublicIpAddress for NetworkInterfaceAttribute
+        /// </summary>
+        public static readonly NetworkInterfaceAttribute AssociatePublicIpAddress = new NetworkInterfaceAttribute("associatePublicIpAddress");
+        /// <summary>
         /// Constant Attachment for NetworkInterfaceAttribute
         /// </summary>
         public static readonly NetworkInterfaceAttribute Attachment = new NetworkInterfaceAttribute("attachment");
@@ -15306,6 +15414,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PermissionGroup(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PhcSupport.
+    /// </summary>
+    public class PhcSupport : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Supported for PhcSupport
+        /// </summary>
+        public static readonly PhcSupport Supported = new PhcSupport("supported");
+        /// <summary>
+        /// Constant Unsupported for PhcSupport
+        /// </summary>
+        public static readonly PhcSupport Unsupported = new PhcSupport("unsupported");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PhcSupport(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PhcSupport FindValue(string value)
+        {
+            return FindValue<PhcSupport>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PhcSupport(string value)
         {
             return FindValue(value);
         }

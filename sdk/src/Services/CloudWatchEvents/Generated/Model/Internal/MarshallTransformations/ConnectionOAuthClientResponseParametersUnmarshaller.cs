@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         public ConnectionOAuthClientResponseParameters Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectionOAuthClientResponseParameters unmarshalledObject = new ConnectionOAuthClientResponseParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -89,4 +91,3 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

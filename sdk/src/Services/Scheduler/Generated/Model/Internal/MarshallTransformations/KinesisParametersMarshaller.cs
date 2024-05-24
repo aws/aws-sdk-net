@@ -46,6 +46,8 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KinesisParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPartitionKey())
             {
                 context.Writer.WritePropertyName("PartitionKey");
@@ -61,4 +63,3 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

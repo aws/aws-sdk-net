@@ -63,22 +63,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EnableResourceNameDnsAAAARecord", StringUtils.FromBool(publicRequest.EnableResourceNameDnsAAAARecord));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnableResourceNameDnsARecord())
                 {
                     request.Parameters.Add("EnableResourceNameDnsARecord", StringUtils.FromBool(publicRequest.EnableResourceNameDnsARecord));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrivateDnsHostnameType())
                 {
                     request.Parameters.Add("PrivateDnsHostnameType", StringUtils.FromString(publicRequest.PrivateDnsHostnameType));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -46,6 +46,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Address requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAddressId())
             {
                 context.Writer.WritePropertyName("AddressId");
@@ -145,4 +147,3 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

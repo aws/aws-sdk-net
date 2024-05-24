@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -62,8 +63,8 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// In responses, AWS OpsWorks Stacks returns <c>*****FILTERED*****</c> instead of the
-        /// actual value.
+        /// In responses, OpsWorks Stacks returns <c>*****FILTERED*****</c> instead of the actual
+        /// value.
         /// </para>
         /// </summary>
         public string Password
@@ -81,7 +82,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Revision. 
         /// <para>
-        /// The application's version. AWS OpsWorks Stacks enables you to easily deploy new versions
+        /// The application's version. OpsWorks Stacks enables you to easily deploy new versions
         /// of an application. One of the simplest approaches is to have branches or revisions
         /// in your repository that represent different versions that can potentially be deployed.
         /// </para>
@@ -105,8 +106,8 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// In responses, AWS OpsWorks Stacks returns <c>*****FILTERED*****</c> instead of the
-        /// actual value.
+        /// In responses, OpsWorks Stacks returns <c>*****FILTERED*****</c> instead of the actual
+        /// value.
         /// </para>
         /// </summary>
         public string SshKey

@@ -16,7 +16,7 @@
     <property>Amazon.Budgets.Model.CreateBudgetActionRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.CreateBudgetActionRequest.ExecutionRoleArn</property>
@@ -40,7 +40,7 @@
     <property>Amazon.Budgets.Model.CreateBudgetActionResponse.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.CreateNotificationRequest.AccountId</property>
@@ -52,7 +52,7 @@
     <property>Amazon.Budgets.Model.CreateNotificationRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.CreateSubscriberRequest.AccountId</property>
@@ -64,7 +64,7 @@
     <property>Amazon.Budgets.Model.CreateSubscriberRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteBudgetRequest.AccountId</property>
@@ -76,7 +76,7 @@
     <property>Amazon.Budgets.Model.DeleteBudgetRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteBudgetActionRequest.AccountId</property>
@@ -94,7 +94,7 @@
     <property>Amazon.Budgets.Model.DeleteBudgetActionRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteBudgetActionResponse.AccountId</property>
@@ -106,7 +106,7 @@
     <property>Amazon.Budgets.Model.DeleteBudgetActionResponse.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteNotificationRequest.AccountId</property>
@@ -118,7 +118,7 @@
     <property>Amazon.Budgets.Model.DeleteNotificationRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteSubscriberRequest.AccountId</property>
@@ -130,7 +130,7 @@
     <property>Amazon.Budgets.Model.DeleteSubscriberRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetRequest.AccountId</property>
@@ -142,7 +142,7 @@
     <property>Amazon.Budgets.Model.DescribeBudgetRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetActionRequest.AccountId</property>
@@ -160,7 +160,7 @@
     <property>Amazon.Budgets.Model.DescribeBudgetActionRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetActionResponse.AccountId</property>
@@ -172,7 +172,7 @@
     <property>Amazon.Budgets.Model.DescribeBudgetActionResponse.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetActionHistoriesRequest.AccountId</property>
@@ -190,7 +190,7 @@
     <property>Amazon.Budgets.Model.DescribeBudgetActionHistoriesRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetActionHistoriesRequest.MaxResults</property>
@@ -242,7 +242,7 @@
     <property>Amazon.Budgets.Model.DescribeBudgetActionsForBudgetRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetActionsForBudgetRequest.MaxResults</property>
@@ -294,7 +294,7 @@
     <property>Amazon.Budgets.Model.DescribeBudgetPerformanceHistoryRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetPerformanceHistoryRequest.MaxResults</property>
@@ -346,7 +346,7 @@
     <property>Amazon.Budgets.Model.DescribeNotificationsForBudgetRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeNotificationsForBudgetRequest.MaxResults</property>
@@ -375,7 +375,7 @@
     <property>Amazon.Budgets.Model.DescribeSubscribersForNotificationRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeSubscribersForNotificationRequest.MaxResults</property>
@@ -410,7 +410,7 @@
     <property>Amazon.Budgets.Model.ExecuteBudgetActionRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.ExecuteBudgetActionResponse.AccountId</property>
@@ -428,7 +428,22 @@
     <property>Amazon.Budgets.Model.ExecuteBudgetActionResponse.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.UntagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.UpdateBudgetRequest.AccountId</property>
@@ -452,7 +467,7 @@
     <property>Amazon.Budgets.Model.UpdateBudgetActionRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.UpdateBudgetActionRequest.ExecutionRoleArn</property>
@@ -470,7 +485,7 @@
     <property>Amazon.Budgets.Model.UpdateBudgetActionResponse.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.UpdateNotificationRequest.AccountId</property>
@@ -482,7 +497,7 @@
     <property>Amazon.Budgets.Model.UpdateNotificationRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.UpdateSubscriberRequest.AccountId</property>
@@ -494,7 +509,7 @@
     <property>Amazon.Budgets.Model.UpdateSubscriberRequest.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Action.ActionId</property>
@@ -506,7 +521,7 @@
     <property>Amazon.Budgets.Model.Action.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Action.ExecutionRoleArn</property>
@@ -529,19 +544,19 @@
     <property>Amazon.Budgets.Model.Budget.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.BudgetNotificationsForAccount.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.BudgetPerformanceHistory.BudgetName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(?![^:\\]*/action/)[^:\\]+$</pattern>
+    <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.HistoricalOptions.BudgetAdjustmentPeriod</property>
@@ -563,6 +578,16 @@
     <property>Amazon.Budgets.Model.Notification.Threshold</property>
     <min>0</min>
     <max>15000000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.ResourceTag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.ResourceTag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.ScpActionDefinition.PolicyId</property>

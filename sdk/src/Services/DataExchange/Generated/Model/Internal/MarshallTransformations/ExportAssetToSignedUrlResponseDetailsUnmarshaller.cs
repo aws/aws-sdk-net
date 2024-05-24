@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public ExportAssetToSignedUrlResponseDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ExportAssetToSignedUrlResponseDetails unmarshalledObject = new ExportAssetToSignedUrlResponseDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -113,4 +115,3 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

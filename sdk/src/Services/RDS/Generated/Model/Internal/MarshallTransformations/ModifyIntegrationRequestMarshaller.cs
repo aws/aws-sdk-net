@@ -63,22 +63,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DataFilter", StringUtils.FromString(publicRequest.DataFilter));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIntegrationIdentifier())
                 {
                     request.Parameters.Add("IntegrationIdentifier", StringUtils.FromString(publicRequest.IntegrationIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIntegrationName())
                 {
                     request.Parameters.Add("IntegrationName", StringUtils.FromString(publicRequest.IntegrationName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

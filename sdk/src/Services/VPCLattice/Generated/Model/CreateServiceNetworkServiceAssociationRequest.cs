@@ -26,11 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateServiceNetworkServiceAssociation operation.
-    /// Associates a service with a service network.
+    /// Associates a service with a service network. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations">Manage
+    /// service associations</a> in the <i>Amazon VPC Lattice User Guide</i>.
     /// 
     ///  
     /// <para>

@@ -46,6 +46,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EmergencyContact requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContactNotes())
             {
                 context.Writer.WritePropertyName("ContactNotes");
@@ -73,4 +75,3 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

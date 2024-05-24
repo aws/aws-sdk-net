@@ -46,10 +46,19 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SystemResourceLimits requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCpus())
             {
                 context.Writer.WritePropertyName("cpus");
-                context.Writer.Write(requestObject.Cpus);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Cpus))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Cpus));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Cpus);
+                }
             }
 
             if(requestObject.IsSetMemory())
@@ -67,4 +76,3 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

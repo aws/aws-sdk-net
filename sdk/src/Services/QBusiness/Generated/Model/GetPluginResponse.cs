@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -35,7 +36,9 @@ namespace Amazon.QBusiness.Model
     {
         private string _applicationId;
         private PluginAuthConfiguration _authConfiguration;
+        private PluginBuildStatus _buildStatus;
         private DateTime? _createdAt;
+        private CustomPluginConfiguration _customPluginConfiguration;
         private string _displayName;
         private string _pluginArn;
         private string _pluginId;
@@ -79,6 +82,24 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BuildStatus. 
+        /// <para>
+        /// The current status of a plugin. A plugin is modified asynchronously.
+        /// </para>
+        /// </summary>
+        public PluginBuildStatus BuildStatus
+        {
+            get { return this._buildStatus; }
+            set { this._buildStatus = value; }
+        }
+
+        // Check to see if BuildStatus property is set
+        internal bool IsSetBuildStatus()
+        {
+            return this._buildStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The timestamp for when the plugin was created.
@@ -94,6 +115,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomPluginConfiguration. 
+        /// <para>
+        /// Configuration information required to create a custom plugin.
+        /// </para>
+        /// </summary>
+        public CustomPluginConfiguration CustomPluginConfiguration
+        {
+            get { return this._customPluginConfiguration; }
+            set { this._customPluginConfiguration = value; }
+        }
+
+        // Check to see if CustomPluginConfiguration property is set
+        internal bool IsSetCustomPluginConfiguration()
+        {
+            return this._customPluginConfiguration != null;
         }
 
         /// <summary>

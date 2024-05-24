@@ -57,6 +57,8 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
         public SyncConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SyncConfiguration unmarshalledObject = new SyncConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -149,4 +151,3 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

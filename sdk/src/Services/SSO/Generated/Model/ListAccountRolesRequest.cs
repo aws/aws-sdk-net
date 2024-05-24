@@ -27,6 +27,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSO.Model
 {
     /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.SSO.Model
         // Check to see if AccessToken property is set
         internal bool IsSetAccessToken()
         {
-            return this._accessToken != null;
+            return !string.IsNullOrEmpty(this._accessToken);
         }
 
         /// <summary>

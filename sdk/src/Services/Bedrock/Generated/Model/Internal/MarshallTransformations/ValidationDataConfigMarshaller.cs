@@ -46,6 +46,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ValidationDataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetValidators())
             {
                 context.Writer.WritePropertyName("validators");
@@ -71,4 +73,3 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

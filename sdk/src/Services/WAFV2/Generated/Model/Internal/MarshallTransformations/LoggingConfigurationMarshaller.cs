@@ -46,6 +46,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoggingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLogDestinationConfigs())
             {
                 context.Writer.WritePropertyName("LogDestinationConfigs");
@@ -66,6 +68,18 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.LoggingFilter, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetLogScope())
+            {
+                context.Writer.WritePropertyName("LogScope");
+                context.Writer.Write(requestObject.LogScope);
+            }
+
+            if(requestObject.IsSetLogType())
+            {
+                context.Writer.WritePropertyName("LogType");
+                context.Writer.Write(requestObject.LogType);
             }
 
             if(requestObject.IsSetManagedByFirewallManager())
@@ -105,4 +119,3 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

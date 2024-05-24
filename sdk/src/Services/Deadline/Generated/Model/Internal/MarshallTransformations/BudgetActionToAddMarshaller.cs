@@ -46,6 +46,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BudgetActionToAdd requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
@@ -55,7 +57,14 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThresholdPercentage())
             {
                 context.Writer.WritePropertyName("thresholdPercentage");
-                context.Writer.Write(requestObject.ThresholdPercentage);
+                if(StringUtils.IsSpecialFloatValue(requestObject.ThresholdPercentage))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ThresholdPercentage));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ThresholdPercentage);
+                }
             }
 
             if(requestObject.IsSetType())
@@ -73,4 +82,3 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

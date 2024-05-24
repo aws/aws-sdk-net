@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OSIS.Model
 {
     /// <summary>
@@ -34,6 +35,10 @@ namespace Amazon.OSIS.Model
     public partial class PipelineBlueprintSummary
     {
         private string _blueprintName;
+        private string _displayDescription;
+        private string _displayName;
+        private string _service;
+        private string _useCase;
 
         /// <summary>
         /// Gets and sets the property BlueprintName. 
@@ -51,6 +56,78 @@ namespace Amazon.OSIS.Model
         internal bool IsSetBlueprintName()
         {
             return this._blueprintName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayDescription. 
+        /// <para>
+        /// A description of the blueprint.
+        /// </para>
+        /// </summary>
+        public string DisplayDescription
+        {
+            get { return this._displayDescription; }
+            set { this._displayDescription = value; }
+        }
+
+        // Check to see if DisplayDescription property is set
+        internal bool IsSetDisplayDescription()
+        {
+            return this._displayDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// The display name of the blueprint.
+        /// </para>
+        /// </summary>
+        public string DisplayName
+        {
+            get { return this._displayName; }
+            set { this._displayName = value; }
+        }
+
+        // Check to see if DisplayName property is set
+        internal bool IsSetDisplayName()
+        {
+            return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Service. 
+        /// <para>
+        /// The name of the service that the blueprint is associated with.
+        /// </para>
+        /// </summary>
+        public string Service
+        {
+            get { return this._service; }
+            set { this._service = value; }
+        }
+
+        // Check to see if Service property is set
+        internal bool IsSetService()
+        {
+            return this._service != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseCase. 
+        /// <para>
+        /// The use case that the blueprint relates to.
+        /// </para>
+        /// </summary>
+        public string UseCase
+        {
+            get { return this._useCase; }
+            set { this._useCase = value; }
+        }
+
+        // Check to see if UseCase property is set
+        internal bool IsSetUseCase()
+        {
+            return this._useCase != null;
         }
 
     }

@@ -46,6 +46,8 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GitHubCodeDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
@@ -97,4 +99,3 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

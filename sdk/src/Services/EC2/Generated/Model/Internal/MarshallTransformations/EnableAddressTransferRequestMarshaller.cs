@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllocationId", StringUtils.FromString(publicRequest.AllocationId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTransferAccountId())
                 {
                     request.Parameters.Add("TransferAccountId", StringUtils.FromString(publicRequest.TransferAccountId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

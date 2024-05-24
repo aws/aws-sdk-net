@@ -46,6 +46,8 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Validator requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContent())
             {
                 context.Writer.WritePropertyName("Content");
@@ -67,4 +69,3 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

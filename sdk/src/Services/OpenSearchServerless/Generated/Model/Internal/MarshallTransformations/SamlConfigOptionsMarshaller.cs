@@ -46,6 +46,8 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SamlConfigOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGroupAttribute())
             {
                 context.Writer.WritePropertyName("groupAttribute");
@@ -79,4 +81,3 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

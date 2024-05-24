@@ -26,11 +26,18 @@ namespace Amazon.S3.Model
 	{
         private readonly string prefix;
 
+        /// <summary>
+        /// Construct an instance of IntelligentTieringPrefixPredicate
+        /// </summary>
+        /// <param name="prefix"></param>
         public IntelligentTieringPrefixPredicate(string prefix)
         {
             this.prefix = prefix;
         }
 
+        /// <summary>
+        /// The prefix for the predicate.
+        /// </summary>
         public string Prefix
         {
             get { return this.prefix; }

@@ -70,7 +70,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static ListMultipartUploadsRequestMarshaller _instance;
 
-	    public static ListMultipartUploadsRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static ListMultipartUploadsRequestMarshaller Instance
 	    {
 	        get
 	        {

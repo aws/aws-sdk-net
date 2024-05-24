@@ -63,12 +63,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NodeCount", StringUtils.FromInt(publicRequest.NodeCount));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReservedNodeOfferingId())
                 {
                     request.Parameters.Add("ReservedNodeOfferingId", StringUtils.FromString(publicRequest.ReservedNodeOfferingId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

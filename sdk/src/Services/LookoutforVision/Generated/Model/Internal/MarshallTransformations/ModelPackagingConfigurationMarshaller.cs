@@ -46,6 +46,8 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ModelPackagingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGreengrass())
             {
                 context.Writer.WritePropertyName("Greengrass");
@@ -66,4 +68,3 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

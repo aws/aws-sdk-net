@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -36,6 +37,7 @@ namespace Amazon.Pinpoint.Model
     {
         private string _body;
         private string _fromAddress;
+        private List<MessageHeader> _headers = AWSConfigs.InitializeCollections ? new List<MessageHeader>() : null;
         private string _htmlBody;
         private string _title;
 
@@ -74,6 +76,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetFromAddress()
         {
             return this._fromAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Headers. 
+        /// <para>
+        /// The list of <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader">MessageHeaders</a>
+        /// for the email. You can have up to 15 MessageHeaders for each email.
+        /// </para>
+        /// </summary>
+        public List<MessageHeader> Headers
+        {
+            get { return this._headers; }
+            set { this._headers = value; }
+        }
+
+        // Check to see if Headers property is set
+        internal bool IsSetHeaders()
+        {
+            return this._headers != null && (this._headers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

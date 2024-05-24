@@ -11,9 +11,9 @@
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
     public sealed class <#=this.Structure.Name#> : EnumerableEventStream<IEventStreamEvent, <#=this.Config.ClassName#>EventStreamException>
     {
-        ///summary>
+        /// <summary>
         ///The mapping of event message to a generator function to construct the matching EventStream event
-        ///</summary>
+        /// </summary>
         protected override IDictionary<string,Func<IEventStreamMessage, IEventStreamEvent>> EventMapping {get;} =
         new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
@@ -86,18 +86,32 @@
             get { return _isProcessing; }
             set { _isProcessing = value; }
         }
+
+        /// <summary>
+        /// Event that encompasses all events.
+        /// </summary>
         public override event EventHandler<EventStreamEventReceivedArgs<IEventStreamEvent>> EventReceived;
+
+        /// <summary>
+        /// Event that encompasses exceptions.
+        /// </summary>
         public override event EventHandler<EventStreamExceptionReceivedArgs<<#=this.Config.ClassName#>EventStreamException>> ExceptionReceived;
 <#
         if(isResponse)
         {
 #>
+        /// <summary>
+        /// Event for the initial response.
+        /// </summary>
         public event EventHandler<EventStreamEventReceivedArgs<InitialResponseEvent>> InitialResponseReceived;
 <#
         }
         else if(isRequest)
         {
 #>
+        /// <summary>
+        /// Event for the initial request.
+        /// </summary>
         public event EventHandler<EventStreamEventReceivedArgs<InitialRequestEvent>> InitialRequestReceived;
 <#
         }
@@ -118,9 +132,20 @@
 <#
         }
 #>
+
+        /// <summary>
+        /// Construct an instance
+        /// </summary>
+        /// <param name="stream"></param>        
         public <#=this.Structure.Name#>(Stream stream) : this (stream, null)
         {
         }
+
+        /// <summary>
+        /// Construct an instance
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <param name="eventStreamDecoder"></param>
         public <#=this.Structure.Name#>(Stream stream, IEventStreamDecoder eventStreamDecoder) : base(stream, eventStreamDecoder)
         {
             base.EventReceived += (sender,args) => EventReceived?.Invoke(this, args);

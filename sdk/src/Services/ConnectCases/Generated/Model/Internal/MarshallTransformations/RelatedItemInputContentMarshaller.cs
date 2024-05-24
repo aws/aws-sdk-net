@@ -46,6 +46,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RelatedItemInputContent requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComment())
             {
                 context.Writer.WritePropertyName("comment");
@@ -68,6 +70,17 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFile())
+            {
+                context.Writer.WritePropertyName("file");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FileContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.File, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
@@ -77,4 +90,3 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

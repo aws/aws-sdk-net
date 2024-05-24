@@ -46,6 +46,8 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VectorSearchConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDimension())
             {
                 context.Writer.WritePropertyName("dimension");
@@ -61,4 +63,3 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618
