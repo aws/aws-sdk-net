@@ -8,15 +8,6 @@ namespace UnitTests.NetStandard.Core
     public class AWSSDKUtilsTests
     {
         [Fact]
-        public void BytesToHexString()
-        {
-            var bytes = Encoding.UTF8.GetBytes("Hello World");
-            var hexString = AWSSDKUtils.BytesToHexString(bytes);
-
-            Assert.Equal("48656C6C6F20576F726C64", hexString);
-        }
-
-        [Fact]
         public void ToHexUppercase()
         {
             var bytes = Encoding.UTF8.GetBytes("Hello World");

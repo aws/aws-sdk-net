@@ -1359,13 +1359,6 @@ namespace Amazon.Util
         }
 
         /// <summary>
-        /// Convert bytes to a hex string
-        /// </summary>
-        /// <param name="value">Bytes to convert.</param>
-        /// <returns>Hexadecimal string representing the byte array.</returns>
-        public static string BytesToHexString(byte[] value) => ToHex(value, false);
-
-        /// <summary>
         /// Convert a hex string to bytes
         /// </summary>
         /// <param name="hex">Hexadecimal string</param>

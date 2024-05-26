@@ -19,6 +19,7 @@ using Amazon.Util;
 using System.Reflection;
 using Moq;
 using Amazon.Util.Internal;
+using System.Text;
 
 namespace AWSSDK.UnitTests
 {
@@ -163,6 +164,19 @@ namespace AWSSDK.UnitTests
             var dateTime = AWSSDKUtils.ConvertFromUnixEpochMilliseconds(1599590914970).ToUniversalTime();
             
             Assert.AreEqual(expectedDateTime, dateTime);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [DataRow("Hello World", true, "48656c6c6f20576f726c64")]
+        [DataRow("Hello World", false, "48656C6C6F20576F726C64")]
+        [DataTestMethod]
+        public void ToHex(string input, bool lowercase, string expectedResult)
+        {
+            var bytes = Encoding.UTF8.GetBytes(input);
+            var hexString = AWSSDKUtils.ToHex(bytes, lowercase);
+
+            Assert.AreEqual(expectedResult, hexString);
         }
     }
 }
