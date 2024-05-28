@@ -442,6 +442,12 @@ namespace Amazon.DynamoDBv2.Model
         /// full list of all considerations that apply for resource-based policies, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
         /// policy considerations</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You need to specify the <c>CreateTable</c> and <c>PutResourcePolicy</c> IAM actions
+        /// for authorizing a user to create a table with a resource-based policy.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string ResourcePolicy
         {
