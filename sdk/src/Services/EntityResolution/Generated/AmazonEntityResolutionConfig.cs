@@ -32,7 +32,7 @@ namespace Amazon.EntityResolution
     public partial class AmazonEntityResolutionConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EntityResolution", "3.7.302.14");
+            InternalSDKUtils.BuildUserAgentString("EntityResolution", "3.7.302.15");
 
         private string _userAgent = UserAgentString;
         ///<summary>

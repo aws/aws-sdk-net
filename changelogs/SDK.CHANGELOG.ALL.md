@@ -1,3 +1,16 @@
+### 3.7.819.0 (2024-05-28 18:16 UTC)
+* DynamoDBv2 (3.7.303.13)
+	* Doc-only update for DynamoDB. Specified the IAM actions needed to authorize a user to create a table with a resource-based policy.
+* EC2 (3.7.328.0)
+	* Providing support to accept BgpAsnExtended attribute
+* Kafka (3.7.304.0)
+	* Adds ControllerNodeInfo in ListNodes response to support Raft mode for MSK
+* SimpleWorkflow (3.7.301.0)
+	* This release adds new APIs for deleting activity type and workflow type resources.
+* Core 3.7.304.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.818.0 (2024-05-24 18:38 UTC)
 * DynamoDBv2 (3.7.303.12)
 	* Documentation only updates for DynamoDB.
