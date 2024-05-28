@@ -30,11 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeprecateActivityType operation.
-    /// Deprecates the specified <i>activity type</i>. After an activity type has been deprecated,
-    /// you cannot create new tasks of that activity type. Tasks of this type that were scheduled
-    /// before the type was deprecated continue to run.
+    /// Container for the parameters to the DeleteActivityType operation.
+    /// Deletes the specified <i>activity type</i>.
     /// 
+    ///  
+    /// <para>
+    /// Note: Prior to deletion, activity types must first be <b>deprecated</b>. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  After an activity type has been deleted, you cannot schedule new activities of that
+    /// type. Activities that started before the type was deleted will continue to run. 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Access Control</b> 
@@ -75,7 +82,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     /// </summary>
-    public partial class DeprecateActivityTypeRequest : AmazonSimpleWorkflowRequest
+    public partial class DeleteActivityTypeRequest : AmazonSimpleWorkflowRequest
     {
         private ActivityType _activityType;
         private string _domain;
@@ -83,7 +90,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ActivityType. 
         /// <para>
-        /// The activity type to deprecate.
+        /// The activity type to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

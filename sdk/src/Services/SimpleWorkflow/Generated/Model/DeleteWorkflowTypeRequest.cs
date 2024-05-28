@@ -30,11 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeprecateActivityType operation.
-    /// Deprecates the specified <i>activity type</i>. After an activity type has been deprecated,
-    /// you cannot create new tasks of that activity type. Tasks of this type that were scheduled
-    /// before the type was deprecated continue to run.
+    /// Container for the parameters to the DeleteWorkflowType operation.
+    /// Deletes the specified <i>workflow type</i>.
     /// 
+    ///  
+    /// <para>
+    /// Note: Prior to deletion, workflow types must first be <b>deprecated</b>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  After a workflow type has been deleted, you cannot create new executions of that
+    /// type. Executions that started before the type was deleted will continue to run. 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Access Control</b> 
@@ -60,11 +67,11 @@ namespace Amazon.SimpleWorkflow.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <c>activityType.name</c>: String constraint. The key is <c>swf:activityType.name</c>.
+    ///  <c>workflowType.name</c>: String constraint. The key is <c>swf:workflowType.name</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>activityType.version</c>: String constraint. The key is <c>swf:activityType.version</c>.
+    ///  <c>workflowType.version</c>: String constraint. The key is <c>swf:workflowType.version</c>.
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
@@ -75,34 +82,15 @@ namespace Amazon.SimpleWorkflow.Model
     /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     /// </summary>
-    public partial class DeprecateActivityTypeRequest : AmazonSimpleWorkflowRequest
+    public partial class DeleteWorkflowTypeRequest : AmazonSimpleWorkflowRequest
     {
-        private ActivityType _activityType;
         private string _domain;
-
-        /// <summary>
-        /// Gets and sets the property ActivityType. 
-        /// <para>
-        /// The activity type to deprecate.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public ActivityType ActivityType
-        {
-            get { return this._activityType; }
-            set { this._activityType = value; }
-        }
-
-        // Check to see if ActivityType property is set
-        internal bool IsSetActivityType()
-        {
-            return this._activityType != null;
-        }
+        private WorkflowType _workflowType;
 
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The name of the domain in which the activity type is registered.
+        /// The name of the domain in which the workflow type is registered.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -116,6 +104,25 @@ namespace Amazon.SimpleWorkflow.Model
         internal bool IsSetDomain()
         {
             return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowType. 
+        /// <para>
+        /// The workflow type to delete.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public WorkflowType WorkflowType
+        {
+            get { return this._workflowType; }
+            set { this._workflowType = value; }
+        }
+
+        // Check to see if WorkflowType property is set
+        internal bool IsSetWorkflowType()
+        {
+            return this._workflowType != null;
         }
 
     }
