@@ -212,5 +212,10 @@ namespace Amazon
         /// </summary>
         public static readonly RegionEndpoint USIsobEast1 = GetEndpoint("us-isob-east-1", "US ISOB East (Ohio)");
 
+        /// <summary>
+        /// The EU ISOE West endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint EUIsoeWest1 = GetEndpoint("eu-isoe-west-1", "EU ISOE West");
+
     }
 }
