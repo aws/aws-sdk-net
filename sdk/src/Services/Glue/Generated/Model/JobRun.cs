@@ -44,6 +44,7 @@ namespace Amazon.Glue.Model
         private int? _executionTime;
         private string _glueVersion;
         private string _id;
+        private JobMode _jobMode;
         private string _jobName;
         private JobRunState _jobRunState;
         private DateTime? _lastModifiedOn;
@@ -317,6 +318,41 @@ namespace Amazon.Glue.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobMode. 
+        /// <para>
+        /// A mode that describes how a job was created. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SCRIPT</c> - The job was created using the Glue Studio script editor.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VISUAL</c> - The job was created using the Glue Studio visual editor.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NOTEBOOK</c> - The job was created using an interactive sessions notebook.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When the <c>JobMode</c> field is missing or null, <c>SCRIPT</c> is assigned as the
+        /// default value.
+        /// </para>
+        /// </summary>
+        public JobMode JobMode
+        {
+            get { return this._jobMode; }
+            set { this._jobMode = value; }
+        }
+
+        // Check to see if JobMode property is set
+        internal bool IsSetJobMode()
+        {
+            return this._jobMode != null;
         }
 
         /// <summary>

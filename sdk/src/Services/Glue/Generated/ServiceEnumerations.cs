@@ -2719,6 +2719,60 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type JobMode.
+    /// </summary>
+    public class JobMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOTEBOOK for JobMode
+        /// </summary>
+        public static readonly JobMode NOTEBOOK = new JobMode("NOTEBOOK");
+        /// <summary>
+        /// Constant SCRIPT for JobMode
+        /// </summary>
+        public static readonly JobMode SCRIPT = new JobMode("SCRIPT");
+        /// <summary>
+        /// Constant VISUAL for JobMode
+        /// </summary>
+        public static readonly JobMode VISUAL = new JobMode("VISUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobMode FindValue(string value)
+        {
+            return FindValue<JobMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobRunState.
     /// </summary>
     public class JobRunState : ConstantClass

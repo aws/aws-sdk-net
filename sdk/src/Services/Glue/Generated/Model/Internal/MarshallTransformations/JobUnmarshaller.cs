@@ -126,6 +126,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.GlueVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JobMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedOn", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

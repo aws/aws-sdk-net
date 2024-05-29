@@ -138,6 +138,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.GlueVersion);
             }
 
+            if(requestObject.IsSetJobMode())
+            {
+                context.Writer.WritePropertyName("JobMode");
+                context.Writer.Write(requestObject.JobMode);
+            }
+
             if(requestObject.IsSetLogUri())
             {
                 context.Writer.WritePropertyName("LogUri");
