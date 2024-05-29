@@ -1,3 +1,20 @@
+### 3.7.820.0 (2024-05-29 18:20 UTC)
+* Athena (3.7.304.0)
+	* Throwing validation errors on CreateNotebook with Name containing `/`,`:`,`\`
+* CodeBuild (3.7.309.0)
+	* AWS CodeBuild now supports manually creating GitHub webhooks
+* Connect (3.7.319.0)
+	* This release includes changes to DescribeContact API's response by including ConnectedToSystemTimestamp, RoutingCriteria, Customer, Campaign, AnsweringMachineDetectionStatus, CustomerVoiceActivity, QualityMetrics, DisconnectDetails, and SegmentAttributes information from a contact in Amazon Connect.
+* Glue (3.7.312.0)
+	* Add optional field JobMode to CreateJob and UpdateJob APIs.
+* S3 (3.7.308.6)
+	* Fixed a bug where a multipart upload was being done in the case where a stream was not seekable but had a known content length. If a stream is unseekable but has a content length, a simple upload will be performed unless the size is greater than config.minPartBeforePartUpload.
+* SecurityHub (3.7.306.0)
+	* Add ROOT type for TargetType model
+* Core 3.7.304.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.819.0 (2024-05-28 18:16 UTC)
 * DynamoDBv2 (3.7.303.13)
 	* Doc-only update for DynamoDB. Specified the IAM actions needed to authorize a user to create a table with a resource-based policy.

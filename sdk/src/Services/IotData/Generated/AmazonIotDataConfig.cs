@@ -32,7 +32,7 @@ namespace Amazon.IotData
     public partial class AmazonIotDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoT Data Plane", "3.7.300.96");
+            InternalSDKUtils.BuildUserAgentString("IoT Data Plane", "3.7.300.97");
 
         private string _userAgent = UserAgentString;
         ///<summary>
