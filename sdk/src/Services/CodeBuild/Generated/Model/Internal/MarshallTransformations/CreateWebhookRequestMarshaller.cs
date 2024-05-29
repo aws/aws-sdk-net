@@ -102,6 +102,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetManualCreation())
+                {
+                    context.Writer.WritePropertyName("manualCreation");
+                    context.Writer.Write(publicRequest.ManualCreation);
+                }
+
                 if(publicRequest.IsSetProjectName())
                 {
                     context.Writer.WritePropertyName("projectName");

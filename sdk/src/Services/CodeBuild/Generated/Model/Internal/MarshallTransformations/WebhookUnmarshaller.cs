@@ -90,6 +90,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedSecret = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("manualCreation", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ManualCreation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("payloadUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

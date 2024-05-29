@@ -249,7 +249,9 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property FleetServiceRole. 
         /// <para>
-        /// The service role associated with the compute fleet.
+        /// The service role associated with the compute fleet. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html">
+        /// Allow a user to add a permission policy for a fleet service role</a> in the <i>CodeBuild
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

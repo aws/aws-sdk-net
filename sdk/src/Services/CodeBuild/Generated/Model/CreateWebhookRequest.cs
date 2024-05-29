@@ -52,6 +52,7 @@ namespace Amazon.CodeBuild.Model
         private string _branchFilter;
         private WebhookBuildType _buildType;
         private List<List<WebhookFilter>> _filterGroups = AWSConfigs.InitializeCollections ? new List<List<WebhookFilter>>() : null;
+        private bool? _manualCreation;
         private string _projectName;
 
         /// <summary>
@@ -121,6 +122,32 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetFilterGroups()
         {
             return this._filterGroups != null && (this._filterGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManualCreation. 
+        /// <para>
+        /// If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead
+        /// returns <c>payloadUrl</c> and <c>secret</c> values for the webhook. The <c>payloadUrl</c>
+        /// and <c>secret</c> values in the output can be used to manually create a webhook within
+        /// GitHub.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// manualCreation is only available for GitHub webhooks.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool ManualCreation
+        {
+            get { return this._manualCreation.GetValueOrDefault(); }
+            set { this._manualCreation = value; }
+        }
+
+        // Check to see if ManualCreation property is set
+        internal bool IsSetManualCreation()
+        {
+            return this._manualCreation.HasValue; 
         }
 
         /// <summary>
