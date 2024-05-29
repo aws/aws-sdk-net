@@ -1528,23 +1528,22 @@ namespace Amazon.Connect
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you plan to claim and release numbers frequently during a 30 day period, contact
-        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
-        /// claiming and releasing any more numbers until 30 days past the oldest number released
-        /// has expired.
+        /// If you plan to claim and release numbers frequently, contact us for a service quota
+        /// exception. Otherwise, it is possible you will be blocked from claiming and releasing
+        /// any more numbers until up to 180 days past the oldest number released has expired.
         /// </para>
         ///  
         /// <para>
         /// By default you can claim and release up to 200% of your maximum number of active phone
-        /// numbers during any 30 day period. If you claim and release phone numbers using the
-        /// UI or API during a rolling 30 day cycle that exceeds 200% of your phone number service
-        /// level quota, you will be blocked from claiming any more numbers until 30 days past
-        /// the oldest number released has expired. 
+        /// numbers. If you claim and release phone numbers using the UI or API during a rolling
+        /// 180 day cycle that exceeds 200% of your phone number service level quota, you will
+        /// be blocked from claiming any more numbers until 180 days past the oldest number released
+        /// has expired. 
         /// </para>
         ///  
         /// <para>
         /// For example, if you already have 99 claimed numbers and a service level quota of 99
-        /// phone numbers, and in any 30 day period you release 99, claim 99, and then release
+        /// phone numbers, and in any 180 day period you release 99, claim 99, and then release
         /// 99, you will have exceeded the 200% limit. At that point you are blocked from claiming
         /// any more numbers until you open an Amazon Web Services support ticket.
         /// </para>
@@ -1596,23 +1595,22 @@ namespace Amazon.Connect
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you plan to claim and release numbers frequently during a 30 day period, contact
-        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
-        /// claiming and releasing any more numbers until 30 days past the oldest number released
-        /// has expired.
+        /// If you plan to claim and release numbers frequently, contact us for a service quota
+        /// exception. Otherwise, it is possible you will be blocked from claiming and releasing
+        /// any more numbers until up to 180 days past the oldest number released has expired.
         /// </para>
         ///  
         /// <para>
         /// By default you can claim and release up to 200% of your maximum number of active phone
-        /// numbers during any 30 day period. If you claim and release phone numbers using the
-        /// UI or API during a rolling 30 day cycle that exceeds 200% of your phone number service
-        /// level quota, you will be blocked from claiming any more numbers until 30 days past
-        /// the oldest number released has expired. 
+        /// numbers. If you claim and release phone numbers using the UI or API during a rolling
+        /// 180 day cycle that exceeds 200% of your phone number service level quota, you will
+        /// be blocked from claiming any more numbers until 180 days past the oldest number released
+        /// has expired. 
         /// </para>
         ///  
         /// <para>
         /// For example, if you already have 99 claimed numbers and a service level quota of 99
-        /// phone numbers, and in any 30 day period you release 99, claim 99, and then release
+        /// phone numbers, and in any 180 day period you release 99, claim 99, and then release
         /// 99, you will have exceeded the 200% limit. At that point you are blocked from claiming
         /// any more numbers until you open an Amazon Web Services support ticket.
         /// </para>
@@ -11797,29 +11795,28 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// After releasing a phone number, the phone number enters into a cooldown period of
-        /// 30 days. It cannot be searched for or claimed again until the period has ended. If
-        /// you accidentally release a phone number, contact Amazon Web Services Support.
+        /// After releasing a phone number, the phone number enters into a cooldown period for
+        /// up to 180 days. It cannot be searched for or claimed again until the period has ended.
+        /// If you accidentally release a phone number, contact Amazon Web Services Support.
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you plan to claim and release numbers frequently during a 30 day period, contact
-        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
-        /// claiming and releasing any more numbers until 30 days past the oldest number released
-        /// has expired.
+        /// If you plan to claim and release numbers frequently, contact us for a service quota
+        /// exception. Otherwise, it is possible you will be blocked from claiming and releasing
+        /// any more numbers until up to 180 days past the oldest number released has expired.
         /// </para>
         ///  
         /// <para>
         /// By default you can claim and release up to 200% of your maximum number of active phone
-        /// numbers during any 30 day period. If you claim and release phone numbers using the
-        /// UI or API during a rolling 30 day cycle that exceeds 200% of your phone number service
-        /// level quota, you will be blocked from claiming any more numbers until 30 days past
-        /// the oldest number released has expired. 
+        /// numbers. If you claim and release phone numbers using the UI or API during a rolling
+        /// 180 day cycle that exceeds 200% of your phone number service level quota, you will
+        /// be blocked from claiming any more numbers until 180 days past the oldest number released
+        /// has expired. 
         /// </para>
         ///  
         /// <para>
         /// For example, if you already have 99 claimed numbers and a service level quota of 99
-        /// phone numbers, and in any 30 day period you release 99, claim 99, and then release
+        /// phone numbers, and in any 180 day period you release 99, claim 99, and then release
         /// 99, you will have exceeded the 200% limit. At that point you are blocked from claiming
         /// any more numbers until you open an Amazon Web Services support ticket.
         /// </para>
@@ -11865,29 +11862,28 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// After releasing a phone number, the phone number enters into a cooldown period of
-        /// 30 days. It cannot be searched for or claimed again until the period has ended. If
-        /// you accidentally release a phone number, contact Amazon Web Services Support.
+        /// After releasing a phone number, the phone number enters into a cooldown period for
+        /// up to 180 days. It cannot be searched for or claimed again until the period has ended.
+        /// If you accidentally release a phone number, contact Amazon Web Services Support.
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you plan to claim and release numbers frequently during a 30 day period, contact
-        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
-        /// claiming and releasing any more numbers until 30 days past the oldest number released
-        /// has expired.
+        /// If you plan to claim and release numbers frequently, contact us for a service quota
+        /// exception. Otherwise, it is possible you will be blocked from claiming and releasing
+        /// any more numbers until up to 180 days past the oldest number released has expired.
         /// </para>
         ///  
         /// <para>
         /// By default you can claim and release up to 200% of your maximum number of active phone
-        /// numbers during any 30 day period. If you claim and release phone numbers using the
-        /// UI or API during a rolling 30 day cycle that exceeds 200% of your phone number service
-        /// level quota, you will be blocked from claiming any more numbers until 30 days past
-        /// the oldest number released has expired. 
+        /// numbers. If you claim and release phone numbers using the UI or API during a rolling
+        /// 180 day cycle that exceeds 200% of your phone number service level quota, you will
+        /// be blocked from claiming any more numbers until 180 days past the oldest number released
+        /// has expired. 
         /// </para>
         ///  
         /// <para>
         /// For example, if you already have 99 claimed numbers and a service level quota of 99
-        /// phone numbers, and in any 30 day period you release 99, claim 99, and then release
+        /// phone numbers, and in any 180 day period you release 99, claim 99, and then release
         /// 99, you will have exceeded the 200% limit. At that point you are blocked from claiming
         /// any more numbers until you open an Amazon Web Services support ticket.
         /// </para>
@@ -13933,6 +13929,14 @@ namespace Amazon.Connect
         /// <para>
         /// QUEUE_TRANSFER
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EXTERNAL_OUTBOUND
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MONITOR
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Chat and task contacts can be terminated in any state, regardless of initiation method.
@@ -13977,6 +13981,14 @@ namespace Amazon.Connect
         ///  </li> <li> 
         /// <para>
         /// QUEUE_TRANSFER
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EXTERNAL_OUTBOUND
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MONITOR
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -15382,10 +15394,6 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates routing priority and age on the contact (<b>QueuePriority</b> and <b>QueueTimeAdjustmentInSeconds</b>).
         /// These properties can be used to change a customer's position in the queue. For example,
         /// you can move a contact to the back of the queue by setting a lower routing priority
@@ -15396,7 +15404,13 @@ namespace Amazon.Connect
         /// queue wait time as reported through metrics. These properties can also be updated
         /// by using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/change-routing-priority.html">the
         /// Set routing priority / age flow block</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Either <b>QueuePriority</b> or <b>QueueTimeAdjustmentInSeconds</b> should be provided
+        /// within the request body, but not both.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactRoutingData service method.</param>
         /// 
@@ -15425,10 +15439,6 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates routing priority and age on the contact (<b>QueuePriority</b> and <b>QueueTimeAdjustmentInSeconds</b>).
         /// These properties can be used to change a customer's position in the queue. For example,
         /// you can move a contact to the back of the queue by setting a lower routing priority
@@ -15439,7 +15449,13 @@ namespace Amazon.Connect
         /// queue wait time as reported through metrics. These properties can also be updated
         /// by using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/change-routing-priority.html">the
         /// Set routing priority / age flow block</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Either <b>QueuePriority</b> or <b>QueueTimeAdjustmentInSeconds</b> should be provided
+        /// within the request body, but not both.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactRoutingData service method.</param>
         /// <param name="cancellationToken">

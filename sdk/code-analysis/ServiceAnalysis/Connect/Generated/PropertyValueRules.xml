@@ -3331,6 +3331,26 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AttributeCondition.ComparisonOperator</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttributeCondition.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttributeCondition.ProficiencyLevel</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttributeCondition.Value</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AvailableNumberSummary.PhoneNumber</property>
     <pattern>\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
@@ -3528,9 +3548,29 @@
     <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DeviceInfo.OperatingSystem</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeviceInfo.PlatformName</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeviceInfo.PlatformVersion</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.Dimensions.RoutingStepExpression</property>
     <min>1</min>
     <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisconnectDetails.PotentialDisconnectIssue</property>
+    <min>0</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Distribution.Percentage</property>

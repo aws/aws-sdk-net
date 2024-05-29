@@ -31,10 +31,6 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateContactRoutingData operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Updates routing priority and age on the contact (<b>QueuePriority</b> and <b>QueueTimeAdjustmentInSeconds</b>).
     /// These properties can be used to change a customer's position in the queue. For example,
     /// you can move a contact to the back of the queue by setting a lower routing priority
@@ -45,7 +41,13 @@ namespace Amazon.Connect.Model
     /// queue wait time as reported through metrics. These properties can also be updated
     /// by using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/change-routing-priority.html">the
     /// Set routing priority / age flow block</a>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Either <b>QueuePriority</b> or <b>QueueTimeAdjustmentInSeconds</b> should be provided
+    /// within the request body, but not both.
     /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateContactRoutingDataRequest : AmazonConnectRequest
     {

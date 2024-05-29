@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AgentInfo Object
+    /// Response Unmarshaller for AttributeCondition Object
     /// </summary>  
-    public class AgentInfoUnmarshaller : IUnmarshaller<AgentInfo, XmlUnmarshallerContext>, IUnmarshaller<AgentInfo, JsonUnmarshallerContext>
+    public class AttributeConditionUnmarshaller : IUnmarshaller<AttributeCondition, XmlUnmarshallerContext>, IUnmarshaller<AttributeCondition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AgentInfo IUnmarshaller<AgentInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AttributeCondition IUnmarshaller<AttributeCondition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgentInfo Unmarshall(JsonUnmarshallerContext context)
+        public AttributeCondition Unmarshall(JsonUnmarshallerContext context)
         {
-            AgentInfo unmarshalledObject = new AgentInfo();
+            AttributeCondition unmarshalledObject = new AttributeCondition();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,28 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AgentPauseDurationInSeconds", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.AgentPauseDurationInSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Capabilities", targetDepth))
-                {
-                    var unmarshaller = ParticipantCapabilitiesUnmarshaller.Instance;
-                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ConnectedToAgentTimestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ConnectedToAgentTimestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeviceInfo", targetDepth))
-                {
-                    var unmarshaller = DeviceInfoUnmarshaller.Instance;
-                    unmarshalledObject.DeviceInfo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HierarchyGroups", targetDepth))
-                {
-                    var unmarshaller = HierarchyGroupsUnmarshaller.Instance;
-                    unmarshalledObject.HierarchyGroups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("ComparisonOperator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProficiencyLevel", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.ProficiencyLevel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Value", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +95,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static AgentInfoUnmarshaller _instance = new AgentInfoUnmarshaller();        
+        private static AttributeConditionUnmarshaller _instance = new AttributeConditionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AgentInfoUnmarshaller Instance
+        public static AttributeConditionUnmarshaller Instance
         {
             get
             {

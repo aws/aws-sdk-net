@@ -35,7 +35,10 @@ namespace Amazon.Connect.Model
     public partial class AgentInfo
     {
         private int? _agentPauseDurationInSeconds;
+        private ParticipantCapabilities _capabilities;
         private DateTime? _connectedToAgentTimestamp;
+        private DeviceInfo _deviceInfo;
+        private HierarchyGroups _hierarchyGroups;
         private string _id;
 
         /// <summary>
@@ -58,6 +61,21 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Capabilities.
+        /// </summary>
+        public ParticipantCapabilities Capabilities
+        {
+            get { return this._capabilities; }
+            set { this._capabilities = value; }
+        }
+
+        // Check to see if Capabilities property is set
+        internal bool IsSetCapabilities()
+        {
+            return this._capabilities != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ConnectedToAgentTimestamp. 
         /// <para>
         /// The timestamp when the contact was connected to the agent.
@@ -73,6 +91,42 @@ namespace Amazon.Connect.Model
         internal bool IsSetConnectedToAgentTimestamp()
         {
             return this._connectedToAgentTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceInfo. 
+        /// <para>
+        /// Information regarding Agent’s device.
+        /// </para>
+        /// </summary>
+        public DeviceInfo DeviceInfo
+        {
+            get { return this._deviceInfo; }
+            set { this._deviceInfo = value; }
+        }
+
+        // Check to see if DeviceInfo property is set
+        internal bool IsSetDeviceInfo()
+        {
+            return this._deviceInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HierarchyGroups. 
+        /// <para>
+        /// The agent hierarchy groups for the agent.
+        /// </para>
+        /// </summary>
+        public HierarchyGroups HierarchyGroups
+        {
+            get { return this._hierarchyGroups; }
+            set { this._hierarchyGroups = value; }
+        }
+
+        // Check to see if HierarchyGroups property is set
+        internal bool IsSetHierarchyGroups()
+        {
+            return this._hierarchyGroups != null;
         }
 
         /// <summary>
