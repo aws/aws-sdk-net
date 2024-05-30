@@ -908,7 +908,7 @@ namespace ServiceClientGenerator
                 if (_excludedProperties.Count != injectedPropertyOriginalMemberCount)
                 {
                     throw new InvalidDataException($"The customization excludes and injects members without specifying the originalMember. If you are excluding a member and injecting a different member, make sure to specify the original member that" +
-                        $"was excluded on the injected member in the customizations.json file.");
+                        $" was excluded on the injected member in the customizations.json file.");
                 }
             }
 

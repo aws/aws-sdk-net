@@ -366,9 +366,11 @@ namespace ServiceClientGenerator
                     {
                         var injectedPropertyData = shapeModifier.InjectedPropertyData(p);
                         JsonData originalMember;
+                        // if a modeled property was excluded and replaced by an injected property, then we want to store a copy
+                        // of the original property's JSON so we can access data such as the context params.
                         if (injectedPropertyData.Data[CustomizationsModel.OriginalMemberKey] != null)
                         {
-                            var shapeData = this.model.FindShapeData(this.Name);
+                            var shapeData = this.model.FindShape(this.Name).data;
                             originalMember = shapeData["members"][injectedPropertyData.Data[CustomizationsModel.OriginalMemberKey].ToString()];
                             map.Add(new Member(this.model, this, originalMember, p, p, shapeModifier.InjectedPropertyData(p)));
                         }

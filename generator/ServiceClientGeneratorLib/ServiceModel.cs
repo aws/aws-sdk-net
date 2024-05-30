@@ -528,14 +528,6 @@ namespace ServiceClientGenerator
             return Shape.CreateShape(this, name, shape);
         }
 
-        public JsonData FindShapeData(string name)
-        {
-            var shapes = this.DocumentRoot[ShapesKey];
-            var shape = shapes[name];
-
-            return shape;
-        }
-
         /// <summary>
         /// Gets list of client context parameters, 
         /// used to extend client config with new properties and drive endpoint resolution
