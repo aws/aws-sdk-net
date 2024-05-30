@@ -61,13 +61,13 @@ namespace Amazon.CloudTrail.Model
         ///  
         /// <para>
         /// For more information about how to use advanced event selectors to include Config configuration
-        /// items in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-eds-config">Create
+        /// items in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-eds-cli.html#lake-cli-create-eds-config">Create
         /// an event data store for Config configuration items</a> in the CloudTrail User Guide.
         /// </para>
         ///  
         /// <para>
-        /// For more information about how to use advanced event selectors to include non-Amazon
-        /// Web Services events in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-integration">Create
+        /// For more information about how to use advanced event selectors to include events outside
+        /// of Amazon Web Services events in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-integrations-cli.html#lake-cli-create-integration">Create
         /// an integration to log events from outside Amazon Web Services</a> in the CloudTrail
         /// User Guide.
         /// </para>

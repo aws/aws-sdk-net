@@ -32,7 +32,7 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// A storage lake of event data against which you can run complex SQL-based queries.
     /// An event data store can include events that you have logged on your account. To select
-    /// events for an event data store, use <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">advanced
+    /// events for an event data store, use <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-concepts.html#adv-event-selectors">advanced
     /// event selectors</a>.
     /// </summary>
     public partial class EventDataStore
