@@ -72,6 +72,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentAvailabilityTimer = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AssociatedQueueIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AssociatedQueueIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DefaultOutboundQueueId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
