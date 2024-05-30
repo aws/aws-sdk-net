@@ -250,6 +250,153 @@ namespace Amazon.BedrockRuntime
         #endregion
 
 
+        #region  Converse
+
+        internal virtual ConverseResponse Converse(ConverseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConverseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConverseResponseUnmarshaller.Instance;
+
+            return Invoke<ConverseResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Sends messages to the specified Amazon Bedrock model. <c>Converse</c> provides a consistent
+        /// interface that works with all models that support messages. This allows you to write
+        /// code once and use it with different models. Should a model have unique inference parameters,
+        /// you can also pass those unique parameters to the model. For more information, see
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+        /// inference</a> in the Bedrock User Guide.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <c>bedrock:InvokeModel</c> action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Converse service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the Converse service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelErrorException">
+        /// The request failed due to an error while processing the model.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelNotReadyException">
+        /// The model specified in the request is not ready to serve inference requests.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelTimeoutException">
+        /// The request took too long to process. Processing time exceeded the model timeout length.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Converse">REST API Reference for Converse Operation</seealso>
+        public virtual Task<ConverseResponse> ConverseAsync(ConverseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConverseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConverseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ConverseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ConverseStream
+
+        internal virtual ConverseStreamResponse ConverseStream(ConverseStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConverseStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConverseStreamResponseUnmarshaller.Instance;
+
+            return Invoke<ConverseStreamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Sends messages to the specified Amazon Bedrock model and returns the response in a
+        /// stream. <c>ConverseStream</c> provides a consistent API that works with all Amazon
+        /// Bedrock models that support messages. This allows you to write code once and use it
+        /// with different models. Should a model have unique inference parameters, you can also
+        /// pass those unique parameters to the model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+        /// inference</a> in the Bedrock User Guide.
+        /// 
+        ///  
+        /// <para>
+        /// To find out if a model supports streaming, call <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html">GetFoundationModel</a>
+        /// and check the <c>responseStreamingSupported</c> field in the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example code, see <i>Invoke model with streaming code example</i> in the <i>Amazon
+        /// Bedrock User Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permission for the <c>bedrock:InvokeModelWithResponseStream</c>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConverseStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ConverseStream service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelErrorException">
+        /// The request failed due to an error while processing the model.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelNotReadyException">
+        /// The model specified in the request is not ready to serve inference requests.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelTimeoutException">
+        /// The request took too long to process. Processing time exceeded the model timeout length.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ConverseStream">REST API Reference for ConverseStream Operation</seealso>
+        public virtual Task<ConverseStreamResponse> ConverseStreamAsync(ConverseStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConverseStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConverseStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ConverseStreamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  InvokeModel
 
         internal virtual InvokeModelResponse InvokeModel(InvokeModelRequest request)

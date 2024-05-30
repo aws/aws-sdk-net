@@ -246,6 +246,193 @@ namespace Amazon.BedrockRuntime
         #endregion
 
 
+        #region  Converse
+
+        /// <summary>
+        /// Sends messages to the specified Amazon Bedrock model. <c>Converse</c> provides a consistent
+        /// interface that works with all models that support messages. This allows you to write
+        /// code once and use it with different models. Should a model have unique inference parameters,
+        /// you can also pass those unique parameters to the model. For more information, see
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+        /// inference</a> in the Bedrock User Guide.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permission for the <c>bedrock:InvokeModel</c> action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Converse service method.</param>
+        /// 
+        /// <returns>The response from the Converse service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelErrorException">
+        /// The request failed due to an error while processing the model.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelNotReadyException">
+        /// The model specified in the request is not ready to serve inference requests.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelTimeoutException">
+        /// The request took too long to process. Processing time exceeded the model timeout length.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Converse">REST API Reference for Converse Operation</seealso>
+        public virtual ConverseResponse Converse(ConverseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConverseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConverseResponseUnmarshaller.Instance;
+
+            return Invoke<ConverseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Converse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the Converse operation on AmazonBedrockRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConverse
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Converse">REST API Reference for Converse Operation</seealso>
+        public virtual IAsyncResult BeginConverse(ConverseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConverseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConverseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  Converse operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConverse.</param>
+        /// 
+        /// <returns>Returns a  ConverseResult from BedrockRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Converse">REST API Reference for Converse Operation</seealso>
+        public virtual ConverseResponse EndConverse(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ConverseResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ConverseStream
+
+        /// <summary>
+        /// Sends messages to the specified Amazon Bedrock model and returns the response in a
+        /// stream. <c>ConverseStream</c> provides a consistent API that works with all Amazon
+        /// Bedrock models that support messages. This allows you to write code once and use it
+        /// with different models. Should a model have unique inference parameters, you can also
+        /// pass those unique parameters to the model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+        /// inference</a> in the Bedrock User Guide.
+        /// 
+        ///  
+        /// <para>
+        /// To find out if a model supports streaming, call <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html">GetFoundationModel</a>
+        /// and check the <c>responseStreamingSupported</c> field in the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example code, see <i>Invoke model with streaming code example</i> in the <i>Amazon
+        /// Bedrock User Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permission for the <c>bedrock:InvokeModelWithResponseStream</c>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConverseStream service method.</param>
+        /// 
+        /// <returns>The response from the ConverseStream service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelErrorException">
+        /// The request failed due to an error while processing the model.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelNotReadyException">
+        /// The model specified in the request is not ready to serve inference requests.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ModelTimeoutException">
+        /// The request took too long to process. Processing time exceeded the model timeout length.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ConverseStream">REST API Reference for ConverseStream Operation</seealso>
+        public virtual ConverseStreamResponse ConverseStream(ConverseStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConverseStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConverseStreamResponseUnmarshaller.Instance;
+
+            return Invoke<ConverseStreamResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConverseStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConverseStream operation on AmazonBedrockRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConverseStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ConverseStream">REST API Reference for ConverseStream Operation</seealso>
+        public virtual IAsyncResult BeginConverseStream(ConverseStreamRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConverseStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConverseStreamResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ConverseStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConverseStream.</param>
+        /// 
+        /// <returns>Returns a  ConverseStreamResult from BedrockRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ConverseStream">REST API Reference for ConverseStream Operation</seealso>
+        public virtual ConverseStreamResponse EndConverseStream(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ConverseStreamResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  InvokeModel
 
         /// <summary>
