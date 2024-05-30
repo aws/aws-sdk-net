@@ -32,7 +32,7 @@ namespace Amazon.TrustedAdvisor
     public partial class AmazonTrustedAdvisorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("TrustedAdvisor", "3.7.301.13");
+            InternalSDKUtils.BuildUserAgentString("TrustedAdvisor", "3.7.301.14");
 
         private string _userAgent = UserAgentString;
         ///<summary>

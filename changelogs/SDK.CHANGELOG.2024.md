@@ -1,3 +1,24 @@
+### 3.7.821.0 (2024-05-30 18:23 UTC)
+* BedrockAgent (3.7.310.0)
+	* With this release, Knowledge bases for Bedrock adds support for Titan Text Embedding v2.
+* BedrockRuntime (3.7.303.0)
+	* This release adds Converse and ConverseStream APIs to Bedrock Runtime
+* CertificateManager (3.7.301.0)
+	* add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* CloudTrail (3.7.305.0)
+	* CloudTrail Lake returns PartitionKeys in the GetEventDataStore API response. Events are grouped into partitions based on these keys for better query performance. For example, the calendarday key groups events by day, while combining the calendarday key with the hour key groups them by day and hour.
+* Connect (3.7.320.0)
+	* Adding associatedQueueIds as a SearchCriteria and response field to the SearchRoutingProfiles API
+* EMRServerless (3.7.304.0)
+	* The release adds support for spark structured streaming.
+* RDS (3.7.313.6)
+	* Updates Amazon RDS documentation for Aurora Postgres DBname.
+* SageMaker (3.7.324.0)
+	* Adds Model Card information as a new component to Model Package. Autopilot launches algorithm selection for TimeSeries modality to generate AutoML candidates per algorithm.
+* Core 3.7.304.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.820.0 (2024-05-29 18:20 UTC)
 * Athena (3.7.304.0)
 	* Throwing validation errors on CreateNotebook with Name containing `/`,`:`,`\`
