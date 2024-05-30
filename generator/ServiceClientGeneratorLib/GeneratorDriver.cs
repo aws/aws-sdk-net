@@ -1546,7 +1546,7 @@ namespace ServiceClientGenerator
                 var partitionName = partition["partition"].ToString();
                 var partitionDnsSuffix = partition["dnsSuffix"].ToString();
                 var hostnameTemplate = partition["defaults"]["hostname"].ToString();
-                var regionRegex = partition["regionRegex"].ToString();
+                var partitionRegionRegex = partition["regionRegex"].ToString();
                 JsonData regions = partition["regions"];
                 foreach (var regionCode in regions.PropertyNames)
                 {
@@ -1559,7 +1559,7 @@ namespace ServiceClientGenerator
                         RegionName = regionName,
                         PartitionName = partitionName,
                         PartitionDnsSuffix = partitionDnsSuffix,
-                        RegionRegex = regionRegex,
+                        PartitionRegionRegex = partitionRegionRegex,
                         HostnameTemplate = hostnameTemplate,
                     });
                 }

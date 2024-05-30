@@ -35,13 +35,13 @@ namespace Amazon
         /// The US East (Virginia) regional endpoint.
         /// S3-specific, use for backward compatibility only.
         /// </summary>
-        private static readonly RegionEndpoint USEast1Regional = GetRegionEndpoint("us-east-1-regional", "US East (Virginia) regional", "<#= endpoint.PartitionName #>", "<#= endpoint.PartitionDnsSuffix #>", @"<#= endpoint.RegionRegex #>", "<#= endpoint.HostnameTemplate #>");
+        private static readonly RegionEndpoint USEast1Regional = GetRegionEndpoint("us-east-1-regional", "US East (Virginia) regional", "<#= endpoint.PartitionName #>", "<#= endpoint.PartitionDnsSuffix #>", @"<#= endpoint.PartitionRegionRegex #>", "<#= endpoint.HostnameTemplate #>");
 <# } #>
 
         /// <summary>
         /// The <#= endpoint.RegionName #> endpoint.
         /// </summary>
-        public static readonly RegionEndpoint <#= endpoint.Name #> = GetRegionEndpoint("<#= endpoint.RegionCode #>", "<#= endpoint.RegionName #>", "<#= endpoint.PartitionName #>", "<#= endpoint.PartitionDnsSuffix #>", @"<#= endpoint.RegionRegex #>", "<#= endpoint.HostnameTemplate #>");
+        public static readonly RegionEndpoint <#= endpoint.Name #> = GetRegionEndpoint("<#= endpoint.RegionCode #>", "<#= endpoint.RegionName #>", "<#= endpoint.PartitionName #>", "<#= endpoint.PartitionDnsSuffix #>", @"<#= endpoint.PartitionRegionRegex #>", "<#= endpoint.HostnameTemplate #>");
 <# } #>
     }
 }

@@ -11,7 +11,7 @@ using Amazon.Internal;
 
 namespace AWSSDK_NetStandard.UnitTests
 {
-    public class RegionEndpointV3Tests
+    public class RegionEndpointTests
     {
         [Fact]
         [Trait("Category", "Core")]
@@ -52,9 +52,8 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "Core")]
         public void NonstandardRegionTest()
         {
-            Assert.Equal("s3-external-1.amazonaws.com", RegionEndpoint.GetBySystemName("s3-external-1").GetEndpointForService("s3").Hostname);
+            Assert.Equal("s3.s3-external-1.amazonaws.com", RegionEndpoint.GetBySystemName("s3-external-1").GetEndpointForService("s3").Hostname);
             Assert.Equal("budgets.amazonaws.com", RegionEndpoint.GetBySystemName("aws-global").GetEndpointForService("budgets").Hostname);
-            Assert.Equal("s3-fips.us-gov-west-1.amazonaws.com", RegionEndpoint.GetBySystemName("fips-us-gov-west-1").GetEndpointForService("s3").Hostname);
             Assert.Equal("iam.us-gov.amazonaws.com", RegionEndpoint.GetBySystemName("aws-us-gov-global").GetEndpointForService("iam").Hostname);
         }
 
@@ -78,61 +77,11 @@ namespace AWSSDK_NetStandard.UnitTests
         [Trait("Category", "Core")]
         public void S3SignatureTest()
         {
-            Assert.Equal("4", RegionEndpoint.APNortheast2.GetEndpointForService("s3").SignatureVersionOverride);
-            Assert.Equal("4", RegionEndpoint.CNNorth1.GetEndpointForService("s3").SignatureVersionOverride);
+            Assert.Null(RegionEndpoint.APNortheast2.GetEndpointForService("s3").SignatureVersionOverride);
+            Assert.Null(RegionEndpoint.CNNorth1.GetEndpointForService("s3").SignatureVersionOverride);
             Assert.Equal("2", RegionEndpoint.SAEast1.GetEndpointForService("s3").SignatureVersionOverride);
             Assert.Equal("2", RegionEndpoint.USEast1.GetEndpointForService("s3").SignatureVersionOverride);
             Assert.Equal("2", RegionEndpoint.EUWest1.GetEndpointForService("s3").SignatureVersionOverride);
-        }
-    }
-    
-    public class EndpointCustomizationTestClass : IDisposable
-    {
-        private FileInfo tempEndpointCutomizationFile;
-        public EndpointCustomizationTestClass()
-        {
-            tempEndpointCutomizationFile = CreateEndpointCustomizationFile();
-            RegionEndpointProviderV2.RegionEndpoint.LoadEndpointDefinitions(tempEndpointCutomizationFile.FullName);
-        }
-
-        public void Dispose()
-        {
-            File.Delete(tempEndpointCutomizationFile.FullName);
-            RegionEndpointProviderV2.RegionEndpoint.UnloadEndpointDefinitions();
-        }
-        
-        [Fact]
-        [Trait("Category", "Core")]
-        public void EndpointCustomizationTest()
-        {
-            IRegionEndpointProvider provider = new RegionEndpointProviderV2();
-            var useast1 = provider.GetRegionEndpoint("us-east-1");
-            var uswest2 = provider.GetRegionEndpoint("us-west-2");
-            var euwest1 = provider.GetRegionEndpoint("eu-west-1");
-            Assert.Equal("application-autoscaling.us-east-1.amazonaws.com", useast1.GetEndpointForService("application-autoscaling", false).Hostname);
-            Assert.Equal("application-autoscaling.us-west-2.amazonaws.com", uswest2.GetEndpointForService("application-autoscaling", false).Hostname);
-            Assert.Equal("application-autoscaling.eu-west-1.amazonaws.com", euwest1.GetEndpointForService("application-autoscaling", false).Hostname);
-
-            var apne2 = provider.GetRegionEndpoint("ap-northeast-2");
-            Assert.Equal("sts.amazonaws.com", apne2.GetEndpointForService("sts", false).Hostname);
-        }
-
-        private FileInfo CreateEndpointCustomizationFile()
-        {
-            string customizationResourceName = "UnitTests.NetStandard.endpoint.customization.json";
-            FileInfo fi = new FileInfo(Path.Combine(Path.GetTempPath(), Path.GetTempFileName()));
-
-            using (StreamReader resStream = new StreamReader(Utils.GetAssemblyResourceStream(customizationResourceName)))
-            using (Stream stream = new FileStream(fi.FullName, FileMode.OpenOrCreate))
-            using (StreamWriter fileStreamWriter = new StreamWriter(stream))
-            {
-                while (!resStream.EndOfStream)
-                { 
-                    fileStreamWriter.WriteLine(resStream.ReadLine());
-                }
-            }
-
-            return fi;
         }
     }
 }

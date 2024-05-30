@@ -23,6 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 
 namespace Amazon
@@ -54,7 +55,7 @@ namespace Amazon
         private static Dictionary<string, RegionEndpoint> _hashBySystemName = new Dictionary<string, RegionEndpoint>(StringComparer.OrdinalIgnoreCase);
         private static ReaderWriterLockSlim _readerWriterLock = new ReaderWriterLockSlim();
 
-        private static HashSet<string> _allRegionRegex = new HashSet<string>();
+        private static HashSet<string> _allPartitionRegionRegex = new HashSet<string>();
 
         public static IEnumerable<RegionEndpoint> EnumerableAllRegions
         {
@@ -72,14 +73,14 @@ namespace Amazon
             }
         }
 
-        public static IEnumerable<string> AllRegionRegex
+        public static IEnumerable<string> AllPartitionRegionRegex
         {
             get
             {
                 try
                 {
                     _readerWriterLock.EnterReadLock();
-                    return _allRegionRegex.ToList();
+                    return _allPartitionRegionRegex.ToList();
                 }
                 finally
                 {
@@ -88,7 +89,7 @@ namespace Amazon
             }
         }
 
-        private static RegionEndpoint GetRegionEndpoint(string systemName, string displayName, string partitionName, string partitionDnsSuffix, string regionRegex, string hostnameTemplate)
+        private static RegionEndpoint GetRegionEndpoint(string systemName, string displayName, string partitionName, string partitionDnsSuffix, string partitionRegionRegex, string hostnameTemplate)
         {
             try
             {
@@ -107,9 +108,9 @@ namespace Amazon
                 if (_hashBySystemName.TryGetValue(systemName, out var regionEndpoint))
                     return regionEndpoint;
 
-                regionEndpoint = new RegionEndpoint(systemName, displayName, partitionName, partitionDnsSuffix, regionRegex, hostnameTemplate);
+                regionEndpoint = new RegionEndpoint(systemName, displayName, partitionName, partitionDnsSuffix, partitionRegionRegex, hostnameTemplate);
                 _hashBySystemName.Add(systemName, regionEndpoint);
-                _allRegionRegex.Add(regionRegex);
+                _allPartitionRegionRegex.Add(partitionRegionRegex);
 
                 return regionEndpoint;
             }
@@ -127,6 +128,7 @@ namespace Amazon
         public static RegionEndpoint GetBySystemName(string systemName)
         {
             RegionEndpoint similarRegionEndpoint = null;
+            string regionDescription = null;
             try
             {
                 _readerWriterLock.EnterReadLock();
@@ -134,10 +136,15 @@ namespace Amazon
                 if (_hashBySystemName.TryGetValue(systemName, out var regionEndpoint))
                     return regionEndpoint;
 
-                similarRegionEndpoint = _hashBySystemName.Values.FirstOrDefault(r => systemName.Contains(r.SystemName));
+                similarRegionEndpoint = _hashBySystemName.Values
+                    .FirstOrDefault(r => 
+                                    IsRegionInPartition(systemName, r.PartitionName,
+                                    r.PartitionRegionRegex,
+                                    out regionDescription));
+
                 if (similarRegionEndpoint == null)
                 {
-                    // If we couldn't find similar region we wil assume it belongs to aws partition.
+                    // If we couldn't find similar region we will assume it belongs to aws partition.
                     similarRegionEndpoint = _hashBySystemName.Values.First(r => r.PartitionName == "aws");
                 }
             }
@@ -149,11 +156,49 @@ namespace Amazon
             // partition of the similar region, we can use the similar region values to add it to the endpoints.
             return GetRegionEndpoint(
                     systemName,
-                    "Unknown",
+                    regionDescription ?? GetUnknownRegionDescription(systemName),
                     similarRegionEndpoint.PartitionName,
                     similarRegionEndpoint.PartitionDnsSuffix,
-                    similarRegionEndpoint.SystemName,
+                    similarRegionEndpoint.PartitionRegionRegex,
                     similarRegionEndpoint.HostnameTemplate);
+        }
+
+        private static bool IsRegionInPartition(string regionName, string partitionName, string partitionRegionPattern, out string description)
+        {
+            // see if the region is global region by concatenating the partition and "-global" to construct the global name 
+            // for the partition
+            if (regionName.Equals(string.Concat((string)partitionName, "-global"), StringComparison.OrdinalIgnoreCase))
+            {
+                description = "Global";
+                return true;
+            }
+
+            // no region key in the entry, but it matches the pattern in this partition.
+            // we can try to construct an endpoint based on the heuristics described in endpoints.json
+            else if (new Regex(partitionRegionPattern).Match(regionName).Success)
+            {
+                description = GetUnknownRegionDescription(regionName);
+                return true;
+            }
+
+            else
+            {
+                description = GetUnknownRegionDescription(regionName);
+                return false;
+            }
+        }
+
+        private static string GetUnknownRegionDescription(string regionName)
+        {
+            if (regionName.StartsWith("cn-", StringComparison.OrdinalIgnoreCase) ||
+                regionName.EndsWith("cn-global", StringComparison.OrdinalIgnoreCase))
+            {
+                return "China (Unknown)";
+            }
+            else
+            {
+                return "Unknown";
+            }
         }
 
         /// <summary>
@@ -177,16 +222,16 @@ namespace Amazon
         public string DisplayName { get; private set; }
         public string PartitionName { get; private set; }
         public string PartitionDnsSuffix { get; private set; }
-        public string RegionRegex { get; private set; }
+        public string PartitionRegionRegex { get; private set; }
         public string HostnameTemplate { get; private set; }
 
-        private RegionEndpoint(string systemName, string displayName, string partitionName, string partitionDnsSuffix, string regionRegex, string hostnameTemplate)
+        private RegionEndpoint(string systemName, string displayName, string partitionName, string partitionDnsSuffix, string partitionRegionRegex, string hostnameTemplate)
         {
             SystemName = systemName;
             DisplayName = displayName;
             PartitionName = partitionName;
             PartitionDnsSuffix = partitionDnsSuffix;
-            RegionRegex = regionRegex;
+            PartitionRegionRegex = partitionRegionRegex;
             HostnameTemplate = hostnameTemplate;
         }
 
@@ -230,9 +275,13 @@ namespace Amazon
             // Do a fallback of creating an unknown endpoint based on the
             // current region's hostname template.
 
-            string hostname = HostnameTemplate.Replace("{service}", serviceName)
-                                 .Replace("{region}", SystemName)
-                                 .Replace("{dnsSuffix}", PartitionDnsSuffix);
+            // Remove aws prefix and global suffix from the region name
+            // as they don't appear in the hostname.
+            var regionName = SystemName.Replace("aws-", "").Replace("-global", "").Replace("global", "");
+
+            var hostname = HostnameTemplate.Replace("{service}", serviceName)
+                                 .Replace("{region}", regionName)
+                                 .Replace("{dnsSuffix}", PartitionDnsSuffix).Replace("..", ".");
 
             var signatureVersionOverride = 
                 (serviceName == "s3" && _sigV2SupportedRegions.Contains(SystemName)) ? "2" : null;

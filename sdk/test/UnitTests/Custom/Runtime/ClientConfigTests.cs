@@ -104,7 +104,7 @@ namespace AWSSDK.UnitTests
         {
             // If the current service doesn't have an endpoint rule set (which is the case for configs
             // that are used for testing), we'll return a placeholder endpoint so that unit tests pass.
-            return new Endpoint("https://example.com");
+            return new Endpoint(this.ServiceURL ?? "https://example.com");
         }
     }
 }

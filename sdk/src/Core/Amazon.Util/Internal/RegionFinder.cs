@@ -138,13 +138,13 @@ namespace Amazon.Util.Internal
         /// <returns>First matched region from right to left in the given endpoint or null</returns>
         public static RegionEndpoint FindFuzzyRegion(string endpoint)
         {
-            foreach (var regionRegex in RegionEndpoint.AllRegionRegex)
+            foreach (var partitionRegionRegex in RegionEndpoint.AllPartitionRegionRegex)
             {
                 // A typical region regex looks like "^(us|eu|ap|sa|ca|me|af)\\-\\w+\\-\\d+$"
                 // Remove the start (^) and end ($) keyword to allow regex matching without defined start and end pattern
-                var trimmedRegionRegex = regionRegex.Trim('^', '$');
+                var trimmedPartitionRegionRegex = partitionRegionRegex.Trim('^', '$');
 
-                var match = Regex.Match(endpoint, trimmedRegionRegex, RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.RightToLeft);
+                var match = Regex.Match(endpoint, trimmedPartitionRegionRegex, RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.RightToLeft);
                 if (match.Success)
                 {
                     return RegionEndpoint.GetBySystemName(match.Value);
