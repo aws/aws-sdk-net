@@ -12,6 +12,7 @@ namespace Amazon.Util
                 throw new ArgumentException("The extension method ToUpper only works for invariant culture");
             return str.ToUpperInvariant();
         }
+
 #if NETSTANDARD
         /// <summary>
         ///     Encodes into a span of bytes a set of characters from the specified read-only span.
@@ -64,6 +65,6 @@ namespace Amazon.Util
                 return encoding.GetString(bytePointer, bytes.Length);
             }
         }
-    }
 #endif
+    }
 }
