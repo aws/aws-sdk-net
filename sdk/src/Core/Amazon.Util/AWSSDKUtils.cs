@@ -1077,7 +1077,7 @@ namespace Amazon.Util
             }
         }
         
-        internal static bool TryGetRFCEncodingSchemes(int rfcNumber, out string? encodingScheme)
+        internal static bool TryGetRFCEncodingSchemes(int rfcNumber, out string encodingScheme)
         {
             if (rfcNumber == 3986)
             {
