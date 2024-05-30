@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListJobRuns Request Marshaller
+    /// ListJobRunAttempts Request Marshaller
     /// </summary>       
-    public class ListJobRunsRequestMarshaller : IMarshaller<IRequest, ListJobRunsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListJobRunAttemptsRequestMarshaller : IMarshaller<IRequest, ListJobRunAttemptsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListJobRunsRequest)input);
+            return this.Marshall((ListJobRunAttemptsRequest)input);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListJobRunsRequest publicRequest)
+        public IRequest Marshall(ListJobRunAttemptsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EMRServerless");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-07-13";
@@ -62,32 +62,23 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonEMRServerlessException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
-            
-            if (publicRequest.IsSetCreatedAtAfter())
-                request.Parameters.Add("createdAtAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreatedAtAfter));
-            
-            if (publicRequest.IsSetCreatedAtBefore())
-                request.Parameters.Add("createdAtBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreatedAtBefore));
+            if (!publicRequest.IsSetJobRunId())
+                throw new AmazonEMRServerlessException("Request object does not have required field JobRunId set");
+            request.AddPathResource("{jobRunId}", StringUtils.FromString(publicRequest.JobRunId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
-            if (publicRequest.IsSetMode())
-                request.Parameters.Add("mode", StringUtils.FromString(publicRequest.Mode));
-            
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetStates())
-                request.ParameterCollection.Add("states", publicRequest.States);
-            request.ResourcePath = "/applications/{applicationId}/jobruns";
+            request.ResourcePath = "/applications/{applicationId}/jobruns/{jobRunId}/attempts";
             request.UseQueryString = true;
 
             return request;
         }
-        private static ListJobRunsRequestMarshaller _instance = new ListJobRunsRequestMarshaller();        
+        private static ListJobRunAttemptsRequestMarshaller _instance = new ListJobRunAttemptsRequestMarshaller();        
 
-        internal static ListJobRunsRequestMarshaller GetInstance()
+        internal static ListJobRunAttemptsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -95,7 +86,7 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListJobRunsRequestMarshaller Instance
+        public static ListJobRunAttemptsRequestMarshaller Instance
         {
             get
             {

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobRun Object
+    /// Response Unmarshaller for JobRunAttemptSummary Object
     /// </summary>  
-    public class JobRunUnmarshaller : IUnmarshaller<JobRun, XmlUnmarshallerContext>, IUnmarshaller<JobRun, JsonUnmarshallerContext>
+    public class JobRunAttemptSummaryUnmarshaller : IUnmarshaller<JobRunAttemptSummary, XmlUnmarshallerContext>, IUnmarshaller<JobRunAttemptSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JobRun IUnmarshaller<JobRun, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        JobRunAttemptSummary IUnmarshaller<JobRunAttemptSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public JobRun Unmarshall(JsonUnmarshallerContext context)
+        public JobRunAttemptSummary Unmarshall(JsonUnmarshallerContext context)
         {
-            JobRun unmarshalledObject = new JobRun();
+            JobRunAttemptSummary unmarshalledObject = new JobRunAttemptSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -84,30 +84,6 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attempt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("attemptCreatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.AttemptCreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("attemptUpdatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.AttemptUpdatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("billedResourceUtilization", targetDepth))
-                {
-                    var unmarshaller = ResourceUtilizationUnmarshaller.Instance;
-                    unmarshalledObject.BilledResourceUtilization = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("configurationOverrides", targetDepth))
-                {
-                    var unmarshaller = ConfigurationOverridesUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationOverrides = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -126,22 +102,16 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("executionTimeoutMinutes", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionTimeoutMinutes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("jobDriver", targetDepth))
-                {
-                    var unmarshaller = JobDriverUnmarshaller.Instance;
-                    unmarshalledObject.JobDriver = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("jobRunId", targetDepth))
+                if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobRunId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("jobCreatedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.JobCreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("mode", targetDepth))
@@ -156,22 +126,10 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("networkConfiguration", targetDepth))
-                {
-                    var unmarshaller = NetworkConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("releaseLabel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReleaseLabel = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("retryPolicy", targetDepth))
-                {
-                    var unmarshaller = RetryPolicyUnmarshaller.Instance;
-                    unmarshalledObject.RetryPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("state", targetDepth))
@@ -186,22 +144,10 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.StateDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("totalExecutionDurationSeconds", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TotalExecutionDurationSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("totalResourceUtilization", targetDepth))
-                {
-                    var unmarshaller = TotalResourceUtilizationUnmarshaller.Instance;
-                    unmarshalledObject.TotalResourceUtilization = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("updatedAt", targetDepth))
@@ -215,12 +161,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobRunUnmarshaller _instance = new JobRunUnmarshaller();        
+        private static JobRunAttemptSummaryUnmarshaller _instance = new JobRunAttemptSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobRunUnmarshaller Instance
+        public static JobRunAttemptSummaryUnmarshaller Instance
         {
             get
             {

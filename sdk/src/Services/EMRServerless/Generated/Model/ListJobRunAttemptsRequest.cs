@@ -30,33 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRServerless.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDashboardForJobRun operation.
-    /// Creates and returns a URL that you can use to access the application UIs for a job
-    /// run.
-    /// 
-    ///  
-    /// <para>
-    /// For jobs in a running state, the application UI is a live user interface such as the
-    /// Spark or Tez web UI. For completed jobs, the application UI is a persistent application
-    /// user interface such as the Spark History Server or persistent Tez UI.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// The URL is valid for one hour after you generate it. To access the application UI
-    /// after that hour elapses, you must invoke the API again to generate a new URL.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the ListJobRunAttempts operation.
+    /// Lists all attempt of a job run.
     /// </summary>
-    public partial class GetDashboardForJobRunRequest : AmazonEMRServerlessRequest
+    public partial class ListJobRunAttemptsRequest : AmazonEMRServerlessRequest
     {
         private string _applicationId;
-        private int? _attempt;
         private string _jobRunId;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The ID of the application.
+        /// The ID of the application for which to list job runs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -73,29 +60,9 @@ namespace Amazon.EMRServerless.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Attempt. 
-        /// <para>
-        /// An optimal parameter that indicates the amount of attempts for the job. If not specified,
-        /// this value defaults to the attempt of the latest job.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1)]
-        public int Attempt
-        {
-            get { return this._attempt.GetValueOrDefault(); }
-            set { this._attempt = value; }
-        }
-
-        // Check to see if Attempt property is set
-        internal bool IsSetAttempt()
-        {
-            return this._attempt.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property JobRunId. 
         /// <para>
-        /// The ID of the job run.
+        /// The ID of the job run to list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -109,6 +76,44 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetJobRunId()
         {
             return this._jobRunId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of job run attempts to list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of job run attempt results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

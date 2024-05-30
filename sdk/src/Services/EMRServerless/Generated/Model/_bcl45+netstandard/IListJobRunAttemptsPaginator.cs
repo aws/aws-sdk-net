@@ -16,29 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the emr-serverless-2021-07-13.normal.json service model.
  */
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model
 {
     /// <summary>
-    /// Paginators for the EMRServerless service
+    /// Paginator for the ListJobRunAttempts operation
     ///</summary>
-    public interface IEMRServerlessPaginatorFactory
+    public interface IListJobRunAttemptsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListJobRunAttemptsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListApplications operation
-        ///</summary>
-        IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
-
-        /// <summary>
-        /// Paginator for ListJobRunAttempts operation
-        ///</summary>
-        IListJobRunAttemptsPaginator ListJobRunAttempts(ListJobRunAttemptsRequest request);
-
-        /// <summary>
-        /// Paginator for ListJobRuns operation
-        ///</summary>
-        IListJobRunsPaginator ListJobRuns(ListJobRunsRequest request);
+        /// Enumerable containing all of the JobRunAttempts
+        /// </summary>
+        IPaginatedEnumerable<JobRunAttemptSummary> JobRunAttempts { get; }
     }
 }

@@ -115,10 +115,27 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMode())
+                {
+                    context.Writer.WritePropertyName("mode");
+                    context.Writer.Write(publicRequest.Mode);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetRetryPolicy())
+                {
+                    context.Writer.WritePropertyName("retryPolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RetryPolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RetryPolicy, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTags())

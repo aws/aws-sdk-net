@@ -30,19 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRServerless.Model
 {
     /// <summary>
-    /// The summary of attributes associated with a job run.
+    /// The summary of attributes associated with a job run attempt.
     /// </summary>
-    public partial class JobRunSummary
+    public partial class JobRunAttemptSummary
     {
         private string _applicationId;
         private string _arn;
         private int? _attempt;
-        private DateTime? _attemptCreatedAt;
-        private DateTime? _attemptUpdatedAt;
         private DateTime? _createdAt;
         private string _createdBy;
         private string _executionRole;
         private string _id;
+        private DateTime? _jobCreatedAt;
         private JobRunMode _mode;
         private string _name;
         private string _releaseLabel;
@@ -73,7 +72,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the job run.
+        /// The Amazon Resource Name (ARN) of the job run.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=60, Max=1024)]
@@ -109,45 +108,9 @@ namespace Amazon.EMRServerless.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AttemptCreatedAt. 
-        /// <para>
-        /// The date and time of when the job run attempt was created.
-        /// </para>
-        /// </summary>
-        public DateTime AttemptCreatedAt
-        {
-            get { return this._attemptCreatedAt.GetValueOrDefault(); }
-            set { this._attemptCreatedAt = value; }
-        }
-
-        // Check to see if AttemptCreatedAt property is set
-        internal bool IsSetAttemptCreatedAt()
-        {
-            return this._attemptCreatedAt.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property AttemptUpdatedAt. 
-        /// <para>
-        /// The date and time of when the job run attempt was last updated.
-        /// </para>
-        /// </summary>
-        public DateTime AttemptUpdatedAt
-        {
-            get { return this._attemptUpdatedAt.GetValueOrDefault(); }
-            set { this._attemptUpdatedAt = value; }
-        }
-
-        // Check to see if AttemptUpdatedAt property is set
-        internal bool IsSetAttemptUpdatedAt()
-        {
-            return this._attemptUpdatedAt.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time when the job run was created.
+        /// The date and time when the job run attempt was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -185,7 +148,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property ExecutionRole. 
         /// <para>
-        /// The execution role ARN of the job run.
+        /// The Amazon Resource Name (ARN) of the execution role of the job run..
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -204,7 +167,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the job run.
+        /// The ID of the job run attempt.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -221,9 +184,28 @@ namespace Amazon.EMRServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JobCreatedAt. 
+        /// <para>
+        /// The date and time of when the job run was created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public DateTime JobCreatedAt
+        {
+            get { return this._jobCreatedAt.GetValueOrDefault(); }
+            set { this._jobCreatedAt = value; }
+        }
+
+        // Check to see if JobCreatedAt property is set
+        internal bool IsSetJobCreatedAt()
+        {
+            return this._jobCreatedAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// The mode of the job run.
+        /// The mode of the job run attempt.
         /// </para>
         /// </summary>
         public JobRunMode Mode
@@ -241,7 +223,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The optional job run name. This doesn't have to be unique.
+        /// The name of the job run attempt.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -260,7 +242,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property ReleaseLabel. 
         /// <para>
-        /// The Amazon EMR release associated with the application your job is running on.
+        /// The Amazon EMR release label of the job run attempt.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -279,7 +261,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the job run.
+        /// The state of the job run attempt.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -298,7 +280,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property StateDetails. 
         /// <para>
-        /// The state details of the job run.
+        /// The state details of the job run attempt.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -317,7 +299,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of job run, such as Spark or Hive.
+        /// The type of the job run, such as Spark or Hive.
         /// </para>
         /// </summary>
         public string Type
@@ -335,7 +317,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The date and time when the job run was last updated.
+        /// The date and time of when the job run attempt was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -36,6 +36,7 @@ namespace Amazon.EMRServerless.Model
     public partial class GetJobRunRequest : AmazonEMRServerlessRequest
     {
         private string _applicationId;
+        private int? _attempt;
         private string _jobRunId;
 
         /// <summary>
@@ -55,6 +56,26 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Attempt. 
+        /// <para>
+        /// An optimal parameter that indicates the amount of attempts for the job. If not specified,
+        /// this value defaults to the attempt of the latest job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int Attempt
+        {
+            get { return this._attempt.GetValueOrDefault(); }
+            set { this._attempt = value; }
+        }
+
+        // Check to see if Attempt property is set
+        internal bool IsSetAttempt()
+        {
+            return this._attempt.HasValue; 
         }
 
         /// <summary>
