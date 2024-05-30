@@ -130,6 +130,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.ModelApprovalStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelCard", targetDepth))
+                {
+                    var unmarshaller = ModelPackageModelCardUnmarshaller.Instance;
+                    response.ModelCard = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelMetrics", targetDepth))
                 {
                     var unmarshaller = ModelMetricsUnmarshaller.Instance;
@@ -182,6 +188,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SamplePayloadUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecurityConfig", targetDepth))
+                {
+                    var unmarshaller = ModelPackageSecurityConfigUnmarshaller.Instance;
+                    response.SecurityConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SkipModelValidation", targetDepth))

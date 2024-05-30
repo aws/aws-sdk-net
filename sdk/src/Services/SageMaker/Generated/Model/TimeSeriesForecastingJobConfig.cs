@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class TimeSeriesForecastingJobConfig
     {
+        private CandidateGenerationConfig _candidateGenerationConfig;
         private AutoMLJobCompletionCriteria _completionCriteria;
         private string _featureSpecificationS3Uri;
         private string _forecastFrequency;
@@ -43,6 +44,21 @@ namespace Amazon.SageMaker.Model
         private List<HolidayConfigAttributes> _holidayConfig = AWSConfigs.InitializeCollections ? new List<HolidayConfigAttributes>() : null;
         private TimeSeriesConfig _timeSeriesConfig;
         private TimeSeriesTransformations _transformations;
+
+        /// <summary>
+        /// Gets and sets the property CandidateGenerationConfig.
+        /// </summary>
+        public CandidateGenerationConfig CandidateGenerationConfig
+        {
+            get { return this._candidateGenerationConfig; }
+            set { this._candidateGenerationConfig = value; }
+        }
+
+        // Check to see if CandidateGenerationConfig property is set
+        internal bool IsSetCandidateGenerationConfig()
+        {
+            return this._candidateGenerationConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CompletionCriteria.

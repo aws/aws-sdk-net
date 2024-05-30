@@ -66,6 +66,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CandidateGenerationConfig", targetDepth))
+                {
+                    var unmarshaller = CandidateGenerationConfigUnmarshaller.Instance;
+                    unmarshalledObject.CandidateGenerationConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompletionCriteria", targetDepth))
                 {
                     var unmarshaller = AutoMLJobCompletionCriteriaUnmarshaller.Instance;

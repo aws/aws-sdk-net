@@ -68,11 +68,13 @@ namespace Amazon.SageMaker.Model
         private InferenceSpecification _inferenceSpecification;
         private MetadataProperties _metadataProperties;
         private ModelApprovalStatus _modelApprovalStatus;
+        private ModelPackageModelCard _modelCard;
         private ModelMetrics _modelMetrics;
         private string _modelPackageDescription;
         private string _modelPackageGroupName;
         private string _modelPackageName;
         private string _samplePayloadUrl;
+        private ModelPackageSecurityConfig _securityConfig;
         private SkipModelValidation _skipModelValidation;
         private SourceAlgorithmSpecification _sourceAlgorithmSpecification;
         private string _sourceUri;
@@ -280,6 +282,30 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelCard. 
+        /// <para>
+        /// The model card associated with the model package. Since <c>ModelPackageModelCard</c>
+        /// is tied to a model package, it is a specific usage of a model card and its schema
+        /// is simplified compared to the schema of <c>ModelCard</c>. The <c>ModelPackageModelCard</c>
+        /// schema does not include <c>model_package_details</c>, and <c>model_overview</c> is
+        /// composed of the <c>model_creator</c> and <c>model_artifact</c> properties. For more
+        /// information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
+        /// the Details of a Model Version</a>.
+        /// </para>
+        /// </summary>
+        public ModelPackageModelCard ModelCard
+        {
+            get { return this._modelCard; }
+            set { this._modelCard = value; }
+        }
+
+        // Check to see if ModelCard property is set
+        internal bool IsSetModelCard()
+        {
+            return this._modelCard != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelMetrics. 
         /// <para>
         /// A structure that contains model metrics reports.
@@ -387,6 +413,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSamplePayloadUrl()
         {
             return this._samplePayloadUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityConfig. 
+        /// <para>
+        /// The KMS Key ID (<c>KMSKeyId</c>) used for encryption of model package information.
+        /// </para>
+        /// </summary>
+        public ModelPackageSecurityConfig SecurityConfig
+        {
+            get { return this._securityConfig; }
+            set { this._securityConfig = value; }
+        }
+
+        // Check to see if SecurityConfig property is set
+        internal bool IsSetSecurityConfig()
+        {
+            return this._securityConfig != null;
         }
 
         /// <summary>

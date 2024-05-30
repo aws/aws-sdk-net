@@ -133,6 +133,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ModelApprovalStatus);
                 }
 
+                if(publicRequest.IsSetModelCard())
+                {
+                    context.Writer.WritePropertyName("ModelCard");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ModelPackageModelCardMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ModelCard, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetModelPackageArn())
                 {
                     context.Writer.WritePropertyName("ModelPackageArn");

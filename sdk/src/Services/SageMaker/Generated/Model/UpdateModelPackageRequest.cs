@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private List<string> _customerMetadataPropertiesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private InferenceSpecification _inferenceSpecification;
         private ModelApprovalStatus _modelApprovalStatus;
+        private ModelPackageModelCard _modelCard;
         private string _modelPackageArn;
         private string _sourceUri;
 
@@ -172,6 +173,30 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelApprovalStatus()
         {
             return this._modelApprovalStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelCard. 
+        /// <para>
+        /// The model card associated with the model package. Since <c>ModelPackageModelCard</c>
+        /// is tied to a model package, it is a specific usage of a model card and its schema
+        /// is simplified compared to the schema of <c>ModelCard</c>. The <c>ModelPackageModelCard</c>
+        /// schema does not include <c>model_package_details</c>, and <c>model_overview</c> is
+        /// composed of the <c>model_creator</c> and <c>model_artifact</c> properties. For more
+        /// information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
+        /// the Details of a Model Version</a>.
+        /// </para>
+        /// </summary>
+        public ModelPackageModelCard ModelCard
+        {
+            get { return this._modelCard; }
+            set { this._modelCard = value; }
+        }
+
+        // Check to see if ModelCard property is set
+        internal bool IsSetModelCard()
+        {
+            return this._modelCard != null;
         }
 
         /// <summary>

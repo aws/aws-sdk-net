@@ -1701,9 +1701,25 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
+        /// Constant Arima for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm Arima = new AutoMLAlgorithm("arima");
+        /// <summary>
         /// Constant Catboost for AutoMLAlgorithm
         /// </summary>
         public static readonly AutoMLAlgorithm Catboost = new AutoMLAlgorithm("catboost");
+        /// <summary>
+        /// Constant CnnQr for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm CnnQr = new AutoMLAlgorithm("cnn-qr");
+        /// <summary>
+        /// Constant Deepar for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm Deepar = new AutoMLAlgorithm("deepar");
+        /// <summary>
+        /// Constant Ets for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm Ets = new AutoMLAlgorithm("ets");
         /// <summary>
         /// Constant ExtraTrees for AutoMLAlgorithm
         /// </summary>
@@ -1728,6 +1744,14 @@ namespace Amazon.SageMaker
         /// Constant NnTorch for AutoMLAlgorithm
         /// </summary>
         public static readonly AutoMLAlgorithm NnTorch = new AutoMLAlgorithm("nn-torch");
+        /// <summary>
+        /// Constant Npts for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm Npts = new AutoMLAlgorithm("npts");
+        /// <summary>
+        /// Constant Prophet for AutoMLAlgorithm
+        /// </summary>
+        public static readonly AutoMLAlgorithm Prophet = new AutoMLAlgorithm("prophet");
         /// <summary>
         /// Constant Randomforest for AutoMLAlgorithm
         /// </summary>
