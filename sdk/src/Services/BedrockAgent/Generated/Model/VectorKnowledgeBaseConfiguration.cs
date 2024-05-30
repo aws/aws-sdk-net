@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class VectorKnowledgeBaseConfiguration
     {
         private string _embeddingModelArn;
+        private EmbeddingModelConfiguration _embeddingModelConfiguration;
 
         /// <summary>
         /// Gets and sets the property EmbeddingModelArn. 
@@ -55,6 +56,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetEmbeddingModelArn()
         {
             return this._embeddingModelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmbeddingModelConfiguration. 
+        /// <para>
+        /// The embeddings model configuration details for the vector model used in Knowledge
+        /// Base.
+        /// </para>
+        /// </summary>
+        public EmbeddingModelConfiguration EmbeddingModelConfiguration
+        {
+            get { return this._embeddingModelConfiguration; }
+            set { this._embeddingModelConfiguration = value; }
+        }
+
+        // Check to see if EmbeddingModelConfiguration property is set
+        internal bool IsSetEmbeddingModelConfiguration()
+        {
+            return this._embeddingModelConfiguration != null;
         }
 
     }

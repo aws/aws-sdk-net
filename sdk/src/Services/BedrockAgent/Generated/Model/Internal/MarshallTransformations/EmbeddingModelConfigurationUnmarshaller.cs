@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VectorKnowledgeBaseConfiguration Object
+    /// Response Unmarshaller for EmbeddingModelConfiguration Object
     /// </summary>  
-    public class VectorKnowledgeBaseConfigurationUnmarshaller : IUnmarshaller<VectorKnowledgeBaseConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VectorKnowledgeBaseConfiguration, JsonUnmarshallerContext>
+    public class EmbeddingModelConfigurationUnmarshaller : IUnmarshaller<EmbeddingModelConfiguration, XmlUnmarshallerContext>, IUnmarshaller<EmbeddingModelConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VectorKnowledgeBaseConfiguration IUnmarshaller<VectorKnowledgeBaseConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EmbeddingModelConfiguration IUnmarshaller<EmbeddingModelConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public VectorKnowledgeBaseConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public EmbeddingModelConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            VectorKnowledgeBaseConfiguration unmarshalledObject = new VectorKnowledgeBaseConfiguration();
+            EmbeddingModelConfiguration unmarshalledObject = new EmbeddingModelConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("embeddingModelArn", targetDepth))
+                if (context.TestExpression("bedrockEmbeddingModelConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmbeddingModelArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("embeddingModelConfiguration", targetDepth))
-                {
-                    var unmarshaller = EmbeddingModelConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EmbeddingModelConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BedrockEmbeddingModelConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BedrockEmbeddingModelConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static VectorKnowledgeBaseConfigurationUnmarshaller _instance = new VectorKnowledgeBaseConfigurationUnmarshaller();        
+        private static EmbeddingModelConfigurationUnmarshaller _instance = new EmbeddingModelConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VectorKnowledgeBaseConfigurationUnmarshaller Instance
+        public static EmbeddingModelConfigurationUnmarshaller Instance
         {
             get
             {

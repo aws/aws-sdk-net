@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VectorKnowledgeBaseConfiguration Marshaller
+    /// BedrockEmbeddingModelConfiguration Marshaller
     /// </summary>
-    public class VectorKnowledgeBaseConfigurationMarshaller : IRequestMarshaller<VectorKnowledgeBaseConfiguration, JsonMarshallerContext> 
+    public class BedrockEmbeddingModelConfigurationMarshaller : IRequestMarshaller<BedrockEmbeddingModelConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,25 +44,14 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VectorKnowledgeBaseConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(BedrockEmbeddingModelConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEmbeddingModelArn())
+            if(requestObject.IsSetDimensions())
             {
-                context.Writer.WritePropertyName("embeddingModelArn");
-                context.Writer.Write(requestObject.EmbeddingModelArn);
-            }
-
-            if(requestObject.IsSetEmbeddingModelConfiguration())
-            {
-                context.Writer.WritePropertyName("embeddingModelConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EmbeddingModelConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.EmbeddingModelConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("dimensions");
+                context.Writer.Write(requestObject.Dimensions);
             }
 
         }
@@ -70,7 +59,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static VectorKnowledgeBaseConfigurationMarshaller Instance = new VectorKnowledgeBaseConfigurationMarshaller();
+        public readonly static BedrockEmbeddingModelConfigurationMarshaller Instance = new BedrockEmbeddingModelConfigurationMarshaller();
 
     }
 }
