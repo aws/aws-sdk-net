@@ -75,6 +75,7 @@ namespace UnitTests.NetStandard.Core
         }
 
         [Theory]
+        [InlineData("\ud83d\ude02 value, with special chars!", "%F0%9F%98%82%20value%2C%20with%20special%20chars!")]
         [InlineData("value, with special chars!", "value%2C%20with%20special%20chars!")]
         [InlineData("value, with special chars and path {/+:}", "value%2C%20with%20special%20chars%20and%20path%20%7B/%2B:%7D")]
         public void UrlEncodeWithPath(string input, string expected)
