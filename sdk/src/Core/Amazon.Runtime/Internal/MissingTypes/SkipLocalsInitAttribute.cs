@@ -1,4 +1,4 @@
-#if NETSTANDARD || NETCOREAPP
+#if !NET8_0_OR_GREATER
 namespace System.Runtime.CompilerServices
 {
     /// <summary>Indicates to the compiler that the .locals init flag should not be set in nested method headers when emitting to metadata.</summary>
