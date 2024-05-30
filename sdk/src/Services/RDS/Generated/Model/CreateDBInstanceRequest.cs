@@ -699,8 +699,8 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd> 
         /// <para>
         /// The name of the database to create when the primary DB instance of the Aurora PostgreSQL
-        /// DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL
-        /// DB cluster, a database named <c>postgres</c> is created in the DB cluster.
+        /// DB cluster is created. A database named <c>postgres</c> is always created. If this
+        /// parameter is specified, an additional database with this name is created.
         /// </para>
         ///  
         /// <para>
@@ -836,8 +836,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> 
         /// <para>
-        /// The name of the database to create when the DB instance is created. If this parameter
-        /// isn't specified, a database named <c>postgres</c> is created in the DB instance.
+        /// The name of the database to create when the DB instance is created. A database named
+        /// <c>postgres</c> is always created. If this parameter is specified, an additional database
+        /// with this name is created.
         /// </para>
         ///  
         /// <para>
