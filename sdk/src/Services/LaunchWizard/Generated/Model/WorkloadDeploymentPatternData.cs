@@ -30,22 +30,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
-    /// Describes a workload.
+    /// The data that details a workload deployment pattern.
     /// </summary>
-    public partial class WorkloadData
+    public partial class WorkloadDeploymentPatternData
     {
+        private string _deploymentPatternName;
         private string _description;
         private string _displayName;
-        private string _documentationUrl;
-        private string _iconUrl;
-        private WorkloadStatus _status;
+        private List<DeploymentSpecificationsField> _specifications = AWSConfigs.InitializeCollections ? new List<DeploymentSpecificationsField>() : null;
+        private WorkloadDeploymentPatternStatus _status;
         private string _statusMessage;
         private string _workloadName;
+        private string _workloadVersionName;
+
+        /// <summary>
+        /// Gets and sets the property DeploymentPatternName. 
+        /// <para>
+        /// The name of the deployment pattern.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string DeploymentPatternName
+        {
+            get { return this._deploymentPatternName; }
+            set { this._deploymentPatternName = value; }
+        }
+
+        // Check to see if DeploymentPatternName property is set
+        internal bool IsSetDeploymentPatternName()
+        {
+            return this._deploymentPatternName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of a workload.
+        /// The description of the deployment pattern.
         /// </para>
         /// </summary>
         public string Description
@@ -63,7 +83,7 @@ namespace Amazon.LaunchWizard.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The display name of a workload.
+        /// The display name of the deployment pattern.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -79,48 +99,36 @@ namespace Amazon.LaunchWizard.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DocumentationUrl. 
+        /// Gets and sets the property Specifications. 
         /// <para>
-        /// The URL of a workload document.
+        /// The settings specified for the deployment. These settings define how to deploy and
+        /// configure your resources created by the deployment. For more information about the
+        /// specifications required for creating a deployment for a SAP workload, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+        /// deployment specifications</a>. To retrieve the specifications required to create a
+        /// deployment for other workloads, use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+        /// <c>GetWorkloadDeploymentPattern</c> </a> operation.
         /// </para>
         /// </summary>
-        public string DocumentationUrl
+        [AWSProperty(Min=1, Max=100)]
+        public List<DeploymentSpecificationsField> Specifications
         {
-            get { return this._documentationUrl; }
-            set { this._documentationUrl = value; }
+            get { return this._specifications; }
+            set { this._specifications = value; }
         }
 
-        // Check to see if DocumentationUrl property is set
-        internal bool IsSetDocumentationUrl()
+        // Check to see if Specifications property is set
+        internal bool IsSetSpecifications()
         {
-            return this._documentationUrl != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property IconUrl. 
-        /// <para>
-        /// The URL of a workload icon.
-        /// </para>
-        /// </summary>
-        public string IconUrl
-        {
-            get { return this._iconUrl; }
-            set { this._iconUrl = value; }
-        }
-
-        // Check to see if IconUrl property is set
-        internal bool IsSetIconUrl()
-        {
-            return this._iconUrl != null;
+            return this._specifications != null && (this._specifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of a workload.
+        /// The status of the deployment pattern.
         /// </para>
         /// </summary>
-        public WorkloadStatus Status
+        public WorkloadDeploymentPatternStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -135,7 +143,7 @@ namespace Amazon.LaunchWizard.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// The message about a workload's status.
+        /// The status message of the deployment pattern.
         /// </para>
         /// </summary>
         public string StatusMessage
@@ -153,7 +161,7 @@ namespace Amazon.LaunchWizard.Model
         /// <summary>
         /// Gets and sets the property WorkloadName. 
         /// <para>
-        /// The name of the workload.
+        /// The workload name of the deployment pattern.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -167,6 +175,25 @@ namespace Amazon.LaunchWizard.Model
         internal bool IsSetWorkloadName()
         {
             return this._workloadName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkloadVersionName. 
+        /// <para>
+        /// The workload version name of the deployment pattern.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=30)]
+        public string WorkloadVersionName
+        {
+            get { return this._workloadVersionName; }
+            set { this._workloadVersionName = value; }
+        }
+
+        // Check to see if WorkloadVersionName property is set
+        internal bool IsSetWorkloadVersionName()
+        {
+            return this._workloadVersionName != null;
         }
 
     }

@@ -30,29 +30,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
-    /// Describes workload data.
+    /// Container for the parameters to the GetWorkloadDeploymentPattern operation.
+    /// Returns details for a given workload and deployment pattern, including the available
+    /// specifications. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">ListWorkloads</a>
+    /// operation to discover the available workload names and the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">ListWorkloadDeploymentPatterns</a>
+    /// operation to discover the available deployment pattern names of a given workload.
     /// </summary>
-    public partial class WorkloadDataSummary
+    public partial class GetWorkloadDeploymentPatternRequest : AmazonLaunchWizardRequest
     {
-        private string _displayName;
+        private string _deploymentPatternName;
         private string _workloadName;
 
         /// <summary>
-        /// Gets and sets the property DisplayName. 
+        /// Gets and sets the property DeploymentPatternName. 
         /// <para>
-        /// The display name of the workload data.
+        /// The name of the deployment pattern.
         /// </para>
         /// </summary>
-        public string DisplayName
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string DeploymentPatternName
         {
-            get { return this._displayName; }
-            set { this._displayName = value; }
+            get { return this._deploymentPatternName; }
+            set { this._deploymentPatternName = value; }
         }
 
-        // Check to see if DisplayName property is set
-        internal bool IsSetDisplayName()
+        // Check to see if DeploymentPatternName property is set
+        internal bool IsSetDeploymentPatternName()
         {
-            return this._displayName != null;
+            return this._deploymentPatternName != null;
         }
 
         /// <summary>
@@ -61,7 +66,7 @@ namespace Amazon.LaunchWizard.Model
         /// The name of the workload.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string WorkloadName
         {
             get { return this._workloadName; }

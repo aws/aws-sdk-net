@@ -30,48 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
-    /// Describes workload data.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class WorkloadDataSummary
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _displayName;
-        private string _workloadName;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property DisplayName. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The display name of the workload data.
+        /// Information about the tags.
         /// </para>
         /// </summary>
-        public string DisplayName
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._displayName; }
-            set { this._displayName = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if DisplayName property is set
-        internal bool IsSetDisplayName()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._displayName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property WorkloadName. 
-        /// <para>
-        /// The name of the workload.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public string WorkloadName
-        {
-            get { return this._workloadName; }
-            set { this._workloadName = value; }
-        }
-
-        // Check to see if WorkloadName property is set
-        internal bool IsSetWorkloadName()
-        {
-            return this._workloadName != null;
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

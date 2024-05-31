@@ -139,7 +139,7 @@ namespace Amazon.LaunchWizard.Model
         /// The name of the workload.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=100)]
         public string WorkloadName
         {
             get { return this._workloadName; }

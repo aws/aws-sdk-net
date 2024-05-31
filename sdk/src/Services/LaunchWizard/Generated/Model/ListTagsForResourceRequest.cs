@@ -30,48 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
-    /// Describes workload data.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Lists the tags associated with a specified resource.
     /// </summary>
-    public partial class WorkloadDataSummary
+    public partial class ListTagsForResourceRequest : AmazonLaunchWizardRequest
     {
-        private string _displayName;
-        private string _workloadName;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property DisplayName. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The display name of the workload data.
+        /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
-        public string DisplayName
+        [AWSProperty(Required=true)]
+        public string ResourceArn
         {
-            get { return this._displayName; }
-            set { this._displayName = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if DisplayName property is set
-        internal bool IsSetDisplayName()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._displayName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property WorkloadName. 
-        /// <para>
-        /// The name of the workload.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public string WorkloadName
-        {
-            get { return this._workloadName; }
-            set { this._workloadName = value; }
-        }
-
-        // Check to see if WorkloadName property is set
-        internal bool IsSetWorkloadName()
-        {
-            return this._workloadName != null;
+            return this._resourceArn != null;
         }
 
     }

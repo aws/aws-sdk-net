@@ -30,48 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
-    /// Describes workload data.
+    /// Container for the parameters to the UntagResource operation.
+    /// Removes the specified tags from the given resource.
     /// </summary>
-    public partial class WorkloadDataSummary
+    public partial class UntagResourceRequest : AmazonLaunchWizardRequest
     {
-        private string _displayName;
-        private string _workloadName;
+        private string _resourceArn;
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property DisplayName. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The display name of the workload data.
+        /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
-        public string DisplayName
+        [AWSProperty(Required=true)]
+        public string ResourceArn
         {
-            get { return this._displayName; }
-            set { this._displayName = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if DisplayName property is set
-        internal bool IsSetDisplayName()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._displayName != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property WorkloadName. 
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The name of the workload.
+        /// Keys identifying the tags to remove.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public string WorkloadName
+        [AWSProperty(Required=true, Min=1, Max=200)]
+        public List<string> TagKeys
         {
-            get { return this._workloadName; }
-            set { this._workloadName = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if WorkloadName property is set
-        internal bool IsSetWorkloadName()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._workloadName != null;
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

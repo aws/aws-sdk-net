@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateDeployment Request Marshaller
+    /// GetWorkloadDeploymentPattern Request Marshaller
     /// </summary>       
-    public class CreateDeploymentRequestMarshaller : IMarshaller<IRequest, CreateDeploymentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetWorkloadDeploymentPatternRequestMarshaller : IMarshaller<IRequest, GetWorkloadDeploymentPatternRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateDeploymentRequest)input);
+            return this.Marshall((GetWorkloadDeploymentPatternRequest)input);
         }
 
         /// <summary>
@@ -53,14 +53,14 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateDeploymentRequest publicRequest)
+        public IRequest Marshall(GetWorkloadDeploymentPatternRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LaunchWizard");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/createDeployment";
+            request.ResourcePath = "/getWorkloadDeploymentPattern";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -71,46 +71,6 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("deploymentPatternName");
                     context.Writer.Write(publicRequest.DeploymentPatternName);
-                }
-
-                if(publicRequest.IsSetDryRun())
-                {
-                    context.Writer.WritePropertyName("dryRun");
-                    context.Writer.Write(publicRequest.DryRun);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSpecifications())
-                {
-                    context.Writer.WritePropertyName("specifications");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestSpecificationsKvp in publicRequest.Specifications)
-                    {
-                        context.Writer.WritePropertyName(publicRequestSpecificationsKvp.Key);
-                        var publicRequestSpecificationsValue = publicRequestSpecificationsKvp.Value;
-
-                            context.Writer.Write(publicRequestSpecificationsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetWorkloadName())
@@ -127,9 +87,9 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateDeploymentRequestMarshaller _instance = new CreateDeploymentRequestMarshaller();        
+        private static GetWorkloadDeploymentPatternRequestMarshaller _instance = new GetWorkloadDeploymentPatternRequestMarshaller();        
 
-        internal static CreateDeploymentRequestMarshaller GetInstance()
+        internal static GetWorkloadDeploymentPatternRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +97,7 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDeploymentRequestMarshaller Instance
+        public static GetWorkloadDeploymentPatternRequestMarshaller Instance
         {
             get
             {

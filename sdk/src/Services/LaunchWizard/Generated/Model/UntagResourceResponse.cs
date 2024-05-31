@@ -30,31 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetWorkload operation.
-    /// Returns information about a workload.
+    /// This is the response object from the UntagResource operation.
     /// </summary>
-    public partial class GetWorkloadRequest : AmazonLaunchWizardRequest
+    public partial class UntagResourceResponse : AmazonWebServiceResponse
     {
-        private string _workloadName;
-
-        /// <summary>
-        /// Gets and sets the property WorkloadName. 
-        /// <para>
-        /// The name of the workload.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string WorkloadName
-        {
-            get { return this._workloadName; }
-            set { this._workloadName = value; }
-        }
-
-        // Check to see if WorkloadName property is set
-        internal bool IsSetWorkloadName()
-        {
-            return this._workloadName != null;
-        }
 
     }
 }

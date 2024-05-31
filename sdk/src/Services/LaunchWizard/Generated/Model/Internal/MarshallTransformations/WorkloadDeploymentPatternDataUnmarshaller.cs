@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeploymentData Object
+    /// Response Unmarshaller for WorkloadDeploymentPatternData Object
     /// </summary>  
-    public class DeploymentDataUnmarshaller : IUnmarshaller<DeploymentData, XmlUnmarshallerContext>, IUnmarshaller<DeploymentData, JsonUnmarshallerContext>
+    public class WorkloadDeploymentPatternDataUnmarshaller : IUnmarshaller<WorkloadDeploymentPatternData, XmlUnmarshallerContext>, IUnmarshaller<WorkloadDeploymentPatternData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DeploymentData IUnmarshaller<DeploymentData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WorkloadDeploymentPatternData IUnmarshaller<WorkloadDeploymentPatternData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeploymentData Unmarshall(JsonUnmarshallerContext context)
+        public WorkloadDeploymentPatternData Unmarshall(JsonUnmarshallerContext context)
         {
-            DeploymentData unmarshalledObject = new DeploymentData();
+            WorkloadDeploymentPatternData unmarshalledObject = new WorkloadDeploymentPatternData();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,51 +66,27 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("createdAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("deletedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DeletedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("deploymentArn", targetDepth))
+                if (context.TestExpression("deploymentPatternName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentPatternName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("displayName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("patternName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PatternName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceGroup", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("specifications", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    var unmarshaller = new ListUnmarshaller<DeploymentSpecificationsField, DeploymentSpecificationsFieldUnmarshaller>(DeploymentSpecificationsFieldUnmarshaller.Instance);
                     unmarshalledObject.Specifications = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -120,10 +96,10 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("statusMessage", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("workloadName", targetDepth))
@@ -132,17 +108,23 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
                     unmarshalledObject.WorkloadName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("workloadVersionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkloadVersionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
 
 
-        private static DeploymentDataUnmarshaller _instance = new DeploymentDataUnmarshaller();        
+        private static WorkloadDeploymentPatternDataUnmarshaller _instance = new WorkloadDeploymentPatternDataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeploymentDataUnmarshaller Instance
+        public static WorkloadDeploymentPatternDataUnmarshaller Instance
         {
             get
             {
