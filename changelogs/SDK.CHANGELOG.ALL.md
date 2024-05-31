@@ -1,3 +1,15 @@
+### 3.7.822.0 (2024-05-31 18:27 UTC)
+* CodeBuild (3.7.309.2)
+	* AWS CodeBuild now supports Self-hosted GitHub Actions runners for Github Enterprise
+* CodeGuruSecurity (3.7.301.0)
+	* This release includes minor model updates and documentation updates.
+* ElastiCache (3.7.302.36)
+	* Update to attributes of TestFailover and minor revisions.
+* LaunchWizard (3.7.301.0)
+	* This release adds support for describing workload deployment specifications, deploying additional workload types, and managing tags for Launch Wizard resources with API operations.
+* Core 3.7.304.9
+	* Updated custom user agent header string to comply with User Agent 2.0 standards.
+
 ### 3.7.821.0 (2024-05-30 18:23 UTC)
 * BedrockAgent (3.7.310.0)
 	* With this release, Knowledge bases for Bedrock adds support for Titan Text Embedding v2.

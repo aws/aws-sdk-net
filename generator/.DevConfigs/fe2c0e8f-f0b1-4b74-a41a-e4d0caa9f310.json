@@ -1,9 +1,0 @@
-{
-    "core": {
-        "changeLogMessages": [
-            "Updated custom user agent header string to comply with User Agent 2.0 standards."
-        ],
-        "type": "patch",
-        "updateMinimum": false
-    }
-}
