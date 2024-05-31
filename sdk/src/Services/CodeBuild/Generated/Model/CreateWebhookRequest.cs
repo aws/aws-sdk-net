@@ -134,7 +134,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// manualCreation is only available for GitHub webhooks.
+        ///  <c>manualCreation</c> is only available for GitHub webhooks.
         /// </para>
         ///  </note>
         /// </summary>

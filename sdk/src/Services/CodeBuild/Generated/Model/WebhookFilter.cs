@@ -111,9 +111,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  The <c>PULL_REQUEST_REOPENED</c> works with GitHub and GitHub Enterprise only. The
-        /// <c>RELEASED</c>, <c>PRERELEASED</c>, and <c>WORKFLOW_JOB_QUEUED</c> work with GitHub
-        /// only.
+        ///  Types <c>PULL_REQUEST_REOPENED</c> and <c>WORKFLOW_JOB_QUEUED</c> work with GitHub
+        /// and GitHub Enterprise only. Types <c>RELEASED</c> and <c>PRERELEASED</c> work with
+        /// GitHub only.
         /// </para>
         ///  </note> </li> </ul> </li> <li> 
         /// <para>
