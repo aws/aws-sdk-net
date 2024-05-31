@@ -480,6 +480,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     // If the property has a property converter, use it to convert the hypothetical value
                     convertedEntry = property.Converter.ToEntry(hypotheticalValue);
+
+                    // If the converter's output was cast to an UnconvertedDynamoDBEntry, 
+                    // try converting it again so we can determine the corresponding primitive type
+                    if (convertedEntry is UnconvertedDynamoDBEntry unconvertedEntry)
+                    {
+                        convertedEntry = unconvertedEntry.Convert(flatConfig.Conversion);
+                    }
                 }
                 else
                 {
@@ -491,7 +498,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
             catch (Exception e)
             {
-                throw new InvalidOperationException($"Failed to determine the DynamoDB primitive type for property {property.PropertyName} of type {property.MemberType}.", e);
+                throw new InvalidOperationException($"Failed to determine the DynamoDB primitive type for property {property.PropertyName} " +
+                    $"of type {property.MemberType}. If using {nameof(DataModel.DynamoDBContextConfig.DisableFetchingTableMetadata)} and a converter " +
+                    $"on a primary key, ensure that the converted entry can be cast to a {nameof(Primitive)}.", e);
             }
         }
 
