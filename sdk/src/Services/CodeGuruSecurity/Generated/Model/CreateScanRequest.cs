@@ -31,7 +31,7 @@ namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateScan operation.
-    /// Use to create a scan using code uploaded to an S3 bucket.
+    /// Use to create a scan using code uploaded to an Amazon S3 bucket.
     /// </summary>
     public partial class CreateScanRequest : AmazonCodeGuruSecurityRequest
     {
@@ -86,7 +86,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The identifier for an input resource used to create a scan.
+        /// The identifier for the resource object to be scanned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -106,8 +106,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// Gets and sets the property ScanName. 
         /// <para>
         /// The unique name that CodeGuru Security uses to track revisions across multiple scans
-        /// of the same resource. Only allowed for a <c>STANDARD</c> scan type. If not specified,
-        /// it will be auto generated. 
+        /// of the same resource. Only allowed for a <c>STANDARD</c> scan type. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=140)]

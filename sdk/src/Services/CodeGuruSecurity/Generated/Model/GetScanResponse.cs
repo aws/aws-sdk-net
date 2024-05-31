@@ -36,6 +36,7 @@ namespace Amazon.CodeGuruSecurity.Model
     {
         private AnalysisType _analysisType;
         private DateTime? _createdAt;
+        private string _errorMessage;
         private long? _numberOfRevisions;
         private string _runId;
         private string _scanName;
@@ -81,6 +82,25 @@ namespace Amazon.CodeGuruSecurity.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// Details about the error that causes a scan to fail to be retrieved.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string ErrorMessage
+        {
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
+        }
+
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
+        {
+            return this._errorMessage != null;
         }
 
         /// <summary>
@@ -161,8 +181,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property ScanState. 
         /// <para>
-        /// The current state of the scan. Pass either <c>InProgress</c>, <c>Successful</c>, or
-        /// <c>Failed</c>.
+        /// The current state of the scan. Returns either <c>InProgress</c>, <c>Successful</c>,
+        /// or <c>Failed</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

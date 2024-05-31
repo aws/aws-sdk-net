@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
-    /// Information about a resource, such as an Amazon S3 bucket or AWS Lambda function,
-    /// that contains a finding.
+    /// Information about a resource that contains a finding.
     /// </summary>
     public partial class Resource
     {
@@ -41,7 +40,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the resource.
+        /// The <c>scanName</c> of the scan that was run on the resource.
         /// </para>
         /// </summary>
         public string Id
@@ -59,7 +58,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property SubResourceId. 
         /// <para>
-        /// The identifier for a section of the resource, such as an AWS Lambda layer.
+        /// The identifier for a section of the resource.
         /// </para>
         /// </summary>
         public string SubResourceId

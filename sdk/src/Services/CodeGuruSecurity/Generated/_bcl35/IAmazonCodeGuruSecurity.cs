@@ -66,7 +66,7 @@ namespace Amazon.CodeGuruSecurity
 
 
         /// <summary>
-        /// Returns a list of all requested findings.
+        /// Returns a list of requested findings from standard scans.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetFindings service method.</param>
         /// 
@@ -118,7 +118,7 @@ namespace Amazon.CodeGuruSecurity
 
 
         /// <summary>
-        /// Use to create a scan using code uploaded to an S3 bucket.
+        /// Use to create a scan using code uploaded to an Amazon S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateScan service method.</param>
         /// 
@@ -177,12 +177,13 @@ namespace Amazon.CodeGuruSecurity
 
 
         /// <summary>
-        /// Generates a pre-signed URL and request headers used to upload a code resource.
+        /// Generates a pre-signed URL, request headers used to upload a code resource, and code
+        /// artifact identifier for the uploaded resource.
         /// 
         ///  
         /// <para>
-        /// You can upload your code resource to the URL and add the request headers using any
-        /// HTTP client.
+        /// You can upload your code resource to the URL with the request headers using any HTTP
+        /// client.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUploadUrl service method.</param>
@@ -235,7 +236,7 @@ namespace Amazon.CodeGuruSecurity
 
 
         /// <summary>
-        /// Use to get account level configuration.
+        /// Use to get the encryption configuration for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountConfiguration service method.</param>
         /// 
@@ -346,7 +347,7 @@ namespace Amazon.CodeGuruSecurity
 
 
         /// <summary>
-        /// Returns top level metrics about an account from a specified date, including number
+        /// Returns a summary of metrics for an account from a specified date, including number
         /// of open findings, the categories with most findings, the scans with most open findings,
         /// and scans with most open critical findings.
         /// </summary>
@@ -416,6 +417,9 @@ namespace Amazon.CodeGuruSecurity
         /// </exception>
         /// <exception cref="Amazon.CodeGuruSecurity.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeGuruSecurity.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/GetScan">REST API Reference for GetScan Operation</seealso>
         GetScanResponse GetScan(GetScanRequest request);
@@ -504,7 +508,7 @@ namespace Amazon.CodeGuruSecurity
 
 
         /// <summary>
-        /// Returns a list of all the standard scans in an account. Does not return express scans.
+        /// Returns a list of all scans in an account. Does not return <c>EXPRESS</c> scans.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListScans service method.</param>
         /// 
@@ -733,7 +737,7 @@ namespace Amazon.CodeGuruSecurity
 
 
         /// <summary>
-        /// Use to update account-level configuration with an encryption key.
+        /// Use to update the encryption configuration for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountConfiguration service method.</param>
         /// 
