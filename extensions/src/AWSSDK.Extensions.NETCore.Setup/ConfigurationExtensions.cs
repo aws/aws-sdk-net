@@ -183,6 +183,11 @@ namespace Microsoft.Extensions.Configuration
                 options.SessionName = section["SessionName"];
             }
 
+            if (!string.IsNullOrEmpty(section["ExternalId"]))
+            {
+                options.ExternalId = section["ExternalId"];
+            }
+
             var loggingSection = section.GetSection("Logging");
             if(loggingSection != null)
             {

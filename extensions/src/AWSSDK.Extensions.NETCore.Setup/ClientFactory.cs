@@ -86,7 +86,14 @@ namespace Amazon.Extensions.NETCore.Setup
 
             if (!string.IsNullOrEmpty(options?.SessionRoleArn))
             {
-                credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName);
+                if (string.IsNullOrEmpty(options?.ExternalId))
+                {
+                    credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName);
+                }
+                else
+                {
+                    credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName, new AssumeRoleAWSCredentialsOptions() { ExternalId = options.ExternalId });
+                }
             }
 
             var config = CreateConfig(serviceInterfaceType, options);
