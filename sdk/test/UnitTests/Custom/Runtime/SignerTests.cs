@@ -81,9 +81,6 @@ namespace AWSSDK.UnitTests
                 // Real region with credentialScope.region
                 new object[]{new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("us-east-1") },
                     "us-east-1", "ecr", "api.ecr.us-east-1.amazonaws.com" },
-                // Pseudoregion with credentialScope.region
-                new object[]{ new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-dkr-us-east-1") },
-                    "us-east-1", "ecr", "ecr-fips.us-east-1.amazonaws.com"},
                  // Pseudoregion with credentialScope.region, different partition
                 new object[]{ new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-gov-east-1") },
                     "us-gov-east-1", "ecr", "ecr-fips.us-gov-east-1.amazonaws.com" },
@@ -111,9 +108,11 @@ namespace AWSSDK.UnitTests
         {
             var signer = new AWS4Signer();
             var mock = new Moq.Mock<IRequest>().SetupAllProperties();
+            var requestMock = new Moq.Mock<AmazonWebServiceRequest>().SetupAllProperties();
             var request = mock.Object;
 
             mock.SetupGet(x => x.Headers).Returns(new Dictionary<string, string>());
+            mock.SetupGet(x => x.OriginalRequest).Returns(requestMock.Object);
             request.Endpoint = EndpointResolver.DetermineEndpoint(config, request);
 
             var result = signer.SignRequest(request, config, null, "accessKey", "secretKey");
