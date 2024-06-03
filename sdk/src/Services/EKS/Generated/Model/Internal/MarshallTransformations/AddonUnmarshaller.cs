@@ -126,6 +126,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("podIdentityAssociations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PodIdentityAssociations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("publisher", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

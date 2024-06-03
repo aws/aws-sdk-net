@@ -37,6 +37,7 @@ namespace Amazon.EKS.Model
         private string _addonName;
         private string _addonVersion;
         private string _configurationSchema;
+        private List<AddonPodIdentityConfiguration> _podIdentityConfiguration = AWSConfigs.InitializeCollections ? new List<AddonPodIdentityConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AddonName. 
@@ -93,6 +94,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetConfigurationSchema()
         {
             return this._configurationSchema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PodIdentityConfiguration. 
+        /// <para>
+        /// The Kubernetes service account name used by the addon, and any suggested IAM policies.
+        /// Use this information to create an IAM Role for the Addon.
+        /// </para>
+        /// </summary>
+        public List<AddonPodIdentityConfiguration> PodIdentityConfiguration
+        {
+            get { return this._podIdentityConfiguration; }
+            set { this._podIdentityConfiguration = value; }
+        }
+
+        // Check to see if PodIdentityConfiguration property is set
+        internal bool IsSetPodIdentityConfiguration()
+        {
+            return this._podIdentityConfiguration != null && (this._podIdentityConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

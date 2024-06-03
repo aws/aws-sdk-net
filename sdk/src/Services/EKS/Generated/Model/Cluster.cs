@@ -205,9 +205,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Health. 
         /// <para>
-        /// An object representing the health of your local Amazon EKS cluster on an Amazon Web
-        /// Services Outpost. This object isn't available for clusters on the Amazon Web Services
-        /// cloud.
+        /// An object representing the health of your Amazon EKS cluster.
         /// </para>
         /// </summary>
         public ClusterHealth Health

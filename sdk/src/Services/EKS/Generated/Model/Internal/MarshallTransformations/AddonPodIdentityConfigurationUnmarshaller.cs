@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AddonVersionInfo Object
+    /// Response Unmarshaller for AddonPodIdentityConfiguration Object
     /// </summary>  
-    public class AddonVersionInfoUnmarshaller : IUnmarshaller<AddonVersionInfo, XmlUnmarshallerContext>, IUnmarshaller<AddonVersionInfo, JsonUnmarshallerContext>
+    public class AddonPodIdentityConfigurationUnmarshaller : IUnmarshaller<AddonPodIdentityConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AddonPodIdentityConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AddonVersionInfo IUnmarshaller<AddonVersionInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AddonPodIdentityConfiguration IUnmarshaller<AddonPodIdentityConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AddonVersionInfo Unmarshall(JsonUnmarshallerContext context)
+        public AddonPodIdentityConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            AddonVersionInfo unmarshalledObject = new AddonVersionInfo();
+            AddonPodIdentityConfiguration unmarshalledObject = new AddonPodIdentityConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("addonVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddonVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("architecture", targetDepth))
+                if (context.TestExpression("recommendedManagedPolicies", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Architecture = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecommendedManagedPolicies = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("compatibilities", targetDepth))
+                if (context.TestExpression("serviceAccount", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Compatibility, CompatibilityUnmarshaller>(CompatibilityUnmarshaller.Instance);
-                    unmarshalledObject.Compatibilities = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("requiresConfiguration", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.RequiresConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("requiresIamPermissions", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.RequiresIamPermissions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceAccount = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         }
 
 
-        private static AddonVersionInfoUnmarshaller _instance = new AddonVersionInfoUnmarshaller();        
+        private static AddonPodIdentityConfigurationUnmarshaller _instance = new AddonPodIdentityConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AddonVersionInfoUnmarshaller Instance
+        public static AddonPodIdentityConfigurationUnmarshaller Instance
         {
             get
             {

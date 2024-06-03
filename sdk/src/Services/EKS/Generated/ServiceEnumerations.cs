@@ -85,6 +85,14 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AddonIssueCode AccessDenied = new AddonIssueCode("AccessDenied");
         /// <summary>
+        /// Constant AddonPermissionFailure for AddonIssueCode
+        /// </summary>
+        public static readonly AddonIssueCode AddonPermissionFailure = new AddonIssueCode("AddonPermissionFailure");
+        /// <summary>
+        /// Constant AddonSubscriptionNeeded for AddonIssueCode
+        /// </summary>
+        public static readonly AddonIssueCode AddonSubscriptionNeeded = new AddonIssueCode("AddonSubscriptionNeeded");
+        /// <summary>
         /// Constant AdmissionRequestDenied for AddonIssueCode
         /// </summary>
         public static readonly AddonIssueCode AdmissionRequestDenied = new AddonIssueCode("AdmissionRequestDenied");
@@ -1724,6 +1732,10 @@ namespace Amazon.EKS
         /// Constant PlatformVersion for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType PlatformVersion = new UpdateParamType("PlatformVersion");
+        /// <summary>
+        /// Constant PodIdentityAssociations for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType PodIdentityAssociations = new UpdateParamType("PodIdentityAssociations");
         /// <summary>
         /// Constant PublicAccessCidrs for UpdateParamType
         /// </summary>
