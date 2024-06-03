@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Describes the backend environment for an Amplify app.
+    /// Describes the backend environment associated with a <c>Branch</c> of a Gen 1 Amplify
+    /// app. Amplify Gen 1 applications are created using Amplify Studio or the Amplify command
+    /// line interface (CLI).
     /// </summary>
     public partial class BackendEnvironment
     {
