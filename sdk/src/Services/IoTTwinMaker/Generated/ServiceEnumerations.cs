@@ -753,6 +753,10 @@ namespace Amazon.IoTTwinMaker
         /// </summary>
         public static readonly PropertyUpdateType DELETE = new PropertyUpdateType("DELETE");
         /// <summary>
+        /// Constant RESET_VALUE for PropertyUpdateType
+        /// </summary>
+        public static readonly PropertyUpdateType RESET_VALUE = new PropertyUpdateType("RESET_VALUE");
+        /// <summary>
         /// Constant UPDATE for PropertyUpdateType
         /// </summary>
         public static readonly PropertyUpdateType UPDATE = new PropertyUpdateType("UPDATE");
