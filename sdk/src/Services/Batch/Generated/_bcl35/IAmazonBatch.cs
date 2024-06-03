@@ -858,6 +858,54 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  GetJobQueueSnapshot
+
+
+        /// <summary>
+        /// Provides a list of the first 100 <c>RUNNABLE</c> jobs associated to a single job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobQueueSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the GetJobQueueSnapshot service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/GetJobQueueSnapshot">REST API Reference for GetJobQueueSnapshot Operation</seealso>
+        GetJobQueueSnapshotResponse GetJobQueueSnapshot(GetJobQueueSnapshotRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetJobQueueSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetJobQueueSnapshot operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJobQueueSnapshot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/GetJobQueueSnapshot">REST API Reference for GetJobQueueSnapshot Operation</seealso>
+        IAsyncResult BeginGetJobQueueSnapshot(GetJobQueueSnapshotRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetJobQueueSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJobQueueSnapshot.</param>
+        /// 
+        /// <returns>Returns a  GetJobQueueSnapshotResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/GetJobQueueSnapshot">REST API Reference for GetJobQueueSnapshot Operation</seealso>
+        GetJobQueueSnapshotResponse EndGetJobQueueSnapshot(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListJobs
 
 
