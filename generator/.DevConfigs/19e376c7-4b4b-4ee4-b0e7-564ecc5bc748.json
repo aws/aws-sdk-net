@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Improve handling of primary keys with property converters when using the object-persistence programming model with DisableFetchingTableMetadata set to true."
+            ]
+        }
+    ]
+}
