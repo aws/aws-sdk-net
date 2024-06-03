@@ -1,3 +1,20 @@
+### 3.7.823.0 (2024-06-03 18:20 UTC)
+* Amplify (3.7.302.15)
+	* This doc-only update identifies fields that are specific to Gen 1 and Gen 2 applications.
+* Batch (3.7.306.0)
+	* This release adds support for the AWS Batch GetJobQueueSnapshot API operation.
+* DynamoDBv2 (3.7.303.16)
+	* Improve handling of primary keys with property converters when using the object-persistence programming model with DisableFetchingTableMetadata set to true.
+* EKS (3.7.306.0)
+	* Adds support for EKS add-ons pod identity associations integration
+* IoTTwinMaker (3.7.302.0)
+	* Support RESET_VALUE UpdateType for PropertyUpdates to reset property value to default or null
+* S3 (3.7.308.8)
+	* Fixed issue with certain request parameters not being included as part of the request endpoint calculation.
+* Core 3.7.304.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.822.0 (2024-05-31 18:27 UTC)
 * CodeBuild (3.7.309.2)
 	* AWS CodeBuild now supports Self-hosted GitHub Actions runners for Github Enterprise
