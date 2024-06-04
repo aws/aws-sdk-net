@@ -73,4 +73,8 @@
     <PackageReference Include="System.Memory" Version="4.5.5" />
     <PackageReference Include="System.Text.Json" Version="8.0.3" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\extensions\src\Smithy.Identity.Abstractions\Smithy.Identity.Abstractions.csproj" />
+  </ItemGroup>
 </Project>

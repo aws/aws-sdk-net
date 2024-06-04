@@ -318,6 +318,15 @@ namespace ServiceClientGenerator
                 }
             }
 
+            // Include a dependency on the identity and auth interfaces (as of now a project in the extensions folder, but may be moved to a separate package in the future).
+            var smithyAbstractionProject = "Smithy.Identity.Abstractions";
+            coreProjects.Add(new Project
+            {
+                Name = smithyAbstractionProject,
+                ProjectPath = Utils.PathCombineAlt("..", "extensions", "src", smithyAbstractionProject, $"{smithyAbstractionProject}.csproj"),
+                ProjectGuid = projectGuidDictionary.ContainsKey(smithyAbstractionProject) ? projectGuidDictionary[smithyAbstractionProject] : Guid.NewGuid().ToString("B").ToUpper()
+            });
+
             IList<Project> testProjects = new List<Project>();
             IList<Project> integrationTestDependencies = new List<Project>();
             if (includeTests)
