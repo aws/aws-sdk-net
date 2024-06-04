@@ -376,7 +376,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     throw new ArgumentException(
                         "Conflicting attribute values found between the update expression and the condition expression. " +
                         "Use a different key instead of each affected attribute value key in one of the expressions. " +
-                        $"Affected attribute value keys: {string.Join(", ", conflictingValueKeys)}.",
+                        $"Affected attribute value keys: {string.Join(", ", conflictingValueKeys.ToArray())}.",
                         "updateExpression");
                 }
 
@@ -387,7 +387,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     throw new ArgumentException(
                         "Conflicting attribute names found between the update expression and the condition expression. " +
                         "Use a different key instead of each affected attribute name key in one of the expressions. " +
-                        $"Affected attribute name keys: {string.Join(", ", conflictingNameKeys)}.",
+                        $"Affected attribute name keys: {string.Join(", ", conflictingNameKeys.ToArray())}.",
                         "updateExpression");
                 }
 
