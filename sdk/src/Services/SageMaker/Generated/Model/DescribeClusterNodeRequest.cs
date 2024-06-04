@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeClusterNode operation.
-    /// Retrieves information of an instance (also called a <i>node</i> interchangeably) of
+    /// Retrieves information of a node (also called a <i>instance</i> interchangeably) of
     /// a SageMaker HyperPod cluster.
     /// </summary>
     public partial class DescribeClusterNodeRequest : AmazonSageMakerRequest
@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ClusterName. 
         /// <para>
         /// The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster
-        /// in which the instance is.
+        /// in which the node is.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NodeId. 
         /// <para>
-        /// The ID of the instance.
+        /// The ID of the SageMaker HyperPod cluster node.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

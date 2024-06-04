@@ -41,6 +41,9 @@ namespace Amazon.SageMaker.Model
         private ClusterInstanceType _instanceType;
         private DateTime? _launchTime;
         private ClusterLifeCycleConfig _lifeCycleConfig;
+        private ClusterInstancePlacement _placement;
+        private string _privateDnsHostname;
+        private string _privatePrimaryIp;
         private int? _threadsPerCore;
 
         /// <summary>
@@ -150,6 +153,60 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLifeCycleConfig()
         {
             return this._lifeCycleConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Placement. 
+        /// <para>
+        /// The placement details of the SageMaker HyperPod cluster node.
+        /// </para>
+        /// </summary>
+        public ClusterInstancePlacement Placement
+        {
+            get { return this._placement; }
+            set { this._placement = value; }
+        }
+
+        // Check to see if Placement property is set
+        internal bool IsSetPlacement()
+        {
+            return this._placement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsHostname. 
+        /// <para>
+        /// The private DNS hostname of the SageMaker HyperPod cluster node.
+        /// </para>
+        /// </summary>
+        public string PrivateDnsHostname
+        {
+            get { return this._privateDnsHostname; }
+            set { this._privateDnsHostname = value; }
+        }
+
+        // Check to see if PrivateDnsHostname property is set
+        internal bool IsSetPrivateDnsHostname()
+        {
+            return this._privateDnsHostname != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivatePrimaryIp. 
+        /// <para>
+        /// The private primary IP address of the SageMaker HyperPod cluster node.
+        /// </para>
+        /// </summary>
+        public string PrivatePrimaryIp
+        {
+            get { return this._privatePrimaryIp; }
+            set { this._privatePrimaryIp = value; }
+        }
+
+        // Check to see if PrivatePrimaryIp property is set
+        internal bool IsSetPrivatePrimaryIp()
+        {
+            return this._privatePrimaryIp != null;
         }
 
         /// <summary>

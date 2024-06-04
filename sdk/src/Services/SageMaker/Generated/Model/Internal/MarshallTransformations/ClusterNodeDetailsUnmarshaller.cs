@@ -102,6 +102,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.LifeCycleConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Placement", targetDepth))
+                {
+                    var unmarshaller = ClusterInstancePlacementUnmarshaller.Instance;
+                    unmarshalledObject.Placement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PrivateDnsHostname", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrivateDnsHostname = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PrivatePrimaryIp", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrivatePrimaryIp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ThreadsPerCore", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

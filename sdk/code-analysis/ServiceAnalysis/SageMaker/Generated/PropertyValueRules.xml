@@ -6984,6 +6984,14 @@
     <max>2</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterInstancePlacement.AvailabilityZone</property>
+    <pattern>^[a-z]{2}-[a-z]+-\d[a-z]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterInstancePlacement.AvailabilityZoneId</property>
+    <pattern>^[a-z]{3}\d-az\d$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterLifeCycleConfig.OnCreate</property>
     <min>1</min>
     <max>128</max>
@@ -6999,6 +7007,14 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterNodeDetails.PrivateDnsHostname</property>
+    <pattern>^ip-((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)-?\b){4}\..*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterNodeDetails.PrivatePrimaryIp</property>
+    <pattern>^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterNodeDetails.ThreadsPerCore</property>

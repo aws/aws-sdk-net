@@ -8291,7 +8291,7 @@ namespace Amazon.SageMaker
         #region  DescribeClusterNode
 
         /// <summary>
-        /// Retrieves information of an instance (also called a <i>node</i> interchangeably) of
+        /// Retrieves information of a node (also called a <i>instance</i> interchangeably) of
         /// a SageMaker HyperPod cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterNode service method.</param>
