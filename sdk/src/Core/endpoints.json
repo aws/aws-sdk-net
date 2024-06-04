@@ -10943,6 +10943,7 @@
             "ap-southeast-3": {},
             "ap-southeast-4": {},
             "ca-central-1": {},
+            "ca-west-1": {},
             "eu-central-1": {},
             "eu-central-2": {},
             "eu-north-1": {},
@@ -24235,9 +24236,11 @@
             "eu-north-1": {},
             "eu-west-1": {},
             "eu-west-2": {},
+            "eu-west-3": {},
             "sa-east-1": {},
             "us-east-1": {},
             "us-east-2": {},
+            "us-west-1": {},
             "us-west-2": {}
           }
         },
@@ -34581,52 +34584,24 @@
         },
         "rds": {
           "endpoints": {
-            "rds-fips.us-iso-east-1": {
-              "credentialScope": {
-                "region": "us-iso-east-1"
-              },
-              "deprecated": true,
-              "hostname": "rds-fips.us-iso-east-1.c2s.ic.gov"
-            },
-            "rds-fips.us-iso-west-1": {
-              "credentialScope": {
-                "region": "us-iso-west-1"
-              },
-              "deprecated": true,
-              "hostname": "rds-fips.us-iso-west-1.c2s.ic.gov"
-            },
             "rds.us-iso-east-1": {
               "credentialScope": {
                 "region": "us-iso-east-1"
               },
               "deprecated": true,
-              "variants": [
-                {
-                  "hostname": "rds-fips.us-iso-east-1.c2s.ic.gov",
-                  "tags": [
-                    "fips"
-                  ]
-                }
-              ]
+              "hostname": "rds.us-iso-east-1.c2s.ic.gov"
             },
             "rds.us-iso-west-1": {
               "credentialScope": {
                 "region": "us-iso-west-1"
               },
               "deprecated": true,
-              "variants": [
-                {
-                  "hostname": "rds-fips.us-iso-west-1.c2s.ic.gov",
-                  "tags": [
-                    "fips"
-                  ]
-                }
-              ]
+              "hostname": "rds.us-iso-west-1.c2s.ic.gov"
             },
             "us-iso-east-1": {
               "variants": [
                 {
-                  "hostname": "rds-fips.us-iso-east-1.c2s.ic.gov",
+                  "hostname": "rds.us-iso-east-1.c2s.ic.gov",
                   "tags": [
                     "fips"
                   ]
@@ -34638,12 +34613,12 @@
                 "region": "us-iso-east-1"
               },
               "deprecated": true,
-              "hostname": "rds-fips.us-iso-east-1.c2s.ic.gov"
+              "hostname": "rds.us-iso-east-1.c2s.ic.gov"
             },
             "us-iso-west-1": {
               "variants": [
                 {
-                  "hostname": "rds-fips.us-iso-west-1.c2s.ic.gov",
+                  "hostname": "rds.us-iso-west-1.c2s.ic.gov",
                   "tags": [
                     "fips"
                   ]
@@ -34655,7 +34630,7 @@
                 "region": "us-iso-west-1"
               },
               "deprecated": true,
-              "hostname": "rds-fips.us-iso-west-1.c2s.ic.gov"
+              "hostname": "rds.us-iso-west-1.c2s.ic.gov"
             }
           }
         },
@@ -35458,31 +35433,17 @@
         },
         "rds": {
           "endpoints": {
-            "rds-fips.us-isob-east-1": {
-              "credentialScope": {
-                "region": "us-isob-east-1"
-              },
-              "deprecated": true,
-              "hostname": "rds-fips.us-isob-east-1.sc2s.sgov.gov"
-            },
             "rds.us-isob-east-1": {
               "credentialScope": {
                 "region": "us-isob-east-1"
               },
               "deprecated": true,
-              "variants": [
-                {
-                  "hostname": "rds-fips.us-isob-east-1.sc2s.sgov.gov",
-                  "tags": [
-                    "fips"
-                  ]
-                }
-              ]
+              "hostname": "rds.us-isob-east-1.sc2s.sgov.gov"
             },
             "us-isob-east-1": {
               "variants": [
                 {
-                  "hostname": "rds-fips.us-isob-east-1.sc2s.sgov.gov",
+                  "hostname": "rds.us-isob-east-1.sc2s.sgov.gov",
                   "tags": [
                     "fips"
                   ]
@@ -35494,7 +35455,7 @@
                 "region": "us-isob-east-1"
               },
               "deprecated": true,
-              "hostname": "rds-fips.us-isob-east-1.sc2s.sgov.gov"
+              "hostname": "rds.us-isob-east-1.sc2s.sgov.gov"
             }
           }
         },
