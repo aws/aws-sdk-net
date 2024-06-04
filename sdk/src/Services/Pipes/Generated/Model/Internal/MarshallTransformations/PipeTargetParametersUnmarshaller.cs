@@ -138,6 +138,12 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                     unmarshalledObject.StepFunctionStateMachineParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TimestreamParameters", targetDepth))
+                {
+                    var unmarshaller = PipeTargetTimestreamParametersUnmarshaller.Instance;
+                    unmarshalledObject.TimestreamParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

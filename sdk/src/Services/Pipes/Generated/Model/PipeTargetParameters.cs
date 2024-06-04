@@ -53,6 +53,7 @@ namespace Amazon.Pipes.Model
         private PipeTargetSageMakerPipelineParameters _sageMakerPipelineParameters;
         private PipeTargetSqsQueueParameters _sqsQueueParameters;
         private PipeTargetStateMachineParameters _stepFunctionStateMachineParameters;
+        private PipeTargetTimestreamParameters _timestreamParameters;
 
         /// <summary>
         /// Gets and sets the property BatchJobParameters. 
@@ -277,6 +278,24 @@ namespace Amazon.Pipes.Model
         internal bool IsSetStepFunctionStateMachineParameters()
         {
             return this._stepFunctionStateMachineParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimestreamParameters. 
+        /// <para>
+        /// The parameters for using a Timestream for LiveAnalytics table as a target.
+        /// </para>
+        /// </summary>
+        public PipeTargetTimestreamParameters TimestreamParameters
+        {
+            get { return this._timestreamParameters; }
+            set { this._timestreamParameters = value; }
+        }
+
+        // Check to see if TimestreamParameters property is set
+        internal bool IsSetTimestreamParameters()
+        {
+            return this._timestreamParameters != null;
         }
 
     }

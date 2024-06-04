@@ -175,6 +175,17 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTimestreamParameters())
+            {
+                context.Writer.WritePropertyName("TimestreamParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PipeTargetTimestreamParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimestreamParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
