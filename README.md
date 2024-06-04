@@ -816,6 +816,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This is the initial SDK release for the AWS Support App in Slack.
 * [AWSSDK.Synthetics](https://www.nuget.org/packages/AWSSDK.Synthetics/)
 	* Introducing CloudWatch Synthetics. This is the first public release of CloudWatch Synthetics.
+* [AWSSDK.TaxSettings](https://www.nuget.org/packages/AWSSDK.TaxSettings/)
+	* Initial release of AWS Tax Settings API
 * [AWSSDK.Textract](https://www.nuget.org/packages/AWSSDK.Textract/)
 	* Amazon Textract enables you to add document text detection and analysis to your applications. You provide a document image to the Amazon Textract API, and the service detects the document text. Amazon Textract works with formatted text and can detect words and lines of words that are located close to each other. It can also analyze a document for items such as related text, tables, key-value pairs, and selection elements.
 * [AWSSDK.TimestreamInfluxDB](https://www.nuget.org/packages/AWSSDK.TimestreamInfluxDB/)
