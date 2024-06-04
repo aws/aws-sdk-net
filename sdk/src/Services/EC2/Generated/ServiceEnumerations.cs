@@ -8641,6 +8641,26 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C7i8xlarge = new InstanceType("c7i.8xlarge");
         /// <summary>
+        /// Constant C7iFlex2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7iFlex2xlarge = new InstanceType("c7i-flex.2xlarge");
+        /// <summary>
+        /// Constant C7iFlex4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7iFlex4xlarge = new InstanceType("c7i-flex.4xlarge");
+        /// <summary>
+        /// Constant C7iFlex8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7iFlex8xlarge = new InstanceType("c7i-flex.8xlarge");
+        /// <summary>
+        /// Constant C7iFlexLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7iFlexLarge = new InstanceType("c7i-flex.large");
+        /// <summary>
+        /// Constant C7iFlexXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7iFlexXlarge = new InstanceType("c7i-flex.xlarge");
+        /// <summary>
         /// Constant C7iLarge for InstanceType
         /// </summary>
         public static readonly InstanceType C7iLarge = new InstanceType("c7i.large");
@@ -10952,6 +10972,22 @@ namespace Amazon.EC2
         /// Constant U6tb1Metal for InstanceType
         /// </summary>
         public static readonly InstanceType U6tb1Metal = new InstanceType("u-6tb1.metal");
+        /// <summary>
+        /// Constant U7i12tb224xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U7i12tb224xlarge = new InstanceType("u7i-12tb.224xlarge");
+        /// <summary>
+        /// Constant U7in16tb224xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U7in16tb224xlarge = new InstanceType("u7in-16tb.224xlarge");
+        /// <summary>
+        /// Constant U7in24tb224xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U7in24tb224xlarge = new InstanceType("u7in-24tb.224xlarge");
+        /// <summary>
+        /// Constant U7in32tb224xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U7in32tb224xlarge = new InstanceType("u7in-32tb.224xlarge");
         /// <summary>
         /// Constant U9tb1112xlarge for InstanceType
         /// </summary>
