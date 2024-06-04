@@ -1,3 +1,16 @@
+### 3.7.824.0 (2024-06-04 18:15 UTC)
+* EC2 (3.7.329.0)
+	* U7i instances with up to 32 TiB of DDR5 memory and 896 vCPUs are now available. C7i-flex instances are launched and are lower-priced variants of the Amazon EC2 C7i instances that offer a baseline level of CPU performance with the ability to scale up to the full compute performance 95% of the time.
+* Pipes (3.7.304.0)
+	* This release adds Timestream for LiveAnalytics as a supported target in EventBridge Pipes
+* SageMaker (3.7.325.0)
+	* Extend DescribeClusterNode response with private DNS hostname and IP address, and placement information about availability zone and availability zone ID.
+* TaxSettings (3.7.300.0)
+	* Initial release of AWS Tax Settings API
+* Core 3.7.304.11
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.823.0 (2024-06-03 18:20 UTC)
 * Amplify (3.7.302.15)
 	* This doc-only update identifies fields that are specific to Gen 1 and Gen 2 applications.
