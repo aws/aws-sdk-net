@@ -2850,6 +2850,25 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.AuthenticationConfiguration.SecretArn</property>
+    <pattern>^arn:aws(-(cn|us-gov|iso(-[bef])?))?:secretsmanager:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.AuthenticationConfigurationInput.SecretArn</property>
+    <pattern>^arn:aws(-(cn|us-gov|iso(-[bef])?))?:secretsmanager:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.AuthorizationCodeProperties.AuthorizationCode</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.AuthorizationCodeProperties.RedirectUri</property>
+    <max>512</max>
+    <pattern>^(https?):\/\/[^\s/$.?#].[^\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.BasicCatalogTarget.Database</property>
   </property-value-rule>
   <property-value-rule>
@@ -3207,6 +3226,11 @@
     <property>Amazon.Glue.Model.Connection.Name</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Connection.StatusReason</property>
+    <min>1</min>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ConnectionInput.Description</property>
@@ -4435,6 +4459,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.NullValueField.Value</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.OAuth2ClientApplication.AWSManagedClientApplicationReference</property>
+    <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.OAuth2ClientApplication.UserManagedClientApplicationClientId</property>
+    <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.OAuth2Properties.TokenUrl</property>
+    <max>256</max>
+    <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.OAuth2PropertiesInput.TokenUrl</property>
+    <max>256</max>
+    <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Option.Description</property>

@@ -66,6 +66,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AuthenticationConfiguration", targetDepth))
+                {
+                    var unmarshaller = AuthenticationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConnectionProperties", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
@@ -88,6 +94,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastConnectionValidationTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastConnectionValidationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedBy", targetDepth))
@@ -118,6 +130,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = PhysicalConnectionRequirementsUnmarshaller.Instance;
                     unmarshalledObject.PhysicalConnectionRequirements = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -631,17 +631,6 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// The maximum value for timeout for batch jobs is 7 days or 10080 minutes. The default
-        /// is 2880 minutes (48 hours) for batch jobs.
-        /// </para>
-        ///  
-        /// <para>
-        /// Any existing Glue jobs that have a greater timeout value are defaulted to 7 days.
-        /// For instance you have specified a timeout of 20 days for a batch job, it will be stopped
-        /// on the 7th day.
-        /// </para>
-        ///  
-        /// <para>
         /// Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the
         /// value is left blank, the job will be restarted after 7 days based if you have not
         /// setup a maintenance window. If you have setup maintenance window, it will be restarted

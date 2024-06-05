@@ -106,7 +106,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Fully qualify identifiers: <c>SELECT * from table1 → SELECT * from db1.table1</c>
+        /// Fully qualified identifiers: <c>SELECT * from table1 -&gt; SELECT * from db1.table1</c>
         /// 
         /// </para>
         ///  </li> </ul>

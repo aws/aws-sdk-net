@@ -177,6 +177,60 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type AuthenticationType.
+    /// </summary>
+    public class AuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASIC for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType BASIC = new AuthenticationType("BASIC");
+        /// <summary>
+        /// Constant CUSTOM for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType CUSTOM = new AuthenticationType("CUSTOM");
+        /// <summary>
+        /// Constant OAUTH2 for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType OAUTH2 = new AuthenticationType("OAUTH2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationType FindValue(string value)
+        {
+            return FindValue<AuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BackfillErrorCode.
     /// </summary>
     public class BackfillErrorCode : ConstantClass
@@ -939,6 +993,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey PORT = new ConnectionPropertyKey("PORT");
         /// <summary>
+        /// Constant ROLE_ARN for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey ROLE_ARN = new ConnectionPropertyKey("ROLE_ARN");
+        /// <summary>
         /// Constant SECRET_ID for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey SECRET_ID = new ConnectionPropertyKey("SECRET_ID");
@@ -987,6 +1045,60 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectionStatus.
+    /// </summary>
+    public class ConnectionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus FAILED = new ConnectionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus IN_PROGRESS = new ConnectionStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant READY for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus READY = new ConnectionStatus("READY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionStatus FindValue(string value)
+        {
+            return FindValue<ConnectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionType.
     /// </summary>
     public class ConnectionType : ConstantClass
@@ -1016,6 +1128,10 @@ namespace Amazon.Glue
         /// Constant NETWORK for ConnectionType
         /// </summary>
         public static readonly ConnectionType NETWORK = new ConnectionType("NETWORK");
+        /// <summary>
+        /// Constant SALESFORCE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SALESFORCE = new ConnectionType("SALESFORCE");
         /// <summary>
         /// Constant SFTP for ConnectionType
         /// </summary>
@@ -1865,9 +1981,25 @@ namespace Amazon.Glue
     {
 
         /// <summary>
+        /// Constant AccessDeniedException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode AccessDeniedException = new FederationSourceErrorCode("AccessDeniedException");
+        /// <summary>
+        /// Constant EntityNotFoundException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode EntityNotFoundException = new FederationSourceErrorCode("EntityNotFoundException");
+        /// <summary>
         /// Constant InternalServiceException for FederationSourceErrorCode
         /// </summary>
         public static readonly FederationSourceErrorCode InternalServiceException = new FederationSourceErrorCode("InternalServiceException");
+        /// <summary>
+        /// Constant InvalidCredentialsException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode InvalidCredentialsException = new FederationSourceErrorCode("InvalidCredentialsException");
+        /// <summary>
+        /// Constant InvalidInputException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode InvalidInputException = new FederationSourceErrorCode("InvalidInputException");
         /// <summary>
         /// Constant InvalidResponseException for FederationSourceErrorCode
         /// </summary>
@@ -1880,6 +2012,10 @@ namespace Amazon.Glue
         /// Constant OperationTimeoutException for FederationSourceErrorCode
         /// </summary>
         public static readonly FederationSourceErrorCode OperationTimeoutException = new FederationSourceErrorCode("OperationTimeoutException");
+        /// <summary>
+        /// Constant PartialFailureException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode PartialFailureException = new FederationSourceErrorCode("PartialFailureException");
         /// <summary>
         /// Constant ThrottlingException for FederationSourceErrorCode
         /// </summary>
@@ -3264,6 +3400,60 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NodeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OAuth2GrantType.
+    /// </summary>
+    public class OAuth2GrantType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHORIZATION_CODE for OAuth2GrantType
+        /// </summary>
+        public static readonly OAuth2GrantType AUTHORIZATION_CODE = new OAuth2GrantType("AUTHORIZATION_CODE");
+        /// <summary>
+        /// Constant CLIENT_CREDENTIALS for OAuth2GrantType
+        /// </summary>
+        public static readonly OAuth2GrantType CLIENT_CREDENTIALS = new OAuth2GrantType("CLIENT_CREDENTIALS");
+        /// <summary>
+        /// Constant JWT_BEARER for OAuth2GrantType
+        /// </summary>
+        public static readonly OAuth2GrantType JWT_BEARER = new OAuth2GrantType("JWT_BEARER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OAuth2GrantType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OAuth2GrantType FindValue(string value)
+        {
+            return FindValue<OAuth2GrantType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OAuth2GrantType(string value)
         {
             return FindValue(value);
         }
