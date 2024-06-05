@@ -20,6 +20,7 @@
 
 using Amazon.Runtime.Internal.Util;
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -757,14 +758,32 @@ namespace Amazon.Util
         /// <returns>String version of the data</returns>
         public static string ToHex(byte[] data, bool lowercase)
         {
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < data.Length; i++)
+#if NET8_0_OR_GREATER
+            if (!lowercase)
             {
-                sb.Append(data[i].ToString(lowercase ? "x2" : "X2", CultureInfo.InvariantCulture));
+                return Convert.ToHexString(data);
             }
+#endif
 
-            return sb.ToString();
+#if NETCOREAPP3_1_OR_GREATER
+            return string.Create(data.Length * 2, (data, lowercase), static (chars, state) =>
+            {
+                ToHexString(state.data, chars, state.lowercase);
+            });
+#else
+            char[] chars = ArrayPool<char>.Shared.Rent(data.Length * 2);
+
+            try
+            {
+                ToHexString(data, chars, lowercase);
+
+                return new string(chars, 0, data.Length * 2);
+            }
+            finally
+            {
+                ArrayPool<char>.Shared.Return(chars);
+            }
+#endif
         }
 
         /// <summary>
@@ -1149,6 +1168,23 @@ namespace Amazon.Util
             return encoded.ToString();
         }
 
+        private static void ToHexString(Span<byte> source, Span<char> destination, bool lowercase)
+        {
+            Func<int, char> converter = lowercase ? (Func<int, char>)ToLowerHex : (Func<int, char>)ToUpperHex;
+
+            for (int i = source.Length - 1; i >= 0; i--)
+            {
+                // Break apart the byte into two four-bit components and
+                // then convert each into their hexadecimal equivalent.
+                byte b = source[i];
+                int hiNibble = b >> 4;
+                int loNibble = b & 0xF;
+
+                destination[i * 2] = converter(hiNibble);
+                destination[i * 2 + 1] = converter(loNibble);
+            }
+        }
+
         private static char ToUpperHex(int value)
         {
             // Maps 0-9 to the Unicode range of '0' - '9' (0x30 - 0x39).
@@ -1159,7 +1195,18 @@ namespace Amazon.Util
             // Maps 10-15 to the Unicode range of 'A' - 'F' (0x41 - 0x46).
             return (char)(value - 10 + 'A');
         }
-                
+
+        private static char ToLowerHex(int value)
+        {
+            // Maps 0-9 to the Unicode range of '0' - '9' (0x30 - 0x39).
+            if (value <= 9)
+            {
+                return (char)(value + '0');
+            }
+            // Maps 10-15 to the Unicode range of 'a' - 'f' (0x61 - 0x66).
+            return (char)(value - 10 + 'a');
+        }
+
         internal static string UrlEncodeSlash(string data)
         {
             if (string.IsNullOrEmpty(data))
@@ -1314,18 +1361,6 @@ namespace Amazon.Util
         public static void Sleep(TimeSpan ts)
         {
             Sleep((int)ts.TotalMilliseconds);
-        }
-
-        /// <summary>
-        /// Convert bytes to a hex string
-        /// </summary>
-        /// <param name="value">Bytes to convert.</param>
-        /// <returns>Hexadecimal string representing the byte array.</returns>
-        public static string BytesToHexString(byte[] value)
-        {
-            string hex = BitConverter.ToString(value);
-            hex = hex.Replace("-", string.Empty);
-            return hex;
         }
 
         /// <summary>

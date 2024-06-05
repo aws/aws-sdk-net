@@ -191,8 +191,8 @@ namespace Amazon.S3.Internal
                 return;
 
             etag = etag.Trim(etagTrimChars);
-
-            string hexHash = AWSSDKUtils.BytesToHexString(hash);
+            
+            string hexHash = AWSSDKUtils.ToHex(hash, false);
             if (!string.Equals(etag, hexHash, StringComparison.OrdinalIgnoreCase))
                 throw new AmazonClientException("Expected hash not equal to calculated hash");
         }
