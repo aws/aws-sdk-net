@@ -44,26 +44,30 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "/language>\r\n    <license type=\"expression\">Apache-2.0</license>\r\n    <projectUrl" +
                     ">https://github.com/aws/aws-sdk-net/</projectUrl>\r\n    <tags>AWS Amazon cloud aw" +
                     "s-sdk-v3</tags>\r\n    <icon>images\\AWSLogo.png</icon>\r\n    <dependencies>\r\n      " +
-                    "<group targetFramework=\"net462\">\r\n      </group>\r\n\t  <group targetFramework=\"net" +
-                    "standard2.0\">\r\n        <dependency id=\"Microsoft.Bcl.AsyncInterfaces\" version=\"1" +
-                    ".1.0\" />\r\n      </group>\r\n      <group targetFramework=\"netcoreapp3.1\">\r\n      <" +
-                    "/group>\r\n      <group targetFramework=\"net8.0\">\r\n      </group>\t\t\r\n    </depende" +
-                    "ncies>\r\n  </metadata> \r\n  <files>\r\n    <file src=\"..\\..\\nuget-content\\AWSLogo.pn" +
-                    "g\" target=\"images\\\" />\r\n    <file src=\"..\\..\\nuget-content\\account-management.ps" +
-                    "1\" target=\"tools\" />\r\n\r\n    <file src=\".\\bin\\Release\\net462\\AWSSDK.Core.dll\" tar" +
-                    "get=\"lib\\net462\" />\r\n    <file src=\".\\bin\\Release\\net462\\AWSSDK.Core.xml\" target" +
-                    "=\"lib\\net462\" />\r\n    <file src=\".\\bin\\Release\\net462\\AWSSDK.Core.pdb\" target=\"l" +
-                    "ib\\net462\" />\r\n\r\n    <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.dll\" ta" +
-                    "rget=\"lib\\netstandard2.0\"/>\r\n    <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK." +
-                    "Core.xml\" target=\"lib\\netstandard2.0\"/>\r\n    <file src=\".\\bin\\Release\\netstandar" +
-                    "d2.0\\AWSSDK.Core.pdb\" target=\"lib\\netstandard2.0\"/>\r\n\r\n    <file src=\".\\bin\\Rele" +
-                    "ase\\netcoreapp3.1\\AWSSDK.Core.dll\" target=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\"" +
-                    ".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Core.xml\" target=\"lib\\netcoreapp3.1\"/>\r\n    <" +
-                    "file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Core.pdb\" target=\"lib\\netcoreapp3.1" +
-                    "\"/>\r\n\r\n    <file src=\".\\bin\\Release\\net8.0\\AWSSDK.Core.dll\" target=\"lib\\net8.0\"/" +
-                    ">\r\n    <file src=\".\\bin\\Release\\net8.0\\AWSSDK.Core.xml\" target=\"lib\\net8.0\"/>\r\n " +
-                    "   <file src=\".\\bin\\Release\\net8.0\\AWSSDK.Core.pdb\" target=\"lib\\net8.0\"/>\r\n  </f" +
-                    "iles>\r\n</package>");
+                    "<group targetFramework=\"net462\">\r\n        <dependency id=\"System.Buffers\" versio" +
+                    "n=\"4.5.1\" />\r\n        <dependency id=\"System.Memory\" version=\"4.5.5\" />\r\n       " +
+                    " <dependency id=\"System.Text.Json\" version=\"8.0.3\" />\r\n      </group>\r\n      <gr" +
+                    "oup targetFramework=\"netstandard2.0\">\r\n        <dependency id=\"Microsoft.Bcl.Asy" +
+                    "ncInterfaces\" version=\"1.1.0\" />\r\n        <dependency id=\"System.Buffers\" versio" +
+                    "n=\"4.5.1\" />\r\n        <dependency id=\"System.Memory\" version=\"4.5.5\" />\r\n       " +
+                    " <dependency id=\"System.Text.Json\" version=\"8.0.3\" />\r\n      </group>\r\n      <gr" +
+                    "oup targetFramework=\"netcoreapp3.1\">\r\n      </group>\r\n      <group targetFramewo" +
+                    "rk=\"net8.0\">\r\n      </group>\t\t\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n" +
+                    "    <file src=\"..\\..\\nuget-content\\AWSLogo.png\" target=\"images\\\" />\r\n    <file s" +
+                    "rc=\"..\\..\\nuget-content\\account-management.ps1\" target=\"tools\" />\r\n\r\n    <file s" +
+                    "rc=\".\\bin\\Release\\net462\\AWSSDK.Core.dll\" target=\"lib\\net462\" />\r\n    <file src=" +
+                    "\".\\bin\\Release\\net462\\AWSSDK.Core.xml\" target=\"lib\\net462\" />\r\n    <file src=\".\\" +
+                    "bin\\Release\\net462\\AWSSDK.Core.pdb\" target=\"lib\\net462\" />\r\n\r\n    <file src=\".\\b" +
+                    "in\\Release\\netstandard2.0\\AWSSDK.Core.dll\" target=\"lib\\netstandard2.0\"/>\r\n    <f" +
+                    "ile src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.xml\" target=\"lib\\netstandard2." +
+                    "0\"/>\r\n    <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.pdb\" target=\"lib\\n" +
+                    "etstandard2.0\"/>\r\n\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Core.dll\" " +
+                    "target=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK." +
+                    "Core.xml\" target=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3" +
+                    ".1\\AWSSDK.Core.pdb\" target=\"lib\\netcoreapp3.1\"/>\r\n\r\n    <file src=\".\\bin\\Release" +
+                    "\\net8.0\\AWSSDK.Core.dll\" target=\"lib\\net8.0\"/>\r\n    <file src=\".\\bin\\Release\\net" +
+                    "8.0\\AWSSDK.Core.xml\" target=\"lib\\net8.0\"/>\r\n    <file src=\".\\bin\\Release\\net8.0\\" +
+                    "AWSSDK.Core.pdb\" target=\"lib\\net8.0\"/>\r\n  </files>\r\n</package>");
             return this.GenerationEnvironment.ToString();
         }
     }
