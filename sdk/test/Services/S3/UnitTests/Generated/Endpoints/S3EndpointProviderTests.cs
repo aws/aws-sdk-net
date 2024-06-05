@@ -1009,6 +1009,25 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
+        [Description("virtual addressing, aws-global region with Copy Source, and Key uses the global endpoint. Copy Source and Key parameters should not be used in endpoint evaluation.")]
+        public void Virtual_addressing_awsglobal_region_with_Copy_Source_and_Key_uses_the_global_endpoint_Copy_Source_and_Key_parameters_should_not_be_used_in_endpoint_evaluation_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["Bucket"] = "bucket-name";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Accelerate"] = false;
+            parameters["CopySource"] = "/copy/source";
+            parameters["Key"] = "key";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://bucket-name.s3.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
         [Description("virtual addressing, aws-global region with fips uses the regional fips endpoint")]
         public void Virtual_addressing_awsglobal_region_with_fips_uses_the_regional_fips_endpoint_Test()
         {
