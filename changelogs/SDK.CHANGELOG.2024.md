@@ -1,3 +1,14 @@
+### 3.7.825.0 (2024-06-05 18:59 UTC)
+* GlobalAccelerator (3.7.302.0)
+	* This release contains a new optional ip-addresses input field for the update accelerator and update custom routing accelerator apis. This input enables consumers to replace IPv4 addresses on existing accelerators with addresses provided in the input.
+* Glue (3.7.313.0)
+	* AWS Glue now supports native SaaS connectivity: Salesforce connector available now
+* S3 (3.7.309.0)
+	* Added new params copySource and key to copyObject API for supporting S3 Access Grants plugin. These changes will not change any of the existing S3 API functionality.
+* Core 3.7.304.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.824.0 (2024-06-04 18:15 UTC)
 * EC2 (3.7.329.0)
 	* U7i instances with up to 32 TiB of DDR5 memory and 896 vCPUs are now available. C7i-flex instances are launched and are lower-priced variants of the Amazon EC2 C7i instances that offer a baseline level of CPU performance with the ability to scale up to the full compute performance 95% of the time.
