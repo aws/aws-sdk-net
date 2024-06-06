@@ -30,29 +30,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeMaintenanceStartTime operation.
-    /// Returns your gateway's maintenance window schedule information, with values for monthly
-    /// or weekly cadence, specific day and time to begin maintenance, and which types of
-    /// updates to apply. Time values returned are for the gateway's time zone.
+    /// A set of variables indicating the software update preferences for the gateway.
     /// </summary>
-    public partial class DescribeMaintenanceStartTimeRequest : AmazonStorageGatewayRequest
+    public partial class SoftwareUpdatePreferences
     {
-        private string _gatewayARN;
+        private AutomaticUpdatePolicy _automaticUpdatePolicy;
 
         /// <summary>
-        /// Gets and sets the property GatewayARN.
+        /// Gets and sets the property AutomaticUpdatePolicy. 
+        /// <para>
+        /// Indicates the automatic update policy for a gateway.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>ALL_VERSIONS</c> - Enables regular gateway maintenance updates.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>EMERGENCY_VERSIONS_ONLY</c> - Disables regular gateway maintenance updates.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=50, Max=500)]
-        public string GatewayARN
+        public AutomaticUpdatePolicy AutomaticUpdatePolicy
         {
-            get { return this._gatewayARN; }
-            set { this._gatewayARN = value; }
+            get { return this._automaticUpdatePolicy; }
+            set { this._automaticUpdatePolicy = value; }
         }
 
-        // Check to see if GatewayARN property is set
-        internal bool IsSetGatewayARN()
+        // Check to see if AutomaticUpdatePolicy property is set
+        internal bool IsSetAutomaticUpdatePolicy()
         {
-            return this._gatewayARN != null;
+            return this._automaticUpdatePolicy != null;
         }
 
     }

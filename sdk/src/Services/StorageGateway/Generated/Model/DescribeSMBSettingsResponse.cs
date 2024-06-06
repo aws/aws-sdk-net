@@ -203,23 +203,24 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>MandatorySigning</c>: If you use this option, File Gateway only allows connections
+        ///  <c>MandatorySigning</c>: If you choose this option, File Gateway only allows connections
         /// from SMBv2 or SMBv3 clients that have signing turned on. This option works with SMB
         /// clients on Microsoft Windows Vista, Windows Server 2008, or later. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>MandatoryEncryption</c>: If you use this option, File Gateway only allows connections
+        ///  <c>MandatoryEncryption</c>: If you choose this option, File Gateway only allows connections
         /// from SMBv3 clients that have encryption turned on. Both 256-bit and 128-bit algorithms
         /// are allowed. This option is recommended for environments that handle sensitive data.
         /// It works with SMB clients on Microsoft Windows 8, Windows Server 2012, or later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>EnforceEncryption</c>: If you use this option, File Gateway only allows connections
-        /// from SMBv3 clients that use 256-bit AES encryption algorithms. 128-bit algorithms
-        /// are not allowed. This option is recommended for environments that handle sensitive
-        /// data. It works with SMB clients on Microsoft Windows 8, Windows Server 2012, or later.
+        ///  <c>MandatoryEncryptionNoAes128</c>: If you choose this option, File Gateway only
+        /// allows connections from SMBv3 clients that use 256-bit AES encryption algorithms.
+        /// 128-bit algorithms are not allowed. This option is recommended for environments that
+        /// handle sensitive data. It works with SMB clients on Microsoft Windows 8, Windows Server
+        /// 2012, or later.
         /// </para>
         ///  </li> </ul>
         /// </summary>
