@@ -5753,6 +5753,64 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type ViewUpdateAction.
+    /// </summary>
+    public class ViewUpdateAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADD for ViewUpdateAction
+        /// </summary>
+        public static readonly ViewUpdateAction ADD = new ViewUpdateAction("ADD");
+        /// <summary>
+        /// Constant ADD_OR_REPLACE for ViewUpdateAction
+        /// </summary>
+        public static readonly ViewUpdateAction ADD_OR_REPLACE = new ViewUpdateAction("ADD_OR_REPLACE");
+        /// <summary>
+        /// Constant DROP for ViewUpdateAction
+        /// </summary>
+        public static readonly ViewUpdateAction DROP = new ViewUpdateAction("DROP");
+        /// <summary>
+        /// Constant REPLACE for ViewUpdateAction
+        /// </summary>
+        public static readonly ViewUpdateAction REPLACE = new ViewUpdateAction("REPLACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ViewUpdateAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ViewUpdateAction FindValue(string value)
+        {
+            return FindValue<ViewUpdateAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ViewUpdateAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WorkerType.
     /// </summary>
     public class WorkerType : ConstantClass

@@ -84,6 +84,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsStale = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ValidationConnection", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ValidationConnection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ViewExpandedText", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
