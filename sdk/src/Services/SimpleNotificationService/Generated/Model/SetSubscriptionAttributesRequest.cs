@@ -48,7 +48,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Instantiates SetSubscriptionAttributesRequest with the parameterized properties
         /// </summary>
         /// <param name="subscriptionArn">The ARN of the subscription to modify.</param>
-        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that this action uses: <ul> <li>  <c>DeliveryPolicy</c> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <c>FilterPolicy</c> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic. </li> <li>  <c>FilterPolicyScope</c> – This attribute lets you choose the filtering scope by using one of the following string value types: <ul> <li>  <c>MessageAttributes</c> (default) – The filter is applied on the message attributes. </li> <li>  <c>MessageBody</c> – The filter is applied on the message body. </li> </ul> </li> <li>  <c>RawMessageDelivery</c> – When set to <c>true</c>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata. </li> <li>  <c>RedrivePolicy</c> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing. </li> </ul> The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions: <ul> <li>  <c>SubscriptionRoleArn</c> – The ARN of the IAM role that has the following: <ul> <li> Permission to write to the Kinesis Data Firehose delivery stream </li> <li> Amazon SNS listed as a trusted entity </li> </ul> Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>. </li> </ul></param>
+        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that this action uses: <ul> <li>  <c>DeliveryPolicy</c> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <c>FilterPolicy</c> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic. </li> <li>  <c>FilterPolicyScope</c> – This attribute lets you choose the filtering scope by using one of the following string value types: <ul> <li>  <c>MessageAttributes</c> (default) – The filter is applied on the message attributes. </li> <li>  <c>MessageBody</c> – The filter is applied on the message body. </li> </ul> </li> <li>  <c>RawMessageDelivery</c> – When set to <c>true</c>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata. </li> <li>  <c>RedrivePolicy</c> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing. </li> </ul> The following attribute applies only to Amazon Data Firehose delivery stream subscriptions: <ul> <li>  <c>SubscriptionRoleArn</c> – The ARN of the IAM role that has the following: <ul> <li> Permission to write to the Firehose delivery stream </li> <li> Amazon SNS listed as a trusted entity </li> </ul> Specifying a valid ARN for this attribute is required for Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>. </li> </ul></param>
         /// <param name="attributeValue">The new value for the attribute in JSON format.</param>
         public SetSubscriptionAttributesRequest(string subscriptionArn, string attributeName, string attributeValue)
         {
@@ -106,8 +106,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following attribute applies only to Amazon Kinesis Data Firehose delivery stream
-        /// subscriptions:
+        /// The following attribute applies only to Amazon Data Firehose delivery stream subscriptions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -115,7 +114,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Permission to write to the Kinesis Data Firehose delivery stream
+        /// Permission to write to the Firehose delivery stream
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -123,9 +122,9 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery
-        /// stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-        /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
+        /// Specifying a valid ARN for this attribute is required for Firehose delivery stream
+        /// subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+        /// to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

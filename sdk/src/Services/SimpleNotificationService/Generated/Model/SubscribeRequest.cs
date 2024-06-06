@@ -120,8 +120,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following attribute applies only to Amazon Kinesis Data Firehose delivery stream
-        /// subscriptions:
+        /// The following attribute applies only to Amazon Data Firehose delivery stream subscriptions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -129,7 +128,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Permission to write to the Kinesis Data Firehose delivery stream
+        /// Permission to write to the Firehose delivery stream
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -137,9 +136,9 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery
-        /// stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-        /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
+        /// Specifying a valid ARN for this attribute is required for Firehose delivery stream
+        /// subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+        /// to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
