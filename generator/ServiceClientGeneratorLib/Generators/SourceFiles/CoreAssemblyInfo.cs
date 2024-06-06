@@ -68,16 +68,24 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "he following four values:\r\n//\r\n//      Major Version\r\n//      Minor Version \r\n//" +
                     "      Build Number\r\n//      Revision\r\n//\r\n// You can specify all the values or y" +
                     "ou can default the Build and Revision Numbers \r\n// by using the \'*\' as shown bel" +
-                    "ow:\r\n// [assembly: AssemblyVersion(\"1.0.*\")]\r\n[assembly: AssemblyVersion(\"");
+                    "ow:\r\n// [assembly: AssemblyVersion(\"1.0.*\")]\r\n#if BCL\r\n[assembly: AssemblyVersio" +
+                    "n(\"");
             
-            #line 52 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 53 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["Version"]));
             
             #line default
             #line hidden
-            this.Write("\")]\r\n[assembly: AssemblyFileVersion(\"");
+            this.Write("\")]\r\n#else\r\n[assembly: AssemblyVersion(\"");
             
-            #line 53 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 55 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
+            
+            #line default
+            #line hidden
+            this.Write("\")]\r\n#endif\r\n[assembly: AssemblyFileVersion(\"");
+            
+            #line 57 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
