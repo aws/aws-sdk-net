@@ -107,7 +107,7 @@ namespace ServiceClientGenerator
         public DefaultConfiguration.DefaultConfigurationModel DefaultConfiguration { get; set; }
 
         //This should be the same version number as SdkVersioning.DefaultAssemblyVersion in BuildTasks
-        private const string DefaultAssemblyVersion = "3.3";
+        private const string DefaultAssemblyVersion = "4.0";
 
         /// <summary>
         /// Processes the control manifest to yield the set of services available to
@@ -448,7 +448,7 @@ namespace ServiceClientGenerator
                 var versionTokens = CoreVersion.Split('.');
                 if (!DefaultAssemblyVersion.StartsWith($"{versionTokens[0]}.{versionTokens[1]}"))
                 {
-                    throw new NotImplementedException($"{nameof(DefaultAssemblyVersion)} should be updated to match the AWSSDK.Core minor version number.");
+                    throw new NotImplementedException($"{nameof(DefaultAssemblyVersion)} '{DefaultAssemblyVersion}' should be updated to match the AWSSDK.Core minor version number '{versionTokens[0]}.{versionTokens[1]}'.");
                 }
             }
 

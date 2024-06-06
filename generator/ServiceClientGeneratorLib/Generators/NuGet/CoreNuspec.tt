@@ -12,7 +12,7 @@
     <language>en-US</language>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
-    <tags>AWS Amazon cloud aws-sdk-v3</tags>
+    <tags>AWS Amazon cloud aws-sdk-v4</tags>
     <icon>images\AWSLogo.png</icon>
     <dependencies>
       <group targetFramework="net462">

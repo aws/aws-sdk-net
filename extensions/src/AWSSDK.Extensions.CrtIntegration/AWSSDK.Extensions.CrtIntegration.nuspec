@@ -3,13 +3,13 @@
   <metadata> 
     <id>AWSSDK.Extensions.CrtIntegration</id>
     <title>AWSSDK - Extensions for AWS Common Runtime Integration</title>
-    <version>3.7.300.1</version>
+    <version>4.0.0-preview</version>
     <authors>Amazon Web Services</authors>
     <description>Extensions for the AWS SDK for .NET to integrate with the AWS Common Runtime</description>
     <language>en-US</language>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
-    <tags>AWS Amazon aws-sdk-v3</tags>
+    <tags>AWS Amazon aws-sdk-v4</tags>
     <icon>images\AWSLogo.png</icon>
     <dependencies>
       <group targetFramework="net462">
