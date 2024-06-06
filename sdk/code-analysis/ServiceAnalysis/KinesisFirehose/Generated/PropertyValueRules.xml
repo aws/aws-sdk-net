@@ -965,6 +965,18 @@
     <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.SecretsManagerConfiguration.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.SecretsManagerConfiguration.SecretARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.SnowflakeDestinationConfiguration.AccountUrl</property>
     <min>24</min>
     <max>2048</max>

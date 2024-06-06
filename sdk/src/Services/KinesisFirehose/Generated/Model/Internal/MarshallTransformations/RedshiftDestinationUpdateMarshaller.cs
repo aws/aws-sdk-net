@@ -138,6 +138,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSecretsManagerConfiguration())
+            {
+                context.Writer.WritePropertyName("SecretsManagerConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SecretsManagerConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SecretsManagerConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("Username");

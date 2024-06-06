@@ -47,7 +47,7 @@ namespace Amazon.KinesisFirehose
     /// <para>
     /// Amazon Data Firehose is a fully managed service that delivers real-time streaming
     /// data to destinations such as Amazon Simple Storage Service (Amazon S3), Amazon OpenSearch
-    /// Service, Amazon Redshift, Splunk, and various other supportd destinations.
+    /// Service, Amazon Redshift, Splunk, and various other supported destinations.
     /// </para>
     /// </summary>
     public partial class AmazonKinesisFirehoseClient : AmazonServiceClient, IAmazonKinesisFirehose
@@ -1222,7 +1222,7 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// For the KMS grant creation to be successful, Firehose APIs <c>StartDeliveryStreamEncryption</c>
+        /// For the KMS grant creation to be successful, the Firehose API operations <c>StartDeliveryStreamEncryption</c>
         /// and <c>CreateDeliveryStream</c> should not be called with session credentials that
         /// are more than 6 hours old.
         /// </para>

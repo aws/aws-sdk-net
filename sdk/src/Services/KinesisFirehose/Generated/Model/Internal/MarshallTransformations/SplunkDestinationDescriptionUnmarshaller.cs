@@ -126,6 +126,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SecretsManagerConfiguration", targetDepth))
+                {
+                    var unmarshaller = SecretsManagerConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SecretsManagerConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -61,7 +61,7 @@ namespace Amazon.KinesisFirehose.Model
     /// </para>
     ///  
     /// <para>
-    /// For the KMS grant creation to be successful, Firehose APIs <c>StartDeliveryStreamEncryption</c>
+    /// For the KMS grant creation to be successful, the Firehose API operations <c>StartDeliveryStreamEncryption</c>
     /// and <c>CreateDeliveryStream</c> should not be called with session credentials that
     /// are more than 6 hours old.
     /// </para>

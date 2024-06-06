@@ -278,7 +278,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property SnowflakeDestinationUpdate. 
         /// <para>
-        /// Update to the Snowflake destination condiguration settings
+        /// Update to the Snowflake destination configuration settings.
         /// </para>
         /// </summary>
         public SnowflakeDestinationUpdate SnowflakeDestinationUpdate
