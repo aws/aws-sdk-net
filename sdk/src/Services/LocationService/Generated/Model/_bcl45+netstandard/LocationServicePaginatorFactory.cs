@@ -37,6 +37,14 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Paginator for ForecastGeofenceEvents operation
+        ///</summary>
+        public IForecastGeofenceEventsPaginator ForecastGeofenceEvents(ForecastGeofenceEventsRequest request) 
+        {
+            return new ForecastGeofenceEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetDevicePositionHistory operation
         ///</summary>
         public IGetDevicePositionHistoryPaginator GetDevicePositionHistory(GetDevicePositionHistoryRequest request) 

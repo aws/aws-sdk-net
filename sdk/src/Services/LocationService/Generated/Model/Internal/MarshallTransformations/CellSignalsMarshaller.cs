@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GeofenceGeometry Marshaller
+    /// CellSignals Marshaller
     /// </summary>
-    public class GeofenceGeometryMarshaller : IRequestMarshaller<GeofenceGeometry, JsonMarshallerContext> 
+    public class CellSignalsMarshaller : IRequestMarshaller<CellSignals, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,44 +44,22 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GeofenceGeometry requestObject, JsonMarshallerContext context)
+        public void Marshall(CellSignals requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCircle())
+            if(requestObject.IsSetLteCellDetails())
             {
-                context.Writer.WritePropertyName("Circle");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CircleMarshaller.Instance;
-                marshaller.Marshall(requestObject.Circle, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetGeobuf())
-            {
-                context.Writer.WritePropertyName("Geobuf");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Geobuf));
-            }
-
-            if(requestObject.IsSetPolygon())
-            {
-                context.Writer.WritePropertyName("Polygon");
+                context.Writer.WritePropertyName("LteCellDetails");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectPolygonListValue in requestObject.Polygon)
+                foreach(var requestObjectLteCellDetailsListValue in requestObject.LteCellDetails)
                 {
-                    context.Writer.WriteArrayStart();
-                    foreach(var requestObjectPolygonListValueListValue in requestObjectPolygonListValue)
-                    {
-                        context.Writer.WriteArrayStart();
-                        foreach(var requestObjectPolygonListValueListValueListValue in requestObjectPolygonListValueListValue)
-                        {
-                                context.Writer.Write(requestObjectPolygonListValueListValueListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LteCellDetailsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLteCellDetailsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
             }
@@ -91,7 +69,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static GeofenceGeometryMarshaller Instance = new GeofenceGeometryMarshaller();
+        public readonly static CellSignalsMarshaller Instance = new CellSignalsMarshaller();
 
     }
 }

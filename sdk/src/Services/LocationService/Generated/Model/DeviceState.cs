@@ -30,22 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// This is the response object from the GetDevicePosition operation.
+    /// The device's position, IP address, and Wi-Fi access points.
     /// </summary>
-    public partial class GetDevicePositionResponse : AmazonWebServiceResponse
+    public partial class DeviceState
     {
         private PositionalAccuracy _accuracy;
+        private CellSignals _cellSignals;
         private string _deviceId;
+        private string _ipv4Address;
         private List<double> _position = AWSConfigs.InitializeCollections ? new List<double>() : null;
-        private Dictionary<string, string> _positionProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-        private DateTime? _receivedTime;
         private DateTime? _sampleTime;
+        private List<WiFiAccessPoint> _wiFiAccessPoints = AWSConfigs.InitializeCollections ? new List<WiFiAccessPoint>() : null;
 
         /// <summary>
-        /// Gets and sets the property Accuracy. 
-        /// <para>
-        /// The accuracy of the device position.
-        /// </para>
+        /// Gets and sets the property Accuracy.
         /// </summary>
         public PositionalAccuracy Accuracy
         {
@@ -60,12 +58,30 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeviceId. 
+        /// Gets and sets the property CellSignals. 
         /// <para>
-        /// The device whose position you retrieved.
+        /// The cellular network infrastructure that the device is connected to.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        public CellSignals CellSignals
+        {
+            get { return this._cellSignals; }
+            set { this._cellSignals = value; }
+        }
+
+        // Check to see if CellSignals property is set
+        internal bool IsSetCellSignals()
+        {
+            return this._cellSignals != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceId. 
+        /// <para>
+        /// The device identifier.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string DeviceId
         {
             get { return this._deviceId; }
@@ -76,6 +92,24 @@ namespace Amazon.LocationService.Model
         internal bool IsSetDeviceId()
         {
             return this._deviceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv4Address. 
+        /// <para>
+        /// The device's Ipv4 address.
+        /// </para>
+        /// </summary>
+        public string Ipv4Address
+        {
+            get { return this._ipv4Address; }
+            set { this._ipv4Address = value; }
+        }
+
+        // Check to see if Ipv4Address property is set
+        internal bool IsSetIpv4Address()
+        {
+            return this._ipv4Address != null;
         }
 
         /// <summary>
@@ -98,46 +132,6 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PositionProperties. 
-        /// <para>
-        /// The properties associated with the position.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=3)]
-        public Dictionary<string, string> PositionProperties
-        {
-            get { return this._positionProperties; }
-            set { this._positionProperties = value; }
-        }
-
-        // Check to see if PositionProperties property is set
-        internal bool IsSetPositionProperties()
-        {
-            return this._positionProperties != null && (this._positionProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ReceivedTime. 
-        /// <para>
-        /// The timestamp for when the tracker resource received the device position. Uses <a
-        /// href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format:
-        /// <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public DateTime ReceivedTime
-        {
-            get { return this._receivedTime.GetValueOrDefault(); }
-            set { this._receivedTime = value; }
-        }
-
-        // Check to see if ReceivedTime property is set
-        internal bool IsSetReceivedTime()
-        {
-            return this._receivedTime.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property SampleTime. 
         /// <para>
         /// The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
@@ -155,6 +149,24 @@ namespace Amazon.LocationService.Model
         internal bool IsSetSampleTime()
         {
             return this._sampleTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WiFiAccessPoints. 
+        /// <para>
+        /// The Wi-Fi access points the device is using.
+        /// </para>
+        /// </summary>
+        public List<WiFiAccessPoint> WiFiAccessPoints
+        {
+            get { return this._wiFiAccessPoints; }
+            set { this._wiFiAccessPoints = value; }
+        }
+
+        // Check to see if WiFiAccessPoints property is set
+        internal bool IsSetWiFiAccessPoints()
+        {
+            return this._wiFiAccessPoints != null && (this._wiFiAccessPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

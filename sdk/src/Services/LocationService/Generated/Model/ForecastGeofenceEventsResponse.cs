@@ -30,55 +30,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListGeofences operation.
-    /// Lists geofences stored in a given geofence collection.
+    /// This is the response object from the ForecastGeofenceEvents operation.
     /// </summary>
-    public partial class ListGeofencesRequest : AmazonLocationServiceRequest
+    public partial class ForecastGeofenceEventsResponse : AmazonWebServiceResponse
     {
-        private string _collectionName;
-        private int? _maxResults;
+        private DistanceUnit _distanceUnit;
+        private List<ForecastedEvent> _forecastedEvents = AWSConfigs.InitializeCollections ? new List<ForecastedEvent>() : null;
         private string _nextToken;
+        private SpeedUnit _speedUnit;
 
         /// <summary>
-        /// Gets and sets the property CollectionName. 
+        /// Gets and sets the property DistanceUnit. 
         /// <para>
-        /// The name of the geofence collection storing the list of geofences.
+        /// The distance unit for the forecasted events.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string CollectionName
+        [AWSProperty(Required=true)]
+        public DistanceUnit DistanceUnit
         {
-            get { return this._collectionName; }
-            set { this._collectionName = value; }
+            get { return this._distanceUnit; }
+            set { this._distanceUnit = value; }
         }
 
-        // Check to see if CollectionName property is set
-        internal bool IsSetCollectionName()
+        // Check to see if DistanceUnit property is set
+        internal bool IsSetDistanceUnit()
         {
-            return this._collectionName != null;
+            return this._distanceUnit != null;
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property ForecastedEvents. 
         /// <para>
-        /// An optional limit for the number of geofences returned in a single call. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default value: <c>100</c> 
+        /// The list of forecasted events.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        [AWSProperty(Required=true)]
+        public List<ForecastedEvent> ForecastedEvents
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._forecastedEvents; }
+            set { this._forecastedEvents = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if ForecastedEvents property is set
+        internal bool IsSetForecastedEvents()
         {
-            return this._maxResults.HasValue; 
+            return this._forecastedEvents != null && (this._forecastedEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -86,10 +82,6 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// The pagination token specifying which page of results to return in the response. If
         /// no token is provided, the default page is the first page. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default value: <c>null</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=60000)]
@@ -103,6 +95,25 @@ namespace Amazon.LocationService.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpeedUnit. 
+        /// <para>
+        /// The speed unit for the forecasted events.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public SpeedUnit SpeedUnit
+        {
+            get { return this._speedUnit; }
+            set { this._speedUnit = value; }
+        }
+
+        // Check to see if SpeedUnit property is set
+        internal bool IsSetSpeedUnit()
+        {
+            return this._speedUnit != null;
         }
 
     }

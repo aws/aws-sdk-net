@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GeofenceGeometry Object
+    /// Response Unmarshaller for InferredState Object
     /// </summary>  
-    public class GeofenceGeometryUnmarshaller : IUnmarshaller<GeofenceGeometry, XmlUnmarshallerContext>, IUnmarshaller<GeofenceGeometry, JsonUnmarshallerContext>
+    public class InferredStateUnmarshaller : IUnmarshaller<InferredState, XmlUnmarshallerContext>, IUnmarshaller<InferredState, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GeofenceGeometry IUnmarshaller<GeofenceGeometry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InferredState IUnmarshaller<InferredState, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GeofenceGeometry Unmarshall(JsonUnmarshallerContext context)
+        public InferredState Unmarshall(JsonUnmarshallerContext context)
         {
-            GeofenceGeometry unmarshalledObject = new GeofenceGeometry();
+            InferredState unmarshalledObject = new InferredState();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,28 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Circle", targetDepth))
+                if (context.TestExpression("Accuracy", targetDepth))
                 {
-                    var unmarshaller = CircleUnmarshaller.Instance;
-                    unmarshalledObject.Circle = unmarshaller.Unmarshall(context);
+                    var unmarshaller = PositionalAccuracyUnmarshaller.Instance;
+                    unmarshalledObject.Accuracy = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Geobuf", targetDepth))
+                if (context.TestExpression("DeviationDistance", targetDepth))
                 {
-                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
-                    unmarshalledObject.Geobuf = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.DeviationDistance = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Polygon", targetDepth))
+                if (context.TestExpression("Position", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<List<List<double>>, ListUnmarshaller<List<double>, ListUnmarshaller<double, DoubleUnmarshaller>>>(new ListUnmarshaller<List<double>, ListUnmarshaller<double, DoubleUnmarshaller>>(new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance)));
-                    unmarshalledObject.Polygon = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
+                    unmarshalledObject.Position = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProxyDetected", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ProxyDetected = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +95,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         }
 
 
-        private static GeofenceGeometryUnmarshaller _instance = new GeofenceGeometryUnmarshaller();        
+        private static InferredStateUnmarshaller _instance = new InferredStateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GeofenceGeometryUnmarshaller Instance
+        public static InferredStateUnmarshaller Instance
         {
             get
             {

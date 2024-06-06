@@ -30,30 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Defines the level of certainty of the position.
+    /// The cellular network communication infrastructure that the device uses.
     /// </summary>
-    public partial class PositionalAccuracy
+    public partial class CellSignals
     {
-        private double? _horizontal;
+        private List<LteCellDetails> _lteCellDetails = AWSConfigs.InitializeCollections ? new List<LteCellDetails>() : null;
 
         /// <summary>
-        /// Gets and sets the property Horizontal. 
+        /// Gets and sets the property LteCellDetails. 
         /// <para>
-        /// Estimated maximum distance, in meters, between the measured position and the true
-        /// position of a device, along the Earth's surface.
+        /// Information about the Long-Term Evolution (LTE) network the device is connected to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=10000000)]
-        public double Horizontal
+        [AWSProperty(Required=true, Min=1, Max=16)]
+        public List<LteCellDetails> LteCellDetails
         {
-            get { return this._horizontal.GetValueOrDefault(); }
-            set { this._horizontal = value; }
+            get { return this._lteCellDetails; }
+            set { this._lteCellDetails = value; }
         }
 
-        // Check to see if Horizontal property is set
-        internal bool IsSetHorizontal()
+        // Check to see if LteCellDetails property is set
+        internal bool IsSetLteCellDetails()
         {
-            return this._horizontal.HasValue; 
+            return this._lteCellDetails != null && (this._lteCellDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

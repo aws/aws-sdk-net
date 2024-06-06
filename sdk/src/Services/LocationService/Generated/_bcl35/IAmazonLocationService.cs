@@ -1927,6 +1927,79 @@ namespace Amazon.LocationService
 
         #endregion
         
+        #region  ForecastGeofenceEvents
+
+
+        /// <summary>
+        /// Evaluates device positions against geofence geometries from a given geofence collection.
+        /// The event forecasts three states for which a device can be in relative to a geofence:
+        /// 
+        ///  
+        /// <para>
+        ///  <c>ENTER</c>: If a device is outside of a geofence, but would breach the fence if
+        /// the device is moving at its current speed within time horizon window.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>EXIT</c>: If a device is inside of a geofence, but would breach the fence if the
+        /// device is moving at its current speed within time horizon window.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>IDLE</c>: If a device is inside of a geofence, and the device is not moving.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ForecastGeofenceEvents service method.</param>
+        /// 
+        /// <returns>The response from the ForecastGeofenceEvents service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ForecastGeofenceEvents">REST API Reference for ForecastGeofenceEvents Operation</seealso>
+        ForecastGeofenceEventsResponse ForecastGeofenceEvents(ForecastGeofenceEventsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ForecastGeofenceEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ForecastGeofenceEvents operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndForecastGeofenceEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ForecastGeofenceEvents">REST API Reference for ForecastGeofenceEvents Operation</seealso>
+        IAsyncResult BeginForecastGeofenceEvents(ForecastGeofenceEventsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ForecastGeofenceEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginForecastGeofenceEvents.</param>
+        /// 
+        /// <returns>Returns a  ForecastGeofenceEventsResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ForecastGeofenceEvents">REST API Reference for ForecastGeofenceEvents Operation</seealso>
+        ForecastGeofenceEventsResponse EndForecastGeofenceEvents(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetDevicePosition
 
 
@@ -2059,6 +2132,13 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Retrieves the geofence details from a geofence collection.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The returned geometry will always match the geometry format used when the geofence
+        /// was created.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGeofence service method.</param>
         /// 
@@ -3721,6 +3801,65 @@ namespace Amazon.LocationService
         /// <returns>Returns a  UpdateTrackerResult from LocationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateTracker">REST API Reference for UpdateTracker Operation</seealso>
         UpdateTrackerResponse EndUpdateTracker(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  VerifyDevicePosition
+
+
+        /// <summary>
+        /// Verifies the integrity of the device's position by determining if it was reported
+        /// behind a proxy, and by comparing it to an inferred position estimated based on the
+        /// device's state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDevicePosition service method.</param>
+        /// 
+        /// <returns>The response from the VerifyDevicePosition service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/VerifyDevicePosition">REST API Reference for VerifyDevicePosition Operation</seealso>
+        VerifyDevicePositionResponse VerifyDevicePosition(VerifyDevicePositionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the VerifyDevicePosition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDevicePosition operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyDevicePosition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/VerifyDevicePosition">REST API Reference for VerifyDevicePosition Operation</seealso>
+        IAsyncResult BeginVerifyDevicePosition(VerifyDevicePositionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  VerifyDevicePosition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyDevicePosition.</param>
+        /// 
+        /// <returns>Returns a  VerifyDevicePositionResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/VerifyDevicePosition">REST API Reference for VerifyDevicePosition Operation</seealso>
+        VerifyDevicePositionResponse EndVerifyDevicePosition(IAsyncResult asyncResult);
 
         #endregion
                 

@@ -30,42 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// This is the response object from the GetDevicePosition operation.
+    /// This is the response object from the VerifyDevicePosition operation.
     /// </summary>
-    public partial class GetDevicePositionResponse : AmazonWebServiceResponse
+    public partial class VerifyDevicePositionResponse : AmazonWebServiceResponse
     {
-        private PositionalAccuracy _accuracy;
         private string _deviceId;
-        private List<double> _position = AWSConfigs.InitializeCollections ? new List<double>() : null;
-        private Dictionary<string, string> _positionProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private DistanceUnit _distanceUnit;
+        private InferredState _inferredState;
         private DateTime? _receivedTime;
         private DateTime? _sampleTime;
 
         /// <summary>
-        /// Gets and sets the property Accuracy. 
-        /// <para>
-        /// The accuracy of the device position.
-        /// </para>
-        /// </summary>
-        public PositionalAccuracy Accuracy
-        {
-            get { return this._accuracy; }
-            set { this._accuracy = value; }
-        }
-
-        // Check to see if Accuracy property is set
-        internal bool IsSetAccuracy()
-        {
-            return this._accuracy != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property DeviceId. 
         /// <para>
-        /// The device whose position you retrieved.
+        /// The device identifier.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string DeviceId
         {
             get { return this._deviceId; }
@@ -79,49 +60,49 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Position. 
+        /// Gets and sets the property DistanceUnit. 
         /// <para>
-        /// The last known device position.
+        /// The distance unit for the verification response.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
-        public List<double> Position
+        [AWSProperty(Required=true)]
+        public DistanceUnit DistanceUnit
         {
-            get { return this._position; }
-            set { this._position = value; }
+            get { return this._distanceUnit; }
+            set { this._distanceUnit = value; }
         }
 
-        // Check to see if Position property is set
-        internal bool IsSetPosition()
+        // Check to see if DistanceUnit property is set
+        internal bool IsSetDistanceUnit()
         {
-            return this._position != null && (this._position.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._distanceUnit != null;
         }
 
         /// <summary>
-        /// Gets and sets the property PositionProperties. 
+        /// Gets and sets the property InferredState. 
         /// <para>
-        /// The properties associated with the position.
+        /// The inferred state of the device, given the provided position, IP address, cellular
+        /// signals, and Wi-Fi- access points.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=3)]
-        public Dictionary<string, string> PositionProperties
+        [AWSProperty(Required=true)]
+        public InferredState InferredState
         {
-            get { return this._positionProperties; }
-            set { this._positionProperties = value; }
+            get { return this._inferredState; }
+            set { this._inferredState = value; }
         }
 
-        // Check to see if PositionProperties property is set
-        internal bool IsSetPositionProperties()
+        // Check to see if InferredState property is set
+        internal bool IsSetInferredState()
         {
-            return this._positionProperties != null && (this._positionProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._inferredState != null;
         }
 
         /// <summary>
         /// Gets and sets the property ReceivedTime. 
         /// <para>
-        /// The timestamp for when the tracker resource received the device position. Uses <a
-        /// href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format:
-        /// <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
+        /// The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
+        /// ISO 8601 </a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

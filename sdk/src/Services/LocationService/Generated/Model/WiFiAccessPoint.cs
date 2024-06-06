@@ -30,30 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Defines the level of certainty of the position.
+    /// Wi-Fi access point.
     /// </summary>
-    public partial class PositionalAccuracy
+    public partial class WiFiAccessPoint
     {
-        private double? _horizontal;
+        private string _macAddress;
+        private int? _rss;
 
         /// <summary>
-        /// Gets and sets the property Horizontal. 
+        /// Gets and sets the property MacAddress. 
         /// <para>
-        /// Estimated maximum distance, in meters, between the measured position and the true
-        /// position of a device, along the Earth's surface.
+        /// Medium access control address (Mac).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=10000000)]
-        public double Horizontal
+        [AWSProperty(Required=true, Min=12, Max=17)]
+        public string MacAddress
         {
-            get { return this._horizontal.GetValueOrDefault(); }
-            set { this._horizontal = value; }
+            get { return this._macAddress; }
+            set { this._macAddress = value; }
         }
 
-        // Check to see if Horizontal property is set
-        internal bool IsSetHorizontal()
+        // Check to see if MacAddress property is set
+        internal bool IsSetMacAddress()
         {
-            return this._horizontal.HasValue; 
+            return this._macAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Rss. 
+        /// <para>
+        /// Received signal strength (dBm) of the WLAN measurement data.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=-128, Max=0)]
+        public int Rss
+        {
+            get { return this._rss.GetValueOrDefault(); }
+            set { this._rss = value; }
+        }
+
+        // Check to see if Rss property is set
+        internal bool IsSetRss()
+        {
+            return this._rss.HasValue; 
         }
 
     }
