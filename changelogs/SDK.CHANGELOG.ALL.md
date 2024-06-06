@@ -1,3 +1,23 @@
+### 3.7.826.0 (2024-06-06 18:22 UTC)
+* Account (3.7.301.0)
+	* This release adds 3 new APIs (AcceptPrimaryEmailUpdate, GetPrimaryEmail, and StartPrimaryEmailUpdate) used to centrally manage the root user email address of member accounts within an AWS organization.
+* FSx (3.7.305.0)
+	* This release adds support to increase metadata performance on FSx for Lustre file systems beyond the default level provisioned when a file system is created. This can be done by specifying MetadataConfiguration during the creation of Persistent_2 file systems or by updating it on demand.
+* Glue (3.7.314.0)
+	* This release adds support for creating and updating Glue Data Catalog Views.
+* IoTWireless (3.7.303.0)
+	* Adds support for wireless device to be in Conflict FUOTA Device Status due to a FUOTA Task, so it couldn't be attached to a new one.
+* KinesisFirehose (3.7.305.0)
+	* Adds integration with Secrets Manager for Redshift, Splunk, HttpEndpoint, and Snowflake destinations
+* LocationService (3.7.305.0)
+	* Added two new APIs, VerifyDevicePosition and ForecastGeofenceEvents. Added support for putting larger geofences up to 100,000 vertices with Geobuf fields.
+* SimpleNotificationService (3.7.301.50)
+	* Doc-only update for SNS. These changes include customer-reported issues and TXC3 updates.
+* SQS (3.7.301.15)
+	* Doc only updates for SQS. These updates include customer-reported issues and TCX3 modifications.
+* StorageGateway (3.7.303.0)
+	* Adds SoftwareUpdatePreferences to DescribeMaintenanceStartTime and UpdateMaintenanceStartTime, a structure which contains AutomaticUpdatePolicy.
+
 ### 3.7.825.0 (2024-06-05 18:59 UTC)
 * GlobalAccelerator (3.7.302.0)
 	* This release contains a new optional ip-addresses input field for the update accelerator and update custom routing accelerator apis. This input enables consumers to replace IPv4 addresses on existing accelerators with addresses provided in the input.
