@@ -3251,7 +3251,8 @@ namespace Amazon.SQS
         ///  <important> 
         /// <para>
         /// A message can include only XML, JSON, and unformatted text. The following Unicode
-        /// characters are allowed:
+        /// characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+        /// specification for characters</a>.
         /// </para>
         ///  
         /// <para>
@@ -3260,13 +3261,15 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Any characters not included in this list will be rejected. For more information, see
-        /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
+        /// Amazon SQS does not throw an exception or completely reject the message if it contains
+        /// invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c>
+        /// before storing the message in the queue, as long as the message body contains at least
+        /// one valid character.
         /// </para>
         ///  </important>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which a message is sent. Queue URLs and names are case-sensitive.</param>
-        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KiB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c> to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c>  Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>. </important></param>
+        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KiB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c> to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c>  Amazon SQS does not throw an exception or completely reject the message if it contains invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c> before storing the message in the queue, as long as the message body contains at least one valid character. </important></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -3360,7 +3363,8 @@ namespace Amazon.SQS
         ///  <important> 
         /// <para>
         /// A message can include only XML, JSON, and unformatted text. The following Unicode
-        /// characters are allowed:
+        /// characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+        /// specification for characters</a>.
         /// </para>
         ///  
         /// <para>
@@ -3369,8 +3373,10 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Any characters not included in this list will be rejected. For more information, see
-        /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
+        /// Amazon SQS does not throw an exception or completely reject the message if it contains
+        /// invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c>
+        /// before storing the message in the queue, as long as the message body contains at least
+        /// one valid character.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3498,7 +3504,8 @@ namespace Amazon.SQS
         ///  <important> 
         /// <para>
         /// A message can include only XML, JSON, and unformatted text. The following Unicode
-        /// characters are allowed:
+        /// characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+        /// specification for characters</a>.
         /// </para>
         ///  
         /// <para>
@@ -3507,8 +3514,10 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Any characters not included in this list will be rejected. For more information, see
-        /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
+        /// Amazon SQS does not throw an exception or completely reject the message if it contains
+        /// invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c>
+        /// before storing the message in the queue, as long as the message body contains at least
+        /// one valid character.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3640,7 +3649,8 @@ namespace Amazon.SQS
         ///  <important> 
         /// <para>
         /// A message can include only XML, JSON, and unformatted text. The following Unicode
-        /// characters are allowed:
+        /// characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+        /// specification for characters</a>.
         /// </para>
         ///  
         /// <para>
@@ -3649,8 +3659,10 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Any characters not included in this list will be rejected. For more information, see
-        /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
+        /// Amazon SQS does not throw an exception or completely reject the message if it contains
+        /// invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c>
+        /// before storing the message in the queue, as long as the message body contains at least
+        /// one valid character.
         /// </para>
         ///  </important> 
         /// <para>

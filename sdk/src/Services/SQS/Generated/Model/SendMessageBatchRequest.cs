@@ -53,7 +53,8 @@ namespace Amazon.SQS.Model
     ///  <important> 
     /// <para>
     /// A message can include only XML, JSON, and unformatted text. The following Unicode
-    /// characters are allowed:
+    /// characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+    /// specification for characters</a>.
     /// </para>
     ///  
     /// <para>
@@ -62,8 +63,10 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  
     /// <para>
-    /// Any characters not included in this list will be rejected. For more information, see
-    /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
+    /// Amazon SQS does not throw an exception or completely reject the message if it contains
+    /// invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c>
+    /// before storing the message in the queue, as long as the message body contains at least
+    /// one valid character.
     /// </para>
     ///  </important> 
     /// <para>
