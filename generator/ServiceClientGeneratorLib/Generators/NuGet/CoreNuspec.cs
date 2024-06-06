@@ -15,7 +15,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+    #line 1 "C:\Dev\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class CoreNuspec : CoreNuspecBase
     {
@@ -28,13 +28,13 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("\r\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package> \r\n  <metadata> \r\n    <id>AWSS" +
                     "DK.Core</id>\r\n    <title>AWSSDK - Core Runtime</title>\r\n    <version>");
             
-            #line 9 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 9 "C:\Dev\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
             #line hidden
             
-            #line 9 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 9 "C:\Dev\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NuGetPreviewFlag"]));
             
             #line default
@@ -43,7 +43,7 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "zon Web Services SDK for .NET - Core Runtime</description>\r\n    <language>en-US<" +
                     "/language>\r\n    <license type=\"expression\">Apache-2.0</license>\r\n    <projectUrl" +
                     ">https://github.com/aws/aws-sdk-net/</projectUrl>\r\n    <tags>AWS Amazon cloud aw" +
-                    "s-sdk-v3</tags>\r\n    <icon>images\\AWSLogo.png</icon>\r\n    <dependencies>\r\n      " +
+                    "s-sdk-v4</tags>\r\n    <icon>images\\AWSLogo.png</icon>\r\n    <dependencies>\r\n      " +
                     "<group targetFramework=\"net462\">\r\n        <dependency id=\"System.Buffers\" versio" +
                     "n=\"4.5.1\" />\r\n        <dependency id=\"System.Memory\" version=\"4.5.5\" />\r\n       " +
                     " <dependency id=\"System.Text.Json\" version=\"8.0.3\" />\r\n      </group>\r\n      <gr" +

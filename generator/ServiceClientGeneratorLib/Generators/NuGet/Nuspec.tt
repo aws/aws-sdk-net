@@ -15,7 +15,7 @@
     <language>en-US</language>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
-    <tags>AWS Amazon cloud <#=this.Session["BaseName"]#> aws-sdk-v3<#=this.Session["ExtraTags"]#></tags>
+    <tags>AWS Amazon cloud <#=this.Session["BaseName"]#> aws-sdk-v4<#=this.Session["ExtraTags"]#></tags>
     <icon>images\AWSLogo.png</icon>
 <# 
     if (bool.Parse(this.Session["requireLicenseAcceptance"].ToString()))
