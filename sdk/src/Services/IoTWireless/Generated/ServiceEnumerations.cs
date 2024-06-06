@@ -759,6 +759,10 @@ namespace Amazon.IoTWireless
     {
 
         /// <summary>
+        /// Constant Device_exist_in_conflict_fuota_task for FuotaDeviceStatus
+        /// </summary>
+        public static readonly FuotaDeviceStatus Device_exist_in_conflict_fuota_task = new FuotaDeviceStatus("Device_exist_in_conflict_fuota_task");
+        /// <summary>
         /// Constant FragAlgo_unsupported for FuotaDeviceStatus
         /// </summary>
         public static readonly FuotaDeviceStatus FragAlgo_unsupported = new FuotaDeviceStatus("FragAlgo_unsupported");
