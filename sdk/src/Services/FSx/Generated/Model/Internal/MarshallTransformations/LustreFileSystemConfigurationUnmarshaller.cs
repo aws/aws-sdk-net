@@ -114,6 +114,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MetadataConfiguration", targetDepth))
+                {
+                    var unmarshaller = FileSystemLustreMetadataConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.MetadataConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MountName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -69,7 +69,7 @@ namespace Amazon.FSx.Model
     /// If a file system with the specified client request token exists and the parameters
     /// don't match, this call returns <c>IncompatibleParameterError</c>. If a file system
     /// with the specified client request token doesn't exist, <c>CreateFileSystem</c> does
-    /// the following: 
+    /// the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -149,29 +149,38 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemTypeVersion. 
         /// <para>
-        /// (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system
-        /// that you're creating. Valid values are <c>2.10</c>, <c>2.12</c>, and <c>2.15</c>:
+        /// For FSx for Lustre file systems, sets the Lustre version for the file system that
+        /// you're creating. Valid values are <c>2.10</c>, <c>2.12</c>, and <c>2.15</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// 2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.
+        ///  <c>2.10</c> is supported by the Scratch and Persistent_1 Lustre deployment types.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 2.12 and 2.15 are supported by all Lustre deployment types. <c>2.12</c> or <c>2.15</c>
-        /// is required when setting FSx for Lustre <c>DeploymentType</c> to <c>PERSISTENT_2</c>.
+        ///  <c>2.12</c> is supported by all Lustre deployment types, except for <c>PERSISTENT_2</c>
+        /// with a metadata configuration mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>2.15</c> is supported by all Lustre deployment types and is recommended for all
+        /// new file systems.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default value = <c>2.10</c>, except when <c>DeploymentType</c> is set to <c>PERSISTENT_2</c>,
-        /// then the default is <c>2.12</c>.
+        /// Default value is <c>2.10</c>, except for the following deployments:
         /// </para>
-        ///  <note> 
+        ///  <ul> <li> 
         /// <para>
-        /// If you set <c>FileSystemTypeVersion</c> to <c>2.10</c> for a <c>PERSISTENT_2</c> Lustre
-        /// deployment type, the <c>CreateFileSystem</c> operation fails.
+        /// Default value is <c>2.12</c> when <c>DeploymentType</c> is set to <c>PERSISTENT_2</c>
+        /// without a metadata configuration mode.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// Default value is <c>2.15</c> when <c>DeploymentType</c> is set to <c>PERSISTENT_2</c>
+        /// with a metadata configuration mode.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public string FileSystemTypeVersion
@@ -290,7 +299,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <c>SCRATCH_2</c>, <c>PERSISTENT_2</c> and <c>PERSISTENT_1</c> deployment types
+        /// For <c>SCRATCH_2</c>, <c>PERSISTENT_2</c>, and <c>PERSISTENT_1</c> deployment types
         /// using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of
         /// 2400 GiB.
         /// </para>
@@ -360,7 +369,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Set to <c>HDD</c> to use hard disk drive storage. HDD is supported on <c>SINGLE_AZ_2</c>
         /// and <c>MULTI_AZ_1</c> Windows file system deployment types, and on <c>PERSISTENT_1</c>
-        /// Lustre file system deployment types. 
+        /// Lustre file system deployment types.
         /// </para>
         ///  </li> </ul> 
         /// <para>

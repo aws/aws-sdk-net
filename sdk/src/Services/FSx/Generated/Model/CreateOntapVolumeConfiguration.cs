@@ -125,7 +125,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-types">Volume
         /// types</a> in the Amazon FSx for NetApp ONTAP User Guide.
         /// </para>
         /// </summary>
@@ -146,9 +146,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Specifies the security style for the volume. If a volume's security style is not specified,
         /// it is automatically set to the root volume's security style. The security style determines
-        /// the type of permissions that FSx for ONTAP uses to control data access. For more information,
-        /// see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style">Volume
-        /// security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one
+        /// the type of permissions that FSx for ONTAP uses to control data access. Specify one
         /// of the following values:
         /// </para>
         ///  <ul> <li> 
@@ -171,7 +169,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume
         /// security style</a> in the FSx for ONTAP User Guide.
         /// </para>
         /// </summary>
@@ -354,7 +352,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles of volumes
         /// that you can use for different purposes, FlexVol and FlexGroup volumes. For more information,
-        /// see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-styles.html">Volume
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-styles">Volume
         /// styles</a> in the Amazon FSx for NetApp ONTAP User Guide.
         /// </para>
         /// </summary>

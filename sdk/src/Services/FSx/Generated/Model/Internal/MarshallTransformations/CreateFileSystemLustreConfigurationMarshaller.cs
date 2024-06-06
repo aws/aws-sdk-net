@@ -119,6 +119,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMetadataConfiguration())
+            {
+                context.Writer.WritePropertyName("MetadataConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CreateFileSystemLustreMetadataConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.MetadataConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPerUnitStorageThroughput())
             {
                 context.Writer.WritePropertyName("PerUnitStorageThroughput");
