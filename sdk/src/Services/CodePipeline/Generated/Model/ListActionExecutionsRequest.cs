@@ -66,12 +66,6 @@ namespace Amazon.CodePipeline.Model
         /// is retained for up to 12 months, based on action execution start times. Default value
         /// is 100. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Detailed execution history is available for executions run on or after February 21,
-        /// 2019.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults

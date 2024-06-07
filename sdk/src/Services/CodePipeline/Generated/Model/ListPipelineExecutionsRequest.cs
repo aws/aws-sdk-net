@@ -32,6 +32,14 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// Container for the parameters to the ListPipelineExecutions operation.
     /// Gets a summary of the most recent executions for a pipeline.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// When applying the filter for pipeline executions that have succeeded in the stage,
+    /// the operation returns all executions in the current pipeline version beginning on
+    /// February 1, 2024.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListPipelineExecutionsRequest : AmazonCodePipelineRequest
     {

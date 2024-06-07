@@ -1061,6 +1061,10 @@ namespace Amazon.CodePipeline
         /// </summary>
         public static readonly SourceRevisionType IMAGE_DIGEST = new SourceRevisionType("IMAGE_DIGEST");
         /// <summary>
+        /// Constant S3_OBJECT_KEY for SourceRevisionType
+        /// </summary>
+        public static readonly SourceRevisionType S3_OBJECT_KEY = new SourceRevisionType("S3_OBJECT_KEY");
+        /// <summary>
         /// Constant S3_OBJECT_VERSION_ID for SourceRevisionType
         /// </summary>
         public static readonly SourceRevisionType S3_OBJECT_VERSION_ID = new SourceRevisionType("S3_OBJECT_VERSION_ID");
