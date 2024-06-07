@@ -64,7 +64,7 @@ namespace Amazon.LexModelsV2.Model
         /// When true the next message for the intent is not used.
         /// </para>
         /// </summary>
-        public bool SuppressNextMessage
+        public bool? SuppressNextMessage
         {
             get { return this._suppressNextMessage.GetValueOrDefault(); }
             set { this._suppressNextMessage = value; }
