@@ -1043,6 +1043,20 @@ namespace Amazon.B2bi
         /// <param name="request">Container for the necessary parameters to execute the ListCapabilities service method.</param>
         /// 
         /// <returns>The response from the ListCapabilities service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ThrottlingException">
+        /// The request was denied due to throttling: the data speed and rendering may be limited
+        /// depending on various parameters and conditions.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListCapabilities">REST API Reference for ListCapabilities Operation</seealso>
         ListCapabilitiesResponse ListCapabilities(ListCapabilitiesRequest request);
 
@@ -1059,6 +1073,20 @@ namespace Amazon.B2bi
         /// </param>
         /// 
         /// <returns>The response from the ListCapabilities service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ThrottlingException">
+        /// The request was denied due to throttling: the data speed and rendering may be limited
+        /// depending on various parameters and conditions.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListCapabilities">REST API Reference for ListCapabilities Operation</seealso>
         Task<ListCapabilitiesResponse> ListCapabilitiesAsync(ListCapabilitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1143,6 +1171,20 @@ namespace Amazon.B2bi
         /// <param name="request">Container for the necessary parameters to execute the ListProfiles service method.</param>
         /// 
         /// <returns>The response from the ListProfiles service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ThrottlingException">
+        /// The request was denied due to throttling: the data speed and rendering may be limited
+        /// depending on various parameters and conditions.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
         ListProfilesResponse ListProfiles(ListProfilesRequest request);
 
@@ -1159,6 +1201,20 @@ namespace Amazon.B2bi
         /// </param>
         /// 
         /// <returns>The response from the ListProfiles service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ThrottlingException">
+        /// The request was denied due to throttling: the data speed and rendering may be limited
+        /// depending on various parameters and conditions.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
         Task<ListProfilesResponse> ListProfilesAsync(ListProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1226,6 +1282,20 @@ namespace Amazon.B2bi
         /// <param name="request">Container for the necessary parameters to execute the ListTransformers service method.</param>
         /// 
         /// <returns>The response from the ListTransformers service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ThrottlingException">
+        /// The request was denied due to throttling: the data speed and rendering may be limited
+        /// depending on various parameters and conditions.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListTransformers">REST API Reference for ListTransformers Operation</seealso>
         ListTransformersResponse ListTransformers(ListTransformersRequest request);
 
@@ -1241,6 +1311,20 @@ namespace Amazon.B2bi
         /// </param>
         /// 
         /// <returns>The response from the ListTransformers service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ThrottlingException">
+        /// The request was denied due to throttling: the data speed and rendering may be limited
+        /// depending on various parameters and conditions.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListTransformers">REST API Reference for ListTransformers Operation</seealso>
         Task<ListTransformersResponse> ListTransformersAsync(ListTransformersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1265,6 +1349,10 @@ namespace Amazon.B2bi
         /// <returns>The response from the StartTransformerJob service method, as returned by B2bi.</returns>
         /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ConflictException">
+        /// A conflict exception is thrown when you attempt to delete a resource (such as a profile
+        /// or a capability) that is being used by other resources.
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.InternalServerException">
         /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
@@ -1305,6 +1393,10 @@ namespace Amazon.B2bi
         /// <returns>The response from the StartTransformerJob service method, as returned by B2bi.</returns>
         /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ConflictException">
+        /// A conflict exception is thrown when you attempt to delete a resource (such as a profile
+        /// or a capability) that is being used by other resources.
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.InternalServerException">
         /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data

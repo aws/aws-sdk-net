@@ -51,6 +51,7 @@ namespace Amazon.B2bi.Model
         /// Specifies a list of the capabilities associated with this partnership.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Capabilities
         {
             get { return this._capabilities; }
