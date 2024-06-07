@@ -464,9 +464,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ListAssessmentControlInsightsByControlDomainRequest.ControlDomainId</property>
-    <min>36</min>
-    <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <min>13</min>
+    <max>2048</max>
+    <pattern>^arn:.*:controlcatalog:.*:.*:domain/.*|UNCATEGORIZED|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ListAssessmentControlInsightsByControlDomainRequest.MaxResults</property>
@@ -595,9 +595,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ListControlInsightsByControlDomainRequest.ControlDomainId</property>
-    <min>36</min>
-    <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <min>13</min>
+    <max>2048</max>
+    <pattern>^arn:.*:controlcatalog:.*:.*:domain/.*|UNCATEGORIZED|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ListControlInsightsByControlDomainRequest.MaxResults</property>
@@ -615,6 +615,12 @@
     <min>1</min>
     <max>1000</max>
     <pattern>^[A-Za-z0-9+\/=]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.ListControlsRequest.ControlCatalogId</property>
+    <min>13</min>
+    <max>2048</max>
+    <pattern>^arn:.*:controlcatalog:.*|UNCATEGORIZED</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ListControlsRequest.MaxResults</property>
@@ -1356,15 +1362,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ControlDomainInsights.Id</property>
-    <min>36</min>
-    <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <min>13</min>
+    <max>2048</max>
+    <pattern>^arn:.*:controlcatalog:.*:.*:domain/.*|UNCATEGORIZED|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ControlDomainInsights.Name</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
-    <pattern>.*\S.*</pattern>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ControlInsightsMetadataByAssessmentItem.ControlSetName</property>
@@ -1374,27 +1380,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ControlInsightsMetadataByAssessmentItem.Id</property>
-    <min>36</min>
-    <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <min>13</min>
+    <max>2048</max>
+    <pattern>^arn:.*:controlcatalog:.*:.*:domain/.*|UNCATEGORIZED|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ControlInsightsMetadataByAssessmentItem.Name</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
-    <pattern>.*\S.*</pattern>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ControlInsightsMetadataItem.Id</property>
-    <min>36</min>
-    <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <min>13</min>
+    <max>2048</max>
+    <pattern>^arn:.*:controlcatalog:.*:.*:domain/.*|UNCATEGORIZED|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ControlInsightsMetadataItem.Name</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
-    <pattern>.*\S.*</pattern>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ControlMappingSource.SourceDescription</property>
@@ -1410,7 +1416,7 @@
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ControlMappingSource.SourceName</property>
     <min>1</min>
-    <max>100</max>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ControlMappingSource.TroubleshootingText</property>
@@ -1471,7 +1477,7 @@
   <property-value-rule>
     <property>Amazon.AuditManager.Model.CreateControlMappingSource.SourceName</property>
     <min>1</min>
-    <max>100</max>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.CreateControlMappingSource.TroubleshootingText</property>
@@ -1864,7 +1870,7 @@
     <property>Amazon.AuditManager.Model.SourceKeyword.KeywordValue</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z_0-9-\s().]+$</pattern>
+    <pattern>^[a-zA-Z_0-9-\s().:\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.UpdateAssessmentFrameworkControlSet.Id</property>

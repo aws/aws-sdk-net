@@ -138,6 +138,12 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("state", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

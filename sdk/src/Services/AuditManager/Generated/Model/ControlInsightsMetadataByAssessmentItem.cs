@@ -91,7 +91,7 @@ namespace Amazon.AuditManager.Model
         /// The unique identifier for the assessment control. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=13, Max=2048)]
         public string Id
         {
             get { return this._id; }
@@ -128,7 +128,7 @@ namespace Amazon.AuditManager.Model
         /// The name of the assessment control. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Name
         {
             get { return this._name; }
