@@ -90,6 +90,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableSSMAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InferenceAmiVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InferenceAmiVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InitialInstanceCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

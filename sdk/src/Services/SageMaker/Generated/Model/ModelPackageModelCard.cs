@@ -35,7 +35,9 @@ namespace Amazon.SageMaker.Model
     /// is simplified compared to the schema of <c>ModelCard</c>. The <c>ModelPackageModelCard</c>
     /// schema does not include <c>model_package_details</c>, and <c>model_overview</c> is
     /// composed of the <c>model_creator</c> and <c>model_artifact</c> properties. For more
-    /// information about the model card associated with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
+    /// information about the model package model card schema, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+    /// package model card schema</a>. For more information about the model card associated
+    /// with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
     /// the Details of a Model Version</a>.
     /// </summary>
     public partial class ModelPackageModelCard
@@ -46,7 +48,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelCardContent. 
         /// <para>
-        /// The content of the model card.
+        /// The content of the model card. The content must follow the schema described in <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+        /// Package Model Card Schema</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=100000)]

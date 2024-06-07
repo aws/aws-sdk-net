@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private int? _containerStartupHealthCheckTimeoutInSeconds;
         private ProductionVariantCoreDumpConfig _coreDumpConfig;
         private bool? _enableSSMAccess;
+        private ProductionVariantInferenceAmiVersion _inferenceAmiVersion;
         private int? _initialInstanceCount;
         private float? _initialVariantWeight;
         private ProductionVariantInstanceType _instanceType;
@@ -134,6 +135,33 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnableSSMAccess()
         {
             return this._enableSSMAccess.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceAmiVersion. 
+        /// <para>
+        /// Specifies an option from a collection of preconfigured Amazon Machine Image (AMI)
+        /// images. Each image is configured by Amazon Web Services with a set of software and
+        /// driver versions. Amazon Web Services optimizes these configurations for different
+        /// machine learning workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// By selecting an AMI version, you can ensure that your inference environment is compatible
+        /// with specific software requirements, such as CUDA driver versions, Linux kernel versions,
+        /// or Amazon Web Services Neuron driver versions.
+        /// </para>
+        /// </summary>
+        public ProductionVariantInferenceAmiVersion InferenceAmiVersion
+        {
+            get { return this._inferenceAmiVersion; }
+            set { this._inferenceAmiVersion = value; }
+        }
+
+        // Check to see if InferenceAmiVersion property is set
+        internal bool IsSetInferenceAmiVersion()
+        {
+            return this._inferenceAmiVersion != null;
         }
 
         /// <summary>
