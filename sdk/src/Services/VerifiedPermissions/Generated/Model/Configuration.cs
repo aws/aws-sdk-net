@@ -32,16 +32,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// <summary>
     /// Contains configuration information used when creating a new identity source.
     /// 
-    ///  <note> 
-    /// <para>
-    /// At this time, the only valid member of this structure is a Amazon Cognito user pool
-    /// configuration.
-    /// </para>
     ///  
-    /// <para>
-    /// Specifies a <c>userPoolArn</c>, a <c>groupConfiguration</c>, and a <c>ClientId</c>.
-    /// </para>
-    ///  </note> 
     /// <para>
     /// This data type is used as a request parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreateIdentitySource.html">CreateIdentitySource</a>
     /// operation.
@@ -50,6 +41,7 @@ namespace Amazon.VerifiedPermissions.Model
     public partial class Configuration
     {
         private CognitoUserPoolConfiguration _cognitoUserPoolConfiguration;
+        private OpenIdConnectConfiguration _openIdConnectConfiguration;
 
         /// <summary>
         /// Gets and sets the property CognitoUserPoolConfiguration. 
@@ -76,6 +68,32 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetCognitoUserPoolConfiguration()
         {
             return this._cognitoUserPoolConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenIdConnectConfiguration. 
+        /// <para>
+        /// Contains configuration details of an OpenID Connect (OIDC) identity provider, or identity
+        /// source, that Verified Permissions can use to generate entities from authenticated
+        /// identities. It specifies the issuer URL, token type that you want to use, and policy
+        /// store entity details.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example:<c>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</c>
+        /// 
+        /// </para>
+        /// </summary>
+        public OpenIdConnectConfiguration OpenIdConnectConfiguration
+        {
+            get { return this._openIdConnectConfiguration; }
+            set { this._openIdConnectConfiguration = value; }
+        }
+
+        // Check to see if OpenIdConnectConfiguration property is set
+        internal bool IsSetOpenIdConnectConfiguration()
+        {
+            return this._openIdConnectConfiguration != null;
         }
 
     }

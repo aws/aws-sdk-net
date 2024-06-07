@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConfigurationDetail Object
+    /// Response Unmarshaller for OpenIdConnectGroupConfigurationItem Object
     /// </summary>  
-    public class ConfigurationDetailUnmarshaller : IUnmarshaller<ConfigurationDetail, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationDetail, JsonUnmarshallerContext>
+    public class OpenIdConnectGroupConfigurationItemUnmarshaller : IUnmarshaller<OpenIdConnectGroupConfigurationItem, XmlUnmarshallerContext>, IUnmarshaller<OpenIdConnectGroupConfigurationItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConfigurationDetail IUnmarshaller<ConfigurationDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OpenIdConnectGroupConfigurationItem IUnmarshaller<OpenIdConnectGroupConfigurationItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfigurationDetail Unmarshall(JsonUnmarshallerContext context)
+        public OpenIdConnectGroupConfigurationItem Unmarshall(JsonUnmarshallerContext context)
         {
-            ConfigurationDetail unmarshalledObject = new ConfigurationDetail();
+            OpenIdConnectGroupConfigurationItem unmarshalledObject = new OpenIdConnectGroupConfigurationItem();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cognitoUserPoolConfiguration", targetDepth))
+                if (context.TestExpression("groupClaim", targetDepth))
                 {
-                    var unmarshaller = CognitoUserPoolConfigurationDetailUnmarshaller.Instance;
-                    unmarshalledObject.CognitoUserPoolConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GroupClaim = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("openIdConnectConfiguration", targetDepth))
+                if (context.TestExpression("groupEntityType", targetDepth))
                 {
-                    var unmarshaller = OpenIdConnectConfigurationDetailUnmarshaller.Instance;
-                    unmarshalledObject.OpenIdConnectConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GroupEntityType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConfigurationDetailUnmarshaller _instance = new ConfigurationDetailUnmarshaller();        
+        private static OpenIdConnectGroupConfigurationItemUnmarshaller _instance = new OpenIdConnectGroupConfigurationItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConfigurationDetailUnmarshaller Instance
+        public static OpenIdConnectGroupConfigurationItemUnmarshaller Instance
         {
             get
             {

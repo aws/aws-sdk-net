@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateConfiguration Marshaller
+    /// UpdateOpenIdConnectConfiguration Marshaller
     /// </summary>
-    public class UpdateConfigurationMarshaller : IRequestMarshaller<UpdateConfiguration, JsonMarshallerContext> 
+    public class UpdateOpenIdConnectConfigurationMarshaller : IRequestMarshaller<UpdateOpenIdConnectConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,28 +44,40 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UpdateConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(UpdateOpenIdConnectConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCognitoUserPoolConfiguration())
+            if(requestObject.IsSetEntityIdPrefix())
             {
-                context.Writer.WritePropertyName("cognitoUserPoolConfiguration");
+                context.Writer.WritePropertyName("entityIdPrefix");
+                context.Writer.Write(requestObject.EntityIdPrefix);
+            }
+
+            if(requestObject.IsSetGroupConfiguration())
+            {
+                context.Writer.WritePropertyName("groupConfiguration");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = UpdateCognitoUserPoolConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.CognitoUserPoolConfiguration, context);
+                var marshaller = UpdateOpenIdConnectGroupConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.GroupConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetOpenIdConnectConfiguration())
+            if(requestObject.IsSetIssuer())
             {
-                context.Writer.WritePropertyName("openIdConnectConfiguration");
+                context.Writer.WritePropertyName("issuer");
+                context.Writer.Write(requestObject.Issuer);
+            }
+
+            if(requestObject.IsSetTokenSelection())
+            {
+                context.Writer.WritePropertyName("tokenSelection");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = UpdateOpenIdConnectConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.OpenIdConnectConfiguration, context);
+                var marshaller = UpdateOpenIdConnectTokenSelectionMarshaller.Instance;
+                marshaller.Marshall(requestObject.TokenSelection, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -75,7 +87,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UpdateConfigurationMarshaller Instance = new UpdateConfigurationMarshaller();
+        public readonly static UpdateOpenIdConnectConfigurationMarshaller Instance = new UpdateOpenIdConnectConfigurationMarshaller();
 
     }
 }

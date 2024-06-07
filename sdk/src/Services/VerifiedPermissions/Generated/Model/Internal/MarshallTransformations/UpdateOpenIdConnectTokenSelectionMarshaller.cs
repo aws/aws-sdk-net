@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateConfiguration Marshaller
+    /// UpdateOpenIdConnectTokenSelection Marshaller
     /// </summary>
-    public class UpdateConfigurationMarshaller : IRequestMarshaller<UpdateConfiguration, JsonMarshallerContext> 
+    public class UpdateOpenIdConnectTokenSelectionMarshaller : IRequestMarshaller<UpdateOpenIdConnectTokenSelection, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,28 +44,28 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UpdateConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(UpdateOpenIdConnectTokenSelection requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCognitoUserPoolConfiguration())
+            if(requestObject.IsSetAccessTokenOnly())
             {
-                context.Writer.WritePropertyName("cognitoUserPoolConfiguration");
+                context.Writer.WritePropertyName("accessTokenOnly");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = UpdateCognitoUserPoolConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.CognitoUserPoolConfiguration, context);
+                var marshaller = UpdateOpenIdConnectAccessTokenConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AccessTokenOnly, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetOpenIdConnectConfiguration())
+            if(requestObject.IsSetIdentityTokenOnly())
             {
-                context.Writer.WritePropertyName("openIdConnectConfiguration");
+                context.Writer.WritePropertyName("identityTokenOnly");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = UpdateOpenIdConnectConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.OpenIdConnectConfiguration, context);
+                var marshaller = UpdateOpenIdConnectIdentityTokenConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.IdentityTokenOnly, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -75,7 +75,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UpdateConfigurationMarshaller Instance = new UpdateConfigurationMarshaller();
+        public readonly static UpdateOpenIdConnectTokenSelectionMarshaller Instance = new UpdateOpenIdConnectTokenSelectionMarshaller();
 
     }
 }

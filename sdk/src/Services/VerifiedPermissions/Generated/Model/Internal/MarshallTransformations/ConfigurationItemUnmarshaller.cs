@@ -72,6 +72,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                     unmarshalledObject.CognitoUserPoolConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("openIdConnectConfiguration", targetDepth))
+                {
+                    var unmarshaller = OpenIdConnectConfigurationItemUnmarshaller.Instance;
+                    unmarshalledObject.OpenIdConnectConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

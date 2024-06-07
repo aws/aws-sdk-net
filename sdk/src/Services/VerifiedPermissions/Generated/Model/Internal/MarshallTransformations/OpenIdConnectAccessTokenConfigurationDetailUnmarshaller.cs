@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConfigurationDetail Object
+    /// Response Unmarshaller for OpenIdConnectAccessTokenConfigurationDetail Object
     /// </summary>  
-    public class ConfigurationDetailUnmarshaller : IUnmarshaller<ConfigurationDetail, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationDetail, JsonUnmarshallerContext>
+    public class OpenIdConnectAccessTokenConfigurationDetailUnmarshaller : IUnmarshaller<OpenIdConnectAccessTokenConfigurationDetail, XmlUnmarshallerContext>, IUnmarshaller<OpenIdConnectAccessTokenConfigurationDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConfigurationDetail IUnmarshaller<ConfigurationDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OpenIdConnectAccessTokenConfigurationDetail IUnmarshaller<OpenIdConnectAccessTokenConfigurationDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfigurationDetail Unmarshall(JsonUnmarshallerContext context)
+        public OpenIdConnectAccessTokenConfigurationDetail Unmarshall(JsonUnmarshallerContext context)
         {
-            ConfigurationDetail unmarshalledObject = new ConfigurationDetail();
+            OpenIdConnectAccessTokenConfigurationDetail unmarshalledObject = new OpenIdConnectAccessTokenConfigurationDetail();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cognitoUserPoolConfiguration", targetDepth))
+                if (context.TestExpression("audiences", targetDepth))
                 {
-                    var unmarshaller = CognitoUserPoolConfigurationDetailUnmarshaller.Instance;
-                    unmarshalledObject.CognitoUserPoolConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Audiences = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("openIdConnectConfiguration", targetDepth))
+                if (context.TestExpression("principalIdClaim", targetDepth))
                 {
-                    var unmarshaller = OpenIdConnectConfigurationDetailUnmarshaller.Instance;
-                    unmarshalledObject.OpenIdConnectConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrincipalIdClaim = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConfigurationDetailUnmarshaller _instance = new ConfigurationDetailUnmarshaller();        
+        private static OpenIdConnectAccessTokenConfigurationDetailUnmarshaller _instance = new OpenIdConnectAccessTokenConfigurationDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConfigurationDetailUnmarshaller Instance
+        public static OpenIdConnectAccessTokenConfigurationDetailUnmarshaller Instance
         {
             get
             {

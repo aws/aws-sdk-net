@@ -31,9 +31,8 @@ namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateIdentitySource operation.
-    /// Updates the specified identity source to use a new identity provider (IdP) source,
-    /// or to change the mapping of identities from the IdP to a different principal entity
-    /// type.
+    /// Updates the specified identity source to use a new identity provider (IdP), or to
+    /// change the mapping of identities from the IdP to a different principal entity type.
     /// 
     ///  <note> 
     /// <para>

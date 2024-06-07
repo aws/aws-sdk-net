@@ -41,6 +41,7 @@ namespace Amazon.VerifiedPermissions.Model
     public partial class ConfigurationItem
     {
         private CognitoUserPoolConfigurationItem _cognitoUserPoolConfiguration;
+        private OpenIdConnectConfigurationItem _openIdConnectConfiguration;
 
         /// <summary>
         /// Gets and sets the property CognitoUserPoolConfiguration. 
@@ -67,6 +68,32 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetCognitoUserPoolConfiguration()
         {
             return this._cognitoUserPoolConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenIdConnectConfiguration. 
+        /// <para>
+        /// Contains configuration details of an OpenID Connect (OIDC) identity provider, or identity
+        /// source, that Verified Permissions can use to generate entities from authenticated
+        /// identities. It specifies the issuer URL, token type that you want to use, and policy
+        /// store entity details.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example:<c>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</c>
+        /// 
+        /// </para>
+        /// </summary>
+        public OpenIdConnectConfigurationItem OpenIdConnectConfiguration
+        {
+            get { return this._openIdConnectConfiguration; }
+            set { this._openIdConnectConfiguration = value; }
+        }
+
+        // Check to see if OpenIdConnectConfiguration property is set
+        internal bool IsSetOpenIdConnectConfiguration()
+        {
+            return this._openIdConnectConfiguration != null;
         }
 
     }

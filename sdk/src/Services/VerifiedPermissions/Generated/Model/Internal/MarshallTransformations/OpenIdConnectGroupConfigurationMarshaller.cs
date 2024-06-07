@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateConfiguration Marshaller
+    /// OpenIdConnectGroupConfiguration Marshaller
     /// </summary>
-    public class UpdateConfigurationMarshaller : IRequestMarshaller<UpdateConfiguration, JsonMarshallerContext> 
+    public class OpenIdConnectGroupConfigurationMarshaller : IRequestMarshaller<OpenIdConnectGroupConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,20 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UpdateConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(OpenIdConnectGroupConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCognitoUserPoolConfiguration())
+            if(requestObject.IsSetGroupClaim())
             {
-                context.Writer.WritePropertyName("cognitoUserPoolConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = UpdateCognitoUserPoolConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.CognitoUserPoolConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("groupClaim");
+                context.Writer.Write(requestObject.GroupClaim);
             }
 
-            if(requestObject.IsSetOpenIdConnectConfiguration())
+            if(requestObject.IsSetGroupEntityType())
             {
-                context.Writer.WritePropertyName("openIdConnectConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = UpdateOpenIdConnectConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.OpenIdConnectConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("groupEntityType");
+                context.Writer.Write(requestObject.GroupEntityType);
             }
 
         }
@@ -75,7 +65,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UpdateConfigurationMarshaller Instance = new UpdateConfigurationMarshaller();
+        public readonly static OpenIdConnectGroupConfigurationMarshaller Instance = new OpenIdConnectGroupConfigurationMarshaller();
 
     }
 }

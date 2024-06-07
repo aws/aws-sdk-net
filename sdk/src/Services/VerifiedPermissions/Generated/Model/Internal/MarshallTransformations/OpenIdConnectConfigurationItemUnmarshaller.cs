@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConfigurationDetail Object
+    /// Response Unmarshaller for OpenIdConnectConfigurationItem Object
     /// </summary>  
-    public class ConfigurationDetailUnmarshaller : IUnmarshaller<ConfigurationDetail, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationDetail, JsonUnmarshallerContext>
+    public class OpenIdConnectConfigurationItemUnmarshaller : IUnmarshaller<OpenIdConnectConfigurationItem, XmlUnmarshallerContext>, IUnmarshaller<OpenIdConnectConfigurationItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConfigurationDetail IUnmarshaller<ConfigurationDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OpenIdConnectConfigurationItem IUnmarshaller<OpenIdConnectConfigurationItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfigurationDetail Unmarshall(JsonUnmarshallerContext context)
+        public OpenIdConnectConfigurationItem Unmarshall(JsonUnmarshallerContext context)
         {
-            ConfigurationDetail unmarshalledObject = new ConfigurationDetail();
+            OpenIdConnectConfigurationItem unmarshalledObject = new OpenIdConnectConfigurationItem();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,28 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cognitoUserPoolConfiguration", targetDepth))
+                if (context.TestExpression("entityIdPrefix", targetDepth))
                 {
-                    var unmarshaller = CognitoUserPoolConfigurationDetailUnmarshaller.Instance;
-                    unmarshalledObject.CognitoUserPoolConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EntityIdPrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("openIdConnectConfiguration", targetDepth))
+                if (context.TestExpression("groupConfiguration", targetDepth))
                 {
-                    var unmarshaller = OpenIdConnectConfigurationDetailUnmarshaller.Instance;
-                    unmarshalledObject.OpenIdConnectConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = OpenIdConnectGroupConfigurationItemUnmarshaller.Instance;
+                    unmarshalledObject.GroupConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("issuer", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Issuer = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tokenSelection", targetDepth))
+                {
+                    var unmarshaller = OpenIdConnectTokenSelectionItemUnmarshaller.Instance;
+                    unmarshalledObject.TokenSelection = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +95,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConfigurationDetailUnmarshaller _instance = new ConfigurationDetailUnmarshaller();        
+        private static OpenIdConnectConfigurationItemUnmarshaller _instance = new OpenIdConnectConfigurationItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConfigurationDetailUnmarshaller Instance
+        public static OpenIdConnectConfigurationItemUnmarshaller Instance
         {
             get
             {
