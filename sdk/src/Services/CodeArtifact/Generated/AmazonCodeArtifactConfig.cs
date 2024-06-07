@@ -32,7 +32,7 @@ namespace Amazon.CodeArtifact
     public partial class AmazonCodeArtifactConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("codeartifact", "3.7.302.17");
+            InternalSDKUtils.BuildUserAgentString("codeartifact", "3.7.302.18");
 
         private string _userAgent = UserAgentString;
         ///<summary>

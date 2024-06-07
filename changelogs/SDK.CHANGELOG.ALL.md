@@ -1,3 +1,19 @@
+### 3.7.827.0 (2024-06-07 18:16 UTC)
+* AuditManager (3.7.301.0)
+	* New feature: common controls. When creating custom controls, you can now use pre-grouped AWS data sources based on common compliance themes. Also, the awsServices parameter is deprecated because we now manage services in scope for you. If used, the input is ignored and an empty list is returned.
+* B2bi (3.7.304.0)
+	* Added exceptions to B2Bi List operations and ConflictException to B2Bi StartTransformerJob operation. Also made capabilities field explicitly required when creating a Partnership.
+* CodePipeline (3.7.305.0)
+	* CodePipeline now supports overriding S3 Source Object Key during StartPipelineExecution, as part of Source Overrides.
+* SageMaker (3.7.326.0)
+	* This release introduces a new optional parameter: InferenceAmiVersion, in ProductionVariant.
+* VerifiedPermissions (3.7.307.0)
+	* This release adds OpenIdConnect (OIDC) configuration support for IdentitySources, allowing for external IDPs to be used in authorization requests.
+* Core 3.7.304.13
+	* Update NoProxy Filter for netframework to do suffix matching, to follow the same behavior as the AWS CLI.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.826.0 (2024-06-06 18:22 UTC)
 * Account (3.7.301.0)
 	* This release adds 3 new APIs (AcceptPrimaryEmailUpdate, GetPrimaryEmail, and StartPrimaryEmailUpdate) used to centrally manage the root user email address of member accounts within an AWS organization.

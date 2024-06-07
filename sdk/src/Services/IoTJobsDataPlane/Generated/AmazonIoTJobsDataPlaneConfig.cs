@@ -32,7 +32,7 @@ namespace Amazon.IoTJobsDataPlane
     public partial class AmazonIoTJobsDataPlaneConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoT Jobs Data Plane", "3.7.300.101");
+            InternalSDKUtils.BuildUserAgentString("IoT Jobs Data Plane", "3.7.300.102");
 
         private string _userAgent = UserAgentString;
         ///<summary>

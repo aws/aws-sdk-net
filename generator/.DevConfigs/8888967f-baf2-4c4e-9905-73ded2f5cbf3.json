@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "Update NoProxy Filter for netframework to do suffix matching, to follow the same behavior as the AWS CLI."
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }

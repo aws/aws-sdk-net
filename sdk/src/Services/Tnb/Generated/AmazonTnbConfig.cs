@@ -32,7 +32,7 @@ namespace Amazon.Tnb
     public partial class AmazonTnbConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("tnb", "3.7.300.101");
+            InternalSDKUtils.BuildUserAgentString("tnb", "3.7.300.102");
 
         private string _userAgent = UserAgentString;
         ///<summary>
