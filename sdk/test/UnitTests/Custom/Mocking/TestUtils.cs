@@ -28,6 +28,30 @@ namespace AWSSDK.UnitTests.Mocking
     public class TestUtils
     {
         /// <summary>
+        /// Allows to mock pipeline to run tests using the default pipeline handlers,
+        /// no unmarshaller, and the SigV4 signer
+        /// </summary>
+        /// <param name="request">Request to use</param>
+        /// <param name="marshaller">Marshaller to use or null for none</param>
+        /// <param name="config">ClientConfig to use</param>
+        /// <returns>Marshalled request</returns>
+        public static IRequest RunMockRequest(AmazonWebServiceRequest request,
+            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller,
+            ClientConfig config)
+        {
+            var pipelineHandlers = new List<IPipelineHandler>
+            {
+                new NoopPipelineHandler(),
+                new Signer(),
+                new ChecksumHandler(),
+                new CompressionHandler(),
+                new EndpointResolver(),
+                new Marshaller()
+            };
+
+            return RunMockRequest(pipelineHandlers, request, marshaller, null, config, new AWS4Signer());
+        }
+        /// <summary>
         /// Allows to mock pipeline to run tests using the default pipeline handlers
         /// </summary>
         /// <param name="request">Request to use</param>
@@ -35,7 +59,7 @@ namespace AWSSDK.UnitTests.Mocking
         /// <param name="unmarshaller">Unmarshaller to use or null for none</param>
         /// <param name="config">ClientConfig to use</param>
         /// <param name="signer">Signer to use</param>
-        /// <returns></returns>
+        /// <returns>Marshalled request</returns>
         public static IRequest RunMockRequest(AmazonWebServiceRequest request,
             IMarshaller<IRequest, AmazonWebServiceRequest> marshaller,
             ResponseUnmarshaller unmarshaller,
@@ -64,7 +88,7 @@ namespace AWSSDK.UnitTests.Mocking
         /// <param name="unmarshaller">Unmarshaller to use or null for none</param>
         /// <param name="config">ClientConfig to use</param>
         /// <param name="signer">Signer to use</param>
-        /// <returns></returns>
+        /// <returns>Marshalled request</returns>
         public static IRequest RunMockRequest(List<IPipelineHandler> pipelineHandlers,
             AmazonWebServiceRequest request, 
             IMarshaller<IRequest, AmazonWebServiceRequest> marshaller,

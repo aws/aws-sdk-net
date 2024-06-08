@@ -95,6 +95,36 @@ namespace Amazon.RestJsonTest
 
         #endregion
         
+        #region  NoPayloadPost
+
+
+        /// <summary>
+        /// A POST request without a body, for verifying that we don't set a Content-Type even
+        /// though a POST could have a body
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NoPayloadPost service method.</param>
+        /// 
+        /// <returns>The response from the NoPayloadPost service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/NoPayloadPost">REST API Reference for NoPayloadPost Operation</seealso>
+        NoPayloadPostResponse NoPayloadPost(NoPayloadPostRequest request);
+
+
+
+        /// <summary>
+        /// A POST request without a body, for verifying that we don't set a Content-Type even
+        /// though a POST could have a body
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NoPayloadPost service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the NoPayloadPost service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/NoPayloadPost">REST API Reference for NoPayloadPost Operation</seealso>
+        Task<NoPayloadPostResponse> NoPayloadPostAsync(NoPayloadPostRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  QueryBooleanList
 
 

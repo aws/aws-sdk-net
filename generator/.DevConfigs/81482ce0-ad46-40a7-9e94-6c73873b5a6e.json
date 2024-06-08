@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Omit the Content-Type header for requests without bodies"
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
