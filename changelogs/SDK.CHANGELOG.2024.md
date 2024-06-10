@@ -1,3 +1,14 @@
+### 3.7.828.0 (2024-06-10 18:14 UTC)
+* ApplicationSignals (3.7.300.0)
+	* This is the initial SDK release for Amazon CloudWatch Application Signals. Amazon CloudWatch Application Signals provides curated application performance monitoring for developers to monitor and troubleshoot application health using pre-built dashboards and Service Level Objectives.
+* ECS (3.7.306.0)
+	* This release introduces a new cluster configuration to support the customer-managed keys for ECS managed storage encryption.
+* Imagebuilder (3.7.304.0)
+	* This release updates the regex pattern for Image Builder ARNs.
+* Core 3.7.304.14
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.827.0 (2024-06-07 18:16 UTC)
 * AuditManager (3.7.301.0)
 	* New feature: common controls. When creating custom controls, you can now use pre-grouped AWS data sources based on common compliance themes. Also, the awsServices parameter is deprecated because we now manage services in scope for you. If used, the input is ignored and an empty list is returned.
