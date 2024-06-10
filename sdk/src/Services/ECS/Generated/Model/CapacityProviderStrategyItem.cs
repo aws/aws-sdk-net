@@ -54,6 +54,14 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
+    /// With <c>FARGATE_SPOT</c>, you can run interruption tolerant tasks at a rate that's
+    /// discounted compared to the <c>FARGATE</c> price. <c>FARGATE_SPOT</c> runs tasks on
+    /// spare compute capacity. When Amazon Web Services needs the capacity back, your tasks
+    /// are interrupted with a two-minute warning. <c>FARGATE_SPOT</c> only supports Linux
+    /// tasks with the X86_64 architecture on platform version 1.3.0 or later.
+    /// </para>
+    ///  
+    /// <para>
     /// A capacity provider strategy may contain a maximum of 6 capacity providers.
     /// </para>
     /// </summary>

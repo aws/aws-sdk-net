@@ -39,6 +39,7 @@ namespace Amazon.ECS.Model
         private DateTime? _createdAt;
         private int? _desiredCount;
         private int? _failedTasks;
+        private DeploymentEphemeralStorage _fargateEphemeralStorage;
         private string _id;
         private LaunchType _launchType;
         private NetworkConfiguration _networkConfiguration;
@@ -135,6 +136,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetFailedTasks()
         {
             return this._failedTasks.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FargateEphemeralStorage. 
+        /// <para>
+        /// The Fargate ephemeral storage settings for the deployment.
+        /// </para>
+        /// </summary>
+        public DeploymentEphemeralStorage FargateEphemeralStorage
+        {
+            get { return this._fargateEphemeralStorage; }
+            set { this._fargateEphemeralStorage = value; }
+        }
+
+        // Check to see if FargateEphemeralStorage property is set
+        internal bool IsSetFargateEphemeralStorage()
+        {
+            return this._fargateEphemeralStorage != null;
         }
 
         /// <summary>

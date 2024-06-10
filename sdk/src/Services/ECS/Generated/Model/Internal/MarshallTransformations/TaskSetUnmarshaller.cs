@@ -96,6 +96,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fargateEphemeralStorage", targetDepth))
+                {
+                    var unmarshaller = DeploymentEphemeralStorageUnmarshaller.Instance;
+                    unmarshalledObject.FargateEphemeralStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

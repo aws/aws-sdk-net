@@ -156,6 +156,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionStoppedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fargateEphemeralStorage", targetDepth))
+                {
+                    var unmarshaller = TaskEphemeralStorageUnmarshaller.Instance;
+                    unmarshalledObject.FargateEphemeralStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("group", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

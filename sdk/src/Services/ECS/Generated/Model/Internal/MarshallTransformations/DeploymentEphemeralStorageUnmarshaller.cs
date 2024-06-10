@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClusterConfiguration Object
+    /// Response Unmarshaller for DeploymentEphemeralStorage Object
     /// </summary>  
-    public class ClusterConfigurationUnmarshaller : IUnmarshaller<ClusterConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ClusterConfiguration, JsonUnmarshallerContext>
+    public class DeploymentEphemeralStorageUnmarshaller : IUnmarshaller<DeploymentEphemeralStorage, XmlUnmarshallerContext>, IUnmarshaller<DeploymentEphemeralStorage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ClusterConfiguration IUnmarshaller<ClusterConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DeploymentEphemeralStorage IUnmarshaller<DeploymentEphemeralStorage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DeploymentEphemeralStorage Unmarshall(JsonUnmarshallerContext context)
         {
-            ClusterConfiguration unmarshalledObject = new ClusterConfiguration();
+            DeploymentEphemeralStorage unmarshalledObject = new DeploymentEphemeralStorage();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("executeCommandConfiguration", targetDepth))
+                if (context.TestExpression("kmsKeyId", targetDepth))
                 {
-                    var unmarshaller = ExecuteCommandConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ExecuteCommandConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("managedStorageConfiguration", targetDepth))
-                {
-                    var unmarshaller = ManagedStorageConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ManagedStorageConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClusterConfigurationUnmarshaller _instance = new ClusterConfigurationUnmarshaller();        
+        private static DeploymentEphemeralStorageUnmarshaller _instance = new DeploymentEphemeralStorageUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClusterConfigurationUnmarshaller Instance
+        public static DeploymentEphemeralStorageUnmarshaller Instance
         {
             get
             {

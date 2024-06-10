@@ -30,28 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The certificate root authority that secures your service.
+    /// The amount of ephemeral storage to allocate for the deployment.
     /// </summary>
-    public partial class ServiceConnectTlsCertificateAuthority
+    public partial class DeploymentEphemeralStorage
     {
-        private string _awsPcaAuthorityArn;
+        private string _kmsKeyId;
 
         /// <summary>
-        /// Gets and sets the property AwsPcaAuthorityArn. 
+        /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ARN of the Amazon Web Services Private Certificate Authority certificate.
+        /// Specify an Key Management Service key ID to encrypt the ephemeral storage for deployment.
         /// </para>
         /// </summary>
-        public string AwsPcaAuthorityArn
+        public string KmsKeyId
         {
-            get { return this._awsPcaAuthorityArn; }
-            set { this._awsPcaAuthorityArn = value; }
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
         }
 
-        // Check to see if AwsPcaAuthorityArn property is set
-        internal bool IsSetAwsPcaAuthorityArn()
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
         {
-            return this._awsPcaAuthorityArn != null;
+            return this._kmsKeyId != null;
         }
 
     }

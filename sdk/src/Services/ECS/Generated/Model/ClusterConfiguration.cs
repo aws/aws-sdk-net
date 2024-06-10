@@ -30,11 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The execute command configuration for the cluster.
+    /// The execute command and managed storage configuration for the cluster.
     /// </summary>
     public partial class ClusterConfiguration
     {
         private ExecuteCommandConfiguration _executeCommandConfiguration;
+        private ManagedStorageConfiguration _managedStorageConfiguration;
 
         /// <summary>
         /// Gets and sets the property ExecuteCommandConfiguration. 
@@ -52,6 +53,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetExecuteCommandConfiguration()
         {
             return this._executeCommandConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedStorageConfiguration. 
+        /// <para>
+        /// The details of the managed storage configuration.
+        /// </para>
+        /// </summary>
+        public ManagedStorageConfiguration ManagedStorageConfiguration
+        {
+            get { return this._managedStorageConfiguration; }
+            set { this._managedStorageConfiguration = value; }
+        }
+
+        // Check to see if ManagedStorageConfiguration property is set
+        internal bool IsSetManagedStorageConfiguration()
+        {
+            return this._managedStorageConfiguration != null;
         }
 
     }

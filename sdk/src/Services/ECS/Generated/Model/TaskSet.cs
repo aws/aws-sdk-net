@@ -41,6 +41,7 @@ namespace Amazon.ECS.Model
         private int? _computedDesiredCount;
         private DateTime? _createdAt;
         private string _externalId;
+        private DeploymentEphemeralStorage _fargateEphemeralStorage;
         private string _id;
         private LaunchType _launchType;
         private List<LoadBalancer> _loadBalancers = AWSConfigs.InitializeCollections ? new List<LoadBalancer>() : null;
@@ -164,6 +165,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetExternalId()
         {
             return this._externalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FargateEphemeralStorage. 
+        /// <para>
+        /// The Fargate ephemeral storage settings for the task set.
+        /// </para>
+        /// </summary>
+        public DeploymentEphemeralStorage FargateEphemeralStorage
+        {
+            get { return this._fargateEphemeralStorage; }
+            set { this._fargateEphemeralStorage = value; }
+        }
+
+        // Check to see if FargateEphemeralStorage property is set
+        internal bool IsSetFargateEphemeralStorage()
+        {
+            return this._fargateEphemeralStorage != null;
         }
 
         /// <summary>

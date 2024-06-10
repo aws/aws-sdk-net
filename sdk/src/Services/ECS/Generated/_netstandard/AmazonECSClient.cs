@@ -2871,6 +2871,12 @@ namespace Amazon.ECS
         /// gracefully and exits within 30 seconds from receiving it, no <c>SIGKILL</c> value
         /// is sent.
         /// </para>
+        ///  
+        /// <para>
+        /// For Windows containers, POSIX signals do not work and runtime stops the container
+        /// by sending a <c>CTRL_SHUTDOWN_EVENT</c>. For more information, see <a href="https://github.com/moby/moby/issues/25982">Unable
+        /// to react to graceful shutdown of (Windows) container #25982</a> on GitHub.
+        /// </para>
         ///  <note> 
         /// <para>
         /// The default 30-second timeout can be configured on the Amazon ECS container agent

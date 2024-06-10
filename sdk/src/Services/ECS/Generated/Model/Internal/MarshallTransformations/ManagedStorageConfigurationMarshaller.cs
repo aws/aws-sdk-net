@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ClusterConfiguration Marshaller
+    /// ManagedStorageConfiguration Marshaller
     /// </summary>
-    public class ClusterConfigurationMarshaller : IRequestMarshaller<ClusterConfiguration, JsonMarshallerContext> 
+    public class ManagedStorageConfigurationMarshaller : IRequestMarshaller<ManagedStorageConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,20 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ClusterConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ManagedStorageConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetExecuteCommandConfiguration())
+            if(requestObject.IsSetFargateEphemeralStorageKmsKeyId())
             {
-                context.Writer.WritePropertyName("executeCommandConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ExecuteCommandConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ExecuteCommandConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("fargateEphemeralStorageKmsKeyId");
+                context.Writer.Write(requestObject.FargateEphemeralStorageKmsKeyId);
             }
 
-            if(requestObject.IsSetManagedStorageConfiguration())
+            if(requestObject.IsSetKmsKeyId())
             {
-                context.Writer.WritePropertyName("managedStorageConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ManagedStorageConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ManagedStorageConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("kmsKeyId");
+                context.Writer.Write(requestObject.KmsKeyId);
             }
 
         }
@@ -75,7 +65,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ClusterConfigurationMarshaller Instance = new ClusterConfigurationMarshaller();
+        public readonly static ManagedStorageConfigurationMarshaller Instance = new ManagedStorageConfigurationMarshaller();
 
     }
 }
