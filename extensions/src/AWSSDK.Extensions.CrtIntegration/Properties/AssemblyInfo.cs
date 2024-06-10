@@ -16,5 +16,9 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 
+#if NETFRAMEWORK
 [assembly: AssemblyVersion("4.0")]
+#else
+[assembly: AssemblyVersion("4.0.0.0")]
+#endif
 [assembly: AssemblyFileVersion("4.0.0.0")]
