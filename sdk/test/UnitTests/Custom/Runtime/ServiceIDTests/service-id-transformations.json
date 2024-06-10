@@ -140,11 +140,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_BACKUP_GATEWAY"
   },
   {
-    "service_id": "BackupStorage",
-    "services_section_name": "backupstorage",
-    "service_envvar_name": "AWS_ENDPOINT_URL_BACKUPSTORAGE"
-  },
-  {
     "service_id": "Batch",
     "services_section_name": "batch",
     "service_envvar_name": "AWS_ENDPOINT_URL_BATCH"

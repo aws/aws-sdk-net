@@ -192,10 +192,6 @@
       <Project>{5FFE394A-30FB-4A47-BFC8-F3667019CF92}</Project>
       <Name>AWSSDK.BackupGateway.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/BackupStorage/AWSSDK.BackupStorage.CodeAnalysis.csproj">
-      <Project>{0E97E7B2-2525-4A58-81C0-610D8DC2EDC9}</Project>
-      <Name>AWSSDK.BackupStorage.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Batch/AWSSDK.Batch.CodeAnalysis.csproj">
       <Project>{8672DE1E-8F7B-480C-9A87-C75AA468FFEB}</Project>
       <Name>AWSSDK.Batch.CodeAnalysis</Name>
