@@ -1578,6 +1578,10 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.Attachment.NetworkFunctionGroupName</property>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.Attachment.OwnerAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -1842,6 +1846,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkChangeEventValues.NetworkFunctionGroupName</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.CoreNetworkChangeEventValues.SegmentName</property>
     <min>0</min>
     <max>256</max>
@@ -1860,6 +1870,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkChangeValues.NetworkFunctionGroupName</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.CoreNetworkChangeValues.SegmentName</property>
     <min>0</min>
     <max>256</max>
@@ -1869,6 +1885,30 @@
     <property>Amazon.NetworkManager.Model.CoreNetworkEdge.EdgeLocation</property>
     <min>1</min>
     <max>63</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkNetworkFunctionGroup.Name</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkNetworkFunctionGroupIdentifier.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkNetworkFunctionGroupIdentifier.EdgeLocation</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkNetworkFunctionGroupIdentifier.NetworkFunctionGroupName</property>
+    <min>0</min>
+    <max>256</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2052,6 +2092,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.EdgeOverride.UseEdge</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.GlobalNetwork.Description</property>
     <min>0</min>
     <max>256</max>
@@ -2143,6 +2189,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.Location.Longitude</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.NetworkFunctionGroup.Name</property>
     <min>0</min>
     <max>256</max>
     <pattern>[\s\S]*</pattern>
@@ -2253,6 +2305,12 @@
     <property>Amazon.NetworkManager.Model.NetworkRouteDestination.EdgeLocation</property>
     <min>1</min>
     <max>63</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.NetworkRouteDestination.NetworkFunctionGroupName</property>
+    <min>0</min>
+    <max>256</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2383,6 +2441,12 @@
     <property>Amazon.NetworkManager.Model.Peering.ResourceArn</property>
     <min>0</min>
     <max>1500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ProposedNetworkFunctionGroupChange.NetworkFunctionGroupName</property>
+    <min>0</min>
+    <max>256</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>

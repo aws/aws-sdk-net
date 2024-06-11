@@ -34,8 +34,27 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class RouteTableIdentifier
     {
+        private CoreNetworkNetworkFunctionGroupIdentifier _coreNetworkNetworkFunctionGroup;
         private CoreNetworkSegmentEdgeIdentifier _coreNetworkSegmentEdge;
         private string _transitGatewayRouteTableArn;
+
+        /// <summary>
+        /// Gets and sets the property CoreNetworkNetworkFunctionGroup. 
+        /// <para>
+        /// The route table identifier associated with the network function group.
+        /// </para>
+        /// </summary>
+        public CoreNetworkNetworkFunctionGroupIdentifier CoreNetworkNetworkFunctionGroup
+        {
+            get { return this._coreNetworkNetworkFunctionGroup; }
+            set { this._coreNetworkNetworkFunctionGroup = value; }
+        }
+
+        // Check to see if CoreNetworkNetworkFunctionGroup property is set
+        internal bool IsSetCoreNetworkNetworkFunctionGroup()
+        {
+            return this._coreNetworkNetworkFunctionGroup != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CoreNetworkSegmentEdge. 

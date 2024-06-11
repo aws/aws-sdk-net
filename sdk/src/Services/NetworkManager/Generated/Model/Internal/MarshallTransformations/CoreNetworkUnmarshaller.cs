@@ -102,6 +102,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.GlobalNetworkId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NetworkFunctionGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CoreNetworkNetworkFunctionGroup, CoreNetworkNetworkFunctionGroupUnmarshaller>(CoreNetworkNetworkFunctionGroupUnmarshaller.Instance);
+                    unmarshalledObject.NetworkFunctionGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Segments", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<CoreNetworkSegment, CoreNetworkSegmentUnmarshaller>(CoreNetworkSegmentUnmarshaller.Instance);

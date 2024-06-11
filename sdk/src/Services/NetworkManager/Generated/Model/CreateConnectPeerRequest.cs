@@ -49,7 +49,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property BgpOptions. 
         /// <para>
-        /// The Connect peer BGP options.
+        /// The Connect peer BGP options. This only applies only when the protocol is <c>GRE</c>.
         /// </para>
         /// </summary>
         public BgpOptions BgpOptions
@@ -105,7 +105,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property CoreNetworkAddress. 
         /// <para>
-        /// A Connect peer core network address.
+        /// A Connect peer core network address. This only applies only when the protocol is <c>GRE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -161,7 +161,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property SubnetArn. 
         /// <para>
-        /// The subnet ARN for the Connect peer.
+        /// The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]

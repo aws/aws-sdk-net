@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RouteTableIdentifier Marshaller
+    /// CoreNetworkNetworkFunctionGroupIdentifier Marshaller
     /// </summary>
-    public class RouteTableIdentifierMarshaller : IRequestMarshaller<RouteTableIdentifier, JsonMarshallerContext> 
+    public class CoreNetworkNetworkFunctionGroupIdentifierMarshaller : IRequestMarshaller<CoreNetworkNetworkFunctionGroupIdentifier, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,36 +44,26 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RouteTableIdentifier requestObject, JsonMarshallerContext context)
+        public void Marshall(CoreNetworkNetworkFunctionGroupIdentifier requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCoreNetworkNetworkFunctionGroup())
+            if(requestObject.IsSetCoreNetworkId())
             {
-                context.Writer.WritePropertyName("CoreNetworkNetworkFunctionGroup");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CoreNetworkNetworkFunctionGroupIdentifierMarshaller.Instance;
-                marshaller.Marshall(requestObject.CoreNetworkNetworkFunctionGroup, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("CoreNetworkId");
+                context.Writer.Write(requestObject.CoreNetworkId);
             }
 
-            if(requestObject.IsSetCoreNetworkSegmentEdge())
+            if(requestObject.IsSetEdgeLocation())
             {
-                context.Writer.WritePropertyName("CoreNetworkSegmentEdge");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CoreNetworkSegmentEdgeIdentifierMarshaller.Instance;
-                marshaller.Marshall(requestObject.CoreNetworkSegmentEdge, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("EdgeLocation");
+                context.Writer.Write(requestObject.EdgeLocation);
             }
 
-            if(requestObject.IsSetTransitGatewayRouteTableArn())
+            if(requestObject.IsSetNetworkFunctionGroupName())
             {
-                context.Writer.WritePropertyName("TransitGatewayRouteTableArn");
-                context.Writer.Write(requestObject.TransitGatewayRouteTableArn);
+                context.Writer.WritePropertyName("NetworkFunctionGroupName");
+                context.Writer.Write(requestObject.NetworkFunctionGroupName);
             }
 
         }
@@ -81,7 +71,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RouteTableIdentifierMarshaller Instance = new RouteTableIdentifierMarshaller();
+        public readonly static CoreNetworkNetworkFunctionGroupIdentifierMarshaller Instance = new CoreNetworkNetworkFunctionGroupIdentifierMarshaller();
 
     }
 }

@@ -30,58 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
-    /// Describes a core network change event.
+    /// Describes a core network
     /// </summary>
-    public partial class CoreNetworkChangeEventValues
+    public partial class CoreNetworkNetworkFunctionGroupIdentifier
     {
-        private string _attachmentId;
-        private string _cidr;
+        private string _coreNetworkId;
         private string _edgeLocation;
         private string _networkFunctionGroupName;
-        private string _segmentName;
 
         /// <summary>
-        /// Gets and sets the property AttachmentId. 
+        /// Gets and sets the property CoreNetworkId. 
         /// <para>
-        /// The ID of the attachment if the change event is associated with an attachment. 
+        /// The ID of the core network.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
-        public string AttachmentId
+        public string CoreNetworkId
         {
-            get { return this._attachmentId; }
-            set { this._attachmentId = value; }
+            get { return this._coreNetworkId; }
+            set { this._coreNetworkId = value; }
         }
 
-        // Check to see if AttachmentId property is set
-        internal bool IsSetAttachmentId()
+        // Check to see if CoreNetworkId property is set
+        internal bool IsSetCoreNetworkId()
         {
-            return this._attachmentId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Cidr. 
-        /// <para>
-        /// For a <c>STATIC_ROUTE</c> event, this is the IP address.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=256)]
-        public string Cidr
-        {
-            get { return this._cidr; }
-            set { this._cidr = value; }
-        }
-
-        // Check to see if Cidr property is set
-        internal bool IsSetCidr()
-        {
-            return this._cidr != null;
+            return this._coreNetworkId != null;
         }
 
         /// <summary>
         /// Gets and sets the property EdgeLocation. 
         /// <para>
-        /// The edge location for the core network change event.
+        /// The location for the core network edge.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -100,7 +79,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property NetworkFunctionGroupName. 
         /// <para>
-        /// The changed network function group name.
+        /// The network function group name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -114,25 +93,6 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetNetworkFunctionGroupName()
         {
             return this._networkFunctionGroupName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SegmentName. 
-        /// <para>
-        /// The segment name if the change event is associated with a segment.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=256)]
-        public string SegmentName
-        {
-            get { return this._segmentName; }
-            set { this._segmentName = value; }
-        }
-
-        // Check to see if SegmentName property is set
-        internal bool IsSetSegmentName()
-        {
-            return this._segmentName != null;
         }
 
     }

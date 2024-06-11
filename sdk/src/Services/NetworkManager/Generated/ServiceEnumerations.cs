@@ -373,6 +373,10 @@ namespace Amazon.NetworkManager
         /// </summary>
         public static readonly ChangeType CORE_NETWORK_SEGMENT = new ChangeType("CORE_NETWORK_SEGMENT");
         /// <summary>
+        /// Constant NETWORK_FUNCTION_GROUP for ChangeType
+        /// </summary>
+        public static readonly ChangeType NETWORK_FUNCTION_GROUP = new ChangeType("NETWORK_FUNCTION_GROUP");
+        /// <summary>
         /// Constant SEGMENT_ACTIONS_CONFIGURATION for ChangeType
         /// </summary>
         public static readonly ChangeType SEGMENT_ACTIONS_CONFIGURATION = new ChangeType("SEGMENT_ACTIONS_CONFIGURATION");
@@ -1443,6 +1447,10 @@ namespace Amazon.NetworkManager
         /// </summary>
         public static readonly RouteTableType CORE_NETWORK_SEGMENT = new RouteTableType("CORE_NETWORK_SEGMENT");
         /// <summary>
+        /// Constant NETWORK_FUNCTION_GROUP for RouteTableType
+        /// </summary>
+        public static readonly RouteTableType NETWORK_FUNCTION_GROUP = new RouteTableType("NETWORK_FUNCTION_GROUP");
+        /// <summary>
         /// Constant TRANSIT_GATEWAY_ROUTE_TABLE for RouteTableType
         /// </summary>
         public static readonly RouteTableType TRANSIT_GATEWAY_ROUTE_TABLE = new RouteTableType("TRANSIT_GATEWAY_ROUTE_TABLE");
@@ -1526,6 +1534,106 @@ namespace Amazon.NetworkManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RouteType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SegmentActionServiceInsertion.
+    /// </summary>
+    public class SegmentActionServiceInsertion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SendTo for SegmentActionServiceInsertion
+        /// </summary>
+        public static readonly SegmentActionServiceInsertion SendTo = new SegmentActionServiceInsertion("send-to");
+        /// <summary>
+        /// Constant SendVia for SegmentActionServiceInsertion
+        /// </summary>
+        public static readonly SegmentActionServiceInsertion SendVia = new SegmentActionServiceInsertion("send-via");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SegmentActionServiceInsertion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SegmentActionServiceInsertion FindValue(string value)
+        {
+            return FindValue<SegmentActionServiceInsertion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SegmentActionServiceInsertion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SendViaMode.
+    /// </summary>
+    public class SendViaMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DualHop for SendViaMode
+        /// </summary>
+        public static readonly SendViaMode DualHop = new SendViaMode("dual-hop");
+        /// <summary>
+        /// Constant SingleHop for SendViaMode
+        /// </summary>
+        public static readonly SendViaMode SingleHop = new SendViaMode("single-hop");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SendViaMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SendViaMode FindValue(string value)
+        {
+            return FindValue<SendViaMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SendViaMode(string value)
         {
             return FindValue(value);
         }

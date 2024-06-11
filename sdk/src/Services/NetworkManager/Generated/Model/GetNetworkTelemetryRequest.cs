@@ -200,67 +200,15 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type.
-        /// </para>
-        ///  
-        /// <para>
-        /// The following are the supported resource types for Direct Connect:
+        /// The resource type. The following are the supported resource types:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>dxcon</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>dx-gateway</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>dx-vif</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following are the supported resource types for Network Manager:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>connection</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>device</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>link</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>site</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following are the supported resource types for Amazon VPC:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>customer-gateway</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>transit-gateway</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>transit-gateway-attachment</c> 
+        ///  <c>connect-peer</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>transit-gateway-connect-peer</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>transit-gateway-route-table</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

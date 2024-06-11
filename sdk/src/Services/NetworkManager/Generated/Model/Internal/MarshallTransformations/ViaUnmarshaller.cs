@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CoreNetworkChangeEventValues Object
+    /// Response Unmarshaller for Via Object
     /// </summary>  
-    public class CoreNetworkChangeEventValuesUnmarshaller : IUnmarshaller<CoreNetworkChangeEventValues, XmlUnmarshallerContext>, IUnmarshaller<CoreNetworkChangeEventValues, JsonUnmarshallerContext>
+    public class ViaUnmarshaller : IUnmarshaller<Via, XmlUnmarshallerContext>, IUnmarshaller<Via, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CoreNetworkChangeEventValues IUnmarshaller<CoreNetworkChangeEventValues, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Via IUnmarshaller<Via, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CoreNetworkChangeEventValues Unmarshall(JsonUnmarshallerContext context)
+        public Via Unmarshall(JsonUnmarshallerContext context)
         {
-            CoreNetworkChangeEventValues unmarshalledObject = new CoreNetworkChangeEventValues();
+            Via unmarshalledObject = new Via();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AttachmentId", targetDepth))
+                if (context.TestExpression("NetworkFunctionGroups", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AttachmentId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<NetworkFunctionGroup, NetworkFunctionGroupUnmarshaller>(NetworkFunctionGroupUnmarshaller.Instance);
+                    unmarshalledObject.NetworkFunctionGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Cidr", targetDepth))
+                if (context.TestExpression("WithEdgeOverrides", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Cidr = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EdgeLocation", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EdgeLocation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NetworkFunctionGroupName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFunctionGroupName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SegmentName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SegmentName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<EdgeOverride, EdgeOverrideUnmarshaller>(EdgeOverrideUnmarshaller.Instance);
+                    unmarshalledObject.WithEdgeOverrides = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         }
 
 
-        private static CoreNetworkChangeEventValuesUnmarshaller _instance = new CoreNetworkChangeEventValuesUnmarshaller();        
+        private static ViaUnmarshaller _instance = new ViaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CoreNetworkChangeEventValuesUnmarshaller Instance
+        public static ViaUnmarshaller Instance
         {
             get
             {

@@ -177,7 +177,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property SubnetArn. 
         /// <para>
-        /// The subnet ARN for the Connect peer.
+        /// The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]

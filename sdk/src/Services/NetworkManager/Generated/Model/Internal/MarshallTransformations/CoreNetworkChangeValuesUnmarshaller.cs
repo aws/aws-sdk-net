@@ -96,10 +96,22 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.InsideCidrBlocks = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NetworkFunctionGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFunctionGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SegmentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SegmentName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServiceInsertionActions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServiceInsertionAction, ServiceInsertionActionUnmarshaller>(ServiceInsertionActionUnmarshaller.Instance);
+                    unmarshalledObject.ServiceInsertionActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SharedSegments", targetDepth))

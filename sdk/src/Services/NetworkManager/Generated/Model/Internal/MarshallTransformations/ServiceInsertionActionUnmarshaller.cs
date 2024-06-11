@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NetworkRouteDestination Object
+    /// Response Unmarshaller for ServiceInsertionAction Object
     /// </summary>  
-    public class NetworkRouteDestinationUnmarshaller : IUnmarshaller<NetworkRouteDestination, XmlUnmarshallerContext>, IUnmarshaller<NetworkRouteDestination, JsonUnmarshallerContext>
+    public class ServiceInsertionActionUnmarshaller : IUnmarshaller<ServiceInsertionAction, XmlUnmarshallerContext>, IUnmarshaller<ServiceInsertionAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NetworkRouteDestination IUnmarshaller<NetworkRouteDestination, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ServiceInsertionAction IUnmarshaller<ServiceInsertionAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public NetworkRouteDestination Unmarshall(JsonUnmarshallerContext context)
+        public ServiceInsertionAction Unmarshall(JsonUnmarshallerContext context)
         {
-            NetworkRouteDestination unmarshalledObject = new NetworkRouteDestination();
+            ServiceInsertionAction unmarshalledObject = new ServiceInsertionAction();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,46 +66,28 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CoreNetworkAttachmentId", targetDepth))
+                if (context.TestExpression("Action", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CoreNetworkAttachmentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EdgeLocation", targetDepth))
+                if (context.TestExpression("Mode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EdgeLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NetworkFunctionGroupName", targetDepth))
+                if (context.TestExpression("Via", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFunctionGroupName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ViaUnmarshaller.Instance;
+                    unmarshalledObject.Via = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceId", targetDepth))
+                if (context.TestExpression("WhenSentTo", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SegmentName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SegmentName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TransitGatewayAttachmentId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransitGatewayAttachmentId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = WhenSentToUnmarshaller.Instance;
+                    unmarshalledObject.WhenSentTo = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,12 +95,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         }
 
 
-        private static NetworkRouteDestinationUnmarshaller _instance = new NetworkRouteDestinationUnmarshaller();        
+        private static ServiceInsertionActionUnmarshaller _instance = new ServiceInsertionActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NetworkRouteDestinationUnmarshaller Instance
+        public static ServiceInsertionActionUnmarshaller Instance
         {
             get
             {
