@@ -28,7 +28,7 @@ namespace Amazon.Runtime
     {
         private Logger _logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
 
-        public override DateTimeOffset? Expiration
+        public override DateTime? Expiration
         {
             get
             {
@@ -37,8 +37,7 @@ namespace Amazon.Runtime
                     return null;
                 }
 
-                var stateExpiration = currentState.Expiration.ToUniversalTime();
-                return new DateTimeOffset(stateExpiration);
+                return currentState.Expiration.ToUniversalTime();
             }
         }
 

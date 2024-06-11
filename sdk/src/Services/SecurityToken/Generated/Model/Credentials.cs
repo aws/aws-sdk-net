@@ -85,7 +85,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public new DateTime? Expiration
+        public override DateTime? Expiration
         {
             get { return this._expiration; }
             set { this._expiration = value; }

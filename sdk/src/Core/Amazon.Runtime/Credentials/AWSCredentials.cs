@@ -20,7 +20,7 @@ namespace Amazon.Runtime
     /// <summary>
     /// Abstract class that represents a credentials object for AWS services.
     /// </summary>
-    public abstract class AWSCredentials : IIdentity
+    public abstract class AWSCredentials : BaseIdentity
     {
         /// <summary>
         /// Returns a copy of ImmutableCredentials
