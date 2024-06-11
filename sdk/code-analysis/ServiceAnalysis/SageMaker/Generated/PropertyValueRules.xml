@@ -9590,6 +9590,11 @@
     <pattern>https://\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfig.Scope</property>
+    <max>1024</max>
+    <pattern>^[!#-\[\]-~]+( [!#-\[\]-~]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.OidcConfig.TokenEndpoint</property>
     <max>500</max>
     <pattern>https://\S+</pattern>
@@ -9624,6 +9629,11 @@
     <property>Amazon.SageMaker.Model.OidcConfigForResponse.LogoutEndpoint</property>
     <max>500</max>
     <pattern>https://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OidcConfigForResponse.Scope</property>
+    <max>1024</max>
+    <pattern>^[!#-\[\]-~]+( [!#-\[\]-~]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OidcConfigForResponse.TokenEndpoint</property>

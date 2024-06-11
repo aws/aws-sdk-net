@@ -34,14 +34,36 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class OidcConfig
     {
+        private Dictionary<string, string> _authenticationRequestExtraParams = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _authorizationEndpoint;
         private string _clientId;
         private string _clientSecret;
         private string _issuer;
         private string _jwksUri;
         private string _logoutEndpoint;
+        private string _scope;
         private string _tokenEndpoint;
         private string _userInfoEndpoint;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationRequestExtraParams. 
+        /// <para>
+        /// A string to string map of identifiers specific to the custom identity provider (IdP)
+        /// being used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public Dictionary<string, string> AuthenticationRequestExtraParams
+        {
+            get { return this._authenticationRequestExtraParams; }
+            set { this._authenticationRequestExtraParams = value; }
+        }
+
+        // Check to see if AuthenticationRequestExtraParams property is set
+        internal bool IsSetAuthenticationRequestExtraParams()
+        {
+            return this._authenticationRequestExtraParams != null && (this._authenticationRequestExtraParams.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AuthorizationEndpoint. 
@@ -155,6 +177,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLogoutEndpoint()
         {
             return this._logoutEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// An array of string identifiers used to refer to the specific pieces of user data or
+        /// claims that the client application wants to access.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null;
         }
 
         /// <summary>

@@ -81,6 +81,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CreationTimeBefore);
                 }
 
+                if(publicRequest.IsSetCrossAccountFilterOption())
+                {
+                    context.Writer.WritePropertyName("CrossAccountFilterOption");
+                    context.Writer.Write(publicRequest.CrossAccountFilterOption);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

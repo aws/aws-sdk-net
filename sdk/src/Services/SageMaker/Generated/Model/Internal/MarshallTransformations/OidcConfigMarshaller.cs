@@ -48,6 +48,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAuthenticationRequestExtraParams())
+            {
+                context.Writer.WritePropertyName("AuthenticationRequestExtraParams");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectAuthenticationRequestExtraParamsKvp in requestObject.AuthenticationRequestExtraParams)
+                {
+                    context.Writer.WritePropertyName(requestObjectAuthenticationRequestExtraParamsKvp.Key);
+                    var requestObjectAuthenticationRequestExtraParamsValue = requestObjectAuthenticationRequestExtraParamsKvp.Value;
+
+                        context.Writer.Write(requestObjectAuthenticationRequestExtraParamsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAuthorizationEndpoint())
             {
                 context.Writer.WritePropertyName("AuthorizationEndpoint");
@@ -82,6 +96,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("LogoutEndpoint");
                 context.Writer.Write(requestObject.LogoutEndpoint);
+            }
+
+            if(requestObject.IsSetScope())
+            {
+                context.Writer.WritePropertyName("Scope");
+                context.Writer.Write(requestObject.Scope);
             }
 
             if(requestObject.IsSetTokenEndpoint())
