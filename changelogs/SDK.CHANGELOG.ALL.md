@@ -1,3 +1,18 @@
+### 3.7.829.0 (2024-06-11 18:32 UTC)
+* AccessAnalyzer (3.7.304.0)
+	* IAM Access Analyzer now provides policy recommendations to help resolve unused permissions for IAM roles and users. Additionally, IAM Access Analyzer now extends its custom policy checks to detect when IAM policies grant public access or access to critical resources ahead of deployments.
+* GuardDuty (3.7.307.0)
+	* Added API support for GuardDuty Malware Protection for S3.
+* NetworkManager (3.7.301.0)
+	* This is model changes & documentation update for Service Insertion feature for AWS Cloud WAN. This feature allows insertion of AWS/3rd party security services on Cloud WAN. This allows to steer inter/intra segment traffic via security appliances and provide visibility to the route updates.
+* PcaConnectorScep (3.7.300.0)
+	* Connector for SCEP allows you to use a managed, cloud CA to enroll mobile devices and networking gear. SCEP is a widely-adopted protocol used by mobile device management (MDM) solutions for enrolling mobile devices. With the connector, you can use AWS Private CA with popular MDM solutions.
+* SageMaker (3.7.327.0)
+	* Introduced Scope and AuthenticationRequestExtraParams to SageMaker Workforce OIDC configuration; this allows customers to modify these options for their private Workforce IdP integration. Model Registry Cross-account model package groups are discoverable.
+* Core 3.7.304.15
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.828.0 (2024-06-10 18:14 UTC)
 * ApplicationSignals (3.7.300.0)
 	* This is the initial SDK release for Amazon CloudWatch Application Signals. Amazon CloudWatch Application Signals provides curated application performance monitoring for developers to monitor and troubleshoot application health using pre-built dashboards and Service Level Objectives.
