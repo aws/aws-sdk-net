@@ -314,6 +314,65 @@ namespace Amazon.AccessAnalyzer
 
         #endregion
         
+        #region  CheckNoPublicAccess
+
+
+        /// <summary>
+        /// Checks whether a resource policy can grant public access to the specified resource
+        /// type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckNoPublicAccess service method.</param>
+        /// 
+        /// <returns>The response from the CheckNoPublicAccess service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InvalidParameterException">
+        /// The specified parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.UnprocessableEntityException">
+        /// The specified entity could not be processed.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckNoPublicAccess">REST API Reference for CheckNoPublicAccess Operation</seealso>
+        CheckNoPublicAccessResponse CheckNoPublicAccess(CheckNoPublicAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CheckNoPublicAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CheckNoPublicAccess operation on AmazonAccessAnalyzerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCheckNoPublicAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckNoPublicAccess">REST API Reference for CheckNoPublicAccess Operation</seealso>
+        IAsyncResult BeginCheckNoPublicAccess(CheckNoPublicAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CheckNoPublicAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCheckNoPublicAccess.</param>
+        /// 
+        /// <returns>Returns a  CheckNoPublicAccessResult from AccessAnalyzer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckNoPublicAccess">REST API Reference for CheckNoPublicAccess Operation</seealso>
+        CheckNoPublicAccessResponse EndCheckNoPublicAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateAccessPreview
 
 
@@ -614,6 +673,58 @@ namespace Amazon.AccessAnalyzer
 
         #endregion
         
+        #region  GenerateFindingRecommendation
+
+
+        /// <summary>
+        /// Creates a recommendation for an unused permissions finding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateFindingRecommendation service method.</param>
+        /// 
+        /// <returns>The response from the GenerateFindingRecommendation service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GenerateFindingRecommendation">REST API Reference for GenerateFindingRecommendation Operation</seealso>
+        GenerateFindingRecommendationResponse GenerateFindingRecommendation(GenerateFindingRecommendationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GenerateFindingRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GenerateFindingRecommendation operation on AmazonAccessAnalyzerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateFindingRecommendation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GenerateFindingRecommendation">REST API Reference for GenerateFindingRecommendation Operation</seealso>
+        IAsyncResult BeginGenerateFindingRecommendation(GenerateFindingRecommendationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GenerateFindingRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateFindingRecommendation.</param>
+        /// 
+        /// <returns>Returns a  GenerateFindingRecommendationResult from AccessAnalyzer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GenerateFindingRecommendation">REST API Reference for GenerateFindingRecommendation Operation</seealso>
+        GenerateFindingRecommendationResponse EndGenerateFindingRecommendation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetAccessPreview
 
 
@@ -895,6 +1006,61 @@ namespace Amazon.AccessAnalyzer
         /// <returns>Returns a  GetFindingResult from AccessAnalyzer.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFinding">REST API Reference for GetFinding Operation</seealso>
         GetFindingResponse EndGetFinding(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetFindingRecommendation
+
+
+        /// <summary>
+        /// Retrieves information about a finding recommendation for the specified analyzer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingRecommendation service method.</param>
+        /// 
+        /// <returns>The response from the GetFindingRecommendation service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingRecommendation">REST API Reference for GetFindingRecommendation Operation</seealso>
+        GetFindingRecommendationResponse GetFindingRecommendation(GetFindingRecommendationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFindingRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingRecommendation operation on AmazonAccessAnalyzerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFindingRecommendation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingRecommendation">REST API Reference for GetFindingRecommendation Operation</seealso>
+        IAsyncResult BeginGetFindingRecommendation(GetFindingRecommendationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFindingRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFindingRecommendation.</param>
+        /// 
+        /// <returns>Returns a  GetFindingRecommendationResult from AccessAnalyzer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingRecommendation">REST API Reference for GetFindingRecommendation Operation</seealso>
+        GetFindingRecommendationResponse EndGetFindingRecommendation(IAsyncResult asyncResult);
 
         #endregion
         

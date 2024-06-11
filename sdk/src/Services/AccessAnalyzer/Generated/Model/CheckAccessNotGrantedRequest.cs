@@ -43,7 +43,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// Gets and sets the property Access. 
         /// <para>
         /// An access object containing the permissions that shouldn't be granted by the specified
-        /// policy.
+        /// policy. If only actions are specified, IAM Access Analyzer checks for access of the
+        /// actions on all resources in the policy. If only resources are specified, then IAM
+        /// Access Analyzer checks which actions have access to the specified resources. If both
+        /// actions and resources are specified, then IAM Access Analyzer checks which of the
+        /// specified actions have access to the specified resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]

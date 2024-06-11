@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.CheckAccessNotGranted(Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedRequest)" />
+            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.CheckAccessNotGranted(Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedRequest)" />
+            <member name="T:Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedRequest" />
+            <member name="T:Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Passing check. Restrictive identity policy."
+                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.CheckAccessNotGranted(Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedRequest)" />
+            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.CheckAccessNotGranted(Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedRequest)" />
+            <member name="T:Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedRequest" />
+            <member name="T:Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Passing check. Restrictive S3 Bucket resource policy."
+                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.CheckAccessNotGranted(Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedRequest)" />
+            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.CheckAccessNotGranted(Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedRequest)" />
+            <member name="T:Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedRequest" />
+            <member name="T:Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Failing check. Permissive S3 Bucket resource policy."
+                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.CheckNoPublicAccess(Amazon.AccessAnalyzer.Model.CheckNoPublicAccessRequest)" />
+            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.CheckNoPublicAccess(Amazon.AccessAnalyzer.Model.CheckNoPublicAccessRequest)" />
+            <member name="T:Amazon.AccessAnalyzer.Model.CheckNoPublicAccessRequest" />
+            <member name="T:Amazon.AccessAnalyzer.Model.CheckNoPublicAccessResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Passing check. S3 Bucket policy without public access."
+                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.CheckNoPublicAccess(Amazon.AccessAnalyzer.Model.CheckNoPublicAccessRequest)" />
+            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.CheckNoPublicAccess(Amazon.AccessAnalyzer.Model.CheckNoPublicAccessRequest)" />
+            <member name="T:Amazon.AccessAnalyzer.Model.CheckNoPublicAccessRequest" />
+            <member name="T:Amazon.AccessAnalyzer.Model.CheckNoPublicAccessResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Failing check. S3 Bucket policy with public access."
+                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.GenerateFindingRecommendation(Amazon.AccessAnalyzer.Model.GenerateFindingRecommendationRequest)" />
+            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.GenerateFindingRecommendation(Amazon.AccessAnalyzer.Model.GenerateFindingRecommendationRequest)" />
+            <member name="T:Amazon.AccessAnalyzer.Model.GenerateFindingRecommendationRequest" />
+            <member name="T:Amazon.AccessAnalyzer.Model.GenerateFindingRecommendationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successfully started generating finding recommendation"
+                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.GenerateFindingRecommendation(Amazon.AccessAnalyzer.Model.GenerateFindingRecommendationRequest)" />
+            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.GenerateFindingRecommendation(Amazon.AccessAnalyzer.Model.GenerateFindingRecommendationRequest)" />
+            <member name="T:Amazon.AccessAnalyzer.Model.GenerateFindingRecommendationRequest" />
+            <member name="T:Amazon.AccessAnalyzer.Model.GenerateFindingRecommendationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Failed field validation for id value"
+                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.GetFindingRecommendation(Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest)" />
+            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.GetFindingRecommendation(Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest)" />
+            <member name="T:Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest" />
+            <member name="T:Amazon.AccessAnalyzer.Model.GetFindingRecommendationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successfully fetched finding recommendation"
+                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.GetFindingRecommendation(Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest)" />
+            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.GetFindingRecommendation(Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest)" />
+            <member name="T:Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest" />
+            <member name="T:Amazon.AccessAnalyzer.Model.GetFindingRecommendationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="In progress finding recommendation"
+                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.GetFindingRecommendation(Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest)" />
+            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.GetFindingRecommendation(Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest)" />
+            <member name="T:Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest" />
+            <member name="T:Amazon.AccessAnalyzer.Model.GetFindingRecommendationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Failed finding recommendation"
+                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.GetFindingRecommendation(Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest)" />
+            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.GetFindingRecommendation(Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest)" />
+            <member name="T:Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest" />
+            <member name="T:Amazon.AccessAnalyzer.Model.GetFindingRecommendationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Failed field validation for id value"
+                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+</docs>

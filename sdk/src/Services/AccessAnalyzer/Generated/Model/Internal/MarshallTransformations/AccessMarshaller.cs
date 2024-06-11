@@ -59,6 +59,17 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetResources())
+            {
+                context.Writer.WritePropertyName("resources");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectResourcesListValue in requestObject.Resources)
+                {
+                        context.Writer.Write(requestObjectResourcesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
