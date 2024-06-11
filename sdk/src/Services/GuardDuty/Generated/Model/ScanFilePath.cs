@@ -96,7 +96,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property VolumeArn. 
         /// <para>
-        /// EBS volume Arn details of the infected file.
+        /// EBS volume ARN details of the infected file.
         /// </para>
         /// </summary>
         public string VolumeArn

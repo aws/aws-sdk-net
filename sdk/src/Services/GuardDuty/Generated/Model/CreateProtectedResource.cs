@@ -30,28 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Represents the resources that were scanned in the scan entry.
+    /// Information about the protected resource that is associated with the created Malware
+    /// Protection plan. Presently, <c>S3Bucket</c> is the only supported protected resource.
     /// </summary>
-    public partial class ResourceDetails
+    public partial class CreateProtectedResource
     {
-        private string _instanceArn;
+        private CreateS3BucketResource _s3Bucket;
 
         /// <summary>
-        /// Gets and sets the property InstanceArn. 
+        /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// Instance ARN that was scanned in the scan entry.
+        /// Information about the protected S3 bucket resource.
         /// </para>
         /// </summary>
-        public string InstanceArn
+        public CreateS3BucketResource S3Bucket
         {
-            get { return this._instanceArn; }
-            set { this._instanceArn = value; }
+            get { return this._s3Bucket; }
+            set { this._s3Bucket = value; }
         }
 
-        // Check to see if InstanceArn property is set
-        internal bool IsSetInstanceArn()
+        // Check to see if S3Bucket property is set
+        internal bool IsSetS3Bucket()
         {
-            return this._instanceArn != null;
+            return this._s3Bucket != null;
         }
 
     }

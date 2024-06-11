@@ -102,6 +102,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.PublicAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("s3ObjectDetails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<S3ObjectDetail, S3ObjectDetailUnmarshaller>(S3ObjectDetailUnmarshaller.Instance);
+                    unmarshalledObject.S3ObjectDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);

@@ -30,28 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Represents the resources that were scanned in the scan entry.
+    /// Information about the protected S3 bucket resource.
     /// </summary>
-    public partial class ResourceDetails
+    public partial class UpdateS3BucketResource
     {
-        private string _instanceArn;
+        private List<string> _objectPrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property InstanceArn. 
+        /// Gets and sets the property ObjectPrefixes. 
         /// <para>
-        /// Instance ARN that was scanned in the scan entry.
+        /// Information about the specified object prefixes. The S3 object will be scanned only
+        /// if it belongs to any of the specified object prefixes.
         /// </para>
         /// </summary>
-        public string InstanceArn
+        [AWSProperty(Min=0, Max=5)]
+        public List<string> ObjectPrefixes
         {
-            get { return this._instanceArn; }
-            set { this._instanceArn = value; }
+            get { return this._objectPrefixes; }
+            set { this._objectPrefixes = value; }
         }
 
-        // Check to see if InstanceArn property is set
-        internal bool IsSetInstanceArn()
+        // Check to see if ObjectPrefixes property is set
+        internal bool IsSetObjectPrefixes()
         {
-            return this._instanceArn != null;
+            return this._objectPrefixes != null && (this._objectPrefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -30,28 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Represents the resources that were scanned in the scan entry.
+    /// Information about the nested item path and hash of the protected resource.
     /// </summary>
-    public partial class ResourceDetails
+    public partial class ItemPath
     {
-        private string _instanceArn;
+        private string _hash;
+        private string _nestedItemPath;
 
         /// <summary>
-        /// Gets and sets the property InstanceArn. 
+        /// Gets and sets the property Hash. 
         /// <para>
-        /// Instance ARN that was scanned in the scan entry.
+        /// The hash value of the infected resource.
         /// </para>
         /// </summary>
-        public string InstanceArn
+        public string Hash
         {
-            get { return this._instanceArn; }
-            set { this._instanceArn = value; }
+            get { return this._hash; }
+            set { this._hash = value; }
         }
 
-        // Check to see if InstanceArn property is set
-        internal bool IsSetInstanceArn()
+        // Check to see if Hash property is set
+        internal bool IsSetHash()
         {
-            return this._instanceArn != null;
+            return this._hash != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NestedItemPath. 
+        /// <para>
+        /// The nested item path where the infected file was found.
+        /// </para>
+        /// </summary>
+        public string NestedItemPath
+        {
+            get { return this._nestedItemPath; }
+            set { this._nestedItemPath = value; }
+        }
+
+        // Check to see if NestedItemPath property is set
+        internal bool IsSetNestedItemPath()
+        {
+            return this._nestedItemPath != null;
         }
 
     }

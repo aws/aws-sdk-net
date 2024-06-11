@@ -132,6 +132,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.FeatureName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("malwareScanDetails", targetDepth))
+                {
+                    var unmarshaller = MalwareScanDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MalwareScanDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
