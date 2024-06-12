@@ -221,7 +221,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// "<c>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</c>".
+        /// "<c>{\"ResizeCluster\":{\"NodeType\":\"ra3.4xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</c>".
         /// 
         /// </para>
         /// </summary>
