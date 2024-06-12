@@ -321,6 +321,49 @@ namespace Amazon.RestJsonTest
 
         #endregion
         
+        #region  NoPayloadPost
+
+
+        /// <summary>
+        /// A POST request without a body, for verifying that we don't set a Content-Type even
+        /// though a POST could have a body
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NoPayloadPost service method.</param>
+        /// 
+        /// <returns>The response from the NoPayloadPost service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/NoPayloadPost">REST API Reference for NoPayloadPost Operation</seealso>
+        public virtual NoPayloadPostResponse NoPayloadPost(NoPayloadPostRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NoPayloadPostRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NoPayloadPostResponseUnmarshaller.Instance;
+
+            return Invoke<NoPayloadPostResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// A POST request without a body, for verifying that we don't set a Content-Type even
+        /// though a POST could have a body
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the NoPayloadPost service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the NoPayloadPost service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/NoPayloadPost">REST API Reference for NoPayloadPost Operation</seealso>
+        public virtual Task<NoPayloadPostResponse> NoPayloadPostAsync(NoPayloadPostRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = NoPayloadPostRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = NoPayloadPostResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<NoPayloadPostResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  QueryBooleanList
 
 
