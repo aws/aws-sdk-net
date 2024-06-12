@@ -1,3 +1,23 @@
+### 3.7.830.0 (2024-06-12 18:24 UTC)
+* AppTest (3.7.300.0)
+	* AWS Mainframe Modernization Application Testing is an AWS Mainframe Modernization service feature that automates functional equivalence testing for mainframe application modernization and migration to AWS, and regression testing.
+* EC2 (3.7.330.0)
+	* Tagging support for Traffic Mirroring FilterRule resource
+* OSIS (3.7.303.0)
+	* SDK changes for self-managed vpc endpoint to OpenSearch ingestion pipelines.
+* Redshift (3.7.305.31)
+	* Updates to remove DC1 and DS2 node types.
+* SecretsManager (3.7.304.0)
+	* Introducing RotationToken parameter for PutSecretValue API
+* SecurityLake (3.7.302.0)
+	* This release updates request validation regex to account for non-commercial aws partitions.
+* SimpleEmailV2 (3.7.304.0)
+	* This release adds support for Amazon EventBridge as an email sending events destination.
+* Core 3.7.304.16
+	* Omit the Content-Type header for requests without bodies
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.829.0 (2024-06-11 18:32 UTC)
 * AccessAnalyzer (3.7.304.0)
 	* IAM Access Analyzer now provides policy recommendations to help resolve unused permissions for IAM roles and users. Additionally, IAM Access Analyzer now extends its custom policy checks to detect when IAM policies grant public access or access to critical resources ahead of deployments.
