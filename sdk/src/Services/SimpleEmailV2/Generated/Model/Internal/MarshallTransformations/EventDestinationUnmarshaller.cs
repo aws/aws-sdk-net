@@ -78,6 +78,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EventBridgeDestination", targetDepth))
+                {
+                    var unmarshaller = EventBridgeDestinationUnmarshaller.Instance;
+                    unmarshalledObject.EventBridgeDestination = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KinesisFirehoseDestination", targetDepth))
                 {
                     var unmarshaller = KinesisFirehoseDestinationUnmarshaller.Instance;

@@ -30,32 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// An object that defines an Amazon SNS destination for email events. You can use Amazon
-    /// SNS to send notifications when certain email events occur.
+    /// An object that defines an Amazon EventBridge destination for email events. You can
+    /// use Amazon EventBridge to send notifications when certain email events occur.
     /// </summary>
-    public partial class SnsDestination
+    public partial class EventBridgeDestination
     {
-        private string _topicArn;
+        private string _eventBusArn;
 
         /// <summary>
-        /// Gets and sets the property TopicArn. 
+        /// Gets and sets the property EventBusArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon SNS topic to publish email events to.
-        /// For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-        /// SNS Developer Guide</a>.
+        /// The Amazon Resource Name (ARN) of the Amazon EventBridge bus to publish email events
+        /// to. Only the default bus is supported. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string TopicArn
+        public string EventBusArn
         {
-            get { return this._topicArn; }
-            set { this._topicArn = value; }
+            get { return this._eventBusArn; }
+            set { this._eventBusArn = value; }
         }
 
-        // Check to see if TopicArn property is set
-        internal bool IsSetTopicArn()
+        // Check to see if EventBusArn property is set
+        internal bool IsSetEventBusArn()
         {
-            return this._topicArn != null;
+            return this._eventBusArn != null;
         }
 
     }
