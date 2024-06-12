@@ -168,6 +168,12 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                     unmarshalledObject.VpcEndpoints = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VpcEndpointService", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcEndpointService = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

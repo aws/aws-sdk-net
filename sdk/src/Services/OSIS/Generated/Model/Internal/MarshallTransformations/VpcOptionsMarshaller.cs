@@ -81,6 +81,12 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetVpcEndpointManagement())
+            {
+                context.Writer.WritePropertyName("VpcEndpointManagement");
+                context.Writer.Write(requestObject.VpcEndpointManagement);
+            }
+
         }
 
         /// <summary>

@@ -84,6 +84,12 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                     unmarshalledObject.VpcAttachmentOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VpcEndpointManagement", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcEndpointManagement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

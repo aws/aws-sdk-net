@@ -51,6 +51,7 @@ namespace Amazon.OSIS.Model
         private PipelineStatusReason _statusReason;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private List<VpcEndpoint> _vpcEndpoints = AWSConfigs.InitializeCollections ? new List<VpcEndpoint>() : null;
+        private string _vpcEndpointService;
 
         /// <summary>
         /// Gets and sets the property BufferOptions.
@@ -351,6 +352,24 @@ namespace Amazon.OSIS.Model
         internal bool IsSetVpcEndpoints()
         {
             return this._vpcEndpoints != null && (this._vpcEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointService. 
+        /// <para>
+        /// The VPC endpoint service name for the pipeline.
+        /// </para>
+        /// </summary>
+        public string VpcEndpointService
+        {
+            get { return this._vpcEndpointService; }
+            set { this._vpcEndpointService = value; }
+        }
+
+        // Check to see if VpcEndpointService property is set
+        internal bool IsSetVpcEndpointService()
+        {
+            return this._vpcEndpointService != null;
         }
 
     }

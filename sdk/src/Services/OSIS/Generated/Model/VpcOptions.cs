@@ -38,6 +38,7 @@ namespace Amazon.OSIS.Model
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcAttachmentOptions _vpcAttachmentOptions;
+        private VpcEndpointManagement _vpcEndpointManagement;
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
@@ -93,6 +94,25 @@ namespace Amazon.OSIS.Model
         internal bool IsSetVpcAttachmentOptions()
         {
             return this._vpcAttachmentOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointManagement. 
+        /// <para>
+        /// Defines whether you or Amazon OpenSearch Ingestion service create and manage the VPC
+        /// endpoint configured for the pipeline.
+        /// </para>
+        /// </summary>
+        public VpcEndpointManagement VpcEndpointManagement
+        {
+            get { return this._vpcEndpointManagement; }
+            set { this._vpcEndpointManagement = value; }
+        }
+
+        // Check to see if VpcEndpointManagement property is set
+        internal bool IsSetVpcEndpointManagement()
+        {
+            return this._vpcEndpointManagement != null;
         }
 
     }
