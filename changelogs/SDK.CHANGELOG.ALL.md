@@ -3,6 +3,8 @@
 	* AWS Mainframe Modernization Application Testing is an AWS Mainframe Modernization service feature that automates functional equivalence testing for mainframe application modernization and migration to AWS, and regression testing.
 * EC2 (3.7.330.0)
 	* Tagging support for Traffic Mirroring FilterRule resource
+* BackupStorage (Removed)
+	* AWS BackupStorage has been removed from the SDK.
 * OSIS (3.7.303.0)
 	* SDK changes for self-managed vpc endpoint to OpenSearch ingestion pipelines.
 * Redshift (3.7.305.31)
