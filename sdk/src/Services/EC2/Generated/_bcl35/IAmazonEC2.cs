@@ -16858,6 +16858,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeTrafficMirrorFilterRules
+
+
+        /// <summary>
+        /// Describe traffic mirror filters that determine the traffic that is mirrored.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficMirrorFilterRules service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrafficMirrorFilterRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilterRules">REST API Reference for DescribeTrafficMirrorFilterRules Operation</seealso>
+        DescribeTrafficMirrorFilterRulesResponse DescribeTrafficMirrorFilterRules(DescribeTrafficMirrorFilterRulesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrafficMirrorFilterRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficMirrorFilterRules operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrafficMirrorFilterRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilterRules">REST API Reference for DescribeTrafficMirrorFilterRules Operation</seealso>
+        IAsyncResult BeginDescribeTrafficMirrorFilterRules(DescribeTrafficMirrorFilterRulesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTrafficMirrorFilterRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrafficMirrorFilterRules.</param>
+        /// 
+        /// <returns>Returns a  DescribeTrafficMirrorFilterRulesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilterRules">REST API Reference for DescribeTrafficMirrorFilterRules Operation</seealso>
+        DescribeTrafficMirrorFilterRulesResponse EndDescribeTrafficMirrorFilterRules(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeTrafficMirrorFilters
 
 

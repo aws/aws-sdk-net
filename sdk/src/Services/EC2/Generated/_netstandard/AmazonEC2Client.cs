@@ -15450,6 +15450,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeTrafficMirrorFilterRules
+
+        internal virtual DescribeTrafficMirrorFilterRulesResponse DescribeTrafficMirrorFilterRules(DescribeTrafficMirrorFilterRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficMirrorFilterRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficMirrorFilterRulesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrafficMirrorFilterRulesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describe traffic mirror filters that determine the traffic that is mirrored.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficMirrorFilterRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrafficMirrorFilterRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilterRules">REST API Reference for DescribeTrafficMirrorFilterRules Operation</seealso>
+        public virtual Task<DescribeTrafficMirrorFilterRulesResponse> DescribeTrafficMirrorFilterRulesAsync(DescribeTrafficMirrorFilterRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficMirrorFilterRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficMirrorFilterRulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTrafficMirrorFilterRulesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTrafficMirrorFilters
 
         internal virtual DescribeTrafficMirrorFiltersResponse DescribeTrafficMirrorFilters(DescribeTrafficMirrorFiltersRequest request)
