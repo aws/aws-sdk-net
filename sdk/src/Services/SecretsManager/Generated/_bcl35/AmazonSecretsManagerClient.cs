@@ -1746,8 +1746,8 @@ namespace Amazon.SecretsManager
         ///  
         /// <para>
         /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
-        /// include sensitive information in request parameters except <c>SecretBinary</c> or
-        /// <c>SecretString</c> because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+        /// include sensitive information in request parameters except <c>SecretBinary</c>, <c>SecretString</c>,
+        /// or <c>RotationToken</c> because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
         /// Secrets Manager events with CloudTrail</a>.
         /// </para>
         ///  
