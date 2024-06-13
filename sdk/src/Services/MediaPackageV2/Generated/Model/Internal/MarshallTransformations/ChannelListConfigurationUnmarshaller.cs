@@ -96,6 +96,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InputType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InputType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModifiedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

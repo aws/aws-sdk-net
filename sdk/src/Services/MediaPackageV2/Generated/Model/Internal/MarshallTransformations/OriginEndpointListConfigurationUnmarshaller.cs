@@ -108,6 +108,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ForceEndpointErrorConfiguration", targetDepth))
+                {
+                    var unmarshaller = ForceEndpointErrorConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ForceEndpointErrorConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HlsManifests", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ListHlsManifestConfiguration, ListHlsManifestConfigurationUnmarshaller>(ListHlsManifestConfigurationUnmarshaller.Instance);

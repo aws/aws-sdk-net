@@ -47,6 +47,7 @@ namespace Amazon.MediaPackageV2.Model
         private List<CreateDashManifestConfiguration> _dashManifests = AWSConfigs.InitializeCollections ? new List<CreateDashManifestConfiguration>() : null;
         private string _description;
         private string _eTag;
+        private ForceEndpointErrorConfiguration _forceEndpointErrorConfiguration;
         private List<CreateHlsManifestConfiguration> _hlsManifests = AWSConfigs.InitializeCollections ? new List<CreateHlsManifestConfiguration>() : null;
         private List<CreateLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = AWSConfigs.InitializeCollections ? new List<CreateLowLatencyHlsManifestConfiguration>() : null;
         private string _originEndpointName;
@@ -170,6 +171,24 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetETag()
         {
             return !string.IsNullOrEmpty(this._eTag);
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForceEndpointErrorConfiguration. 
+        /// <para>
+        /// The failover settings for the endpoint.
+        /// </para>
+        /// </summary>
+        public ForceEndpointErrorConfiguration ForceEndpointErrorConfiguration
+        {
+            get { return this._forceEndpointErrorConfiguration; }
+            set { this._forceEndpointErrorConfiguration = value; }
+        }
+
+        // Check to see if ForceEndpointErrorConfiguration property is set
+        internal bool IsSetForceEndpointErrorConfiguration()
+        {
+            return this._forceEndpointErrorConfiguration != null;
         }
 
         /// <summary>
