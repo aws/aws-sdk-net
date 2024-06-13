@@ -51,6 +51,7 @@ namespace Amazon.KeyManagementService.Model
         private bool? _enabled;
         private List<string> _encryptionAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ExpirationModelType _expirationModel;
+        private List<string> _keyAgreementAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _keyId;
         private KeyManagerType _keyManager;
         private KeySpec _keySpec;
@@ -294,6 +295,24 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetExpirationModel()
         {
             return this._expirationModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyAgreementAlgorithms. 
+        /// <para>
+        /// The key agreement algorithm used to derive a shared secret.
+        /// </para>
+        /// </summary>
+        public List<string> KeyAgreementAlgorithms
+        {
+            get { return this._keyAgreementAlgorithms; }
+            set { this._keyAgreementAlgorithms = value; }
+        }
+
+        // Check to see if KeyAgreementAlgorithms property is set
+        internal bool IsSetKeyAgreementAlgorithms()
+        {
+            return this._keyAgreementAlgorithms != null && (this._keyAgreementAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

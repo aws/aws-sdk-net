@@ -132,6 +132,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExpirationModel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KeyAgreementAlgorithms", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.KeyAgreementAlgorithms = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

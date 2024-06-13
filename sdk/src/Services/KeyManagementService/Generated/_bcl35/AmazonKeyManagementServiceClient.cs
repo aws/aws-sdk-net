@@ -1817,10 +1817,14 @@ namespace Amazon.KeyManagementService
         /// Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, or an
         /// SM2 key pair (China Regions only). The private key in an asymmetric KMS key never
         /// leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a> operation to
-        /// download the public key so it can be used outside of KMS. KMS keys with RSA or SM2
-        /// key pairs can be used to encrypt or decrypt data or sign and verify messages (but
-        /// not both). KMS keys with ECC key pairs can be used only to sign and verify messages.
-        /// For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+        /// download the public key so it can be used outside of KMS. Each KMS key can have only
+        /// one key usage. KMS keys with RSA key pairs can be used to encrypt and decrypt data
+        /// or sign and verify messages (but not both). KMS keys with NIST-recommended ECC key
+        /// pairs can be used to sign and verify messages or derive shared secrets (but not both).
+        /// KMS keys with <c>ECC_SECG_P256K1</c> can be used only to sign and verify messages.
+        /// KMS keys with SM2 key pairs (China Regions only) can be used to either encrypt and
+        /// decrypt data, sign and verify messages, or derive shared secrets (you must choose
+        /// one key usage type). For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
         /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
@@ -2361,7 +2365,8 @@ namespace Amazon.KeyManagementService
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
-        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. To find the <c>KeyUsage</c>
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
         /// of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
@@ -3058,6 +3063,257 @@ namespace Amazon.KeyManagementService
         public virtual DeleteImportedKeyMaterialResponse EndDeleteImportedKeyMaterial(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteImportedKeyMaterialResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeriveSharedSecret
+
+        /// <summary>
+        /// Derives a shared secret using a key agreement algorithm.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You must use an asymmetric NIST-recommended elliptic curve (ECC) or SM2 (China Regions
+        /// only) KMS key pair with a <c>KeyUsage</c> value of <c>KEY_AGREEMENT</c> to call DeriveSharedSecret.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// DeriveSharedSecret uses the <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Ar3.pdf#page=60">Elliptic
+        /// Curve Cryptography Cofactor Diffie-Hellman Primitive</a> (ECDH) to establish a key
+        /// agreement between two peers by deriving a shared secret from their elliptic curve
+        /// public-private key pairs. You can use the raw shared secret that DeriveSharedSecret
+        /// returns to derive a symmetric key that can encrypt and decrypt data that is sent between
+        /// the two peers, or that can generate and verify HMACs. KMS recommends that you follow
+        /// <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Cr2.pdf">NIST
+        /// recommendations for key derivation</a> when using the raw shared secret to derive
+        /// a symmetric key.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following workflow demonstrates how to establish key agreement over an insecure
+        /// communication channel using DeriveSharedSecret.
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        ///  <b>Alice</b> calls <a>CreateKey</a> to create an asymmetric KMS key pair with a <c>KeyUsage</c>
+        /// value of <c>KEY_AGREEMENT</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The asymmetric KMS key must use a NIST-recommended elliptic curve (ECC) or SM2 (China
+        /// Regions only) key spec.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Bob</b> creates an elliptic curve key pair.
+        /// </para>
+        ///  
+        /// <para>
+        /// Bob can call <a>CreateKey</a> to create an asymmetric KMS key pair or generate a key
+        /// pair outside of KMS. Bob's key pair must use the same NIST-recommended elliptic curve
+        /// (ECC) or SM2 (China Regions ony) curve as Alice.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alice and Bob <b>exchange their public keys</b> through an insecure communication
+        /// channel (like the internet).
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <a>GetPublicKey</a> to download the public key of your asymmetric KMS key pair.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// KMS strongly recommends verifying that the public key you receive came from the expected
+        /// party before using it to derive a shared secret.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <b>Alice</b> calls DeriveSharedSecret.
+        /// </para>
+        ///  
+        /// <para>
+        /// KMS uses the private key from the KMS key pair generated in <b>Step 1</b>, Bob's public
+        /// key, and the Elliptic Curve Cryptography Cofactor Diffie-Hellman Primitive to derive
+        /// the shared secret. The private key in your KMS key pair never leaves KMS unencrypted.
+        /// DeriveSharedSecret returns the raw shared secret.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Bob</b> uses the Elliptic Curve Cryptography Cofactor Diffie-Hellman Primitive
+        /// to calculate the same raw secret using his private key and Alice's public key.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// To derive a shared secret you must provide a key agreement algorithm, the private
+        /// key of the caller's asymmetric NIST-recommended elliptic curve or SM2 (China Regions
+        /// only) KMS key pair, and the public key from your peer's NIST-recommended elliptic
+        /// curve or SM2 (China Regions only) key pair. The public key can be from another asymmetric
+        /// KMS key pair or from a key pair generated outside of KMS, but both key pairs must
+        /// be on the same elliptic curve.
+        /// </para>
+        ///  
+        /// <para>
+        /// The KMS key that you use for this operation must be in a compatible key state. For
+        /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
+        /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
+        /// <c>KeyId</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DeriveSharedSecret</a>
+        /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateKey</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetPublicKey</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeKey</a> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS
+        /// eventual consistency</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeriveSharedSecret service method.</param>
+        /// 
+        /// <returns>The response from the DeriveSharedSecret service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
+        /// The request was rejected because the specified KMS key is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
+        /// The request was rejected because the specified grant token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidKeyUsageException">
+        /// The request was rejected for one of the following reasons: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>KeyUsage</c> value of the KMS key is incompatible with the API operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
+        /// with the type of key material in the KMS key <c>(KeySpec</c>).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
+        /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
+        /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
+        /// of a KMS key, use the <a>DescribeKey</a> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the encryption or signing algorithms supported for a particular KMS key, use
+        /// the <a>DescribeKey</a> operation.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
+        /// The request was rejected because the specified KMS key was not available. You can
+        /// retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// This exceptions means one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key state of the KMS key is not compatible with the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the key state, use the <a>DescribeKey</a> operation. For more information
+        /// about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For cryptographic operations on KMS keys in custom key stores, this exception represents
+        /// a general failure with many possible causes. To identify the cause, see the error
+        /// message that accompanies the exception.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeriveSharedSecret">REST API Reference for DeriveSharedSecret Operation</seealso>
+        public virtual DeriveSharedSecretResponse DeriveSharedSecret(DeriveSharedSecretRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeriveSharedSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeriveSharedSecretResponseUnmarshaller.Instance;
+
+            return Invoke<DeriveSharedSecretResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeriveSharedSecret operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeriveSharedSecret operation on AmazonKeyManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeriveSharedSecret
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeriveSharedSecret">REST API Reference for DeriveSharedSecret Operation</seealso>
+        public virtual IAsyncResult BeginDeriveSharedSecret(DeriveSharedSecretRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeriveSharedSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeriveSharedSecretResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeriveSharedSecret operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeriveSharedSecret.</param>
+        /// 
+        /// <returns>Returns a  DeriveSharedSecretResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeriveSharedSecret">REST API Reference for DeriveSharedSecret Operation</seealso>
+        public virtual DeriveSharedSecretResponse EndDeriveSharedSecret(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeriveSharedSecretResponse>(asyncResult);
         }
 
         #endregion
@@ -4955,7 +5211,8 @@ namespace Amazon.KeyManagementService
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
-        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. To find the <c>KeyUsage</c>
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
         /// of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
@@ -5231,7 +5488,8 @@ namespace Amazon.KeyManagementService
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
-        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. To find the <c>KeyUsage</c>
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
         /// of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
@@ -5480,7 +5738,8 @@ namespace Amazon.KeyManagementService
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
-        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. To find the <c>KeyUsage</c>
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
         /// of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
@@ -5704,7 +5963,8 @@ namespace Amazon.KeyManagementService
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
-        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. To find the <c>KeyUsage</c>
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
         /// of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
@@ -5947,7 +6207,8 @@ namespace Amazon.KeyManagementService
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
-        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. To find the <c>KeyUsage</c>
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
         /// of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
@@ -6122,7 +6383,8 @@ namespace Amazon.KeyManagementService
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
-        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. To find the <c>KeyUsage</c>
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
         /// of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
@@ -7064,7 +7326,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The public key (or "wrapping key") of an asymmetric key pair that KMS generates.
+        /// The public key (or "wrapping key") of an RSA key pair that KMS generates.
         /// </para>
         ///  
         /// <para>
@@ -7267,7 +7529,7 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html#KMS-GetPublicKey-response-KeyUsage">KeyUsage</a>:
-        /// Whether the key is used for encryption or signing.
+        /// Whether the key is used for encryption, signing, or deriving a shared secret.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7352,7 +7614,8 @@ namespace Amazon.KeyManagementService
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
-        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. To find the <c>KeyUsage</c>
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
         /// of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
@@ -9248,7 +9511,8 @@ namespace Amazon.KeyManagementService
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
-        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. To find the <c>KeyUsage</c>
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
         /// of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
@@ -10883,7 +11147,8 @@ namespace Amazon.KeyManagementService
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
-        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. To find the <c>KeyUsage</c>
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
         /// of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
@@ -12524,7 +12789,8 @@ namespace Amazon.KeyManagementService
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
-        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. To find the <c>KeyUsage</c>
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
         /// of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
@@ -12699,7 +12965,8 @@ namespace Amazon.KeyManagementService
         /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
         /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
         /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
-        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. To find the <c>KeyUsage</c>
+        /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. For deriving key agreement
+        /// secrets, the <c>KeyUsage</c> must be <c>KEY_AGREEMENT</c>. To find the <c>KeyUsage</c>
         /// of a KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  

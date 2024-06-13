@@ -60,7 +60,7 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html#KMS-GetPublicKey-response-KeyUsage">KeyUsage</a>:
-    /// Whether the key is used for encryption or signing.
+    /// Whether the key is used for encryption, signing, or deriving a shared secret.
     /// </para>
     ///  </li> <li> 
     /// <para>

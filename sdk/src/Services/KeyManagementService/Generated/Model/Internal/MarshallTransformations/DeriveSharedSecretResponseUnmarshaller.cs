@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetPublicKey operation
+    /// Response Unmarshaller for DeriveSharedSecret operation
     /// </summary>  
-    public class GetPublicKeyResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeriveSharedSecretResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,28 +46,22 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetPublicKeyResponse response = new GetPublicKeyResponse();
+            DeriveSharedSecretResponse response = new DeriveSharedSecretResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CustomerMasterKeySpec", targetDepth))
+                if (context.TestExpression("CiphertextForRecipient", targetDepth))
+                {
+                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
+                    response.CiphertextForRecipient = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyAgreementAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CustomerMasterKeySpec = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EncryptionAlgorithms", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.EncryptionAlgorithms = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KeyAgreementAlgorithms", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.KeyAgreementAlgorithms = unmarshaller.Unmarshall(context);
+                    response.KeyAgreementAlgorithm = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("KeyId", targetDepth))
@@ -76,28 +70,16 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     response.KeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("KeySpec", targetDepth))
+                if (context.TestExpression("KeyOrigin", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.KeySpec = unmarshaller.Unmarshall(context);
+                    response.KeyOrigin = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("KeyUsage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.KeyUsage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PublicKey", targetDepth))
+                if (context.TestExpression("SharedSecret", targetDepth))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
-                    response.PublicKey = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SigningAlgorithms", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.SigningAlgorithms = unmarshaller.Unmarshall(context);
+                    response.SharedSecret = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -131,9 +113,9 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 {
                     return DisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArnException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DryRunOperationException"))
                 {
-                    return InvalidArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return DryRunOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGrantTokenException"))
                 {
@@ -159,17 +141,13 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 {
                     return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
-                {
-                    return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonKeyManagementServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetPublicKeyResponseUnmarshaller _instance = new GetPublicKeyResponseUnmarshaller();        
+        private static DeriveSharedSecretResponseUnmarshaller _instance = new DeriveSharedSecretResponseUnmarshaller();        
 
-        internal static GetPublicKeyResponseUnmarshaller GetInstance()
+        internal static DeriveSharedSecretResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -177,7 +155,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetPublicKeyResponseUnmarshaller Instance
+        public static DeriveSharedSecretResponseUnmarshaller Instance
         {
             get
             {
