@@ -236,7 +236,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property RulesetNames. 
         /// <para>
-        /// A list of ruleset names for the run.
+        /// A list of ruleset names for the run. Currently, this parameter takes only one Ruleset
+        /// name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

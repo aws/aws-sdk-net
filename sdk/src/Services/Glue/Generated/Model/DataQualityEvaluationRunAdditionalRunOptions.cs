@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     public partial class DataQualityEvaluationRunAdditionalRunOptions
     {
         private bool? _cloudWatchMetricsEnabled;
+        private DQCompositeRuleEvaluationMethod _compositeRuleEvaluationMethod;
         private string _resultsS3Prefix;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetCloudWatchMetricsEnabled()
         {
             return this._cloudWatchMetricsEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompositeRuleEvaluationMethod. 
+        /// <para>
+        /// Set the evaluation method for composite rules in the ruleset to ROW/COLUMN
+        /// </para>
+        /// </summary>
+        public DQCompositeRuleEvaluationMethod CompositeRuleEvaluationMethod
+        {
+            get { return this._compositeRuleEvaluationMethod; }
+            set { this._compositeRuleEvaluationMethod = value; }
+        }
+
+        // Check to see if CompositeRuleEvaluationMethod property is set
+        internal bool IsSetCompositeRuleEvaluationMethod()
+        {
+            return this._compositeRuleEvaluationMethod != null;
         }
 
         /// <summary>
