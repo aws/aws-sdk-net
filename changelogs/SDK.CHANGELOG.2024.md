@@ -1,3 +1,15 @@
+### 3.7.831.0 (2024-06-13 18:19 UTC)
+* CloudHSMV2 (3.7.301.0)
+	* Added support for hsm type hsm2m.medium. Added supported for creating a cluster in FIPS or NON_FIPS mode.
+* Glue (3.7.315.0)
+	* This release adds support for configuration of evaluation method for composite rules in Glue Data Quality rulesets.
+* IoTWireless (3.7.304.0)
+	* Add RoamingDeviceSNR and RoamingDeviceRSSI to Customer Metrics.
+* KeyManagementService (3.7.304.0)
+	* This feature allows customers to use their keys stored in KMS to derive a shared secret which can then be used to establish a secured channel for communication, provide proof of possession, or establish trust with other parties.
+* MediaPackageV2 (3.7.303.0)
+	* This release adds support for CMAF ingest (DASH-IF live media ingest protocol interface 1)
+
 ### 3.7.830.0 (2024-06-12 18:24 UTC)
 * AppTest (3.7.300.0)
 	* AWS Mainframe Modernization Application Testing is an AWS Mainframe Modernization service feature that automates functional equivalence testing for mainframe application modernization and migration to AWS, and regression testing.
