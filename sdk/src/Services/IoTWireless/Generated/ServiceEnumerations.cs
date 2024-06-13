@@ -1215,6 +1215,14 @@ namespace Amazon.IoTWireless
         /// </summary>
         public static readonly MetricName DeviceRoamingDownlinkCount = new MetricName("DeviceRoamingDownlinkCount");
         /// <summary>
+        /// Constant DeviceRoamingRSSI for MetricName
+        /// </summary>
+        public static readonly MetricName DeviceRoamingRSSI = new MetricName("DeviceRoamingRSSI");
+        /// <summary>
+        /// Constant DeviceRoamingSNR for MetricName
+        /// </summary>
+        public static readonly MetricName DeviceRoamingSNR = new MetricName("DeviceRoamingSNR");
+        /// <summary>
         /// Constant DeviceRoamingUplinkCount for MetricName
         /// </summary>
         public static readonly MetricName DeviceRoamingUplinkCount = new MetricName("DeviceRoamingUplinkCount");
