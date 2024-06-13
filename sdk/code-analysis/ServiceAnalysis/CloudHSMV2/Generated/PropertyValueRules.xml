@@ -10,7 +10,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.CreateClusterRequest.HsmType</property>
-    <pattern>(hsm1\.medium)</pattern>
+    <max>32</max>
+    <pattern>((p|)hsm[0-9][a-z.]*\.[a-zA-Z]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.CreateClusterRequest.SourceBackupId</property>
@@ -92,12 +93,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.InitializeClusterRequest.SignedCert</property>
-    <max>5000</max>
+    <max>20000</max>
     <pattern>[a-zA-Z0-9+-/=\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.InitializeClusterRequest.TrustAnchor</property>
-    <max>5000</max>
+    <max>20000</max>
     <pattern>[a-zA-Z0-9+-/=\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -153,6 +154,11 @@
     <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.Backup.HsmType</property>
+    <max>32</max>
+    <pattern>((p|)hsm[0-9][a-z.]*\.[a-zA-Z]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Backup.SourceBackup</property>
     <pattern>backup-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
@@ -172,27 +178,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Certificates.AwsHardwareCertificate</property>
-    <max>5000</max>
+    <max>20000</max>
     <pattern>[a-zA-Z0-9+-/=\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Certificates.ClusterCertificate</property>
-    <max>5000</max>
+    <max>20000</max>
     <pattern>[a-zA-Z0-9+-/=\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Certificates.ClusterCsr</property>
-    <max>5000</max>
+    <max>20000</max>
     <pattern>[a-zA-Z0-9+-/=\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Certificates.HsmCertificate</property>
-    <max>5000</max>
+    <max>20000</max>
     <pattern>[a-zA-Z0-9+-/=\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Certificates.ManufacturerHardwareCertificate</property>
-    <max>5000</max>
+    <max>20000</max>
     <pattern>[a-zA-Z0-9+-/=\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -201,7 +207,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Cluster.HsmType</property>
-    <pattern>(hsm1\.medium)</pattern>
+    <max>32</max>
+    <pattern>((p|)hsm[0-9][a-z.]*\.[a-zA-Z]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Cluster.PreCoPassword</property>

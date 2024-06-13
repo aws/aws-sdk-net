@@ -37,6 +37,7 @@ namespace Amazon.CloudHSMV2.Model
     {
         private BackupRetentionPolicy _backupRetentionPolicy;
         private string _hsmType;
+        private ClusterMode _mode;
         private string _sourceBackupId;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -62,10 +63,11 @@ namespace Amazon.CloudHSMV2.Model
         /// <summary>
         /// Gets and sets the property HsmType. 
         /// <para>
-        /// The type of HSM to use in the cluster. Currently the only allowed value is <c>hsm1.medium</c>.
+        /// The type of HSM to use in the cluster. The allowed values are <c>hsm1.medium</c> and
+        /// <c>hsm2m.medium</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=32)]
         public string HsmType
         {
             get { return this._hsmType; }
@@ -76,6 +78,24 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetHsmType()
         {
             return this._hsmType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// The mode to use in the cluster. The allowed values are <c>FIPS</c> and <c>NON_FIPS</c>.
+        /// </para>
+        /// </summary>
+        public ClusterMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
         }
 
         /// <summary>

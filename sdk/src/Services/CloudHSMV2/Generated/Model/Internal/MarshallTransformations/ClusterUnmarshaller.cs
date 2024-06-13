@@ -108,6 +108,12 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.HsmType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Mode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PreCoPassword", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

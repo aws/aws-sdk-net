@@ -68,6 +68,7 @@ namespace Amazon.CloudHSMV2.Model
         /// Use the <c>states</c> filter to return only clusters that match the specified state.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=30)]
         public Dictionary<string, List<string>> Filters
         {
             get { return this._filters; }
