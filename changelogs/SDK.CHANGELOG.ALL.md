@@ -1,3 +1,15 @@
+### 3.7.832.0 (2024-06-14 18:24 UTC)
+* DataZone (3.7.304.0)
+	* This release introduces a new default service blueprint for custom environment creation.
+* EC2 (3.7.330.1)
+	* Documentation updates for Amazon EC2.
+* Macie2 (3.7.303.0)
+	* This release adds support for managing the status of automated sensitive data discovery for individual accounts in an organization, and determining whether individual S3 buckets are included in the scope of the analyses.
+* MediaConvert (3.7.305.0)
+	* This release adds the ability to search for historical job records within the management console using a search box and/or via the SDK/CLI with partial string matching search on input file name.
+* Route53Domains (3.7.302.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+
 ### 3.7.831.0 (2024-06-13 18:19 UTC)
 * CloudHSMV2 (3.7.301.0)
 	* Added support for hsm type hsm2m.medium. Added supported for creating a cluster in FIPS or NON_FIPS mode.
