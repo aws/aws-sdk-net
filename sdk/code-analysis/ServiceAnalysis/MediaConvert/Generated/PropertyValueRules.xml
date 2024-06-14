@@ -31,6 +31,11 @@
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.SearchJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.UpdateJobTemplateRequest.Priority</property>
     <min>-50</min>
     <max>50</max>
