@@ -51,8 +51,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
         /// The strategy used by the Capacity Reservation Fleet to determine which of the specified
-        /// instance types to use. For more information, see For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy">
-        /// Allocation strategy</a> in the Amazon EC2 User Guide.
+        /// instance types to use. For more information, see For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy">Allocation
+        /// strategy</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public string AllocationStrategy
@@ -321,7 +321,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The total number of capacity units for which the Capacity Reservation Fleet reserves
         /// capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total
-        /// target capacity</a> in the Amazon EC2 User Guide.
+        /// target capacity</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public int TotalTargetCapacity

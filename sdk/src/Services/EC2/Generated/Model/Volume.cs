@@ -174,8 +174,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was
-        /// used to protect the volume encryption key for the volume.
+        /// The Amazon Resource Name (ARN) of the KMS key that was used to protect the volume
+        /// encryption key for the volume.
         /// </para>
         /// </summary>
         public string KmsKeyId

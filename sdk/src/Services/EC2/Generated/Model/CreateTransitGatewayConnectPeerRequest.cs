@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html#tgw-connect-peer">Connect
-    /// peers</a> in the <i>Transit Gateways Guide</i>.
+    /// peers</a> in the <i>Amazon Web Services Transit Gateways Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateTransitGatewayConnectPeerRequest : AmazonEC2Request

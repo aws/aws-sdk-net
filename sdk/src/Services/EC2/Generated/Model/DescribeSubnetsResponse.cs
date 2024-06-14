@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// Information about one or more subnets.
+        /// Information about the subnets.
         /// </para>
         /// </summary>
         public List<Subnet> Subnets

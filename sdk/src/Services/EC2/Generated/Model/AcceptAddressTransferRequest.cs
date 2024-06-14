@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the AcceptAddressTransfer operation.
     /// Accepts an Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept">Accept
-    /// a transferred Elastic IP address</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// a transferred Elastic IP address</a> in the <i>Amazon VPC User Guide</i>.
     /// </summary>
     public partial class AcceptAddressTransferRequest : AmazonEC2Request
     {

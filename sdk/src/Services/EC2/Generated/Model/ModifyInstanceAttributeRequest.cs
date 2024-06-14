@@ -144,8 +144,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DisableApiStop. 
         /// <para>
         /// Indicates whether an instance is enabled for stop protection. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-        /// Protection</a>.
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable
+        /// stop protection for your instance</a>.
         /// </para>
         /// </summary>
         public bool DisableApiStop

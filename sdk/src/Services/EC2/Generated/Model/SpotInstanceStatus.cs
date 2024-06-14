@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Code. 
         /// <para>
         /// The status code. For a list of status codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html#spot-instance-request-status-understand">Spot
-        /// request status codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// request status codes</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public string Code

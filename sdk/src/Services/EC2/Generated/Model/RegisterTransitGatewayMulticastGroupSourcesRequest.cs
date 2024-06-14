@@ -37,8 +37,8 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// A multicast source is a network interface attached to a supported instance that sends
-    /// multicast traffic. For information about supported instances, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
-    /// Considerations</a> in <i>Amazon VPC Transit Gateways</i>.
+    /// multicast traffic. For more information about supported instances, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-multicast-overview.html">Multicast
+    /// on transit gateways</a> in the <i>Amazon Web Services Transit Gateways Guide</i>.
     /// </para>
     ///  
     /// <para>

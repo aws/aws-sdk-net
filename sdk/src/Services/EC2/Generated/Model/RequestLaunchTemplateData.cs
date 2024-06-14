@@ -114,8 +114,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CpuOptions. 
         /// <para>
-        /// The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-        /// CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
+        /// CPU options</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public LaunchTemplateCpuOptionsRequest CpuOptions
@@ -152,8 +152,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DisableApiStop. 
         /// <para>
         /// Indicates whether to enable the instance for stop protection. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-        /// protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable
+        /// stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public bool DisableApiStop
@@ -275,9 +275,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property EnclaveOptions. 
         /// <para>
         /// Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
-        /// For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
-        /// What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
-        /// Enclaves User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
+        /// is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -302,7 +302,7 @@ namespace Amazon.EC2.Model
         /// Indicates whether an instance is enabled for hibernation. This parameter is valid
         /// only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
         /// prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-        /// your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public LaunchTemplateHibernationOptionsRequest HibernationOptions
@@ -374,8 +374,7 @@ namespace Amazon.EC2.Model
         ///  </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
-        /// a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute
-        /// Cloud User Guide</i>.
+        /// a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public string ImageId
@@ -499,8 +498,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Amazon
+        /// EC2 instance types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -528,7 +527,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User
-        /// provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// provided kernels</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -609,7 +608,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MetadataOptions. 
         /// <para>
         /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-        /// metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public LaunchTemplateInstanceMetadataOptionsRequest MetadataOptions
@@ -705,7 +704,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User
-        /// provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// provided kernels</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -792,15 +791,13 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The user data to make available to the instance. You must provide base64-encoded text.
         /// User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
-        /// commands on your Linux instance at launch</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instancedata-add-user-data.html">Work
-        /// with instance user data</a> (Windows) in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.
+        /// commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If you are creating the launch template for use with Batch, the user data must be
-        /// provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">
-        /// MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon
+        /// provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">MIME
+        /// multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon
         /// EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>

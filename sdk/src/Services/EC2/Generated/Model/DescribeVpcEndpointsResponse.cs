@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcEndpoints. 
         /// <para>
-        /// Information about the endpoints.
+        /// Information about the VPC endpoints.
         /// </para>
         /// </summary>
         public List<VpcEndpoint> VpcEndpoints

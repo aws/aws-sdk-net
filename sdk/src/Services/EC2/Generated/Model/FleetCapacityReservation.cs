@@ -141,8 +141,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property FulfilledCapacity. 
         /// <para>
         /// The number of capacity units fulfilled by the Capacity Reservation. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">
-        /// Total target capacity</a> in the Amazon EC2 User Guide.
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total
+        /// target capacity</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public double FulfilledCapacity
@@ -197,8 +197,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Priority. 
         /// <para>
         /// The priority of the instance type in the Capacity Reservation Fleet. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">
-        /// Instance type priority</a> in the Amazon EC2 User Guide.
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">Instance
+        /// type priority</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -236,8 +236,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Weight. 
         /// <para>
         /// The weight of the instance type in the Capacity Reservation Fleet. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight">
-        /// Instance type weight</a> in the Amazon EC2 User Guide.
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight">Instance
+        /// type weight</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public double Weight
