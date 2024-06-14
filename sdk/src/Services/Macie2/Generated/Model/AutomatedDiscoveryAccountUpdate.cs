@@ -30,51 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListInvitations operation.
-    /// Retrieves information about Amazon Macie membership invitations that were received
-    /// by an account.
+    /// Changes the status of automated sensitive data discovery for an Amazon Macie account.
     /// </summary>
-    public partial class ListInvitationsRequest : AmazonMacie2Request
+    public partial class AutomatedDiscoveryAccountUpdate
     {
-        private int? _maxResults;
-        private string _nextToken;
+        private string _accountId;
+        private AutomatedDiscoveryAccountStatus _status;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property AccountId. 
         /// <para>
-        /// The maximum number of items to include in each page of a paginated response.
+        /// The Amazon Web Services account ID for the account.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
-        public int MaxResults
+        public string AccountId
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._accountId; }
+            set { this._accountId = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
         {
-            return this._maxResults.HasValue; 
+            return this._accountId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The nextToken string that specifies which page of results to return in a paginated
-        /// response.
+        /// The new status of automated sensitive data discovery for the account. Valid values
+        /// are: ENABLED, perform automated sensitive data discovery activities for the account;
+        /// and, DISABLED, don't perform automated sensitive data discovery activities for the
+        /// account.
         /// </para>
         /// </summary>
-        public string NextToken
+        public AutomatedDiscoveryAccountStatus Status
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._nextToken != null;
+            return this._status != null;
         }
 
     }

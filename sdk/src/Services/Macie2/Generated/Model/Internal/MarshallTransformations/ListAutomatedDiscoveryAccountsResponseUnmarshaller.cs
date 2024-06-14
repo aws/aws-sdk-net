@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetAutomatedDiscoveryConfiguration operation
+    /// Response Unmarshaller for ListAutomatedDiscoveryAccounts operation
     /// </summary>  
-    public class GetAutomatedDiscoveryConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListAutomatedDiscoveryAccountsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,52 +46,22 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetAutomatedDiscoveryConfigurationResponse response = new GetAutomatedDiscoveryConfigurationResponse();
+            ListAutomatedDiscoveryAccountsResponse response = new ListAutomatedDiscoveryAccountsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("autoEnableOrganizationMembers", targetDepth))
+                if (context.TestExpression("items", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AutomatedDiscoveryAccount, AutomatedDiscoveryAccountUnmarshaller>(AutomatedDiscoveryAccountUnmarshaller.Instance);
+                    response.Items = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AutoEnableOrganizationMembers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("classificationScopeId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ClassificationScopeId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("disabledAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.DisabledAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("firstEnabledAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.FirstEnabledAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sensitivityInspectionTemplateId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SensitivityInspectionTemplateId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -125,6 +95,10 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -137,9 +111,9 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             return new AmazonMacie2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetAutomatedDiscoveryConfigurationResponseUnmarshaller _instance = new GetAutomatedDiscoveryConfigurationResponseUnmarshaller();        
+        private static ListAutomatedDiscoveryAccountsResponseUnmarshaller _instance = new ListAutomatedDiscoveryAccountsResponseUnmarshaller();        
 
-        internal static GetAutomatedDiscoveryConfigurationResponseUnmarshaller GetInstance()
+        internal static ListAutomatedDiscoveryAccountsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -147,7 +121,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetAutomatedDiscoveryConfigurationResponseUnmarshaller Instance
+        public static ListAutomatedDiscoveryAccountsResponseUnmarshaller Instance
         {
             get
             {

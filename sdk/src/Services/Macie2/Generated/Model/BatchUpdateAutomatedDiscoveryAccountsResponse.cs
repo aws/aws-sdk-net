@@ -30,31 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies where to store data classification results, and the encryption settings
-    /// to use when storing results in that location. The location must be an S3 general purpose
-    /// bucket.
+    /// This is the response object from the BatchUpdateAutomatedDiscoveryAccounts operation.
     /// </summary>
-    public partial class ClassificationExportConfiguration
+    public partial class BatchUpdateAutomatedDiscoveryAccountsResponse : AmazonWebServiceResponse
     {
-        private S3Destination _s3Destination;
+        private List<AutomatedDiscoveryAccountUpdateError> _errors = AWSConfigs.InitializeCollections ? new List<AutomatedDiscoveryAccountUpdateError>() : null;
 
         /// <summary>
-        /// Gets and sets the property S3Destination. 
+        /// Gets and sets the property Errors. 
         /// <para>
-        /// The S3 bucket to store data classification results in, and the encryption settings
-        /// to use when storing results in that bucket.
+        /// An array of objects, one for each account whose status wasn’t changed. Each object
+        /// identifies the account and explains why the status of automated sensitive data discovery
+        /// wasn’t changed for the account. This value is null if the request succeeded for all
+        /// specified accounts.
         /// </para>
         /// </summary>
-        public S3Destination S3Destination
+        public List<AutomatedDiscoveryAccountUpdateError> Errors
         {
-            get { return this._s3Destination; }
-            set { this._s3Destination = value; }
+            get { return this._errors; }
+            set { this._errors = value; }
         }
 
-        // Check to see if S3Destination property is set
-        internal bool IsSetS3Destination()
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
         {
-            return this._s3Destination != null;
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -72,6 +72,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("automatedDiscoveryMonitoringStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AutomatedDiscoveryMonitoringStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bucketName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

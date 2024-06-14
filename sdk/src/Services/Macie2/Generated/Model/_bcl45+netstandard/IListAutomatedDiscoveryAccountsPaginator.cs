@@ -16,26 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the macie2-2020-01-01.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
-#pragma warning disable CS0612,CS0618,CS1570
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetAutomatedDiscoveryConfiguration operation.
-    /// Retrieves the configuration settings and status of automated sensitive data discovery
-    /// for an organization or standalone account.
-    /// </summary>
-    public partial class GetAutomatedDiscoveryConfigurationRequest : AmazonMacie2Request
+    /// Paginator for the ListAutomatedDiscoveryAccounts operation
+    ///</summary>
+    public interface IListAutomatedDiscoveryAccountsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListAutomatedDiscoveryAccountsResponse> Responses { get; }
 
+        /// <summary>
+        /// Enumerable containing all of the Items
+        /// </summary>
+        IPaginatedEnumerable<AutomatedDiscoveryAccount> Items { get; }
     }
 }

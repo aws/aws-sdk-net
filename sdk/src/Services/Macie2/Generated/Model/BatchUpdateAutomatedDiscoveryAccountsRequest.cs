@@ -30,31 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies where to store data classification results, and the encryption settings
-    /// to use when storing results in that location. The location must be an S3 general purpose
-    /// bucket.
+    /// Container for the parameters to the BatchUpdateAutomatedDiscoveryAccounts operation.
+    /// Changes the status of automated sensitive data discovery for one or more accounts.
     /// </summary>
-    public partial class ClassificationExportConfiguration
+    public partial class BatchUpdateAutomatedDiscoveryAccountsRequest : AmazonMacie2Request
     {
-        private S3Destination _s3Destination;
+        private List<AutomatedDiscoveryAccountUpdate> _accounts = AWSConfigs.InitializeCollections ? new List<AutomatedDiscoveryAccountUpdate>() : null;
 
         /// <summary>
-        /// Gets and sets the property S3Destination. 
+        /// Gets and sets the property Accounts. 
         /// <para>
-        /// The S3 bucket to store data classification results in, and the encryption settings
-        /// to use when storing results in that bucket.
+        /// An array of objects, one for each account to change the status of automated sensitive
+        /// data discovery for. Each object specifies the Amazon Web Services account ID for an
+        /// account and a new status for that account.
         /// </para>
         /// </summary>
-        public S3Destination S3Destination
+        public List<AutomatedDiscoveryAccountUpdate> Accounts
         {
-            get { return this._s3Destination; }
-            set { this._s3Destination = value; }
+            get { return this._accounts; }
+            set { this._accounts = value; }
         }
 
-        // Check to see if S3Destination property is set
-        internal bool IsSetS3Destination()
+        // Check to see if Accounts property is set
+        internal bool IsSetAccounts()
         {
-            return this._s3Destination != null;
+            return this._accounts != null && (this._accounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

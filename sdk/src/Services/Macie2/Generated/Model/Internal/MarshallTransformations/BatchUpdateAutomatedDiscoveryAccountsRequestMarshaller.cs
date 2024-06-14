@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateAutomatedDiscoveryConfiguration Request Marshaller
+    /// BatchUpdateAutomatedDiscoveryAccounts Request Marshaller
     /// </summary>       
-    public class UpdateAutomatedDiscoveryConfigurationRequestMarshaller : IMarshaller<IRequest, UpdateAutomatedDiscoveryConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class BatchUpdateAutomatedDiscoveryAccountsRequestMarshaller : IMarshaller<IRequest, BatchUpdateAutomatedDiscoveryAccountsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateAutomatedDiscoveryConfigurationRequest)input);
+            return this.Marshall((BatchUpdateAutomatedDiscoveryAccountsRequest)input);
         }
 
         /// <summary>
@@ -53,30 +53,34 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateAutomatedDiscoveryConfigurationRequest publicRequest)
+        public IRequest Marshall(BatchUpdateAutomatedDiscoveryAccountsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Macie2");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-01-01";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "PATCH";
 
-            request.ResourcePath = "/automated-discovery/configuration";
+            request.ResourcePath = "/automated-discovery/accounts";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutoEnableOrganizationMembers())
+                if(publicRequest.IsSetAccounts())
                 {
-                    context.Writer.WritePropertyName("autoEnableOrganizationMembers");
-                    context.Writer.Write(publicRequest.AutoEnableOrganizationMembers);
-                }
+                    context.Writer.WritePropertyName("accounts");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAccountsListValue in publicRequest.Accounts)
+                    {
+                        context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.Write(publicRequest.Status);
+                        var marshaller = AutomatedDiscoveryAccountUpdateMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAccountsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -87,9 +91,9 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateAutomatedDiscoveryConfigurationRequestMarshaller _instance = new UpdateAutomatedDiscoveryConfigurationRequestMarshaller();        
+        private static BatchUpdateAutomatedDiscoveryAccountsRequestMarshaller _instance = new BatchUpdateAutomatedDiscoveryAccountsRequestMarshaller();        
 
-        internal static UpdateAutomatedDiscoveryConfigurationRequestMarshaller GetInstance()
+        internal static BatchUpdateAutomatedDiscoveryAccountsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -97,7 +101,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateAutomatedDiscoveryConfigurationRequestMarshaller Instance
+        public static BatchUpdateAutomatedDiscoveryAccountsRequestMarshaller Instance
         {
             get
             {

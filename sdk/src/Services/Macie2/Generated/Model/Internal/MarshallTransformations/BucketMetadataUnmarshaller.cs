@@ -78,6 +78,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AllowsUnencryptedObjectUploads = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("automatedDiscoveryMonitoringStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AutomatedDiscoveryMonitoringStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bucketArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetAutomatedDiscoveryConfiguration operation
+    /// Response Unmarshaller for BatchUpdateAutomatedDiscoveryAccounts operation
     /// </summary>  
-    public class GetAutomatedDiscoveryConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class BatchUpdateAutomatedDiscoveryAccountsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,52 +46,16 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetAutomatedDiscoveryConfigurationResponse response = new GetAutomatedDiscoveryConfigurationResponse();
+            BatchUpdateAutomatedDiscoveryAccountsResponse response = new BatchUpdateAutomatedDiscoveryAccountsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("autoEnableOrganizationMembers", targetDepth))
+                if (context.TestExpression("errors", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AutoEnableOrganizationMembers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("classificationScopeId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ClassificationScopeId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("disabledAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.DisabledAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("firstEnabledAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.FirstEnabledAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sensitivityInspectionTemplateId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SensitivityInspectionTemplateId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AutomatedDiscoveryAccountUpdateError, AutomatedDiscoveryAccountUpdateErrorUnmarshaller>(AutomatedDiscoveryAccountUpdateErrorUnmarshaller.Instance);
+                    response.Errors = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -121,6 +85,10 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -137,9 +105,9 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             return new AmazonMacie2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetAutomatedDiscoveryConfigurationResponseUnmarshaller _instance = new GetAutomatedDiscoveryConfigurationResponseUnmarshaller();        
+        private static BatchUpdateAutomatedDiscoveryAccountsResponseUnmarshaller _instance = new BatchUpdateAutomatedDiscoveryAccountsResponseUnmarshaller();        
 
-        internal static GetAutomatedDiscoveryConfigurationResponseUnmarshaller GetInstance()
+        internal static BatchUpdateAutomatedDiscoveryAccountsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -147,7 +115,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetAutomatedDiscoveryConfigurationResponseUnmarshaller Instance
+        public static BatchUpdateAutomatedDiscoveryAccountsResponseUnmarshaller Instance
         {
             get
             {

@@ -163,7 +163,7 @@ namespace Amazon.Macie2.Model
         /// </li> <li>
         /// <para>
         /// SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this
-        /// value, use the scheduleFrequency property to define the recurrence pattern for the
+        /// value, use the scheduleFrequency property to specify the recurrence pattern for the
         /// job.
         /// </para>
         /// </li></ul>
@@ -253,9 +253,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about individual managed data identifiers or to determine which ones
-        /// are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
-        /// managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+        /// To learn about individual managed data identifiers or determine which ones are in
+        /// the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
+        /// managed data identifiers</a> or <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
         /// managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.
         /// </para>
         /// </summary>

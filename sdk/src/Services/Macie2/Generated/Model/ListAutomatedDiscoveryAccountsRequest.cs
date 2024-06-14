@@ -30,14 +30,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListInvitations operation.
-    /// Retrieves information about Amazon Macie membership invitations that were received
-    /// by an account.
+    /// Container for the parameters to the ListAutomatedDiscoveryAccounts operation.
+    /// Retrieves the status of automated sensitive data discovery for one or more accounts.
     /// </summary>
-    public partial class ListInvitationsRequest : AmazonMacie2Request
+    public partial class ListAutomatedDiscoveryAccountsRequest : AmazonMacie2Request
     {
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property AccountIds. 
+        /// <para>
+        /// The Amazon Web Services account ID for each account, for as many as 50 accounts. To
+        /// retrieve the status for multiple accounts, append the accountIds parameter and argument
+        /// for each account, separated by an ampersand (&amp;). To retrieve the status for all
+        /// the accounts in an organization, omit this parameter.
+        /// </para>
+        /// </summary>
+        public List<string> AccountIds
+        {
+            get { return this._accountIds; }
+            set { this._accountIds = value; }
+        }
+
+        // Check to see if AccountIds property is set
+        internal bool IsSetAccountIds()
+        {
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

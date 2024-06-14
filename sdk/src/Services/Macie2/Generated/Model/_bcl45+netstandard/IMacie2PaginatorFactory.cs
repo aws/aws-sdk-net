@@ -42,6 +42,11 @@ namespace Amazon.Macie2.Model
         IListAllowListsPaginator ListAllowLists(ListAllowListsRequest request);
 
         /// <summary>
+        /// Paginator for ListAutomatedDiscoveryAccounts operation
+        ///</summary>
+        IListAutomatedDiscoveryAccountsPaginator ListAutomatedDiscoveryAccounts(ListAutomatedDiscoveryAccountsRequest request);
+
+        /// <summary>
         /// Paginator for ListClassificationJobs operation
         ///</summary>
         IListClassificationJobsPaginator ListClassificationJobs(ListClassificationJobsRequest request);
