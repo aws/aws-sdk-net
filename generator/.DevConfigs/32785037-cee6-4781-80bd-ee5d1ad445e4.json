@@ -1,0 +1,18 @@
+{
+    "services": [
+        {
+            "serviceName": "SecurityToken",
+            "type": "patch",
+            "changeLogMessages": [
+                "Added support for Tags and TransitiveTagKeys in ICoreAmazonSTS.CredentialsFromAssumeRoleAuthentication() method."
+            ]
+        }
+    ],
+    "core": {
+      "changeLogMessages": [
+        "Added Tags and TransitiveTagKeys properties to AssumeRoleAWSCredentialsOptions class."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
