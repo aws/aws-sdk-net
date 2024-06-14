@@ -16,6 +16,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
 
@@ -85,5 +86,21 @@ namespace Amazon.Runtime
         /// operation.
         /// </summary>
         public string SourceIdentity { get; set; }
+
+        /// <summary>
+        /// A list of session tags that you want to pass. Each session tag consists of a key name 
+        /// and an associated value. 
+        /// For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
+        /// Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.
+        /// </summary>
+        public List<KeyValuePair<string, string>> Tags { get; set; }
+
+        /// <summary>
+        /// A list of keys for session tags that you want to set as transitive. If you set a tag
+        /// key as transitive, the corresponding key and value passes to subsequent sessions in
+        /// a role chain. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">Chaining
+        /// Roles with Session Tags</a> in the <i>IAM User Guide</i>.
+        /// </summary>
+        public List<string> TransitiveTagKeys { get; set; }
     }
 }
