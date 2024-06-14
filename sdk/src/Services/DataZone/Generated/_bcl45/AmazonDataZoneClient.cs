@@ -436,6 +436,89 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  AssociateEnvironmentRole
+
+
+        /// <summary>
+        /// Associates the environment role in Amazon DataZone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnvironmentRole service method.</param>
+        /// 
+        /// <returns>The response from the AssociateEnvironmentRole service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssociateEnvironmentRole">REST API Reference for AssociateEnvironmentRole Operation</seealso>
+        public virtual AssociateEnvironmentRoleResponse AssociateEnvironmentRole(AssociateEnvironmentRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateEnvironmentRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEnvironmentRoleResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateEnvironmentRoleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates the environment role in Amazon DataZone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnvironmentRole service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateEnvironmentRole service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssociateEnvironmentRole">REST API Reference for AssociateEnvironmentRole Operation</seealso>
+        public virtual Task<AssociateEnvironmentRoleResponse> AssociateEnvironmentRoleAsync(AssociateEnvironmentRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateEnvironmentRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEnvironmentRoleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateEnvironmentRoleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelMetadataGenerationRun
 
 
@@ -1114,6 +1197,91 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateEnvironmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateEnvironmentAction
+
+
+        /// <summary>
+        /// Creates an action for the environment, for example, creates a console link for an
+        /// analytics tool that is available in this environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateEnvironmentAction service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateEnvironmentAction">REST API Reference for CreateEnvironmentAction Operation</seealso>
+        public virtual CreateEnvironmentActionResponse CreateEnvironmentAction(CreateEnvironmentActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEnvironmentActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEnvironmentActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an action for the environment, for example, creates a console link for an
+        /// analytics tool that is available in this environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEnvironmentAction service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateEnvironmentAction">REST API Reference for CreateEnvironmentAction Operation</seealso>
+        public virtual Task<CreateEnvironmentActionResponse> CreateEnvironmentActionAsync(CreateEnvironmentActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEnvironmentActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateEnvironmentActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2531,6 +2699,91 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  DeleteEnvironmentAction
+
+
+        /// <summary>
+        /// Deletes an action for the environment, for example, deletes a console link for an
+        /// analytics tool that is available in this environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEnvironmentAction service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteEnvironmentAction">REST API Reference for DeleteEnvironmentAction Operation</seealso>
+        public virtual DeleteEnvironmentActionResponse DeleteEnvironmentAction(DeleteEnvironmentActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEnvironmentActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEnvironmentActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an action for the environment, for example, deletes a console link for an
+        /// analytics tool that is available in this environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEnvironmentAction service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteEnvironmentAction">REST API Reference for DeleteEnvironmentAction Operation</seealso>
+        public virtual Task<DeleteEnvironmentActionResponse> DeleteEnvironmentActionAsync(DeleteEnvironmentActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEnvironmentActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteEnvironmentActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteEnvironmentBlueprintConfiguration
 
 
@@ -3497,6 +3750,89 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  DisassociateEnvironmentRole
+
+
+        /// <summary>
+        /// Disassociates the environment role in Amazon DataZone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnvironmentRole service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateEnvironmentRole service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DisassociateEnvironmentRole">REST API Reference for DisassociateEnvironmentRole Operation</seealso>
+        public virtual DisassociateEnvironmentRoleResponse DisassociateEnvironmentRole(DisassociateEnvironmentRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateEnvironmentRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEnvironmentRoleResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateEnvironmentRoleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates the environment role in Amazon DataZone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnvironmentRole service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateEnvironmentRole service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DisassociateEnvironmentRole">REST API Reference for DisassociateEnvironmentRole Operation</seealso>
+        public virtual Task<DisassociateEnvironmentRoleResponse> DisassociateEnvironmentRoleAsync(DisassociateEnvironmentRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateEnvironmentRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEnvironmentRoleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateEnvironmentRoleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAsset
 
 
@@ -3985,6 +4321,83 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetEnvironmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEnvironmentAction
+
+
+        /// <summary>
+        /// Gets the specified environment action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnvironmentAction service method.</param>
+        /// 
+        /// <returns>The response from the GetEnvironmentAction service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetEnvironmentAction">REST API Reference for GetEnvironmentAction Operation</seealso>
+        public virtual GetEnvironmentActionResponse GetEnvironmentAction(GetEnvironmentActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEnvironmentActionResponseUnmarshaller.Instance;
+
+            return Invoke<GetEnvironmentActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the specified environment action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnvironmentAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEnvironmentAction service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetEnvironmentAction">REST API Reference for GetEnvironmentAction Operation</seealso>
+        public virtual Task<GetEnvironmentActionResponse> GetEnvironmentActionAsync(GetEnvironmentActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEnvironmentActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetEnvironmentActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5733,6 +6146,77 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEnvironmentActions
+
+
+        /// <summary>
+        /// Lists existing environment actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEnvironmentActions service method.</param>
+        /// 
+        /// <returns>The response from the ListEnvironmentActions service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEnvironmentActions">REST API Reference for ListEnvironmentActions Operation</seealso>
+        public virtual ListEnvironmentActionsResponse ListEnvironmentActions(ListEnvironmentActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEnvironmentActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEnvironmentActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEnvironmentActionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists existing environment actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEnvironmentActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEnvironmentActions service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEnvironmentActions">REST API Reference for ListEnvironmentActions Operation</seealso>
+        public virtual Task<ListEnvironmentActionsResponse> ListEnvironmentActionsAsync(ListEnvironmentActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEnvironmentActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEnvironmentActionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListEnvironmentActionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8170,6 +8654,89 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateEnvironmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEnvironmentAction
+
+
+        /// <summary>
+        /// Updates an environment action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironmentAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEnvironmentAction service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateEnvironmentAction">REST API Reference for UpdateEnvironmentAction Operation</seealso>
+        public virtual UpdateEnvironmentActionResponse UpdateEnvironmentAction(UpdateEnvironmentActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEnvironmentActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEnvironmentActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an environment action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironmentAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEnvironmentAction service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateEnvironmentAction">REST API Reference for UpdateEnvironmentAction Operation</seealso>
+        public virtual Task<UpdateEnvironmentActionResponse> UpdateEnvironmentActionAsync(UpdateEnvironmentActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEnvironmentActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateEnvironmentActionResponse>(request, options, cancellationToken);
         }
 
         #endregion

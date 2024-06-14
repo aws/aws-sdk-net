@@ -76,6 +76,24 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEnvironmentAccountIdentifier())
+                {
+                    context.Writer.WritePropertyName("environmentAccountIdentifier");
+                    context.Writer.Write(publicRequest.EnvironmentAccountIdentifier);
+                }
+
+                if(publicRequest.IsSetEnvironmentAccountRegion())
+                {
+                    context.Writer.WritePropertyName("environmentAccountRegion");
+                    context.Writer.Write(publicRequest.EnvironmentAccountRegion);
+                }
+
+                if(publicRequest.IsSetEnvironmentBlueprintIdentifier())
+                {
+                    context.Writer.WritePropertyName("environmentBlueprintIdentifier");
+                    context.Writer.Write(publicRequest.EnvironmentBlueprintIdentifier);
+                }
+
                 if(publicRequest.IsSetEnvironmentProfileIdentifier())
                 {
                     context.Writer.WritePropertyName("environmentProfileIdentifier");

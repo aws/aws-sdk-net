@@ -38,6 +38,7 @@ namespace Amazon.DataZone.Model
         private string _clientToken;
         private string _domainIdentifier;
         private string _identifier;
+        private bool? _retainPermissionsOnRevokeFailure;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -94,6 +95,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetainPermissionsOnRevokeFailure. 
+        /// <para>
+        /// Specifies that the granted permissions are retained in case of a self-subscribe functionality
+        /// failure for a data source.
+        /// </para>
+        /// </summary>
+        public bool RetainPermissionsOnRevokeFailure
+        {
+            get { return this._retainPermissionsOnRevokeFailure.GetValueOrDefault(); }
+            set { this._retainPermissionsOnRevokeFailure = value; }
+        }
+
+        // Check to see if RetainPermissionsOnRevokeFailure property is set
+        internal bool IsSetRetainPermissionsOnRevokeFailure()
+        {
+            return this._retainPermissionsOnRevokeFailure.HasValue; 
         }
 
     }

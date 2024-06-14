@@ -52,6 +52,11 @@ namespace Amazon.DataZone.Model
         IListDomainsPaginator ListDomains(ListDomainsRequest request);
 
         /// <summary>
+        /// Paginator for ListEnvironmentActions operation
+        ///</summary>
+        IListEnvironmentActionsPaginator ListEnvironmentActions(ListEnvironmentActionsRequest request);
+
+        /// <summary>
         /// Paginator for ListEnvironmentBlueprintConfigurations operation
         ///</summary>
         IListEnvironmentBlueprintConfigurationsPaginator ListEnvironmentBlueprintConfigurations(ListEnvironmentBlueprintConfigurationsRequest request);

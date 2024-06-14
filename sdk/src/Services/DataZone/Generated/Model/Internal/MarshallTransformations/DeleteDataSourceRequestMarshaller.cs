@@ -71,6 +71,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             else            
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
+            
+            if (publicRequest.IsSetRetainPermissionsOnRevokeFailure())
+                request.Parameters.Add("retainPermissionsOnRevokeFailure", StringUtils.FromBool(publicRequest.RetainPermissionsOnRevokeFailure));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/data-sources/{identifier}";
             request.UseQueryString = true;
 
