@@ -192,6 +192,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.PreviousRunId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProfileName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProfileName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SecurityConfiguration", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

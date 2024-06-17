@@ -566,6 +566,21 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateUsageProfileRequest.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateUsageProfileRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateUsageProfileResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateUserDefinedFunctionRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -860,6 +875,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DeleteTriggerResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteUsageProfileRequest.Name</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -1705,6 +1725,21 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetUsageProfileRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetUsageProfileResponse.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetUsageProfileResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetUserDefinedFunctionRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -1936,6 +1971,19 @@
     <property>Amazon.Glue.Model.ListTriggersRequest.MaxResults</property>
     <min>1</min>
     <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListUsageProfilesRequest.MaxResults</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListUsageProfilesRequest.NextToken</property>
+    <max>400000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListUsageProfilesResponse.NextToken</property>
+    <max>400000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ListWorkflowsRequest.MaxResults</property>
@@ -2744,6 +2792,21 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateUsageProfileRequest.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateUsageProfileRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateUsageProfileResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.UpdateUserDefinedFunctionRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -3211,6 +3274,24 @@
     <property>Amazon.Glue.Model.Condition.JobName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ConfigurationObject.DefaultValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ConfigurationObject.MaxValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ConfigurationObject.MinValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Connection.Description</property>
@@ -4061,6 +4142,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.Job.ProfileName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.Job.SecurityConfiguration</property>
     <min>1</min>
     <max>255</max>
@@ -4112,6 +4198,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobRun.PreviousRunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.JobRun.ProfileName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -5012,6 +5103,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.Session.ProfileName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.Session.Role</property>
     <min>20</min>
     <max>2048</max>
@@ -5429,6 +5525,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpsertRedshiftTargetOptions.TableLocation</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UsageProfileDefinition.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UsageProfileDefinition.Name</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UserDefinedFunction.CatalogId</property>

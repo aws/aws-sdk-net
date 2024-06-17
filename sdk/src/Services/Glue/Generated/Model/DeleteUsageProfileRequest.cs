@@ -30,38 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetWorkflowRun operation.
-    /// Retrieves the metadata for a given workflow run. Job run history is accessible for
-    /// 90 days for your workflow and job run.
+    /// Container for the parameters to the DeleteUsageProfile operation.
+    /// Deletes the Glue specified usage profile.
     /// </summary>
-    public partial class GetWorkflowRunRequest : AmazonGlueRequest
+    public partial class DeleteUsageProfileRequest : AmazonGlueRequest
     {
-        private bool? _includeGraph;
         private string _name;
-        private string _runId;
-
-        /// <summary>
-        /// Gets and sets the property IncludeGraph. 
-        /// <para>
-        /// Specifies whether to include the workflow graph in response or not.
-        /// </para>
-        /// </summary>
-        public bool IncludeGraph
-        {
-            get { return this._includeGraph.GetValueOrDefault(); }
-            set { this._includeGraph = value; }
-        }
-
-        // Check to see if IncludeGraph property is set
-        internal bool IsSetIncludeGraph()
-        {
-            return this._includeGraph.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the workflow being run.
+        /// The name of the usage profile to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -75,25 +54,6 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RunId. 
-        /// <para>
-        /// The ID of the workflow run.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string RunId
-        {
-            get { return this._runId; }
-            set { this._runId = value; }
-        }
-
-        // Check to see if RunId property is set
-        internal bool IsSetRunId()
-        {
-            return this._runId != null;
         }
 
     }

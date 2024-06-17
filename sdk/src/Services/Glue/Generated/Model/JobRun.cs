@@ -55,6 +55,7 @@ namespace Amazon.Glue.Model
         private int? _numberOfWorkers;
         private List<Predecessor> _predecessorRuns = AWSConfigs.InitializeCollections ? new List<Predecessor>() : null;
         private string _previousRunId;
+        private string _profileName;
         private string _securityConfiguration;
         private DateTime? _startedOn;
         private int? _timeout;
@@ -583,6 +584,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetPreviousRunId()
         {
             return this._previousRunId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileName. 
+        /// <para>
+        /// The name of an Glue usage profile associated with the job run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ProfileName
+        {
+            get { return this._profileName; }
+            set { this._profileName = value; }
+        }
+
+        // Check to see if ProfileName property is set
+        internal bool IsSetProfileName()
+        {
+            return this._profileName != null;
         }
 
         /// <summary>

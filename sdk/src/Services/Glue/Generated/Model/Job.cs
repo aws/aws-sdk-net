@@ -54,6 +54,7 @@ namespace Amazon.Glue.Model
         private Dictionary<string, string> _nonOverridableArguments = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private NotificationProperty _notificationProperty;
         private int? _numberOfWorkers;
+        private string _profileName;
         private string _role;
         private string _securityConfiguration;
         private SourceControlDetails _sourceControlDetails;
@@ -553,6 +554,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetNumberOfWorkers()
         {
             return this._numberOfWorkers.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileName. 
+        /// <para>
+        /// The name of an Glue usage profile associated with the job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ProfileName
+        {
+            get { return this._profileName; }
+            set { this._profileName = value; }
+        }
+
+        // Check to see if ProfileName property is set
+        internal bool IsSetProfileName()
+        {
+            return this._profileName != null;
         }
 
         /// <summary>
