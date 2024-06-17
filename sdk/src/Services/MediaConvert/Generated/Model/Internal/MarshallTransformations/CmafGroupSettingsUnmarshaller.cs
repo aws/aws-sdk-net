@@ -90,6 +90,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodecSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dashIFrameTrickPlayNameModifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DashIFrameTrickPlayNameModifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dashManifestStyle", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
