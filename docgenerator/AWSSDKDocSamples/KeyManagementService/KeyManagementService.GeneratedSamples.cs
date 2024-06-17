@@ -369,18 +369,19 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceDeriveSharedSecret()
         {
-            #region to-derive-a-shared-secret-1716220614829
+            #region to-derive-a-shared-secret-1718381818754
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.DeriveSharedSecret(new DeriveSharedSecretRequest 
             {
                 KeyAgreementAlgorithm = "ECDH", // The key agreement algorithm used to derive the shared secret. The only valid value is ECDH.
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The key identifier for an asymmetric KMS key pair. The private key in the specified key pair is used to derive the shared secret.
-                PublicKey = new MemoryStream(MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvH3Yj0wbkLEpUl95Cv1cJVjsVNSjwGq3tCLnzXfhVwVvmzGN8pYj3U8nKwgouaHbBWNJYjP5VutbbkKS4Kv4GojwZBJyHN17kmxo8yTjRmjR15SKIQ8cqRA2uaERMLnpztIXdZp232PQPbWGxDyXYJ0aJ5EFSag+iSK341kr2kFTpINN7T1ZaX9vfXBdGR+VtkRKMWoHQeWzHrPZ+3irvpXNCKxGUxmPNsJSjPUhuSXT5+0VrY/LEYLQ5lUTrhU6z5/OK0kzaCc66DXc5ipSloS4Xyg+QcYSMxe9xuqO5HtzFImUSKBm1W6eDT6lHnSbpi7vXzNbIX7pWxKw9nmQvQIDAQAB) // The public key in your peer's asymmetric key pair.
+                PublicKey = new MemoryStream(MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvH3Yj0wbkLEpUl95Cv1cJVjsVNSjwGq3tCLnzXfhVwVvmzGN8pYj3U8nKwgouaHbBWNJYjP5VutbbkKS4Kv4GojwZBJyHN17kmxo8yTjRmjR15SKIQ8cqRA2uaERMLnpztIXdZp232PQPbWGxDyXYJ0aJ5EFSag) // The public key in your peer's asymmetric key pair.
             });
 
             string keyAgreementAlgorithm = response.KeyAgreementAlgorithm; // The key agreement algorithm used to derive the shared secret.
             string keyId = response.KeyId; // The asymmetric KMS key pair used to derive the shared secret.
+            string keyOrigin = response.KeyOrigin; // The source of the key material for the specified KMS key.
             MemoryStream sharedSecret = response.SharedSecret; // The raw secret derived from the specified key agreement algorithm, private key in the asymmetric KMS key, and your peer's public key.
 
             #endregion

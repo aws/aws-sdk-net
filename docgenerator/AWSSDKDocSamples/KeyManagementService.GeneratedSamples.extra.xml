@@ -414,7 +414,7 @@
                 <code
                     title="To derive a shared secret"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-derive-a-shared-secret-1716220614829" />
+                    region="to-derive-a-shared-secret-1718381818754" />
             </example>
         </value>
     </doc>
