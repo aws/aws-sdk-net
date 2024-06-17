@@ -1,3 +1,27 @@
+### 3.7.833.0 (2024-06-17 18:31 UTC)
+* ACMPCA (3.7.302.14)
+	* Doc-only update that adds name constraints as an allowed extension for ImportCertificateAuthorityCertificate.
+* Batch (3.7.307.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* CodeBuild (3.7.310.0)
+	* AWS CodeBuild now supports global and organization GitHub webhooks
+* CognitoIdentityProvider (3.7.306.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* DirectoryService (3.7.301.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* ElasticFileSystem (3.7.303.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* Glue (3.7.316.0)
+	* This release introduces a new feature, Usage profiles. Usage profiles allow the AWS Glue admin to create different profiles for various classes of users within the account, enforcing limits and defaults for jobs and sessions.
+* KeyManagementService (3.7.304.1)
+	* Updating SDK example for KMS DeriveSharedSecret API.
+* MediaConvert (3.7.306.0)
+	* This release includes support for creating I-frame only video segments for DASH trick play.
+* SecretsManager (3.7.304.1)
+	* Doc only update for Secrets Manager
+* WAF (3.7.301.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+
 ### 3.7.832.0 (2024-06-14 18:24 UTC)
 * DataZone (3.7.304.0)
 	* This release introduces a new default service blueprint for custom environment creation.
