@@ -722,8 +722,9 @@ namespace Amazon.SecretsManager
         ///  
         /// <para>
         ///  <b>Required permissions: </b> <c>secretsmanager:CreateSecret</c>. If you include
-        /// tags in the secret, you also need <c>secretsmanager:TagResource</c>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        /// tags in the secret, you also need <c>secretsmanager:TagResource</c>. To add replica
+        /// Regions, you must also have <c>secretsmanager:ReplicateSecretToRegions</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -860,8 +861,9 @@ namespace Amazon.SecretsManager
         ///  
         /// <para>
         ///  <b>Required permissions: </b> <c>secretsmanager:CreateSecret</c>. If you include
-        /// tags in the secret, you also need <c>secretsmanager:TagResource</c>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        /// tags in the secret, you also need <c>secretsmanager:TagResource</c>. To add replica
+        /// Regions, you must also have <c>secretsmanager:ReplicateSecretToRegions</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
