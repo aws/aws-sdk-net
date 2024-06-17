@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         private DateTime? _lastModifiedSecret;
         private bool? _manualCreation;
         private string _payloadUrl;
+        private ScopeConfiguration _scopeConfiguration;
         private string _secret;
         private string _url;
 
@@ -175,6 +176,30 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetPayloadUrl()
         {
             return this._payloadUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScopeConfiguration. 
+        /// <para>
+        /// The scope configuration for global or organization webhooks.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Global or organization webhooks are only available for GitHub and Github Enterprise
+        /// webhooks.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ScopeConfiguration ScopeConfiguration
+        {
+            get { return this._scopeConfiguration; }
+            set { this._scopeConfiguration = value; }
+        }
+
+        // Check to see if ScopeConfiguration property is set
+        internal bool IsSetScopeConfiguration()
+        {
+            return this._scopeConfiguration != null;
         }
 
         /// <summary>

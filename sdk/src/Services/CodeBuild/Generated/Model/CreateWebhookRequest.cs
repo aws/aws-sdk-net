@@ -54,6 +54,7 @@ namespace Amazon.CodeBuild.Model
         private List<List<WebhookFilter>> _filterGroups = AWSConfigs.InitializeCollections ? new List<List<WebhookFilter>>() : null;
         private bool? _manualCreation;
         private string _projectName;
+        private ScopeConfiguration _scopeConfiguration;
 
         /// <summary>
         /// Gets and sets the property BranchFilter. 
@@ -167,6 +168,30 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetProjectName()
         {
             return this._projectName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScopeConfiguration. 
+        /// <para>
+        /// The scope configuration for global or organization webhooks.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Global or organization webhooks are only available for GitHub and Github Enterprise
+        /// webhooks.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ScopeConfiguration ScopeConfiguration
+        {
+            get { return this._scopeConfiguration; }
+            set { this._scopeConfiguration = value; }
+        }
+
+        // Check to see if ScopeConfiguration property is set
+        internal bool IsSetScopeConfiguration()
+        {
+            return this._scopeConfiguration != null;
         }
 
     }

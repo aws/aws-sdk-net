@@ -114,6 +114,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProjectName);
                 }
 
+                if(publicRequest.IsSetScopeConfiguration())
+                {
+                    context.Writer.WritePropertyName("scopeConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ScopeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ScopeConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

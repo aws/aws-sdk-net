@@ -209,6 +209,19 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </note> </li> </ul> </li> <li> 
         /// <para>
+        /// REPOSITORY_NAME
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A webhook triggers a build when the repository name matches the regular expression
+        /// pattern.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  Works with GitHub global or organization webhooks only. 
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
+        /// <para>
         /// WORKFLOW_NAME
         /// </para>
         ///  <ul> <li> 

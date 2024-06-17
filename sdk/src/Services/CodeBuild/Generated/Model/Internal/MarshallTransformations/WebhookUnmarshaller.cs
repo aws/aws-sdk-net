@@ -102,6 +102,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.PayloadUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("scopeConfiguration", targetDepth))
+                {
+                    var unmarshaller = ScopeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ScopeConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("secret", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
