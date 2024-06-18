@@ -1,3 +1,30 @@
+### 3.7.834.0 (2024-06-18 18:29 UTC)
+* BedrockRuntime (3.7.304.0)
+	* This release adds support for using Guardrails with the Converse and ConverseStream APIs.
+* CloudTrail (3.7.306.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* ConfigService (3.7.303.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* EKS (3.7.307.0)
+	* This release adds support to surface async fargate customer errors from async path to customer through describe-fargate-profile API response.
+* Lightsail (3.7.306.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* Polly (3.7.304.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* Rekognition (3.7.303.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* SageMaker (3.7.328.0)
+	* Launched a new feature in SageMaker to provide managed MLflow Tracking Servers for customers to track ML experiments. This release also adds a new capability of attaching additional storage to SageMaker HyperPod cluster instances.
+* SecurityToken (3.7.300.107)
+	* Added support for Tags and TransitiveTagKeys in ICoreAmazonSTS.CredentialsFromAssumeRoleAuthentication() method.
+* Shield (3.7.301.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* Snowball (3.7.301.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* Core 3.7.304.17
+	* Added Tags and TransitiveTagKeys properties to AssumeRoleAWSCredentialsOptions class.
+	* All services packages updated to require new Core
+
 ### 3.7.833.0 (2024-06-17 18:31 UTC)
 * ACMPCA (3.7.302.14)
 	* Doc-only update that adds name constraints as an allowed extension for ImportCertificateAuthorityCertificate.
