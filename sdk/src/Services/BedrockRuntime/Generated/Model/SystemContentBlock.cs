@@ -30,11 +30,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// A system content block
+    /// A system content block.
     /// </summary>
     public partial class SystemContentBlock
     {
+        private GuardrailConverseContentBlock _guardContent;
         private string _text;
+
+        /// <summary>
+        /// Gets and sets the property GuardContent. 
+        /// <para>
+        /// A content block to assess with the guardrail. Use with the Converse API (<a>Converse</a>
+        /// and <a>ConverseStream</a>). 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon
+        /// Bedrock User Guide</i>.
+        /// </para>
+        /// </summary>
+        public GuardrailConverseContentBlock GuardContent
+        {
+            get { return this._guardContent; }
+            set { this._guardContent = value; }
+        }
+
+        // Check to see if GuardContent property is set
+        internal bool IsSetGuardContent()
+        {
+            return this._guardContent != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Text. 

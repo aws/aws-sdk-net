@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The model must request a specific tool.
+    /// The model must request a specific tool. For example, <c>{"tool" : {"name" : "Your
+    /// tool name"}}</c>.
     /// 
     ///  <note> 
     /// <para>

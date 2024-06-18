@@ -87,6 +87,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetGuardrailConfig())
+                {
+                    context.Writer.WritePropertyName("guardrailConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GuardrailStreamConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.GuardrailConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetInferenceConfig())
                 {
                     context.Writer.WritePropertyName("inferenceConfig");

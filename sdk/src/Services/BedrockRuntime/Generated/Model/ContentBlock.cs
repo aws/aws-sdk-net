@@ -30,14 +30,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// A block of content for a message.
+    /// A block of content for a message that you pass to, or receive from, a model with the
+    /// Converse API (<a>Converse</a> and <a>ConverseStream</a>).
     /// </summary>
     public partial class ContentBlock
     {
+        private GuardrailConverseContentBlock _guardContent;
         private ImageBlock _image;
         private string _text;
         private ToolResultBlock _toolResult;
         private ToolUseBlock _toolUse;
+
+        /// <summary>
+        /// Gets and sets the property GuardContent. 
+        /// <para>
+        /// Contains the content to assess with the guardrail. If you don't specify <c>guardContent</c>
+        /// in a call to the Converse API, the guardrail (if passed in the Converse API) assesses
+        /// the entire message.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon
+        /// Bedrock User Guide</i>. <pre><c> &lt;/p&gt; </c></pre>
+        /// </summary>
+        public GuardrailConverseContentBlock GuardContent
+        {
+            get { return this._guardContent; }
+            set { this._guardContent = value; }
+        }
+
+        // Check to see if GuardContent property is set
+        internal bool IsSetGuardContent()
+        {
+            return this._guardContent != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Image. 

@@ -255,10 +255,20 @@ namespace Amazon.BedrockRuntime
         /// Sends messages to the specified Amazon Bedrock model. <c>Converse</c> provides a consistent
         /// interface that works with all models that support messages. This allows you to write
         /// code once and use it with different models. Should a model have unique inference parameters,
-        /// you can also pass those unique parameters to the model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
-        /// inference</a> in the Bedrock User Guide.
+        /// you can also pass those unique parameters to the model.
         /// 
+        ///  
+        /// <para>
+        /// For information about the Converse API, see <i>Use the Converse API</i> in the <i>Amazon
+        /// Bedrock User Guide</i>. To use a guardrail, see <i>Use a guardrail with the Converse
+        /// API</i> in the <i>Amazon Bedrock User Guide</i>. To use a tool with a model, see <i>Tool
+        /// use (Function calling)</i> in the <i>Amazon Bedrock User Guide</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example code, see <i>Converse API examples</i> in the <i>Amazon Bedrock User Guide</i>.
+        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permission for the <c>bedrock:InvokeModel</c> action. 
@@ -306,10 +316,20 @@ namespace Amazon.BedrockRuntime
         /// Sends messages to the specified Amazon Bedrock model. <c>Converse</c> provides a consistent
         /// interface that works with all models that support messages. This allows you to write
         /// code once and use it with different models. Should a model have unique inference parameters,
-        /// you can also pass those unique parameters to the model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
-        /// inference</a> in the Bedrock User Guide.
+        /// you can also pass those unique parameters to the model.
         /// 
+        ///  
+        /// <para>
+        /// For information about the Converse API, see <i>Use the Converse API</i> in the <i>Amazon
+        /// Bedrock User Guide</i>. To use a guardrail, see <i>Use a guardrail with the Converse
+        /// API</i> in the <i>Amazon Bedrock User Guide</i>. To use a tool with a model, see <i>Tool
+        /// use (Function calling)</i> in the <i>Amazon Bedrock User Guide</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example code, see <i>Converse API examples</i> in the <i>Amazon Bedrock User Guide</i>.
+        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permission for the <c>bedrock:InvokeModel</c> action. 
@@ -365,8 +385,7 @@ namespace Amazon.BedrockRuntime
         /// stream. <c>ConverseStream</c> provides a consistent API that works with all Amazon
         /// Bedrock models that support messages. This allows you to write code once and use it
         /// with different models. Should a model have unique inference parameters, you can also
-        /// pass those unique parameters to the model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
-        /// inference</a> in the Bedrock User Guide.
+        /// pass those unique parameters to the model. 
         /// 
         ///  
         /// <para>
@@ -375,8 +394,15 @@ namespace Amazon.BedrockRuntime
         /// </para>
         ///  
         /// <para>
-        /// For example code, see <i>Invoke model with streaming code example</i> in the <i>Amazon
-        /// Bedrock User Guide</i>. 
+        /// For information about the Converse API, see <i>Use the Converse API</i> in the <i>Amazon
+        /// Bedrock User Guide</i>. To use a guardrail, see <i>Use a guardrail with the Converse
+        /// API</i> in the <i>Amazon Bedrock User Guide</i>. To use a tool with a model, see <i>Tool
+        /// use (Function calling)</i> in the <i>Amazon Bedrock User Guide</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example code, see <i>Conversation streaming example</i> in the <i>Amazon Bedrock
+        /// User Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -427,8 +453,7 @@ namespace Amazon.BedrockRuntime
         /// stream. <c>ConverseStream</c> provides a consistent API that works with all Amazon
         /// Bedrock models that support messages. This allows you to write code once and use it
         /// with different models. Should a model have unique inference parameters, you can also
-        /// pass those unique parameters to the model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
-        /// inference</a> in the Bedrock User Guide.
+        /// pass those unique parameters to the model. 
         /// 
         ///  
         /// <para>
@@ -437,8 +462,15 @@ namespace Amazon.BedrockRuntime
         /// </para>
         ///  
         /// <para>
-        /// For example code, see <i>Invoke model with streaming code example</i> in the <i>Amazon
-        /// Bedrock User Guide</i>. 
+        /// For information about the Converse API, see <i>Use the Converse API</i> in the <i>Amazon
+        /// Bedrock User Guide</i>. To use a guardrail, see <i>Use a guardrail with the Converse
+        /// API</i> in the <i>Amazon Bedrock User Guide</i>. To use a tool with a model, see <i>Tool
+        /// use (Function calling)</i> in the <i>Amazon Bedrock User Guide</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example code, see <i>Conversation streaming example</i> in the <i>Amazon Bedrock
+        /// User Guide</i>. 
         /// </para>
         ///  
         /// <para>

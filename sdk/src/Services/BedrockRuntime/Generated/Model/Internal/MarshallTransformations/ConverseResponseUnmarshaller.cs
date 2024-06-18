@@ -76,6 +76,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     response.StopReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("trace", targetDepth))
+                {
+                    var unmarshaller = ConverseTraceUnmarshaller.Instance;
+                    response.Trace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("usage", targetDepth))
                 {
                     var unmarshaller = TokenUsageUnmarshaller.Instance;

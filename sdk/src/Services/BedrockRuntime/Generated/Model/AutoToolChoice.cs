@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The Model automatically decides if a tool should be called or to whether to generate
-    /// text instead.
+    /// The Model automatically decides if a tool should be called or whether to generate
+    /// text instead. For example, <c>{"auto" : {}}</c>.
     /// </summary>
     public partial class AutoToolChoice
     {

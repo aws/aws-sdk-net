@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The model must request at least one tool (no text is generated).
+    /// The model must request at least one tool (no text is generated). For example, <c>{"any"
+    /// : {}}</c>.
     /// </summary>
     public partial class AnyToolChoice
     {

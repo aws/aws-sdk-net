@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// Forces a model to use a tool.
+    /// Determines which tools the model should request in a call to <c>Converse</c> or <c>ConverseStream</c>.
+    /// <c>ToolChoice</c> is only supported by Anthropic Claude 3 models and by Mistral AI
+    /// Mistral Large.
     /// </summary>
     public partial class ToolChoice
     {
@@ -59,8 +61,8 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Auto. 
         /// <para>
-        /// The Model automatically decides if a tool should be called or to whether to generate
-        /// text instead.
+        /// (Default). The Model automatically decides if a tool should be called or whether to
+        /// generate text instead. 
         /// </para>
         /// </summary>
         public AutoToolChoice Auto
@@ -78,7 +80,8 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Tool. 
         /// <para>
-        /// The Model must request the specified tool.
+        /// The Model must request the specified tool. Only supported by Anthropic Claude 3 models.
+        /// 
         /// </para>
         /// </summary>
         public SpecificToolChoice Tool

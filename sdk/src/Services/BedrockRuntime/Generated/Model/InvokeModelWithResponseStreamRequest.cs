@@ -87,8 +87,8 @@ namespace Amazon.BedrockRuntime.Model
         /// Gets and sets the property Body. 
         /// <para>
         /// The prompt and inference parameters in the format specified in the <c>contentType</c>
-        /// in the header. To see the format and content of the request and response bodies for
-        /// different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+        /// in the header. You must provide the body in JSON format. To see the format and content
+        /// of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
         /// parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
         /// inference</a> in the Bedrock User Guide.
         /// </para>
@@ -109,7 +109,7 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The MIME type of the input data in the request. The default value is <c>application/json</c>.
+        /// The MIME type of the input data in the request. You must specify <c>application/json</c>.
         /// </para>
         /// </summary>
         public string ContentType

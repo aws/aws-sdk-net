@@ -38,6 +38,7 @@ namespace Amazon.BedrockRuntime.Model
         private ConverseMetrics _metrics;
         private ConverseOutput _output;
         private StopReason _stopReason;
+        private ConverseTrace _trace;
         private TokenUsage _usage;
 
         /// <summary>
@@ -113,6 +114,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetStopReason()
         {
             return this._stopReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Trace. 
+        /// <para>
+        /// A trace object that contains information about the Guardrail behavior.
+        /// </para>
+        /// </summary>
+        public ConverseTrace Trace
+        {
+            get { return this._trace; }
+            set { this._trace = value; }
+        }
+
+        // Check to see if Trace property is set
+        internal bool IsSetTrace()
+        {
+            return this._trace != null;
         }
 
         /// <summary>

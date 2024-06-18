@@ -40,6 +40,7 @@ namespace Amazon.BedrockRuntime.Model
         : IEventStreamEvent
     {
         private ConverseStreamMetrics _metrics;
+        private ConverseStreamTrace _trace;
         private TokenUsage _usage;
 
         /// <summary>
@@ -59,6 +60,25 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetMetrics()
         {
             return this._metrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Trace. 
+        /// <para>
+        /// The trace object in the response from <a>ConverseStream</a> that contains information
+        /// about the guardrail behavior.
+        /// </para>
+        /// </summary>
+        public ConverseStreamTrace Trace
+        {
+            get { return this._trace; }
+            set { this._trace = value; }
+        }
+
+        // Check to see if Trace property is set
+        internal bool IsSetTrace()
+        {
+            return this._trace != null;
         }
 
         /// <summary>

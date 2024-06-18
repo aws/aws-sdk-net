@@ -34,10 +34,20 @@ namespace Amazon.BedrockRuntime.Model
     /// Sends messages to the specified Amazon Bedrock model. <c>Converse</c> provides a consistent
     /// interface that works with all models that support messages. This allows you to write
     /// code once and use it with different models. Should a model have unique inference parameters,
-    /// you can also pass those unique parameters to the model. For more information, see
-    /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
-    /// inference</a> in the Bedrock User Guide.
+    /// you can also pass those unique parameters to the model.
     /// 
+    ///  
+    /// <para>
+    /// For information about the Converse API, see <i>Use the Converse API</i> in the <i>Amazon
+    /// Bedrock User Guide</i>. To use a guardrail, see <i>Use a guardrail with the Converse
+    /// API</i> in the <i>Amazon Bedrock User Guide</i>. To use a tool with a model, see <i>Tool
+    /// use (Function calling)</i> in the <i>Amazon Bedrock User Guide</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// For example code, see <i>Converse API examples</i> in the <i>Amazon Bedrock User Guide</i>.
+    /// 
+    /// </para>
     ///  
     /// <para>
     /// This operation requires permission for the <c>bedrock:InvokeModel</c> action. 
@@ -47,6 +57,7 @@ namespace Amazon.BedrockRuntime.Model
     {
         private Amazon.Runtime.Documents.Document _additionalModelRequestFields;
         private List<string> _additionalModelResponseFieldPaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private GuardrailConfiguration _guardrailConfig;
         private InferenceConfiguration _inferenceConfig;
         private List<Message> _messages = AWSConfigs.InitializeCollections ? new List<Message>() : null;
         private string _modelId;
@@ -78,7 +89,7 @@ namespace Amazon.BedrockRuntime.Model
         /// Gets and sets the property AdditionalModelResponseFieldPaths. 
         /// <para>
         /// Additional model parameters field paths to return in the response. <c>Converse</c>
-        /// returns the requested fields as a JSON Pointer object in the <c>additionalModelResultFields</c>
+        /// returns the requested fields as a JSON Pointer object in the <c>additionalModelResponseFields</c>
         /// field. The following is example JSON for <c>additionalModelResponseFieldPaths</c>.
         /// </para>
         ///  
@@ -108,6 +119,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetAdditionalModelResponseFieldPaths()
         {
             return this._additionalModelResponseFieldPaths != null && (this._additionalModelResponseFieldPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GuardrailConfig. 
+        /// <para>
+        /// Configuration information for a guardrail that you want to use in the request. 
+        /// </para>
+        /// </summary>
+        public GuardrailConfiguration GuardrailConfig
+        {
+            get { return this._guardrailConfig; }
+            set { this._guardrailConfig = value; }
+        }
+
+        // Check to see if GuardrailConfig property is set
+        internal bool IsSetGuardrailConfig()
+        {
+            return this._guardrailConfig != null;
         }
 
         /// <summary>
