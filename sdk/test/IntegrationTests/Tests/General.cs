@@ -613,6 +613,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         [TestMethod]
         [TestCategory("General")]
+        [TestCategory("RequiresIAMUser")]
         public void TestExpiringCredentials()
         {
             // test that non-expired credentials work
