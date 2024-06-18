@@ -325,6 +325,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListMlflowTrackingServers operation
+        ///</summary>
+        public IListMlflowTrackingServersPaginator ListMlflowTrackingServers(ListMlflowTrackingServersRequest request) 
+        {
+            return new ListMlflowTrackingServersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListModelBiasJobDefinitions operation
         ///</summary>
         public IListModelBiasJobDefinitionsPaginator ListModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest request) 

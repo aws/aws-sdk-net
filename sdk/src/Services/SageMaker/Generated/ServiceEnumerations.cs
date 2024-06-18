@@ -8333,6 +8333,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type IsTrackingServerActive.
+    /// </summary>
+    public class IsTrackingServerActive : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for IsTrackingServerActive
+        /// </summary>
+        public static readonly IsTrackingServerActive Active = new IsTrackingServerActive("Active");
+        /// <summary>
+        /// Constant Inactive for IsTrackingServerActive
+        /// </summary>
+        public static readonly IsTrackingServerActive Inactive = new IsTrackingServerActive("Inactive");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IsTrackingServerActive(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IsTrackingServerActive FindValue(string value)
+        {
+            return FindValue<IsTrackingServerActive>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IsTrackingServerActive(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobType.
     /// </summary>
     public class JobType : ConstantClass
@@ -15365,6 +15415,60 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type SortTrackingServerBy.
+    /// </summary>
+    public class SortTrackingServerBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreationTime for SortTrackingServerBy
+        /// </summary>
+        public static readonly SortTrackingServerBy CreationTime = new SortTrackingServerBy("CreationTime");
+        /// <summary>
+        /// Constant Name for SortTrackingServerBy
+        /// </summary>
+        public static readonly SortTrackingServerBy Name = new SortTrackingServerBy("Name");
+        /// <summary>
+        /// Constant Status for SortTrackingServerBy
+        /// </summary>
+        public static readonly SortTrackingServerBy Status = new SortTrackingServerBy("Status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortTrackingServerBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortTrackingServerBy FindValue(string value)
+        {
+            return FindValue<SortTrackingServerBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortTrackingServerBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortTrialComponentsBy.
     /// </summary>
     public class SortTrialComponentsBy : ConstantClass
@@ -16514,6 +16618,170 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ThroughputMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrackingServerSize.
+    /// </summary>
+    public class TrackingServerSize : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Large for TrackingServerSize
+        /// </summary>
+        public static readonly TrackingServerSize Large = new TrackingServerSize("Large");
+        /// <summary>
+        /// Constant Medium for TrackingServerSize
+        /// </summary>
+        public static readonly TrackingServerSize Medium = new TrackingServerSize("Medium");
+        /// <summary>
+        /// Constant Small for TrackingServerSize
+        /// </summary>
+        public static readonly TrackingServerSize Small = new TrackingServerSize("Small");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrackingServerSize(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrackingServerSize FindValue(string value)
+        {
+            return FindValue<TrackingServerSize>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrackingServerSize(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrackingServerStatus.
+    /// </summary>
+    public class TrackingServerStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Created for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus Created = new TrackingServerStatus("Created");
+        /// <summary>
+        /// Constant CreateFailed for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus CreateFailed = new TrackingServerStatus("CreateFailed");
+        /// <summary>
+        /// Constant Creating for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus Creating = new TrackingServerStatus("Creating");
+        /// <summary>
+        /// Constant DeleteFailed for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus DeleteFailed = new TrackingServerStatus("DeleteFailed");
+        /// <summary>
+        /// Constant Deleting for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus Deleting = new TrackingServerStatus("Deleting");
+        /// <summary>
+        /// Constant MaintenanceComplete for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus MaintenanceComplete = new TrackingServerStatus("MaintenanceComplete");
+        /// <summary>
+        /// Constant MaintenanceFailed for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus MaintenanceFailed = new TrackingServerStatus("MaintenanceFailed");
+        /// <summary>
+        /// Constant MaintenanceInProgress for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus MaintenanceInProgress = new TrackingServerStatus("MaintenanceInProgress");
+        /// <summary>
+        /// Constant Started for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus Started = new TrackingServerStatus("Started");
+        /// <summary>
+        /// Constant StartFailed for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus StartFailed = new TrackingServerStatus("StartFailed");
+        /// <summary>
+        /// Constant Starting for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus Starting = new TrackingServerStatus("Starting");
+        /// <summary>
+        /// Constant StopFailed for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus StopFailed = new TrackingServerStatus("StopFailed");
+        /// <summary>
+        /// Constant Stopped for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus Stopped = new TrackingServerStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus Stopping = new TrackingServerStatus("Stopping");
+        /// <summary>
+        /// Constant Updated for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus Updated = new TrackingServerStatus("Updated");
+        /// <summary>
+        /// Constant UpdateFailed for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus UpdateFailed = new TrackingServerStatus("UpdateFailed");
+        /// <summary>
+        /// Constant Updating for TrackingServerStatus
+        /// </summary>
+        public static readonly TrackingServerStatus Updating = new TrackingServerStatus("Updating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrackingServerStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrackingServerStatus FindValue(string value)
+        {
+            return FindValue<TrackingServerStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrackingServerStatus(string value)
         {
             return FindValue(value);
         }

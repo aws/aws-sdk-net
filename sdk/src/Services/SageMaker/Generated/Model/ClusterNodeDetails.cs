@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private string _instanceGroupName;
         private string _instanceId;
         private ClusterInstanceStatusDetails _instanceStatus;
+        private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
         private DateTime? _launchTime;
         private ClusterLifeCycleConfig _lifeCycleConfig;
@@ -99,6 +100,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceStatus()
         {
             return this._instanceStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceStorageConfigs. 
+        /// <para>
+        /// The configurations of additional storage specified to the instance group where the
+        /// instance (node) is launched.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<ClusterInstanceStorageConfig> InstanceStorageConfigs
+        {
+            get { return this._instanceStorageConfigs; }
+            set { this._instanceStorageConfigs = value; }
+        }
+
+        // Check to see if InstanceStorageConfigs property is set
+        internal bool IsSetInstanceStorageConfigs()
+        {
+            return this._instanceStorageConfigs != null && (this._instanceStorageConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

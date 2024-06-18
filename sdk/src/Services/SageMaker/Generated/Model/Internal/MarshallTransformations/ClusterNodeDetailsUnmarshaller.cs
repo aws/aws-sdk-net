@@ -84,6 +84,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstanceStorageConfigs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ClusterInstanceStorageConfig, ClusterInstanceStorageConfigUnmarshaller>(ClusterInstanceStorageConfigUnmarshaller.Instance);
+                    unmarshalledObject.InstanceStorageConfigs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

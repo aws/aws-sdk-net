@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private string _executionRole;
         private int? _instanceCount;
         private string _instanceGroupName;
+        private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
         private ClusterLifeCycleConfig _lifeCycleConfig;
         private int? _threadsPerCore;
@@ -97,6 +98,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceGroupName()
         {
             return this._instanceGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceStorageConfigs. 
+        /// <para>
+        /// Specifies the additional storage configurations for the instances in the SageMaker
+        /// HyperPod cluster instance group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<ClusterInstanceStorageConfig> InstanceStorageConfigs
+        {
+            get { return this._instanceStorageConfigs; }
+            set { this._instanceStorageConfigs = value; }
+        }
+
+        // Check to see if InstanceStorageConfigs property is set
+        internal bool IsSetInstanceStorageConfigs()
+        {
+            return this._instanceStorageConfigs != null && (this._instanceStorageConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
