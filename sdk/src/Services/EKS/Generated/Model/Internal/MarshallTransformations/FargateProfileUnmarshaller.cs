@@ -90,6 +90,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.FargateProfileName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("health", targetDepth))
+                {
+                    var unmarshaller = FargateProfileHealthUnmarshaller.Instance;
+                    unmarshalledObject.Health = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("podExecutionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

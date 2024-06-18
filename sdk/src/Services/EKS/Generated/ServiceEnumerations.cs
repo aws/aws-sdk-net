@@ -1063,6 +1063,64 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type FargateProfileIssueCode.
+    /// </summary>
+    public class FargateProfileIssueCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDenied for FargateProfileIssueCode
+        /// </summary>
+        public static readonly FargateProfileIssueCode AccessDenied = new FargateProfileIssueCode("AccessDenied");
+        /// <summary>
+        /// Constant ClusterUnreachable for FargateProfileIssueCode
+        /// </summary>
+        public static readonly FargateProfileIssueCode ClusterUnreachable = new FargateProfileIssueCode("ClusterUnreachable");
+        /// <summary>
+        /// Constant InternalFailure for FargateProfileIssueCode
+        /// </summary>
+        public static readonly FargateProfileIssueCode InternalFailure = new FargateProfileIssueCode("InternalFailure");
+        /// <summary>
+        /// Constant PodExecutionRoleAlreadyInUse for FargateProfileIssueCode
+        /// </summary>
+        public static readonly FargateProfileIssueCode PodExecutionRoleAlreadyInUse = new FargateProfileIssueCode("PodExecutionRoleAlreadyInUse");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FargateProfileIssueCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FargateProfileIssueCode FindValue(string value)
+        {
+            return FindValue<FargateProfileIssueCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FargateProfileIssueCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FargateProfileStatus.
     /// </summary>
     public class FargateProfileStatus : ConstantClass
