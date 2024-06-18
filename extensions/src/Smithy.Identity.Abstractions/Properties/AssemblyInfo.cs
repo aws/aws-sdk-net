@@ -7,5 +7,9 @@
 [assembly: AssemblyCopyright("Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 
+#if NETFRAMEWORK
 [assembly: AssemblyVersion("0.1")]
+#else
+[assembly: AssemblyVersion("0.1")]
+#endif
 [assembly: AssemblyFileVersion("0.1")]
