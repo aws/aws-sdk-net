@@ -2,11 +2,11 @@
     "projects": [
         {
             "name": "NetFramework",
-            "targetFrameworks": [ "net462" ],
+            "targetFrameworks": [ "net472" ],
             "defineConstants": [ "BCL", "AWS_ASYNC_API", "CODE_ANALYSIS" ],
             "template": "VS2017ProjectFile",
             "excludeFolders": [ "_netstandard", "obj"],
-            "nugetTargetPlatform": "net462",
+            "nugetTargetPlatform": "net472",
             "frameworkReferences" : [
                 {"name": "System.Configuration"}
             ],
@@ -52,7 +52,7 @@
     "unittestprojects":[
         {
             "name": "NetFramework",
-            "targetFrameworks": [ "net462" ],
+            "targetFrameworks": [ "net472" ],
             "defineConstants": [ "TRACE", "BCL", "ASYNC_AWAIT" ],
             "excludeFolders": ["obj"],
             "visualStudioServices" : ["{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"],

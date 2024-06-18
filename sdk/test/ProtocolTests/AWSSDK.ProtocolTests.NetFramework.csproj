@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
      <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
-      <TargetFramework>net462</TargetFramework>
+      <TargetFramework>net472</TargetFramework>
       <DefineConstants>$(DefineConstants);TRACE;BCL;ASYNC_AWAIT;DEBUG</DefineConstants>
       <DebugType>portable</DebugType>
       <GenerateDocumentationFile>true</GenerateDocumentationFile>
