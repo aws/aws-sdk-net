@@ -34,7 +34,7 @@ namespace Amazon.Ep2hostlabel
     public partial class AmazonEp2hostlabelConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Ep2-host-label", "3.3");
+            InternalSDKUtils.BuildUserAgentString("Ep2-host-label", "4.0");
 
         private static readonly AmazonEp2hostlabelEndpointResolver EndpointResolver =
             new AmazonEp2hostlabelEndpointResolver();

@@ -34,7 +34,7 @@ namespace Amazon.JSONRPC10
     public partial class AmazonJSONRPC10Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("JSON RPC 10", "3.3");
+            InternalSDKUtils.BuildUserAgentString("JSON RPC 10", "4.0");
 
 
         private string _userAgent = UserAgentString;

@@ -34,7 +34,7 @@ namespace Amazon.WorkLink
     public partial class AmazonWorkLinkConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WorkLink", "3.7.300.84");
+            InternalSDKUtils.BuildUserAgentString("WorkLink", "4.0.0.0");
 
         private static readonly AmazonWorkLinkEndpointResolver EndpointResolver =
             new AmazonWorkLinkEndpointResolver();
