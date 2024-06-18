@@ -73,9 +73,9 @@
     <file src="..\..\..\code-analysis\ServiceAnalysis\\<#=this.Session["CodeAnalysisServiceFolder"]#>\bin\Release\*.dll" target="analyzers\dotnet\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />
     <file src="..\..\..\code-analysis\NuGetInstallScripts\*.ps1" target="tools\" />
 
-    <file src=".\bin\Release\net462\\<#=this.Session["AssemblyName"]#>.dll" target="lib\net462" />
-    <file src=".\bin\Release\net462\\<#=this.Session["AssemblyName"]#>.xml" target="lib\net462" />
-    <file src=".\bin\Release\net462\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net462" />
+    <file src=".\bin\Release\net472\\<#=this.Session["AssemblyName"]#>.dll" target="lib\net472" />
+    <file src=".\bin\Release\net472\\<#=this.Session["AssemblyName"]#>.xml" target="lib\net472" />
+    <file src=".\bin\Release\net472\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net472" />
 
 <#	
 	if(Convert.ToBoolean(this.Session["NetStandardSupport"]))
