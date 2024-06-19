@@ -13,11 +13,9 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Endpoints;
 
 namespace Amazon.Extensions.NETCore.Setup
 {
@@ -27,6 +25,7 @@ namespace Amazon.Extensions.NETCore.Setup
     internal class DefaultClientConfig : ClientConfig
     {
         public DefaultClientConfig()
+            : base(null)
         {
 
         }
@@ -53,6 +52,16 @@ namespace Amazon.Extensions.NETCore.Setup
             {
                 return null;
             }
+        }
+
+        protected override void Initialize()
+        {
+            // Override the initialize method to avoid use with the null IDefaultConfigurationProvider
+        }
+
+        public override Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+        {
+            return null;
         }
     }
 }

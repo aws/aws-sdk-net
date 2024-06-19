@@ -13,14 +13,25 @@
     <icon>images\AWSLogo.png</icon>
 	
     <dependencies>
-      <group>
-        <dependency id="AWSSDK.Core" version="3.7.300" />
+      <group targetFramework="netstandard2.0">
+        <dependency id="AWSSDK.Core" version="4.0.0.0-preview" />
         <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="2.0.0" />
         <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="2.0.0" />
         <dependency id="Microsoft.Extensions.Logging.Abstractions" version="2.0.0" />
       </group>
-	  
-    </dependencies>
+      <group targetFramework="netcoreapp3.1">
+        <dependency id="AWSSDK.Core" version="4.0.0.0-preview" />
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="2.0.0" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="2.0.0" />
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="2.0.0" />
+      </group>
+      <group targetFramework="net8.0">
+        <dependency id="AWSSDK.Core" version="4.0.0.0-preview" />
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="2.0.0" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="2.0.0" />
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="2.0.0" />
+      </group>
+	</dependencies>
 
   </metadata> 
   <files>

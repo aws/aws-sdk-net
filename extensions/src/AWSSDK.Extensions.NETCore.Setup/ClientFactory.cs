@@ -241,12 +241,13 @@ namespace Amazon.Extensions.NETCore.Setup
                     if (string.Equals(property.Name, "DefaultConfigurationMode", StringComparison.Ordinal))
                         continue;
 
-                    // Skip setting RetryMode if it is set to legacy but the DefaultConfigurationMode is not legacy.
+                    // Skip setting RetryMode if it is set to standard, the default mode, but the DefaultConfigurationMode
+                    // on the new service config is not legacy.
                     // This will allow the retry mode to be configured from the DefaultConfiguration.
                     // This is a workaround to handle the inability to tell if RetryMode was explicitly set.
                     if (string.Equals(property.Name, "RetryMode", StringComparison.Ordinal) && 
-                        defaultConfig.RetryMode == RequestRetryMode.Legacy && 
-                        config.DefaultConfigurationMode != DefaultConfigurationMode.Legacy)
+                        defaultConfig.RetryMode == RequestRetryMode.Standard && 
+                        config.DefaultConfigurationMode != DefaultConfigurationMode.Standard)
                         continue;
 
                     singleArray[0] = property.GetMethod.Invoke(defaultConfig, emptyArray);
