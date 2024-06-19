@@ -14,6 +14,7 @@
  */
 
 using Amazon.Runtime.Telemetry.Metrics;
+using Amazon.Runtime.Telemetry.Metrics.NoOp;
 using Amazon.Runtime.Telemetry.Tracing;
 using Amazon.Runtime.Telemetry.Tracing.NoOp;
 
