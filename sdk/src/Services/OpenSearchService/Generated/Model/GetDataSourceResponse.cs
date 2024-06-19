@@ -98,7 +98,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the data source response.
+        /// The status of the data source.
         /// </para>
         /// </summary>
         public DataSourceStatus Status

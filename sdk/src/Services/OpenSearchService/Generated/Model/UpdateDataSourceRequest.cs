@@ -121,7 +121,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the data source update request.
+        /// The status of the data source update.
         /// </para>
         /// </summary>
         public DataSourceStatus Status
