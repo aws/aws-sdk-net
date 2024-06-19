@@ -34,6 +34,7 @@ namespace Amazon.Artifact.Model
     /// </summary>
     public partial class ReportSummary
     {
+        private AcceptanceType _acceptanceType;
         private string _arn;
         private string _category;
         private string _companyName;
@@ -48,6 +49,24 @@ namespace Amazon.Artifact.Model
         private string _statusMessage;
         private UploadState _uploadState;
         private long? _version;
+
+        /// <summary>
+        /// Gets and sets the property AcceptanceType. 
+        /// <para>
+        /// Acceptance type for report.
+        /// </para>
+        /// </summary>
+        public AcceptanceType AcceptanceType
+        {
+            get { return this._acceptanceType; }
+            set { this._acceptanceType = value; }
+        }
+
+        // Check to see if AcceptanceType property is set
+        internal bool IsSetAcceptanceType()
+        {
+            return this._acceptanceType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

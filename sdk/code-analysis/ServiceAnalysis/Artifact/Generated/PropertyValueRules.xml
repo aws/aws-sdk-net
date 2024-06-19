@@ -2,7 +2,7 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Artifact.Model.GetReportRequest.ReportId</property>
-    <pattern>^report-[a-zA-Z0-9]{16}$</pattern>
+    <pattern>report-[a-zA-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.GetReportRequest.ReportVersion</property>
@@ -12,7 +12,7 @@
     <property>Amazon.Artifact.Model.GetReportRequest.TermToken</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9_\-\s]*$</pattern>
+    <pattern>[a-zA-Z0-9_\-\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.GetReportResponse.DocumentPresignedUrl</property>
@@ -21,7 +21,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.GetReportMetadataRequest.ReportId</property>
-    <pattern>^report-[a-zA-Z0-9]{16}$</pattern>
+    <pattern>report-[a-zA-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.GetReportMetadataRequest.ReportVersion</property>
@@ -29,7 +29,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.GetTermForReportRequest.ReportId</property>
-    <pattern>^report-[a-zA-Z0-9]{16}$</pattern>
+    <pattern>report-[a-zA-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.GetTermForReportRequest.ReportVersion</property>
@@ -59,41 +59,41 @@
     <property>Amazon.Artifact.Model.ReportDetail.Arn</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^[^&lt;&gt;]*$</pattern>
+    <pattern>[^&lt;&gt;]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportDetail.Category</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9_\-\s]*$</pattern>
+    <pattern>[a-zA-Z0-9_\-\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportDetail.CompanyName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9_\-\s]*$</pattern>
+    <pattern>[a-zA-Z0-9_\-\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportDetail.Description</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^[^&lt;&gt;]*$</pattern>
+    <pattern>[^&lt;&gt;]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportDetail.Id</property>
-    <pattern>^report-[a-zA-Z0-9]{16}$</pattern>
+    <pattern>report-[a-zA-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportDetail.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9_\-\s]*$</pattern>
+    <pattern>[a-zA-Z0-9_\-\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportDetail.ProductName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9_\-\s]*$</pattern>
+    <pattern>[a-zA-Z0-9_\-\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportDetail.SequenceNumber</property>
@@ -103,13 +103,13 @@
     <property>Amazon.Artifact.Model.ReportDetail.Series</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9_\-\s]*$</pattern>
+    <pattern>[a-zA-Z0-9_\-\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportDetail.TermArn</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^[^&lt;&gt;]*$</pattern>
+    <pattern>[^&lt;&gt;]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportDetail.Version</property>
@@ -119,47 +119,47 @@
     <property>Amazon.Artifact.Model.ReportSummary.Arn</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^[^&lt;&gt;]*$</pattern>
+    <pattern>[^&lt;&gt;]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportSummary.Category</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9_\-\s]*$</pattern>
+    <pattern>[a-zA-Z0-9_\-\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportSummary.CompanyName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9_\-\s]*$</pattern>
+    <pattern>[a-zA-Z0-9_\-\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportSummary.Description</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^[^&lt;&gt;]*$</pattern>
+    <pattern>[^&lt;&gt;]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportSummary.Id</property>
-    <pattern>^report-[a-zA-Z0-9]{16}$</pattern>
+    <pattern>report-[a-zA-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportSummary.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9_\-\s]*$</pattern>
+    <pattern>[a-zA-Z0-9_\-\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportSummary.ProductName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9_\-\s]*$</pattern>
+    <pattern>[a-zA-Z0-9_\-\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportSummary.Series</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9_\-\s]*$</pattern>
+    <pattern>[a-zA-Z0-9_\-\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Artifact.Model.ReportSummary.Version</property>
