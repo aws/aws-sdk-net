@@ -29,6 +29,7 @@ using Amazon.Runtime.Internal.Util;
 using System.ComponentModel.Design;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal.Settings;
+using Amazon.Runtime.Telemetry;
 
 #if NETSTANDARD
 using System.Runtime.InteropServices;
@@ -93,6 +94,7 @@ namespace Amazon.Runtime
         private const long DefaultMinCompressionSizeBytes = 10240;
         private bool didProcessServiceURL = false;
         private IAWSTokenProvider _awsTokenProvider = new DefaultAWSTokenProviderChain();
+        private TelemetryProvider telemetryProvider = AWSConfigs.TelemetryProvider;
 
         private CredentialProfileStoreChain credentialProfileStoreChain;
 #if BCL
@@ -1245,5 +1247,20 @@ namespace Amazon.Runtime
         /// but can be changed to use custom user supplied EndpointProvider.
         /// </summary>
         public IEndpointProvider EndpointProvider { get; set; }
+
+        /// <summary>
+        /// Gets or sets the <see cref="TelemetryProvider"/> instance for this client configuration.
+        /// <para>
+        /// This telemetry provider is used to collect and report telemetry data 
+        /// (such as traces and metrics) for operations performed by this specific client.
+        /// If this property is not explicitly set, it will default to the global 
+        /// <see cref="AWSConfigs.TelemetryProvider"/>.
+        /// </para>
+        /// </summary>
+        public TelemetryProvider TelemetryProvider
+        {
+            get { return this.telemetryProvider; }
+            set { this.telemetryProvider = value; }
+        }
     }
 }
