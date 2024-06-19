@@ -13,22 +13,24 @@
  * permissions and limitations under the License.
  */
 
-namespace Amazon.Runtime.Telemetry.Metrics
+namespace Amazon.Runtime.Telemetry.Metrics.NoOp
 {
     /// <summary>
-    /// Abstract class representing a provider for creating <see cref="Meter"/> instances.
-    /// Meter providers are used to create meters which record metrics data.
+    /// A no-op implementation of the <see cref="MeterProvider"/> that returns a no-op meter.
     /// </summary>
-    public abstract class MeterProvider
+    internal class NoOpMeterProvider : MeterProvider
     {
         /// <summary>
-        /// Retrieves or creates a<see cref="Meter"/> for the given instrumentation scope.
+        /// Retrieves a no-op meter, which is a meter that does not record any telemetry data.
         /// </summary>
         /// <param name="scope">
         /// The name of the instrumentation scope that uniquely identifies this meter.
         /// </param>
         /// <param name="attributes">Optional attributes associated with the metrics.</param>
-        /// <returns>A <see cref="Meter"/> instance associated with the provided instrumentation scope.</returns>
-        public abstract Meter GetMeter(string scope, Attributes attributes = null);
+        /// <returns>A no-op <see cref="Meter"/> instance.</returns>
+        public override Meter GetMeter(string scope, Attributes attributes = null)
+        {
+            return new NoOpMeter();
+        }
     }
 }
