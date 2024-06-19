@@ -1,3 +1,20 @@
+### 3.7.835.0 (2024-06-19 18:25 UTC)
+* Artifact (3.7.301.0)
+	* This release adds an acceptanceType field to the ReportSummary structure (used in the ListReports API response).
+* Athena (3.7.305.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* CostAndUsageReport (3.7.302.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* DirectConnect (3.7.301.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* ElasticTranscoder (3.7.301.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* OpenSearchService (3.7.308.0)
+	* This release enables customers to use JSON Web Tokens (JWT) for authentication on their Amazon OpenSearch Service domains.
+* Core 3.7.304.18
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.834.0 (2024-06-18 18:29 UTC)
 * BedrockRuntime (3.7.304.0)
 	* This release adds support for using Guardrails with the Converse and ConverseStream APIs.

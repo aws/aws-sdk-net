@@ -32,7 +32,7 @@ namespace Amazon.SSOOIDC
     public partial class AmazonSSOOIDCConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSO OIDC", "3.7.302.17");
+            InternalSDKUtils.BuildUserAgentString("SSO OIDC", "3.7.302.18");
 
         private string _userAgent = UserAgentString;
         ///<summary>
