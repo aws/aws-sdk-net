@@ -513,7 +513,7 @@
         <Message Text="Copying License.txt and Notice.txt to the assembly zips" />
         <Copy
             SourceFiles="../Notice.txt;../License.txt"
-            DestinationFiles="../Deployment/assemblies/net462/Notice.txt;../Deployment/assemblies/net462/License.txt"
+            DestinationFiles="../Deployment/assemblies/net472/Notice.txt;../Deployment/assemblies/net472/License.txt"
         />
         <!-- netstandard2.0 needs modified Notice with additional 3rd party dependencies -->
         <Copy

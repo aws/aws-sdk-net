@@ -34,7 +34,7 @@ namespace Amazon.RestJsonProtocol
     public partial class AmazonRestJsonProtocolConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Rest Json Protocol", "3.3");
+            InternalSDKUtils.BuildUserAgentString("Rest Json Protocol", "4.0");
 
 
         private string _userAgent = UserAgentString;

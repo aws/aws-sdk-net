@@ -34,7 +34,7 @@ namespace Amazon.PaginatorsTest
     public partial class AmazonPaginatorsTestConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Paginators-Test", "3.3");
+            InternalSDKUtils.BuildUserAgentString("Paginators-Test", "4.0");
 
 
         private string _userAgent = UserAgentString;

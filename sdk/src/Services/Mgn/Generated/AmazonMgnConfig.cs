@@ -34,7 +34,7 @@ namespace Amazon.Mgn
     public partial class AmazonMgnConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("mgn", "3.7.302.13");
+            InternalSDKUtils.BuildUserAgentString("mgn", "4.0.0.0");
 
         private static readonly AmazonMgnEndpointResolver EndpointResolver =
             new AmazonMgnEndpointResolver();

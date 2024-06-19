@@ -12,13 +12,13 @@
     <tags>AWS Amazon aws-sdk-v4</tags>
     <icon>images\AWSLogo.png</icon>
     <dependencies>
-      <group targetFramework="net462">
-        <dependency id="AWSSDK.Core" version="3.7.300" />
+      <group targetFramework="net472">
+        <dependency id="AWSSDK.Core" version="4.0.0.0-preview" />
         <dependency id="AWSCRT-AUTH" version="0.4.4" />
         <dependency id="AWSCRT-CHECKSUMS" version="0.4.4" />
       </group>
       <group targetFramework="netstandard2.0">
-        <dependency id="AWSSDK.Core" version="3.7.300" />
+        <dependency id="AWSSDK.Core" version="4.0.0-preview" />
         <dependency id="AWSCRT-AUTH" version="0.4.4" />
         <dependency id="AWSCRT-CHECKSUMS" version="0.4.4" />
       </group>
@@ -28,8 +28,8 @@
   <files>
     <file src="..\..\..\sdk\nuget-content\AWSLogo.png" target="images\" />
 
-    <file src=".\bin\Release\net462\AWSSDK.Extensions.CrtIntegration.dll" target="lib\net462" />
-    <file src=".\bin\Release\net462\AWSSDK.Extensions.CrtIntegration.pdb" target="lib\net462" />
+    <file src=".\bin\Release\net472\AWSSDK.Extensions.CrtIntegration.dll" target="lib\net472" />
+    <file src=".\bin\Release\net472\AWSSDK.Extensions.CrtIntegration.pdb" target="lib\net472" />
 
     <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.CrtIntegration.dll" target="lib\netstandard2.0"/>
     <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.CrtIntegration.pdb" target="lib\netstandard2.0"/>

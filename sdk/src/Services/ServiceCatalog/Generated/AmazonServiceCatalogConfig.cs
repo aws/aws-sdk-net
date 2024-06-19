@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog
     public partial class AmazonServiceCatalogConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Service Catalog", "3.7.301.54");
+            InternalSDKUtils.BuildUserAgentString("Service Catalog", "4.0.0.0");
 
         private static readonly AmazonServiceCatalogEndpointResolver EndpointResolver =
             new AmazonServiceCatalogEndpointResolver();

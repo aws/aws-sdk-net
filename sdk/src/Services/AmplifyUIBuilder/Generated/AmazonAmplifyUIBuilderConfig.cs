@@ -34,7 +34,7 @@ namespace Amazon.AmplifyUIBuilder
     public partial class AmazonAmplifyUIBuilderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AmplifyUIBuilder", "3.7.301.31");
+            InternalSDKUtils.BuildUserAgentString("AmplifyUIBuilder", "4.0.0.0");
 
         private static readonly AmazonAmplifyUIBuilderEndpointResolver EndpointResolver =
             new AmazonAmplifyUIBuilderEndpointResolver();

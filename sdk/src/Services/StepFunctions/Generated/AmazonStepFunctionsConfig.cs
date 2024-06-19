@@ -34,7 +34,7 @@ namespace Amazon.StepFunctions
     public partial class AmazonStepFunctionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SFN", "3.7.303.2");
+            InternalSDKUtils.BuildUserAgentString("SFN", "4.0.0.0");
 
         private static readonly AmazonStepFunctionsEndpointResolver EndpointResolver =
             new AmazonStepFunctionsEndpointResolver();

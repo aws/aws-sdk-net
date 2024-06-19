@@ -34,7 +34,7 @@ namespace Amazon.SecurityLake
     public partial class AmazonSecurityLakeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SecurityLake", "3.7.301.30");
+            InternalSDKUtils.BuildUserAgentString("SecurityLake", "4.0.0.0");
 
         private static readonly AmazonSecurityLakeEndpointResolver EndpointResolver =
             new AmazonSecurityLakeEndpointResolver();

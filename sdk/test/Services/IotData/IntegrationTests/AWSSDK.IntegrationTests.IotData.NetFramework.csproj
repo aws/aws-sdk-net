@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net462</TargetFramework>
+    <TargetFramework>net472</TargetFramework>
     <DefineConstants>$(DefineConstants);DEBUG;TRACE;BCL;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>

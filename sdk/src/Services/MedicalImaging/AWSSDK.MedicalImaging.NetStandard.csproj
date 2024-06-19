@@ -22,6 +22,7 @@
     <SignAssembly>true</SignAssembly>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
+    <LangVersion>9.0</LangVersion>
     <NoWarn>CA1822</NoWarn>
   </PropertyGroup>
   <!-- Async Enumerable Compatibility -->

@@ -34,7 +34,7 @@ namespace Amazon.SupportApp
     public partial class AmazonSupportAppConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Support App", "3.7.300.84");
+            InternalSDKUtils.BuildUserAgentString("Support App", "4.0.0.0");
 
         private static readonly AmazonSupportAppEndpointResolver EndpointResolver =
             new AmazonSupportAppEndpointResolver();

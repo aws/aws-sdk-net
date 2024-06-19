@@ -34,7 +34,7 @@ namespace Amazon.RestXmlProtocolNamespace
     public partial class AmazonRestXmlProtocolNamespaceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Rest Xml Protocol Namespace", "3.3");
+            InternalSDKUtils.BuildUserAgentString("Rest Xml Protocol Namespace", "4.0");
 
 
         private string _userAgent = UserAgentString;

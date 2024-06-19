@@ -69,6 +69,7 @@
     if (!string.IsNullOrEmpty(this.Project.SupressWarnings))
     {
 #>
+    <LangVersion>9.0</LangVersion>
     <NoWarn><#=this.Project.SupressWarnings #></NoWarn>
 <#
     }
