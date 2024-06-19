@@ -34,7 +34,7 @@ namespace Amazon.EC2Protocol
     public partial class AmazonEC2ProtocolConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EC2 Protocol", "3.3");
+            InternalSDKUtils.BuildUserAgentString("EC2 Protocol", "4.0");
 
 
         private string _userAgent = UserAgentString;

@@ -34,7 +34,7 @@ namespace Amazon.QueryProtocol
     public partial class AmazonQueryProtocolConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Query Protocol", "3.3");
+            InternalSDKUtils.BuildUserAgentString("Query Protocol", "4.0");
 
 
         private string _userAgent = UserAgentString;

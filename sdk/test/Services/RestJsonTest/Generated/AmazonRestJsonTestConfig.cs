@@ -34,7 +34,7 @@ namespace Amazon.RestJsonTest
     public partial class AmazonRestJsonTestConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Rest-Json-Test", "3.3");
+            InternalSDKUtils.BuildUserAgentString("Rest-Json-Test", "4.0");
 
 
         private string _userAgent = UserAgentString;

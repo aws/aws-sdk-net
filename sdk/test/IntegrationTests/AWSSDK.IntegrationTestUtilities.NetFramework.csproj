@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net462</TargetFramework>
+    <TargetFramework>net472</TargetFramework>
     <DefineConstants>$(DefineConstants);DEBUG;TRACE;BCL;LOCAL_FILE</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.IntegrationTestUtilities.NetFramework</AssemblyName>
     <PackageId>AWSSDK.IntegrationTestUtilities.NetFramework</PackageId>
-    <BaseIntermediateOutputPath>./obj/net462</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>./obj/net472</BaseIntermediateOutputPath>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>

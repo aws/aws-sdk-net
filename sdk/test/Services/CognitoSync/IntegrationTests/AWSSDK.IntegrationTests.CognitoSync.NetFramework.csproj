@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net462</TargetFramework>
+    <TargetFramework>net472</TargetFramework>
     <DefineConstants>$(DefineConstants);DEBUG;TRACE;BCL;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.IntegrationTests.CognitoSync.NetFramework</AssemblyName>
     <PackageId>AWSSDK.IntegrationTests.CognitoSync.NetFramework</PackageId>
-    <BaseIntermediateOutputPath>./obj/net462</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>./obj/net472</BaseIntermediateOutputPath>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>

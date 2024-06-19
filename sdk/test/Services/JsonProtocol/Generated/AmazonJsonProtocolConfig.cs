@@ -34,7 +34,7 @@ namespace Amazon.JsonProtocol
     public partial class AmazonJsonProtocolConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Json Protocol", "3.3");
+            InternalSDKUtils.BuildUserAgentString("Json Protocol", "4.0");
 
 
         private string _userAgent = UserAgentString;

@@ -34,7 +34,7 @@ namespace Amazon.BearerTokenAuthTest
     public partial class AmazonBearerTokenAuthTestConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Bearer-Token-Auth-Test", "3.3");
+            InternalSDKUtils.BuildUserAgentString("Bearer-Token-Auth-Test", "4.0");
 
 
         private string _userAgent = UserAgentString;
