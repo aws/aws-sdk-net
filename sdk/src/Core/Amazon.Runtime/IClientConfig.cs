@@ -18,6 +18,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
+using Amazon.Runtime.Telemetry;
 #if NETSTANDARD
 using System.Net.Http;
 #endif
@@ -369,6 +370,16 @@ namespace Amazon.Runtime
         /// which doesn't allow to specify the User-Agent header.
         /// </summary>
         bool UseAlternateUserAgentHeader { get; }
+        
+        /// <summary>
+        /// <para>
+        /// This telemetry provider is used to collect and report telemetry data 
+        /// (such as traces and metrics) for operations performed by this specific client.
+        /// If this property is not explicitly set, it will default to the global 
+        /// <see cref="AWSConfigs.TelemetryProvider"/>.
+        /// </para>
+        /// </summary>
+        TelemetryProvider TelemetryProvider { get; }
 #if BCL
         /// <summary>
         /// Gets the TCP keep-alive values to use for service requests. Enabling TCP keep-alive sends periodic TCP keep-alive probe packets, to prevent disconnection due to 
