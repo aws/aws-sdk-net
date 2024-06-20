@@ -50,6 +50,9 @@ namespace Amazon.SageMaker.Model
         private HubContentType _hubContentType;
         private string _hubContentVersion;
         private string _hubName;
+        private string _referenceMinVersion;
+        private string _sageMakerPublicHubContentArn;
+        private HubContentSupportStatus _supportStatus;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -356,6 +359,62 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHubName()
         {
             return this._hubName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReferenceMinVersion. 
+        /// <para>
+        /// The minimum version of the hub content.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=14)]
+        public string ReferenceMinVersion
+        {
+            get { return this._referenceMinVersion; }
+            set { this._referenceMinVersion = value; }
+        }
+
+        // Check to see if ReferenceMinVersion property is set
+        internal bool IsSetReferenceMinVersion()
+        {
+            return this._referenceMinVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SageMakerPublicHubContentArn. 
+        /// <para>
+        /// The ARN of the public hub content.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string SageMakerPublicHubContentArn
+        {
+            get { return this._sageMakerPublicHubContentArn; }
+            set { this._sageMakerPublicHubContentArn = value; }
+        }
+
+        // Check to see if SageMakerPublicHubContentArn property is set
+        internal bool IsSetSageMakerPublicHubContentArn()
+        {
+            return this._sageMakerPublicHubContentArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportStatus. 
+        /// <para>
+        /// The support status of the hub content.
+        /// </para>
+        /// </summary>
+        public HubContentSupportStatus SupportStatus
+        {
+            get { return this._supportStatus; }
+            set { this._supportStatus = value; }
+        }
+
+        // Check to see if SupportStatus property is set
+        internal bool IsSetSupportStatus()
+        {
+            return this._supportStatus != null;
         }
 
     }

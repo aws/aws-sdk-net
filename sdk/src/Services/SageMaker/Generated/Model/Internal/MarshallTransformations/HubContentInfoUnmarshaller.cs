@@ -126,6 +126,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.HubContentVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OriginalCreationTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.OriginalCreationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SageMakerPublicHubContentArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SageMakerPublicHubContentArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SupportStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SupportStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

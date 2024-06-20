@@ -1904,12 +1904,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Create a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHub service method.</param>
         /// 
@@ -1928,12 +1922,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Create a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHub service method.</param>
         /// <param name="cancellationToken">
@@ -1950,6 +1938,56 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHub">REST API Reference for CreateHub Operation</seealso>
         Task<CreateHubResponse> CreateHubAsync(CreateHubRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateHubContentReference
+
+
+        /// <summary>
+        /// Create a hub content reference in order to add a model in the JumpStart public hub
+        /// to a private hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHubContentReference service method.</param>
+        /// 
+        /// <returns>The response from the CreateHubContentReference service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentReference">REST API Reference for CreateHubContentReference Operation</seealso>
+        CreateHubContentReferenceResponse CreateHubContentReference(CreateHubContentReferenceRequest request);
+
+
+
+        /// <summary>
+        /// Create a hub content reference in order to add a model in the JumpStart public hub
+        /// to a private hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHubContentReference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateHubContentReference service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentReference">REST API Reference for CreateHubContentReference Operation</seealso>
+        Task<CreateHubContentReferenceResponse> CreateHubContentReferenceAsync(CreateHubContentReferenceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5202,12 +5240,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Delete a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHub service method.</param>
         /// 
@@ -5225,12 +5257,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Delete a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHub service method.</param>
         /// <param name="cancellationToken">
@@ -5254,12 +5280,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Delete the contents of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHubContent service method.</param>
         /// 
@@ -5277,12 +5297,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Delete the contents of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHubContent service method.</param>
         /// <param name="cancellationToken">
@@ -5298,6 +5312,40 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContent">REST API Reference for DeleteHubContent Operation</seealso>
         Task<DeleteHubContentResponse> DeleteHubContentAsync(DeleteHubContentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteHubContentReference
+
+
+        /// <summary>
+        /// Delete a hub content reference in order to remove a model from a private hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHubContentReference service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHubContentReference service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContentReference">REST API Reference for DeleteHubContentReference Operation</seealso>
+        DeleteHubContentReferenceResponse DeleteHubContentReference(DeleteHubContentReferenceRequest request);
+
+
+
+        /// <summary>
+        /// Delete a hub content reference in order to remove a model from a private hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHubContentReference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHubContentReference service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContentReference">REST API Reference for DeleteHubContentReference Operation</seealso>
+        Task<DeleteHubContentReferenceResponse> DeleteHubContentReferenceAsync(DeleteHubContentReferenceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -7299,13 +7347,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Describe a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
+        /// Describes a hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHub service method.</param>
         /// 
@@ -7319,13 +7361,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Describe a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
+        /// Describes a hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHub service method.</param>
         /// <param name="cancellationToken">
@@ -7346,12 +7382,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Describe the content of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHubContent service method.</param>
         /// 
@@ -7366,12 +7396,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Describe the content of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHubContent service method.</param>
         /// <param name="cancellationToken">
@@ -8966,12 +8990,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Import hub content.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportHubContent service method.</param>
         /// 
@@ -8993,12 +9011,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Import hub content.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportHubContent service method.</param>
         /// <param name="cancellationToken">
@@ -9792,12 +9804,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List the contents of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubContents service method.</param>
         /// 
@@ -9812,12 +9818,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List the contents of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubContents service method.</param>
         /// <param name="cancellationToken">
@@ -9838,12 +9838,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List hub content versions.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubContentVersions service method.</param>
         /// 
@@ -9858,12 +9852,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List hub content versions.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubContentVersions service method.</param>
         /// <param name="cancellationToken">
@@ -9884,12 +9872,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List all existing hubs.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubs service method.</param>
         /// 
@@ -9901,12 +9883,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List all existing hubs.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubs service method.</param>
         /// <param name="cancellationToken">
@@ -13492,12 +13468,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Update a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHub service method.</param>
         /// 
@@ -13512,12 +13482,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Update a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHub service method.</param>
         /// <param name="cancellationToken">

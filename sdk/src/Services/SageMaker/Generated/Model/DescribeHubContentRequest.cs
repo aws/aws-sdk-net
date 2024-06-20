@@ -32,12 +32,6 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the DescribeHubContent operation.
     /// Describe the content of a hub.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Hub APIs are only callable through SageMaker Studio.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class DescribeHubContentRequest : AmazonSageMakerRequest
     {
@@ -109,7 +103,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the hub that contains the content to describe.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true)]
         public string HubName
         {
             get { return this._hubName; }

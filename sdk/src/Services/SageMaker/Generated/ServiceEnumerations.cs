@@ -6291,6 +6291,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type HubContentSupportStatus.
+    /// </summary>
+    public class HubContentSupportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Deprecated for HubContentSupportStatus
+        /// </summary>
+        public static readonly HubContentSupportStatus Deprecated = new HubContentSupportStatus("Deprecated");
+        /// <summary>
+        /// Constant Supported for HubContentSupportStatus
+        /// </summary>
+        public static readonly HubContentSupportStatus Supported = new HubContentSupportStatus("Supported");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HubContentSupportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HubContentSupportStatus FindValue(string value)
+        {
+            return FindValue<HubContentSupportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HubContentSupportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HubContentType.
     /// </summary>
     public class HubContentType : ConstantClass
@@ -6300,6 +6350,10 @@ namespace Amazon.SageMaker
         /// Constant Model for HubContentType
         /// </summary>
         public static readonly HubContentType Model = new HubContentType("Model");
+        /// <summary>
+        /// Constant ModelReference for HubContentType
+        /// </summary>
+        public static readonly HubContentType ModelReference = new HubContentType("ModelReference");
         /// <summary>
         /// Constant Notebook for HubContentType
         /// </summary>

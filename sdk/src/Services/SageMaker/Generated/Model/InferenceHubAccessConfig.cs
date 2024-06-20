@@ -30,30 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeHub operation.
-    /// Describes a hub.
+    /// Configuration information specifying which hub contents have accessible deployment
+    /// options.
     /// </summary>
-    public partial class DescribeHubRequest : AmazonSageMakerRequest
+    public partial class InferenceHubAccessConfig
     {
-        private string _hubName;
+        private string _hubContentArn;
 
         /// <summary>
-        /// Gets and sets the property HubName. 
+        /// Gets and sets the property HubContentArn. 
         /// <para>
-        /// The name of the hub to describe.
+        /// The ARN of the hub content for which deployment access is allowed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string HubName
+        [AWSProperty(Required=true, Max=255)]
+        public string HubContentArn
         {
-            get { return this._hubName; }
-            set { this._hubName = value; }
+            get { return this._hubContentArn; }
+            set { this._hubContentArn = value; }
         }
 
-        // Check to see if HubName property is set
-        internal bool IsSetHubName()
+        // Check to see if HubContentArn property is set
+        internal bool IsSetHubContentArn()
         {
-            return this._hubName != null;
+            return this._hubContentArn != null;
         }
 
     }

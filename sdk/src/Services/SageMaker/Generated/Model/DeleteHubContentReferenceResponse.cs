@@ -30,31 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeHub operation.
-    /// Describes a hub.
+    /// This is the response object from the DeleteHubContentReference operation.
     /// </summary>
-    public partial class DescribeHubRequest : AmazonSageMakerRequest
+    public partial class DeleteHubContentReferenceResponse : AmazonWebServiceResponse
     {
-        private string _hubName;
-
-        /// <summary>
-        /// Gets and sets the property HubName. 
-        /// <para>
-        /// The name of the hub to describe.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string HubName
-        {
-            get { return this._hubName; }
-            set { this._hubName = value; }
-        }
-
-        // Check to see if HubName property is set
-        internal bool IsSetHubName()
-        {
-            return this._hubName != null;
-        }
 
     }
 }

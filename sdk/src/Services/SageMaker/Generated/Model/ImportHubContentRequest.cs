@@ -32,12 +32,6 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the ImportHubContent operation.
     /// Import hub content.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Hub APIs are only callable through SageMaker Studio.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ImportHubContentRequest : AmazonSageMakerRequest
     {
@@ -232,7 +226,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the hub to import content into.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true)]
         public string HubName
         {
             get { return this._hubName; }

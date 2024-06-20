@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3ModelDataSource Object
+    /// Response Unmarshaller for InferenceHubAccessConfig Object
     /// </summary>  
-    public class S3ModelDataSourceUnmarshaller : IUnmarshaller<S3ModelDataSource, XmlUnmarshallerContext>, IUnmarshaller<S3ModelDataSource, JsonUnmarshallerContext>
+    public class InferenceHubAccessConfigUnmarshaller : IUnmarshaller<InferenceHubAccessConfig, XmlUnmarshallerContext>, IUnmarshaller<InferenceHubAccessConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        S3ModelDataSource IUnmarshaller<S3ModelDataSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InferenceHubAccessConfig IUnmarshaller<InferenceHubAccessConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public S3ModelDataSource Unmarshall(JsonUnmarshallerContext context)
+        public InferenceHubAccessConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            S3ModelDataSource unmarshalledObject = new S3ModelDataSource();
+            InferenceHubAccessConfig unmarshalledObject = new InferenceHubAccessConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CompressionType", targetDepth))
+                if (context.TestExpression("HubContentArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CompressionType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HubAccessConfig", targetDepth))
-                {
-                    var unmarshaller = InferenceHubAccessConfigUnmarshaller.Instance;
-                    unmarshalledObject.HubAccessConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ModelAccessConfig", targetDepth))
-                {
-                    var unmarshaller = ModelAccessConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelAccessConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3DataType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3DataType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3Uri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HubContentArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static S3ModelDataSourceUnmarshaller _instance = new S3ModelDataSourceUnmarshaller();        
+        private static InferenceHubAccessConfigUnmarshaller _instance = new InferenceHubAccessConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3ModelDataSourceUnmarshaller Instance
+        public static InferenceHubAccessConfigUnmarshaller Instance
         {
             get
             {

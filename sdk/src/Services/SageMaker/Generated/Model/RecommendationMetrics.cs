@@ -48,7 +48,6 @@ namespace Amazon.SageMaker.Model
         /// Defines the cost per hour for the instance. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public float CostPerHour
         {
             get { return this._costPerHour.GetValueOrDefault(); }
@@ -67,7 +66,6 @@ namespace Amazon.SageMaker.Model
         /// Defines the cost per inference for the instance .
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public float CostPerInference
         {
             get { return this._costPerInference.GetValueOrDefault(); }
@@ -109,7 +107,6 @@ namespace Amazon.SageMaker.Model
         /// The expected maximum number of requests per minute for the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int MaxInvocations
         {
             get { return this._maxInvocations.GetValueOrDefault(); }
@@ -151,7 +148,6 @@ namespace Amazon.SageMaker.Model
         /// The expected model latency at maximum invocation per minute for the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int ModelLatency
         {
             get { return this._modelLatency.GetValueOrDefault(); }

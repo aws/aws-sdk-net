@@ -30,20 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteHubContent operation.
-    /// Delete the contents of a hub.
+    /// Container for the parameters to the DeleteHubContentReference operation.
+    /// Delete a hub content reference in order to remove a model from a private hub.
     /// </summary>
-    public partial class DeleteHubContentRequest : AmazonSageMakerRequest
+    public partial class DeleteHubContentReferenceRequest : AmazonSageMakerRequest
     {
         private string _hubContentName;
         private HubContentType _hubContentType;
-        private string _hubContentVersion;
         private string _hubName;
 
         /// <summary>
         /// Gets and sets the property HubContentName. 
         /// <para>
-        /// The name of the content that you want to delete from a hub.
+        /// The name of the hub content to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]
@@ -62,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HubContentType. 
         /// <para>
-        /// The type of content that you want to delete from a hub.
+        /// The type of hub content to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,28 +78,9 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HubContentVersion. 
-        /// <para>
-        /// The version of the content that you want to delete from a hub.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=14)]
-        public string HubContentVersion
-        {
-            get { return this._hubContentVersion; }
-            set { this._hubContentVersion = value; }
-        }
-
-        // Check to see if HubContentVersion property is set
-        internal bool IsSetHubContentVersion()
-        {
-            return this._hubContentVersion != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property HubName. 
         /// <para>
-        /// The name of the hub that you want to delete content in.
+        /// The name of the hub to delete the hub content reference from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
