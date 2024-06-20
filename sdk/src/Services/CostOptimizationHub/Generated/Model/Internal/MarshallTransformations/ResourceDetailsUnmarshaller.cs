@@ -126,6 +126,18 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.OpenSearchReservedInstances = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rdsDbInstance", targetDepth))
+                {
+                    var unmarshaller = RdsDbInstanceUnmarshaller.Instance;
+                    unmarshalledObject.RdsDbInstance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rdsDbInstanceStorage", targetDepth))
+                {
+                    var unmarshaller = RdsDbInstanceStorageUnmarshaller.Instance;
+                    unmarshalledObject.RdsDbInstanceStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("rdsReservedInstances", targetDepth))
                 {
                     var unmarshaller = RdsReservedInstancesUnmarshaller.Instance;

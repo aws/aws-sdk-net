@@ -149,7 +149,8 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlyCost. 
         /// <para>
-        /// The estimated monthly cost for the recommendation.
+        /// The estimated monthly cost of the current resource. For Reserved Instances and Savings
+        /// Plans, it refers to the cost for eligible usage.
         /// </para>
         /// </summary>
         public double EstimatedMonthlyCost
