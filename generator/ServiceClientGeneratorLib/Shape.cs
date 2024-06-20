@@ -603,20 +603,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        /// <summary>
-        /// Determines if the shape's json has a streaming attribute
-        /// </summary>
-        public bool IsStreaming
-        {
-            get
-            {
-                var streamingNode = this.data[StreamingKey];
-                if (streamingNode == null)
-                    return false;
-
-                return bool.Parse(streamingNode.ToString());
-            }
-        }
 
         public bool Sensitive
         {

@@ -134,7 +134,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
 	}
     else if (payloadIsStream)
     {
-        if (payload.IsStreaming)
+        if (payload.Shape.IsStreaming)
         {
 
             

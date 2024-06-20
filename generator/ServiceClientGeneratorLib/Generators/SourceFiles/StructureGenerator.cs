@@ -198,7 +198,7 @@ if(structureIsEvent || structureIsEventStream)
             
             #line 92 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
-    bool hasStreamingMember = this.Structure?.Members.Any(member => member.IsStreaming) ?? false;
+    bool hasStreamingMember = this.Structure?.Members.Any(member => member.Shape.IsStreaming) ?? false;
         
     bool structureContainsEventPayload = this.Structure?.Members.Any(member => member.IsEventPayload) ?? false;
     Member payloadMember = this.Structure?.GetExplicitEventPayloadMember();
@@ -1533,7 +1533,7 @@ if(structureIsEvent || structureIsEventStream)
                 {
                     foreach (var member in this.Structure.Members) 
                     {
-                        if (member.IsStreaming) 
+                        if (member.Shape.IsStreaming) 
                         {
 
             

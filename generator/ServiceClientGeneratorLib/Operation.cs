@@ -422,7 +422,7 @@ namespace ServiceClientGenerator
             {
                 return this.ResponseStructure == null ?
                     null :
-                    this.ResponseStructure.Members.SingleOrDefault(m => m.IsStreaming);
+                    this.ResponseStructure.Members.SingleOrDefault(m => m.Shape.IsStreaming);
             }
         }
 
@@ -463,7 +463,7 @@ namespace ServiceClientGenerator
             {
                 return this.RequestStructure == null ?
                     null :
-                    this.RequestStructure.Members.SingleOrDefault(m => m.IsStreaming);
+                    this.RequestStructure.Members.SingleOrDefault(m => m.Shape.IsStreaming);
             }
         }
 

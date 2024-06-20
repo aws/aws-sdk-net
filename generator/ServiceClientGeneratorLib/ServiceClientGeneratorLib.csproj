@@ -396,6 +396,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EventStreamGenerator.tt</DependentUpon>
     </Compile>
+    <Compile Update="Generators\SourceFiles\AmazonS3RetryPolicy.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AmazonS3RetryPolicy.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Update="Generators/Component/Component.tt">
@@ -696,6 +701,10 @@
     <None Update="Generators/SourceFiles/EventStreamGenerator.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EventStreamGenerator.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\AmazonS3RetryPolicy.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AmazonS3RetryPolicy.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

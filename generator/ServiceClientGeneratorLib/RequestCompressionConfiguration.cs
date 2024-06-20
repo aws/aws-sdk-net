@@ -76,7 +76,7 @@ namespace ServiceClientGenerator
                     }
                     else
                     {
-                        if(payload != null && payload.IsStreaming && payload.RequiresLength) 
+                        if(payload != null && payload.Shape.IsStreaming && payload.RequiresLength) 
                         {
                             throw new InvalidOperationException(
                                 "Cannot compress the request payload if the payload is a stream and the length of the request should be fixed"

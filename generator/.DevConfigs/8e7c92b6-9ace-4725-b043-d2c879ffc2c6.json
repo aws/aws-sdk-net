@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Add additional requests types to be retried for requests that return a 200 status code and an error in the body."
+            ]
+        }
+      ]
+}

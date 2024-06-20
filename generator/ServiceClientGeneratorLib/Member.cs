@@ -552,7 +552,7 @@ namespace ServiceClientGenerator
                     }
                     return "string";
                 case "blob":
-                    if (this.IsStreaming)
+                    if (this.Shape.IsStreaming)
                         return "Stream";
                     return "MemoryStream";
                 case "boolean":
@@ -905,17 +905,6 @@ namespace ServiceClientGenerator
             get
             {
                 return this.Shape.RequiresLength;
-            }
-        }
-
-        /// <summary>
-        /// Determines if the member is a stream from the shape in the json model
-        /// </summary>
-        public bool IsStreaming
-        {
-            get
-            {
-                return this.Shape.IsStreaming;
             }
         }
 
