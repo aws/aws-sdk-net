@@ -74,6 +74,15 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         }
 
         /// <summary>
+        /// The region used by partitional (non-regionalized/global) services for signing.
+        /// </summary>
+        public string implicitGlobalRegion
+        {
+            get { return (string)this["implicitGlobalRegion"]; }
+            set { this["implicitGlobalRegion"] = value; }
+        }
+
+        /// <summary>
         /// Builds Partition from PartitionAttributesShape
         /// </summary>
         internal static Partition FromPartitionData(PartitionAttributesShape data)
@@ -84,7 +93,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 dnsSuffix = data.dnsSuffix,
                 dualStackDnsSuffix = data.dualStackDnsSuffix,
                 supportsFIPS = data.supportsFIPS,
-                supportsDualStack = data.supportsDualStack
+                supportsDualStack = data.supportsDualStack,
+                implicitGlobalRegion = data.implicitGlobalRegion,
             };
         }
 

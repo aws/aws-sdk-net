@@ -1,0 +1,7 @@
+{
+    "core": {
+        "changeLogMessages": ["Add implicit global region to internal partition metadata"],
+        "type": "patch",
+        "updateMinimum": false
+    }
+}
