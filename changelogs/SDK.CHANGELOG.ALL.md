@@ -1,3 +1,27 @@
+### 3.7.836.0 (2024-06-20 18:27 UTC)
+* BedrockRuntime (3.7.305.0)
+	* This release adds document support to Converse and ConverseStream APIs
+* CodeArtifact (3.7.303.0)
+	* Add support for the Cargo package format.
+* ComputeOptimizer (3.7.303.0)
+	* This release enables AWS Compute Optimizer to analyze and generate optimization recommendations for Amazon RDS MySQL and RDS PostgreSQL.
+* CostOptimizationHub (3.7.302.0)
+	* This release enables AWS Cost Optimization Hub to show cost optimization recommendations for Amazon RDS MySQL and RDS PostgreSQL.
+* DynamoDBv2 (3.7.303.25)
+	* Doc-only update for DynamoDB. Fixed Important note in 6 Global table APIs - CreateGlobalTable, DescribeGlobalTable, DescribeGlobalTableSettings, ListGlobalTables, UpdateGlobalTable, and UpdateGlobalTableSettings.
+	* Fixed an issue causing DynamoDB context save to fail if the model object inherits a base class that contains members with the same name
+* Glue (3.7.317.0)
+	* Fix Glue paginators for Jobs, JobRuns, Triggers, Blueprints and Workflows.
+* IVSRealTime (3.7.304.0)
+	* IVS Real-Time now offers customers the ability to record individual stage participants to S3.
+* SageMaker (3.7.329.0)
+	* Adds support for model references in Hub service, and adds support for cross-account access of Hubs
+* SecurityHub (3.7.306.11)
+	* Documentation updates for Security Hub
+* Core 3.7.304.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.835.0 (2024-06-19 18:25 UTC)
 * Artifact (3.7.301.0)
 	* This release adds an acceptanceType field to the ReportSummary structure (used in the ListReports API response).
