@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Fixed an issue causing DynamoDB context save to fail if the model object inherits a base class that contains members with the same name"
+            ]
+        }
+    ]
+}
