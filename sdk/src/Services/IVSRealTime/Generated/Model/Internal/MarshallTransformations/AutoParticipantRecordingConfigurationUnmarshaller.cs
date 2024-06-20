@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Stage Object
+    /// Response Unmarshaller for AutoParticipantRecordingConfiguration Object
     /// </summary>  
-    public class StageUnmarshaller : IUnmarshaller<Stage, XmlUnmarshallerContext>, IUnmarshaller<Stage, JsonUnmarshallerContext>
+    public class AutoParticipantRecordingConfigurationUnmarshaller : IUnmarshaller<AutoParticipantRecordingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AutoParticipantRecordingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Stage IUnmarshaller<Stage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AutoParticipantRecordingConfiguration IUnmarshaller<AutoParticipantRecordingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Stage Unmarshall(JsonUnmarshallerContext context)
+        public AutoParticipantRecordingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            Stage unmarshalledObject = new Stage();
+            AutoParticipantRecordingConfiguration unmarshalledObject = new AutoParticipantRecordingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("activeSessionId", targetDepth))
+                if (context.TestExpression("mediaTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.MediaTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageConfigurationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveSessionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("autoParticipantRecordingConfiguration", targetDepth))
-                {
-                    var unmarshaller = AutoParticipantRecordingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AutoParticipantRecordingConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StorageConfigurationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         }
 
 
-        private static StageUnmarshaller _instance = new StageUnmarshaller();        
+        private static AutoParticipantRecordingConfigurationUnmarshaller _instance = new AutoParticipantRecordingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StageUnmarshaller Instance
+        public static AutoParticipantRecordingConfigurationUnmarshaller Instance
         {
             get
             {

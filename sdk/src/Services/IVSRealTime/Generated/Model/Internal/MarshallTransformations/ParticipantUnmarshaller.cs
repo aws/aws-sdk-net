@@ -120,6 +120,24 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Published = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("recordingS3BucketName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecordingS3BucketName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("recordingS3Prefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecordingS3Prefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("recordingState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecordingState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sdkVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
