@@ -48,6 +48,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDocument())
+            {
+                context.Writer.WritePropertyName("document");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DocumentBlockMarshaller.Instance;
+                marshaller.Marshall(requestObject.Document, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetGuardContent())
             {
                 context.Writer.WritePropertyName("guardContent");

@@ -35,11 +35,30 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class ContentBlock
     {
+        private DocumentBlock _document;
         private GuardrailConverseContentBlock _guardContent;
         private ImageBlock _image;
         private string _text;
         private ToolResultBlock _toolResult;
         private ToolUseBlock _toolUse;
+
+        /// <summary>
+        /// Gets and sets the property Document. 
+        /// <para>
+        /// A document to include in the message.
+        /// </para>
+        /// </summary>
+        public DocumentBlock Document
+        {
+            get { return this._document; }
+            set { this._document = value; }
+        }
+
+        // Check to see if Document property is set
+        internal bool IsSetDocument()
+        {
+            return this._document != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GuardContent. 

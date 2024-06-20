@@ -34,9 +34,28 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class ToolResultContentBlock
     {
+        private DocumentBlock _document;
         private ImageBlock _image;
         private Amazon.Runtime.Documents.Document _json;
         private string _text;
+
+        /// <summary>
+        /// Gets and sets the property Document. 
+        /// <para>
+        /// A tool result that is a document.
+        /// </para>
+        /// </summary>
+        public DocumentBlock Document
+        {
+            get { return this._document; }
+            set { this._document = value; }
+        }
+
+        // Check to see if Document property is set
+        internal bool IsSetDocument()
+        {
+            return this._document != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Image. 

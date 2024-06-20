@@ -75,6 +75,84 @@ namespace Amazon.BedrockRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type DocumentFormat.
+    /// </summary>
+    public class DocumentFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Csv for DocumentFormat
+        /// </summary>
+        public static readonly DocumentFormat Csv = new DocumentFormat("csv");
+        /// <summary>
+        /// Constant Doc for DocumentFormat
+        /// </summary>
+        public static readonly DocumentFormat Doc = new DocumentFormat("doc");
+        /// <summary>
+        /// Constant Docx for DocumentFormat
+        /// </summary>
+        public static readonly DocumentFormat Docx = new DocumentFormat("docx");
+        /// <summary>
+        /// Constant Html for DocumentFormat
+        /// </summary>
+        public static readonly DocumentFormat Html = new DocumentFormat("html");
+        /// <summary>
+        /// Constant Md for DocumentFormat
+        /// </summary>
+        public static readonly DocumentFormat Md = new DocumentFormat("md");
+        /// <summary>
+        /// Constant Pdf for DocumentFormat
+        /// </summary>
+        public static readonly DocumentFormat Pdf = new DocumentFormat("pdf");
+        /// <summary>
+        /// Constant Txt for DocumentFormat
+        /// </summary>
+        public static readonly DocumentFormat Txt = new DocumentFormat("txt");
+        /// <summary>
+        /// Constant Xls for DocumentFormat
+        /// </summary>
+        public static readonly DocumentFormat Xls = new DocumentFormat("xls");
+        /// <summary>
+        /// Constant Xlsx for DocumentFormat
+        /// </summary>
+        public static readonly DocumentFormat Xlsx = new DocumentFormat("xlsx");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentFormat FindValue(string value)
+        {
+            return FindValue<DocumentFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailContentFilterConfidence.
     /// </summary>
     public class GuardrailContentFilterConfidence : ConstantClass

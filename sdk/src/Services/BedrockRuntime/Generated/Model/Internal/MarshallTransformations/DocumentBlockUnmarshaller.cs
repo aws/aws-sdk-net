@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ToolResultContentBlock Object
+    /// Response Unmarshaller for DocumentBlock Object
     /// </summary>  
-    public class ToolResultContentBlockUnmarshaller : IUnmarshaller<ToolResultContentBlock, XmlUnmarshallerContext>, IUnmarshaller<ToolResultContentBlock, JsonUnmarshallerContext>
+    public class DocumentBlockUnmarshaller : IUnmarshaller<DocumentBlock, XmlUnmarshallerContext>, IUnmarshaller<DocumentBlock, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ToolResultContentBlock IUnmarshaller<ToolResultContentBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DocumentBlock IUnmarshaller<DocumentBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ToolResultContentBlock Unmarshall(JsonUnmarshallerContext context)
+        public DocumentBlock Unmarshall(JsonUnmarshallerContext context)
         {
-            ToolResultContentBlock unmarshalledObject = new ToolResultContentBlock();
+            DocumentBlock unmarshalledObject = new DocumentBlock();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,22 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("document", targetDepth))
-                {
-                    var unmarshaller = DocumentBlockUnmarshaller.Instance;
-                    unmarshalledObject.Document = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("image", targetDepth))
-                {
-                    var unmarshaller = ImageBlockUnmarshaller.Instance;
-                    unmarshalledObject.Image = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("json", targetDepth))
-                {
-                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
-                    unmarshalledObject.Json = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("text", targetDepth))
+                if (context.TestExpression("format", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("source", targetDepth))
+                {
+                    var unmarshaller = DocumentSourceUnmarshaller.Instance;
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +89,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static ToolResultContentBlockUnmarshaller _instance = new ToolResultContentBlockUnmarshaller();        
+        private static DocumentBlockUnmarshaller _instance = new DocumentBlockUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ToolResultContentBlockUnmarshaller Instance
+        public static DocumentBlockUnmarshaller Instance
         {
             get
             {

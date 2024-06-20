@@ -66,6 +66,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("document", targetDepth))
+                {
+                    var unmarshaller = DocumentBlockUnmarshaller.Instance;
+                    unmarshalledObject.Document = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("guardContent", targetDepth))
                 {
                     var unmarshaller = GuardrailConverseContentBlockUnmarshaller.Instance;
