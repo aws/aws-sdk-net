@@ -285,6 +285,10 @@ namespace Amazon.CodeArtifact
     {
 
         /// <summary>
+        /// Constant Cargo for PackageFormat
+        /// </summary>
+        public static readonly PackageFormat Cargo = new PackageFormat("cargo");
+        /// <summary>
         /// Constant Generic for PackageFormat
         /// </summary>
         public static readonly PackageFormat Generic = new PackageFormat("generic");

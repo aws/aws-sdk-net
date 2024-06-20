@@ -81,8 +81,9 @@ namespace Amazon.CodeArtifact
     /// <para>
     ///  <b>Package</b>: A <i>package</i> is a bundle of software and the metadata required
     /// to resolve dependencies and install the software. CodeArtifact supports npm, PyPI,
-    /// Maven, NuGet, Swift, Ruby, and generic package formats. For more information about
-    /// the supported package formats and how to use CodeArtifact with them, see the <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html">CodeArtifact
+    /// Maven, NuGet, Swift, Ruby, Cargo, and generic package formats. For more information
+    /// about the supported package formats and how to use CodeArtifact with them, see the
+    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html">CodeArtifact
     /// User Guide</a>.
     /// </para>
     ///  
@@ -265,6 +266,10 @@ namespace Amazon.CodeArtifact
     /// package format. A repository has one endpoint for each package format: 
     /// </para>
     ///  <ul> <li> 
+    /// <para>
+    ///  <c>cargo</c> 
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     ///  <c>generic</c> 
     /// </para>
@@ -1970,6 +1975,10 @@ namespace Amazon.CodeArtifact
         /// has one endpoint for each package format: 
         /// 
         ///  <ul> <li> 
+        /// <para>
+        ///  <c>cargo</c> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <c>generic</c> 
         /// </para>

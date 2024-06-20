@@ -36,6 +36,10 @@ namespace Amazon.CodeArtifact.Model
     /// 
     ///  <ul> <li> 
     /// <para>
+    ///  <c>cargo</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>generic</c> 
     /// </para>
     ///  </li> <li> 
