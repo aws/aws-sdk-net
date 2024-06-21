@@ -1444,7 +1444,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             {
                 var transactWrite = hashTable.CreateTransactWrite();
-                AssertExtensions.ExpectException<ArgumentException>(() => transactWrite.AddKeyToUpdate(hashKey: 7001,
+                AssertExtensions.ExpectException<ArgumentException>(() => transactWrite.AddDocumentToUpdate(hashKey: 7001,
                     new Expression
                     {
                         ExpressionStatement = "SET #garbage = :garbage",
@@ -1461,7 +1461,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         },
                         ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
                     }));
-                AssertExtensions.ExpectException<ArgumentException>(() => transactWrite.AddKeyToUpdate(hashKey: 7001,
+                AssertExtensions.ExpectException<ArgumentException>(() => transactWrite.AddDocumentToUpdate(hashKey: 7001,
                     new Expression
                     {
                         ExpressionStatement = "SET #garbage = :garbage",
@@ -1482,7 +1482,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             {
                 var transactWrite = hashTable.CreateTransactWrite();
-                transactWrite.AddKeyToUpdate(hashKey: 7001,
+                transactWrite.AddDocumentToUpdate(hashKey: 7001,
                     new Expression
                     {
                         ExpressionStatement = "SET #price = #price + :inc",
@@ -1499,7 +1499,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         },
                         ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
                     });
-                transactWrite.AddKeyToUpdate(hashKey: 7002,
+                transactWrite.AddDocumentToUpdate(hashKey: 7002,
                     new Expression
                     {
                         ExpressionStatement = "SET #price = #price + :inc",
@@ -1539,7 +1539,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             {
                 var transactWrite = hashTable.CreateTransactWrite();
-                transactWrite.AddKeyToUpdate(hashKey: 7001,
+                transactWrite.AddDocumentToUpdate(hashKey: 7001,
                     new Expression
                     {
                         ExpressionStatement = "SET #price = #price + :inc",
@@ -1556,7 +1556,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         },
                         ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
                     });
-                transactWrite.AddKeyToUpdate(hashKey: 7002,
+                transactWrite.AddDocumentToUpdate(hashKey: 7002,
                     new Expression
                     {
                         ExpressionStatement = "SET #price = #price + :inc",

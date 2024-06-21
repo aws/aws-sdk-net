@@ -167,9 +167,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="hashKey">Hash key of the document.</param>
         /// <param name="updateExpression">Update expression to use.</param>
         /// <param name="operationConfig">Configuration to use.</param>
-        public void AddKeyToUpdate(Primitive hashKey, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null)
+        public void AddDocumentToUpdate(Primitive hashKey, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null)
         {
-            AddKeyToUpdate(hashKey, rangeKey: null, updateExpression, operationConfig);
+            AddDocumentToUpdate(hashKey, rangeKey: null, updateExpression, operationConfig);
         }
 
         /// <summary>
@@ -179,9 +179,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="rangeKey">Range key of the document.</param>
         /// <param name="updateExpression">Update expression to use.</param>
         /// <param name="operationConfig">Configuration to use.</param>
-        public void AddKeyToUpdate(Primitive hashKey, Primitive rangeKey, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null)
+        public void AddDocumentToUpdate(Primitive hashKey, Primitive rangeKey, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null)
         {
-            AddKeyToUpdateHelper(TargetTable.MakeKey(hashKey, rangeKey), updateExpression, operationConfig);
+            AddDocumentToUpdateHelper(TargetTable.MakeKey(hashKey, rangeKey), updateExpression, operationConfig);
         }
 
         /// <summary>
@@ -190,9 +190,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="key">Key of the document.</param>
         /// <param name="updateExpression">Update expression to use.</param>
         /// <param name="operationConfig">Configuration to use.</param>
-        public void AddKeyToUpdate(IDictionary<string, DynamoDBEntry> key, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null)
+        public void AddDocumentToUpdate(IDictionary<string, DynamoDBEntry> key, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null)
         {
-            AddKeyToUpdateHelper(TargetTable.MakeKey(key), updateExpression, operationConfig);
+            AddDocumentToUpdateHelper(TargetTable.MakeKey(key), updateExpression, operationConfig);
         }
 
         #endregion
@@ -362,7 +362,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             });
         }
 
-        internal void AddKeyToUpdateHelper(Key key, Expression updateExpression, TransactWriteItemOperationConfig operationConfig)
+        internal void AddDocumentToUpdateHelper(Key key, Expression updateExpression, TransactWriteItemOperationConfig operationConfig)
         {
             if (operationConfig?.ConditionalExpression != null)
             {

@@ -1419,7 +1419,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             {
                 var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
-                transactWrite.AddSaveKey(employee1.Name, employee1.Age,
+                transactWrite.AddSaveItem(employee1.Name, employee1.Age,
                     new Expression
                     {
                         ExpressionStatement = "SET #score = #score + :score",
@@ -1464,7 +1464,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             {
                 var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
-                transactWrite.AddSaveKey(employee1.Name, employee1.Age,
+                transactWrite.AddSaveItem(employee1.Name, employee1.Age,
                     new Expression
                     {
                         ExpressionStatement = "SET #score = #score + :score",
@@ -1477,7 +1477,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         ExpressionAttributeNames = { ["#version"] = "Version" },
                         ExpressionAttributeValues = { [":version"] = employee1.Version }
                     });
-                transactWrite.AddSaveKey(employee2.Name, employee2.Age,
+                transactWrite.AddSaveItem(employee2.Name, employee2.Age,
                     new Expression
                     {
                         ExpressionStatement = "SET #score = #score + :score",

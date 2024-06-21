@@ -150,9 +150,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="hashKey">Hash key of the item to delete.</param>
         /// <param name="updateExpression">Update expression to use.</param>
         /// <param name="conditionExpression">Condition to check before the operation.</param>
-        public void AddSaveKey(object hashKey, Expression updateExpression, Expression conditionExpression = null)
+        public void AddSaveItem(object hashKey, Expression updateExpression, Expression conditionExpression = null)
         {
-            AddSaveKey(hashKey, rangeKey: null, updateExpression, conditionExpression);
+            AddSaveItem(hashKey, rangeKey: null, updateExpression, conditionExpression);
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="rangeKey">Range key of the item to delete.</param>
         /// <param name="updateExpression">Update expression to use.</param>
         /// <param name="conditionExpression">Condition to check before the operation.</param>
-        public void AddSaveKey(object hashKey, object rangeKey, Expression updateExpression, Expression conditionExpression = null)
+        public void AddSaveItem(object hashKey, object rangeKey, Expression updateExpression, Expression conditionExpression = null)
         {
             var operationConfig = conditionExpression != null
                 ? new TransactWriteItemOperationConfig
@@ -173,7 +173,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
                 : null;
 
-            DocumentTransaction.AddKeyToUpdateHelper(Context.MakeKey(hashKey, rangeKey, StorageConfig, Config), updateExpression, operationConfig);
+            DocumentTransaction.AddDocumentToUpdateHelper(Context.MakeKey(hashKey, rangeKey, StorageConfig, Config), updateExpression, operationConfig);
         }
 
         #endregion
