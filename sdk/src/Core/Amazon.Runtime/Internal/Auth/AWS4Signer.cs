@@ -870,16 +870,21 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>Canonicalized string of headers, with the header names in lower case.</returns>
         protected internal static string CanonicalizeHeaders(IEnumerable<KeyValuePair<string, string>> sortedHeaders)
         {
-            if (sortedHeaders == null || sortedHeaders.Count() == 0)
+            if (sortedHeaders == null)
                 return string.Empty;
 
-            var builder = new StringBuilder();
+            // Majority of the cases we will always have a IDictionary<string, string> for headers which implements ICollection<KeyValuePair<string, string>>.
+            var materializedSortedHeaders = sortedHeaders as ICollection<KeyValuePair<string, string>> ?? sortedHeaders.ToList();
+            if (materializedSortedHeaders.Count == 0)
+                return string.Empty;
+
+            using var builder = new ValueStringBuilder(512);
             
-            foreach (var entry in sortedHeaders)
+            foreach (var entry in materializedSortedHeaders)
             {
                 // Refer https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html. (Step #4: "To create the canonical headers list, convert all header names to lowercase and remove leading spaces and trailing spaces. Convert sequential spaces in the header value to a single space.").
                 builder.Append(entry.Key.ToLowerInvariant());
-                builder.Append(":");
+                builder.Append(':');
                 builder.Append(AWSSDKUtils.CompressSpaces(entry.Value)?.Trim());
                 builder.Append("\n");
             }
