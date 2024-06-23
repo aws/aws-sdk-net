@@ -35,7 +35,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Threading;
 using Amazon.Runtime.Endpoints;
-using AWSSDK.Core.NetStandard.Amazon.Runtime.Internal.Util;
+using ThirdParty.RuntimeBackports;
 
 #if AWS_ASYNC_API
 using System.Threading.Tasks;

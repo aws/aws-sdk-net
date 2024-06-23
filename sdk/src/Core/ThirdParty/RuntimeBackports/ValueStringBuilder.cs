@@ -2,15 +2,15 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+#nullable enable
+
 using System;
 using System.Buffers;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-#nullable enable
-
-namespace AWSSDK.Core.NetStandard.Amazon.Runtime.Internal.Util
+namespace ThirdParty.RuntimeBackports
 {
 #pragma warning disable CA1815
     internal ref struct ValueStringBuilder

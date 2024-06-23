@@ -22,7 +22,7 @@ using Amazon.Internal;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Endpoints;
-using AWSSDK.Core.NetStandard.Amazon.Runtime.Internal.Util;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime.Internal.Auth
 {
