@@ -98,6 +98,13 @@ namespace AWSSDK.Core.NetStandard.Amazon.Runtime.Internal.Util
             return s;
         }
 
+        public string ToString(int start, int length)
+        {
+            string s = _chars.Slice(start, length).ToString();
+            Dispose();
+            return s;
+        }
+
         /// <summary>Returns the underlying storage of the builder.</summary>
         public Span<char> RawChars => _chars;
 
