@@ -22,6 +22,7 @@ using Amazon.Internal;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Endpoints;
+using AWSSDK.Core.NetStandard.Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -818,13 +819,13 @@ namespace Amazon.Runtime.Internal.Auth
                                                     IDictionary<string, string> pathResources,
                                                     bool doubleEncode)
         {
-            var canonicalRequest = new StringBuilder();
-            canonicalRequest.AppendFormat("{0}\n", httpMethod);
-            canonicalRequest.AppendFormat("{0}\n", AWSSDKUtils.CanonicalizeResourcePathV2(endpoint, resourcePath, doubleEncode, pathResources));
-            canonicalRequest.AppendFormat("{0}\n", canonicalQueryString);
+            using var canonicalRequest = new ValueStringBuilder(512);
+            canonicalRequest.Append($"{httpMethod}\n");
+            canonicalRequest.Append($"{AWSSDKUtils.CanonicalizeResourcePathV2(endpoint, resourcePath, doubleEncode, pathResources)}\n");
+            canonicalRequest.Append($"{canonicalQueryString}\n");
 
-            canonicalRequest.AppendFormat("{0}\n", CanonicalizeHeaders(sortedHeaders));
-            canonicalRequest.AppendFormat("{0}\n", CanonicalizeHeaderNames(sortedHeaders));
+            canonicalRequest.Append($"{CanonicalizeHeaders(sortedHeaders)}\n");
+            canonicalRequest.Append($"{CanonicalizeHeaderNames(sortedHeaders)}\n");
 
             if (precomputedBodyHash != null)
             {
@@ -832,8 +833,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
             else
             {
-                string contentHash;
-                if (sortedHeaders.TryGetValue(HeaderKeys.XAmzContentSha256Header, out contentHash))
+                if (sortedHeaders.TryGetValue(HeaderKeys.XAmzContentSha256Header, out var contentHash))
                     canonicalRequest.Append(contentHash);
             }
 
