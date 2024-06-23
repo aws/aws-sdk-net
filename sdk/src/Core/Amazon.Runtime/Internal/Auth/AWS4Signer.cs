@@ -819,7 +819,7 @@ namespace Amazon.Runtime.Internal.Auth
                                                     IDictionary<string, string> pathResources,
                                                     bool doubleEncode)
         {
-            using var canonicalRequest = new ValueStringBuilder(512);
+            var canonicalRequest = new ValueStringBuilder(512);
             canonicalRequest.Append($"{httpMethod}\n");
             canonicalRequest.Append($"{AWSSDKUtils.CanonicalizeResourcePathV2(endpoint, resourcePath, doubleEncode, pathResources)}\n");
             canonicalRequest.Append($"{canonicalQueryString}\n");
@@ -878,8 +878,7 @@ namespace Amazon.Runtime.Internal.Auth
             if (materializedSortedHeaders.Count == 0)
                 return string.Empty;
 
-            using var builder = new ValueStringBuilder(512);
-            
+            var builder = new ValueStringBuilder(512);
             foreach (var entry in materializedSortedHeaders)
             {
                 // Refer https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html. (Step #4: "To create the canonical headers list, convert all header names to lowercase and remove leading spaces and trailing spaces. Convert sequential spaces in the header value to a single space.").
