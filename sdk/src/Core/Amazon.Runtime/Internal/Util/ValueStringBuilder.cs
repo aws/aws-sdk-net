@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 namespace AWSSDK.Core.NetStandard.Amazon.Runtime.Internal.Util
 {
 #pragma warning disable CA1815
-    public ref struct ValueStringBuilder
+    internal ref struct ValueStringBuilder
 #pragma warning restore CA1815
     {
         private char[]? _arrayToReturnToPool;
