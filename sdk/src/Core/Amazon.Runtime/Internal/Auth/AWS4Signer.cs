@@ -820,7 +820,8 @@ namespace Amazon.Runtime.Internal.Auth
                                                     bool doubleEncode)
         {
             var canonicalRequest = new ValueStringBuilder(512);
-            canonicalRequest.Append($"{httpMethod}\n");
+            canonicalRequest.Append(httpMethod);
+            canonicalRequest.Append('\n');
             canonicalRequest.Append($"{AWSSDKUtils.CanonicalizeResourcePathV2(endpoint, resourcePath, doubleEncode, pathResources)}\n");
             canonicalRequest.Append($"{canonicalQueryString}\n");
 
