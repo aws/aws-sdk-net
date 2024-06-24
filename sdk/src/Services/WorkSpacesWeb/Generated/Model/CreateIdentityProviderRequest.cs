@@ -40,6 +40,7 @@ namespace Amazon.WorkSpacesWeb.Model
         private string _identityProviderName;
         private IdentityProviderType _identityProviderType;
         private string _portalArn;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -273,6 +274,25 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetPortalArn()
         {
             return this._portalArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to add to the identity provider resource. A tag is a key-value pair.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -96,6 +96,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomerManagedKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deepLinkAllowed", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeepLinkAllowed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("disconnectTimeoutInMinutes", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

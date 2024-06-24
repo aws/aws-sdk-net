@@ -38,6 +38,7 @@ namespace Amazon.WorkSpacesWeb.Model
         private string _clientToken;
         private CookieSynchronizationConfiguration _cookieSynchronizationConfiguration;
         private EnabledType _copyAllowed;
+        private EnabledType _deepLinkAllowed;
         private int? _disconnectTimeoutInMinutes;
         private EnabledType _downloadAllowed;
         private int? _idleDisconnectTimeoutInMinutes;
@@ -114,6 +115,25 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetCopyAllowed()
         {
             return this._copyAllowed != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeepLinkAllowed. 
+        /// <para>
+        /// Specifies whether the user can use deep links that open automatically when connecting
+        /// to a session.
+        /// </para>
+        /// </summary>
+        public EnabledType DeepLinkAllowed
+        {
+            get { return this._deepLinkAllowed; }
+            set { this._deepLinkAllowed = value; }
+        }
+
+        // Check to see if DeepLinkAllowed property is set
+        internal bool IsSetDeepLinkAllowed()
+        {
+            return this._deepLinkAllowed != null;
         }
 
         /// <summary>
