@@ -37,7 +37,7 @@ namespace Amazon.QBusiness.Model
     /// <para>
     /// There are new tiers for Amazon Q Business. Not all features in Amazon Q Business Pro
     /// are also available in Amazon Q Business Lite. For information on what's included in
-    /// Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon
+    /// Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#user-sub-tiers">Amazon
     /// Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription
     /// tiers to users.
     /// </para>
@@ -51,6 +51,7 @@ namespace Amazon.QBusiness.Model
         private string _displayName;
         private EncryptionConfiguration _encryptionConfiguration;
         private string _identityCenterInstanceArn;
+        private QAppsConfiguration _qAppsConfiguration;
         private string _roleArn;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
@@ -167,6 +168,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetIdentityCenterInstanceArn()
         {
             return this._identityCenterInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QAppsConfiguration. 
+        /// <para>
+        /// An option to allow end users to create and use Amazon Q Apps in the web experience.
+        /// </para>
+        /// </summary>
+        public QAppsConfiguration QAppsConfiguration
+        {
+            get { return this._qAppsConfiguration; }
+            set { this._qAppsConfiguration = value; }
+        }
+
+        // Check to see if QAppsConfiguration property is set
+        internal bool IsSetQAppsConfiguration()
+        {
+            return this._qAppsConfiguration != null;
         }
 
         /// <summary>

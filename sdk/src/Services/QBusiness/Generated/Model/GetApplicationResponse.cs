@@ -43,6 +43,7 @@ namespace Amazon.QBusiness.Model
         private EncryptionConfiguration _encryptionConfiguration;
         private ErrorDetail _error;
         private string _identityCenterApplicationArn;
+        private QAppsConfiguration _qAppsConfiguration;
         private string _roleArn;
         private ApplicationStatus _status;
         private DateTime? _updatedAt;
@@ -215,6 +216,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetIdentityCenterApplicationArn()
         {
             return this._identityCenterApplicationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QAppsConfiguration. 
+        /// <para>
+        /// Settings for whether end users can create and use Amazon Q Apps in the web experience.
+        /// </para>
+        /// </summary>
+        public QAppsConfiguration QAppsConfiguration
+        {
+            get { return this._qAppsConfiguration; }
+            set { this._qAppsConfiguration = value; }
+        }
+
+        // Check to see if QAppsConfiguration property is set
+        internal bool IsSetQAppsConfiguration()
+        {
+            return this._qAppsConfiguration != null;
         }
 
         /// <summary>

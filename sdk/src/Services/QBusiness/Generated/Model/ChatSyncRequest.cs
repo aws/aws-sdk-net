@@ -245,7 +245,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ParentMessageId. 
         /// <para>
-        /// The identifier of the previous end user text input message in a conversation.
+        /// The identifier of the previous system message in a conversation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

@@ -88,8 +88,7 @@ namespace Amazon.QBusiness.Model
         /// <para>
         /// Returns <c>true</c> when a document contains any of the specified document attributes
         /// or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
-        /// attribute value types</a>: <c>dateValue</c>, <c>longValue</c>, <c>stringListValue</c>
-        /// and <c>stringValue</c>.
+        /// attribute value types</a>: <c>stringListValue</c>.
         /// </para>
         /// </summary>
         public DocumentAttribute ContainsAny

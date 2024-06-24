@@ -99,6 +99,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdentityCenterInstanceArn);
                 }
 
+                if(publicRequest.IsSetQAppsConfiguration())
+                {
+                    context.Writer.WritePropertyName("qAppsConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = QAppsConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.QAppsConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("roleArn");
