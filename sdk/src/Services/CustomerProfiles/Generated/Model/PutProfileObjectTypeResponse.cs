@@ -42,6 +42,8 @@ namespace Amazon.CustomerProfiles.Model
         private Dictionary<string, ObjectTypeField> _fields = AWSConfigs.InitializeCollections ? new Dictionary<string, ObjectTypeField>() : null;
         private Dictionary<string, List<ObjectTypeKey>> _keys = AWSConfigs.InitializeCollections ? new Dictionary<string, List<ObjectTypeKey>>() : null;
         private DateTime? _lastUpdatedAt;
+        private int? _maxAvailableProfileObjectCount;
+        private int? _maxProfileObjectCount;
         private string _objectTypeName;
         private string _sourceLastUpdatedTimestampFormat;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -199,6 +201,44 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetLastUpdatedAt()
         {
             return this._lastUpdatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxAvailableProfileObjectCount. 
+        /// <para>
+        /// The amount of provisioned profile object max count available.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int MaxAvailableProfileObjectCount
+        {
+            get { return this._maxAvailableProfileObjectCount.GetValueOrDefault(); }
+            set { this._maxAvailableProfileObjectCount = value; }
+        }
+
+        // Check to see if MaxAvailableProfileObjectCount property is set
+        internal bool IsSetMaxAvailableProfileObjectCount()
+        {
+            return this._maxAvailableProfileObjectCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxProfileObjectCount. 
+        /// <para>
+        /// The amount of profile object max count assigned to the object type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MaxProfileObjectCount
+        {
+            get { return this._maxProfileObjectCount.GetValueOrDefault(); }
+            set { this._maxProfileObjectCount = value; }
+        }
+
+        // Check to see if MaxProfileObjectCount property is set
+        internal bool IsSetMaxProfileObjectCount()
+        {
+            return this._maxProfileObjectCount.HasValue; 
         }
 
         /// <summary>
