@@ -1,3 +1,21 @@
+### 3.7.837.0 (2024-06-24 21:16 UTC)
+* BedrockRuntime (3.7.306.0)
+	* Increases Converse API's document name length
+* CustomerProfiles (3.7.302.0)
+	* This release includes changes to ProfileObjectType APIs, adds functionality top set and get capacity for profile object types.
+* EC2 (3.7.331.0)
+	* Fix EC2 multi-protocol info in models.
+* QBusiness (3.7.304.0)
+	* Allow enable/disable Q Apps when creating/updating a Q application; Return the Q Apps enablement information when getting a Q application.
+* SimpleSystemsManagement (3.7.305.0)
+	* Add sensitive trait to SSM IPAddress property for CloudTrail redaction
+* WorkSpacesWeb (3.7.302.0)
+	* Added ability to enable DeepLinking functionality on a Portal via UserSettings as well as added support for IdentityProvider resource tagging.
+* Core 3.7.304.20
+	* Add implicit global region to internal partition metadata
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.836.0 (2024-06-20 18:27 UTC)
 * BedrockRuntime (3.7.305.0)
 	* This release adds document support to Converse and ConverseStream APIs
