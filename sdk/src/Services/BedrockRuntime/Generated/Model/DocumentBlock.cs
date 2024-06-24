@@ -66,7 +66,7 @@ namespace Amazon.BedrockRuntime.Model
         /// A name for the document.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string Name
         {
             get { return this._name; }
