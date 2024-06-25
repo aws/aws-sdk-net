@@ -8605,6 +8605,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C7gnMedium = new InstanceType("c7gn.medium");
         /// <summary>
+        /// Constant C7gnMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gnMetal = new InstanceType("c7gn.metal");
+        /// <summary>
         /// Constant C7gnXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C7gnXlarge = new InstanceType("c7gn.xlarge");
@@ -9985,6 +9989,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType Mac1Metal = new InstanceType("mac1.metal");
         /// <summary>
+        /// Constant Mac2M1ultraMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType Mac2M1ultraMetal = new InstanceType("mac2-m1ultra.metal");
+        /// <summary>
         /// Constant Mac2M2Metal for InstanceType
         /// </summary>
         public static readonly InstanceType Mac2M2Metal = new InstanceType("mac2-m2.metal");
@@ -10805,6 +10813,54 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R7izXlarge = new InstanceType("r7iz.xlarge");
         /// <summary>
+        /// Constant R8g12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8g12xlarge = new InstanceType("r8g.12xlarge");
+        /// <summary>
+        /// Constant R8g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8g16xlarge = new InstanceType("r8g.16xlarge");
+        /// <summary>
+        /// Constant R8g24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8g24xlarge = new InstanceType("r8g.24xlarge");
+        /// <summary>
+        /// Constant R8g2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8g2xlarge = new InstanceType("r8g.2xlarge");
+        /// <summary>
+        /// Constant R8g48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8g48xlarge = new InstanceType("r8g.48xlarge");
+        /// <summary>
+        /// Constant R8g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8g4xlarge = new InstanceType("r8g.4xlarge");
+        /// <summary>
+        /// Constant R8g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8g8xlarge = new InstanceType("r8g.8xlarge");
+        /// <summary>
+        /// Constant R8gLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8gLarge = new InstanceType("r8g.large");
+        /// <summary>
+        /// Constant R8gMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8gMedium = new InstanceType("r8g.medium");
+        /// <summary>
+        /// Constant R8gMetal24xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8gMetal24xl = new InstanceType("r8g.metal-24xl");
+        /// <summary>
+        /// Constant R8gMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8gMetal48xl = new InstanceType("r8g.metal-48xl");
+        /// <summary>
+        /// Constant R8gXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8gXlarge = new InstanceType("r8g.xlarge");
+        /// <summary>
         /// Constant T1Micro for InstanceType
         /// </summary>
         public static readonly InstanceType T1Micro = new InstanceType("t1.micro");
@@ -10976,6 +11032,10 @@ namespace Amazon.EC2
         /// Constant U7i12tb224xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType U7i12tb224xlarge = new InstanceType("u7i-12tb.224xlarge");
+        /// <summary>
+        /// Constant U7ib12tb224xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U7ib12tb224xlarge = new InstanceType("u7ib-12tb.224xlarge");
         /// <summary>
         /// Constant U7in16tb224xlarge for InstanceType
         /// </summary>
