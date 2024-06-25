@@ -190,7 +190,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// The amount of time, in seconds, between one scaling activity ending and another one
-        /// starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        /// starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-scaling-cooldowns.html">Scaling
         /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
@@ -281,8 +281,8 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto
         /// Scaling supports <c>DesiredCapacityType</c> for attribute-based instance type selection
-        /// only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-        /// an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon
+        /// only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-mixed-instances-group-attribute-based-instance-type-selection.html">Create
+        /// a mixed instances group using attribute-based instance type selection</a> in the <i>Amazon
         /// EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
@@ -344,8 +344,9 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// The valid values are <c>EC2</c>, <c>ELB</c>, and <c>VPC_LATTICE</c>. <c>EC2</c> is
-        /// the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-        /// checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html">Health
+        /// checks for instances in an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -371,9 +372,9 @@ namespace Amazon.AutoScaling.Model
         /// The ID of the instance used to base the launch configuration on. If specified, Amazon
         /// EC2 Auto Scaling uses the configuration values from the specified instance to create
         /// a new launch configuration. To get the instance ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-        /// API operation. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating
-        /// an Auto Scaling group using an EC2 instance</a> in the <i>Amazon EC2 Auto Scaling
-        /// User Guide</i>.
+        /// API operation. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Create
+        /// an Auto Scaling group using parameters from an existing instance</a> in the <i>Amazon
+        /// EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=19)]
@@ -446,7 +447,7 @@ namespace Amazon.AutoScaling.Model
         ///  <note> 
         /// <para>
         /// The launch template that is specified must be configured for use with an Auto Scaling
-        /// group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
+        /// group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Create
         /// a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
         /// User Guide</i>.
         /// </para>
@@ -508,7 +509,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The maximum amount of time, in seconds, that an instance can be in service. The default
         /// is null. If specified, the value must be either 0 or a number equal to or greater
-        /// than 86,400 seconds (1 day). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
+        /// than 86,400 seconds (1 day). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replace
         /// Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon EC2
         /// Auto Scaling User Guide</i>.
         /// </para>
@@ -597,7 +598,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Indicates whether newly launched instances are protected from termination by Amazon
         /// EC2 Auto Scaling when scaling in. For more information about preventing instances
-        /// from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+        /// from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Use
         /// instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -717,8 +718,8 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// A policy or a list of policies that are used to select the instance to terminate.
         /// These policies are executed in the order that you list them. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
-        /// with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Configure
+        /// termination policies for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
         /// User Guide</i>.
         /// </para>
         ///  

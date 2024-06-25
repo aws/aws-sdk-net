@@ -104,7 +104,7 @@ namespace Amazon.AutoScaling.Model
         /// The instance type, such as <c>m3.xlarge</c>. You must specify an instance type that
         /// is supported in your requested Region and Availability Zones. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  
         /// <para>
@@ -164,8 +164,8 @@ namespace Amazon.AutoScaling.Model
         /// in an overage. For example, if there are two units remaining to fulfill capacity,
         /// and Amazon EC2 Auto Scaling can only launch an instance with a <c>WeightedCapacity</c>
         /// of five units, the instance is launched, and the desired capacity is exceeded by three
-        /// units. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring
-        /// instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
+        /// units. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configure
+        /// an Auto Scaling group to use instance weights</a> in the <i>Amazon EC2 Auto Scaling
         /// User Guide</i>. Value must be in the range of 1–999.
         /// </para>
         ///  

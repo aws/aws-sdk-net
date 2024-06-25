@@ -42,7 +42,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-configurations.html">Launch
     /// configurations</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     ///  <note> 
@@ -91,8 +91,9 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// If you specify <c>true</c>, each instance in the Auto Scaling group receives a unique
-        /// public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-        /// Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Provide
+        /// network connectivity for your Auto Scaling instances using Amazon VPC</a> in the <i>Amazon
+        /// EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -178,7 +179,7 @@ namespace Amazon.AutoScaling.Model
         /// and an optimized configuration stack to provide optimal I/O performance. This optimization
         /// is not available with all instance types. Additional fees are incurred when you enable
         /// EBS optimization for an instance type that is not EBS-optimized by default. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
         /// EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  
@@ -225,7 +226,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property ImageId. 
         /// <para>
         /// The ID of the Amazon Machine Image (AMI) that was assigned during registration. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
         /// a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  
@@ -259,9 +260,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating
-        /// a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto Scaling
-        /// User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html">Create
+        /// a launch configuration</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=19)]
@@ -292,7 +292,7 @@ namespace Amazon.AutoScaling.Model
         /// When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute
         /// and your account is charged a fee. When you disable detailed monitoring, CloudWatch
         /// generates metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
-        /// Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// monitoring for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -363,7 +363,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property KeyName. 
         /// <para>
         /// The name of the key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-        /// EC2 key pairs and Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// EC2 key pairs and Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide for Linux
+        /// Instances</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -401,8 +402,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MetadataOptions. 
         /// <para>
-        /// The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
-        /// the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configure
+        /// the instance metadata options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public InstanceMetadataOptions MetadataOptions
@@ -424,9 +425,7 @@ namespace Amazon.AutoScaling.Model
         /// with <c>dedicated</c> tenancy runs on isolated, single-tenant hardware and can only
         /// be launched into a VPC. To launch dedicated instances into a shared tenancy VPC (a
         /// VPC with the instance placement tenancy attribute set to <c>default</c>), you must
-        /// set the value of this property to <c>dedicated</c>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
-        /// instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
-        /// User Guide</i>.
+        /// set the value of this property to <c>dedicated</c>.
         /// </para>
         ///  
         /// <para>
@@ -481,9 +480,9 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property SecurityGroups. 
         /// <para>
         /// A list that contains the security group IDs to assign to the instances in the Auto
-        /// Scaling group. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Control
-        /// traffic to resources using security groups</a> in the <i>Amazon Virtual Private Cloud
-        /// User Guide</i>.
+        /// Scaling group. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html">Control
+        /// traffic to your Amazon Web Services resources using security groups</a> in the <i>Amazon
+        /// Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups
