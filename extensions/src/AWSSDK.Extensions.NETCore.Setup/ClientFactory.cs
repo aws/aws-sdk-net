@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using System.Xml.Linq;
@@ -353,6 +354,12 @@ namespace Amazon.Extensions.NETCore.Setup
             return config;
         }
 
+#if NET8_0_OR_GREATER
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2075",
+              Justification = "Setting service specific config settings is best effort but is up to users to make " + 
+                                "sure service specific config settings are not trimmed. Since the service client's " + 
+                                "request pipeline is going to check the properties when making request it is highly unlikely they would be trimmed.")]
+#endif
         private void ProcessServiceSpecificSettings(ClientConfig clientConfig, IDictionary<string, string> serviceSettings)
         {
             var singleArray = new object[1];
