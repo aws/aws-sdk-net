@@ -1,0 +1,150 @@
+{
+  "type": "object",
+
+  "properties": {
+
+    "AWS": {
+      "description": "Settings for configuring the AWS SDK for .NET",
+      "type": "object",
+      "properties": {
+        "AllowAutoRedirect": {
+          "type": "boolean",
+          "description": "This flag controls if .NET HTTP infrastructure should follow redirection responses (e.g. HTTP 307 - temporary redirect)."
+        },
+        "AuthenticationRegion": {
+          "type": "string",
+          "description": "Overrides the region used when computing AWS signature."
+        },
+        "BufferSize": {
+          "type": "integer",
+          "description": "The BufferSize controls the buffer used to read in from input streams and write out to the request."
+        },
+        "ClientAppId": {
+          "type": "string",
+          "description": "ClientAppId is an optional application specific identifier that can be set. When set it will be appended to the User-Agent header of every request in the form of app/{ClientAppId}."
+        },
+        "DefaultsMode": {
+          "enum": [
+            "Standard",
+            "InRegion",
+            "CrossRegion",
+            "Mobile",
+            "Auto"
+          ],
+          "description": "Sets the mode that SDK should use when setting default values for settings."
+        },
+        "DisableHostPrefixInjection": {
+          "type": "boolean",
+          "description": "Host prefix injection prefixes the service endpoint with request members from APIs which use this feature."
+        },
+        "DisableLogging": {
+          "type": "boolean",
+          "description": "If true logging for this client will be disabled."
+        },
+        "DisableRequestCompression": {
+          "type": "boolean",
+          "description": "Controls whether request payloads are automatically compressed for supported operations."
+        },
+        "EndpointDiscoveryCacheLimit": {
+          "type": "integer",
+          "description": "The maximum number of discovered endpoints that can be stored within the cache for the client."
+        },
+        "EndpointDiscoveryEnabled": {
+          "type": "boolean",
+          "description": "The flag indicating if endpoint discovery should be enabled or disabled for operations that are not required to use endpoint discovery."
+        },
+        "FastFailRequests": {
+          "type": "boolean",
+          "description": "Under Adaptive retry mode the SDK will use fail fast logic."
+        },
+        "HttpClientCacheSize": {
+          "type": "integer",
+          "description": "Controls the number of HttpClients cached for service clients."
+        },
+        "IgnoreConfiguredEndpointUrls": {
+          "type": "boolean",
+          "description": "If set to true the SDK will ignore the configured endpointUrls in the config file or in the environment variables."
+        },
+        "LogMetrics": {
+          "type": "boolean",
+          "description": "Flag on whether to log metrics for service calls."
+        },
+        "LogResponse": {
+          "type": "boolean",
+          "description": "If this property is set to true, the service response is logged."
+        },
+        "MaxErrorRetry": {
+          "type": "integer",
+          "description": "How many retry HTTP requests an SDK should make for a single SDK operation invocation before giving up."
+        },
+        "Profile": {
+          "type": "string",
+          "description": "The AWS credential profiles the service client should be configured for."
+        },
+        "ProfilesLocation": {
+          "type": "string",
+          "description": "The path to where the AWS credential profile is configured. By default this is configured at ~/.aws/credentials."
+        },
+        "ProgressUpdateInterval": {
+          "type": "number",
+          "description": "The interval at which progress update events are raised for upload operations."
+        },
+        "Region": {
+          "type": "string",
+          "description": "The AWS region the service client should be configured for."
+        },
+        "RequestMinCompressionSizeBytes": {
+          "type": "number",
+          "description": "Minimum size in bytes that a request body should be to trigger compression."
+        },
+        "ResignRetries": {
+          "type": "boolean",
+          "description": "Flag on whether to resign requests on retry or not."
+        },
+        "RetryMode": {
+          "enum": [
+            "Standard",
+            "Adaptive"
+          ],
+          "description": "The current mode in use for request retries and influences the value returned from MaxErrorRetry."
+        },
+        "ServiceURL": {
+          "type": "string",
+          "description": "Overrides the region for the service clients and sends requests to the indicated url."
+        },
+        "SessionName": {
+          "type": "string",
+          "description": "The session name for the assumed session using the SessionRoleArn."
+        },
+        "SessionRoleArn": {
+          "type": "string",
+          "description": "If set this role will be assumed using the resolved AWS credentials."
+        },
+        "ThrottleRetries": {
+          "type": "bool",
+          "description": "Enables the SDK to use intelligent throttle retry logic."
+        },
+        "Timeout": {
+          "type": "integer",
+          "description": "The timeout that is set on the HttpClient Timeout for configuring the wait time for requests time out."
+        },
+        "UseAlternateUserAgentHeader": {
+          "type": "boolean",
+          "description": "If true the service client will use the x-amz-user-agent header instead of the User-Agent header to report version and environment information to the AWS service. This is commonly used in Blazor WebAssembly applications."
+        },
+        "UseDualstackEndpoint": {
+          "type": "boolean",
+          "description": "Configures the endpoint calculation for a service to go to a dual stack (ipv6 enabled) endpoint for the configured region."
+        },
+        "UseFIPSEndpoint": {
+          "type": "boolean",
+          "description": "Configures the endpoint calculation to go to a FIPS endpoint for the configured region."
+        },
+        "UseHttp": {
+          "type": "boolean",
+          "description": "If true clients will attempt to use HTTP protocol if the target endpoint supports it."
+        }
+      }
+    }
+  }
+}

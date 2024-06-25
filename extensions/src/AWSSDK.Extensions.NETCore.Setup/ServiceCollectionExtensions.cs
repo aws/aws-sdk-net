@@ -93,7 +93,7 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IServiceCollection AddAWSService<T>(this IServiceCollection collection, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
         {
             Func<IServiceProvider, object> factory =
-                new ClientFactory(typeof(T), options).CreateServiceClient;
+                new ClientFactory<T>(options).CreateServiceClient;
 
             var descriptor = new ServiceDescriptor(typeof(T), factory, lifetime);
             collection.Add(descriptor);
@@ -127,7 +127,7 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IServiceCollection TryAddAWSService<T>(this IServiceCollection collection, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
         {
             Func<IServiceProvider, object> factory =
-                new ClientFactory(typeof(T), options).CreateServiceClient;
+                new ClientFactory<T>(options).CreateServiceClient;
 
             var descriptor = new ServiceDescriptor(typeof(T), factory, lifetime);
             collection.TryAdd(descriptor);

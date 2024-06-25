@@ -122,10 +122,10 @@ namespace NETCore.SetupTests
             Assert.Equal(DefaultConfigurationMode.Standard, client.Config.DefaultConfigurationMode);
             Assert.Equal(RequestRetryMode.Adaptive, client.Config.RetryMode);
 
-            // verify S3 config specific settings are not configured
+            // verify S3 config specific settings are configured
             var clientConfig = client.Config as AmazonS3Config;
             Assert.NotNull(clientConfig);
-            Assert.False(clientConfig.ForcePathStyle);
+            Assert.True(clientConfig.ForcePathStyle);
         }
 
         [Fact]
@@ -217,7 +217,7 @@ namespace NETCore.SetupTests
                 .AddJsonFile("./TestFiles/GetClientConfigSettingsTest.json")
                 .Build();
 
-            var options = config.GetAWSOptions<AmazonS3Config>();
+            var options = config.GetAWSOptions();
 
             Assert.Equal(RegionEndpoint.USWest2, options.Region);
             Assert.True(options.DefaultClientConfig.UseHttp);
@@ -246,6 +246,29 @@ namespace NETCore.SetupTests
             var clientConfig = client.Config as AmazonS3Config;
             Assert.NotNull(clientConfig);
             Assert.True(clientConfig.ForcePathStyle);
+        }
+
+        [Fact]
+        public void MockServiceClientConfigTest()
+        {
+            var config = new ConfigurationBuilder()
+                .AddJsonFile("./TestFiles/MockServiceClientConfigTest.json")
+                .Build();
+
+            var options = config.GetAWSOptions();
+
+            Assert.Equal(5, options.DefaultClientConfig.ServiceSpecificSettings.Count);
+
+            var client = options.CreateServiceClient<IMockService>();
+            Assert.NotNull(client);
+            Assert.Equal(RegionEndpoint.USWest2, client.Config.RegionEndpoint);
+
+            var serviceConfig = client.Config as MockServiceConfig;
+            Assert.Equal(MockServiceConfig.TheEnum.Second, serviceConfig.Position);
+            Assert.Equal(MockServiceConfig.TheEnum.Second, serviceConfig.NullablePosition);
+            Assert.True(serviceConfig.TheBool);
+            Assert.Equal(TimeSpan.FromMilliseconds(100), serviceConfig.TimeLength);
+            Assert.Equal(TimeSpan.FromMilliseconds(200), serviceConfig.NullableTimeLength);
         }
     }
 }

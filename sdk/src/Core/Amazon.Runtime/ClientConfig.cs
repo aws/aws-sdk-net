@@ -14,19 +14,16 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Net;
-using System.Text;
 using System.Threading;
 
-using Amazon.Runtime.Internal.Auth;
+
 using Amazon.Util;
 using System.Globalization;
 using Amazon.Internal;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
-using System.ComponentModel.Design;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal.Settings;
 
@@ -196,7 +193,7 @@ namespace Amazon.Runtime
         public abstract string UserAgent { get; }
 
         /// <summary>
-        /// When set to true, the service client will use the  x-amz-user-agent
+        /// When set to true, the service client will use the x-amz-user-agent
         /// header instead of the User-Agent header to report version and
         /// environment information to the AWS service.
         ///
