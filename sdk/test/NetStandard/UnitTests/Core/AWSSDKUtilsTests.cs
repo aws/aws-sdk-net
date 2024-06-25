@@ -90,6 +90,8 @@ namespace UnitTests.NetStandard.Core
         [InlineData("no-delimiters-at-all", "")]
         [InlineData("delimiter-end-of-string.", "")]
         [InlineData("relative-path/no-file-extension", "")]
+        [InlineData("relative-path\\no-file-extension", "")]
+        [InlineData("relative-path:no-file-extension", "")]
         [InlineData("simple-file.pdf", ".pdf")]
         [InlineData("relative-path/with-file-extension.pdf", ".pdf")]
         [InlineData("relative-path.with-dot/with-file-extension.pdf", ".pdf")]

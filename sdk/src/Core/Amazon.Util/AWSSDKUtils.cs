@@ -198,26 +198,45 @@ namespace Amazon.Util
             if (path is null)
                 return null;
 
-#if NETFRAMEWORK
-            int sepIdx = path.LastIndexOf('.');
-            int dirIdx = path.LastIndexOfAny(PathSeps);
-#else
-            int sepIdx = MemoryExtensions.LastIndexOf(path.AsSpan(), '.');
-            int dirIdx = MemoryExtensions.LastIndexOfAny(path.AsSpan(), '/', '\\', ':');
-#endif
+#if NET8_0_OR_GREATER
+            int extensionIndex = path.AsSpan().LastIndexOf('.');
+            int directoryIndex = path.AsSpan().LastIndexOfAny('/', '\\', ':');
 
             // extension separator is found and exists before path separator or path separator doesn't exist
             // AND it's not the last one in the string
-            if (dirIdx < sepIdx && sepIdx < path.Length - 1)
+            if (directoryIndex < extensionIndex && extensionIndex < path.Length - 1)
             {
-                return path.Substring(sepIdx);
+                return path.Substring(extensionIndex);
             }
 
-            // If we're here we either:
-            // 1. Can't find the extension separator
-            // 2. Found but it's at the end of the string
-            // 3. Found but there is a directory separator after
             return string.Empty;
+#else
+            int length = path.Length;
+            int index = length;
+
+            while (--index >= 0)
+            {
+                char ch = path[index];
+                if (ch == '.')
+                {
+                    if (index != length - 1)
+                        return path.Substring(index, length - index);
+                    else
+                        return string.Empty;
+                }
+                else if (IsPathSeparator(ch))
+                    break;
+            }
+
+            return string.Empty;
+
+            bool IsPathSeparator(char ch)
+            {
+                return (ch == '\\' ||
+                        ch == '/' ||
+                        ch == ':');
+            }
+#endif
         }
 
         /*
