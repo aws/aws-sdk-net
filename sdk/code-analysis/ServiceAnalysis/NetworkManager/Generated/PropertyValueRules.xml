@@ -1600,6 +1600,24 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.AttachmentError.Message</property>
+    <min>0</min>
+    <max>10000000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.AttachmentError.RequestId</property>
+    <min>0</min>
+    <max>10000000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.AttachmentError.ResourceArn</property>
+    <min>0</min>
+    <max>1500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.AWSLocation.SubnetArn</property>
     <min>0</min>
     <max>500</max>
@@ -1753,6 +1771,24 @@
     <property>Amazon.NetworkManager.Model.ConnectPeerConfiguration.PeerAddress</property>
     <min>1</min>
     <max>50</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ConnectPeerError.Message</property>
+    <min>0</min>
+    <max>10000000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ConnectPeerError.RequestId</property>
+    <min>0</min>
+    <max>10000000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ConnectPeerError.ResourceArn</property>
+    <min>0</min>
+    <max>1500</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2441,6 +2477,30 @@
     <property>Amazon.NetworkManager.Model.Peering.ResourceArn</property>
     <min>0</min>
     <max>1500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.PeeringError.Message</property>
+    <min>0</min>
+    <max>10000000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.PeeringError.RequestId</property>
+    <min>0</min>
+    <max>10000000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.PeeringError.ResourceArn</property>
+    <min>0</min>
+    <max>1500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.PermissionsErrorContext.MissingPermission</property>
+    <min>0</min>
+    <max>10000000</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>

@@ -25,6 +25,80 @@ namespace Amazon.NetworkManager
 {
 
     /// <summary>
+    /// Constants used for properties of type AttachmentErrorCode.
+    /// </summary>
+    public class AttachmentErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED = new AttachmentErrorCode("MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant SUBNET_DUPLICATED_IN_AVAILABILITY_ZONE for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode SUBNET_DUPLICATED_IN_AVAILABILITY_ZONE = new AttachmentErrorCode("SUBNET_DUPLICATED_IN_AVAILABILITY_ZONE");
+        /// <summary>
+        /// Constant SUBNET_NO_FREE_ADDRESSES for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode SUBNET_NO_FREE_ADDRESSES = new AttachmentErrorCode("SUBNET_NO_FREE_ADDRESSES");
+        /// <summary>
+        /// Constant SUBNET_NO_IPV6_CIDRS for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode SUBNET_NO_IPV6_CIDRS = new AttachmentErrorCode("SUBNET_NO_IPV6_CIDRS");
+        /// <summary>
+        /// Constant SUBNET_NOT_FOUND for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode SUBNET_NOT_FOUND = new AttachmentErrorCode("SUBNET_NOT_FOUND");
+        /// <summary>
+        /// Constant SUBNET_UNSUPPORTED_AVAILABILITY_ZONE for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode SUBNET_UNSUPPORTED_AVAILABILITY_ZONE = new AttachmentErrorCode("SUBNET_UNSUPPORTED_AVAILABILITY_ZONE");
+        /// <summary>
+        /// Constant VPC_NOT_FOUND for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode VPC_NOT_FOUND = new AttachmentErrorCode("VPC_NOT_FOUND");
+        /// <summary>
+        /// Constant VPN_CONNECTION_NOT_FOUND for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode VPN_CONNECTION_NOT_FOUND = new AttachmentErrorCode("VPN_CONNECTION_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttachmentErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachmentErrorCode FindValue(string value)
+        {
+            return FindValue<AttachmentErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachmentErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AttachmentState.
     /// </summary>
     public class AttachmentState : ConstantClass
@@ -637,6 +711,72 @@ namespace Amazon.NetworkManager
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectPeerErrorCode.
+    /// </summary>
+    public class ConnectPeerErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EDGE_LOCATION_NO_FREE_IPS for ConnectPeerErrorCode
+        /// </summary>
+        public static readonly ConnectPeerErrorCode EDGE_LOCATION_NO_FREE_IPS = new ConnectPeerErrorCode("EDGE_LOCATION_NO_FREE_IPS");
+        /// <summary>
+        /// Constant EDGE_LOCATION_PEER_DUPLICATE for ConnectPeerErrorCode
+        /// </summary>
+        public static readonly ConnectPeerErrorCode EDGE_LOCATION_PEER_DUPLICATE = new ConnectPeerErrorCode("EDGE_LOCATION_PEER_DUPLICATE");
+        /// <summary>
+        /// Constant INVALID_INSIDE_CIDR_BLOCK for ConnectPeerErrorCode
+        /// </summary>
+        public static readonly ConnectPeerErrorCode INVALID_INSIDE_CIDR_BLOCK = new ConnectPeerErrorCode("INVALID_INSIDE_CIDR_BLOCK");
+        /// <summary>
+        /// Constant IP_OUTSIDE_SUBNET_CIDR_RANGE for ConnectPeerErrorCode
+        /// </summary>
+        public static readonly ConnectPeerErrorCode IP_OUTSIDE_SUBNET_CIDR_RANGE = new ConnectPeerErrorCode("IP_OUTSIDE_SUBNET_CIDR_RANGE");
+        /// <summary>
+        /// Constant NO_ASSOCIATED_CIDR_BLOCK for ConnectPeerErrorCode
+        /// </summary>
+        public static readonly ConnectPeerErrorCode NO_ASSOCIATED_CIDR_BLOCK = new ConnectPeerErrorCode("NO_ASSOCIATED_CIDR_BLOCK");
+        /// <summary>
+        /// Constant SUBNET_NOT_FOUND for ConnectPeerErrorCode
+        /// </summary>
+        public static readonly ConnectPeerErrorCode SUBNET_NOT_FOUND = new ConnectPeerErrorCode("SUBNET_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectPeerErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectPeerErrorCode FindValue(string value)
+        {
+            return FindValue<ConnectPeerErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectPeerErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectPeerState.
     /// </summary>
     public class ConnectPeerState : ConstantClass
@@ -1086,6 +1226,72 @@ namespace Amazon.NetworkManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LinkState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PeeringErrorCode.
+    /// </summary>
+    public class PeeringErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EDGE_LOCATION_PEER_DUPLICATE for PeeringErrorCode
+        /// </summary>
+        public static readonly PeeringErrorCode EDGE_LOCATION_PEER_DUPLICATE = new PeeringErrorCode("EDGE_LOCATION_PEER_DUPLICATE");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for PeeringErrorCode
+        /// </summary>
+        public static readonly PeeringErrorCode INTERNAL_ERROR = new PeeringErrorCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant INVALID_TRANSIT_GATEWAY_STATE for PeeringErrorCode
+        /// </summary>
+        public static readonly PeeringErrorCode INVALID_TRANSIT_GATEWAY_STATE = new PeeringErrorCode("INVALID_TRANSIT_GATEWAY_STATE");
+        /// <summary>
+        /// Constant MISSING_PERMISSIONS for PeeringErrorCode
+        /// </summary>
+        public static readonly PeeringErrorCode MISSING_PERMISSIONS = new PeeringErrorCode("MISSING_PERMISSIONS");
+        /// <summary>
+        /// Constant TRANSIT_GATEWAY_NOT_FOUND for PeeringErrorCode
+        /// </summary>
+        public static readonly PeeringErrorCode TRANSIT_GATEWAY_NOT_FOUND = new PeeringErrorCode("TRANSIT_GATEWAY_NOT_FOUND");
+        /// <summary>
+        /// Constant TRANSIT_GATEWAY_PEERS_LIMIT_EXCEEDED for PeeringErrorCode
+        /// </summary>
+        public static readonly PeeringErrorCode TRANSIT_GATEWAY_PEERS_LIMIT_EXCEEDED = new PeeringErrorCode("TRANSIT_GATEWAY_PEERS_LIMIT_EXCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PeeringErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PeeringErrorCode FindValue(string value)
+        {
+            return FindValue<PeeringErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PeeringErrorCode(string value)
         {
             return FindValue(value);
         }
