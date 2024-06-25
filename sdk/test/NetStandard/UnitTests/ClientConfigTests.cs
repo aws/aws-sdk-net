@@ -83,8 +83,8 @@ namespace UnitTests
                 "New properties added to ClientConfig. ClientConfig properties that are set on the HttpClient must be added to the " +
                 "HttpRequestMessageFactory.CreateConfigUniqueString.  Once evaluated add the new properties to known properties collection. " +
                 $"({string.Join(",", unknownProperties)})" +
-                "New properties should also be added to AWSSDK.Extensions.NETCore.Setup. Read the DefaultClientConfig maintenance " +
-                "information for instructions on how to add new properties to AWSSDK.Extensions.NETCore.Setup.");
+                "New properties should also be added to AWSSDK.Extensions.NETCore.Setup. In the DefaultClientConfig source file is " +
+                "maintenance information for instructions on how to add new properties to AWSSDK.Extensions.NETCore.Setup.");
         }
     }
 }
