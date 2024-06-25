@@ -108,6 +108,12 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                     unmarshalledObject.DesktopType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deviceCreationTags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.DeviceCreationTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
