@@ -12,7 +12,6 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using Amazon.S3.Encryption;
 using Amazon.S3.Model;
 using System;
 using System.Collections.Generic;
