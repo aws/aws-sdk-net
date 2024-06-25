@@ -1,3 +1,15 @@
+### 3.7.838.0 (2024-06-25 18:24 UTC)
+* AutoScaling (3.7.303.0)
+	* Doc only update for Auto Scaling's TargetTrackingMetricDataQuery
+* EC2 (3.7.332.0)
+	* This release is for the launch of the new u7ib-12tb.224xlarge, R8g, c7gn.metal and mac2-m1ultra.metal instance types
+* NetworkManager (3.7.302.0)
+	* This is model changes & documentation update for the Asynchronous Error Reporting feature for AWS Cloud WAN. This feature allows customers to view errors that occur while their resources are being provisioned, enabling customers to fix their resources without needing external support.
+* S3 (3.7.309.9)
+	* Add additional requests types to be retried for requests that return a 200 status code and an error in the body.
+* WorkSpacesThinClient (3.7.303.0)
+	* This release adds the deviceCreationTags field to CreateEnvironment API input, UpdateEnvironment API input and GetEnvironment API output.
+
 ### 3.7.837.0 (2024-06-24 21:16 UTC)
 * BedrockRuntime (3.7.306.0)
 	* Increases Converse API's document name length
