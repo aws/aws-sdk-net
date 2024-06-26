@@ -23,7 +23,6 @@ using AWSSDK_DotNet.UnitTests.TestTools;
 using Amazon.Redshift;
 using ServiceClientGenerator;
 using System.Reflection;
-using Amazon.S3.Encryption;
 using System.Security.Cryptography;
 
 namespace AWSSDK.UnitTests

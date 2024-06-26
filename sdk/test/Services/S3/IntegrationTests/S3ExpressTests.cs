@@ -7,7 +7,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Encryption;
 using Amazon.S3.Util;
 using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
@@ -637,47 +636,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Directory.Delete(directoryPath, true);
                 if (File.Exists(retrievedDirectoryPath))
                     Directory.Delete(retrievedDirectoryPath, true);
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void Test_EncryptionClient()
-        {
-            var encryptionClient = new AmazonS3EncryptionClient(new EncryptionMaterials(RSA.Create()));
-
-            foreach (var key in keys)
-            {
-                encryptionClient.PutObject(new PutObjectRequest
-                {
-                    BucketName = bucketName,
-                    Key = key + "encrypted",
-                    ContentBody = content + "encrypted"
-                });
-            }
-
-            var ListObjectsV2Response = encryptionClient.ListObjectsV2(new ListObjectsV2Request
-            {
-                BucketName = bucketName
-            });
-
-            foreach (var s3object in ListObjectsV2Response.S3Objects)
-            {
-                if (!s3object.Key.Contains("encrypted"))
-                    continue;
-
-                var res = encryptionClient.GetObject(bucketName, s3object.Key);
-                StreamReader reader = new StreamReader(res.ResponseStream);
-                var objectContent = reader.ReadToEnd();
-
-                Assert.AreEqual(objectContent, content + "encrypted");
-                Assert.AreEqual(s3object.BucketName, bucketName);
-
-                encryptionClient.DeleteObject(new DeleteObjectRequest
-                {
-                    BucketName = bucketName,
-                    Key = s3object.Key
-                });
             }
         }
     }

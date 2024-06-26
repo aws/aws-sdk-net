@@ -21,7 +21,6 @@ using Amazon.Util;
 using AWSSDK_DotNet.UnitTests.TestTools;
 using ServiceClientGenerator;
 using System.Reflection;
-using Amazon.S3.Encryption;
 using System.Security.Cryptography;
 
 namespace AWSSDK.UnitTests
