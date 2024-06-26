@@ -356,9 +356,7 @@ namespace Amazon.Extensions.NETCore.Setup
 
 #if NET8_0_OR_GREATER
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2075",
-              Justification = "Setting service specific config settings is best effort but is up to users to make " + 
-                                "sure service specific config settings are not trimmed. Since the service client's " + 
-                                "request pipeline is going to check the properties when making request it is highly unlikely they would be trimmed.")]
+              Justification = "The parent calling method uses the DynamicDependencyAttribute on the service client to ensure the public properties are not trimmed.")]
 #endif
         private void ProcessServiceSpecificSettings(ClientConfig clientConfig, IDictionary<string, string> serviceSettings)
         {

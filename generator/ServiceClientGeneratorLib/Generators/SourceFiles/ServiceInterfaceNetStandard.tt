@@ -97,12 +97,14 @@ namespace <#=this.Config.Namespace#>
         #endregion
 <# } #>
 
+        #region Static factory interface methods
 #if NET8_0_OR_GREATER
 // Warning CA1033 is issued when the child types can not call the method defined in parent types.
 // In this use case the intended caller is only meant to be the interface as a factory
 // method to create the child types. Given the SDK use case the warning can be ignored.
 #pragma warning disable CA1033
         /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(Amazon<#=this.Config.ClassName#>Config))]
         static ClientConfig IAmazonService.CreateDefaultClientConfig() => new Amazon<#=this.Config.ClassName#>Config();
 
         /// <inheritdoc/>
@@ -122,5 +124,6 @@ namespace <#=this.Config.Namespace#>
         }
 #pragma warning restore CA1033
 #endif
+        #endregion
 	}
 }
