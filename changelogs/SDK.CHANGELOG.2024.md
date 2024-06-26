@@ -1,3 +1,15 @@
+### 3.7.839.0 (2024-06-26 18:19 UTC)
+* ControlTower (3.7.306.0)
+	* Added ListLandingZoneOperations API.
+* EKS (3.7.308.0)
+	* Added support for disabling unmanaged addons during cluster creation.
+* IVSRealTime (3.7.305.0)
+	* IVS Real-Time now offers customers the ability to upload public keys for customer vended participant tokens.
+* KinesisAnalyticsV2 (3.7.303.0)
+	* This release adds support for new ListApplicationOperations and DescribeApplicationOperation APIs. It adds a new configuration to enable system rollbacks, adds field ApplicationVersionCreateTimestamp for clarity and improves support for pagination for APIs.
+* OpenSearchService (3.7.309.0)
+	* This release adds support for enabling or disabling Natural Language Query Processing feature for Amazon OpenSearch Service domains, and provides visibility into the current state of the setup or tear-down.
+
 ### 3.7.838.0 (2024-06-25 18:24 UTC)
 * AutoScaling (3.7.303.0)
 	* Doc only update for Auto Scaling's TargetTrackingMetricDataQuery
