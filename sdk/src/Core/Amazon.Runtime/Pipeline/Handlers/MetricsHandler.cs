@@ -17,6 +17,8 @@ using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using System.Globalization;
 using System;
+using Amazon.Runtime.Telemetry.Tracing;
+using Amazon.Runtime.Telemetry;
 
 namespace Amazon.Runtime.Internal
 {
@@ -34,15 +36,28 @@ namespace Amazon.Runtime.Internal
         public override void InvokeSync(IExecutionContext executionContext)
         {
             executionContext.RequestContext.Metrics.AddProperty(Metric.AsyncCall, false);
+
+            var operationName = AWSSDKUtils.ExtractOperationName(executionContext.RequestContext.RequestName);
+            var spanName = $"{executionContext.RequestContext.ServiceMetaData.ServiceId}.{operationName}";
+            var span = TracingUtilities.CreateSpan(executionContext.RequestContext, spanName);
+
             try
             {
                 executionContext.RequestContext.Metrics.StartEvent(Metric.ClientExecuteTime);
                 base.InvokeSync(executionContext);
+
+                span.SetAttribute(TelemetryConstants.RequestIdAttributeKey, executionContext.ResponseContext.Response.ResponseMetadata.RequestId);
+            }
+            catch(Exception ex)
+            {
+                span.SetExceptionAttributes(ex);
+                throw;
             }
             finally
             {
                 executionContext.RequestContext.Metrics.StopEvent(Metric.ClientExecuteTime);
                 this.LogMetrics(executionContext);
+                span.Dispose();
             }
         }
 
@@ -59,16 +74,29 @@ namespace Amazon.Runtime.Internal
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             executionContext.RequestContext.Metrics.AddProperty(Metric.AsyncCall, true);
+            
+            var operationName = AWSSDKUtils.ExtractOperationName(executionContext.RequestContext.RequestName);
+            var spanName = $"{executionContext.RequestContext.ServiceMetaData.ServiceId}.{operationName}";
+            var span = TracingUtilities.CreateSpan(executionContext.RequestContext, spanName);
+
             try
             {
                 executionContext.RequestContext.Metrics.StartEvent(Metric.ClientExecuteTime);
-                var response = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);    
-                return response;                  
+                var response = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
+
+                span.SetAttribute(TelemetryConstants.RequestIdAttributeKey, executionContext.ResponseContext.Response.ResponseMetadata.RequestId);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                span.SetExceptionAttributes(ex);
+                throw;
             }
             finally
             {
                 executionContext.RequestContext.Metrics.StopEvent(Metric.ClientExecuteTime);
                 this.LogMetrics(executionContext);
+                span.Dispose();
             }            
         }
 

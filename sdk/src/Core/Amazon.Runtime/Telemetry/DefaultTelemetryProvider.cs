@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using System;
 using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Runtime.Telemetry.Metrics.NoOp;
 using Amazon.Runtime.Telemetry.Tracing;
@@ -56,6 +57,8 @@ namespace Amazon.Runtime.Telemetry
         /// <param name="tracerProvider">The tracer provider to register.</param>
         public override void RegisterTracerProvider(TracerProvider tracerProvider)
         {
+            if (tracerProvider == null)
+                throw new ArgumentNullException(nameof(tracerProvider));
             TracerProvider = tracerProvider;
         }
 
@@ -67,6 +70,8 @@ namespace Amazon.Runtime.Telemetry
         /// <param name="meterProvider">The meter provider to register.</param>
         public override void RegisterMeterProvider(MeterProvider meterProvider)
         {
+            if (meterProvider == null)
+                throw new ArgumentNullException(nameof(meterProvider));
             MeterProvider = meterProvider;
         }
     }
