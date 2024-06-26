@@ -89,44 +89,6 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void RegisterKMSInstance()
-        {
-            var expectedInstance = new Mock<IAmazonKeyManagementService>().Object;
-            var registry = new GlobalRuntimeDependencyRegistry();
-            registry.RegisterKeyManagementServiceClient(expectedInstance);
-
-
-            var registeredInstance = registry.GetInstance<IAmazonKeyManagementService>(
-                ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new KeyManagementServiceClientContext()));
-            
-            Assert.AreSame(expectedInstance, registeredInstance);
-        }
-
-        [TestMethod]
-        public void RegisterKMSWithFactory()
-        {
-            var expectedInstance = new Mock<IAmazonKeyManagementService>().Object;
-            var registry = new GlobalRuntimeDependencyRegistry();
-
-            var factoryCalled = false;
-            registry.RegisterKeyManagementServiceClient((context) =>
-            {
-                factoryCalled = true;
-                Assert.IsNotNull(context.KeyManagementServiceClientContextData);
-                return expectedInstance;
-            });
-
-
-            var registeredInstance = registry.GetInstance<IAmazonKeyManagementService>(
-                ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new KeyManagementServiceClientContext()));
-
-            Assert.IsTrue(factoryCalled);
-            Assert.AreSame(expectedInstance, registeredInstance);
-        }
-
-        [TestMethod]
         public void RegisterSSOInstance()
         {
             var expectedInstance = new Mock<IAmazonSSO>().Object;

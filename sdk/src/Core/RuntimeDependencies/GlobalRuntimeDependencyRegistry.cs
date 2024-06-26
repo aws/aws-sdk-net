@@ -70,32 +70,6 @@ namespace Amazon.RuntimeDependencies
         }
 
         /// <summary>
-        /// Register the Amazon.KeyManagementService.AmazonKeyManagementServiceClient instance from AWSSDK.KeyManagementService package.
-        /// 
-        /// The Key Management Service client is used runtime dependency is used in the obsolete S3 encryption client Amazon.S3.Encryption.AmazonS3EncryptionClient inside the AWSSDK.S3.
-        /// Users of the S3 encryption client should migrate to the standalone Amazon.Extensions.S3.Encryption which includes the Key Management Service client as a compile time
-        /// dependency.
-        /// </summary>
-        /// <param name="instance"></param>
-        public void RegisterKeyManagementServiceClient(object instance)
-        {
-            RegisterInstance(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME, instance);
-        }
-
-        /// <summary>
-        /// Register the Amazon.KeyManagementService.AmazonKeyManagementServiceClient instance from AWSSDK.KeyManagementService package.
-        /// 
-        /// The Key Management Service client is used runtime dependency is used in the obsolete S3 encryption client Amazon.S3.Encryption.AmazonS3EncryptionClient inside the AWSSDK.S3.
-        /// Users of the S3 encryption client should migrate to the standalone Amazon.Extensions.S3.Encryption which includes the Key Management Service client as a compile time
-        /// dependency.
-        /// </summary>
-        /// <param name="factory"></param>
-        public void RegisterKeyManagementServiceClient(RuntimeDependencyFactory factory)
-        {
-            RegisterInstance(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME, factory);
-        }
-
-        /// <summary>
         /// Register the Amazon.SecurityToken.AmazonSecurityTokenServiceClient instance from the AWSSDK.SecurityToken package.
         /// 
         /// The Security Token service client is used for credential providers that assume a role.
