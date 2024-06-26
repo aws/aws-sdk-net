@@ -48,6 +48,17 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         {
             StartApplicationResponse response = new StartApplicationResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("OperationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OperationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

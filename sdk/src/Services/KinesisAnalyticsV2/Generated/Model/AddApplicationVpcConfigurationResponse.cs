@@ -36,6 +36,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     {
         private string _applicationARN;
         private long? _applicationVersionId;
+        private string _operationId;
         private VpcConfigurationDescription _vpcConfigurationDescription;
 
         /// <summary>
@@ -75,6 +76,23 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetApplicationVersionId()
         {
             return this._applicationVersionId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationId. Operation ID for tracking AddApplicationVpcConfiguration
+        /// request
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string OperationId
+        {
+            get { return this._operationId; }
+            set { this._operationId = value; }
+        }
+
+        // Check to see if OperationId property is set
+        internal bool IsSetOperationId()
+        {
+            return this._operationId != null;
         }
 
         /// <summary>

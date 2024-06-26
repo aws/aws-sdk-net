@@ -56,6 +56,22 @@ namespace Amazon.KinesisAnalyticsV2
     public partial class AmazonKinesisAnalyticsV2Client : AmazonServiceClient, IAmazonKinesisAnalyticsV2
     {
         private static IServiceMetadata serviceMetadata = new AmazonKinesisAnalyticsV2Metadata();
+        private IKinesisAnalyticsV2PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IKinesisAnalyticsV2PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new KinesisAnalyticsV2PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>
@@ -1779,6 +1795,69 @@ namespace Amazon.KinesisAnalyticsV2
 
         #endregion
         
+        #region  DescribeApplicationOperation
+
+
+        /// <summary>
+        /// Returns information about a specific operation performed on a Managed Service for
+        /// Apache Flink application
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationOperation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplicationOperation service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationOperation">REST API Reference for DescribeApplicationOperation Operation</seealso>
+        public virtual DescribeApplicationOperationResponse DescribeApplicationOperation(DescribeApplicationOperationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationOperationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApplicationOperationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about a specific operation performed on a Managed Service for
+        /// Apache Flink application
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApplicationOperation service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationOperation">REST API Reference for DescribeApplicationOperation Operation</seealso>
+        public virtual Task<DescribeApplicationOperationResponse> DescribeApplicationOperationAsync(DescribeApplicationOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationOperationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeApplicationOperationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeApplicationSnapshot
 
 
@@ -2020,6 +2099,69 @@ namespace Amazon.KinesisAnalyticsV2
             options.ResponseUnmarshaller = DiscoverInputSchemaResponseUnmarshaller.Instance;
             
             return InvokeAsync<DiscoverInputSchemaResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListApplicationOperations
+
+
+        /// <summary>
+        /// Lists information about operations performed on a Managed Service for Apache Flink
+        /// application
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationOperations service method.</param>
+        /// 
+        /// <returns>The response from the ListApplicationOperations service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationOperations">REST API Reference for ListApplicationOperations Operation</seealso>
+        public virtual ListApplicationOperationsResponse ListApplicationOperations(ListApplicationOperationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListApplicationOperationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists information about operations performed on a Managed Service for Apache Flink
+        /// application
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApplicationOperations service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationOperations">REST API Reference for ListApplicationOperations Operation</seealso>
+        public virtual Task<ListApplicationOperationsResponse> ListApplicationOperationsAsync(ListApplicationOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationOperationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListApplicationOperationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2299,22 +2441,18 @@ namespace Amazon.KinesisAnalyticsV2
 
         /// <summary>
         /// Reverts the application to the previous running version. You can roll back an application
-        /// if you suspect it is stuck in a transient status. 
+        /// if you suspect it is stuck in a transient status or in the running status. 
         /// 
         ///  
         /// <para>
-        /// You can roll back an application only if it is in the <c>UPDATING</c> or <c>AUTOSCALING</c>
-        /// status.
+        /// You can roll back an application only if it is in the <c>UPDATING</c>, <c>AUTOSCALING</c>,
+        /// or <c>RUNNING</c> statuses.
         /// </para>
         ///  
         /// <para>
         /// When you rollback an application, it loads state data from the last successful snapshot.
         /// If the application has no snapshots, Managed Service for Apache Flink rejects the
         /// rollback request.
-        /// </para>
-        ///  
-        /// <para>
-        /// This action is not supported for Managed Service for Apache Flink for SQL applications.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RollbackApplication service method.</param>
@@ -2354,22 +2492,18 @@ namespace Amazon.KinesisAnalyticsV2
 
         /// <summary>
         /// Reverts the application to the previous running version. You can roll back an application
-        /// if you suspect it is stuck in a transient status. 
+        /// if you suspect it is stuck in a transient status or in the running status. 
         /// 
         ///  
         /// <para>
-        /// You can roll back an application only if it is in the <c>UPDATING</c> or <c>AUTOSCALING</c>
-        /// status.
+        /// You can roll back an application only if it is in the <c>UPDATING</c>, <c>AUTOSCALING</c>,
+        /// or <c>RUNNING</c> statuses.
         /// </para>
         ///  
         /// <para>
         /// When you rollback an application, it loads state data from the last successful snapshot.
         /// If the application has no snapshots, Managed Service for Apache Flink rejects the
         /// rollback request.
-        /// </para>
-        ///  
-        /// <para>
-        /// This action is not supported for Managed Service for Apache Flink for SQL applications.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RollbackApplication service method.</param>
