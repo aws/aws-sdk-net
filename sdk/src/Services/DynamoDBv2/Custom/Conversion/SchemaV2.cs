@@ -24,9 +24,9 @@ namespace Amazon.DynamoDBv2
 {
     #region Converter factories
 
-    internal class WellKnownTypesConverterFactoryV2 : ConverterFactory
+    internal class DefaultConverterFactoryV2 : ConverterFactory
     {
-        public WellKnownTypesConverterFactoryV2(DynamoDBEntryConversion conversion) : base(conversion)
+        public DefaultConverterFactoryV2(DynamoDBEntryConversion conversion) : base(conversion)
         {
         }
 

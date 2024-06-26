@@ -442,7 +442,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             return false;
         }
-        
+
         /// <summary>
         /// Apply a set of filters to a determine whether a member should be returned.
         /// In terms of DynamoDb, we want to return members that are fields or properties
@@ -460,7 +460,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return true;
         }
-        
+
         /// <summary>
         /// Retrieves a list of members that exist in a given type.
         /// The function goes over all the declared members of a given type
@@ -469,13 +469,16 @@ namespace Amazon.DynamoDBv2.DataModel
         /// members from the derived types will be used while ignoring same-name members
         /// in base types to avoid returning duplicate members.
         /// </summary>
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         public static List<MemberInfo> GetMembersFromType(Type type)
         {
             Dictionary<string, MemberInfo> members = new Dictionary<string, MemberInfo>();
-        
+
             Type currentType = type;
             while (
-                currentType != null && 
+                currentType != null &&
                 currentType != typeof(object))
             {
                 // Previous implementation used GetMembers to return the valid members for a type, but in certain class configurations
@@ -486,7 +489,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     .GetMembers(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.DeclaredOnly)
                     .Where(IsValidMemberInfo)
                     .ToList();
-        
+
                 foreach (var member in currentMembers)
                 {
                     if (!members.ContainsKey(member.Name))
@@ -494,10 +497,10 @@ namespace Amazon.DynamoDBv2.DataModel
                         members[member.Name] = member;
                     }
                 }
-        
+
                 currentType = currentType.BaseType;
             }
-        
+
             return members.Values.ToList();
         }
 

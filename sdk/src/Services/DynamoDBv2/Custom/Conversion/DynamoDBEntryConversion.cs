@@ -400,13 +400,13 @@ namespace Amazon.DynamoDBv2
 
         private void SetV1Converters()
         {
-            AddConverterFactory(new WellKnownTypesConverterFactoryV1(this));
+            AddConverterFactory(new DefaultConverterFactoryV1(this));
             AddConverterFactory(new CollectionConverterFactoryV1(this));
         }
 
         private void SetV2Converters()
         {
-            AddConverterFactory(new WellKnownTypesConverterFactoryV2(this));
+            AddConverterFactory(new DefaultConverterFactoryV2(this));
             AddConverterFactory(new CollectionConverterFactoryV2(this));
         }
 
