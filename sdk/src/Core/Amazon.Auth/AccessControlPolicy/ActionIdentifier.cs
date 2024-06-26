@@ -68,6 +68,15 @@ namespace Amazon.Auth.AccessControlPolicy
                 this.actionName = value;
             }
         }
+
+        /// <summary>
+        /// Implicit operator to allow assigning action identifiers as a string.
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator ActionIdentifier(string value)
+        {
+            return new ActionIdentifier(value);
+        }
     }
 }
 
