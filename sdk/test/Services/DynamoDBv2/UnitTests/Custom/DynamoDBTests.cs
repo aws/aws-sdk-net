@@ -11,6 +11,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon.Util.Internal;
 using ThirdParty.Json.LitJson;
 
 namespace AWSSDK_DotNet35.UnitTests
@@ -591,6 +592,54 @@ namespace AWSSDK_DotNet35.UnitTests
                 context.Load<HashKeyConverter_DateTimeToBool>(new DateTime(1024, DateTimeKind.Utc)));
 
             mock.VerifyNoOtherCalls();
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void FromDocument_NullableDateTime_RetrieveDateTimeInUtc()
+        {
+            var mock = new Mock<IAmazonDynamoDB>();
+            var obj = new NullableDateTime
+            {
+                UserId = Guid.NewGuid().ToString(),
+                AppointmentSlot = DateTime.Parse("2024-06-24T08:00:00.000Z", provider: CultureInfo.CreateSpecificCulture("en-US"), styles: DateTimeStyles.AdjustToUniversal)
+            };
+            var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { RetrieveDateTimeInUtc = true, DisableFetchingTableMetadata = true });
+
+            var json = JsonSerializerHelper.Serialize<NullableDateTime>(obj, new JsonSerializerContext());
+            var document = Document.FromJson(json);
+            var result = context.FromDocument<NullableDateTime>(document);
+
+            Assert.AreEqual(obj.AppointmentSlot, result.AppointmentSlot);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void FromDocument_NullableDateTime_RetrieveDateTimeInUtc_NullValue()
+        {
+            var mock = new Mock<IAmazonDynamoDB>();
+            var obj = new NullableDateTime
+            {
+                UserId = Guid.NewGuid().ToString(),
+                AppointmentSlot = null
+            };
+            var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { RetrieveDateTimeInUtc = true, DisableFetchingTableMetadata = true });
+
+            var json = JsonSerializerHelper.Serialize<NullableDateTime>(obj, new JsonSerializerContext());
+            var document = Document.FromJson(json);
+            var result = context.FromDocument<NullableDateTime>(document);
+
+            Assert.AreEqual(obj.AppointmentSlot, result.AppointmentSlot);
+        }
+
+        [DynamoDBTable("NullableDateTime")]
+        public class NullableDateTime
+        {
+            [DynamoDBHashKey("UserId")]
+            public string UserId { get; set; }
+
+            [DynamoDBProperty("AppointmentSlot")]
+            public DateTime? AppointmentSlot { get; set; }
         }
 
         [DynamoDBTable("EmployeeDetails")]
