@@ -13,14 +13,12 @@
  * permissions and limitations under the License.
  */
 
-using Smithy.Identity.Abstractions;
-
 namespace Amazon.Runtime
 {
     /// <summary>
     /// Abstract class that represents a credentials object for AWS services.
     /// </summary>
-    public abstract class AWSCredentials : BaseIdentity
+    public abstract class AWSCredentials
     {
         /// <summary>
         /// Returns a copy of ImmutableCredentials

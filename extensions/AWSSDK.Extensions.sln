@@ -28,8 +28,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.CrtIntegr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.NetStandard", "..\sdk\src\Services\S3\AWSSDK.S3.NetStandard.csproj", "{331C9F91-2F44-47CC-822C-D4F58B57F4EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithy.Identity.Abstractions", "src\Smithy.Identity.Abstractions\Smithy.Identity.Abstractions.csproj", "{294D1FA3-5D40-46F9-8228-46D8E17F98E6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,10 +66,6 @@ Global
 		{331C9F91-2F44-47CC-822C-D4F58B57F4EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{331C9F91-2F44-47CC-822C-D4F58B57F4EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{331C9F91-2F44-47CC-822C-D4F58B57F4EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{294D1FA3-5D40-46F9-8228-46D8E17F98E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{294D1FA3-5D40-46F9-8228-46D8E17F98E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{294D1FA3-5D40-46F9-8228-46D8E17F98E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{294D1FA3-5D40-46F9-8228-46D8E17F98E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,7 +79,6 @@ Global
 		{FFE9C5B6-F508-4CB6-ADB7-7602CB437B75} = {3D822DC2-ED2E-4434-BC4F-CE7FCD846B02}
 		{4C0F4D67-3519-46F1-BD60-AA71FBA1CA2D} = {3D822DC2-ED2E-4434-BC4F-CE7FCD846B02}
 		{331C9F91-2F44-47CC-822C-D4F58B57F4EF} = {0BA39F07-84D6-420B-82D3-6DC3AF016C65}
-		{294D1FA3-5D40-46F9-8228-46D8E17F98E6} = {3D822DC2-ED2E-4434-BC4F-CE7FCD846B02}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {949367A4-5683-4FD3-93F4-A2CEA6EECB21}
