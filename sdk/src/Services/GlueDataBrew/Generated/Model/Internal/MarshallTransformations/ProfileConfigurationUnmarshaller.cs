@@ -57,6 +57,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public ProfileConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ProfileConfiguration unmarshalledObject = new ProfileConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

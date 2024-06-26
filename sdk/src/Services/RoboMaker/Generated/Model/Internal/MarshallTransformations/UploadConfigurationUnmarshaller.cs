@@ -57,6 +57,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         public UploadConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             UploadConfiguration unmarshalledObject = new UploadConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

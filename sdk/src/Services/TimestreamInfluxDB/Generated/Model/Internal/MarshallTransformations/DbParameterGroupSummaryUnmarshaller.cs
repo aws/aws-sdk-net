@@ -57,6 +57,8 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
         public DbParameterGroupSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DbParameterGroupSummary unmarshalledObject = new DbParameterGroupSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

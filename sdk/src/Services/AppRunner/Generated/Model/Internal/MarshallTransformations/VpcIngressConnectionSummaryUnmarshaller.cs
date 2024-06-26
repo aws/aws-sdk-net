@@ -57,6 +57,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         public VpcIngressConnectionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             VpcIngressConnectionSummary unmarshalledObject = new VpcIngressConnectionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public Leg Unmarshall(JsonUnmarshallerContext context)
         {
             Leg unmarshalledObject = new Leg();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

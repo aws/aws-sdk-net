@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ColumnHierarchy Unmarshall(JsonUnmarshallerContext context)
         {
             ColumnHierarchy unmarshalledObject = new ColumnHierarchy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         public CaseEventIncludedData Unmarshall(JsonUnmarshallerContext context)
         {
             CaseEventIncludedData unmarshalledObject = new CaseEventIncludedData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

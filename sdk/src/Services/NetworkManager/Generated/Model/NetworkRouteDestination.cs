@@ -36,6 +36,7 @@ namespace Amazon.NetworkManager.Model
     {
         private string _coreNetworkAttachmentId;
         private string _edgeLocation;
+        private string _networkFunctionGroupName;
         private string _resourceId;
         private string _resourceType;
         private string _segmentName;
@@ -77,6 +78,25 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetEdgeLocation()
         {
             return this._edgeLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkFunctionGroupName. 
+        /// <para>
+        /// The network function group name associated with the destination.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string NetworkFunctionGroupName
+        {
+            get { return this._networkFunctionGroupName; }
+            set { this._networkFunctionGroupName = value; }
+        }
+
+        // Check to see if NetworkFunctionGroupName property is set
+        internal bool IsSetNetworkFunctionGroupName()
+        {
+            return this._networkFunctionGroupName != null;
         }
 
         /// <summary>

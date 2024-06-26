@@ -57,6 +57,8 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
         public UnmappedAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             UnmappedAttribute unmarshalledObject = new UnmappedAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

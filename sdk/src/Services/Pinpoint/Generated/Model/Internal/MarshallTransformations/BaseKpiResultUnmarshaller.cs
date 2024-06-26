@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public BaseKpiResult Unmarshall(JsonUnmarshallerContext context)
         {
             BaseKpiResult unmarshalledObject = new BaseKpiResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

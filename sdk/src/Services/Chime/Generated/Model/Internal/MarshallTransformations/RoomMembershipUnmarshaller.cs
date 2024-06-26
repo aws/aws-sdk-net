@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public RoomMembership Unmarshall(JsonUnmarshallerContext context)
         {
             RoomMembership unmarshalledObject = new RoomMembership();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

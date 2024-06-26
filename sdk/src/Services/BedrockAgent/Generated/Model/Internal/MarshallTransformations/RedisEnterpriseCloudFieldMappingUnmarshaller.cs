@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public RedisEnterpriseCloudFieldMapping Unmarshall(JsonUnmarshallerContext context)
         {
             RedisEnterpriseCloudFieldMapping unmarshalledObject = new RedisEnterpriseCloudFieldMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

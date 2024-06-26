@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public CustomDomainConfigType Unmarshall(JsonUnmarshallerContext context)
         {
             CustomDomainConfigType unmarshalledObject = new CustomDomainConfigType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

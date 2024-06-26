@@ -57,6 +57,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         public InstanceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceConfiguration unmarshalledObject = new InstanceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

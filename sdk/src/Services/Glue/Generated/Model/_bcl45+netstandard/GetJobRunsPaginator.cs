@@ -42,6 +42,12 @@ namespace Amazon.Glue.Model
         /// </summary>
         public IPaginatedEnumerable<GetJobRunsResponse> Responses => new PaginatedResponse<GetJobRunsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the JobRuns
+        /// </summary>
+        public IPaginatedEnumerable<JobRun> JobRuns => 
+            new PaginatedResultKeyResponse<GetJobRunsResponse, JobRun>(this, (i) => i.JobRuns ?? new List<JobRun>());
+
         internal GetJobRunsPaginator(IAmazonGlue client, GetJobRunsRequest request)
         {
             this._client = client;

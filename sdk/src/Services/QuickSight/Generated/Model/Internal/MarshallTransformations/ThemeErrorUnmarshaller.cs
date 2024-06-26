@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ThemeError Unmarshall(JsonUnmarshallerContext context)
         {
             ThemeError unmarshalledObject = new ThemeError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

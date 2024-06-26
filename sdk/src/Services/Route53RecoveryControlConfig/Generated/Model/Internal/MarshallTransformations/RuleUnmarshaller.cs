@@ -57,6 +57,8 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
         public Rule Unmarshall(JsonUnmarshallerContext context)
         {
             Rule unmarshalledObject = new Rule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public AvailConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AvailConfiguration unmarshalledObject = new AvailConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AvailSettingsUnmarshaller.Instance;
                     unmarshalledObject.AvailSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scte35SegmentationScope", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Scte35SegmentationScope = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

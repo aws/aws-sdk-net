@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public IotSiteWiseSourceConfigurationFilter Unmarshall(JsonUnmarshallerContext context)
         {
             IotSiteWiseSourceConfigurationFilter unmarshalledObject = new IotSiteWiseSourceConfigurationFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

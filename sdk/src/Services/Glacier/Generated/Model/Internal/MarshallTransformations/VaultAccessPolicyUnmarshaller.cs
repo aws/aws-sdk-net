@@ -57,6 +57,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public VaultAccessPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             VaultAccessPolicy unmarshalledObject = new VaultAccessPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public ConnectPeer Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectPeer unmarshalledObject = new ConnectPeer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -98,6 +100,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EdgeLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastModificationErrors", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ConnectPeerError, ConnectPeerErrorUnmarshaller>(ConnectPeerErrorUnmarshaller.Instance);
+                    unmarshalledObject.LastModificationErrors = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("State", targetDepth))

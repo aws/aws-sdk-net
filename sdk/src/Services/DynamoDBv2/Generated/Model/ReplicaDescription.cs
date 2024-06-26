@@ -36,6 +36,7 @@ namespace Amazon.DynamoDBv2.Model
     {
         private List<ReplicaGlobalSecondaryIndexDescription> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<ReplicaGlobalSecondaryIndexDescription>() : null;
         private string _kmsMasterKeyId;
+        private OnDemandThroughputOverride _onDemandThroughputOverride;
         private ProvisionedThroughputOverride _provisionedThroughputOverride;
         private string _regionName;
         private DateTime? _replicaInaccessibleDateTime;
@@ -78,6 +79,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetKMSMasterKeyId()
         {
             return this._kmsMasterKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDemandThroughputOverride. 
+        /// <para>
+        /// Overrides the maximum on-demand throughput settings for the specified replica table.
+        /// </para>
+        /// </summary>
+        public OnDemandThroughputOverride OnDemandThroughputOverride
+        {
+            get { return this._onDemandThroughputOverride; }
+            set { this._onDemandThroughputOverride = value; }
+        }
+
+        // Check to see if OnDemandThroughputOverride property is set
+        internal bool IsSetOnDemandThroughputOverride()
+        {
+            return this._onDemandThroughputOverride != null;
         }
 
         /// <summary>

@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public EbsStorageSettings Unmarshall(JsonUnmarshallerContext context)
         {
             EbsStorageSettings unmarshalledObject = new EbsStorageSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

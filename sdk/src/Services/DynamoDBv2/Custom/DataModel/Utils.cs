@@ -442,6 +442,64 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             return false;
         }
+        
+        /// <summary>
+        /// Apply a set of filters to a determine whether a member should be returned.
+        /// In terms of DynamoDb, we want to return members that are fields or properties
+        /// and are both read and write members.
+        /// </summary>
+        private static bool IsValidMemberInfo(MemberInfo member)
+        {
+            // filter out non-fields and non-properties
+            if (!(member is FieldInfo || member is PropertyInfo))
+                return false;
+
+            // filter out properties that aren't both read and write
+            if (!IsReadWrite(member))
+                return false;
+
+            return true;
+        }
+        
+        /// <summary>
+        /// Retrieves a list of members that exist in a given type.
+        /// The function goes over all the declared members of a given type
+        /// and recurses into any base types and the declared members of those types.
+        /// In case of members existing in both derived and base types,
+        /// members from the derived types will be used while ignoring same-name members
+        /// in base types to avoid returning duplicate members.
+        /// </summary>
+        public static List<MemberInfo> GetMembersFromType(Type type)
+        {
+            Dictionary<string, MemberInfo> members = new Dictionary<string, MemberInfo>();
+        
+            Type currentType = type;
+            while (
+                currentType != null && 
+                currentType != typeof(object))
+            {
+                // Previous implementation used GetMembers to return the valid members for a type, but in certain class configurations
+                // invalid members were returned. To account for that, we are going over each type separately.
+                // Using 'DeclaredOnly' binding flag to return the members that were declared in the current type and not any inherited members
+                // since the iteration is going over each base type separately.
+                var currentMembers = currentType
+                    .GetMembers(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.DeclaredOnly)
+                    .Where(IsValidMemberInfo)
+                    .ToList();
+        
+                foreach (var member in currentMembers)
+                {
+                    if (!members.ContainsKey(member.Name))
+                    {
+                        members[member.Name] = member;
+                    }
+                }
+        
+                currentType = currentType.BaseType;
+            }
+        
+            return members.Values.ToList();
+        }
 
         #endregion
 

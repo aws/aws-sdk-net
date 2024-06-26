@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AxisDisplayRange Unmarshall(JsonUnmarshallerContext context)
         {
             AxisDisplayRange unmarshalledObject = new AxisDisplayRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

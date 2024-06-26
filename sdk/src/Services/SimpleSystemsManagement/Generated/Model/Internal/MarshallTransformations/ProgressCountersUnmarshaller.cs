@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public ProgressCounters Unmarshall(JsonUnmarshallerContext context)
         {
             ProgressCounters unmarshalledObject = new ProgressCounters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

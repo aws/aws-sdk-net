@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public VdmOptions Unmarshall(JsonUnmarshallerContext context)
         {
             VdmOptions unmarshalledObject = new VdmOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

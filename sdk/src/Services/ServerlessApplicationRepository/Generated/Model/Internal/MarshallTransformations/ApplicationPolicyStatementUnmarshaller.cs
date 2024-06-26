@@ -57,6 +57,8 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         public ApplicationPolicyStatement Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationPolicyStatement unmarshalledObject = new ApplicationPolicyStatement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

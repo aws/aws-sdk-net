@@ -57,6 +57,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         public TapeRecoveryPointInfo Unmarshall(JsonUnmarshallerContext context)
         {
             TapeRecoveryPointInfo unmarshalledObject = new TapeRecoveryPointInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

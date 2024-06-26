@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public BucketState Unmarshall(JsonUnmarshallerContext context)
         {
             BucketState unmarshalledObject = new BucketState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

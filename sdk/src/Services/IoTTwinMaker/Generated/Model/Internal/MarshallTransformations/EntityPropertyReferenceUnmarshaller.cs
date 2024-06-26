@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public EntityPropertyReference Unmarshall(JsonUnmarshallerContext context)
         {
             EntityPropertyReference unmarshalledObject = new EntityPropertyReference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

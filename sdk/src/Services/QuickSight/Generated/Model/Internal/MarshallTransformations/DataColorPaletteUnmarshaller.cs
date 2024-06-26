@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DataColorPalette Unmarshall(JsonUnmarshallerContext context)
         {
             DataColorPalette unmarshalledObject = new DataColorPalette();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

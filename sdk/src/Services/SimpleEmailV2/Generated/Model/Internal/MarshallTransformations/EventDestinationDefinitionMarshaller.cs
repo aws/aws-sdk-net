@@ -65,6 +65,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Enabled);
             }
 
+            if(requestObject.IsSetEventBridgeDestination())
+            {
+                context.Writer.WritePropertyName("EventBridgeDestination");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EventBridgeDestinationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EventBridgeDestination, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetKinesisFirehoseDestination())
             {
                 context.Writer.WritePropertyName("KinesisFirehoseDestination");

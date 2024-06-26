@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public GroupNameAndArn Unmarshall(JsonUnmarshallerContext context)
         {
             GroupNameAndArn unmarshalledObject = new GroupNameAndArn();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

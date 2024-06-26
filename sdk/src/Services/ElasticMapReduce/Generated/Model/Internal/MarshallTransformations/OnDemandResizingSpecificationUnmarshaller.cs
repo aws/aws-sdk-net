@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public OnDemandResizingSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             OnDemandResizingSpecification unmarshalledObject = new OnDemandResizingSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

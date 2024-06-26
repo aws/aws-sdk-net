@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AutomationRulesAction Unmarshall(JsonUnmarshallerContext context)
         {
             AutomationRulesAction unmarshalledObject = new AutomationRulesAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

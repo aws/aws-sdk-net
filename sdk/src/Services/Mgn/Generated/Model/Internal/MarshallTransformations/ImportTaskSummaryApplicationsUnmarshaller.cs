@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public ImportTaskSummaryApplications Unmarshall(JsonUnmarshallerContext context)
         {
             ImportTaskSummaryApplications unmarshalledObject = new ImportTaskSummaryApplications();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

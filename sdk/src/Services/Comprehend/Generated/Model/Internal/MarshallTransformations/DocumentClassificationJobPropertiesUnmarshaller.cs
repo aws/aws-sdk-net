@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public DocumentClassificationJobProperties Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentClassificationJobProperties unmarshalledObject = new DocumentClassificationJobProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

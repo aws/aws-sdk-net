@@ -57,6 +57,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public ShardDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ShardDetail unmarshalledObject = new ShardDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

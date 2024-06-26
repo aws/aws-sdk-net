@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public KmsKeyConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             KmsKeyConfiguration unmarshalledObject = new KmsKeyConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

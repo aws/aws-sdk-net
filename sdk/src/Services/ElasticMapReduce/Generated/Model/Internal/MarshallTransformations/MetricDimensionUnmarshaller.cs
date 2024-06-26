@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public MetricDimension Unmarshall(JsonUnmarshallerContext context)
         {
             MetricDimension unmarshalledObject = new MetricDimension();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

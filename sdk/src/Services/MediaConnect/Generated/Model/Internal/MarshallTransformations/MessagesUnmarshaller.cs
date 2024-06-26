@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public Messages Unmarshall(JsonUnmarshallerContext context)
         {
             Messages unmarshalledObject = new Messages();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

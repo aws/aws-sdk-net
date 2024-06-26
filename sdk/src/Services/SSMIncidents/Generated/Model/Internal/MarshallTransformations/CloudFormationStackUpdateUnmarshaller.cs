@@ -57,6 +57,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         public CloudFormationStackUpdate Unmarshall(JsonUnmarshallerContext context)
         {
             CloudFormationStackUpdate unmarshalledObject = new CloudFormationStackUpdate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

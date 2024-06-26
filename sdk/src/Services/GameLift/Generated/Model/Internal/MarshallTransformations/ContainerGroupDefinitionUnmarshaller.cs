@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public ContainerGroupDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             ContainerGroupDefinition unmarshalledObject = new ContainerGroupDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

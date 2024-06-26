@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public MemberIdArnPair Unmarshall(JsonUnmarshallerContext context)
         {
             MemberIdArnPair unmarshalledObject = new MemberIdArnPair();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

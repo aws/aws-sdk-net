@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public TargetGroupInfo Unmarshall(JsonUnmarshallerContext context)
         {
             TargetGroupInfo unmarshalledObject = new TargetGroupInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

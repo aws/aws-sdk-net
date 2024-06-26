@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public S3DataConfig Unmarshall(JsonUnmarshallerContext context)
         {
             S3DataConfig unmarshalledObject = new S3DataConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

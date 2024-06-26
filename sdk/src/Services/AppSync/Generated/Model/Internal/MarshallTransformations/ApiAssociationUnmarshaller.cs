@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public ApiAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             ApiAssociation unmarshalledObject = new ApiAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

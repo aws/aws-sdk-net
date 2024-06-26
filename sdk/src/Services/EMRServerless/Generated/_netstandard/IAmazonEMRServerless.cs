@@ -274,6 +274,33 @@ namespace Amazon.EMRServerless
 
         #endregion
                 
+        #region  ListJobRunAttempts
+
+
+
+        /// <summary>
+        /// Lists all attempt of a job run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobRunAttempts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJobRunAttempts service method, as returned by EMRServerless.</returns>
+        /// <exception cref="Amazon.EMRServerless.Model.InternalServerException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.EMRServerless.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ListJobRunAttempts">REST API Reference for ListJobRunAttempts Operation</seealso>
+        Task<ListJobRunAttemptsResponse> ListJobRunAttemptsAsync(ListJobRunAttemptsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListJobRuns
 
 

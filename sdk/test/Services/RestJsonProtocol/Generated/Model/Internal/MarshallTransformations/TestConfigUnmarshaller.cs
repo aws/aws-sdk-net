@@ -57,6 +57,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         public TestConfig Unmarshall(JsonUnmarshallerContext context)
         {
             TestConfig unmarshalledObject = new TestConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

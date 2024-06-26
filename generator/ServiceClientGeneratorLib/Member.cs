@@ -44,6 +44,17 @@ namespace ServiceClientGenerator
             this.PropertyModifier = null;
             this.PropertyInjector = propertyInjector;
         }
+        
+        public Member(ServiceModel model, Shape owningShape, JsonData originalMember, string name, string defaultMarshallName, CustomizationsModel.PropertyInjector propertyInjector)
+                        : base(model, propertyInjector.Data)
+        {
+            this.OwningShape = owningShape;
+            this.OriginalMember = originalMember;
+            _name = name;
+            _defaultMarshallName = defaultMarshallName;
+            this.PropertyModifier = null;
+            this.PropertyInjector = propertyInjector;
+        }
 
         public Member(ServiceModel model, Shape owningShape, string name, string defaultMarshallName, JsonData data, CustomizationsModel.PropertyModifier propertyModifier)
             : base(model, data)
@@ -56,6 +67,11 @@ namespace ServiceClientGenerator
         }
 
         public Shape OwningShape { get; protected set; }
+
+        /// <summary>
+        /// If a member is excluded and injected with another member. The OriginalMember represents the JsonData of the original excluded member.
+        /// </summary>
+        public JsonData OriginalMember { get; protected set; }
 
         // injected members are not subject to renaming, exclusion etc
         public bool IsInjected
@@ -536,7 +552,7 @@ namespace ServiceClientGenerator
                     }
                     return "string";
                 case "blob":
-                    if (this.IsStreaming)
+                    if (this.Shape.IsStreaming)
                         return "Stream";
                     return "MemoryStream";
                 case "boolean":
@@ -893,17 +909,6 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Determines if the member is a stream from the shape in the json model
-        /// </summary>
-        public bool IsStreaming
-        {
-            get
-            {
-                return this.Shape.IsStreaming;
-            }
-        }
-
-        /// <summary>
         /// Determines if the member is a document from the shape in the json model
         /// </summary>
         public bool IsDocument
@@ -1143,7 +1148,7 @@ namespace ServiceClientGenerator
             // Rules used to default the format if timestampFormat is not specified.
             // 1. All timestamp values serialized in HTTP headers are formatted using rfc822 by default.
             // 2. All timestamp values serialized in uri and query strings are formatted using iso8601 by default.
-            if (marshallLocation == MarshallLocation.Header)
+            if (marshallLocation == MarshallLocation.Header || marshallLocation == MarshallLocation.Headers)
             {
                 return TimestampFormat.RFC822;
             }
@@ -1185,7 +1190,8 @@ namespace ServiceClientGenerator
         {
             get
             {
-                var parameter = data.SafeGet("contextParam");
+                JsonData parameter;
+                parameter = this.OriginalMember == null ? data.SafeGet("contextParam") : this.OriginalMember.SafeGet("contextParam");
                 return parameter == null ? null : new ContextParameter { name = parameter.SafeGetString("name") };
             }
         }

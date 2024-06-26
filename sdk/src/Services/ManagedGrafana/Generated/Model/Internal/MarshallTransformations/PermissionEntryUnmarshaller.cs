@@ -57,6 +57,8 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         public PermissionEntry Unmarshall(JsonUnmarshallerContext context)
         {
             PermissionEntry unmarshalledObject = new PermissionEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

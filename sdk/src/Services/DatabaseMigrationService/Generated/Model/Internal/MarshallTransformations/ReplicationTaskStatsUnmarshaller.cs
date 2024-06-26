@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public ReplicationTaskStats Unmarshall(JsonUnmarshallerContext context)
         {
             ReplicationTaskStats unmarshalledObject = new ReplicationTaskStats();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

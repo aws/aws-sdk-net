@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public PipelineExecution Unmarshall(JsonUnmarshallerContext context)
         {
             PipelineExecution unmarshalledObject = new PipelineExecution();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -76,6 +78,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("executionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pipelineExecutionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +100,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.PipelineVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rollbackMetadata", targetDepth))
+                {
+                    var unmarshaller = PipelineRollbackMetadataUnmarshaller.Instance;
+                    unmarshalledObject.RollbackMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

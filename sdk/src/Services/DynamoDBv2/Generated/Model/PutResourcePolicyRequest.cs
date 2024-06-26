@@ -40,7 +40,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>
     ///  <c>PutResourcePolicy</c> is an idempotent operation; running it multiple times on
     /// the same resource using the same policy document will return the same revision ID.
-    /// If you specify an <c>ExpectedRevisionId</c> which doesn't match the current policy's
+    /// If you specify an <c>ExpectedRevisionId</c> that doesn't match the current policy's
     /// <c>RevisionId</c>, the <c>PolicyNotFoundException</c> will be returned.
     /// </para>
     ///  <note> 
@@ -85,13 +85,16 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// A string value that you can use to conditionally update your policy. You can provide
         /// the revision ID of your existing policy to make mutating requests against that policy.
+        /// </para>
+        ///  <note> 
+        /// <para>
         /// When you provide an expected revision ID, if the revision ID of the existing policy
         /// on the resource doesn't match or if there's no policy attached to the resource, your
         /// request will be rejected with a <c>PolicyNotFoundException</c>.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
-        /// To conditionally put a policy when no policy exists for the resource, specify <c>NO_POLICY</c>
+        /// To conditionally attach a policy when no policy exists for the resource, specify <c>NO_POLICY</c>
         /// for the revision ID.
         /// </para>
         /// </summary>
@@ -113,11 +116,20 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// An Amazon Web Services resource-based policy document in JSON format.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         /// The maximum size supported for a resource-based policy document is 20 KB. DynamoDB
-        /// counts whitespaces when calculating the size of a policy against this limit. For a
-        /// full list of all considerations that you should keep in mind while attaching a resource-based
+        /// counts whitespaces when calculating the size of a policy against this limit.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Within a resource-based policy, if the action for a DynamoDB service-linked role (SLR)
+        /// to replicate data for a global table is denied, adding or deleting a replica will
+        /// fail with an error.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For a full list of all considerations that apply while attaching a resource-based
         /// policy, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
         /// policy considerations</a>.
         /// </para>

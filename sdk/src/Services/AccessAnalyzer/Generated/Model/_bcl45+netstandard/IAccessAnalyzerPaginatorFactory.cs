@@ -27,6 +27,11 @@ namespace Amazon.AccessAnalyzer.Model
     {
 
         /// <summary>
+        /// Paginator for GetFindingRecommendation operation
+        ///</summary>
+        IGetFindingRecommendationPaginator GetFindingRecommendation(GetFindingRecommendationRequest request);
+
+        /// <summary>
         /// Paginator for GetFindingV2 operation
         ///</summary>
         IGetFindingV2Paginator GetFindingV2(GetFindingV2Request request);

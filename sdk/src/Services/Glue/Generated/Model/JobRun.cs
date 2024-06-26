@@ -44,15 +44,18 @@ namespace Amazon.Glue.Model
         private int? _executionTime;
         private string _glueVersion;
         private string _id;
+        private JobMode _jobMode;
         private string _jobName;
         private JobRunState _jobRunState;
         private DateTime? _lastModifiedOn;
         private string _logGroupName;
+        private string _maintenanceWindow;
         private double? _maxCapacity;
         private NotificationProperty _notificationProperty;
         private int? _numberOfWorkers;
         private List<Predecessor> _predecessorRuns = AWSConfigs.InitializeCollections ? new List<Predecessor>() : null;
         private string _previousRunId;
+        private string _profileName;
         private string _securityConfiguration;
         private DateTime? _startedOn;
         private int? _timeout;
@@ -172,13 +175,14 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DPUSeconds. 
         /// <para>
-        /// This field populates only for Auto Scaling job runs, and represents the total time
-        /// each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU
-        /// factor (1 for <c>G.1X</c>, 2 for <c>G.2X</c>, or 0.25 for <c>G.025X</c> workers).
-        /// This value may be different than the <c>executionEngineRuntime</c> * <c>MaxCapacity</c>
-        /// as in the case of Auto Scaling jobs, as the number of executors running at a given
-        /// time may be less than the <c>MaxCapacity</c>. Therefore, it is possible that the value
-        /// of <c>DPUSeconds</c> is less than <c>executionEngineRuntime</c> * <c>MaxCapacity</c>.
+        /// This field can be set for either job runs with execution class <c>FLEX</c> or when
+        /// Auto Scaling is enabled, and represents the total time each executor ran during the
+        /// lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <c>G.1X</c>,
+        /// 2 for <c>G.2X</c>, or 0.25 for <c>G.025X</c> workers). This value may be different
+        /// than the <c>executionEngineRuntime</c> * <c>MaxCapacity</c> as in the case of Auto
+        /// Scaling jobs, as the number of executors running at a given time may be less than
+        /// the <c>MaxCapacity</c>. Therefore, it is possible that the value of <c>DPUSeconds</c>
+        /// is less than <c>executionEngineRuntime</c> * <c>MaxCapacity</c>.
         /// </para>
         /// </summary>
         public double DPUSeconds
@@ -318,6 +322,41 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JobMode. 
+        /// <para>
+        /// A mode that describes how a job was created. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SCRIPT</c> - The job was created using the Glue Studio script editor.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VISUAL</c> - The job was created using the Glue Studio visual editor.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NOTEBOOK</c> - The job was created using an interactive sessions notebook.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When the <c>JobMode</c> field is missing or null, <c>SCRIPT</c> is assigned as the
+        /// default value.
+        /// </para>
+        /// </summary>
+        public JobMode JobMode
+        {
+            get { return this._jobMode; }
+            set { this._jobMode = value; }
+        }
+
+        // Check to see if JobMode property is set
+        internal bool IsSetJobMode()
+        {
+            return this._jobMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
         /// The name of the job definition being used in this run.
@@ -394,6 +433,32 @@ namespace Amazon.Glue.Model
         internal bool IsSetLogGroupName()
         {
             return this._logGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceWindow. 
+        /// <para>
+        /// This field specifies a day of the week and hour for a maintenance window for streaming
+        /// jobs. Glue periodically performs maintenance activities. During these maintenance
+        /// windows, Glue will need to restart your streaming jobs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Glue will restart the job within 3 hours of the specified maintenance window. For
+        /// instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs
+        /// will be restarted between 10:00AM GMT to 1:00PM GMT.
+        /// </para>
+        /// </summary>
+        public string MaintenanceWindow
+        {
+            get { return this._maintenanceWindow; }
+            set { this._maintenanceWindow = value; }
+        }
+
+        // Check to see if MaintenanceWindow property is set
+        internal bool IsSetMaintenanceWindow()
+        {
+            return this._maintenanceWindow != null;
         }
 
         /// <summary>
@@ -522,6 +587,25 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProfileName. 
+        /// <para>
+        /// The name of an Glue usage profile associated with the job run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ProfileName
+        {
+            get { return this._profileName; }
+            set { this._profileName = value; }
+        }
+
+        // Check to see if ProfileName property is set
+        internal bool IsSetProfileName()
+        {
+            return this._profileName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SecurityConfiguration. 
         /// <para>
         /// The name of the <c>SecurityConfiguration</c> structure to be used with this job run.
@@ -567,8 +651,10 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880
-        /// minutes (48 hours).
+        /// Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the
+        /// value is left blank, the job will be restarted after 7 days based if you have not
+        /// setup a maintenance window. If you have setup maintenance window, it will be restarted
+        /// during the maintenance window after 7 days.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

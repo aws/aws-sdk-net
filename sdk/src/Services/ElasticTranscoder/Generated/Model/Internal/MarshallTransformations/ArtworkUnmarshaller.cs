@@ -57,6 +57,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         public Artwork Unmarshall(JsonUnmarshallerContext context)
         {
             Artwork unmarshalledObject = new Artwork();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

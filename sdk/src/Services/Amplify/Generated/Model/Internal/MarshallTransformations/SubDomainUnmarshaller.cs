@@ -57,6 +57,8 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         public SubDomain Unmarshall(JsonUnmarshallerContext context)
         {
             SubDomain unmarshalledObject = new SubDomain();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

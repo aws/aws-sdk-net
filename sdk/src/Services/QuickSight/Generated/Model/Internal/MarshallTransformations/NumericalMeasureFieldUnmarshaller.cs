@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public NumericalMeasureField Unmarshall(JsonUnmarshallerContext context)
         {
             NumericalMeasureField unmarshalledObject = new NumericalMeasureField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

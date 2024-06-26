@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public CompositedVideoArtifactsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CompositedVideoArtifactsConfiguration unmarshalledObject = new CompositedVideoArtifactsConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

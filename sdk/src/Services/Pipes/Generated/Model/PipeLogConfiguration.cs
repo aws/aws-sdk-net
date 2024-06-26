@@ -61,7 +61,7 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property FirehoseLogDestination. 
         /// <para>
-        /// The Amazon Kinesis Data Firehose logging configuration settings for the pipe.
+        /// The Amazon Data Firehose logging configuration settings for the pipe.
         /// </para>
         /// </summary>
         public FirehoseLogDestination FirehoseLogDestination

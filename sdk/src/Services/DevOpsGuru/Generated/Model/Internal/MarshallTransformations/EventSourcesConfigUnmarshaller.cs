@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public EventSourcesConfig Unmarshall(JsonUnmarshallerContext context)
         {
             EventSourcesConfig unmarshalledObject = new EventSourcesConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public RepositoryMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             RepositoryMetadata unmarshalledObject = new RepositoryMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public TrainingRepositoryAuthConfig Unmarshall(JsonUnmarshallerContext context)
         {
             TrainingRepositoryAuthConfig unmarshalledObject = new TrainingRepositoryAuthConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

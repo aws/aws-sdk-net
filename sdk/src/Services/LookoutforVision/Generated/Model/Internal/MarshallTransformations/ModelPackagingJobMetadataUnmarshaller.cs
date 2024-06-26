@@ -57,6 +57,8 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         public ModelPackagingJobMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             ModelPackagingJobMetadata unmarshalledObject = new ModelPackagingJobMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         public ValidatorMetric Unmarshall(JsonUnmarshallerContext context)
         {
             ValidatorMetric unmarshalledObject = new ValidatorMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

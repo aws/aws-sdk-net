@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEc2NetworkInterfaceIpV6AddressDetail Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEc2NetworkInterfaceIpV6AddressDetail unmarshalledObject = new AwsEc2NetworkInterfaceIpV6AddressDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

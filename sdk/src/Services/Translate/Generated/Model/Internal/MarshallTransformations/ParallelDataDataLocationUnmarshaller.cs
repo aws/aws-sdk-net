@@ -57,6 +57,8 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         public ParallelDataDataLocation Unmarshall(JsonUnmarshallerContext context)
         {
             ParallelDataDataLocation unmarshalledObject = new ParallelDataDataLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

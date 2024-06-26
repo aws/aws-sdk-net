@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public BodySectionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             BodySectionConfiguration unmarshalledObject = new BodySectionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

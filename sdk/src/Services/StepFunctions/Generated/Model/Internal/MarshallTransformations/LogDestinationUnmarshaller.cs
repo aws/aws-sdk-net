@@ -57,6 +57,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         public LogDestination Unmarshall(JsonUnmarshallerContext context)
         {
             LogDestination unmarshalledObject = new LogDestination();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

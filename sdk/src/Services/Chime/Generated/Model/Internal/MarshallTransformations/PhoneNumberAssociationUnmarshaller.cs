@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public PhoneNumberAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             PhoneNumberAssociation unmarshalledObject = new PhoneNumberAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

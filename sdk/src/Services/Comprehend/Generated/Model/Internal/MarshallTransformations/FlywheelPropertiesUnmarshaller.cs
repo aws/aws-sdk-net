@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public FlywheelProperties Unmarshall(JsonUnmarshallerContext context)
         {
             FlywheelProperties unmarshalledObject = new FlywheelProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

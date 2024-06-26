@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public DominantColor Unmarshall(JsonUnmarshallerContext context)
         {
             DominantColor unmarshalledObject = new DominantColor();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

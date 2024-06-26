@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public NetworkInfo Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkInfo unmarshalledObject = new NetworkInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

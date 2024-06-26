@@ -57,6 +57,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public StreamingExperienceSettings Unmarshall(JsonUnmarshallerContext context)
         {
             StreamingExperienceSettings unmarshalledObject = new StreamingExperienceSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

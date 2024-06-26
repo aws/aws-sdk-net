@@ -57,6 +57,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         public BatchDetachPolicyResponse Unmarshall(JsonUnmarshallerContext context)
         {
             BatchDetachPolicyResponse unmarshalledObject = new BatchDetachPolicyResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

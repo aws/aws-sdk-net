@@ -122,7 +122,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SourceReservedNodeType. 
         /// <para>
-        /// The source reserved-node type, for example ds2.xlarge.
+        /// The source reserved-node type, for example ra3.4xlarge.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

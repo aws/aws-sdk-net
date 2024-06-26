@@ -2309,6 +2309,9 @@ namespace Amazon.IVSRealTime
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
         /// 
         /// </exception>

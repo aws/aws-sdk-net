@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public EcsEnvironmentVariable Unmarshall(JsonUnmarshallerContext context)
         {
             EcsEnvironmentVariable unmarshalledObject = new EcsEnvironmentVariable();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

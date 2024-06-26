@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public CountPercent Unmarshall(JsonUnmarshallerContext context)
         {
             CountPercent unmarshalledObject = new CountPercent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public SentimentConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SentimentConfiguration unmarshalledObject = new SentimentConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

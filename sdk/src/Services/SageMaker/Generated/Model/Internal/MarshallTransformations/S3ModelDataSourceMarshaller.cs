@@ -54,6 +54,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CompressionType);
             }
 
+            if(requestObject.IsSetHubAccessConfig())
+            {
+                context.Writer.WritePropertyName("HubAccessConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InferenceHubAccessConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.HubAccessConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetModelAccessConfig())
             {
                 context.Writer.WritePropertyName("ModelAccessConfig");

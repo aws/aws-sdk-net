@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ResourceLimits Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceLimits unmarshalledObject = new ResourceLimits();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

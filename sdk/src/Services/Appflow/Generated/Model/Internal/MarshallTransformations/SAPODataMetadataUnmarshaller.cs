@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public SAPODataMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             SAPODataMetadata unmarshalledObject = new SAPODataMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -51,7 +51,7 @@ namespace Amazon.Glacier.Model
         // Check to see if LockId property is set
         internal bool IsSetLockId()
         {
-            return this._lockId != null;
+            return !string.IsNullOrEmpty(this._lockId);
         }
 
     }

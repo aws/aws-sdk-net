@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Linq;
 using Amazon.Runtime;
@@ -22,6 +23,7 @@ using Amazon.Runtime.SharedInterfaces;
 using Amazon.SecurityToken.Model;
 using Amazon.SecurityToken.SAML;
 using Amazon.Util.Internal;
+
 
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
@@ -185,6 +187,16 @@ namespace Amazon.SecurityToken
                     if (options.DurationSeconds.HasValue)
                     {
                         request.DurationSeconds = options.DurationSeconds.Value;
+                    }
+
+                    if (options.Tags != null && options.Tags.Count > 0)
+                    {
+                        request.Tags = options.Tags.Select(kv => new Tag() { Key = kv.Key, Value = kv.Value }).ToList();
+                    }
+
+                    if (options.TransitiveTagKeys != null && options.TransitiveTagKeys.Count > 0)
+                    {
+                        request.TransitiveTagKeys = options.TransitiveTagKeys;
                     }
                 }
 

@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public Ipv6CidrBlockAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             Ipv6CidrBlockAssociation unmarshalledObject = new Ipv6CidrBlockAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

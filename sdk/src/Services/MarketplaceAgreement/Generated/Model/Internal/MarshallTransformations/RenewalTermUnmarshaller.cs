@@ -57,6 +57,8 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         public RenewalTerm Unmarshall(JsonUnmarshallerContext context)
         {
             RenewalTerm unmarshalledObject = new RenewalTerm();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

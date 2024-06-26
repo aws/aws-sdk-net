@@ -57,6 +57,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         public MarkerRecordedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             MarkerRecordedEventAttributes unmarshalledObject = new MarkerRecordedEventAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

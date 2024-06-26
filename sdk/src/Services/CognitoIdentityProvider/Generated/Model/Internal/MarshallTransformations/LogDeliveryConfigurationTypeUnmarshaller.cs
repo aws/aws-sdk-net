@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public LogDeliveryConfigurationType Unmarshall(JsonUnmarshallerContext context)
         {
             LogDeliveryConfigurationType unmarshalledObject = new LogDeliveryConfigurationType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

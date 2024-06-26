@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public UserProperty Unmarshall(JsonUnmarshallerContext context)
         {
             UserProperty unmarshalledObject = new UserProperty();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

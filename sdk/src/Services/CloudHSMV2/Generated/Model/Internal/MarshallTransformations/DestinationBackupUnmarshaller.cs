@@ -57,6 +57,8 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         public DestinationBackup Unmarshall(JsonUnmarshallerContext context)
         {
             DestinationBackup unmarshalledObject = new DestinationBackup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

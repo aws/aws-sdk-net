@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public FailureDetails Unmarshall(JsonUnmarshallerContext context)
         {
             FailureDetails unmarshalledObject = new FailureDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         public InvestigationDetail Unmarshall(JsonUnmarshallerContext context)
         {
             InvestigationDetail unmarshalledObject = new InvestigationDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

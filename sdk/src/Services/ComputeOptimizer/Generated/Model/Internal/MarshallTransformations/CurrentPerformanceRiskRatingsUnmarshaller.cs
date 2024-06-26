@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public CurrentPerformanceRiskRatings Unmarshall(JsonUnmarshallerContext context)
         {
             CurrentPerformanceRiskRatings unmarshalledObject = new CurrentPerformanceRiskRatings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

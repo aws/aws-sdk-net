@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public OnDemandCapacityReservationOptions Unmarshall(JsonUnmarshallerContext context)
         {
             OnDemandCapacityReservationOptions unmarshalledObject = new OnDemandCapacityReservationOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -77,7 +77,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -91,7 +95,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
         /// <param name="rangeKey">Range key element of the target item.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -106,9 +114,16 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
+        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
+        /// the item's primary key for the table must be specified.
+        /// </param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
@@ -121,10 +136,17 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
         /// <param name="rangeKey">Range key element of the target item.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
+        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
+        /// the item's primary key for the table must be specified.
+        /// </param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
@@ -138,8 +160,14 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="keyObject">Key of the target item.</param>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
+        /// <param name="keyObject">A partially-specified instance, where the
+        /// hash/range properties are equal to the key of the item you
+        /// want to load.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
@@ -152,9 +180,18 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="keyObject">Key of the target item.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
+        /// <param name="keyObject">A partially-specified instance, where the
+        /// hash/range properties are equal to the key of the item you
+        /// want to load.</param>
+        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
+        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
+        /// the item's primary key for the table must be specified.
+        /// </param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
@@ -170,7 +207,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginLoad.</param>
         /// <returns>
-        /// Object of type T, populated with properties of item loaded from DynamoDB.
+        /// Object of type T, populated with the properties of the item loaded from DynamoDB.
         /// </returns>
         public T EndLoad<T>(IAsyncResult asyncResult)
         {

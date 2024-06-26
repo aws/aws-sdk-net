@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public ChallengeResponse Unmarshall(JsonUnmarshallerContext context)
         {
             ChallengeResponse unmarshalledObject = new ChallengeResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

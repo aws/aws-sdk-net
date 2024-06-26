@@ -57,6 +57,8 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
         public ImageTagDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ImageTagDetail unmarshalledObject = new ImageTagDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

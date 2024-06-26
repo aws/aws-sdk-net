@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public NodeToNodeEncryptionOptions Unmarshall(JsonUnmarshallerContext context)
         {
             NodeToNodeEncryptionOptions unmarshalledObject = new NodeToNodeEncryptionOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

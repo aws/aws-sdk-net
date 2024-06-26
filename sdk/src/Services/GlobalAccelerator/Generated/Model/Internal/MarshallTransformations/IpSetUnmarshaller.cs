@@ -57,6 +57,8 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         public IpSet Unmarshall(JsonUnmarshallerContext context)
         {
             IpSet unmarshalledObject = new IpSet();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

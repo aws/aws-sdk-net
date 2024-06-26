@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public TrailProperties Unmarshall(JsonUnmarshallerContext context)
         {
             TrailProperties unmarshalledObject = new TrailProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

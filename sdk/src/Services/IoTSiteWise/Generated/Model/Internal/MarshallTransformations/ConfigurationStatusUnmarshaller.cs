@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public ConfigurationStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigurationStatus unmarshalledObject = new ConfigurationStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

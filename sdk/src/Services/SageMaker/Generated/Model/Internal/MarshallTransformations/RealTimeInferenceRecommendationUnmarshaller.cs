@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public RealTimeInferenceRecommendation Unmarshall(JsonUnmarshallerContext context)
         {
             RealTimeInferenceRecommendation unmarshalledObject = new RealTimeInferenceRecommendation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -47,7 +47,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The number of megabytes per second being transferred from the backup storage. Returns
         /// the average rate for a completed backup. This field is only updated when you restore
-        /// to DC2 and DS2 node types. 
+        /// to DC2 node types. 
         /// </para>
         /// </summary>
         public double CurrentRestoreRateInMegaBytesPerSecond
@@ -67,7 +67,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The amount of time an in-progress restore has been running, or the amount of time
         /// it took a completed restore to finish. This field is only updated when you restore
-        /// to DC2 and DS2 node types. 
+        /// to DC2 node types. 
         /// </para>
         /// </summary>
         public long ElapsedTimeInSeconds
@@ -86,8 +86,8 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property EstimatedTimeToCompletionInSeconds. 
         /// <para>
         /// The estimate of the time remaining before the restore will complete. Returns 0 for
-        /// a completed restore. This field is only updated when you restore to DC2 and DS2 node
-        /// types. 
+        /// a completed restore. This field is only updated when you restore to DC2 node types.
+        /// 
         /// </para>
         /// </summary>
         public long EstimatedTimeToCompletionInSeconds
@@ -106,7 +106,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property ProgressInMegaBytes. 
         /// <para>
         /// The number of megabytes that have been transferred from snapshot storage. This field
-        /// is only updated when you restore to DC2 and DS2 node types. 
+        /// is only updated when you restore to DC2 node types. 
         /// </para>
         /// </summary>
         public long ProgressInMegaBytes
@@ -125,7 +125,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property SnapshotSizeInMegaBytes. 
         /// <para>
         /// The size of the set of snapshot data used to restore the cluster. This field is only
-        /// updated when you restore to DC2 and DS2 node types. 
+        /// updated when you restore to DC2 node types. 
         /// </para>
         /// </summary>
         public long SnapshotSizeInMegaBytes

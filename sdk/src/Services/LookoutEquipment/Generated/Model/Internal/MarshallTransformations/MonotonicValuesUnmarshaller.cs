@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public MonotonicValues Unmarshall(JsonUnmarshallerContext context)
         {
             MonotonicValues unmarshalledObject = new MonotonicValues();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

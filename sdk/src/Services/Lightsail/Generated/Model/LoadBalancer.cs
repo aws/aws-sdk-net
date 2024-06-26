@@ -208,8 +208,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The possible values are <c>ipv4</c> for IPv4 only, and <c>dualstack</c> for IPv4 and
-        /// IPv6.
+        /// The possible values are <c>ipv4</c> for IPv4 only, <c>ipv6</c> for IPv6 only, and
+        /// <c>dualstack</c> for IPv4 and IPv6.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType

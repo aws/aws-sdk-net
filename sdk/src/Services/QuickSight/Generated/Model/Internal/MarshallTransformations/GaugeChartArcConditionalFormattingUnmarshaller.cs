@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public GaugeChartArcConditionalFormatting Unmarshall(JsonUnmarshallerContext context)
         {
             GaugeChartArcConditionalFormatting unmarshalledObject = new GaugeChartArcConditionalFormatting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

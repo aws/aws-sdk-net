@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TopicRefreshScheduleSummary Unmarshall(JsonUnmarshallerContext context)
         {
             TopicRefreshScheduleSummary unmarshalledObject = new TopicRefreshScheduleSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

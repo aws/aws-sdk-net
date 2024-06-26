@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public DataSourceIntrospectionModelFieldType Unmarshall(JsonUnmarshallerContext context)
         {
             DataSourceIntrospectionModelFieldType unmarshalledObject = new DataSourceIntrospectionModelFieldType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

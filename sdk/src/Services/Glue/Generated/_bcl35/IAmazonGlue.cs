@@ -2448,6 +2448,64 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  CreateUsageProfile
+
+
+        /// <summary>
+        /// Creates an Glue usage profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsageProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateUsageProfile service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUsageProfile">REST API Reference for CreateUsageProfile Operation</seealso>
+        CreateUsageProfileResponse CreateUsageProfile(CreateUsageProfileRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUsageProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsageProfile operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUsageProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUsageProfile">REST API Reference for CreateUsageProfile Operation</seealso>
+        IAsyncResult BeginCreateUsageProfile(CreateUsageProfileRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateUsageProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUsageProfile.</param>
+        /// 
+        /// <returns>Returns a  CreateUsageProfileResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUsageProfile">REST API Reference for CreateUsageProfile Operation</seealso>
+        CreateUsageProfileResponse EndCreateUsageProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateUserDefinedFunction
 
 
@@ -3907,6 +3965,58 @@ namespace Amazon.Glue
         /// <returns>Returns a  DeleteTriggerResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTrigger">REST API Reference for DeleteTrigger Operation</seealso>
         DeleteTriggerResponse EndDeleteTrigger(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteUsageProfile
+
+
+        /// <summary>
+        /// Deletes the Glue specified usage profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsageProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUsageProfile service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteUsageProfile">REST API Reference for DeleteUsageProfile Operation</seealso>
+        DeleteUsageProfileResponse DeleteUsageProfile(DeleteUsageProfileRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUsageProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsageProfile operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUsageProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteUsageProfile">REST API Reference for DeleteUsageProfile Operation</seealso>
+        IAsyncResult BeginDeleteUsageProfile(DeleteUsageProfileRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUsageProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUsageProfile.</param>
+        /// 
+        /// <returns>Returns a  DeleteUsageProfileResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteUsageProfile">REST API Reference for DeleteUsageProfile Operation</seealso>
+        DeleteUsageProfileResponse EndDeleteUsageProfile(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5475,7 +5585,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the metadata for a given job run.
+        /// Retrieves the metadata for a given job run. Job run history is accessible for 90 days
+        /// for your workflow and job run.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobRun service method.</param>
         /// 
@@ -7391,6 +7502,61 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetUsageProfile
+
+
+        /// <summary>
+        /// Retrieves information about the specified Glue usage profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsageProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetUsageProfile service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUsageProfile">REST API Reference for GetUsageProfile Operation</seealso>
+        GetUsageProfileResponse GetUsageProfile(GetUsageProfileRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsageProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsageProfile operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsageProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUsageProfile">REST API Reference for GetUsageProfile Operation</seealso>
+        IAsyncResult BeginGetUsageProfile(GetUsageProfileRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUsageProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsageProfile.</param>
+        /// 
+        /// <returns>Returns a  GetUsageProfileResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUsageProfile">REST API Reference for GetUsageProfile Operation</seealso>
+        GetUsageProfileResponse EndGetUsageProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetUserDefinedFunction
 
 
@@ -7557,7 +7723,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the metadata for a given workflow run.
+        /// Retrieves the metadata for a given workflow run. Job run history is accessible for
+        /// 90 days for your workflow and job run.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRun service method.</param>
         /// 
@@ -8785,6 +8952,58 @@ namespace Amazon.Glue
         /// <returns>Returns a  ListTriggersResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTriggers">REST API Reference for ListTriggers Operation</seealso>
         ListTriggersResponse EndListTriggers(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListUsageProfiles
+
+
+        /// <summary>
+        /// List all the Glue usage profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsageProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListUsageProfiles service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListUsageProfiles">REST API Reference for ListUsageProfiles Operation</seealso>
+        ListUsageProfilesResponse ListUsageProfiles(ListUsageProfilesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUsageProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUsageProfiles operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUsageProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListUsageProfiles">REST API Reference for ListUsageProfiles Operation</seealso>
+        IAsyncResult BeginListUsageProfiles(ListUsageProfilesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListUsageProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUsageProfiles.</param>
+        /// 
+        /// <returns>Returns a  ListUsageProfilesResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListUsageProfiles">REST API Reference for ListUsageProfiles Operation</seealso>
+        ListUsageProfilesResponse EndListUsageProfiles(IAsyncResult asyncResult);
 
         #endregion
         
@@ -11909,6 +12128,64 @@ namespace Amazon.Glue
         /// <returns>Returns a  UpdateTriggerResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTrigger">REST API Reference for UpdateTrigger Operation</seealso>
         UpdateTriggerResponse EndUpdateTrigger(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateUsageProfile
+
+
+        /// <summary>
+        /// Update an Glue usage profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsageProfile service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUsageProfile service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateUsageProfile">REST API Reference for UpdateUsageProfile Operation</seealso>
+        UpdateUsageProfileResponse UpdateUsageProfile(UpdateUsageProfileRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUsageProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsageProfile operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUsageProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateUsageProfile">REST API Reference for UpdateUsageProfile Operation</seealso>
+        IAsyncResult BeginUpdateUsageProfile(UpdateUsageProfileRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateUsageProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUsageProfile.</param>
+        /// 
+        /// <returns>Returns a  UpdateUsageProfileResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateUsageProfile">REST API Reference for UpdateUsageProfile Operation</seealso>
+        UpdateUsageProfileResponse EndUpdateUsageProfile(IAsyncResult asyncResult);
 
         #endregion
         

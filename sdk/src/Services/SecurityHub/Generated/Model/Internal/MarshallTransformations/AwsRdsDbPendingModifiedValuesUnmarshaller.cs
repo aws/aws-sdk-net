@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRdsDbPendingModifiedValues Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRdsDbPendingModifiedValues unmarshalledObject = new AwsRdsDbPendingModifiedValues();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

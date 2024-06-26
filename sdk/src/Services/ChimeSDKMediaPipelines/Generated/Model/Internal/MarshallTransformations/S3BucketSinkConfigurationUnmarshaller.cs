@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public S3BucketSinkConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             S3BucketSinkConfiguration unmarshalledObject = new S3BucketSinkConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

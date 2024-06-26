@@ -63,6 +63,22 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Determines if the given node has "streaming": true which can be applied to a shape
+        /// or a member.
+        /// </summary>
+        public bool IsStreaming
+        {
+            get
+            {
+                var streamingNode = this.data[Shape.StreamingKey];
+                if (streamingNode == null)
+                    return false;
+
+                return bool.Parse(streamingNode.ToString());
+            }
+        }
+
+        /// <summary>
         /// If defined, specifies the namespace prefix the xml constructed
         /// </summary>
         public string XmlNamespacePrefix

@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public BlueInstanceTerminationOption Unmarshall(JsonUnmarshallerContext context)
         {
             BlueInstanceTerminationOption unmarshalledObject = new BlueInstanceTerminationOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

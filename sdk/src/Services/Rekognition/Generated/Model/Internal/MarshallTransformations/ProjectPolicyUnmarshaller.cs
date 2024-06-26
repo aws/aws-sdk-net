@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public ProjectPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             ProjectPolicy unmarshalledObject = new ProjectPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public CustomEmailLambdaVersionConfigType Unmarshall(JsonUnmarshallerContext context)
         {
             CustomEmailLambdaVersionConfigType unmarshalledObject = new CustomEmailLambdaVersionConfigType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

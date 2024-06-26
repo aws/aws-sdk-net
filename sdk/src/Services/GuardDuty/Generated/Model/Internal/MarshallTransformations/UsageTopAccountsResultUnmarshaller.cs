@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public UsageTopAccountsResult Unmarshall(JsonUnmarshallerContext context)
         {
             UsageTopAccountsResult unmarshalledObject = new UsageTopAccountsResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public RoleAliasDescription Unmarshall(JsonUnmarshallerContext context)
         {
             RoleAliasDescription unmarshalledObject = new RoleAliasDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

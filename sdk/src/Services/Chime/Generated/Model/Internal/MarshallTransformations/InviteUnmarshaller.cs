@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public Invite Unmarshall(JsonUnmarshallerContext context)
         {
             Invite unmarshalledObject = new Invite();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

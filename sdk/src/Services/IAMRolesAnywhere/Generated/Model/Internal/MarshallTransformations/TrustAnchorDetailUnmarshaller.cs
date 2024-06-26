@@ -57,6 +57,8 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         public TrustAnchorDetail Unmarshall(JsonUnmarshallerContext context)
         {
             TrustAnchorDetail unmarshalledObject = new TrustAnchorDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

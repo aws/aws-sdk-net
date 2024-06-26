@@ -57,6 +57,8 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         public ActiveContextTimeToLive Unmarshall(JsonUnmarshallerContext context)
         {
             ActiveContextTimeToLive unmarshalledObject = new ActiveContextTimeToLive();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

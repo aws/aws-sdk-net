@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public DatastorePartitions Unmarshall(JsonUnmarshallerContext context)
         {
             DatastorePartitions unmarshalledObject = new DatastorePartitions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -144,16 +144,32 @@
     <pattern>^arn:aws[a-z-]*:iam::\d{12}:role\/[\w+=,.@/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.CreateEventBusRequest.Description</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.CreateEventBusRequest.EventSourceName</property>
     <min>1</min>
     <max>256</max>
     <pattern>aws\.partner(/[\.\-_A-Za-z0-9]+){2,}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.CreateEventBusRequest.KmsKeyIdentifier</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.CreateEventBusRequest.Name</property>
     <min>1</min>
     <max>256</max>
     <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.CreateEventBusResponse.Description</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.CreateEventBusResponse.KmsKeyIdentifier</property>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.CreatePartnerEventSourceRequest.Account</property>
@@ -417,6 +433,14 @@
     <min>1</min>
     <max>1600</max>
     <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[/\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeEventBusResponse.Description</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeEventBusResponse.KmsKeyIdentifier</property>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.DescribeEventSourceRequest.Name</property>
@@ -1108,6 +1132,34 @@
     <pattern>^arn:aws[a-z-]*:iam::\d{12}:role\/[\w+=,.@/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateEventBusRequest.Description</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateEventBusRequest.KmsKeyIdentifier</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateEventBusRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateEventBusResponse.Description</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateEventBusResponse.KmsKeyIdentifier</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateEventBusResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.ApiDestination.ApiDestinationArn</property>
     <min>1</min>
     <max>1600</max>
@@ -1342,6 +1394,10 @@
     <min>1</min>
     <max>512</max>
     <pattern>^arn:aws[a-z-]*:events:[a-z]{2}-[a-z-]+-\d+:\d{12}:event-bus/[\w.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.EventBus.Description</property>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.InputTransformer.InputTemplate</property>

@@ -57,6 +57,8 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
         public VmServer Unmarshall(JsonUnmarshallerContext context)
         {
             VmServer unmarshalledObject = new VmServer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

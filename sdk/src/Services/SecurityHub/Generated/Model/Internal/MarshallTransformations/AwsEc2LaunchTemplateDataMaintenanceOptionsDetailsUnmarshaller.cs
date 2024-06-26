@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEc2LaunchTemplateDataMaintenanceOptionsDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEc2LaunchTemplateDataMaintenanceOptionsDetails unmarshalledObject = new AwsEc2LaunchTemplateDataMaintenanceOptionsDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public QnAKendraConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             QnAKendraConfiguration unmarshalledObject = new QnAKendraConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

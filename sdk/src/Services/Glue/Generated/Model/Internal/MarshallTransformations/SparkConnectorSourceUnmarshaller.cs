@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public SparkConnectorSource Unmarshall(JsonUnmarshallerContext context)
         {
             SparkConnectorSource unmarshalledObject = new SparkConnectorSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

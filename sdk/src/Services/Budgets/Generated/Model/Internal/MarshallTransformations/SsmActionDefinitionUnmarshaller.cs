@@ -57,6 +57,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         public SsmActionDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             SsmActionDefinition unmarshalledObject = new SsmActionDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

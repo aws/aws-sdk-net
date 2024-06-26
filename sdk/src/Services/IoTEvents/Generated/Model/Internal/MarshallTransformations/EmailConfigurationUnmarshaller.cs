@@ -57,6 +57,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         public EmailConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EmailConfiguration unmarshalledObject = new EmailConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

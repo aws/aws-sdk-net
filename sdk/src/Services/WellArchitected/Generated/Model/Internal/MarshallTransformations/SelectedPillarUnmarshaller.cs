@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public SelectedPillar Unmarshall(JsonUnmarshallerContext context)
         {
             SelectedPillar unmarshalledObject = new SelectedPillar();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

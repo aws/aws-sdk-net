@@ -57,6 +57,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         public RecordsIngested Unmarshall(JsonUnmarshallerContext context)
         {
             RecordsIngested unmarshalledObject = new RecordsIngested();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

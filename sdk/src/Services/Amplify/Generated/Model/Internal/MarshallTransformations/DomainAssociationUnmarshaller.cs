@@ -57,6 +57,8 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         public DomainAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             DomainAssociation unmarshalledObject = new DomainAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

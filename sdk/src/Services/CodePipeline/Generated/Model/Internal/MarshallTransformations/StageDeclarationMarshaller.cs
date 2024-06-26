@@ -86,6 +86,17 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetOnFailure())
+            {
+                context.Writer.WritePropertyName("onFailure");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FailureConditionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnFailure, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

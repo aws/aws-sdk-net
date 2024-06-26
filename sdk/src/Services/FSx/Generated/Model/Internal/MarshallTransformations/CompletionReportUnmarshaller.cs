@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public CompletionReport Unmarshall(JsonUnmarshallerContext context)
         {
             CompletionReport unmarshalledObject = new CompletionReport();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

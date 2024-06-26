@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public BatchDeleteFeaturedResultsSetError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchDeleteFeaturedResultsSetError unmarshalledObject = new BatchDeleteFeaturedResultsSetError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

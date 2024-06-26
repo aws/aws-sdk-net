@@ -106,7 +106,7 @@ namespace Amazon.SecurityHub.Model
         /// each account, the list includes the account ID and optionally the email address.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<AccountDetails> AccountDetails
         {
             get { return this._accountDetails; }

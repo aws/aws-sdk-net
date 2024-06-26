@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public ReactiveAnomalySummary Unmarshall(JsonUnmarshallerContext context)
         {
             ReactiveAnomalySummary unmarshalledObject = new ReactiveAnomalySummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

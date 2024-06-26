@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public ResourceErrorsDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceErrorsDetails unmarshalledObject = new ResourceErrorsDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

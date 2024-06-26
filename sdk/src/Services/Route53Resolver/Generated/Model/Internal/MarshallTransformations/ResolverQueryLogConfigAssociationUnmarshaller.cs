@@ -57,6 +57,8 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         public ResolverQueryLogConfigAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             ResolverQueryLogConfigAssociation unmarshalledObject = new ResolverQueryLogConfigAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

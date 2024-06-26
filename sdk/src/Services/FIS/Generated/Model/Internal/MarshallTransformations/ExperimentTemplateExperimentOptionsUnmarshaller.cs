@@ -57,6 +57,8 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         public ExperimentTemplateExperimentOptions Unmarshall(JsonUnmarshallerContext context)
         {
             ExperimentTemplateExperimentOptions unmarshalledObject = new ExperimentTemplateExperimentOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public PrimitiveMessageDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             PrimitiveMessageDefinition unmarshalledObject = new PrimitiveMessageDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public PrivacyBudgetTemplateSummary Unmarshall(JsonUnmarshallerContext context)
         {
             PrivacyBudgetTemplateSummary unmarshalledObject = new PrivacyBudgetTemplateSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

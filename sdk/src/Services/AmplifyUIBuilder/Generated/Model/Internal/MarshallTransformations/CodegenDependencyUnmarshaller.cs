@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public CodegenDependency Unmarshall(JsonUnmarshallerContext context)
         {
             CodegenDependency unmarshalledObject = new CodegenDependency();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

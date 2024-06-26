@@ -43,6 +43,7 @@ namespace Amazon.KinesisFirehose.Model
         private S3DestinationDescription _s3BackupDescription;
         private RedshiftS3BackupMode _s3BackupMode;
         private S3DestinationDescription _s3DestinationDescription;
+        private SecretsManagerConfiguration _secretsManagerConfiguration;
         private string _username;
 
         /// <summary>
@@ -215,12 +216,30 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecretsManagerConfiguration. 
+        /// <para>
+        ///  The configuration that defines how you access secrets for Amazon Redshift. 
+        /// </para>
+        /// </summary>
+        public SecretsManagerConfiguration SecretsManagerConfiguration
+        {
+            get { return this._secretsManagerConfiguration; }
+            set { this._secretsManagerConfiguration = value; }
+        }
+
+        // Check to see if SecretsManagerConfiguration property is set
+        internal bool IsSetSecretsManagerConfiguration()
+        {
+            return this._secretsManagerConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
         /// The name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=512)]
+        [AWSProperty(Sensitive=true, Min=1, Max=512)]
         public string Username
         {
             get { return this._username; }

@@ -57,6 +57,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         public EventBridgeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EventBridgeConfiguration unmarshalledObject = new EventBridgeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         public RepositoryAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             RepositoryAssociation unmarshalledObject = new RepositoryAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

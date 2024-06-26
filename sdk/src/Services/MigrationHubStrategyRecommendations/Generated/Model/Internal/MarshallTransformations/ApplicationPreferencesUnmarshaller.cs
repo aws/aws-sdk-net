@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public ApplicationPreferences Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationPreferences unmarshalledObject = new ApplicationPreferences();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

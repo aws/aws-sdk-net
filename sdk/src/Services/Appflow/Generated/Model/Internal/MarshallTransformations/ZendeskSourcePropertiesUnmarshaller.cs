@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public ZendeskSourceProperties Unmarshall(JsonUnmarshallerContext context)
         {
             ZendeskSourceProperties unmarshalledObject = new ZendeskSourceProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

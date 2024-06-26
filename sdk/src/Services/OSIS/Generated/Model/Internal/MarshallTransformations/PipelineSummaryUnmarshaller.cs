@@ -57,6 +57,8 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         public PipelineSummary Unmarshall(JsonUnmarshallerContext context)
         {
             PipelineSummary unmarshalledObject = new PipelineSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Destinations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PipelineDestination, PipelineDestinationUnmarshaller>(PipelineDestinationUnmarshaller.Instance);
+                    unmarshalledObject.Destinations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))

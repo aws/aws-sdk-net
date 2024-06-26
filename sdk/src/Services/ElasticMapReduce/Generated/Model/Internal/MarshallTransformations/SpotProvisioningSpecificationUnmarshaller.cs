@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public SpotProvisioningSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             SpotProvisioningSpecification unmarshalledObject = new SpotProvisioningSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

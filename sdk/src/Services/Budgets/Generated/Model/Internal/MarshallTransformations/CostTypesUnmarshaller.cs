@@ -57,6 +57,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         public CostTypes Unmarshall(JsonUnmarshallerContext context)
         {
             CostTypes unmarshalledObject = new CostTypes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

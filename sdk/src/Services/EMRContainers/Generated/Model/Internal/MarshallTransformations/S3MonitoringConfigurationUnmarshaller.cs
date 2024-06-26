@@ -57,6 +57,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         public S3MonitoringConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             S3MonitoringConfiguration unmarshalledObject = new S3MonitoringConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

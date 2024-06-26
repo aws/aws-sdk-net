@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public CoreNetworkChangeEventValues Unmarshall(JsonUnmarshallerContext context)
         {
             CoreNetworkChangeEventValues unmarshalledObject = new CoreNetworkChangeEventValues();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -80,6 +82,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EdgeLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFunctionGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFunctionGroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SegmentName", targetDepth))

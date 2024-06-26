@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public Time Unmarshall(JsonUnmarshallerContext context)
         {
             Time unmarshalledObject = new Time();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

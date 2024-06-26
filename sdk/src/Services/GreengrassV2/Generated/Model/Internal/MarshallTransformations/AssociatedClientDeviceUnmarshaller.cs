@@ -57,6 +57,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         public AssociatedClientDevice Unmarshall(JsonUnmarshallerContext context)
         {
             AssociatedClientDevice unmarshalledObject = new AssociatedClientDevice();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

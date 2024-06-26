@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public RedshiftSource Unmarshall(JsonUnmarshallerContext context)
         {
             RedshiftSource unmarshalledObject = new RedshiftSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

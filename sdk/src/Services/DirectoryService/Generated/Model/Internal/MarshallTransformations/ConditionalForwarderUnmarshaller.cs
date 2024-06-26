@@ -57,6 +57,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         public ConditionalForwarder Unmarshall(JsonUnmarshallerContext context)
         {
             ConditionalForwarder unmarshalledObject = new ConditionalForwarder();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

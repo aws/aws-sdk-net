@@ -64,7 +64,8 @@ namespace Amazon.BedrockAgent.Model
         /// Gets and sets the property ActionGroupExecutor. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Lambda function containing the business logic
-        /// that is carried out upon invoking the action.
+        /// that is carried out upon invoking the action or the custom control method for handling
+        /// the information elicited from the user.
         /// </para>
         /// </summary>
         public ActionGroupExecutor ActionGroupExecutor

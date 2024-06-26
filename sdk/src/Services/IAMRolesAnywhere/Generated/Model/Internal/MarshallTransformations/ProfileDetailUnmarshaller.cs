@@ -57,6 +57,8 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         public ProfileDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ProfileDetail unmarshalledObject = new ProfileDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

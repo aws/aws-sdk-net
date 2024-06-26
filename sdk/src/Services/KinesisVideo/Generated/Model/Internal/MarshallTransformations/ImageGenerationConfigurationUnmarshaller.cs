@@ -57,6 +57,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         public ImageGenerationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ImageGenerationConfiguration unmarshalledObject = new ImageGenerationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DefaultInteractiveLayoutConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DefaultInteractiveLayoutConfiguration unmarshalledObject = new DefaultInteractiveLayoutConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public WorkflowListItem Unmarshall(JsonUnmarshallerContext context)
         {
             WorkflowListItem unmarshalledObject = new WorkflowListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

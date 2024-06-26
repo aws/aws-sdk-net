@@ -57,6 +57,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         public ShareRule Unmarshall(JsonUnmarshallerContext context)
         {
             ShareRule unmarshalledObject = new ShareRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

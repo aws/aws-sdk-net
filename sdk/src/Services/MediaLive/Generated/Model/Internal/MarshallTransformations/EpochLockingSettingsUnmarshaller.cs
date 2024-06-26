@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public EpochLockingSettings Unmarshall(JsonUnmarshallerContext context)
         {
             EpochLockingSettings unmarshalledObject = new EpochLockingSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

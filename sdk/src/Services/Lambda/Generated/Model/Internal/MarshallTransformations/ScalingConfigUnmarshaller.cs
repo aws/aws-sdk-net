@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public ScalingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ScalingConfig unmarshalledObject = new ScalingConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

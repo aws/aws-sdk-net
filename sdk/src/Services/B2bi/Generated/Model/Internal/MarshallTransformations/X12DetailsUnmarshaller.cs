@@ -57,6 +57,8 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         public X12Details Unmarshall(JsonUnmarshallerContext context)
         {
             X12Details unmarshalledObject = new X12Details();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
         public ResourceSyncAttempt Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceSyncAttempt unmarshalledObject = new ResourceSyncAttempt();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

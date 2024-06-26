@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public GatewayRouteVirtualService Unmarshall(JsonUnmarshallerContext context)
         {
             GatewayRouteVirtualService unmarshalledObject = new GatewayRouteVirtualService();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public CsvClassifier Unmarshall(JsonUnmarshallerContext context)
         {
             CsvClassifier unmarshalledObject = new CsvClassifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

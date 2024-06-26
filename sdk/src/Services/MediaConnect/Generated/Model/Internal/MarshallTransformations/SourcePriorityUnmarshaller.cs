@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public SourcePriority Unmarshall(JsonUnmarshallerContext context)
         {
             SourcePriority unmarshalledObject = new SourcePriority();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

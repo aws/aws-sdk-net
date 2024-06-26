@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public FacetResult Unmarshall(JsonUnmarshallerContext context)
         {
             FacetResult unmarshalledObject = new FacetResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

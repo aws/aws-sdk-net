@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public TimeSeriesDataPointSummaryFormOutput Unmarshall(JsonUnmarshallerContext context)
         {
             TimeSeriesDataPointSummaryFormOutput unmarshalledObject = new TimeSeriesDataPointSummaryFormOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public ProjectMember Unmarshall(JsonUnmarshallerContext context)
         {
             ProjectMember unmarshalledObject = new ProjectMember();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

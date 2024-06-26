@@ -57,6 +57,8 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
         public ClusterInList Unmarshall(JsonUnmarshallerContext context)
         {
             ClusterInList unmarshalledObject = new ClusterInList();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

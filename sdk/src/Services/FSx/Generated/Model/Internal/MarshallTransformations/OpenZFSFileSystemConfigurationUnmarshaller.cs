@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public OpenZFSFileSystemConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             OpenZFSFileSystemConfiguration unmarshalledObject = new OpenZFSFileSystemConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

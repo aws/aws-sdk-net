@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public BatchStopJobRunSuccessfulSubmission Unmarshall(JsonUnmarshallerContext context)
         {
             BatchStopJobRunSuccessfulSubmission unmarshalledObject = new BatchStopJobRunSuccessfulSubmission();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

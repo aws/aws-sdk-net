@@ -100,8 +100,8 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Python and NuGet package versions do not contain a corresponding component, package
-        /// versions of those formats do not have a namespace. 
+        ///  Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component,
+        /// package versions of those formats do not have a namespace. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

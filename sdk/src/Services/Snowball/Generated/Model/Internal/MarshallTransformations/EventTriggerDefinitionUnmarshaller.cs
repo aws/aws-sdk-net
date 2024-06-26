@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public EventTriggerDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             EventTriggerDefinition unmarshalledObject = new EventTriggerDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public NodeInfo Unmarshall(JsonUnmarshallerContext context)
         {
             NodeInfo unmarshalledObject = new NodeInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BrokerNodeInfoUnmarshaller.Instance;
                     unmarshalledObject.BrokerNodeInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("controllerNodeInfo", targetDepth))
+                {
+                    var unmarshaller = ControllerNodeInfoUnmarshaller.Instance;
+                    unmarshalledObject.ControllerNodeInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("instanceType", targetDepth))

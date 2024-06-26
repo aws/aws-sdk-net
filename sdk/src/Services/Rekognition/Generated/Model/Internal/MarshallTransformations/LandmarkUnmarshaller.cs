@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public Landmark Unmarshall(JsonUnmarshallerContext context)
         {
             Landmark unmarshalledObject = new Landmark();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

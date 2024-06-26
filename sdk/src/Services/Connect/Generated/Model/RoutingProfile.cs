@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class RoutingProfile
     {
         private AgentAvailabilityTimer _agentAvailabilityTimer;
+        private List<string> _associatedQueueIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _defaultOutboundQueueId;
         private string _description;
         private string _instanceId;
@@ -67,6 +68,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetAgentAvailabilityTimer()
         {
             return this._agentAvailabilityTimer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociatedQueueIds. 
+        /// <para>
+        /// The IDs of the associated queue.
+        /// </para>
+        /// </summary>
+        public List<string> AssociatedQueueIds
+        {
+            get { return this._associatedQueueIds; }
+            set { this._associatedQueueIds = value; }
+        }
+
+        // Check to see if AssociatedQueueIds property is set
+        internal bool IsSetAssociatedQueueIds()
+        {
+            return this._associatedQueueIds != null && (this._associatedQueueIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

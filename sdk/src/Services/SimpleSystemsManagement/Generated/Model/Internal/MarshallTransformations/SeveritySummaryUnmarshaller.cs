@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public SeveritySummary Unmarshall(JsonUnmarshallerContext context)
         {
             SeveritySummary unmarshalledObject = new SeveritySummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         public BatchRetryStrategy Unmarshall(JsonUnmarshallerContext context)
         {
             BatchRetryStrategy unmarshalledObject = new BatchRetryStrategy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

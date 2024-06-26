@@ -57,6 +57,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         public SMSConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SMSConfiguration unmarshalledObject = new SMSConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

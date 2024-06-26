@@ -113,6 +113,34 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("SourcePortRange" + "." + "ToPort", StringUtils.FromInt(publicRequest.SourcePortRange.ToPort));
                     }
                 }
+                if(publicRequest.IsSetTagSpecifications())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                    {
+                        if(publicRequestlistValue.IsSetResourceType())
+                        {
+                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
+                        }
+                        if(publicRequestlistValue.IsSetTags())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                            {
+                                if(publicRequestlistValuelistValue.IsSetKey())
+                                {
+                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetValue())
+                                {
+                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                }
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetTrafficDirection())
                 {
                     request.Parameters.Add("TrafficDirection", StringUtils.FromString(publicRequest.TrafficDirection));

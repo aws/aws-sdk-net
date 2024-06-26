@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastModifiedTime;
         private MetadataProperties _metadataProperties;
         private ModelApprovalStatus _modelApprovalStatus;
+        private ModelPackageModelCard _modelCard;
         private ModelMetrics _modelMetrics;
         private string _modelPackageArn;
         private string _modelPackageDescription;
@@ -56,6 +57,7 @@ namespace Amazon.SageMaker.Model
         private ModelPackageStatusDetails _modelPackageStatusDetails;
         private int? _modelPackageVersion;
         private string _samplePayloadUrl;
+        private ModelPackageSecurityConfig _securityConfig;
         private SkipModelValidation _skipModelValidation;
         private SourceAlgorithmSpecification _sourceAlgorithmSpecification;
         private string _sourceUri;
@@ -321,6 +323,21 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelCard.
+        /// </summary>
+        public ModelPackageModelCard ModelCard
+        {
+            get { return this._modelCard; }
+            set { this._modelCard = value; }
+        }
+
+        // Check to see if ModelCard property is set
+        internal bool IsSetModelCard()
+        {
+            return this._modelCard != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelMetrics. 
         /// <para>
         /// Metrics for the model.
@@ -507,6 +524,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSamplePayloadUrl()
         {
             return this._samplePayloadUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityConfig.
+        /// </summary>
+        public ModelPackageSecurityConfig SecurityConfig
+        {
+            get { return this._securityConfig; }
+            set { this._securityConfig = value; }
+        }
+
+        // Check to see if SecurityConfig property is set
+        internal bool IsSetSecurityConfig()
+        {
+            return this._securityConfig != null;
         }
 
         /// <summary>

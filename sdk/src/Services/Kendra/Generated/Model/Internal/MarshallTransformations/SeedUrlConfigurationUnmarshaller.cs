@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public SeedUrlConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SeedUrlConfiguration unmarshalledObject = new SeedUrlConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

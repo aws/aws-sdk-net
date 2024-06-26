@@ -4,6 +4,7 @@
     "apiVersion":"2014-10-31",
     "endpointPrefix":"rds",
     "protocol":"query",
+    "protocols":["query"],
     "serviceAbbreviation":"Amazon RDS",
     "serviceFullName":"Amazon Relational Database Service",
     "serviceId":"RDS",
@@ -3590,7 +3591,8 @@
         "ManageMasterUserPassword":{"shape":"BooleanOptional"},
         "MasterUserSecretKmsKeyId":{"shape":"String"},
         "EnableLocalWriteForwarding":{"shape":"BooleanOptional"},
-        "CACertificateIdentifier":{"shape":"String"}
+        "CACertificateIdentifier":{"shape":"String"},
+        "EngineLifecycleSupport":{"shape":"String"}
       }
     },
     "CreateDBClusterParameterGroupMessage":{
@@ -3706,7 +3708,8 @@
         "CACertificateIdentifier":{"shape":"String"},
         "DBSystemId":{"shape":"String"},
         "DedicatedLogVolume":{"shape":"BooleanOptional"},
-        "MultiTenant":{"shape":"BooleanOptional"}
+        "MultiTenant":{"shape":"BooleanOptional"},
+        "EngineLifecycleSupport":{"shape":"String"}
       }
     },
     "CreateDBInstanceReadReplicaMessage":{
@@ -3942,6 +3945,7 @@
         "SourceDBClusterIdentifier":{"shape":"String"},
         "Engine":{"shape":"String"},
         "EngineVersion":{"shape":"String"},
+        "EngineLifecycleSupport":{"shape":"String"},
         "DeletionProtection":{"shape":"BooleanOptional"},
         "DatabaseName":{"shape":"String"},
         "StorageEncrypted":{"shape":"BooleanOptional"}
@@ -4175,7 +4179,8 @@
         "AwsBackupRecoveryPointArn":{"shape":"String"},
         "LimitlessDatabase":{"shape":"LimitlessDatabase"},
         "StorageThroughput":{"shape":"IntegerOptional"},
-        "CertificateDetails":{"shape":"CertificateDetails"}
+        "CertificateDetails":{"shape":"CertificateDetails"},
+        "EngineLifecycleSupport":{"shape":"String"}
       },
       "wrapper":true
     },
@@ -4672,6 +4677,7 @@
         "TagList":{"shape":"TagList"},
         "SupportsBabelfish":{"shape":"Boolean"},
         "CustomDBEngineVersionManifest":{"shape":"CustomDBEngineVersionManifest"},
+        "SupportsLimitlessDatabase":{"shape":"Boolean"},
         "SupportsCertificateRotationWithoutRestart":{"shape":"BooleanOptional"},
         "SupportedCACertificateIdentifiers":{"shape":"CACertificateIdentifiersList"},
         "SupportsLocalWriteForwarding":{"shape":"BooleanOptional"},
@@ -4779,7 +4785,8 @@
         "PercentProgress":{"shape":"String"},
         "DedicatedLogVolume":{"shape":"Boolean"},
         "IsStorageConfigUpgradeAvailable":{"shape":"BooleanOptional"},
-        "MultiTenant":{"shape":"BooleanOptional"}
+        "MultiTenant":{"shape":"BooleanOptional"},
+        "EngineLifecycleSupport":{"shape":"String"}
       },
       "wrapper":true
     },
@@ -6958,6 +6965,7 @@
         "Status":{"shape":"String"},
         "Engine":{"shape":"String"},
         "EngineVersion":{"shape":"String"},
+        "EngineLifecycleSupport":{"shape":"String"},
         "DatabaseName":{"shape":"String"},
         "StorageEncrypted":{"shape":"BooleanOptional"},
         "DeletionProtection":{"shape":"BooleanOptional"},
@@ -9115,7 +9123,8 @@
         "NetworkType":{"shape":"String"},
         "ManageMasterUserPassword":{"shape":"BooleanOptional"},
         "MasterUserSecretKmsKeyId":{"shape":"String"},
-        "StorageType":{"shape":"String"}
+        "StorageType":{"shape":"String"},
+        "EngineLifecycleSupport":{"shape":"String"}
       }
     },
     "RestoreDBClusterFromS3Result":{
@@ -9160,7 +9169,8 @@
         "PubliclyAccessible":{"shape":"BooleanOptional"},
         "ServerlessV2ScalingConfiguration":{"shape":"ServerlessV2ScalingConfiguration"},
         "NetworkType":{"shape":"String"},
-        "RdsCustomClusterConfiguration":{"shape":"RdsCustomClusterConfiguration"}
+        "RdsCustomClusterConfiguration":{"shape":"RdsCustomClusterConfiguration"},
+        "EngineLifecycleSupport":{"shape":"String"}
       }
     },
     "RestoreDBClusterFromSnapshotResult":{
@@ -9201,7 +9211,8 @@
         "ServerlessV2ScalingConfiguration":{"shape":"ServerlessV2ScalingConfiguration"},
         "NetworkType":{"shape":"String"},
         "SourceDbClusterResourceId":{"shape":"String"},
-        "RdsCustomClusterConfiguration":{"shape":"RdsCustomClusterConfiguration"}
+        "RdsCustomClusterConfiguration":{"shape":"RdsCustomClusterConfiguration"},
+        "EngineLifecycleSupport":{"shape":"String"}
       }
     },
     "RestoreDBClusterToPointInTimeResult":{
@@ -9254,7 +9265,8 @@
         "DBClusterSnapshotIdentifier":{"shape":"String"},
         "AllocatedStorage":{"shape":"IntegerOptional"},
         "DedicatedLogVolume":{"shape":"BooleanOptional"},
-        "CACertificateIdentifier":{"shape":"String"}
+        "CACertificateIdentifier":{"shape":"String"},
+        "EngineLifecycleSupport":{"shape":"String"}
       }
     },
     "RestoreDBInstanceFromDBSnapshotResult":{
@@ -9324,7 +9336,8 @@
         "ManageMasterUserPassword":{"shape":"BooleanOptional"},
         "MasterUserSecretKmsKeyId":{"shape":"String"},
         "DedicatedLogVolume":{"shape":"BooleanOptional"},
-        "CACertificateIdentifier":{"shape":"String"}
+        "CACertificateIdentifier":{"shape":"String"},
+        "EngineLifecycleSupport":{"shape":"String"}
       }
     },
     "RestoreDBInstanceFromS3Result":{
@@ -9381,7 +9394,8 @@
         "StorageThroughput":{"shape":"IntegerOptional"},
         "AllocatedStorage":{"shape":"IntegerOptional"},
         "DedicatedLogVolume":{"shape":"BooleanOptional"},
-        "CACertificateIdentifier":{"shape":"String"}
+        "CACertificateIdentifier":{"shape":"String"},
+        "EngineLifecycleSupport":{"shape":"String"}
       }
     },
     "RestoreDBInstanceToPointInTimeResult":{
@@ -10124,6 +10138,7 @@
         "SupportsParallelQuery":{"shape":"BooleanOptional"},
         "SupportsGlobalDatabases":{"shape":"BooleanOptional"},
         "SupportsBabelfish":{"shape":"BooleanOptional"},
+        "SupportsLimitlessDatabase":{"shape":"BooleanOptional"},
         "SupportsLocalWriteForwarding":{"shape":"BooleanOptional"},
         "SupportsIntegrations":{"shape":"BooleanOptional"}
       }

@@ -57,6 +57,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         public PendingMaintenance Unmarshall(JsonUnmarshallerContext context)
         {
             PendingMaintenance unmarshalledObject = new PendingMaintenance();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

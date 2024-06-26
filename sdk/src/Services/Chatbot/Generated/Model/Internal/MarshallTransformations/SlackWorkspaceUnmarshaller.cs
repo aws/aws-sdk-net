@@ -57,6 +57,8 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
         public SlackWorkspace Unmarshall(JsonUnmarshallerContext context)
         {
             SlackWorkspace unmarshalledObject = new SlackWorkspace();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

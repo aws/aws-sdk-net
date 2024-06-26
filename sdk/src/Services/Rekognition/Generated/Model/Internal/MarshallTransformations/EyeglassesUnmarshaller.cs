@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public Eyeglasses Unmarshall(JsonUnmarshallerContext context)
         {
             Eyeglasses unmarshalledObject = new Eyeglasses();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

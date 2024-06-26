@@ -57,6 +57,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         public GenerativeReference Unmarshall(JsonUnmarshallerContext context)
         {
             GenerativeReference unmarshalledObject = new GenerativeReference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -40,6 +40,7 @@ namespace Amazon.GuardDuty.Model
         private string _name;
         private Owner _owner;
         private PublicAccess _publicAccess;
+        private List<S3ObjectDetail> _s3ObjectDetails = AWSConfigs.InitializeCollections ? new List<S3ObjectDetail>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _type;
 
@@ -149,6 +150,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetPublicAccess()
         {
             return this._publicAccess != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3ObjectDetails. 
+        /// <para>
+        /// Information about the S3 object that was scanned.
+        /// </para>
+        /// </summary>
+        public List<S3ObjectDetail> S3ObjectDetails
+        {
+            get { return this._s3ObjectDetails; }
+            set { this._s3ObjectDetails = value; }
+        }
+
+        // Check to see if S3ObjectDetails property is set
+        internal bool IsSetS3ObjectDetails()
+        {
+            return this._s3ObjectDetails != null && (this._s3ObjectDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

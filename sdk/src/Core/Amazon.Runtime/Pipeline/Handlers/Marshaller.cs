@@ -51,7 +51,7 @@ namespace Amazon.Runtime.Internal
         public override System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             PreInvoke(executionContext);
-            return base.InvokeAsync<T>(executionContext);            
+            return base.InvokeAsync<T>(executionContext);
         }
 
 #elif AWS_APM_API
@@ -81,20 +81,15 @@ namespace Amazon.Runtime.Internal
             requestContext.Request = requestContext.Marshaller.Marshall(requestContext.OriginalRequest);
             requestContext.Request.AuthenticationRegion = requestContext.ClientConfig.AuthenticationRegion;
 
-#if NETSTANDARD
-            var method = requestContext.Request.HttpMethod.ToUpperInvariant();
-#else
-            var method = requestContext.Request.HttpMethod.ToUpper(CultureInfo.InvariantCulture);
-#endif
-            if (method != "GET" && method != "DELETE" && method != "HEAD")
+            // If the request has a body and its request-specific marshaller didn't already
+            // set Content-Type, follow our existing fallback logic
+            if (requestContext.Request.HasRequestBody() &&
+               !requestContext.Request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
             {
-                if (!requestContext.Request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
-                {
-                    if (requestContext.Request.UseQueryString)
-                        requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = "application/x-amz-json-1.0";
-                    else
-                        requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
-                }
+                if (requestContext.Request.UseQueryString)
+                    requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = "application/x-amz-json-1.0";
+                else
+                    requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
             }
 
             SetRecursionDetectionHeader(requestContext.Request.Headers);
@@ -108,7 +103,7 @@ namespace Amazon.Runtime.Internal
         private static void SetRecursionDetectionHeader(IDictionary<string, string> headers)
         {
             if (!headers.ContainsKey(HeaderKeys.XAmznTraceIdHeader))
-            {                
+            {
                 var lambdaFunctionName = Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME);
                 var amznTraceId = Environment.GetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID);
 

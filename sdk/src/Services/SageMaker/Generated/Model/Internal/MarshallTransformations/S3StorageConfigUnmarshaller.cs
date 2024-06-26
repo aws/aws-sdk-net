@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public S3StorageConfig Unmarshall(JsonUnmarshallerContext context)
         {
             S3StorageConfig unmarshalledObject = new S3StorageConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

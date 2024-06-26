@@ -57,6 +57,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public JobSample Unmarshall(JsonUnmarshallerContext context)
         {
             JobSample unmarshalledObject = new JobSample();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

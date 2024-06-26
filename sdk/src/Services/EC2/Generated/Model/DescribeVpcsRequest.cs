@@ -31,7 +31,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVpcs operation.
-    /// Describes one or more of your VPCs.
+    /// Describes your VPCs. The default is to describe all your VPCs. Alternatively, you
+    /// can specify specific VPC IDs or filter the results to include only the VPCs that match
+    /// specific criteria.
     /// </summary>
     public partial class DescribeVpcsRequest : AmazonEC2Request
     {
@@ -176,10 +178,6 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property VpcIds. 
         /// <para>
         /// The IDs of the VPCs.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: Describes all your VPCs.
         /// </para>
         /// </summary>
         public List<string> VpcIds

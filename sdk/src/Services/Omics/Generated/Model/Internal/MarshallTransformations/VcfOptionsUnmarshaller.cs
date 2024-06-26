@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public VcfOptions Unmarshall(JsonUnmarshallerContext context)
         {
             VcfOptions unmarshalledObject = new VcfOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

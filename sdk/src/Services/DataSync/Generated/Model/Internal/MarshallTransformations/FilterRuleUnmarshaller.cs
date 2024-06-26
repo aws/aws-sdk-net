@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public FilterRule Unmarshall(JsonUnmarshallerContext context)
         {
             FilterRule unmarshalledObject = new FilterRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

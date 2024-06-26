@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public JdbcTarget Unmarshall(JsonUnmarshallerContext context)
         {
             JdbcTarget unmarshalledObject = new JdbcTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

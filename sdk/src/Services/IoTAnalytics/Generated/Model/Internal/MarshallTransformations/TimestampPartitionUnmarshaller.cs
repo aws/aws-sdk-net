@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public TimestampPartition Unmarshall(JsonUnmarshallerContext context)
         {
             TimestampPartition unmarshalledObject = new TimestampPartition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

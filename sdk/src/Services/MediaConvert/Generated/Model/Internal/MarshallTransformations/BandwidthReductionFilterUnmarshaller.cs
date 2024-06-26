@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public BandwidthReductionFilter Unmarshall(JsonUnmarshallerContext context)
         {
             BandwidthReductionFilter unmarshalledObject = new BandwidthReductionFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

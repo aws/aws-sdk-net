@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public TrendmicroMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             TrendmicroMetadata unmarshalledObject = new TrendmicroMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

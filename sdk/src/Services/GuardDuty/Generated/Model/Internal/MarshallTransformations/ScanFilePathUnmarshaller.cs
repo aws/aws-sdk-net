@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public ScanFilePath Unmarshall(JsonUnmarshallerContext context)
         {
             ScanFilePath unmarshalledObject = new ScanFilePath();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public FailureInfo Unmarshall(JsonUnmarshallerContext context)
         {
             FailureInfo unmarshalledObject = new FailureInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

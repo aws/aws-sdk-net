@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public LFResourceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             LFResourceDetails unmarshalledObject = new LFResourceDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

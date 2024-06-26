@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pipes.Model
 {
     /// <summary>
-    /// The Amazon Kinesis Data Firehose logging configuration settings for the pipe.
+    /// The Amazon Data Firehose logging configuration settings for the pipe.
     /// </summary>
     public partial class FirehoseLogDestination
     {
@@ -39,8 +39,8 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Kinesis Data Firehose delivery stream to which
-        /// EventBridge delivers the pipe log records.
+        /// The Amazon Resource Name (ARN) of the Firehose delivery stream to which EventBridge
+        /// delivers the pipe log records.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]

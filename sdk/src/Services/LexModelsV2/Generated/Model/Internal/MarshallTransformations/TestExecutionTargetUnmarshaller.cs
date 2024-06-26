@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public TestExecutionTarget Unmarshall(JsonUnmarshallerContext context)
         {
             TestExecutionTarget unmarshalledObject = new TestExecutionTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

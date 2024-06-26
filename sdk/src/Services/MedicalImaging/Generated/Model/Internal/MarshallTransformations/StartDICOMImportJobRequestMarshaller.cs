@@ -87,6 +87,12 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DataAccessRoleArn);
                 }
 
+                if(publicRequest.IsSetInputOwnerAccountId())
+                {
+                    context.Writer.WritePropertyName("inputOwnerAccountId");
+                    context.Writer.Write(publicRequest.InputOwnerAccountId);
+                }
+
                 if(publicRequest.IsSetInputS3Uri())
                 {
                     context.Writer.WritePropertyName("inputS3Uri");

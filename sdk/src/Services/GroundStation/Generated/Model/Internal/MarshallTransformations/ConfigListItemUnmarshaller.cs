@@ -57,6 +57,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public ConfigListItem Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigListItem unmarshalledObject = new ConfigListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

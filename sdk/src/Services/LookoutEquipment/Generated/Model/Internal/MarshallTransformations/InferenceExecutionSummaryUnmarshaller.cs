@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public InferenceExecutionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             InferenceExecutionSummary unmarshalledObject = new InferenceExecutionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

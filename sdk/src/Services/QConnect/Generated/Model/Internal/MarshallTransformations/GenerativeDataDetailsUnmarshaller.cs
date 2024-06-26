@@ -57,6 +57,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         public GenerativeDataDetails Unmarshall(JsonUnmarshallerContext context)
         {
             GenerativeDataDetails unmarshalledObject = new GenerativeDataDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

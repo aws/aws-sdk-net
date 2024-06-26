@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public ArchiveGroupSettings Unmarshall(JsonUnmarshallerContext context)
         {
             ArchiveGroupSettings unmarshalledObject = new ArchiveGroupSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public SageMakerSavingsPlans Unmarshall(JsonUnmarshallerContext context)
         {
             SageMakerSavingsPlans unmarshalledObject = new SageMakerSavingsPlans();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

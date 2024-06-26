@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public MonthlySchedule Unmarshall(JsonUnmarshallerContext context)
         {
             MonthlySchedule unmarshalledObject = new MonthlySchedule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

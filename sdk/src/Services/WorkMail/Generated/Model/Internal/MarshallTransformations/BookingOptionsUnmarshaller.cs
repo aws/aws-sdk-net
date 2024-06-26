@@ -57,6 +57,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         public BookingOptions Unmarshall(JsonUnmarshallerContext context)
         {
             BookingOptions unmarshalledObject = new BookingOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

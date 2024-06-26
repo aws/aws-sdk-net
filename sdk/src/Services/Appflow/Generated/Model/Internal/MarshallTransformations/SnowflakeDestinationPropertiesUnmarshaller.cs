@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public SnowflakeDestinationProperties Unmarshall(JsonUnmarshallerContext context)
         {
             SnowflakeDestinationProperties unmarshalledObject = new SnowflakeDestinationProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

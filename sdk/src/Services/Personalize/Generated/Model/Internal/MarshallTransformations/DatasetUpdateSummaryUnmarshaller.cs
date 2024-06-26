@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public DatasetUpdateSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DatasetUpdateSummary unmarshalledObject = new DatasetUpdateSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

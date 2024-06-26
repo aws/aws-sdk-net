@@ -1797,6 +1797,76 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type SelfGrantStatus.
+    /// </summary>
+    public class SelfGrantStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GRANT_FAILED for SelfGrantStatus
+        /// </summary>
+        public static readonly SelfGrantStatus GRANT_FAILED = new SelfGrantStatus("GRANT_FAILED");
+        /// <summary>
+        /// Constant GRANT_IN_PROGRESS for SelfGrantStatus
+        /// </summary>
+        public static readonly SelfGrantStatus GRANT_IN_PROGRESS = new SelfGrantStatus("GRANT_IN_PROGRESS");
+        /// <summary>
+        /// Constant GRANT_PENDING for SelfGrantStatus
+        /// </summary>
+        public static readonly SelfGrantStatus GRANT_PENDING = new SelfGrantStatus("GRANT_PENDING");
+        /// <summary>
+        /// Constant GRANTED for SelfGrantStatus
+        /// </summary>
+        public static readonly SelfGrantStatus GRANTED = new SelfGrantStatus("GRANTED");
+        /// <summary>
+        /// Constant REVOKE_FAILED for SelfGrantStatus
+        /// </summary>
+        public static readonly SelfGrantStatus REVOKE_FAILED = new SelfGrantStatus("REVOKE_FAILED");
+        /// <summary>
+        /// Constant REVOKE_IN_PROGRESS for SelfGrantStatus
+        /// </summary>
+        public static readonly SelfGrantStatus REVOKE_IN_PROGRESS = new SelfGrantStatus("REVOKE_IN_PROGRESS");
+        /// <summary>
+        /// Constant REVOKE_PENDING for SelfGrantStatus
+        /// </summary>
+        public static readonly SelfGrantStatus REVOKE_PENDING = new SelfGrantStatus("REVOKE_PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SelfGrantStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SelfGrantStatus FindValue(string value)
+        {
+            return FindValue<SelfGrantStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SelfGrantStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortFieldProject.
     /// </summary>
     public class SortFieldProject : ConstantClass

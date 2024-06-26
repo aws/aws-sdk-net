@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public TimecodeBurnin Unmarshall(JsonUnmarshallerContext context)
         {
             TimecodeBurnin unmarshalledObject = new TimecodeBurnin();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

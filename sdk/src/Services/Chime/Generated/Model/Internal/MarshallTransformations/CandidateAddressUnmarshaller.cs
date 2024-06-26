@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public CandidateAddress Unmarshall(JsonUnmarshallerContext context)
         {
             CandidateAddress unmarshalledObject = new CandidateAddress();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

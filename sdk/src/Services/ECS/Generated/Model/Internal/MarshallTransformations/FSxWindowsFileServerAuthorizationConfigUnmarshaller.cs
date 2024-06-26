@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public FSxWindowsFileServerAuthorizationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             FSxWindowsFileServerAuthorizationConfig unmarshalledObject = new FSxWindowsFileServerAuthorizationConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

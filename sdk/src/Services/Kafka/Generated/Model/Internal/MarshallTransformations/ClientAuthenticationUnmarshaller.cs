@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public ClientAuthentication Unmarshall(JsonUnmarshallerContext context)
         {
             ClientAuthentication unmarshalledObject = new ClientAuthentication();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

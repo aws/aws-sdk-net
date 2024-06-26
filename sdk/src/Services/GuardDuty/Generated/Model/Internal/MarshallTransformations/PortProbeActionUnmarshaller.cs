@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public PortProbeAction Unmarshall(JsonUnmarshallerContext context)
         {
             PortProbeAction unmarshalledObject = new PortProbeAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

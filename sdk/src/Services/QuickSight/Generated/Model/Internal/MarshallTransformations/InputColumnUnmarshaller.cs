@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public InputColumn Unmarshall(JsonUnmarshallerContext context)
         {
             InputColumn unmarshalledObject = new InputColumn();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -137,10 +137,10 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property GatewayTimezone. 
         /// <para>
         /// A value that indicates the time zone you want to set for the gateway. The time zone
-        /// is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time
-        /// is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time
-        /// zone is used, for example, for scheduling snapshots and your gateway's maintenance
-        /// schedule.
+        /// is of the format "GMT", "GMT-hr:mm", or "GMT+hr:mm". For example, GMT indicates Greenwich
+        /// Mean Time without any offset. GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00
+        /// indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for
+        /// scheduling snapshots and your gateway's maintenance schedule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=10)]
@@ -165,8 +165,8 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>STORED</c> | <c>CACHED</c> | <c>VTL</c> | <c>VTL_SNOW</c> | <c>FILE_S3</c>
-        /// | <c>FILE_FSX_SMB</c> 
+        /// Valid Values: <c>STORED</c> | <c>CACHED</c> | <c>VTL</c> | <c>FILE_S3</c> | <c>FILE_FSX_SMB</c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=20)]

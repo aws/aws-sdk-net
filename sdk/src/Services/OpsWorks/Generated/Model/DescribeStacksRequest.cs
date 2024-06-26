@@ -49,7 +49,11 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property StackIds. 
         /// <para>
         /// An array of stack IDs that specify the stacks to be described. If you omit this parameter,
-        /// <c>DescribeStacks</c> returns a description of every stack.
+        /// and have permissions to get information about all stacks, <c>DescribeStacks</c> returns
+        /// a description of every stack. If the IAM policy that is attached to an IAM user limits
+        /// the <c>DescribeStacks</c> action to specific stack ARNs, this parameter is required,
+        /// and the user must specify a stack ARN that is allowed by the policy. Otherwise, <c>DescribeStacks</c>
+        /// returns an <c>AccessDenied</c> error.
         /// </para>
         /// </summary>
         public List<string> StackIds

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DateTimeHierarchy Unmarshall(JsonUnmarshallerContext context)
         {
             DateTimeHierarchy unmarshalledObject = new DateTimeHierarchy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

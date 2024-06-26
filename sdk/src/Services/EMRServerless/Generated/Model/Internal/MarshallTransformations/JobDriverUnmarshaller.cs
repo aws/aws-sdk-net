@@ -57,6 +57,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         public JobDriver Unmarshall(JsonUnmarshallerContext context)
         {
             JobDriver unmarshalledObject = new JobDriver();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

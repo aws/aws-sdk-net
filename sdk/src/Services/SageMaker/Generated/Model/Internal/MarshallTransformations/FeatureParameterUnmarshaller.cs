@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public FeatureParameter Unmarshall(JsonUnmarshallerContext context)
         {
             FeatureParameter unmarshalledObject = new FeatureParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

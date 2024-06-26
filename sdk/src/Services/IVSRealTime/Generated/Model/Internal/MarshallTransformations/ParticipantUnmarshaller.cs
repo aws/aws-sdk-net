@@ -57,6 +57,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         public Participant Unmarshall(JsonUnmarshallerContext context)
         {
             Participant unmarshalledObject = new Participant();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -116,6 +118,24 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.Published = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("recordingS3BucketName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecordingS3BucketName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("recordingS3Prefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecordingS3Prefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("recordingState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecordingState = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sdkVersion", targetDepth))

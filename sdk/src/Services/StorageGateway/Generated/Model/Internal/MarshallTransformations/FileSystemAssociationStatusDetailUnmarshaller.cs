@@ -57,6 +57,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         public FileSystemAssociationStatusDetail Unmarshall(JsonUnmarshallerContext context)
         {
             FileSystemAssociationStatusDetail unmarshalledObject = new FileSystemAssociationStatusDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

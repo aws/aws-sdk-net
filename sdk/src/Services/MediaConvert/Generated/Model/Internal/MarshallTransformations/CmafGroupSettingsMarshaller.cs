@@ -82,6 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CodecSpecification);
             }
 
+            if(requestObject.IsSetDashIFrameTrickPlayNameModifier())
+            {
+                context.Writer.WritePropertyName("dashIFrameTrickPlayNameModifier");
+                context.Writer.Write(requestObject.DashIFrameTrickPlayNameModifier);
+            }
+
             if(requestObject.IsSetDashManifestStyle())
             {
                 context.Writer.WritePropertyName("dashManifestStyle");

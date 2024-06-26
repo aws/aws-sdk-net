@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// For more information about Availability Zones, Local Zones, and Wavelength Zones,
     /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-    /// and zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// and zones</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>

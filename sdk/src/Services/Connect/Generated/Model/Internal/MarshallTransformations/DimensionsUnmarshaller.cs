@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public Dimensions Unmarshall(JsonUnmarshallerContext context)
         {
             Dimensions unmarshalledObject = new Dimensions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

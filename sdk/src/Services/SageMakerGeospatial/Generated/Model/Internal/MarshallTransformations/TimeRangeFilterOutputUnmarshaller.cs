@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public TimeRangeFilterOutput Unmarshall(JsonUnmarshallerContext context)
         {
             TimeRangeFilterOutput unmarshalledObject = new TimeRangeFilterOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

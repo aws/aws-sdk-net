@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public ColdStorageOptions Unmarshall(JsonUnmarshallerContext context)
         {
             ColdStorageOptions unmarshalledObject = new ColdStorageOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         public CreateVpcEndpointDetail Unmarshall(JsonUnmarshallerContext context)
         {
             CreateVpcEndpointDetail unmarshalledObject = new CreateVpcEndpointDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

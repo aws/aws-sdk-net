@@ -57,6 +57,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         public MagneticStoreWriteProperties Unmarshall(JsonUnmarshallerContext context)
         {
             MagneticStoreWriteProperties unmarshalledObject = new MagneticStoreWriteProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

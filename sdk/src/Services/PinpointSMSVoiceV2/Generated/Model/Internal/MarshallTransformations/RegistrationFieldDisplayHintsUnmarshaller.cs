@@ -57,6 +57,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         public RegistrationFieldDisplayHints Unmarshall(JsonUnmarshallerContext context)
         {
             RegistrationFieldDisplayHints unmarshalledObject = new RegistrationFieldDisplayHints();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public ImagePullSecret Unmarshall(JsonUnmarshallerContext context)
         {
             ImagePullSecret unmarshalledObject = new ImagePullSecret();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

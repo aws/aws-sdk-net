@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public HealthCheck Unmarshall(JsonUnmarshallerContext context)
         {
             HealthCheck unmarshalledObject = new HealthCheck();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

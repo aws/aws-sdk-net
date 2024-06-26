@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public ClusterListEntry Unmarshall(JsonUnmarshallerContext context)
         {
             ClusterListEntry unmarshalledObject = new ClusterListEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

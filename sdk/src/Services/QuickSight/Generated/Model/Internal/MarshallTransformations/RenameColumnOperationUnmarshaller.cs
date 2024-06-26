@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public RenameColumnOperation Unmarshall(JsonUnmarshallerContext context)
         {
             RenameColumnOperation unmarshalledObject = new RenameColumnOperation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

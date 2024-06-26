@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public ConfigurableEnvironmentAction Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigurableEnvironmentAction unmarshalledObject = new ConfigurableEnvironmentAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

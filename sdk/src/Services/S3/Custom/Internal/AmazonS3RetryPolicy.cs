@@ -31,13 +31,6 @@ namespace Amazon.S3.Internal
     {
         private const string AWS_KMS_Signature_Error = "AWS KMS managed keys require AWS Signature Version 4";
 
-        private static ICollection<Type> RequestsWith200Error = new HashSet<Type>
-        {
-            typeof(CopyObjectRequest),
-            typeof(CopyPartRequest),
-            typeof(CompleteMultipartUploadRequest)
-        };
-
         /// <summary>
         /// Constructor for AmazonS3RetryPolicy.
         /// </summary>
@@ -68,7 +61,7 @@ namespace Amazon.S3.Internal
                 if (serviceException.StatusCode == HttpStatusCode.OK)
                 {
                     var requestType = executionContext.RequestContext.OriginalRequest.GetType();
-                    if (AmazonS3RetryPolicy.RequestsWith200Error.Contains(requestType))
+                    if (RequestsWith200Error.Contains(requestType))
                     {
                         // Retry on HTTP 200 responses which contain an error response
                         // CopyObject, CopyPart and CompleteMultipartUpload operations can return this

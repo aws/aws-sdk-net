@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public S3ContentLocation Unmarshall(JsonUnmarshallerContext context)
         {
             S3ContentLocation unmarshalledObject = new S3ContentLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

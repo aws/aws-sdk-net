@@ -57,6 +57,8 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         public SpekeKeyProvider Unmarshall(JsonUnmarshallerContext context)
         {
             SpekeKeyProvider unmarshalledObject = new SpekeKeyProvider();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

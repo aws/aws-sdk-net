@@ -34,6 +34,10 @@ namespace Amazon.StorageGateway.Model
     /// 
     ///  <ul> <li> 
     /// <para>
+    ///  <a>DescribeMaintenanceStartTimeOutput$SoftwareUpdatePreferences</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>DescribeMaintenanceStartTimeOutput$DayOfMonth</a> 
     /// </para>
     ///  </li> <li> 
@@ -61,14 +65,15 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayARN;
         private int? _hourOfDay;
         private int? _minuteOfHour;
+        private SoftwareUpdatePreferences _softwareUpdatePreferences;
         private string _timezone;
 
         /// <summary>
         /// Gets and sets the property DayOfMonth. 
         /// <para>
         /// The day of the month component of the maintenance start time represented as an ordinal
-        /// number from 1 to 28, where 1 represents the first day of the month and 28 represents
-        /// the last day of the month.
+        /// number from 1 to 28, where 1 represents the first day of the month. It is not possible
+        /// to set the maintenance schedule to start on days 29 through 31.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=28)]
@@ -159,6 +164,36 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetMinuteOfHour()
         {
             return this._minuteOfHour.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwareUpdatePreferences. 
+        /// <para>
+        /// A set of variables indicating the software update preferences for the gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// Includes <c>AutomaticUpdatePolicy</c> field with the following inputs:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>ALL_VERSIONS</c> - Enables regular gateway maintenance updates.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>EMERGENCY_VERSIONS_ONLY</c> - Disables regular gateway maintenance updates.
+        /// </para>
+        /// </summary>
+        public SoftwareUpdatePreferences SoftwareUpdatePreferences
+        {
+            get { return this._softwareUpdatePreferences; }
+            set { this._softwareUpdatePreferences = value; }
+        }
+
+        // Check to see if SoftwareUpdatePreferences property is set
+        internal bool IsSetSoftwareUpdatePreferences()
+        {
+            return this._softwareUpdatePreferences != null;
         }
 
         /// <summary>

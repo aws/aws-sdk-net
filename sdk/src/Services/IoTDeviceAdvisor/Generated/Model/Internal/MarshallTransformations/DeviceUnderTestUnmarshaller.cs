@@ -57,6 +57,8 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         public DeviceUnderTest Unmarshall(JsonUnmarshallerContext context)
         {
             DeviceUnderTest unmarshalledObject = new DeviceUnderTest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

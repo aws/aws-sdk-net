@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public HoldoutActivity Unmarshall(JsonUnmarshallerContext context)
         {
             HoldoutActivity unmarshalledObject = new HoldoutActivity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -32,6 +32,8 @@ namespace Amazon.ControlTower.Model
     /// <summary>
     /// Container for the parameters to the GetBaseline operation.
     /// Retrieve details about an existing <c>Baseline</c> resource by specifying its identifier.
+    /// For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html">
+    /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
     /// </summary>
     public partial class GetBaselineRequest : AmazonControlTowerRequest
     {

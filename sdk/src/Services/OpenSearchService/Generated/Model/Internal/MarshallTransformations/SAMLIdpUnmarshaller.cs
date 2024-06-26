@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public SAMLIdp Unmarshall(JsonUnmarshallerContext context)
         {
             SAMLIdp unmarshalledObject = new SAMLIdp();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

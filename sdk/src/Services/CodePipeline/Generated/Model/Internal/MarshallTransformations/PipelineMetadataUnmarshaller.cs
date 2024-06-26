@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public PipelineMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             PipelineMetadata unmarshalledObject = new PipelineMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

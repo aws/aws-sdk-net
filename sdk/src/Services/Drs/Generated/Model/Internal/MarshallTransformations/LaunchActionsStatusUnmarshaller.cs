@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public LaunchActionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
             LaunchActionsStatus unmarshalledObject = new LaunchActionsStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

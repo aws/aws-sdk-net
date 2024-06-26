@@ -428,8 +428,10 @@ namespace AWSSDK_NetStandard.UnitTests
         public async Task GetLogEventsTest_TwoResponses()
         {
             var request = new GetLogEventsRequest();
+
+            // GetLogEvents returns the same token sent when reaching the end of the stream
             var firstResponse = new GetLogEventsResponse() { NextForwardToken = "foo" };
-            var secondResponse = new GetLogEventsResponse() { NextForwardToken = null };
+            var secondResponse = new GetLogEventsResponse() { NextForwardToken = "foo" };
             var token = new CancellationToken();
 
             _mockClient.SetupSequence(x => x.GetLogEventsAsync(It.IsAny<GetLogEventsRequest>(), It.IsAny<CancellationToken>()))

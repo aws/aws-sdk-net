@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ProductionVariant Unmarshall(JsonUnmarshallerContext context)
         {
             ProductionVariant unmarshalledObject = new ProductionVariant();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -86,6 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.EnableSSMAccess = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InferenceAmiVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InferenceAmiVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InitialInstanceCount", targetDepth))

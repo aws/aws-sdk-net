@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public TimestreamResources Unmarshall(JsonUnmarshallerContext context)
         {
             TimestreamResources unmarshalledObject = new TimestreamResources();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public InstanceTypeSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceTypeSpecification unmarshalledObject = new InstanceTypeSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public MaximumMinimumComputation Unmarshall(JsonUnmarshallerContext context)
         {
             MaximumMinimumComputation unmarshalledObject = new MaximumMinimumComputation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

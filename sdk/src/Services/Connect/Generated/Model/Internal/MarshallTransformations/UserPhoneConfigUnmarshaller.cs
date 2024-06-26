@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public UserPhoneConfig Unmarshall(JsonUnmarshallerContext context)
         {
             UserPhoneConfig unmarshalledObject = new UserPhoneConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

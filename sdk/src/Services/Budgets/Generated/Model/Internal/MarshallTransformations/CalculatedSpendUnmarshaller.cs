@@ -57,6 +57,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         public CalculatedSpend Unmarshall(JsonUnmarshallerContext context)
         {
             CalculatedSpend unmarshalledObject = new CalculatedSpend();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         public DeploymentComponentUpdatePolicy Unmarshall(JsonUnmarshallerContext context)
         {
             DeploymentComponentUpdatePolicy unmarshalledObject = new DeploymentComponentUpdatePolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

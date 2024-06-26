@@ -57,6 +57,8 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
         public CellOutput Unmarshall(JsonUnmarshallerContext context)
         {
             CellOutput unmarshalledObject = new CellOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

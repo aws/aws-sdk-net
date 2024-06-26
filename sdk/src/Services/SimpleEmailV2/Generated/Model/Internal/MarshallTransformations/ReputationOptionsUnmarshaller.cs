@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public ReputationOptions Unmarshall(JsonUnmarshallerContext context)
         {
             ReputationOptions unmarshalledObject = new ReputationOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

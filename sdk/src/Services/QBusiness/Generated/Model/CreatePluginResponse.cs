@@ -34,8 +34,27 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class CreatePluginResponse : AmazonWebServiceResponse
     {
+        private PluginBuildStatus _buildStatus;
         private string _pluginArn;
         private string _pluginId;
+
+        /// <summary>
+        /// Gets and sets the property BuildStatus. 
+        /// <para>
+        /// The current status of a plugin. A plugin is modified asynchronously.
+        /// </para>
+        /// </summary>
+        public PluginBuildStatus BuildStatus
+        {
+            get { return this._buildStatus; }
+            set { this._buildStatus = value; }
+        }
+
+        // Check to see if BuildStatus property is set
+        internal bool IsSetBuildStatus()
+        {
+            return this._buildStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PluginArn. 

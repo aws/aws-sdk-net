@@ -57,6 +57,8 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
         public LoggingConfigurationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             LoggingConfigurationSummary unmarshalledObject = new LoggingConfigurationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

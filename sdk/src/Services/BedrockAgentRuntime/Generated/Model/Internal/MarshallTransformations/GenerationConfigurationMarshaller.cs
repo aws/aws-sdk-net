@@ -48,6 +48,42 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalModelRequestFields())
+            {
+                context.Writer.WritePropertyName("additionalModelRequestFields");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectAdditionalModelRequestFieldsKvp in requestObject.AdditionalModelRequestFields)
+                {
+                    context.Writer.WritePropertyName(requestObjectAdditionalModelRequestFieldsKvp.Key);
+                    var requestObjectAdditionalModelRequestFieldsValue = requestObjectAdditionalModelRequestFieldsKvp.Value;
+
+                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObjectAdditionalModelRequestFieldsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetGuardrailConfiguration())
+            {
+                context.Writer.WritePropertyName("guardrailConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GuardrailConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.GuardrailConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetInferenceConfig())
+            {
+                context.Writer.WritePropertyName("inferenceConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InferenceConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.InferenceConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPromptTemplate())
             {
                 context.Writer.WritePropertyName("promptTemplate");

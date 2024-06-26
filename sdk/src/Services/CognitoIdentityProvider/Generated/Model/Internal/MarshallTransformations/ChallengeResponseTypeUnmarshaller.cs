@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public ChallengeResponseType Unmarshall(JsonUnmarshallerContext context)
         {
             ChallengeResponseType unmarshalledObject = new ChallengeResponseType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

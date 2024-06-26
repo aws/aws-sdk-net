@@ -281,7 +281,7 @@ namespace Amazon.QuickSight.Model
         /// The series item configuration of a line chart.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Max=2000)]
         public List<SeriesItem> Series
         {
             get { return this._series; }

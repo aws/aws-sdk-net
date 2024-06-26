@@ -84,6 +84,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCustomPluginConfiguration())
+                {
+                    context.Writer.WritePropertyName("customPluginConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomPluginConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomPluginConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDisplayName())
                 {
                     context.Writer.WritePropertyName("displayName");

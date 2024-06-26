@@ -57,6 +57,8 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         public JobProgressReport Unmarshall(JsonUnmarshallerContext context)
         {
             JobProgressReport unmarshalledObject = new JobProgressReport();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

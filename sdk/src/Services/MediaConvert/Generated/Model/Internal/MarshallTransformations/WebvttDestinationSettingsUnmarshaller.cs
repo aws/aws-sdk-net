@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public WebvttDestinationSettings Unmarshall(JsonUnmarshallerContext context)
         {
             WebvttDestinationSettings unmarshalledObject = new WebvttDestinationSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -286,8 +286,9 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For an overview on tagging Amazon RDS resources, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-        /// Amazon RDS Resources</a>.
+        /// For an overview on tagging your relational database resources, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+        /// Amazon RDS Resources</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging
+        /// Amazon Aurora and Amazon RDS Resources</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>

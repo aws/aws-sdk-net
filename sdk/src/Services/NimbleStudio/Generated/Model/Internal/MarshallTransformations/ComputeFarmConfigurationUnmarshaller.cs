@@ -57,6 +57,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         public ComputeFarmConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ComputeFarmConfiguration unmarshalledObject = new ComputeFarmConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

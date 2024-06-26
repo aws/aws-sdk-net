@@ -57,6 +57,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         public IdentityInfo Unmarshall(JsonUnmarshallerContext context)
         {
             IdentityInfo unmarshalledObject = new IdentityInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

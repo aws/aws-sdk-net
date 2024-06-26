@@ -57,6 +57,8 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         public FileSystemSize Unmarshall(JsonUnmarshallerContext context)
         {
             FileSystemSize unmarshalledObject = new FileSystemSize();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         public DeviceMinutes Unmarshall(JsonUnmarshallerContext context)
         {
             DeviceMinutes unmarshalledObject = new DeviceMinutes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

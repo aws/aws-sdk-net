@@ -57,6 +57,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         public Sample Unmarshall(JsonUnmarshallerContext context)
         {
             Sample unmarshalledObject = new Sample();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

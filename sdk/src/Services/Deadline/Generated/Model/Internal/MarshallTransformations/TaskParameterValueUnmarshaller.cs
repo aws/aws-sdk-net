@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public TaskParameterValue Unmarshall(JsonUnmarshallerContext context)
         {
             TaskParameterValue unmarshalledObject = new TaskParameterValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

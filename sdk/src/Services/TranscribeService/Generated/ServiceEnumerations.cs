@@ -75,6 +75,52 @@ namespace Amazon.TranscribeService
 
 
     /// <summary>
+    /// Constants used for properties of type CallAnalyticsFeature.
+    /// </summary>
+    public class CallAnalyticsFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GENERATIVE_SUMMARIZATION for CallAnalyticsFeature
+        /// </summary>
+        public static readonly CallAnalyticsFeature GENERATIVE_SUMMARIZATION = new CallAnalyticsFeature("GENERATIVE_SUMMARIZATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CallAnalyticsFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CallAnalyticsFeature FindValue(string value)
+        {
+            return FindValue<CallAnalyticsFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CallAnalyticsFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CallAnalyticsJobStatus.
     /// </summary>
     public class CallAnalyticsJobStatus : ConstantClass
@@ -126,6 +172,56 @@ namespace Amazon.TranscribeService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CallAnalyticsJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CallAnalyticsSkippedReasonCode.
+    /// </summary>
+    public class CallAnalyticsSkippedReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED_SAFETY_GUIDELINES for CallAnalyticsSkippedReasonCode
+        /// </summary>
+        public static readonly CallAnalyticsSkippedReasonCode FAILED_SAFETY_GUIDELINES = new CallAnalyticsSkippedReasonCode("FAILED_SAFETY_GUIDELINES");
+        /// <summary>
+        /// Constant INSUFFICIENT_CONVERSATION_CONTENT for CallAnalyticsSkippedReasonCode
+        /// </summary>
+        public static readonly CallAnalyticsSkippedReasonCode INSUFFICIENT_CONVERSATION_CONTENT = new CallAnalyticsSkippedReasonCode("INSUFFICIENT_CONVERSATION_CONTENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CallAnalyticsSkippedReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CallAnalyticsSkippedReasonCode FindValue(string value)
+        {
+            return FindValue<CallAnalyticsSkippedReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CallAnalyticsSkippedReasonCode(string value)
         {
             return FindValue(value);
         }

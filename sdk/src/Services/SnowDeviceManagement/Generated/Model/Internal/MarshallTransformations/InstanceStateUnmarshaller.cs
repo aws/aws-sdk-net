@@ -57,6 +57,8 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
         public InstanceState Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceState unmarshalledObject = new InstanceState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

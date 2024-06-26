@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public IotEventsDestinationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             IotEventsDestinationConfiguration unmarshalledObject = new IotEventsDestinationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

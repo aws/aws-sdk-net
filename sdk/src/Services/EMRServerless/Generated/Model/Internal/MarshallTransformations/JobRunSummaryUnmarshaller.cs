@@ -57,6 +57,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         public JobRunSummary Unmarshall(JsonUnmarshallerContext context)
         {
             JobRunSummary unmarshalledObject = new JobRunSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,24 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("attempt", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Attempt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("attemptCreatedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.AttemptCreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("attemptUpdatedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.AttemptUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("createdAt", targetDepth))
@@ -98,6 +118,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))

@@ -57,6 +57,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public DetailsMap Unmarshall(JsonUnmarshallerContext context)
         {
             DetailsMap unmarshalledObject = new DetailsMap();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

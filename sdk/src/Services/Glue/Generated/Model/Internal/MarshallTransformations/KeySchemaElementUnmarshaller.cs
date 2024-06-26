@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public KeySchemaElement Unmarshall(JsonUnmarshallerContext context)
         {
             KeySchemaElement unmarshalledObject = new KeySchemaElement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

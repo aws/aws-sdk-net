@@ -262,6 +262,21 @@ namespace ServiceClientGenerator
             }
         }
 
+        /// <summary>
+        /// Determines if the operation pagination should end when the response equal to the request token
+        /// </summary>
+        public bool StopPaginationOnSameToken
+        {
+            get
+            {
+                var modifiers = this.model.Customizations.GetOperationModifiers(this.name);
+                if (modifiers != null)
+                    return modifiers.StopPaginationOnSameToken;
+
+                return false;
+            }
+        }
+
         public bool WrapsResultShape(string shapeName)
         {
             var modifiers = this.model.Customizations.GetOperationModifiers(this.name);
@@ -407,7 +422,7 @@ namespace ServiceClientGenerator
             {
                 return this.ResponseStructure == null ?
                     null :
-                    this.ResponseStructure.Members.SingleOrDefault(m => m.IsStreaming);
+                    this.ResponseStructure.Members.SingleOrDefault(m => m.Shape.IsStreaming);
             }
         }
 
@@ -448,7 +463,7 @@ namespace ServiceClientGenerator
             {
                 return this.RequestStructure == null ?
                     null :
-                    this.RequestStructure.Members.SingleOrDefault(m => m.IsStreaming);
+                    this.RequestStructure.Members.SingleOrDefault(m => m.Shape.IsStreaming);
             }
         }
 
@@ -482,12 +497,20 @@ namespace ServiceClientGenerator
                     return new List<Member>();
 
                 var payloadName = this.ResponseStructure.PayloadMemberName;
+                if (this.InputOutputIsSameShape && string.Equals(model.Protocol,"rest-xml",StringComparison.OrdinalIgnoreCase))
+                {
+                    return this.ResponseStructure.Members.Where(
+                        m =>
+                            m.MarshallLocation == MarshallLocation.Body || m.MarshallLocation == MarshallLocation.Uri || m.MarshallLocation == MarshallLocation.QueryString &&
+                            !string.Equals(m.MarshallName, payloadName, StringComparison.Ordinal)).ToList();
+                }
                 return this.ResponseStructure.Members.Where(
                     m =>
                         m.MarshallLocation == MarshallLocation.Body &&
                         !string.Equals(m.MarshallName, payloadName, StringComparison.Ordinal)).ToList();
             }
         }
+
 
         /// <summary>
         /// List of members that are decorated with a hostLabel value equal to true
@@ -875,6 +898,23 @@ namespace ServiceClientGenerator
             }
         }
 
+        public bool InputOutputIsSameShape
+        {
+            get
+            {
+                // Only one can be true. If one of the input or output is not defined then the operation
+                // uses the same shape for the input and output.
+                if (this.data[ServiceModel.InputKey] == null ^ this.data[ServiceModel.OutputKey] == null)
+                {
+                    return true;
+                }
+                else if (this.RequestStructure == this.ResponseStructure)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
         /// <summary>
         /// For Set to true when the service model specifies a shape that should be wrapped in a response. 
         /// ElastiCache CreateCacheCluster is an example of this.

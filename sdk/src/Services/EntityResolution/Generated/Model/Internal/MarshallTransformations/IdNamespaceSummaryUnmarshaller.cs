@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public IdNamespaceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             IdNamespaceSummary unmarshalledObject = new IdNamespaceSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

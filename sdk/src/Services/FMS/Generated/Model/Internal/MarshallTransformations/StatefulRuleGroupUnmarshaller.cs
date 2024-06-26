@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public StatefulRuleGroup Unmarshall(JsonUnmarshallerContext context)
         {
             StatefulRuleGroup unmarshalledObject = new StatefulRuleGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

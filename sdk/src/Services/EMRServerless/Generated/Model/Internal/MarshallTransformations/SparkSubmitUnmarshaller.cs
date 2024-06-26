@@ -57,6 +57,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         public SparkSubmit Unmarshall(JsonUnmarshallerContext context)
         {
             SparkSubmit unmarshalledObject = new SparkSubmit();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

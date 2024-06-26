@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public Dimension Unmarshall(JsonUnmarshallerContext context)
         {
             Dimension unmarshalledObject = new Dimension();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

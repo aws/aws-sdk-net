@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public InvalidNetworkInterface Unmarshall(JsonUnmarshallerContext context)
         {
             InvalidNetworkInterface unmarshalledObject = new InvalidNetworkInterface();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

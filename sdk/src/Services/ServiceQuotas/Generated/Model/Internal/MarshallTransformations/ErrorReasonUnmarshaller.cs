@@ -57,6 +57,8 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
         public ErrorReason Unmarshall(JsonUnmarshallerContext context)
         {
             ErrorReason unmarshalledObject = new ErrorReason();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

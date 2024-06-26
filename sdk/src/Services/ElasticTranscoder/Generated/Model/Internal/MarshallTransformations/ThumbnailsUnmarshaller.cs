@@ -57,6 +57,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         public Thumbnails Unmarshall(JsonUnmarshallerContext context)
         {
             Thumbnails unmarshalledObject = new Thumbnails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public DecryptStepDetails Unmarshall(JsonUnmarshallerContext context)
         {
             DecryptStepDetails unmarshalledObject = new DecryptStepDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

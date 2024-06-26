@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public TcpTimeout Unmarshall(JsonUnmarshallerContext context)
         {
             TcpTimeout unmarshalledObject = new TcpTimeout();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public UserTurnSlotOutput Unmarshall(JsonUnmarshallerContext context)
         {
             UserTurnSlotOutput unmarshalledObject = new UserTurnSlotOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

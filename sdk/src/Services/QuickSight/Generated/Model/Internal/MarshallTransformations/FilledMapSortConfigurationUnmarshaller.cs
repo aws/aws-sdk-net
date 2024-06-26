@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FilledMapSortConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             FilledMapSortConfiguration unmarshalledObject = new FilledMapSortConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -284,8 +284,6 @@ namespace Amazon.Athena.Model
         /// location using one of the ways: either in the workgroup using this setting, or for
         /// individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>.
         /// If none of them is set, Athena issues an error that no output location is provided.
-        /// For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
-        /// with query results, recent queries, and output files</a>.
         /// </para>
         /// </summary>
         public ResultConfiguration ResultConfiguration

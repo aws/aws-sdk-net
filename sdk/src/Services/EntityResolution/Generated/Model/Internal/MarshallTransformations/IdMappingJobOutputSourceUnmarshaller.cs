@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public IdMappingJobOutputSource Unmarshall(JsonUnmarshallerContext context)
         {
             IdMappingJobOutputSource unmarshalledObject = new IdMappingJobOutputSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

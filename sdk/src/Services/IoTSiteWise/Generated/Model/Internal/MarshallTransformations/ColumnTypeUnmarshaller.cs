@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public ColumnType Unmarshall(JsonUnmarshallerContext context)
         {
             ColumnType unmarshalledObject = new ColumnType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

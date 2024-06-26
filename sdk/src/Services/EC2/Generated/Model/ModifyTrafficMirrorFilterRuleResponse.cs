@@ -37,9 +37,13 @@ namespace Amazon.EC2.Model
         private TrafficMirrorFilterRule _trafficMirrorFilterRule;
 
         /// <summary>
-        /// Gets and sets the property TrafficMirrorFilterRule. 
+        /// Gets and sets the property TrafficMirrorFilterRule. <note> 
         /// <para>
-        /// Modifies a Traffic Mirror rule.
+        /// Tags are not returned for ModifyTrafficMirrorFilterRule.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// A Traffic Mirror rule.
         /// </para>
         /// </summary>
         public TrafficMirrorFilterRule TrafficMirrorFilterRule

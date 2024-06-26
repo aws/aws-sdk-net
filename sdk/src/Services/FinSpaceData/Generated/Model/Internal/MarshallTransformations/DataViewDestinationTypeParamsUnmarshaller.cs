@@ -57,6 +57,8 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         public DataViewDestinationTypeParams Unmarshall(JsonUnmarshallerContext context)
         {
             DataViewDestinationTypeParams unmarshalledObject = new DataViewDestinationTypeParams();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

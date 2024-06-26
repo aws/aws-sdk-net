@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public PlayerLatencyPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             PlayerLatencyPolicy unmarshalledObject = new PlayerLatencyPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

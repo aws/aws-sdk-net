@@ -364,7 +364,21 @@ namespace ServiceClientGenerator
                     var injectedProperties = shapeModifier.InjectedPropertyNames;
                     foreach (var p in injectedProperties)
                     {
-                        map.Add(new Member(this.model, this, p, p, shapeModifier.InjectedPropertyData(p)));
+                        var injectedPropertyData = shapeModifier.InjectedPropertyData(p);
+                        JsonData originalMember;
+                        // if a modeled property was excluded and replaced by an injected property, then we want to store a copy
+                        // of the original property's JSON so we can access data such as the context params.
+                        if (injectedPropertyData.Data[CustomizationsModel.OriginalMemberKey] != null)
+                        {
+                            var shapeData = this.model.FindShape(this.Name).data;
+                            originalMember = shapeData["members"][injectedPropertyData.Data[CustomizationsModel.OriginalMemberKey].ToString()];
+                            map.Add(new Member(this.model, this, originalMember, p, p, shapeModifier.InjectedPropertyData(p)));
+                        }
+                        else
+                        {
+                            map.Add(new Member(this.model, this, p, p, shapeModifier.InjectedPropertyData(p)));
+                        }
+
                     }
                 }
 
@@ -589,20 +603,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        /// <summary>
-        /// Determines if the shape's json has a streaming attribute
-        /// </summary>
-        public bool IsStreaming
-        {
-            get
-            {
-                var streamingNode = this.data[StreamingKey];
-                if (streamingNode == null)
-                    return false;
-
-                return bool.Parse(streamingNode.ToString());
-            }
-        }
 
         public bool Sensitive
         {

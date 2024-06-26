@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public SubSlotSetting Unmarshall(JsonUnmarshallerContext context)
         {
             SubSlotSetting unmarshalledObject = new SubSlotSetting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

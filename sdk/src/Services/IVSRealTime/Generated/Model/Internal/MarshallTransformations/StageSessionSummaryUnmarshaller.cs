@@ -57,6 +57,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         public StageSessionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             StageSessionSummary unmarshalledObject = new StageSessionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -97,6 +97,17 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMessageSystemAttributeNames())
+                {
+                    context.Writer.WritePropertyName("MessageSystemAttributeNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMessageSystemAttributeNamesListValue in publicRequest.MessageSystemAttributeNames)
+                    {
+                            context.Writer.Write(publicRequestMessageSystemAttributeNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetQueueUrl())
                 {
                     context.Writer.WritePropertyName("QueueUrl");

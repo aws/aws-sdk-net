@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public ParquetConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ParquetConfiguration unmarshalledObject = new ParquetConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

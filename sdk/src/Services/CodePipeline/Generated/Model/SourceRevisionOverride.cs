@@ -33,6 +33,14 @@ namespace Amazon.CodePipeline.Model
     /// A list that allows you to specify, or override, the source revision for a pipeline
     /// execution that's being started. A source revision is the version with all the changes
     /// to your application code, or source artifact, for the pipeline execution.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// For the <c>S3_OBJECT_VERSION_ID</c> and <c>S3_OBJECT_KEY</c> types of source revisions,
+    /// either of the types can be used independently, or they can be used together to override
+    /// the source with a specific ObjectKey and VersionID.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SourceRevisionOverride
     {

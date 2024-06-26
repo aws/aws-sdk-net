@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public HomeDirectoryMapEntry Unmarshall(JsonUnmarshallerContext context)
         {
             HomeDirectoryMapEntry unmarshalledObject = new HomeDirectoryMapEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

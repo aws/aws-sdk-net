@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public DomainEndpointOptions Unmarshall(JsonUnmarshallerContext context)
         {
             DomainEndpointOptions unmarshalledObject = new DomainEndpointOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

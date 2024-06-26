@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public AlarmConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AlarmConfiguration unmarshalledObject = new AlarmConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public EnvironmentProfileSummary Unmarshall(JsonUnmarshallerContext context)
         {
             EnvironmentProfileSummary unmarshalledObject = new EnvironmentProfileSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

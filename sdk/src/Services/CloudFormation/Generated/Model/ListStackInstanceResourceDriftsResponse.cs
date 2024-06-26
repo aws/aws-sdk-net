@@ -63,7 +63,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Summaries. 
         /// <para>
-        /// A list of <c>StackInstanceResourceDriftSummary</c> structures that contain information
+        /// A list of <c>StackInstanceResourceDriftsSummary</c> structures that contain information
         /// about the specified stack instances.
         /// </para>
         /// </summary>

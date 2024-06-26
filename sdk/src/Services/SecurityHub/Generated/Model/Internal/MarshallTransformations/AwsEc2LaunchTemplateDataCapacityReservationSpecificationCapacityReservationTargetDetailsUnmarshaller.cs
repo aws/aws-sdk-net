@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails unmarshalledObject = new AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public PartialMatch Unmarshall(JsonUnmarshallerContext context)
         {
             PartialMatch unmarshalledObject = new PartialMatch();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -47,10 +47,10 @@ namespace Amazon.CodeArtifact
     ///  <b>Repository</b>: A CodeArtifact repository contains a set of <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html#welcome-concepts-package-version">package
     /// versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot,
     /// so a single repository can contain packages of any supported type. Each repository
-    /// exposes endpoints for fetching and publishing packages using tools like the <b> <c>npm</c>
-    /// </b> CLI, the Maven CLI (<b> <c>mvn</c> </b>), Python CLIs (<b> <c>pip</c> </b> and
-    /// <c>twine</c>), NuGet CLIs (<c>nuget</c> and <c>dotnet</c>), and the Swift package
-    /// manager (<b> <c>swift</c> </b>).
+    /// exposes endpoints for fetching and publishing packages using tools such as the <b>
+    /// <c>npm</c> </b> CLI or the Maven CLI (<b> <c>mvn</c> </b>). For a list of supported
+    /// package managers, see the <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html">CodeArtifact
+    /// User Guide</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -80,13 +80,11 @@ namespace Amazon.CodeArtifact
     ///  </li> <li> 
     /// <para>
     ///  <b>Package</b>: A <i>package</i> is a bundle of software and the metadata required
-    /// to resolve dependencies and install the software. CodeArtifact supports <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>,
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>,
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>,
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>,
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-swift">Swift</a>,
-    /// and <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic">generic</a>
-    /// package formats.
+    /// to resolve dependencies and install the software. CodeArtifact supports npm, PyPI,
+    /// Maven, NuGet, Swift, Ruby, Cargo, and generic package formats. For more information
+    /// about the supported package formats and how to use CodeArtifact with them, see the
+    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html">CodeArtifact
+    /// User Guide</a>.
     /// </para>
     ///  
     /// <para>
@@ -269,6 +267,10 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <c>cargo</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>generic</c> 
     /// </para>
     ///  </li> <li> 
@@ -286,6 +288,10 @@ namespace Amazon.CodeArtifact
     ///  </li> <li> 
     /// <para>
     ///  <c>pypi</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ruby</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -1970,6 +1976,10 @@ namespace Amazon.CodeArtifact
         /// 
         ///  <ul> <li> 
         /// <para>
+        ///  <c>cargo</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>generic</c> 
         /// </para>
         ///  </li> <li> 
@@ -1987,6 +1997,10 @@ namespace Amazon.CodeArtifact
         ///  </li> <li> 
         /// <para>
         ///  <c>pypi</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ruby</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

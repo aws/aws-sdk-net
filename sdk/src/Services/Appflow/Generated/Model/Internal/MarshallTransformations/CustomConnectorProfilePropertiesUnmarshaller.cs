@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public CustomConnectorProfileProperties Unmarshall(JsonUnmarshallerContext context)
         {
             CustomConnectorProfileProperties unmarshalledObject = new CustomConnectorProfileProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public BatchPutPropertyError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchPutPropertyError unmarshalledObject = new BatchPutPropertyError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         public ScanningRepositoryFilter Unmarshall(JsonUnmarshallerContext context)
         {
             ScanningRepositoryFilter unmarshalledObject = new ScanningRepositoryFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

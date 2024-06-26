@@ -57,6 +57,8 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
         public Email Unmarshall(JsonUnmarshallerContext context)
         {
             Email unmarshalledObject = new Email();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

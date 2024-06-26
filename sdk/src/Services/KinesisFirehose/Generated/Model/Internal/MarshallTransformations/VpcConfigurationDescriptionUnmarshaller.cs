@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public VpcConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             VpcConfigurationDescription unmarshalledObject = new VpcConfigurationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public BatchCreateChannelMembershipError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchCreateChannelMembershipError unmarshalledObject = new BatchCreateChannelMembershipError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

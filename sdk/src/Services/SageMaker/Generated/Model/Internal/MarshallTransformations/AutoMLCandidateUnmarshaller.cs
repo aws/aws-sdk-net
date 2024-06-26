@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public AutoMLCandidate Unmarshall(JsonUnmarshallerContext context)
         {
             AutoMLCandidate unmarshalledObject = new AutoMLCandidate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

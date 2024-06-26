@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public AgentInfo Unmarshall(JsonUnmarshallerContext context)
         {
             AgentInfo unmarshalledObject = new AgentInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -70,10 +72,28 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentPauseDurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Capabilities", targetDepth))
+                {
+                    var unmarshaller = ParticipantCapabilitiesUnmarshaller.Instance;
+                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConnectedToAgentTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.ConnectedToAgentTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DeviceInfo", targetDepth))
+                {
+                    var unmarshaller = DeviceInfoUnmarshaller.Instance;
+                    unmarshalledObject.DeviceInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HierarchyGroups", targetDepth))
+                {
+                    var unmarshaller = HierarchyGroupsUnmarshaller.Instance;
+                    unmarshalledObject.HierarchyGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))

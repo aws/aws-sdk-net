@@ -97,7 +97,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property BlueprintId. 
         /// <para>
-        /// The ID for a virtual private server image (<c>app_wordpress_4_4</c> or <c>app_lamp_7_0</c>).
+        /// The ID for a virtual private server image (<c>app_wordpress_x_x</c> or <c>app_lamp_x_x</c>).
         /// Use the <c>get blueprints</c> operation to return a list of available images (or <i>blueprints</i>).
         /// </para>
         ///  <note> 
@@ -126,7 +126,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property BundleId. 
         /// <para>
         /// The bundle of specification information for your virtual private server (or <i>instance</i>),
-        /// including the pricing plan (<c>micro_1_0</c>).
+        /// including the pricing plan (<c>medium_x_x</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -195,8 +195,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The possible values are <c>ipv4</c> for IPv4 only, and <c>dualstack</c> for IPv4 and
-        /// IPv6.
+        /// The possible values are <c>ipv4</c> for IPv4 only, <c>ipv6</c> for IPv6 only, and
+        /// <c>dualstack</c> for IPv4 and IPv6.
         /// </para>
         ///  
         /// <para>

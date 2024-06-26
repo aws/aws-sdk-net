@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-scheduled-scaling.html">Scheduled
     /// scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     ///  

@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public H265Settings Unmarshall(JsonUnmarshallerContext context)
         {
             H265Settings unmarshalledObject = new H265Settings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

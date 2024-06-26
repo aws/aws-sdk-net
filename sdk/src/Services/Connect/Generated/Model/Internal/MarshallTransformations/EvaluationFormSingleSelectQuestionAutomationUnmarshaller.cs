@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public EvaluationFormSingleSelectQuestionAutomation Unmarshall(JsonUnmarshallerContext context)
         {
             EvaluationFormSingleSelectQuestionAutomation unmarshalledObject = new EvaluationFormSingleSelectQuestionAutomation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

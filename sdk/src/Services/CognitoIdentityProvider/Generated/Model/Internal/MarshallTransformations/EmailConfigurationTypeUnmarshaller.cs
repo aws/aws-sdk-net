@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public EmailConfigurationType Unmarshall(JsonUnmarshallerContext context)
         {
             EmailConfigurationType unmarshalledObject = new EmailConfigurationType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

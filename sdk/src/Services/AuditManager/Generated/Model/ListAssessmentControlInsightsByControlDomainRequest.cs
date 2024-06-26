@@ -74,8 +74,15 @@ namespace Amazon.AuditManager.Model
         /// <para>
         /// The unique identifier for the control domain. 
         /// </para>
+        ///  
+        /// <para>
+        /// Audit Manager supports the control domains that are provided by Amazon Web Services
+        /// Control Catalog. For information about how to find a list of available control domains,
+        /// see <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+        /// <c>ListDomains</c> </a> in the Amazon Web Services Control Catalog API Reference.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
+        [AWSProperty(Required=true, Min=13, Max=2048)]
         public string ControlDomainId
         {
             get { return this._controlDomainId; }

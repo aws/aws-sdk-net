@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public ProposedSegmentChange Unmarshall(JsonUnmarshallerContext context)
         {
             ProposedSegmentChange unmarshalledObject = new ProposedSegmentChange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

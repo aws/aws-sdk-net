@@ -57,6 +57,8 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         public AcceptedTerm Unmarshall(JsonUnmarshallerContext context)
         {
             AcceptedTerm unmarshalledObject = new AcceptedTerm();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

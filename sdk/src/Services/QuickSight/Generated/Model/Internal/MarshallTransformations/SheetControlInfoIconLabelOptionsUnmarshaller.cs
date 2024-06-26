@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SheetControlInfoIconLabelOptions Unmarshall(JsonUnmarshallerContext context)
         {
             SheetControlInfoIconLabelOptions unmarshalledObject = new SheetControlInfoIconLabelOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

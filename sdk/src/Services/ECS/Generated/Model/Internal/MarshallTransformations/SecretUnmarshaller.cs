@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public Secret Unmarshall(JsonUnmarshallerContext context)
         {
             Secret unmarshalledObject = new Secret();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

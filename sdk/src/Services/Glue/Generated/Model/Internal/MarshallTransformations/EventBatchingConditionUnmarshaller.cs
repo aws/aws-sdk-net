@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public EventBatchingCondition Unmarshall(JsonUnmarshallerContext context)
         {
             EventBatchingCondition unmarshalledObject = new EventBatchingCondition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

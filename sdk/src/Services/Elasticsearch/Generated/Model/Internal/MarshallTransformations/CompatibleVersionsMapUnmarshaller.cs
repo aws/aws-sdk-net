@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public CompatibleVersionsMap Unmarshall(JsonUnmarshallerContext context)
         {
             CompatibleVersionsMap unmarshalledObject = new CompatibleVersionsMap();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

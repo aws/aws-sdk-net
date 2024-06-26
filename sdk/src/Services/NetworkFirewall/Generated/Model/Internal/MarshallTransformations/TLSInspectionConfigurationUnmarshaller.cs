@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public TLSInspectionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TLSInspectionConfiguration unmarshalledObject = new TLSInspectionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

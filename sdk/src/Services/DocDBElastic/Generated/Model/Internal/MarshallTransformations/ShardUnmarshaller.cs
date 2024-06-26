@@ -57,6 +57,8 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
         public Shard Unmarshall(JsonUnmarshallerContext context)
         {
             Shard unmarshalledObject = new Shard();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

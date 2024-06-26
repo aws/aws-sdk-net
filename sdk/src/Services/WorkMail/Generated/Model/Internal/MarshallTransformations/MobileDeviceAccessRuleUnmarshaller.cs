@@ -57,6 +57,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         public MobileDeviceAccessRule Unmarshall(JsonUnmarshallerContext context)
         {
             MobileDeviceAccessRule unmarshalledObject = new MobileDeviceAccessRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

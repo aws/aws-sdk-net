@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public WeightedQuantileLoss Unmarshall(JsonUnmarshallerContext context)
         {
             WeightedQuantileLoss unmarshalledObject = new WeightedQuantileLoss();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

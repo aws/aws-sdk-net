@@ -57,6 +57,8 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
         public ResourceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceSummary unmarshalledObject = new ResourceSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

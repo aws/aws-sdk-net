@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NodeDetails. 
         /// <para>
-        /// The details of the instance.
+        /// The details of the SageMaker HyperPod cluster node.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

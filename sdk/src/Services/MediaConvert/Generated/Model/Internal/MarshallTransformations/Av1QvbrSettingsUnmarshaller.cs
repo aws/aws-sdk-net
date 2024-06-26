@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public Av1QvbrSettings Unmarshall(JsonUnmarshallerContext context)
         {
             Av1QvbrSettings unmarshalledObject = new Av1QvbrSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

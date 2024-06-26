@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public EventDestination Unmarshall(JsonUnmarshallerContext context)
         {
             EventDestination unmarshalledObject = new EventDestination();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EventBridgeDestination", targetDepth))
+                {
+                    var unmarshaller = EventBridgeDestinationUnmarshaller.Instance;
+                    unmarshalledObject.EventBridgeDestination = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("KinesisFirehoseDestination", targetDepth))

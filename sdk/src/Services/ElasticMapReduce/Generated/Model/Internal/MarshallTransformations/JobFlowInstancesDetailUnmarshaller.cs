@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public JobFlowInstancesDetail Unmarshall(JsonUnmarshallerContext context)
         {
             JobFlowInstancesDetail unmarshalledObject = new JobFlowInstancesDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

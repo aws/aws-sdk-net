@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public AmazonopensearchserviceRetryOptions Unmarshall(JsonUnmarshallerContext context)
         {
             AmazonopensearchserviceRetryOptions unmarshalledObject = new AmazonopensearchserviceRetryOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         public PathToObjectIdentifiers Unmarshall(JsonUnmarshallerContext context)
         {
             PathToObjectIdentifiers unmarshalledObject = new PathToObjectIdentifiers();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

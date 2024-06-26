@@ -57,6 +57,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         public AutoStartConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AutoStartConfig unmarshalledObject = new AutoStartConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public LoggingFormat Unmarshall(JsonUnmarshallerContext context)
         {
             LoggingFormat unmarshalledObject = new LoggingFormat();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

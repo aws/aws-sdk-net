@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public CustomArtifactConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             CustomArtifactConfigurationDescription unmarshalledObject = new CustomArtifactConfigurationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SnowflakeParameters Unmarshall(JsonUnmarshallerContext context)
         {
             SnowflakeParameters unmarshalledObject = new SnowflakeParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

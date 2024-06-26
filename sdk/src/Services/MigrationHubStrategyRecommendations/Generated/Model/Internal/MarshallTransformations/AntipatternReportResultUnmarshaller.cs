@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public AntipatternReportResult Unmarshall(JsonUnmarshallerContext context)
         {
             AntipatternReportResult unmarshalledObject = new AntipatternReportResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

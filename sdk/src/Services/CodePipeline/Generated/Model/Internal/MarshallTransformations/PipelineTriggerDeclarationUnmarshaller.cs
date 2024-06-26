@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public PipelineTriggerDeclaration Unmarshall(JsonUnmarshallerContext context)
         {
             PipelineTriggerDeclaration unmarshalledObject = new PipelineTriggerDeclaration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public FailedEntity Unmarshall(JsonUnmarshallerContext context)
         {
             FailedEntity unmarshalledObject = new FailedEntity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

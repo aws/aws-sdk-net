@@ -179,6 +179,52 @@ namespace Amazon.Pipes
 
 
     /// <summary>
+    /// Constants used for properties of type DimensionValueType.
+    /// </summary>
+    public class DimensionValueType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VARCHAR for DimensionValueType
+        /// </summary>
+        public static readonly DimensionValueType VARCHAR = new DimensionValueType("VARCHAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DimensionValueType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DimensionValueType FindValue(string value)
+        {
+            return FindValue<DimensionValueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DimensionValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DynamoDBStreamStartPosition.
     /// </summary>
     public class DynamoDBStreamStartPosition : ConstantClass
@@ -318,6 +364,64 @@ namespace Amazon.Pipes
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EcsResourceRequirementType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EpochTimeUnit.
+    /// </summary>
+    public class EpochTimeUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MICROSECONDS for EpochTimeUnit
+        /// </summary>
+        public static readonly EpochTimeUnit MICROSECONDS = new EpochTimeUnit("MICROSECONDS");
+        /// <summary>
+        /// Constant MILLISECONDS for EpochTimeUnit
+        /// </summary>
+        public static readonly EpochTimeUnit MILLISECONDS = new EpochTimeUnit("MILLISECONDS");
+        /// <summary>
+        /// Constant NANOSECONDS for EpochTimeUnit
+        /// </summary>
+        public static readonly EpochTimeUnit NANOSECONDS = new EpochTimeUnit("NANOSECONDS");
+        /// <summary>
+        /// Constant SECONDS for EpochTimeUnit
+        /// </summary>
+        public static readonly EpochTimeUnit SECONDS = new EpochTimeUnit("SECONDS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EpochTimeUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EpochTimeUnit FindValue(string value)
+        {
+            return FindValue<EpochTimeUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EpochTimeUnit(string value)
         {
             return FindValue(value);
         }
@@ -530,6 +634,68 @@ namespace Amazon.Pipes
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MeasureValueType.
+    /// </summary>
+    public class MeasureValueType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BIGINT for MeasureValueType
+        /// </summary>
+        public static readonly MeasureValueType BIGINT = new MeasureValueType("BIGINT");
+        /// <summary>
+        /// Constant BOOLEAN for MeasureValueType
+        /// </summary>
+        public static readonly MeasureValueType BOOLEAN = new MeasureValueType("BOOLEAN");
+        /// <summary>
+        /// Constant DOUBLE for MeasureValueType
+        /// </summary>
+        public static readonly MeasureValueType DOUBLE = new MeasureValueType("DOUBLE");
+        /// <summary>
+        /// Constant TIMESTAMP for MeasureValueType
+        /// </summary>
+        public static readonly MeasureValueType TIMESTAMP = new MeasureValueType("TIMESTAMP");
+        /// <summary>
+        /// Constant VARCHAR for MeasureValueType
+        /// </summary>
+        public static readonly MeasureValueType VARCHAR = new MeasureValueType("VARCHAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MeasureValueType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MeasureValueType FindValue(string value)
+        {
+            return FindValue<MeasureValueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MeasureValueType(string value)
         {
             return FindValue(value);
         }
@@ -1136,6 +1302,56 @@ namespace Amazon.Pipes
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SelfManagedKafkaStartPosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TimeFieldType.
+    /// </summary>
+    public class TimeFieldType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EPOCH for TimeFieldType
+        /// </summary>
+        public static readonly TimeFieldType EPOCH = new TimeFieldType("EPOCH");
+        /// <summary>
+        /// Constant TIMESTAMP_FORMAT for TimeFieldType
+        /// </summary>
+        public static readonly TimeFieldType TIMESTAMP_FORMAT = new TimeFieldType("TIMESTAMP_FORMAT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TimeFieldType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimeFieldType FindValue(string value)
+        {
+            return FindValue<TimeFieldType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimeFieldType(string value)
         {
             return FindValue(value);
         }

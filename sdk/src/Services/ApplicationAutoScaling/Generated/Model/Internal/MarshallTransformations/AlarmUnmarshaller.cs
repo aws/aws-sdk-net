@@ -57,6 +57,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         public Alarm Unmarshall(JsonUnmarshallerContext context)
         {
             Alarm unmarshalledObject = new Alarm();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

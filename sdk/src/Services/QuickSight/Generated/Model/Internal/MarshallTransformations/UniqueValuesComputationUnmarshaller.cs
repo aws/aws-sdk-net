@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public UniqueValuesComputation Unmarshall(JsonUnmarshallerContext context)
         {
             UniqueValuesComputation unmarshalledObject = new UniqueValuesComputation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

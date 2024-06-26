@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public JoinKeyProperties Unmarshall(JsonUnmarshallerContext context)
         {
             JoinKeyProperties unmarshalledObject = new JoinKeyProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public ProvisioningProperties Unmarshall(JsonUnmarshallerContext context)
         {
             ProvisioningProperties unmarshalledObject = new ProvisioningProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

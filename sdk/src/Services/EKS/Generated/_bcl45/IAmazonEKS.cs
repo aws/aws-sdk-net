@@ -558,8 +558,8 @@ namespace Amazon.EKS
         /// <para>
         /// In most cases, it takes several minutes to create a cluster. After you create an Amazon
         /// EKS cluster, you must configure your Kubernetes tooling to communicate with the API
-        /// server and launch nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
-        /// Cluster Authentication</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
+        /// server and launch nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-auth.html">Allowing
+        /// users to access your cluster</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
         /// Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
@@ -648,8 +648,8 @@ namespace Amazon.EKS
         /// <para>
         /// In most cases, it takes several minutes to create a cluster. After you create an Amazon
         /// EKS cluster, you must configure your Kubernetes tooling to communicate with the API
-        /// server and launch nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
-        /// Cluster Authentication</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
+        /// server and launch nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-auth.html">Allowing
+        /// users to access your cluster</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
         /// Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
@@ -930,8 +930,8 @@ namespace Amazon.EKS
         /// version for the cluster. All node groups are created with the latest AMI release version
         /// for the respective minor Kubernetes version of the cluster, unless you deploy a custom
         /// AMI using a launch template. For more information about using launch templates, see
-        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-        /// template support</a>.
+        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+        /// managed nodes with launch templates</a>.
         /// </para>
         ///  
         /// <para>
@@ -989,8 +989,8 @@ namespace Amazon.EKS
         /// version for the cluster. All node groups are created with the latest AMI release version
         /// for the respective minor Kubernetes version of the cluster, unless you deploy a custom
         /// AMI using a launch template. For more information about using launch templates, see
-        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-        /// template support</a>.
+        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+        /// managed nodes with launch templates</a>.
         /// </para>
         ///  
         /// <para>

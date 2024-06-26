@@ -57,6 +57,8 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
         public Lexicon Unmarshall(JsonUnmarshallerContext context)
         {
             Lexicon unmarshalledObject = new Lexicon();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

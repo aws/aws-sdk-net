@@ -59,7 +59,7 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the request to onboard a member account as an Firewall Manager
-        /// administator.
+        /// administrator.
         /// </para>
         ///  <ul> <li> 
         /// <para>

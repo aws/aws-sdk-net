@@ -157,7 +157,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// both.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2)]
+        [AWSProperty(Required=true, Min=1, Max=3)]
         public List<string> NumberCapabilities
         {
             get { return this._numberCapabilities; }

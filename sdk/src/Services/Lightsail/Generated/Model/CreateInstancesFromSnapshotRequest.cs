@@ -120,7 +120,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property BundleId. 
         /// <para>
         /// The bundle of specification information for your virtual private server (or <i>instance</i>),
-        /// including the pricing plan (<c>micro_1_0</c>).
+        /// including the pricing plan (<c>micro_x_x</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -192,8 +192,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The possible values are <c>ipv4</c> for IPv4 only, and <c>dualstack</c> for IPv4 and
-        /// IPv6.
+        /// The possible values are <c>ipv4</c> for IPv4 only, <c>ipv6</c> for IPv6 only, and
+        /// <c>dualstack</c> for IPv4 and IPv6.
         /// </para>
         ///  
         /// <para>

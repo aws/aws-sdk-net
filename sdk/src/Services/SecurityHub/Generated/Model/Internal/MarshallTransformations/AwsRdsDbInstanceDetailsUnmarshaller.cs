@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRdsDbInstanceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRdsDbInstanceDetails unmarshalledObject = new AwsRdsDbInstanceDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

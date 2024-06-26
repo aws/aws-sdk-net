@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsSecretsManagerSecretDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsSecretsManagerSecretDetails unmarshalledObject = new AwsSecretsManagerSecretDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

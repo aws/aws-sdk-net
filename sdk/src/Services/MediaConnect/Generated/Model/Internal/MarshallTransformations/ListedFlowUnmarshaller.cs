@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public ListedFlow Unmarshall(JsonUnmarshallerContext context)
         {
             ListedFlow unmarshalledObject = new ListedFlow();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

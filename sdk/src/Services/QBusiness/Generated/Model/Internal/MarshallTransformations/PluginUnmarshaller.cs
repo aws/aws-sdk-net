@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public Plugin Unmarshall(JsonUnmarshallerContext context)
         {
             Plugin unmarshalledObject = new Plugin();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("buildStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BuildStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

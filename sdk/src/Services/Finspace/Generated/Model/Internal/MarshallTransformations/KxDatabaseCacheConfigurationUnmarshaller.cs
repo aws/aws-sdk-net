@@ -57,6 +57,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public KxDatabaseCacheConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             KxDatabaseCacheConfiguration unmarshalledObject = new KxDatabaseCacheConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public Pose Unmarshall(JsonUnmarshallerContext context)
         {
             Pose unmarshalledObject = new Pose();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

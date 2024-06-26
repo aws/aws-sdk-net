@@ -57,6 +57,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         public ScoreDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ScoreDetails unmarshalledObject = new ScoreDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

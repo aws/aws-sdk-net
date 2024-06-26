@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public GraphqlApi Unmarshall(JsonUnmarshallerContext context)
         {
             GraphqlApi unmarshalledObject = new GraphqlApi();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

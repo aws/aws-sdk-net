@@ -57,6 +57,8 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
         public Subnet Unmarshall(JsonUnmarshallerContext context)
         {
             Subnet unmarshalledObject = new Subnet();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         public BatchStartViewerSessionRevocationError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchStartViewerSessionRevocationError unmarshalledObject = new BatchStartViewerSessionRevocationError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

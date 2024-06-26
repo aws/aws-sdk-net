@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public AutoRollbackConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AutoRollbackConfiguration unmarshalledObject = new AutoRollbackConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

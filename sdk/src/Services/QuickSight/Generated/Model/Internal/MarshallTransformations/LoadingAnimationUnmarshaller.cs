@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public LoadingAnimation Unmarshall(JsonUnmarshallerContext context)
         {
             LoadingAnimation unmarshalledObject = new LoadingAnimation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

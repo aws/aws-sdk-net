@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public PipeTargetEventBridgeEventBusParameters Unmarshall(JsonUnmarshallerContext context)
         {
             PipeTargetEventBridgeEventBusParameters unmarshalledObject = new PipeTargetEventBridgeEventBusParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

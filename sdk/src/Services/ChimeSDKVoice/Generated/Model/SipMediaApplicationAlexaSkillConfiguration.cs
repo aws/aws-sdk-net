@@ -31,6 +31,14 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// The Alexa Skill configuration of a SIP media application.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Due to changes made by the Amazon Alexa service, this data type is no longer available
+    /// for use. For more information, refer to the <a href="https://developer.amazon.com/en-US/alexa/alexasmartproperties">Alexa
+    /// Smart Properties</a> page.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class SipMediaApplicationAlexaSkillConfiguration
     {

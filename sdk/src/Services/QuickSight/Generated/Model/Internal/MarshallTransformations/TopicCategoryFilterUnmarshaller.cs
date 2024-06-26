@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TopicCategoryFilter Unmarshall(JsonUnmarshallerContext context)
         {
             TopicCategoryFilter unmarshalledObject = new TopicCategoryFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

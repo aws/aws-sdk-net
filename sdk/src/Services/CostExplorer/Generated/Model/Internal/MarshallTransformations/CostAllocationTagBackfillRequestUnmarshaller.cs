@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public CostAllocationTagBackfillRequest Unmarshall(JsonUnmarshallerContext context)
         {
             CostAllocationTagBackfillRequest unmarshalledObject = new CostAllocationTagBackfillRequest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

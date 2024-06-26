@@ -196,7 +196,12 @@ namespace Amazon.ComputeOptimizer.Model
         /// of your workload and is not over provisioned. For optimized resources, Compute Optimizer
         /// might recommend a new generation instance type.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The valid values in your API responses appear as OVER_PROVISIONED, UNDER_PROVISIONED,
+        /// or OPTIMIZED.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Finding Finding
         {

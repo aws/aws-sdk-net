@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public StagingArea Unmarshall(JsonUnmarshallerContext context)
         {
             StagingArea unmarshalledObject = new StagingArea();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

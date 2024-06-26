@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public HumanTaskConfig Unmarshall(JsonUnmarshallerContext context)
         {
             HumanTaskConfig unmarshalledObject = new HumanTaskConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

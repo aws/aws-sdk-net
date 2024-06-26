@@ -39,8 +39,8 @@ namespace Amazon.EC2.Model
     ///  <note> 
     /// <para>
     /// Limitations and rules apply to a VPC peering connection. For more information, see
-    /// the <a href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
-    /// section in the <i>VPC Peering Guide</i>.
+    /// the <a href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">VPC
+    /// peering limitations</a> in the <i>VPC Peering Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>

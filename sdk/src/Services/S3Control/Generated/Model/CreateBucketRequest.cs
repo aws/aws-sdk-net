@@ -139,7 +139,7 @@ namespace Amazon.S3Control.Model
         // Check to see if ACL property is set
         internal bool IsSetACL()
         {
-            return this._acl != null;
+            return !string.IsNullOrEmpty(this._acl);
         }
 
         /// <summary>
@@ -204,7 +204,7 @@ namespace Amazon.S3Control.Model
         // Check to see if GrantFullControl property is set
         internal bool IsSetGrantFullControl()
         {
-            return this._grantFullControl != null;
+            return !string.IsNullOrEmpty(this._grantFullControl);
         }
 
         /// <summary>
@@ -227,7 +227,7 @@ namespace Amazon.S3Control.Model
         // Check to see if GrantRead property is set
         internal bool IsSetGrantRead()
         {
-            return this._grantRead != null;
+            return !string.IsNullOrEmpty(this._grantRead);
         }
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace Amazon.S3Control.Model
         // Check to see if GrantReadACP property is set
         internal bool IsSetGrantReadACP()
         {
-            return this._grantReadACP != null;
+            return !string.IsNullOrEmpty(this._grantReadACP);
         }
 
         /// <summary>
@@ -273,7 +273,7 @@ namespace Amazon.S3Control.Model
         // Check to see if GrantWrite property is set
         internal bool IsSetGrantWrite()
         {
-            return this._grantWrite != null;
+            return !string.IsNullOrEmpty(this._grantWrite);
         }
 
         /// <summary>
@@ -296,7 +296,7 @@ namespace Amazon.S3Control.Model
         // Check to see if GrantWriteACP property is set
         internal bool IsSetGrantWriteACP()
         {
-            return this._grantWriteACP != null;
+            return !string.IsNullOrEmpty(this._grantWriteACP);
         }
 
         /// <summary>
@@ -343,7 +343,7 @@ namespace Amazon.S3Control.Model
         // Check to see if OutpostId property is set
         internal bool IsSetOutpostId()
         {
-            return this._outpostId != null;
+            return !string.IsNullOrEmpty(this._outpostId);
         }
 
     }

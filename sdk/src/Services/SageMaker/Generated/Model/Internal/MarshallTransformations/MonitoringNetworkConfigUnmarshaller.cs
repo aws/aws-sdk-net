@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public MonitoringNetworkConfig Unmarshall(JsonUnmarshallerContext context)
         {
             MonitoringNetworkConfig unmarshalledObject = new MonitoringNetworkConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

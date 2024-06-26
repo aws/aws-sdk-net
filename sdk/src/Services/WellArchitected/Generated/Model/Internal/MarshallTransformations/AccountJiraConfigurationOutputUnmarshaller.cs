@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public AccountJiraConfigurationOutput Unmarshall(JsonUnmarshallerContext context)
         {
             AccountJiraConfigurationOutput unmarshalledObject = new AccountJiraConfigurationOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

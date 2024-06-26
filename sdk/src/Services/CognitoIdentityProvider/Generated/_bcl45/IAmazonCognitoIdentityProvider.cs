@@ -10931,6 +10931,10 @@ namespace Amazon.CognitoIdentityProvider
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
@@ -11031,6 +11035,10 @@ namespace Amazon.CognitoIdentityProvider
         /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.

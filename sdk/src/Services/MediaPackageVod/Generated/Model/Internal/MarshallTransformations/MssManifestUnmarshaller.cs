@@ -57,6 +57,8 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         public MssManifest Unmarshall(JsonUnmarshallerContext context)
         {
             MssManifest unmarshalledObject = new MssManifest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public ApprovalRuleEventMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             ApprovalRuleEventMetadata unmarshalledObject = new ApprovalRuleEventMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

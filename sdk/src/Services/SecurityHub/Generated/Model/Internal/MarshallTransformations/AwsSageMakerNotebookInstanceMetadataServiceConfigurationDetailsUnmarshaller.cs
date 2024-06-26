@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails unmarshalledObject = new AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

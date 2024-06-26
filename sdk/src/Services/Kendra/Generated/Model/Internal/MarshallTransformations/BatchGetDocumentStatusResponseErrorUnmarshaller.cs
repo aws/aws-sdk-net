@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public BatchGetDocumentStatusResponseError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchGetDocumentStatusResponseError unmarshalledObject = new BatchGetDocumentStatusResponseError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         public SubjectDetail Unmarshall(JsonUnmarshallerContext context)
         {
             SubjectDetail unmarshalledObject = new SubjectDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

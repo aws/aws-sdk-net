@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsS3BucketServerSideEncryptionByDefault Unmarshall(JsonUnmarshallerContext context)
         {
             AwsS3BucketServerSideEncryptionByDefault unmarshalledObject = new AwsS3BucketServerSideEncryptionByDefault();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public ContentRedaction Unmarshall(JsonUnmarshallerContext context)
         {
             ContentRedaction unmarshalledObject = new ContentRedaction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

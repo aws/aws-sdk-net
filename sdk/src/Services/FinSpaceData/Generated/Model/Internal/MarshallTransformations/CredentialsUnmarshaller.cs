@@ -57,6 +57,8 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         public Credentials Unmarshall(JsonUnmarshallerContext context)
         {
             Credentials unmarshalledObject = new Credentials();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

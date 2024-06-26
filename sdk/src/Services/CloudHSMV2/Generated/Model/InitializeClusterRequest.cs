@@ -69,7 +69,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The certificate must be in PEM format and can contain a maximum of 5000 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=5000)]
+        [AWSProperty(Required=true, Max=20000)]
         public string SignedCert
         {
             get { return this._signedCert; }
@@ -91,7 +91,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The certificate must be in PEM format and can contain a maximum of 5000 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=5000)]
+        [AWSProperty(Required=true, Max=20000)]
         public string TrustAnchor
         {
             get { return this._trustAnchor; }

@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public FirehoseAction Unmarshall(JsonUnmarshallerContext context)
         {
             FirehoseAction unmarshalledObject = new FirehoseAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public BotAliasHistoryEvent Unmarshall(JsonUnmarshallerContext context)
         {
             BotAliasHistoryEvent unmarshalledObject = new BotAliasHistoryEvent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

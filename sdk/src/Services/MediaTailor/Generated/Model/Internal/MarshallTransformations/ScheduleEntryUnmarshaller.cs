@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public ScheduleEntry Unmarshall(JsonUnmarshallerContext context)
         {
             ScheduleEntry unmarshalledObject = new ScheduleEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

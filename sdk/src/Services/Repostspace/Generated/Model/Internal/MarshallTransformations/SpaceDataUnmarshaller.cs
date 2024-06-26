@@ -57,6 +57,8 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
         public SpaceData Unmarshall(JsonUnmarshallerContext context)
         {
             SpaceData unmarshalledObject = new SpaceData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

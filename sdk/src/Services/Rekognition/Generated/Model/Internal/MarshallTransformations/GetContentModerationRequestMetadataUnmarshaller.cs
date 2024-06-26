@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public GetContentModerationRequestMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             GetContentModerationRequestMetadata unmarshalledObject = new GetContentModerationRequestMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

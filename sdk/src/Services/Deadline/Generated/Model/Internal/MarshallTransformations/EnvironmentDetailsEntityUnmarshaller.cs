@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public EnvironmentDetailsEntity Unmarshall(JsonUnmarshallerContext context)
         {
             EnvironmentDetailsEntity unmarshalledObject = new EnvironmentDetailsEntity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

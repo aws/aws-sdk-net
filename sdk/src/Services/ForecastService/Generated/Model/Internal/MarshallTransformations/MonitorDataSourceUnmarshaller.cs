@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public MonitorDataSource Unmarshall(JsonUnmarshallerContext context)
         {
             MonitorDataSource unmarshalledObject = new MonitorDataSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

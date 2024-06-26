@@ -57,6 +57,8 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         public TimestampForCollection Unmarshall(JsonUnmarshallerContext context)
         {
             TimestampForCollection unmarshalledObject = new TimestampForCollection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

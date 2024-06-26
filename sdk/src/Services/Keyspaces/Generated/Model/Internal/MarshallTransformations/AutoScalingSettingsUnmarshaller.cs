@@ -57,6 +57,8 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         public AutoScalingSettings Unmarshall(JsonUnmarshallerContext context)
         {
             AutoScalingSettings unmarshalledObject = new AutoScalingSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

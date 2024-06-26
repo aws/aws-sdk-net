@@ -57,6 +57,8 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         public JournalKinesisStreamDescription Unmarshall(JsonUnmarshallerContext context)
         {
             JournalKinesisStreamDescription unmarshalledObject = new JournalKinesisStreamDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

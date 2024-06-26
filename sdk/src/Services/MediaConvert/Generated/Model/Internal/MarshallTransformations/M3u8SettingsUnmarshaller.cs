@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public M3u8Settings Unmarshall(JsonUnmarshallerContext context)
         {
             M3u8Settings unmarshalledObject = new M3u8Settings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

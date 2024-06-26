@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public SamplingRuleRecord Unmarshall(JsonUnmarshallerContext context)
         {
             SamplingRuleRecord unmarshalledObject = new SamplingRuleRecord();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

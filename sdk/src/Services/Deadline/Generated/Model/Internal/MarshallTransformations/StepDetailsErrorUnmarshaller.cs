@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public StepDetailsError Unmarshall(JsonUnmarshallerContext context)
         {
             StepDetailsError unmarshalledObject = new StepDetailsError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

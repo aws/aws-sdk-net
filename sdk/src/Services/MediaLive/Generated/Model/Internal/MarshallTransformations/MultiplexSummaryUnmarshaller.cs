@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public MultiplexSummary Unmarshall(JsonUnmarshallerContext context)
         {
             MultiplexSummary unmarshalledObject = new MultiplexSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

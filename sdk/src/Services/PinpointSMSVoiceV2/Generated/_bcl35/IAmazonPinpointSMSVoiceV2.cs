@@ -39,14 +39,15 @@ namespace Amazon.PinpointSMSVoiceV2
     /// Amazon Pinpoint is an Amazon Web Services service that you can use to engage with
     /// your recipients across multiple messaging channels. The Amazon Pinpoint SMS and Voice,
     /// version 2 API provides programmatic access to options that are unique to the SMS and
-    /// voice channels and supplements the resources provided by the Amazon Pinpoint API.
+    /// voice channels. Amazon Pinpoint SMS and Voice, version 2 resources such as phone numbers,
+    /// sender IDs, and opt-out lists can be used by the Amazon Pinpoint API.
     /// </para>
     ///  
     /// <para>
-    /// If you're new to Amazon Pinpoint, it's also helpful to review the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">
-    /// Amazon Pinpoint Developer Guide</a>. The <i>Amazon Pinpoint Developer Guide</i> provides
+    /// If you're new to Amazon Pinpoint SMS, it's also helpful to review the <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/what-is-service.html">
+    /// Amazon Pinpoint SMS User Guide</a>. The <i>Amazon Pinpoint Developer Guide</i> provides
     /// tutorials, code samples, and procedures that demonstrate how to use Amazon Pinpoint
-    /// features programmatically and how to integrate Amazon Pinpoint functionality into
+    /// SMS features programmatically and how to integrate Amazon Pinpoint functionality into
     /// mobile apps and other types of applications. The guide also provides key information,
     /// such as Amazon Pinpoint integration with other Amazon Web Services services, and the
     /// quotas that apply to use of the service.
@@ -164,6 +165,72 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <returns>Returns a  AssociateOriginationIdentityResult from PinpointSMSVoiceV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/AssociateOriginationIdentity">REST API Reference for AssociateOriginationIdentity Operation</seealso>
         AssociateOriginationIdentityResponse EndAssociateOriginationIdentity(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AssociateProtectConfiguration
+
+
+        /// <summary>
+        /// Associate a protect configuration with a configuration set. This replaces the configuration
+        /// sets current protect configuration. A configuration set can only be associated with
+        /// one protect configuration at a time. A protect configuration can be associated with
+        /// multiple configuration sets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateProtectConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the AssociateProtectConfiguration service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time or it could be that
+        /// the requested action isn't valid for the current state or configuration of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/AssociateProtectConfiguration">REST API Reference for AssociateProtectConfiguration Operation</seealso>
+        AssociateProtectConfigurationResponse AssociateProtectConfiguration(AssociateProtectConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateProtectConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateProtectConfiguration operation on AmazonPinpointSMSVoiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateProtectConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/AssociateProtectConfiguration">REST API Reference for AssociateProtectConfiguration Operation</seealso>
+        IAsyncResult BeginAssociateProtectConfiguration(AssociateProtectConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateProtectConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateProtectConfiguration.</param>
+        /// 
+        /// <returns>Returns a  AssociateProtectConfigurationResult from PinpointSMSVoiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/AssociateProtectConfiguration">REST API Reference for AssociateProtectConfiguration Operation</seealso>
+        AssociateProtectConfigurationResponse EndAssociateProtectConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -477,6 +544,67 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <returns>Returns a  CreatePoolResult from PinpointSMSVoiceV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreatePool">REST API Reference for CreatePool Operation</seealso>
         CreatePoolResponse EndCreatePool(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateProtectConfiguration
+
+
+        /// <summary>
+        /// Create a new protect configuration. By default all country rule sets for each capability
+        /// are set to <c>ALLOW</c>. Update the country rule sets using <c>UpdateProtectConfigurationCountryRuleSet</c>.
+        /// A protect configurations name is stored as a Tag with the key set to <c>Name</c> and
+        /// value as the name of the protect configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProtectConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateProtectConfiguration service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateProtectConfiguration">REST API Reference for CreateProtectConfiguration Operation</seealso>
+        CreateProtectConfigurationResponse CreateProtectConfiguration(CreateProtectConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProtectConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProtectConfiguration operation on AmazonPinpointSMSVoiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProtectConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateProtectConfiguration">REST API Reference for CreateProtectConfiguration Operation</seealso>
+        IAsyncResult BeginCreateProtectConfiguration(CreateProtectConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProtectConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProtectConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateProtectConfigurationResult from PinpointSMSVoiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateProtectConfiguration">REST API Reference for CreateProtectConfiguration Operation</seealso>
+        CreateProtectConfigurationResponse EndCreateProtectConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -804,6 +932,64 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <returns>Returns a  CreateVerifiedDestinationNumberResult from PinpointSMSVoiceV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateVerifiedDestinationNumber">REST API Reference for CreateVerifiedDestinationNumber Operation</seealso>
         CreateVerifiedDestinationNumberResponse EndCreateVerifiedDestinationNumber(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAccountDefaultProtectConfiguration
+
+
+        /// <summary>
+        /// Removes the current account default protect configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountDefaultProtectConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccountDefaultProtectConfiguration service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteAccountDefaultProtectConfiguration">REST API Reference for DeleteAccountDefaultProtectConfiguration Operation</seealso>
+        DeleteAccountDefaultProtectConfigurationResponse DeleteAccountDefaultProtectConfiguration(DeleteAccountDefaultProtectConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccountDefaultProtectConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountDefaultProtectConfiguration operation on AmazonPinpointSMSVoiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccountDefaultProtectConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteAccountDefaultProtectConfiguration">REST API Reference for DeleteAccountDefaultProtectConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteAccountDefaultProtectConfiguration(DeleteAccountDefaultProtectConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccountDefaultProtectConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccountDefaultProtectConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccountDefaultProtectConfigurationResult from PinpointSMSVoiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteAccountDefaultProtectConfiguration">REST API Reference for DeleteAccountDefaultProtectConfiguration Operation</seealso>
+        DeleteAccountDefaultProtectConfigurationResponse EndDeleteAccountDefaultProtectConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1145,6 +1331,65 @@ namespace Amazon.PinpointSMSVoiceV2
 
         #endregion
         
+        #region  DeleteMediaMessageSpendLimitOverride
+
+
+        /// <summary>
+        /// Deletes an account-level monthly spending limit override for sending multimedia messages
+        /// (MMS). Deleting a spend limit override will set the <c>EnforcedLimit</c> to equal
+        /// the <c>MaxLimit</c>, which is controlled by Amazon Web Services. For more information
+        /// on spend limits (quotas) see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas
+        /// for Server Migration Service</a> in the <i>Server Migration Service User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMediaMessageSpendLimitOverride service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMediaMessageSpendLimitOverride service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteMediaMessageSpendLimitOverride">REST API Reference for DeleteMediaMessageSpendLimitOverride Operation</seealso>
+        DeleteMediaMessageSpendLimitOverrideResponse DeleteMediaMessageSpendLimitOverride(DeleteMediaMessageSpendLimitOverrideRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMediaMessageSpendLimitOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMediaMessageSpendLimitOverride operation on AmazonPinpointSMSVoiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMediaMessageSpendLimitOverride
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteMediaMessageSpendLimitOverride">REST API Reference for DeleteMediaMessageSpendLimitOverride Operation</seealso>
+        IAsyncResult BeginDeleteMediaMessageSpendLimitOverride(DeleteMediaMessageSpendLimitOverrideRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMediaMessageSpendLimitOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMediaMessageSpendLimitOverride.</param>
+        /// 
+        /// <returns>Returns a  DeleteMediaMessageSpendLimitOverrideResult from PinpointSMSVoiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteMediaMessageSpendLimitOverride">REST API Reference for DeleteMediaMessageSpendLimitOverride Operation</seealso>
+        DeleteMediaMessageSpendLimitOverrideResponse EndDeleteMediaMessageSpendLimitOverride(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteOptedOutNumber
 
 
@@ -1361,6 +1606,71 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <returns>Returns a  DeletePoolResult from PinpointSMSVoiceV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeletePool">REST API Reference for DeletePool Operation</seealso>
         DeletePoolResponse EndDeletePool(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteProtectConfiguration
+
+
+        /// <summary>
+        /// Permanently delete the protect configuration. The protect configuration must have
+        /// deletion protection disabled and must not be associated as the account default protect
+        /// configuration or associated with a configuration set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProtectConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProtectConfiguration service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time or it could be that
+        /// the requested action isn't valid for the current state or configuration of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteProtectConfiguration">REST API Reference for DeleteProtectConfiguration Operation</seealso>
+        DeleteProtectConfigurationResponse DeleteProtectConfiguration(DeleteProtectConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProtectConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProtectConfiguration operation on AmazonPinpointSMSVoiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProtectConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteProtectConfiguration">REST API Reference for DeleteProtectConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteProtectConfiguration(DeleteProtectConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProtectConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProtectConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteProtectConfigurationResult from PinpointSMSVoiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteProtectConfiguration">REST API Reference for DeleteProtectConfiguration Operation</seealso>
+        DeleteProtectConfigurationResponse EndDeleteProtectConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2296,6 +2606,65 @@ namespace Amazon.PinpointSMSVoiceV2
 
         #endregion
         
+        #region  DescribeProtectConfigurations
+
+
+        /// <summary>
+        /// Retrieves the protect configurations that match any of filters. If a filter isn’t
+        /// provided then all protect configurations are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProtectConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProtectConfigurations service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeProtectConfigurations">REST API Reference for DescribeProtectConfigurations Operation</seealso>
+        DescribeProtectConfigurationsResponse DescribeProtectConfigurations(DescribeProtectConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProtectConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProtectConfigurations operation on AmazonPinpointSMSVoiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProtectConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeProtectConfigurations">REST API Reference for DescribeProtectConfigurations Operation</seealso>
+        IAsyncResult BeginDescribeProtectConfigurations(DescribeProtectConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeProtectConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeProtectConfigurations.</param>
+        /// 
+        /// <returns>Returns a  DescribeProtectConfigurationsResult from PinpointSMSVoiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeProtectConfigurations">REST API Reference for DescribeProtectConfigurations Operation</seealso>
+        DescribeProtectConfigurationsResponse EndDescribeProtectConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeRegistrationAttachments
 
 
@@ -2963,6 +3332,69 @@ namespace Amazon.PinpointSMSVoiceV2
 
         #endregion
         
+        #region  DisassociateProtectConfiguration
+
+
+        /// <summary>
+        /// Disassociate a protect configuration from a configuration set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateProtectConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateProtectConfiguration service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time or it could be that
+        /// the requested action isn't valid for the current state or configuration of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DisassociateProtectConfiguration">REST API Reference for DisassociateProtectConfiguration Operation</seealso>
+        DisassociateProtectConfigurationResponse DisassociateProtectConfiguration(DisassociateProtectConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateProtectConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateProtectConfiguration operation on AmazonPinpointSMSVoiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateProtectConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DisassociateProtectConfiguration">REST API Reference for DisassociateProtectConfiguration Operation</seealso>
+        IAsyncResult BeginDisassociateProtectConfiguration(DisassociateProtectConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateProtectConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateProtectConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DisassociateProtectConfigurationResult from PinpointSMSVoiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DisassociateProtectConfiguration">REST API Reference for DisassociateProtectConfiguration Operation</seealso>
+        DisassociateProtectConfigurationResponse EndDisassociateProtectConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DiscardRegistrationVersion
 
 
@@ -3023,6 +3455,64 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <returns>Returns a  DiscardRegistrationVersionResult from PinpointSMSVoiceV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DiscardRegistrationVersion">REST API Reference for DiscardRegistrationVersion Operation</seealso>
         DiscardRegistrationVersionResponse EndDiscardRegistrationVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetProtectConfigurationCountryRuleSet
+
+
+        /// <summary>
+        /// Retrieve the CountryRuleSet for the specified NumberCapability from a protect configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProtectConfigurationCountryRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the GetProtectConfigurationCountryRuleSet service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/GetProtectConfigurationCountryRuleSet">REST API Reference for GetProtectConfigurationCountryRuleSet Operation</seealso>
+        GetProtectConfigurationCountryRuleSetResponse GetProtectConfigurationCountryRuleSet(GetProtectConfigurationCountryRuleSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetProtectConfigurationCountryRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetProtectConfigurationCountryRuleSet operation on AmazonPinpointSMSVoiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetProtectConfigurationCountryRuleSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/GetProtectConfigurationCountryRuleSet">REST API Reference for GetProtectConfigurationCountryRuleSet Operation</seealso>
+        IAsyncResult BeginGetProtectConfigurationCountryRuleSet(GetProtectConfigurationCountryRuleSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetProtectConfigurationCountryRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetProtectConfigurationCountryRuleSet.</param>
+        /// 
+        /// <returns>Returns a  GetProtectConfigurationCountryRuleSetResult from PinpointSMSVoiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/GetProtectConfigurationCountryRuleSet">REST API Reference for GetProtectConfigurationCountryRuleSet Operation</seealso>
+        GetProtectConfigurationCountryRuleSetResponse EndGetProtectConfigurationCountryRuleSet(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3746,6 +4236,72 @@ namespace Amazon.PinpointSMSVoiceV2
 
         #endregion
         
+        #region  SendMediaMessage
+
+
+        /// <summary>
+        /// Creates a new multimedia message (MMS) and sends it to a recipient's phone number.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendMediaMessage service method.</param>
+        /// 
+        /// <returns>The response from the SendMediaMessage service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time or it could be that
+        /// the requested action isn't valid for the current state or configuration of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendMediaMessage">REST API Reference for SendMediaMessage Operation</seealso>
+        SendMediaMessageResponse SendMediaMessage(SendMediaMessageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendMediaMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendMediaMessage operation on AmazonPinpointSMSVoiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendMediaMessage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendMediaMessage">REST API Reference for SendMediaMessage Operation</seealso>
+        IAsyncResult BeginSendMediaMessage(SendMediaMessageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendMediaMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendMediaMessage.</param>
+        /// 
+        /// <returns>Returns a  SendMediaMessageResult from PinpointSMSVoiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendMediaMessage">REST API Reference for SendMediaMessage Operation</seealso>
+        SendMediaMessageResponse EndSendMediaMessage(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SendTextMessage
 
 
@@ -3889,6 +4445,66 @@ namespace Amazon.PinpointSMSVoiceV2
 
         #endregion
         
+        #region  SetAccountDefaultProtectConfiguration
+
+
+        /// <summary>
+        /// Set a protect configuration as your account default. You can only have one account
+        /// default protect configuration at a time. The current account default protect configuration
+        /// is replaced with the provided protect configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetAccountDefaultProtectConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the SetAccountDefaultProtectConfiguration service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetAccountDefaultProtectConfiguration">REST API Reference for SetAccountDefaultProtectConfiguration Operation</seealso>
+        SetAccountDefaultProtectConfigurationResponse SetAccountDefaultProtectConfiguration(SetAccountDefaultProtectConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetAccountDefaultProtectConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetAccountDefaultProtectConfiguration operation on AmazonPinpointSMSVoiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetAccountDefaultProtectConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetAccountDefaultProtectConfiguration">REST API Reference for SetAccountDefaultProtectConfiguration Operation</seealso>
+        IAsyncResult BeginSetAccountDefaultProtectConfiguration(SetAccountDefaultProtectConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetAccountDefaultProtectConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetAccountDefaultProtectConfiguration.</param>
+        /// 
+        /// <returns>Returns a  SetAccountDefaultProtectConfigurationResult from PinpointSMSVoiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetAccountDefaultProtectConfiguration">REST API Reference for SetAccountDefaultProtectConfiguration Operation</seealso>
+        SetAccountDefaultProtectConfigurationResponse EndSetAccountDefaultProtectConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SetDefaultMessageType
 
 
@@ -4018,6 +4634,63 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <returns>Returns a  SetDefaultSenderIdResult from PinpointSMSVoiceV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetDefaultSenderId">REST API Reference for SetDefaultSenderId Operation</seealso>
         SetDefaultSenderIdResponse EndSetDefaultSenderId(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SetMediaMessageSpendLimitOverride
+
+
+        /// <summary>
+        /// Sets an account level monthly spend limit override for sending MMS messages. The requested
+        /// spend limit must be less than or equal to the <c>MaxLimit</c>, which is set by Amazon
+        /// Web Services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetMediaMessageSpendLimitOverride service method.</param>
+        /// 
+        /// <returns>The response from the SetMediaMessageSpendLimitOverride service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetMediaMessageSpendLimitOverride">REST API Reference for SetMediaMessageSpendLimitOverride Operation</seealso>
+        SetMediaMessageSpendLimitOverrideResponse SetMediaMessageSpendLimitOverride(SetMediaMessageSpendLimitOverrideRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetMediaMessageSpendLimitOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetMediaMessageSpendLimitOverride operation on AmazonPinpointSMSVoiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetMediaMessageSpendLimitOverride
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetMediaMessageSpendLimitOverride">REST API Reference for SetMediaMessageSpendLimitOverride Operation</seealso>
+        IAsyncResult BeginSetMediaMessageSpendLimitOverride(SetMediaMessageSpendLimitOverrideRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetMediaMessageSpendLimitOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetMediaMessageSpendLimitOverride.</param>
+        /// 
+        /// <returns>Returns a  SetMediaMessageSpendLimitOverrideResult from PinpointSMSVoiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetMediaMessageSpendLimitOverride">REST API Reference for SetMediaMessageSpendLimitOverride Operation</seealso>
+        SetMediaMessageSpendLimitOverrideResponse EndSetMediaMessageSpendLimitOverride(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4529,6 +5202,124 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <returns>Returns a  UpdatePoolResult from PinpointSMSVoiceV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdatePool">REST API Reference for UpdatePool Operation</seealso>
         UpdatePoolResponse EndUpdatePool(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateProtectConfiguration
+
+
+        /// <summary>
+        /// Update the setting for an existing protect configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProtectConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProtectConfiguration service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfiguration">REST API Reference for UpdateProtectConfiguration Operation</seealso>
+        UpdateProtectConfigurationResponse UpdateProtectConfiguration(UpdateProtectConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProtectConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProtectConfiguration operation on AmazonPinpointSMSVoiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProtectConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfiguration">REST API Reference for UpdateProtectConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateProtectConfiguration(UpdateProtectConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProtectConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProtectConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateProtectConfigurationResult from PinpointSMSVoiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfiguration">REST API Reference for UpdateProtectConfiguration Operation</seealso>
+        UpdateProtectConfigurationResponse EndUpdateProtectConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateProtectConfigurationCountryRuleSet
+
+
+        /// <summary>
+        /// Update a country rule set to <c>ALLOW</c> or <c>BLOCK</c> messages to be sent to the
+        /// specified destination counties. You can update one or multiple countries at a time.
+        /// The updates are only applied to the specified NumberCapability type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProtectConfigurationCountryRuleSet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProtectConfigurationCountryRuleSet service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfigurationCountryRuleSet">REST API Reference for UpdateProtectConfigurationCountryRuleSet Operation</seealso>
+        UpdateProtectConfigurationCountryRuleSetResponse UpdateProtectConfigurationCountryRuleSet(UpdateProtectConfigurationCountryRuleSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProtectConfigurationCountryRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProtectConfigurationCountryRuleSet operation on AmazonPinpointSMSVoiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProtectConfigurationCountryRuleSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfigurationCountryRuleSet">REST API Reference for UpdateProtectConfigurationCountryRuleSet Operation</seealso>
+        IAsyncResult BeginUpdateProtectConfigurationCountryRuleSet(UpdateProtectConfigurationCountryRuleSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProtectConfigurationCountryRuleSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProtectConfigurationCountryRuleSet.</param>
+        /// 
+        /// <returns>Returns a  UpdateProtectConfigurationCountryRuleSetResult from PinpointSMSVoiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfigurationCountryRuleSet">REST API Reference for UpdateProtectConfigurationCountryRuleSet Operation</seealso>
+        UpdateProtectConfigurationCountryRuleSetResponse EndUpdateProtectConfigurationCountryRuleSet(IAsyncResult asyncResult);
 
         #endregion
         

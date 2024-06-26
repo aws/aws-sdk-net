@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public ReferenceStoreDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ReferenceStoreDetail unmarshalledObject = new ReferenceStoreDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

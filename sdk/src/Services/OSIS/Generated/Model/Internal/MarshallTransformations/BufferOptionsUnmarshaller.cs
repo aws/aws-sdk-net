@@ -57,6 +57,8 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         public BufferOptions Unmarshall(JsonUnmarshallerContext context)
         {
             BufferOptions unmarshalledObject = new BufferOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

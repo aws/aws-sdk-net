@@ -45,9 +45,9 @@ namespace Amazon.EC2.Model
     /// When copying snapshots to a Region, copies of encrypted EBS snapshots remain encrypted.
     /// Copies of unencrypted snapshots remain unencrypted, unless you enable encryption for
     /// the snapshot copy operation. By default, encrypted snapshot copies use the default
-    /// Key Management Service (KMS) KMS key; however, you can specify a different KMS key.
-    /// To copy an encrypted snapshot that has been shared from another account, you must
-    /// have permissions for the KMS key used to encrypt the snapshot.
+    /// KMS key; however, you can specify a different KMS key. To copy an encrypted snapshot
+    /// that has been shared from another account, you must have permissions for the KMS key
+    /// used to encrypt the snapshot.
     /// </para>
     ///  
     /// <para>
@@ -178,9 +178,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The identifier of the Key Management Service (KMS) KMS key to use for Amazon EBS encryption.
-        /// If this parameter is not specified, your KMS key for Amazon EBS is used. If <c>KmsKeyId</c>
-        /// is specified, the encrypted state must be <c>true</c>.
+        /// The identifier of the KMS key to use for Amazon EBS encryption. If this parameter
+        /// is not specified, your KMS key for Amazon EBS is used. If <c>KmsKeyId</c> is specified,
+        /// the encrypted state must be <c>true</c>.
         /// </para>
         ///  
         /// <para>
@@ -235,11 +235,11 @@ namespace Amazon.EC2.Model
         /// action, and include the <c>SourceRegion</c>, <c>SourceSnapshotId</c>, and <c>DestinationRegion</c>
         /// parameters. The <c>PresignedUrl</c> must be signed using Amazon Web Services Signature
         /// Version 4. Because EBS snapshots are stored in Amazon S3, the signing algorithm for
-        /// this parameter uses the same logic that is described in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-        /// Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> in
-        /// the <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly signed
-        /// <c>PresignedUrl</c> will cause the copy operation to fail asynchronously, and the
-        /// snapshot will move to an <c>error</c> state.
+        /// this parameter uses the same logic that is described in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+        /// Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version
+        /// 4)</a> in the <i>Amazon S3 API Reference</i>. An invalid or improperly signed <c>PresignedUrl</c>
+        /// will cause the copy operation to fail asynchronously, and the snapshot will move to
+        /// an <c>error</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

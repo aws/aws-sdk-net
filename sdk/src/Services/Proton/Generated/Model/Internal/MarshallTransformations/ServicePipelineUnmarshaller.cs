@@ -57,6 +57,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         public ServicePipeline Unmarshall(JsonUnmarshallerContext context)
         {
             ServicePipeline unmarshalledObject = new ServicePipeline();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

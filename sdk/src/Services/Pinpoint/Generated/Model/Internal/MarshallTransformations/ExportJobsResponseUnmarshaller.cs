@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public ExportJobsResponse Unmarshall(JsonUnmarshallerContext context)
         {
             ExportJobsResponse unmarshalledObject = new ExportJobsResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

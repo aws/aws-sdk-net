@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
         public ResourceId Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceId unmarshalledObject = new ResourceId();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         public RetentionProperties Unmarshall(JsonUnmarshallerContext context)
         {
             RetentionProperties unmarshalledObject = new RetentionProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public DocumentRequires Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentRequires unmarshalledObject = new DocumentRequires();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

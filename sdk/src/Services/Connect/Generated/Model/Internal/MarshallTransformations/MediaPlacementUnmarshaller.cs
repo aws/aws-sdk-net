@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public MediaPlacement Unmarshall(JsonUnmarshallerContext context)
         {
             MediaPlacement unmarshalledObject = new MediaPlacement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

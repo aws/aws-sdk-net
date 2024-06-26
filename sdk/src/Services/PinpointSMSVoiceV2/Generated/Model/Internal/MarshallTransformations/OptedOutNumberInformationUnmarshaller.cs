@@ -57,6 +57,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         public OptedOutNumberInformation Unmarshall(JsonUnmarshallerContext context)
         {
             OptedOutNumberInformation unmarshalledObject = new OptedOutNumberInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

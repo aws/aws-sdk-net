@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public VeevaMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             VeevaMetadata unmarshalledObject = new VeevaMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

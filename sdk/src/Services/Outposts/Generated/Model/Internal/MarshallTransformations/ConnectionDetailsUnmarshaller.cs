@@ -57,6 +57,8 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         public ConnectionDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectionDetails unmarshalledObject = new ConnectionDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

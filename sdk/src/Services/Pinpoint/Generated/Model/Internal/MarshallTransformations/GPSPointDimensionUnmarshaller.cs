@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public GPSPointDimension Unmarshall(JsonUnmarshallerContext context)
         {
             GPSPointDimension unmarshalledObject = new GPSPointDimension();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

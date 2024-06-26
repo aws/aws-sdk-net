@@ -57,6 +57,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         public DecisionTaskScheduledEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             DecisionTaskScheduledEventAttributes unmarshalledObject = new DecisionTaskScheduledEventAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

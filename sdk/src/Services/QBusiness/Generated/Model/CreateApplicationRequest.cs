@@ -32,6 +32,16 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
     /// Creates an Amazon Q Business application.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// There are new tiers for Amazon Q Business. Not all features in Amazon Q Business Pro
+    /// are also available in Amazon Q Business Lite. For information on what's included in
+    /// Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#user-sub-tiers">Amazon
+    /// Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription
+    /// tiers to users.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateApplicationRequest : AmazonQBusinessRequest
     {
@@ -41,6 +51,7 @@ namespace Amazon.QBusiness.Model
         private string _displayName;
         private EncryptionConfiguration _encryptionConfiguration;
         private string _identityCenterInstanceArn;
+        private QAppsConfiguration _qAppsConfiguration;
         private string _roleArn;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
@@ -160,13 +171,31 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QAppsConfiguration. 
+        /// <para>
+        /// An option to allow end users to create and use Amazon Q Apps in the web experience.
+        /// </para>
+        /// </summary>
+        public QAppsConfiguration QAppsConfiguration
+        {
+            get { return this._qAppsConfiguration; }
+            set { this._qAppsConfiguration = value; }
+        }
+
+        // Check to see if QAppsConfiguration property is set
+        internal bool IsSetQAppsConfiguration()
+        {
+            return this._qAppsConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon
         /// CloudWatch logs and metrics.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1284)]
+        [AWSProperty(Min=0, Max=1284)]
         public string RoleArn
         {
             get { return this._roleArn; }

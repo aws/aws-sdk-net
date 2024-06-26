@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public CollectionScheme Unmarshall(JsonUnmarshallerContext context)
         {
             CollectionScheme unmarshalledObject = new CollectionScheme();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

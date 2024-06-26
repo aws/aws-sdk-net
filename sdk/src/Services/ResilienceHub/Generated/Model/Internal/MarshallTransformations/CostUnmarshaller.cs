@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public Cost Unmarshall(JsonUnmarshallerContext context)
         {
             Cost unmarshalledObject = new Cost();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

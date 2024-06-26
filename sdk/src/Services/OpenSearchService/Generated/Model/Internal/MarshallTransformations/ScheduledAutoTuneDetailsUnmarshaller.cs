@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public ScheduledAutoTuneDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ScheduledAutoTuneDetails unmarshalledObject = new ScheduledAutoTuneDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

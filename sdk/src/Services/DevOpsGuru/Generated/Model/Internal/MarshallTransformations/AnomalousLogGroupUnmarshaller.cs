@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public AnomalousLogGroup Unmarshall(JsonUnmarshallerContext context)
         {
             AnomalousLogGroup unmarshalledObject = new AnomalousLogGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

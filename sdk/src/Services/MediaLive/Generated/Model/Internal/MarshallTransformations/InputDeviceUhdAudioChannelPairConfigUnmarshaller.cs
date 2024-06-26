@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public InputDeviceUhdAudioChannelPairConfig Unmarshall(JsonUnmarshallerContext context)
         {
             InputDeviceUhdAudioChannelPairConfig unmarshalledObject = new InputDeviceUhdAudioChannelPairConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

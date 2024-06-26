@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public RecordingGroup Unmarshall(JsonUnmarshallerContext context)
         {
             RecordingGroup unmarshalledObject = new RecordingGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

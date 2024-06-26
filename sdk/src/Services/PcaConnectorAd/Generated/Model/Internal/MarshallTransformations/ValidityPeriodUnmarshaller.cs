@@ -57,6 +57,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         public ValidityPeriod Unmarshall(JsonUnmarshallerContext context)
         {
             ValidityPeriod unmarshalledObject = new ValidityPeriod();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         public ExportingLocation Unmarshall(JsonUnmarshallerContext context)
         {
             ExportingLocation unmarshalledObject = new ExportingLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

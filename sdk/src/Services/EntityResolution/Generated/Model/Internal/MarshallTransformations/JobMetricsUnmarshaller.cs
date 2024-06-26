@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public JobMetrics Unmarshall(JsonUnmarshallerContext context)
         {
             JobMetrics unmarshalledObject = new JobMetrics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

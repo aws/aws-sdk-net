@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public EC2CreateRouteAction Unmarshall(JsonUnmarshallerContext context)
         {
             EC2CreateRouteAction unmarshalledObject = new EC2CreateRouteAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

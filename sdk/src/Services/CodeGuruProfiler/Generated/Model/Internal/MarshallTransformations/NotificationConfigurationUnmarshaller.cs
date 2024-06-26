@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         public NotificationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             NotificationConfiguration unmarshalledObject = new NotificationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

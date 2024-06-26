@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public SlackConnectorProfileProperties Unmarshall(JsonUnmarshallerContext context)
         {
             SlackConnectorProfileProperties unmarshalledObject = new SlackConnectorProfileProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

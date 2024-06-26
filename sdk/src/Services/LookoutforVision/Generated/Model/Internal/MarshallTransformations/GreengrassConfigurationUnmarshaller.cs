@@ -57,6 +57,8 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         public GreengrassConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             GreengrassConfiguration unmarshalledObject = new GreengrassConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

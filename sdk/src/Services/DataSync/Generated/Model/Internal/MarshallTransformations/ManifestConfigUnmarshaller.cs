@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public ManifestConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ManifestConfig unmarshalledObject = new ManifestConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         public DimensionKeyDescription Unmarshall(JsonUnmarshallerContext context)
         {
             DimensionKeyDescription unmarshalledObject = new DimensionKeyDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

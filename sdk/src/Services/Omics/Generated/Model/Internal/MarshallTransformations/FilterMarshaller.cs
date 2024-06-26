@@ -70,6 +70,17 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTypeListValue in requestObject.Type)
+                {
+                        context.Writer.Write(requestObjectTypeListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

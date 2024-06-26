@@ -45,6 +45,7 @@ namespace Amazon.MediaPackageV2.Model
         private string _channelName;
         private string _clientToken;
         private string _description;
+        private InputType _inputType;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -104,7 +105,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if ClientToken property is set
         internal bool IsSetClientToken()
         {
-            return this._clientToken != null;
+            return !string.IsNullOrEmpty(this._clientToken);
         }
 
         /// <summary>
@@ -124,6 +125,41 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputType. 
+        /// <para>
+        /// The input type will be an immutable field which will be used to define whether the
+        /// channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS
+        /// to preserve current behavior.
+        /// </para>
+        ///  
+        /// <para>
+        /// The allowed values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>HLS</c> - The HLS streaming specification (which defines M3U8 manifests and TS
+        /// segments).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CMAF</c> - The DASH-IF CMAF Ingest specification (which defines CMAF segments
+        /// with optional DASH manifests).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public InputType InputType
+        {
+            get { return this._inputType; }
+            set { this._inputType = value; }
+        }
+
+        // Check to see if InputType property is set
+        internal bool IsSetInputType()
+        {
+            return this._inputType != null;
         }
 
         /// <summary>

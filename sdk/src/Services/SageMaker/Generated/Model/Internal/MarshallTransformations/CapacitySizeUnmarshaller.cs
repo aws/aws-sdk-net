@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public CapacitySize Unmarshall(JsonUnmarshallerContext context)
         {
             CapacitySize unmarshalledObject = new CapacitySize();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

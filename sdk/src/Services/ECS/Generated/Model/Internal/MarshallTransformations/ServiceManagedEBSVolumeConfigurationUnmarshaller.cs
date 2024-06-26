@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public ServiceManagedEBSVolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceManagedEBSVolumeConfiguration unmarshalledObject = new ServiceManagedEBSVolumeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

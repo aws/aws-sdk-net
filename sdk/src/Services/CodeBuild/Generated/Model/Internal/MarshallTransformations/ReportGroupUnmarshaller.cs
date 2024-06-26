@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public ReportGroup Unmarshall(JsonUnmarshallerContext context)
         {
             ReportGroup unmarshalledObject = new ReportGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -46,7 +46,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppRegistryAppName. 
         /// <para>
-        /// The name of the application this resource is mapped to.
+        /// Name of the application this resource is mapped to when the <c>mappingType</c> is
+        /// <c>AppRegistryApp</c>.
         /// </para>
         /// </summary>
         public string AppRegistryAppName
@@ -64,8 +65,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property EksSourceName. 
         /// <para>
-        /// Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource
-        /// belongs to.
+        /// Name of the Amazon Elastic Kubernetes Service cluster and namespace that this resource
+        /// is mapped to when the <c>mappingType</c> is <c>EKS</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -89,7 +90,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property LogicalStackName. 
         /// <para>
-        /// The name of the CloudFormation stack this resource is mapped to.
+        /// Name of the CloudFormation stack this resource is mapped to when the <c>mappingType</c>
+        /// is <c>CfnStack</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -110,27 +112,6 @@ namespace Amazon.ResilienceHub.Model
         /// <para>
         /// Specifies the type of resource mapping.
         /// </para>
-        ///  <dl> <dt>AppRegistryApp</dt> <dd> 
-        /// <para>
-        /// The resource is mapped to another application. The name of the application is contained
-        /// in the <c>appRegistryAppName</c> property.
-        /// </para>
-        ///  </dd> <dt>CfnStack</dt> <dd> 
-        /// <para>
-        /// The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack
-        /// is contained in the <c>logicalStackName</c> property.
-        /// </para>
-        ///  </dd> <dt>Resource</dt> <dd> 
-        /// <para>
-        /// The resource is mapped to another resource. The name of the resource is contained
-        /// in the <c>resourceName</c> property.
-        /// </para>
-        ///  </dd> <dt>ResourceGroup</dt> <dd> 
-        /// <para>
-        /// The resource is mapped to Resource Groups. The name of the resource group is contained
-        /// in the <c>resourceGroupName</c> property.
-        /// </para>
-        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required=true)]
         public ResourceMappingType MappingType
@@ -167,7 +148,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResourceGroupName. 
         /// <para>
-        /// Name of the resource group that the resource is mapped to.
+        /// Name of the Resource Groups that this resource is mapped to when the <c>mappingType</c>
+        /// is <c>ResourceGroup</c>.
         /// </para>
         /// </summary>
         public string ResourceGroupName
@@ -185,7 +167,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// Name of the resource that the resource is mapped to.
+        /// Name of the resource that this resource is mapped to when the <c>mappingType</c> is
+        /// <c>Resource</c>.
         /// </para>
         /// </summary>
         public string ResourceName
@@ -203,7 +186,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property TerraformSourceName. 
         /// <para>
-        ///  The short name of the Terraform source. 
+        /// Name of the Terraform source that this resource is mapped to when the <c>mappingType</c>
+        /// is <c>Terraform</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

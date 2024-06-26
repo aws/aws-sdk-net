@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AthenaParameters Unmarshall(JsonUnmarshallerContext context)
         {
             AthenaParameters unmarshalledObject = new AthenaParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

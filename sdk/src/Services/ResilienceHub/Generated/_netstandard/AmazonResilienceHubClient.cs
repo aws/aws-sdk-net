@@ -1862,6 +1862,55 @@ namespace Amazon.ResilienceHub
 
         #endregion
         
+        #region  ListAppAssessmentResourceDrifts
+
+        internal virtual ListAppAssessmentResourceDriftsResponse ListAppAssessmentResourceDrifts(ListAppAssessmentResourceDriftsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppAssessmentResourceDriftsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppAssessmentResourceDriftsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAppAssessmentResourceDriftsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Indicates the list of resource drifts that were detected while running an assessment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAppAssessmentResourceDrifts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAppAssessmentResourceDrifts service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentResourceDrifts">REST API Reference for ListAppAssessmentResourceDrifts Operation</seealso>
+        public virtual Task<ListAppAssessmentResourceDriftsResponse> ListAppAssessmentResourceDriftsAsync(ListAppAssessmentResourceDriftsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppAssessmentResourceDriftsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppAssessmentResourceDriftsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAppAssessmentResourceDriftsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAppAssessments
 
         internal virtual ListAppAssessmentsResponse ListAppAssessments(ListAppAssessmentsRequest request)

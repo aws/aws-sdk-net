@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         public FeatureSummary Unmarshall(JsonUnmarshallerContext context)
         {
             FeatureSummary unmarshalledObject = new FeatureSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

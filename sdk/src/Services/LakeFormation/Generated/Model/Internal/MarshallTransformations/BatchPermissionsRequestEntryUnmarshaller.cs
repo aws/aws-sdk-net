@@ -57,6 +57,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public BatchPermissionsRequestEntry Unmarshall(JsonUnmarshallerContext context)
         {
             BatchPermissionsRequestEntry unmarshalledObject = new BatchPermissionsRequestEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

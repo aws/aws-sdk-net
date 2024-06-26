@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public UserPoolPolicyType Unmarshall(JsonUnmarshallerContext context)
         {
             UserPoolPolicyType unmarshalledObject = new UserPoolPolicyType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

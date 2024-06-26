@@ -57,6 +57,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         public AuditEventField Unmarshall(JsonUnmarshallerContext context)
         {
             AuditEventField unmarshalledObject = new AuditEventField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

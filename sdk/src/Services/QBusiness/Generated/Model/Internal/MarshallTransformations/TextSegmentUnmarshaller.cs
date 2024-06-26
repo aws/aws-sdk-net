@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public TextSegment Unmarshall(JsonUnmarshallerContext context)
         {
             TextSegment unmarshalledObject = new TextSegment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("snippetExcerpt", targetDepth))
+                {
+                    var unmarshaller = SnippetExcerptUnmarshaller.Instance;
+                    unmarshalledObject.SnippetExcerpt = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

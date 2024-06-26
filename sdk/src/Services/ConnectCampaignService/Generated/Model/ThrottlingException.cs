@@ -138,7 +138,7 @@ namespace Amazon.ConnectCampaignService.Model
         // Check to see if XAmzErrorType property is set
         internal bool IsSetXAmzErrorType()
         {
-            return this._xAmzErrorType != null;
+            return !string.IsNullOrEmpty(this._xAmzErrorType);
         }
 
         /// <summary>

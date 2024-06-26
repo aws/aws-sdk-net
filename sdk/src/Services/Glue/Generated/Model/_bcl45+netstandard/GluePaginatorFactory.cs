@@ -349,6 +349,14 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for ListUsageProfiles operation
+        ///</summary>
+        public IListUsageProfilesPaginator ListUsageProfiles(ListUsageProfilesRequest request) 
+        {
+            return new ListUsageProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListWorkflows operation
         ///</summary>
         public IListWorkflowsPaginator ListWorkflows(ListWorkflowsRequest request) 

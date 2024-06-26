@@ -39,8 +39,8 @@ namespace Amazon.EKS.Model
     /// <c>TerminateInstances</c> </a>, or the node group deployment or update will fail.
     /// For more information about launch templates, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">
     /// <c>CreateLaunchTemplate</c> </a> in the Amazon EC2 API Reference. For more information
-    /// about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-    /// template support</a> in the <i>Amazon EKS User Guide</i>.
+    /// about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+    /// managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.
     /// 
     ///  
     /// <para>

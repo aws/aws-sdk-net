@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public DatadogConnectorProfileProperties Unmarshall(JsonUnmarshallerContext context)
         {
             DatadogConnectorProfileProperties unmarshalledObject = new DatadogConnectorProfileProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

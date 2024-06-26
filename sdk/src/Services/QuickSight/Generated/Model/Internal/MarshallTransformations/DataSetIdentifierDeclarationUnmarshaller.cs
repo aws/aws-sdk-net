@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DataSetIdentifierDeclaration Unmarshall(JsonUnmarshallerContext context)
         {
             DataSetIdentifierDeclaration unmarshalledObject = new DataSetIdentifierDeclaration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

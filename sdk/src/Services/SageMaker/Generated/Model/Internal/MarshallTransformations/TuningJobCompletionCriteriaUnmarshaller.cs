@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public TuningJobCompletionCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             TuningJobCompletionCriteria unmarshalledObject = new TuningJobCompletionCriteria();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public UsageTrackingResource Unmarshall(JsonUnmarshallerContext context)
         {
             UsageTrackingResource unmarshalledObject = new UsageTrackingResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

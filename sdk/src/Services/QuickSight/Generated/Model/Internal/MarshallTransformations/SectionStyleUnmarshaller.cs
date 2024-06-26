@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SectionStyle Unmarshall(JsonUnmarshallerContext context)
         {
             SectionStyle unmarshalledObject = new SectionStyle();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

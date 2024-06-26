@@ -36,6 +36,10 @@ namespace Amazon.CodeArtifact.Model
     /// 
     ///  <ul> <li> 
     /// <para>
+    ///  <c>cargo</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>generic</c> 
     /// </para>
     ///  </li> <li> 
@@ -53,6 +57,10 @@ namespace Amazon.CodeArtifact.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>pypi</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ruby</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>

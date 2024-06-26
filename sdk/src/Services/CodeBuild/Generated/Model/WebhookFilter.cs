@@ -111,9 +111,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  The <c>PULL_REQUEST_REOPENED</c> works with GitHub and GitHub Enterprise only. The
-        /// <c>RELEASED</c>, <c>PRERELEASED</c>, and <c>WORKFLOW_JOB_QUEUED</c> work with GitHub
-        /// only.
+        ///  Types <c>PULL_REQUEST_REOPENED</c> and <c>WORKFLOW_JOB_QUEUED</c> work with GitHub
+        /// and GitHub Enterprise only. Types <c>RELEASED</c> and <c>PRERELEASED</c> work with
+        /// GitHub only.
         /// </para>
         ///  </note> </li> </ul> </li> <li> 
         /// <para>
@@ -206,6 +206,19 @@ namespace Amazon.CodeBuild.Model
         ///  <note> 
         /// <para>
         ///  Works with <c>RELEASED</c> and <c>PRERELEASED</c> events only. 
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
+        /// <para>
+        /// REPOSITORY_NAME
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A webhook triggers a build when the repository name matches the regular expression
+        /// pattern.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  Works with GitHub global or organization webhooks only. 
         /// </para>
         ///  </note> </li> </ul> </li> <li> 
         /// <para>

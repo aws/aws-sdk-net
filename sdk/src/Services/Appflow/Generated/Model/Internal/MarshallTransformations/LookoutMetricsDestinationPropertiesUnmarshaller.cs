@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public LookoutMetricsDestinationProperties Unmarshall(JsonUnmarshallerContext context)
         {
             LookoutMetricsDestinationProperties unmarshalledObject = new LookoutMetricsDestinationProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

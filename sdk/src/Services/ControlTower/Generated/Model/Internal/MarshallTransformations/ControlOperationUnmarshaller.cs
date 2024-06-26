@@ -57,6 +57,8 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         public ControlOperation Unmarshall(JsonUnmarshallerContext context)
         {
             ControlOperation unmarshalledObject = new ControlOperation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,10 +66,28 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("controlIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ControlIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("enabledControlIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EnabledControlIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("operationIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OperationIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("operationType", targetDepth))
@@ -92,6 +112,12 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

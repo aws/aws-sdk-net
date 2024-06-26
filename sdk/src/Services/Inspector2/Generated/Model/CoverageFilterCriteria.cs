@@ -45,6 +45,7 @@ namespace Amazon.Inspector2.Model
         private List<CoverageDateFilter> _lastScannedAt = AWSConfigs.InitializeCollections ? new List<CoverageDateFilter>() : null;
         private List<CoverageStringFilter> _resourceId = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
         private List<CoverageStringFilter> _resourceType = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
+        private List<CoverageStringFilter> _scanMode = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
         private List<CoverageStringFilter> _scanStatusCode = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
         private List<CoverageStringFilter> _scanStatusReason = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
         private List<CoverageStringFilter> _scanType = AWSConfigs.InitializeCollections ? new List<CoverageStringFilter>() : null;
@@ -260,6 +261,26 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null && (this._resourceType.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanMode. 
+        /// <para>
+        /// The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are
+        /// <c>EC2_SSM_AGENT_BASED</c> and <c>EC2_HYBRID</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<CoverageStringFilter> ScanMode
+        {
+            get { return this._scanMode; }
+            set { this._scanMode = value; }
+        }
+
+        // Check to see if ScanMode property is set
+        internal bool IsSetScanMode()
+        {
+            return this._scanMode != null && (this._scanMode.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

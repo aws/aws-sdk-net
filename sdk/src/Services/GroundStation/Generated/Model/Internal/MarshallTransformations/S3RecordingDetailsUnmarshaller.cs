@@ -57,6 +57,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public S3RecordingDetails Unmarshall(JsonUnmarshallerContext context)
         {
             S3RecordingDetails unmarshalledObject = new S3RecordingDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

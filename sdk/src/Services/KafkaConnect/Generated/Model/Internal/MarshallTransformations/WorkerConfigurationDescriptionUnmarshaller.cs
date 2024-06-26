@@ -57,6 +57,8 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         public WorkerConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             WorkerConfigurationDescription unmarshalledObject = new WorkerConfigurationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

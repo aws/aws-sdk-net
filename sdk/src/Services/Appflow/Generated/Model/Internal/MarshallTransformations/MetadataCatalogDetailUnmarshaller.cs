@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public MetadataCatalogDetail Unmarshall(JsonUnmarshallerContext context)
         {
             MetadataCatalogDetail unmarshalledObject = new MetadataCatalogDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

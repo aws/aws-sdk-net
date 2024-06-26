@@ -57,6 +57,8 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         public MountTargetDescription Unmarshall(JsonUnmarshallerContext context)
         {
             MountTargetDescription unmarshalledObject = new MountTargetDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

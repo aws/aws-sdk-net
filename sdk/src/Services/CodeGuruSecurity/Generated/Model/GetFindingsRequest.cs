@@ -46,10 +46,10 @@ namespace Amazon.CodeGuruSecurity.Model
         /// The maximum number of results to return in the response. Use this parameter when paginating
         /// results. If additional results exist beyond the number you specify, the <c>nextToken</c>
         /// element is returned in the response. Use <c>nextToken</c> in a subsequent request
-        /// to retrieve additional results.
+        /// to retrieve additional results. If not specified, returns 1000 results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

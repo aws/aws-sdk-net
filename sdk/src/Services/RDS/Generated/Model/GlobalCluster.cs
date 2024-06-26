@@ -37,6 +37,7 @@ namespace Amazon.RDS.Model
         private string _databaseName;
         private bool? _deletionProtection;
         private string _engine;
+        private string _engineLifecycleSupport;
         private string _engineVersion;
         private FailoverState _failoverState;
         private string _globalClusterArn;
@@ -98,6 +99,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngine()
         {
             return this._engine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineLifecycleSupport. 
+        /// <para>
+        /// The life cycle type for the global cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see CreateGlobalCluster.
+        /// </para>
+        /// </summary>
+        public string EngineLifecycleSupport
+        {
+            get { return this._engineLifecycleSupport; }
+            set { this._engineLifecycleSupport = value; }
+        }
+
+        // Check to see if EngineLifecycleSupport property is set
+        internal bool IsSetEngineLifecycleSupport()
+        {
+            return this._engineLifecycleSupport != null;
         }
 
         /// <summary>

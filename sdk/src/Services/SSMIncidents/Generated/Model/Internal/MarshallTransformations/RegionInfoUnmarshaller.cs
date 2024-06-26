@@ -57,6 +57,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         public RegionInfo Unmarshall(JsonUnmarshallerContext context)
         {
             RegionInfo unmarshalledObject = new RegionInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

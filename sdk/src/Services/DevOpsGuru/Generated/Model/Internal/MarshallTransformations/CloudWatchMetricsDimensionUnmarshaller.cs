@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public CloudWatchMetricsDimension Unmarshall(JsonUnmarshallerContext context)
         {
             CloudWatchMetricsDimension unmarshalledObject = new CloudWatchMetricsDimension();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

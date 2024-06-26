@@ -57,6 +57,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         public PartitionKey Unmarshall(JsonUnmarshallerContext context)
         {
             PartitionKey unmarshalledObject = new PartitionKey();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

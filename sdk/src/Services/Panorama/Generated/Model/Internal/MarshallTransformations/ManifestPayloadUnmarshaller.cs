@@ -57,6 +57,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         public ManifestPayload Unmarshall(JsonUnmarshallerContext context)
         {
             ManifestPayload unmarshalledObject = new ManifestPayload();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

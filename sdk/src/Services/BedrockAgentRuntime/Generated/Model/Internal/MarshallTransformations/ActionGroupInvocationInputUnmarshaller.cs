@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         public ActionGroupInvocationInput Unmarshall(JsonUnmarshallerContext context)
         {
             ActionGroupInvocationInput unmarshalledObject = new ActionGroupInvocationInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public WorkforceVpcConfigResponse Unmarshall(JsonUnmarshallerContext context)
         {
             WorkforceVpcConfigResponse unmarshalledObject = new WorkforceVpcConfigResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

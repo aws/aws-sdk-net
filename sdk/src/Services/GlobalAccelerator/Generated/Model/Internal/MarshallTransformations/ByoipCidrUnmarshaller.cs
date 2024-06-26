@@ -57,6 +57,8 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         public ByoipCidr Unmarshall(JsonUnmarshallerContext context)
         {
             ByoipCidr unmarshalledObject = new ByoipCidr();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

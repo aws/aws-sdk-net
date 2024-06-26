@@ -57,6 +57,8 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         public CustomLogSourceProvider Unmarshall(JsonUnmarshallerContext context)
         {
             CustomLogSourceProvider unmarshalledObject = new CustomLogSourceProvider();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

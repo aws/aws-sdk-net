@@ -500,10 +500,6 @@ namespace Amazon.SQS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Currently, only standard queues are supported.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Only one active message movement task is supported per queue at any given time.
         /// </para>
         ///  </li> </ul> </note>
@@ -562,10 +558,6 @@ namespace Amazon.SQS
         /// queues (DLQs)</a> only. In this context, the source queue is the dead-letter queue
         /// (DLQ), while the destination queue can be the original source queue (from which the
         /// messages were driven to the dead-letter-queue), or a custom destination queue. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Currently, only standard queues are supported.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3367,10 +3359,6 @@ namespace Amazon.SQS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Currently, only standard queues are supported.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Only one active message movement task is supported per queue at any given time.
         /// </para>
         ///  </li> </ul> </note>
@@ -3426,10 +3414,6 @@ namespace Amazon.SQS
         /// queues (DLQs)</a> only. In this context, the source queue is the dead-letter queue
         /// (DLQ), while the destination queue can be the original source queue (from which the
         /// messages were driven to the dead-letter-queue), or a custom destination queue. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Currently, only standard queues are supported.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5027,7 +5011,8 @@ namespace Amazon.SQS
         ///  <important> 
         /// <para>
         /// A message can include only XML, JSON, and unformatted text. The following Unicode
-        /// characters are allowed:
+        /// characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+        /// specification for characters</a>.
         /// </para>
         ///  
         /// <para>
@@ -5036,13 +5021,15 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Any characters not included in this list will be rejected. For more information, see
-        /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
+        /// Amazon SQS does not throw an exception or completely reject the message if it contains
+        /// invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c>
+        /// before storing the message in the queue, as long as the message body contains at least
+        /// one valid character.
         /// </para>
         ///  </important>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which a message is sent. Queue URLs and names are case-sensitive.</param>
-        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KiB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c> to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c>  Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>. </important></param>
+        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KiB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c> to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c>  Amazon SQS does not throw an exception or completely reject the message if it contains invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c> before storing the message in the queue, as long as the message body contains at least one valid character. </important></param>
         /// 
         /// <returns>The response from the SendMessage service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
@@ -5125,7 +5112,8 @@ namespace Amazon.SQS
         ///  <important> 
         /// <para>
         /// A message can include only XML, JSON, and unformatted text. The following Unicode
-        /// characters are allowed:
+        /// characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+        /// specification for characters</a>.
         /// </para>
         ///  
         /// <para>
@@ -5134,8 +5122,10 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Any characters not included in this list will be rejected. For more information, see
-        /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
+        /// Amazon SQS does not throw an exception or completely reject the message if it contains
+        /// invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c>
+        /// before storing the message in the queue, as long as the message body contains at least
+        /// one valid character.
         /// </para>
         ///  </important>
         /// </summary>
@@ -5223,7 +5213,8 @@ namespace Amazon.SQS
         ///  <important> 
         /// <para>
         /// A message can include only XML, JSON, and unformatted text. The following Unicode
-        /// characters are allowed:
+        /// characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+        /// specification for characters</a>.
         /// </para>
         ///  
         /// <para>
@@ -5232,13 +5223,15 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Any characters not included in this list will be rejected. For more information, see
-        /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
+        /// Amazon SQS does not throw an exception or completely reject the message if it contains
+        /// invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c>
+        /// before storing the message in the queue, as long as the message body contains at least
+        /// one valid character.
         /// </para>
         ///  </important>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which a message is sent. Queue URLs and names are case-sensitive.</param>
-        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KiB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c> to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c>  Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>. </important></param>
+        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KiB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c> to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c>  Amazon SQS does not throw an exception or completely reject the message if it contains invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c> before storing the message in the queue, as long as the message body contains at least one valid character. </important></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -5325,7 +5318,8 @@ namespace Amazon.SQS
         ///  <important> 
         /// <para>
         /// A message can include only XML, JSON, and unformatted text. The following Unicode
-        /// characters are allowed:
+        /// characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+        /// specification for characters</a>.
         /// </para>
         ///  
         /// <para>
@@ -5334,8 +5328,10 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Any characters not included in this list will be rejected. For more information, see
-        /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
+        /// Amazon SQS does not throw an exception or completely reject the message if it contains
+        /// invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c>
+        /// before storing the message in the queue, as long as the message body contains at least
+        /// one valid character.
         /// </para>
         ///  </important>
         /// </summary>
@@ -5447,7 +5443,8 @@ namespace Amazon.SQS
         ///  <important> 
         /// <para>
         /// A message can include only XML, JSON, and unformatted text. The following Unicode
-        /// characters are allowed:
+        /// characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+        /// specification for characters</a>.
         /// </para>
         ///  
         /// <para>
@@ -5456,8 +5453,10 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Any characters not included in this list will be rejected. For more information, see
-        /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
+        /// Amazon SQS does not throw an exception or completely reject the message if it contains
+        /// invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c>
+        /// before storing the message in the queue, as long as the message body contains at least
+        /// one valid character.
         /// </para>
         ///  </important> 
         /// <para>
@@ -5578,7 +5577,8 @@ namespace Amazon.SQS
         ///  <important> 
         /// <para>
         /// A message can include only XML, JSON, and unformatted text. The following Unicode
-        /// characters are allowed:
+        /// characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+        /// specification for characters</a>.
         /// </para>
         ///  
         /// <para>
@@ -5587,8 +5587,10 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Any characters not included in this list will be rejected. For more information, see
-        /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
+        /// Amazon SQS does not throw an exception or completely reject the message if it contains
+        /// invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c>
+        /// before storing the message in the queue, as long as the message body contains at least
+        /// one valid character.
         /// </para>
         ///  </important> 
         /// <para>
@@ -5709,7 +5711,8 @@ namespace Amazon.SQS
         ///  <important> 
         /// <para>
         /// A message can include only XML, JSON, and unformatted text. The following Unicode
-        /// characters are allowed:
+        /// characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+        /// specification for characters</a>.
         /// </para>
         ///  
         /// <para>
@@ -5718,8 +5721,10 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Any characters not included in this list will be rejected. For more information, see
-        /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
+        /// Amazon SQS does not throw an exception or completely reject the message if it contains
+        /// invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c>
+        /// before storing the message in the queue, as long as the message body contains at least
+        /// one valid character.
         /// </para>
         ///  </important> 
         /// <para>
@@ -5844,7 +5849,8 @@ namespace Amazon.SQS
         ///  <important> 
         /// <para>
         /// A message can include only XML, JSON, and unformatted text. The following Unicode
-        /// characters are allowed:
+        /// characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+        /// specification for characters</a>.
         /// </para>
         ///  
         /// <para>
@@ -5853,8 +5859,10 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Any characters not included in this list will be rejected. For more information, see
-        /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
+        /// Amazon SQS does not throw an exception or completely reject the message if it contains
+        /// invalid characters. Instead, it replaces those invalid characters with <c>U+FFFD</c>
+        /// before storing the message in the queue, as long as the message body contains at least
+        /// one valid character.
         /// </para>
         ///  </important> 
         /// <para>
@@ -5960,12 +5968,12 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Sets the value of one or more queue attributes. When you change a queue's attributes,
-        /// the change can take up to 60 seconds for most of the attributes to propagate throughout
-        /// the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c> attribute
-        /// can take up to 15 minutes and will impact existing messages in the queue potentially
-        /// causing them to be expired and deleted if the <c>MessageRetentionPeriod</c> is reduced
-        /// below the age of existing messages.
+        /// Sets the value of one or more queue attributes, like a policy. When you change a queue's
+        /// attributes, the change can take up to 60 seconds for most of the attributes to propagate
+        /// throughout the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c>
+        /// attribute can take up to 15 minutes and will impact existing messages in the queue
+        /// potentially causing them to be expired and deleted if the <c>MessageRetentionPeriod</c>
+        /// is reduced below the age of existing messages.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -6040,12 +6048,12 @@ namespace Amazon.SQS
         SetQueueAttributesResponse SetQueueAttributes(string queueUrl, Dictionary<string, string> attributes);
 
         /// <summary>
-        /// Sets the value of one or more queue attributes. When you change a queue's attributes,
-        /// the change can take up to 60 seconds for most of the attributes to propagate throughout
-        /// the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c> attribute
-        /// can take up to 15 minutes and will impact existing messages in the queue potentially
-        /// causing them to be expired and deleted if the <c>MessageRetentionPeriod</c> is reduced
-        /// below the age of existing messages.
+        /// Sets the value of one or more queue attributes, like a policy. When you change a queue's
+        /// attributes, the change can take up to 60 seconds for most of the attributes to propagate
+        /// throughout the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c>
+        /// attribute can take up to 15 minutes and will impact existing messages in the queue
+        /// potentially causing them to be expired and deleted if the <c>MessageRetentionPeriod</c>
+        /// is reduced below the age of existing messages.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -6120,12 +6128,12 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Sets the value of one or more queue attributes. When you change a queue's attributes,
-        /// the change can take up to 60 seconds for most of the attributes to propagate throughout
-        /// the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c> attribute
-        /// can take up to 15 minutes and will impact existing messages in the queue potentially
-        /// causing them to be expired and deleted if the <c>MessageRetentionPeriod</c> is reduced
-        /// below the age of existing messages.
+        /// Sets the value of one or more queue attributes, like a policy. When you change a queue's
+        /// attributes, the change can take up to 60 seconds for most of the attributes to propagate
+        /// throughout the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c>
+        /// attribute can take up to 15 minutes and will impact existing messages in the queue
+        /// potentially causing them to be expired and deleted if the <c>MessageRetentionPeriod</c>
+        /// is reduced below the age of existing messages.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -6204,12 +6212,12 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Sets the value of one or more queue attributes. When you change a queue's attributes,
-        /// the change can take up to 60 seconds for most of the attributes to propagate throughout
-        /// the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c> attribute
-        /// can take up to 15 minutes and will impact existing messages in the queue potentially
-        /// causing them to be expired and deleted if the <c>MessageRetentionPeriod</c> is reduced
-        /// below the age of existing messages.
+        /// Sets the value of one or more queue attributes, like a policy. When you change a queue's
+        /// attributes, the change can take up to 60 seconds for most of the attributes to propagate
+        /// throughout the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c>
+        /// attribute can take up to 15 minutes and will impact existing messages in the queue
+        /// potentially causing them to be expired and deleted if the <c>MessageRetentionPeriod</c>
+        /// is reduced below the age of existing messages.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -6310,10 +6318,6 @@ namespace Amazon.SQS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Currently, only standard queues support redrive. FIFO queues don't support redrive.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Only one active message movement task is supported per queue at any given time.
         /// </para>
         ///  </li> </ul> </note>
@@ -6377,10 +6381,6 @@ namespace Amazon.SQS
         /// queue is the DLQ, while the destination queue can be the original source queue (from
         /// which the messages were driven to the dead-letter-queue), or a custom destination
         /// queue.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Currently, only standard queues support redrive. FIFO queues don't support redrive.
         /// </para>
         ///  </li> <li> 
         /// <para>

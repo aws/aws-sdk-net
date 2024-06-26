@@ -57,6 +57,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         public VTLDevice Unmarshall(JsonUnmarshallerContext context)
         {
             VTLDevice unmarshalledObject = new VTLDevice();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public LustreFileSystemConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LustreFileSystemConfiguration unmarshalledObject = new LustreFileSystemConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -110,6 +112,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LustreLogConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MetadataConfiguration", targetDepth))
+                {
+                    var unmarshaller = FileSystemLustreMetadataConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.MetadataConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MountName", targetDepth))

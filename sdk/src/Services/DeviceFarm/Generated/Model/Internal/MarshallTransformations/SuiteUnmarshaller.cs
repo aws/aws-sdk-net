@@ -57,6 +57,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         public Suite Unmarshall(JsonUnmarshallerContext context)
         {
             Suite unmarshalledObject = new Suite();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

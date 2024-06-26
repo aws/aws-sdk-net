@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         public RecordFormat Unmarshall(JsonUnmarshallerContext context)
         {
             RecordFormat unmarshalledObject = new RecordFormat();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

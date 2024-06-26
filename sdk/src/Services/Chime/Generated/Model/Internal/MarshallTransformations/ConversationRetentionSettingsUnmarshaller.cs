@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public ConversationRetentionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             ConversationRetentionSettings unmarshalledObject = new ConversationRetentionSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

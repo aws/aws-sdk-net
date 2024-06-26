@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public IBMDb2Settings Unmarshall(JsonUnmarshallerContext context)
         {
             IBMDb2Settings unmarshalledObject = new IBMDb2Settings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         public PendingLogs Unmarshall(JsonUnmarshallerContext context)
         {
             PendingLogs unmarshalledObject = new PendingLogs();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public PolygonGeometryInput Unmarshall(JsonUnmarshallerContext context)
         {
             PolygonGeometryInput unmarshalledObject = new PolygonGeometryInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
         public ProjectDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ProjectDetails unmarshalledObject = new ProjectDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

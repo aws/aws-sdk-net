@@ -57,6 +57,8 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         public Loa Unmarshall(JsonUnmarshallerContext context)
         {
             Loa unmarshalledObject = new Loa();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

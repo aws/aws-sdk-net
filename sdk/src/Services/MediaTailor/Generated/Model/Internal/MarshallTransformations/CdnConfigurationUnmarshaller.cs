@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public CdnConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CdnConfiguration unmarshalledObject = new CdnConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

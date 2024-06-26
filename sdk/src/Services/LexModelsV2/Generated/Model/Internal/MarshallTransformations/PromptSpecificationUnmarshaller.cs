@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public PromptSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             PromptSpecification unmarshalledObject = new PromptSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

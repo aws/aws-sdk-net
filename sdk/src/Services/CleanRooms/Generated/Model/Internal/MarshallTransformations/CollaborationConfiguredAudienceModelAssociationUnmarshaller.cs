@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public CollaborationConfiguredAudienceModelAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             CollaborationConfiguredAudienceModelAssociation unmarshalledObject = new CollaborationConfiguredAudienceModelAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

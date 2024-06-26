@@ -699,6 +699,234 @@ namespace Amazon.SimpleWorkflow
 
         #endregion
         
+        #region  DeleteActivityType
+
+        /// <summary>
+        /// Deletes the specified <i>activity type</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Note: Prior to deletion, activity types must first be <b>deprecated</b>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  After an activity type has been deleted, you cannot schedule new activities of that
+        /// type. Activities that started before the type was deleted will continue to run. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Access Control</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use IAM policies to control this action's access to Amazon SWF resources as
+        /// follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>activityType.name</c>: String constraint. The key is <c>swf:activityType.name</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>activityType.version</c>: String constraint. The key is <c>swf:activityType.version</c>.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
+        /// values fall outside the specified constraints, the action fails. The associated event
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteActivityType service method.</param>
+        /// 
+        /// <returns>The response from the DeleteActivityType service method, as returned by SimpleWorkflow.</returns>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
+        /// Returned when the caller doesn't have sufficient permissions to invoke the action.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.TypeNotDeprecatedException">
+        /// Returned when the resource type has not been deprecated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
+        /// Returned when the named resource cannot be found with in the scope of this operation
+        /// (region or domain). This could happen if the named resource was never created or is
+        /// no longer available for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeleteActivityType">REST API Reference for DeleteActivityType Operation</seealso>
+        public virtual DeleteActivityTypeResponse DeleteActivityType(DeleteActivityTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteActivityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteActivityTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteActivityTypeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteActivityType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteActivityType operation on AmazonSimpleWorkflowClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteActivityType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeleteActivityType">REST API Reference for DeleteActivityType Operation</seealso>
+        public virtual IAsyncResult BeginDeleteActivityType(DeleteActivityTypeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteActivityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteActivityTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteActivityType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteActivityType.</param>
+        /// 
+        /// <returns>Returns a  DeleteActivityTypeResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeleteActivityType">REST API Reference for DeleteActivityType Operation</seealso>
+        public virtual DeleteActivityTypeResponse EndDeleteActivityType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteActivityTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteWorkflowType
+
+        /// <summary>
+        /// Deletes the specified <i>workflow type</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Note: Prior to deletion, workflow types must first be <b>deprecated</b>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  After a workflow type has been deleted, you cannot create new executions of that
+        /// type. Executions that started before the type was deleted will continue to run. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Access Control</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use IAM policies to control this action's access to Amazon SWF resources as
+        /// follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>workflowType.name</c>: String constraint. The key is <c>swf:workflowType.name</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>workflowType.version</c>: String constraint. The key is <c>swf:workflowType.version</c>.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
+        /// values fall outside the specified constraints, the action fails. The associated event
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkflowType service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkflowType service method, as returned by SimpleWorkflow.</returns>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.OperationNotPermittedException">
+        /// Returned when the caller doesn't have sufficient permissions to invoke the action.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.TypeNotDeprecatedException">
+        /// Returned when the resource type has not been deprecated.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleWorkflow.Model.UnknownResourceException">
+        /// Returned when the named resource cannot be found with in the scope of this operation
+        /// (region or domain). This could happen if the named resource was never created or is
+        /// no longer available for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeleteWorkflowType">REST API Reference for DeleteWorkflowType Operation</seealso>
+        public virtual DeleteWorkflowTypeResponse DeleteWorkflowType(DeleteWorkflowTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkflowTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkflowTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkflowTypeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorkflowType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkflowType operation on AmazonSimpleWorkflowClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWorkflowType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeleteWorkflowType">REST API Reference for DeleteWorkflowType Operation</seealso>
+        public virtual IAsyncResult BeginDeleteWorkflowType(DeleteWorkflowTypeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkflowTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkflowTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWorkflowType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWorkflowType.</param>
+        /// 
+        /// <returns>Returns a  DeleteWorkflowTypeResult from SimpleWorkflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeleteWorkflowType">REST API Reference for DeleteWorkflowType Operation</seealso>
+        public virtual DeleteWorkflowTypeResponse EndDeleteWorkflowType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWorkflowTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeprecateActivityType
 
         /// <summary>
@@ -706,12 +934,7 @@ namespace Amazon.SimpleWorkflow
         /// you cannot create new tasks of that activity type. Tasks of this type that were scheduled
         /// before the type was deprecated continue to run.
         /// 
-        ///  <note> 
-        /// <para>
-        /// This operation is eventually consistent. The results are best effort and may not exactly
-        /// reflect recent updates and changes.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         ///  <b>Access Control</b> 
         /// </para>

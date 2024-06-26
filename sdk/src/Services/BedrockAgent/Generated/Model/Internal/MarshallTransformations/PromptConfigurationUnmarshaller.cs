@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public PromptConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             PromptConfiguration unmarshalledObject = new PromptConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

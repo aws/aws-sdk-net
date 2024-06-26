@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public MonitoringStatisticsResource Unmarshall(JsonUnmarshallerContext context)
         {
             MonitoringStatisticsResource unmarshalledObject = new MonitoringStatisticsResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

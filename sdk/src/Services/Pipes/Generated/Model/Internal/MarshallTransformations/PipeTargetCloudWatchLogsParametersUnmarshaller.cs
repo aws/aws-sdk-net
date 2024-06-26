@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public PipeTargetCloudWatchLogsParameters Unmarshall(JsonUnmarshallerContext context)
         {
             PipeTargetCloudWatchLogsParameters unmarshalledObject = new PipeTargetCloudWatchLogsParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

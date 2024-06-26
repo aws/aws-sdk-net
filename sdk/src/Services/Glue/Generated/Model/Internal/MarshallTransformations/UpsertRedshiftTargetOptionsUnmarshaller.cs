@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public UpsertRedshiftTargetOptions Unmarshall(JsonUnmarshallerContext context)
         {
             UpsertRedshiftTargetOptions unmarshalledObject = new UpsertRedshiftTargetOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

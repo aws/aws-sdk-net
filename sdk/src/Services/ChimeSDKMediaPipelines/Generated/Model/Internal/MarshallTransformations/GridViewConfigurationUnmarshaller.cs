@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public GridViewConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             GridViewConfiguration unmarshalledObject = new GridViewConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

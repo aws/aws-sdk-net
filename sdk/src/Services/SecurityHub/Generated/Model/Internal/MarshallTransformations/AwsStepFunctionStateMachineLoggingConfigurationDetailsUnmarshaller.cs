@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsStepFunctionStateMachineLoggingConfigurationDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsStepFunctionStateMachineLoggingConfigurationDetails unmarshalledObject = new AwsStepFunctionStateMachineLoggingConfigurationDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

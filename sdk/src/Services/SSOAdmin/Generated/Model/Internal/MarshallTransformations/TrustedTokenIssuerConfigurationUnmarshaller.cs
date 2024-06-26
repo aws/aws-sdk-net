@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public TrustedTokenIssuerConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TrustedTokenIssuerConfiguration unmarshalledObject = new TrustedTokenIssuerConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

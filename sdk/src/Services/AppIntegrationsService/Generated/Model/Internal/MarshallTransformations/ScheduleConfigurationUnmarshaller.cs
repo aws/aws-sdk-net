@@ -57,6 +57,8 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         public ScheduleConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ScheduleConfiguration unmarshalledObject = new ScheduleConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

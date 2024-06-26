@@ -51,6 +51,20 @@ namespace Amazon.CustomerProfiles.Model
     /// To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
     /// confused deputy prevention</a> for sample policies that you should apply. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// It is not possible to associate a Customer Profiles domain with an Amazon Connect
+    /// Instance directly from the API. If you would like to create a domain and associate
+    /// a Customer Profiles domain, use the Amazon Connect admin website. For more information,
+    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-customer-profiles.html#enable-customer-profiles-step1">Enable
+    /// Customer Profiles</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Each Amazon Connect instance can be associated with only one domain. Multiple Amazon
+    /// Connect instances can be associated with one domain.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateDomainRequest : AmazonCustomerProfilesRequest
     {

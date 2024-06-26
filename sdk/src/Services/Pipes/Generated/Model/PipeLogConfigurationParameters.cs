@@ -43,11 +43,11 @@ namespace Amazon.Pipes.Model
     /// </para>
     ///  
     /// <para>
-    /// For example, suppose when you created the pipe you specified a Kinesis Data Firehose
-    /// stream log destination. You then update the pipe to add an Amazon S3 log destination.
-    /// In addition to specifying the <c>S3LogDestinationParameters</c> for the new log destination,
-    /// you must also specify the fields in the <c>FirehoseLogDestinationParameters</c> object
-    /// in order to retain the Kinesis Data Firehose stream log destination. 
+    /// For example, suppose when you created the pipe you specified a Firehose stream log
+    /// destination. You then update the pipe to add an Amazon S3 log destination. In addition
+    /// to specifying the <c>S3LogDestinationParameters</c> for the new log destination, you
+    /// must also specify the fields in the <c>FirehoseLogDestinationParameters</c> object
+    /// in order to retain the Firehose stream log destination. 
     /// </para>
     ///  
     /// <para>
@@ -84,7 +84,7 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property FirehoseLogDestination. 
         /// <para>
-        /// The Amazon Kinesis Data Firehose logging configuration settings for the pipe.
+        /// The Amazon Data Firehose logging configuration settings for the pipe.
         /// </para>
         /// </summary>
         public FirehoseLogDestinationParameters FirehoseLogDestination
@@ -102,8 +102,8 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property IncludeExecutionData. 
         /// <para>
-        /// Specify <c>ON</c> to include the execution data (specifically, the <c>payload</c>
-        /// and <c>awsRequest</c> fields) in the log messages for this pipe.
+        /// Specify <c>ALL</c> to include the execution data (specifically, the <c>payload</c>,
+        /// <c>awsRequest</c>, and <c>awsResponse</c> fields) in the log messages for this pipe.
         /// </para>
         ///  
         /// <para>
@@ -116,7 +116,7 @@ namespace Amazon.Pipes.Model
         /// </para>
         ///  
         /// <para>
-        /// The default is <c>OFF</c>.
+        /// By default, execution data is not included.
         /// </para>
         /// </summary>
         public List<string> IncludeExecutionData

@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public ForwardedIPConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ForwardedIPConfig unmarshalledObject = new ForwardedIPConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

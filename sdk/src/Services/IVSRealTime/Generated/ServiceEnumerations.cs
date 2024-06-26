@@ -285,6 +285,184 @@ namespace Amazon.IVSRealTime
 
 
     /// <summary>
+    /// Constants used for properties of type ParticipantRecordingFilterByRecordingState.
+    /// </summary>
+    public class ParticipantRecordingFilterByRecordingState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ParticipantRecordingFilterByRecordingState
+        /// </summary>
+        public static readonly ParticipantRecordingFilterByRecordingState ACTIVE = new ParticipantRecordingFilterByRecordingState("ACTIVE");
+        /// <summary>
+        /// Constant FAILED for ParticipantRecordingFilterByRecordingState
+        /// </summary>
+        public static readonly ParticipantRecordingFilterByRecordingState FAILED = new ParticipantRecordingFilterByRecordingState("FAILED");
+        /// <summary>
+        /// Constant STARTING for ParticipantRecordingFilterByRecordingState
+        /// </summary>
+        public static readonly ParticipantRecordingFilterByRecordingState STARTING = new ParticipantRecordingFilterByRecordingState("STARTING");
+        /// <summary>
+        /// Constant STOPPED for ParticipantRecordingFilterByRecordingState
+        /// </summary>
+        public static readonly ParticipantRecordingFilterByRecordingState STOPPED = new ParticipantRecordingFilterByRecordingState("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for ParticipantRecordingFilterByRecordingState
+        /// </summary>
+        public static readonly ParticipantRecordingFilterByRecordingState STOPPING = new ParticipantRecordingFilterByRecordingState("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParticipantRecordingFilterByRecordingState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantRecordingFilterByRecordingState FindValue(string value)
+        {
+            return FindValue<ParticipantRecordingFilterByRecordingState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantRecordingFilterByRecordingState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParticipantRecordingMediaType.
+    /// </summary>
+    public class ParticipantRecordingMediaType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUDIO_ONLY for ParticipantRecordingMediaType
+        /// </summary>
+        public static readonly ParticipantRecordingMediaType AUDIO_ONLY = new ParticipantRecordingMediaType("AUDIO_ONLY");
+        /// <summary>
+        /// Constant AUDIO_VIDEO for ParticipantRecordingMediaType
+        /// </summary>
+        public static readonly ParticipantRecordingMediaType AUDIO_VIDEO = new ParticipantRecordingMediaType("AUDIO_VIDEO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParticipantRecordingMediaType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantRecordingMediaType FindValue(string value)
+        {
+            return FindValue<ParticipantRecordingMediaType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantRecordingMediaType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParticipantRecordingState.
+    /// </summary>
+    public class ParticipantRecordingState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ParticipantRecordingState
+        /// </summary>
+        public static readonly ParticipantRecordingState ACTIVE = new ParticipantRecordingState("ACTIVE");
+        /// <summary>
+        /// Constant DISABLED for ParticipantRecordingState
+        /// </summary>
+        public static readonly ParticipantRecordingState DISABLED = new ParticipantRecordingState("DISABLED");
+        /// <summary>
+        /// Constant FAILED for ParticipantRecordingState
+        /// </summary>
+        public static readonly ParticipantRecordingState FAILED = new ParticipantRecordingState("FAILED");
+        /// <summary>
+        /// Constant STARTING for ParticipantRecordingState
+        /// </summary>
+        public static readonly ParticipantRecordingState STARTING = new ParticipantRecordingState("STARTING");
+        /// <summary>
+        /// Constant STOPPED for ParticipantRecordingState
+        /// </summary>
+        public static readonly ParticipantRecordingState STOPPED = new ParticipantRecordingState("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for ParticipantRecordingState
+        /// </summary>
+        public static readonly ParticipantRecordingState STOPPING = new ParticipantRecordingState("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParticipantRecordingState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantRecordingState FindValue(string value)
+        {
+            return FindValue<ParticipantRecordingState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantRecordingState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ParticipantState.
     /// </summary>
     public class ParticipantState : ConstantClass

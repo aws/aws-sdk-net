@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public UpdatePolicy Unmarshall(JsonUnmarshallerContext context)
         {
             UpdatePolicy unmarshalledObject = new UpdatePolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -395,6 +395,65 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  CreateMalwareProtectionPlan
+
+
+        /// <summary>
+        /// Creates a new Malware Protection plan for the protected resource.
+        /// 
+        ///  
+        /// <para>
+        /// When you create a Malware Protection plan, the Amazon Web Services service terms for
+        /// GuardDuty Malware Protection apply. For more information, see <a href="http://aws.amazon.com/service-terms/#87._Amazon_GuardDuty">Amazon
+        /// Web Services service terms for GuardDuty Malware Protection</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMalwareProtectionPlan service method.</param>
+        /// 
+        /// <returns>The response from the CreateMalwareProtectionPlan service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ConflictException">
+        /// A request conflict exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMalwareProtectionPlan">REST API Reference for CreateMalwareProtectionPlan Operation</seealso>
+        CreateMalwareProtectionPlanResponse CreateMalwareProtectionPlan(CreateMalwareProtectionPlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMalwareProtectionPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMalwareProtectionPlan operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMalwareProtectionPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMalwareProtectionPlan">REST API Reference for CreateMalwareProtectionPlan Operation</seealso>
+        IAsyncResult BeginCreateMalwareProtectionPlan(CreateMalwareProtectionPlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMalwareProtectionPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMalwareProtectionPlan.</param>
+        /// 
+        /// <returns>Returns a  CreateMalwareProtectionPlanResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMalwareProtectionPlan">REST API Reference for CreateMalwareProtectionPlan Operation</seealso>
+        CreateMalwareProtectionPlanResponse EndCreateMalwareProtectionPlan(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateMembers
 
 
@@ -847,6 +906,60 @@ namespace Amazon.GuardDuty
         /// <returns>Returns a  DeleteIPSetResult from GuardDuty.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         DeleteIPSetResponse EndDeleteIPSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteMalwareProtectionPlan
+
+
+        /// <summary>
+        /// Deletes the Malware Protection plan ID associated with the Malware Protection plan
+        /// resource. Use this API only when you no longer want to protect the resource associated
+        /// with this Malware Protection plan ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMalwareProtectionPlan service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMalwareProtectionPlan service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMalwareProtectionPlan">REST API Reference for DeleteMalwareProtectionPlan Operation</seealso>
+        DeleteMalwareProtectionPlanResponse DeleteMalwareProtectionPlan(DeleteMalwareProtectionPlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMalwareProtectionPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMalwareProtectionPlan operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMalwareProtectionPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMalwareProtectionPlan">REST API Reference for DeleteMalwareProtectionPlan Operation</seealso>
+        IAsyncResult BeginDeleteMalwareProtectionPlan(DeleteMalwareProtectionPlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMalwareProtectionPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMalwareProtectionPlan.</param>
+        /// 
+        /// <returns>Returns a  DeleteMalwareProtectionPlanResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMalwareProtectionPlan">REST API Reference for DeleteMalwareProtectionPlan Operation</seealso>
+        DeleteMalwareProtectionPlanResponse EndDeleteMalwareProtectionPlan(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1846,6 +1959,59 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  GetMalwareProtectionPlan
+
+
+        /// <summary>
+        /// Retrieves the Malware Protection plan details associated with a Malware Protection
+        /// plan ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMalwareProtectionPlan service method.</param>
+        /// 
+        /// <returns>The response from the GetMalwareProtectionPlan service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareProtectionPlan">REST API Reference for GetMalwareProtectionPlan Operation</seealso>
+        GetMalwareProtectionPlanResponse GetMalwareProtectionPlan(GetMalwareProtectionPlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMalwareProtectionPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMalwareProtectionPlan operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMalwareProtectionPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareProtectionPlan">REST API Reference for GetMalwareProtectionPlan Operation</seealso>
+        IAsyncResult BeginGetMalwareProtectionPlan(GetMalwareProtectionPlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMalwareProtectionPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMalwareProtectionPlan.</param>
+        /// 
+        /// <returns>Returns a  GetMalwareProtectionPlanResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareProtectionPlan">REST API Reference for GetMalwareProtectionPlan Operation</seealso>
+        GetMalwareProtectionPlanResponse EndGetMalwareProtectionPlan(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetMalwareScanSettings
 
 
@@ -2629,6 +2795,56 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  ListMalwareProtectionPlans
+
+
+        /// <summary>
+        /// Lists the Malware Protection plan IDs associated with the protected resources in your
+        /// Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMalwareProtectionPlans service method.</param>
+        /// 
+        /// <returns>The response from the ListMalwareProtectionPlans service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMalwareProtectionPlans">REST API Reference for ListMalwareProtectionPlans Operation</seealso>
+        ListMalwareProtectionPlansResponse ListMalwareProtectionPlans(ListMalwareProtectionPlansRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMalwareProtectionPlans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMalwareProtectionPlans operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMalwareProtectionPlans
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMalwareProtectionPlans">REST API Reference for ListMalwareProtectionPlans Operation</seealso>
+        IAsyncResult BeginListMalwareProtectionPlans(ListMalwareProtectionPlansRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMalwareProtectionPlans operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMalwareProtectionPlans.</param>
+        /// 
+        /// <returns>Returns a  ListMalwareProtectionPlansResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMalwareProtectionPlans">REST API Reference for ListMalwareProtectionPlans Operation</seealso>
+        ListMalwareProtectionPlansResponse EndListMalwareProtectionPlans(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListMembers
 
 
@@ -3366,6 +3582,58 @@ namespace Amazon.GuardDuty
         /// <returns>Returns a  UpdateIPSetResult from GuardDuty.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         UpdateIPSetResponse EndUpdateIPSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateMalwareProtectionPlan
+
+
+        /// <summary>
+        /// Updates an existing Malware Protection plan resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMalwareProtectionPlan service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMalwareProtectionPlan service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMalwareProtectionPlan">REST API Reference for UpdateMalwareProtectionPlan Operation</seealso>
+        UpdateMalwareProtectionPlanResponse UpdateMalwareProtectionPlan(UpdateMalwareProtectionPlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMalwareProtectionPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMalwareProtectionPlan operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMalwareProtectionPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMalwareProtectionPlan">REST API Reference for UpdateMalwareProtectionPlan Operation</seealso>
+        IAsyncResult BeginUpdateMalwareProtectionPlan(UpdateMalwareProtectionPlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMalwareProtectionPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMalwareProtectionPlan.</param>
+        /// 
+        /// <returns>Returns a  UpdateMalwareProtectionPlanResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMalwareProtectionPlan">REST API Reference for UpdateMalwareProtectionPlan Operation</seealso>
+        UpdateMalwareProtectionPlanResponse EndUpdateMalwareProtectionPlan(IAsyncResult asyncResult);
 
         #endregion
         

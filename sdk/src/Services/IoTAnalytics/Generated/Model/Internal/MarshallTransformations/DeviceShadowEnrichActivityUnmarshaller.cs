@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public DeviceShadowEnrichActivity Unmarshall(JsonUnmarshallerContext context)
         {
             DeviceShadowEnrichActivity unmarshalledObject = new DeviceShadowEnrichActivity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public InventoryItemAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             InventoryItemAttribute unmarshalledObject = new InventoryItemAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

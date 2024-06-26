@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public SingleSignOn Unmarshall(JsonUnmarshallerContext context)
         {
             SingleSignOn unmarshalledObject = new SingleSignOn();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

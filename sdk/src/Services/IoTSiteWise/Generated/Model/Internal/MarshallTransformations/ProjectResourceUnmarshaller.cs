@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public ProjectResource Unmarshall(JsonUnmarshallerContext context)
         {
             ProjectResource unmarshalledObject = new ProjectResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

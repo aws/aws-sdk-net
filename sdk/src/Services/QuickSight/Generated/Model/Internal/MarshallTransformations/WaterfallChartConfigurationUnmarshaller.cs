@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public WaterfallChartConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             WaterfallChartConfiguration unmarshalledObject = new WaterfallChartConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

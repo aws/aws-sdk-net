@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public ImmediateModeScheduleActionStartSettings Unmarshall(JsonUnmarshallerContext context)
         {
             ImmediateModeScheduleActionStartSettings unmarshalledObject = new ImmediateModeScheduleActionStartSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

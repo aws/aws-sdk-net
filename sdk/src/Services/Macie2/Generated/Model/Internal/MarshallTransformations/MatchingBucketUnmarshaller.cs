@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public MatchingBucket Unmarshall(JsonUnmarshallerContext context)
         {
             MatchingBucket unmarshalledObject = new MatchingBucket();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("automatedDiscoveryMonitoringStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AutomatedDiscoveryMonitoringStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("bucketName", targetDepth))

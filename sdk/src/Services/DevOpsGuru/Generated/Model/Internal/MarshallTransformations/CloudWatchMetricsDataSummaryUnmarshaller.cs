@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public CloudWatchMetricsDataSummary Unmarshall(JsonUnmarshallerContext context)
         {
             CloudWatchMetricsDataSummary unmarshalledObject = new CloudWatchMetricsDataSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

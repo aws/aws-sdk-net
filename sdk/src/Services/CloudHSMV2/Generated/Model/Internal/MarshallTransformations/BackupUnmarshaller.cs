@@ -57,6 +57,8 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         public Backup Unmarshall(JsonUnmarshallerContext context)
         {
             Backup unmarshalledObject = new Backup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -98,6 +100,18 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeleteTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HsmType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HsmType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Mode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NeverExpires", targetDepth))

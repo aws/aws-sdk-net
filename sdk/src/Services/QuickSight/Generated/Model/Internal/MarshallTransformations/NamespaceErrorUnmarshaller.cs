@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public NamespaceError Unmarshall(JsonUnmarshallerContext context)
         {
             NamespaceError unmarshalledObject = new NamespaceError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

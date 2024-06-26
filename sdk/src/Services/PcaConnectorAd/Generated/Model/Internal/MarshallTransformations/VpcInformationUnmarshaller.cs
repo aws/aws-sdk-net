@@ -57,6 +57,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         public VpcInformation Unmarshall(JsonUnmarshallerContext context)
         {
             VpcInformation unmarshalledObject = new VpcInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

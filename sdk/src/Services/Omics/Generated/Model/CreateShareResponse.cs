@@ -41,7 +41,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ShareId. 
         /// <para>
-        ///  An ID generated for the share. 
+        /// The ID that HealthOmics generates for the share.
         /// </para>
         /// </summary>
         public string ShareId
@@ -59,7 +59,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ShareName. 
         /// <para>
-        ///  A name given to the share. 
+        /// The name of the share.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -78,7 +78,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of a share. 
+        /// The status of the share.
         /// </para>
         /// </summary>
         public ShareStatus Status

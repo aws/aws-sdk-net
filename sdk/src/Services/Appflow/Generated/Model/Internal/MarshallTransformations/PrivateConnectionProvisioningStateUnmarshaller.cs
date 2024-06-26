@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public PrivateConnectionProvisioningState Unmarshall(JsonUnmarshallerContext context)
         {
             PrivateConnectionProvisioningState unmarshalledObject = new PrivateConnectionProvisioningState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

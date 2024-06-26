@@ -57,6 +57,8 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         public WorkflowDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             WorkflowDefinition unmarshalledObject = new WorkflowDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

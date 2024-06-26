@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEcsTaskDefinitionInferenceAcceleratorsDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEcsTaskDefinitionInferenceAcceleratorsDetails unmarshalledObject = new AwsEcsTaskDefinitionInferenceAcceleratorsDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -56,6 +56,24 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void GetSsoToken_PkceFlow()
+        {
+            var minExpectedExpiresAt = DateTime.Now.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn);
+            var response = CoreAmazonSSOOIDC.GetSsoToken(
+                _testFixture.OidcClient.Object,
+                _testFixture.GetSsoTokenRequestWithPkceSuccess,
+                _testFixture.GetSsoTokenContext.Object
+            );
+
+            AssertValidResponse(response, minExpectedExpiresAt);
+            Assert.IsNotNull(response.CodeVerifier);
+
+            _testFixture.AssertRegisterClientRequest(_testFixture.RegisterClientWithPkceRequest);
+            _testFixture.AssertCreateTokenRequest(_testFixture.CreateTokenWithPkceRequest);
+            Assert.AreEqual(1, _testFixture.RetrieveAuthorizationCodeCallbackCount);
+        }
+
+        [TestMethod]
         public async Task GetSsoTokenAsync()
         {
             var minExpectedExpiresAt = DateTime.Now.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn);
@@ -68,6 +86,24 @@ namespace AWSSDK.UnitTests
             _testFixture.AssertStartDeviceAuthorizationAsyncRequest(_testFixture.StartDeviceAuthorizationRequest);
             _testFixture.AssertCreateTokenAsyncRequest(_testFixture.CreateTokenRequest);
             Assert.AreEqual(1, _testFixture.SsoVerificationCallbackCount);
+        }
+
+        [TestMethod]
+        public async Task GetSsoToken_PkceFlowAsync()
+        {
+            var minExpectedExpiresAt = DateTime.Now.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn);
+            var response = await CoreAmazonSSOOIDC.GetSsoTokenAsync(
+                _testFixture.OidcClient.Object,
+                _testFixture.GetSsoTokenRequestWithPkceSuccess,
+                _testFixture.GetSsoTokenContext.Object
+            );
+
+            AssertValidResponse(response, minExpectedExpiresAt);
+            Assert.IsNotNull(response.CodeVerifier);
+
+            _testFixture.AssertRegisterClientAsyncRequest(_testFixture.RegisterClientWithPkceRequest);
+            _testFixture.AssertCreateTokenAsyncRequest(_testFixture.CreateTokenWithPkceRequest);
+            Assert.AreEqual(1, _testFixture.RetrieveAuthorizationCodeCallbackCount);
         }
 
         [TestMethod]
@@ -206,6 +242,62 @@ namespace AWSSDK.UnitTests
 
             Assert.AreSame(exception, actualException);
             _testFixture.AssertCreateTokenAsyncRequest(_testFixture.CreateTokenRequest);
+        }
+
+        [TestMethod]
+        public void GetSsoToken_PkceFlow_RetrieveCodeException()
+        {
+            Assert.ThrowsException<Exception>(() => CoreAmazonSSOOIDC.GetSsoToken(
+                _testFixture.OidcClient.Object,
+                _testFixture.GetSsoTokenRequestWithPkceError,
+                _testFixture.GetSsoTokenContext.Object
+            ));
+
+            _testFixture.AssertCreateTokenRequest(_testFixture.CreateTokenWithPkceRequest, timesCalled: 0);
+            Assert.AreEqual(1, _testFixture.RetrieveAuthorizationCodeCallbackCount);
+        }
+
+        [TestMethod]
+        public void GetSsoToken_PkceFlow_UnknownException()
+        {
+            var exception = new Exception("unexpected exception");
+            _testFixture.WithCreateTokenException(exception);
+
+            var actualException = Assert.ThrowsException<Exception>(() => 
+                CoreAmazonSSOOIDC.GetSsoToken(_testFixture.OidcClient.Object, _testFixture.GetSsoTokenRequestWithPkceSuccess)
+            );
+
+            Assert.AreSame(exception, actualException);
+            _testFixture.AssertCreateTokenRequest(_testFixture.CreateTokenWithPkceRequest);
+        }
+
+        [TestMethod]
+        public async Task GetSsoTokenAsync_PkceFlow_RetrieveCodeException()
+        {
+            await Assert.ThrowsExceptionAsync<Exception>(async () => 
+                await CoreAmazonSSOOIDC.GetSsoTokenAsync(
+                    _testFixture.OidcClient.Object,
+                    _testFixture.GetSsoTokenRequestWithPkceError,
+                    _testFixture.GetSsoTokenContext.Object
+                )
+            );
+
+            _testFixture.AssertCreateTokenAsyncRequest(_testFixture.CreateTokenWithPkceRequest, timesCalled: 0);
+            Assert.AreEqual(1, _testFixture.RetrieveAuthorizationCodeCallbackCount);
+        }
+
+        [TestMethod]
+        public async Task GetSsoTokenAsync_PkceFlow_UnknownException()
+        {
+            var exception = new Exception("unexpected exception");
+            _testFixture.WithCreateTokenException(exception);
+
+            var actualException = await Assert.ThrowsExceptionAsync<Exception>(async () =>
+                await CoreAmazonSSOOIDC.GetSsoTokenAsync(_testFixture.OidcClient.Object, _testFixture.GetSsoTokenRequestWithPkceSuccess)
+            );
+
+            Assert.AreSame(exception, actualException);
+            _testFixture.AssertCreateTokenAsyncRequest(_testFixture.CreateTokenWithPkceRequest);
         }
 
         private void AssertValidResponse(GetSsoTokenResponse response, DateTime minExpectedExpiresAt)

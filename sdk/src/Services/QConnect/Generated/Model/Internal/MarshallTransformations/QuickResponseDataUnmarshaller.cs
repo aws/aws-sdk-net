@@ -57,6 +57,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         public QuickResponseData Unmarshall(JsonUnmarshallerContext context)
         {
             QuickResponseData unmarshalledObject = new QuickResponseData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         public WebACL Unmarshall(JsonUnmarshallerContext context)
         {
             WebACL unmarshalledObject = new WebACL();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public LFTagKeyResource Unmarshall(JsonUnmarshallerContext context)
         {
             LFTagKeyResource unmarshalledObject = new LFTagKeyResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

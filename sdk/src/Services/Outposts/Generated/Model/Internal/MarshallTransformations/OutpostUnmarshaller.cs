@@ -57,6 +57,8 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         public Outpost Unmarshall(JsonUnmarshallerContext context)
         {
             Outpost unmarshalledObject = new Outpost();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

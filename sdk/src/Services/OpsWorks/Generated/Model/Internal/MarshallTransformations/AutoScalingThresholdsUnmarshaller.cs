@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public AutoScalingThresholds Unmarshall(JsonUnmarshallerContext context)
         {
             AutoScalingThresholds unmarshalledObject = new AutoScalingThresholds();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

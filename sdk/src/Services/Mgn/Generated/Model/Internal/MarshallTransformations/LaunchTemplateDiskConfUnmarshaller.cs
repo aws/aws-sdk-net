@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public LaunchTemplateDiskConf Unmarshall(JsonUnmarshallerContext context)
         {
             LaunchTemplateDiskConf unmarshalledObject = new LaunchTemplateDiskConf();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

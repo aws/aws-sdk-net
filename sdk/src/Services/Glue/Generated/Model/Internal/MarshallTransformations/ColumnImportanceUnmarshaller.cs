@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public ColumnImportance Unmarshall(JsonUnmarshallerContext context)
         {
             ColumnImportance unmarshalledObject = new ColumnImportance();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

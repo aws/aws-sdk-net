@@ -70,43 +70,43 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     {
                         if(publicRequestlistValue.IsSetAllowedValues())
                         {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AllowedValues", StringUtils.FromString(publicRequestlistValue.AllowedValues));
+                            request.Parameters.Add("Parameters" + "." + "Parameter" + "." + publicRequestlistValueIndex + "." + "AllowedValues", StringUtils.FromString(publicRequestlistValue.AllowedValues));
                         }
                         if(publicRequestlistValue.IsSetApplyMethod())
                         {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ApplyMethod", StringUtils.FromString(publicRequestlistValue.ApplyMethod));
+                            request.Parameters.Add("Parameters" + "." + "Parameter" + "." + publicRequestlistValueIndex + "." + "ApplyMethod", StringUtils.FromString(publicRequestlistValue.ApplyMethod));
                         }
                         if(publicRequestlistValue.IsSetApplyType())
                         {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ApplyType", StringUtils.FromString(publicRequestlistValue.ApplyType));
+                            request.Parameters.Add("Parameters" + "." + "Parameter" + "." + publicRequestlistValueIndex + "." + "ApplyType", StringUtils.FromString(publicRequestlistValue.ApplyType));
                         }
                         if(publicRequestlistValue.IsSetDataType())
                         {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DataType", StringUtils.FromString(publicRequestlistValue.DataType));
+                            request.Parameters.Add("Parameters" + "." + "Parameter" + "." + publicRequestlistValueIndex + "." + "DataType", StringUtils.FromString(publicRequestlistValue.DataType));
                         }
                         if(publicRequestlistValue.IsSetDescription())
                         {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
+                            request.Parameters.Add("Parameters" + "." + "Parameter" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
                         }
                         if(publicRequestlistValue.IsSetIsModifiable())
                         {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IsModifiable", StringUtils.FromBool(publicRequestlistValue.IsModifiable));
+                            request.Parameters.Add("Parameters" + "." + "Parameter" + "." + publicRequestlistValueIndex + "." + "IsModifiable", StringUtils.FromBool(publicRequestlistValue.IsModifiable));
                         }
                         if(publicRequestlistValue.IsSetMinimumEngineVersion())
                         {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MinimumEngineVersion", StringUtils.FromString(publicRequestlistValue.MinimumEngineVersion));
+                            request.Parameters.Add("Parameters" + "." + "Parameter" + "." + publicRequestlistValueIndex + "." + "MinimumEngineVersion", StringUtils.FromString(publicRequestlistValue.MinimumEngineVersion));
                         }
                         if(publicRequestlistValue.IsSetParameterName())
                         {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterName", StringUtils.FromString(publicRequestlistValue.ParameterName));
+                            request.Parameters.Add("Parameters" + "." + "Parameter" + "." + publicRequestlistValueIndex + "." + "ParameterName", StringUtils.FromString(publicRequestlistValue.ParameterName));
                         }
                         if(publicRequestlistValue.IsSetParameterValue())
                         {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
+                            request.Parameters.Add("Parameters" + "." + "Parameter" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
                         }
                         if(publicRequestlistValue.IsSetSource())
                         {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Source", StringUtils.FromString(publicRequestlistValue.Source));
+                            request.Parameters.Add("Parameters" + "." + "Parameter" + "." + publicRequestlistValueIndex + "." + "Source", StringUtils.FromString(publicRequestlistValue.Source));
                         }
                         publicRequestlistValueIndex++;
                     }

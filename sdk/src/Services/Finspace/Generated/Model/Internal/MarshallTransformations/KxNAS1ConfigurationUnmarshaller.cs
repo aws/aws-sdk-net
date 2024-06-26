@@ -57,6 +57,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public KxNAS1Configuration Unmarshall(JsonUnmarshallerContext context)
         {
             KxNAS1Configuration unmarshalledObject = new KxNAS1Configuration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

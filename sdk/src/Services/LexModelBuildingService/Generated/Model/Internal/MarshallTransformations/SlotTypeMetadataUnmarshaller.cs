@@ -57,6 +57,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         public SlotTypeMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             SlotTypeMetadata unmarshalledObject = new SlotTypeMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

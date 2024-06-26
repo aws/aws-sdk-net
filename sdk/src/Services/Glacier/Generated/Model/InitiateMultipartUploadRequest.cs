@@ -161,7 +161,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveDescription property is set
         internal bool IsSetArchiveDescription()
         {
-            return this._archiveDescription != null;
+            return !string.IsNullOrEmpty(this._archiveDescription);
         }
 
         /// <summary>

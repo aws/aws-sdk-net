@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public GeoMosaicConfigInput Unmarshall(JsonUnmarshallerContext context)
         {
             GeoMosaicConfigInput unmarshalledObject = new GeoMosaicConfigInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public ImageScanFindingAggregation Unmarshall(JsonUnmarshallerContext context)
         {
             ImageScanFindingAggregation unmarshalledObject = new ImageScanFindingAggregation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

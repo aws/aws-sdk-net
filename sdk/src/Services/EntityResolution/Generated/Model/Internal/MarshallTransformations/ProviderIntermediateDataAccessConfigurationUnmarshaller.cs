@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public ProviderIntermediateDataAccessConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ProviderIntermediateDataAccessConfiguration unmarshalledObject = new ProviderIntermediateDataAccessConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

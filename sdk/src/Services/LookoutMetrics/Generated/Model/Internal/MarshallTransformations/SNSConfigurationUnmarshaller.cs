@@ -57,6 +57,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public SNSConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SNSConfiguration unmarshalledObject = new SNSConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

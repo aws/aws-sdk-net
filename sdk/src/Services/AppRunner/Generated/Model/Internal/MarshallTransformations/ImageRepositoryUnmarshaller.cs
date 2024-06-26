@@ -57,6 +57,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         public ImageRepository Unmarshall(JsonUnmarshallerContext context)
         {
             ImageRepository unmarshalledObject = new ImageRepository();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

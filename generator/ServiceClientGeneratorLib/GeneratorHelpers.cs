@@ -65,7 +65,9 @@ namespace ServiceClientGenerator
                 return string.Empty;
 
             if (member.Shape.IsList)
-                return "member";
+            {
+                return member.Shape.ListMarshallName == null ? "member" : member.Shape.ListMarshallName;
+            }
 
             if (member.Shape.IsMap)
                 return "entry";

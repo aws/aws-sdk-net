@@ -923,6 +923,10 @@ namespace Amazon.ECR
         /// </summary>
         public static readonly UpstreamRegistry GithubContainerRegistry = new UpstreamRegistry("github-container-registry");
         /// <summary>
+        /// Constant GitlabContainerRegistry for UpstreamRegistry
+        /// </summary>
+        public static readonly UpstreamRegistry GitlabContainerRegistry = new UpstreamRegistry("gitlab-container-registry");
+        /// <summary>
         /// Constant K8s for UpstreamRegistry
         /// </summary>
         public static readonly UpstreamRegistry K8s = new UpstreamRegistry("k8s");

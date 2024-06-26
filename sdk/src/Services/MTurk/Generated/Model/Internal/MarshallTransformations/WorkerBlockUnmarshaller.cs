@@ -57,6 +57,8 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
         public WorkerBlock Unmarshall(JsonUnmarshallerContext context)
         {
             WorkerBlock unmarshalledObject = new WorkerBlock();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public VariableValue Unmarshall(JsonUnmarshallerContext context)
         {
             VariableValue unmarshalledObject = new VariableValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

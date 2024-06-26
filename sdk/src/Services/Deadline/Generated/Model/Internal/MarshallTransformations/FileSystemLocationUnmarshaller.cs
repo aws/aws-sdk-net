@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public FileSystemLocation Unmarshall(JsonUnmarshallerContext context)
         {
             FileSystemLocation unmarshalledObject = new FileSystemLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

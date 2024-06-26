@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public AwsEc2NetworkInterfaceViolation Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEc2NetworkInterfaceViolation unmarshalledObject = new AwsEc2NetworkInterfaceViolation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

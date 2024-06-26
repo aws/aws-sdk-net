@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ComboChartAggregatedFieldWells Unmarshall(JsonUnmarshallerContext context)
         {
             ComboChartAggregatedFieldWells unmarshalledObject = new ComboChartAggregatedFieldWells();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         public NestedPayload Unmarshall(JsonUnmarshallerContext context)
         {
             NestedPayload unmarshalledObject = new NestedPayload();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

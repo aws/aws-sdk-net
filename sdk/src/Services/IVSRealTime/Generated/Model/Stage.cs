@@ -36,6 +36,7 @@ namespace Amazon.IVSRealTime.Model
     {
         private string _activeSessionId;
         private string _arn;
+        private AutoParticipantRecordingConfiguration _autoParticipantRecordingConfiguration;
         private string _name;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -75,6 +76,24 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoParticipantRecordingConfiguration. 
+        /// <para>
+        /// Auto-participant-recording configuration object attached to the stage.
+        /// </para>
+        /// </summary>
+        public AutoParticipantRecordingConfiguration AutoParticipantRecordingConfiguration
+        {
+            get { return this._autoParticipantRecordingConfiguration; }
+            set { this._autoParticipantRecordingConfiguration = value; }
+        }
+
+        // Check to see if AutoParticipantRecordingConfiguration property is set
+        internal bool IsSetAutoParticipantRecordingConfiguration()
+        {
+            return this._autoParticipantRecordingConfiguration != null;
         }
 
         /// <summary>

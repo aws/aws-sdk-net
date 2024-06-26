@@ -57,6 +57,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         public Participants Unmarshall(JsonUnmarshallerContext context)
         {
             Participants unmarshalledObject = new Participants();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

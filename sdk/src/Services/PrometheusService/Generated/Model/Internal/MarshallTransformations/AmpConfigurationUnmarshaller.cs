@@ -57,6 +57,8 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         public AmpConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AmpConfiguration unmarshalledObject = new AmpConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

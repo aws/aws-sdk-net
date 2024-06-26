@@ -57,6 +57,8 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         public DatasourcePackageIngestDetail Unmarshall(JsonUnmarshallerContext context)
         {
             DatasourcePackageIngestDetail unmarshalledObject = new DatasourcePackageIngestDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

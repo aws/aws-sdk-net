@@ -57,6 +57,8 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         public CredentialSummary Unmarshall(JsonUnmarshallerContext context)
         {
             CredentialSummary unmarshalledObject = new CredentialSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

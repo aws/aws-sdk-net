@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
     /// Flow log data for a monitored network interface is recorded as flow log records, which
     /// are log events consisting of fields that describe the traffic flow. For more information,
     /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-    /// log records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// log records</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html">VPC
-    /// Flow Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// Flow Logs</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateFlowLogsRequest : AmazonEC2Request
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How
         /// to ensure idempotency</a>.
         /// </para>
         /// </summary>
@@ -285,7 +285,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// When a network interface is attached to a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+        /// When a network interface is attached to a <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Nitro-based
         /// instance</a>, the aggregation interval is always 60 seconds or less, regardless of
         /// the value that you specify.
         /// </para>

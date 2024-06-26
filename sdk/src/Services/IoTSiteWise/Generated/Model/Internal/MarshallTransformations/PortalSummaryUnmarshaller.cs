@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public PortalSummary Unmarshall(JsonUnmarshallerContext context)
         {
             PortalSummary unmarshalledObject = new PortalSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

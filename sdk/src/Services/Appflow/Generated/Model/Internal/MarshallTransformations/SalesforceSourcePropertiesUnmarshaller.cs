@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public SalesforceSourceProperties Unmarshall(JsonUnmarshallerContext context)
         {
             SalesforceSourceProperties unmarshalledObject = new SalesforceSourceProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

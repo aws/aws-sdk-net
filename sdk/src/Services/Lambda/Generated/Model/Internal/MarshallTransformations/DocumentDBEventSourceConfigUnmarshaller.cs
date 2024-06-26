@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public DocumentDBEventSourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentDBEventSourceConfig unmarshalledObject = new DocumentDBEventSourceConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

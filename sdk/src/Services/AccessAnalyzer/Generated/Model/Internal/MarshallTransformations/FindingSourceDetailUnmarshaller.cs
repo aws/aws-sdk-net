@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public FindingSourceDetail Unmarshall(JsonUnmarshallerContext context)
         {
             FindingSourceDetail unmarshalledObject = new FindingSourceDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

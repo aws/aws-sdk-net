@@ -167,18 +167,18 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// When the Amazon ECS agent cannot connect to the Amazon ECS service, the service reports
-    /// the container as <c>UNHEALTHY</c>. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The health check statuses are the "last heard from" response from the Amazon ECS agent.
+    /// If the Amazon ECS container agent becomes disconnected from the Amazon ECS service,
+    /// this won't cause a container to transition to an <c>UNHEALTHY</c> status. This is
+    /// by design, to ensure that containers remain running during agent restarts or temporary
+    /// unavailability. The health check status is the "last heard from" response from the
+    /// Amazon ECS agent, so if the container was considered <c>HEALTHY</c> prior to the disconnect,
+    /// that status will remain until the agent reconnects and another health check occurs.
     /// There are no assumptions made about the status of the container health checks.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Container health checks require version 1.17.0 or greater of the Amazon ECS container
-    /// agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+    /// Container health checks require version <c>1.17.0</c> or greater of the Amazon ECS
+    /// container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
     /// the Amazon ECS container agent</a>.
     /// </para>
     ///  </li> <li> 

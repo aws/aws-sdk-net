@@ -32,6 +32,13 @@ namespace Amazon.LocationService.Model
     /// <summary>
     /// Container for the parameters to the GetGeofence operation.
     /// Retrieves the geofence details from a geofence collection.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The returned geometry will always match the geometry format used when the geofence
+    /// was created.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetGeofenceRequest : AmazonLocationServiceRequest
     {

@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public ReferenceSets Unmarshall(JsonUnmarshallerContext context)
         {
             ReferenceSets unmarshalledObject = new ReferenceSets();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

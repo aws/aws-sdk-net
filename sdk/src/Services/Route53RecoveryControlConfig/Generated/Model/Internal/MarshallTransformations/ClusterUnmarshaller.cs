@@ -57,6 +57,8 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
         public Cluster Unmarshall(JsonUnmarshallerContext context)
         {
             Cluster unmarshalledObject = new Cluster();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

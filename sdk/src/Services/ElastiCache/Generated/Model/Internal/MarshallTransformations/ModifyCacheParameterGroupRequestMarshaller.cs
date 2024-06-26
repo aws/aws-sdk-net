@@ -70,11 +70,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     {
                         if(publicRequestlistValue.IsSetParameterName())
                         {
-                            request.Parameters.Add("ParameterNameValues" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterName", StringUtils.FromString(publicRequestlistValue.ParameterName));
+                            request.Parameters.Add("ParameterNameValues" + "." + "ParameterNameValue" + "." + publicRequestlistValueIndex + "." + "ParameterName", StringUtils.FromString(publicRequestlistValue.ParameterName));
                         }
                         if(publicRequestlistValue.IsSetParameterValue())
                         {
-                            request.Parameters.Add("ParameterNameValues" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
+                            request.Parameters.Add("ParameterNameValues" + "." + "ParameterNameValue" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
                         }
                         publicRequestlistValueIndex++;
                     }

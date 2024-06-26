@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public KPIOptions Unmarshall(JsonUnmarshallerContext context)
         {
             KPIOptions unmarshalledObject = new KPIOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

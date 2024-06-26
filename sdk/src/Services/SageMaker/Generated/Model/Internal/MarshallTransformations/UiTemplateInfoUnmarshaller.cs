@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public UiTemplateInfo Unmarshall(JsonUnmarshallerContext context)
         {
             UiTemplateInfo unmarshalledObject = new UiTemplateInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

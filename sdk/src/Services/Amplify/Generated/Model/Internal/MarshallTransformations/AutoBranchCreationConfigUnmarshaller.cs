@@ -57,6 +57,8 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         public AutoBranchCreationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AutoBranchCreationConfig unmarshalledObject = new AutoBranchCreationConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

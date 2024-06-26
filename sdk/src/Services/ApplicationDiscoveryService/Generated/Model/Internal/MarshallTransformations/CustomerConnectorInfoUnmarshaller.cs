@@ -57,6 +57,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         public CustomerConnectorInfo Unmarshall(JsonUnmarshallerContext context)
         {
             CustomerConnectorInfo unmarshalledObject = new CustomerConnectorInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public Insight Unmarshall(JsonUnmarshallerContext context)
         {
             Insight unmarshalledObject = new Insight();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

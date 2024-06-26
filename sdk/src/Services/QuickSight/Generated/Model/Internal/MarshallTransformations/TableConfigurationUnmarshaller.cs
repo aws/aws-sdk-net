@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TableConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TableConfiguration unmarshalledObject = new TableConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

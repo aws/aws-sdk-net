@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public SpaceSharingSettings Unmarshall(JsonUnmarshallerContext context)
         {
             SpaceSharingSettings unmarshalledObject = new SpaceSharingSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

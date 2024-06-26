@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public JobLogEventData Unmarshall(JsonUnmarshallerContext context)
         {
             JobLogEventData unmarshalledObject = new JobLogEventData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

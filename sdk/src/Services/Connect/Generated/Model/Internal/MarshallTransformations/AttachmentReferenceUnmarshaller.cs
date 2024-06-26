@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public AttachmentReference Unmarshall(JsonUnmarshallerContext context)
         {
             AttachmentReference unmarshalledObject = new AttachmentReference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

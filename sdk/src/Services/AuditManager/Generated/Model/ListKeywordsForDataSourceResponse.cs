@@ -40,7 +40,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Keywords. 
         /// <para>
-        ///  The list of keywords for the event mapping source. 
+        /// The list of keywords for the control mapping source.
         /// </para>
         /// </summary>
         public List<string> Keywords

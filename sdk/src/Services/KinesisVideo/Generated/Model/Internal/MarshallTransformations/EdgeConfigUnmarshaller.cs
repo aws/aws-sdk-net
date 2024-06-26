@@ -57,6 +57,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         public EdgeConfig Unmarshall(JsonUnmarshallerContext context)
         {
             EdgeConfig unmarshalledObject = new EdgeConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

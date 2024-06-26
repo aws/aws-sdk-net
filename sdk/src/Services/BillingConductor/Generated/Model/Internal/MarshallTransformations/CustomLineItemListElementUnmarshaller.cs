@@ -57,6 +57,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         public CustomLineItemListElement Unmarshall(JsonUnmarshallerContext context)
         {
             CustomLineItemListElement unmarshalledObject = new CustomLineItemListElement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

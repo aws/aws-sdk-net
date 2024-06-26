@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public EmailTemplateMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             EmailTemplateMetadata unmarshalledObject = new EmailTemplateMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public ProductViewAggregationValue Unmarshall(JsonUnmarshallerContext context)
         {
             ProductViewAggregationValue unmarshalledObject = new ProductViewAggregationValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

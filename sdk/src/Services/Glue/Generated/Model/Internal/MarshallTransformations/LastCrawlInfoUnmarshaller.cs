@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public LastCrawlInfo Unmarshall(JsonUnmarshallerContext context)
         {
             LastCrawlInfo unmarshalledObject = new LastCrawlInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

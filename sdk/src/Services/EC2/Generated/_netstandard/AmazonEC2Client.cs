@@ -303,7 +303,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Accepts an Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept">Accept
-        /// a transferred Elastic IP address</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// a transferred Elastic IP address</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptAddressTransfer service method.</param>
         /// <param name="cancellationToken">
@@ -631,7 +631,7 @@ namespace Amazon.EC2
         /// or from an address pool created from a public IPv4 address range that you have brought
         /// to Amazon Web Services for use with your Amazon Web Services resources using bring
         /// your own IP addresses (BYOIP). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
-        /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -643,7 +643,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -677,7 +677,7 @@ namespace Amazon.EC2
         /// or from an address pool created from a public IPv4 address range that you have brought
         /// to Amazon Web Services for use with your Amazon Web Services resources using bring
         /// your own IP addresses (BYOIP). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
-        /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -689,7 +689,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -855,9 +855,7 @@ namespace Amazon.EC2
         /// one or more specific IPv6 addresses, or you can specify the number of IPv6 addresses
         /// to be automatically assigned from within the subnet's IPv6 CIDR block range. You can
         /// assign as many IPv6 addresses to a network interface as you can assign private IPv4
-        /// addresses, and the limit varies per instance type. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
-        /// Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic Compute
-        /// Cloud User Guide</i>.
+        /// addresses, and the limit varies per instance type.
         /// 
         ///  
         /// <para>
@@ -869,8 +867,7 @@ namespace Amazon.EC2
         /// You can optionally use Prefix Delegation on the network interface. You must specify
         /// either the IPV6 Prefix Delegation prefixes, or the IPv6 Prefix Delegation count. For
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
-        /// Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute
-        /// Cloud User Guide</i>.
+        /// Assigning prefixes to network interfaces</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignIpv6Addresses service method.</param>
@@ -912,10 +909,8 @@ namespace Amazon.EC2
         /// You can specify one or more specific secondary IP addresses, or you can specify the
         /// number of secondary IP addresses to be automatically assigned within the subnet's
         /// CIDR block range. The number of secondary IP addresses that you can assign to an instance
-        /// varies by instance type. For information about instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information
-        /// about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// varies by instance type. For more information about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -937,8 +932,7 @@ namespace Amazon.EC2
         /// You can optionally use Prefix Delegation on the network interface. You must specify
         /// either the IPv4 Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
-        /// Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute
-        /// Cloud User Guide</i>.
+        /// Assigning prefixes to network interfaces</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignPrivateIpAddresses service method.</param>
@@ -973,8 +967,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Assigns one or more private IPv4 addresses to a private NAT gateway. For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// Assigns private IPv4 addresses to a private NAT gateway. For more information, see
+        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
         /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignPrivateNatGatewayAddress service method.</param>
@@ -1130,7 +1124,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon VPC User Guide</i>.
+        /// option sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateDhcpOptions service method.</param>
@@ -1625,8 +1619,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// Before you create the association, run the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a>
-        /// command and set <c>--interface-type</c> to <c>trunk</c>. You must also create a network
+        /// Before you create the association, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">CreateNetworkInterface</a>
+        /// command and set the interface type to <c>trunk</c>. You must also create a network
         /// interface for each branch network interface that you want to associate with the trunk
         /// network interface.
         /// </para>
@@ -1666,7 +1660,6 @@ namespace Amazon.EC2
         /// Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block,
         /// an Amazon-provided IPv6 CIDR block, or an IPv6 CIDR block from an IPv6 address pool
         /// that you provisioned through bring your own IP addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
-        /// 
         /// 
         ///  
         /// <para>
@@ -2488,8 +2481,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Sell
+        /// in the Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelReservedInstancesListing service method.</param>
@@ -2768,9 +2761,9 @@ namespace Amazon.EC2
         /// When copying snapshots to a Region, copies of encrypted EBS snapshots remain encrypted.
         /// Copies of unencrypted snapshots remain unencrypted, unless you enable encryption for
         /// the snapshot copy operation. By default, encrypted snapshot copies use the default
-        /// Key Management Service (KMS) KMS key; however, you can specify a different KMS key.
-        /// To copy an encrypted snapshot that has been shared from another account, you must
-        /// have permissions for the KMS key used to encrypt the snapshot.
+        /// KMS key; however, you can specify a different KMS key. To copy an encrypted snapshot
+        /// that has been shared from another account, you must have permissions for the KMS key
+        /// used to encrypt the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -2885,7 +2878,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create
-        /// a Capacity Reservation Fleet</a> in the Amazon EC2 User Guide.
+        /// a Capacity Reservation Fleet</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservationFleet service method.</param>
         /// <param name="cancellationToken">
@@ -3238,7 +3231,7 @@ namespace Amazon.EC2
         /// <para>
         /// The following are the individual DHCP options you can specify. For more information,
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon VPC User Guide</i>.
+        /// option sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3275,7 +3268,7 @@ namespace Amazon.EC2
         /// <para>
         ///  <c>netbios-node-type</c> - The NetBIOS node type (1, 2, 4, or 8). We recommend that
         /// you specify 2. Broadcast and multicast are not supported. For more information about
-        /// NetBIOS node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
+        /// NetBIOS node types, see <a href="https://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3412,7 +3405,7 @@ namespace Amazon.EC2
         /// Flow log data for a monitored network interface is recorded as flow log records, which
         /// are log events consisting of fields that describe the traffic flow. For more information,
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-        /// log records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// log records</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3424,7 +3417,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html">VPC
-        /// Flow Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Flow Logs</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFlowLogs service method.</param>
@@ -4006,16 +3999,14 @@ namespace Amazon.EC2
         /// A launch template contains the parameters to launch an instance. When you launch an
         /// instance using <a>RunInstances</a>, you can specify a launch template instead of providing
         /// the launch parameters in the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
-        /// an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.
+        /// an instance from a launch template</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// To clone an existing launch template as the basis for a new launch template, use the
         /// Amazon EC2 console. The API, SDKs, and CLI do not support cloning a template. For
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template-from-existing-launch-template">Create
-        /// a launch template from an existing launch template</a> in the <i>Amazon Elastic Compute
-        /// Cloud User Guide</i>.
+        /// a launch template from an existing launch template</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplate service method.</param>
@@ -4068,8 +4059,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Modify
-        /// a launch template (manage launch template versions)</a> in the <i>Amazon Elastic Compute
-        /// Cloud User Guide</i>.
+        /// a launch template (manage launch template versions)</a> in the <i>Amazon EC2 User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplateVersion service method.</param>
@@ -4539,14 +4530,12 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The number of IP addresses you can assign to a network interface varies by instance
-        /// type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
-        /// Addresses Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User
-        /// Guide</i>.
+        /// type.
         /// </para>
         ///  
         /// <para>
         /// For more information about network interfaces, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
-        /// network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// network interfaces</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterface service method.</param>
@@ -4716,7 +4705,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
-        /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// a root volume</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplaceRootVolumeTask service method.</param>
@@ -4780,8 +4769,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Sell
+        /// in the Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReservedInstancesListing service method.</param>
@@ -5076,12 +5065,12 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can tag your snapshots during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
-        /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html">Amazon
-        /// Elastic Block Store</a> and <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// EBS</a> and <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
         /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
@@ -5171,7 +5160,7 @@ namespace Amazon.EC2
         /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
         /// You can create one data feed per Amazon Web Services account. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Instance data feed</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpotDatafeedSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -5323,9 +5312,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a subnet CIDR reservation. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
-        /// CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User Guide</i> and <a
-        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign
-        /// prefixes to network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// CIDR reservations</a> in the <i>Amazon VPC User Guide</i> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign
+        /// prefixes to network interfaces</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnetCidrReservation service method.</param>
         /// <param name="cancellationToken">
@@ -5712,7 +5700,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html#tgw-connect-peer">Connect
-        /// peers</a> in the <i>Transit Gateways Guide</i>.
+        /// peers</a> in the <i>Amazon Web Services Transit Gateways Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayConnectPeer service method.</param>
@@ -6210,7 +6198,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can tag your volumes during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
-        /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6345,8 +6333,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a connection notification for a specified VPC endpoint or VPC endpoint service.
         /// A connection notification notifies you of specific endpoint events. You must create
-        /// an SNS topic to receive notifications. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create
-        /// a Topic</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+        /// an SNS topic to receive notifications. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Creating
+        /// an Amazon SNS topic</a> in the <i>Amazon SNS Developer Guide</i>.
         /// 
         ///  
         /// <para>
@@ -6455,8 +6443,8 @@ namespace Amazon.EC2
         ///  <note> 
         /// <para>
         /// Limitations and rules apply to a VPC peering connection. For more information, see
-        /// the <a href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
-        /// section in the <i>VPC Peering Guide</i>.
+        /// the <a href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">VPC
+        /// peering limitations</a> in the <i>VPC Peering Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7441,7 +7429,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-launch-template-versions.html#delete-launch-template-version">Delete
-        /// a launch template version</a> in the <i>EC2 User Guide</i>.
+        /// a launch template version</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchTemplateVersions service method.</param>
@@ -8810,8 +8798,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes the specified transit gateway route table. You must disassociate the route
-        /// table from any transit gateway route tables before you can delete it.
+        /// Deletes the specified transit gateway route table. If there are any route tables associated
+        /// with the transit gateway route table, you must first run <a>DisassociateRouteTable</a>
+        /// before you can delete the transit gateway route table. This removes any route tables
+        /// associated with the transit gateway route table.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRouteTable service method.</param>
         /// <param name="cancellationToken">
@@ -9943,7 +9933,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes an Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
-        /// Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Elastic IP addresses</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -10052,7 +10042,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information about Availability Zones, Local Zones, and Wavelength Zones,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-        /// and zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// and zones</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -10083,7 +10073,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information about Availability Zones, Local Zones, and Wavelength Zones,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-        /// and zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// and zones</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -10424,9 +10414,9 @@ namespace Amazon.EC2
         /// </para>
         ///  </note> 
         /// <para>
-        /// Describes one or more of your linked EC2-Classic instances. This request only returns
-        /// information about EC2-Classic instances linked to a VPC through ClassicLink. You cannot
-        /// use this request to return information about other instances.
+        /// Describes your linked EC2-Classic instances. This request only returns information
+        /// about EC2-Classic instances linked to a VPC through ClassicLink. You cannot use this
+        /// request to return information about other instances.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClassicLinkInstances service method.</param>
@@ -10806,12 +10796,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your DHCP options sets.
+        /// Describes your DHCP option sets. The default is to describe all your DHCP option sets.
+        /// Alternatively, you can specify specific DHCP option set IDs or filter the results
+        /// to include only the DHCP option sets that match specific criteria.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon VPC User Guide</i>.
+        /// option sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -10828,12 +10820,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your DHCP options sets.
+        /// Describes your DHCP option sets. The default is to describe all your DHCP option sets.
+        /// Alternatively, you can specify specific DHCP option set IDs or filter the results
+        /// to include only the DHCP option sets that match specific criteria.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon VPC User Guide</i>.
+        /// option sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDhcpOptions service method.</param>
@@ -10868,7 +10862,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your egress-only internet gateways.
+        /// Describes your egress-only internet gateways. The default is to describe all your
+        /// egress-only internet gateways. Alternatively, you can specify specific egress-only
+        /// internet gateway IDs or filter the results to include only the egress-only internet
+        /// gateways that match specific criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEgressOnlyInternetGateways service method.</param>
         /// <param name="cancellationToken">
@@ -10905,14 +10902,12 @@ namespace Amazon.EC2
         /// <note> 
         /// <para>
         /// Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that
-        /// require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or
-        /// G5 instances.
+        /// require graphics acceleration, we recommend that you use Amazon EC2 G4, G5, or G6
+        /// instances.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Describes the Elastic Graphics accelerator associated with your instances. For more
-        /// information about Elastic Graphics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
-        /// Elastic Graphics</a>.
+        /// Describes the Elastic Graphics accelerator associated with your instances.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeElasticGpus service method.</param>
@@ -12459,7 +12454,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your internet gateways.
+        /// Describes your internet gateways. The default is to describe all your internet gateways.
+        /// Alternatively, you can specify specific internet gateway IDs or filter the results
+        /// to include only the internet gateways that match specific criteria.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -12475,7 +12472,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your internet gateways.
+        /// Describes your internet gateways. The default is to describe all your internet gateways.
+        /// Alternatively, you can specify specific internet gateway IDs or filter the results
+        /// to include only the internet gateways that match specific criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInternetGateways service method.</param>
         /// <param name="cancellationToken">
@@ -13249,7 +13248,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your NAT gateways.
+        /// Describes your NAT gateways. The default is to describe all your NAT gateways. Alternatively,
+        /// you can specify specific NAT gateway IDs or filter the results to include only the
+        /// NAT gateways that match specific criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNatGateways service method.</param>
         /// <param name="cancellationToken">
@@ -13286,7 +13287,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your network ACLs.
+        /// Describes your network ACLs. The default is to describe all your network ACLs. Alternatively,
+        /// you can specify specific network ACL IDs or filter the results to include only the
+        /// network ACLs that match specific criteria.
         /// 
         ///  
         /// <para>
@@ -13308,7 +13311,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your network ACLs.
+        /// Describes your network ACLs. The default is to describe all your network ACLs. Alternatively,
+        /// you can specify specific network ACL IDs or filter the results to include only the
+        /// network ACLs that match specific criteria.
         /// 
         ///  
         /// <para>
@@ -13824,13 +13829,14 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For a list of the Regions supported by Amazon EC2, see <a href="https://docs.aws.amazon.com/general/latest/gr/ec2-service.html">
-        /// Amazon Elastic Compute Cloud endpoints and quotas</a>.
+        /// For a list of the Regions supported by Amazon EC2, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-endpoints.html">Amazon
+        /// EC2 service endpoints</a>.
         /// </para>
         ///  
         /// <para>
-        /// For information about enabling and disabling Regions for your account, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
-        /// Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference</i>.
+        /// For information about enabling and disabling Regions for your account, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html">Specify
+        /// which Amazon Web Services Regions your account can use</a> in the <i>Amazon Web Services
+        /// Account Management Reference Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -13857,13 +13863,14 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For a list of the Regions supported by Amazon EC2, see <a href="https://docs.aws.amazon.com/general/latest/gr/ec2-service.html">
-        /// Amazon Elastic Compute Cloud endpoints and quotas</a>.
+        /// For a list of the Regions supported by Amazon EC2, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-endpoints.html">Amazon
+        /// EC2 service endpoints</a>.
         /// </para>
         ///  
         /// <para>
-        /// For information about enabling and disabling Regions for your account, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
-        /// Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference</i>.
+        /// For information about enabling and disabling Regions for your account, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html">Specify
+        /// which Amazon Web Services Regions your account can use</a> in the <i>Amazon Web Services
+        /// Account Management Reference Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -13905,7 +13912,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes a root volume replacement task. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
-        /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// a root volume</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplaceRootVolumeTasks service method.</param>
         /// <param name="cancellationToken">
@@ -14044,8 +14051,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Sell
+        /// in the Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -14093,8 +14100,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Sell
+        /// in the Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -14145,7 +14152,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modify
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <note> 
@@ -14176,7 +14183,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modify
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <note> 
@@ -14234,8 +14241,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Sell
+        /// in the Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -14271,8 +14278,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Sell
+        /// in the Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -14316,7 +14323,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your route tables.
+        /// Describes your route tables. The default is to describe all your route tables. Alternatively,
+        /// you can specify specific route table IDs or filter the results to include only the
+        /// route tables that match specific criteria.
         /// 
         ///  
         /// <para>
@@ -14344,7 +14353,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your route tables.
+        /// Describes your route tables. The default is to describe all your route tables. Alternatively,
+        /// you can specify specific route table IDs or filter the results to include only the
+        /// route tables that match specific criteria.
         /// 
         ///  
         /// <para>
@@ -14875,7 +14886,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Instance data feed</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -14892,7 +14903,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Instance data feed</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotDatafeedSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -15149,7 +15160,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Spot price history. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-        /// Instance pricing history</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Instance pricing history</a> in the <i>Amazon EC2 User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -15173,7 +15184,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Spot price history. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-        /// Instance pricing history</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Instance pricing history</a> in the <i>Amazon EC2 User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -15313,7 +15324,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your subnets.
+        /// Describes your subnets. The default is to describe all your subnets. Alternatively,
+        /// you can specify specific subnet IDs or filter the results to include only the subnets
+        /// that match specific criteria.
         /// 
         ///  
         /// <para>
@@ -15335,7 +15348,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your subnets.
+        /// Describes your subnets. The default is to describe all your subnets. Alternatively,
+        /// you can specify specific subnet IDs or filter the results to include only the subnets
+        /// that match specific criteria.
         /// 
         ///  
         /// <para>
@@ -15444,6 +15459,40 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTrafficMirrorFilterRules
+
+        internal virtual DescribeTrafficMirrorFilterRulesResponse DescribeTrafficMirrorFilterRules(DescribeTrafficMirrorFilterRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficMirrorFilterRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficMirrorFilterRulesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrafficMirrorFilterRulesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describe traffic mirror filters that determine the traffic that is mirrored.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficMirrorFilterRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrafficMirrorFilterRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilterRules">REST API Reference for DescribeTrafficMirrorFilterRules Operation</seealso>
+        public virtual Task<DescribeTrafficMirrorFilterRulesResponse> DescribeTrafficMirrorFilterRulesAsync(DescribeTrafficMirrorFilterRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficMirrorFilterRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficMirrorFilterRulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTrafficMirrorFilterRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -16262,10 +16311,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can also use CloudWatch Events to check the status of a modification to an EBS
-        /// volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
-        /// CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
-        /// the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">
+        /// Monitor the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumesModifications service method.</param>
@@ -16643,7 +16690,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes your VPC endpoints.
+        /// Describes your VPC endpoints. The default is to describe all your VPC endpoints. Alternatively,
+        /// you can specify specific VPC endpoint IDs or filter the results to include only the
+        /// VPC endpoints that match specific criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints service method.</param>
         /// <param name="cancellationToken">
@@ -16793,7 +16842,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your VPC peering connections.
+        /// Describes your VPC peering connections. The default is to describe all your VPC peering
+        /// connections. Alternatively, you can specify specific VPC peering connection IDs or
+        /// filter the results to include only the VPC peering connections that match specific
+        /// criteria.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -16809,7 +16861,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your VPC peering connections.
+        /// Describes your VPC peering connections. The default is to describe all your VPC peering
+        /// connections. Alternatively, you can specify specific VPC peering connection IDs or
+        /// filter the results to include only the VPC peering connections that match specific
+        /// criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcPeeringConnections service method.</param>
         /// <param name="cancellationToken">
@@ -16846,7 +16901,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your VPCs.
+        /// Describes your VPCs. The default is to describe all your VPCs. Alternatively, you
+        /// can specify specific VPC IDs or filter the results to include only the VPCs that match
+        /// specific criteria.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -16862,7 +16919,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your VPCs.
+        /// Describes your VPCs. The default is to describe all your VPCs. Alternatively, you
+        /// can specify specific VPC IDs or filter the results to include only the VPCs that match
+        /// specific criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcs service method.</param>
         /// <param name="cancellationToken">
@@ -17279,7 +17338,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Disables Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
-        /// Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Elastic IP addresses</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableAddressTransfer service method.</param>
         /// <param name="cancellationToken">
@@ -18545,7 +18604,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Enables Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
-        /// Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Elastic IP addresses</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableAddressTransfer service method.</param>
         /// <param name="cancellationToken">
@@ -19427,7 +19486,7 @@ namespace Amazon.EC2
         /// <para>
         /// The routes are saved to the specified bucket in a JSON file. For more information,
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-route-tables.html#tgw-export-route-tables">Export
-        /// Route Tables to Amazon S3</a> in <i>Transit Gateways</i>.
+        /// route tables to Amazon S3</a> in the <i>Amazon Web Services Transit Gateways Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportTransitGatewayRoutes service method.</param>
@@ -20067,6 +20126,41 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetInstanceTpmEkPub
+
+        internal virtual GetInstanceTpmEkPubResponse GetInstanceTpmEkPub(GetInstanceTpmEkPubRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInstanceTpmEkPubRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInstanceTpmEkPubResponseUnmarshaller.Instance;
+
+            return Invoke<GetInstanceTpmEkPubResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the public endorsement key associated with the Nitro Trusted Platform Module
+        /// (NitroTPM) for the specified instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceTpmEkPub service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInstanceTpmEkPub service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTpmEkPub">REST API Reference for GetInstanceTpmEkPub Operation</seealso>
+        public virtual Task<GetInstanceTpmEkPubResponse> GetInstanceTpmEkPubAsync(GetInstanceTpmEkPubRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInstanceTpmEkPubRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInstanceTpmEkPubResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInstanceTpmEkPubResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetInstanceTypesFromInstanceRequirements
 
         internal virtual GetInstanceTypesFromInstanceRequirementsResponse GetInstanceTypesFromInstanceRequirements(GetInstanceTypesFromInstanceRequirementsRequest request)
@@ -20337,7 +20431,7 @@ namespace Amazon.EC2
         /// <para>
         /// If you use this action after <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateIpamPoolCidr.html">AllocateIpamPoolCidr</a>
         /// or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>,
-        /// note that all EC2 API actions follow an <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency">eventual
+        /// note that all EC2 API actions follow an <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">eventual
         /// consistency</a> model.
         /// </para>
         ///  </note>
@@ -20632,8 +20726,8 @@ namespace Amazon.EC2
         /// <para>
         /// The Windows password is generated at boot by the <c>EC2Config</c> service or <c>EC2Launch</c>
         /// scripts (Windows Server 2016 and later). This usually only happens the first time
-        /// an instance is launched. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
-        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a>
+        /// an instance is launched. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingConfig_WinAMI.html">EC2Config</a>
+        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2launch.html">EC2Launch</a>
         /// in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
@@ -20848,7 +20942,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
-        /// placement score</a> in the Amazon EC2 User Guide.
+        /// placement score</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSpotPlacementScores service method.</param>
@@ -21788,13 +21882,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Changes the opt-in status of the Local Zone and Wavelength Zone group for your account.
-        /// 
-        ///  
-        /// <para>
-        /// Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
-        /// DescribeAvailabilityZones</a> to view the value for <c>GroupName</c>.
-        /// </para>
+        /// Changes the opt-in status of the specified zone group for your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyAvailabilityZoneGroup service method.</param>
         /// <param name="cancellationToken">
@@ -23165,7 +23253,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modify
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -23939,12 +24027,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        ///  You can use CloudWatch Events to check the status of a modification to an EBS volume.
-        /// For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
-        /// CloudWatch Events User Guide</a>. You can also track the status of a modification
-        /// using <a>DescribeVolumesModifications</a>. For information about tracking status changes
-        /// using either method, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
-        /// the progress of volume modifications</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
+        /// the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -24712,7 +24796,7 @@ namespace Amazon.EC2
         /// advertise it. You must ensure that the address range is registered to you and that
         /// you created an RPKI ROA to authorize Amazon ASNs 16509 and 14618 to advertise the
         /// address range. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
-        /// your own IP addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your own IP addresses (BYOIP)</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -24963,8 +25047,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
-        /// Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
+        /// Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Sell
+        /// in the Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedInstancesOffering service method.</param>
@@ -25251,8 +25335,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Registers members (network interfaces) with the transit gateway multicast group. A
         /// member is a network interface associated with a supported EC2 instance that receives
-        /// multicast traffic. For information about supported instances, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
-        /// Consideration</a> in <i>Amazon VPC Transit Gateways</i>.
+        /// multicast traffic. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-multicast-overview.html">Multicast
+        /// on transit gateways</a> in the <i>Amazon Web Services Transit Gateways Guide</i>.
         /// 
         ///  
         /// <para>
@@ -25298,8 +25382,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// A multicast source is a network interface attached to a supported instance that sends
-        /// multicast traffic. For information about supported instances, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
-        /// Considerations</a> in <i>Amazon VPC Transit Gateways</i>.
+        /// multicast traffic. For more information about supported instances, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-multicast-overview.html">Multicast
+        /// on transit gateways</a> in the <i>Amazon Web Services Transit Gateways Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -25639,7 +25723,7 @@ namespace Amazon.EC2
         /// 
         ///  <note> 
         /// <para>
-        /// All EC2 API actions follow an <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency">eventual
+        /// All EC2 API actions follow an <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">eventual
         /// consistency</a> model.
         /// </para>
         ///  </note>
@@ -26077,15 +26161,14 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Work
+        /// with Spot Instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
         /// We strongly discourage using the RequestSpotInstances API because it is a legacy API
         /// with no planned investment. For options for requesting Spot Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
-        /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux
-        /// Instances</i>.
+        /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -26278,7 +26361,7 @@ namespace Amazon.EC2
         /// is enabled. The default value is <c>true</c>, which means checking is enabled. This
         /// value must be <c>false</c> for a NAT instance to perform NAT. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-        /// Instances</a> in the <i>Amazon VPC User Guide</i>.
+        /// instances</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetInstanceAttribute service method.</param>
@@ -26766,8 +26849,8 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don't specify a security group ID, we use the default security group. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
+        /// If you don't specify a security group ID, we use the default security group for the
+        /// VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
         /// groups</a>.
         /// </para>
         ///  </li> <li> 
@@ -26787,6 +26870,12 @@ namespace Amazon.EC2
         /// To ensure faster instance launches, break up large requests into smaller batches.
         /// For example, create five separate launch requests for 100 instances each instead of
         /// one launch request for 500 instances.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>RunInstances</c> is subject to both request rate limiting and resource rate limiting.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-throttling.html">Request
+        /// throttling</a>.
         /// </para>
         ///  
         /// <para>
@@ -26854,8 +26943,7 @@ namespace Amazon.EC2
         /// You must launch a Scheduled Instance during its scheduled time period. You can't stop
         /// or reboot a Scheduled Instance, but you can terminate it as needed. If you terminate
         /// a Scheduled Instance before the current scheduled time period ends, you can launch
-        /// it again after a few minutes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
-        /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// it again after a few minutes.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunScheduledInstances service method.</param>
@@ -27014,8 +27102,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information about configuring your operating system to generate a crash dump
         /// when a kernel panic or stop error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send
-        /// a diagnostic interrupt (for advanced users)</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
-        /// a diagnostic interrupt (for advanced users)</a> (Windows instances).
+        /// a diagnostic interrupt (for advanced users)</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendDiagnosticInterrupt service method.</param>
@@ -27082,7 +27169,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
-        /// and start your instance</a> in the <i>Amazon EC2 User Guide</i>.
+        /// and start Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartInstances service method.</param>
@@ -27232,14 +27319,14 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Stops an Amazon EBS-backed instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
-        /// and start your instance</a> in the <i>Amazon EC2 User Guide</i>.
+        /// and start Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// 
         ///  
         /// <para>
         /// You can use the Stop action to hibernate an instance if the instance is <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enabling-hibernation.html">enabled
         /// for hibernation</a> and it meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
         /// prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-        /// your instance</a> in the <i>Amazon EC2 User Guide</i>.
+        /// your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>

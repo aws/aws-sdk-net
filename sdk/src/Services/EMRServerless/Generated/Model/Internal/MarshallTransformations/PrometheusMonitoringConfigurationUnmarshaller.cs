@@ -57,6 +57,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         public PrometheusMonitoringConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             PrometheusMonitoringConfiguration unmarshalledObject = new PrometheusMonitoringConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public BotAliasTestExecutionTarget Unmarshall(JsonUnmarshallerContext context)
         {
             BotAliasTestExecutionTarget unmarshalledObject = new BotAliasTestExecutionTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

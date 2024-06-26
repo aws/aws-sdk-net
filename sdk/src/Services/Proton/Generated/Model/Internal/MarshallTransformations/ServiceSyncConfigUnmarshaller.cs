@@ -57,6 +57,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         public ServiceSyncConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceSyncConfig unmarshalledObject = new ServiceSyncConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

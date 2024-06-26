@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public TimeBasedLinear Unmarshall(JsonUnmarshallerContext context)
         {
             TimeBasedLinear unmarshalledObject = new TimeBasedLinear();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

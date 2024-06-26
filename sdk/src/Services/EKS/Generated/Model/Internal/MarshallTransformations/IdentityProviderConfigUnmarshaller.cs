@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public IdentityProviderConfig Unmarshall(JsonUnmarshallerContext context)
         {
             IdentityProviderConfig unmarshalledObject = new IdentityProviderConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

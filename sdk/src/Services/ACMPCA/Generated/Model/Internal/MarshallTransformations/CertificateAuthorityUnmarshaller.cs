@@ -57,6 +57,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         public CertificateAuthority Unmarshall(JsonUnmarshallerContext context)
         {
             CertificateAuthority unmarshalledObject = new CertificateAuthority();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

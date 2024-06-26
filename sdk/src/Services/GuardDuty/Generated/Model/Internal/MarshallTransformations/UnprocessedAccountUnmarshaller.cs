@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public UnprocessedAccount Unmarshall(JsonUnmarshallerContext context)
         {
             UnprocessedAccount unmarshalledObject = new UnprocessedAccount();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

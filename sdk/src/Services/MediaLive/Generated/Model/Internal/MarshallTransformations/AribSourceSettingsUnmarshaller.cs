@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public AribSourceSettings Unmarshall(JsonUnmarshallerContext context)
         {
             AribSourceSettings unmarshalledObject = new AribSourceSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

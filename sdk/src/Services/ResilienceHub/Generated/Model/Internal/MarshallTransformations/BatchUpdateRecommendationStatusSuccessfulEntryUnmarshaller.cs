@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public BatchUpdateRecommendationStatusSuccessfulEntry Unmarshall(JsonUnmarshallerContext context)
         {
             BatchUpdateRecommendationStatusSuccessfulEntry unmarshalledObject = new BatchUpdateRecommendationStatusSuccessfulEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

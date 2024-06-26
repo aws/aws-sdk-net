@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public CatalogKafkaSource Unmarshall(JsonUnmarshallerContext context)
         {
             CatalogKafkaSource unmarshalledObject = new CatalogKafkaSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

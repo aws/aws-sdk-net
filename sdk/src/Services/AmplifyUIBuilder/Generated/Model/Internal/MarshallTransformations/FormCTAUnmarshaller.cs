@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public FormCTA Unmarshall(JsonUnmarshallerContext context)
         {
             FormCTA unmarshalledObject = new FormCTA();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         public EventBus Unmarshall(JsonUnmarshallerContext context)
         {
             EventBus unmarshalledObject = new EventBus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,24 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreationTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastModifiedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))

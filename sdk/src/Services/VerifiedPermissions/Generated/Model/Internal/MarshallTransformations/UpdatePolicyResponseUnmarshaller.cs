@@ -52,10 +52,22 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("actions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ActionIdentifier, ActionIdentifierUnmarshaller>(ActionIdentifierUnmarshaller.Instance);
+                    response.Actions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("effect", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Effect = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedDate", targetDepth))

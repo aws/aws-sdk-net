@@ -39,6 +39,8 @@ namespace Amazon.QBusiness.Model
         private AttachmentsConfiguration _attachmentsConfiguration;
         private string _description;
         private string _displayName;
+        private string _identityCenterInstanceArn;
+        private QAppsConfiguration _qAppsConfiguration;
         private string _roleArn;
 
         /// <summary>
@@ -114,6 +116,44 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterInstanceArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either
+        /// creating for—or connecting to—your Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=1224)]
+        public string IdentityCenterInstanceArn
+        {
+            get { return this._identityCenterInstanceArn; }
+            set { this._identityCenterInstanceArn = value; }
+        }
+
+        // Check to see if IdentityCenterInstanceArn property is set
+        internal bool IsSetIdentityCenterInstanceArn()
+        {
+            return this._identityCenterInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QAppsConfiguration. 
+        /// <para>
+        /// An option to allow end users to create and use Amazon Q Apps in the web experience.
+        /// </para>
+        /// </summary>
+        public QAppsConfiguration QAppsConfiguration
+        {
+            get { return this._qAppsConfiguration; }
+            set { this._qAppsConfiguration = value; }
+        }
+
+        // Check to see if QAppsConfiguration property is set
+        internal bool IsSetQAppsConfiguration()
+        {
+            return this._qAppsConfiguration != null;
         }
 
         /// <summary>

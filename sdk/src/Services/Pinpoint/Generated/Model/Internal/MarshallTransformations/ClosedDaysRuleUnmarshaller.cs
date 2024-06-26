@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public ClosedDaysRule Unmarshall(JsonUnmarshallerContext context)
         {
             ClosedDaysRule unmarshalledObject = new ClosedDaysRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

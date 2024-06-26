@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public SyncState Unmarshall(JsonUnmarshallerContext context)
         {
             SyncState unmarshalledObject = new SyncState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

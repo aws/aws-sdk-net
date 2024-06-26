@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public ViewRepresentation Unmarshall(JsonUnmarshallerContext context)
         {
             ViewRepresentation unmarshalledObject = new ViewRepresentation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -80,6 +82,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.IsStale = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ValidationConnection", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ValidationConnection = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ViewExpandedText", targetDepth))

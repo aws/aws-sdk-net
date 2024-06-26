@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         public RouteSummary Unmarshall(JsonUnmarshallerContext context)
         {
             RouteSummary unmarshalledObject = new RouteSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

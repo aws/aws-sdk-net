@@ -41,7 +41,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Channel ARN.
+        /// ARN of an IVS resource; e.g., channel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

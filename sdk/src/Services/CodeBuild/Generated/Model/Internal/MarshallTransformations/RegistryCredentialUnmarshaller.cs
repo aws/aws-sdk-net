@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public RegistryCredential Unmarshall(JsonUnmarshallerContext context)
         {
             RegistryCredential unmarshalledObject = new RegistryCredential();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

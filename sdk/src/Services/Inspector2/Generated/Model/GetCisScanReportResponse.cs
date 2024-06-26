@@ -58,7 +58,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        ///  The URL where the CIS scan report PDF can be downloaded. 
+        ///  The URL where a PDF or CSV of the CIS scan report can be downloaded. 
         /// </para>
         /// </summary>
         public string Url

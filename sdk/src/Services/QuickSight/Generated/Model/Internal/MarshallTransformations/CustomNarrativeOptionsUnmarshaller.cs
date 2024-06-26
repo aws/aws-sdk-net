@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public CustomNarrativeOptions Unmarshall(JsonUnmarshallerContext context)
         {
             CustomNarrativeOptions unmarshalledObject = new CustomNarrativeOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

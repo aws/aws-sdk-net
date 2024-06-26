@@ -83,6 +83,7 @@ namespace Amazon.RDS.Model
         private bool? _enableIAMDatabaseAuthentication;
         private bool? _enablePerformanceInsights;
         private string _engine;
+        private string _engineLifecycleSupport;
         private string _engineVersion;
         private int? _iops;
         private string _kmsKeyId;
@@ -698,8 +699,8 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd> 
         /// <para>
         /// The name of the database to create when the primary DB instance of the Aurora PostgreSQL
-        /// DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL
-        /// DB cluster, a database named <c>postgres</c> is created in the DB cluster.
+        /// DB cluster is created. A database named <c>postgres</c> is always created. If this
+        /// parameter is specified, an additional database with this name is created.
         /// </para>
         ///  
         /// <para>
@@ -835,8 +836,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> 
         /// <para>
-        /// The name of the database to create when the DB instance is created. If this parameter
-        /// isn't specified, a database named <c>postgres</c> is created in the DB instance.
+        /// The name of the database to create when the DB instance is created. A database named
+        /// <c>postgres</c> is always created. If this parameter is specified, an additional database
+        /// with this name is created.
         /// </para>
         ///  
         /// <para>
@@ -1505,6 +1507,54 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineLifecycleSupport. 
+        /// <para>
+        /// The life cycle type for this DB instance.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// By default, this value is set to <c>open-source-rds-extended-support</c>, which enrolls
+        /// your DB instance into Amazon RDS Extended Support. At the end of standard support,
+        /// you can avoid charges for Extended Support by setting the value to <c>open-source-rds-extended-support-disabled</c>.
+        /// In this case, creating the DB instance will fail if the DB major version is past its
+        /// end of standard support date.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora
+        /// DB instances, the life cycle type is managed by the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this setting to enroll your DB instance into Amazon RDS Extended Support.
+        /// With RDS Extended Support, you can run the selected major engine version on your DB
+        /// instance past the end of standard support for that engine version. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+        /// Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>open-source-rds-extended-support | open-source-rds-extended-support-disabled</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>open-source-rds-extended-support</c> 
+        /// </para>
+        /// </summary>
+        public string EngineLifecycleSupport
+        {
+            get { return this._engineLifecycleSupport; }
+            set { this._engineLifecycleSupport = value; }
+        }
+
+        // Check to see if EngineLifecycleSupport property is set
+        internal bool IsSetEngineLifecycleSupport()
+        {
+            return this._engineLifecycleSupport != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The version number of the database engine to use.
@@ -1668,7 +1718,19 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The license model information for this DB instance.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// License models for RDS for Db2 require additional configuration. The Bring Your Own
+        /// License (BYOL) model requires a custom parameter group. The Db2 license through Amazon
+        /// Web Services Marketplace model requires an Amazon Web Services Marketplace subscription.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS
+        /// for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
         ///  
+        /// <para>
+        /// The default for RDS for Db2 is <c>bring-your-own-license</c>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.
         /// </para>
@@ -1678,7 +1740,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// RDS for Db2 - <c>bring-your-own-license</c> 
+        /// RDS for Db2 - <c>bring-your-own-license | marketplace-license</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2682,8 +2744,9 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Timezone. 
         /// <para>
         /// The time zone of the DB instance. The time zone parameter is currently supported only
-        /// by <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
-        /// SQL Server</a>.
+        /// by <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-time-zone">RDS
+        /// for Db2</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">RDS
+        /// for SQL Server</a>.
         /// </para>
         /// </summary>
         public string Timezone

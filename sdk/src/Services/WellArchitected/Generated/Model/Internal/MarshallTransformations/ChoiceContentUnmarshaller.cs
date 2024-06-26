@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public ChoiceContent Unmarshall(JsonUnmarshallerContext context)
         {
             ChoiceContent unmarshalledObject = new ChoiceContent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

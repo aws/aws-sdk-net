@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public ColumnRowFilter Unmarshall(JsonUnmarshallerContext context)
         {
             ColumnRowFilter unmarshalledObject = new ColumnRowFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

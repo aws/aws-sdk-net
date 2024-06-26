@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public Vertex Unmarshall(JsonUnmarshallerContext context)
         {
             Vertex unmarshalledObject = new Vertex();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

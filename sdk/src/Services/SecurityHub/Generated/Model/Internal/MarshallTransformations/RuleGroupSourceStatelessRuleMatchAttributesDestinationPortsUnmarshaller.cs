@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts Unmarshall(JsonUnmarshallerContext context)
         {
             RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts unmarshalledObject = new RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -38,6 +38,7 @@ namespace Amazon.NetworkManager.Model
         private string _coreNetworkId;
         private DateTime? _createdAt;
         private string _edgeLocation;
+        private List<PeeringError> _lastModificationErrors = AWSConfigs.InitializeCollections ? new List<PeeringError>() : null;
         private string _ownerAccountId;
         private string _peeringId;
         private PeeringType _peeringType;
@@ -118,6 +119,25 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetEdgeLocation()
         {
             return this._edgeLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModificationErrors. 
+        /// <para>
+        /// Describes the error associated with the Connect peer request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<PeeringError> LastModificationErrors
+        {
+            get { return this._lastModificationErrors; }
+            set { this._lastModificationErrors = value; }
+        }
+
+        // Check to see if LastModificationErrors property is set
+        internal bool IsSetLastModificationErrors()
+        {
+            return this._lastModificationErrors != null && (this._lastModificationErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

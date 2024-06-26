@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public CoveredResource Unmarshall(JsonUnmarshallerContext context)
         {
             CoveredResource unmarshalledObject = new CoveredResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -92,6 +94,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scanMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScanMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("scanStatus", targetDepth))

@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public OutputNotebookS3LocationForOutput Unmarshall(JsonUnmarshallerContext context)
         {
             OutputNotebookS3LocationForOutput unmarshalledObject = new OutputNotebookS3LocationForOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

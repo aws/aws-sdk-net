@@ -57,6 +57,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         public UploadMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             UploadMetadata unmarshalledObject = new UploadMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

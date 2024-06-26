@@ -57,6 +57,8 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         public StatementData Unmarshall(JsonUnmarshallerContext context)
         {
             StatementData unmarshalledObject = new StatementData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

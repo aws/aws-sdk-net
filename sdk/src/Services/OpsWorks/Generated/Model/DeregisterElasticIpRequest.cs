@@ -31,8 +31,8 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterElasticIp operation.
-    /// Deregisters a specified Elastic IP address. The address can then be registered by
-    /// another stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+    /// Deregisters a specified Elastic IP address. The address can be registered by another
+    /// stack after it is deregistered. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
     /// Management</a>.
     /// 
     ///  

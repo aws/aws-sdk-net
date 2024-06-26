@@ -57,6 +57,8 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
         public WorkloadDeploymentPatternDataSummary Unmarshall(JsonUnmarshallerContext context)
         {
             WorkloadDeploymentPatternDataSummary unmarshalledObject = new WorkloadDeploymentPatternDataSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public ResourcePricing Unmarshall(JsonUnmarshallerContext context)
         {
             ResourcePricing unmarshalledObject = new ResourcePricing();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

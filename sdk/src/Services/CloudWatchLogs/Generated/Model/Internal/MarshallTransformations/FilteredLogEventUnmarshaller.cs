@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public FilteredLogEvent Unmarshall(JsonUnmarshallerContext context)
         {
             FilteredLogEvent unmarshalledObject = new FilteredLogEvent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public Service Unmarshall(JsonUnmarshallerContext context)
         {
             Service unmarshalledObject = new Service();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -128,6 +130,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FeatureName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("malwareScanDetails", targetDepth))
+                {
+                    var unmarshaller = MalwareScanDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MalwareScanDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourceRole", targetDepth))

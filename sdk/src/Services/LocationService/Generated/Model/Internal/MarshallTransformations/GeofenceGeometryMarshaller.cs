@@ -59,6 +59,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetGeobuf())
+            {
+                context.Writer.WritePropertyName("Geobuf");
+                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Geobuf));
+            }
+
             if(requestObject.IsSetPolygon())
             {
                 context.Writer.WritePropertyName("Polygon");

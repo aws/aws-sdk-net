@@ -57,6 +57,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public EphemerisItem Unmarshall(JsonUnmarshallerContext context)
         {
             EphemerisItem unmarshalledObject = new EphemerisItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

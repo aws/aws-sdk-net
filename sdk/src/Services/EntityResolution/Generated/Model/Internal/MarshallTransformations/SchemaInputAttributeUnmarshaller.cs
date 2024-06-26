@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public SchemaInputAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             SchemaInputAttribute unmarshalledObject = new SchemaInputAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

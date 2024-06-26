@@ -57,6 +57,8 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         public AudioConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AudioConfiguration unmarshalledObject = new AudioConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

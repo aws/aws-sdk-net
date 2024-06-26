@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public Suggestion Unmarshall(JsonUnmarshallerContext context)
         {
             Suggestion unmarshalledObject = new Suggestion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

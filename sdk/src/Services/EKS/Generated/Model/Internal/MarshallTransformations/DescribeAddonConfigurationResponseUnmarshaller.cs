@@ -70,6 +70,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     response.ConfigurationSchema = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("podIdentityConfiguration", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AddonPodIdentityConfiguration, AddonPodIdentityConfigurationUnmarshaller>(AddonPodIdentityConfigurationUnmarshaller.Instance);
+                    response.PodIdentityConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public DeleteFileSystemWindowsResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DeleteFileSystemWindowsResponse unmarshalledObject = new DeleteFileSystemWindowsResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

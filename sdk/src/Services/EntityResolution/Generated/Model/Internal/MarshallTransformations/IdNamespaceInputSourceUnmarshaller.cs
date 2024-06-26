@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public IdNamespaceInputSource Unmarshall(JsonUnmarshallerContext context)
         {
             IdNamespaceInputSource unmarshalledObject = new IdNamespaceInputSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

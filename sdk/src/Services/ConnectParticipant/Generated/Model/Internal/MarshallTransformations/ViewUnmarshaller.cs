@@ -57,6 +57,8 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         public View Unmarshall(JsonUnmarshallerContext context)
         {
             View unmarshalledObject = new View();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

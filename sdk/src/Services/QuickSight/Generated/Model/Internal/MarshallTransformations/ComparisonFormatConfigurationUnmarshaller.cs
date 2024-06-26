@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ComparisonFormatConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ComparisonFormatConfiguration unmarshalledObject = new ComparisonFormatConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

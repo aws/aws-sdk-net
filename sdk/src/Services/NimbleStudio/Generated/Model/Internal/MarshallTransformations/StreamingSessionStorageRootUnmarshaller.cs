@@ -57,6 +57,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         public StreamingSessionStorageRoot Unmarshall(JsonUnmarshallerContext context)
         {
             StreamingSessionStorageRoot unmarshalledObject = new StreamingSessionStorageRoot();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
         public ResourceIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceIdentifier unmarshalledObject = new ResourceIdentifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -34,6 +34,13 @@ namespace Amazon.ManagedGrafana.Model
     /// Creates a Grafana API key for the workspace. This key can be used to authenticate
     /// requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a>
     /// for available APIs and example requests.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// In workspaces compatible with Grafana version 9 or above, use workspace service accounts
+    /// instead of API keys. API keys will be removed in a future release.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateWorkspaceApiKeyRequest : AmazonManagedGrafanaRequest
     {
@@ -68,7 +75,7 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <c>VIEWER</c>|<c>EDITOR</c>|<c>ADMIN</c> 
+        ///  Valid values: <c>ADMIN</c>|<c>EDITOR</c>|<c>VIEWER</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

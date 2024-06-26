@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public AppInstanceAdmin Unmarshall(JsonUnmarshallerContext context)
         {
             AppInstanceAdmin unmarshalledObject = new AppInstanceAdmin();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

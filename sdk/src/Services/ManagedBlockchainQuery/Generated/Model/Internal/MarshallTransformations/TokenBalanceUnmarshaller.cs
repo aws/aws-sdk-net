@@ -57,6 +57,8 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         public TokenBalance Unmarshall(JsonUnmarshallerContext context)
         {
             TokenBalance unmarshalledObject = new TokenBalance();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

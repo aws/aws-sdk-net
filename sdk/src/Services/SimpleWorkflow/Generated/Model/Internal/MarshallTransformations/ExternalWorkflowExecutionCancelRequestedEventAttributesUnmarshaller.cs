@@ -57,6 +57,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         public ExternalWorkflowExecutionCancelRequestedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             ExternalWorkflowExecutionCancelRequestedEventAttributes unmarshalledObject = new ExternalWorkflowExecutionCancelRequestedEventAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

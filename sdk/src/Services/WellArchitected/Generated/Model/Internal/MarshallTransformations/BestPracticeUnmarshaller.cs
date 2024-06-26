@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public BestPractice Unmarshall(JsonUnmarshallerContext context)
         {
             BestPractice unmarshalledObject = new BestPractice();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

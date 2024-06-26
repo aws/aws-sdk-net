@@ -57,6 +57,8 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         public NeptuneImportOptions Unmarshall(JsonUnmarshallerContext context)
         {
             NeptuneImportOptions unmarshalledObject = new NeptuneImportOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

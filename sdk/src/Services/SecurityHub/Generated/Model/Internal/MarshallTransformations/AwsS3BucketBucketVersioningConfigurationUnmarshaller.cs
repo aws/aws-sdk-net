@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsS3BucketBucketVersioningConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AwsS3BucketBucketVersioningConfiguration unmarshalledObject = new AwsS3BucketBucketVersioningConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

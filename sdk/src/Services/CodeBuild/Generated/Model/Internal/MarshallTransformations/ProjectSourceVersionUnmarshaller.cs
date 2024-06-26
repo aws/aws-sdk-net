@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public ProjectSourceVersion Unmarshall(JsonUnmarshallerContext context)
         {
             ProjectSourceVersion unmarshalledObject = new ProjectSourceVersion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public AudioSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             AudioSpecification unmarshalledObject = new AudioSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

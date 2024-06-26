@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public ActivateReadSetSourceItem Unmarshall(JsonUnmarshallerContext context)
         {
             ActivateReadSetSourceItem unmarshalledObject = new ActivateReadSetSourceItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

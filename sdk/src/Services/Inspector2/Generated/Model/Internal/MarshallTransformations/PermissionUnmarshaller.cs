@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public Permission Unmarshall(JsonUnmarshallerContext context)
         {
             Permission unmarshalledObject = new Permission();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

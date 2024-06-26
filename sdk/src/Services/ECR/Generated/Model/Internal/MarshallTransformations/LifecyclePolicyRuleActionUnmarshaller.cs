@@ -57,6 +57,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         public LifecyclePolicyRuleAction Unmarshall(JsonUnmarshallerContext context)
         {
             LifecyclePolicyRuleAction unmarshalledObject = new LifecyclePolicyRuleAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

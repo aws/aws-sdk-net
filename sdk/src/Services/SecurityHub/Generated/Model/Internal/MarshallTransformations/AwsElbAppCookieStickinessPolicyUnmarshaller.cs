@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsElbAppCookieStickinessPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             AwsElbAppCookieStickinessPolicy unmarshalledObject = new AwsElbAppCookieStickinessPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

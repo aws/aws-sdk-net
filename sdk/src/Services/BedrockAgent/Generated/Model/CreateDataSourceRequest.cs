@@ -75,7 +75,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property DataDeletionPolicy. 
         /// <para>
-        /// The deletion policy for the requested data source
+        /// The data deletion policy assigned to the data source.
         /// </para>
         /// </summary>
         public DataDeletionPolicy DataDeletionPolicy

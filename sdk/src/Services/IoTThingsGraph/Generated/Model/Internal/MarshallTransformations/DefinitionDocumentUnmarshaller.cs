@@ -57,6 +57,8 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
         public DefinitionDocument Unmarshall(JsonUnmarshallerContext context)
         {
             DefinitionDocument unmarshalledObject = new DefinitionDocument();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

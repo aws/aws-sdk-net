@@ -57,6 +57,8 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         public Destination Unmarshall(JsonUnmarshallerContext context)
         {
             Destination unmarshalledObject = new Destination();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

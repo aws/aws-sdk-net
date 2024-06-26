@@ -57,6 +57,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         public TrialMinutes Unmarshall(JsonUnmarshallerContext context)
         {
             TrialMinutes unmarshalledObject = new TrialMinutes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

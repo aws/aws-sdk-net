@@ -123,25 +123,13 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         /// Maven
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Swift
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// generic
-        /// </para>
         ///  </li> </ul> </note> <ul> <li> 
         /// <para>
         ///  The namespace of a Maven package version is its <c>groupId</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm or Swift package version is its <c>scope</c>. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The namespace of a generic package is its <c>namespace</c>.
+        ///  The namespace of an npm package version is its <c>scope</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>

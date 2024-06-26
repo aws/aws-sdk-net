@@ -57,6 +57,8 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
         public SyncBlockerContext Unmarshall(JsonUnmarshallerContext context)
         {
             SyncBlockerContext unmarshalledObject = new SyncBlockerContext();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

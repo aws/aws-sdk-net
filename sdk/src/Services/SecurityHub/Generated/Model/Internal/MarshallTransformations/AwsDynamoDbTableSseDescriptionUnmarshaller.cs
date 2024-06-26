@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsDynamoDbTableSseDescription Unmarshall(JsonUnmarshallerContext context)
         {
             AwsDynamoDbTableSseDescription unmarshalledObject = new AwsDynamoDbTableSseDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public TimecodeConfig Unmarshall(JsonUnmarshallerContext context)
         {
             TimecodeConfig unmarshalledObject = new TimecodeConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

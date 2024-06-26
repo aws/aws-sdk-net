@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public ObjectTypes Unmarshall(JsonUnmarshallerContext context)
         {
             ObjectTypes unmarshalledObject = new ObjectTypes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

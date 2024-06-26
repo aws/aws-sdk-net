@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         public BranchDiffSourceCodeType Unmarshall(JsonUnmarshallerContext context)
         {
             BranchDiffSourceCodeType unmarshalledObject = new BranchDiffSourceCodeType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

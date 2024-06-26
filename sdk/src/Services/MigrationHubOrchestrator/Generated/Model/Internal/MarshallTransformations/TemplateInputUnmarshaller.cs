@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
         public TemplateInput Unmarshall(JsonUnmarshallerContext context)
         {
             TemplateInput unmarshalledObject = new TemplateInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public LoadBalancerTlsCertificateDomainValidationOption Unmarshall(JsonUnmarshallerContext context)
         {
             LoadBalancerTlsCertificateDomainValidationOption unmarshalledObject = new LoadBalancerTlsCertificateDomainValidationOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

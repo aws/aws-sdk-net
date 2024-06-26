@@ -57,6 +57,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         public LogSettingsResponse Unmarshall(JsonUnmarshallerContext context)
         {
             LogSettingsResponse unmarshalledObject = new LogSettingsResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

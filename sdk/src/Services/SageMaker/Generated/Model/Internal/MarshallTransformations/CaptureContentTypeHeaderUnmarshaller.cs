@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public CaptureContentTypeHeader Unmarshall(JsonUnmarshallerContext context)
         {
             CaptureContentTypeHeader unmarshalledObject = new CaptureContentTypeHeader();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

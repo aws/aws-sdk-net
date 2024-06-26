@@ -415,6 +415,56 @@ namespace Amazon.AuditManager
 
 
     /// <summary>
+    /// Constants used for properties of type ControlState.
+    /// </summary>
+    public class ControlState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ControlState
+        /// </summary>
+        public static readonly ControlState ACTIVE = new ControlState("ACTIVE");
+        /// <summary>
+        /// Constant END_OF_SUPPORT for ControlState
+        /// </summary>
+        public static readonly ControlState END_OF_SUPPORT = new ControlState("END_OF_SUPPORT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ControlState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ControlState FindValue(string value)
+        {
+            return FindValue<ControlState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ControlState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ControlStatus.
     /// </summary>
     public class ControlStatus : ConstantClass
@@ -475,6 +525,10 @@ namespace Amazon.AuditManager
     {
 
         /// <summary>
+        /// Constant Core for ControlType
+        /// </summary>
+        public static readonly ControlType Core = new ControlType("Core");
+        /// <summary>
         /// Constant Custom for ControlType
         /// </summary>
         public static readonly ControlType Custom = new ControlType("Custom");
@@ -512,6 +566,68 @@ namespace Amazon.AuditManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ControlType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataSourceType.
+    /// </summary>
+    public class DataSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_API_Call for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType AWS_API_Call = new DataSourceType("AWS_API_Call");
+        /// <summary>
+        /// Constant AWS_Cloudtrail for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType AWS_Cloudtrail = new DataSourceType("AWS_Cloudtrail");
+        /// <summary>
+        /// Constant AWS_Config for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType AWS_Config = new DataSourceType("AWS_Config");
+        /// <summary>
+        /// Constant AWS_Security_Hub for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType AWS_Security_Hub = new DataSourceType("AWS_Security_Hub");
+        /// <summary>
+        /// Constant MANUAL for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType MANUAL = new DataSourceType("MANUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSourceType FindValue(string value)
+        {
+            return FindValue<DataSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSourceType(string value)
         {
             return FindValue(value);
         }
@@ -1374,6 +1490,14 @@ namespace Amazon.AuditManager
         /// Constant AWS_Security_Hub for SourceType
         /// </summary>
         public static readonly SourceType AWS_Security_Hub = new SourceType("AWS_Security_Hub");
+        /// <summary>
+        /// Constant Common_Control for SourceType
+        /// </summary>
+        public static readonly SourceType Common_Control = new SourceType("Common_Control");
+        /// <summary>
+        /// Constant Core_Control for SourceType
+        /// </summary>
+        public static readonly SourceType Core_Control = new SourceType("Core_Control");
         /// <summary>
         /// Constant MANUAL for SourceType
         /// </summary>

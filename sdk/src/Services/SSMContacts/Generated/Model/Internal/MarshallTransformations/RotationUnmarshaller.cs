@@ -57,6 +57,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         public Rotation Unmarshall(JsonUnmarshallerContext context)
         {
             Rotation unmarshalledObject = new Rotation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

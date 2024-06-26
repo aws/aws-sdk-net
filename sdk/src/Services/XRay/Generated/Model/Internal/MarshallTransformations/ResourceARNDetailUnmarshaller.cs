@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public ResourceARNDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceARNDetail unmarshalledObject = new ResourceARNDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         public LaunchProfileInitialization Unmarshall(JsonUnmarshallerContext context)
         {
             LaunchProfileInitialization unmarshalledObject = new LaunchProfileInitialization();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

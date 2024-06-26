@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public InvalidSignalDecoder Unmarshall(JsonUnmarshallerContext context)
         {
             InvalidSignalDecoder unmarshalledObject = new InvalidSignalDecoder();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public CostEstimate Unmarshall(JsonUnmarshallerContext context)
         {
             CostEstimate unmarshalledObject = new CostEstimate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

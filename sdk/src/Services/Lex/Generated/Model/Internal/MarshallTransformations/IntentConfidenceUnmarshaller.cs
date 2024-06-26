@@ -57,6 +57,8 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
         public IntentConfidence Unmarshall(JsonUnmarshallerContext context)
         {
             IntentConfidence unmarshalledObject = new IntentConfidence();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

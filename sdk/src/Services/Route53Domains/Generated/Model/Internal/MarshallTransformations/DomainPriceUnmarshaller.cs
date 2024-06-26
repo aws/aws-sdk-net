@@ -57,6 +57,8 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         public DomainPrice Unmarshall(JsonUnmarshallerContext context)
         {
             DomainPrice unmarshalledObject = new DomainPrice();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

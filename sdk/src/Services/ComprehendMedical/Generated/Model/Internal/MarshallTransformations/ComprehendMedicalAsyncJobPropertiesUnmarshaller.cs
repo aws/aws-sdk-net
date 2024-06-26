@@ -57,6 +57,8 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
         public ComprehendMedicalAsyncJobProperties Unmarshall(JsonUnmarshallerContext context)
         {
             ComprehendMedicalAsyncJobProperties unmarshalledObject = new ComprehendMedicalAsyncJobProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

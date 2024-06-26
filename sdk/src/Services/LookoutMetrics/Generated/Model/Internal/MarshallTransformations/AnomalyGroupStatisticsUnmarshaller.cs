@@ -57,6 +57,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public AnomalyGroupStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             AnomalyGroupStatistics unmarshalledObject = new AnomalyGroupStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -353,7 +353,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DefaultRedirectURI. 
         /// <para>
-        /// The default redirect URI. Must be in the <c>CallbackURLs</c> list.
+        /// The default redirect URI. In app clients with one assigned IdP, replaces <c>redirect_uri</c>
+        /// in authentication requests. Must be in the <c>CallbackURLs</c> list.
         /// </para>
         ///  
         /// <para>
@@ -373,8 +374,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
-        /// Endpoint</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default
+        /// redirect URI</a>.
         /// </para>
         ///  
         /// <para>

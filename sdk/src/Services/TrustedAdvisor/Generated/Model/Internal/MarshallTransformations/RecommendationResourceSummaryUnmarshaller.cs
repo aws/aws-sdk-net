@@ -57,6 +57,8 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
         public RecommendationResourceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendationResourceSummary unmarshalledObject = new RecommendationResourceSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AwsResourceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("exclusionStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExclusionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))

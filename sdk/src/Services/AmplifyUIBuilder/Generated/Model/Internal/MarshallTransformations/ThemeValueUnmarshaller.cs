@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public ThemeValue Unmarshall(JsonUnmarshallerContext context)
         {
             ThemeValue unmarshalledObject = new ThemeValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

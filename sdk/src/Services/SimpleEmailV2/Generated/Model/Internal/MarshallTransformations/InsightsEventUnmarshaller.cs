@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public InsightsEvent Unmarshall(JsonUnmarshallerContext context)
         {
             InsightsEvent unmarshalledObject = new InsightsEvent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

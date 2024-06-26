@@ -57,6 +57,8 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
         public ReviewActionDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ReviewActionDetail unmarshalledObject = new ReviewActionDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

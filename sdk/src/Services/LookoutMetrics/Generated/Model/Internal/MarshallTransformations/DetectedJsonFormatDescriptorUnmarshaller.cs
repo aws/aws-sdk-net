@@ -57,6 +57,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public DetectedJsonFormatDescriptor Unmarshall(JsonUnmarshallerContext context)
         {
             DetectedJsonFormatDescriptor unmarshalledObject = new DetectedJsonFormatDescriptor();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

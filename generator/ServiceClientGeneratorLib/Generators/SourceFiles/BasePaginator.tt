@@ -101,6 +101,12 @@ else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
             while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#>.Count > 0);
 <#
 }
+else if (this.Operation.StopPaginationOnSameToken)
+{
+#>
+            while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#> != _request.<#=this.Operation.Paginators.InputTokens[0].PropertyName#>);
+<#
+}
 else
 {
 #>
@@ -160,6 +166,12 @@ else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
 {
 #>
             while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#>.Count > 0);
+<#
+}
+else if (this.Operation.StopPaginationOnSameToken)
+{
+#>
+            while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#> != _request.<#=this.Operation.Paginators.InputTokens[0].PropertyName#>);
 <#
 }
 else

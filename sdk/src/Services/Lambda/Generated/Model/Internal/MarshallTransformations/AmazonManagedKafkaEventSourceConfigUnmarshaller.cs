@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public AmazonManagedKafkaEventSourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AmazonManagedKafkaEventSourceConfig unmarshalledObject = new AmazonManagedKafkaEventSourceConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

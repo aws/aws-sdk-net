@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public AutoMLJobConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AutoMLJobConfig unmarshalledObject = new AutoMLJobConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

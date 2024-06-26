@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public EvaluationParameters Unmarshall(JsonUnmarshallerContext context)
         {
             EvaluationParameters unmarshalledObject = new EvaluationParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

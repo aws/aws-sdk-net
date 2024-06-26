@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public SubscribedAsset Unmarshall(JsonUnmarshallerContext context)
         {
             SubscribedAsset unmarshalledObject = new SubscribedAsset();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

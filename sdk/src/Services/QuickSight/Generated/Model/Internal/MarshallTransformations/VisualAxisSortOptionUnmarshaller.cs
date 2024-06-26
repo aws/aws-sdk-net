@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public VisualAxisSortOption Unmarshall(JsonUnmarshallerContext context)
         {
             VisualAxisSortOption unmarshalledObject = new VisualAxisSortOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

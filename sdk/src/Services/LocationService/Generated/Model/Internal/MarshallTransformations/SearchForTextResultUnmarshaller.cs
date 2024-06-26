@@ -57,6 +57,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public SearchForTextResult Unmarshall(JsonUnmarshallerContext context)
         {
             SearchForTextResult unmarshalledObject = new SearchForTextResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

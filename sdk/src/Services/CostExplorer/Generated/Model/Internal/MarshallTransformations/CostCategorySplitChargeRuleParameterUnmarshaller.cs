@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public CostCategorySplitChargeRuleParameter Unmarshall(JsonUnmarshallerContext context)
         {
             CostCategorySplitChargeRuleParameter unmarshalledObject = new CostCategorySplitChargeRuleParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

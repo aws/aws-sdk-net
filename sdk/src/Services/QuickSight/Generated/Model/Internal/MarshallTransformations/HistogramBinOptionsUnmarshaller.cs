@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public HistogramBinOptions Unmarshall(JsonUnmarshallerContext context)
         {
             HistogramBinOptions unmarshalledObject = new HistogramBinOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

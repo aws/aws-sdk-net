@@ -57,6 +57,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         public ReceivedMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             ReceivedMetadata unmarshalledObject = new ReceivedMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

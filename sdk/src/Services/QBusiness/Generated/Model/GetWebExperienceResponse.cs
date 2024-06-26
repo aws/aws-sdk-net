@@ -74,6 +74,7 @@ namespace Amazon.QBusiness.Model
         /// The authentication configuration information for your Amazon Q Business web experience.
         /// </para>
         /// </summary>
+        [Obsolete("Property associated with legacy SAML IdP flow. Deprecated in favor of using AWS IAM Identity Center for user management.")]
         public WebExperienceAuthConfiguration AuthenticationConfiguration
         {
             get { return this._authenticationConfiguration; }
@@ -89,7 +90,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp when the retriever was created.
+        /// The Unix timestamp when the Amazon Q Business web experience was last created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -240,7 +241,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp when the data source connector was last updated.
+        /// The Unix timestamp when the Amazon Q Business web experience was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

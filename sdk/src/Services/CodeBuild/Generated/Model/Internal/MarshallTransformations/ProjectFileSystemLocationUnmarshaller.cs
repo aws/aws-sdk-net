@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public ProjectFileSystemLocation Unmarshall(JsonUnmarshallerContext context)
         {
             ProjectFileSystemLocation unmarshalledObject = new ProjectFileSystemLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

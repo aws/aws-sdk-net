@@ -57,6 +57,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         public CoverageTime Unmarshall(JsonUnmarshallerContext context)
         {
             CoverageTime unmarshalledObject = new CoverageTime();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

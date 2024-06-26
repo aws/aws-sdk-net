@@ -57,6 +57,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public ImagePermissions Unmarshall(JsonUnmarshallerContext context)
         {
             ImagePermissions unmarshalledObject = new ImagePermissions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

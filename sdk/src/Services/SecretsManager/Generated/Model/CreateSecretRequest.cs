@@ -89,8 +89,9 @@ namespace Amazon.SecretsManager.Model
     ///  
     /// <para>
     ///  <b>Required permissions: </b> <c>secretsmanager:CreateSecret</c>. If you include
-    /// tags in the secret, you also need <c>secretsmanager:TagResource</c>. For more information,
-    /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+    /// tags in the secret, you also need <c>secretsmanager:TagResource</c>. To add replica
+    /// Regions, you must also have <c>secretsmanager:ReplicateSecretToRegions</c>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
     /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
     /// and access control in Secrets Manager</a>. 
     /// </para>
@@ -315,6 +316,12 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// This parameter is not available in the Secrets Manager console.
         /// </para>
+        ///  
+        /// <para>
+        /// Sensitive: This field contains sensitive information, so the service does not include
+        /// it in CloudTrail log entries. If you create your own log entries, you must also avoid
+        /// logging the information in this field.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=65536)]
         public MemoryStream SecretBinary
@@ -345,6 +352,12 @@ namespace Amazon.SecretsManager.Model
         /// the protected secret text in only the <c>SecretString</c> parameter. The Secrets Manager
         /// console stores the information as a JSON structure of key/value pairs that a Lambda
         /// rotation function can parse.
+        /// </para>
+        ///  
+        /// <para>
+        /// Sensitive: This field contains sensitive information, so the service does not include
+        /// it in CloudTrail log entries. If you create your own log entries, you must also avoid
+        /// logging the information in this field.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=65536)]

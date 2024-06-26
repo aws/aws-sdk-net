@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public HeaderOrder Unmarshall(JsonUnmarshallerContext context)
         {
             HeaderOrder unmarshalledObject = new HeaderOrder();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public SseConfig Unmarshall(JsonUnmarshallerContext context)
         {
             SseConfig unmarshalledObject = new SseConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public ProvisioningArtifactPreferences Unmarshall(JsonUnmarshallerContext context)
         {
             ProvisioningArtifactPreferences unmarshalledObject = new ProvisioningArtifactPreferences();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

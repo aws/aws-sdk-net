@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public BoxConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             BoxConfiguration unmarshalledObject = new BoxConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

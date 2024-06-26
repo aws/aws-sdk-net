@@ -57,6 +57,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public Lifecycle Unmarshall(JsonUnmarshallerContext context)
         {
             Lifecycle unmarshalledObject = new Lifecycle();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

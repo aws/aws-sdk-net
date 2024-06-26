@@ -57,6 +57,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         public PageClassification Unmarshall(JsonUnmarshallerContext context)
         {
             PageClassification unmarshalledObject = new PageClassification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

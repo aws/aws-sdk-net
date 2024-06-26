@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public HumanLoopRequestSource Unmarshall(JsonUnmarshallerContext context)
         {
             HumanLoopRequestSource unmarshalledObject = new HumanLoopRequestSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

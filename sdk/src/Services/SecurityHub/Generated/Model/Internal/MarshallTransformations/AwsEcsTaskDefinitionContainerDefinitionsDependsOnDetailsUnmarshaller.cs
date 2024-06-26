@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails unmarshalledObject = new AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

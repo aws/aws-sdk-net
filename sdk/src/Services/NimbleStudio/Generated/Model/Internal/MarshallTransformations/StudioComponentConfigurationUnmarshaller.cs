@@ -57,6 +57,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         public StudioComponentConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             StudioComponentConfiguration unmarshalledObject = new StudioComponentConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

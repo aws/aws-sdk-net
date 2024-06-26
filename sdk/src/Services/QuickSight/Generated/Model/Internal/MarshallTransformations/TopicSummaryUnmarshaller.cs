@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TopicSummary Unmarshall(JsonUnmarshallerContext context)
         {
             TopicSummary unmarshalledObject = new TopicSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -80,6 +82,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TopicId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UserExperienceVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserExperienceVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

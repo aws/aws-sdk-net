@@ -57,6 +57,8 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
         public DestinationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DestinationConfiguration unmarshalledObject = new DestinationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

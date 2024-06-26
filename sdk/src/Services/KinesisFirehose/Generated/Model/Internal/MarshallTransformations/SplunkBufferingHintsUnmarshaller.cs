@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public SplunkBufferingHints Unmarshall(JsonUnmarshallerContext context)
         {
             SplunkBufferingHints unmarshalledObject = new SplunkBufferingHints();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         public JobResourceTags Unmarshall(JsonUnmarshallerContext context)
         {
             JobResourceTags unmarshalledObject = new JobResourceTags();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

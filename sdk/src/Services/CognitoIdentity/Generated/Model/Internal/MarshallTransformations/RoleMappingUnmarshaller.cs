@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         public RoleMapping Unmarshall(JsonUnmarshallerContext context)
         {
             RoleMapping unmarshalledObject = new RoleMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

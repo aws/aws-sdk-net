@@ -57,6 +57,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         public BotAliasMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             BotAliasMetadata unmarshalledObject = new BotAliasMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

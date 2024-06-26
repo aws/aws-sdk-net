@@ -57,6 +57,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         public IdentitySourceItem Unmarshall(JsonUnmarshallerContext context)
         {
             IdentitySourceItem unmarshalledObject = new IdentitySourceItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

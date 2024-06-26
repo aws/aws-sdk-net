@@ -57,6 +57,8 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
         public Value Unmarshall(JsonUnmarshallerContext context)
         {
             Value unmarshalledObject = new Value();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

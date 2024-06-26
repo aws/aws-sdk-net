@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public AccountUsage Unmarshall(JsonUnmarshallerContext context)
         {
             AccountUsage unmarshalledObject = new AccountUsage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

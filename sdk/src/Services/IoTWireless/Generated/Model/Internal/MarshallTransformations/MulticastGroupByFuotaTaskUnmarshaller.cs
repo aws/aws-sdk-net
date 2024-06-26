@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public MulticastGroupByFuotaTask Unmarshall(JsonUnmarshallerContext context)
         {
             MulticastGroupByFuotaTask unmarshalledObject = new MulticastGroupByFuotaTask();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

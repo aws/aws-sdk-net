@@ -57,6 +57,8 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
         public RDSDatabase Unmarshall(JsonUnmarshallerContext context)
         {
             RDSDatabase unmarshalledObject = new RDSDatabase();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

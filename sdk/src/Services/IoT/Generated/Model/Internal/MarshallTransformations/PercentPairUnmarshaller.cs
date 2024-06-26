@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public PercentPair Unmarshall(JsonUnmarshallerContext context)
         {
             PercentPair unmarshalledObject = new PercentPair();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

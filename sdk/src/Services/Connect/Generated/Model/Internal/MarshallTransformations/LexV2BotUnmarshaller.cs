@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public LexV2Bot Unmarshall(JsonUnmarshallerContext context)
         {
             LexV2Bot unmarshalledObject = new LexV2Bot();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

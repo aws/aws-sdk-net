@@ -282,7 +282,7 @@ namespace Amazon.OpsWorks.Model
         /// The default root device type. This value is used by default for all instances in the
         /// stack, but you can override it when you create an instance. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-        /// for the Root Device</a>.
+        /// for the Root Device</a>. 
         /// </para>
         /// </summary>
         public RootDeviceType DefaultRootDeviceType
@@ -355,7 +355,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The stack name.
+        /// The stack name. Stack names can be a maximum of 64 characters.
         /// </para>
         /// </summary>
         public string Name
@@ -373,9 +373,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The stack AWS region, such as "ap-northeast-2". For more information about AWS regions,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>.
+        /// The stack Amazon Web Services Region, such as <c>ap-northeast-2</c>. For more information
+        /// about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// and Endpoints</a>.
         /// </para>
         /// </summary>
         public string Region
@@ -393,7 +393,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The stack AWS Identity and Access Management (IAM) role.
+        /// The stack Identity and Access Management (IAM) role.
         /// </para>
         /// </summary>
         public string ServiceRoleArn
@@ -447,8 +447,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property UseOpsworksSecurityGroups. 
         /// <para>
-        /// Whether the stack automatically associates the AWS OpsWorks Stacks built-in security
-        /// groups with the stack's layers.
+        /// Whether the stack automatically associates the OpsWorks Stacks built-in security groups
+        /// with the stack's layers.
         /// </para>
         /// </summary>
         public bool UseOpsworksSecurityGroups

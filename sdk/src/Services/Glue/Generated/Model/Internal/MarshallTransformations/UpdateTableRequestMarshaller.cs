@@ -81,6 +81,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DatabaseName);
                 }
 
+                if(publicRequest.IsSetForce())
+                {
+                    context.Writer.WritePropertyName("Force");
+                    context.Writer.Write(publicRequest.Force);
+                }
+
                 if(publicRequest.IsSetSkipArchive())
                 {
                     context.Writer.WritePropertyName("SkipArchive");
@@ -108,6 +114,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("VersionId");
                     context.Writer.Write(publicRequest.VersionId);
+                }
+
+                if(publicRequest.IsSetViewUpdateAction())
+                {
+                    context.Writer.WritePropertyName("ViewUpdateAction");
+                    context.Writer.Write(publicRequest.ViewUpdateAction);
                 }
 
                 writer.WriteObjectEnd();

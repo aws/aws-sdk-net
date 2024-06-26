@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public EnableIoTLoggingParams Unmarshall(JsonUnmarshallerContext context)
         {
             EnableIoTLoggingParams unmarshalledObject = new EnableIoTLoggingParams();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

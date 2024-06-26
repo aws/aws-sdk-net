@@ -57,6 +57,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         public GetFieldResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GetFieldResponse unmarshalledObject = new GetFieldResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,18 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("createdTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("deleted", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Deleted = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -80,6 +94,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FieldId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastModifiedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))

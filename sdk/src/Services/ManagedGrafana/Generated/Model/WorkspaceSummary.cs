@@ -128,8 +128,8 @@ namespace Amazon.ManagedGrafana.Model
         /// Gets and sets the property GrafanaToken. 
         /// <para>
         /// The token that ties this workspace to a Grafana Labs account. For more information,
-        /// see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
-        /// with Grafana Labs</a>.
+        /// see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
+        /// your account with Grafana Labs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]

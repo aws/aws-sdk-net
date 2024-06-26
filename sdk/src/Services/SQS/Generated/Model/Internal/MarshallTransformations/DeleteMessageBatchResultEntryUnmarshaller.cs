@@ -57,6 +57,8 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public DeleteMessageBatchResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
             DeleteMessageBatchResultEntry unmarshalledObject = new DeleteMessageBatchResultEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

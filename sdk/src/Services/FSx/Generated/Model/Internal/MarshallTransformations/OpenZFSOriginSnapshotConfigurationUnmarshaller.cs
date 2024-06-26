@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public OpenZFSOriginSnapshotConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             OpenZFSOriginSnapshotConfiguration unmarshalledObject = new OpenZFSOriginSnapshotConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

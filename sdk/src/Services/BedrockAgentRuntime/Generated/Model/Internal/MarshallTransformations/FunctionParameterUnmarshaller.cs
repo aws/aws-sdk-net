@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         public FunctionParameter Unmarshall(JsonUnmarshallerContext context)
         {
             FunctionParameter unmarshalledObject = new FunctionParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

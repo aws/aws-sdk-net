@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public SegmentGroupList Unmarshall(JsonUnmarshallerContext context)
         {
             SegmentGroupList unmarshalledObject = new SegmentGroupList();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

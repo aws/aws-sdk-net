@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public DocumentReviewCommentSource Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentReviewCommentSource unmarshalledObject = new DocumentReviewCommentSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

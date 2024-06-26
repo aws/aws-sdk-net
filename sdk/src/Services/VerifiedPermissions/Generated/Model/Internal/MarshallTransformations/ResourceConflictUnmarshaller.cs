@@ -57,6 +57,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         public ResourceConflict Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceConflict unmarshalledObject = new ResourceConflict();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

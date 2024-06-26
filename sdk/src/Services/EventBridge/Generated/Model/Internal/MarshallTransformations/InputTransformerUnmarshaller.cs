@@ -57,6 +57,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         public InputTransformer Unmarshall(JsonUnmarshallerContext context)
         {
             InputTransformer unmarshalledObject = new InputTransformer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

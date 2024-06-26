@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public FSxWindowsFileServerVolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             FSxWindowsFileServerVolumeConfiguration unmarshalledObject = new FSxWindowsFileServerVolumeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

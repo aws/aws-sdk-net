@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public IssuerCertificateIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             IssuerCertificateIdentifier unmarshalledObject = new IssuerCertificateIdentifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public AwsApiCallAction Unmarshall(JsonUnmarshallerContext context)
         {
             AwsApiCallAction unmarshalledObject = new AwsApiCallAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

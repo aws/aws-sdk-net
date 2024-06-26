@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public Scte35InputScheduleActionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             Scte35InputScheduleActionSettings unmarshalledObject = new Scte35InputScheduleActionSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

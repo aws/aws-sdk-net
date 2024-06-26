@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public SceneError Unmarshall(JsonUnmarshallerContext context)
         {
             SceneError unmarshalledObject = new SceneError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         public Tiering Unmarshall(JsonUnmarshallerContext context)
         {
             Tiering unmarshalledObject = new Tiering();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

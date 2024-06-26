@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public WebhookFilter Unmarshall(JsonUnmarshallerContext context)
         {
             WebhookFilter unmarshalledObject = new WebhookFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

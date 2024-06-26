@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public PipeLogConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             PipeLogConfiguration unmarshalledObject = new PipeLogConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

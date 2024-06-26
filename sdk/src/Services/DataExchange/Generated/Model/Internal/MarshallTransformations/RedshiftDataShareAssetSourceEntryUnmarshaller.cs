@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public RedshiftDataShareAssetSourceEntry Unmarshall(JsonUnmarshallerContext context)
         {
             RedshiftDataShareAssetSourceEntry unmarshalledObject = new RedshiftDataShareAssetSourceEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

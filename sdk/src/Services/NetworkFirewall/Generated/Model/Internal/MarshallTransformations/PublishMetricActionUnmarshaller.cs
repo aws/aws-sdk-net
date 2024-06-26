@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public PublishMetricAction Unmarshall(JsonUnmarshallerContext context)
         {
             PublishMetricAction unmarshalledObject = new PublishMetricAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

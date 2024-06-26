@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public ReferencePredictorSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ReferencePredictorSummary unmarshalledObject = new ReferencePredictorSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

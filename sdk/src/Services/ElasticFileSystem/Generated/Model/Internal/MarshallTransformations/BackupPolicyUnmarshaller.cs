@@ -57,6 +57,8 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         public BackupPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             BackupPolicy unmarshalledObject = new BackupPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

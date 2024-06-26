@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class S3ModelDataSource
     {
         private ModelCompressionType _compressionType;
+        private InferenceHubAccessConfig _hubAccessConfig;
         private ModelAccessConfig _modelAccessConfig;
         private S3ModelDataType _s3DataType;
         private string _s3Uri;
@@ -135,6 +136,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCompressionType()
         {
             return this._compressionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HubAccessConfig. 
+        /// <para>
+        /// Configuration information for hub access.
+        /// </para>
+        /// </summary>
+        public InferenceHubAccessConfig HubAccessConfig
+        {
+            get { return this._hubAccessConfig; }
+            set { this._hubAccessConfig = value; }
+        }
+
+        // Check to see if HubAccessConfig property is set
+        internal bool IsSetHubAccessConfig()
+        {
+            return this._hubAccessConfig != null;
         }
 
         /// <summary>

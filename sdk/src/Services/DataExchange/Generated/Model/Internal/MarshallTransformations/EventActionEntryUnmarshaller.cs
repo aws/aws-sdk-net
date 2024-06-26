@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public EventActionEntry Unmarshall(JsonUnmarshallerContext context)
         {
             EventActionEntry unmarshalledObject = new EventActionEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

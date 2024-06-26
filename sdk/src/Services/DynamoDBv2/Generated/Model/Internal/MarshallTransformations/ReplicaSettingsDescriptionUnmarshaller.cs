@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public ReplicaSettingsDescription Unmarshall(JsonUnmarshallerContext context)
         {
             ReplicaSettingsDescription unmarshalledObject = new ReplicaSettingsDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

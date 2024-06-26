@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public S3SnapshotAsset Unmarshall(JsonUnmarshallerContext context)
         {
             S3SnapshotAsset unmarshalledObject = new S3SnapshotAsset();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

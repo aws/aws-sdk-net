@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public IpAddressDetails Unmarshall(JsonUnmarshallerContext context)
         {
             IpAddressDetails unmarshalledObject = new IpAddressDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

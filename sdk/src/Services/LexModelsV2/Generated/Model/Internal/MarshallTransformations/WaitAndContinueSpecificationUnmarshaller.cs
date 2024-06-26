@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public WaitAndContinueSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             WaitAndContinueSpecification unmarshalledObject = new WaitAndContinueSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

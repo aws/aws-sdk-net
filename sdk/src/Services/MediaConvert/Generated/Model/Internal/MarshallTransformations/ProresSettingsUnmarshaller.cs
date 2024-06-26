@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public ProresSettings Unmarshall(JsonUnmarshallerContext context)
         {
             ProresSettings unmarshalledObject = new ProresSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

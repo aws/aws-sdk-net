@@ -49,8 +49,8 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Modify
-    /// a launch template (manage launch template versions)</a> in the <i>Amazon Elastic Compute
-    /// Cloud User Guide</i>.
+    /// a launch template (manage launch template versions)</a> in the <i>Amazon EC2 User
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateLaunchTemplateVersionRequest : AmazonEC2Request
@@ -159,8 +159,7 @@ namespace Amazon.EC2.Model
         /// If <c>true</c>, and if a Systems Manager parameter is specified for <c>ImageId</c>,
         /// the AMI ID is displayed in the response for <c>imageID</c>. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
-        /// a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute
-        /// Cloud User Guide</i>.
+        /// a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>

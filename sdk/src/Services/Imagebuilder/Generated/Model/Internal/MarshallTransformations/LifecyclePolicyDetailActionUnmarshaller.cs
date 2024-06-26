@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public LifecyclePolicyDetailAction Unmarshall(JsonUnmarshallerContext context)
         {
             LifecyclePolicyDetailAction unmarshalledObject = new LifecyclePolicyDetailAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

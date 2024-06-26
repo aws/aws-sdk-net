@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public Compute Unmarshall(JsonUnmarshallerContext context)
         {
             Compute unmarshalledObject = new Compute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

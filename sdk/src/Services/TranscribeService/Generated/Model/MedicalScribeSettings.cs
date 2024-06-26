@@ -92,7 +92,7 @@ namespace Amazon.TranscribeService.Model
         /// field to true.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=10)]
+        [AWSProperty(Min=2, Max=30)]
         public int MaxSpeakerLabels
         {
             get { return this._maxSpeakerLabels.GetValueOrDefault(); }

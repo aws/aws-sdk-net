@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public VoiceAnalyticsProcessorConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             VoiceAnalyticsProcessorConfiguration unmarshalledObject = new VoiceAnalyticsProcessorConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

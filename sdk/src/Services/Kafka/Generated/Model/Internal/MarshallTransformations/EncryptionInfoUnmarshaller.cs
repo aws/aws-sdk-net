@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public EncryptionInfo Unmarshall(JsonUnmarshallerContext context)
         {
             EncryptionInfo unmarshalledObject = new EncryptionInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

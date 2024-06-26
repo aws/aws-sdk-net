@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public UserQuickConnectConfig Unmarshall(JsonUnmarshallerContext context)
         {
             UserQuickConnectConfig unmarshalledObject = new UserQuickConnectConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

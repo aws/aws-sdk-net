@@ -57,6 +57,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public ImageStateChangeReason Unmarshall(JsonUnmarshallerContext context)
         {
             ImageStateChangeReason unmarshalledObject = new ImageStateChangeReason();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

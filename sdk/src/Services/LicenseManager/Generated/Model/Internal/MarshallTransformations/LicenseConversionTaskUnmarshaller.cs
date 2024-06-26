@@ -57,6 +57,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         public LicenseConversionTask Unmarshall(JsonUnmarshallerContext context)
         {
             LicenseConversionTask unmarshalledObject = new LicenseConversionTask();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

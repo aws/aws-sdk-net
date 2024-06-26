@@ -77,6 +77,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListEnvironmentActions operation
+        ///</summary>
+        public IListEnvironmentActionsPaginator ListEnvironmentActions(ListEnvironmentActionsRequest request) 
+        {
+            return new ListEnvironmentActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEnvironmentBlueprintConfigurations operation
         ///</summary>
         public IListEnvironmentBlueprintConfigurationsPaginator ListEnvironmentBlueprintConfigurations(ListEnvironmentBlueprintConfigurationsRequest request) 

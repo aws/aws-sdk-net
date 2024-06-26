@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public EBSSavingsEstimationMode Unmarshall(JsonUnmarshallerContext context)
         {
             EBSSavingsEstimationMode unmarshalledObject = new EBSSavingsEstimationMode();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

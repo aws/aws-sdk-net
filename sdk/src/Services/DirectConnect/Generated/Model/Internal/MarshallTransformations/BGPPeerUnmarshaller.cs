@@ -57,6 +57,8 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         public BGPPeer Unmarshall(JsonUnmarshallerContext context)
         {
             BGPPeer unmarshalledObject = new BGPPeer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

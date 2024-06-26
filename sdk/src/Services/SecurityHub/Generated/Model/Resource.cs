@@ -159,6 +159,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The canonical Amazon Web Services external Region name where this resource is located.
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum length of 1. Maximum length of 16.
+        /// </para>
         /// </summary>
         public string Region
         {
@@ -195,7 +199,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of Amazon Web Services tags associated with a resource at the time the finding
-        /// was processed.
+        /// was processed. Tags must follow <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon
+        /// Web Services tag naming limits and requirements</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -221,6 +226,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// If the resource does not match any of the provided types, then set <c>Type</c> to
         /// <c>Other</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum length of 1. Maximum length of 256.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

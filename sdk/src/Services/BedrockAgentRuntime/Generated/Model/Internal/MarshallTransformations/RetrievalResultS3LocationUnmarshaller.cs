@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         public RetrievalResultS3Location Unmarshall(JsonUnmarshallerContext context)
         {
             RetrievalResultS3Location unmarshalledObject = new RetrievalResultS3Location();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

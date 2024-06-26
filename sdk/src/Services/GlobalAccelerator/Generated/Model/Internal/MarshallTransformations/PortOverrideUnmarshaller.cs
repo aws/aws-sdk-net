@@ -57,6 +57,8 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         public PortOverride Unmarshall(JsonUnmarshallerContext context)
         {
             PortOverride unmarshalledObject = new PortOverride();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

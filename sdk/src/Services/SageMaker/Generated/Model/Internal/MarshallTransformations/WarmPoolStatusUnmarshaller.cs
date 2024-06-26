@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public WarmPoolStatus Unmarshall(JsonUnmarshallerContext context)
         {
             WarmPoolStatus unmarshalledObject = new WarmPoolStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

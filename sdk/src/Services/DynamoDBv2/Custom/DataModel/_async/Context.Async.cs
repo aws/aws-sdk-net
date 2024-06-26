@@ -16,10 +16,12 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -39,9 +41,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="value">Object to save.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-#pragma warning disable IL2095 // 'DynamicallyAccessedMemberTypes' on the generic parameter of method or type don't match overridden generic parameter method or type. All overridden members must have the same 'DynamicallyAccessedMembersAttribute' usage.
-        public Task SaveAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, CancellationToken cancellationToken = default(CancellationToken))
-#pragma warning restore IL2095 // 'DynamicallyAccessedMemberTypes' on the generic parameter of method or type don't match overridden generic parameter method or type. All overridden members must have the same 'DynamicallyAccessedMembersAttribute' usage.
+        public Task SaveAsync<T>(T value, CancellationToken cancellationToken = default(CancellationToken))
         {
             return SaveHelperAsync(value, null, cancellationToken);
         }
@@ -92,79 +92,113 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Load async
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Load operation.
+        /// Loads an object from DynamoDB for the given hash key.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-#pragma warning disable IL2095 // 'DynamicallyAccessedMemberTypes' on the generic parameter of method or type don't match overridden generic parameter method or type. All overridden members must have the same 'DynamicallyAccessedMembersAttribute' usage.
-        public Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, CancellationToken cancellationToken = default(CancellationToken))
-#pragma warning restore IL2095 // 'DynamicallyAccessedMemberTypes' on the generic parameter of method or type don't match overridden generic parameter method or type. All overridden members must have the same 'DynamicallyAccessedMembersAttribute' usage.
+        /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
+        public Task<T> LoadAsync<T>(object hashKey, CancellationToken cancellationToken = default(CancellationToken))
         {
             return LoadHelperAsync<T>(hashKey, null, null, cancellationToken);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Load operation.
+        /// Loads an object from DynamoDB for the given hash key and using the given config.
         /// </summary>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
         /// <typeparam name="T">Type to populate.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
+        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
+        /// the item's primary key for the table must be specified.
+        /// </param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
         public Task<T> LoadAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
             return LoadHelperAsync<T>(hashKey, null, operationConfig, cancellationToken);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Load operation.
+        /// Loads an object from DynamoDB for the given hash-and-range primary key.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
         /// <param name="rangeKey">Range key element of the target item.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
         public Task<T> LoadAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default(CancellationToken))
         {
             return LoadHelperAsync<T>(hashKey, rangeKey, null, cancellationToken);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Load operation.
+        /// Loads an object from DynamoDB for the given hash-and-range primary key and using the given config.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
         /// <param name="rangeKey">Range key element of the target item.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
+        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
+        /// the item's primary key for the table must be specified.
+        /// </param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
         public Task<T> LoadAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
             return LoadHelperAsync<T>(hashKey, rangeKey, operationConfig, cancellationToken);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Load operation.
+        /// Loads an object from DynamoDB for the given key.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="keyObject">Key of the target item.</param>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
+        /// <param name="keyObject">A partially-specified instance, where the
+        /// hash/range properties are equal to the key of the item you
+        /// want to load.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
         public Task<T> LoadAsync<T>(T keyObject, CancellationToken cancellationToken = default(CancellationToken))
         {
             return LoadHelperAsync(keyObject, null, cancellationToken);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Load operation.
+        /// Loads an object from DynamoDB for the given key and using the given config.
         /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="keyObject">Key of the target item.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <remarks>
+        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
+        /// </remarks>
+        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
+        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
+        /// <param name="keyObject">A partially-specified instance, where the
+        /// hash/range properties are equal to the key of the item you
+        /// want to load.</param>
+        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
+        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
+        /// the item's primary key for the table must be specified.
+        /// </param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
         public Task<T> LoadAsync<T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
             return LoadHelperAsync(keyObject, operationConfig, cancellationToken);

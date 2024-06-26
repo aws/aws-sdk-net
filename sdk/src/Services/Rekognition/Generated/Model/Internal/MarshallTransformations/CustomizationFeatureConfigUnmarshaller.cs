@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public CustomizationFeatureConfig Unmarshall(JsonUnmarshallerContext context)
         {
             CustomizationFeatureConfig unmarshalledObject = new CustomizationFeatureConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

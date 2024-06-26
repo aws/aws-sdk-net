@@ -57,6 +57,8 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         public MultiMeasureMappings Unmarshall(JsonUnmarshallerContext context)
         {
             MultiMeasureMappings unmarshalledObject = new MultiMeasureMappings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

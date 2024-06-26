@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public AttributePayload Unmarshall(JsonUnmarshallerContext context)
         {
             AttributePayload unmarshalledObject = new AttributePayload();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

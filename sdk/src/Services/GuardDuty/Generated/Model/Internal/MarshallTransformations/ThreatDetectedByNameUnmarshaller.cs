@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public ThreatDetectedByName Unmarshall(JsonUnmarshallerContext context)
         {
             ThreatDetectedByName unmarshalledObject = new ThreatDetectedByName();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

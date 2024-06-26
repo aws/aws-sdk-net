@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ExcludePeriodConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ExcludePeriodConfiguration unmarshalledObject = new ExcludePeriodConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

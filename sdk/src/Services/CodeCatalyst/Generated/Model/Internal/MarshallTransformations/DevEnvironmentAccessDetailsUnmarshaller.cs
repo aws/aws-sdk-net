@@ -57,6 +57,8 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         public DevEnvironmentAccessDetails Unmarshall(JsonUnmarshallerContext context)
         {
             DevEnvironmentAccessDetails unmarshalledObject = new DevEnvironmentAccessDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

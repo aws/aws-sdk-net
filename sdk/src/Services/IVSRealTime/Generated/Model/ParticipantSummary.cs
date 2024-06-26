@@ -37,6 +37,7 @@ namespace Amazon.IVSRealTime.Model
         private DateTime? _firstJoinTime;
         private string _participantId;
         private bool? _published;
+        private ParticipantRecordingState _recordingState;
         private ParticipantState _state;
         private string _userId;
 
@@ -94,6 +95,24 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetPublished()
         {
             return this._published.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordingState. 
+        /// <para>
+        /// Participant’s recording state.
+        /// </para>
+        /// </summary>
+        public ParticipantRecordingState RecordingState
+        {
+            get { return this._recordingState; }
+            set { this._recordingState = value; }
+        }
+
+        // Check to see if RecordingState property is set
+        internal bool IsSetRecordingState()
+        {
+            return this._recordingState != null;
         }
 
         /// <summary>

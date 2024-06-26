@@ -32,6 +32,11 @@ namespace Amazon.Omics.Model
     /// <summary>
     /// Container for the parameters to the GetRun operation.
     /// Gets information about a workflow run.
+    /// 
+    ///  
+    /// <para>
+    /// If a workflow is shared with you, you cannot export information about the run.
+    /// </para>
     /// </summary>
     public partial class GetRunRequest : AmazonOmicsRequest
     {

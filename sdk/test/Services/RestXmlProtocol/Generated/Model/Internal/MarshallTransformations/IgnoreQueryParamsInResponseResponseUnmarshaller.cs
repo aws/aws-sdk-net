@@ -46,9 +46,40 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             IgnoreQueryParamsInResponseResponse response = new IgnoreQueryParamsInResponseResponse();
+            UnmarshallResult(context,response);
             
             return response;
         }        
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, IgnoreQueryParamsInResponseResponse response)
+        {
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument) 
+                   targetDepth += 1;
+            if (context.IsEmptyResponse)
+            {
+                return;
+            }
+            while (context.Read())
+            {
+                if (context.IsStartElement || context.IsAttribute)
+                {
+                    if (context.TestExpression("baz", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Baz = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return;
+                }
+            }
+          
+            return;
+        }
   
 
         /// <summary>

@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public ApplicationSettingsResource Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationSettingsResource unmarshalledObject = new ApplicationSettingsResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         public VPCConfig Unmarshall(JsonUnmarshallerContext context)
         {
             VPCConfig unmarshalledObject = new VPCConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

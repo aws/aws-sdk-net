@@ -42,6 +42,7 @@ namespace Amazon.FSx.Model
         private LustreDeploymentType _deploymentType;
         private DriveCacheType _driveCacheType;
         private LustreLogConfiguration _logConfiguration;
+        private FileSystemLustreMetadataConfiguration _metadataConfiguration;
         private string _mountName;
         private int? _perUnitStorageThroughput;
         private LustreRootSquashConfiguration _rootSquashConfiguration;
@@ -231,6 +232,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetLogConfiguration()
         {
             return this._logConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataConfiguration. 
+        /// <para>
+        /// The Lustre metadata performance configuration for an Amazon FSx for Lustre file system
+        /// using a <c>PERSISTENT_2</c> deployment type.
+        /// </para>
+        /// </summary>
+        public FileSystemLustreMetadataConfiguration MetadataConfiguration
+        {
+            get { return this._metadataConfiguration; }
+            set { this._metadataConfiguration = value; }
+        }
+
+        // Check to see if MetadataConfiguration property is set
+        internal bool IsSetMetadataConfiguration()
+        {
+            return this._metadataConfiguration != null;
         }
 
         /// <summary>

@@ -88,10 +88,13 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier for the control domain. 
+        /// The unique identifier for the control domain. Audit Manager supports the control domains
+        /// that are provided by Amazon Web Services Control Catalog. For information about how
+        /// to find a list of available control domains, see <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+        /// <c>ListDomains</c> </a> in the Amazon Web Services Control Catalog API Reference.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=13, Max=2048)]
         public string Id
         {
             get { return this._id; }
@@ -128,7 +131,7 @@ namespace Amazon.AuditManager.Model
         /// The name of the control domain. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Name
         {
             get { return this._name; }

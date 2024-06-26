@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public ReleaseConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ReleaseConfiguration unmarshalledObject = new ReleaseConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public BlueGreenDeploymentConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             BlueGreenDeploymentConfiguration unmarshalledObject = new BlueGreenDeploymentConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

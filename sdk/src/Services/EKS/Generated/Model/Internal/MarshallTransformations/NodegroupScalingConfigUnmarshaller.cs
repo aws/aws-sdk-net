@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public NodegroupScalingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             NodegroupScalingConfig unmarshalledObject = new NodegroupScalingConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

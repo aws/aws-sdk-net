@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public DataQualityEvaluationRunAdditionalRunOptions Unmarshall(JsonUnmarshallerContext context)
         {
             DataQualityEvaluationRunAdditionalRunOptions unmarshalledObject = new DataQualityEvaluationRunAdditionalRunOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchMetricsEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CompositeRuleEvaluationMethod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CompositeRuleEvaluationMethod = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ResultsS3Prefix", targetDepth))

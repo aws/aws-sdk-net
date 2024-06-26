@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public EnvironmentError Unmarshall(JsonUnmarshallerContext context)
         {
             EnvironmentError unmarshalledObject = new EnvironmentError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

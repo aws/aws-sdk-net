@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public APISchema Unmarshall(JsonUnmarshallerContext context)
         {
             APISchema unmarshalledObject = new APISchema();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

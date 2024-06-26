@@ -1192,6 +1192,123 @@ namespace Amazon.ComputeOptimizer
 
         #endregion
         
+        #region  ExportRDSDatabaseRecommendations
+
+
+        /// <summary>
+        /// Export optimization recommendations for your Amazon Relational Database Service (Amazon
+        /// RDS). 
+        /// 
+        ///  
+        /// <para>
+        /// Recommendations are exported in a comma-separated values (CSV) file, and its metadata
+        /// in a JavaScript Object Notation (JSON) file, to an existing Amazon Simple Storage
+        /// Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+        /// Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have only one Amazon RDS export job in progress per Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportRDSDatabaseRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the ExportRDSDatabaseRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
+        /// The request exceeds a limit of the service.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportRDSDatabaseRecommendations">REST API Reference for ExportRDSDatabaseRecommendations Operation</seealso>
+        public virtual ExportRDSDatabaseRecommendationsResponse ExportRDSDatabaseRecommendations(ExportRDSDatabaseRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportRDSDatabaseRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportRDSDatabaseRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<ExportRDSDatabaseRecommendationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Export optimization recommendations for your Amazon Relational Database Service (Amazon
+        /// RDS). 
+        /// 
+        ///  
+        /// <para>
+        /// Recommendations are exported in a comma-separated values (CSV) file, and its metadata
+        /// in a JavaScript Object Notation (JSON) file, to an existing Amazon Simple Storage
+        /// Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+        /// Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have only one Amazon RDS export job in progress per Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportRDSDatabaseRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportRDSDatabaseRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
+        /// The request exceeds a limit of the service.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportRDSDatabaseRecommendations">REST API Reference for ExportRDSDatabaseRecommendations Operation</seealso>
+        public virtual Task<ExportRDSDatabaseRecommendationsResponse> ExportRDSDatabaseRecommendationsAsync(ExportRDSDatabaseRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportRDSDatabaseRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportRDSDatabaseRecommendationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ExportRDSDatabaseRecommendationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAutoScalingGroupRecommendations
 
 
@@ -2319,6 +2436,202 @@ namespace Amazon.ComputeOptimizer
             options.ResponseUnmarshaller = GetLicenseRecommendationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetLicenseRecommendationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRDSDatabaseRecommendationProjectedMetrics
+
+
+        /// <summary>
+        /// Returns the projected metrics of Amazon RDS recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRDSDatabaseRecommendationProjectedMetrics service method.</param>
+        /// 
+        /// <returns>The response from the GetRDSDatabaseRecommendationProjectedMetrics service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRDSDatabaseRecommendationProjectedMetrics">REST API Reference for GetRDSDatabaseRecommendationProjectedMetrics Operation</seealso>
+        public virtual GetRDSDatabaseRecommendationProjectedMetricsResponse GetRDSDatabaseRecommendationProjectedMetrics(GetRDSDatabaseRecommendationProjectedMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRDSDatabaseRecommendationProjectedMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRDSDatabaseRecommendationProjectedMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<GetRDSDatabaseRecommendationProjectedMetricsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the projected metrics of Amazon RDS recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRDSDatabaseRecommendationProjectedMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRDSDatabaseRecommendationProjectedMetrics service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRDSDatabaseRecommendationProjectedMetrics">REST API Reference for GetRDSDatabaseRecommendationProjectedMetrics Operation</seealso>
+        public virtual Task<GetRDSDatabaseRecommendationProjectedMetricsResponse> GetRDSDatabaseRecommendationProjectedMetricsAsync(GetRDSDatabaseRecommendationProjectedMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRDSDatabaseRecommendationProjectedMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRDSDatabaseRecommendationProjectedMetricsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRDSDatabaseRecommendationProjectedMetricsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRDSDatabaseRecommendations
+
+
+        /// <summary>
+        /// Returns Amazon RDS recommendations. 
+        /// 
+        ///  
+        /// <para>
+        /// Compute Optimizer generates recommendations for Amazon RDS that meet a specific set
+        /// of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRDSDatabaseRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the GetRDSDatabaseRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRDSDatabaseRecommendations">REST API Reference for GetRDSDatabaseRecommendations Operation</seealso>
+        public virtual GetRDSDatabaseRecommendationsResponse GetRDSDatabaseRecommendations(GetRDSDatabaseRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRDSDatabaseRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRDSDatabaseRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetRDSDatabaseRecommendationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns Amazon RDS recommendations. 
+        /// 
+        ///  
+        /// <para>
+        /// Compute Optimizer generates recommendations for Amazon RDS that meet a specific set
+        /// of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRDSDatabaseRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRDSDatabaseRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRDSDatabaseRecommendations">REST API Reference for GetRDSDatabaseRecommendations Operation</seealso>
+        public virtual Task<GetRDSDatabaseRecommendationsResponse> GetRDSDatabaseRecommendationsAsync(GetRDSDatabaseRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRDSDatabaseRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRDSDatabaseRecommendationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRDSDatabaseRecommendationsResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -189,7 +189,7 @@ namespace Amazon.FSx.Model
         /// system. Scale-up file systems are powered by 1 HA pair. The default value is 1. FSx
         /// for ONTAP scale-out file systems are powered by up to 12 HA pairs. The value of this
         /// property affects the values of <c>StorageCapacity</c>, <c>Iops</c>, and <c>ThroughputCapacity</c>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability
         /// (HA) pairs</a> in the FSx for ONTAP user guide.
         /// </para>
         ///  

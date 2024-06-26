@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public NodeRangeProperty Unmarshall(JsonUnmarshallerContext context)
         {
             NodeRangeProperty unmarshalledObject = new NodeRangeProperty();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         public ImpactedLocation Unmarshall(JsonUnmarshallerContext context)
         {
             ImpactedLocation unmarshalledObject = new ImpactedLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

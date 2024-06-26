@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public PolicyVersionIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             PolicyVersionIdentifier unmarshalledObject = new PolicyVersionIdentifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

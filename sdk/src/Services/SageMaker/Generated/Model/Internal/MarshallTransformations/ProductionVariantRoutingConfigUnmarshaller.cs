@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ProductionVariantRoutingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ProductionVariantRoutingConfig unmarshalledObject = new ProductionVariantRoutingConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

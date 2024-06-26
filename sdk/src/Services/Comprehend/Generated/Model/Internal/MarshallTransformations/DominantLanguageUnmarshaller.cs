@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public DominantLanguage Unmarshall(JsonUnmarshallerContext context)
         {
             DominantLanguage unmarshalledObject = new DominantLanguage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

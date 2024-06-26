@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public UnprocessedScramSecret Unmarshall(JsonUnmarshallerContext context)
         {
             UnprocessedScramSecret unmarshalledObject = new UnprocessedScramSecret();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         public Robot Unmarshall(JsonUnmarshallerContext context)
         {
             Robot unmarshalledObject = new Robot();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

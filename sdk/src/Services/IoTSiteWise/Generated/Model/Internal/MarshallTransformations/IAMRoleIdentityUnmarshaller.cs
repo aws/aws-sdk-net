@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public IAMRoleIdentity Unmarshall(JsonUnmarshallerContext context)
         {
             IAMRoleIdentity unmarshalledObject = new IAMRoleIdentity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         public EnvironmentState Unmarshall(JsonUnmarshallerContext context)
         {
             EnvironmentState unmarshalledObject = new EnvironmentState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

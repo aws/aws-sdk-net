@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public VisibleRangeOptions Unmarshall(JsonUnmarshallerContext context)
         {
             VisibleRangeOptions unmarshalledObject = new VisibleRangeOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public FindingCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             FindingCriteria unmarshalledObject = new FindingCriteria();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

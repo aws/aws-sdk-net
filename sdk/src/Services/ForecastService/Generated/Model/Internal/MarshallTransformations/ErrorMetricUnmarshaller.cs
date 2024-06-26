@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public ErrorMetric Unmarshall(JsonUnmarshallerContext context)
         {
             ErrorMetric unmarshalledObject = new ErrorMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

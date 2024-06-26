@@ -57,6 +57,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         public TotalResourceUtilization Unmarshall(JsonUnmarshallerContext context)
         {
             TotalResourceUtilization unmarshalledObject = new TotalResourceUtilization();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

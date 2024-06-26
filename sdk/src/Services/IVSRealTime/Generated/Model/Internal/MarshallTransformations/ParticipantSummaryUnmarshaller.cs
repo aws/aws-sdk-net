@@ -57,6 +57,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         public ParticipantSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ParticipantSummary unmarshalledObject = new ParticipantSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -80,6 +82,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.Published = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("recordingState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecordingState = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("state", targetDepth))

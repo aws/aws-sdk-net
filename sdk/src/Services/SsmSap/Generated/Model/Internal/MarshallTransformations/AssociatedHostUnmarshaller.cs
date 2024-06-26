@@ -57,6 +57,8 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         public AssociatedHost Unmarshall(JsonUnmarshallerContext context)
         {
             AssociatedHost unmarshalledObject = new AssociatedHost();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

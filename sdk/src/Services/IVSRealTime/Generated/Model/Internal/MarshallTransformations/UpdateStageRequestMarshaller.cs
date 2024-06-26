@@ -73,6 +73,17 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Arn);
                 }
 
+                if(publicRequest.IsSetAutoParticipantRecordingConfiguration())
+                {
+                    context.Writer.WritePropertyName("autoParticipantRecordingConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutoParticipantRecordingConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AutoParticipantRecordingConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

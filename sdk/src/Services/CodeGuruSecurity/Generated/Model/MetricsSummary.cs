@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
-    /// Information about summary metrics in an account.
+    /// A summary of metrics for an account as of a specified date.
     /// </summary>
     public partial class MetricsSummary
     {
@@ -44,7 +44,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// Gets and sets the property CategoriesWithMostFindings. 
         /// <para>
         /// A list of <c>CategoryWithFindingNum</c> objects for the top 5 finding categories with
-        /// the most open findings in an account.
+        /// the most findings.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -81,7 +81,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property OpenFindings. 
         /// <para>
-        /// The number of open findings of each severity in an account.
+        /// The number of open findings of each severity.
         /// </para>
         /// </summary>
         public FindingMetricsValuePerSeverity OpenFindings
@@ -100,7 +100,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// Gets and sets the property ScansWithMostOpenCriticalFindings. 
         /// <para>
         /// A list of <c>ScanNameWithFindingNum</c> objects for the top 3 scans with the most
-        /// number of open findings in an account.
+        /// number of open critical findings.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
@@ -120,7 +120,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// Gets and sets the property ScansWithMostOpenFindings. 
         /// <para>
         /// A list of <c>ScanNameWithFindingNum</c> objects for the top 3 scans with the most
-        /// number of open critical findings in an account.
+        /// number of open findings.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]

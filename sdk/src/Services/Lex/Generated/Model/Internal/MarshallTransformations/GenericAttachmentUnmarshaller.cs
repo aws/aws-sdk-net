@@ -57,6 +57,8 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
         public GenericAttachment Unmarshall(JsonUnmarshallerContext context)
         {
             GenericAttachment unmarshalledObject = new GenericAttachment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

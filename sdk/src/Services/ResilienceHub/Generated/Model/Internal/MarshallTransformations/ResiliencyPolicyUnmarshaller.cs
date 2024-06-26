@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public ResiliencyPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             ResiliencyPolicy unmarshalledObject = new ResiliencyPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

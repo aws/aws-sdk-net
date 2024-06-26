@@ -57,6 +57,8 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
         public SuggestStatus Unmarshall(JsonUnmarshallerContext context)
         {
             SuggestStatus unmarshalledObject = new SuggestStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

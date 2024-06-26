@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public ContactListDestination Unmarshall(JsonUnmarshallerContext context)
         {
             ContactListDestination unmarshalledObject = new ContactListDestination();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

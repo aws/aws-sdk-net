@@ -57,6 +57,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public CallAnalyticsJob Unmarshall(JsonUnmarshallerContext context)
         {
             CallAnalyticsJob unmarshalledObject = new CallAnalyticsJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CallAnalyticsJobDetails", targetDepth))
+                {
+                    var unmarshaller = CallAnalyticsJobDetailsUnmarshaller.Instance;
+                    unmarshalledObject.CallAnalyticsJobDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CallAnalyticsJobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

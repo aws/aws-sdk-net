@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public UpdateResult Unmarshall(JsonUnmarshallerContext context)
         {
             UpdateResult unmarshalledObject = new UpdateResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

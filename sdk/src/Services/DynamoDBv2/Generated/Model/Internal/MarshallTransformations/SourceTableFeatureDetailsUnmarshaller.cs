@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public SourceTableFeatureDetails Unmarshall(JsonUnmarshallerContext context)
         {
             SourceTableFeatureDetails unmarshalledObject = new SourceTableFeatureDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

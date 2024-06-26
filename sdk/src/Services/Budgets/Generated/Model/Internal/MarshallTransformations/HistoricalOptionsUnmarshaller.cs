@@ -57,6 +57,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         public HistoricalOptions Unmarshall(JsonUnmarshallerContext context)
         {
             HistoricalOptions unmarshalledObject = new HistoricalOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

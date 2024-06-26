@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public PipelineConfig Unmarshall(JsonUnmarshallerContext context)
         {
             PipelineConfig unmarshalledObject = new PipelineConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

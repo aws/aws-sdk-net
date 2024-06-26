@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public SalesforceKnowledgeArticleConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SalesforceKnowledgeArticleConfiguration unmarshalledObject = new SalesforceKnowledgeArticleConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

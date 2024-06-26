@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         public CustomEvents Unmarshall(JsonUnmarshallerContext context)
         {
             CustomEvents unmarshalledObject = new CustomEvents();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

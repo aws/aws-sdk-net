@@ -875,6 +875,10 @@ namespace Amazon.BedrockAgent
     {
 
         /// <summary>
+        /// Constant MONGO_DB_ATLAS for KnowledgeBaseStorageType
+        /// </summary>
+        public static readonly KnowledgeBaseStorageType MONGO_DB_ATLAS = new KnowledgeBaseStorageType("MONGO_DB_ATLAS");
+        /// <summary>
         /// Constant OPENSEARCH_SERVERLESS for KnowledgeBaseStorageType
         /// </summary>
         public static readonly KnowledgeBaseStorageType OPENSEARCH_SERVERLESS = new KnowledgeBaseStorageType("OPENSEARCH_SERVERLESS");

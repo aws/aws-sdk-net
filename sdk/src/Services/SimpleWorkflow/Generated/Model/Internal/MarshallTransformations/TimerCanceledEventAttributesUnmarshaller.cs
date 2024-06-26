@@ -57,6 +57,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         public TimerCanceledEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             TimerCanceledEventAttributes unmarshalledObject = new TimerCanceledEventAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

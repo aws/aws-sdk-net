@@ -154,11 +154,15 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Rotate
+        /// ROTATE - default, if no update strategy is provided
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Set
+        /// SET - allowed only after ROTATE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELETE - allowed only when transitioning to RBAC
         /// </para>
         ///  </li> </ul> 
         /// <para>

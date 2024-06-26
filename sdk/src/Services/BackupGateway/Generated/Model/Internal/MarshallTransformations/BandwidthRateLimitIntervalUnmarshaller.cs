@@ -57,6 +57,8 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         public BandwidthRateLimitInterval Unmarshall(JsonUnmarshallerContext context)
         {
             BandwidthRateLimitInterval unmarshalledObject = new BandwidthRateLimitInterval();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public AccessPreviewStatusReason Unmarshall(JsonUnmarshallerContext context)
         {
             AccessPreviewStatusReason unmarshalledObject = new AccessPreviewStatusReason();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

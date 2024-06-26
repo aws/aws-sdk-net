@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public LoRaWANJoinEventNotificationConfigurations Unmarshall(JsonUnmarshallerContext context)
         {
             LoRaWANJoinEventNotificationConfigurations unmarshalledObject = new LoRaWANJoinEventNotificationConfigurations();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

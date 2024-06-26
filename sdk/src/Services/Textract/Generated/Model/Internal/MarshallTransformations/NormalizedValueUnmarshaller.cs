@@ -57,6 +57,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         public NormalizedValue Unmarshall(JsonUnmarshallerContext context)
         {
             NormalizedValue unmarshalledObject = new NormalizedValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

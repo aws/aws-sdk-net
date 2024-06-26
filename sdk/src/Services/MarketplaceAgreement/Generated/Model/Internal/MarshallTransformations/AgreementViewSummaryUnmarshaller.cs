@@ -57,6 +57,8 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         public AgreementViewSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AgreementViewSummary unmarshalledObject = new AgreementViewSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public EcrConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EcrConfiguration unmarshalledObject = new EcrConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

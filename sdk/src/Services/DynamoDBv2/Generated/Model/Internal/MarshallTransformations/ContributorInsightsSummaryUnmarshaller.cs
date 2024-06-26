@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public ContributorInsightsSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ContributorInsightsSummary unmarshalledObject = new ContributorInsightsSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

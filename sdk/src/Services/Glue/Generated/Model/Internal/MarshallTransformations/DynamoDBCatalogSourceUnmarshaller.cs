@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public DynamoDBCatalogSource Unmarshall(JsonUnmarshallerContext context)
         {
             DynamoDBCatalogSource unmarshalledObject = new DynamoDBCatalogSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

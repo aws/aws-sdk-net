@@ -57,6 +57,8 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
         public ExternalId Unmarshall(JsonUnmarshallerContext context)
         {
             ExternalId unmarshalledObject = new ExternalId();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

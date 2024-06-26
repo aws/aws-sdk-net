@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public EntityDisplayData Unmarshall(JsonUnmarshallerContext context)
         {
             EntityDisplayData unmarshalledObject = new EntityDisplayData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

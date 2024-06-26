@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsLambdaFunctionDeadLetterConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AwsLambdaFunctionDeadLetterConfig unmarshalledObject = new AwsLambdaFunctionDeadLetterConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public JourneyLimits Unmarshall(JsonUnmarshallerContext context)
         {
             JourneyLimits unmarshalledObject = new JourneyLimits();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

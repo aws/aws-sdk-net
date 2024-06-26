@@ -57,6 +57,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public MedicalTranscriptionJobSummary Unmarshall(JsonUnmarshallerContext context)
         {
             MedicalTranscriptionJobSummary unmarshalledObject = new MedicalTranscriptionJobSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public ListedGatewayInstance Unmarshall(JsonUnmarshallerContext context)
         {
             ListedGatewayInstance unmarshalledObject = new ListedGatewayInstance();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

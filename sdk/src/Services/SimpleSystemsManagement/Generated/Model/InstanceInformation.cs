@@ -196,7 +196,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The IP address of the managed node.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=46)]
+        [AWSProperty(Sensitive=true, Min=1, Max=46)]
         public string IPAddress
         {
             get { return this._ipAddress; }

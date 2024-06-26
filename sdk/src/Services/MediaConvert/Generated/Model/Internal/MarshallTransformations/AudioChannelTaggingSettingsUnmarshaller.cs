@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public AudioChannelTaggingSettings Unmarshall(JsonUnmarshallerContext context)
         {
             AudioChannelTaggingSettings unmarshalledObject = new AudioChannelTaggingSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

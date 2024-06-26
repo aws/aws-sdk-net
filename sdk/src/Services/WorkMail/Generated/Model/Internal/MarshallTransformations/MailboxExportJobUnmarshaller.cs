@@ -57,6 +57,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         public MailboxExportJob Unmarshall(JsonUnmarshallerContext context)
         {
             MailboxExportJob unmarshalledObject = new MailboxExportJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

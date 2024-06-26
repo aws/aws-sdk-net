@@ -57,6 +57,8 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
         public BatchGetRecordError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchGetRecordError unmarshalledObject = new BatchGetRecordError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

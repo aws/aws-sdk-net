@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public VectorEnrichmentJobS3Data Unmarshall(JsonUnmarshallerContext context)
         {
             VectorEnrichmentJobS3Data unmarshalledObject = new VectorEnrichmentJobS3Data();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public IamRoleConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             IamRoleConfiguration unmarshalledObject = new IamRoleConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

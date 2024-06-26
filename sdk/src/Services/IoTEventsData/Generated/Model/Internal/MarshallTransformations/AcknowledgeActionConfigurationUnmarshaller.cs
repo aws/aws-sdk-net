@@ -57,6 +57,8 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
         public AcknowledgeActionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AcknowledgeActionConfiguration unmarshalledObject = new AcknowledgeActionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

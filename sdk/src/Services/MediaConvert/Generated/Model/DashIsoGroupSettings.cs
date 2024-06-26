@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
         private List<DashAdditionalManifest> _additionalManifests = AWSConfigs.InitializeCollections ? new List<DashAdditionalManifest>() : null;
         private DashIsoGroupAudioChannelConfigSchemeIdUri _audioChannelConfigSchemeIdUri;
         private string _baseUrl;
+        private string _dashIFrameTrickPlayNameModifier;
         private DashManifestStyle _dashManifestStyle;
         private string _destination;
         private DestinationSettings _destinationSettings;
@@ -111,6 +112,30 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetBaseUrl()
         {
             return this._baseUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DashIFrameTrickPlayNameModifier. Specify whether MediaConvert
+        /// generates I-frame only video segments for DASH trick play, also known as trick mode.
+        /// When specified, the I-frame only video segments are included within an additional
+        /// AdaptationSet in your DASH output manifest. To generate I-frame only video segments:
+        /// Enter a name as a text string, up to 256 character long. This name is appended to
+        /// the end of this output group's base filename, that you specify as part of your destination
+        /// URI, and used for the I-frame only video segment files. You may also include format
+        /// identifiers. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs
+        /// To not generate I-frame only video segments: Leave blank.
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string DashIFrameTrickPlayNameModifier
+        {
+            get { return this._dashIFrameTrickPlayNameModifier; }
+            set { this._dashIFrameTrickPlayNameModifier = value; }
+        }
+
+        // Check to see if DashIFrameTrickPlayNameModifier property is set
+        internal bool IsSetDashIFrameTrickPlayNameModifier()
+        {
+            return this._dashIFrameTrickPlayNameModifier != null;
         }
 
         /// <summary>

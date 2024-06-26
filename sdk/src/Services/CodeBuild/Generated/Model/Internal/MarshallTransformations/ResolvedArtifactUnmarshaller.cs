@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public ResolvedArtifact Unmarshall(JsonUnmarshallerContext context)
         {
             ResolvedArtifact unmarshalledObject = new ResolvedArtifact();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

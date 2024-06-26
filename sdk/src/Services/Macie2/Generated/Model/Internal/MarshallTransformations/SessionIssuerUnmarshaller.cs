@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public SessionIssuer Unmarshall(JsonUnmarshallerContext context)
         {
             SessionIssuer unmarshalledObject = new SessionIssuer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public RelatedResource Unmarshall(JsonUnmarshallerContext context)
         {
             RelatedResource unmarshalledObject = new RelatedResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

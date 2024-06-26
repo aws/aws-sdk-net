@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public FailedCreateAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             FailedCreateAssociation unmarshalledObject = new FailedCreateAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

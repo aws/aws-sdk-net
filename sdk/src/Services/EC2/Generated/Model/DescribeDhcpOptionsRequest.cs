@@ -31,12 +31,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDhcpOptions operation.
-    /// Describes one or more of your DHCP options sets.
+    /// Describes your DHCP option sets. The default is to describe all your DHCP option sets.
+    /// Alternatively, you can specify specific DHCP option set IDs or filter the results
+    /// to include only the DHCP option sets that match specific criteria.
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-    /// options sets</a> in the <i>Amazon VPC User Guide</i>.
+    /// option sets</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeDhcpOptionsRequest : AmazonEC2Request
@@ -49,11 +51,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DhcpOptionsIds. 
         /// <para>
-        /// The IDs of one or more DHCP options sets.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: Describes all your DHCP options sets.
+        /// The IDs of DHCP option sets.
         /// </para>
         /// </summary>
         public List<string> DhcpOptionsIds

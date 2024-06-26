@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public BlockDeviceMapping Unmarshall(JsonUnmarshallerContext context)
         {
             BlockDeviceMapping unmarshalledObject = new BlockDeviceMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

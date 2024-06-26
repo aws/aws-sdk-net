@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public OidcConfigForResponse Unmarshall(JsonUnmarshallerContext context)
         {
             OidcConfigForResponse unmarshalledObject = new OidcConfigForResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AuthenticationRequestExtraParams", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.AuthenticationRequestExtraParams = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AuthorizationEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +100,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogoutEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Scope", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TokenEndpoint", targetDepth))

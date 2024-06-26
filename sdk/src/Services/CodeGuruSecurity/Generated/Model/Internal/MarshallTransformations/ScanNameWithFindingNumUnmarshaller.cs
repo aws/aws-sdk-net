@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
         public ScanNameWithFindingNum Unmarshall(JsonUnmarshallerContext context)
         {
             ScanNameWithFindingNum unmarshalledObject = new ScanNameWithFindingNum();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

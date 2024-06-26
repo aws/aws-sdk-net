@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public DataSourceRunActivity Unmarshall(JsonUnmarshallerContext context)
         {
             DataSourceRunActivity unmarshalledObject = new DataSourceRunActivity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

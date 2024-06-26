@@ -84,6 +84,10 @@
     <pattern>[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetDashboardForJobRunRequest.Attempt</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRServerless.Model.GetDashboardForJobRunRequest.JobRunId</property>
     <min>1</min>
     <max>64</max>
@@ -99,6 +103,10 @@
     <min>1</min>
     <max>64</max>
     <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetJobRunRequest.Attempt</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.GetJobRunRequest.JobRunId</property>
@@ -119,6 +127,35 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.ListApplicationsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[A-Za-z0-9_=-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.ListJobRunAttemptsRequest.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.ListJobRunAttemptsRequest.JobRunId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.ListJobRunAttemptsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.ListJobRunAttemptsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[A-Za-z0-9_=-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.ListJobRunAttemptsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
     <pattern>[A-Za-z0-9_=-]+</pattern>
@@ -392,6 +429,10 @@
     <pattern>arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\d{12}):\/applications\/[0-9a-zA-Z]+\/jobruns\/[0-9a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRServerless.Model.JobRun.Attempt</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRServerless.Model.JobRun.CreatedBy</property>
     <min>20</min>
     <max>2048</max>
@@ -433,6 +474,58 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRServerless.Model.JobRunAttemptSummary.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.JobRunAttemptSummary.Arn</property>
+    <min>60</min>
+    <max>1024</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\d{12}):\/applications\/[0-9a-zA-Z]+\/jobruns\/[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.JobRunAttemptSummary.Attempt</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.JobRunAttemptSummary.CreatedBy</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):(iam|sts)::(\d{12})?:[\w/+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.JobRunAttemptSummary.ExecutionRole</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.JobRunAttemptSummary.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.JobRunAttemptSummary.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.JobRunAttemptSummary.ReleaseLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9._/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.JobRunAttemptSummary.StateDetails</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRServerless.Model.JobRunSummary.ApplicationId</property>
     <min>1</min>
     <max>64</max>
@@ -443,6 +536,10 @@
     <min>60</min>
     <max>1024</max>
     <pattern>arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\d{12}):\/applications\/[0-9a-zA-Z]+\/jobruns\/[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.JobRunSummary.Attempt</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.JobRunSummary.CreatedBy</property>
@@ -509,6 +606,14 @@
     <min>1</min>
     <max>10280</max>
     <pattern>https://aps-workspaces.([a-z]{2}-[a-z-]{1,20}-[1-9]).amazonaws(.[0-9A-Za-z]{2,4})+/workspaces/[-_.0-9A-Za-z]{1,100}/api/v1/remote_write</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.RetryPolicy.MaxAttempts</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.RetryPolicy.MaxFailedAttemptsPerHour</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.S3MonitoringConfiguration.EncryptionKeyArn</property>

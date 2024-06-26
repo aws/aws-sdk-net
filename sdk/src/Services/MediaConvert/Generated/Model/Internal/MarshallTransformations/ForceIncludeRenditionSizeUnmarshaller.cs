@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public ForceIncludeRenditionSize Unmarshall(JsonUnmarshallerContext context)
         {
             ForceIncludeRenditionSize unmarshalledObject = new ForceIncludeRenditionSize();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

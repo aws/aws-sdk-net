@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public ServerlessSasl Unmarshall(JsonUnmarshallerContext context)
         {
             ServerlessSasl unmarshalledObject = new ServerlessSasl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

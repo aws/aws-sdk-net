@@ -57,6 +57,8 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
         public MemberId Unmarshall(JsonUnmarshallerContext context)
         {
             MemberId unmarshalledObject = new MemberId();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

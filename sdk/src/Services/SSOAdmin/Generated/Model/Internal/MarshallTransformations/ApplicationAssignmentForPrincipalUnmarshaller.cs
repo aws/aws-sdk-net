@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public ApplicationAssignmentForPrincipal Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationAssignmentForPrincipal unmarshalledObject = new ApplicationAssignmentForPrincipal();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

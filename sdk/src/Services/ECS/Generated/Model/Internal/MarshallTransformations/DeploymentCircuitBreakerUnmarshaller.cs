@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public DeploymentCircuitBreaker Unmarshall(JsonUnmarshallerContext context)
         {
             DeploymentCircuitBreaker unmarshalledObject = new DeploymentCircuitBreaker();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

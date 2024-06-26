@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public S3LogsConfig Unmarshall(JsonUnmarshallerContext context)
         {
             S3LogsConfig unmarshalledObject = new S3LogsConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

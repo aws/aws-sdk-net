@@ -101,8 +101,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property IsDefault. 
         /// <para>
-        /// Indicates whether this is the default rule. Listener rules are created when you create
-        /// a listener. Each listener has a default rule for checking connection requests. 
+        /// Indicates whether this is the default listener rule.
         /// </para>
         /// </summary>
         public bool IsDefault
@@ -157,7 +156,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        ///  The priority of the rule. 
+        /// The priority of the rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

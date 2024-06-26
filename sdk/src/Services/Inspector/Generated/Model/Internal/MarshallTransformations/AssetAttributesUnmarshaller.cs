@@ -57,6 +57,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         public AssetAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             AssetAttributes unmarshalledObject = new AssetAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

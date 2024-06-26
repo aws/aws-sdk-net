@@ -57,6 +57,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public KxVolume Unmarshall(JsonUnmarshallerContext context)
         {
             KxVolume unmarshalledObject = new KxVolume();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

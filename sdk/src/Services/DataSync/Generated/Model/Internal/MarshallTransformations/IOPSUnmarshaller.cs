@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public IOPS Unmarshall(JsonUnmarshallerContext context)
         {
             IOPS unmarshalledObject = new IOPS();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public StepExecutionStatusDetail Unmarshall(JsonUnmarshallerContext context)
         {
             StepExecutionStatusDetail unmarshalledObject = new StepExecutionStatusDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         public ObjectReference Unmarshall(JsonUnmarshallerContext context)
         {
             ObjectReference unmarshalledObject = new ObjectReference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

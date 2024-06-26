@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public GlueDataCatalogConfig Unmarshall(JsonUnmarshallerContext context)
         {
             GlueDataCatalogConfig unmarshalledObject = new GlueDataCatalogConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

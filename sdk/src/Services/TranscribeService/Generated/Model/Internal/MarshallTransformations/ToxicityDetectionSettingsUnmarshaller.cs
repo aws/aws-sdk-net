@@ -57,6 +57,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public ToxicityDetectionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             ToxicityDetectionSettings unmarshalledObject = new ToxicityDetectionSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

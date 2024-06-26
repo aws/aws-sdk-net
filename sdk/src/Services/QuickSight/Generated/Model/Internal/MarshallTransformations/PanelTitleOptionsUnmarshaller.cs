@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public PanelTitleOptions Unmarshall(JsonUnmarshallerContext context)
         {
             PanelTitleOptions unmarshalledObject = new PanelTitleOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

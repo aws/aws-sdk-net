@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public SchemaId Unmarshall(JsonUnmarshallerContext context)
         {
             SchemaId unmarshalledObject = new SchemaId();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

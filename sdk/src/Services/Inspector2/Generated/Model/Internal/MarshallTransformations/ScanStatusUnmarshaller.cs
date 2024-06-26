@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public ScanStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ScanStatus unmarshalledObject = new ScanStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

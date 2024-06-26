@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FilterTextAreaControl Unmarshall(JsonUnmarshallerContext context)
         {
             FilterTextAreaControl unmarshalledObject = new FilterTextAreaControl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

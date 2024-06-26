@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsWafv2WebAclCaptchaConfigDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsWafv2WebAclCaptchaConfigDetails unmarshalledObject = new AwsWafv2WebAclCaptchaConfigDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

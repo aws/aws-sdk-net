@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public ConnectorDataTarget Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectorDataTarget unmarshalledObject = new ConnectorDataTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

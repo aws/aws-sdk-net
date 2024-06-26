@@ -57,6 +57,8 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
         public SitePlan Unmarshall(JsonUnmarshallerContext context)
         {
             SitePlan unmarshalledObject = new SitePlan();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

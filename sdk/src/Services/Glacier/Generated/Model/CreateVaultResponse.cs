@@ -51,7 +51,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this._location != null;
+            return !string.IsNullOrEmpty(this._location);
         }
 
     }

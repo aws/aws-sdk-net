@@ -96,6 +96,8 @@ of these tests, charges can occur. To reduce charges occurred by running the tes
 
 Unit tests can be found in the **AWSSDK.UnitTests** project.
 
+Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol tests ensure that each AWS protocol is working as expected. Each supported protocol is [listed here](https://smithy.io/2.0/aws/protocols/index.html). These tests are safe to run as they do not call real AWS services. You can run these tests by either opening the solution file and running the tests or via the `dotnet` cli by invoking `dotnet test AWSSDK.ProtocolTests.NetStandard.csproj`. The structure for the protocol test cases can be found [here in the smithy docs](https://smithy.io/2.0/additional-specs/http-protocol-compliance-tests.html).
+
 ### NuGet Packages
 
 * [AWSSDK.AccessAnalyzer](https://www.nuget.org/packages/AWSSDK.AccessAnalyzer/)
@@ -104,8 +106,6 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This release of the Account Management API enables customers to manage the alternate contacts for their AWS accounts. For more information, see https://docs.aws.amazon.com/accounts/latest/reference/accounts-welcome.html
 * [AWSSDK.ACMPCA](https://www.nuget.org/packages/AWSSDK.ACMPCA/)
 	* AWS Certificate Manager (ACM) Private Certificate Authority (CA) is a managed private CA service that helps you easily and securely manage the lifecycle of your private certificates. ACM Private CA provides you a highly-available private CA service without the upfront investment and ongoing maintenance costs of operating your own private CA. ACM Private CA extends ACM's certificate management capabilities to private certificates, enabling you to manage public and private certificates centrally.
-* [AWSSDK.AlexaForBusiness](https://www.nuget.org/packages/AWSSDK.AlexaForBusiness/)
-	* Alexa for Business is now generally available for production use. Alexa for Business makes it easy for you to use Alexa in your organization. The Alexa for Business SDK gives you APIs to manage Alexa devices, enroll users, and assign skills at scale. For more information about Alexa for Business, go to https://aws.amazon.com/alexaforbusiness
 * [AWSSDK.Amplify](https://www.nuget.org/packages/AWSSDK.Amplify/)
 	* Amplify is a fully managed continuous deployment and hosting service for modern web apps.
 * [AWSSDK.AmplifyBackend](https://www.nuget.org/packages/AWSSDK.AmplifyBackend/)
@@ -136,6 +136,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile.
 * [AWSSDK.ApplicationInsights](https://www.nuget.org/packages/AWSSDK.ApplicationInsights/)
 	* CloudWatch Application Insights detects errors and exceptions from logs, including .NET custom application logs, SQL Server logs, IIS logs, and more, and uses a combination of built-in rules and machine learning, such as dynamic baselining, to identify common problems. You can then easily drill into specific issues with CloudWatch Automatic Dashboards that are dynamically generated. These dashboards contain the most recent alarms, a summary of relevant metrics, and log snippets to help you identify root cause.
+* [AWSSDK.ApplicationSignals](https://www.nuget.org/packages/AWSSDK.ApplicationSignals/)
+	* This is the initial SDK release for Amazon CloudWatch Application Signals. Amazon CloudWatch Application Signals provides curated application performance monitoring for developers to monitor and troubleshoot application health using pre-built dashboards and Service Level Objectives.
 * [AWSSDK.AppMesh](https://www.nuget.org/packages/AWSSDK.AppMesh/)
 	* AWS App Mesh is a service mesh that makes it easy to monitor and control communications between microservices of an application. AWS App Mesh APIs are available for preview in eu-west-1, us-east-1, us-east-2, and us-west-2 regions.
 * [AWSSDK.AppRegistry](https://www.nuget.org/packages/AWSSDK.AppRegistry/)
@@ -146,6 +148,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.
 * [AWSSDK.AppSync](https://www.nuget.org/packages/AWSSDK.AppSync/)
 	* AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.
+* [AWSSDK.AppTest](https://www.nuget.org/packages/AWSSDK.AppTest/)
+	* AWS Mainframe Modernization Application Testing is an AWS Mainframe Modernization service feature that automates functional equivalence testing for mainframe application modernization and migration to AWS, and regression testing.
 * [AWSSDK.ARCZonalShift](https://www.nuget.org/packages/AWSSDK.ARCZonalShift/)
 	* Amazon Route 53 Application Recovery Controller Zonal Shift is a new service that makes it easy to shift traffic away from an Availability Zone in a Region. See the developer guide for more information: https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route53-recovery.html
 * [AWSSDK.Artifact](https://www.nuget.org/packages/AWSSDK.Artifact/)
@@ -174,8 +178,6 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Backup is a fully managed backup service that makes it easy to centralize and automate the back up of data across AWS services in the cloud as well as on-premises.
 * [AWSSDK.BackupGateway](https://www.nuget.org/packages/AWSSDK.BackupGateway/)
 	* Initial release of AWS Backup gateway which enables you to centralize and automate protection of on-premises VMware and VMware Cloud on AWS workloads using AWS Backup.
-* [AWSSDK.BackupStorage](https://www.nuget.org/packages/AWSSDK.BackupStorage/)
-	* This is the first public release of AWS Backup Storage. We are exposing some previously-internal APIs for use by external services. These APIs are not meant to be used directly by customers.
 * [AWSSDK.Batch](https://www.nuget.org/packages/AWSSDK.Batch/)
 	* AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. 
 * [AWSSDK.BCMDataExports](https://www.nuget.org/packages/AWSSDK.BCMDataExports/)
@@ -426,8 +428,6 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Enable Amazon GuardDuty to continuously monitor and process AWS data sources to identify threats to your AWS accounts and workloads. You can add customization by uploading additional threat intelligence lists and IP safe lists. You can list security findings, suspend, and disable the service.
 * [AWSSDK.HealthLake](https://www.nuget.org/packages/AWSSDK.HealthLake/)
 	* This release introduces Amazon HealthLake (preview), a HIPAA-eligible service that enables healthcare and life sciences customers to store, transform, query, and analyze health data in the AWS Cloud.
-* [AWSSDK.Honeycode](https://www.nuget.org/packages/AWSSDK.Honeycode/)
-	* Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.
 * [AWSSDK.IAMRolesAnywhere](https://www.nuget.org/packages/AWSSDK.IAMRolesAnywhere/)
 	* IAM Roles Anywhere allows your workloads such as servers, containers, and applications to obtain temporary AWS credentials and use the same IAM roles and policies that you have configured for your AWS workloads to access AWS resources.
 * [AWSSDK.IdentityManagement](https://www.nuget.org/packages/AWSSDK.IdentityManagement/)
@@ -548,6 +548,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.
 * [AWSSDK.Macie2](https://www.nuget.org/packages/AWSSDK.Macie2/)
 	* This release introduces a new major version of the Amazon Macie API. You can use this version of the API to develop tools and applications that interact with the new Amazon Macie.
+* [AWSSDK.MailManager](https://www.nuget.org/packages/AWSSDK.MailManager/)
+	* This release includes a new Amazon SES feature called Mail Manager, which is a set of email gateway capabilities designed to help customers strengthen their organization's email infrastructure, simplify email workflow management, and streamline email compliance control.
 * [AWSSDK.MainframeModernization](https://www.nuget.org/packages/AWSSDK.MainframeModernization/)
 	* AWS Mainframe Modernization service is a managed mainframe service and set of tools for planning, migrating, modernizing, and running mainframe workloads on AWS
 * [AWSSDK.ManagedBlockchain](https://www.nuget.org/packages/AWSSDK.ManagedBlockchain/)
@@ -648,6 +650,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Initial release of AWS Payment Cryptography DataPlane Plane service for performing cryptographic operations typically used during card payment processing.
 * [AWSSDK.PcaConnectorAd](https://www.nuget.org/packages/AWSSDK.PcaConnectorAd/)
 	* The Connector for AD allows you to use a fully-managed AWS Private CA as a drop-in replacement for your self-managed enterprise CAs without local agents or proxy servers. Enterprises that use AD to manage Windows environments can reduce their private certificate authority (CA) costs and complexity.
+* [AWSSDK.PcaConnectorScep](https://www.nuget.org/packages/AWSSDK.PcaConnectorScep/)
+	* Connector for SCEP allows you to use a managed, cloud CA to enroll mobile devices and networking gear. SCEP is a widely-adopted protocol used by mobile device management (MDM) solutions for enrolling mobile devices. With the connector, you can use AWS Private CA with popular MDM solutions.
 * [AWSSDK.Personalize](https://www.nuget.org/packages/AWSSDK.Personalize/)
 	* Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.
 * [AWSSDK.PersonalizeEvents](https://www.nuget.org/packages/AWSSDK.PersonalizeEvents/)
@@ -816,6 +820,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This is the initial SDK release for the AWS Support App in Slack.
 * [AWSSDK.Synthetics](https://www.nuget.org/packages/AWSSDK.Synthetics/)
 	* Introducing CloudWatch Synthetics. This is the first public release of CloudWatch Synthetics.
+* [AWSSDK.TaxSettings](https://www.nuget.org/packages/AWSSDK.TaxSettings/)
+	* Initial release of AWS Tax Settings API
 * [AWSSDK.Textract](https://www.nuget.org/packages/AWSSDK.Textract/)
 	* Amazon Textract enables you to add document text detection and analysis to your applications. You provide a document image to the Amazon Textract API, and the service detects the document text. Amazon Textract works with formatted text and can detect words and lines of words that are located close to each other. It can also analyze a document for items such as related text, tables, key-value pairs, and selection elements.
 * [AWSSDK.TimestreamInfluxDB](https://www.nuget.org/packages/AWSSDK.TimestreamInfluxDB/)

@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public OutputGroup Unmarshall(JsonUnmarshallerContext context)
         {
             OutputGroup unmarshalledObject = new OutputGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

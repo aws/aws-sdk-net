@@ -57,6 +57,8 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
         public GroupQuery Unmarshall(JsonUnmarshallerContext context)
         {
             GroupQuery unmarshalledObject = new GroupQuery();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

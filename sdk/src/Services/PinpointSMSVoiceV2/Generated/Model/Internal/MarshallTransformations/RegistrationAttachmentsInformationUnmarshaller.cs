@@ -57,6 +57,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         public RegistrationAttachmentsInformation Unmarshall(JsonUnmarshallerContext context)
         {
             RegistrationAttachmentsInformation unmarshalledObject = new RegistrationAttachmentsInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

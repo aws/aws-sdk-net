@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public FailedItem Unmarshall(JsonUnmarshallerContext context)
         {
             FailedItem unmarshalledObject = new FailedItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

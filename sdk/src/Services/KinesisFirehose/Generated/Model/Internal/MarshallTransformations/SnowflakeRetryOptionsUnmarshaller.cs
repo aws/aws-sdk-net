@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public SnowflakeRetryOptions Unmarshall(JsonUnmarshallerContext context)
         {
             SnowflakeRetryOptions unmarshalledObject = new SnowflakeRetryOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

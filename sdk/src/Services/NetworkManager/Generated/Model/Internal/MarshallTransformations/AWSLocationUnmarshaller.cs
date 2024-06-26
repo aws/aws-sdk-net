@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public AWSLocation Unmarshall(JsonUnmarshallerContext context)
         {
             AWSLocation unmarshalledObject = new AWSLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public BaiduChannelResponse Unmarshall(JsonUnmarshallerContext context)
         {
             BaiduChannelResponse unmarshalledObject = new BaiduChannelResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

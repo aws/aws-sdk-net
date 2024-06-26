@@ -57,6 +57,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         public ExclusionPreview Unmarshall(JsonUnmarshallerContext context)
         {
             ExclusionPreview unmarshalledObject = new ExclusionPreview();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

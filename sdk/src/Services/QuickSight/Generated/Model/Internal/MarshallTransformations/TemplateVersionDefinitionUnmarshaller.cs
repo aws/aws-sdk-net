@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TemplateVersionDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             TemplateVersionDefinition unmarshalledObject = new TemplateVersionDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

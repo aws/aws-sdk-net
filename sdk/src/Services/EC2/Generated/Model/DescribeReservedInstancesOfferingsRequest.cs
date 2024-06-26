@@ -44,8 +44,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-    /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Sell
+    /// in the Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -204,8 +204,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type that the reservation will cover (for example, <c>m1.small</c>).
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// types</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Amazon
+        /// EC2 instance types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public InstanceType InstanceType

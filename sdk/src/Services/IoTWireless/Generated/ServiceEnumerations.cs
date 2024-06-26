@@ -759,6 +759,10 @@ namespace Amazon.IoTWireless
     {
 
         /// <summary>
+        /// Constant Device_exist_in_conflict_fuota_task for FuotaDeviceStatus
+        /// </summary>
+        public static readonly FuotaDeviceStatus Device_exist_in_conflict_fuota_task = new FuotaDeviceStatus("Device_exist_in_conflict_fuota_task");
+        /// <summary>
         /// Constant FragAlgo_unsupported for FuotaDeviceStatus
         /// </summary>
         public static readonly FuotaDeviceStatus FragAlgo_unsupported = new FuotaDeviceStatus("FragAlgo_unsupported");
@@ -1210,6 +1214,14 @@ namespace Amazon.IoTWireless
         /// Constant DeviceRoamingDownlinkCount for MetricName
         /// </summary>
         public static readonly MetricName DeviceRoamingDownlinkCount = new MetricName("DeviceRoamingDownlinkCount");
+        /// <summary>
+        /// Constant DeviceRoamingRSSI for MetricName
+        /// </summary>
+        public static readonly MetricName DeviceRoamingRSSI = new MetricName("DeviceRoamingRSSI");
+        /// <summary>
+        /// Constant DeviceRoamingSNR for MetricName
+        /// </summary>
+        public static readonly MetricName DeviceRoamingSNR = new MetricName("DeviceRoamingSNR");
         /// <summary>
         /// Constant DeviceRoamingUplinkCount for MetricName
         /// </summary>

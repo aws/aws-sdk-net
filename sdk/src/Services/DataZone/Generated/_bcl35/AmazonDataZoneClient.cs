@@ -419,6 +419,81 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  AssociateEnvironmentRole
+
+        /// <summary>
+        /// Associates the environment role in Amazon DataZone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnvironmentRole service method.</param>
+        /// 
+        /// <returns>The response from the AssociateEnvironmentRole service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssociateEnvironmentRole">REST API Reference for AssociateEnvironmentRole Operation</seealso>
+        public virtual AssociateEnvironmentRoleResponse AssociateEnvironmentRole(AssociateEnvironmentRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateEnvironmentRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEnvironmentRoleResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateEnvironmentRoleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateEnvironmentRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEnvironmentRole operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateEnvironmentRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssociateEnvironmentRole">REST API Reference for AssociateEnvironmentRole Operation</seealso>
+        public virtual IAsyncResult BeginAssociateEnvironmentRole(AssociateEnvironmentRoleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateEnvironmentRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEnvironmentRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateEnvironmentRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateEnvironmentRole.</param>
+        /// 
+        /// <returns>Returns a  AssociateEnvironmentRoleResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssociateEnvironmentRole">REST API Reference for AssociateEnvironmentRole Operation</seealso>
+        public virtual AssociateEnvironmentRoleResponse EndAssociateEnvironmentRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateEnvironmentRoleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelMetadataGenerationRun
 
         /// <summary>
@@ -1024,6 +1099,82 @@ namespace Amazon.DataZone
         public virtual CreateEnvironmentResponse EndCreateEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateEnvironmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateEnvironmentAction
+
+        /// <summary>
+        /// Creates an action for the environment, for example, creates a console link for an
+        /// analytics tool that is available in this environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateEnvironmentAction service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateEnvironmentAction">REST API Reference for CreateEnvironmentAction Operation</seealso>
+        public virtual CreateEnvironmentActionResponse CreateEnvironmentAction(CreateEnvironmentActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEnvironmentActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEnvironmentActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEnvironmentAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentAction operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEnvironmentAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateEnvironmentAction">REST API Reference for CreateEnvironmentAction Operation</seealso>
+        public virtual IAsyncResult BeginCreateEnvironmentAction(CreateEnvironmentActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEnvironmentActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEnvironmentAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEnvironmentAction.</param>
+        /// 
+        /// <returns>Returns a  CreateEnvironmentActionResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateEnvironmentAction">REST API Reference for CreateEnvironmentAction Operation</seealso>
+        public virtual CreateEnvironmentActionResponse EndCreateEnvironmentAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateEnvironmentActionResponse>(asyncResult);
         }
 
         #endregion
@@ -2304,6 +2455,82 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  DeleteEnvironmentAction
+
+        /// <summary>
+        /// Deletes an action for the environment, for example, deletes a console link for an
+        /// analytics tool that is available in this environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEnvironmentAction service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteEnvironmentAction">REST API Reference for DeleteEnvironmentAction Operation</seealso>
+        public virtual DeleteEnvironmentActionResponse DeleteEnvironmentAction(DeleteEnvironmentActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEnvironmentActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEnvironmentActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEnvironmentAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentAction operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEnvironmentAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteEnvironmentAction">REST API Reference for DeleteEnvironmentAction Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEnvironmentAction(DeleteEnvironmentActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEnvironmentActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEnvironmentAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEnvironmentAction.</param>
+        /// 
+        /// <returns>Returns a  DeleteEnvironmentActionResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteEnvironmentAction">REST API Reference for DeleteEnvironmentAction Operation</seealso>
+        public virtual DeleteEnvironmentActionResponse EndDeleteEnvironmentAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEnvironmentActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteEnvironmentBlueprintConfiguration
 
         /// <summary>
@@ -3189,6 +3416,81 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  DisassociateEnvironmentRole
+
+        /// <summary>
+        /// Disassociates the environment role in Amazon DataZone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnvironmentRole service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateEnvironmentRole service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DisassociateEnvironmentRole">REST API Reference for DisassociateEnvironmentRole Operation</seealso>
+        public virtual DisassociateEnvironmentRoleResponse DisassociateEnvironmentRole(DisassociateEnvironmentRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateEnvironmentRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEnvironmentRoleResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateEnvironmentRoleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateEnvironmentRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEnvironmentRole operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateEnvironmentRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DisassociateEnvironmentRole">REST API Reference for DisassociateEnvironmentRole Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateEnvironmentRole(DisassociateEnvironmentRoleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateEnvironmentRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEnvironmentRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateEnvironmentRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateEnvironmentRole.</param>
+        /// 
+        /// <returns>Returns a  DisassociateEnvironmentRoleResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DisassociateEnvironmentRole">REST API Reference for DisassociateEnvironmentRole Operation</seealso>
+        public virtual DisassociateEnvironmentRoleResponse EndDisassociateEnvironmentRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateEnvironmentRoleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAsset
 
         /// <summary>
@@ -3632,6 +3934,78 @@ namespace Amazon.DataZone
         public virtual GetEnvironmentResponse EndGetEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEnvironmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetEnvironmentAction
+
+        /// <summary>
+        /// Gets the specified environment action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnvironmentAction service method.</param>
+        /// 
+        /// <returns>The response from the GetEnvironmentAction service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetEnvironmentAction">REST API Reference for GetEnvironmentAction Operation</seealso>
+        public virtual GetEnvironmentActionResponse GetEnvironmentAction(GetEnvironmentActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEnvironmentActionResponseUnmarshaller.Instance;
+
+            return Invoke<GetEnvironmentActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEnvironmentAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEnvironmentAction operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEnvironmentAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetEnvironmentAction">REST API Reference for GetEnvironmentAction Operation</seealso>
+        public virtual IAsyncResult BeginGetEnvironmentAction(GetEnvironmentActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEnvironmentActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEnvironmentAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEnvironmentAction.</param>
+        /// 
+        /// <returns>Returns a  GetEnvironmentActionResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetEnvironmentAction">REST API Reference for GetEnvironmentAction Operation</seealso>
+        public virtual GetEnvironmentActionResponse EndGetEnvironmentAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetEnvironmentActionResponse>(asyncResult);
         }
 
         #endregion
@@ -5243,6 +5617,75 @@ namespace Amazon.DataZone
         public virtual ListDomainsResponse EndListDomains(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDomainsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListEnvironmentActions
+
+        /// <summary>
+        /// Lists existing environment actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEnvironmentActions service method.</param>
+        /// 
+        /// <returns>The response from the ListEnvironmentActions service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEnvironmentActions">REST API Reference for ListEnvironmentActions Operation</seealso>
+        public virtual ListEnvironmentActionsResponse ListEnvironmentActions(ListEnvironmentActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEnvironmentActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEnvironmentActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEnvironmentActionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEnvironmentActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEnvironmentActions operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEnvironmentActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEnvironmentActions">REST API Reference for ListEnvironmentActions Operation</seealso>
+        public virtual IAsyncResult BeginListEnvironmentActions(ListEnvironmentActionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEnvironmentActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEnvironmentActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEnvironmentActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEnvironmentActions.</param>
+        /// 
+        /// <returns>Returns a  ListEnvironmentActionsResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEnvironmentActions">REST API Reference for ListEnvironmentActions Operation</seealso>
+        public virtual ListEnvironmentActionsResponse EndListEnvironmentActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEnvironmentActionsResponse>(asyncResult);
         }
 
         #endregion
@@ -7500,6 +7943,81 @@ namespace Amazon.DataZone
         public virtual UpdateEnvironmentResponse EndUpdateEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateEnvironmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateEnvironmentAction
+
+        /// <summary>
+        /// Updates an environment action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironmentAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEnvironmentAction service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateEnvironmentAction">REST API Reference for UpdateEnvironmentAction Operation</seealso>
+        public virtual UpdateEnvironmentActionResponse UpdateEnvironmentAction(UpdateEnvironmentActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEnvironmentActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEnvironmentActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEnvironmentAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironmentAction operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEnvironmentAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateEnvironmentAction">REST API Reference for UpdateEnvironmentAction Operation</seealso>
+        public virtual IAsyncResult BeginUpdateEnvironmentAction(UpdateEnvironmentActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEnvironmentActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEnvironmentActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEnvironmentAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEnvironmentAction.</param>
+        /// 
+        /// <returns>Returns a  UpdateEnvironmentActionResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateEnvironmentAction">REST API Reference for UpdateEnvironmentAction Operation</seealso>
+        public virtual UpdateEnvironmentActionResponse EndUpdateEnvironmentAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateEnvironmentActionResponse>(asyncResult);
         }
 
         #endregion

@@ -57,6 +57,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         public WorldFailure Unmarshall(JsonUnmarshallerContext context)
         {
             WorldFailure unmarshalledObject = new WorldFailure();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

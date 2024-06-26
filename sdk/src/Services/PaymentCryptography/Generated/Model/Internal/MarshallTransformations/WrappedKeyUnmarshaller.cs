@@ -57,6 +57,8 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         public WrappedKey Unmarshall(JsonUnmarshallerContext context)
         {
             WrappedKey unmarshalledObject = new WrappedKey();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

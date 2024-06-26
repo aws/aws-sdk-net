@@ -57,6 +57,8 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
         public ProgressEvent Unmarshall(JsonUnmarshallerContext context)
         {
             ProgressEvent unmarshalledObject = new ProgressEvent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

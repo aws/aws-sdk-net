@@ -4625,6 +4625,106 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type EkPubKeyFormat.
+    /// </summary>
+    public class EkPubKeyFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Der for EkPubKeyFormat
+        /// </summary>
+        public static readonly EkPubKeyFormat Der = new EkPubKeyFormat("der");
+        /// <summary>
+        /// Constant Tpmt for EkPubKeyFormat
+        /// </summary>
+        public static readonly EkPubKeyFormat Tpmt = new EkPubKeyFormat("tpmt");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EkPubKeyFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EkPubKeyFormat FindValue(string value)
+        {
+            return FindValue<EkPubKeyFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EkPubKeyFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EkPubKeyType.
+    /// </summary>
+    public class EkPubKeyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EccSecP384 for EkPubKeyType
+        /// </summary>
+        public static readonly EkPubKeyType EccSecP384 = new EkPubKeyType("ecc-sec-p384");
+        /// <summary>
+        /// Constant Rsa2048 for EkPubKeyType
+        /// </summary>
+        public static readonly EkPubKeyType Rsa2048 = new EkPubKeyType("rsa-2048");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EkPubKeyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EkPubKeyType FindValue(string value)
+        {
+            return FindValue<EkPubKeyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EkPubKeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ElasticGpuState.
     /// </summary>
     public class ElasticGpuState : ConstantClass
@@ -8505,6 +8605,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C7gnMedium = new InstanceType("c7gn.medium");
         /// <summary>
+        /// Constant C7gnMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gnMetal = new InstanceType("c7gn.metal");
+        /// <summary>
         /// Constant C7gnXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C7gnXlarge = new InstanceType("c7gn.xlarge");
@@ -8540,6 +8644,26 @@ namespace Amazon.EC2
         /// Constant C7i8xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C7i8xlarge = new InstanceType("c7i.8xlarge");
+        /// <summary>
+        /// Constant C7iFlex2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7iFlex2xlarge = new InstanceType("c7i-flex.2xlarge");
+        /// <summary>
+        /// Constant C7iFlex4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7iFlex4xlarge = new InstanceType("c7i-flex.4xlarge");
+        /// <summary>
+        /// Constant C7iFlex8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7iFlex8xlarge = new InstanceType("c7i-flex.8xlarge");
+        /// <summary>
+        /// Constant C7iFlexLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7iFlexLarge = new InstanceType("c7i-flex.large");
+        /// <summary>
+        /// Constant C7iFlexXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7iFlexXlarge = new InstanceType("c7i-flex.xlarge");
         /// <summary>
         /// Constant C7iLarge for InstanceType
         /// </summary>
@@ -9865,6 +9989,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType Mac1Metal = new InstanceType("mac1.metal");
         /// <summary>
+        /// Constant Mac2M1ultraMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType Mac2M1ultraMetal = new InstanceType("mac2-m1ultra.metal");
+        /// <summary>
         /// Constant Mac2M2Metal for InstanceType
         /// </summary>
         public static readonly InstanceType Mac2M2Metal = new InstanceType("mac2-m2.metal");
@@ -10685,6 +10813,54 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R7izXlarge = new InstanceType("r7iz.xlarge");
         /// <summary>
+        /// Constant R8g12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8g12xlarge = new InstanceType("r8g.12xlarge");
+        /// <summary>
+        /// Constant R8g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8g16xlarge = new InstanceType("r8g.16xlarge");
+        /// <summary>
+        /// Constant R8g24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8g24xlarge = new InstanceType("r8g.24xlarge");
+        /// <summary>
+        /// Constant R8g2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8g2xlarge = new InstanceType("r8g.2xlarge");
+        /// <summary>
+        /// Constant R8g48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8g48xlarge = new InstanceType("r8g.48xlarge");
+        /// <summary>
+        /// Constant R8g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8g4xlarge = new InstanceType("r8g.4xlarge");
+        /// <summary>
+        /// Constant R8g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8g8xlarge = new InstanceType("r8g.8xlarge");
+        /// <summary>
+        /// Constant R8gLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8gLarge = new InstanceType("r8g.large");
+        /// <summary>
+        /// Constant R8gMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8gMedium = new InstanceType("r8g.medium");
+        /// <summary>
+        /// Constant R8gMetal24xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8gMetal24xl = new InstanceType("r8g.metal-24xl");
+        /// <summary>
+        /// Constant R8gMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8gMetal48xl = new InstanceType("r8g.metal-48xl");
+        /// <summary>
+        /// Constant R8gXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8gXlarge = new InstanceType("r8g.xlarge");
+        /// <summary>
         /// Constant T1Micro for InstanceType
         /// </summary>
         public static readonly InstanceType T1Micro = new InstanceType("t1.micro");
@@ -10852,6 +11028,26 @@ namespace Amazon.EC2
         /// Constant U6tb1Metal for InstanceType
         /// </summary>
         public static readonly InstanceType U6tb1Metal = new InstanceType("u-6tb1.metal");
+        /// <summary>
+        /// Constant U7i12tb224xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U7i12tb224xlarge = new InstanceType("u7i-12tb.224xlarge");
+        /// <summary>
+        /// Constant U7ib12tb224xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U7ib12tb224xlarge = new InstanceType("u7ib-12tb.224xlarge");
+        /// <summary>
+        /// Constant U7in16tb224xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U7in16tb224xlarge = new InstanceType("u7in-16tb.224xlarge");
+        /// <summary>
+        /// Constant U7in24tb224xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U7in24tb224xlarge = new InstanceType("u7in-24tb.224xlarge");
+        /// <summary>
+        /// Constant U7in32tb224xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U7in32tb224xlarge = new InstanceType("u7in-32tb.224xlarge");
         /// <summary>
         /// Constant U9tb1112xlarge for InstanceType
         /// </summary>
@@ -15321,6 +15517,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type PhcSupport.
+    /// </summary>
+    public class PhcSupport : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Supported for PhcSupport
+        /// </summary>
+        public static readonly PhcSupport Supported = new PhcSupport("supported");
+        /// <summary>
+        /// Constant Unsupported for PhcSupport
+        /// </summary>
+        public static readonly PhcSupport Unsupported = new PhcSupport("unsupported");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PhcSupport(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PhcSupport FindValue(string value)
+        {
+            return FindValue<PhcSupport>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PhcSupport(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PlacementGroupState.
     /// </summary>
     public class PlacementGroupState : ConstantClass
@@ -16650,6 +16896,10 @@ namespace Amazon.EC2
         /// Constant VpcBlockPublicAccessExclusion for ResourceType
         /// </summary>
         public static readonly ResourceType VpcBlockPublicAccessExclusion = new ResourceType("vpc-block-public-access-exclusion");
+        /// <summary>
+        /// Constant VpcEncryptionControl for ResourceType
+        /// </summary>
+        public static readonly ResourceType VpcEncryptionControl = new ResourceType("vpc-encryption-control");
         /// <summary>
         /// Constant VpcEndpoint for ResourceType
         /// </summary>

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DonutOptions Unmarshall(JsonUnmarshallerContext context)
         {
             DonutOptions unmarshalledObject = new DonutOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

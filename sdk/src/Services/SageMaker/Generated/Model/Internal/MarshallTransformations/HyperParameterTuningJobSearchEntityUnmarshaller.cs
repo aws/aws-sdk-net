@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public HyperParameterTuningJobSearchEntity Unmarshall(JsonUnmarshallerContext context)
         {
             HyperParameterTuningJobSearchEntity unmarshalledObject = new HyperParameterTuningJobSearchEntity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

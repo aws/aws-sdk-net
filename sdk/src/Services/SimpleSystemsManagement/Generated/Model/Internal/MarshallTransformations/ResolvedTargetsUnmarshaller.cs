@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public ResolvedTargets Unmarshall(JsonUnmarshallerContext context)
         {
             ResolvedTargets unmarshalledObject = new ResolvedTargets();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

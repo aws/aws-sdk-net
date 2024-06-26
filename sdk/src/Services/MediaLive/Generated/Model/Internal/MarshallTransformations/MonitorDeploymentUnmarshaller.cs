@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public MonitorDeployment Unmarshall(JsonUnmarshallerContext context)
         {
             MonitorDeployment unmarshalledObject = new MonitorDeployment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

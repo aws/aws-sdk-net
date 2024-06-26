@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public CodegenFeatureFlags Unmarshall(JsonUnmarshallerContext context)
         {
             CodegenFeatureFlags unmarshalledObject = new CodegenFeatureFlags();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

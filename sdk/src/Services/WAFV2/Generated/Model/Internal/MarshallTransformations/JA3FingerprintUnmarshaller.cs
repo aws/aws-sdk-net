@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public JA3Fingerprint Unmarshall(JsonUnmarshallerContext context)
         {
             JA3Fingerprint unmarshalledObject = new JA3Fingerprint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

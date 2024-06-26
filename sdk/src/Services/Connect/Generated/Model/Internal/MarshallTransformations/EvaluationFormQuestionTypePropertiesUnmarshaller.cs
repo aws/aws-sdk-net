@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public EvaluationFormQuestionTypeProperties Unmarshall(JsonUnmarshallerContext context)
         {
             EvaluationFormQuestionTypeProperties unmarshalledObject = new EvaluationFormQuestionTypeProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

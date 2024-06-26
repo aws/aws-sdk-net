@@ -57,6 +57,8 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
         public RepositoryCatalogData Unmarshall(JsonUnmarshallerContext context)
         {
             RepositoryCatalogData unmarshalledObject = new RepositoryCatalogData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

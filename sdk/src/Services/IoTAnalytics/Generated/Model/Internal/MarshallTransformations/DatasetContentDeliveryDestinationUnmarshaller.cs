@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public DatasetContentDeliveryDestination Unmarshall(JsonUnmarshallerContext context)
         {
             DatasetContentDeliveryDestination unmarshalledObject = new DatasetContentDeliveryDestination();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

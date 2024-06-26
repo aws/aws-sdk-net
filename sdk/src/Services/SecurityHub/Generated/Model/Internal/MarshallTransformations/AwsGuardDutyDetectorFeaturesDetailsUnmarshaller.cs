@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsGuardDutyDetectorFeaturesDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsGuardDutyDetectorFeaturesDetails unmarshalledObject = new AwsGuardDutyDetectorFeaturesDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

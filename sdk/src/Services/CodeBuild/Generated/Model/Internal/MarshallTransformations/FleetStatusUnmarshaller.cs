@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public FleetStatus Unmarshall(JsonUnmarshallerContext context)
         {
             FleetStatus unmarshalledObject = new FleetStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

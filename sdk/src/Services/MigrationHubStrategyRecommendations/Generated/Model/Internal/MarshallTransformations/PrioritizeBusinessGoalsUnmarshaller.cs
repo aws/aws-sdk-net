@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public PrioritizeBusinessGoals Unmarshall(JsonUnmarshallerContext context)
         {
             PrioritizeBusinessGoals unmarshalledObject = new PrioritizeBusinessGoals();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public JoinInstruction Unmarshall(JsonUnmarshallerContext context)
         {
             JoinInstruction unmarshalledObject = new JoinInstruction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

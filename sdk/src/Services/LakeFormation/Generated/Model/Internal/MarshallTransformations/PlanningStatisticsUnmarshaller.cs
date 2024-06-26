@@ -57,6 +57,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public PlanningStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             PlanningStatistics unmarshalledObject = new PlanningStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
         public Checksum Unmarshall(JsonUnmarshallerContext context)
         {
             Checksum unmarshalledObject = new Checksum();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

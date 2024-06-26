@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public StorageTypeLimit Unmarshall(JsonUnmarshallerContext context)
         {
             StorageTypeLimit unmarshalledObject = new StorageTypeLimit();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

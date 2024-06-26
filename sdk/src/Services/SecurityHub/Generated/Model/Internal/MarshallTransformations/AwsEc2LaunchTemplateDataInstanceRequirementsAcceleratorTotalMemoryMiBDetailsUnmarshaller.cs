@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails unmarshalledObject = new AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

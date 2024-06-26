@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public FleetUtilization Unmarshall(JsonUnmarshallerContext context)
         {
             FleetUtilization unmarshalledObject = new FleetUtilization();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

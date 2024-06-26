@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public ExperienceEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
             ExperienceEndpoint unmarshalledObject = new ExperienceEndpoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

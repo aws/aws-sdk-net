@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public BucketServerSideEncryption Unmarshall(JsonUnmarshallerContext context)
         {
             BucketServerSideEncryption unmarshalledObject = new BucketServerSideEncryption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

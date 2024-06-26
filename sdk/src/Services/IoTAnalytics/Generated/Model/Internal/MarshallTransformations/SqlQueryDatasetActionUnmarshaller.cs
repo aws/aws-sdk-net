@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public SqlQueryDatasetAction Unmarshall(JsonUnmarshallerContext context)
         {
             SqlQueryDatasetAction unmarshalledObject = new SqlQueryDatasetAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

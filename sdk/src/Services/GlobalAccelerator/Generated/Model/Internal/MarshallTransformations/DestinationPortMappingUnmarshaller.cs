@@ -57,6 +57,8 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         public DestinationPortMapping Unmarshall(JsonUnmarshallerContext context)
         {
             DestinationPortMapping unmarshalledObject = new DestinationPortMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

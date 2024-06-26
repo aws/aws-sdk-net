@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public BatchJobDependency Unmarshall(JsonUnmarshallerContext context)
         {
             BatchJobDependency unmarshalledObject = new BatchJobDependency();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

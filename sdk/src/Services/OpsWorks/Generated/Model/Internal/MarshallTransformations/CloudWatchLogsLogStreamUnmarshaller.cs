@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public CloudWatchLogsLogStream Unmarshall(JsonUnmarshallerContext context)
         {
             CloudWatchLogsLogStream unmarshalledObject = new CloudWatchLogsLogStream();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

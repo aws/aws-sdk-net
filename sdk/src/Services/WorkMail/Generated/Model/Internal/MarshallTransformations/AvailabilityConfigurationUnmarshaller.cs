@@ -57,6 +57,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         public AvailabilityConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AvailabilityConfiguration unmarshalledObject = new AvailabilityConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

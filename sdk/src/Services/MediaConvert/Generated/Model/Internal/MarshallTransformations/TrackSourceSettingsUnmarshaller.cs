@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public TrackSourceSettings Unmarshall(JsonUnmarshallerContext context)
         {
             TrackSourceSettings unmarshalledObject = new TrackSourceSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

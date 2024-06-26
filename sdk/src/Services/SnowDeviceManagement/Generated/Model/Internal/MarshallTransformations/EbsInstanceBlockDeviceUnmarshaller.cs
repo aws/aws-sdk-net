@@ -57,6 +57,8 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
         public EbsInstanceBlockDevice Unmarshall(JsonUnmarshallerContext context)
         {
             EbsInstanceBlockDevice unmarshalledObject = new EbsInstanceBlockDevice();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

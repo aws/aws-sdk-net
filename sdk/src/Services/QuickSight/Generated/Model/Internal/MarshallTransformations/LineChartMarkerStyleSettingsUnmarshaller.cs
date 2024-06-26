@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public LineChartMarkerStyleSettings Unmarshall(JsonUnmarshallerContext context)
         {
             LineChartMarkerStyleSettings unmarshalledObject = new LineChartMarkerStyleSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

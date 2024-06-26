@@ -43,8 +43,8 @@ namespace Amazon.OAM.Model
     /// </para>
     ///  
     /// <para>
-    /// Each account can contain one sink. If you delete a sink, you can then create a new
-    /// one in that account.
+    /// Each account can contain one sink per Region. If you delete a sink, you can then create
+    /// a new one in that Region.
     /// </para>
     /// </summary>
     public partial class CreateSinkRequest : AmazonOAMRequest

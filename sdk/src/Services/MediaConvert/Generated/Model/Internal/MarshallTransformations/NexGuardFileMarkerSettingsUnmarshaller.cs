@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public NexGuardFileMarkerSettings Unmarshall(JsonUnmarshallerContext context)
         {
             NexGuardFileMarkerSettings unmarshalledObject = new NexGuardFileMarkerSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public ExtendedDataServices Unmarshall(JsonUnmarshallerContext context)
         {
             ExtendedDataServices unmarshalledObject = new ExtendedDataServices();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

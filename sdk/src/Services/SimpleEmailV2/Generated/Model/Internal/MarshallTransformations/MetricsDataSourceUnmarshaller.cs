@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public MetricsDataSource Unmarshall(JsonUnmarshallerContext context)
         {
             MetricsDataSource unmarshalledObject = new MetricsDataSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

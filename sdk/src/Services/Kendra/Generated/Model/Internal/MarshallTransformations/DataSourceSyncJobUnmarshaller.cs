@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public DataSourceSyncJob Unmarshall(JsonUnmarshallerContext context)
         {
             DataSourceSyncJob unmarshalledObject = new DataSourceSyncJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public GenerationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             GenerationSummary unmarshalledObject = new GenerationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

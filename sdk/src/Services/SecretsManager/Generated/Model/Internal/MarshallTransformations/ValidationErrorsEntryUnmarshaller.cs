@@ -57,6 +57,8 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         public ValidationErrorsEntry Unmarshall(JsonUnmarshallerContext context)
         {
             ValidationErrorsEntry unmarshalledObject = new ValidationErrorsEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

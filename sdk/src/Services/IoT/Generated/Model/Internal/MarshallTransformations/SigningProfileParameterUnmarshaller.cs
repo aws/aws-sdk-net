@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public SigningProfileParameter Unmarshall(JsonUnmarshallerContext context)
         {
             SigningProfileParameter unmarshalledObject = new SigningProfileParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

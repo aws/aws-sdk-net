@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public Xavc4kIntraCbgProfileSettings Unmarshall(JsonUnmarshallerContext context)
         {
             Xavc4kIntraCbgProfileSettings unmarshalledObject = new Xavc4kIntraCbgProfileSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -426,6 +426,79 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  BatchUpdateAutomatedDiscoveryAccounts
+
+        /// <summary>
+        /// Changes the status of automated sensitive data discovery for one or more accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateAutomatedDiscoveryAccounts service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateAutomatedDiscoveryAccounts service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ConflictException">
+        /// Provides information about an error that occurred due to a versioning conflict for
+        /// a specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchUpdateAutomatedDiscoveryAccounts">REST API Reference for BatchUpdateAutomatedDiscoveryAccounts Operation</seealso>
+        public virtual BatchUpdateAutomatedDiscoveryAccountsResponse BatchUpdateAutomatedDiscoveryAccounts(BatchUpdateAutomatedDiscoveryAccountsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateAutomatedDiscoveryAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateAutomatedDiscoveryAccountsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateAutomatedDiscoveryAccountsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateAutomatedDiscoveryAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateAutomatedDiscoveryAccounts operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateAutomatedDiscoveryAccounts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchUpdateAutomatedDiscoveryAccounts">REST API Reference for BatchUpdateAutomatedDiscoveryAccounts Operation</seealso>
+        public virtual IAsyncResult BeginBatchUpdateAutomatedDiscoveryAccounts(BatchUpdateAutomatedDiscoveryAccountsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateAutomatedDiscoveryAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateAutomatedDiscoveryAccountsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateAutomatedDiscoveryAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateAutomatedDiscoveryAccounts.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateAutomatedDiscoveryAccountsResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchUpdateAutomatedDiscoveryAccounts">REST API Reference for BatchUpdateAutomatedDiscoveryAccounts Operation</seealso>
+        public virtual BatchUpdateAutomatedDiscoveryAccountsResponse EndBatchUpdateAutomatedDiscoveryAccounts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchUpdateAutomatedDiscoveryAccountsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateAllowList
 
         /// <summary>
@@ -2444,7 +2517,7 @@ namespace Amazon.Macie2
 
         /// <summary>
         /// Retrieves the configuration settings and status of automated sensitive data discovery
-        /// for an account.
+        /// for an organization or standalone account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAutomatedDiscoveryConfiguration service method.</param>
         /// 
@@ -4078,6 +4151,79 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  ListAutomatedDiscoveryAccounts
+
+        /// <summary>
+        /// Retrieves the status of automated sensitive data discovery for one or more accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedDiscoveryAccounts service method.</param>
+        /// 
+        /// <returns>The response from the ListAutomatedDiscoveryAccounts service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListAutomatedDiscoveryAccounts">REST API Reference for ListAutomatedDiscoveryAccounts Operation</seealso>
+        public virtual ListAutomatedDiscoveryAccountsResponse ListAutomatedDiscoveryAccounts(ListAutomatedDiscoveryAccountsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAutomatedDiscoveryAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomatedDiscoveryAccountsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAutomatedDiscoveryAccountsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAutomatedDiscoveryAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedDiscoveryAccounts operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAutomatedDiscoveryAccounts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListAutomatedDiscoveryAccounts">REST API Reference for ListAutomatedDiscoveryAccounts Operation</seealso>
+        public virtual IAsyncResult BeginListAutomatedDiscoveryAccounts(ListAutomatedDiscoveryAccountsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAutomatedDiscoveryAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomatedDiscoveryAccountsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAutomatedDiscoveryAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAutomatedDiscoveryAccounts.</param>
+        /// 
+        /// <returns>Returns a  ListAutomatedDiscoveryAccountsResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListAutomatedDiscoveryAccounts">REST API Reference for ListAutomatedDiscoveryAccounts Operation</seealso>
+        public virtual ListAutomatedDiscoveryAccountsResponse EndListAutomatedDiscoveryAccounts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAutomatedDiscoveryAccountsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListClassificationJobs
 
         /// <summary>
@@ -4474,7 +4620,7 @@ namespace Amazon.Macie2
         #region  ListInvitations
 
         /// <summary>
-        /// Retrieves information about the Amazon Macie membership invitations that were received
+        /// Retrieves information about Amazon Macie membership invitations that were received
         /// by an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
@@ -4775,8 +4921,8 @@ namespace Amazon.Macie2
         #region  ListResourceProfileArtifacts
 
         /// <summary>
-        /// Retrieves information about objects that were selected from an S3 bucket for automated
-        /// sensitive data discovery.
+        /// Retrieves information about objects that Amazon Macie selected from an S3 bucket for
+        /// automated sensitive data discovery.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceProfileArtifacts service method.</param>
         /// 
@@ -5055,7 +5201,7 @@ namespace Amazon.Macie2
         #region  PutClassificationExportConfiguration
 
         /// <summary>
-        /// Creates or updates the configuration settings for storing data classification results.
+        /// Adds or updates the configuration settings for storing data classification results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutClassificationExportConfiguration service method.</param>
         /// 
@@ -5354,7 +5500,7 @@ namespace Amazon.Macie2
         #region  TestCustomDataIdentifier
 
         /// <summary>
-        /// Tests a custom data identifier.
+        /// Tests criteria for a custom data identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestCustomDataIdentifier service method.</param>
         /// 
@@ -5562,7 +5708,8 @@ namespace Amazon.Macie2
         #region  UpdateAutomatedDiscoveryConfiguration
 
         /// <summary>
-        /// Enables or disables automated sensitive data discovery for an account.
+        /// Changes the configuration settings and status of automated sensitive data discovery
+        /// for an organization or standalone account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedDiscoveryConfiguration service method.</param>
         /// 

@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public SearchRecord Unmarshall(JsonUnmarshallerContext context)
         {
             SearchRecord unmarshalledObject = new SearchRecord();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

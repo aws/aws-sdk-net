@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public HeatMapSortConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             HeatMapSortConfiguration unmarshalledObject = new HeatMapSortConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

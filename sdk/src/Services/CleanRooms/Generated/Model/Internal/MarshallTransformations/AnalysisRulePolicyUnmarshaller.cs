@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public AnalysisRulePolicy Unmarshall(JsonUnmarshallerContext context)
         {
             AnalysisRulePolicy unmarshalledObject = new AnalysisRulePolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

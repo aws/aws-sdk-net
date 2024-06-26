@@ -59,6 +59,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetNoAuthConfiguration())
+            {
+                context.Writer.WritePropertyName("noAuthConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NoAuthConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.NoAuthConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOAuth2ClientCredentialConfiguration())
             {
                 context.Writer.WritePropertyName("oAuth2ClientCredentialConfiguration");

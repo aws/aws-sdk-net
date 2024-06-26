@@ -57,6 +57,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public VocabularyFilterInfo Unmarshall(JsonUnmarshallerContext context)
         {
             VocabularyFilterInfo unmarshalledObject = new VocabularyFilterInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

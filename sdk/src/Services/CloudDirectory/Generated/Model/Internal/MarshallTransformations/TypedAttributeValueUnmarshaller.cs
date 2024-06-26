@@ -57,6 +57,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         public TypedAttributeValue Unmarshall(JsonUnmarshallerContext context)
         {
             TypedAttributeValue unmarshalledObject = new TypedAttributeValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

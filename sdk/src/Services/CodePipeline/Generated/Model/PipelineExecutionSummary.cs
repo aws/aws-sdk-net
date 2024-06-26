@@ -35,11 +35,14 @@ namespace Amazon.CodePipeline.Model
     public partial class PipelineExecutionSummary
     {
         private ExecutionMode _executionMode;
+        private ExecutionType _executionType;
         private DateTime? _lastUpdateTime;
         private string _pipelineExecutionId;
+        private PipelineRollbackMetadata _rollbackMetadata;
         private List<SourceRevision> _sourceRevisions = AWSConfigs.InitializeCollections ? new List<SourceRevision>() : null;
         private DateTime? _startTime;
         private PipelineExecutionStatus _status;
+        private string _statusSummary;
         private StopExecutionTrigger _stopTrigger;
         private ExecutionTrigger _trigger;
 
@@ -60,6 +63,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetExecutionMode()
         {
             return this._executionMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionType. 
+        /// <para>
+        /// Type of the pipeline execution.
+        /// </para>
+        /// </summary>
+        public ExecutionType ExecutionType
+        {
+            get { return this._executionType; }
+            set { this._executionType = value; }
+        }
+
+        // Check to see if ExecutionType property is set
+        internal bool IsSetExecutionType()
+        {
+            return this._executionType != null;
         }
 
         /// <summary>
@@ -96,6 +117,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetPipelineExecutionId()
         {
             return this._pipelineExecutionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RollbackMetadata. 
+        /// <para>
+        /// The metadata for the stage execution to be rolled back.
+        /// </para>
+        /// </summary>
+        public PipelineRollbackMetadata RollbackMetadata
+        {
+            get { return this._rollbackMetadata; }
+            set { this._rollbackMetadata = value; }
+        }
+
+        // Check to see if RollbackMetadata property is set
+        internal bool IsSetRollbackMetadata()
+        {
+            return this._rollbackMetadata != null;
         }
 
         /// <summary>
@@ -183,6 +222,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusSummary. 
+        /// <para>
+        /// Status summary for the pipeline.
+        /// </para>
+        /// </summary>
+        public string StatusSummary
+        {
+            get { return this._statusSummary; }
+            set { this._statusSummary = value; }
+        }
+
+        // Check to see if StatusSummary property is set
+        internal bool IsSetStatusSummary()
+        {
+            return this._statusSummary != null;
         }
 
         /// <summary>

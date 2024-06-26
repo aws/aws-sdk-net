@@ -30,5 +30,10 @@ namespace Amazon.Glue.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<GetTriggersResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Triggers
+        /// </summary>
+        IPaginatedEnumerable<Trigger> Triggers { get; }
     }
 }

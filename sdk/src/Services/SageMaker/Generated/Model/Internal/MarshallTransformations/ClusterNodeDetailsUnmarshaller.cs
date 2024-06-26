@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ClusterNodeDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ClusterNodeDetails unmarshalledObject = new ClusterNodeDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -82,6 +84,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstanceStorageConfigs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ClusterInstanceStorageConfig, ClusterInstanceStorageConfigUnmarshaller>(ClusterInstanceStorageConfigUnmarshaller.Instance);
+                    unmarshalledObject.InstanceStorageConfigs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +106,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ClusterLifeCycleConfigUnmarshaller.Instance;
                     unmarshalledObject.LifeCycleConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Placement", targetDepth))
+                {
+                    var unmarshaller = ClusterInstancePlacementUnmarshaller.Instance;
+                    unmarshalledObject.Placement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PrivateDnsHostname", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrivateDnsHostname = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PrivatePrimaryIp", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrivatePrimaryIp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ThreadsPerCore", targetDepth))

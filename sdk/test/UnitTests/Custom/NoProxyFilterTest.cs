@@ -38,6 +38,9 @@ namespace AWSSDK.UnitTests
         [DataRow(null, "bar.com", false)]
         [DataRow("127.0.0.1,localhost,ssm.us-west-2.amazonaws.com", "ssm.us-west-2.amazonaws.com", true)]
         [DataRow("127.0.0.1,localhost,ssm.us-west-2.amazonaws.com", "autoscaling.us-west-2.amazonaws.com", false)]
+        [DataRow("us-west-2.amazonaws.com","bucket-name.s3.us-west-2.amazonaws.com", true)]
+        [DataRow("*.s3.us-west-2.amazonaws.com", "bucket-name.s3.us-west-2.amazonaws.com", true)]
+
         public void Match(string noProxyValue, string testUri, bool skip)
         {
             var filter = new NoProxyFilter(new EnvironmentVariableStub(noProxyValue));

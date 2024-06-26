@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsElbLoadBalancerConnectionDraining Unmarshall(JsonUnmarshallerContext context)
         {
             AwsElbLoadBalancerConnectionDraining unmarshalledObject = new AwsElbLoadBalancerConnectionDraining();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

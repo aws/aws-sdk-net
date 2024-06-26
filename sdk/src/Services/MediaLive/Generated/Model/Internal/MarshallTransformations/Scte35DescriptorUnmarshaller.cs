@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public Scte35Descriptor Unmarshall(JsonUnmarshallerContext context)
         {
             Scte35Descriptor unmarshalledObject = new Scte35Descriptor();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

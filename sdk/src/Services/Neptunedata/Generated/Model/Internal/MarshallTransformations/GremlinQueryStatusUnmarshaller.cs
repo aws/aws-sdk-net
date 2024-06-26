@@ -57,6 +57,8 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
         public GremlinQueryStatus Unmarshall(JsonUnmarshallerContext context)
         {
             GremlinQueryStatus unmarshalledObject = new GremlinQueryStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

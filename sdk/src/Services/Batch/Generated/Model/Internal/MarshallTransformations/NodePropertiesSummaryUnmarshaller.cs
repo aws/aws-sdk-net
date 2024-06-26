@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public NodePropertiesSummary Unmarshall(JsonUnmarshallerContext context)
         {
             NodePropertiesSummary unmarshalledObject = new NodePropertiesSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

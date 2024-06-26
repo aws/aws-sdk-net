@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ProductionVariantManagedInstanceScaling Unmarshall(JsonUnmarshallerContext context)
         {
             ProductionVariantManagedInstanceScaling unmarshalledObject = new ProductionVariantManagedInstanceScaling();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

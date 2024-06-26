@@ -45,9 +45,12 @@ namespace Amazon.CustomerProfiles
     /// that has pre-built connectors powered by AppFlow that make it easy to combine customer
     /// information from third party applications, such as Salesforce (CRM), ServiceNow (ITSM),
     /// and your enterprise resource planning (ERP), with contact history from your Amazon
-    /// Connect contact center. If you're new to Amazon Connect, you might find it helpful
-    /// to review the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/">Amazon
-    /// Connect Administrator Guide</a>.
+    /// Connect contact center. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about the Amazon Connect Customer Profiles feature, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html">Use
+    /// Customer Profiles</a> in the <i>Amazon Connect Administrator's Guide</i>. 
     /// </para>
     /// </summary>
     public partial class AmazonCustomerProfilesClient : AmazonServiceClient, IAmazonCustomerProfiles
@@ -461,6 +464,20 @@ namespace Amazon.CustomerProfiles
         /// To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
         /// confused deputy prevention</a> for sample policies that you should apply. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// It is not possible to associate a Customer Profiles domain with an Amazon Connect
+        /// Instance directly from the API. If you would like to create a domain and associate
+        /// a Customer Profiles domain, use the Amazon Connect admin website. For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-customer-profiles.html#enable-customer-profiles-step1">Enable
+        /// Customer Profiles</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each Amazon Connect instance can be associated with only one domain. Multiple Amazon
+        /// Connect instances can be associated with one domain.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// 
@@ -512,6 +529,20 @@ namespace Amazon.CustomerProfiles
         /// To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
         /// confused deputy prevention</a> for sample policies that you should apply. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// It is not possible to associate a Customer Profiles domain with an Amazon Connect
+        /// Instance directly from the API. If you would like to create a domain and associate
+        /// a Customer Profiles domain, use the Amazon Connect admin website. For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-customer-profiles.html#enable-customer-profiles-step1">Enable
+        /// Customer Profiles</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each Amazon Connect instance can be associated with only one domain. Multiple Amazon
+        /// Connect instances can be associated with one domain.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// <param name="cancellationToken">

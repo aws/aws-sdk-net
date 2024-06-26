@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ColorScale Unmarshall(JsonUnmarshallerContext context)
         {
             ColorScale unmarshalledObject = new ColorScale();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

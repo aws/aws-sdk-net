@@ -31,7 +31,8 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetWorkflowRun operation.
-    /// Retrieves the metadata for a given workflow run.
+    /// Retrieves the metadata for a given workflow run. Job run history is accessible for
+    /// 90 days for your workflow and job run.
     /// </summary>
     public partial class GetWorkflowRunRequest : AmazonGlueRequest
     {

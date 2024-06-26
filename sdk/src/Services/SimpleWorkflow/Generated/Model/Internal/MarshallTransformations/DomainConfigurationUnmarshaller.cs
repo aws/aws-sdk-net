@@ -57,6 +57,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         public DomainConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DomainConfiguration unmarshalledObject = new DomainConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

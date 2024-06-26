@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public AudioTrackSelection Unmarshall(JsonUnmarshallerContext context)
         {
             AudioTrackSelection unmarshalledObject = new AudioTrackSelection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

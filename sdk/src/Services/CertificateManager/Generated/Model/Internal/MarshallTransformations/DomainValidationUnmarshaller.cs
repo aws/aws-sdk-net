@@ -57,6 +57,8 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         public DomainValidation Unmarshall(JsonUnmarshallerContext context)
         {
             DomainValidation unmarshalledObject = new DomainValidation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

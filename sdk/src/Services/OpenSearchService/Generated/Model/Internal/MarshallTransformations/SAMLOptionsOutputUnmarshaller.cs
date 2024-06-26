@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public SAMLOptionsOutput Unmarshall(JsonUnmarshallerContext context)
         {
             SAMLOptionsOutput unmarshalledObject = new SAMLOptionsOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

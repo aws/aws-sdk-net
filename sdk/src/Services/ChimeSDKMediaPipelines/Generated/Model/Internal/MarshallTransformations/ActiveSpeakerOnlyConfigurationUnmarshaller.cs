@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public ActiveSpeakerOnlyConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ActiveSpeakerOnlyConfiguration unmarshalledObject = new ActiveSpeakerOnlyConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

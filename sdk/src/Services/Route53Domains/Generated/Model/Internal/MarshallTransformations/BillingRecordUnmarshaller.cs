@@ -57,6 +57,8 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         public BillingRecord Unmarshall(JsonUnmarshallerContext context)
         {
             BillingRecord unmarshalledObject = new BillingRecord();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

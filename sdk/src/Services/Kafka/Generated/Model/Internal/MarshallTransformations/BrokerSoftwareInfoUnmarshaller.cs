@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public BrokerSoftwareInfo Unmarshall(JsonUnmarshallerContext context)
         {
             BrokerSoftwareInfo unmarshalledObject = new BrokerSoftwareInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

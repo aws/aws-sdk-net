@@ -66,6 +66,7 @@ namespace Amazon.S3.Internal
                 ["UseObjectLambdaEndpoint"] = parameters["UseObjectLambdaEndpoint"],
                 ["Key"] = parameters["Key"],
                 ["Prefix"] = parameters["Prefix"],
+                ["CopySource"] = parameters["CopySource"],
                 ["DisableAccessPoints"] = parameters["DisableAccessPoints"],
                 ["DisableMultiRegionAccessPoints"] = parameters["DisableMultiRegionAccessPoints"],
                 ["UseArnRegion"] = parameters["UseArnRegion"],

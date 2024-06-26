@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public InvokeResponseStreamUpdate Unmarshall(JsonUnmarshallerContext context)
         {
             InvokeResponseStreamUpdate unmarshalledObject = new InvokeResponseStreamUpdate();
+            if (context.IsEmptyResponse)
+                return null;
             unmarshalledObject.Payload = context.Stream as MemoryStream;
             return unmarshalledObject;
         }

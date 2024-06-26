@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public ConnectionsList Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectionsList unmarshalledObject = new ConnectionsList();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

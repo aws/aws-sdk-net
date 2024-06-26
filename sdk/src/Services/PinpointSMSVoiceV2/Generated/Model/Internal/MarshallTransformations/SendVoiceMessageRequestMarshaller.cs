@@ -125,6 +125,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.OriginationIdentity);
                 }
 
+                if(publicRequest.IsSetProtectConfigurationId())
+                {
+                    context.Writer.WritePropertyName("ProtectConfigurationId");
+                    context.Writer.Write(publicRequest.ProtectConfigurationId);
+                }
+
                 if(publicRequest.IsSetTimeToLive())
                 {
                     context.Writer.WritePropertyName("TimeToLive");

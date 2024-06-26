@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public VersionUpdateByJobsConfig Unmarshall(JsonUnmarshallerContext context)
         {
             VersionUpdateByJobsConfig unmarshalledObject = new VersionUpdateByJobsConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

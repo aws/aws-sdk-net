@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public FailedCreateStandbyWorkspacesRequest Unmarshall(JsonUnmarshallerContext context)
         {
             FailedCreateStandbyWorkspacesRequest unmarshalledObject = new FailedCreateStandbyWorkspacesRequest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

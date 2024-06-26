@@ -35,11 +35,10 @@ namespace Amazon.Amplify.Model
     /// 
     ///  
     /// <para>
-    /// This API is available only to Amplify Gen 1 applications where the backend was created
+    /// This API is available only to Amplify Gen 1 applications where the backend is created
     /// using Amplify Studio or the Amplify command line interface (CLI). This API isn’t available
-    /// to applications created using the Amplify Gen 2 public preview. When you deploy an
-    /// application with Amplify Gen 2, you provision the app's backend infrastructure using
-    /// Typescript code.
+    /// to Amplify Gen 2 applications. When you deploy an application with Amplify Gen 2,
+    /// you provision the app's backend infrastructure using Typescript code.
     /// </para>
     /// </summary>
     public partial class ListBackendEnvironmentsRequest : AmazonAmplifyRequest
@@ -93,7 +92,7 @@ namespace Amazon.Amplify.Model
         /// The maximum number of records to list in a single response. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

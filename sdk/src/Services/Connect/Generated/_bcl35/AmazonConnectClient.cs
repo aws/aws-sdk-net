@@ -1578,6 +1578,76 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  BatchGetAttachedFileMetadata
+
+        /// <summary>
+        /// Allows you to retrieve metadata about multiple attached files on an associated resource.
+        /// Each attached file provided in the input list must be associated with the input AssociatedResourceArn.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAttachedFileMetadata service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetAttachedFileMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchGetAttachedFileMetadata">REST API Reference for BatchGetAttachedFileMetadata Operation</seealso>
+        public virtual BatchGetAttachedFileMetadataResponse BatchGetAttachedFileMetadata(BatchGetAttachedFileMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAttachedFileMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAttachedFileMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetAttachedFileMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetAttachedFileMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAttachedFileMetadata operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetAttachedFileMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchGetAttachedFileMetadata">REST API Reference for BatchGetAttachedFileMetadata Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetAttachedFileMetadata(BatchGetAttachedFileMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAttachedFileMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAttachedFileMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetAttachedFileMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetAttachedFileMetadata.</param>
+        /// 
+        /// <returns>Returns a  BatchGetAttachedFileMetadataResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchGetAttachedFileMetadata">REST API Reference for BatchGetAttachedFileMetadata Operation</seealso>
+        public virtual BatchGetAttachedFileMetadataResponse EndBatchGetAttachedFileMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetAttachedFileMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchGetFlowAssociation
 
         /// <summary>
@@ -1758,23 +1828,22 @@ namespace Amazon.Connect
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you plan to claim and release numbers frequently during a 30 day period, contact
-        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
-        /// claiming and releasing any more numbers until 30 days past the oldest number released
-        /// has expired.
+        /// If you plan to claim and release numbers frequently, contact us for a service quota
+        /// exception. Otherwise, it is possible you will be blocked from claiming and releasing
+        /// any more numbers until up to 180 days past the oldest number released has expired.
         /// </para>
         ///  
         /// <para>
         /// By default you can claim and release up to 200% of your maximum number of active phone
-        /// numbers during any 30 day period. If you claim and release phone numbers using the
-        /// UI or API during a rolling 30 day cycle that exceeds 200% of your phone number service
-        /// level quota, you will be blocked from claiming any more numbers until 30 days past
-        /// the oldest number released has expired. 
+        /// numbers. If you claim and release phone numbers using the UI or API during a rolling
+        /// 180 day cycle that exceeds 200% of your phone number service level quota, you will
+        /// be blocked from claiming any more numbers until 180 days past the oldest number released
+        /// has expired. 
         /// </para>
         ///  
         /// <para>
         /// For example, if you already have 99 claimed numbers and a service level quota of 99
-        /// phone numbers, and in any 30 day period you release 99, claim 99, and then release
+        /// phone numbers, and in any 180 day period you release 99, claim 99, and then release
         /// 99, you will have exceeded the 200% limit. At that point you are blocked from claiming
         /// any more numbers until you open an Amazon Web Services support ticket.
         /// </para>
@@ -1842,6 +1911,76 @@ namespace Amazon.Connect
         public virtual ClaimPhoneNumberResponse EndClaimPhoneNumber(IAsyncResult asyncResult)
         {
             return EndInvoke<ClaimPhoneNumberResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CompleteAttachedFileUpload
+
+        /// <summary>
+        /// Allows you to confirm that the attached file has been uploaded using the pre-signed
+        /// URL provided in the StartAttachedFileUpload API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteAttachedFileUpload service method.</param>
+        /// 
+        /// <returns>The response from the CompleteAttachedFileUpload service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CompleteAttachedFileUpload">REST API Reference for CompleteAttachedFileUpload Operation</seealso>
+        public virtual CompleteAttachedFileUploadResponse CompleteAttachedFileUpload(CompleteAttachedFileUploadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteAttachedFileUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteAttachedFileUploadResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteAttachedFileUploadResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CompleteAttachedFileUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CompleteAttachedFileUpload operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteAttachedFileUpload
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CompleteAttachedFileUpload">REST API Reference for CompleteAttachedFileUpload Operation</seealso>
+        public virtual IAsyncResult BeginCompleteAttachedFileUpload(CompleteAttachedFileUploadRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteAttachedFileUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteAttachedFileUploadResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CompleteAttachedFileUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteAttachedFileUpload.</param>
+        /// 
+        /// <returns>Returns a  CompleteAttachedFileUploadResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CompleteAttachedFileUpload">REST API Reference for CompleteAttachedFileUpload Operation</seealso>
+        public virtual CompleteAttachedFileUploadResponse EndCompleteAttachedFileUpload(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CompleteAttachedFileUploadResponse>(asyncResult);
         }
 
         #endregion
@@ -2628,7 +2767,7 @@ namespace Amazon.Connect
         /// <summary>
         /// Creates a prompt. For more information about prompts, such as supported file types
         /// and maximum length, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create
-        /// prompts</a> in the <i>Amazon Connect Administrator's Guide</i>.
+        /// prompts</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrompt service method.</param>
         /// 
@@ -3835,6 +3974,81 @@ namespace Amazon.Connect
         public virtual DeactivateEvaluationFormResponse EndDeactivateEvaluationForm(IAsyncResult asyncResult)
         {
             return EndInvoke<DeactivateEvaluationFormResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAttachedFile
+
+        /// <summary>
+        /// Deletes an attached file along with the underlying S3 Object.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The attached file is <b>permanently deleted</b> if S3 bucket versioning is not enabled.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttachedFile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAttachedFile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteAttachedFile">REST API Reference for DeleteAttachedFile Operation</seealso>
+        public virtual DeleteAttachedFileResponse DeleteAttachedFile(DeleteAttachedFileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAttachedFileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAttachedFileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAttachedFileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAttachedFile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttachedFile operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAttachedFile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteAttachedFile">REST API Reference for DeleteAttachedFile Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAttachedFile(DeleteAttachedFileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAttachedFileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAttachedFileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAttachedFile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAttachedFile.</param>
+        /// 
+        /// <returns>Returns a  DeleteAttachedFileResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteAttachedFile">REST API Reference for DeleteAttachedFile Operation</seealso>
+        public virtual DeleteAttachedFileResponse EndDeleteAttachedFile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAttachedFileResponse>(asyncResult);
         }
 
         #endregion
@@ -5707,6 +5921,20 @@ namespace Amazon.Connect
         /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
         /// Connect Flow language</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
+        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
+        /// been published.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the response, <b>Status</b> indicates the flow status as either <c>SAVED</c> or
+        /// <c>PUBLISHED</c>. The <c>PUBLISHED</c> status will initiate validation on the content.
+        /// <c>SAVED</c> does not initiate validation of the content. <c>SAVED</c> | <c>PUBLISHED</c>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlow service method.</param>
         /// 
@@ -5779,6 +6007,14 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Describes the specified flow module.
+        /// 
+        ///  
+        /// <para>
+        /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
+        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
+        /// been published.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowModule service method.</param>
         /// 
@@ -8252,6 +8488,77 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetAttachedFile
+
+        /// <summary>
+        /// Provides a pre-signed URL for download of an approved attached file. This API also
+        /// returns metadata about the attached file. It will only return a downloadURL if the
+        /// status of the attached file is <c>APPROVED</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAttachedFile service method.</param>
+        /// 
+        /// <returns>The response from the GetAttachedFile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetAttachedFile">REST API Reference for GetAttachedFile Operation</seealso>
+        public virtual GetAttachedFileResponse GetAttachedFile(GetAttachedFileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAttachedFileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAttachedFileResponseUnmarshaller.Instance;
+
+            return Invoke<GetAttachedFileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAttachedFile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAttachedFile operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAttachedFile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetAttachedFile">REST API Reference for GetAttachedFile Operation</seealso>
+        public virtual IAsyncResult BeginGetAttachedFile(GetAttachedFileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAttachedFileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAttachedFileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAttachedFile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAttachedFile.</param>
+        /// 
+        /// <returns>Returns a  GetAttachedFileResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetAttachedFile">REST API Reference for GetAttachedFile Operation</seealso>
+        public virtual GetAttachedFileResponse EndGetAttachedFile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAttachedFileResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetContactAttributes
 
         /// <summary>
@@ -8726,7 +9033,7 @@ namespace Amazon.Connect
         /// <para>
         /// For a description of the historical metrics that are supported by <c>GetMetricDataV2</c>
         /// and <c>GetMetricData</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-        /// metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.
+        /// metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricDataV2 service method.</param>
@@ -12530,29 +12837,28 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// After releasing a phone number, the phone number enters into a cooldown period of
-        /// 30 days. It cannot be searched for or claimed again until the period has ended. If
-        /// you accidentally release a phone number, contact Amazon Web Services Support.
+        /// After releasing a phone number, the phone number enters into a cooldown period for
+        /// up to 180 days. It cannot be searched for or claimed again until the period has ended.
+        /// If you accidentally release a phone number, contact Amazon Web Services Support.
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you plan to claim and release numbers frequently during a 30 day period, contact
-        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
-        /// claiming and releasing any more numbers until 30 days past the oldest number released
-        /// has expired.
+        /// If you plan to claim and release numbers frequently, contact us for a service quota
+        /// exception. Otherwise, it is possible you will be blocked from claiming and releasing
+        /// any more numbers until up to 180 days past the oldest number released has expired.
         /// </para>
         ///  
         /// <para>
         /// By default you can claim and release up to 200% of your maximum number of active phone
-        /// numbers during any 30 day period. If you claim and release phone numbers using the
-        /// UI or API during a rolling 30 day cycle that exceeds 200% of your phone number service
-        /// level quota, you will be blocked from claiming any more numbers until 30 days past
-        /// the oldest number released has expired. 
+        /// numbers. If you claim and release phone numbers using the UI or API during a rolling
+        /// 180 day cycle that exceeds 200% of your phone number service level quota, you will
+        /// be blocked from claiming any more numbers until 180 days past the oldest number released
+        /// has expired. 
         /// </para>
         ///  
         /// <para>
         /// For example, if you already have 99 claimed numbers and a service level quota of 99
-        /// phone numbers, and in any 30 day period you release 99, claim 99, and then release
+        /// phone numbers, and in any 180 day period you release 99, claim 99, and then release
         /// 99, you will have exceeded the 200% limit. At that point you are blocked from claiming
         /// any more numbers until you open an Amazon Web Services support ticket.
         /// </para>
@@ -12926,6 +13232,144 @@ namespace Amazon.Connect
         public virtual SearchAvailablePhoneNumbersResponse EndSearchAvailablePhoneNumbers(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchAvailablePhoneNumbersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchContactFlowModules
+
+        /// <summary>
+        /// Searches the flow modules in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContactFlowModules service method.</param>
+        /// 
+        /// <returns>The response from the SearchContactFlowModules service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlowModules">REST API Reference for SearchContactFlowModules Operation</seealso>
+        public virtual SearchContactFlowModulesResponse SearchContactFlowModules(SearchContactFlowModulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchContactFlowModulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchContactFlowModulesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchContactFlowModulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchContactFlowModules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchContactFlowModules operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchContactFlowModules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlowModules">REST API Reference for SearchContactFlowModules Operation</seealso>
+        public virtual IAsyncResult BeginSearchContactFlowModules(SearchContactFlowModulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchContactFlowModulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchContactFlowModulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchContactFlowModules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchContactFlowModules.</param>
+        /// 
+        /// <returns>Returns a  SearchContactFlowModulesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlowModules">REST API Reference for SearchContactFlowModules Operation</seealso>
+        public virtual SearchContactFlowModulesResponse EndSearchContactFlowModules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchContactFlowModulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchContactFlows
+
+        /// <summary>
+        /// Searches the contact flows in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContactFlows service method.</param>
+        /// 
+        /// <returns>The response from the SearchContactFlows service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlows">REST API Reference for SearchContactFlows Operation</seealso>
+        public virtual SearchContactFlowsResponse SearchContactFlows(SearchContactFlowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchContactFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchContactFlowsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchContactFlowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchContactFlows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchContactFlows operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchContactFlows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlows">REST API Reference for SearchContactFlows Operation</seealso>
+        public virtual IAsyncResult BeginSearchContactFlows(SearchContactFlowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchContactFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchContactFlowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchContactFlows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchContactFlows.</param>
+        /// 
+        /// <returns>Returns a  SearchContactFlowsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlows">REST API Reference for SearchContactFlows Operation</seealso>
+        public virtual SearchContactFlowsResponse EndSearchContactFlows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchContactFlowsResponse>(asyncResult);
         }
 
         #endregion
@@ -13789,6 +14233,85 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  StartAttachedFileUpload
+
+        /// <summary>
+        /// Provides a pre-signed Amazon S3 URL in response for uploading your content.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You may only use this API to upload attachments to a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
+        /// Case</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAttachedFileUpload service method.</param>
+        /// 
+        /// <returns>The response from the StartAttachedFileUpload service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAttachedFileUpload">REST API Reference for StartAttachedFileUpload Operation</seealso>
+        public virtual StartAttachedFileUploadResponse StartAttachedFileUpload(StartAttachedFileUploadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAttachedFileUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAttachedFileUploadResponseUnmarshaller.Instance;
+
+            return Invoke<StartAttachedFileUploadResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAttachedFileUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAttachedFileUpload operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAttachedFileUpload
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAttachedFileUpload">REST API Reference for StartAttachedFileUpload Operation</seealso>
+        public virtual IAsyncResult BeginStartAttachedFileUpload(StartAttachedFileUploadRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAttachedFileUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAttachedFileUploadResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAttachedFileUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAttachedFileUpload.</param>
+        /// 
+        /// <returns>Returns a  StartAttachedFileUploadResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAttachedFileUpload">REST API Reference for StartAttachedFileUpload Operation</seealso>
+        public virtual StartAttachedFileUploadResponse EndStartAttachedFileUpload(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartAttachedFileUploadResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartChatContact
 
         /// <summary>
@@ -14462,6 +14985,14 @@ namespace Amazon.Connect
         ///  </li> <li> 
         /// <para>
         /// QUEUE_TRANSFER
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EXTERNAL_OUTBOUND
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MONITOR
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -15557,6 +16088,13 @@ namespace Amazon.Connect
         /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
         /// Connect Flow language</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
+        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
+        /// been published.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowContent service method.</param>
         /// 
@@ -15700,7 +16238,15 @@ namespace Amazon.Connect
         #region  UpdateContactFlowModuleContent
 
         /// <summary>
-        /// Updates specified flow module for the specified Amazon Connect instance.
+        /// Updates specified flow module for the specified Amazon Connect instance. 
+        /// 
+        ///  
+        /// <para>
+        /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
+        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
+        /// been published.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowModuleContent service method.</param>
         /// 
@@ -15925,10 +16471,6 @@ namespace Amazon.Connect
         #region  UpdateContactRoutingData
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates routing priority and age on the contact (<b>QueuePriority</b> and <b>QueueTimeAdjustmentInSeconds</b>).
         /// These properties can be used to change a customer's position in the queue. For example,
         /// you can move a contact to the back of the queue by setting a lower routing priority
@@ -15939,7 +16481,13 @@ namespace Amazon.Connect
         /// queue wait time as reported through metrics. These properties can also be updated
         /// by using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/change-routing-priority.html">the
         /// Set routing priority / age flow block</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Either <b>QueuePriority</b> or <b>QueueTimeAdjustmentInSeconds</b> should be provided
+        /// within the request body, but not both.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactRoutingData service method.</param>
         /// 

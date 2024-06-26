@@ -161,7 +161,7 @@ namespace Amazon.Lambda.Model
         // Check to see if RetryAfterSeconds property is set
         internal bool IsSetRetryAfterSeconds()
         {
-            return this._retryAfterSeconds != null;
+            return !string.IsNullOrEmpty(this._retryAfterSeconds);
         }
 
         /// <summary>

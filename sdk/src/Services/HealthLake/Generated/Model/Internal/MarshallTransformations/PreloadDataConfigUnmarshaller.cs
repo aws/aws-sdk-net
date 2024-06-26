@@ -57,6 +57,8 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         public PreloadDataConfig Unmarshall(JsonUnmarshallerContext context)
         {
             PreloadDataConfig unmarshalledObject = new PreloadDataConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

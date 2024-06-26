@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public KeyPair Unmarshall(JsonUnmarshallerContext context)
         {
             KeyPair unmarshalledObject = new KeyPair();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

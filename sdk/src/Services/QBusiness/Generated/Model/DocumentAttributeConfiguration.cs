@@ -52,7 +52,7 @@ namespace Amazon.QBusiness.Model
         /// The name of the document attribute.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=30)]
         public string Name
         {
             get { return this._name; }

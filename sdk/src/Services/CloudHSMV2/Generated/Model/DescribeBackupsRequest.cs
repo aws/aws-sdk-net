@@ -82,6 +82,7 @@ namespace Amazon.CloudHSMV2.Model
         /// defined at the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=30)]
         public Dictionary<string, List<string>> Filters
         {
             get { return this._filters; }

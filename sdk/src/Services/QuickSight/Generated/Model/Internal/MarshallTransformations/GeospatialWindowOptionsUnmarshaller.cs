@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public GeospatialWindowOptions Unmarshall(JsonUnmarshallerContext context)
         {
             GeospatialWindowOptions unmarshalledObject = new GeospatialWindowOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

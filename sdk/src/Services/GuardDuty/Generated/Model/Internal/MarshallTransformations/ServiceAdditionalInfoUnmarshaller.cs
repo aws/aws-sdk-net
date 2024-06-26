@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public ServiceAdditionalInfo Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceAdditionalInfo unmarshalledObject = new ServiceAdditionalInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

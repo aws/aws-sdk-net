@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public PossibleRemediationAction Unmarshall(JsonUnmarshallerContext context)
         {
             PossibleRemediationAction unmarshalledObject = new PossibleRemediationAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

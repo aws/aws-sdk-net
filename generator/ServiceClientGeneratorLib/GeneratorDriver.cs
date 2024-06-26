@@ -202,6 +202,8 @@ namespace ServiceClientGenerator
             if (Configuration.Namespace == "Amazon.S3")
             {
                 ExecuteProjectFileGenerators();
+                // The AmazonS3RetryPolicy simply populates the static list of requests to retry for a status code of 200 which returns an exception.
+                ExecuteGenerator(new AmazonS3RetryPolicy(), "AmazonS3RetryPolicy.cs");
                 return;
             }
             // The top level request that all operation requests are children of
@@ -256,25 +258,10 @@ namespace ServiceClientGenerator
             // Generate any missed structures that are not defined or referenced by a request, response, marshaller, unmarshaller, or exception of an operation
             GenerateStructures(null);
 
-            var fileName = string.Format("{0}MarshallingTests.cs", Configuration.ClassName);
-
-            // Generate tests based on the type of request it is
-            if (Configuration.ServiceModel.Type == ServiceType.Json)
-                ExecuteTestGenerator(new JsonMarshallingTests(), fileName, "Marshalling");
-            else if (Configuration.ServiceModel.Type == ServiceType.Query)
-            {
-                if (Configuration.ServiceModel.IsEC2Protocol)
-                    ExecuteTestGenerator(new AWSQueryEC2MarshallingTests(), fileName, "Marshalling");
-                else
-                    ExecuteTestGenerator(new AWSQueryMarshallingTests(), fileName, "Marshalling");
-            }
-            else if (Configuration.ServiceModel.Type == ServiceType.Rest_Xml || Configuration.ServiceModel.Type == ServiceType.Rest_Json)
-                ExecuteTestGenerator(new RestMarshallingTests(), fileName, "Marshalling");
-
             //Generate endpoint discovery tests for classes that have an endpoint operation
-            if(Configuration.ServiceModel.FindEndpointOperation() != null)
+            if (Configuration.ServiceModel.FindEndpointOperation() != null)
             {
-                fileName = string.Format("{0}EndpointDiscoveryMarshallingTests.cs", Configuration.ClassName);
+                var fileName = string.Format("{0}EndpointDiscoveryMarshallingTests.cs", Configuration.ClassName);
                 ExecuteTestGenerator(new EndpointDiscoveryMarshallingTests(), fileName, "Marshalling");
             }
 

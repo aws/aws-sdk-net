@@ -32,7 +32,7 @@ namespace Amazon.AppRunner
     public partial class AmazonAppRunnerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AppRunner", "3.7.301.53");
+            InternalSDKUtils.BuildUserAgentString("AppRunner", "3.7.301.81");
 
         private string _userAgent = UserAgentString;
         ///<summary>

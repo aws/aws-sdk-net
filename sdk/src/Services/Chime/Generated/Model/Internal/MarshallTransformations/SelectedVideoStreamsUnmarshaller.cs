@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public SelectedVideoStreams Unmarshall(JsonUnmarshallerContext context)
         {
             SelectedVideoStreams unmarshalledObject = new SelectedVideoStreams();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

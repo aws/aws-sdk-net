@@ -57,6 +57,8 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         public SnsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SnsConfiguration unmarshalledObject = new SnsConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

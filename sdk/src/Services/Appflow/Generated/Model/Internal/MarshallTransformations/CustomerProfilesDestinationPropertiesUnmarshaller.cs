@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public CustomerProfilesDestinationProperties Unmarshall(JsonUnmarshallerContext context)
         {
             CustomerProfilesDestinationProperties unmarshalledObject = new CustomerProfilesDestinationProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

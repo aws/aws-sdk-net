@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public Volume Unmarshall(JsonUnmarshallerContext context)
         {
             Volume unmarshalledObject = new Volume();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         public S3LogDeliveryDescription Unmarshall(JsonUnmarshallerContext context)
         {
             S3LogDeliveryDescription unmarshalledObject = new S3LogDeliveryDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

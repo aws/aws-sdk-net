@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public SybaseSettings Unmarshall(JsonUnmarshallerContext context)
         {
             SybaseSettings unmarshalledObject = new SybaseSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransfo
         public Subscription Unmarshall(JsonUnmarshallerContext context)
         {
             Subscription unmarshalledObject = new Subscription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

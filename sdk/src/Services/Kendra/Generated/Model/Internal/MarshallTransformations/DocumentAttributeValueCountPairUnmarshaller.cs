@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public DocumentAttributeValueCountPair Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentAttributeValueCountPair unmarshalledObject = new DocumentAttributeValueCountPair();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

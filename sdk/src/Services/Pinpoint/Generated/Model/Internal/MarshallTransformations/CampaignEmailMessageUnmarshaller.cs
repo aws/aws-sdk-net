@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public CampaignEmailMessage Unmarshall(JsonUnmarshallerContext context)
         {
             CampaignEmailMessage unmarshalledObject = new CampaignEmailMessage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FromAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Headers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MessageHeader, MessageHeaderUnmarshaller>(MessageHeaderUnmarshaller.Instance);
+                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("HtmlBody", targetDepth))

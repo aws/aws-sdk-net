@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public FindingStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             FindingStatistics unmarshalledObject = new FindingStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

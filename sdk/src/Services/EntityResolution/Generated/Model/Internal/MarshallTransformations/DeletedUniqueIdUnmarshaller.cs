@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public DeletedUniqueId Unmarshall(JsonUnmarshallerContext context)
         {
             DeletedUniqueId unmarshalledObject = new DeletedUniqueId();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

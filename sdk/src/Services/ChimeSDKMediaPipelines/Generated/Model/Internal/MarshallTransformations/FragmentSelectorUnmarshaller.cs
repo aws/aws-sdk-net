@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public FragmentSelector Unmarshall(JsonUnmarshallerContext context)
         {
             FragmentSelector unmarshalledObject = new FragmentSelector();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

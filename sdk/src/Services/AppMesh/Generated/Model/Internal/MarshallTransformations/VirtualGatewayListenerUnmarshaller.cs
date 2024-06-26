@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public VirtualGatewayListener Unmarshall(JsonUnmarshallerContext context)
         {
             VirtualGatewayListener unmarshalledObject = new VirtualGatewayListener();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

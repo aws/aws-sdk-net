@@ -57,6 +57,8 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         public CertificateDetail Unmarshall(JsonUnmarshallerContext context)
         {
             CertificateDetail unmarshalledObject = new CertificateDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

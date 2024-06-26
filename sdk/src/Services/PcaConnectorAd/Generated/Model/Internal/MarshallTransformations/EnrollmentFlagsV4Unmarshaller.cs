@@ -57,6 +57,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         public EnrollmentFlagsV4 Unmarshall(JsonUnmarshallerContext context)
         {
             EnrollmentFlagsV4 unmarshalledObject = new EnrollmentFlagsV4();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

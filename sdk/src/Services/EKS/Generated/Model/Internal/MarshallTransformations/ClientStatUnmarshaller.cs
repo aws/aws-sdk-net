@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public ClientStat Unmarshall(JsonUnmarshallerContext context)
         {
             ClientStat unmarshalledObject = new ClientStat();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

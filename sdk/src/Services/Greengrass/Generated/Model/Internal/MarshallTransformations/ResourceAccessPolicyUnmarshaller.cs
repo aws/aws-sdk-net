@@ -57,6 +57,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         public ResourceAccessPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceAccessPolicy unmarshalledObject = new ResourceAccessPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

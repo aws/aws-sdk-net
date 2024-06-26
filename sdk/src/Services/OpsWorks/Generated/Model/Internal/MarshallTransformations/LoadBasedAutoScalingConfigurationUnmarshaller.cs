@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public LoadBasedAutoScalingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LoadBasedAutoScalingConfiguration unmarshalledObject = new LoadBasedAutoScalingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

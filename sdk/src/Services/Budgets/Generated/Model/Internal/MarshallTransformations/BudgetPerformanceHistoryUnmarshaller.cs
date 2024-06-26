@@ -57,6 +57,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         public BudgetPerformanceHistory Unmarshall(JsonUnmarshallerContext context)
         {
             BudgetPerformanceHistory unmarshalledObject = new BudgetPerformanceHistory();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

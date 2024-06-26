@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public PointInTimeRecoveryDescription Unmarshall(JsonUnmarshallerContext context)
         {
             PointInTimeRecoveryDescription unmarshalledObject = new PointInTimeRecoveryDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public Prompt Unmarshall(JsonUnmarshallerContext context)
         {
             Prompt unmarshalledObject = new Prompt();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

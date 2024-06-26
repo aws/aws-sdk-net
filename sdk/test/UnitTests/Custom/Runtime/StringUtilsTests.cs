@@ -144,7 +144,7 @@ namespace AWSSDK.UnitTests
                 new object[] {new List<string> { "English", "" , "French" }, "English,French" },
                 new object[] {new List<string> { "English", null , "French" }, "English,French" },
                 new object[] {new List<string> { "French", "English" }, "French,English" },
-                new object[] {new List<string> { "\"English\"", "French,German", "'German'" }, "\"English\",\"French,German\",\'German\'" }
+                new object[] {new List<string> { "\"English\"", "French,German", "'German'" }, "\"\\\"English\\\"\",\"French,German\",\'German\'" }
             };
 
         [TestCategory("UnitTest")]

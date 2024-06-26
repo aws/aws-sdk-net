@@ -57,6 +57,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public PendingModifiedServiceUpdate Unmarshall(JsonUnmarshallerContext context)
         {
             PendingModifiedServiceUpdate unmarshalledObject = new PendingModifiedServiceUpdate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public MicrosoftSQLServerCatalogSource Unmarshall(JsonUnmarshallerContext context)
         {
             MicrosoftSQLServerCatalogSource unmarshalledObject = new MicrosoftSQLServerCatalogSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

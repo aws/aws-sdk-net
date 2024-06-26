@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AmazonElasticsearchParameters Unmarshall(JsonUnmarshallerContext context)
         {
             AmazonElasticsearchParameters unmarshalledObject = new AmazonElasticsearchParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

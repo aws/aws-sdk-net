@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public StatefulEngineOptions Unmarshall(JsonUnmarshallerContext context)
         {
             StatefulEngineOptions unmarshalledObject = new StatefulEngineOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RuleOrder = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StreamExceptionPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StreamExceptionPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

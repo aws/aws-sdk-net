@@ -57,6 +57,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         public CacheAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             CacheAttributes unmarshalledObject = new CacheAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

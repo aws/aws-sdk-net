@@ -57,6 +57,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         public BatchDeleteConfigurationTask Unmarshall(JsonUnmarshallerContext context)
         {
             BatchDeleteConfigurationTask unmarshalledObject = new BatchDeleteConfigurationTask();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

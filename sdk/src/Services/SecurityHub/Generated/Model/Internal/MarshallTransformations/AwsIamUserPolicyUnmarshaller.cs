@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsIamUserPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             AwsIamUserPolicy unmarshalledObject = new AwsIamUserPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

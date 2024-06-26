@@ -57,6 +57,8 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
         public ScheduleSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ScheduleSummary unmarshalledObject = new ScheduleSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

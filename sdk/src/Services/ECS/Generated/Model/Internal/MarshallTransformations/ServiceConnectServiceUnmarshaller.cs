@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public ServiceConnectService Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceConnectService unmarshalledObject = new ServiceConnectService();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

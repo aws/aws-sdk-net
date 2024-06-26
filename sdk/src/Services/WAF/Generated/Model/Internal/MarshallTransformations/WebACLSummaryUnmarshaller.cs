@@ -57,6 +57,8 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         public WebACLSummary Unmarshall(JsonUnmarshallerContext context)
         {
             WebACLSummary unmarshalledObject = new WebACLSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

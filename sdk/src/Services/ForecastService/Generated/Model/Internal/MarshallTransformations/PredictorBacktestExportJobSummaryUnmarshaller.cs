@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public PredictorBacktestExportJobSummary Unmarshall(JsonUnmarshallerContext context)
         {
             PredictorBacktestExportJobSummary unmarshalledObject = new PredictorBacktestExportJobSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

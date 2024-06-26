@@ -1,21 +1,17 @@
-﻿using System;
+﻿using Amazon;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DataModel;
+using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.Model;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon.Auth.AccessControlPolicy;
-using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
-using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.DataModel;
-using Amazon.DynamoDBv2.Model;
 using ThirdParty.Json.LitJson;
-
-using Moq;
-using Amazon;
 
 namespace AWSSDK_DotNet35.UnitTests
 {
@@ -468,6 +464,7 @@ namespace AWSSDK_DotNet35.UnitTests
         /// that relies on the hash key without correct table metadata
         /// </summary>
         [TestMethod]
+        [TestCategory("DynamoDBv2")]
         public void DisableFetchingTableMetadata_QueryWithMissingHashKey_ThrowsException()
         {
             var config = new DynamoDBContextConfig()
@@ -485,6 +482,7 @@ namespace AWSSDK_DotNet35.UnitTests
         /// that relies on a range key without correct table metadata
         /// </summary>
         [TestMethod]
+        [TestCategory("DynamoDBv2")]
         public void DisableFetchingTableMetadata_QueryWithMissingRangeKey_ThrowsException()
         {
             var config = new DynamoDBContextConfig()
@@ -501,6 +499,98 @@ namespace AWSSDK_DotNet35.UnitTests
             // This is a GSI's range key, which is not attributed
             Assert.ThrowsException<InvalidOperationException>(() =>
                 context.Query<EmployeeMissingRangeKeys>("123", QueryOperator.GreaterThan, new List<object> { 5 }, new DynamoDBOperationConfig { IndexName = "GlobalIndex"}));
+        }
+
+        /// <summary>
+        /// Asserts that we can infer the type of the primary key is "String" 
+        /// when using a property converter and DisableFetchingTableMetadata
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void DisableFetchingTableMetadata_KeyWithConverter_DateTimeToString()
+        {
+            var mock = new Mock<IAmazonDynamoDB>();
+            mock.Setup(x => x.GetItem(It.IsAny<GetItemRequest>())).Returns(
+                new GetItemResponse() {  Item = new Dictionary<string, AttributeValue>()});
+
+            var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { DisableFetchingTableMetadata = true });
+            
+            context.Load<HashKeyConverter_DateTimeToString>(DateTime.MinValue);
+
+            // Verify that the DateTime was cast to a string attribute correctly
+            mock.Verify(x => 
+                x.GetItem(It.Is<GetItemRequest>(request => 
+                    request.Key.ContainsKey("CreationDate") && 
+                    request.Key["CreationDate"].S == "0001-01-01T00:00:00.000Z")));
+
+            mock.VerifyNoOtherCalls();
+        }
+
+        /// <summary>
+        /// Asserts that we can infer the type of the primary key is "Number" 
+        /// when using a property converter and DisableFetchingTableMetadata
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void DisableFetchingTableMetadata_KeyWithConverter_DateTimeToNumber()
+        {
+            var mock = new Mock<IAmazonDynamoDB>();
+            mock.Setup(x => x.GetItem(It.IsAny<GetItemRequest>())).Returns(
+                new GetItemResponse() { Item = new Dictionary<string, AttributeValue>() });
+
+            var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { DisableFetchingTableMetadata = true });
+
+            context.Load<HashKeyConverter_DateTimeToNumber>(new DateTime(1024, DateTimeKind.Utc));
+
+            // Verify that the DateTime was cast to a number attribute correctly
+            mock.Verify(x => 
+                x.GetItem(It.Is<GetItemRequest>(request =>
+                    request.Key.ContainsKey("CreationDate") &&
+                    request.Key["CreationDate"].N == "1024")));
+
+            mock.VerifyNoOtherCalls();
+        }
+
+        /// <summary>
+        /// Asserts that we can infer the type of the primary key is "Binary" 
+        /// when using a property converter and DisableFetchingTableMetadata
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void DisableFetchingTableMetadata_KeyWithConverter_DateTimeToBinary()
+        {
+            var mock = new Mock<IAmazonDynamoDB>();
+            mock.Setup(x => x.GetItem(It.IsAny<GetItemRequest>())).Returns(
+                new GetItemResponse() { Item = new Dictionary<string, AttributeValue>() });
+
+            var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { DisableFetchingTableMetadata = true });
+
+            context.Load<HashKeyConverter_DateTimeToBinary>(new DateTime(1024, DateTimeKind.Utc));
+
+            // Verify that the DateTime was cast to a binary attribute correctly (converts to a string just for the comparison)
+            mock.Verify(x => 
+                x.GetItem(It.Is<GetItemRequest>(request =>
+                    request.Key.ContainsKey("CreationDate") &&
+                    BitConverter.ToString(request.Key["CreationDate"].B.ToArray()) == "00-04-00-00-00-00-00-40")));
+
+            mock.VerifyNoOtherCalls();
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void DisableFetchingTableMetadata_KeyWithConverter_DateTimeToBool_ThrowsException()
+        {
+            var mock = new Mock<IAmazonDynamoDB>();
+            mock.Setup(x => x.GetItem(It.IsAny<GetItemRequest>())).Returns(
+                new GetItemResponse() { Item = new Dictionary<string, AttributeValue>() });
+
+            var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { DisableFetchingTableMetadata = true });
+
+            // A boolean isn't valid as a primary key, so we expect an exception 
+            Assert.ThrowsException<InvalidOperationException>(() => 
+                context.Load<HashKeyConverter_DateTimeToBool>(new DateTime(1024, DateTimeKind.Utc)));
+
+            mock.VerifyNoOtherCalls();
         }
 
         [DynamoDBTable("EmployeeDetails")]
@@ -528,6 +618,80 @@ namespace AWSSDK_DotNet35.UnitTests
 
             // This is the range key for "GlobalIndex" for our typical testing table
             public int Score { get; set; }
+        }
+
+        private class HashKeyConverter_DateTimeToString
+        {
+            [DynamoDBHashKey(typeof(DateTimeConverter))]
+            public DateTime CreationDate { get; set; }
+
+            private class DateTimeConverter : IPropertyConverter
+            {
+                public DynamoDBEntry ToEntry(object value)
+                {
+                    return ((DateTime)value).ToString(@"yyyy-MM-dd\THH:mm:ss.fff\Z", CultureInfo.InvariantCulture);
+                }
+                public object FromEntry(DynamoDBEntry entry)
+                {
+                    throw new NotImplementedException();
+                }
+            }
+        }
+
+        private class HashKeyConverter_DateTimeToNumber
+        {
+            [DynamoDBHashKey(typeof(DateTimeConverter))]
+            public DateTime CreationDate { get; set; }
+
+            private class DateTimeConverter : IPropertyConverter
+            {
+                public DynamoDBEntry ToEntry(object value)
+                {
+                    return ((DateTime)value).Ticks;
+                }
+                public object FromEntry(DynamoDBEntry entry)
+                {
+                    throw new NotImplementedException();
+                }
+            }
+        }
+
+        private class HashKeyConverter_DateTimeToBinary
+        {
+            [DynamoDBHashKey(typeof(DateTimeConverter))]
+            public DateTime CreationDate { get; set; }
+
+            private class DateTimeConverter : IPropertyConverter
+            {
+                public DynamoDBEntry ToEntry(object value)
+                {
+                    return BitConverter.GetBytes(((DateTime)value).ToBinary());
+                }
+                public object FromEntry(DynamoDBEntry entry)
+                {
+                    throw new NotImplementedException();
+                }
+            }
+        }
+
+        private class HashKeyConverter_DateTimeToBool
+        {
+            // This isn't valid, it's for testing that we throw an exception when a
+            // converter on a key doesn't return an entry that can be cast to a Primitive
+            [DynamoDBHashKey(typeof(DateTimeConverter))]
+            public DateTime CreationDate { get; set; }
+
+            private class DateTimeConverter : IPropertyConverter
+            {
+                public DynamoDBEntry ToEntry(object value)
+                {
+                    return new DynamoDBBool(true);
+                }
+                public object FromEntry(DynamoDBEntry entry)
+                {
+                    throw new NotImplementedException();
+                }
+            }
         }
     }
 }

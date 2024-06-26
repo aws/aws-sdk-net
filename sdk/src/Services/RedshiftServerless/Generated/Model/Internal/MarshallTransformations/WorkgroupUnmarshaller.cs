@@ -57,6 +57,8 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         public Workgroup Unmarshall(JsonUnmarshallerContext context)
         {
             Workgroup unmarshalledObject = new Workgroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public CompositedVideoConcatenationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CompositedVideoConcatenationConfiguration unmarshalledObject = new CompositedVideoConcatenationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         public KinesisConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             KinesisConfiguration unmarshalledObject = new KinesisConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

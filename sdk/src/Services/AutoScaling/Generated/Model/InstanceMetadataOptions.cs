@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
-    /// the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configure
+    /// the instance metadata options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </summary>
     public partial class InstanceMetadataOptions
     {

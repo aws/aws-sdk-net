@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public ECSServiceProjectedUtilizationMetric Unmarshall(JsonUnmarshallerContext context)
         {
             ECSServiceProjectedUtilizationMetric unmarshalledObject = new ECSServiceProjectedUtilizationMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

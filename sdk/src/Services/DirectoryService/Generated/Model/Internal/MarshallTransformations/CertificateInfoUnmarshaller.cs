@@ -57,6 +57,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         public CertificateInfo Unmarshall(JsonUnmarshallerContext context)
         {
             CertificateInfo unmarshalledObject = new CertificateInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

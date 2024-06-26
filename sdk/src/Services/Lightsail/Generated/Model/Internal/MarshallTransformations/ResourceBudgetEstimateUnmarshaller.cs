@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public ResourceBudgetEstimate Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceBudgetEstimate unmarshalledObject = new ResourceBudgetEstimate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

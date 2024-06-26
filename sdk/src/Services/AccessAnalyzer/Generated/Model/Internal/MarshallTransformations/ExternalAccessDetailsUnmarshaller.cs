@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public ExternalAccessDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ExternalAccessDetails unmarshalledObject = new ExternalAccessDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

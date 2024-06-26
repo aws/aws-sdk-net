@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public OrganizationManagedRuleMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             OrganizationManagedRuleMetadata unmarshalledObject = new OrganizationManagedRuleMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

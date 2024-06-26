@@ -57,6 +57,8 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
         public DocumentServiceWarning Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentServiceWarning unmarshalledObject = new DocumentServiceWarning();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

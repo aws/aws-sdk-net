@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public VpcOptions Unmarshall(JsonUnmarshallerContext context)
         {
             VpcOptions unmarshalledObject = new VpcOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

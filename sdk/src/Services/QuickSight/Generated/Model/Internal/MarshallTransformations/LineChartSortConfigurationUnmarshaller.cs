@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public LineChartSortConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LineChartSortConfiguration unmarshalledObject = new LineChartSortConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

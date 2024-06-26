@@ -42,6 +42,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Describes the recommended steps to take to remediate an issue identified in a finding.
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1 length. Maximum of 512 length.
+        /// </para>
         /// </summary>
         public string Text
         {

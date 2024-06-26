@@ -59,7 +59,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Accepts property is set
         internal bool IsSetAccepts()
         {
-            return this._accepts != null;
+            return !string.IsNullOrEmpty(this._accepts);
         }
 
         /// <summary>

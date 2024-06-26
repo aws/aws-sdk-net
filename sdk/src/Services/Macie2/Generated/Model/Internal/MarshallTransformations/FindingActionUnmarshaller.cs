@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public FindingAction Unmarshall(JsonUnmarshallerContext context)
         {
             FindingAction unmarshalledObject = new FindingAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

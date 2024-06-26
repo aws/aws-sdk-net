@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public ReportExportConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ReportExportConfig unmarshalledObject = new ReportExportConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

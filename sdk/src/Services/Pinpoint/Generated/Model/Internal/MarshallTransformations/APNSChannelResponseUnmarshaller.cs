@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public APNSChannelResponse Unmarshall(JsonUnmarshallerContext context)
         {
             APNSChannelResponse unmarshalledObject = new APNSChannelResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

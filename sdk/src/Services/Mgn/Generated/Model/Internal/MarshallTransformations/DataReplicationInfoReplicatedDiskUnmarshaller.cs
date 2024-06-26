@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public DataReplicationInfoReplicatedDisk Unmarshall(JsonUnmarshallerContext context)
         {
             DataReplicationInfoReplicatedDisk unmarshalledObject = new DataReplicationInfoReplicatedDisk();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

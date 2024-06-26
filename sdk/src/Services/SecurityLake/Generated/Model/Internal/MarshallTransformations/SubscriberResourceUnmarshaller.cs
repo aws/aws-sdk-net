@@ -57,6 +57,8 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         public SubscriberResource Unmarshall(JsonUnmarshallerContext context)
         {
             SubscriberResource unmarshalledObject = new SubscriberResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

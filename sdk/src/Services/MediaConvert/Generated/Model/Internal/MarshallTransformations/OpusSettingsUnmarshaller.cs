@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public OpusSettings Unmarshall(JsonUnmarshallerContext context)
         {
             OpusSettings unmarshalledObject = new OpusSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

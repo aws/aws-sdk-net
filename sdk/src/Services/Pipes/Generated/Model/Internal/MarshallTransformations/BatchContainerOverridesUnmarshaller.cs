@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public BatchContainerOverrides Unmarshall(JsonUnmarshallerContext context)
         {
             BatchContainerOverrides unmarshalledObject = new BatchContainerOverrides();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

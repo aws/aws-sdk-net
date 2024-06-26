@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public MeshRef Unmarshall(JsonUnmarshallerContext context)
         {
             MeshRef unmarshalledObject = new MeshRef();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

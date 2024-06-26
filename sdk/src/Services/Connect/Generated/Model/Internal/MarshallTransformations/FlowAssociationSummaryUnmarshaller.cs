@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public FlowAssociationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             FlowAssociationSummary unmarshalledObject = new FlowAssociationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

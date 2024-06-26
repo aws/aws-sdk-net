@@ -57,6 +57,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         public TemplateRevision Unmarshall(JsonUnmarshallerContext context)
         {
             TemplateRevision unmarshalledObject = new TemplateRevision();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

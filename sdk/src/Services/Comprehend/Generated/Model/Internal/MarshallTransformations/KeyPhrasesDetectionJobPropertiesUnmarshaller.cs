@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public KeyPhrasesDetectionJobProperties Unmarshall(JsonUnmarshallerContext context)
         {
             KeyPhrasesDetectionJobProperties unmarshalledObject = new KeyPhrasesDetectionJobProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

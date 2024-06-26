@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ConditionalFormattingCustomIconCondition Unmarshall(JsonUnmarshallerContext context)
         {
             ConditionalFormattingCustomIconCondition unmarshalledObject = new ConditionalFormattingCustomIconCondition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

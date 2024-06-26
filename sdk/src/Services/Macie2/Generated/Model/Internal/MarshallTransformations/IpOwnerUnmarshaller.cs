@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public IpOwner Unmarshall(JsonUnmarshallerContext context)
         {
             IpOwner unmarshalledObject = new IpOwner();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

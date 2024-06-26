@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public InferenceSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             InferenceSpecification unmarshalledObject = new InferenceSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -27,7 +27,7 @@
     <property>Amazon.BedrockAgent.Model.CreateAgentRequest.AgentResourceRoleArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/(service-role/)?AmazonBedrockExecutionRoleForAgents_.+$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.CreateAgentRequest.ClientToken</property>
@@ -60,7 +60,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.CreateAgentRequest.Instruction</property>
     <min>40</min>
-    <max>1200</max>
+    <max>4000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.CreateAgentActionGroupRequest.ActionGroupName</property>
@@ -555,7 +555,7 @@
     <property>Amazon.BedrockAgent.Model.UpdateAgentRequest.AgentResourceRoleArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/(service-role/)?AmazonBedrockExecutionRoleForAgents_.+$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.UpdateAgentRequest.CustomerEncryptionKeyArn</property>
@@ -582,7 +582,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.UpdateAgentRequest.Instruction</property>
     <min>40</min>
-    <max>1200</max>
+    <max>4000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.UpdateAgentActionGroupRequest.ActionGroupId</property>
@@ -718,7 +718,7 @@
     <property>Amazon.BedrockAgent.Model.Agent.AgentResourceRoleArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/(service-role/)?AmazonBedrockExecutionRoleForAgents_.+$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.Agent.AgentVersion</property>
@@ -757,7 +757,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.Agent.Instruction</property>
     <min>40</min>
-    <max>1200</max>
+    <max>4000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.AgentActionGroup.ActionGroupId</property>
@@ -824,6 +824,12 @@
     <min>1</min>
     <max>5</max>
     <pattern>^(DRAFT|[0-9]{0,4}[1-9][0-9]{0,4})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AgentAliasRoutingConfigurationListItem.ProvisionedThroughput</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^((([0-9a-zA-Z][_-]?){1,63})|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:provisioned-model/[a-z0-9]{12}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.AgentAliasSummary.AgentAliasId</property>
@@ -905,7 +911,7 @@
     <property>Amazon.BedrockAgent.Model.AgentVersion.AgentResourceRoleArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/(service-role/)?AmazonBedrockExecutionRoleForAgents_.+$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.AgentVersion.CustomerEncryptionKeyArn</property>
@@ -932,7 +938,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.AgentVersion.Instruction</property>
     <min>40</min>
-    <max>1200</max>
+    <max>4000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.AgentVersion.Version</property>
@@ -952,6 +958,11 @@
     <property>Amazon.BedrockAgent.Model.AgentVersionSummary.Description</property>
     <min>1</min>
     <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.BedrockEmbeddingModelConfiguration.Dimensions</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.DataSource.DataSourceId</property>
@@ -1004,6 +1015,16 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.Function.Name</property>
     <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.GuardrailConfiguration.GuardrailIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.GuardrailConfiguration.GuardrailVersion</property>
+    <pattern>^(([0-9]{1,8})|(DRAFT))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.InferenceConfiguration.MaximumLength</property>
@@ -1096,6 +1117,58 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.KnowledgeBaseSummary.Name</property>
     <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MongoDbAtlasConfiguration.CollectionName</property>
+    <min>0</min>
+    <max>63</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MongoDbAtlasConfiguration.CredentialsSecretArn</property>
+    <pattern>^arn:aws(|-cn|-us-gov):secretsmanager:[a-z0-9-]{1,20}:([0-9]{12}|):secret:[a-zA-Z0-9!/_+=.@-]{1,512}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MongoDbAtlasConfiguration.DatabaseName</property>
+    <min>0</min>
+    <max>63</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MongoDbAtlasConfiguration.Endpoint</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MongoDbAtlasConfiguration.EndpointServiceName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?:arn:aws(?:-us-gov|-cn|-iso|-iso-[a-z])*:.+:.*:\d+:.+/.+$|[a-zA-Z0-9*]+[a-zA-Z0-9._-]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MongoDbAtlasConfiguration.VectorIndexName</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MongoDbAtlasFieldMapping.MetadataField</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MongoDbAtlasFieldMapping.TextField</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MongoDbAtlasFieldMapping.VectorField</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.OpenSearchServerlessConfiguration.CollectionArn</property>
@@ -1289,7 +1362,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.VectorKnowledgeBaseConfiguration.EmbeddingModelArn</property>
     <min>20</min>
-    <max>1011</max>
-    <pattern>^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}))$</pattern>
+    <max>2048</max>
+    <pattern>^(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|([0-9]{12}:provisioned-model/[a-z0-9]{12})))|([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|(([0-9a-zA-Z][_-]?)+)$</pattern>
   </property-value-rule>
 </property-value-rules>

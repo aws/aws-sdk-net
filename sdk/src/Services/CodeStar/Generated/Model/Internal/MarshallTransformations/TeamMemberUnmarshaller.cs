@@ -57,6 +57,8 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
         public TeamMember Unmarshall(JsonUnmarshallerContext context)
         {
             TeamMember unmarshalledObject = new TeamMember();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

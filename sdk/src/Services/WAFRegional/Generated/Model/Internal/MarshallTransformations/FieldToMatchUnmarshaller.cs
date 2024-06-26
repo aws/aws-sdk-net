@@ -57,6 +57,8 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         public FieldToMatch Unmarshall(JsonUnmarshallerContext context)
         {
             FieldToMatch unmarshalledObject = new FieldToMatch();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -46,6 +46,7 @@ namespace Amazon.AuditManager.Model
         private DateTime? _lastUpdatedAt;
         private string _lastUpdatedBy;
         private string _name;
+        private ControlState _state;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _testingInformation;
         private ControlType _type;
@@ -189,7 +190,7 @@ namespace Amazon.AuditManager.Model
         ///  The description of the control. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
+        [AWSProperty(Sensitive=true, Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -275,6 +276,26 @@ namespace Amazon.AuditManager.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the control. The <c>END_OF_SUPPORT</c> state is applicable to standard
+        /// controls only. This state indicates that the standard control can still be used to
+        /// collect evidence, but Audit Manager is no longer updating or maintaining that control.
+        /// </para>
+        /// </summary>
+        public ControlState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
         /// <summary>

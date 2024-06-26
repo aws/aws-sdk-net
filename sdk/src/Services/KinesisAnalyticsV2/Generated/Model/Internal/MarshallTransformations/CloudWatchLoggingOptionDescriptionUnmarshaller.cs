@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public CloudWatchLoggingOptionDescription Unmarshall(JsonUnmarshallerContext context)
         {
             CloudWatchLoggingOptionDescription unmarshalledObject = new CloudWatchLoggingOptionDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public AgentVersion Unmarshall(JsonUnmarshallerContext context)
         {
             AgentVersion unmarshalledObject = new AgentVersion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -122,6 +124,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FoundationModel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("guardrailConfiguration", targetDepth))
+                {
+                    var unmarshaller = GuardrailConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.GuardrailConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("idleSessionTTLInSeconds", targetDepth))

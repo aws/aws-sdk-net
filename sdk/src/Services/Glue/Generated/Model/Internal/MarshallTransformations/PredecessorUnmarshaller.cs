@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public Predecessor Unmarshall(JsonUnmarshallerContext context)
         {
             Predecessor unmarshalledObject = new Predecessor();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

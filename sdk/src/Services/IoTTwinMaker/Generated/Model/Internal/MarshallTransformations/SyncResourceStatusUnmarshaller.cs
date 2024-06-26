@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public SyncResourceStatus Unmarshall(JsonUnmarshallerContext context)
         {
             SyncResourceStatus unmarshalledObject = new SyncResourceStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

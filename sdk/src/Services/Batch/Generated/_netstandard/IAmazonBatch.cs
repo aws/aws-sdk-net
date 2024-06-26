@@ -570,6 +570,32 @@ namespace Amazon.Batch
 
         #endregion
                 
+        #region  GetJobQueueSnapshot
+
+
+
+        /// <summary>
+        /// Provides a list of the first 100 <c>RUNNABLE</c> jobs associated to a single job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobQueueSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJobQueueSnapshot service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/GetJobQueueSnapshot">REST API Reference for GetJobQueueSnapshot Operation</seealso>
+        Task<GetJobQueueSnapshotResponse> GetJobQueueSnapshotAsync(GetJobQueueSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListJobs
 
 

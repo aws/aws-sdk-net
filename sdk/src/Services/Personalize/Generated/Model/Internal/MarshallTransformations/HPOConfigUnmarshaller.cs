@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public HPOConfig Unmarshall(JsonUnmarshallerContext context)
         {
             HPOConfig unmarshalledObject = new HPOConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public SsmParameterStoreParameter Unmarshall(JsonUnmarshallerContext context)
         {
             SsmParameterStoreParameter unmarshalledObject = new SsmParameterStoreParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

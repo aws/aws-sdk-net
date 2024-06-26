@@ -57,6 +57,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         public AlternateKey Unmarshall(JsonUnmarshallerContext context)
         {
             AlternateKey unmarshalledObject = new AlternateKey();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

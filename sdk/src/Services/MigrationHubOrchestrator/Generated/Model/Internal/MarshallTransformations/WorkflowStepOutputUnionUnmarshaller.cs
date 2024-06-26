@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
         public WorkflowStepOutputUnion Unmarshall(JsonUnmarshallerContext context)
         {
             WorkflowStepOutputUnion unmarshalledObject = new WorkflowStepOutputUnion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

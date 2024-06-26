@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public FormTypeData Unmarshall(JsonUnmarshallerContext context)
         {
             FormTypeData unmarshalledObject = new FormTypeData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

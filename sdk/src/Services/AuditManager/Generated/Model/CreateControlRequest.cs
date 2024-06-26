@@ -106,7 +106,7 @@ namespace Amazon.AuditManager.Model
         ///  The description of the control. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
+        [AWSProperty(Sensitive=true, Max=1000)]
         public string Description
         {
             get { return this._description; }

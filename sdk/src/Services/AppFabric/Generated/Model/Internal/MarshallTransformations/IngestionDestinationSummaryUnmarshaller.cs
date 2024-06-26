@@ -57,6 +57,8 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
         public IngestionDestinationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             IngestionDestinationSummary unmarshalledObject = new IngestionDestinationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

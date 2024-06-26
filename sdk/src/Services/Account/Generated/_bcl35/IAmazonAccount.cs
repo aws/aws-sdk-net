@@ -45,6 +45,71 @@ namespace Amazon.Account
 
 
         
+        #region  AcceptPrimaryEmailUpdate
+
+
+        /// <summary>
+        /// Accepts the request that originated from <a>StartPrimaryEmailUpdate</a> to update
+        /// the primary email address (also known as the root user email address) for the specified
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptPrimaryEmailUpdate service method.</param>
+        /// 
+        /// <returns>The response from the AcceptPrimaryEmailUpdate service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ConflictException">
+        /// The request could not be processed because of a conflict in the current status of
+        /// the resource. For example, this happens if you try to enable a Region that is currently
+        /// being disabled (in a status of DISABLING).
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/AcceptPrimaryEmailUpdate">REST API Reference for AcceptPrimaryEmailUpdate Operation</seealso>
+        AcceptPrimaryEmailUpdateResponse AcceptPrimaryEmailUpdate(AcceptPrimaryEmailUpdateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptPrimaryEmailUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptPrimaryEmailUpdate operation on AmazonAccountClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptPrimaryEmailUpdate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/AcceptPrimaryEmailUpdate">REST API Reference for AcceptPrimaryEmailUpdate Operation</seealso>
+        IAsyncResult BeginAcceptPrimaryEmailUpdate(AcceptPrimaryEmailUpdateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptPrimaryEmailUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptPrimaryEmailUpdate.</param>
+        /// 
+        /// <returns>Returns a  AcceptPrimaryEmailUpdateResult from Account.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/AcceptPrimaryEmailUpdate">REST API Reference for AcceptPrimaryEmailUpdate Operation</seealso>
+        AcceptPrimaryEmailUpdateResponse EndAcceptPrimaryEmailUpdate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteAlternateContact
 
 
@@ -123,6 +188,13 @@ namespace Amazon.Account
 
         /// <summary>
         /// Disables (opts-out) a particular Region for an account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The act of disabling a Region will remove all IAM access to any resources that reside
+        /// in that Region.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableRegion service method.</param>
         /// 
@@ -375,6 +447,64 @@ namespace Amazon.Account
 
         #endregion
         
+        #region  GetPrimaryEmail
+
+
+        /// <summary>
+        /// Retrieves the primary email address for the specified account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPrimaryEmail service method.</param>
+        /// 
+        /// <returns>The response from the GetPrimaryEmail service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetPrimaryEmail">REST API Reference for GetPrimaryEmail Operation</seealso>
+        GetPrimaryEmailResponse GetPrimaryEmail(GetPrimaryEmailRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPrimaryEmail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPrimaryEmail operation on AmazonAccountClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPrimaryEmail
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetPrimaryEmail">REST API Reference for GetPrimaryEmail Operation</seealso>
+        IAsyncResult BeginGetPrimaryEmail(GetPrimaryEmailRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPrimaryEmail operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPrimaryEmail.</param>
+        /// 
+        /// <returns>Returns a  GetPrimaryEmailResult from Account.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetPrimaryEmail">REST API Reference for GetPrimaryEmail Operation</seealso>
+        GetPrimaryEmailResponse EndGetPrimaryEmail(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetRegionOptStatus
 
 
@@ -614,6 +744,69 @@ namespace Amazon.Account
         /// <returns>Returns a  PutContactInformationResult from Account.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutContactInformation">REST API Reference for PutContactInformation Operation</seealso>
         PutContactInformationResponse EndPutContactInformation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartPrimaryEmailUpdate
+
+
+        /// <summary>
+        /// Starts the process to update the primary email address for the specified account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartPrimaryEmailUpdate service method.</param>
+        /// 
+        /// <returns>The response from the StartPrimaryEmailUpdate service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ConflictException">
+        /// The request could not be processed because of a conflict in the current status of
+        /// the resource. For example, this happens if you try to enable a Region that is currently
+        /// being disabled (in a status of DISABLING).
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/StartPrimaryEmailUpdate">REST API Reference for StartPrimaryEmailUpdate Operation</seealso>
+        StartPrimaryEmailUpdateResponse StartPrimaryEmailUpdate(StartPrimaryEmailUpdateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartPrimaryEmailUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartPrimaryEmailUpdate operation on AmazonAccountClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartPrimaryEmailUpdate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/StartPrimaryEmailUpdate">REST API Reference for StartPrimaryEmailUpdate Operation</seealso>
+        IAsyncResult BeginStartPrimaryEmailUpdate(StartPrimaryEmailUpdateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartPrimaryEmailUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartPrimaryEmailUpdate.</param>
+        /// 
+        /// <returns>Returns a  StartPrimaryEmailUpdateResult from Account.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/StartPrimaryEmailUpdate">REST API Reference for StartPrimaryEmailUpdate Operation</seealso>
+        StartPrimaryEmailUpdateResponse EndStartPrimaryEmailUpdate(IAsyncResult asyncResult);
 
         #endregion
                 

@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public AutoScalingGroupProvider Unmarshall(JsonUnmarshallerContext context)
         {
             AutoScalingGroupProvider unmarshalledObject = new AutoScalingGroupProvider();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

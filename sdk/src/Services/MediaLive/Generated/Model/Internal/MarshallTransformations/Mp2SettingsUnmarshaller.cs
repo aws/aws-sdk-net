@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public Mp2Settings Unmarshall(JsonUnmarshallerContext context)
         {
             Mp2Settings unmarshalledObject = new Mp2Settings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

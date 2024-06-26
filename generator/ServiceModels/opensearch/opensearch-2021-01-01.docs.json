@@ -4,7 +4,7 @@
   "operations": {
     "AcceptInboundConnection": "<p>Allows the destination Amazon OpenSearch Service domain owner to accept an inbound cross-cluster search connection request. For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html\">Cross-cluster search for Amazon OpenSearch Service</a>.</p>",
     "AddDataSource": "<p>Creates a new direct-query data source to the specified domain. For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html\">Creating Amazon OpenSearch Service data source integrations with Amazon S3</a>.</p>",
-    "AddTags": "<p>Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set of case-sensitive key-value pairs. A domain can have up to 10 tags. For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html\">Tagging Amazon OpenSearch Service domains</a>.</p>",
+    "AddTags": "<p>Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set of case-sensitive key-value pairs. A domain can have up to 10 tags. For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html\">Tagging Amazon OpenSearch Service domains</a>. </p>",
     "AssociatePackage": "<p>Associates a package with an Amazon OpenSearch Service domain. For more information, see <a href=\"https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html\">Custom packages for Amazon OpenSearch Service</a>.</p>",
     "AuthorizeVpcEndpointAccess": "<p>Provides access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.</p>",
     "CancelDomainConfigChange": "<p>Cancels a pending configuration change on an Amazon OpenSearch Service domain.</p>",
@@ -388,6 +388,8 @@
         "InstanceTypeDetails$AppLogsEnabled": "<p>Whether logging is supported for the instance type.</p>",
         "InstanceTypeDetails$AdvancedSecurityEnabled": "<p>Whether fine-grained access control is supported for the instance type.</p>",
         "InstanceTypeDetails$WarmEnabled": "<p>Whether UltraWarm is supported for the instance type.</p>",
+        "JWTOptionsInput$Enabled": "<p>True to enable JWT authentication and authorization for a domain.</p>",
+        "JWTOptionsOutput$Enabled": "<p>True if JWT use is enabled.</p>",
         "ListInstanceTypeDetailsRequest$RetrieveAZs": "<p>An optional parameter that specifies the Availability Zones for the domain.</p>",
         "LogPublishingOption$Enabled": "<p>Whether the log should be published.</p>",
         "NodeToNodeEncryptionOptions$Enabled": "<p>True to enable node-to-node encryption.</p>",
@@ -681,6 +683,14 @@
         "GetDataSourceRequest$Name": "<p>The name of the data source to get information about.</p>",
         "GetDataSourceResponse$Name": "<p>The name of the data source.</p>",
         "UpdateDataSourceRequest$Name": "<p>The name of the data source to modify.</p>"
+      }
+    },
+    "DataSourceStatus": {
+      "base": null,
+      "refs": {
+        "DataSourceDetails$Status": "<p>The status of the data source.</p>",
+        "GetDataSourceResponse$Status": "<p>The status of the data source.</p>",
+        "UpdateDataSourceRequest$Status": "<p>The status of the data source update.</p>"
       }
     },
     "DataSourceType": {
@@ -1273,7 +1283,7 @@
     "EndpointsMap": {
       "base": null,
       "refs": {
-        "DomainStatus$Endpoints": "<p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>"
+        "DomainStatus$Endpoints": "<p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:</p> <ul> <li> <p> <b>IPv4 IP addresses</b> - <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code> </p> </li> <li> <p> <b>Dual stack IP addresses</b> - <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code> </p> </li> </ul>"
       }
     },
     "EngineType": {
@@ -1415,6 +1425,12 @@
     "GetUpgradeStatusResponse": {
       "base": "<p>Container for the response returned by the <code>GetUpgradeStatus</code> operation.</p>",
       "refs": {
+      }
+    },
+    "HostedZoneId": {
+      "base": null,
+      "refs": {
+        "DomainStatus$DomainEndpointV2HostedZoneId": "<p>The dual stack hosted zone ID for the domain. </p>"
       }
     },
     "IPAddressType": {
@@ -1569,6 +1585,18 @@
       "base": null,
       "refs": {
         "UpgradeStepItem$Issues": "<p>A list of strings containing detailed information about the errors encountered in a particular step.</p>"
+      }
+    },
+    "JWTOptionsInput": {
+      "base": "<p>The JWT authentication and authorization configuration for an Amazon OpenSearch Service domain.</p>",
+      "refs": {
+        "AdvancedSecurityOptionsInput$JWTOptions": "<p>Container for information about the JWT configuration of the Amazon OpenSearch Service. </p>"
+      }
+    },
+    "JWTOptionsOutput": {
+      "base": "<p>Describes the JWT options configured for the domain.</p>",
+      "refs": {
+        "AdvancedSecurityOptions$JWTOptions": "<p>Container for information about the JWT configuration of the Amazon OpenSearch Service.</p>"
       }
     },
     "KmsKeyId": {
@@ -2341,6 +2369,12 @@
         "S3GlueDataCatalog$RoleArn": "<p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>"
       }
     },
+    "RolesKey": {
+      "base": null,
+      "refs": {
+        "JWTOptionsInput$RolesKey": "<p>Element of the JWT assertion to use for roles.</p>"
+      }
+    },
     "RollbackOnDisable": {
       "base": "<p>The rollback state while disabling Auto-Tune for the domain.</p>",
       "refs": {
@@ -2612,6 +2646,10 @@
         "EndpointsMap$key": null,
         "GetPackageVersionHistoryResponse$NextToken": "<p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>",
         "GetUpgradeHistoryResponse$NextToken": "<p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>",
+        "JWTOptionsInput$PublicKey": "<p>Element of the JWT assertion used by the cluster to verify JWT signatures.</p>",
+        "JWTOptionsOutput$SubjectKey": "<p>The key used for matching the JWT subject attribute.</p>",
+        "JWTOptionsOutput$RolesKey": "<p>The key used for matching the JWT roles attribute.</p>",
+        "JWTOptionsOutput$PublicKey": "<p>The key used to verify the signature of incoming JWT requests.</p>",
         "ListDomainsForPackageResponse$NextToken": "<p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>",
         "ListPackagesForDomainResponse$NextToken": "<p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>",
         "ModifyingProperties$Name": "<p>The name of the property that is currently being modified.</p>",
@@ -2653,6 +2691,12 @@
         "VPCDerivedInfo$SecurityGroupIds": "<p>The list of security group IDs associated with the VPC endpoints for the domain.</p>",
         "VPCOptions$SubnetIds": "<p>A list of subnet IDs associated with the VPC endpoints for the domain. If your domain uses multiple Availability Zones, you need to provide two subnet IDs, one per zone. Otherwise, provide only one.</p>",
         "VPCOptions$SecurityGroupIds": "<p>The list of security group IDs associated with the VPC endpoints for the domain. If you do not provide a security group ID, OpenSearch Service uses the default security group for the VPC.</p>"
+      }
+    },
+    "SubjectKey": {
+      "base": null,
+      "refs": {
+        "JWTOptionsInput$SubjectKey": "<p>Element of the JWT assertion to use for the user name.</p>"
       }
     },
     "TLSSecurityPolicy": {

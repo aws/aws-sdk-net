@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public EcrContainerImageMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             EcrContainerImageMetadata unmarshalledObject = new EcrContainerImageMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

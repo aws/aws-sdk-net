@@ -41,7 +41,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property CodeArtifactId. 
         /// <para>
-        /// The identifier for the uploaded code resource. 
+        /// The identifier for the uploaded code resource. Pass this to <c>CreateScan</c> to use
+        /// the uploaded resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +80,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property S3Url. 
         /// <para>
-        /// A pre-signed S3 URL. You can upload the code file you want to scan and add the required
+        /// A pre-signed S3 URL. You can upload the code file you want to scan with the required
         /// <c>requestHeaders</c> using any HTTP client.
         /// </para>
         /// </summary>

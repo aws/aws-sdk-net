@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public DescribedHostKey Unmarshall(JsonUnmarshallerContext context)
         {
             DescribedHostKey unmarshalledObject = new DescribedHostKey();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

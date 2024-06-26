@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public HeatMapAggregatedFieldWells Unmarshall(JsonUnmarshallerContext context)
         {
             HeatMapAggregatedFieldWells unmarshalledObject = new HeatMapAggregatedFieldWells();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

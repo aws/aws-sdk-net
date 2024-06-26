@@ -45,6 +45,7 @@ namespace Amazon.OpenSearchService.Model
         private bool? _created;
         private bool? _deleted;
         private DomainEndpointOptions _domainEndpointOptions;
+        private string _domainEndpointV2HostedZoneId;
         private string _domainId;
         private string _domainName;
         private DomainProcessingStatusType _domainProcessingStatus;
@@ -274,6 +275,24 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DomainEndpointV2HostedZoneId. 
+        /// <para>
+        /// The dual stack hosted zone ID for the domain. 
+        /// </para>
+        /// </summary>
+        public string DomainEndpointV2HostedZoneId
+        {
+            get { return this._domainEndpointV2HostedZoneId; }
+            set { this._domainEndpointV2HostedZoneId = value; }
+        }
+
+        // Check to see if DomainEndpointV2HostedZoneId property is set
+        internal bool IsSetDomainEndpointV2HostedZoneId()
+        {
+            return this._domainEndpointV2HostedZoneId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
         /// Unique identifier for the domain.
@@ -389,8 +408,19 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property Endpoints. 
         /// <para>
         /// The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.
-        /// Example <c>key, value</c>: <c>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</c>.
+        /// For example:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>IPv4 IP addresses</b> - <c>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Dual stack IP addresses</b> - <c>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</c>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> Endpoints
         {

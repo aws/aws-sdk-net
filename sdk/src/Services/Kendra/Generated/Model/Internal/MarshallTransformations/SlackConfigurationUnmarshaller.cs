@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public SlackConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SlackConfiguration unmarshalledObject = new SlackConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

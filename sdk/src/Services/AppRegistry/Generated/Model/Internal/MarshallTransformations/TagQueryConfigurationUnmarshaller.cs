@@ -57,6 +57,8 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         public TagQueryConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TagQueryConfiguration unmarshalledObject = new TagQueryConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

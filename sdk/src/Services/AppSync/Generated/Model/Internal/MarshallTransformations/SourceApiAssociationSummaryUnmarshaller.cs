@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public SourceApiAssociationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SourceApiAssociationSummary unmarshalledObject = new SourceApiAssociationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

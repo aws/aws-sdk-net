@@ -120,6 +120,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("type");
+                    context.Writer.Write(publicRequest.Type);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

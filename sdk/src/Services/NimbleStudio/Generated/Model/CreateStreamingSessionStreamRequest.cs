@@ -64,7 +64,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if ClientToken property is set
         internal bool IsSetClientToken()
         {
-            return this._clientToken != null;
+            return !string.IsNullOrEmpty(this._clientToken);
         }
 
         /// <summary>

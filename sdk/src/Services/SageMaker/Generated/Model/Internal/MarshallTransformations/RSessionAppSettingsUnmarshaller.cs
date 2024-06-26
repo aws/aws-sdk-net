@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public RSessionAppSettings Unmarshall(JsonUnmarshallerContext context)
         {
             RSessionAppSettings unmarshalledObject = new RSessionAppSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

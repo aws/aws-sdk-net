@@ -78,10 +78,10 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the target. If the target type of the target group is <c>INSTANCE</c>, this
-        /// is an instance ID. If the target type is <c>IP</c> , this is an IP address. If the
-        /// target type is <c>LAMBDA</c>, this is the ARN of the Lambda function. If the target
-        /// type is <c>ALB</c>, this is the ARN of the Application Load Balancer.
+        /// The ID of the target. If the target group type is <c>INSTANCE</c>, this is an instance
+        /// ID. If the target group type is <c>IP</c>, this is an IP address. If the target group
+        /// type is <c>LAMBDA</c>, this is the ARN of a Lambda function. If the target group type
+        /// is <c>ALB</c>, this is the ARN of an Application Load Balancer.
         /// </para>
         /// </summary>
         public string Id

@@ -104,7 +104,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                         response.EnumList.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("flattenedList/item", targetDepth))
+                    if (context.TestExpression("flattenedList", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         if (response.FlattenedList == null)
@@ -115,7 +115,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                         response.FlattenedList.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("customName/item", targetDepth))
+                    if (context.TestExpression("customName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         if (response.FlattenedList2 == null)
@@ -126,7 +126,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                         response.FlattenedList2.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("flattenedListWithMemberNamespace/member", targetDepth))
+                    if (context.TestExpression("flattenedListWithMemberNamespace", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         if (response.FlattenedListWithMemberNamespace == null)
@@ -137,7 +137,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                         response.FlattenedListWithMemberNamespace.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("flattenedListWithNamespace/member", targetDepth))
+                    if (context.TestExpression("flattenedListWithNamespace", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         if (response.FlattenedListWithNamespace == null)

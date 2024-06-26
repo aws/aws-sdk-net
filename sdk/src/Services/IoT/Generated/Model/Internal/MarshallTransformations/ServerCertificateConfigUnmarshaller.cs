@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public ServerCertificateConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ServerCertificateConfig unmarshalledObject = new ServerCertificateConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

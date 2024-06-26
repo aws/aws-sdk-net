@@ -36,8 +36,8 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  <important> 
     /// <para>
-    /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-    /// 2019.11.21 (Current)</a> of global tables. 
+    /// For global tables, this operation only applies to global tables using Version 2019.11.21
+    /// (Current version). 
     /// </para>
     ///  </important> 
     /// <para>
@@ -70,6 +70,7 @@ namespace Amazon.DynamoDBv2.Model
         private BillingMode _billingMode;
         private bool? _deletionProtectionEnabled;
         private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndexUpdate>() : null;
+        private OnDemandThroughput _onDemandThroughput;
         private ProvisionedThroughput _provisionedThroughput;
         private List<ReplicationGroupUpdate> _replicaUpdates = AWSConfigs.InitializeCollections ? new List<ReplicationGroupUpdate>() : null;
         private SSESpecification _sseSpecification;
@@ -125,14 +126,14 @@ namespace Amazon.DynamoDBv2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>PROVISIONED</c> - We recommend using <c>PROVISIONED</c> for predictable workloads.
-        /// <c>PROVISIONED</c> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
-        /// Mode</a>.
+        /// <c>PROVISIONED</c> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+        /// capacity mode</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>PAY_PER_REQUEST</c> - We recommend using <c>PAY_PER_REQUEST</c> for unpredictable
-        /// workloads. <c>PAY_PER_REQUEST</c> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
-        /// Mode</a>. 
+        /// workloads. <c>PAY_PER_REQUEST</c> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+        /// capacity mode</a>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -209,6 +210,26 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OnDemandThroughput. 
+        /// <para>
+        /// Updates the maximum number of read and write units for the specified table in on-demand
+        /// capacity mode. If you use this parameter, you must specify <c>MaxReadRequestUnits</c>,
+        /// <c>MaxWriteRequestUnits</c>, or both.
+        /// </para>
+        /// </summary>
+        public OnDemandThroughput OnDemandThroughput
+        {
+            get { return this._onDemandThroughput; }
+            set { this._onDemandThroughput = value; }
+        }
+
+        // Check to see if OnDemandThroughput property is set
+        internal bool IsSetOnDemandThroughput()
+        {
+            return this._onDemandThroughput != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProvisionedThroughput. 
         /// <para>
         /// The new provisioned throughput settings for the specified table or index.
@@ -233,8 +254,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this property only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </note>
         /// </summary>

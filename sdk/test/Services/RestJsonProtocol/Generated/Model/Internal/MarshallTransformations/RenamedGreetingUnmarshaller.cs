@@ -57,6 +57,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         public RenamedGreeting Unmarshall(JsonUnmarshallerContext context)
         {
             RenamedGreeting unmarshalledObject = new RenamedGreeting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

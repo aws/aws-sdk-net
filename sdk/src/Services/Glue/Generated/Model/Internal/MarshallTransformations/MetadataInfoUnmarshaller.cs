@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public MetadataInfo Unmarshall(JsonUnmarshallerContext context)
         {
             MetadataInfo unmarshalledObject = new MetadataInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

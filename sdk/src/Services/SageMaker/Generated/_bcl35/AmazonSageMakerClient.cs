@@ -2244,12 +2244,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Create a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHub service method.</param>
         /// 
@@ -2303,6 +2297,71 @@ namespace Amazon.SageMaker
         public virtual CreateHubResponse EndCreateHub(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateHubResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateHubContentReference
+
+        /// <summary>
+        /// Create a hub content reference in order to add a model in the JumpStart public hub
+        /// to a private hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHubContentReference service method.</param>
+        /// 
+        /// <returns>The response from the CreateHubContentReference service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentReference">REST API Reference for CreateHubContentReference Operation</seealso>
+        public virtual CreateHubContentReferenceResponse CreateHubContentReference(CreateHubContentReferenceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHubContentReferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHubContentReferenceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHubContentReferenceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHubContentReference operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateHubContentReference operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHubContentReference
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentReference">REST API Reference for CreateHubContentReference Operation</seealso>
+        public virtual IAsyncResult BeginCreateHubContentReference(CreateHubContentReferenceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHubContentReferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHubContentReferenceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateHubContentReference operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHubContentReference.</param>
+        /// 
+        /// <returns>Returns a  CreateHubContentReferenceResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentReference">REST API Reference for CreateHubContentReference Operation</seealso>
+        public virtual CreateHubContentReferenceResponse EndCreateHubContentReference(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateHubContentReferenceResponse>(asyncResult);
         }
 
         #endregion
@@ -2900,6 +2959,66 @@ namespace Amazon.SageMaker
         public virtual CreateLabelingJobResponse EndCreateLabelingJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLabelingJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateMlflowTrackingServer
+
+        /// <summary>
+        /// Creates an MLflow Tracking Server using a general purpose Amazon S3 bucket as the
+        /// artifact store. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-create-tracking-server.html">Create
+        /// an MLflow Tracking Server</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMlflowTrackingServer service method.</param>
+        /// 
+        /// <returns>The response from the CreateMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMlflowTrackingServer">REST API Reference for CreateMlflowTrackingServer Operation</seealso>
+        public virtual CreateMlflowTrackingServerResponse CreateMlflowTrackingServer(CreateMlflowTrackingServerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMlflowTrackingServerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMlflowTrackingServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMlflowTrackingServer operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMlflowTrackingServer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMlflowTrackingServer">REST API Reference for CreateMlflowTrackingServer Operation</seealso>
+        public virtual IAsyncResult BeginCreateMlflowTrackingServer(CreateMlflowTrackingServerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMlflowTrackingServer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMlflowTrackingServer.</param>
+        /// 
+        /// <returns>Returns a  CreateMlflowTrackingServerResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMlflowTrackingServer">REST API Reference for CreateMlflowTrackingServer Operation</seealso>
+        public virtual CreateMlflowTrackingServerResponse EndCreateMlflowTrackingServer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMlflowTrackingServerResponse>(asyncResult);
         }
 
         #endregion
@@ -3861,6 +3980,65 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreatePresignedMlflowTrackingServerUrl
+
+        /// <summary>
+        /// Returns a presigned URL that you can use to connect to the MLflow UI attached to your
+        /// tracking server. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-launch-ui.html">Launch
+        /// the MLflow UI using a presigned URL</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedMlflowTrackingServerUrl service method.</param>
+        /// 
+        /// <returns>The response from the CreatePresignedMlflowTrackingServerUrl service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedMlflowTrackingServerUrl">REST API Reference for CreatePresignedMlflowTrackingServerUrl Operation</seealso>
+        public virtual CreatePresignedMlflowTrackingServerUrlResponse CreatePresignedMlflowTrackingServerUrl(CreatePresignedMlflowTrackingServerUrlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePresignedMlflowTrackingServerUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresignedMlflowTrackingServerUrlResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePresignedMlflowTrackingServerUrlResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePresignedMlflowTrackingServerUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedMlflowTrackingServerUrl operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePresignedMlflowTrackingServerUrl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedMlflowTrackingServerUrl">REST API Reference for CreatePresignedMlflowTrackingServerUrl Operation</seealso>
+        public virtual IAsyncResult BeginCreatePresignedMlflowTrackingServerUrl(CreatePresignedMlflowTrackingServerUrlRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePresignedMlflowTrackingServerUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresignedMlflowTrackingServerUrlResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePresignedMlflowTrackingServerUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePresignedMlflowTrackingServerUrl.</param>
+        /// 
+        /// <returns>Returns a  CreatePresignedMlflowTrackingServerUrlResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedMlflowTrackingServerUrl">REST API Reference for CreatePresignedMlflowTrackingServerUrl Operation</seealso>
+        public virtual CreatePresignedMlflowTrackingServerUrlResponse EndCreatePresignedMlflowTrackingServerUrl(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePresignedMlflowTrackingServerUrlResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreatePresignedNotebookInstanceUrl
 
         /// <summary>
@@ -4068,7 +4246,7 @@ namespace Amazon.SageMaker
         #region  CreateSpace
 
         /// <summary>
-        /// Creates a space used for real time collaboration in a domain.
+        /// Creates a private space or a space used for real time collaboration in a domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpace service method.</param>
         /// 
@@ -6014,12 +6192,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Delete a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHub service method.</param>
         /// 
@@ -6080,12 +6252,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Delete the contents of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHubContent service method.</param>
         /// 
@@ -6138,6 +6304,63 @@ namespace Amazon.SageMaker
         public virtual DeleteHubContentResponse EndDeleteHubContent(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteHubContentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteHubContentReference
+
+        /// <summary>
+        /// Delete a hub content reference in order to remove a model from a private hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHubContentReference service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHubContentReference service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContentReference">REST API Reference for DeleteHubContentReference Operation</seealso>
+        public virtual DeleteHubContentReferenceResponse DeleteHubContentReference(DeleteHubContentReferenceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHubContentReferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHubContentReferenceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHubContentReferenceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteHubContentReference operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHubContentReference operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHubContentReference
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContentReference">REST API Reference for DeleteHubContentReference Operation</seealso>
+        public virtual IAsyncResult BeginDeleteHubContentReference(DeleteHubContentReferenceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHubContentReferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHubContentReferenceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteHubContentReference operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHubContentReference.</param>
+        /// 
+        /// <returns>Returns a  DeleteHubContentReferenceResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContentReference">REST API Reference for DeleteHubContentReference Operation</seealso>
+        public virtual DeleteHubContentReferenceResponse EndDeleteHubContentReference(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteHubContentReferenceResponse>(asyncResult);
         }
 
         #endregion
@@ -6503,6 +6726,64 @@ namespace Amazon.SageMaker
         public virtual DeleteInferenceExperimentResponse EndDeleteInferenceExperiment(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteInferenceExperimentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteMlflowTrackingServer
+
+        /// <summary>
+        /// Deletes an MLflow Tracking Server. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-cleanup.html.html">Clean
+        /// up MLflow resources</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMlflowTrackingServer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMlflowTrackingServer">REST API Reference for DeleteMlflowTrackingServer Operation</seealso>
+        public virtual DeleteMlflowTrackingServerResponse DeleteMlflowTrackingServer(DeleteMlflowTrackingServerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMlflowTrackingServerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMlflowTrackingServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMlflowTrackingServer operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMlflowTrackingServer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMlflowTrackingServer">REST API Reference for DeleteMlflowTrackingServer Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMlflowTrackingServer(DeleteMlflowTrackingServerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMlflowTrackingServer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMlflowTrackingServer.</param>
+        /// 
+        /// <returns>Returns a  DeleteMlflowTrackingServerResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMlflowTrackingServer">REST API Reference for DeleteMlflowTrackingServer Operation</seealso>
+        public virtual DeleteMlflowTrackingServerResponse EndDeleteMlflowTrackingServer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMlflowTrackingServerResponse>(asyncResult);
         }
 
         #endregion
@@ -7660,7 +7941,7 @@ namespace Amazon.SageMaker
         /// <para>
         /// If a private workforce contains one or more work teams, you must use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkteam.html">DeleteWorkteam</a>
         /// operation to delete all work teams before you delete the workforce. If you try to
-        /// delete a workforce that contains one or more work teams, you will recieve a <c>ResourceInUse</c>
+        /// delete a workforce that contains one or more work teams, you will receive a <c>ResourceInUse</c>
         /// error.
         /// </para>
         ///  </important>
@@ -8291,7 +8572,7 @@ namespace Amazon.SageMaker
         #region  DescribeClusterNode
 
         /// <summary>
-        /// Retrieves information of an instance (also called a <i>node</i> interchangeably) of
+        /// Retrieves information of a node (also called a <i>instance</i> interchangeably) of
         /// a SageMaker HyperPod cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterNode service method.</param>
@@ -9204,13 +9485,7 @@ namespace Amazon.SageMaker
         #region  DescribeHub
 
         /// <summary>
-        /// Describe a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
+        /// Describes a hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHub service method.</param>
         /// 
@@ -9268,12 +9543,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Describe the content of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHubContent service method.</param>
         /// 
@@ -9842,6 +10111,63 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeMlflowTrackingServer
+
+        /// <summary>
+        /// Returns information about an MLflow Tracking Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMlflowTrackingServer service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMlflowTrackingServer">REST API Reference for DescribeMlflowTrackingServer Operation</seealso>
+        public virtual DescribeMlflowTrackingServerResponse DescribeMlflowTrackingServer(DescribeMlflowTrackingServerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMlflowTrackingServerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMlflowTrackingServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMlflowTrackingServer operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMlflowTrackingServer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMlflowTrackingServer">REST API Reference for DescribeMlflowTrackingServer Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMlflowTrackingServer(DescribeMlflowTrackingServerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMlflowTrackingServer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMlflowTrackingServer.</param>
+        /// 
+        /// <returns>Returns a  DescribeMlflowTrackingServerResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMlflowTrackingServer">REST API Reference for DescribeMlflowTrackingServer Operation</seealso>
+        public virtual DescribeMlflowTrackingServerResponse EndDescribeMlflowTrackingServer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMlflowTrackingServerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeModel
 
         /// <summary>
@@ -10131,7 +10457,13 @@ namespace Amazon.SageMaker
         /// Returns a description of the specified model package, which is used to create SageMaker
         /// models or list them on Amazon Web Services Marketplace.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// If you provided a KMS Key ID when you created your model package, you will see the
+        /// <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html">KMS
+        /// Decrypt</a> API call in your CloudTrail logs when you use this API.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// To create models in SageMaker, buyers can subscribe to model packages listed on Amazon
         /// Web Services Marketplace.
@@ -11283,7 +11615,7 @@ namespace Amazon.SageMaker
         #region  DescribeWorkteam
 
         /// <summary>
-        /// Gets information about a specific work team. You can see information such as the create
+        /// Gets information about a specific work team. You can see information such as the creation
         /// date, the last updated date, membership information, and the work team's Amazon Resource
         /// Name (ARN).
         /// </summary>
@@ -11855,12 +12187,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Import hub content.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportHubContent service method.</param>
         /// 
@@ -13308,12 +13634,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List the contents of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubContents service method.</param>
         /// 
@@ -13371,12 +13691,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List hub content versions.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubContentVersions service method.</param>
         /// 
@@ -13434,12 +13748,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List all existing hubs.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubs service method.</param>
         /// 
@@ -14100,6 +14408,60 @@ namespace Amazon.SageMaker
         public virtual ListLineageGroupsResponse EndListLineageGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<ListLineageGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMlflowTrackingServers
+
+        /// <summary>
+        /// Lists all MLflow Tracking Servers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMlflowTrackingServers service method.</param>
+        /// 
+        /// <returns>The response from the ListMlflowTrackingServers service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMlflowTrackingServers">REST API Reference for ListMlflowTrackingServers Operation</seealso>
+        public virtual ListMlflowTrackingServersResponse ListMlflowTrackingServers(ListMlflowTrackingServersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMlflowTrackingServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMlflowTrackingServersResponseUnmarshaller.Instance;
+
+            return Invoke<ListMlflowTrackingServersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMlflowTrackingServers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMlflowTrackingServers operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMlflowTrackingServers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMlflowTrackingServers">REST API Reference for ListMlflowTrackingServers Operation</seealso>
+        public virtual IAsyncResult BeginListMlflowTrackingServers(ListMlflowTrackingServersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMlflowTrackingServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMlflowTrackingServersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMlflowTrackingServers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMlflowTrackingServers.</param>
+        /// 
+        /// <returns>Returns a  ListMlflowTrackingServersResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMlflowTrackingServers">REST API Reference for ListMlflowTrackingServers Operation</seealso>
+        public virtual ListMlflowTrackingServersResponse EndListMlflowTrackingServers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMlflowTrackingServersResponse>(asyncResult);
         }
 
         #endregion
@@ -16761,6 +17123,67 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  StartMlflowTrackingServer
+
+        /// <summary>
+        /// Programmatically start an MLflow Tracking Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMlflowTrackingServer service method.</param>
+        /// 
+        /// <returns>The response from the StartMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMlflowTrackingServer">REST API Reference for StartMlflowTrackingServer Operation</seealso>
+        public virtual StartMlflowTrackingServerResponse StartMlflowTrackingServer(StartMlflowTrackingServerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return Invoke<StartMlflowTrackingServerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMlflowTrackingServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMlflowTrackingServer operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMlflowTrackingServer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMlflowTrackingServer">REST API Reference for StartMlflowTrackingServer Operation</seealso>
+        public virtual IAsyncResult BeginStartMlflowTrackingServer(StartMlflowTrackingServerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMlflowTrackingServer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMlflowTrackingServer.</param>
+        /// 
+        /// <returns>Returns a  StartMlflowTrackingServerResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMlflowTrackingServer">REST API Reference for StartMlflowTrackingServer Operation</seealso>
+        public virtual StartMlflowTrackingServerResponse EndStartMlflowTrackingServer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartMlflowTrackingServerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartMonitoringSchedule
 
         /// <summary>
@@ -17423,6 +17846,67 @@ namespace Amazon.SageMaker
         public virtual StopLabelingJobResponse EndStopLabelingJob(IAsyncResult asyncResult)
         {
             return EndInvoke<StopLabelingJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopMlflowTrackingServer
+
+        /// <summary>
+        /// Programmatically stop an MLflow Tracking Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopMlflowTrackingServer service method.</param>
+        /// 
+        /// <returns>The response from the StopMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopMlflowTrackingServer">REST API Reference for StopMlflowTrackingServer Operation</seealso>
+        public virtual StopMlflowTrackingServerResponse StopMlflowTrackingServer(StopMlflowTrackingServerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return Invoke<StopMlflowTrackingServerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopMlflowTrackingServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopMlflowTrackingServer operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopMlflowTrackingServer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopMlflowTrackingServer">REST API Reference for StopMlflowTrackingServer Operation</seealso>
+        public virtual IAsyncResult BeginStopMlflowTrackingServer(StopMlflowTrackingServerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopMlflowTrackingServer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopMlflowTrackingServer.</param>
+        /// 
+        /// <returns>Returns a  StopMlflowTrackingServerResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopMlflowTrackingServer">REST API Reference for StopMlflowTrackingServer Operation</seealso>
+        public virtual StopMlflowTrackingServerResponse EndStopMlflowTrackingServer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopMlflowTrackingServerResponse>(asyncResult);
         }
 
         #endregion
@@ -18782,12 +19266,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Update a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHub service method.</param>
         /// 
@@ -19139,6 +19617,71 @@ namespace Amazon.SageMaker
         public virtual UpdateInferenceExperimentResponse EndUpdateInferenceExperiment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateInferenceExperimentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateMlflowTrackingServer
+
+        /// <summary>
+        /// Updates properties of an existing MLflow Tracking Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMlflowTrackingServer service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMlflowTrackingServer">REST API Reference for UpdateMlflowTrackingServer Operation</seealso>
+        public virtual UpdateMlflowTrackingServerResponse UpdateMlflowTrackingServer(UpdateMlflowTrackingServerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMlflowTrackingServerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMlflowTrackingServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMlflowTrackingServer operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMlflowTrackingServer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMlflowTrackingServer">REST API Reference for UpdateMlflowTrackingServer Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMlflowTrackingServer(UpdateMlflowTrackingServerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMlflowTrackingServer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMlflowTrackingServer.</param>
+        /// 
+        /// <returns>Returns a  UpdateMlflowTrackingServerResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMlflowTrackingServer">REST API Reference for UpdateMlflowTrackingServer Operation</seealso>
+        public virtual UpdateMlflowTrackingServerResponse EndUpdateMlflowTrackingServer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMlflowTrackingServerResponse>(asyncResult);
         }
 
         #endregion

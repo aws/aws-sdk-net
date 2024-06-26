@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public BuildStatusConfig Unmarshall(JsonUnmarshallerContext context)
         {
             BuildStatusConfig unmarshalledObject = new BuildStatusConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

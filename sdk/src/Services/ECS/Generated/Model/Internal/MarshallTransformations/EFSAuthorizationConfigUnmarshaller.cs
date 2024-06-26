@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public EFSAuthorizationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             EFSAuthorizationConfig unmarshalledObject = new EFSAuthorizationConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

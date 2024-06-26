@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public TaskScheduleDetails Unmarshall(JsonUnmarshallerContext context)
         {
             TaskScheduleDetails unmarshalledObject = new TaskScheduleDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

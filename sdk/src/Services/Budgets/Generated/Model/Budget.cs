@@ -163,8 +163,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property CostFilters. 
         /// <para>
-        /// The cost filters, such as <c>Region</c>, <c>Service</c>, <c>member account</c>, <c>Tag</c>,
-        /// or <c>Cost Category</c>, that are applied to a budget.
+        /// The cost filters, such as <c>Region</c>, <c>Service</c>, <c>LinkedAccount</c>, <c>Tag</c>,
+        /// or <c>CostCategory</c>, that are applied to a budget.
         /// </para>
         ///  
         /// <para>

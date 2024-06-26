@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public OntapFileSystemConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             OntapFileSystemConfiguration unmarshalledObject = new OntapFileSystemConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

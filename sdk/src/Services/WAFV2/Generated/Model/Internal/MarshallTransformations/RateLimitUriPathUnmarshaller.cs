@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public RateLimitUriPath Unmarshall(JsonUnmarshallerContext context)
         {
             RateLimitUriPath unmarshalledObject = new RateLimitUriPath();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

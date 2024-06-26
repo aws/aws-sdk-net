@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public Licensing Unmarshall(JsonUnmarshallerContext context)
         {
             Licensing unmarshalledObject = new Licensing();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

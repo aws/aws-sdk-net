@@ -36,6 +36,7 @@ namespace Amazon.KeyManagementService.Model
     {
         private CustomerMasterKeySpec _customerMasterKeySpec;
         private List<string> _encryptionAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _keyAgreementAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _keyId;
         private KeySpec _keySpec;
         private KeyUsageType _keyUsage;
@@ -96,6 +97,25 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KeyAgreementAlgorithms. 
+        /// <para>
+        /// The key agreement algorithm used to derive a shared secret. This field is present
+        /// only when the KMS key has a <c>KeyUsage</c> value of <c>KEY_AGREEMENT</c>.
+        /// </para>
+        /// </summary>
+        public List<string> KeyAgreementAlgorithms
+        {
+            get { return this._keyAgreementAlgorithms; }
+            set { this._keyAgreementAlgorithms = value; }
+        }
+
+        // Check to see if KeyAgreementAlgorithms property is set
+        internal bool IsSetKeyAgreementAlgorithms()
+        {
+            return this._keyAgreementAlgorithms != null && (this._keyAgreementAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
@@ -136,13 +156,13 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyUsage. 
         /// <para>
-        /// The permitted use of the public key. Valid values are <c>ENCRYPT_DECRYPT</c> or <c>SIGN_VERIFY</c>.
-        /// 
+        /// The permitted use of the public key. Valid values for asymmetric key pairs are <c>ENCRYPT_DECRYPT</c>,
+        /// <c>SIGN_VERIFY</c>, and <c>KEY_AGREEMENT</c>. 
         /// </para>
         ///  
         /// <para>
-        /// This information is critical. If a public key with <c>SIGN_VERIFY</c> key usage encrypts
-        /// data outside of KMS, the ciphertext cannot be decrypted. 
+        /// This information is critical. For example, if a public key with <c>SIGN_VERIFY</c>
+        /// key usage encrypts data outside of KMS, the ciphertext cannot be decrypted. 
         /// </para>
         /// </summary>
         public KeyUsageType KeyUsage

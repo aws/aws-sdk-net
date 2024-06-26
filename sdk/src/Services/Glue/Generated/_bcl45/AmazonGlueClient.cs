@@ -3429,6 +3429,83 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  CreateUsageProfile
+
+
+        /// <summary>
+        /// Creates an Glue usage profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsageProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateUsageProfile service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUsageProfile">REST API Reference for CreateUsageProfile Operation</seealso>
+        public virtual CreateUsageProfileResponse CreateUsageProfile(CreateUsageProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUsageProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUsageProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUsageProfileResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an Glue usage profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsageProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateUsageProfile service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUsageProfile">REST API Reference for CreateUsageProfile Operation</seealso>
+        public virtual Task<CreateUsageProfileResponse> CreateUsageProfileAsync(CreateUsageProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUsageProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUsageProfileResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateUsageProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateUserDefinedFunction
 
 
@@ -5335,6 +5412,71 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = DeleteTriggerResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteTriggerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUsageProfile
+
+
+        /// <summary>
+        /// Deletes the Glue specified usage profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsageProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUsageProfile service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteUsageProfile">REST API Reference for DeleteUsageProfile Operation</seealso>
+        public virtual DeleteUsageProfileResponse DeleteUsageProfile(DeleteUsageProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUsageProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUsageProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUsageProfileResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the Glue specified usage profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsageProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteUsageProfile service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteUsageProfile">REST API Reference for DeleteUsageProfile Operation</seealso>
+        public virtual Task<DeleteUsageProfileResponse> DeleteUsageProfileAsync(DeleteUsageProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUsageProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUsageProfileResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteUsageProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7295,7 +7437,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the metadata for a given job run.
+        /// Retrieves the metadata for a given job run. Job run history is accessible for 90 days
+        /// for your workflow and job run.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobRun service method.</param>
         /// 
@@ -7324,7 +7467,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the metadata for a given job run.
+        /// Retrieves the metadata for a given job run. Job run history is accessible for 90 days
+        /// for your workflow and job run.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobRun service method.</param>
         /// <param name="cancellationToken">
@@ -9805,6 +9949,77 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetUsageProfile
+
+
+        /// <summary>
+        /// Retrieves information about the specified Glue usage profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsageProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetUsageProfile service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUsageProfile">REST API Reference for GetUsageProfile Operation</seealso>
+        public virtual GetUsageProfileResponse GetUsageProfile(GetUsageProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUsageProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUsageProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsageProfileResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about the specified Glue usage profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsageProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetUsageProfile service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUsageProfile">REST API Reference for GetUsageProfile Operation</seealso>
+        public virtual Task<GetUsageProfileResponse> GetUsageProfileAsync(GetUsageProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUsageProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUsageProfileResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetUsageProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetUserDefinedFunction
 
 
@@ -10016,7 +10231,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the metadata for a given workflow run.
+        /// Retrieves the metadata for a given workflow run. Job run history is accessible for
+        /// 90 days for your workflow and job run.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRun service method.</param>
         /// 
@@ -10045,7 +10261,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves the metadata for a given workflow run.
+        /// Retrieves the metadata for a given workflow run. Job run history is accessible for
+        /// 90 days for your workflow and job run.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRun service method.</param>
         /// <param name="cancellationToken">
@@ -11581,6 +11798,71 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = ListTriggersResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTriggersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListUsageProfiles
+
+
+        /// <summary>
+        /// List all the Glue usage profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsageProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListUsageProfiles service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListUsageProfiles">REST API Reference for ListUsageProfiles Operation</seealso>
+        public virtual ListUsageProfilesResponse ListUsageProfiles(ListUsageProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsageProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsageProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListUsageProfilesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List all the Glue usage profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsageProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUsageProfiles service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListUsageProfiles">REST API Reference for ListUsageProfiles Operation</seealso>
+        public virtual Task<ListUsageProfilesResponse> ListUsageProfilesAsync(ListUsageProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsageProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsageProfilesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListUsageProfilesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -15762,6 +16044,83 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = UpdateTriggerResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateTriggerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUsageProfile
+
+
+        /// <summary>
+        /// Update an Glue usage profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsageProfile service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUsageProfile service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateUsageProfile">REST API Reference for UpdateUsageProfile Operation</seealso>
+        public virtual UpdateUsageProfileResponse UpdateUsageProfile(UpdateUsageProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUsageProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUsageProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUsageProfileResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Update an Glue usage profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsageProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateUsageProfile service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationNotSupportedException">
+        /// The operation is not available in the region.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateUsageProfile">REST API Reference for UpdateUsageProfile Operation</seealso>
+        public virtual Task<UpdateUsageProfileResponse> UpdateUsageProfileAsync(UpdateUsageProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUsageProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUsageProfileResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateUsageProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion

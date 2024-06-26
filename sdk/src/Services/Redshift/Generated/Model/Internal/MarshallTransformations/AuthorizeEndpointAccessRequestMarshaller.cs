@@ -72,7 +72,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.VpcIds)
                     {
-                        request.Parameters.Add("VpcIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        request.Parameters.Add("VpcIds" + "." + "VpcIdentifier" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
                 }

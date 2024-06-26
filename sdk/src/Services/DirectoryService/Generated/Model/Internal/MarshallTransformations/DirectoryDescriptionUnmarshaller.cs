@@ -57,6 +57,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         public DirectoryDescription Unmarshall(JsonUnmarshallerContext context)
         {
             DirectoryDescription unmarshalledObject = new DirectoryDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

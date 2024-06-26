@@ -323,6 +323,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -369,6 +375,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -528,6 +540,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -587,6 +605,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -730,6 +754,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -769,6 +799,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -808,6 +844,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -849,6 +891,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -891,6 +939,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -929,6 +983,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -967,6 +1027,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -1007,6 +1073,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -1061,6 +1133,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -1119,6 +1197,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -1181,6 +1265,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -1242,6 +1332,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -1290,6 +1386,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -1340,6 +1442,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -1389,6 +1497,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -1427,6 +1541,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -1466,6 +1586,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -1499,6 +1625,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -1533,6 +1665,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -1575,6 +1713,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -1618,6 +1762,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -1660,6 +1810,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -1815,6 +1971,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -1871,6 +2033,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -1987,6 +2155,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -2030,6 +2204,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -2184,6 +2364,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2241,6 +2427,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2361,6 +2553,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2399,6 +2597,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2437,6 +2641,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2470,6 +2680,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2504,6 +2720,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2537,6 +2759,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2573,6 +2801,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2608,6 +2842,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2644,6 +2884,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2683,6 +2929,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2722,6 +2974,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2760,6 +3018,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2799,6 +3063,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2840,6 +3110,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2881,6 +3157,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -2920,6 +3202,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3029,6 +3317,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3070,6 +3364,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3112,6 +3412,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3153,6 +3459,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3195,6 +3507,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3233,6 +3551,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3409,6 +3733,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3445,6 +3775,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3500,6 +3836,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -3566,6 +3908,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -3619,6 +3967,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3660,6 +4014,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3703,6 +4063,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3745,6 +4111,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3787,6 +4159,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3831,6 +4209,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3876,6 +4260,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3917,6 +4307,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -3959,6 +4355,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4000,6 +4402,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4043,6 +4451,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4088,6 +4502,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4127,6 +4547,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4165,6 +4591,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4204,6 +4636,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4248,6 +4686,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4293,6 +4737,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4333,6 +4783,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4517,6 +4973,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4556,6 +5018,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4598,6 +5066,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4639,6 +5113,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4902,6 +5382,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4941,6 +5427,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -4981,6 +5473,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -5022,6 +5520,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -5064,6 +5568,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -5102,6 +5612,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -5294,6 +5810,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -5332,6 +5854,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -5370,6 +5898,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -5415,6 +5949,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -5461,6 +6001,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -5503,6 +6049,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -5547,6 +6099,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -5590,6 +6148,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -5634,6 +6198,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -5680,6 +6250,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ConflictException">
         /// The requested state transition isn't valid. For example, you can't delete a firewall
@@ -5727,6 +6303,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -5777,6 +6359,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -5828,6 +6416,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -5868,6 +6462,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -5910,6 +6510,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -5951,6 +6557,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -5993,6 +6605,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
@@ -6040,6 +6658,12 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
         /// The current account doesn't have the IAM permissions required to perform the specified
         /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.

@@ -57,6 +57,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public MetricSetDataQualityMetric Unmarshall(JsonUnmarshallerContext context)
         {
             MetricSetDataQualityMetric unmarshalledObject = new MetricSetDataQualityMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

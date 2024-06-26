@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public TimestreamAction Unmarshall(JsonUnmarshallerContext context)
         {
             TimestreamAction unmarshalledObject = new TimestreamAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

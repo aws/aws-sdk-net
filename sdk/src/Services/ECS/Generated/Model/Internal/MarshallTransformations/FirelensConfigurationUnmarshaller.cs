@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public FirelensConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             FirelensConfiguration unmarshalledObject = new FirelensConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

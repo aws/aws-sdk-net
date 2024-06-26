@@ -39,6 +39,7 @@ namespace Amazon.QBusiness.Model
         private string _applicationId;
         private List<AttachmentInput> _attachments = AWSConfigs.InitializeCollections ? new List<AttachmentInput>() : null;
         private AttributeFilter _attributeFilter;
+        private AuthChallengeResponse _authChallengeResponse;
         private ChatMode _chatMode;
         private ChatModeConfiguration _chatModeConfiguration;
         private string _clientToken;
@@ -126,9 +127,28 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AuthChallengeResponse. 
+        /// <para>
+        /// An authentication verification event response by a third party authentication server
+        /// to Amazon Q Business.
+        /// </para>
+        /// </summary>
+        public AuthChallengeResponse AuthChallengeResponse
+        {
+            get { return this._authChallengeResponse; }
+            set { this._authChallengeResponse = value; }
+        }
+
+        // Check to see if AuthChallengeResponse property is set
+        internal bool IsSetAuthChallengeResponse()
+        {
+            return this._authChallengeResponse != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ChatMode. 
         /// <para>
-        /// The chat modes available in an Amazon Q Business web experience.
+        /// The chat modes available to an Amazon Q Business end user.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -225,7 +245,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ParentMessageId. 
         /// <para>
-        /// The identifier of the previous end user text input message in a conversation.
+        /// The identifier of the previous system message in a conversation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

@@ -285,6 +285,10 @@ namespace Amazon.CodeArtifact
     {
 
         /// <summary>
+        /// Constant Cargo for PackageFormat
+        /// </summary>
+        public static readonly PackageFormat Cargo = new PackageFormat("cargo");
+        /// <summary>
         /// Constant Generic for PackageFormat
         /// </summary>
         public static readonly PackageFormat Generic = new PackageFormat("generic");
@@ -304,6 +308,10 @@ namespace Amazon.CodeArtifact
         /// Constant Pypi for PackageFormat
         /// </summary>
         public static readonly PackageFormat Pypi = new PackageFormat("pypi");
+        /// <summary>
+        /// Constant Ruby for PackageFormat
+        /// </summary>
+        public static readonly PackageFormat Ruby = new PackageFormat("ruby");
         /// <summary>
         /// Constant Swift for PackageFormat
         /// </summary>

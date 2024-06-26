@@ -57,6 +57,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         public UserAccessLoggingSettingsSummary Unmarshall(JsonUnmarshallerContext context)
         {
             UserAccessLoggingSettingsSummary unmarshalledObject = new UserAccessLoggingSettingsSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

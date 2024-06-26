@@ -57,6 +57,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         public NFSFileShareInfo Unmarshall(JsonUnmarshallerContext context)
         {
             NFSFileShareInfo unmarshalledObject = new NFSFileShareInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

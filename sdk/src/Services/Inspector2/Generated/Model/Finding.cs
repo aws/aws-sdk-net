@@ -265,7 +265,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LastObservedAt. 
         /// <para>
-        /// The date and time that the finding was last observed.
+        ///  The date and time the finding was last observed. This timestamp for this field remains
+        /// unchanged until a finding is updated. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

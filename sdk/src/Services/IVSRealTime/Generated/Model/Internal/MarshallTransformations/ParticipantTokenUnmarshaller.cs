@@ -57,6 +57,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         public ParticipantToken Unmarshall(JsonUnmarshallerContext context)
         {
             ParticipantToken unmarshalledObject = new ParticipantToken();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

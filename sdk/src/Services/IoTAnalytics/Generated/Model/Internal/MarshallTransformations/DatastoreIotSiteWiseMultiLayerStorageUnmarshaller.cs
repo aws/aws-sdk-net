@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public DatastoreIotSiteWiseMultiLayerStorage Unmarshall(JsonUnmarshallerContext context)
         {
             DatastoreIotSiteWiseMultiLayerStorage unmarshalledObject = new DatastoreIotSiteWiseMultiLayerStorage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

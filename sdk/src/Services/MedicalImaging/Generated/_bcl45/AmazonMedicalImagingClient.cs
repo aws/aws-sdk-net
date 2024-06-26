@@ -1436,13 +1436,13 @@ namespace Amazon.MedicalImaging
         ///  <note> 
         /// <para>
         ///  <c>SearchImageSets</c> accepts a single search query parameter and returns a paginated
-        /// response of all image sets that have the matching criteria. All range queries must
-        /// be input as <c>(lowerBound, upperBound)</c>.
+        /// response of all image sets that have the matching criteria. All date range queries
+        /// must be input as <c>(lowerBound, upperBound)</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <c>SearchImageSets</c> uses the <c>updatedAt</c> field for sorting in decreasing
-        /// order from latest to oldest.
+        /// By default, <c>SearchImageSets</c> uses the <c>updatedAt</c> field for sorting in
+        /// descending order from newest to oldest.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1484,13 +1484,13 @@ namespace Amazon.MedicalImaging
         ///  <note> 
         /// <para>
         ///  <c>SearchImageSets</c> accepts a single search query parameter and returns a paginated
-        /// response of all image sets that have the matching criteria. All range queries must
-        /// be input as <c>(lowerBound, upperBound)</c>.
+        /// response of all image sets that have the matching criteria. All date range queries
+        /// must be input as <c>(lowerBound, upperBound)</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <c>SearchImageSets</c> uses the <c>updatedAt</c> field for sorting in decreasing
-        /// order from latest to oldest.
+        /// By default, <c>SearchImageSets</c> uses the <c>updatedAt</c> field for sorting in
+        /// descending order from newest to oldest.
         /// </para>
         ///  </note>
         /// </summary>

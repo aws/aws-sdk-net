@@ -401,6 +401,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DeriveSharedSecret(Amazon.KeyManagementService.Model.DeriveSharedSecretRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DeriveSharedSecret(Amazon.KeyManagementService.Model.DeriveSharedSecretRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DeriveSharedSecretRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DeriveSharedSecretResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example derives a shared secret using a key agreement algorithm.
+                </para>
+                <code
+                    title="To derive a shared secret"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-derive-a-shared-secret-1718381818754" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DescribeCustomKeyStores(Amazon.KeyManagementService.Model.DescribeCustomKeyStoresRequest)" />
             <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DescribeCustomKeyStores(Amazon.KeyManagementService.Model.DescribeCustomKeyStoresRequest)" />
             <member name="T:Amazon.KeyManagementService.Model.DescribeCustomKeyStoresRequest" />

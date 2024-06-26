@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public DetailedError Unmarshall(JsonUnmarshallerContext context)
         {
             DetailedError unmarshalledObject = new DetailedError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

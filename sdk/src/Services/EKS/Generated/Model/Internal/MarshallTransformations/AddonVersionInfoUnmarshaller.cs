@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public AddonVersionInfo Unmarshall(JsonUnmarshallerContext context)
         {
             AddonVersionInfo unmarshalledObject = new AddonVersionInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -86,6 +88,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.RequiresConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("requiresIamPermissions", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RequiresIamPermissions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

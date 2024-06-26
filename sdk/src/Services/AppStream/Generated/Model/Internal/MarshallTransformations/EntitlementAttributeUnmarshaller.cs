@@ -57,6 +57,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public EntitlementAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             EntitlementAttribute unmarshalledObject = new EntitlementAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -422,6 +422,8 @@ namespace ServiceClientGenerator
         public const string GenerateUnmarshallerKey = "generateUnmarshaller";
         public const string SkipUriPropertyValidationKey = "skipUriPropertyValidation";
         public const string OverrideContentTypeKey = "overrideContentType";
+        public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
+        public const string OriginalMemberKey = "originalMember";
 
         JsonData _documentRoot;
 
@@ -875,6 +877,39 @@ namespace ServiceClientGenerator
                 // add a 'convenience' member (for backwards compatibility) using
                 // the same name as an original (and now renamed) member.
                 _injectedProperties = ParseInjections(data);
+                Validate(data);
+            }
+
+
+            //"exclude": [
+            //    "CopySource",
+            //    "Key"
+            //],
+            //"inject": [
+            //    {
+            //        "SourceBucket": {
+            //            "shape": "BucketName"
+            //        }
+            //    },
+            //    {
+            //        "SourceKey": {
+            //            "shape": "ObjectKey",
+            //            "originalMember": "CopySource"
+            //        }
+            //   },
+            // Above is an example of how to specify the originalMember on the injected member.
+            private void Validate(JsonData data)
+            {
+                // if a property was excluded, then the injected member must reference the original member that it is replacing
+                if (_excludedProperties.Count == 0 || _injectedProperties.Count == 0)
+                    return;
+                int injectedPropertyOriginalMemberCount = _injectedProperties.Values
+                    .Count(jsonData => jsonData[CustomizationsModel.OriginalMemberKey] != null);
+                if (_excludedProperties.Count != injectedPropertyOriginalMemberCount)
+                {
+                    throw new InvalidDataException($"The customization excludes and injects members without specifying the originalMember. If you are excluding a member and injecting a different member, make sure to specify the original member that" +
+                        $" was excluded on the injected member in the customizations.json file.");
+                }
             }
 
             #region Property Exclusion
@@ -1252,6 +1287,8 @@ namespace ServiceClientGenerator
                 modifiers.Documentation = (string)operation[OperationModifiers.DocumentationKey];
             if (operation[OperationModifiers.DeprecatedMessageKey] != null && operation[OperationModifiers.DeprecatedMessageKey].IsString)
                 modifiers.DeprecatedMessage = (string)operation[OperationModifiers.DeprecatedMessageKey];
+            if (operation[OperationModifiers.StopPaginationOnSameTokenKey] != null && operation[OperationModifiers.StopPaginationOnSameTokenKey].IsBoolean)
+                modifiers.StopPaginationOnSameToken = (bool)operation[OperationModifiers.StopPaginationOnSameTokenKey];
 
             if (operation[OperationModifiers.MarshallNameOverrides] != null &&
                 operation[OperationModifiers.MarshallNameOverrides].IsArray)
@@ -1318,6 +1355,7 @@ namespace ServiceClientGenerator
             public const string DeprecatedKey = "deprecated";
             public const string DeprecatedMessageKey = "deprecatedMessage";
             public const string DocumentationKey = "documentation";
+            public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
 
             // within a marshal override for a shape; one or both may be present
             public const string MarshallLocationName = "marshallLocationName";
@@ -1395,6 +1433,12 @@ namespace ServiceClientGenerator
             }
 
             public string DeprecatedMessage
+            {
+                get;
+                set;
+            }
+
+            public bool StopPaginationOnSameToken
             {
                 get;
                 set;

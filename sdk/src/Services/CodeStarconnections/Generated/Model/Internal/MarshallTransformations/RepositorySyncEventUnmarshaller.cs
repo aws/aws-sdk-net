@@ -57,6 +57,8 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
         public RepositorySyncEvent Unmarshall(JsonUnmarshallerContext context)
         {
             RepositorySyncEvent unmarshalledObject = new RepositorySyncEvent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

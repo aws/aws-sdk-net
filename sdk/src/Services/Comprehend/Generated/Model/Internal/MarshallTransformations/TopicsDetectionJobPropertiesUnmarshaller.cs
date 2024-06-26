@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public TopicsDetectionJobProperties Unmarshall(JsonUnmarshallerContext context)
         {
             TopicsDetectionJobProperties unmarshalledObject = new TopicsDetectionJobProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

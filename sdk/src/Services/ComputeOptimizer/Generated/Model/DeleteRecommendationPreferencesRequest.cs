@@ -75,11 +75,6 @@ namespace Amazon.ComputeOptimizer.Model
         /// are part of Auto Scaling groups. The <c>AutoScalingGroup</c> option encompasses only
         /// instances that are part of an Auto Scaling group.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The valid values for this parameter are <c>Ec2Instance</c> and <c>AutoScalingGroup</c>.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public ResourceType ResourceType

@@ -302,12 +302,14 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The <c>JobRun</c> timeout in minutes. This is the maximum time that a job run can
         /// consume resources before it is terminated and enters <c>TIMEOUT</c> status. This value
-        /// overrides the timeout value set in the parent job.
+        /// overrides the timeout value set in the parent job. 
         /// </para>
         ///  
         /// <para>
-        /// Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880
-        /// minutes (48 hours).
+        /// Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the
+        /// value is left blank, the job will be restarted after 7 days based if you have not
+        /// setup a maintenance window. If you have setup maintenance window, it will be restarted
+        /// during the maintenance window after 7 days.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public DataRepositoryFailureDetails Unmarshall(JsonUnmarshallerContext context)
         {
             DataRepositoryFailureDetails unmarshalledObject = new DataRepositoryFailureDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

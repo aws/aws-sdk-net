@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public EyeOpen Unmarshall(JsonUnmarshallerContext context)
         {
             EyeOpen unmarshalledObject = new EyeOpen();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

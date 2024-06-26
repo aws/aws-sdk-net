@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public GridLayoutScreenCanvasSizeOptions Unmarshall(JsonUnmarshallerContext context)
         {
             GridLayoutScreenCanvasSizeOptions unmarshalledObject = new GridLayoutScreenCanvasSizeOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
         public ImageFailure Unmarshall(JsonUnmarshallerContext context)
         {
             ImageFailure unmarshalledObject = new ImageFailure();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

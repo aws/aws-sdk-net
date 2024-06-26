@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public Session Unmarshall(JsonUnmarshallerContext context)
         {
             Session unmarshalledObject = new Session();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -146,6 +148,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfWorkers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProfileName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProfileName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Progress", targetDepth))

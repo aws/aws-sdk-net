@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public KernelCapabilities Unmarshall(JsonUnmarshallerContext context)
         {
             KernelCapabilities unmarshalledObject = new KernelCapabilities();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

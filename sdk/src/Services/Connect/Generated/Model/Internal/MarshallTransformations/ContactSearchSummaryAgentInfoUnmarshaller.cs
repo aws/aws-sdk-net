@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public ContactSearchSummaryAgentInfo Unmarshall(JsonUnmarshallerContext context)
         {
             ContactSearchSummaryAgentInfo unmarshalledObject = new ContactSearchSummaryAgentInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

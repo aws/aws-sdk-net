@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public RuleGroupSourceStatelessRuleMatchAttributesTcpFlags Unmarshall(JsonUnmarshallerContext context)
         {
             RuleGroupSourceStatelessRuleMatchAttributesTcpFlags unmarshalledObject = new RuleGroupSourceStatelessRuleMatchAttributesTcpFlags();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

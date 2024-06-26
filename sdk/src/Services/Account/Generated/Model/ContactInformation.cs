@@ -242,8 +242,11 @@ namespace Amazon.Account.Model
         /// <summary>
         /// Gets and sets the property StateOrRegion. 
         /// <para>
-        /// The state or region of the primary contact address. This field is required in selected
-        /// countries.
+        /// The state or region of the primary contact address. If the mailing address is within
+        /// the United States (US), the value in this field can be either a two character state
+        /// code (for example, <c>NJ</c>) or the full state name (for example, <c>New Jersey</c>).
+        /// This field is required in the following countries: <c>US</c>, <c>CA</c>, <c>GB</c>,
+        /// <c>DE</c>, <c>JP</c>, <c>IN</c>, and <c>BR</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=50)]

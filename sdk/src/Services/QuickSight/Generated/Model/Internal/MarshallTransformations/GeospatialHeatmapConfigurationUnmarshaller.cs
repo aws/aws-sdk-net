@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public GeospatialHeatmapConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             GeospatialHeatmapConfiguration unmarshalledObject = new GeospatialHeatmapConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

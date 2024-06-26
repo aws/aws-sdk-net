@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public EncryptionSetting Unmarshall(JsonUnmarshallerContext context)
         {
             EncryptionSetting unmarshalledObject = new EncryptionSetting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         public DeviceDefinitionVersion Unmarshall(JsonUnmarshallerContext context)
         {
             DeviceDefinitionVersion unmarshalledObject = new DeviceDefinitionVersion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

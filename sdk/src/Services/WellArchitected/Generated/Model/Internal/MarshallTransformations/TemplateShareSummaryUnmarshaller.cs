@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public TemplateShareSummary Unmarshall(JsonUnmarshallerContext context)
         {
             TemplateShareSummary unmarshalledObject = new TemplateShareSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

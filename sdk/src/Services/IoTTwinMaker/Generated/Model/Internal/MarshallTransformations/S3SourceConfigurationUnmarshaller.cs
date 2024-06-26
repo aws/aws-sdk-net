@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public S3SourceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             S3SourceConfiguration unmarshalledObject = new S3SourceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

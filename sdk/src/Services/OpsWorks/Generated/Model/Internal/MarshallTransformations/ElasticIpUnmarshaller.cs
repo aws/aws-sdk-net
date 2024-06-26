@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public ElasticIp Unmarshall(JsonUnmarshallerContext context)
         {
             ElasticIp unmarshalledObject = new ElasticIp();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

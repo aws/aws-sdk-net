@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public GlueDataCatalogConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             GlueDataCatalogConfigurationDescription unmarshalledObject = new GlueDataCatalogConfigurationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

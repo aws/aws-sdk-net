@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public AwsManagedResources Unmarshall(JsonUnmarshallerContext context)
         {
             AwsManagedResources unmarshalledObject = new AwsManagedResources();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

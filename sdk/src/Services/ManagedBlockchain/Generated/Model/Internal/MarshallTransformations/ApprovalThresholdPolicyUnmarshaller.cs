@@ -57,6 +57,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         public ApprovalThresholdPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             ApprovalThresholdPolicy unmarshalledObject = new ApprovalThresholdPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

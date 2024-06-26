@@ -54,7 +54,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         }
         else if (payloadIsStream)
         {
-            if (payload.IsStreaming)
+            if (payload.Shape.IsStreaming)
             {
 #>
             response.<#=payload.PropertyName#> = context.Stream;
@@ -195,7 +195,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         }
 
 <#
-    if (payload != null && payload.IsStreaming)
+    if (payload != null && payload.Shape.IsStreaming)
     {
 #>
         /// <summary>

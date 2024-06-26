@@ -45,6 +45,8 @@ namespace Amazon.CloudHSMV2.Model
         private DateTime? _copyTimestamp;
         private DateTime? _createTimestamp;
         private DateTime? _deleteTimestamp;
+        private string _hsmType;
+        private ClusterMode _mode;
         private bool? _neverExpires;
         private string _sourceBackup;
         private string _sourceCluster;
@@ -158,6 +160,43 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetDeleteTimestamp()
         {
             return this._deleteTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HsmType. 
+        /// <para>
+        /// The HSM type of the cluster that was backed up.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=32)]
+        public string HsmType
+        {
+            get { return this._hsmType; }
+            set { this._hsmType = value; }
+        }
+
+        // Check to see if HsmType property is set
+        internal bool IsSetHsmType()
+        {
+            return this._hsmType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// The mode of the cluster that was backed up.
+        /// </para>
+        /// </summary>
+        public ClusterMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
         }
 
         /// <summary>

@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public AvailabilityZoneInfo Unmarshall(JsonUnmarshallerContext context)
         {
             AvailabilityZoneInfo unmarshalledObject = new AvailabilityZoneInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

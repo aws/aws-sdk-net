@@ -57,6 +57,8 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
         public ParameterGroupStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ParameterGroupStatus unmarshalledObject = new ParameterGroupStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

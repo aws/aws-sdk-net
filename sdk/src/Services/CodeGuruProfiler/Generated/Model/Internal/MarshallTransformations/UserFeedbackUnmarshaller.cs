@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         public UserFeedback Unmarshall(JsonUnmarshallerContext context)
         {
             UserFeedback unmarshalledObject = new UserFeedback();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

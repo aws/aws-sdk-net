@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public NetworkConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkConfiguration unmarshalledObject = new NetworkConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

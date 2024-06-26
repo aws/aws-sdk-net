@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public MetricDatum Unmarshall(JsonUnmarshallerContext context)
         {
             MetricDatum unmarshalledObject = new MetricDatum();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

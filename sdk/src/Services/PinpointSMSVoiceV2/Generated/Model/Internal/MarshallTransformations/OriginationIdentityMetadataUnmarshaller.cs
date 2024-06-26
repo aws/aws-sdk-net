@@ -57,6 +57,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         public OriginationIdentityMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             OriginationIdentityMetadata unmarshalledObject = new OriginationIdentityMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

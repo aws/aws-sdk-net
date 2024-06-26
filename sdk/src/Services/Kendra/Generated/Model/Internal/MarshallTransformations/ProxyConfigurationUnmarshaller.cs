@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public ProxyConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ProxyConfiguration unmarshalledObject = new ProxyConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

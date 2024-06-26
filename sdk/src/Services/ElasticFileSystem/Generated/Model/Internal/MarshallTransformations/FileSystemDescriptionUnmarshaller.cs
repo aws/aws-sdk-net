@@ -57,6 +57,8 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         public FileSystemDescription Unmarshall(JsonUnmarshallerContext context)
         {
             FileSystemDescription unmarshalledObject = new FileSystemDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

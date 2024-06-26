@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public Algorithm Unmarshall(JsonUnmarshallerContext context)
         {
             Algorithm unmarshalledObject = new Algorithm();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

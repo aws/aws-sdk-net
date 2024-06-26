@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public AnalyticsConfigurationType Unmarshall(JsonUnmarshallerContext context)
         {
             AnalyticsConfigurationType unmarshalledObject = new AnalyticsConfigurationType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

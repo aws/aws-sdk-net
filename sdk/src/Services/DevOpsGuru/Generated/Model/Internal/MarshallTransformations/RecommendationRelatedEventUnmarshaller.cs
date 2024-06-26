@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public RecommendationRelatedEvent Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendationRelatedEvent unmarshalledObject = new RecommendationRelatedEvent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

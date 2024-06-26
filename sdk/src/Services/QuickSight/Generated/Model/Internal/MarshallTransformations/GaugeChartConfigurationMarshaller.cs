@@ -48,6 +48,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetColorConfiguration())
+            {
+                context.Writer.WritePropertyName("ColorConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GaugeChartColorConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ColorConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDataLabels())
             {
                 context.Writer.WritePropertyName("DataLabels");

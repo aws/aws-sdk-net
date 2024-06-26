@@ -57,6 +57,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         public AutomationExecution Unmarshall(JsonUnmarshallerContext context)
         {
             AutomationExecution unmarshalledObject = new AutomationExecution();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

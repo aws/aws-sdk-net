@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public SchemaStatusReason Unmarshall(JsonUnmarshallerContext context)
         {
             SchemaStatusReason unmarshalledObject = new SchemaStatusReason();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         public TargetAction Unmarshall(JsonUnmarshallerContext context)
         {
             TargetAction unmarshalledObject = new TargetAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

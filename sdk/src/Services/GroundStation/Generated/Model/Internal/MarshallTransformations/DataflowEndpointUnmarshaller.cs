@@ -57,6 +57,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public DataflowEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
             DataflowEndpoint unmarshalledObject = new DataflowEndpoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

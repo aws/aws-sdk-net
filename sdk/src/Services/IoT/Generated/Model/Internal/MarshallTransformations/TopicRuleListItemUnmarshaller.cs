@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public TopicRuleListItem Unmarshall(JsonUnmarshallerContext context)
         {
             TopicRuleListItem unmarshalledObject = new TopicRuleListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

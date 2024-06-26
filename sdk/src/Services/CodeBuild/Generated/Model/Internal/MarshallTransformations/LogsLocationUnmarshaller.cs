@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public LogsLocation Unmarshall(JsonUnmarshallerContext context)
         {
             LogsLocation unmarshalledObject = new LogsLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

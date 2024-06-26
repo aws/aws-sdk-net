@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public Mpeg2FilterSettings Unmarshall(JsonUnmarshallerContext context)
         {
             Mpeg2FilterSettings unmarshalledObject = new Mpeg2FilterSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         public Application Unmarshall(JsonUnmarshallerContext context)
         {
             Application unmarshalledObject = new Application();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -110,6 +112,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, InitialCapacityConfig, StringUnmarshaller, InitialCapacityConfigUnmarshaller>(StringUnmarshaller.Instance, InitialCapacityConfigUnmarshaller.Instance);
                     unmarshalledObject.InitialCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("interactiveConfiguration", targetDepth))
+                {
+                    var unmarshaller = InteractiveConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.InteractiveConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maximumCapacity", targetDepth))

@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         public VoiceProfileDomain Unmarshall(JsonUnmarshallerContext context)
         {
             VoiceProfileDomain unmarshalledObject = new VoiceProfileDomain();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

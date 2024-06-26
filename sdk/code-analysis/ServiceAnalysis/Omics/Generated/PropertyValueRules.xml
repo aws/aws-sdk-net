@@ -990,6 +990,11 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunResponse.StorageType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.Uuid</property>
     <min>1</min>
     <max>128</max>
@@ -1000,6 +1005,10 @@
     <min>1</min>
     <max>18</max>
     <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunResponse.WorkflowOwnerId</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.WorkflowType</property>
@@ -1192,6 +1201,10 @@
     <property>Amazon.Omics.Model.GetWorkflowRequest.Type</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetWorkflowRequest.WorkflowOwnerId</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowResponse.Accelerators</property>
@@ -1869,10 +1882,19 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunRequest.StorageType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.WorkflowId</property>
     <min>1</min>
     <max>18</max>
     <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunRequest.WorkflowOwnerId</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.WorkflowType</property>
@@ -2657,6 +2679,11 @@
     <property>Amazon.Omics.Model.RunListItem.StorageCapacity</property>
     <min>0</min>
     <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunListItem.StorageType</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.RunListItem.WorkflowId</property>

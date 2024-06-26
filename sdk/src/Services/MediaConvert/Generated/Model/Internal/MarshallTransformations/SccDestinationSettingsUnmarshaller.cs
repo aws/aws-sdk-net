@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public SccDestinationSettings Unmarshall(JsonUnmarshallerContext context)
         {
             SccDestinationSettings unmarshalledObject = new SccDestinationSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

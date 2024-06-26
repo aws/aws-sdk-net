@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public XavcHdProfileSettings Unmarshall(JsonUnmarshallerContext context)
         {
             XavcHdProfileSettings unmarshalledObject = new XavcHdProfileSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public JobExecutionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             JobExecutionSettings unmarshalledObject = new JobExecutionSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

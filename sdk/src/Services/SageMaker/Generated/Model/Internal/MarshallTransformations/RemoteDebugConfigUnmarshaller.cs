@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public RemoteDebugConfig Unmarshall(JsonUnmarshallerContext context)
         {
             RemoteDebugConfig unmarshalledObject = new RemoteDebugConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

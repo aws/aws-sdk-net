@@ -57,6 +57,8 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         public ModelPerformance Unmarshall(JsonUnmarshallerContext context)
         {
             ModelPerformance unmarshalledObject = new ModelPerformance();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

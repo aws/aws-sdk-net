@@ -57,6 +57,8 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         public ConfiguredAudienceModelOutputConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ConfiguredAudienceModelOutputConfig unmarshalledObject = new ConfiguredAudienceModelOutputConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

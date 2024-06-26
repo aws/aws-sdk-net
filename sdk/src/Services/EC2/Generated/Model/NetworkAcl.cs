@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Associations. 
         /// <para>
-        /// Any associations between the network ACL and one or more subnets
+        /// Any associations between the network ACL and your subnets
         /// </para>
         /// </summary>
         public List<NetworkAclAssociation> Associations

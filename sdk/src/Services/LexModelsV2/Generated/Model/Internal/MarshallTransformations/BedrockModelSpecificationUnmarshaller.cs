@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public BedrockModelSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             BedrockModelSpecification unmarshalledObject = new BedrockModelSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

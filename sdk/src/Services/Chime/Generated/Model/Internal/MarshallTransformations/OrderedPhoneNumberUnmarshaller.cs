@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public OrderedPhoneNumber Unmarshall(JsonUnmarshallerContext context)
         {
             OrderedPhoneNumber unmarshalledObject = new OrderedPhoneNumber();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -253,6 +253,104 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type AnsweringMachineDetectionStatus.
+    /// </summary>
+    public class AnsweringMachineDetectionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMD_ERROR for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus AMD_ERROR = new AnsweringMachineDetectionStatus("AMD_ERROR");
+        /// <summary>
+        /// Constant AMD_NOT_APPLICABLE for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus AMD_NOT_APPLICABLE = new AnsweringMachineDetectionStatus("AMD_NOT_APPLICABLE");
+        /// <summary>
+        /// Constant AMD_UNANSWERED for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus AMD_UNANSWERED = new AnsweringMachineDetectionStatus("AMD_UNANSWERED");
+        /// <summary>
+        /// Constant AMD_UNRESOLVED for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus AMD_UNRESOLVED = new AnsweringMachineDetectionStatus("AMD_UNRESOLVED");
+        /// <summary>
+        /// Constant ANSWERED for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus ANSWERED = new AnsweringMachineDetectionStatus("ANSWERED");
+        /// <summary>
+        /// Constant ERROR for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus ERROR = new AnsweringMachineDetectionStatus("ERROR");
+        /// <summary>
+        /// Constant FAX_MACHINE_DETECTED for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus FAX_MACHINE_DETECTED = new AnsweringMachineDetectionStatus("FAX_MACHINE_DETECTED");
+        /// <summary>
+        /// Constant HUMAN_ANSWERED for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus HUMAN_ANSWERED = new AnsweringMachineDetectionStatus("HUMAN_ANSWERED");
+        /// <summary>
+        /// Constant SIT_TONE_BUSY for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus SIT_TONE_BUSY = new AnsweringMachineDetectionStatus("SIT_TONE_BUSY");
+        /// <summary>
+        /// Constant SIT_TONE_DETECTED for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus SIT_TONE_DETECTED = new AnsweringMachineDetectionStatus("SIT_TONE_DETECTED");
+        /// <summary>
+        /// Constant SIT_TONE_INVALID_NUMBER for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus SIT_TONE_INVALID_NUMBER = new AnsweringMachineDetectionStatus("SIT_TONE_INVALID_NUMBER");
+        /// <summary>
+        /// Constant UNDETECTED for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus UNDETECTED = new AnsweringMachineDetectionStatus("UNDETECTED");
+        /// <summary>
+        /// Constant VOICEMAIL_BEEP for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus VOICEMAIL_BEEP = new AnsweringMachineDetectionStatus("VOICEMAIL_BEEP");
+        /// <summary>
+        /// Constant VOICEMAIL_NO_BEEP for AnsweringMachineDetectionStatus
+        /// </summary>
+        public static readonly AnsweringMachineDetectionStatus VOICEMAIL_NO_BEEP = new AnsweringMachineDetectionStatus("VOICEMAIL_NO_BEEP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnsweringMachineDetectionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnsweringMachineDetectionStatus FindValue(string value)
+        {
+            return FindValue<AnsweringMachineDetectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnsweringMachineDetectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ArtifactStatus.
     /// </summary>
     public class ArtifactStatus : ConstantClass
@@ -300,6 +398,60 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ArtifactStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AttachedFileInvalidRequestExceptionReason.
+    /// </summary>
+    public class AttachedFileInvalidRequestExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INVALID_FILE_NAME for AttachedFileInvalidRequestExceptionReason
+        /// </summary>
+        public static readonly AttachedFileInvalidRequestExceptionReason INVALID_FILE_NAME = new AttachedFileInvalidRequestExceptionReason("INVALID_FILE_NAME");
+        /// <summary>
+        /// Constant INVALID_FILE_SIZE for AttachedFileInvalidRequestExceptionReason
+        /// </summary>
+        public static readonly AttachedFileInvalidRequestExceptionReason INVALID_FILE_SIZE = new AttachedFileInvalidRequestExceptionReason("INVALID_FILE_SIZE");
+        /// <summary>
+        /// Constant INVALID_FILE_TYPE for AttachedFileInvalidRequestExceptionReason
+        /// </summary>
+        public static readonly AttachedFileInvalidRequestExceptionReason INVALID_FILE_TYPE = new AttachedFileInvalidRequestExceptionReason("INVALID_FILE_TYPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttachedFileInvalidRequestExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachedFileInvalidRequestExceptionReason FindValue(string value)
+        {
+            return FindValue<AttachedFileInvalidRequestExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachedFileInvalidRequestExceptionReason(string value)
         {
             return FindValue(value);
         }
@@ -654,6 +806,56 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContactFlowState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContactFlowStatus.
+    /// </summary>
+    public class ContactFlowStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PUBLISHED for ContactFlowStatus
+        /// </summary>
+        public static readonly ContactFlowStatus PUBLISHED = new ContactFlowStatus("PUBLISHED");
+        /// <summary>
+        /// Constant SAVED for ContactFlowStatus
+        /// </summary>
+        public static readonly ContactFlowStatus SAVED = new ContactFlowStatus("SAVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactFlowStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactFlowStatus FindValue(string value)
+        {
+            return FindValue<ContactFlowStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactFlowStatus(string value)
         {
             return FindValue(value);
         }
@@ -1608,6 +1810,110 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FailureReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FileStatusType.
+    /// </summary>
+    public class FileStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType APPROVED = new FileStatusType("APPROVED");
+        /// <summary>
+        /// Constant FAILED for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType FAILED = new FileStatusType("FAILED");
+        /// <summary>
+        /// Constant PROCESSING for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType PROCESSING = new FileStatusType("PROCESSING");
+        /// <summary>
+        /// Constant REJECTED for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType REJECTED = new FileStatusType("REJECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileStatusType FindValue(string value)
+        {
+            return FindValue<FileStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FileUseCaseType.
+    /// </summary>
+    public class FileUseCaseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTACHMENT for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType ATTACHMENT = new FileUseCaseType("ATTACHMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileUseCaseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileUseCaseType FindValue(string value)
+        {
+            return FindValue<FileUseCaseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileUseCaseType(string value)
         {
             return FindValue(value);
         }
@@ -4762,6 +5068,64 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RoutingCriteriaStepStatus.
+    /// </summary>
+    public class RoutingCriteriaStepStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RoutingCriteriaStepStatus
+        /// </summary>
+        public static readonly RoutingCriteriaStepStatus ACTIVE = new RoutingCriteriaStepStatus("ACTIVE");
+        /// <summary>
+        /// Constant EXPIRED for RoutingCriteriaStepStatus
+        /// </summary>
+        public static readonly RoutingCriteriaStepStatus EXPIRED = new RoutingCriteriaStepStatus("EXPIRED");
+        /// <summary>
+        /// Constant INACTIVE for RoutingCriteriaStepStatus
+        /// </summary>
+        public static readonly RoutingCriteriaStepStatus INACTIVE = new RoutingCriteriaStepStatus("INACTIVE");
+        /// <summary>
+        /// Constant JOINED for RoutingCriteriaStepStatus
+        /// </summary>
+        public static readonly RoutingCriteriaStepStatus JOINED = new RoutingCriteriaStepStatus("JOINED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RoutingCriteriaStepStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RoutingCriteriaStepStatus FindValue(string value)
+        {
+            return FindValue<RoutingCriteriaStepStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RoutingCriteriaStepStatus(string value)
         {
             return FindValue(value);
         }

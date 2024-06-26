@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public PolicyComplianceDetail Unmarshall(JsonUnmarshallerContext context)
         {
             PolicyComplianceDetail unmarshalledObject = new PolicyComplianceDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

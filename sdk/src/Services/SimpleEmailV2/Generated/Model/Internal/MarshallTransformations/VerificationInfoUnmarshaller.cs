@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public VerificationInfo Unmarshall(JsonUnmarshallerContext context)
         {
             VerificationInfo unmarshalledObject = new VerificationInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

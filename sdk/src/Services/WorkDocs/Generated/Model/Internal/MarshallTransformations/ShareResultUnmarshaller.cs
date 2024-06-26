@@ -57,6 +57,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         public ShareResult Unmarshall(JsonUnmarshallerContext context)
         {
             ShareResult unmarshalledObject = new ShareResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

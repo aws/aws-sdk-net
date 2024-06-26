@@ -57,6 +57,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         public HttpParameters Unmarshall(JsonUnmarshallerContext context)
         {
             HttpParameters unmarshalledObject = new HttpParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

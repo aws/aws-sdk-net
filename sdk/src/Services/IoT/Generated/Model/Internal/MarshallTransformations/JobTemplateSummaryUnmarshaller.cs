@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public JobTemplateSummary Unmarshall(JsonUnmarshallerContext context)
         {
             JobTemplateSummary unmarshalledObject = new JobTemplateSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

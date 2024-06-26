@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public Peering Unmarshall(JsonUnmarshallerContext context)
         {
             Peering unmarshalledObject = new Peering();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -86,6 +88,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EdgeLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastModificationErrors", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PeeringError, PeeringErrorUnmarshaller>(PeeringErrorUnmarshaller.Instance);
+                    unmarshalledObject.LastModificationErrors = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OwnerAccountId", targetDepth))

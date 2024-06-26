@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public VersionInfo Unmarshall(JsonUnmarshallerContext context)
         {
             VersionInfo unmarshalledObject = new VersionInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public ComplianceContributorCount Unmarshall(JsonUnmarshallerContext context)
         {
             ComplianceContributorCount unmarshalledObject = new ComplianceContributorCount();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

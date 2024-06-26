@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public ServiceVersion Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceVersion unmarshalledObject = new ServiceVersion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

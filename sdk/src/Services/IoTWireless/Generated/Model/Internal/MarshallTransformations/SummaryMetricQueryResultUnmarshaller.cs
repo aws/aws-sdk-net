@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public SummaryMetricQueryResult Unmarshall(JsonUnmarshallerContext context)
         {
             SummaryMetricQueryResult unmarshalledObject = new SummaryMetricQueryResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

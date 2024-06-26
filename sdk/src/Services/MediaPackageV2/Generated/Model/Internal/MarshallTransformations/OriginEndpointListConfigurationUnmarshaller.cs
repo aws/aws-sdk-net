@@ -57,6 +57,8 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         public OriginEndpointListConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             OriginEndpointListConfiguration unmarshalledObject = new OriginEndpointListConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -104,6 +106,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ForceEndpointErrorConfiguration", targetDepth))
+                {
+                    var unmarshaller = ForceEndpointErrorConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ForceEndpointErrorConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("HlsManifests", targetDepth))

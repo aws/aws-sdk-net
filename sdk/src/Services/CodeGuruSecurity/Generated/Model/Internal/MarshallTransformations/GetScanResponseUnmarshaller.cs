@@ -64,6 +64,12 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("errorMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ErrorMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("numberOfRevisions", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -138,6 +144,10 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonCodeGuruSecurityException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

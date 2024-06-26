@@ -57,6 +57,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         public AgentPreview Unmarshall(JsonUnmarshallerContext context)
         {
             AgentPreview unmarshalledObject = new AgentPreview();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

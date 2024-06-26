@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public UdpContainerSettings Unmarshall(JsonUnmarshallerContext context)
         {
             UdpContainerSettings unmarshalledObject = new UdpContainerSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         public S3RepositoryDetails Unmarshall(JsonUnmarshallerContext context)
         {
             S3RepositoryDetails unmarshalledObject = new S3RepositoryDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

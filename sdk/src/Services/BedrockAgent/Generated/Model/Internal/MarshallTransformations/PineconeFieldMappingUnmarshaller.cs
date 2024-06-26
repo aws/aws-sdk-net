@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public PineconeFieldMapping Unmarshall(JsonUnmarshallerContext context)
         {
             PineconeFieldMapping unmarshalledObject = new PineconeFieldMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

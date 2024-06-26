@@ -57,6 +57,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         public BackendAPIConflictResolution Unmarshall(JsonUnmarshallerContext context)
         {
             BackendAPIConflictResolution unmarshalledObject = new BackendAPIConflictResolution();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

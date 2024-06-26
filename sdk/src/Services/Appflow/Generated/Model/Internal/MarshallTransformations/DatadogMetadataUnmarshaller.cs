@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public DatadogMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             DatadogMetadata unmarshalledObject = new DatadogMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

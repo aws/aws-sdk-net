@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public S3WordsList Unmarshall(JsonUnmarshallerContext context)
         {
             S3WordsList unmarshalledObject = new S3WordsList();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

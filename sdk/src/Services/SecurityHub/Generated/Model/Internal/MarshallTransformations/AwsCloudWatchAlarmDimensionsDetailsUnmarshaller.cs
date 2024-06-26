@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsCloudWatchAlarmDimensionsDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsCloudWatchAlarmDimensionsDetails unmarshalledObject = new AwsCloudWatchAlarmDimensionsDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

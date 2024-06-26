@@ -57,6 +57,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public PlaceGeometry Unmarshall(JsonUnmarshallerContext context)
         {
             PlaceGeometry unmarshalledObject = new PlaceGeometry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

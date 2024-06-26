@@ -57,6 +57,8 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         public AlertManagerDefinitionStatus Unmarshall(JsonUnmarshallerContext context)
         {
             AlertManagerDefinitionStatus unmarshalledObject = new AlertManagerDefinitionStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

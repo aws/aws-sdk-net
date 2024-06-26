@@ -57,6 +57,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         public ProblemDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ProblemDetail unmarshalledObject = new ProblemDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

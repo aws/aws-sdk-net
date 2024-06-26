@@ -77,13 +77,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                             int publicRequestlistValuelistValueIndex = 1;
                             foreach(var publicRequestlistValuelistValue in publicRequestlistValue.DBSecurityGroupMemberships)
                             {
-                                request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DBSecurityGroupMemberships" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                request.Parameters.Add("OptionsToInclude" + "." + "OptionConfiguration" + "." + publicRequestlistValueIndex + "." + "DBSecurityGroupMemberships" + "." + "DBSecurityGroupName" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
                         if(publicRequestlistValue.IsSetOptionName())
                         {
-                            request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
+                            request.Parameters.Add("OptionsToInclude" + "." + "OptionConfiguration" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
                         }
                         if(publicRequestlistValue.IsSetOptionSettings())
                         {
@@ -92,57 +92,57 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                             {
                                 if(publicRequestlistValuelistValue.IsSetAllowedValues())
                                 {
-                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "AllowedValues", StringUtils.FromString(publicRequestlistValuelistValue.AllowedValues));
+                                    request.Parameters.Add("OptionsToInclude" + "." + "OptionConfiguration" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "OptionSetting" + "." + publicRequestlistValuelistValueIndex + "." + "AllowedValues", StringUtils.FromString(publicRequestlistValuelistValue.AllowedValues));
                                 }
                                 if(publicRequestlistValuelistValue.IsSetApplyType())
                                 {
-                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "ApplyType", StringUtils.FromString(publicRequestlistValuelistValue.ApplyType));
+                                    request.Parameters.Add("OptionsToInclude" + "." + "OptionConfiguration" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "OptionSetting" + "." + publicRequestlistValuelistValueIndex + "." + "ApplyType", StringUtils.FromString(publicRequestlistValuelistValue.ApplyType));
                                 }
                                 if(publicRequestlistValuelistValue.IsSetDataType())
                                 {
-                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "DataType", StringUtils.FromString(publicRequestlistValuelistValue.DataType));
+                                    request.Parameters.Add("OptionsToInclude" + "." + "OptionConfiguration" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "OptionSetting" + "." + publicRequestlistValuelistValueIndex + "." + "DataType", StringUtils.FromString(publicRequestlistValuelistValue.DataType));
                                 }
                                 if(publicRequestlistValuelistValue.IsSetDefaultValue())
                                 {
-                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "DefaultValue", StringUtils.FromString(publicRequestlistValuelistValue.DefaultValue));
+                                    request.Parameters.Add("OptionsToInclude" + "." + "OptionConfiguration" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "OptionSetting" + "." + publicRequestlistValuelistValueIndex + "." + "DefaultValue", StringUtils.FromString(publicRequestlistValuelistValue.DefaultValue));
                                 }
                                 if(publicRequestlistValuelistValue.IsSetDescription())
                                 {
-                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
+                                    request.Parameters.Add("OptionsToInclude" + "." + "OptionConfiguration" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "OptionSetting" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
                                 }
                                 if(publicRequestlistValuelistValue.IsSetIsCollection())
                                 {
-                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "IsCollection", StringUtils.FromBool(publicRequestlistValuelistValue.IsCollection));
+                                    request.Parameters.Add("OptionsToInclude" + "." + "OptionConfiguration" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "OptionSetting" + "." + publicRequestlistValuelistValueIndex + "." + "IsCollection", StringUtils.FromBool(publicRequestlistValuelistValue.IsCollection));
                                 }
                                 if(publicRequestlistValuelistValue.IsSetIsModifiable())
                                 {
-                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "IsModifiable", StringUtils.FromBool(publicRequestlistValuelistValue.IsModifiable));
+                                    request.Parameters.Add("OptionsToInclude" + "." + "OptionConfiguration" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "OptionSetting" + "." + publicRequestlistValuelistValueIndex + "." + "IsModifiable", StringUtils.FromBool(publicRequestlistValuelistValue.IsModifiable));
                                 }
                                 if(publicRequestlistValuelistValue.IsSetName())
                                 {
-                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValuelistValue.Name));
+                                    request.Parameters.Add("OptionsToInclude" + "." + "OptionConfiguration" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "OptionSetting" + "." + publicRequestlistValuelistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValuelistValue.Name));
                                 }
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
-                                    request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                    request.Parameters.Add("OptionsToInclude" + "." + "OptionConfiguration" + "." + publicRequestlistValueIndex + "." + "OptionSettings" + "." + "OptionSetting" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
                         if(publicRequestlistValue.IsSetOptionVersion())
                         {
-                            request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionVersion", StringUtils.FromString(publicRequestlistValue.OptionVersion));
+                            request.Parameters.Add("OptionsToInclude" + "." + "OptionConfiguration" + "." + publicRequestlistValueIndex + "." + "OptionVersion", StringUtils.FromString(publicRequestlistValue.OptionVersion));
                         }
                         if(publicRequestlistValue.IsSetPort())
                         {
-                            request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Port", StringUtils.FromInt(publicRequestlistValue.Port));
+                            request.Parameters.Add("OptionsToInclude" + "." + "OptionConfiguration" + "." + publicRequestlistValueIndex + "." + "Port", StringUtils.FromInt(publicRequestlistValue.Port));
                         }
                         if(publicRequestlistValue.IsSetVpcSecurityGroupMemberships())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
                             foreach(var publicRequestlistValuelistValue in publicRequestlistValue.VpcSecurityGroupMemberships)
                             {
-                                request.Parameters.Add("OptionsToInclude" + "." + "member" + "." + publicRequestlistValueIndex + "." + "VpcSecurityGroupMemberships" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                request.Parameters.Add("OptionsToInclude" + "." + "OptionConfiguration" + "." + publicRequestlistValueIndex + "." + "VpcSecurityGroupMemberships" + "." + "VpcSecurityGroupId" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }

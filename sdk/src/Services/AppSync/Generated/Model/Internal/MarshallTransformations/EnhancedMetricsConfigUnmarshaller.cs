@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public EnhancedMetricsConfig Unmarshall(JsonUnmarshallerContext context)
         {
             EnhancedMetricsConfig unmarshalledObject = new EnhancedMetricsConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public AttributeSuggestionsDescribeConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AttributeSuggestionsDescribeConfig unmarshalledObject = new AttributeSuggestionsDescribeConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

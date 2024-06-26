@@ -31,7 +31,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the PutClassificationExportConfiguration operation.
-    /// Creates or updates the configuration settings for storing data classification results.
+    /// Adds or updates the configuration settings for storing data classification results.
     /// </summary>
     public partial class PutClassificationExportConfigurationRequest : AmazonMacie2Request
     {

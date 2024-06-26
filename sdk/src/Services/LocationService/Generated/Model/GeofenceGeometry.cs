@@ -34,8 +34,9 @@ namespace Amazon.LocationService.Model
     /// 
     ///  
     /// <para>
-    /// A geofence geometry is made up of either a polygon or a circle. Can be either a polygon
-    /// or a circle. Including both will return a validation error.
+    /// A geofence geometry is made up of either a polygon or a circle. Can be a polygon,
+    /// a circle or a polygon encoded in Geobuf format. Including multiple selections will
+    /// return a validation error.
     /// </para>
     ///  <note> 
     /// <para>
@@ -47,6 +48,7 @@ namespace Amazon.LocationService.Model
     public partial class GeofenceGeometry
     {
         private Circle _circle;
+        private MemoryStream _geobuf;
         private List<List<List<double>>> _polygon = AWSConfigs.InitializeCollections ? new List<List<List<double>>>() : null;
 
         /// <summary>
@@ -66,6 +68,30 @@ namespace Amazon.LocationService.Model
         internal bool IsSetCircle()
         {
             return this._circle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Geobuf. 
+        /// <para>
+        /// Geobuf is a compact binary encoding for geographic data that provides lossless compression
+        /// of GeoJSON polygons. The Geobuf must be Base64-encoded.
+        /// </para>
+        ///  
+        /// <para>
+        /// A polygon in Geobuf format can have up to 100,000 vertices.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=600000)]
+        public MemoryStream Geobuf
+        {
+            get { return this._geobuf; }
+            set { this._geobuf = value; }
+        }
+
+        // Check to see if Geobuf property is set
+        internal bool IsSetGeobuf()
+        {
+            return this._geobuf != null;
         }
 
         /// <summary>

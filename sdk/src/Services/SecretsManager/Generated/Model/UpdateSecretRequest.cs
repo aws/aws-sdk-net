@@ -220,6 +220,12 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// You can't access this parameter in the Secrets Manager console.
         /// </para>
+        ///  
+        /// <para>
+        /// Sensitive: This field contains sensitive information, so the service does not include
+        /// it in CloudTrail log entries. If you create your own log entries, you must also avoid
+        /// logging the information in this field.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=65536)]
         public MemoryStream SecretBinary
@@ -269,6 +275,12 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// Either <c>SecretBinary</c> or <c>SecretString</c> must have a value, but not both.
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Sensitive: This field contains sensitive information, so the service does not include
+        /// it in CloudTrail log entries. If you create your own log entries, you must also avoid
+        /// logging the information in this field.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=65536)]

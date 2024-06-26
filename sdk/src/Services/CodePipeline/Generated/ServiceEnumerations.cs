@@ -545,6 +545,56 @@ namespace Amazon.CodePipeline
 
 
     /// <summary>
+    /// Constants used for properties of type ExecutionType.
+    /// </summary>
+    public class ExecutionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ROLLBACK for ExecutionType
+        /// </summary>
+        public static readonly ExecutionType ROLLBACK = new ExecutionType("ROLLBACK");
+        /// <summary>
+        /// Constant STANDARD for ExecutionType
+        /// </summary>
+        public static readonly ExecutionType STANDARD = new ExecutionType("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionType FindValue(string value)
+        {
+            return FindValue<ExecutionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExecutorType.
     /// </summary>
     public class ExecutorType : ConstantClass
@@ -951,6 +1001,52 @@ namespace Amazon.CodePipeline
 
 
     /// <summary>
+    /// Constants used for properties of type Result.
+    /// </summary>
+    public class Result : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ROLLBACK for Result
+        /// </summary>
+        public static readonly Result ROLLBACK = new Result("ROLLBACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Result(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Result FindValue(string value)
+        {
+            return FindValue<Result>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Result(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SourceRevisionType.
     /// </summary>
     public class SourceRevisionType : ConstantClass
@@ -964,6 +1060,10 @@ namespace Amazon.CodePipeline
         /// Constant IMAGE_DIGEST for SourceRevisionType
         /// </summary>
         public static readonly SourceRevisionType IMAGE_DIGEST = new SourceRevisionType("IMAGE_DIGEST");
+        /// <summary>
+        /// Constant S3_OBJECT_KEY for SourceRevisionType
+        /// </summary>
+        public static readonly SourceRevisionType S3_OBJECT_KEY = new SourceRevisionType("S3_OBJECT_KEY");
         /// <summary>
         /// Constant S3_OBJECT_VERSION_ID for SourceRevisionType
         /// </summary>
@@ -1227,6 +1327,10 @@ namespace Amazon.CodePipeline
     {
 
         /// <summary>
+        /// Constant AutomatedRollback for TriggerType
+        /// </summary>
+        public static readonly TriggerType AutomatedRollback = new TriggerType("AutomatedRollback");
+        /// <summary>
         /// Constant CloudWatchEvent for TriggerType
         /// </summary>
         public static readonly TriggerType CloudWatchEvent = new TriggerType("CloudWatchEvent");
@@ -1234,6 +1338,10 @@ namespace Amazon.CodePipeline
         /// Constant CreatePipeline for TriggerType
         /// </summary>
         public static readonly TriggerType CreatePipeline = new TriggerType("CreatePipeline");
+        /// <summary>
+        /// Constant ManualRollback for TriggerType
+        /// </summary>
+        public static readonly TriggerType ManualRollback = new TriggerType("ManualRollback");
         /// <summary>
         /// Constant PollForSourceChanges for TriggerType
         /// </summary>

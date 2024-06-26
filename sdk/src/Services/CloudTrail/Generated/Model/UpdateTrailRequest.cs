@@ -300,8 +300,8 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property S3BucketName. 
         /// <para>
         /// Specifies the name of the Amazon S3 bucket designated for publishing log files. See
-        /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
-        /// S3 Bucket Naming Requirements</a>.
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Amazon
+        /// S3 Bucket naming rules</a>.
         /// </para>
         /// </summary>
         public string S3BucketName
@@ -320,7 +320,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property S3KeyPrefix. 
         /// <para>
         /// Specifies the Amazon S3 key prefix that comes after the name of the bucket you have
-        /// designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+        /// designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/get-and-view-cloudtrail-log-files.html#cloudtrail-find-log-files">Finding
         /// Your CloudTrail Log Files</a>. The maximum length is 200 characters.
         /// </para>
         /// </summary>

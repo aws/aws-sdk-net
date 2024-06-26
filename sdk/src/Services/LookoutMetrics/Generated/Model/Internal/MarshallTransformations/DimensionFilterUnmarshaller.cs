@@ -57,6 +57,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public DimensionFilter Unmarshall(JsonUnmarshallerContext context)
         {
             DimensionFilter unmarshalledObject = new DimensionFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

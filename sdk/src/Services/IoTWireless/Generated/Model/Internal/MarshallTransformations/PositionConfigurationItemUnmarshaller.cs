@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public PositionConfigurationItem Unmarshall(JsonUnmarshallerContext context)
         {
             PositionConfigurationItem unmarshalledObject = new PositionConfigurationItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

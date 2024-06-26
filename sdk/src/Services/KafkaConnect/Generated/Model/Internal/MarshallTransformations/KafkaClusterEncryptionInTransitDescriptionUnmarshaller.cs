@@ -57,6 +57,8 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         public KafkaClusterEncryptionInTransitDescription Unmarshall(JsonUnmarshallerContext context)
         {
             KafkaClusterEncryptionInTransitDescription unmarshalledObject = new KafkaClusterEncryptionInTransitDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public EnvironmentVariable Unmarshall(JsonUnmarshallerContext context)
         {
             EnvironmentVariable unmarshalledObject = new EnvironmentVariable();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
         public TaskError Unmarshall(JsonUnmarshallerContext context)
         {
             TaskError unmarshalledObject = new TaskError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

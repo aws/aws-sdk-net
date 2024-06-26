@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public UpgradeStepItem Unmarshall(JsonUnmarshallerContext context)
         {
             UpgradeStepItem unmarshalledObject = new UpgradeStepItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public TransferringInputDeviceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             TransferringInputDeviceSummary unmarshalledObject = new TransferringInputDeviceSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -1995,6 +1995,9 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/RedriveExecution">REST API Reference for RedriveExecution Operation</seealso>
         public virtual Task<RedriveExecutionResponse> RedriveExecutionAsync(RedriveExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2925,6 +2928,73 @@ namespace Amazon.StepFunctions
             options.ResponseUnmarshaller = UpdateStateMachineAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateStateMachineAliasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ValidateStateMachineDefinition
+
+        internal virtual ValidateStateMachineDefinitionResponse ValidateStateMachineDefinition(ValidateStateMachineDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ValidateStateMachineDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateStateMachineDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<ValidateStateMachineDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Validates the syntax of a state machine definition.
+        /// 
+        ///  
+        /// <para>
+        /// You can validate that a state machine definition is correct without creating a state
+        /// machine resource. Step Functions will implicitly perform the same syntax check when
+        /// you invoke <c>CreateStateMachine</c> and <c>UpdateStateMachine</c>. State machine
+        /// definitions are specified using a JSON-based, structured language. For more information
+        /// on Amazon States Language see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+        /// States Language</a> (ASL). 
+        /// </para>
+        ///  
+        /// <para>
+        /// Suggested uses for <c>ValidateStateMachineDefinition</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Integrate automated checks into your code review or Continuous Integration (CI) process
+        /// to validate state machine definitions before starting deployments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Run the validation from a Git pre-commit hook to check your state machine definitions
+        /// before committing them to your source repository.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Errors found in the state machine definition will be returned in the response as a
+        /// list of <b>diagnostic elements</b>, rather than raise an exception.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateStateMachineDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateStateMachineDefinition service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ValidateStateMachineDefinition">REST API Reference for ValidateStateMachineDefinition Operation</seealso>
+        public virtual Task<ValidateStateMachineDefinitionResponse> ValidateStateMachineDefinitionAsync(ValidateStateMachineDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ValidateStateMachineDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateStateMachineDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ValidateStateMachineDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion

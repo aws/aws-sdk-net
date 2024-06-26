@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public NetworkFirewallMissingSubnetViolation Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkFirewallMissingSubnetViolation unmarshalledObject = new NetworkFirewallMissingSubnetViolation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

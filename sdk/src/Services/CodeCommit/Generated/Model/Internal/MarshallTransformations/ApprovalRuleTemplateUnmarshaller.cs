@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public ApprovalRuleTemplate Unmarshall(JsonUnmarshallerContext context)
         {
             ApprovalRuleTemplate unmarshalledObject = new ApprovalRuleTemplate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

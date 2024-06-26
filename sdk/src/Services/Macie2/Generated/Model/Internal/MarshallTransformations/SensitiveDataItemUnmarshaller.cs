@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public SensitiveDataItem Unmarshall(JsonUnmarshallerContext context)
         {
             SensitiveDataItem unmarshalledObject = new SensitiveDataItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
         public Task Unmarshall(JsonUnmarshallerContext context)
         {
             Task unmarshalledObject = new Task();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

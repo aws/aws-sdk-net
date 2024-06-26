@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public EventBridgeRuleTemplateTarget Unmarshall(JsonUnmarshallerContext context)
         {
             EventBridgeRuleTemplateTarget unmarshalledObject = new EventBridgeRuleTemplateTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

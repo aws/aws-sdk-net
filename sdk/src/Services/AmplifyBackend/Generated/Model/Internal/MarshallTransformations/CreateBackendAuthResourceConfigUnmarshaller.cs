@@ -57,6 +57,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         public CreateBackendAuthResourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             CreateBackendAuthResourceConfig unmarshalledObject = new CreateBackendAuthResourceConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

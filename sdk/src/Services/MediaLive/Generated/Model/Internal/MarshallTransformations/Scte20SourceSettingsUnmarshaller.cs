@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public Scte20SourceSettings Unmarshall(JsonUnmarshallerContext context)
         {
             Scte20SourceSettings unmarshalledObject = new Scte20SourceSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

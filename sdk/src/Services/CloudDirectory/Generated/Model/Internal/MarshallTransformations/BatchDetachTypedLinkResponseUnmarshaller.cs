@@ -57,6 +57,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         public BatchDetachTypedLinkResponse Unmarshall(JsonUnmarshallerContext context)
         {
             BatchDetachTypedLinkResponse unmarshalledObject = new BatchDetachTypedLinkResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

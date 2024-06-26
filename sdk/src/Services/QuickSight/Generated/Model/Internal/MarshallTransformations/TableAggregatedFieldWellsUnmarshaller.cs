@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TableAggregatedFieldWells Unmarshall(JsonUnmarshallerContext context)
         {
             TableAggregatedFieldWells unmarshalledObject = new TableAggregatedFieldWells();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

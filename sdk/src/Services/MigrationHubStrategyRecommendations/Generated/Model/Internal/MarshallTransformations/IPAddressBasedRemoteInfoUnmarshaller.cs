@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public IPAddressBasedRemoteInfo Unmarshall(JsonUnmarshallerContext context)
         {
             IPAddressBasedRemoteInfo unmarshalledObject = new IPAddressBasedRemoteInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

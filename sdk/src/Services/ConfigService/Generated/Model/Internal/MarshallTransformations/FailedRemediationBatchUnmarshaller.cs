@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public FailedRemediationBatch Unmarshall(JsonUnmarshallerContext context)
         {
             FailedRemediationBatch unmarshalledObject = new FailedRemediationBatch();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

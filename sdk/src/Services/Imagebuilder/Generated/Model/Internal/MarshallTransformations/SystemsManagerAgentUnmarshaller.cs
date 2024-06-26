@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public SystemsManagerAgent Unmarshall(JsonUnmarshallerContext context)
         {
             SystemsManagerAgent unmarshalledObject = new SystemsManagerAgent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

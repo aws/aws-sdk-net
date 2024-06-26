@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public ComputeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ComputeConfiguration unmarshalledObject = new ComputeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

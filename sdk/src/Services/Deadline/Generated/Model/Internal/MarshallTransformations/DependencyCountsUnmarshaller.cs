@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public DependencyCounts Unmarshall(JsonUnmarshallerContext context)
         {
             DependencyCounts unmarshalledObject = new DependencyCounts();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public LastSync Unmarshall(JsonUnmarshallerContext context)
         {
             LastSync unmarshalledObject = new LastSync();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

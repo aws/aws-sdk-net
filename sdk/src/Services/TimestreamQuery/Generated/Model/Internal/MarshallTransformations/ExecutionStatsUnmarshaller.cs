@@ -57,6 +57,8 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         public ExecutionStats Unmarshall(JsonUnmarshallerContext context)
         {
             ExecutionStats unmarshalledObject = new ExecutionStats();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     unmarshalledObject.BytesMetered = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CumulativeBytesScanned", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.CumulativeBytesScanned = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DataWrites", targetDepth))

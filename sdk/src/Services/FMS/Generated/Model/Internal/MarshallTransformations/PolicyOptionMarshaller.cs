@@ -48,6 +48,17 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetNetworkAclCommonPolicy())
+            {
+                context.Writer.WritePropertyName("NetworkAclCommonPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NetworkAclCommonPolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.NetworkAclCommonPolicy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNetworkFirewallPolicy())
             {
                 context.Writer.WritePropertyName("NetworkFirewallPolicy");

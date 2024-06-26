@@ -57,6 +57,8 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
         public CustomizedLoadMetricSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             CustomizedLoadMetricSpecification unmarshalledObject = new CustomizedLoadMetricSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

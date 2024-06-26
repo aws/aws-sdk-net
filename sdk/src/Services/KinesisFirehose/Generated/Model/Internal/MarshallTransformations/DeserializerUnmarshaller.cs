@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public Deserializer Unmarshall(JsonUnmarshallerContext context)
         {
             Deserializer unmarshalledObject = new Deserializer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

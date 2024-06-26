@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public SensitivityInspectionTemplatesEntry Unmarshall(JsonUnmarshallerContext context)
         {
             SensitivityInspectionTemplatesEntry unmarshalledObject = new SensitivityInspectionTemplatesEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

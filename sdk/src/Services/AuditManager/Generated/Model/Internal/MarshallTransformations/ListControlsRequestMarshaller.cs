@@ -60,6 +60,9 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetControlCatalogId())
+                request.Parameters.Add("controlCatalogId", StringUtils.FromString(publicRequest.ControlCatalogId));
+            
             if (publicRequest.IsSetControlType())
                 request.Parameters.Add("controlType", StringUtils.FromString(publicRequest.ControlType));
             

@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public JobFlowExecutionStatusDetail Unmarshall(JsonUnmarshallerContext context)
         {
             JobFlowExecutionStatusDetail unmarshalledObject = new JobFlowExecutionStatusDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -282,19 +282,15 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property SubMunicipality. 
         /// <para>
-        /// An area that's part of a larger municipality. For example, <c>Blissville</c> is a
+        /// An area that's part of a larger municipality. For example, <c>Blissville </c> is a
         /// submunicipality in the Queen County in New York.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This property is only returned for a place index that uses Esri as a data provider.
-        /// The property is represented as a <c>district</c>.
+        /// This property supported by Esri and OpenData. The Esri property is <c>district</c>,
+        /// and the OpenData property is <c>borough</c>.
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-        /// Location Service data providers</a>.
-        /// </para>
+        ///  </note>
         /// </summary>
         public string SubMunicipality
         {
@@ -373,8 +369,8 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This property is returned only for a place index that uses Esri or Grab as a data
-        /// provider. It is not returned for <c>SearchPlaceIndexForPosition</c>.
+        /// Returned only for a place index that uses Esri or Grab as a data provider. Is not
+        /// returned for <c>SearchPlaceIndexForPosition</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -397,7 +393,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This property is returned only for a place index that uses Esri as a data provider.
+        /// Returned only for a place index that uses Esri as a data provider.
         /// </para>
         ///  </note>
         /// </summary>

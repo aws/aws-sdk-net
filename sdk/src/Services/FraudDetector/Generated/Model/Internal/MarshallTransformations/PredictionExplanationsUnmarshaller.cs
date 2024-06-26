@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public PredictionExplanations Unmarshall(JsonUnmarshallerContext context)
         {
             PredictionExplanations unmarshalledObject = new PredictionExplanations();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

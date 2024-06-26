@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public InstancePortState Unmarshall(JsonUnmarshallerContext context)
         {
             InstancePortState unmarshalledObject = new InstancePortState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

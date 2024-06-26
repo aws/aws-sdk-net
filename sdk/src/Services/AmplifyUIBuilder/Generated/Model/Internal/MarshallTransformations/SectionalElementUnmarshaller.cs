@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public SectionalElement Unmarshall(JsonUnmarshallerContext context)
         {
             SectionalElement unmarshalledObject = new SectionalElement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

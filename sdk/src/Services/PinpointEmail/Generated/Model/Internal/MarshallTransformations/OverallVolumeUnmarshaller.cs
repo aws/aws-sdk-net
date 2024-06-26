@@ -57,6 +57,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         public OverallVolume Unmarshall(JsonUnmarshallerContext context)
         {
             OverallVolume unmarshalledObject = new OverallVolume();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

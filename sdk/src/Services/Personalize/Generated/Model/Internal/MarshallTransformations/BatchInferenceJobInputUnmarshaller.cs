@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public BatchInferenceJobInput Unmarshall(JsonUnmarshallerContext context)
         {
             BatchInferenceJobInput unmarshalledObject = new BatchInferenceJobInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

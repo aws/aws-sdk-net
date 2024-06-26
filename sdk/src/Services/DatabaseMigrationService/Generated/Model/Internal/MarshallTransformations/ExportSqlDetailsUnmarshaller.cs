@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public ExportSqlDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ExportSqlDetails unmarshalledObject = new ExportSqlDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRedshiftClusterElasticIpStatus Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRedshiftClusterElasticIpStatus unmarshalledObject = new AwsRedshiftClusterElasticIpStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

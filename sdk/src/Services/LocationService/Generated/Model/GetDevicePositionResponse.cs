@@ -119,8 +119,9 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property ReceivedTime. 
         /// <para>
-        /// The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
-        /// ISO 8601 </a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
+        /// The timestamp for when the tracker resource received the device position. Uses <a
+        /// href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format:
+        /// <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -42,6 +42,12 @@ namespace Amazon.Glue.Model
         /// </summary>
         public IPaginatedEnumerable<ListTriggersResponse> Responses => new PaginatedResponse<ListTriggersResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the TriggerNames
+        /// </summary>
+        public IPaginatedEnumerable<string> TriggerNames => 
+            new PaginatedResultKeyResponse<ListTriggersResponse, string>(this, (i) => i.TriggerNames ?? new List<string>());
+
         internal ListTriggersPaginator(IAmazonGlue client, ListTriggersRequest request)
         {
             this._client = client;

@@ -413,6 +413,22 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for SearchContactFlowModules operation
+        ///</summary>
+        public ISearchContactFlowModulesPaginator SearchContactFlowModules(SearchContactFlowModulesRequest request) 
+        {
+            return new SearchContactFlowModulesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchContactFlows operation
+        ///</summary>
+        public ISearchContactFlowsPaginator SearchContactFlows(SearchContactFlowsRequest request) 
+        {
+            return new SearchContactFlowsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchContacts operation
         ///</summary>
         public ISearchContactsPaginator SearchContacts(SearchContactsRequest request) 

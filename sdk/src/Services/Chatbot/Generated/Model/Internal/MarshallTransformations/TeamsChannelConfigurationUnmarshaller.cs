@@ -57,6 +57,8 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
         public TeamsChannelConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TeamsChannelConfiguration unmarshalledObject = new TeamsChannelConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -110,6 +112,12 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SnsTopicArns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TeamId", targetDepth))

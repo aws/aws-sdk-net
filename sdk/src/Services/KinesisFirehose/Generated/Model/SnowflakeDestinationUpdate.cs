@@ -48,6 +48,7 @@ namespace Amazon.KinesisFirehose.Model
         private SnowflakeS3BackupMode _s3BackupMode;
         private S3DestinationUpdate _s3Update;
         private string _schema;
+        private SecretsManagerConfiguration _secretsManagerConfiguration;
         private SnowflakeRoleConfiguration _snowflakeRoleConfiguration;
         private string _table;
         private string _user;
@@ -321,6 +322,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetSchema()
         {
             return this._schema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManagerConfiguration. 
+        /// <para>
+        ///  Describes the Secrets Manager configuration in Snowflake. 
+        /// </para>
+        /// </summary>
+        public SecretsManagerConfiguration SecretsManagerConfiguration
+        {
+            get { return this._secretsManagerConfiguration; }
+            set { this._secretsManagerConfiguration = value; }
+        }
+
+        // Check to see if SecretsManagerConfiguration property is set
+        internal bool IsSetSecretsManagerConfiguration()
+        {
+            return this._secretsManagerConfiguration != null;
         }
 
         /// <summary>

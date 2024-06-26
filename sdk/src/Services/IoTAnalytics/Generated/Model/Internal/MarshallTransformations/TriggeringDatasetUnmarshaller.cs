@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public TriggeringDataset Unmarshall(JsonUnmarshallerContext context)
         {
             TriggeringDataset unmarshalledObject = new TriggeringDataset();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public WordCloudVisual Unmarshall(JsonUnmarshallerContext context)
         {
             WordCloudVisual unmarshalledObject = new WordCloudVisual();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

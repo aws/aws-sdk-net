@@ -57,6 +57,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         public CustomerAgentlessCollectorInfo Unmarshall(JsonUnmarshallerContext context)
         {
             CustomerAgentlessCollectorInfo unmarshalledObject = new CustomerAgentlessCollectorInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

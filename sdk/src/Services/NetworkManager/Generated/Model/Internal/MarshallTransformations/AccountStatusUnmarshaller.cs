@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public AccountStatus Unmarshall(JsonUnmarshallerContext context)
         {
             AccountStatus unmarshalledObject = new AccountStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

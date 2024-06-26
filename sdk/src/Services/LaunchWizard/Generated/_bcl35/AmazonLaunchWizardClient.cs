@@ -349,6 +349,10 @@ namespace Amazon.LaunchWizard
         /// An internal error has occurred. Retry your request, but if the problem persists, contact
         /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
         /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceLimitException">
+        /// You have exceeded an Launch Wizard resource limit. For example, you might have too
+        /// many deployments in progress.
+        /// </exception>
         /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
         /// The specified workload or deployment resource can't be found.
         /// </exception>
@@ -529,6 +533,73 @@ namespace Amazon.LaunchWizard
 
         #endregion
         
+        #region  GetWorkloadDeploymentPattern
+
+        /// <summary>
+        /// Returns details for a given workload and deployment pattern, including the available
+        /// specifications. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">ListWorkloads</a>
+        /// operation to discover the available workload names and the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">ListWorkloadDeploymentPatterns</a>
+        /// operation to discover the available deployment pattern names of a given workload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkloadDeploymentPattern service method.</param>
+        /// 
+        /// <returns>The response from the GetWorkloadDeploymentPattern service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetWorkloadDeploymentPattern">REST API Reference for GetWorkloadDeploymentPattern Operation</seealso>
+        public virtual GetWorkloadDeploymentPatternResponse GetWorkloadDeploymentPattern(GetWorkloadDeploymentPatternRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkloadDeploymentPatternRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkloadDeploymentPatternResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkloadDeploymentPatternResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetWorkloadDeploymentPattern operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkloadDeploymentPattern operation on AmazonLaunchWizardClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetWorkloadDeploymentPattern
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetWorkloadDeploymentPattern">REST API Reference for GetWorkloadDeploymentPattern Operation</seealso>
+        public virtual IAsyncResult BeginGetWorkloadDeploymentPattern(GetWorkloadDeploymentPatternRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkloadDeploymentPatternRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkloadDeploymentPatternResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetWorkloadDeploymentPattern operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetWorkloadDeploymentPattern.</param>
+        /// 
+        /// <returns>Returns a  GetWorkloadDeploymentPatternResult from LaunchWizard.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetWorkloadDeploymentPattern">REST API Reference for GetWorkloadDeploymentPattern Operation</seealso>
+        public virtual GetWorkloadDeploymentPatternResponse EndGetWorkloadDeploymentPattern(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetWorkloadDeploymentPatternResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDeploymentEvents
 
         /// <summary>
@@ -654,10 +725,76 @@ namespace Amazon.LaunchWizard
 
         #endregion
         
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Lists the tags associated with a specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonLaunchWizardClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from LaunchWizard.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListWorkloadDeploymentPatterns
 
         /// <summary>
-        /// Lists the workload deployment patterns.
+        /// Lists the workload deployment patterns for a given workload name. You can use the
+        /// <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">ListWorkloads</a>
+        /// operation to discover the available workload names.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkloadDeploymentPatterns service method.</param>
         /// 
@@ -721,7 +858,8 @@ namespace Amazon.LaunchWizard
         #region  ListWorkloads
 
         /// <summary>
-        /// Lists the workloads.
+        /// Lists the available workload names. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">ListWorkloadDeploymentPatterns</a>
+        /// operation to discover the available deployment patterns for a given workload.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkloads service method.</param>
         /// 
@@ -775,6 +913,134 @@ namespace Amazon.LaunchWizard
         public virtual ListWorkloadsResponse EndListWorkloads(IAsyncResult asyncResult)
         {
             return EndInvoke<ListWorkloadsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        /// <summary>
+        /// Adds the specified tags to the given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonLaunchWizardClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from LaunchWizard.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes the specified tags from the given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonLaunchWizardClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from LaunchWizard.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
         }
 
         #endregion

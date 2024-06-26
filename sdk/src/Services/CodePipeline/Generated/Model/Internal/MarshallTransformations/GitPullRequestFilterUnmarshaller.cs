@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public GitPullRequestFilter Unmarshall(JsonUnmarshallerContext context)
         {
             GitPullRequestFilter unmarshalledObject = new GitPullRequestFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

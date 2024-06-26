@@ -57,6 +57,8 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
         public NotificationRuleSummary Unmarshall(JsonUnmarshallerContext context)
         {
             NotificationRuleSummary unmarshalledObject = new NotificationRuleSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

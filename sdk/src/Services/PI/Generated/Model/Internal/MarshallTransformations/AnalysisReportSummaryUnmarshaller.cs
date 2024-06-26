@@ -57,6 +57,8 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         public AnalysisReportSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AnalysisReportSummary unmarshalledObject = new AnalysisReportSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public InsufficientSensorData Unmarshall(JsonUnmarshallerContext context)
         {
             InsufficientSensorData unmarshalledObject = new InsufficientSensorData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

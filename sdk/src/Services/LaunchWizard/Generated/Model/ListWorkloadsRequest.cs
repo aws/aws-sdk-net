@@ -31,7 +31,8 @@ namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
     /// Container for the parameters to the ListWorkloads operation.
-    /// Lists the workloads.
+    /// Lists the available workload names. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">ListWorkloadDeploymentPatterns</a>
+    /// operation to discover the available deployment patterns for a given workload.
     /// </summary>
     public partial class ListWorkloadsRequest : AmazonLaunchWizardRequest
     {

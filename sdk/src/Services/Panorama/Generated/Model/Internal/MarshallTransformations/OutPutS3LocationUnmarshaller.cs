@@ -57,6 +57,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         public OutPutS3Location Unmarshall(JsonUnmarshallerContext context)
         {
             OutPutS3Location unmarshalledObject = new OutPutS3Location();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public AiffSettings Unmarshall(JsonUnmarshallerContext context)
         {
             AiffSettings unmarshalledObject = new AiffSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

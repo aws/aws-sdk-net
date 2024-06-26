@@ -57,6 +57,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         public ManualEvidence Unmarshall(JsonUnmarshallerContext context)
         {
             ManualEvidence unmarshalledObject = new ManualEvidence();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public DashIsoEncryptionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             DashIsoEncryptionSettings unmarshalledObject = new DashIsoEncryptionSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

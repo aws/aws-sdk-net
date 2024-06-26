@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public CustomParameterValues Unmarshall(JsonUnmarshallerContext context)
         {
             CustomParameterValues unmarshalledObject = new CustomParameterValues();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

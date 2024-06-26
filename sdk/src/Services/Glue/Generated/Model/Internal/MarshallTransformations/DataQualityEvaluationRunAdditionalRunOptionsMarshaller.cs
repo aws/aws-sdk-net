@@ -54,6 +54,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CloudWatchMetricsEnabled);
             }
 
+            if(requestObject.IsSetCompositeRuleEvaluationMethod())
+            {
+                context.Writer.WritePropertyName("CompositeRuleEvaluationMethod");
+                context.Writer.Write(requestObject.CompositeRuleEvaluationMethod);
+            }
+
             if(requestObject.IsSetResultsS3Prefix())
             {
                 context.Writer.WritePropertyName("ResultsS3Prefix");

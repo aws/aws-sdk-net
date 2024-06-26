@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
-    /// The severity of the issue in the code that generated a finding.
+    /// A numeric value corresponding to the severity of a finding, such as the number of
+    /// open findings or the average time it takes to close findings of a given severity.
     /// </summary>
     public partial class FindingMetricsValuePerSeverity
     {
@@ -43,7 +44,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property Critical. 
         /// <para>
-        /// The severity of the finding is critical and should be addressed immediately.
+        /// A numeric value corresponding to a critical finding.
         /// </para>
         /// </summary>
         public double Critical
@@ -61,7 +62,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property High. 
         /// <para>
-        /// The severity of the finding is high and should be addressed as a near-term priority.
+        /// A numeric value corresponding to a high severity finding.
         /// </para>
         /// </summary>
         public double High
@@ -79,7 +80,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property Info. 
         /// <para>
-        /// The finding is related to quality or readability improvements and not considered actionable.
+        /// A numeric value corresponding to an informational finding.
         /// </para>
         /// </summary>
         public double Info
@@ -97,7 +98,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property Low. 
         /// <para>
-        /// The severity of the finding is low and does require action on its own.
+        /// A numeric value corresponding to a low severity finding.
         /// </para>
         /// </summary>
         public double Low
@@ -115,7 +116,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property Medium. 
         /// <para>
-        /// The severity of the finding is medium and should be addressed as a mid-term priority.
+        /// A numeric value corresponding to a medium severity finding.
         /// </para>
         /// </summary>
         public double Medium

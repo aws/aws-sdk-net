@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public StandardsManagedBy Unmarshall(JsonUnmarshallerContext context)
         {
             StandardsManagedBy unmarshalledObject = new StandardsManagedBy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

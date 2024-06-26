@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public RuntimeVersionError Unmarshall(JsonUnmarshallerContext context)
         {
             RuntimeVersionError unmarshalledObject = new RuntimeVersionError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

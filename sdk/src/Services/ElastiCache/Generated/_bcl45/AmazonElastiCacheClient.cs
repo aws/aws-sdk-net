@@ -7650,7 +7650,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Represents the input of a <c>TestFailover</c> operation which test automatic failover
+        /// Represents the input of a <c>TestFailover</c> operation which tests automatic failover
         /// on a specified node group (called shard in the console) in a replication group (called
         /// cluster in the console).
         /// 
@@ -7667,7 +7667,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// A customer can use this operation to test automatic failover on up to 5 shards (called
+        /// A customer can use this operation to test automatic failover on up to 15 shards (called
         /// node groups in the ElastiCache API and Amazon CLI) in any rolling 24-hour period.
         /// </para>
         ///  </li> <li> 
@@ -7778,7 +7778,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Represents the input of a <c>TestFailover</c> operation which test automatic failover
+        /// Represents the input of a <c>TestFailover</c> operation which tests automatic failover
         /// on a specified node group (called shard in the console) in a replication group (called
         /// cluster in the console).
         /// 
@@ -7795,7 +7795,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// A customer can use this operation to test automatic failover on up to 5 shards (called
+        /// A customer can use this operation to test automatic failover on up to 15 shards (called
         /// node groups in the ElastiCache API and Amazon CLI) in any rolling 24-hour period.
         /// </para>
         ///  </li> <li> 

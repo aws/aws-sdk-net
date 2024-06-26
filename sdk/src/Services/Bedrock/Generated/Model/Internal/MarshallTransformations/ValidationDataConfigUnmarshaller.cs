@@ -57,6 +57,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         public ValidationDataConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ValidationDataConfig unmarshalledObject = new ValidationDataConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

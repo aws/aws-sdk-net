@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Describes a work team of a vendor that does the a labelling job.
+    /// Describes a work team of a vendor that does the labelling job.
     /// </summary>
     public partial class SubscribedWorkteam
     {

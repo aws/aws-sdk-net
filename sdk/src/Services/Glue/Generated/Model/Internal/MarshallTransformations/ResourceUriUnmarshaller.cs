@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public ResourceUri Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceUri unmarshalledObject = new ResourceUri();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

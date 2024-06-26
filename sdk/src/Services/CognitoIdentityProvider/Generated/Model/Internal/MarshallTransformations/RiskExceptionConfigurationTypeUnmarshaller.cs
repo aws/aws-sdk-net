@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public RiskExceptionConfigurationType Unmarshall(JsonUnmarshallerContext context)
         {
             RiskExceptionConfigurationType unmarshalledObject = new RiskExceptionConfigurationType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

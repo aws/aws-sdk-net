@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public SubscriptionGrantSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SubscriptionGrantSummary unmarshalledObject = new SubscriptionGrantSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

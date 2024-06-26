@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public RunGroupListItem Unmarshall(JsonUnmarshallerContext context)
         {
             RunGroupListItem unmarshalledObject = new RunGroupListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

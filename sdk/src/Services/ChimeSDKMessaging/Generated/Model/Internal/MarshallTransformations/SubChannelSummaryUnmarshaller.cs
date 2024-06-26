@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public SubChannelSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SubChannelSummary unmarshalledObject = new SubChannelSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

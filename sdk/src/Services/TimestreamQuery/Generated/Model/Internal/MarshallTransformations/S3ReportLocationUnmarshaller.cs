@@ -57,6 +57,8 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         public S3ReportLocation Unmarshall(JsonUnmarshallerContext context)
         {
             S3ReportLocation unmarshalledObject = new S3ReportLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

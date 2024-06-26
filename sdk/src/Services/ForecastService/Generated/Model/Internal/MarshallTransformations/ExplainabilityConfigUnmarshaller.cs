@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public ExplainabilityConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ExplainabilityConfig unmarshalledObject = new ExplainabilityConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

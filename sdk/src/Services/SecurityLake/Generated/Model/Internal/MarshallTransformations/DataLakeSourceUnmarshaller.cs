@@ -57,6 +57,8 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         public DataLakeSource Unmarshall(JsonUnmarshallerContext context)
         {
             DataLakeSource unmarshalledObject = new DataLakeSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

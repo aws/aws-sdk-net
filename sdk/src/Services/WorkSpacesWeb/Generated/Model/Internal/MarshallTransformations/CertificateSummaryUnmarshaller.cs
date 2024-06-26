@@ -57,6 +57,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         public CertificateSummary Unmarshall(JsonUnmarshallerContext context)
         {
             CertificateSummary unmarshalledObject = new CertificateSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

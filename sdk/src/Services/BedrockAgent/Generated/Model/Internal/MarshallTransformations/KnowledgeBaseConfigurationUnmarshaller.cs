@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public KnowledgeBaseConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             KnowledgeBaseConfiguration unmarshalledObject = new KnowledgeBaseConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

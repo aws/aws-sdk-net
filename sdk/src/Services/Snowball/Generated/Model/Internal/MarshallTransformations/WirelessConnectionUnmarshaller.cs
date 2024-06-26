@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public WirelessConnection Unmarshall(JsonUnmarshallerContext context)
         {
             WirelessConnection unmarshalledObject = new WirelessConnection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

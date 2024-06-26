@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public FailureCause Unmarshall(JsonUnmarshallerContext context)
         {
             FailureCause unmarshalledObject = new FailureCause();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

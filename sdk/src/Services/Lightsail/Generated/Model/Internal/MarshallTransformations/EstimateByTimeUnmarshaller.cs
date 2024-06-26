@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public EstimateByTime Unmarshall(JsonUnmarshallerContext context)
         {
             EstimateByTime unmarshalledObject = new EstimateByTime();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

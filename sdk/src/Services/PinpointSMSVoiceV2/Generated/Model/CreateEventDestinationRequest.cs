@@ -83,7 +83,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Gets and sets the property CloudWatchLogsDestination. 
         /// <para>
         /// An object that contains information about an event destination for logging to Amazon
-        /// CloudWatch logs.
+        /// CloudWatch Logs.
         /// </para>
         /// </summary>
         public CloudWatchLogsDestination CloudWatchLogsDestination
@@ -169,7 +169,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Required=true, Min=1, Max=43)]
         public List<string> MatchingEventTypes
         {
             get { return this._matchingEventTypes; }

@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public TimeSeriesSummary Unmarshall(JsonUnmarshallerContext context)
         {
             TimeSeriesSummary unmarshalledObject = new TimeSeriesSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

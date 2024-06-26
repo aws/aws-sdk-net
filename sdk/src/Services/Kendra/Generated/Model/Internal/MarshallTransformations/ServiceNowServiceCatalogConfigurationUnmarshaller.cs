@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public ServiceNowServiceCatalogConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceNowServiceCatalogConfiguration unmarshalledObject = new ServiceNowServiceCatalogConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -446,44 +446,42 @@ namespace Amazon.VerifiedPermissions
 
 
         /// <summary>
-        /// Creates a reference to an Amazon Cognito user pool as an external identity provider
-        /// (IdP). 
+        /// Adds an identity source to a policy store–an Amazon Cognito user pool or OpenID Connect
+        /// (OIDC) identity provider (IdP). 
         /// 
         ///  
         /// <para>
         /// After you create an identity source, you can use the identities provided by the IdP
         /// as proxies for the principal in authorization queries that use the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a>
-        /// operation. These identities take the form of tokens that contain claims about the
-        /// user, such as IDs, attributes and group memberships. Amazon Cognito provides both
-        /// identity tokens and access tokens, and Verified Permissions can use either or both.
-        /// Any combination of identity and access tokens results in the same Cedar principal.
-        /// Verified Permissions automatically translates the information about the identities
-        /// into the standard Cedar attributes that can be evaluated by your policies. Because
-        /// the Amazon Cognito identity and access tokens can contain different information, the
-        /// tokens you choose to use determine which principal attributes are available to access
-        /// when evaluating Cedar policies.
+        /// or <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_BatchIsAuthorizedWithToken.html">BatchIsAuthorizedWithToken</a>
+        /// API operations. These identities take the form of tokens that contain claims about
+        /// the user, such as IDs, attributes and group memberships. Identity sources provide
+        /// identity (ID) tokens and access tokens. Verified Permissions derives information about
+        /// your user and session from token claims. Access tokens provide action <c>context</c>
+        /// to your policies, and ID tokens provide principal <c>Attributes</c>.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you delete a Amazon Cognito user pool or user, tokens from that deleted pool or
-        /// that deleted user continue to be usable until they expire.
+        /// Tokens from an identity source user continue to be usable until they expire. Token
+        /// revocation and resource deletion have no effect on the validity of a token in your
+        /// policy store
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// To reference a user from this identity source in your Cedar policies, use the following
-        /// syntax.
+        /// To reference a user from this identity source in your Cedar policies, refer to the
+        /// following syntax examples.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <i>IdentityType::"&lt;CognitoUserPoolIdentifier&gt;|&lt;CognitoClientId&gt;</i> 
+        /// Amazon Cognito user pool: <c>Namespace::[Entity type]::[User pool ID]|[user principal
+        /// attribute]</c>, for example <c>MyCorp::User::us-east-1_EXAMPLE|a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</c>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Where <c>IdentityType</c> is the string that you provide to the <c>PrincipalEntityType</c>
-        /// parameter for this operation. The <c>CognitoUserPoolId</c> and <c>CognitoClientId</c>
-        /// are defined by the Amazon Cognito user pool.
+        /// OpenID Connect (OIDC) provider: <c>Namespace::[Entity type]::[principalIdClaim]|[user
+        /// principal attribute]</c>, for example <c>MyCorp::User::MyOIDCProvider|a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</c>.
         /// </para>
-        ///  </note> <note> 
+        ///  </li> </ul> </note> <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
         /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
@@ -2465,8 +2463,9 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you delete a Amazon Cognito user pool or user, tokens from that deleted pool or
-        /// that deleted user continue to be usable until they expire.
+        /// Tokens from an identity source user continue to be usable until they expire. Token
+        /// revocation and resource deletion have no effect on the validity of a token in your
+        /// policy store
         /// </para>
         ///  </important>
         /// </summary>
@@ -3277,9 +3276,8 @@ namespace Amazon.VerifiedPermissions
 
 
         /// <summary>
-        /// Updates the specified identity source to use a new identity provider (IdP) source,
-        /// or to change the mapping of identities from the IdP to a different principal entity
-        /// type.
+        /// Updates the specified identity source to use a new identity provider (IdP), or to
+        /// change the mapping of identities from the IdP to a different principal entity type.
         /// 
         ///  <note> 
         /// <para>

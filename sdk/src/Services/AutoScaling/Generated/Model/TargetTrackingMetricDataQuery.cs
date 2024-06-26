@@ -81,7 +81,7 @@ namespace Amazon.AutoScaling.Model
         /// a lowercase letter. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Id
         {
             get { return this._id; }

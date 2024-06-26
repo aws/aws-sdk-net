@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public IngestedEventsTimeWindow Unmarshall(JsonUnmarshallerContext context)
         {
             IngestedEventsTimeWindow unmarshalledObject = new IngestedEventsTimeWindow();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public LambdaDetails Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaDetails unmarshalledObject = new LambdaDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

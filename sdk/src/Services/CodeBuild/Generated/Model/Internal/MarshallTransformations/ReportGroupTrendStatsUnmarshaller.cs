@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public ReportGroupTrendStats Unmarshall(JsonUnmarshallerContext context)
         {
             ReportGroupTrendStats unmarshalledObject = new ReportGroupTrendStats();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public AssetItem Unmarshall(JsonUnmarshallerContext context)
         {
             AssetItem unmarshalledObject = new AssetItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public KafkaActionHeader Unmarshall(JsonUnmarshallerContext context)
         {
             KafkaActionHeader unmarshalledObject = new KafkaActionHeader();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

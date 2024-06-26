@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public ContainerInstanceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ContainerInstanceDetails unmarshalledObject = new ContainerInstanceDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

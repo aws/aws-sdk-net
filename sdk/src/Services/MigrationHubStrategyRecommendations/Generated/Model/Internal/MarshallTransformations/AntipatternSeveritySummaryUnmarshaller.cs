@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public AntipatternSeveritySummary Unmarshall(JsonUnmarshallerContext context)
         {
             AntipatternSeveritySummary unmarshalledObject = new AntipatternSeveritySummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

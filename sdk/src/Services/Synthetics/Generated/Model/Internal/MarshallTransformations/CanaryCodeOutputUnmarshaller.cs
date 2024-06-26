@@ -57,6 +57,8 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         public CanaryCodeOutput Unmarshall(JsonUnmarshallerContext context)
         {
             CanaryCodeOutput unmarshalledObject = new CanaryCodeOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

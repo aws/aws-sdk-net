@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public MemberAccountEc2DeepInspectionStatusState Unmarshall(JsonUnmarshallerContext context)
         {
             MemberAccountEc2DeepInspectionStatusState unmarshalledObject = new MemberAccountEc2DeepInspectionStatusState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

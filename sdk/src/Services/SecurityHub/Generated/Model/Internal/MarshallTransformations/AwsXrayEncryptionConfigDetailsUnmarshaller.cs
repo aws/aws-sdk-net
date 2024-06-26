@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsXrayEncryptionConfigDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsXrayEncryptionConfigDetails unmarshalledObject = new AwsXrayEncryptionConfigDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

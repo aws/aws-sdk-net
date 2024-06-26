@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public AlexaForBusinessMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             AlexaForBusinessMetadata unmarshalledObject = new AlexaForBusinessMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

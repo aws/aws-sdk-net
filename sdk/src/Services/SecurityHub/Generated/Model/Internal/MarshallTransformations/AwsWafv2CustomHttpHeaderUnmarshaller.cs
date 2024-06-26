@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsWafv2CustomHttpHeader Unmarshall(JsonUnmarshallerContext context)
         {
             AwsWafv2CustomHttpHeader unmarshalledObject = new AwsWafv2CustomHttpHeader();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

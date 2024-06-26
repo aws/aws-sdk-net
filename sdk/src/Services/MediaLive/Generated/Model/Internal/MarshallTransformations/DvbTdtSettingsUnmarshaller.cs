@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public DvbTdtSettings Unmarshall(JsonUnmarshallerContext context)
         {
             DvbTdtSettings unmarshalledObject = new DvbTdtSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -605,11 +605,6 @@ namespace Amazon.ECS.Model
         /// The operating system that your tasks definitions run on. A platform family is specified
         /// only for tasks using the Fargate launch type. 
         /// </para>
-        ///  
-        /// <para>
-        /// When you specify a task definition in a service, this value must match the <c>runtimePlatform</c>
-        /// value of the service.
-        /// </para>
         /// </summary>
         public RuntimePlatform RuntimePlatform
         {

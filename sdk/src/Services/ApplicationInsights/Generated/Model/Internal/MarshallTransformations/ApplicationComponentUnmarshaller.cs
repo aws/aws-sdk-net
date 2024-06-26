@@ -57,6 +57,8 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
         public ApplicationComponent Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationComponent unmarshalledObject = new ApplicationComponent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

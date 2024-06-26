@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ProductionVariantServerlessConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ProductionVariantServerlessConfig unmarshalledObject = new ProductionVariantServerlessConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

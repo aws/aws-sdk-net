@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public MultiplexOutputDestination Unmarshall(JsonUnmarshallerContext context)
         {
             MultiplexOutputDestination unmarshalledObject = new MultiplexOutputDestination();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

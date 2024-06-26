@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public PieChartFieldWells Unmarshall(JsonUnmarshallerContext context)
         {
             PieChartFieldWells unmarshalledObject = new PieChartFieldWells();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRedshiftClusterVpcSecurityGroup Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRedshiftClusterVpcSecurityGroup unmarshalledObject = new AwsRedshiftClusterVpcSecurityGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// You can tag your volumes during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
-    /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -122,7 +122,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensure
         /// Idempotency</a>.
         /// </para>
         /// </summary>
@@ -192,7 +192,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For <c>io2</c> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+        /// For <c>io2</c> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances
         /// built on the Nitro System</a>. On other instances, you can achieve performance up
         /// to 32,000 IOPS.
         /// </para>
@@ -218,9 +218,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The identifier of the Key Management Service (KMS) KMS key to use for Amazon EBS encryption.
-        /// If this parameter is not specified, your KMS key for Amazon EBS is used. If <c>KmsKeyId</c>
-        /// is specified, the encrypted state must be <c>true</c>.
+        /// The identifier of the KMS key to use for Amazon EBS encryption. If this parameter
+        /// is not specified, your KMS key for Amazon EBS is used. If <c>KmsKeyId</c> is specified,
+        /// the encrypted state must be <c>true</c>.
         /// </para>
         ///  
         /// <para>
@@ -265,7 +265,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MultiAttachEnabled. 
         /// <para>
         /// Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you
-        /// can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+        /// can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Instances
         /// built on the Nitro System</a> in the same Availability Zone. This parameter is supported
         /// with <c>io1</c> and <c>io2</c> volumes only. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html">
         /// Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.

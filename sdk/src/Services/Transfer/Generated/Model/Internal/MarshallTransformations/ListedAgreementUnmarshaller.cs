@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public ListedAgreement Unmarshall(JsonUnmarshallerContext context)
         {
             ListedAgreement unmarshalledObject = new ListedAgreement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

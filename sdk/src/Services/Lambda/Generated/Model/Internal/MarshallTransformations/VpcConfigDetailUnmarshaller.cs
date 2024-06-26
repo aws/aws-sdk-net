@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public VpcConfigDetail Unmarshall(JsonUnmarshallerContext context)
         {
             VpcConfigDetail unmarshalledObject = new VpcConfigDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

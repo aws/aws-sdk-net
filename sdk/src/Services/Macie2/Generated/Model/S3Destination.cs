@@ -42,7 +42,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The name of the bucket.
+        /// The name of the bucket. This must be the name of an existing general purpose bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

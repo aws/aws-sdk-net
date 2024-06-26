@@ -57,6 +57,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public EntityDetectorConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EntityDetectorConfiguration unmarshalledObject = new EntityDetectorConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

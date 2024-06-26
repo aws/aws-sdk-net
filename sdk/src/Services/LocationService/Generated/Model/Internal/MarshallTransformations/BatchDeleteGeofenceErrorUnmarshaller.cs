@@ -57,6 +57,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public BatchDeleteGeofenceError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchDeleteGeofenceError unmarshalledObject = new BatchDeleteGeofenceError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

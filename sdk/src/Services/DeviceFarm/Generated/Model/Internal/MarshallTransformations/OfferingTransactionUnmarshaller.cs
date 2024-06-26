@@ -57,6 +57,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         public OfferingTransaction Unmarshall(JsonUnmarshallerContext context)
         {
             OfferingTransaction unmarshalledObject = new OfferingTransaction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

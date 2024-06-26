@@ -54,6 +54,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EmbeddingModelArn);
             }
 
+            if(requestObject.IsSetEmbeddingModelConfiguration())
+            {
+                context.Writer.WritePropertyName("embeddingModelConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EmbeddingModelConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EmbeddingModelConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

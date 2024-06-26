@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public AudioMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             AudioMetadata unmarshalledObject = new AudioMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

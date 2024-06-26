@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public ReviewTemplatePillarReviewSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ReviewTemplatePillarReviewSummary unmarshalledObject = new ReviewTemplatePillarReviewSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

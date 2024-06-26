@@ -70,6 +70,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetGenerativeQnA())
+            {
+                context.Writer.WritePropertyName("GenerativeQnA");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AnonymousUserGenerativeQnAEmbeddingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.GenerativeQnA, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetQSearchBar())
             {
                 context.Writer.WritePropertyName("QSearchBar");

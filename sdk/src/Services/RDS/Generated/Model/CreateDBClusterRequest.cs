@@ -82,6 +82,7 @@ namespace Amazon.RDS.Model
         private bool? _enableLocalWriteForwarding;
         private bool? _enablePerformanceInsights;
         private string _engine;
+        private string _engineLifecycleSupport;
         private string _engineMode;
         private string _engineVersion;
         private string _globalClusterIdentifier;
@@ -164,17 +165,27 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// A list of Availability Zones (AZs) where DB instances in the DB cluster can be created.
+        /// A list of Availability Zones (AZs) where you specifically want to create DB instances
+        /// in the DB cluster.
         /// </para>
         ///  
         /// <para>
-        /// For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
-        /// the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
+        /// For information on AZs, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones">Availability
+        /// Zones</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Valid for Cluster Type: Aurora DB clusters only
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Can't specify more than three AZs.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> AvailabilityZones
         {
@@ -334,8 +345,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name for your database of up to 64 alphanumeric characters. If you don't provide
-        /// a name, Amazon RDS doesn't create a database in the DB cluster you are creating.
+        /// The name for your database of up to 64 alphanumeric characters. A database named <c>postgres</c>
+        /// is always created. If this parameter is specified, an additional database with this
+        /// name is created.
         /// </para>
         ///  
         /// <para>
@@ -847,8 +859,30 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>aurora-mysql | aurora-postgresql | mysql | postgres</c> 
+        /// Valid Values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>aurora-mysql</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>aurora-postgresql</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>mysql</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>postgres</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>neptune</c> - For information about using Amazon Neptune, see the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html">
+        /// <i>Amazon Neptune User Guide</i> </a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Engine
@@ -861,6 +895,62 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngine()
         {
             return this._engine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineLifecycleSupport. 
+        /// <para>
+        /// The life cycle type for this DB cluster.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// By default, this value is set to <c>open-source-rds-extended-support</c>, which enrolls
+        /// your DB cluster into Amazon RDS Extended Support. At the end of standard support,
+        /// you can avoid charges for Extended Support by setting the value to <c>open-source-rds-extended-support-disabled</c>.
+        /// In this case, creating the DB cluster will fail if the DB major version is past its
+        /// end of standard support date.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can use this setting to enroll your DB cluster into Amazon RDS Extended Support.
+        /// With RDS Extended Support, you can run the selected major engine version on your DB
+        /// cluster past the end of standard support for that engine version. For more information,
+        /// see the following sections:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Aurora (PostgreSQL only) - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
+        /// Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+        /// Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>open-source-rds-extended-support | open-source-rds-extended-support-disabled</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>open-source-rds-extended-support</c> 
+        /// </para>
+        /// </summary>
+        public string EngineLifecycleSupport
+        {
+            get { return this._engineLifecycleSupport; }
+            set { this._engineLifecycleSupport = value; }
+        }
+
+        // Check to see if EngineLifecycleSupport property is set
+        internal bool IsSetEngineLifecycleSupport()
+        {
+            return this._engineLifecycleSupport != null;
         }
 
         /// <summary>

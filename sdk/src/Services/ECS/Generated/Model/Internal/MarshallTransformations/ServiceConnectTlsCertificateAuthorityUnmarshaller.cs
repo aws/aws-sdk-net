@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public ServiceConnectTlsCertificateAuthority Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceConnectTlsCertificateAuthority unmarshalledObject = new ServiceConnectTlsCertificateAuthority();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

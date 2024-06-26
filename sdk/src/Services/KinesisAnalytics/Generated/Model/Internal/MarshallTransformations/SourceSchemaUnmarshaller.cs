@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         public SourceSchema Unmarshall(JsonUnmarshallerContext context)
         {
             SourceSchema unmarshalledObject = new SourceSchema();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public SecurityGroupRuleDescription Unmarshall(JsonUnmarshallerContext context)
         {
             SecurityGroupRuleDescription unmarshalledObject = new SecurityGroupRuleDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

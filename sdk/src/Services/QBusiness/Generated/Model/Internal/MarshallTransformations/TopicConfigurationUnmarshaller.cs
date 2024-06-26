@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public TopicConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TopicConfiguration unmarshalledObject = new TopicConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

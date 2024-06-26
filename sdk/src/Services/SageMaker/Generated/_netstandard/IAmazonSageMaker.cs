@@ -1089,12 +1089,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Create a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHub service method.</param>
         /// <param name="cancellationToken">
@@ -1111,6 +1105,35 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHub">REST API Reference for CreateHub Operation</seealso>
         Task<CreateHubResponse> CreateHubAsync(CreateHubRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateHubContentReference
+
+
+
+        /// <summary>
+        /// Create a hub content reference in order to add a model in the JumpStart public hub
+        /// to a private hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHubContentReference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateHubContentReference service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentReference">REST API Reference for CreateHubContentReference Operation</seealso>
+        Task<CreateHubContentReferenceResponse> CreateHubContentReferenceAsync(CreateHubContentReferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1420,6 +1443,30 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateLabelingJob">REST API Reference for CreateLabelingJob Operation</seealso>
         Task<CreateLabelingJobResponse> CreateLabelingJobAsync(CreateLabelingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateMlflowTrackingServer
+
+
+
+        /// <summary>
+        /// Creates an MLflow Tracking Server using a general purpose Amazon S3 bucket as the
+        /// artifact store. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-create-tracking-server.html">Create
+        /// an MLflow Tracking Server</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMlflowTrackingServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMlflowTrackingServer">REST API Reference for CreateMlflowTrackingServer Operation</seealso>
+        Task<CreateMlflowTrackingServerResponse> CreateMlflowTrackingServerAsync(CreateMlflowTrackingServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1912,6 +1959,29 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  CreatePresignedMlflowTrackingServerUrl
+
+
+
+        /// <summary>
+        /// Returns a presigned URL that you can use to connect to the MLflow UI attached to your
+        /// tracking server. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-launch-ui.html">Launch
+        /// the MLflow UI using a presigned URL</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedMlflowTrackingServerUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePresignedMlflowTrackingServerUrl service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedMlflowTrackingServerUrl">REST API Reference for CreatePresignedMlflowTrackingServerUrl Operation</seealso>
+        Task<CreatePresignedMlflowTrackingServerUrlResponse> CreatePresignedMlflowTrackingServerUrlAsync(CreatePresignedMlflowTrackingServerUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreatePresignedNotebookInstanceUrl
 
 
@@ -2013,7 +2083,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a space used for real time collaboration in a domain.
+        /// Creates a private space or a space used for real time collaboration in a domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpace service method.</param>
         /// <param name="cancellationToken">
@@ -2915,12 +2985,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Delete a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHub service method.</param>
         /// <param name="cancellationToken">
@@ -2945,12 +3009,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Delete the contents of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHubContent service method.</param>
         /// <param name="cancellationToken">
@@ -2966,6 +3024,27 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContent">REST API Reference for DeleteHubContent Operation</seealso>
         Task<DeleteHubContentResponse> DeleteHubContentAsync(DeleteHubContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteHubContentReference
+
+
+
+        /// <summary>
+        /// Delete a hub content reference in order to remove a model from a private hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHubContentReference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHubContentReference service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContentReference">REST API Reference for DeleteHubContentReference Operation</seealso>
+        Task<DeleteHubContentReferenceResponse> DeleteHubContentReferenceAsync(DeleteHubContentReferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3115,6 +3194,28 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceExperiment">REST API Reference for DeleteInferenceExperiment Operation</seealso>
         Task<DeleteInferenceExperimentResponse> DeleteInferenceExperimentAsync(DeleteInferenceExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteMlflowTrackingServer
+
+
+
+        /// <summary>
+        /// Deletes an MLflow Tracking Server. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-cleanup.html.html">Clean
+        /// up MLflow resources</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMlflowTrackingServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMlflowTrackingServer">REST API Reference for DeleteMlflowTrackingServer Operation</seealso>
+        Task<DeleteMlflowTrackingServerResponse> DeleteMlflowTrackingServerAsync(DeleteMlflowTrackingServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3589,7 +3690,7 @@ namespace Amazon.SageMaker
         /// <para>
         /// If a private workforce contains one or more work teams, you must use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkteam.html">DeleteWorkteam</a>
         /// operation to delete all work teams before you delete the workforce. If you try to
-        /// delete a workforce that contains one or more work teams, you will recieve a <c>ResourceInUse</c>
+        /// delete a workforce that contains one or more work teams, you will receive a <c>ResourceInUse</c>
         /// error.
         /// </para>
         ///  </important>
@@ -3824,7 +3925,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Retrieves information of an instance (also called a <i>node</i> interchangeably) of
+        /// Retrieves information of a node (also called a <i>instance</i> interchangeably) of
         /// a SageMaker HyperPod cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterNode service method.</param>
@@ -4161,13 +4262,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Describe a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
+        /// Describes a hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHub service method.</param>
         /// <param name="cancellationToken">
@@ -4189,12 +4284,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Describe the content of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHubContent service method.</param>
         /// <param name="cancellationToken">
@@ -4401,6 +4490,27 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  DescribeMlflowTrackingServer
+
+
+
+        /// <summary>
+        /// Returns information about an MLflow Tracking Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMlflowTrackingServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMlflowTrackingServer">REST API Reference for DescribeMlflowTrackingServer Operation</seealso>
+        Task<DescribeMlflowTrackingServerResponse> DescribeMlflowTrackingServerAsync(DescribeMlflowTrackingServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeModel
 
 
@@ -4512,7 +4622,13 @@ namespace Amazon.SageMaker
         /// Returns a description of the specified model package, which is used to create SageMaker
         /// models or list them on Amazon Web Services Marketplace.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// If you provided a KMS Key ID when you created your model package, you will see the
+        /// <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html">KMS
+        /// Decrypt</a> API call in your CloudTrail logs when you use this API.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// To create models in SageMaker, buyers can subscribe to model packages listed on Amazon
         /// Web Services Marketplace.
@@ -4944,7 +5060,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Gets information about a specific work team. You can see information such as the create
+        /// Gets information about a specific work team. You can see information such as the creation
         /// date, the last updated date, membership information, and the work team's Amazon Resource
         /// Name (ARN).
         /// </summary>
@@ -5156,12 +5272,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Import hub content.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportHubContent service method.</param>
         /// <param name="cancellationToken">
@@ -5673,12 +5783,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List the contents of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubContents service method.</param>
         /// <param name="cancellationToken">
@@ -5700,12 +5804,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List hub content versions.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubContentVersions service method.</param>
         /// <param name="cancellationToken">
@@ -5727,12 +5825,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List all existing hubs.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubs service method.</param>
         /// <param name="cancellationToken">
@@ -5960,6 +6052,24 @@ namespace Amazon.SageMaker
         /// <returns>The response from the ListLineageGroups service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLineageGroups">REST API Reference for ListLineageGroups Operation</seealso>
         Task<ListLineageGroupsResponse> ListLineageGroupsAsync(ListLineageGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListMlflowTrackingServers
+
+
+
+        /// <summary>
+        /// Lists all MLflow Tracking Servers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMlflowTrackingServers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMlflowTrackingServers service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMlflowTrackingServers">REST API Reference for ListMlflowTrackingServers Operation</seealso>
+        Task<ListMlflowTrackingServersResponse> ListMlflowTrackingServersAsync(ListMlflowTrackingServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -6964,6 +7074,31 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  StartMlflowTrackingServer
+
+
+
+        /// <summary>
+        /// Programmatically start an MLflow Tracking Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMlflowTrackingServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMlflowTrackingServer">REST API Reference for StartMlflowTrackingServer Operation</seealso>
+        Task<StartMlflowTrackingServerResponse> StartMlflowTrackingServerAsync(StartMlflowTrackingServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartMonitoringSchedule
 
 
@@ -7231,6 +7366,31 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopLabelingJob">REST API Reference for StopLabelingJob Operation</seealso>
         Task<StopLabelingJobResponse> StopLabelingJobAsync(StopLabelingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopMlflowTrackingServer
+
+
+
+        /// <summary>
+        /// Programmatically stop an MLflow Tracking Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopMlflowTrackingServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopMlflowTrackingServer">REST API Reference for StopMlflowTrackingServer Operation</seealso>
+        Task<StopMlflowTrackingServerResponse> StopMlflowTrackingServerAsync(StopMlflowTrackingServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -7835,12 +7995,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Update a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHub service method.</param>
         /// <param name="cancellationToken">
@@ -7975,6 +8129,35 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceExperiment">REST API Reference for UpdateInferenceExperiment Operation</seealso>
         Task<UpdateInferenceExperimentResponse> UpdateInferenceExperimentAsync(UpdateInferenceExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateMlflowTrackingServer
+
+
+
+        /// <summary>
+        /// Updates properties of an existing MLflow Tracking Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMlflowTrackingServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMlflowTrackingServer">REST API Reference for UpdateMlflowTrackingServer Operation</seealso>
+        Task<UpdateMlflowTrackingServerResponse> UpdateMlflowTrackingServerAsync(UpdateMlflowTrackingServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

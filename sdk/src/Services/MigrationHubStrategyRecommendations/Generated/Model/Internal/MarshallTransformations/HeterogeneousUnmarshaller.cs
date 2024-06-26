@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public Heterogeneous Unmarshall(JsonUnmarshallerContext context)
         {
             Heterogeneous unmarshalledObject = new Heterogeneous();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

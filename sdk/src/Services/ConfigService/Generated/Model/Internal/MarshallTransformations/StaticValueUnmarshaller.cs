@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public StaticValue Unmarshall(JsonUnmarshallerContext context)
         {
             StaticValue unmarshalledObject = new StaticValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

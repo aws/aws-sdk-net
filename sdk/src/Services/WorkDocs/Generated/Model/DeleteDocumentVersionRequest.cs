@@ -57,7 +57,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if AuthenticationToken property is set
         internal bool IsSetAuthenticationToken()
         {
-            return this._authenticationToken != null;
+            return !string.IsNullOrEmpty(this._authenticationToken);
         }
 
         /// <summary>

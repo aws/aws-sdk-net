@@ -78,14 +78,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         if(publicRequestlistValue.IsSetName())
                         {
-                            request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                            request.Parameters.Add("Filters" + "." + "Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
                             foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
                             {
-                                request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Values" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                request.Parameters.Add("Filters" + "." + "Filter" + "." + publicRequestlistValueIndex + "." + "Values" + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }

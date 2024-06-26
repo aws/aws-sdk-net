@@ -57,6 +57,8 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
         public EnrollmentJobFraudDetectionConfig Unmarshall(JsonUnmarshallerContext context)
         {
             EnrollmentJobFraudDetectionConfig unmarshalledObject = new EnrollmentJobFraudDetectionConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

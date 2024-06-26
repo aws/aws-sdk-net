@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public TransitionState Unmarshall(JsonUnmarshallerContext context)
         {
             TransitionState unmarshalledObject = new TransitionState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

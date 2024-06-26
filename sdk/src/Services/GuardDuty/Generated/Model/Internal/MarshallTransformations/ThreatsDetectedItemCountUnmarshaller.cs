@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public ThreatsDetectedItemCount Unmarshall(JsonUnmarshallerContext context)
         {
             ThreatsDetectedItemCount unmarshalledObject = new ThreatsDetectedItemCount();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

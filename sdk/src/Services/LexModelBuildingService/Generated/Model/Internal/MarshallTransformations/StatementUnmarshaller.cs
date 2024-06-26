@@ -57,6 +57,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         public Statement Unmarshall(JsonUnmarshallerContext context)
         {
             Statement unmarshalledObject = new Statement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

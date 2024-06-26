@@ -57,6 +57,8 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
         public PlacementDescription Unmarshall(JsonUnmarshallerContext context)
         {
             PlacementDescription unmarshalledObject = new PlacementDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

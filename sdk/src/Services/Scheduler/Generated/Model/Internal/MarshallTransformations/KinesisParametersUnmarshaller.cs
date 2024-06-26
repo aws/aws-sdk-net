@@ -57,6 +57,8 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
         public KinesisParameters Unmarshall(JsonUnmarshallerContext context)
         {
             KinesisParameters unmarshalledObject = new KinesisParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

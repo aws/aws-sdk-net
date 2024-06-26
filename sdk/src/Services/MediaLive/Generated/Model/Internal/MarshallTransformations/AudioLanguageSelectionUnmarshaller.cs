@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public AudioLanguageSelection Unmarshall(JsonUnmarshallerContext context)
         {
             AudioLanguageSelection unmarshalledObject = new AudioLanguageSelection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

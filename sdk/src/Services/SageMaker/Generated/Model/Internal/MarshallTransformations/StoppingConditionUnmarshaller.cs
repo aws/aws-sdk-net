@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public StoppingCondition Unmarshall(JsonUnmarshallerContext context)
         {
             StoppingCondition unmarshalledObject = new StoppingCondition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

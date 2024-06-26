@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FolderSummary Unmarshall(JsonUnmarshallerContext context)
         {
             FolderSummary unmarshalledObject = new FolderSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

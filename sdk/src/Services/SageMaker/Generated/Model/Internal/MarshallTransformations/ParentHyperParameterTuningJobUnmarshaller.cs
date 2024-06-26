@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ParentHyperParameterTuningJob Unmarshall(JsonUnmarshallerContext context)
         {
             ParentHyperParameterTuningJob unmarshalledObject = new ParentHyperParameterTuningJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

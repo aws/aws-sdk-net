@@ -37,6 +37,7 @@ namespace Amazon.QBusiness.Model
     {
         private int? _beginOffset;
         private int? _endOffset;
+        private SnippetExcerpt _snippetExcerpt;
 
         /// <summary>
         /// Gets and sets the property BeginOffset. 
@@ -72,6 +73,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetEndOffset()
         {
             return this._endOffset.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnippetExcerpt. 
+        /// <para>
+        /// The relevant text excerpt from a source that was used to generate a citation text
+        /// segment in an Amazon Q Business chat response.
+        /// </para>
+        /// </summary>
+        public SnippetExcerpt SnippetExcerpt
+        {
+            get { return this._snippetExcerpt; }
+            set { this._snippetExcerpt = value; }
+        }
+
+        // Check to see if SnippetExcerpt property is set
+        internal bool IsSetSnippetExcerpt()
+        {
+            return this._snippetExcerpt != null;
         }
 
     }

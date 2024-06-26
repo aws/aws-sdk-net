@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public AudioAndDTMFInputSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             AudioAndDTMFInputSpecification unmarshalledObject = new AudioAndDTMFInputSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

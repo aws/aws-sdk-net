@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public Concurrency Unmarshall(JsonUnmarshallerContext context)
         {
             Concurrency unmarshalledObject = new Concurrency();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

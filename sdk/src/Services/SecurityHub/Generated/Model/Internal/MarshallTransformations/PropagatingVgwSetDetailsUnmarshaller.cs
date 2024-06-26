@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public PropagatingVgwSetDetails Unmarshall(JsonUnmarshallerContext context)
         {
             PropagatingVgwSetDetails unmarshalledObject = new PropagatingVgwSetDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

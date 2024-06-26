@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public OverrideDatasetParameterOperation Unmarshall(JsonUnmarshallerContext context)
         {
             OverrideDatasetParameterOperation unmarshalledObject = new OverrideDatasetParameterOperation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

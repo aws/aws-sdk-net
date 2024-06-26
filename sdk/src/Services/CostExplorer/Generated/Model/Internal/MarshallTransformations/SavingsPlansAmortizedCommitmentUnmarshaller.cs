@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public SavingsPlansAmortizedCommitment Unmarshall(JsonUnmarshallerContext context)
         {
             SavingsPlansAmortizedCommitment unmarshalledObject = new SavingsPlansAmortizedCommitment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -37,7 +37,7 @@ namespace Amazon.AuditManager.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private SourceType _source;
+        private DataSourceType _source;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -80,11 +80,11 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        ///  The control mapping data source that the keywords apply to. 
+        /// The control mapping data source that the keywords apply to. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public SourceType Source
+        public DataSourceType Source
         {
             get { return this._source; }
             set { this._source = value; }

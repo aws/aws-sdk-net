@@ -31,6 +31,12 @@ namespace Amazon.VPCLattice.Model
 {
     /// <summary>
     /// Summary information about a target group.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/target-groups.html">Target
+    /// groups</a> in the <i>Amazon VPC Lattice User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class TargetGroupSummary
     {
@@ -107,9 +113,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The type of IP address used for the target group. The possible values are <c>ipv4</c>
-        /// and <c>ipv6</c>. This is an optional parameter. If not specified, the IP address type
-        /// defaults to <c>ipv4</c>.
+        /// The type of IP address used for the target group. The possible values are <c>IPV4</c>
+        /// and <c>IPV6</c>. This is an optional parameter. If not specified, the default is <c>IPV4</c>.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType
@@ -127,7 +132,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property LambdaEventStructureVersion. 
         /// <para>
-        /// Lambda event structure version
+        /// The version of the event structure that your Lambda function receives. Supported only
+        /// if the target group type is <c>LAMBDA</c>.
         /// </para>
         /// </summary>
         public LambdaEventStructureVersion LambdaEventStructureVersion
@@ -219,7 +225,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ServiceArns. 
         /// <para>
-        /// The list of Amazon Resource Names (ARNs) of the service.
+        /// The Amazon Resource Names (ARNs) of the service.
         /// </para>
         /// </summary>
         public List<string> ServiceArns

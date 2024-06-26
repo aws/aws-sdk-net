@@ -96,6 +96,20 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DesktopEndpoint);
                 }
 
+                if(publicRequest.IsSetDeviceCreationTags())
+                {
+                    context.Writer.WritePropertyName("deviceCreationTags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestDeviceCreationTagsKvp in publicRequest.DeviceCreationTags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestDeviceCreationTagsKvp.Key);
+                        var publicRequestDeviceCreationTagsValue = publicRequestDeviceCreationTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestDeviceCreationTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKmsKeyArn())
                 {
                     context.Writer.WritePropertyName("kmsKeyArn");

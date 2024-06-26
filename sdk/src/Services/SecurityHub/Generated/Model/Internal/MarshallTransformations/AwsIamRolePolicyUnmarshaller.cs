@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsIamRolePolicy Unmarshall(JsonUnmarshallerContext context)
         {
             AwsIamRolePolicy unmarshalledObject = new AwsIamRolePolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

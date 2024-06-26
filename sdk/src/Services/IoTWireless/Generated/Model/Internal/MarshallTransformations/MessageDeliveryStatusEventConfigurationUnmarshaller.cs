@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public MessageDeliveryStatusEventConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             MessageDeliveryStatusEventConfiguration unmarshalledObject = new MessageDeliveryStatusEventConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

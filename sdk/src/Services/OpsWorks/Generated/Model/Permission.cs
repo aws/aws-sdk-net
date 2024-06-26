@@ -79,8 +79,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property IamUserArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// The Amazon Resource Name (ARN) for an Identity and Access Management (IAM) role. For
+        /// more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         /// </summary>

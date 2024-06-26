@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public WirelessDeviceEventLogOption Unmarshall(JsonUnmarshallerContext context)
         {
             WirelessDeviceEventLogOption unmarshalledObject = new WirelessDeviceEventLogOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

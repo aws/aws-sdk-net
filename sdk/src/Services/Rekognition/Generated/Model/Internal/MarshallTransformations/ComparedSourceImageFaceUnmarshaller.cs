@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public ComparedSourceImageFace Unmarshall(JsonUnmarshallerContext context)
         {
             ComparedSourceImageFace unmarshalledObject = new ComparedSourceImageFace();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -61,6 +61,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The protocol used for the component.
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1. Maximum of 16.
+        /// </para>
         /// </summary>
         public string Protocol
         {

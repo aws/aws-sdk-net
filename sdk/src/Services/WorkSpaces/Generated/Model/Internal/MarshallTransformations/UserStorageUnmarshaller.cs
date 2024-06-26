@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public UserStorage Unmarshall(JsonUnmarshallerContext context)
         {
             UserStorage unmarshalledObject = new UserStorage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

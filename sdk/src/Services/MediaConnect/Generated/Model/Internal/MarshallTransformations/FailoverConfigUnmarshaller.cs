@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public FailoverConfig Unmarshall(JsonUnmarshallerContext context)
         {
             FailoverConfig unmarshalledObject = new FailoverConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

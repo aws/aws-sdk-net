@@ -41,6 +41,7 @@ namespace Amazon.CloudHSMV2.Model
         private DateTime? _createTimestamp;
         private List<Hsm> _hsms = AWSConfigs.InitializeCollections ? new List<Hsm>() : null;
         private string _hsmType;
+        private ClusterMode _mode;
         private string _preCoPassword;
         private string _securityGroup;
         private string _sourceBackupId;
@@ -164,6 +165,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The type of HSM that the cluster contains.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32)]
         public string HsmType
         {
             get { return this._hsmType; }
@@ -174,6 +176,24 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetHsmType()
         {
             return this._hsmType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// The mode of the cluster.
+        /// </para>
+        /// </summary>
+        public ClusterMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
         }
 
         /// <summary>

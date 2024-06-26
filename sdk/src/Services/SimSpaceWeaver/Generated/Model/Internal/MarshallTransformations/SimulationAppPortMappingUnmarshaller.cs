@@ -57,6 +57,8 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
         public SimulationAppPortMapping Unmarshall(JsonUnmarshallerContext context)
         {
             SimulationAppPortMapping unmarshalledObject = new SimulationAppPortMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

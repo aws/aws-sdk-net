@@ -349,6 +349,14 @@ namespace Amazon.CostOptimizationHub
         /// </summary>
         public static readonly ResourceType OpenSearchReservedInstances = new ResourceType("OpenSearchReservedInstances");
         /// <summary>
+        /// Constant RdsDbInstance for ResourceType
+        /// </summary>
+        public static readonly ResourceType RdsDbInstance = new ResourceType("RdsDbInstance");
+        /// <summary>
+        /// Constant RdsDbInstanceStorage for ResourceType
+        /// </summary>
+        public static readonly ResourceType RdsDbInstanceStorage = new ResourceType("RdsDbInstanceStorage");
+        /// <summary>
         /// Constant RdsReservedInstances for ResourceType
         /// </summary>
         public static readonly ResourceType RdsReservedInstances = new ResourceType("RdsReservedInstances");

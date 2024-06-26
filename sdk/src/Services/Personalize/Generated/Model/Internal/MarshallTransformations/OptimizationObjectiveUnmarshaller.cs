@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public OptimizationObjective Unmarshall(JsonUnmarshallerContext context)
         {
             OptimizationObjective unmarshalledObject = new OptimizationObjective();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

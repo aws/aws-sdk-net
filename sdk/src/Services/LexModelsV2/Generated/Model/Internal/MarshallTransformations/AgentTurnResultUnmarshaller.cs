@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public AgentTurnResult Unmarshall(JsonUnmarshallerContext context)
         {
             AgentTurnResult unmarshalledObject = new AgentTurnResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

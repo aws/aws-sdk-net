@@ -36,6 +36,7 @@ namespace Amazon.OSIS.Model
     {
         private BufferOptions _bufferOptions;
         private DateTime? _createdAt;
+        private List<PipelineDestination> _destinations = AWSConfigs.InitializeCollections ? new List<PipelineDestination>() : null;
         private EncryptionAtRestOptions _encryptionAtRestOptions;
         private List<string> _ingestEndpointUrls = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _lastUpdatedAt;
@@ -50,6 +51,7 @@ namespace Amazon.OSIS.Model
         private PipelineStatusReason _statusReason;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private List<VpcEndpoint> _vpcEndpoints = AWSConfigs.InitializeCollections ? new List<VpcEndpoint>() : null;
+        private string _vpcEndpointService;
 
         /// <summary>
         /// Gets and sets the property BufferOptions.
@@ -82,6 +84,24 @@ namespace Amazon.OSIS.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Destinations. 
+        /// <para>
+        /// Destinations to which the pipeline writes data.
+        /// </para>
+        /// </summary>
+        public List<PipelineDestination> Destinations
+        {
+            get { return this._destinations; }
+            set { this._destinations = value; }
+        }
+
+        // Check to see if Destinations property is set
+        internal bool IsSetDestinations()
+        {
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -246,7 +266,8 @@ namespace Amazon.OSIS.Model
         /// <summary>
         /// Gets and sets the property ServiceVpcEndpoints. 
         /// <para>
-        /// A list of VPC endpoints that OpenSearch Ingestion has created to other AWS services.
+        /// A list of VPC endpoints that OpenSearch Ingestion has created to other Amazon Web
+        /// Services services.
         /// </para>
         /// </summary>
         public List<ServiceVpcEndpoint> ServiceVpcEndpoints
@@ -331,6 +352,24 @@ namespace Amazon.OSIS.Model
         internal bool IsSetVpcEndpoints()
         {
             return this._vpcEndpoints != null && (this._vpcEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointService. 
+        /// <para>
+        /// The VPC endpoint service name for the pipeline.
+        /// </para>
+        /// </summary>
+        public string VpcEndpointService
+        {
+            get { return this._vpcEndpointService; }
+            set { this._vpcEndpointService = value; }
+        }
+
+        // Check to see if VpcEndpointService property is set
+        internal bool IsSetVpcEndpointService()
+        {
+            return this._vpcEndpointService != null;
         }
 
     }

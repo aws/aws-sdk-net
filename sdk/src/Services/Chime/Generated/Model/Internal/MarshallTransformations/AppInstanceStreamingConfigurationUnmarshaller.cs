@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public AppInstanceStreamingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AppInstanceStreamingConfiguration unmarshalledObject = new AppInstanceStreamingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

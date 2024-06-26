@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails unmarshalledObject = new AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

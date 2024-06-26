@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public PluginAuthConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             PluginAuthConfiguration unmarshalledObject = new PluginAuthConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BasicAuthConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BasicAuthConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("noAuthConfiguration", targetDepth))
+                {
+                    var unmarshaller = NoAuthConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NoAuthConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("oAuth2ClientCredentialConfiguration", targetDepth))

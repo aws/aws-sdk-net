@@ -57,6 +57,8 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
         public QualificationRequest Unmarshall(JsonUnmarshallerContext context)
         {
             QualificationRequest unmarshalledObject = new QualificationRequest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

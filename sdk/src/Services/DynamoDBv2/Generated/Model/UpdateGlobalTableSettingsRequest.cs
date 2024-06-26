@@ -35,14 +35,17 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  <important> 
     /// <para>
-    /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-    /// 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-    /// 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility,
-    /// higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine
-    /// which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-    /// the version</a>. To update existing global tables from version 2017.11.29 (Legacy)
-    /// to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-    /// Updating global tables</a>. 
+    /// This documentation is for version 2017.11.29 (Legacy) of global tables, which should
+    /// be avoided for new global tables. Customers should use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+    /// Tables version 2019.11.21 (Current)</a> when possible, because it provides greater
+    /// flexibility, higher efficiency, and consumes less write capacity than 2017.11.29 (Legacy).
+    /// </para>
+    ///  
+    /// <para>
+    /// To determine which version you're using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+    /// the global table version you are using</a>. To update existing global tables from
+    /// version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+    /// global tables</a>.
     /// </para>
     ///  </important>
     /// </summary>
@@ -64,14 +67,14 @@ namespace Amazon.DynamoDBv2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>PROVISIONED</c> - We recommend using <c>PROVISIONED</c> for predictable workloads.
-        /// <c>PROVISIONED</c> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
-        /// Mode</a>.
+        /// <c>PROVISIONED</c> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+        /// capacity mode</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>PAY_PER_REQUEST</c> - We recommend using <c>PAY_PER_REQUEST</c> for unpredictable
-        /// workloads. <c>PAY_PER_REQUEST</c> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
-        /// Mode</a>. 
+        /// workloads. <c>PAY_PER_REQUEST</c> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+        /// capacity mode</a>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

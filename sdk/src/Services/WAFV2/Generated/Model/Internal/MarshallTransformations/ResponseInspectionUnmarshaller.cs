@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public ResponseInspection Unmarshall(JsonUnmarshallerContext context)
         {
             ResponseInspection unmarshalledObject = new ResponseInspection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

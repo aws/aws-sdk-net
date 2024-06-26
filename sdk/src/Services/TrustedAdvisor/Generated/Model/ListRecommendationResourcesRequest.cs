@@ -35,11 +35,30 @@ namespace Amazon.TrustedAdvisor.Model
     /// </summary>
     public partial class ListRecommendationResourcesRequest : AmazonTrustedAdvisorRequest
     {
+        private ExclusionStatus _exclusionStatus;
         private int? _maxResults;
         private string _nextToken;
         private string _recommendationIdentifier;
         private string _regionCode;
         private ResourceStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property ExclusionStatus. 
+        /// <para>
+        /// The exclusion status of the resource
+        /// </para>
+        /// </summary>
+        public ExclusionStatus ExclusionStatus
+        {
+            get { return this._exclusionStatus; }
+            set { this._exclusionStatus = value; }
+        }
+
+        // Check to see if ExclusionStatus property is set
+        internal bool IsSetExclusionStatus()
+        {
+            return this._exclusionStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

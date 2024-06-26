@@ -61,7 +61,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Excludes.  
         /// <para>
-        /// The managed data identifiers to explicitly exclude (not use) when analyzing data.
+        /// The managed data identifiers to explicitly exclude (not use) when performing automated
+        /// sensitive data discovery.
         /// </para>
         ///  
         /// <para>
@@ -105,7 +106,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Includes. 
         /// <para>
         /// The allow lists, custom data identifiers, and managed data identifiers to explicitly
-        /// include (use) when analyzing data.
+        /// include (use) when performing automated sensitive data discovery.
         /// </para>
         /// </summary>
         public SensitivityInspectionTemplateIncludes Includes

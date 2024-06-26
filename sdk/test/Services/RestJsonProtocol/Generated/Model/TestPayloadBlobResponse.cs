@@ -49,7 +49,7 @@ namespace Amazon.RestJsonProtocol.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>

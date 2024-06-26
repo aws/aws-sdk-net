@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRedshiftClusterRestoreStatus Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRedshiftClusterRestoreStatus unmarshalledObject = new AwsRedshiftClusterRestoreStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

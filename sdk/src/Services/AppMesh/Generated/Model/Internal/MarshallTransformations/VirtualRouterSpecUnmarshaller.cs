@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public VirtualRouterSpec Unmarshall(JsonUnmarshallerContext context)
         {
             VirtualRouterSpec unmarshalledObject = new VirtualRouterSpec();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

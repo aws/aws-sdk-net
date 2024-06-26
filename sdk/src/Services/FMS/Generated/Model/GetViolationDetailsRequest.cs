@@ -84,6 +84,10 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Network ACL
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Third-party firewall
         /// </para>
         ///  </li> </ul>

@@ -57,6 +57,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         public ListBillingGroupAccountGrouping Unmarshall(JsonUnmarshallerContext context)
         {
             ListBillingGroupAccountGrouping unmarshalledObject = new ListBillingGroupAccountGrouping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

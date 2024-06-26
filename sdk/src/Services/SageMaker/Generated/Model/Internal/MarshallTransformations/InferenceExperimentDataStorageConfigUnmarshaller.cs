@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public InferenceExperimentDataStorageConfig Unmarshall(JsonUnmarshallerContext context)
         {
             InferenceExperimentDataStorageConfig unmarshalledObject = new InferenceExperimentDataStorageConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

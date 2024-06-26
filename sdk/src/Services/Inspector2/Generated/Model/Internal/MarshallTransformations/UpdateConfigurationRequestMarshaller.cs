@@ -67,6 +67,17 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEc2Configuration())
+                {
+                    context.Writer.WritePropertyName("ec2Configuration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = Ec2ConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Ec2Configuration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEcrConfiguration())
                 {
                     context.Writer.WritePropertyName("ecrConfiguration");

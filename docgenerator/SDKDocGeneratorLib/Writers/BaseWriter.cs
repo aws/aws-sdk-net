@@ -521,19 +521,25 @@ namespace SDKDocGenerator.Writers
             var docs45 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net45"), wrapper);
             var docsCore20 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netstandard2.0"), wrapper);
             var docsNetCoreApp31 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netcoreapp3.1"), wrapper);
+            var docsNet80 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net8.0"), wrapper);
 
             // If there is no documentation then assume it is available for all platforms.
             var boolNoDocs = docs35 == null && docs45 == null 
-                && docsCore20 == null && docsNetCoreApp31 == null;
+                && docsCore20 == null && docsNetCoreApp31 == null
+                && docsNet80 == null;
 
-            // .NET Core App
-            var netCoreAppVersions = new List<string>();
+            // .NET Core / .NET
+            var netAppVersions = new List<string>();
+
+            if (boolNoDocs || (wrapper != null && docsNet80 != null))
+                netAppVersions.Add("8.0 and newer");
+
             if (boolNoDocs || (wrapper != null && docsNetCoreApp31 != null))
-                netCoreAppVersions.Add("3.1");
-            
-            if(netCoreAppVersions.Count > 0)
+                netAppVersions.Add("Core 3.1");
+
+            if (netAppVersions.Count > 0)
             {
-                writer.WriteLine("<p><strong>.NET Core App: </strong><br/>Supported in: {0}<br/>", string.Join(", ", netCoreAppVersions));
+                writer.WriteLine("<p><strong>.NET: </strong><br/>Supported in: {0}<br/>", string.Join(", ", netAppVersions));
             }
 
             // .NET Standard
@@ -546,14 +552,12 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("<p><strong>.NET Standard: </strong><br/>Supported in: {0}<br/>", string.Join(", ", netstandardVersions));
             }
 
-
             // .NET Framework
             var netframeworkVersions = new List<string>();
             if (boolNoDocs || (wrapper != null && docs45 != null))
-                netframeworkVersions.Add("4.5");
+                netframeworkVersions.Add("4.5 and newer");
             if (boolNoDocs || (wrapper != null && docs35 != null))
-            {
-                netframeworkVersions.Add("4.0");
+            {                
                 netframeworkVersions.Add("3.5");
             }
 

@@ -57,6 +57,8 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         public VirtualGateway Unmarshall(JsonUnmarshallerContext context)
         {
             VirtualGateway unmarshalledObject = new VirtualGateway();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

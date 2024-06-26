@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
-    /// Represents an object when updating a rule.
+    /// Describes a rule update.
     /// </summary>
     public partial class RuleUpdate
     {

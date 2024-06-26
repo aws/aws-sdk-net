@@ -57,6 +57,8 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
         public Tenant Unmarshall(JsonUnmarshallerContext context)
         {
             Tenant unmarshalledObject = new Tenant();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

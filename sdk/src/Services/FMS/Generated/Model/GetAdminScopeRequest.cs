@@ -31,7 +31,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAdminScope operation.
-    /// Returns information about the specified account's administrative scope. The admistrative
+    /// Returns information about the specified account's administrative scope. The administrative
     /// scope defines the resources that an Firewall Manager administrator can manage.
     /// </summary>
     public partial class GetAdminScopeRequest : AmazonFMSRequest
@@ -41,7 +41,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property AdminAccount. 
         /// <para>
-        /// The administator account that you want to get the details for.
+        /// The administrator account that you want to get the details for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

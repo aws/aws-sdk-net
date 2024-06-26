@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DhcpOptions. 
         /// <para>
-        /// Information about one or more DHCP options sets.
+        /// Information about the DHCP options sets.
         /// </para>
         /// </summary>
         public List<DhcpOptions> DhcpOptions

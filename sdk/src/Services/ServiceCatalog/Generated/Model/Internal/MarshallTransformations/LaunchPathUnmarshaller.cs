@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public LaunchPath Unmarshall(JsonUnmarshallerContext context)
         {
             LaunchPath unmarshalledObject = new LaunchPath();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

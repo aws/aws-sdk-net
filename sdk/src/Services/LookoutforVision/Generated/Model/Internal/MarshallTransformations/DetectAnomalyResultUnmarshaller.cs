@@ -57,6 +57,8 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         public DetectAnomalyResult Unmarshall(JsonUnmarshallerContext context)
         {
             DetectAnomalyResult unmarshalledObject = new DetectAnomalyResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

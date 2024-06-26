@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public FlywheelModelEvaluationMetrics Unmarshall(JsonUnmarshallerContext context)
         {
             FlywheelModelEvaluationMetrics unmarshalledObject = new FlywheelModelEvaluationMetrics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

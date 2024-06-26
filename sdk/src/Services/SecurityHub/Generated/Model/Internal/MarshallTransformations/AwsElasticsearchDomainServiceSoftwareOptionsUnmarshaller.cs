@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsElasticsearchDomainServiceSoftwareOptions Unmarshall(JsonUnmarshallerContext context)
         {
             AwsElasticsearchDomainServiceSoftwareOptions unmarshalledObject = new AwsElasticsearchDomainServiceSoftwareOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

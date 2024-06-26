@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SheetControlLayoutConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SheetControlLayoutConfiguration unmarshalledObject = new SheetControlLayoutConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

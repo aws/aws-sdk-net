@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public ResponseBudgetAction Unmarshall(JsonUnmarshallerContext context)
         {
             ResponseBudgetAction unmarshalledObject = new ResponseBudgetAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

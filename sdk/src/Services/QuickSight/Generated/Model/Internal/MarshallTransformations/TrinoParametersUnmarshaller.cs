@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TrinoParameters Unmarshall(JsonUnmarshallerContext context)
         {
             TrinoParameters unmarshalledObject = new TrinoParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

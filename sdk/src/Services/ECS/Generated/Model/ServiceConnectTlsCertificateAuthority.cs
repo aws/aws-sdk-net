@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An object that represents the Amazon Web Services Private Certificate Authority certificate.
+    /// The certificate root authority that secures your service.
     /// </summary>
     public partial class ServiceConnectTlsCertificateAuthority
     {

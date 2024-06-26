@@ -57,6 +57,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         public SignalExternalWorkflowExecutionFailedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             SignalExternalWorkflowExecutionFailedEventAttributes unmarshalledObject = new SignalExternalWorkflowExecutionFailedEventAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

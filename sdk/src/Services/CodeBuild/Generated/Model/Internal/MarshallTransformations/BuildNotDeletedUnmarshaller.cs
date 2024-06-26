@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public BuildNotDeleted Unmarshall(JsonUnmarshallerContext context)
         {
             BuildNotDeleted unmarshalledObject = new BuildNotDeleted();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
