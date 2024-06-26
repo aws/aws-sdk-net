@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon.Auth.AccessControlPolicy;
-using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
 
 namespace AWSSDK_DotNet.UnitTests
 {
@@ -20,7 +19,7 @@ namespace AWSSDK_DotNet.UnitTests
             var policy = new Policy();
 
             Statement statement = new Statement(Statement.StatementEffect.Allow);
-            statement.Actions.Add(SQSActionIdentifiers.SendMessage);
+            statement.Actions.Add("sqs:SendMessage");
             statement.Resources.Add(new Resource("the:queue:arn"));
             statement.Conditions.Add(ConditionFactory.NewSourceArnCondition("source:arn"));
             statement.Principals.Add(new Principal("*"));
@@ -28,7 +27,7 @@ namespace AWSSDK_DotNet.UnitTests
             policy.Statements.Add(statement);
 
             Statement newStatement = new Statement(Statement.StatementEffect.Allow);
-            newStatement.Actions.Add(SQSActionIdentifiers.SendMessage);
+            newStatement.Actions.Add("sqs:SendMessage");
             newStatement.Resources.Add(new Resource("the:queue:arn"));
             newStatement.Conditions.Add(ConditionFactory.NewSourceArnCondition("source:arn"));
             newStatement.Principals.Add(new Principal("*"));
@@ -41,10 +40,10 @@ namespace AWSSDK_DotNet.UnitTests
             newStatement.Effect = Statement.StatementEffect.Allow;
             Assert.IsTrue(policy.CheckIfStatementExists(newStatement));
 
-            newStatement.Actions.Add(SQSActionIdentifiers.AddPermission);
+            newStatement.Actions.Add("sqs:AddPermission");
             Assert.IsFalse(policy.CheckIfStatementExists(newStatement));
 
-            newStatement.Actions.Remove(SQSActionIdentifiers.AddPermission);
+            newStatement.Actions.Remove("sqs:AddPermission");
             Assert.IsTrue(policy.CheckIfStatementExists(newStatement));
 
             newStatement.Principals.Add(new Principal("data"));
