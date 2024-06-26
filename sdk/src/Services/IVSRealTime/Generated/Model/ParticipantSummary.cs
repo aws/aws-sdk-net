@@ -100,7 +100,7 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property RecordingState. 
         /// <para>
-        /// Participant’s recording state.
+        /// The participant’s recording state.
         /// </para>
         /// </summary>
         public ParticipantRecordingState RecordingState

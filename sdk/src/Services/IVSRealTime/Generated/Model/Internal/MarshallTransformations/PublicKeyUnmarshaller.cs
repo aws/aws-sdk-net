@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Stage Object
+    /// Response Unmarshaller for PublicKey Object
     /// </summary>  
-    public class StageUnmarshaller : IUnmarshaller<Stage, XmlUnmarshallerContext>, IUnmarshaller<Stage, JsonUnmarshallerContext>
+    public class PublicKeyUnmarshaller : IUnmarshaller<PublicKey, XmlUnmarshallerContext>, IUnmarshaller<PublicKey, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Stage IUnmarshaller<Stage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PublicKey IUnmarshaller<PublicKey, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Stage Unmarshall(JsonUnmarshallerContext context)
+        public PublicKey Unmarshall(JsonUnmarshallerContext context)
         {
-            Stage unmarshalledObject = new Stage();
+            PublicKey unmarshalledObject = new PublicKey();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,28 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("activeSessionId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveSessionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("autoParticipantRecordingConfiguration", targetDepth))
+                if (context.TestExpression("fingerprint", targetDepth))
                 {
-                    var unmarshaller = AutoParticipantRecordingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AutoParticipantRecordingConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("endpoints", targetDepth))
-                {
-                    var unmarshaller = StageEndpointsUnmarshaller.Instance;
-                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Fingerprint = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("publicKeyMaterial", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PublicKeyMaterial = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
@@ -107,12 +101,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         }
 
 
-        private static StageUnmarshaller _instance = new StageUnmarshaller();        
+        private static PublicKeyUnmarshaller _instance = new PublicKeyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StageUnmarshaller Instance
+        public static PublicKeyUnmarshaller Instance
         {
             get
             {

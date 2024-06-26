@@ -30,38 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateStage operation.
-    /// Creates a new stage (and optionally participant tokens).
+    /// Summary information about a public key.
     /// </summary>
-    public partial class CreateStageRequest : AmazonIVSRealTimeRequest
+    public partial class PublicKeySummary
     {
-        private AutoParticipantRecordingConfiguration _autoParticipantRecordingConfiguration;
+        private string _arn;
         private string _name;
-        private List<ParticipantTokenConfiguration> _participantTokenConfigurations = AWSConfigs.InitializeCollections ? new List<ParticipantTokenConfiguration>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property AutoParticipantRecordingConfiguration. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// Configuration object for individual participant recording, to attach to the new stage.
+        /// Public key ARN.
         /// </para>
         /// </summary>
-        public AutoParticipantRecordingConfiguration AutoParticipantRecordingConfiguration
+        [AWSProperty(Min=1, Max=128)]
+        public string Arn
         {
-            get { return this._autoParticipantRecordingConfiguration; }
-            set { this._autoParticipantRecordingConfiguration = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if AutoParticipantRecordingConfiguration property is set
-        internal bool IsSetAutoParticipantRecordingConfiguration()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._autoParticipantRecordingConfiguration != null;
+            return this._arn != null;
         }
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Optional name that can be specified for the stage being created.
+        /// Public key name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -78,32 +77,13 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParticipantTokenConfigurations. 
-        /// <para>
-        /// Array of participant token configuration objects to attach to the new stage.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=12)]
-        public List<ParticipantTokenConfiguration> ParticipantTokenConfigurations
-        {
-            get { return this._participantTokenConfigurations; }
-            set { this._participantTokenConfigurations = value; }
-        }
-
-        // Check to see if ParticipantTokenConfigurations property is set
-        internal bool IsSetParticipantTokenConfigurations()
-        {
-            return this._participantTokenConfigurations != null && (this._participantTokenConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tags attached to the resource. Array of maps, each of the form <c>string:string (key:value)</c>.
         /// See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// AWS Resources</a> for details, including restrictions that apply to tags and "Tag
         /// naming limits and requirements"; Amazon IVS has no constraints on tags beyond what
-        /// is documented there. 
+        /// is documented there.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

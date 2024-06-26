@@ -61,8 +61,8 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property AutoParticipantRecordingConfiguration. 
         /// <para>
-        /// Auto-participant-recording configuration object to attach to the stage. Auto-participant-recording
-        /// configuration cannot be updated while recording is active.
+        /// Configuration object for individual participant recording, to attach to the stage.
+        /// Note that this cannot be updated while recording is active.
         /// </para>
         /// </summary>
         public AutoParticipantRecordingConfiguration AutoParticipantRecordingConfiguration

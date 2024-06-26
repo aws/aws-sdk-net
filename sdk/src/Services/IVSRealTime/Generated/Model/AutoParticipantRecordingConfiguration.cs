@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
-    /// Object specifying an auto-participant-recording configuration.
+    /// Object specifying a configuration for individual participant recording.
     /// </summary>
     public partial class AutoParticipantRecordingConfiguration
     {
@@ -59,10 +59,10 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property StorageConfigurationArn. 
         /// <para>
-        /// ARN of the <a>StorageConfiguration</a> resource to use for auto participant recording.
-        /// Default: "" (empty string, no storage configuration is specified). Individual participant
-        /// recording cannot be started unless a storage configuration is specified, when a <a>Stage</a>
-        /// is created or updated.
+        /// ARN of the <a>StorageConfiguration</a> resource to use for individual participant
+        /// recording. Default: <c>""</c> (empty string, no storage configuration is specified).
+        /// Individual participant recording cannot be started unless a storage configuration
+        /// is specified, when a <a>Stage</a> is created or updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=128)]

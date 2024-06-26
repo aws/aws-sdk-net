@@ -69,6 +69,14 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
+        /// Paginator for ListPublicKeys operation
+        ///</summary>
+        public IListPublicKeysPaginator ListPublicKeys(ListPublicKeysRequest request) 
+        {
+            return new ListPublicKeysPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListStages operation
         ///</summary>
         public IListStagesPaginator ListStages(ListStagesRequest request) 

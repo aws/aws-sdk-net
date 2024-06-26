@@ -30,38 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateStage operation.
-    /// Creates a new stage (and optionally participant tokens).
+    /// Container for the parameters to the ImportPublicKey operation.
+    /// Import a public key to be used for signing stage participant tokens.
     /// </summary>
-    public partial class CreateStageRequest : AmazonIVSRealTimeRequest
+    public partial class ImportPublicKeyRequest : AmazonIVSRealTimeRequest
     {
-        private AutoParticipantRecordingConfiguration _autoParticipantRecordingConfiguration;
         private string _name;
-        private List<ParticipantTokenConfiguration> _participantTokenConfigurations = AWSConfigs.InitializeCollections ? new List<ParticipantTokenConfiguration>() : null;
+        private string _publicKeyMaterial;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-
-        /// <summary>
-        /// Gets and sets the property AutoParticipantRecordingConfiguration. 
-        /// <para>
-        /// Configuration object for individual participant recording, to attach to the new stage.
-        /// </para>
-        /// </summary>
-        public AutoParticipantRecordingConfiguration AutoParticipantRecordingConfiguration
-        {
-            get { return this._autoParticipantRecordingConfiguration; }
-            set { this._autoParticipantRecordingConfiguration = value; }
-        }
-
-        // Check to see if AutoParticipantRecordingConfiguration property is set
-        internal bool IsSetAutoParticipantRecordingConfiguration()
-        {
-            return this._autoParticipantRecordingConfiguration != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Optional name that can be specified for the stage being created.
+        /// Name of the public key to be imported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -78,22 +59,22 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParticipantTokenConfigurations. 
+        /// Gets and sets the property PublicKeyMaterial. 
         /// <para>
-        /// Array of participant token configuration objects to attach to the new stage.
+        /// The content of the public key to be imported.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=12)]
-        public List<ParticipantTokenConfiguration> ParticipantTokenConfigurations
+        [AWSProperty(Required=true)]
+        public string PublicKeyMaterial
         {
-            get { return this._participantTokenConfigurations; }
-            set { this._participantTokenConfigurations = value; }
+            get { return this._publicKeyMaterial; }
+            set { this._publicKeyMaterial = value; }
         }
 
-        // Check to see if ParticipantTokenConfigurations property is set
-        internal bool IsSetParticipantTokenConfigurations()
+        // Check to see if PublicKeyMaterial property is set
+        internal bool IsSetPublicKeyMaterial()
         {
-            return this._participantTokenConfigurations != null && (this._participantTokenConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._publicKeyMaterial != null;
         }
 
         /// <summary>
@@ -103,7 +84,7 @@ namespace Amazon.IVSRealTime.Model
         /// See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// AWS Resources</a> for details, including restrictions that apply to tags and "Tag
         /// naming limits and requirements"; Amazon IVS has no constraints on tags beyond what
-        /// is documented there. 
+        /// is documented there.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
