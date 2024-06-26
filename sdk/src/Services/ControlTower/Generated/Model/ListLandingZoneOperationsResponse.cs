@@ -30,36 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// This is the response object from the ListControlOperations operation.
+    /// This is the response object from the ListLandingZoneOperations operation.
     /// </summary>
-    public partial class ListControlOperationsResponse : AmazonWebServiceResponse
+    public partial class ListLandingZoneOperationsResponse : AmazonWebServiceResponse
     {
-        private List<ControlOperationSummary> _controlOperations = AWSConfigs.InitializeCollections ? new List<ControlOperationSummary>() : null;
+        private List<LandingZoneOperationSummary> _landingZoneOperations = AWSConfigs.InitializeCollections ? new List<LandingZoneOperationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ControlOperations. 
+        /// Gets and sets the property LandingZoneOperations. 
         /// <para>
-        /// Returns a list of output from control operations. 
+        /// Lists landing zone operations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<ControlOperationSummary> ControlOperations
+        public List<LandingZoneOperationSummary> LandingZoneOperations
         {
-            get { return this._controlOperations; }
-            set { this._controlOperations = value; }
+            get { return this._landingZoneOperations; }
+            set { this._landingZoneOperations = value; }
         }
 
-        // Check to see if ControlOperations property is set
-        internal bool IsSetControlOperations()
+        // Check to see if LandingZoneOperations property is set
+        internal bool IsSetLandingZoneOperations()
         {
-            return this._controlOperations != null && (this._controlOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._landingZoneOperations != null && (this._landingZoneOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token.
+        /// Retrieves the next page of results. If the string is empty, the response is the end
+        /// of the results.
         /// </para>
         /// </summary>
         public string NextToken

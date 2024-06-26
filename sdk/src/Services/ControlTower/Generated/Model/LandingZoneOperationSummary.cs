@@ -30,59 +30,58 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// The deployment summary of an <c>EnabledControl</c> or <c>EnabledBaseline</c> resource.
+    /// Returns a summary of information about a landing zone operation.
     /// </summary>
-    public partial class EnablementStatusSummary
+    public partial class LandingZoneOperationSummary
     {
-        private string _lastOperationIdentifier;
-        private EnablementStatus _status;
+        private string _operationIdentifier;
+        private LandingZoneOperationType _operationType;
+        private LandingZoneOperationStatus _status;
 
         /// <summary>
-        /// Gets and sets the property LastOperationIdentifier. 
+        /// Gets and sets the property OperationIdentifier. 
         /// <para>
-        /// The last operation identifier for the enabled resource.
+        /// The <c>operationIdentifier</c> of the landing zone operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
-        public string LastOperationIdentifier
+        public string OperationIdentifier
         {
-            get { return this._lastOperationIdentifier; }
-            set { this._lastOperationIdentifier = value; }
+            get { return this._operationIdentifier; }
+            set { this._operationIdentifier = value; }
         }
 
-        // Check to see if LastOperationIdentifier property is set
-        internal bool IsSetLastOperationIdentifier()
+        // Check to see if OperationIdentifier property is set
+        internal bool IsSetOperationIdentifier()
         {
-            return this._lastOperationIdentifier != null;
+            return this._operationIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationType. 
+        /// <para>
+        /// The type of the landing zone operation.
+        /// </para>
+        /// </summary>
+        public LandingZoneOperationType OperationType
+        {
+            get { return this._operationType; }
+            set { this._operationType = value; }
+        }
+
+        // Check to see if OperationType property is set
+        internal bool IsSetOperationType()
+        {
+            return this._operationType != null;
         }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The deployment status of the enabled resource.
+        /// The status of the landing zone operation.
         /// </para>
-        ///  
-        /// <para>
-        /// Valid values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>SUCCEEDED</c>: The <c>EnabledControl</c> or <c>EnabledBaseline</c> configuration
-        /// was deployed successfully.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>UNDER_CHANGE</c>: The <c>EnabledControl</c> or <c>EnabledBaseline</c> configuration
-        /// is changing. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>FAILED</c>: The <c>EnabledControl</c> or <c>EnabledBaseline</c> configuration
-        /// failed to deploy.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
-        public EnablementStatus Status
+        public LandingZoneOperationStatus Status
         {
             get { return this._status; }
             set { this._status = value; }

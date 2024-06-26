@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LandingZoneOperationDetail Object
+    /// Response Unmarshaller for LandingZoneOperationSummary Object
     /// </summary>  
-    public class LandingZoneOperationDetailUnmarshaller : IUnmarshaller<LandingZoneOperationDetail, XmlUnmarshallerContext>, IUnmarshaller<LandingZoneOperationDetail, JsonUnmarshallerContext>
+    public class LandingZoneOperationSummaryUnmarshaller : IUnmarshaller<LandingZoneOperationSummary, XmlUnmarshallerContext>, IUnmarshaller<LandingZoneOperationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LandingZoneOperationDetail IUnmarshaller<LandingZoneOperationDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LandingZoneOperationSummary IUnmarshaller<LandingZoneOperationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public LandingZoneOperationDetail Unmarshall(JsonUnmarshallerContext context)
+        public LandingZoneOperationSummary Unmarshall(JsonUnmarshallerContext context)
         {
-            LandingZoneOperationDetail unmarshalledObject = new LandingZoneOperationDetail();
+            LandingZoneOperationSummary unmarshalledObject = new LandingZoneOperationSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,12 +66,6 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("endTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("operationIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -84,22 +78,10 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                     unmarshalledObject.OperationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("startTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("statusMessage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +89,12 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         }
 
 
-        private static LandingZoneOperationDetailUnmarshaller _instance = new LandingZoneOperationDetailUnmarshaller();        
+        private static LandingZoneOperationSummaryUnmarshaller _instance = new LandingZoneOperationSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LandingZoneOperationDetailUnmarshaller Instance
+        public static LandingZoneOperationSummaryUnmarshaller Instance
         {
             get
             {

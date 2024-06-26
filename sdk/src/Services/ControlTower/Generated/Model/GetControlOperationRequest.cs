@@ -33,8 +33,8 @@ namespace Amazon.ControlTower.Model
     /// Container for the parameters to the GetControlOperation operation.
     /// Returns the status of a particular <c>EnableControl</c> or <c>DisableControl</c> operation.
     /// Displays a message in case of error. Details for an operation are available for 90
-    /// days. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-    /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
+    /// days. For usage examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
+    /// <i>Controls Reference Guide</i> </a>.
     /// </summary>
     public partial class GetControlOperationRequest : AmazonControlTowerRequest
     {

@@ -69,6 +69,14 @@ namespace Amazon.ControlTower.Model
         }
 
         /// <summary>
+        /// Paginator for ListLandingZoneOperations operation
+        ///</summary>
+        public IListLandingZoneOperationsPaginator ListLandingZoneOperations(ListLandingZoneOperationsRequest request) 
+        {
+            return new ListLandingZoneOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLandingZones operation
         ///</summary>
         public IListLandingZonesPaginator ListLandingZones(ListLandingZonesRequest request) 

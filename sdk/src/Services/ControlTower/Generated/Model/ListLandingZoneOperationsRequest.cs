@@ -30,36 +30,58 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// This is the response object from the ListControlOperations operation.
+    /// Container for the parameters to the ListLandingZoneOperations operation.
+    /// Lists all landing zone operations from the past 90 days. Results are sorted by time,
+    /// with the most recent operation first.
     /// </summary>
-    public partial class ListControlOperationsResponse : AmazonWebServiceResponse
+    public partial class ListLandingZoneOperationsRequest : AmazonControlTowerRequest
     {
-        private List<ControlOperationSummary> _controlOperations = AWSConfigs.InitializeCollections ? new List<ControlOperationSummary>() : null;
+        private LandingZoneOperationFilter _filter;
+        private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ControlOperations. 
+        /// Gets and sets the property Filter. 
         /// <para>
-        /// Returns a list of output from control operations. 
+        /// An input filter for the <c>ListLandingZoneOperations</c> API that lets you select
+        /// the types of landing zone operations to view.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<ControlOperationSummary> ControlOperations
+        public LandingZoneOperationFilter Filter
         {
-            get { return this._controlOperations; }
-            set { this._controlOperations = value; }
+            get { return this._filter; }
+            set { this._filter = value; }
         }
 
-        // Check to see if ControlOperations property is set
-        internal bool IsSetControlOperations()
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
         {
-            return this._controlOperations != null && (this._controlOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._filter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// How many results to return per API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token.
+        /// The token to continue the list from a previous API call with the same parameters.
         /// </para>
         /// </summary>
         public string NextToken
