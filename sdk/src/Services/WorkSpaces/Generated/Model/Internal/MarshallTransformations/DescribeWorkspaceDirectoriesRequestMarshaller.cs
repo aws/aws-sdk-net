@@ -92,6 +92,17 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetWorkspaceDirectoryNames())
+                {
+                    context.Writer.WritePropertyName("WorkspaceDirectoryNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestWorkspaceDirectoryNamesListValue in publicRequest.WorkspaceDirectoryNames)
+                    {
+                            context.Writer.Write(publicRequestWorkspaceDirectoryNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -69,6 +69,17 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetActiveDirectoryConfig())
+                {
+                    context.Writer.WritePropertyName("ActiveDirectoryConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ActiveDirectoryConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ActiveDirectoryConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDirectoryId())
                 {
                     context.Writer.WritePropertyName("DirectoryId");
@@ -118,6 +129,30 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Tenancy");
                     context.Writer.Write(publicRequest.Tenancy);
+                }
+
+                if(publicRequest.IsSetUserIdentityType())
+                {
+                    context.Writer.WritePropertyName("UserIdentityType");
+                    context.Writer.Write(publicRequest.UserIdentityType);
+                }
+
+                if(publicRequest.IsSetWorkspaceDirectoryDescription())
+                {
+                    context.Writer.WritePropertyName("WorkspaceDirectoryDescription");
+                    context.Writer.Write(publicRequest.WorkspaceDirectoryDescription);
+                }
+
+                if(publicRequest.IsSetWorkspaceDirectoryName())
+                {
+                    context.Writer.WritePropertyName("WorkspaceDirectoryName");
+                    context.Writer.Write(publicRequest.WorkspaceDirectoryName);
+                }
+
+                if(publicRequest.IsSetWorkspaceType())
+                {
+                    context.Writer.WritePropertyName("WorkspaceType");
+                    context.Writer.Write(publicRequest.WorkspaceType);
                 }
 
                 writer.WriteObjectEnd();

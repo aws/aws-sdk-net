@@ -41,6 +41,7 @@ namespace Amazon.WorkSpaces.Model
         private bool? _enableInternetAccess;
         private bool? _enableMaintenanceMode;
         private bool? _enableWorkDocs;
+        private string _instanceIamRoleArn;
         private bool? _userEnabledAsLocalAdministrator;
 
         /// <summary>
@@ -168,6 +169,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetEnableWorkDocs()
         {
             return this._enableWorkDocs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceIamRoleArn. 
+        /// <para>
+        /// Indicates the IAM role ARN of the instance.
+        /// </para>
+        /// </summary>
+        public string InstanceIamRoleArn
+        {
+            get { return this._instanceIamRoleArn; }
+            set { this._instanceIamRoleArn = value; }
+        }
+
+        // Check to see if InstanceIamRoleArn property is set
+        internal bool IsSetInstanceIamRoleArn()
+        {
+            return this._instanceIamRoleArn != null;
         }
 
         /// <summary>

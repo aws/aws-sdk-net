@@ -241,6 +241,56 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type ApplicationSettingsStatusEnum.
+    /// </summary>
+    public class ApplicationSettingsStatusEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ApplicationSettingsStatusEnum
+        /// </summary>
+        public static readonly ApplicationSettingsStatusEnum DISABLED = new ApplicationSettingsStatusEnum("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ApplicationSettingsStatusEnum
+        /// </summary>
+        public static readonly ApplicationSettingsStatusEnum ENABLED = new ApplicationSettingsStatusEnum("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationSettingsStatusEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationSettingsStatusEnum FindValue(string value)
+        {
+            return FindValue<ApplicationSettingsStatusEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationSettingsStatusEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssociationErrorCode.
     /// </summary>
     public class AssociationErrorCode : ConstantClass
@@ -436,6 +486,52 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AuthenticationType.
+    /// </summary>
+    public class AuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SAML for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType SAML = new AuthenticationType("SAML");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationType FindValue(string value)
+        {
+            return FindValue<AuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationType(string value)
         {
             return FindValue(value);
         }
@@ -1187,6 +1283,110 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type DescribeWorkspacesPoolsFilterName.
+    /// </summary>
+    public class DescribeWorkspacesPoolsFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PoolName for DescribeWorkspacesPoolsFilterName
+        /// </summary>
+        public static readonly DescribeWorkspacesPoolsFilterName PoolName = new DescribeWorkspacesPoolsFilterName("PoolName");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DescribeWorkspacesPoolsFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DescribeWorkspacesPoolsFilterName FindValue(string value)
+        {
+            return FindValue<DescribeWorkspacesPoolsFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DescribeWorkspacesPoolsFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DescribeWorkspacesPoolsFilterOperator.
+    /// </summary>
+    public class DescribeWorkspacesPoolsFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTAINS for DescribeWorkspacesPoolsFilterOperator
+        /// </summary>
+        public static readonly DescribeWorkspacesPoolsFilterOperator CONTAINS = new DescribeWorkspacesPoolsFilterOperator("CONTAINS");
+        /// <summary>
+        /// Constant EQUALS for DescribeWorkspacesPoolsFilterOperator
+        /// </summary>
+        public static readonly DescribeWorkspacesPoolsFilterOperator EQUALS = new DescribeWorkspacesPoolsFilterOperator("EQUALS");
+        /// <summary>
+        /// Constant NOTCONTAINS for DescribeWorkspacesPoolsFilterOperator
+        /// </summary>
+        public static readonly DescribeWorkspacesPoolsFilterOperator NOTCONTAINS = new DescribeWorkspacesPoolsFilterOperator("NOTCONTAINS");
+        /// <summary>
+        /// Constant NOTEQUALS for DescribeWorkspacesPoolsFilterOperator
+        /// </summary>
+        public static readonly DescribeWorkspacesPoolsFilterOperator NOTEQUALS = new DescribeWorkspacesPoolsFilterOperator("NOTEQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DescribeWorkspacesPoolsFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DescribeWorkspacesPoolsFilterOperator FindValue(string value)
+        {
+            return FindValue<DescribeWorkspacesPoolsFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DescribeWorkspacesPoolsFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImageAssociatedResourceType.
     /// </summary>
     public class ImageAssociatedResourceType : ConstantClass
@@ -1781,6 +1981,56 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type SessionConnectionState.
+    /// </summary>
+    public class SessionConnectionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTED for SessionConnectionState
+        /// </summary>
+        public static readonly SessionConnectionState CONNECTED = new SessionConnectionState("CONNECTED");
+        /// <summary>
+        /// Constant NOT_CONNECTED for SessionConnectionState
+        /// </summary>
+        public static readonly SessionConnectionState NOT_CONNECTED = new SessionConnectionState("NOT_CONNECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionConnectionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionConnectionState FindValue(string value)
+        {
+            return FindValue<SessionConnectionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionConnectionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StandbyWorkspaceRelationshipType.
     /// </summary>
     public class StandbyWorkspaceRelationshipType : ConstantClass
@@ -1824,6 +2074,152 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StandbyWorkspaceRelationshipType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageConnectorStatusEnum.
+    /// </summary>
+    public class StorageConnectorStatusEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for StorageConnectorStatusEnum
+        /// </summary>
+        public static readonly StorageConnectorStatusEnum DISABLED = new StorageConnectorStatusEnum("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for StorageConnectorStatusEnum
+        /// </summary>
+        public static readonly StorageConnectorStatusEnum ENABLED = new StorageConnectorStatusEnum("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageConnectorStatusEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageConnectorStatusEnum FindValue(string value)
+        {
+            return FindValue<StorageConnectorStatusEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageConnectorStatusEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageConnectorTypeEnum.
+    /// </summary>
+    public class StorageConnectorTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HOME_FOLDER for StorageConnectorTypeEnum
+        /// </summary>
+        public static readonly StorageConnectorTypeEnum HOME_FOLDER = new StorageConnectorTypeEnum("HOME_FOLDER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageConnectorTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageConnectorTypeEnum FindValue(string value)
+        {
+            return FindValue<StorageConnectorTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageConnectorTypeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StreamingExperiencePreferredProtocolEnum.
+    /// </summary>
+    public class StreamingExperiencePreferredProtocolEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TCP for StreamingExperiencePreferredProtocolEnum
+        /// </summary>
+        public static readonly StreamingExperiencePreferredProtocolEnum TCP = new StreamingExperiencePreferredProtocolEnum("TCP");
+        /// <summary>
+        /// Constant UDP for StreamingExperiencePreferredProtocolEnum
+        /// </summary>
+        public static readonly StreamingExperiencePreferredProtocolEnum UDP = new StreamingExperiencePreferredProtocolEnum("UDP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamingExperiencePreferredProtocolEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamingExperiencePreferredProtocolEnum FindValue(string value)
+        {
+            return FindValue<StreamingExperiencePreferredProtocolEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamingExperiencePreferredProtocolEnum(string value)
         {
             return FindValue(value);
         }
@@ -1924,6 +2320,164 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Tenancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserIdentityType.
+    /// </summary>
+    public class UserIdentityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_DIRECTORY_SERVICE for UserIdentityType
+        /// </summary>
+        public static readonly UserIdentityType AWS_DIRECTORY_SERVICE = new UserIdentityType("AWS_DIRECTORY_SERVICE");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED for UserIdentityType
+        /// </summary>
+        public static readonly UserIdentityType CUSTOMER_MANAGED = new UserIdentityType("CUSTOMER_MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserIdentityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserIdentityType FindValue(string value)
+        {
+            return FindValue<UserIdentityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserIdentityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserSettingActionEnum.
+    /// </summary>
+    public class UserSettingActionEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLIPBOARD_COPY_FROM_LOCAL_DEVICE for UserSettingActionEnum
+        /// </summary>
+        public static readonly UserSettingActionEnum CLIPBOARD_COPY_FROM_LOCAL_DEVICE = new UserSettingActionEnum("CLIPBOARD_COPY_FROM_LOCAL_DEVICE");
+        /// <summary>
+        /// Constant CLIPBOARD_COPY_TO_LOCAL_DEVICE for UserSettingActionEnum
+        /// </summary>
+        public static readonly UserSettingActionEnum CLIPBOARD_COPY_TO_LOCAL_DEVICE = new UserSettingActionEnum("CLIPBOARD_COPY_TO_LOCAL_DEVICE");
+        /// <summary>
+        /// Constant PRINTING_TO_LOCAL_DEVICE for UserSettingActionEnum
+        /// </summary>
+        public static readonly UserSettingActionEnum PRINTING_TO_LOCAL_DEVICE = new UserSettingActionEnum("PRINTING_TO_LOCAL_DEVICE");
+        /// <summary>
+        /// Constant SMART_CARD for UserSettingActionEnum
+        /// </summary>
+        public static readonly UserSettingActionEnum SMART_CARD = new UserSettingActionEnum("SMART_CARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserSettingActionEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserSettingActionEnum FindValue(string value)
+        {
+            return FindValue<UserSettingActionEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserSettingActionEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserSettingPermissionEnum.
+    /// </summary>
+    public class UserSettingPermissionEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for UserSettingPermissionEnum
+        /// </summary>
+        public static readonly UserSettingPermissionEnum DISABLED = new UserSettingPermissionEnum("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for UserSettingPermissionEnum
+        /// </summary>
+        public static readonly UserSettingPermissionEnum ENABLED = new UserSettingPermissionEnum("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserSettingPermissionEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserSettingPermissionEnum FindValue(string value)
+        {
+            return FindValue<UserSettingPermissionEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserSettingPermissionEnum(string value)
         {
             return FindValue(value);
         }
@@ -2210,6 +2764,10 @@ namespace Amazon.WorkSpaces
         /// Constant AD_CONNECTOR for WorkspaceDirectoryType
         /// </summary>
         public static readonly WorkspaceDirectoryType AD_CONNECTOR = new WorkspaceDirectoryType("AD_CONNECTOR");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED for WorkspaceDirectoryType
+        /// </summary>
+        public static readonly WorkspaceDirectoryType CUSTOMER_MANAGED = new WorkspaceDirectoryType("CUSTOMER_MANAGED");
         /// <summary>
         /// Constant SIMPLE_AD for WorkspaceDirectoryType
         /// </summary>
@@ -2571,6 +3129,278 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type WorkspacesPoolErrorCode.
+    /// </summary>
+    public class WorkspacesPoolErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUNDLE_NOT_FOUND for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode BUNDLE_NOT_FOUND = new WorkspacesPoolErrorCode("BUNDLE_NOT_FOUND");
+        /// <summary>
+        /// Constant DEFAULT_OU_IS_MISSING for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DEFAULT_OU_IS_MISSING = new WorkspacesPoolErrorCode("DEFAULT_OU_IS_MISSING");
+        /// <summary>
+        /// Constant DIRECTORY_NOT_FOUND for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DIRECTORY_NOT_FOUND = new WorkspacesPoolErrorCode("DIRECTORY_NOT_FOUND");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_ACCESS_DENIED for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_ERROR_ACCESS_DENIED = new WorkspacesPoolErrorCode("DOMAIN_JOIN_ERROR_ACCESS_DENIED");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED = new WorkspacesPoolErrorCode("DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_FILE_NOT_FOUND for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_ERROR_FILE_NOT_FOUND = new WorkspacesPoolErrorCode("DOMAIN_JOIN_ERROR_FILE_NOT_FOUND");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_INVALID_PARAMETER for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_ERROR_INVALID_PARAMETER = new WorkspacesPoolErrorCode("DOMAIN_JOIN_ERROR_INVALID_PARAMETER");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_LOGON_FAILURE for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_ERROR_LOGON_FAILURE = new WorkspacesPoolErrorCode("DOMAIN_JOIN_ERROR_LOGON_FAILURE");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_MORE_DATA for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_ERROR_MORE_DATA = new WorkspacesPoolErrorCode("DOMAIN_JOIN_ERROR_MORE_DATA");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN = new WorkspacesPoolErrorCode("DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_NOT_SUPPORTED for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_ERROR_NOT_SUPPORTED = new WorkspacesPoolErrorCode("DOMAIN_JOIN_ERROR_NOT_SUPPORTED");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_SECRET_ACTION_PERMISSION_IS_MISSING for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_ERROR_SECRET_ACTION_PERMISSION_IS_MISSING = new WorkspacesPoolErrorCode("DOMAIN_JOIN_ERROR_SECRET_ACTION_PERMISSION_IS_MISSING");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_SECRET_DECRYPTION_FAILURE for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_ERROR_SECRET_DECRYPTION_FAILURE = new WorkspacesPoolErrorCode("DOMAIN_JOIN_ERROR_SECRET_DECRYPTION_FAILURE");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_SECRET_INVALID for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_ERROR_SECRET_INVALID = new WorkspacesPoolErrorCode("DOMAIN_JOIN_ERROR_SECRET_INVALID");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_SECRET_NOT_FOUND for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_ERROR_SECRET_NOT_FOUND = new WorkspacesPoolErrorCode("DOMAIN_JOIN_ERROR_SECRET_NOT_FOUND");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_SECRET_STATE_INVALID for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_ERROR_SECRET_STATE_INVALID = new WorkspacesPoolErrorCode("DOMAIN_JOIN_ERROR_SECRET_STATE_INVALID");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_ERROR_SECRET_VALUE_KEY_NOT_FOUND for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_ERROR_SECRET_VALUE_KEY_NOT_FOUND = new WorkspacesPoolErrorCode("DOMAIN_JOIN_ERROR_SECRET_VALUE_KEY_NOT_FOUND");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_INTERNAL_SERVICE_ERROR for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_INTERNAL_SERVICE_ERROR = new WorkspacesPoolErrorCode("DOMAIN_JOIN_INTERNAL_SERVICE_ERROR");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME = new WorkspacesPoolErrorCode("DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_NERR_PASSWORD_EXPIRED for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_NERR_PASSWORD_EXPIRED = new WorkspacesPoolErrorCode("DOMAIN_JOIN_NERR_PASSWORD_EXPIRED");
+        /// <summary>
+        /// Constant DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED = new WorkspacesPoolErrorCode("DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED");
+        /// <summary>
+        /// Constant IAM_SERVICE_ROLE_IS_MISSING for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode IAM_SERVICE_ROLE_IS_MISSING = new WorkspacesPoolErrorCode("IAM_SERVICE_ROLE_IS_MISSING");
+        /// <summary>
+        /// Constant IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION = new WorkspacesPoolErrorCode("IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION");
+        /// <summary>
+        /// Constant IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION = new WorkspacesPoolErrorCode("IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION");
+        /// <summary>
+        /// Constant IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION = new WorkspacesPoolErrorCode("IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION");
+        /// <summary>
+        /// Constant IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION = new WorkspacesPoolErrorCode("IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION");
+        /// <summary>
+        /// Constant IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION = new WorkspacesPoolErrorCode("IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION");
+        /// <summary>
+        /// Constant IGW_NOT_ATTACHED for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode IGW_NOT_ATTACHED = new WorkspacesPoolErrorCode("IGW_NOT_ATTACHED");
+        /// <summary>
+        /// Constant IMAGE_NOT_FOUND for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode IMAGE_NOT_FOUND = new WorkspacesPoolErrorCode("IMAGE_NOT_FOUND");
+        /// <summary>
+        /// Constant INSUFFICIENT_PERMISSIONS_ERROR for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode INSUFFICIENT_PERMISSIONS_ERROR = new WorkspacesPoolErrorCode("INSUFFICIENT_PERMISSIONS_ERROR");
+        /// <summary>
+        /// Constant INTERNAL_SERVICE_ERROR for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode INTERNAL_SERVICE_ERROR = new WorkspacesPoolErrorCode("INTERNAL_SERVICE_ERROR");
+        /// <summary>
+        /// Constant INVALID_SUBNET_CONFIGURATION for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode INVALID_SUBNET_CONFIGURATION = new WorkspacesPoolErrorCode("INVALID_SUBNET_CONFIGURATION");
+        /// <summary>
+        /// Constant MACHINE_ROLE_IS_MISSING for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode MACHINE_ROLE_IS_MISSING = new WorkspacesPoolErrorCode("MACHINE_ROLE_IS_MISSING");
+        /// <summary>
+        /// Constant NETWORK_INTERFACE_LIMIT_EXCEEDED for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode NETWORK_INTERFACE_LIMIT_EXCEEDED = new WorkspacesPoolErrorCode("NETWORK_INTERFACE_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant SECURITY_GROUPS_NOT_FOUND for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode SECURITY_GROUPS_NOT_FOUND = new WorkspacesPoolErrorCode("SECURITY_GROUPS_NOT_FOUND");
+        /// <summary>
+        /// Constant STS_DISABLED_IN_REGION for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode STS_DISABLED_IN_REGION = new WorkspacesPoolErrorCode("STS_DISABLED_IN_REGION");
+        /// <summary>
+        /// Constant SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES = new WorkspacesPoolErrorCode("SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES");
+        /// <summary>
+        /// Constant SUBNET_NOT_FOUND for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode SUBNET_NOT_FOUND = new WorkspacesPoolErrorCode("SUBNET_NOT_FOUND");
+        /// <summary>
+        /// Constant WORKSPACES_POOL_INSTANCE_PROVISIONING_FAILURE for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode WORKSPACES_POOL_INSTANCE_PROVISIONING_FAILURE = new WorkspacesPoolErrorCode("WORKSPACES_POOL_INSTANCE_PROVISIONING_FAILURE");
+        /// <summary>
+        /// Constant WORKSPACES_POOL_STOPPED for WorkspacesPoolErrorCode
+        /// </summary>
+        public static readonly WorkspacesPoolErrorCode WORKSPACES_POOL_STOPPED = new WorkspacesPoolErrorCode("WORKSPACES_POOL_STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkspacesPoolErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkspacesPoolErrorCode FindValue(string value)
+        {
+            return FindValue<WorkspacesPoolErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkspacesPoolErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkspacesPoolState.
+    /// </summary>
+    public class WorkspacesPoolState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATING for WorkspacesPoolState
+        /// </summary>
+        public static readonly WorkspacesPoolState CREATING = new WorkspacesPoolState("CREATING");
+        /// <summary>
+        /// Constant DELETING for WorkspacesPoolState
+        /// </summary>
+        public static readonly WorkspacesPoolState DELETING = new WorkspacesPoolState("DELETING");
+        /// <summary>
+        /// Constant RUNNING for WorkspacesPoolState
+        /// </summary>
+        public static readonly WorkspacesPoolState RUNNING = new WorkspacesPoolState("RUNNING");
+        /// <summary>
+        /// Constant STARTING for WorkspacesPoolState
+        /// </summary>
+        public static readonly WorkspacesPoolState STARTING = new WorkspacesPoolState("STARTING");
+        /// <summary>
+        /// Constant STOPPED for WorkspacesPoolState
+        /// </summary>
+        public static readonly WorkspacesPoolState STOPPED = new WorkspacesPoolState("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for WorkspacesPoolState
+        /// </summary>
+        public static readonly WorkspacesPoolState STOPPING = new WorkspacesPoolState("STOPPING");
+        /// <summary>
+        /// Constant UPDATING for WorkspacesPoolState
+        /// </summary>
+        public static readonly WorkspacesPoolState UPDATING = new WorkspacesPoolState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkspacesPoolState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkspacesPoolState FindValue(string value)
+        {
+            return FindValue<WorkspacesPoolState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkspacesPoolState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WorkspaceState.
     /// </summary>
     public class WorkspaceState : ConstantClass
@@ -2674,6 +3504,56 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WorkspaceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkspaceType.
+    /// </summary>
+    public class WorkspaceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PERSONAL for WorkspaceType
+        /// </summary>
+        public static readonly WorkspaceType PERSONAL = new WorkspaceType("PERSONAL");
+        /// <summary>
+        /// Constant POOLS for WorkspaceType
+        /// </summary>
+        public static readonly WorkspaceType POOLS = new WorkspaceType("POOLS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkspaceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkspaceType FindValue(string value)
+        {
+            return FindValue<WorkspaceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkspaceType(string value)
         {
             return FindValue(value);
         }

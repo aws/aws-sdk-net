@@ -96,6 +96,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableWorkDocs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstanceIamRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceIamRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserEnabledAsLocalAdministrator", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
