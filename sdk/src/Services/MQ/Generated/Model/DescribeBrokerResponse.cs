@@ -107,9 +107,9 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// Enables automatic upgrades to new minor versions for brokers, as new versions are
-        /// released and supported by Amazon MQ. Automatic upgrades occur during the scheduled
-        /// maintenance window of the broker or after a manual broker reboot.
+        /// Enables automatic upgrades to new patch versions for brokers as new versions are released
+        /// and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance
+        /// window or after a manual broker reboot.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -346,8 +346,9 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
-        /// engines</a>.
+        /// The broker engine version. For more information, see the <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/activemq-version-management.html">ActiveMQ
+        /// version management</a> and the <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/rabbitmq-version-management.html">RabbitMQ
+        /// version management</a> sections in the Amazon MQ Developer Guide.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -495,9 +496,9 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property PendingEngineVersion. 
         /// <para>
-        /// The broker engine version to upgrade to. For a list of supported engine versions,
-        /// see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
-        /// engines</a>.
+        /// The broker engine version to upgrade to. For more information, see the <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/activemq-version-management.html">ActiveMQ
+        /// version management</a> and the <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/rabbitmq-version-management.html">RabbitMQ
+        /// version management</a> sections in the Amazon MQ Developer Guide.
         /// </para>
         /// </summary>
         public string PendingEngineVersion
