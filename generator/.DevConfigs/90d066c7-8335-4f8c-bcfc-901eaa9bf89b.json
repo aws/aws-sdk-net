@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "minor",
+            "changeLogMessages": [
+                "Add support for update and condition expressions to DynamoDB transactional writes that are created using the document model or the object-persistence model."
+            ]
+        }
+    ]
+}
