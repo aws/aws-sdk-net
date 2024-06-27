@@ -41,7 +41,7 @@ namespace Amazon.Extensions.NETCore.Setup
         /// <summary>
         /// Constructs an instance of the ClientFactory
         /// </summary>
-        /// <param name="type">The type object for the Amazon service client interface, for example IAmazonS3.</param>
+        /// <param name="options">The AWS options used for creating service clients.</param>
         internal ClientFactory(AWSOptions awsOptions)
         {
             _awsOptions = awsOptions;
@@ -77,7 +77,8 @@ namespace Amazon.Extensions.NETCore.Setup
         /// Creates the AWS service client that implements the service client interface. The AWSOptions object
         /// will be searched for in the IServiceProvider.
         /// </summary>
-        /// <param name="provider">The dependency injection provider.</param>
+        /// <param name="logger">Logger instance for writing diagnostic logs.</param>
+        /// <param name="options">The AWS options used for creating the service client.</param>
         /// <returns>The AWS service client</returns>
         internal IAmazonService CreateServiceClient(ILogger logger, AWSOptions options)
         {
