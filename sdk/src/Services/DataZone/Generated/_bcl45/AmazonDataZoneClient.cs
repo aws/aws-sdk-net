@@ -5024,6 +5024,83 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  GetLineageNode
+
+
+        /// <summary>
+        /// Gets the data lineage node.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLineageNode service method.</param>
+        /// 
+        /// <returns>The response from the GetLineageNode service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetLineageNode">REST API Reference for GetLineageNode Operation</seealso>
+        public virtual GetLineageNodeResponse GetLineageNode(GetLineageNodeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLineageNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLineageNodeResponseUnmarshaller.Instance;
+
+            return Invoke<GetLineageNodeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the data lineage node.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLineageNode service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLineageNode service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetLineageNode">REST API Reference for GetLineageNode Operation</seealso>
+        public virtual Task<GetLineageNodeResponse> GetLineageNodeAsync(GetLineageNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLineageNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLineageNodeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetLineageNodeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetListing
 
 
@@ -6517,6 +6594,83 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  ListLineageNodeHistory
+
+
+        /// <summary>
+        /// Lists the history of the specified data lineage node.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLineageNodeHistory service method.</param>
+        /// 
+        /// <returns>The response from the ListLineageNodeHistory service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListLineageNodeHistory">REST API Reference for ListLineageNodeHistory Operation</seealso>
+        public virtual ListLineageNodeHistoryResponse ListLineageNodeHistory(ListLineageNodeHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLineageNodeHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLineageNodeHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<ListLineageNodeHistoryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the history of the specified data lineage node.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLineageNodeHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLineageNodeHistory service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListLineageNodeHistory">REST API Reference for ListLineageNodeHistory Operation</seealso>
+        public virtual Task<ListLineageNodeHistoryResponse> ListLineageNodeHistoryAsync(ListLineageNodeHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLineageNodeHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLineageNodeHistoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLineageNodeHistoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListMetadataGenerationRuns
 
 
@@ -7277,6 +7431,95 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = ListTimeSeriesDataPointsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTimeSeriesDataPointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PostLineageEvent
+
+
+        /// <summary>
+        /// Posts a data lineage event.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PostLineageEvent service method.</param>
+        /// 
+        /// <returns>The response from the PostLineageEvent service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PostLineageEvent">REST API Reference for PostLineageEvent Operation</seealso>
+        public virtual PostLineageEventResponse PostLineageEvent(PostLineageEventRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PostLineageEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PostLineageEventResponseUnmarshaller.Instance;
+
+            return Invoke<PostLineageEventResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Posts a data lineage event.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PostLineageEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PostLineageEvent service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PostLineageEvent">REST API Reference for PostLineageEvent Operation</seealso>
+        public virtual Task<PostLineageEventResponse> PostLineageEventAsync(PostLineageEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PostLineageEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PostLineageEventResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PostLineageEventResponse>(request, options, cancellationToken);
         }
 
         #endregion

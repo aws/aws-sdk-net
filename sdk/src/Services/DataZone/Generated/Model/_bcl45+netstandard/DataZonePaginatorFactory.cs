@@ -117,6 +117,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListLineageNodeHistory operation
+        ///</summary>
+        public IListLineageNodeHistoryPaginator ListLineageNodeHistory(ListLineageNodeHistoryRequest request) 
+        {
+            return new ListLineageNodeHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMetadataGenerationRuns operation
         ///</summary>
         public IListMetadataGenerationRunsPaginator ListMetadataGenerationRuns(ListMetadataGenerationRunsRequest request) 

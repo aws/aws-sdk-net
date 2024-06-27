@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SearchTypesResultItem Object
+    /// Response Unmarshaller for LineageNodeReference Object
     /// </summary>  
-    public class SearchTypesResultItemUnmarshaller : IUnmarshaller<SearchTypesResultItem, XmlUnmarshallerContext>, IUnmarshaller<SearchTypesResultItem, JsonUnmarshallerContext>
+    public class LineageNodeReferenceUnmarshaller : IUnmarshaller<LineageNodeReference, XmlUnmarshallerContext>, IUnmarshaller<LineageNodeReference, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SearchTypesResultItem IUnmarshaller<SearchTypesResultItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LineageNodeReference IUnmarshaller<LineageNodeReference, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SearchTypesResultItem Unmarshall(JsonUnmarshallerContext context)
+        public LineageNodeReference Unmarshall(JsonUnmarshallerContext context)
         {
-            SearchTypesResultItem unmarshalledObject = new SearchTypesResultItem();
+            LineageNodeReference unmarshalledObject = new LineageNodeReference();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("assetTypeItem", targetDepth))
+                if (context.TestExpression("eventTimestamp", targetDepth))
                 {
-                    var unmarshaller = AssetTypeItemUnmarshaller.Instance;
-                    unmarshalledObject.AssetTypeItem = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EventTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("formTypeItem", targetDepth))
+                if (context.TestExpression("id", targetDepth))
                 {
-                    var unmarshaller = FormTypeDataUnmarshaller.Instance;
-                    unmarshalledObject.FormTypeItem = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lineageNodeTypeItem", targetDepth))
-                {
-                    var unmarshaller = LineageNodeTypeItemUnmarshaller.Instance;
-                    unmarshalledObject.LineageNodeTypeItem = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static SearchTypesResultItemUnmarshaller _instance = new SearchTypesResultItemUnmarshaller();        
+        private static LineageNodeReferenceUnmarshaller _instance = new LineageNodeReferenceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SearchTypesResultItemUnmarshaller Instance
+        public static LineageNodeReferenceUnmarshaller Instance
         {
             get
             {

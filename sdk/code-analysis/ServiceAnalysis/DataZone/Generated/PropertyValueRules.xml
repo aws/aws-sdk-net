@@ -1560,6 +1560,28 @@
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.GetLineageNodeRequest.DomainIdentifier</property>
+    <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetLineageNodeRequest.Identifier</property>
+    <min>1</min>
+    <max>2086</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetLineageNodeResponse.DomainId</property>
+    <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetLineageNodeResponse.Id</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetLineageNodeResponse.TypeRevision</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.GetListingRequest.DomainIdentifier</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
@@ -2052,6 +2074,30 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.ListLineageNodeHistoryRequest.DomainIdentifier</property>
+    <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ListLineageNodeHistoryRequest.Identifier</property>
+    <min>1</min>
+    <max>2086</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ListLineageNodeHistoryRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ListLineageNodeHistoryRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ListLineageNodeHistoryResponse.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.ListMetadataGenerationRunsRequest.DomainIdentifier</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
@@ -2288,6 +2334,21 @@
     <property>Amazon.DataZone.Model.ListTimeSeriesDataPointsResponse.NextToken</property>
     <min>1</min>
     <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.PostLineageEventRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\x21-\x7E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.PostLineageEventRequest.DomainIdentifier</property>
+    <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.PostLineageEventRequest.Event</property>
+    <min>0</min>
+    <max>300000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.PostTimeSeriesDataPointsRequest.ClientToken</property>
@@ -3478,7 +3539,7 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.FormInput.Content</property>
     <min>0</min>
-    <max>150000</max>
+    <max>300000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.FormInput.FormName</property>
@@ -3637,6 +3698,32 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.Import.Revision</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.LineageNodeReference.Id</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.LineageNodeSummary.DomainId</property>
+    <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.LineageNodeSummary.Id</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.LineageNodeSummary.TypeRevision</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.LineageNodeTypeItem.DomainId</property>
+    <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.LineageNodeTypeItem.Revision</property>
     <min>1</min>
     <max>64</max>
   </property-value-rule>

@@ -733,6 +733,56 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type EdgeDirection.
+    /// </summary>
+    public class EdgeDirection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOWNSTREAM for EdgeDirection
+        /// </summary>
+        public static readonly EdgeDirection DOWNSTREAM = new EdgeDirection("DOWNSTREAM");
+        /// <summary>
+        /// Constant UPSTREAM for EdgeDirection
+        /// </summary>
+        public static readonly EdgeDirection UPSTREAM = new EdgeDirection("UPSTREAM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EdgeDirection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EdgeDirection FindValue(string value)
+        {
+            return FindValue<EdgeDirection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EdgeDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EnableSetting.
     /// </summary>
     public class EnableSetting : ConstantClass
@@ -2676,6 +2726,10 @@ namespace Amazon.DataZone
         /// Constant FORM_TYPE for TypesSearchScope
         /// </summary>
         public static readonly TypesSearchScope FORM_TYPE = new TypesSearchScope("FORM_TYPE");
+        /// <summary>
+        /// Constant LINEAGE_NODE_TYPE for TypesSearchScope
+        /// </summary>
+        public static readonly TypesSearchScope LINEAGE_NODE_TYPE = new TypesSearchScope("LINEAGE_NODE_TYPE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

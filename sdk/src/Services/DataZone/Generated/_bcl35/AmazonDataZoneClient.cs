@@ -4589,6 +4589,78 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  GetLineageNode
+
+        /// <summary>
+        /// Gets the data lineage node.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLineageNode service method.</param>
+        /// 
+        /// <returns>The response from the GetLineageNode service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetLineageNode">REST API Reference for GetLineageNode Operation</seealso>
+        public virtual GetLineageNodeResponse GetLineageNode(GetLineageNodeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLineageNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLineageNodeResponseUnmarshaller.Instance;
+
+            return Invoke<GetLineageNodeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLineageNode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLineageNode operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLineageNode
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetLineageNode">REST API Reference for GetLineageNode Operation</seealso>
+        public virtual IAsyncResult BeginGetLineageNode(GetLineageNodeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLineageNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLineageNodeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLineageNode operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLineageNode.</param>
+        /// 
+        /// <returns>Returns a  GetLineageNodeResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetLineageNode">REST API Reference for GetLineageNode Operation</seealso>
+        public virtual GetLineageNodeResponse EndGetLineageNode(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetLineageNodeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetListing
 
         /// <summary>
@@ -5972,6 +6044,78 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  ListLineageNodeHistory
+
+        /// <summary>
+        /// Lists the history of the specified data lineage node.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLineageNodeHistory service method.</param>
+        /// 
+        /// <returns>The response from the ListLineageNodeHistory service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListLineageNodeHistory">REST API Reference for ListLineageNodeHistory Operation</seealso>
+        public virtual ListLineageNodeHistoryResponse ListLineageNodeHistory(ListLineageNodeHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLineageNodeHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLineageNodeHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<ListLineageNodeHistoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLineageNodeHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLineageNodeHistory operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLineageNodeHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListLineageNodeHistory">REST API Reference for ListLineageNodeHistory Operation</seealso>
+        public virtual IAsyncResult BeginListLineageNodeHistory(ListLineageNodeHistoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLineageNodeHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLineageNodeHistoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLineageNodeHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLineageNodeHistory.</param>
+        /// 
+        /// <returns>Returns a  ListLineageNodeHistoryResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListLineageNodeHistory">REST API Reference for ListLineageNodeHistory Operation</seealso>
+        public virtual ListLineageNodeHistoryResponse EndListLineageNodeHistory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListLineageNodeHistoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListMetadataGenerationRuns
 
         /// <summary>
@@ -6685,6 +6829,84 @@ namespace Amazon.DataZone
         public virtual ListTimeSeriesDataPointsResponse EndListTimeSeriesDataPoints(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTimeSeriesDataPointsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PostLineageEvent
+
+        /// <summary>
+        /// Posts a data lineage event.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PostLineageEvent service method.</param>
+        /// 
+        /// <returns>The response from the PostLineageEvent service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PostLineageEvent">REST API Reference for PostLineageEvent Operation</seealso>
+        public virtual PostLineageEventResponse PostLineageEvent(PostLineageEventRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PostLineageEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PostLineageEventResponseUnmarshaller.Instance;
+
+            return Invoke<PostLineageEventResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PostLineageEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PostLineageEvent operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPostLineageEvent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PostLineageEvent">REST API Reference for PostLineageEvent Operation</seealso>
+        public virtual IAsyncResult BeginPostLineageEvent(PostLineageEventRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PostLineageEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PostLineageEventResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PostLineageEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPostLineageEvent.</param>
+        /// 
+        /// <returns>Returns a  PostLineageEventResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PostLineageEvent">REST API Reference for PostLineageEvent Operation</seealso>
+        public virtual PostLineageEventResponse EndPostLineageEvent(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PostLineageEventResponse>(asyncResult);
         }
 
         #endregion
