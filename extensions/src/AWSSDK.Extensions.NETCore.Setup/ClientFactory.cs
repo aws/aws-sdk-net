@@ -86,7 +86,7 @@ namespace Amazon.Extensions.NETCore.Setup
 
             if (!string.IsNullOrEmpty(options?.SessionRoleArn))
             {
-                credentials = new AssumeRoleAWSCredentials(credentials, _awsOptions.SessionRoleArn, _awsOptions.SessionName);
+                credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName);
             }
 
             var config = CreateConfig(options);
@@ -229,15 +229,16 @@ namespace Amazon.Extensions.NETCore.Setup
 
             // There is intertwined logic between ServiceURL, Region and DefaultConfigurationMode
             // in the SDK. They are handled at the start together to make it easier to debug SDK behavior.
-            if (defaultConfig.ServiceURL != null)
+            if (!string.IsNullOrEmpty(defaultConfig.ServiceURL))
             {
                 config.ServiceURL = defaultConfig.ServiceURL;
             }
             // Setting RegionEndpoint only if ServiceURL was not set, because ServiceURL value will be lost otherwise
-            if (options.Region != null && string.IsNullOrEmpty(defaultConfig.ServiceURL))
+            else if (options.Region != null)
             {
                 config.RegionEndpoint = options.Region;
             }
+
             if (options.DefaultConfigurationMode.HasValue)
             {
                 config.DefaultConfigurationMode = options.DefaultConfigurationMode.Value;
