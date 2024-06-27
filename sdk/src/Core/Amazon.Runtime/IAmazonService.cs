@@ -52,8 +52,8 @@ namespace Amazon.Runtime
         /// </param>
         /// <returns></returns>
         [UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
-    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. All other service clients have been confirmed to be trim safe. " + 
-            "If service clients become unsafe for trimming other compiler warnings will ocurr forcing the behavor to be addressed. " +
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. All other service clients have been confirmed to be trim safe. " +
+            "If service clients become unsafe for trimming other compiler warnings will occur forcing the behavor to be addressed. " +
             "AppSync has been the the service users should be using for syncronization instead of CognitoSync for many years so unlikely " +
             "users will attempt to use CognitoSync with Native AOT.")]
         static abstract IAmazonService CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig);
