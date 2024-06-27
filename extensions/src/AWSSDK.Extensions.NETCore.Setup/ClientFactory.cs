@@ -41,7 +41,7 @@ namespace Amazon.Extensions.NETCore.Setup
         /// <summary>
         /// Constructs an instance of the ClientFactory
         /// </summary>
-        /// <param name="options">The AWS options used for creating service clients.</param>
+        /// <param name="awsOptions">The AWS options used for creating service clients.</param>
         internal ClientFactory(AWSOptions awsOptions)
         {
             _awsOptions = awsOptions;
@@ -162,6 +162,7 @@ namespace Amazon.Extensions.NETCore.Setup
         /// Creates the AWSCredentials using either the profile indicated from the AWSOptions object
         /// of the SDK fallback credentials search.
         /// </summary>
+        /// <param name="logger"></param>
         /// <param name="options"></param>
         /// <returns></returns>
         private static AWSCredentials CreateCredentials(ILogger logger, AWSOptions options)
