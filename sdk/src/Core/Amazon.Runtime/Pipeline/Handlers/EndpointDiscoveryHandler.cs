@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
+using Amazon.Util;
 
 namespace Amazon.Runtime.Internal
 {
@@ -178,23 +179,13 @@ namespace Amazon.Runtime.Internal
                 var operationName = string.Empty;
                 if (endpointDiscoveryData.Identifiers != null && endpointDiscoveryData.Identifiers.Count > 0)
                 {
-                    operationName = OperationNameFromRequestName(requestContext.RequestName);
+                    operationName = AWSSDKUtils.ExtractOperationName(requestContext.RequestName);
                 }
                 return options.EndpointOperation(new EndpointOperationContext(requestContext.ImmutableCredentials.AccessKey, operationName, endpointDiscoveryData, evictCacheKey, evictUri));
             }
 
             return null;
         }                
-        
-        private static string OperationNameFromRequestName(string requestName)
-        {    
-            if (requestName.EndsWith("Request", StringComparison.Ordinal))
-            {
-                return requestName.Substring(0, requestName.Length - 7);
-            }
-
-            return requestName;
-        }
 
         private static bool IsInvalidEndpointException(Exception exception)
         {
