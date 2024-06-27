@@ -498,10 +498,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Must match the name of an existing DB subnet group.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must not be <c>default</c>.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Example: <c>mydbsubnetgroup</c> 

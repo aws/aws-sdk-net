@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Returns the details of the DB instance’s server certificate.
+    /// The details of the DB instance’s server certificate.
     /// 
     ///  
     /// <para>
