@@ -31,7 +31,32 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMediaPipelineKinesisVideoStreamPool operation.
-    /// Creates an Kinesis video stream pool for the media pipeline.
+    /// Creates an Amazon Kinesis Video Stream pool for use with media stream pipelines.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If a meeting uses an opt-in Region as its <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html#chimesdk-meeting-chime_CreateMeeting-request-MediaRegion">MediaRegion</a>,
+    /// the KVS stream must be in that same Region. For example, if a meeting uses the <c>af-south-1</c>
+    /// Region, the KVS stream must also be in <c>af-south-1</c>. However, if the meeting
+    /// uses a Region that AWS turns on by default, the KVS stream can be in any available
+    /// Region, including an opt-in Region. For example, if the meeting uses <c>ca-central-1</c>,
+    /// the KVS stream can be in <c>eu-west-2</c>, <c>us-east-1</c>, <c>af-south-1</c>, or
+    /// any other Region that the Amazon Chime SDK supports.
+    /// </para>
+    ///  
+    /// <para>
+    /// To learn which AWS Region a meeting uses, call the <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_GetMeeting.html">GetMeeting</a>
+    /// API and use the <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html#chimesdk-meeting-chime_CreateMeeting-request-MediaRegion">MediaRegion</a>
+    /// parameter from the response.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about opt-in Regions, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions.html">Available
+    /// Regions</a> in the <i>Amazon Chime SDK Developer Guide</i>, and <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html#rande-manage-enable.html">Specify
+    /// which AWS Regions your account can use</a>, in the <i>AWS Account Management Reference
+    /// Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateMediaPipelineKinesisVideoStreamPoolRequest : AmazonChimeSDKMediaPipelinesRequest
     {
@@ -62,7 +87,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property PoolName. 
         /// <para>
-        /// The name of the video stream pool.
+        /// The name of the pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -81,7 +106,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property StreamConfiguration. 
         /// <para>
-        /// The configuration settings for the video stream.
+        /// The configuration settings for the stream.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +125,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the video stream pool.
+        /// The tags assigned to the stream pool.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

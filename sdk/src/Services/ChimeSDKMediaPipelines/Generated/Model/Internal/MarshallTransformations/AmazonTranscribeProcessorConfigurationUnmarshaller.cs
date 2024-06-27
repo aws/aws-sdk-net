@@ -96,6 +96,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     unmarshalledObject.IdentifyLanguage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IdentifyMultipleLanguages", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IdentifyMultipleLanguages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LanguageCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
