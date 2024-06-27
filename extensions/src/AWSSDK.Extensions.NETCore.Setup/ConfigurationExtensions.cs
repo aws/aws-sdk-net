@@ -21,6 +21,8 @@ using Amazon.Util;
 
 using Amazon.Extensions.NETCore.Setup;
 using System.Linq;
+using System.Threading;
+using System.Collections.Generic;
 
 namespace Microsoft.Extensions.Configuration
 {
@@ -28,15 +30,25 @@ namespace Microsoft.Extensions.Configuration
     /// This class adds extension methods to IConfiguration making it easier to pull out
     /// AWS configuration options.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.Extensions.NETCore.Setup.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public static class ConfigurationExtensions
     {
         /// <summary>
         /// The default section where settings are read from the IConfiguration object. This is set to "AWS".
         /// </summary>
         public const string DEFAULT_CONFIG_SECTION = "AWS";
+
+        const string ProfileKey = "Profile";
+        const string AWSProfileNameKey = "AWSProfileName";
+        const string ProfilesLocationKey = "ProfilesLocation";
+        const string AWSProfilesLocationKey = "AWSProfilesLocation";
+        const string RegionKey = "Region";
+        const string AWSRegionKey = "AWSRegion";
+        const string DefaultsModeKey = "DefaultsMode";
+        const string SessionRoleArnKey = "SessionRoleArn";
+        const string SessionNameKey = "SessionName";
+        const string LoggingKey = "Logging";
+
+
 
         /// <summary>
         /// Constructs an AWSOptions class with the options specified in the "AWS" section in the IConfiguration object.
@@ -56,32 +68,9 @@ namespace Microsoft.Extensions.Configuration
         /// <returns>The AWSOptions containing the values set in configuration system.</returns>
         public static AWSOptions GetAWSOptions(this IConfiguration config, string configSection)
         {
-            return GetAWSOptions<DefaultClientConfig>(config, configSection);
-        }
-
-        /// <summary>
-        /// Constructs an AWSOptions class with the options specified in the "AWS" section in the IConfiguration object.
-        /// </summary>
-        /// <typeparam name="TConfig">The AWS client config to be used in creating clients, like AmazonS3Config.</typeparam>
-        /// <param name="config"></param>
-        /// <returns>The AWSOptions containing the values set in configuration system.</returns>
-        public static AWSOptions GetAWSOptions<TConfig>(this IConfiguration config) where TConfig : ClientConfig, new()
-        {
-            return GetAWSOptions<TConfig>(config, DEFAULT_CONFIG_SECTION);
-        }
-
-        /// <summary>
-        /// Constructs an AWSOptions class with the options specified in the "AWS" section in the IConfiguration object.
-        /// </summary>
-        /// <typeparam name="TConfig">The AWS client config to be used in creating clients, like AmazonS3Config.</typeparam>
-        /// <param name="config"></param>
-        /// <param name="configSection">The config section to extract AWS options from.</param>
-        /// <returns>The AWSOptions containing the values set in configuration system.</returns>
-        public static AWSOptions GetAWSOptions<TConfig>(this IConfiguration config, string configSection) where TConfig : ClientConfig, new()
-        {
             var options = new AWSOptions
             {
-                DefaultClientConfig = new TConfig(),
+                DefaultClientConfig = new DefaultClientConfig(),
             };
 
             IConfiguration section;
@@ -93,97 +82,280 @@ namespace Microsoft.Extensions.Configuration
             if (section == null)
                 return options;
 
-            var clientConfigType = typeof(TConfig);
-            var properties = clientConfigType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
-            foreach (var element in section.GetChildren())
+            foreach(var element in section.GetChildren())
             {
-                try
+                if (string.IsNullOrEmpty(element.Value))
+                    continue;
+
+
+                // Logging is handled outside of this loop
+                if (string.Equals(element.Key, LoggingKey, StringComparison.OrdinalIgnoreCase))
                 {
-                    var property = properties.SingleOrDefault(p => p.Name.Equals(element.Key, StringComparison.OrdinalIgnoreCase));
-                    if (property == null || property.SetMethod == null)
-                        continue;
-
-                    if (property.PropertyType == typeof(string) || property.PropertyType.GetTypeInfo().IsPrimitive)
-                    {
-                        var value = Convert.ChangeType(element.Value, property.PropertyType);
-                        property.SetMethod.Invoke(options.DefaultClientConfig, new object[] { value });
-                    }
-                    else if (property.PropertyType == typeof(TimeSpan) || property.PropertyType == typeof(Nullable<TimeSpan>))
-                    {
-                        var milliSeconds = Convert.ToInt64(element.Value);
-                        var timespan = TimeSpan.FromMilliseconds(milliSeconds);
-                        property.SetMethod.Invoke(options.DefaultClientConfig, new object[] { timespan });
-                    }
-                    else if (property.PropertyType.IsEnum)
-                    {
-
-                        var value = Enum.Parse(property.PropertyType, element.Value);
-                        if ( value != null )
-                        {
-                            property.SetMethod.Invoke(options.DefaultClientConfig, new object[] { value });
-                        }
-                    }
+                    continue;
                 }
-                catch(Exception e)
+                // Include checking legacy key
+                else if (string.Equals(element.Key, ProfileKey, StringComparison.OrdinalIgnoreCase) || string.Equals(element.Key, AWSProfileNameKey, StringComparison.OrdinalIgnoreCase))
                 {
-                    throw new ConfigurationException($"Error reading value for property {element.Key}.", e)
-                    {
-                        PropertyName = element.Key,
-                        PropertyValue = element.Value
-                    };
+                    options.Profile = element.Value;
                 }
-            }
-
-            if (!string.IsNullOrEmpty(section["Profile"]))
-            {
-                options.Profile = section["Profile"];
-            }
-            // Check legacy name if the new name isn't set
-            else if (!string.IsNullOrEmpty(section["AWSProfileName"]))
-            {
-                options.Profile = section["AWSProfileName"];
-            }
-
-            if (!string.IsNullOrEmpty(section["ProfilesLocation"]))
-            {
-                options.ProfilesLocation = section["ProfilesLocation"];
-            }
-            // Check legacy name if the new name isn't set
-            else if (!string.IsNullOrEmpty(section["AWSProfilesLocation"]))
-            {
-                options.ProfilesLocation = section["AWSProfilesLocation"];
-            }
-
-            if (!string.IsNullOrEmpty(section["Region"]))
-            {
-                options.Region = RegionEndpoint.GetBySystemName(section["Region"]);
-            }
-            // Check legacy name if the new name isn't set
-            else if (!string.IsNullOrEmpty(section["AWSRegion"]))
-            {
-                options.Region = RegionEndpoint.GetBySystemName(section["AWSRegion"]);
-            }
-
-            if (!string.IsNullOrEmpty(section["DefaultsMode"]))
-            {
-                if(!Enum.TryParse<DefaultConfigurationMode>(section["DefaultsMode"], out var mode))
+                // Include checking legacy key
+                else if (string.Equals(element.Key, ProfilesLocationKey, StringComparison.OrdinalIgnoreCase) || string.Equals(element.Key, AWSProfilesLocationKey, StringComparison.OrdinalIgnoreCase))
                 {
-                    throw new ArgumentException($"Invalid value for DefaultConfiguration. Valid values are: {string.Join(", ", Enum.GetNames(typeof(DefaultConfigurationMode)))} ");
+                    options.ProfilesLocation = element.Value;
                 }
-                options.DefaultConfigurationMode = mode;
+                // Include checking legacy key
+                else if (string.Equals(element.Key, RegionKey, StringComparison.OrdinalIgnoreCase) || string.Equals(element.Key, AWSRegionKey, StringComparison.OrdinalIgnoreCase))
+                {
+                    options.Region = RegionEndpoint.GetBySystemName(element.Value);
+                }
+                else if (string.Equals(element.Key, DefaultsModeKey, StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!Enum.TryParse<DefaultConfigurationMode>(element.Value, out var mode))
+                    {
+                        throw new ArgumentException($"Invalid value for DefaultConfiguration. Valid values are: {string.Join(", ", Enum.GetNames(typeof(DefaultConfigurationMode)))} ");
+                    }
+                    options.DefaultConfigurationMode = mode;
+                }
+                else if (string.Equals(element.Key, SessionRoleArnKey, StringComparison.OrdinalIgnoreCase))
+                {
+                    options.SessionRoleArn = element.Value;
+                }
+                else if (string.Equals(element.Key, SessionNameKey, StringComparison.OrdinalIgnoreCase))
+                {
+                    options.SessionName = element.Value;
+                }
+
+                // Start DefaultConfigClient settings
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.AllowAutoRedirect), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var allowAutoRedirect))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.AllowAutoRedirect)}.");
+                    }
+
+                    options.DefaultClientConfig.AllowAutoRedirect = allowAutoRedirect;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.AuthenticationRegion), StringComparison.OrdinalIgnoreCase))
+                {
+                    options.DefaultClientConfig.AuthenticationRegion = element.Value;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.BufferSize), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!int.TryParse(element.Value, out var bufferSize))
+                    {
+                        throw new ArgumentException($"Invalid integer value for {nameof(DefaultClientConfig.BufferSize)}.");
+                    }
+
+                    options.DefaultClientConfig.BufferSize = bufferSize;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.ClientAppId), StringComparison.OrdinalIgnoreCase))
+                {
+                    options.DefaultClientConfig.ClientAppId = element.Value;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.DisableHostPrefixInjection), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var disableHostPrefixInjection))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.DisableHostPrefixInjection)}.");
+                    }
+
+                    options.DefaultClientConfig.DisableHostPrefixInjection = disableHostPrefixInjection;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.DisableLogging), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var disableLogging))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.DisableLogging)}.");
+                    }
+
+                    options.DefaultClientConfig.DisableLogging = disableLogging;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.DisableRequestCompression), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var disableRequestCompression))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.DisableRequestCompression)}.");
+                    }
+
+                    options.DefaultClientConfig.DisableRequestCompression = disableRequestCompression;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.EndpointDiscoveryCacheLimit), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!int.TryParse(element.Value, out var endpointDiscoveryCacheLimit))
+                    {
+                        throw new ArgumentException($"Invalid integer value for {nameof(DefaultClientConfig.EndpointDiscoveryCacheLimit)}.");
+                    }
+
+                    options.DefaultClientConfig.EndpointDiscoveryCacheLimit = endpointDiscoveryCacheLimit;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.EndpointDiscoveryEnabled), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var endpointDiscoveryEnabled))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.EndpointDiscoveryEnabled)}.");
+                    }
+
+                    options.DefaultClientConfig.EndpointDiscoveryEnabled = endpointDiscoveryEnabled;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.FastFailRequests), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var fastFailRequests))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.FastFailRequests)}.");
+                    }
+
+                    options.DefaultClientConfig.FastFailRequests = fastFailRequests;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.HttpClientCacheSize), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!int.TryParse(element.Value, out var httpClientCacheSize))
+                    {
+                        throw new ArgumentException($"Invalid integer value for {nameof(DefaultClientConfig.HttpClientCacheSize)}.");
+                    }
+
+                    options.DefaultClientConfig.HttpClientCacheSize = httpClientCacheSize;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.IgnoreConfiguredEndpointUrls), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var ignoreConfiguredEndpointUrls))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.IgnoreConfiguredEndpointUrls)}.");
+                    }
+
+                    options.DefaultClientConfig.IgnoreConfiguredEndpointUrls = ignoreConfiguredEndpointUrls;
+                }
+
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.LogMetrics), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var logMetrics))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.LogMetrics)}.");
+                    }
+
+                    options.DefaultClientConfig.LogMetrics = logMetrics;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.LogResponse), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var logResponse))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.LogResponse)}.");
+                    }
+
+                    options.DefaultClientConfig.LogResponse = logResponse;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.MaxErrorRetry), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!int.TryParse(element.Value, out var maxErrorRetry))
+                    {
+                        throw new ArgumentException($"Invalid integer value for {nameof(DefaultClientConfig.MaxErrorRetry)}.");
+                    }
+
+                    options.DefaultClientConfig.MaxErrorRetry = maxErrorRetry;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.ProgressUpdateInterval), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!long.TryParse(element.Value, out var progressUpdateInterval))
+                    {
+                        throw new ArgumentException($"Invalid long value for {nameof(DefaultClientConfig.ProgressUpdateInterval)}.");
+                    }
+
+                    options.DefaultClientConfig.ProgressUpdateInterval = progressUpdateInterval;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.RequestMinCompressionSizeBytes), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!long.TryParse(element.Value, out var requestMinCompressionSizeBytes))
+                    {
+                        throw new ArgumentException($"Invalid long value for {nameof(DefaultClientConfig.RequestMinCompressionSizeBytes)}.");
+                    }
+
+                    options.DefaultClientConfig.RequestMinCompressionSizeBytes = requestMinCompressionSizeBytes;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.ResignRetries), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var resignRetries))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.ResignRetries)}.");
+                    }
+
+                    options.DefaultClientConfig.ResignRetries = resignRetries;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.RetryMode), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!Enum.TryParse<RequestRetryMode>(element.Value, out var mode))
+                    {
+                        throw new ArgumentException($"Invalid value for RetryMode. Valid values are: {string.Join(", ", Enum.GetNames(typeof(RequestRetryMode)))} ");
+                    }
+                    options.DefaultClientConfig.RetryMode = mode;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.ServiceURL), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!Uri.TryCreate(element.Value, UriKind.Absolute, out var serviceUri))
+                    {
+                        throw new ArgumentException($"Invalid uri value for {nameof(DefaultClientConfig.ServiceURL)}.");
+                    }
+                    options.DefaultClientConfig.ServiceURL = serviceUri.ToString();
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.ThrottleRetries), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var throttleRetries))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.ThrottleRetries)}.");
+                    }
+
+                    options.DefaultClientConfig.ThrottleRetries = throttleRetries;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.Timeout), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!int.TryParse(element.Value, out var timeout))
+                    {
+                        throw new ArgumentException($"Invalid integer value for {nameof(DefaultClientConfig.Timeout)}.");
+                    }
+
+                    options.DefaultClientConfig.Timeout = TimeSpan.FromMilliseconds(timeout);
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.UseAlternateUserAgentHeader), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var useAlternateUserAgentHeader))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.UseAlternateUserAgentHeader)}.");
+                    }
+
+                    options.DefaultClientConfig.UseAlternateUserAgentHeader = useAlternateUserAgentHeader;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.UseDualstackEndpoint), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var useDualstackEndpoint))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.UseDualstackEndpoint)}.");
+                    }
+
+                    options.DefaultClientConfig.UseDualstackEndpoint = useDualstackEndpoint;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.UseFIPSEndpoint), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var useFIPSEndpoint))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.UseFIPSEndpoint)}.");
+                    }
+
+                    options.DefaultClientConfig.UseFIPSEndpoint = useFIPSEndpoint;
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.UseHttp), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var useHttp))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.UseHttp)}.");
+                    }
+
+                    options.DefaultClientConfig.UseHttp = useHttp;
+                }
+                else
+                {
+                    options.DefaultClientConfig.ServiceSpecificSettings[element.Key] = element.Value;
+                }
             }
 
-            if (!string.IsNullOrEmpty(section["SessionRoleArn"]))
-            {
-                options.SessionRoleArn = section["SessionRoleArn"];
-            }
-
-            if (!string.IsNullOrEmpty(section["SessionName"]))
-            {
-                options.SessionName = section["SessionName"];
-            }
-
-            var loggingSection = section.GetSection("Logging");
+            var loggingSection = section.GetSection(LoggingKey);
             if(loggingSection != null)
             {
                 options.Logging = new AWSOptions.LoggingSetting();

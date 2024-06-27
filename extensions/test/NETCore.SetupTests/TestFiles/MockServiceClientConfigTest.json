@@ -1,0 +1,10 @@
+﻿{
+  "AWS": {
+    "Region": "us-west-2",
+    "Position": "Second",
+    "nullablePosition": "Second",
+    "TimeLength": 100,
+    "NullableTimeLength": 200,
+    "theBool": true
+  }
+}

@@ -12,10 +12,10 @@
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 	
   <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
-    <WarningsAsErrors>IL2026,IL2075</WarningsAsErrors>
     <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>  
 
@@ -39,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.Core" Version="3.7.300" />
+    <ProjectReference Include="../../../sdk/src/Core/AWSSDK.Core.NetStandard.csproj" />
   </ItemGroup>
 
 </Project>
