@@ -9408,7 +9408,8 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// List tags for a CloudFront resource.
+        /// List tags for a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -9437,7 +9438,8 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// List tags for a CloudFront resource.
+        /// List tags for a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -9570,7 +9572,8 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Add tags to a CloudFront resource.
+        /// Add tags to a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -9599,7 +9602,8 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Add tags to a CloudFront resource.
+        /// Add tags to a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -9740,7 +9744,8 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Remove tags from a CloudFront resource.
+        /// Remove tags from a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -9769,7 +9774,8 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Remove tags from a CloudFront resource.
+        /// Remove tags from a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

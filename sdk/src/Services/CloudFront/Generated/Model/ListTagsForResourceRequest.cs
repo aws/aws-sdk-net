@@ -31,7 +31,8 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List tags for a CloudFront resource.
+    /// List tags for a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+    /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonCloudFrontRequest
     {
