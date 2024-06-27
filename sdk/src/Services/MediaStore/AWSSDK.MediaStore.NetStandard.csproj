@@ -22,7 +22,6 @@
     <SignAssembly>true</SignAssembly>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
-    <LangVersion>9.0</LangVersion>
     <NoWarn>CA1822</NoWarn>
   </PropertyGroup>
   <!-- Async Enumerable Compatibility -->
@@ -31,6 +30,16 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <IsTrimmable>true</IsTrimmable>
+  </PropertyGroup>
+  <!-- 
+    For .NET 8 LangVersion is set to 11 to allow using static interface methods. This is to allow
+    the service interface factory method to exist for AWSSDK.Extensions.NETCore.Setup.
+  -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <LangVersion>11.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' != 'net8.0'">
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">
     <CodeAnalysisRuleSet>../../../AWSDotNetSDK.ruleset</CodeAnalysisRuleSet>
