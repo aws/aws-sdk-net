@@ -9251,6 +9251,100 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type MlTools.
+    /// </summary>
+    public class MlTools : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AutoMl for MlTools
+        /// </summary>
+        public static readonly MlTools AutoMl = new MlTools("AutoMl");
+        /// <summary>
+        /// Constant DataWrangler for MlTools
+        /// </summary>
+        public static readonly MlTools DataWrangler = new MlTools("DataWrangler");
+        /// <summary>
+        /// Constant EmrClusters for MlTools
+        /// </summary>
+        public static readonly MlTools EmrClusters = new MlTools("EmrClusters");
+        /// <summary>
+        /// Constant Endpoints for MlTools
+        /// </summary>
+        public static readonly MlTools Endpoints = new MlTools("Endpoints");
+        /// <summary>
+        /// Constant Experiments for MlTools
+        /// </summary>
+        public static readonly MlTools Experiments = new MlTools("Experiments");
+        /// <summary>
+        /// Constant FeatureStore for MlTools
+        /// </summary>
+        public static readonly MlTools FeatureStore = new MlTools("FeatureStore");
+        /// <summary>
+        /// Constant InferenceRecommender for MlTools
+        /// </summary>
+        public static readonly MlTools InferenceRecommender = new MlTools("InferenceRecommender");
+        /// <summary>
+        /// Constant JumpStart for MlTools
+        /// </summary>
+        public static readonly MlTools JumpStart = new MlTools("JumpStart");
+        /// <summary>
+        /// Constant ModelEvaluation for MlTools
+        /// </summary>
+        public static readonly MlTools ModelEvaluation = new MlTools("ModelEvaluation");
+        /// <summary>
+        /// Constant Models for MlTools
+        /// </summary>
+        public static readonly MlTools Models = new MlTools("Models");
+        /// <summary>
+        /// Constant Pipelines for MlTools
+        /// </summary>
+        public static readonly MlTools Pipelines = new MlTools("Pipelines");
+        /// <summary>
+        /// Constant Projects for MlTools
+        /// </summary>
+        public static readonly MlTools Projects = new MlTools("Projects");
+        /// <summary>
+        /// Constant Training for MlTools
+        /// </summary>
+        public static readonly MlTools Training = new MlTools("Training");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MlTools(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MlTools FindValue(string value)
+        {
+            return FindValue<MlTools>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MlTools(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ModelApprovalStatus.
     /// </summary>
     public class ModelApprovalStatus : ConstantClass

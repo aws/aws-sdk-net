@@ -31,7 +31,9 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Defines the configuration for attaching an additional Amazon Elastic Block Store (EBS)
-    /// volume to each instance of the SageMaker HyperPod cluster instance group.
+    /// volume to each instance of the SageMaker HyperPod cluster instance group. To learn
+    /// more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-release-notes.html#sagemaker-hyperpod-release-notes-20240620">SageMaker
+    /// HyperPod release notes: June 20, 2024</a>.
     /// </summary>
     public partial class ClusterEbsVolumeConfig
     {

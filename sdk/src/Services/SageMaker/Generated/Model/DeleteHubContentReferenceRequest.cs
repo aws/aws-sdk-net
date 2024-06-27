@@ -61,7 +61,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HubContentType. 
         /// <para>
-        /// The type of hub content to delete.
+        /// The type of hub content reference to delete. The only supported type of hub content
+        /// reference to delete is <c>ModelReference</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
