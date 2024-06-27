@@ -1,3 +1,32 @@
+### 3.7.840.0 (2024-06-27 18:21 UTC)
+* ApplicationAutoScaling (3.7.303.0)
+	* Amazon WorkSpaces customers can now use Application Auto Scaling to automatically scale the number of virtual desktops in a WorkSpaces pool.
+* ChimeSDKMediaPipelines (3.7.301.0)
+	* Added Amazon Transcribe multi language identification to Chime SDK call analytics. Enabling customers sending single stream audio to generate call recordings using Chime SDK call analytics
+* CloudFront (3.7.303.17)
+	* Doc only update for CloudFront that fixes customer-reported issue
+* DataZone (3.7.305.0)
+	* This release supports the data lineage feature of business data catalog in Amazon DataZone.
+* DynamoDBv2 (3.7.304.0)
+	* Add support for update and condition expressions to DynamoDB transactional writes that are created using the document model or the object-persistence model.
+* ElastiCache (3.7.303.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* MQ (3.7.301.0)
+	* This release makes the EngineVersion field optional for both broker and configuration and uses the latest available version by default. The AutoMinorVersionUpgrade field is also now optional for broker creation and defaults to 'true'.
+* QConnect (3.7.305.0)
+	* Adds CreateContentAssociation, ListContentAssociations, GetContentAssociation, and DeleteContentAssociation APIs.
+* QuickSight (3.7.312.0)
+	* Adding support for Repeating Sections, Nested Filters
+* RDS (3.7.313.18)
+	* Updates Amazon RDS documentation for TAZ export to S3.
+* SageMaker (3.7.330.0)
+	* Add capability for Admins to customize Studio experience for the user by showing or hiding Apps and MLTools.
+* WorkSpaces (3.7.304.0)
+	* Added support for WorkSpaces Pools.
+* Core 3.7.304.21
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.839.0 (2024-06-26 18:19 UTC)
 * ControlTower (3.7.306.0)
 	* Added ListLandingZoneOperations API.
