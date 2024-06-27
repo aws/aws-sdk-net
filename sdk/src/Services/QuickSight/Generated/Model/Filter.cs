@@ -42,6 +42,7 @@ namespace Amazon.QuickSight.Model
     public partial class Filter
     {
         private CategoryFilter _categoryFilter;
+        private NestedFilter _nestedFilter;
         private NumericEqualityFilter _numericEqualityFilter;
         private NumericRangeFilter _numericRangeFilter;
         private RelativeDatesFilter _relativeDatesFilter;
@@ -70,6 +71,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCategoryFilter()
         {
             return this._categoryFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NestedFilter. 
+        /// <para>
+        /// A <c>NestedFilter</c> filters data with a subset of data that is defined by the nested
+        /// inner filter.
+        /// </para>
+        /// </summary>
+        public NestedFilter NestedFilter
+        {
+            get { return this._nestedFilter; }
+            set { this._nestedFilter = value; }
+        }
+
+        // Check to see if NestedFilter property is set
+        internal bool IsSetNestedFilter()
+        {
+            return this._nestedFilter != null;
         }
 
         /// <summary>

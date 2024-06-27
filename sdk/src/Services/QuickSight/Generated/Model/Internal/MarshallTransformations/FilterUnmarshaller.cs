@@ -72,6 +72,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.CategoryFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NestedFilter", targetDepth))
+                {
+                    var unmarshaller = NestedFilterUnmarshaller.Instance;
+                    unmarshalledObject.NestedFilter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NumericEqualityFilter", targetDepth))
                 {
                     var unmarshaller = NumericEqualityFilterUnmarshaller.Instance;

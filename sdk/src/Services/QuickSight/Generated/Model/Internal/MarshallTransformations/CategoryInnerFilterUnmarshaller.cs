@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BodySectionConfiguration Object
+    /// Response Unmarshaller for CategoryInnerFilter Object
     /// </summary>  
-    public class BodySectionConfigurationUnmarshaller : IUnmarshaller<BodySectionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<BodySectionConfiguration, JsonUnmarshallerContext>
+    public class CategoryInnerFilterUnmarshaller : IUnmarshaller<CategoryInnerFilter, XmlUnmarshallerContext>, IUnmarshaller<CategoryInnerFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BodySectionConfiguration IUnmarshaller<BodySectionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CategoryInnerFilter IUnmarshaller<CategoryInnerFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public BodySectionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public CategoryInnerFilter Unmarshall(JsonUnmarshallerContext context)
         {
-            BodySectionConfiguration unmarshalledObject = new BodySectionConfiguration();
+            CategoryInnerFilter unmarshalledObject = new CategoryInnerFilter();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Content", targetDepth))
+                if (context.TestExpression("Column", targetDepth))
                 {
-                    var unmarshaller = BodySectionContentUnmarshaller.Instance;
-                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ColumnIdentifierUnmarshaller.Instance;
+                    unmarshalledObject.Column = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PageBreakConfiguration", targetDepth))
+                if (context.TestExpression("Configuration", targetDepth))
                 {
-                    var unmarshaller = SectionPageBreakConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PageBreakConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = CategoryFilterConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Configuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RepeatConfiguration", targetDepth))
+                if (context.TestExpression("DefaultFilterControlConfiguration", targetDepth))
                 {
-                    var unmarshaller = BodySectionRepeatConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RepeatConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SectionId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SectionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Style", targetDepth))
-                {
-                    var unmarshaller = SectionStyleUnmarshaller.Instance;
-                    unmarshalledObject.Style = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DefaultFilterControlConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DefaultFilterControlConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +89,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static BodySectionConfigurationUnmarshaller _instance = new BodySectionConfigurationUnmarshaller();        
+        private static CategoryInnerFilterUnmarshaller _instance = new CategoryInnerFilterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BodySectionConfigurationUnmarshaller Instance
+        public static CategoryInnerFilterUnmarshaller Instance
         {
             get
             {

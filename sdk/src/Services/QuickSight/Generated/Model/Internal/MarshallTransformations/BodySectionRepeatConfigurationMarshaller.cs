@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// BodySectionConfiguration Marshaller
+    /// BodySectionRepeatConfiguration Marshaller
     /// </summary>
-    public class BodySectionConfigurationMarshaller : IRequestMarshaller<BodySectionConfiguration, JsonMarshallerContext> 
+    public class BodySectionRepeatConfigurationMarshaller : IRequestMarshaller<BodySectionRepeatConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,19 +44,35 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BodySectionConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(BodySectionRepeatConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetContent())
+            if(requestObject.IsSetDimensionConfigurations())
             {
-                context.Writer.WritePropertyName("Content");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("DimensionConfigurations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDimensionConfigurationsListValue in requestObject.DimensionConfigurations)
+                {
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = BodySectionContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.Content, context);
+                    var marshaller = BodySectionRepeatDimensionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectDimensionConfigurationsListValue, context);
 
-                context.Writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetNonRepeatingVisuals())
+            {
+                context.Writer.WritePropertyName("NonRepeatingVisuals");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectNonRepeatingVisualsListValue in requestObject.NonRepeatingVisuals)
+                {
+                        context.Writer.Write(requestObjectNonRepeatingVisualsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetPageBreakConfiguration())
@@ -64,36 +80,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("PageBreakConfiguration");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = SectionPageBreakConfigurationMarshaller.Instance;
+                var marshaller = BodySectionRepeatPageBreakConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PageBreakConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRepeatConfiguration())
-            {
-                context.Writer.WritePropertyName("RepeatConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = BodySectionRepeatConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.RepeatConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSectionId())
-            {
-                context.Writer.WritePropertyName("SectionId");
-                context.Writer.Write(requestObject.SectionId);
-            }
-
-            if(requestObject.IsSetStyle())
-            {
-                context.Writer.WritePropertyName("Style");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SectionStyleMarshaller.Instance;
-                marshaller.Marshall(requestObject.Style, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -103,7 +91,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static BodySectionConfigurationMarshaller Instance = new BodySectionConfigurationMarshaller();
+        public readonly static BodySectionRepeatConfigurationMarshaller Instance = new BodySectionRepeatConfigurationMarshaller();
 
     }
 }

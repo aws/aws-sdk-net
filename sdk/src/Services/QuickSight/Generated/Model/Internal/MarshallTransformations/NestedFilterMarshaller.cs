@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// BodySectionConfiguration Marshaller
+    /// NestedFilter Marshaller
     /// </summary>
-    public class BodySectionConfigurationMarshaller : IRequestMarshaller<BodySectionConfiguration, JsonMarshallerContext> 
+    public class NestedFilterMarshaller : IRequestMarshaller<NestedFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,56 +44,40 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BodySectionConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(NestedFilter requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetContent())
+            if(requestObject.IsSetColumn())
             {
-                context.Writer.WritePropertyName("Content");
+                context.Writer.WritePropertyName("Column");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = BodySectionContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.Content, context);
+                var marshaller = ColumnIdentifierMarshaller.Instance;
+                marshaller.Marshall(requestObject.Column, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetPageBreakConfiguration())
+            if(requestObject.IsSetFilterId())
             {
-                context.Writer.WritePropertyName("PageBreakConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SectionPageBreakConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.PageBreakConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("FilterId");
+                context.Writer.Write(requestObject.FilterId);
             }
 
-            if(requestObject.IsSetRepeatConfiguration())
+            if(requestObject.IsSetIncludeInnerSet())
             {
-                context.Writer.WritePropertyName("RepeatConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = BodySectionRepeatConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.RepeatConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("IncludeInnerSet");
+                context.Writer.Write(requestObject.IncludeInnerSet);
             }
 
-            if(requestObject.IsSetSectionId())
+            if(requestObject.IsSetInnerFilter())
             {
-                context.Writer.WritePropertyName("SectionId");
-                context.Writer.Write(requestObject.SectionId);
-            }
-
-            if(requestObject.IsSetStyle())
-            {
-                context.Writer.WritePropertyName("Style");
+                context.Writer.WritePropertyName("InnerFilter");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = SectionStyleMarshaller.Instance;
-                marshaller.Marshall(requestObject.Style, context);
+                var marshaller = InnerFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.InnerFilter, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -103,7 +87,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static BodySectionConfigurationMarshaller Instance = new BodySectionConfigurationMarshaller();
+        public readonly static NestedFilterMarshaller Instance = new NestedFilterMarshaller();
 
     }
 }

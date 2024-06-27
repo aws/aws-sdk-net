@@ -3107,6 +3107,16 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.BodySectionDynamicCategoryDimensionConfiguration.Limit</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.BodySectionDynamicNumericDimensionConfiguration.Limit</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.BoxPlotVisual.VisualId</property>
     <min>1</min>
     <max>512</max>
@@ -4273,6 +4283,12 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.NegativeFormat.Suffix</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.NestedFilter.FilterId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.NetworkInterface.NetworkInterfaceId</property>
