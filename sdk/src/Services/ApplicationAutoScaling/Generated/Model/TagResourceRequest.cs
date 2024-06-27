@@ -52,7 +52,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     ///  
     /// <para>
     /// For general information about tags, including the format and syntax, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-    /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
+    /// your Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
     /// </para>
     ///  
     /// <para>
@@ -113,8 +113,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  
         /// <para>
         /// For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-defined
-        /// tag restrictions</a> in the <i>Amazon Web Services Billing and Cost Management User
-        /// Guide</i>.
+        /// tag restrictions</a> in the <i>Amazon Web Services Billing User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -296,6 +296,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant SageMakerVariantProvisionedConcurrencyUtilization for MetricType
         /// </summary>
         public static readonly MetricType SageMakerVariantProvisionedConcurrencyUtilization = new MetricType("SageMakerVariantProvisionedConcurrencyUtilization");
+        /// <summary>
+        /// Constant WorkSpacesAverageUserSessionsCapacityUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType WorkSpacesAverageUserSessionsCapacityUtilization = new MetricType("WorkSpacesAverageUserSessionsCapacityUtilization");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -476,6 +480,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant SagemakerVariantDesiredProvisionedConcurrency for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension SagemakerVariantDesiredProvisionedConcurrency = new ScalableDimension("sagemaker:variant:DesiredProvisionedConcurrency");
+        /// <summary>
+        /// Constant WorkspacesWorkspacespoolDesiredUserSessions for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension WorkspacesWorkspacespoolDesiredUserSessions = new ScalableDimension("workspaces:workspacespool:DesiredUserSessions");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -640,6 +648,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant Sagemaker for ServiceNamespace
         /// </summary>
         public static readonly ServiceNamespace Sagemaker = new ServiceNamespace("sagemaker");
+        /// <summary>
+        /// Constant Workspaces for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace Workspaces = new ServiceNamespace("workspaces");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
