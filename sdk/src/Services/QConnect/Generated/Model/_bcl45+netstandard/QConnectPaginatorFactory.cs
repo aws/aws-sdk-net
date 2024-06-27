@@ -53,6 +53,14 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Paginator for ListContentAssociations operation
+        ///</summary>
+        public IListContentAssociationsPaginator ListContentAssociations(ListContentAssociationsRequest request) 
+        {
+            return new ListContentAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListContents operation
         ///</summary>
         public IListContentsPaginator ListContents(ListContentsRequest request) 

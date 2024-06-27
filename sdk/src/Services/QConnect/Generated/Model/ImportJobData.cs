@@ -85,7 +85,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property FailedRecordReport. 
         /// <para>
-        /// The link to donwload the information of resource data that failed to be imported.
+        /// The link to download the information of resource data that failed to be imported.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=4096)]

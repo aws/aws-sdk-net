@@ -272,6 +272,136 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  CreateContentAssociation
+
+
+        /// <summary>
+        /// Creates an association between a content resource in a knowledge base and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/step-by-step-guided-experiences.html">step-by-step
+        /// guides</a>. Step-by-step guides offer instructions to agents for resolving common
+        /// customer issues. You create a content association to integrate Amazon Q in Connect
+        /// and step-by-step guides. 
+        /// 
+        ///  
+        /// <para>
+        /// After you integrate Amazon Q and step-by-step guides, when Amazon Q provides a recommendation
+        /// to an agent based on the intent that it's detected, it also provides them with the
+        /// option to start the step-by-step guide that you have associated with the content.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note the following limitations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can create only one content association for each content resource in a knowledge
+        /// base.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can associate a step-by-step guide with multiple content resources.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContentAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateContentAssociation service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateContentAssociation">REST API Reference for CreateContentAssociation Operation</seealso>
+        CreateContentAssociationResponse CreateContentAssociation(CreateContentAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Creates an association between a content resource in a knowledge base and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/step-by-step-guided-experiences.html">step-by-step
+        /// guides</a>. Step-by-step guides offer instructions to agents for resolving common
+        /// customer issues. You create a content association to integrate Amazon Q in Connect
+        /// and step-by-step guides. 
+        /// 
+        ///  
+        /// <para>
+        /// After you integrate Amazon Q and step-by-step guides, when Amazon Q provides a recommendation
+        /// to an agent based on the intent that it's detected, it also provides them with the
+        /// option to start the step-by-step guide that you have associated with the content.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note the following limitations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can create only one content association for each content resource in a knowledge
+        /// base.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can associate a step-by-step guide with multiple content resources.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContentAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContentAssociation service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateContentAssociation">REST API Reference for CreateContentAssociation Operation</seealso>
+        Task<CreateContentAssociationResponse> CreateContentAssociationAsync(CreateContentAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateKnowledgeBase
 
 
@@ -660,6 +790,68 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  DeleteContentAssociation
+
+
+        /// <summary>
+        /// Deletes the content association. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about content associations--what they are and when they are used--see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContentAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContentAssociation service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteContentAssociation">REST API Reference for DeleteContentAssociation Operation</seealso>
+        DeleteContentAssociationResponse DeleteContentAssociation(DeleteContentAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the content association. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about content associations--what they are and when they are used--see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContentAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContentAssociation service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteContentAssociation">REST API Reference for DeleteContentAssociation Operation</seealso>
+        Task<DeleteContentAssociationResponse> DeleteContentAssociationAsync(DeleteContentAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteImportJob
 
 
@@ -981,6 +1173,68 @@ namespace Amazon.QConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetContent">REST API Reference for GetContent Operation</seealso>
         Task<GetContentResponse> GetContentAsync(GetContentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetContentAssociation
+
+
+        /// <summary>
+        /// Returns the content association.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about content associations--what they are and when they are used--see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContentAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetContentAssociation service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetContentAssociation">REST API Reference for GetContentAssociation Operation</seealso>
+        GetContentAssociationResponse GetContentAssociation(GetContentAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Returns the content association.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about content associations--what they are and when they are used--see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContentAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetContentAssociation service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetContentAssociation">REST API Reference for GetContentAssociation Operation</seealso>
+        Task<GetContentAssociationResponse> GetContentAssociationAsync(GetContentAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1373,6 +1627,68 @@ namespace Amazon.QConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAssistants">REST API Reference for ListAssistants Operation</seealso>
         Task<ListAssistantsResponse> ListAssistantsAsync(ListAssistantsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListContentAssociations
+
+
+        /// <summary>
+        /// Lists the content associations.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about content associations--what they are and when they are used--see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContentAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListContentAssociations service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListContentAssociations">REST API Reference for ListContentAssociations Operation</seealso>
+        ListContentAssociationsResponse ListContentAssociations(ListContentAssociationsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the content associations.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about content associations--what they are and when they are used--see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContentAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContentAssociations service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListContentAssociations">REST API Reference for ListContentAssociations Operation</seealso>
+        Task<ListContentAssociationsResponse> ListContentAssociationsAsync(ListContentAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
