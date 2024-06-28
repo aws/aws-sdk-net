@@ -30,38 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteBackup operation.
-    /// Deletes a specified CloudHSM backup. A backup can be restored up to 7 days after the
-    /// DeleteBackup request is made. For more information on restoring a backup, see <a>RestoreBackup</a>.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM backup
-    /// in a different Amazon Web Services account.
-    /// </para>
+    /// This is the response object from the GetResourcePolicy operation.
     /// </summary>
-    public partial class DeleteBackupRequest : AmazonCloudHSMV2Request
+    public partial class GetResourcePolicyResponse : AmazonWebServiceResponse
     {
-        private string _backupId;
+        private string _policy;
 
         /// <summary>
-        /// Gets and sets the property BackupId. 
+        /// Gets and sets the property Policy. 
         /// <para>
-        /// The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a>
-        /// operation.
+        /// The policy attached to a resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string BackupId
+        [AWSProperty(Min=1, Max=20000)]
+        public string Policy
         {
-            get { return this._backupId; }
-            set { this._backupId = value; }
+            get { return this._policy; }
+            set { this._policy = value; }
         }
 
-        // Check to see if BackupId property is set
-        internal bool IsSetBackupId()
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
         {
-            return this._backupId != null;
+            return this._policy != null;
         }
 
     }

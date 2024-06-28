@@ -36,9 +36,9 @@ namespace Amazon.CloudHSMV2
     /// <summary>
     /// <para>Implementation for accessing CloudHSMV2</para>
     ///
-    /// For more information about AWS CloudHSM, see <a href="http://aws.amazon.com/cloudhsm/">AWS
-    /// CloudHSM</a> and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
-    /// CloudHSM User Guide</a>.
+    /// For more information about CloudHSM, see <a href="http://aws.amazon.com/cloudhsm/">CloudHSM</a>
+    /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/"> CloudHSM
+    /// User Guide</a>.
     /// </summary>
     public partial class AmazonCloudHSMV2Client : AmazonServiceClient, IAmazonCloudHSMV2
     {
@@ -269,7 +269,13 @@ namespace Amazon.CloudHSMV2
         #region  CopyBackupToRegion
 
         /// <summary>
-        /// Copy an AWS CloudHSM cluster backup to a different region.
+        /// Copy an CloudHSM cluster backup to a different region.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM backup
+        /// in a different Amazon Web Services account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyBackupToRegion service method.</param>
         /// 
@@ -279,8 +285,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
@@ -344,7 +350,14 @@ namespace Amazon.CloudHSMV2
         #region  CreateCluster
 
         /// <summary>
-        /// Creates a new AWS CloudHSM cluster.
+        /// Creates a new CloudHSM cluster.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> Yes. To perform this operation with an CloudHSM backup
+        /// in a different AWS account, specify the full backup ARN in the value of the SourceBackupId
+        /// parameter.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
         /// 
@@ -354,8 +367,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
@@ -419,7 +432,13 @@ namespace Amazon.CloudHSMV2
         #region  CreateHsm
 
         /// <summary>
-        /// Creates a new hardware security module (HSM) in the specified AWS CloudHSM cluster.
+        /// Creates a new hardware security module (HSM) in the specified CloudHSM cluster.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM cluster
+        /// in a different Amazon Web Service account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHsm service method.</param>
         /// 
@@ -429,8 +448,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
@@ -490,9 +509,14 @@ namespace Amazon.CloudHSMV2
         #region  DeleteBackup
 
         /// <summary>
-        /// Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after
-        /// the DeleteBackup request is made. For more information on restoring a backup, see
-        /// <a>RestoreBackup</a>.
+        /// Deletes a specified CloudHSM backup. A backup can be restored up to 7 days after the
+        /// DeleteBackup request is made. For more information on restoring a backup, see <a>RestoreBackup</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM backup
+        /// in a different Amazon Web Services account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBackup service method.</param>
         /// 
@@ -502,8 +526,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
@@ -563,9 +587,15 @@ namespace Amazon.CloudHSMV2
         #region  DeleteCluster
 
         /// <summary>
-        /// Deletes the specified AWS CloudHSM cluster. Before you can delete a cluster, you must
+        /// Deletes the specified CloudHSM cluster. Before you can delete a cluster, you must
         /// delete all HSMs in the cluster. To see if the cluster contains any HSMs, use <a>DescribeClusters</a>.
         /// To delete an HSM, use <a>DeleteHsm</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM cluster
+        /// in a different Amazon Web Services account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
         /// 
@@ -575,8 +605,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
@@ -643,6 +673,12 @@ namespace Amazon.CloudHSMV2
         /// Deletes the specified HSM. To specify an HSM, you can use its identifier (ID), the
         /// IP address of the HSM's elastic network interface (ENI), or the ID of the HSM's ENI.
         /// You need to specify only one of these values. To find these values, use <a>DescribeClusters</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM hsm
+        /// in a different Amazon Web Services account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHsm service method.</param>
         /// 
@@ -652,8 +688,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
@@ -710,10 +746,90 @@ namespace Amazon.CloudHSMV2
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+        /// <summary>
+        /// Deletes an CloudHSM resource policy. Deleting a resource policy will result in the
+        /// resource being unshared and removed from any RAM resource shares. Deleting the resource
+        /// policy attached to a backup will not impact any clusters created from that backup.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM resource
+        /// in a different Amazon Web Services account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by CloudHSMV2.</returns>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmAccessDeniedException">
+        /// The request was rejected because the requester does not have permission to perform
+        /// the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
+        /// The request was rejected because it is not a valid request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmResourceNotFoundException">
+        /// The request was rejected because it refers to a resource that cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
+        /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation on AmazonCloudHSMV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourcePolicyResult from CloudHSMV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeBackups
 
         /// <summary>
-        /// Gets information about backups of AWS CloudHSM clusters.
+        /// Gets information about backups of CloudHSM clusters. Lists either the backups you
+        /// own or the backups shared with you when the Shared parameter is true.
         /// 
         ///  
         /// <para>
@@ -722,6 +838,11 @@ namespace Amazon.CloudHSMV2
         /// includes a <c>NextToken</c> value. Use this value in a subsequent <c>DescribeBackups</c>
         /// request to get more backups. When you receive a response with no <c>NextToken</c>
         /// (or an empty or null value), that means there are no more backups to get.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> Yes. Customers can describe backups in other Amazon Web
+        /// Services accounts that are shared with them.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBackups service method.</param>
@@ -732,8 +853,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
@@ -797,7 +918,7 @@ namespace Amazon.CloudHSMV2
         #region  DescribeClusters
 
         /// <summary>
-        /// Gets information about AWS CloudHSM clusters.
+        /// Gets information about CloudHSM clusters.
         /// 
         ///  
         /// <para>
@@ -806,6 +927,11 @@ namespace Amazon.CloudHSMV2
         /// it includes a <c>NextToken</c> value. Use this value in a subsequent <c>DescribeClusters</c>
         /// request to get more clusters. When you receive a response with no <c>NextToken</c>
         /// (or an empty or null value), that means there are no more clusters to get.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on CloudHSM clusters
+        /// in a different Amazon Web Services account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusters service method.</param>
@@ -816,8 +942,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
@@ -875,13 +1001,96 @@ namespace Amazon.CloudHSMV2
 
         #endregion
         
+        #region  GetResourcePolicy
+
+        /// <summary>
+        /// Retrieves the resource policy document attached to a given resource. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM resource
+        /// in a different Amazon Web Services account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by CloudHSMV2.</returns>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmAccessDeniedException">
+        /// The request was rejected because the requester does not have permission to perform
+        /// the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
+        /// The request was rejected because it is not a valid request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmResourceNotFoundException">
+        /// The request was rejected because it refers to a resource that cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
+        /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy operation on AmazonCloudHSMV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetResourcePolicy(GetResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  GetResourcePolicyResult from CloudHSMV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse EndGetResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  InitializeCluster
 
         /// <summary>
-        /// Claims an AWS CloudHSM cluster by submitting the cluster certificate issued by your
-        /// issuing certificate authority (CA) and the CA's root certificate. Before you can claim
-        /// a cluster, you must sign the cluster's certificate signing request (CSR) with your
-        /// issuing CA. To get the cluster's CSR, use <a>DescribeClusters</a>.
+        /// Claims an CloudHSM cluster by submitting the cluster certificate issued by your issuing
+        /// certificate authority (CA) and the CA's root certificate. Before you can claim a cluster,
+        /// you must sign the cluster's certificate signing request (CSR) with your issuing CA.
+        /// To get the cluster's CSR, use <a>DescribeClusters</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM cluster
+        /// in a different Amazon Web Services account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InitializeCluster service method.</param>
         /// 
@@ -891,8 +1100,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
@@ -952,7 +1161,7 @@ namespace Amazon.CloudHSMV2
         #region  ListTags
 
         /// <summary>
-        /// Gets a list of tags for the specified AWS CloudHSM cluster.
+        /// Gets a list of tags for the specified CloudHSM cluster.
         /// 
         ///  
         /// <para>
@@ -961,6 +1170,11 @@ namespace Amazon.CloudHSMV2
         /// a <c>NextToken</c> value. Use this value in a subsequent <c>ListTags</c> request to
         /// get more tags. When you receive a response with no <c>NextToken</c> (or an empty or
         /// null value), that means there are no more tags to get.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM resource
+        /// in a different Amazon Web Services account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
@@ -971,8 +1185,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
@@ -1036,7 +1250,13 @@ namespace Amazon.CloudHSMV2
         #region  ModifyBackupAttributes
 
         /// <summary>
-        /// Modifies attributes for AWS CloudHSM backup.
+        /// Modifies attributes for CloudHSM backup.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM backup
+        /// in a different Amazon Web Services account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyBackupAttributes service method.</param>
         /// 
@@ -1046,8 +1266,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
@@ -1107,7 +1327,13 @@ namespace Amazon.CloudHSMV2
         #region  ModifyCluster
 
         /// <summary>
-        /// Modifies AWS CloudHSM cluster.
+        /// Modifies CloudHSM cluster.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM cluster
+        /// in a different Amazon Web Services account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCluster service method.</param>
         /// 
@@ -1117,8 +1343,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
@@ -1175,11 +1401,116 @@ namespace Amazon.CloudHSMV2
 
         #endregion
         
+        #region  PutResourcePolicy
+
+        /// <summary>
+        /// Creates or updates an CloudHSM resource policy. A resource policy helps you to define
+        /// the IAM entity (for example, an Amazon Web Services account) that can manage your
+        /// CloudHSM resources. The following resources support CloudHSM resource policies: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  Backup - The resource policy allows you to describe the backup and restore a cluster
+        /// from the backup in another Amazon Web Services account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// In order to share a backup, it must be in a 'READY' state and you must own it.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// While you can share a backup using the CloudHSM PutResourcePolicy operation, we recommend
+        /// using Resource Access Manager (RAM) instead. Using RAM provides multiple benefits
+        /// as it creates the policy for you, allows multiple resources to be shared at one time,
+        /// and increases the discoverability of shared resources. If you use PutResourcePolicy
+        /// and want consumers to be able to describe the backups you share with them, you must
+        /// promote the backup to a standard RAM Resource Share using the RAM PromoteResourceShareCreatedFromPolicy
+        /// API operation. For more information, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html">
+        /// Working with shared backups</a> in the CloudHSM User Guide
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM resource
+        /// in a different Amazon Web Services account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by CloudHSMV2.</returns>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmAccessDeniedException">
+        /// The request was rejected because the requester does not have permission to perform
+        /// the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
+        /// The request was rejected because it is not a valid request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmResourceNotFoundException">
+        /// The request was rejected because it refers to a resource that cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
+        /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation on AmazonCloudHSMV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  PutResourcePolicyResult from CloudHSMV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse EndPutResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RestoreBackup
 
         /// <summary>
-        /// Restores a specified AWS CloudHSM backup that is in the <c>PENDING_DELETION</c> state.
-        /// For mor information on deleting a backup, see <a>DeleteBackup</a>.
+        /// Restores a specified CloudHSM backup that is in the <c>PENDING_DELETION</c> state.
+        /// For more information on deleting a backup, see <a>DeleteBackup</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM backup
+        /// in a different Amazon Web Services account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreBackup service method.</param>
         /// 
@@ -1189,8 +1520,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
@@ -1250,7 +1581,13 @@ namespace Amazon.CloudHSMV2
         #region  TagResource
 
         /// <summary>
-        /// Adds or overwrites one or more tags for the specified AWS CloudHSM cluster.
+        /// Adds or overwrites one or more tags for the specified CloudHSM cluster.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM resource
+        /// in a different Amazon Web Services account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1260,8 +1597,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
@@ -1325,7 +1662,13 @@ namespace Amazon.CloudHSMV2
         #region  UntagResource
 
         /// <summary>
-        /// Removes the specified tag or tags from the specified AWS CloudHSM cluster.
+        /// Removes the specified tag or tags from the specified CloudHSM cluster.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM resource
+        /// in a different Amazon Web Services account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1335,8 +1678,8 @@ namespace Amazon.CloudHSMV2
         /// the requested operation.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
-        /// The request was rejected because of an AWS CloudHSM internal failure. The request
-        /// can be retried.
+        /// The request was rejected because of an CloudHSM internal failure. The request can
+        /// be retried.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.

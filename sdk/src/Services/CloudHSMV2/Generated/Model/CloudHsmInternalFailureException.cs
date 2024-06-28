@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
-    /// The request was rejected because of an AWS CloudHSM internal failure. The request
-    /// can be retried.
+    /// The request was rejected because of an CloudHSM internal failure. The request can
+    /// be retried.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

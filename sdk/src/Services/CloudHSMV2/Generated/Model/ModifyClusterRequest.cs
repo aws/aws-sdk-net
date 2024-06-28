@@ -31,7 +31,13 @@ namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyCluster operation.
-    /// Modifies AWS CloudHSM cluster.
+    /// Modifies CloudHSM cluster.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM cluster
+    /// in a different Amazon Web Services account.
+    /// </para>
     /// </summary>
     public partial class ModifyClusterRequest : AmazonCloudHSMV2Request
     {

@@ -31,7 +31,14 @@ namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCluster operation.
-    /// Creates a new AWS CloudHSM cluster.
+    /// Creates a new CloudHSM cluster.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Cross-account use:</b> Yes. To perform this operation with an CloudHSM backup
+    /// in a different AWS account, specify the full backup ARN in the value of the SourceBackupId
+    /// parameter.
+    /// </para>
     /// </summary>
     public partial class CreateClusterRequest : AmazonCloudHSMV2Request
     {
@@ -101,9 +108,10 @@ namespace Amazon.CloudHSMV2.Model
         /// <summary>
         /// Gets and sets the property SourceBackupId. 
         /// <para>
-        /// The identifier (ID) of the cluster backup to restore. Use this value to restore the
-        /// cluster from a backup instead of creating a new cluster. To find the backup ID, use
-        /// <a>DescribeBackups</a>.
+        /// The identifier (ID) or the Amazon Resource Name (ARN) of the cluster backup to restore.
+        /// Use this value to restore the cluster from a backup instead of creating a new cluster.
+        /// To find the backup ID or ARN, use <a>DescribeBackups</a>. <i>If using a backup in
+        /// another account, the full ARN must be supplied.</i> 
         /// </para>
         /// </summary>
         public string SourceBackupId

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
-    /// Contains information about an AWS CloudHSM cluster.
+    /// Contains information about an CloudHSM cluster.
     /// </summary>
     public partial class Cluster
     {

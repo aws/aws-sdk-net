@@ -15,7 +15,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.CreateClusterRequest.SourceBackupId</property>
-    <pattern>backup-[2-7a-zA-Z]{11,16}</pattern>
+    <pattern>^(arn:aws(-(us-gov))?:cloudhsm:([a-z]{2}(-(gov|isob|iso))?-(east|west|north|south|central){1,2}-[0-9]{1}):[0-9]{12}:backup/)?backup-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.CreateHsmRequest.AvailabilityZone</property>
@@ -58,6 +58,19 @@
     <pattern>hsm-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.DeleteResourcePolicyRequest.ResourceArn</property>
+    <pattern>arn:aws(-(us-gov))?:cloudhsm:([a-z]{2}(-(gov|isob|iso))?-(east|west|north|south|central){1,2}-[0-9]{1}):[0-9]{12}:(backup/backup|cluster/cluster|hsm/hsm)-[2-7a-zA-Z]{11,16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.DeleteResourcePolicyResponse.Policy</property>
+    <min>1</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.DeleteResourcePolicyResponse.ResourceArn</property>
+    <pattern>arn:aws(-(us-gov))?:cloudhsm:([a-z]{2}(-(gov|isob|iso))?-(east|west|north|south|central){1,2}-[0-9]{1}):[0-9]{12}:(backup/backup|cluster/cluster|hsm/hsm)-[2-7a-zA-Z]{11,16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.DescribeBackupsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -86,6 +99,15 @@
     <property>Amazon.CloudHSMV2.Model.DescribeClustersResponse.NextToken</property>
     <max>256</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.GetResourcePolicyRequest.ResourceArn</property>
+    <pattern>arn:aws(-(us-gov))?:cloudhsm:([a-z]{2}(-(gov|isob|iso))?-(east|west|north|south|central){1,2}-[0-9]{1}):[0-9]{12}:(backup/backup|cluster/cluster|hsm/hsm)-[2-7a-zA-Z]{11,16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.GetResourcePolicyResponse.Policy</property>
+    <min>1</min>
+    <max>20000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.InitializeClusterRequest.ClusterId</property>
@@ -134,6 +156,24 @@
     <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.PutResourcePolicyRequest.Policy</property>
+    <min>1</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.PutResourcePolicyRequest.ResourceArn</property>
+    <pattern>arn:aws(-(us-gov))?:cloudhsm:([a-z]{2}(-(gov|isob|iso))?-(east|west|north|south|central){1,2}-[0-9]{1}):[0-9]{12}:(backup/backup|cluster/cluster|hsm/hsm)-[2-7a-zA-Z]{11,16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.PutResourcePolicyResponse.Policy</property>
+    <min>1</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.PutResourcePolicyResponse.ResourceArn</property>
+    <pattern>arn:aws(-(us-gov))?:cloudhsm:([a-z]{2}(-(gov|isob|iso))?-(east|west|north|south|central){1,2}-[0-9]{1}):[0-9]{12}:(backup/backup|cluster/cluster|hsm/hsm)-[2-7a-zA-Z]{11,16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.RestoreBackupRequest.BackupId</property>
     <pattern>backup-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
@@ -144,6 +184,10 @@
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.UntagResourceRequest.ResourceId</property>
     <pattern>(?:cluster|backup)-[2-7a-zA-Z]{11,16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.Backup.BackupArn</property>
+    <pattern>^(arn:aws(-(us-gov))?:cloudhsm:([a-z]{2}(-(gov|isob|iso))?-(east|west|north|south|central){1,2}-[0-9]{1}):[0-9]{12}:backup/)?backup-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Backup.BackupId</property>

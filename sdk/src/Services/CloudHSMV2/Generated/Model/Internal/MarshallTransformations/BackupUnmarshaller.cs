@@ -66,6 +66,12 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BackupArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BackupArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BackupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

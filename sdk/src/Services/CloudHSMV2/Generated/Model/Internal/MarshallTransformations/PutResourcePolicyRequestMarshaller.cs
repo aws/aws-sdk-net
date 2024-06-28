@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeBackups Request Marshaller
+    /// PutResourcePolicy Request Marshaller
     /// </summary>       
-    public class DescribeBackupsRequestMarshaller : IMarshaller<IRequest, DescribeBackupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutResourcePolicyRequestMarshaller : IMarshaller<IRequest, PutResourcePolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeBackupsRequest)input);
+            return this.Marshall((PutResourcePolicyRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeBackupsRequest publicRequest)
+        public IRequest Marshall(PutResourcePolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudHSMV2");
-            string target = "BaldrApiService.DescribeBackups";
+            string target = "BaldrApiService.PutResourcePolicy";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-28";
@@ -69,47 +69,16 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilters())
+                if(publicRequest.IsSetPolicy())
                 {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFiltersKvp in publicRequest.Filters)
-                    {
-                        context.Writer.WritePropertyName(publicRequestFiltersKvp.Key);
-                        var publicRequestFiltersValue = publicRequestFiltersKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFiltersValueListValue in publicRequestFiltersValue)
-                        {
-                                context.Writer.Write(publicRequestFiltersValueListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("Policy");
+                    context.Writer.Write(publicRequest.Policy);
                 }
 
-                if(publicRequest.IsSetMaxResults())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetShared())
-                {
-                    context.Writer.WritePropertyName("Shared");
-                    context.Writer.Write(publicRequest.Shared);
-                }
-
-                if(publicRequest.IsSetSortAscending())
-                {
-                    context.Writer.WritePropertyName("SortAscending");
-                    context.Writer.Write(publicRequest.SortAscending);
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
                 writer.WriteObjectEnd();
@@ -120,9 +89,9 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribeBackupsRequestMarshaller _instance = new DescribeBackupsRequestMarshaller();        
+        private static PutResourcePolicyRequestMarshaller _instance = new PutResourcePolicyRequestMarshaller();        
 
-        internal static DescribeBackupsRequestMarshaller GetInstance()
+        internal static PutResourcePolicyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -130,7 +99,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeBackupsRequestMarshaller Instance
+        public static PutResourcePolicyRequestMarshaller Instance
         {
             get
             {

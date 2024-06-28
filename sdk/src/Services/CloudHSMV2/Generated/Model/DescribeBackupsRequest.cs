@@ -31,7 +31,8 @@ namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeBackups operation.
-    /// Gets information about backups of AWS CloudHSM clusters.
+    /// Gets information about backups of CloudHSM clusters. Lists either the backups you
+    /// own or the backups shared with you when the Shared parameter is true.
     /// 
     ///  
     /// <para>
@@ -41,12 +42,18 @@ namespace Amazon.CloudHSMV2.Model
     /// request to get more backups. When you receive a response with no <c>NextToken</c>
     /// (or an empty or null value), that means there are no more backups to get.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use:</b> Yes. Customers can describe backups in other Amazon Web
+    /// Services accounts that are shared with them.
+    /// </para>
     /// </summary>
     public partial class DescribeBackupsRequest : AmazonCloudHSMV2Request
     {
         private Dictionary<string, List<string>> _filters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private int? _maxResults;
         private string _nextToken;
+        private bool? _shared;
         private bool? _sortAscending;
 
         /// <summary>
@@ -133,6 +140,34 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Shared. 
+        /// <para>
+        /// Describe backups that are shared with you.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// By default when using this option, the command returns backups that have been shared
+        /// using a standard Resource Access Manager resource share. In order for a backup that
+        /// was shared using the PutResourcePolicy command to be returned, the share must be promoted
+        /// to a standard resource share using the RAM <a href="https://docs.aws.amazon.com/cli/latest/reference/ram/promote-resource-share-created-from-policy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// API operation. For more information about sharing backups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html">
+        /// Working with shared backups</a> in the CloudHSM User Guide.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool Shared
+        {
+            get { return this._shared.GetValueOrDefault(); }
+            set { this._shared = value; }
+        }
+
+        // Check to see if Shared property is set
+        internal bool IsSetShared()
+        {
+            return this._shared.HasValue; 
         }
 
         /// <summary>

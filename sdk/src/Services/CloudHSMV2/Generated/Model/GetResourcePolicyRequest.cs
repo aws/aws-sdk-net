@@ -30,38 +30,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteBackup operation.
-    /// Deletes a specified CloudHSM backup. A backup can be restored up to 7 days after the
-    /// DeleteBackup request is made. For more information on restoring a backup, see <a>RestoreBackup</a>.
+    /// Container for the parameters to the GetResourcePolicy operation.
+    /// Retrieves the resource policy document attached to a given resource. 
     /// 
     ///  
     /// <para>
-    ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM backup
+    ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM resource
     /// in a different Amazon Web Services account.
     /// </para>
     /// </summary>
-    public partial class DeleteBackupRequest : AmazonCloudHSMV2Request
+    public partial class GetResourcePolicyRequest : AmazonCloudHSMV2Request
     {
-        private string _backupId;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property BackupId. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a>
-        /// operation.
+        /// Amazon Resource Name (ARN) of the resource to which a policy is attached.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string BackupId
+        public string ResourceArn
         {
-            get { return this._backupId; }
-            set { this._backupId = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if BackupId property is set
-        internal bool IsSetBackupId()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._backupId != null;
+            return this._resourceArn != null;
         }
 
     }
