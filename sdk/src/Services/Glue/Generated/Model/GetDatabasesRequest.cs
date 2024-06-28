@@ -35,10 +35,30 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetDatabasesRequest : AmazonGlueRequest
     {
+        private List<string> _attributesToGet = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _catalogId;
         private int? _maxResults;
         private string _nextToken;
         private ResourceShareType _resourceShareType;
+
+        /// <summary>
+        /// Gets and sets the property AttributesToGet. 
+        /// <para>
+        /// Specifies the database fields returned by the <c>GetDatabases</c> call. This parameter
+        /// doesn’t accept an empty list. The request must include the <c>NAME</c>.
+        /// </para>
+        /// </summary>
+        public List<string> AttributesToGet
+        {
+            get { return this._attributesToGet; }
+            set { this._attributesToGet = value; }
+        }
+
+        // Check to see if AttributesToGet property is set
+        internal bool IsSetAttributesToGet()
+        {
+            return this._attributesToGet != null && (this._attributesToGet.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
