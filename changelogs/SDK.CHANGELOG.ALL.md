@@ -1,3 +1,28 @@
+### 3.7.841.0 (2024-06-28 19:23 UTC)
+* ACMPCA (3.7.303.0)
+	* Added CCPC_LEVEL_1_OR_HIGHER KeyStorageSecurityStandard and SM2 KeyAlgorithm and SM3WITHSM2 SigningAlgorithm for China regions.
+* CloudHSMV2 (3.7.302.0)
+	* Added 3 new APIs to support backup sharing: GetResourcePolicy, PutResourcePolicy, and DeleteResourcePolicy. Added BackupArn to the output of the DescribeBackups API. Added support for BackupArn in the CreateCluster API.
+* Connect (3.7.321.0)
+	* This release supports showing PreferredAgentRouting step via DescribeContact API.
+* DynamoDBv2 (3.7.304.1)
+	* Fixed an issue where RetrieveDateTimeInUtc is ignored when using nullable DateTime
+* ElasticMapReduce (3.7.305.0)
+	* This release provides the support for new allocation strategies i.e. CAPACITY_OPTIMIZED_PRIORITIZED for Spot and PRIORITIZED for On-Demand by taking input of priority value for each instance type for instance fleet clusters.
+* Glue (3.7.318.0)
+	* Added AttributesToGet parameter to Glue GetDatabases, allowing caller to limit output to include only the database name.
+* KinesisAnalyticsV2 (3.7.304.0)
+	* Support for Flink 1.19 in Managed Service for Apache Flink
+* OpenSearchService (3.7.310.0)
+	* This release removes support for enabling or disabling Natural Language Query Processing feature for Amazon OpenSearch Service domains.
+* PI (3.7.301.18)
+	* Noting that the filter db.sql.db_id isn't available for RDS for SQL Server DB instances.
+* WorkSpaces (3.7.305.0)
+	* Added support for Red Hat Enterprise Linux 8 on Amazon WorkSpaces Personal.
+* Core 3.7.304.22
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.840.0 (2024-06-27 18:21 UTC)
 * ApplicationAutoScaling (3.7.303.0)
 	* Amazon WorkSpaces customers can now use Application Auto Scaling to automatically scale the number of virtual desktops in a WorkSpaces pool.

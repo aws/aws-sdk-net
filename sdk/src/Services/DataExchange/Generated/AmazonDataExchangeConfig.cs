@@ -32,7 +32,7 @@ namespace Amazon.DataExchange
     public partial class AmazonDataExchangeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DataExchange", "3.7.301.109");
+            InternalSDKUtils.BuildUserAgentString("DataExchange", "3.7.301.110");
 
         private string _userAgent = UserAgentString;
         ///<summary>
