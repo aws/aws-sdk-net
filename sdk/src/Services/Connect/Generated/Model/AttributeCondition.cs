@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class AttributeCondition
     {
         private string _comparisonOperator;
+        private MatchCriteria _matchCriteria;
         private string _name;
         private float? _proficiencyLevel;
         private string _value;
@@ -56,6 +57,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetComparisonOperator()
         {
             return this._comparisonOperator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MatchCriteria. 
+        /// <para>
+        /// An object to define <c>AgentsCriteria</c>.
+        /// </para>
+        /// </summary>
+        public MatchCriteria MatchCriteria
+        {
+            get { return this._matchCriteria; }
+            set { this._matchCriteria = value; }
+        }
+
+        // Check to see if MatchCriteria property is set
+        internal bool IsSetMatchCriteria()
+        {
+            return this._matchCriteria != null;
         }
 
         /// <summary>

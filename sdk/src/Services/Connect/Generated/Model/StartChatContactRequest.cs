@@ -63,9 +63,20 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
-    /// in the <i>Amazon Connect Administrator Guide</i>.
+    /// For more information about chat, see the following topics in the <i>Amazon Connect
+    /// Administrator Guide</i>: 
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
+    /// Web and mobile messaging capabilities in Amazon Connect</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+    /// Connect Chat security best practices</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class StartChatContactRequest : AmazonConnectRequest
     {

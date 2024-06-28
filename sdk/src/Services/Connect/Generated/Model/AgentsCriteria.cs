@@ -30,49 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A structure that defines the field name to sort by and a sort order.
+    /// Can be used to define a list of preferred agents to target the contact within the
+    /// queue. Note that agents must have the queue in their routing profile in order to be
+    /// offered the contact.
     /// </summary>
-    public partial class Sort
+    public partial class AgentsCriteria
     {
-        private SortableFieldName _fieldName;
-        private SortOrder _order;
+        private List<string> _agentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property FieldName. 
+        /// Gets and sets the property AgentIds. 
         /// <para>
-        /// The name of the field on which to sort.
+        /// An object to specify a list of agents, by Agent ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public SortableFieldName FieldName
+        public List<string> AgentIds
         {
-            get { return this._fieldName; }
-            set { this._fieldName = value; }
+            get { return this._agentIds; }
+            set { this._agentIds = value; }
         }
 
-        // Check to see if FieldName property is set
-        internal bool IsSetFieldName()
+        // Check to see if AgentIds property is set
+        internal bool IsSetAgentIds()
         {
-            return this._fieldName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Order. 
-        /// <para>
-        /// An ascending or descending sort.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public SortOrder Order
-        {
-            get { return this._order; }
-            set { this._order = value; }
-        }
-
-        // Check to see if Order property is set
-        internal bool IsSetOrder()
-        {
-            return this._order != null;
+            return this._agentIds != null && (this._agentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

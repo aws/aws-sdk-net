@@ -60,7 +60,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property DoubleValue. 
         /// <para>
-        /// a Double number value type.
+        /// A Double number value type.
         /// </para>
         /// </summary>
         public double DoubleValue

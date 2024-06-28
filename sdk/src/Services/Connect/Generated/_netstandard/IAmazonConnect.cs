@@ -4810,6 +4810,35 @@ namespace Amazon.Connect
         /// Imports a claimed phone number from an external service, such as Amazon Pinpoint,
         /// into an Amazon Connect instance. You can call this API only in the same Amazon Web
         /// Services Region where the Amazon Connect instance was created.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+        /// API to verify the status of a previous <c>ImportPhoneNumber</c> operation. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// If you plan to claim or import numbers and then release numbers frequently, contact
+        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
+        /// claiming and releasing any more numbers until up to 180 days past the oldest number
+        /// released has expired. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  By default you can claim or import and then release up to 200% of your maximum number
+        /// of active phone numbers. If you claim or import and then release phone numbers using
+        /// the UI or API during a rolling 180 day cycle that exceeds 200% of your phone number
+        /// service level quota, you will be blocked from claiming or importing any more numbers
+        /// until 180 days past the oldest number released has expired. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you already have 99 claimed or imported numbers and a service level
+        /// quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and
+        /// then release 99, you will have exceeded the 200% limit. At that point you are blocked
+        /// from claiming any more numbers until you open an Amazon Web Services Support ticket.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportPhoneNumber service method.</param>
         /// <param name="cancellationToken">
@@ -7396,9 +7425,20 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// For more information about chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
-        /// in the <i>Amazon Connect Administrator Guide</i>.
+        /// For more information about chat, see the following topics in the <i>Amazon Connect
+        /// Administrator Guide</i>: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
+        /// Web and mobile messaging capabilities in Amazon Connect</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+        /// Connect Chat security best practices</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartChatContact service method.</param>
         /// <param name="cancellationToken">
@@ -7542,6 +7582,22 @@ namespace Amazon.Connect
         ///  For more information about message streaming, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable
         /// real-time chat message streaming</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information about chat, see the following topics in the <i>Amazon Connect
+        /// Administrator Guide</i>: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
+        /// Web and mobile messaging capabilities in Amazon Connect</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+        /// Connect Chat security best practices</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartContactStreaming service method.</param>
         /// <param name="cancellationToken">

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AttributeCondition Object
+    /// Response Unmarshaller for AgentsCriteria Object
     /// </summary>  
-    public class AttributeConditionUnmarshaller : IUnmarshaller<AttributeCondition, XmlUnmarshallerContext>, IUnmarshaller<AttributeCondition, JsonUnmarshallerContext>
+    public class AgentsCriteriaUnmarshaller : IUnmarshaller<AgentsCriteria, XmlUnmarshallerContext>, IUnmarshaller<AgentsCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AttributeCondition IUnmarshaller<AttributeCondition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AgentsCriteria IUnmarshaller<AgentsCriteria, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AttributeCondition Unmarshall(JsonUnmarshallerContext context)
+        public AgentsCriteria Unmarshall(JsonUnmarshallerContext context)
         {
-            AttributeCondition unmarshalledObject = new AttributeCondition();
+            AgentsCriteria unmarshalledObject = new AgentsCriteria();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ComparisonOperator", targetDepth))
+                if (context.TestExpression("AgentIds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MatchCriteria", targetDepth))
-                {
-                    var unmarshaller = MatchCriteriaUnmarshaller.Instance;
-                    unmarshalledObject.MatchCriteria = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProficiencyLevel", targetDepth))
-                {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.ProficiencyLevel = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Value", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AgentIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static AttributeConditionUnmarshaller _instance = new AttributeConditionUnmarshaller();        
+        private static AgentsCriteriaUnmarshaller _instance = new AgentsCriteriaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AttributeConditionUnmarshaller Instance
+        public static AgentsCriteriaUnmarshaller Instance
         {
             get
             {

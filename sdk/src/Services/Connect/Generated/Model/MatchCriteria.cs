@@ -30,49 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A structure that defines the field name to sort by and a sort order.
+    /// An object to define <c>AgentsCriteria</c>.
     /// </summary>
-    public partial class Sort
+    public partial class MatchCriteria
     {
-        private SortableFieldName _fieldName;
-        private SortOrder _order;
+        private AgentsCriteria _agentsCriteria;
 
         /// <summary>
-        /// Gets and sets the property FieldName. 
+        /// Gets and sets the property AgentsCriteria. 
         /// <para>
-        /// The name of the field on which to sort.
+        /// An object to define <c>AgentIds</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public SortableFieldName FieldName
+        public AgentsCriteria AgentsCriteria
         {
-            get { return this._fieldName; }
-            set { this._fieldName = value; }
+            get { return this._agentsCriteria; }
+            set { this._agentsCriteria = value; }
         }
 
-        // Check to see if FieldName property is set
-        internal bool IsSetFieldName()
+        // Check to see if AgentsCriteria property is set
+        internal bool IsSetAgentsCriteria()
         {
-            return this._fieldName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Order. 
-        /// <para>
-        /// An ascending or descending sort.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public SortOrder Order
-        {
-            get { return this._order; }
-            set { this._order = value; }
-        }
-
-        // Check to see if Order property is set
-        internal bool IsSetOrder()
-        {
-            return this._order != null;
+            return this._agentsCriteria != null;
         }
 
     }
