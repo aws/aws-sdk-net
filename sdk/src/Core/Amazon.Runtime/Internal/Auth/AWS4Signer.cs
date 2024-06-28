@@ -898,7 +898,16 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>Formatted string of header names</returns>
         protected static string CanonicalizeHeaderNames(IEnumerable<KeyValuePair<string, string>> sortedHeaders)
         {
-            return string.Join(";", sortedHeaders.Select(x => x.Key.ToLowerInvariant()));
+            var builder = new ValueStringBuilder(512);
+
+            foreach (var header in sortedHeaders)
+            {
+                if (builder.Length > 0)
+                    builder.Append(';');
+                builder.Append(header.Key.ToLowerInvariant());
+            }
+
+            return builder.ToString();
         }
 
         /// <summary>
