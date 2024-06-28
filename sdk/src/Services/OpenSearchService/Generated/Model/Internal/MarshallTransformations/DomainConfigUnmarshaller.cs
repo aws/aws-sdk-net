@@ -84,12 +84,6 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdvancedSecurityOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("AIMLOptions", targetDepth))
-                {
-                    var unmarshaller = AIMLOptionsStatusUnmarshaller.Instance;
-                    unmarshalledObject.AIMLOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("AutoTuneOptions", targetDepth))
                 {
                     var unmarshaller = AutoTuneOptionsStatusUnmarshaller.Instance;
