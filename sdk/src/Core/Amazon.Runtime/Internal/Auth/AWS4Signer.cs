@@ -22,6 +22,7 @@ using Amazon.Internal;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Endpoints;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -818,13 +819,14 @@ namespace Amazon.Runtime.Internal.Auth
                                                     IDictionary<string, string> pathResources,
                                                     bool doubleEncode)
         {
-            var canonicalRequest = new StringBuilder();
-            canonicalRequest.AppendFormat("{0}\n", httpMethod);
-            canonicalRequest.AppendFormat("{0}\n", AWSSDKUtils.CanonicalizeResourcePathV2(endpoint, resourcePath, doubleEncode, pathResources));
-            canonicalRequest.AppendFormat("{0}\n", canonicalQueryString);
+            var canonicalRequest = new ValueStringBuilder(512);
+            canonicalRequest.Append(httpMethod);
+            canonicalRequest.Append('\n');
+            canonicalRequest.Append($"{AWSSDKUtils.CanonicalizeResourcePathV2(endpoint, resourcePath, doubleEncode, pathResources)}\n");
+            canonicalRequest.Append($"{canonicalQueryString}\n");
 
-            canonicalRequest.AppendFormat("{0}\n", CanonicalizeHeaders(sortedHeaders));
-            canonicalRequest.AppendFormat("{0}\n", CanonicalizeHeaderNames(sortedHeaders));
+            canonicalRequest.Append($"{CanonicalizeHeaders(sortedHeaders)}\n");
+            canonicalRequest.Append($"{CanonicalizeHeaderNames(sortedHeaders)}\n");
 
             if (precomputedBodyHash != null)
             {
@@ -832,8 +834,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
             else
             {
-                string contentHash;
-                if (sortedHeaders.TryGetValue(HeaderKeys.XAmzContentSha256Header, out contentHash))
+                if (sortedHeaders.TryGetValue(HeaderKeys.XAmzContentSha256Header, out var contentHash))
                     canonicalRequest.Append(contentHash);
             }
 
@@ -870,16 +871,20 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>Canonicalized string of headers, with the header names in lower case.</returns>
         protected internal static string CanonicalizeHeaders(IEnumerable<KeyValuePair<string, string>> sortedHeaders)
         {
-            if (sortedHeaders == null || sortedHeaders.Count() == 0)
+            if (sortedHeaders == null)
                 return string.Empty;
 
-            var builder = new StringBuilder();
-            
-            foreach (var entry in sortedHeaders)
+            // Majority of the cases we will always have a IDictionary<string, string> for headers which implements ICollection<KeyValuePair<string, string>>.
+            var materializedSortedHeaders = sortedHeaders as ICollection<KeyValuePair<string, string>> ?? sortedHeaders.ToList();
+            if (materializedSortedHeaders.Count == 0)
+                return string.Empty;
+
+            var builder = new ValueStringBuilder(512);
+            foreach (var entry in materializedSortedHeaders)
             {
                 // Refer https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html. (Step #4: "To create the canonical headers list, convert all header names to lowercase and remove leading spaces and trailing spaces. Convert sequential spaces in the header value to a single space.").
                 builder.Append(entry.Key.ToLowerInvariant());
-                builder.Append(":");
+                builder.Append(':');
                 builder.Append(AWSSDKUtils.CompressSpaces(entry.Value)?.Trim());
                 builder.Append("\n");
             }
@@ -893,15 +898,15 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>Formatted string of header names</returns>
         protected static string CanonicalizeHeaderNames(IEnumerable<KeyValuePair<string, string>> sortedHeaders)
         {
-            var builder = new StringBuilder();
-            
+            var builder = new ValueStringBuilder(512);
+
             foreach (var header in sortedHeaders)
             {
                 if (builder.Length > 0)
-                    builder.Append(";");
+                    builder.Append(';');
                 builder.Append(header.Key.ToLowerInvariant());
             }
-            
+
             return builder.ToString();
         }
 

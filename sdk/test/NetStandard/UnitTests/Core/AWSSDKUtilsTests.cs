@@ -24,5 +24,13 @@ namespace UnitTests.NetStandard.Core
 
             Assert.Equal("48656c6c6f20576f726c64", hexString);
         }
+
+        [Fact]
+        public void CompressSpaces()
+        {
+            var data = "Hello,   World!";
+            var compressed = AWSSDKUtils.CompressSpaces(data);
+            Assert.Equal("Hello, World!", compressed);
+        }
     }
 }

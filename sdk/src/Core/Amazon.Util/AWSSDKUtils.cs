@@ -35,6 +35,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Threading;
 using Amazon.Runtime.Endpoints;
+using ThirdParty.RuntimeBackports;
 
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
@@ -1643,21 +1644,24 @@ namespace Amazon.Util
                 return null;
             }
 
-            if (data.Length == 0)
+            var dataLength = data.Length;
+            if (dataLength == 0)
             {
                 return string.Empty;
             }
 
-            var stringBuilder = new StringBuilder();
+            var stringBuilder = new ValueStringBuilder(dataLength);
+            int index = 0;
             var isWhiteSpace = false;
             foreach (var character in data)
             {
                 if (!isWhiteSpace | !(isWhiteSpace = char.IsWhiteSpace(character)))
                 {
                     stringBuilder.Append(isWhiteSpace ? ' ' : character);
+                    index++;
                 }
             }
-            return stringBuilder.ToString();
+            return stringBuilder.ToString(0, index);
         }
 
         /// <summary>
