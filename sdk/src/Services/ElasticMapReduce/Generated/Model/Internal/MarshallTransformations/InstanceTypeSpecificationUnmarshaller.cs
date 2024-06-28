@@ -108,6 +108,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Priority", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WeightedCapacity", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -1678,6 +1678,10 @@ namespace Amazon.ElasticMapReduce
         /// Constant LowestPrice for OnDemandProvisioningAllocationStrategy
         /// </summary>
         public static readonly OnDemandProvisioningAllocationStrategy LowestPrice = new OnDemandProvisioningAllocationStrategy("lowest-price");
+        /// <summary>
+        /// Constant Prioritized for OnDemandProvisioningAllocationStrategy
+        /// </summary>
+        public static readonly OnDemandProvisioningAllocationStrategy Prioritized = new OnDemandProvisioningAllocationStrategy("prioritized");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1978,6 +1982,10 @@ namespace Amazon.ElasticMapReduce
         /// Constant CapacityOptimized for SpotProvisioningAllocationStrategy
         /// </summary>
         public static readonly SpotProvisioningAllocationStrategy CapacityOptimized = new SpotProvisioningAllocationStrategy("capacity-optimized");
+        /// <summary>
+        /// Constant CapacityOptimizedPrioritized for SpotProvisioningAllocationStrategy
+        /// </summary>
+        public static readonly SpotProvisioningAllocationStrategy CapacityOptimizedPrioritized = new SpotProvisioningAllocationStrategy("capacity-optimized-prioritized");
         /// <summary>
         /// Constant Diversified for SpotProvisioningAllocationStrategy
         /// </summary>
