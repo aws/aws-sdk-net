@@ -560,6 +560,10 @@ namespace Amazon.ACMPCA
         /// Constant RSA_4096 for KeyAlgorithm
         /// </summary>
         public static readonly KeyAlgorithm RSA_4096 = new KeyAlgorithm("RSA_4096");
+        /// <summary>
+        /// Constant SM2 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm SM2 = new KeyAlgorithm("SM2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -602,6 +606,10 @@ namespace Amazon.ACMPCA
     public class KeyStorageSecurityStandard : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CCPC_LEVEL_1_OR_HIGHER for KeyStorageSecurityStandard
+        /// </summary>
+        public static readonly KeyStorageSecurityStandard CCPC_LEVEL_1_OR_HIGHER = new KeyStorageSecurityStandard("CCPC_LEVEL_1_OR_HIGHER");
         /// <summary>
         /// Constant FIPS_140_2_LEVEL_2_OR_HIGHER for KeyStorageSecurityStandard
         /// </summary>
@@ -896,6 +904,10 @@ namespace Amazon.ACMPCA
         /// Constant SHA512WITHRSA for SigningAlgorithm
         /// </summary>
         public static readonly SigningAlgorithm SHA512WITHRSA = new SigningAlgorithm("SHA512WITHRSA");
+        /// <summary>
+        /// Constant SM3WITHSM2 for SigningAlgorithm
+        /// </summary>
+        public static readonly SigningAlgorithm SM3WITHSM2 = new SigningAlgorithm("SM3WITHSM2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
