@@ -47,7 +47,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ApplicationSettings. 
         /// <para>
-        /// Indicates the application settings of the WorkSpaces pool.
+        /// Indicates the application settings of the pool.
         /// </para>
         /// </summary>
         public ApplicationSettingsRequest ApplicationSettings
@@ -65,7 +65,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property BundleId. 
         /// <para>
-        /// The identifier of the bundle for the WorkSpaces pool.
+        /// The identifier of the bundle for the pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +84,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Capacity. 
         /// <para>
-        /// The user capacity of the WorkSpaces pool.
+        /// The user capacity of the pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -103,7 +103,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The WorkSpaces pool description.
+        /// The pool description.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -122,7 +122,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory for the WorkSpaces pool.
+        /// The identifier of the directory for the pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=65)]
@@ -141,7 +141,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property PoolName. 
         /// <para>
-        /// The name of the WorkSpaces pool.
+        /// The name of the pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -160,7 +160,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags for the WorkSpaces pool.
+        /// The tags for the pool.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -178,7 +178,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property TimeoutSettings. 
         /// <para>
-        /// Indicates the timeout settings of the WorkSpaces pool.
+        /// Indicates the timeout settings of the pool.
         /// </para>
         /// </summary>
         public TimeoutSettings TimeoutSettings

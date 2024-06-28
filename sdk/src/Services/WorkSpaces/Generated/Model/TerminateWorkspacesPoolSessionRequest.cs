@@ -31,7 +31,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the TerminateWorkspacesPoolSession operation.
-    /// Terminates the WorkSpaces pool session.
+    /// Terminates the pool session.
     /// </summary>
     public partial class TerminateWorkspacesPoolSessionRequest : AmazonWorkSpacesRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The identifier of the WorkSpaces pool session.
+        /// The identifier of the pool session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

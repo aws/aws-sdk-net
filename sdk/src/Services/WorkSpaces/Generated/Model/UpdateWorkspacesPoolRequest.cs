@@ -31,7 +31,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateWorkspacesPool operation.
-    /// Updates the specified WorkSpaces pool.
+    /// Updates the specified pool.
     /// </summary>
     public partial class UpdateWorkspacesPoolRequest : AmazonWorkSpacesRequest
     {
@@ -82,7 +82,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Capacity. 
         /// <para>
-        /// The desired capacity for the WorkSpaces pool.
+        /// The desired capacity for the pool.
         /// </para>
         /// </summary>
         public Capacity Capacity
@@ -100,7 +100,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Describes the specified WorkSpaces pool to update.
+        /// Describes the specified pool to update.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -138,7 +138,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property PoolId. 
         /// <para>
-        /// The identifier of the specified WorkSpaces pool to update.
+        /// The identifier of the specified pool to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -157,7 +157,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property TimeoutSettings. 
         /// <para>
-        /// Indicates the timeout settings of the specified WorkSpaces pool.
+        /// Indicates the timeout settings of the specified pool.
         /// </para>
         /// </summary>
         public TimeoutSettings TimeoutSettings

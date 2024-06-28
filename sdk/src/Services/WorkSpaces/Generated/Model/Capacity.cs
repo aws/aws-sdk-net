@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the user capacity for a WorkSpaces pool.
+    /// Describes the user capacity for a pool of WorkSpaces.
     /// </summary>
     public partial class Capacity
     {

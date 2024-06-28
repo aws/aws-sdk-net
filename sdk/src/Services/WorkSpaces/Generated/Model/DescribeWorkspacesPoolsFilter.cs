@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the filter conditions for the WorkSpaces pool to return.
+    /// Describes the filter conditions for WorkSpaces Pools to return.
     /// </summary>
     public partial class DescribeWorkspacesPoolsFilter
     {
@@ -60,7 +60,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operator values for filtering WorkSpaces pools.
+        /// The operator values for filtering WorkSpaces Pools.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values for filtering WorkSpaces pools.
+        /// The values for filtering WorkSpaces Pools.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]

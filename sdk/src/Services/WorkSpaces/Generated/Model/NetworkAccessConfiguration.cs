@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the network details of a WorkSpaces pool.
+    /// Describes the network details of a WorkSpaces Pool.
     /// </summary>
     public partial class NetworkAccessConfiguration
     {

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the capacity status for a WorkSpaces pool
+    /// Describes the capacity status for a pool of WorkSpaces.
     /// </summary>
     public partial class CapacityStatus
     {
@@ -62,7 +62,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ActualUserSessions. 
         /// <para>
-        /// The total number of session slots that are available for WorkSpaces pools.
+        /// The total number of session slots that are available for a pool of WorkSpaces.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

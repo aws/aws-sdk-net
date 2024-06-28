@@ -60,7 +60,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Sessions. 
         /// <para>
-        /// Describes the WorkSpaces pool sessions.
+        /// Describes the pool sessions.
         /// </para>
         /// </summary>
         public List<WorkspacesPoolSession> Sessions

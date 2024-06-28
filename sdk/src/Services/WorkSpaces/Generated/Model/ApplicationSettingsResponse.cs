@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the persistent application settings for users of a WorkSpaces pool.
+    /// Describes the persistent application settings for WorkSpaces Pools users.
     /// </summary>
     public partial class ApplicationSettingsResponse
     {

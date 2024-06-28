@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes a WorkSpaces pool error.
+    /// Describes a pool error.
     /// </summary>
     public partial class WorkspacesPoolError
     {

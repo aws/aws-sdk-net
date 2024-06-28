@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes a WorkSpaces pool.
+    /// Describes a pool of WorkSpaces.
     /// </summary>
     public partial class WorkspacesPool
     {
@@ -181,7 +181,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property PoolArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the WorkSpaces pool.
+        /// The Amazon Resource Name (ARN) for the pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -200,7 +200,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property PoolId. 
         /// <para>
-        /// The identifier of a WorkSpaces pool.
+        /// The identifier of a pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

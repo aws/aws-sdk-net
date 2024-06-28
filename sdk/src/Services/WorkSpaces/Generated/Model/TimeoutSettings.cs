@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the timeout settings for a WorkSpaces pool.
+    /// Describes the timeout settings for a pool of WorkSpaces.
     /// </summary>
     public partial class TimeoutSettings
     {

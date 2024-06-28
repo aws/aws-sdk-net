@@ -31,7 +31,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeWorkspacesPools operation.
-    /// Describes the specified WorkSpaces pool.
+    /// Describes the specified WorkSpaces Pools.
     /// </summary>
     public partial class DescribeWorkspacesPoolsRequest : AmazonWorkSpacesRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filter conditions for the WorkSpaces pool to return.
+        /// The filter conditions for the WorkSpaces Pool to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -101,7 +101,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property PoolIds. 
         /// <para>
-        /// The identifier of the WorkSpaces pool.
+        /// The identifier of the WorkSpaces Pools.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]

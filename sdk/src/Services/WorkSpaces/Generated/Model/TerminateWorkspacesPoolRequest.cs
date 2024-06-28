@@ -31,7 +31,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the TerminateWorkspacesPool operation.
-    /// Terminates the specified WorkSpaces pool.
+    /// Terminates the specified pool.
     /// </summary>
     public partial class TerminateWorkspacesPoolRequest : AmazonWorkSpacesRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property PoolId. 
         /// <para>
-        /// The identifier of the WorkSpaces pool.
+        /// The identifier of the pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

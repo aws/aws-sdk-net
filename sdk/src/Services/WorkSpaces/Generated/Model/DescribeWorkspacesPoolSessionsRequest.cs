@@ -31,8 +31,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeWorkspacesPoolSessions operation.
-    /// Retrieves a list that describes the streaming sessions for a specified WorkSpaces
-    /// pool.
+    /// Retrieves a list that describes the streaming sessions for a specified pool.
     /// </summary>
     public partial class DescribeWorkspacesPoolSessionsRequest : AmazonWorkSpacesRequest
     {
@@ -83,7 +82,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property PoolId. 
         /// <para>
-        /// The identifier of the WorkSpaces pool.
+        /// The identifier of the pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

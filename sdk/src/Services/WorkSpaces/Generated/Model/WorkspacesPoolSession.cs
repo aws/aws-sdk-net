@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes a WorkSpaces pool session.
+    /// Describes a pool session.
     /// </summary>
     public partial class WorkspacesPoolSession
     {
@@ -47,8 +47,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// The authentication method. The user is authenticated using a WorkSpaces pool URL (API)
-        /// or SAML 2.0 federation (SAML).
+        /// The authentication method. The user is authenticated using a WorkSpaces Pools URL
+        /// (API) or SAML 2.0 federation (SAML).
         /// </para>
         /// </summary>
         public AuthenticationType AuthenticationType

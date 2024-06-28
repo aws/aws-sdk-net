@@ -3935,7 +3935,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the specified WorkSpaces pool.
+        /// Describes the specified WorkSpaces Pools.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspacesPools service method.</param>
         /// 
@@ -3961,7 +3961,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the specified WorkSpaces pool.
+        /// Describes the specified WorkSpaces Pools.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspacesPools service method.</param>
         /// <param name="cancellationToken">
@@ -3994,8 +3994,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Retrieves a list that describes the streaming sessions for a specified WorkSpaces
-        /// pool.
+        /// Retrieves a list that describes the streaming sessions for a specified pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspacesPoolSessions service method.</param>
         /// 
@@ -4021,8 +4020,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Retrieves a list that describes the streaming sessions for a specified WorkSpaces
-        /// pool.
+        /// Retrieves a list that describes the streaming sessions for a specified pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspacesPoolSessions service method.</param>
         /// <param name="cancellationToken">
@@ -6091,12 +6089,12 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Starts the specified WorkSpaces pool.
+        /// Starts the specified pool.
         /// 
         ///  
         /// <para>
-        /// You cannot start a WorkSpace pool unless it has a running mode of <c>AutoStop</c>
-        /// and a state of <c>STOPPED</c>.
+        /// You cannot start a pool unless it has a running mode of <c>AutoStop</c> and a state
+        /// of <c>STOPPED</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartWorkspacesPool service method.</param>
@@ -6135,12 +6133,12 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Starts the specified WorkSpaces pool.
+        /// Starts the specified pool.
         /// 
         ///  
         /// <para>
-        /// You cannot start a WorkSpace pool unless it has a running mode of <c>AutoStop</c>
-        /// and a state of <c>STOPPED</c>.
+        /// You cannot start a pool unless it has a running mode of <c>AutoStop</c> and a state
+        /// of <c>STOPPED</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartWorkspacesPool service method.</param>
@@ -6239,7 +6237,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Stops the specifiedWorkSpaces pool.
+        /// Stops the specified pool.
         /// 
         ///  
         /// <para>
@@ -6277,7 +6275,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Stops the specifiedWorkSpaces pool.
+        /// Stops the specified pool.
         /// 
         ///  
         /// <para>
@@ -6437,7 +6435,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Terminates the specified WorkSpaces pool.
+        /// Terminates the specified pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateWorkspacesPool service method.</param>
         /// 
@@ -6469,7 +6467,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Terminates the specified WorkSpaces pool.
+        /// Terminates the specified pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateWorkspacesPool service method.</param>
         /// <param name="cancellationToken">
@@ -6508,7 +6506,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Terminates the WorkSpaces pool session.
+        /// Terminates the pool session.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateWorkspacesPoolSession service method.</param>
         /// 
@@ -6540,7 +6538,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Terminates the WorkSpaces pool session.
+        /// Terminates the pool session.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateWorkspacesPoolSession service method.</param>
         /// <param name="cancellationToken">
@@ -7072,7 +7070,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Updates the specified WorkSpaces pool.
+        /// Updates the specified pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspacesPool service method.</param>
         /// 
@@ -7110,7 +7108,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Updates the specified WorkSpaces pool.
+        /// Updates the specified pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspacesPool service method.</param>
         /// <param name="cancellationToken">

@@ -31,7 +31,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the StopWorkspacesPool operation.
-    /// Stops the specifiedWorkSpaces pool.
+    /// Stops the specified pool.
     /// 
     ///  
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property PoolId. 
         /// <para>
-        /// The identifier of the WorkSpaces pool.
+        /// The identifier of the pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

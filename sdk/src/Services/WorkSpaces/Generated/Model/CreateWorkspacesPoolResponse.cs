@@ -39,7 +39,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property WorkspacesPool. 
         /// <para>
-        /// Indicates the WorkSpaces pool to create.
+        /// Indicates the pool to create.
         /// </para>
         /// </summary>
         public WorkspacesPool WorkspacesPool
