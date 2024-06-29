@@ -24,6 +24,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Amazon.Runtime.EventStreams.Internal
 {
@@ -161,5 +162,20 @@ namespace Amazon.Runtime.EventStreams.Internal
 
             base.StartProcessing();
         }
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Starts the background thread to start reading events from the network stream.
+        /// 
+        /// The Task will be completed when all of the events from the stream have been processed.
+        /// </summary>
+        public override async Task StartProcessingAsync()
+        {
+            // If they are/have enumerated, the event-driven mode should be disabled
+            if (IsEnumerated) throw new InvalidOperationException(MutuallyExclusiveExceptionMessage);
+
+            await base.StartProcessingAsync().ConfigureAwait(false);
+        }
+#endif
     }
 }
