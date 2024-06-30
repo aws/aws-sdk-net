@@ -1,5 +1,7 @@
-﻿using Amazon.Util;
+﻿using System.Collections.Generic;
+using Amazon.Util;
 using System.Text;
+using Amazon.Runtime.Internal;
 using Xunit;
 
 namespace UnitTests.NetStandard.Core
@@ -7,6 +9,22 @@ namespace UnitTests.NetStandard.Core
     [Trait("Category", "Core")]
     public class AWSSDKUtilsTests
     {
+        [Fact]
+        public void GetParametersAsString()
+        {
+            var parameters = new ParameterCollection
+            {
+                { "key1", "value1" },
+                { "key2", "value2" },
+                { "key3", new List<string> { "value3", "value4" } },
+                { "key4", new List<double> { 1.1, 2.1 } }
+            };
+
+            var parametersString = AWSSDKUtils.GetParametersAsString(parameters);
+
+            Assert.Equal("key1=value1&key2=value2&key3=value3&key3=value4&key4=1.1&key4=2.1", parametersString);
+        }
+
         [Fact]
         public void ToHexUppercase()
         {
