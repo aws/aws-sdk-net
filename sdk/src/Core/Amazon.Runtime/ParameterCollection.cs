@@ -77,7 +77,7 @@ namespace Amazon.Runtime.Internal
             return GetParametersEnumerable().ToList();
         }
 
-        private IEnumerable<KeyValuePair<string, string>> GetParametersEnumerable()
+        internal IEnumerable<KeyValuePair<string, string>> GetParametersEnumerable()
         {
             foreach (var kvp in this)
             {

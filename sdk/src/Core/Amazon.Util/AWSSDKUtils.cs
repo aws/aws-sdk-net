@@ -302,26 +302,20 @@ namespace Amazon.Util
          */
         internal static string GetParametersAsString(ParameterCollection parameterCollection)
         {
-            var sortedParameters = parameterCollection.GetSortedParametersList();
-
-            StringBuilder data = new StringBuilder(512);
-            foreach (var kvp in sortedParameters)
+            var parameterBuilder = new ValueStringBuilder(512);
+            foreach (var kvp in parameterCollection.GetParametersEnumerable())
             {
-                var key = kvp.Key;
                 var value = kvp.Value;
-                if (value != null)
-                {
-                    data.Append(key);
-                    data.Append('=');
-                    data.Append(AWSSDKUtils.UrlEncode(value, false));
-                    data.Append('&');
-                }
+                if (value == null)
+                    continue;
+                parameterBuilder.Append(kvp.Key);
+                parameterBuilder.Append('=');
+                parameterBuilder.Append(AWSSDKUtils.UrlEncode(value, false));
+                parameterBuilder.Append('&');
             }
-            string result = data.ToString();
-            if (result.Length == 0)
-                return string.Empty;
 
-            return result.Remove(result.Length - 1);
+            var length = parameterBuilder.Length;
+            return length == 0 ? string.Empty : parameterBuilder.ToString(0, length - 1);
         }
 
         /// <summary>
