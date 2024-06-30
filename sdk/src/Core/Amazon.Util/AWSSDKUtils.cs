@@ -199,7 +199,15 @@ namespace Amazon.Util
                 return null;
 
 #if NET8_0_OR_GREATER
+            // LastIndexOf and LastIndexOfAny is vectorized on .NET8+ and is
+            // signifigantly faster for cases where 'path' does not end with a short file
+            // extension, such as GUIDs
             int extensionIndex = path.AsSpan().LastIndexOf('.');
+            if (extensionIndex == -1)
+            {
+                return string.Empty;
+            }
+
             int directoryIndex = path.AsSpan().LastIndexOfAny('/', '\\', ':');
 
             // extension separator is found and exists before path separator or path separator doesn't exist
