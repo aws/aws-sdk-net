@@ -2,6 +2,9 @@
     "core": {
         "changeLogMessages": ["Update event stream apis use non blocking async io."],
         "type": "patch",
-        "updateMinimum": true
+        "updateMinimum": true,
+		"backwardIncompatibilitiesToIgnore" : [
+			"Amazon.Runtime.EventStreams.Internal.IEventStream/MethodAbstractMethodAdded"
+		]
     }
 }
