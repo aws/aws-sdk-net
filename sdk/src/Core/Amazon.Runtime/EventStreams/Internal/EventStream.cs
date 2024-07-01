@@ -49,12 +49,14 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// </summary>
         void StartProcessing();
 
+#if AWS_ASYNC_API
         /// <summary>
         /// Starts the background thread to start reading events from the network stream.
         /// 
         /// The Task will be completed when all of the events from the stream have been processed.
         /// </summary>
         Task StartProcessingAsync();
+#endif
     }
 
     /// <summary>
