@@ -145,17 +145,6 @@ namespace Amazon.Runtime.Internal
         void AddPathResource(string key, string value);
 
         /// <summary>
-        /// Gets and Sets the version number for the marshaller used to create this request. The version number
-        /// is used to support backward compatible changes that would otherwise be breaking changes when a 
-        /// newer core is used with an older service assembly.
-        /// </summary>
-        int MarshallerVersion
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// Gets and Sets the content for this request.
         /// </summary>
         byte[] Content
