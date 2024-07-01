@@ -102,6 +102,53 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
+        public void TestPutAndGetWithBidiCharacters()
+        {
+            var bidiChar = '\u200E';
+            var encodedBidiChar = "%E2%80%8E";
+            var content = "TestPutAndGetWithBidiCharacters";            
+            var bidiKey = UtilityMethods.GenerateName($"TestPutAndGetWithBidi{bidiChar}Characters");
+
+            // Verify character is in the string
+            Assert.IsTrue(bidiKey.IndexOf(bidiChar) > 0);
+            Assert.IsTrue(AWSSDKUtils.HasBidiControlCharacters(bidiKey));
+
+            // Verify character is encoded by the Uri class
+            Uri uri = new Uri(new Uri("http://www.amazon.com/"), bidiKey);
+            Assert.IsTrue(uri.AbsoluteUri.Contains(encodedBidiChar));
+            Assert.IsFalse(AWSSDKUtils.HasBidiControlCharacters(uri.AbsoluteUri));
+            Assert.IsTrue(uri.AbsoluteUri.Contains($"TestPutAndGetWithBidi{encodedBidiChar}Characters"));
+
+            // Verify the bidi key can be used to put an object
+            var putObjectRequest = new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = bidiKey,
+                ContentBody = content
+            };
+                        
+            Client.PutObject(putObjectRequest);
+
+            // Verify the bidi key object can be read
+            var response = Client.GetObject(new GetObjectRequest
+            {
+                BucketName = bucketName,
+                Key = bidiKey,
+            });
+
+            // Read S3 bucket response content
+            var responseBody = string.Empty;
+            using (var reader = new StreamReader(response.ResponseStream))
+            {
+                responseBody = reader.ReadToEnd();                
+            }
+
+            // Verify the correct response was read
+            Assert.IsTrue(content == responseBody);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void TestStorageClass()
         {
             var key = "contentBodyPut" + random.Next();

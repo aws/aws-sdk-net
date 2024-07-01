@@ -55,7 +55,6 @@ namespace Amazon.Runtime.Internal
         string canonicalResource;
         RegionEndpoint alternateRegion;
         long originalStreamLength;
-        int marshallerVersion = 2; //2 is the default version and must be used whenever a version is not specified in the marshaller.
 
         /// <summary>
         /// Constructs a new DefaultRequest with the specified service name and the
@@ -254,26 +253,6 @@ namespace Amazon.Runtime.Internal
         public void AddPathResource(string key, string value)
         {
             PathResources.Add(key, value);
-        }
-
-        /// <summary>
-        /// Gets and Sets the version number for the marshaller used to create this request. The version number
-        /// is used to support backward compatible changes that would otherwise be breaking changes when a 
-        /// newer core is used with an older service assembly.
-        /// Versions:
-        ///     1 - Legacy version (no longer supported)
-        ///     2 - Default version. Support for path segments
-        /// </summary>
-        public int MarshallerVersion
-        {
-            get
-            {
-                return this.marshallerVersion;
-            }
-            set
-            {
-                this.marshallerVersion = value;
-            }
         }
 
         public string CanonicalResource

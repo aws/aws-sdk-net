@@ -88,8 +88,6 @@ namespace Amazon.Util
         internal const string S3Accelerate = "s3-accelerate";
         internal const string S3Control = "s3-control";
 
-        private const int DefaultMarshallerVersion = 2;
-
         private static readonly string _userAgent = InternalSDKUtils.BuildUserAgentString(string.Empty, string.Empty);
 
 #endregion
@@ -322,107 +320,6 @@ namespace Amazon.Util
                 return string.Empty;
 
             return result.Remove(result.Length - 1);
-        }
-
-        /// <summary>
-        /// Returns the canonicalized resource path for the service endpoint with single URL encoded path segments.
-        /// </summary>
-        /// <param name="endpoint">Endpoint URL for the request</param>
-        /// <param name="resourcePath">Resource path for the request</param>
-        /// <remarks>
-        /// If resourcePath begins or ends with slash, the resulting canonicalized
-        /// path will follow suit.
-        /// </remarks>
-        /// <returns>Canonicalized resource path for the endpoint</returns>
-        [Obsolete("Use CanonicalizeResourcePathV2 instead")]
-        public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath)
-        {
-            // This overload is kept for backward compatibility in existing code bases.
-            return CanonicalizeResourcePath(endpoint, resourcePath, false, null, DefaultMarshallerVersion);
-        }
-
-        /// <summary>
-        /// Returns the canonicalized resource path for the service endpoint
-        /// </summary>
-        /// <param name="endpoint">Endpoint URL for the request</param>
-        /// <param name="resourcePath">Resource path for the request</param>
-        /// <param name="detectPreEncode">If true pre URL encode path segments if necessary.
-        /// S3 is currently the only service that does not expect pre URL encoded segments.</param>
-        /// <remarks>
-        /// If resourcePath begins or ends with slash, the resulting canonicalized
-        /// path will follow suit.
-        /// </remarks>
-        /// <returns>Canonicalized resource path for the endpoint</returns>
-        [Obsolete("Use CanonicalizeResourcePathV2 instead")]
-        public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath, bool detectPreEncode)
-        {
-            // This overload is kept for backward compatibility in existing code bases.
-            return CanonicalizeResourcePath(endpoint, resourcePath, detectPreEncode, null, DefaultMarshallerVersion);
-        }
-
-        /// <summary>
-        /// Returns the canonicalized resource path for the service endpoint
-        /// </summary>
-        /// <param name="endpoint">Endpoint URL for the request</param>
-        /// <param name="resourcePath">Resource path for the request</param>
-        /// <param name="detectPreEncode">If true pre URL encode path segments if necessary.
-        /// S3 is currently the only service that does not expect pre URL encoded segments.</param>
-        /// <param name="pathResources">Dictionary of key/value parameters containing the values for the ResourcePath key replacements</param>
-        /// <param name="marshallerVersion">The version of the marshaller that constructed the request object.</param>
-        /// <remarks>
-        /// If resourcePath begins or ends with slash, the resulting canonicalized
-        /// path will follow suit.
-        /// </remarks>
-        /// <returns>Canonicalized resource path for the endpoint</returns>
-        [Obsolete("Use CanonicalizeResourcePathV2 instead")]
-        public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath, bool detectPreEncode, IDictionary<string, string> pathResources, int marshallerVersion)
-        {
-            if (endpoint != null)
-            {
-                var path = endpoint.AbsolutePath;
-                if (string.IsNullOrEmpty(path) || string.Equals(path, Slash, StringComparison.Ordinal))
-                    path = string.Empty;
-
-                if (!string.IsNullOrEmpty(resourcePath) && resourcePath.StartsWith(Slash, StringComparison.Ordinal))
-                    resourcePath = resourcePath.Substring(1);
-
-                if (!string.IsNullOrEmpty(resourcePath))
-                    path = path + Slash + resourcePath;
-
-                resourcePath = path;
-            }
-
-            if (string.IsNullOrEmpty(resourcePath))
-                return Slash;
-
-            IEnumerable<string> encodedSegments = AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, pathResources);
-            
-            var pathWasPreEncoded = false;
-            if (detectPreEncode)
-            {
-                if (endpoint == null)
-                    throw new ArgumentNullException(nameof(endpoint), "A non-null endpoint is necessary to decide whether or not to pre URL encode.");
-
-                // S3 is a special case.  For S3 skip the pre encode.
-                // For everything else URL pre encode the resource path segments.
-                if (!S3Uri.IsS3Uri(endpoint))
-                {
-                    encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, true).Replace(Slash, EncodedSlash));
-                    
-                    pathWasPreEncoded = true;
-                }
-            }
-#pragma warning disable 0618
-            var canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegments(encodedSegments, false);
-#pragma warning restore 0618
-            // Get the logger each time (it's cached) because we shouldn't store it in a static variable.
-            Logger.GetLogger(typeof(AWSSDKUtils)).DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
-                pathWasPreEncoded ? "Double" : "Single",
-                resourcePath,
-                endpoint == null ? "" : " with endpoint " + endpoint.AbsoluteUri,
-                canonicalizedResourcePath);
-
-            return canonicalizedResourcePath;
         }
 
         /// <summary>
