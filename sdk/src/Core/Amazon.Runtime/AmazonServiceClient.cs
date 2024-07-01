@@ -494,19 +494,7 @@ namespace Amazon.Runtime
                 if (resourcePath.StartsWith("/", StringComparison.Ordinal))
                     resourcePath = resourcePath.Substring(1);
 
-                // Microsoft added support for unicode bidi control characters to the Uri class in .NET 4.7.2
-                // https://github.com/microsoft/dotnet/blob/master/Documentation/compatibility/uri-unicode-bidirectional-characters.md
-                // However, we only want to support it on .NET Core 3.1 and higher due to not having to deal with .NET Standard support matrix.
-#if BCL || NETSTANDARD20
-                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath) ||
-                    (internalRequest.PathResources?.Any(v => AWSSDKUtils.HasBidiControlCharacters(v.Value)) == true))
-                {
-                    resourcePath = string.Join("/", AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, internalRequest.PathResources).ToArray());
-                    throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
-                        "Target resource path [{0}] has bidirectional characters, which are not supported" +
-                        "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
-                }
-#endif          // Since S3 is the only service that is single encoded, we send the URL unencoded for special characters
+                // Since S3 is the only service that is single encoded, we send the URL unencoded for special characters
                 // to match the previous behavior compatible with the SigV2 backend.
                 if (internalRequest.SignatureVersion == SignatureVersion.SigV2 && String.Equals(internalRequest.ServiceName, "AmazonS3"))
                 {
@@ -547,23 +535,7 @@ namespace Amazon.Runtime
                 sb.AppendFormat("{0}{1}", delim, queryString);
             }
 
-            var parameterizedPath = string.Empty;
-            if(internalRequest.MarshallerVersion >= 2)
-            {
-                parameterizedPath = string.Concat(resourcePath, sb);
-            }
-            else
-            {
-                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath))
-                        throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
-                            "Target resource path [{0}] has bidirectional characters, which are not supported" +
-                            "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
-
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
-                parameterizedPath = string.Concat(AWSSDKUtils.ProtectEncodedSlashUrlEncode(resourcePath, skipEncodingValidPathChars), sb);
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
-            }
-
+            var parameterizedPath = string.Concat(resourcePath, sb);
             var hasSlash = url.AbsoluteUri.EndsWith("/", StringComparison.Ordinal) || parameterizedPath.StartsWith("/", StringComparison.Ordinal);
 
             var strUri = hasSlash
