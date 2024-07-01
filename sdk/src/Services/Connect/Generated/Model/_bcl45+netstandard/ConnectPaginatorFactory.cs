@@ -85,6 +85,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListAuthenticationProfiles operation
+        ///</summary>
+        public IListAuthenticationProfilesPaginator ListAuthenticationProfiles(ListAuthenticationProfilesRequest request) 
+        {
+            return new ListAuthenticationProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListBots operation
         ///</summary>
         public IListBotsPaginator ListBots(ListBotsRequest request) 

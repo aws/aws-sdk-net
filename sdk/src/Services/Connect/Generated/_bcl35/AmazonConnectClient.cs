@@ -36,9 +36,21 @@ namespace Amazon.Connect
     /// <summary>
     /// <para>Implementation for accessing Connect</para>
     ///
+    /// <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Service.html">Amazon
+    /// Connect actions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Service.html">Amazon
+    /// Connect data types</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// Amazon Connect is a cloud-based contact center solution that you use to set up and
     /// manage a customer contact center and provide reliable customer engagement at any scale.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Amazon Connect provides metrics and real-time reporting that enable you to optimize
@@ -5761,6 +5773,81 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DescribeAuthenticationProfile
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change. To request
+        /// access to this API, contact Amazon Web Services Support.
+        /// 
+        ///  
+        /// <para>
+        /// Describes the target authentication profile.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuthenticationProfile service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAuthenticationProfile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAuthenticationProfile">REST API Reference for DescribeAuthenticationProfile Operation</seealso>
+        public virtual DescribeAuthenticationProfileResponse DescribeAuthenticationProfile(DescribeAuthenticationProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAuthenticationProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAuthenticationProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAuthenticationProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAuthenticationProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuthenticationProfile operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAuthenticationProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAuthenticationProfile">REST API Reference for DescribeAuthenticationProfile Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAuthenticationProfile(DescribeAuthenticationProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAuthenticationProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAuthenticationProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAuthenticationProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAuthenticationProfile.</param>
+        /// 
+        /// <returns>Returns a  DescribeAuthenticationProfileResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAuthenticationProfile">REST API Reference for DescribeAuthenticationProfile Operation</seealso>
+        public virtual DescribeAuthenticationProfileResponse EndDescribeAuthenticationProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAuthenticationProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeContact
 
         /// <summary>
@@ -9628,6 +9715,82 @@ namespace Amazon.Connect
         public virtual ListApprovedOriginsResponse EndListApprovedOrigins(IAsyncResult asyncResult)
         {
             return EndInvoke<ListApprovedOriginsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAuthenticationProfiles
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change. To request
+        /// access to this API, contact Amazon Web Services Support.
+        /// 
+        ///  
+        /// <para>
+        /// Provides summary information about the authentication profiles in a specified Amazon
+        /// Connect instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuthenticationProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListAuthenticationProfiles service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAuthenticationProfiles">REST API Reference for ListAuthenticationProfiles Operation</seealso>
+        public virtual ListAuthenticationProfilesResponse ListAuthenticationProfiles(ListAuthenticationProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAuthenticationProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuthenticationProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAuthenticationProfilesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAuthenticationProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAuthenticationProfiles operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAuthenticationProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAuthenticationProfiles">REST API Reference for ListAuthenticationProfiles Operation</seealso>
+        public virtual IAsyncResult BeginListAuthenticationProfiles(ListAuthenticationProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAuthenticationProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuthenticationProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAuthenticationProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAuthenticationProfiles.</param>
+        /// 
+        /// <returns>Returns a  ListAuthenticationProfilesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAuthenticationProfiles">REST API Reference for ListAuthenticationProfiles Operation</seealso>
+        public virtual ListAuthenticationProfilesResponse EndListAuthenticationProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAuthenticationProfilesResponse>(asyncResult);
         }
 
         #endregion
@@ -14269,8 +14432,8 @@ namespace Amazon.Connect
         /// 
         ///  <important> 
         /// <para>
-        /// You may only use this API to upload attachments to a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
-        /// Case</a>.
+        /// You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Amazon
+        /// Connect Case</a>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -15893,6 +16056,81 @@ namespace Amazon.Connect
         public virtual UpdateAgentStatusResponse EndUpdateAgentStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAgentStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAuthenticationProfile
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change. To request
+        /// access to this API, contact Amazon Web Services Support.
+        /// 
+        ///  
+        /// <para>
+        /// Updates the selected authentication profile.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthenticationProfile service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAuthenticationProfile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAuthenticationProfile">REST API Reference for UpdateAuthenticationProfile Operation</seealso>
+        public virtual UpdateAuthenticationProfileResponse UpdateAuthenticationProfile(UpdateAuthenticationProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAuthenticationProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAuthenticationProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAuthenticationProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAuthenticationProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthenticationProfile operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAuthenticationProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAuthenticationProfile">REST API Reference for UpdateAuthenticationProfile Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAuthenticationProfile(UpdateAuthenticationProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAuthenticationProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAuthenticationProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAuthenticationProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAuthenticationProfile.</param>
+        /// 
+        /// <returns>Returns a  UpdateAuthenticationProfileResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAuthenticationProfile">REST API Reference for UpdateAuthenticationProfile Operation</seealso>
+        public virtual UpdateAuthenticationProfileResponse EndUpdateAuthenticationProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAuthenticationProfileResponse>(asyncResult);
         }
 
         #endregion

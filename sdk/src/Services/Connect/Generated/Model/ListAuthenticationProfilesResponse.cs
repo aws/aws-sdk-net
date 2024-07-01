@@ -30,48 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// This is the response object from the SearchContactFlows operation.
+    /// This is the response object from the ListAuthenticationProfiles operation.
     /// </summary>
-    public partial class SearchContactFlowsResponse : AmazonWebServiceResponse
+    public partial class ListAuthenticationProfilesResponse : AmazonWebServiceResponse
     {
-        private long? _approximateTotalCount;
-        private List<ContactFlow> _contactFlows = AWSConfigs.InitializeCollections ? new List<ContactFlow>() : null;
+        private List<AuthenticationProfileSummary> _authenticationProfileSummaryList = AWSConfigs.InitializeCollections ? new List<AuthenticationProfileSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ApproximateTotalCount. 
+        /// Gets and sets the property AuthenticationProfileSummaryList. 
         /// <para>
-        /// The total number of contact flows which matched your search query.
+        /// A summary of a given authentication profile.
         /// </para>
         /// </summary>
-        public long ApproximateTotalCount
+        public List<AuthenticationProfileSummary> AuthenticationProfileSummaryList
         {
-            get { return this._approximateTotalCount.GetValueOrDefault(); }
-            set { this._approximateTotalCount = value; }
+            get { return this._authenticationProfileSummaryList; }
+            set { this._authenticationProfileSummaryList = value; }
         }
 
-        // Check to see if ApproximateTotalCount property is set
-        internal bool IsSetApproximateTotalCount()
+        // Check to see if AuthenticationProfileSummaryList property is set
+        internal bool IsSetAuthenticationProfileSummaryList()
         {
-            return this._approximateTotalCount.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ContactFlows. 
-        /// <para>
-        /// Information about the flows.
-        /// </para>
-        /// </summary>
-        public List<ContactFlow> ContactFlows
-        {
-            get { return this._contactFlows; }
-            set { this._contactFlows = value; }
-        }
-
-        // Check to see if ContactFlows property is set
-        internal bool IsSetContactFlows()
-        {
-            return this._contactFlows != null && (this._contactFlows.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._authenticationProfileSummaryList != null && (this._authenticationProfileSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +61,6 @@ namespace Amazon.Connect.Model
         /// If there are additional results, this is the token for the next set of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2500)]
         public string NextToken
         {
             get { return this._nextToken; }
