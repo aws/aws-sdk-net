@@ -131,7 +131,6 @@ namespace CrtIntegrationTests
             IRequest request = mock.Object;
             request.HttpMethod = "POST";
             request.ResourcePath = resourcePath;
-            request.MarshallerVersion = 2;
             request.Content = Encoding.ASCII.GetBytes("Param1=value1");
             request.Endpoint = new Uri("https://" + SigningTestHost + "/");
 
@@ -220,7 +219,6 @@ namespace CrtIntegrationTests
             var request = mock.Object;
             request.HttpMethod = "GET";
             request.ResourcePath = "/";
-            request.MarshallerVersion = 2;
             request.Endpoint = new Uri("https://" + SigningTestHost + "/");
 
             return request;
@@ -276,7 +274,6 @@ namespace CrtIntegrationTests
             mock.SetupGet(x => x.SubResources).Returns(new Dictionary<string, string>());
 
             var request = mock.Object;
-            request.MarshallerVersion = 2;
             request.HttpMethod = "PUT";
             request.ResourcePath = "/examplebucket/chunkObject.txt";
             request.Endpoint = new Uri("https://s3.amazonaws.com/");
