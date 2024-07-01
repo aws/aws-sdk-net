@@ -389,6 +389,10 @@ namespace Amazon.EKS
     {
 
         /// <summary>
+        /// Constant CAPACITY_BLOCK for CapacityTypes
+        /// </summary>
+        public static readonly CapacityTypes CAPACITY_BLOCK = new CapacityTypes("CAPACITY_BLOCK");
+        /// <summary>
         /// Constant ON_DEMAND for CapacityTypes
         /// </summary>
         public static readonly CapacityTypes ON_DEMAND = new CapacityTypes("ON_DEMAND");
