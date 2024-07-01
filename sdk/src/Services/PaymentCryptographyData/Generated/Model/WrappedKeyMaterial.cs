@@ -30,30 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptographyData.Model
 {
     /// <summary>
-    /// Parameters that are required to generate or verify Visa PIN.
+    /// Parameter information of a WrappedKeyBlock for encryption key exchange.
     /// </summary>
-    public partial class VisaPin
+    public partial class WrappedKeyMaterial
     {
-        private int? _pinVerificationKeyIndex;
+        private string _tr31KeyBlock;
 
         /// <summary>
-        /// Gets and sets the property PinVerificationKeyIndex. 
+        /// Gets and sets the property Tr31KeyBlock. 
         /// <para>
-        /// The value for PIN verification index. It is used in the Visa PIN algorithm to calculate
-        /// the PVV (PIN Verification Value).
+        /// The TR-31 wrapped key block.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=6)]
-        public int PinVerificationKeyIndex
+        [AWSProperty(Sensitive=true, Min=56, Max=9984)]
+        public string Tr31KeyBlock
         {
-            get { return this._pinVerificationKeyIndex.GetValueOrDefault(); }
-            set { this._pinVerificationKeyIndex = value; }
+            get { return this._tr31KeyBlock; }
+            set { this._tr31KeyBlock = value; }
         }
 
-        // Check to see if PinVerificationKeyIndex property is set
-        internal bool IsSetPinVerificationKeyIndex()
+        // Check to see if Tr31KeyBlock property is set
+        internal bool IsSetTr31KeyBlock()
         {
-            return this._pinVerificationKeyIndex.HasValue; 
+            return this._tr31KeyBlock != null;
         }
 
     }
