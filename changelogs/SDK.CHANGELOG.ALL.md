@@ -1,3 +1,28 @@
+### 3.7.842.0 (2024-07-01 19:49 UTC)
+* APIGateway (3.7.301.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* CognitoIdentity (3.7.301.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* Connect (3.7.322.0)
+	* Authentication profiles are Amazon Connect resources (in gated preview) that allow you to configure authentication settings for users in your contact center. This release adds support for new ListAuthenticationProfiles, DescribeAuthenticationProfile and UpdateAuthenticationProfile APIs.
+* DocDB (3.7.304.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* EKS (3.7.309.0)
+	* Updates EKS managed node groups to support EC2 Capacity Blocks for ML
+* PaymentCryptography (3.7.304.0)
+	* Added further restrictions on logging of potentially sensitive inputs and outputs.
+* PaymentCryptographyData (3.7.302.0)
+	* Adding support for dynamic keys for encrypt, decrypt, re-encrypt and translate pin functions.  With this change, customers can use one-time TR-31 keys directly in dataplane operations without the need to first import them into the service.
+* SimpleWorkflow (3.7.302.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* StepFunctions (3.7.304.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* WAFV2 (3.7.305.18)
+	* JSON body inspection: Update documentation to clarify that JSON parsing doesn't include full validation.
+* Core 3.7.304.23
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.841.0 (2024-06-28 19:23 UTC)
 * ACMPCA (3.7.303.0)
 	* Added CCPC_LEVEL_1_OR_HIGHER KeyStorageSecurityStandard and SM2 KeyAlgorithm and SM3WITHSM2 SigningAlgorithm for China regions.
