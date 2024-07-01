@@ -43,7 +43,7 @@ namespace Amazon.PaymentCryptography.Model
         /// The TR-31 wrapped key block to import.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=56, Max=9984)]
+        [AWSProperty(Required=true, Sensitive=true, Min=56, Max=9984)]
         public string WrappedKeyBlock
         {
             get { return this._wrappedKeyBlock; }
