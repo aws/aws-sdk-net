@@ -840,8 +840,7 @@ namespace Amazon.S3
         /// <para>
         /// When the request is an HTTP 1.1 request, the response is chunk encoded. When the request
         /// is not an HTTP 1.1 request, the response would not contain the <c>Content-Length</c>.
-        /// You always need to read the entire response body to check if the copy succeeds. to
-        /// keep the connection alive while we copy the data. 
+        /// You always need to read the entire response body to check if the copy succeeds. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1035,8 +1034,7 @@ namespace Amazon.S3
         /// <para>
         /// When the request is an HTTP 1.1 request, the response is chunk encoded. When the request
         /// is not an HTTP 1.1 request, the response would not contain the <c>Content-Length</c>.
-        /// You always need to read the entire response body to check if the copy succeeds. to
-        /// keep the connection alive while we copy the data. 
+        /// You always need to read the entire response body to check if the copy succeeds. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1232,8 +1230,7 @@ namespace Amazon.S3
         /// <para>
         /// When the request is an HTTP 1.1 request, the response is chunk encoded. When the request
         /// is not an HTTP 1.1 request, the response would not contain the <c>Content-Length</c>.
-        /// You always need to read the entire response body to check if the copy succeeds. to
-        /// keep the connection alive while we copy the data. 
+        /// You always need to read the entire response body to check if the copy succeeds. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1433,8 +1430,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1446,7 +1443,7 @@ namespace Amazon.S3
         /// <para>
         /// If the source object that you want to copy is in a directory bucket, you must have
         /// the <b> <c>s3express:CreateSession</c> </b> permission in the <c>Action</c> element
-        /// of a policy to read the object . By default, the session is in the <c>ReadWrite</c>
+        /// of a policy to read the object. By default, the session is in the <c>ReadWrite</c>
         /// mode. If you want to restrict the access, you can explicitly set the <c>s3express:SessionMode</c>
         /// condition key to <c>ReadOnly</c> on the copy source bucket.
         /// </para>
@@ -1644,8 +1641,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1657,7 +1654,7 @@ namespace Amazon.S3
         /// <para>
         /// If the source object that you want to copy is in a directory bucket, you must have
         /// the <b> <c>s3express:CreateSession</c> </b> permission in the <c>Action</c> element
-        /// of a policy to read the object . By default, the session is in the <c>ReadWrite</c>
+        /// of a policy to read the object. By default, the session is in the <c>ReadWrite</c>
         /// mode. If you want to restrict the access, you can explicitly set the <c>s3express:SessionMode</c>
         /// condition key to <c>ReadOnly</c> on the copy source bucket.
         /// </para>
@@ -1857,8 +1854,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1870,7 +1867,7 @@ namespace Amazon.S3
         /// <para>
         /// If the source object that you want to copy is in a directory bucket, you must have
         /// the <b> <c>s3express:CreateSession</c> </b> permission in the <c>Action</c> element
-        /// of a policy to read the object . By default, the session is in the <c>ReadWrite</c>
+        /// of a policy to read the object. By default, the session is in the <c>ReadWrite</c>
         /// mode. If you want to restrict the access, you can explicitly set the <c>s3express:SessionMode</c>
         /// condition key to <c>ReadOnly</c> on the copy source bucket.
         /// </para>
@@ -4243,7 +4240,7 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
-        /// from a versiong-enabled bucket, you must specify the <c>s3:DeleteObjectVersion</c>
+        /// from a versioning-enabled bucket, you must specify the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
         ///  </li> </ul> </li> <li> 
