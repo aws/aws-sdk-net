@@ -16,6 +16,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Threading;
 using Amazon.Util.Internal;
 
@@ -119,7 +120,7 @@ namespace Amazon.Runtime.Internal.Util
             } while (Interlocked.CompareExchange(ref cachedLoggers, newLoggerCache, oldLoggerCache) != oldLoggerCache);
 
             // Unregister all the loggers in the old cache
-            foreach (var item in oldLoggerCache)
+            foreach (var item in oldLoggerCache ?? Enumerable.Empty<KeyValuePair<Type, Lazy<Logger>>>())
             {
                 var lazyLogger = item.Value;
                 if (lazyLogger.IsValueCreated)
