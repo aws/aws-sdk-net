@@ -48,6 +48,15 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// Starts the background thread to start reading events from the network stream.
         /// </summary>
         void StartProcessing();
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Starts the background thread to start reading events from the network stream.
+        /// 
+        /// The Task will be completed when all of the events from the stream have been processed.
+        /// </summary>
+        Task StartProcessingAsync();
+#endif
     }
 
     /// <summary>
@@ -253,22 +262,39 @@ namespace Amazon.Runtime.EventStreams.Internal
         {
 #if AWS_ASYNC_API
             // Task only exists in framework 4.5 and up, and Standard.
-            Task.Run(() => ProcessLoop());
+            Task.Run(() => ProcessLoopAsync());
 #else
             // ThreadPool only exists in 3.5 and below. These implementations do not have the Task library.
             ThreadPool.QueueUserWorkItem(ProcessLoop);
 #endif
         }
 
-        /// <summary>
-        /// The background thread main loop. It will constantly read from the network stream until IsProcessing is false, or an error occurs.
-        /// <para></para>
-        /// This stub exists due to FXCop.
-        /// </summary>
-        private void ProcessLoop()
+#if AWS_ASYNC_API
+        private async Task ProcessLoopAsync()
         {
-            ProcessLoop(null);
+            var buffer = new byte[BufferSize];
+
+            try
+            {
+                while (IsProcessing)
+                {
+                    await ReadFromStreamAsync(buffer).ConfigureAwait(false);
+                }
+            }
+            // These exceptions are raised on the background thread. They are fired as events for visibility.
+            catch (Exception ex)
+            {
+                IsProcessing = false;
+
+                // surfaceException means what is surfaced to the user. For example, in S3Select, that would be a S3EventStreamException.
+                var surfaceException = WrapException(ex);
+
+                // Raise the exception as an event.
+                ExceptionReceived?.Invoke(this,
+                    new EventStreamExceptionReceivedArgs<TE>(surfaceException));
+            }
         }
+#endif
 
         /// <summary>
         /// The background thread main loop. It will constantly read from the network stream until IsProcessing is false, or an error occurs.
@@ -319,6 +345,27 @@ namespace Amazon.Runtime.EventStreams.Internal
             }
         }
 
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Reads from the stream into the buffer. It then passes the buffer to the decoder, which raises an event for
+        /// each message it decodes.
+        /// </summary>
+        /// <param name="buffer">The buffer to store the read bytes from the stream.</param>
+        protected async Task ReadFromStreamAsync(byte[] buffer)
+        {
+            var bytesRead = await NetworkStream.ReadAsync(buffer, 0, buffer.Length).ConfigureAwait(false);
+            if (bytesRead > 0)
+            {
+                // Decoder raises MessageReceived for every message it encounters.
+                Decoder.ProcessData(buffer, 0, bytesRead);
+            }
+            else
+            {
+                IsProcessing = false;
+            }
+        }
+#endif
+
         /// <summary>
         /// Wraps exceptions in an outer exception so they can be passed to event handlers. If the Exception is already of a compatable type,
         /// the method returns what it was given.
@@ -354,6 +401,23 @@ namespace Amazon.Runtime.EventStreams.Internal
             IsProcessing = true;
             Process();
         }
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Starts the background thread to start reading events from the network stream.
+        /// 
+        /// The Task will be completed when all of the events from the stream have been processed.
+        /// </summary>
+        public virtual async Task StartProcessingAsync()
+        {
+            if (IsProcessing) 
+                return;
+
+            IsProcessing = true;
+            await ProcessLoopAsync().ConfigureAwait(false);
+        }
+#endif
+
 
         #region Dispose Pattern
         private bool _disposed;

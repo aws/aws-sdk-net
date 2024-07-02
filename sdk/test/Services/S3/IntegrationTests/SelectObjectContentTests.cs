@@ -136,6 +136,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             AssertRecordsEqualsExpected(testContent);
         }
 
+#if ASYNC_AWAIT
+        /// <summary>
+        /// Tests the Event-Driven method for iterating through an EventStream returned from SelectObjectContent. Technically, the enumerable test should suffice,
+        /// but it may be useful to have a itegration test for each interaction pattern.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("S3")]
+        public async System.Threading.Tasks.Task TestCallEventsAsync()
+        {
+            var eventStream = GetSelectObjectContentEventStream();
+
+            var testContent = "";
+            var recordsEvents = new List<RecordsEvent>();
+
+            eventStream.RecordsEventReceived += (sender, args) => recordsEvents.Add(args.EventStreamEvent);
+            await eventStream.StartProcessingAsync();
+
+            using (var streamReader = new StreamReader(recordsEvents[0].Payload))
+            {
+                testContent = streamReader.ReadToEnd();
+            }
+            eventStream.Dispose();
+
+            AssertRecordsEqualsExpected(testContent);
+        }
+#endif
+
         /// <summary>
         /// Tests the Event-Driven method for checking an EventStream returned from SelectObjectContent based on RecordDelimiter settings for CSV InputSerialization and OutputSerialization.
         /// </summary>
