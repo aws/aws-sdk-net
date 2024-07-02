@@ -15,13 +15,16 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Util;
+
+#if NET8_0_OR_GREATER
+using System.Diagnostics.CodeAnalysis;
+#endif
 
 namespace Amazon.DynamoDBv2
 {
@@ -111,8 +114,10 @@ namespace Amazon.DynamoDBv2
     {
         public CollectionConverterFactoryV1(DynamoDBEntryConversion conversion) : base(conversion, Utils.PrimitiveTypes) { }
 
+#if NET8_0_OR_GREATER
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL3050:RequiresDynamicCode",
             Justification = "MakeGenericType is safe here since we support reference types only, so fully shareable code is generated.")]
+#endif
         protected override Converter CreateConverter(Type elementType, Type collectionType)
         {
             var genericType = typeof(PrimitiveCollectionConverterV1<,>).MakeGenericType(elementType, collectionType);

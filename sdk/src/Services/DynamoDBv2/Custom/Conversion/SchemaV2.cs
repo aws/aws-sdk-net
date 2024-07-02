@@ -15,10 +15,13 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
+
+#if NET8_0_OR_GREATER
+using System.Diagnostics.CodeAnalysis;
+#endif
 
 namespace Amazon.DynamoDBv2
 {
@@ -63,8 +66,10 @@ namespace Amazon.DynamoDBv2
     {
         public CollectionConverterFactoryV2(DynamoDBEntryConversion conversion) : base(conversion, Utils.PrimitiveTypes) { }
 
+#if NET8_0_OR_GREATER
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL3050:RequiresDynamicCode",
             Justification = "MakeGenericType is safe here since we support reference types only, so fully shareable code is generated.")]
+#endif
         protected override Converter CreateConverter(Type elementType, Type collectionType)
         {
             var genericType = typeof(CollectionConverterV2<,>).MakeGenericType(elementType, collectionType);
@@ -77,8 +82,10 @@ namespace Amazon.DynamoDBv2
         public DynamoDBListConverterFactory(DynamoDBEntryConversion conversion)
             : base(conversion, new[] { typeof(String), typeof(MemoryStream), typeof(byte[]) }) { }
 
+#if NET8_0_OR_GREATER
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL3050:RequiresDynamicCode",
             Justification = "MakeGenericType is safe here since we support reference types only, so fully shareable code is generated.")]
+#endif
         protected override Converter CreateConverter(Type elementType, Type collectionType)
         {
             var genericType = typeof(DynamoDBListConverter<,>).MakeGenericType(elementType, collectionType);
@@ -86,7 +93,7 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-    #endregion
+#endregion
 
 
     #region Same converter behavior as V1
