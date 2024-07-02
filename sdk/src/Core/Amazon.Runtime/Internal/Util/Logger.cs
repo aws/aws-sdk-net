@@ -46,8 +46,7 @@ namespace Amazon.Runtime.Internal.Util
             {
                 loggers = new List<InternalLogger>(3);
 #pragma warning disable
-                InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
-                loggers.Add(log4netLogger);
+                loggers.Add(new InternalLog4netLogger(type));
 #pragma warning restore
             }
             else
@@ -56,8 +55,7 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             loggers.Add(new InternalConsoleLogger(type));
-            InternalSystemDiagnosticsLogger sdLogger = new InternalSystemDiagnosticsLogger(type);
-            loggers.Add(sdLogger);
+            loggers.Add(new InternalSystemDiagnosticsLogger(type));
             ConfigureLoggers();
             AWSConfigs.PropertyChanged += ConfigsChanged;
         }
