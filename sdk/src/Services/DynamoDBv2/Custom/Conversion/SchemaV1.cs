@@ -1,12 +1,12 @@
 ﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -41,6 +41,7 @@ namespace Amazon.DynamoDBv2
             if (Nullable.GetUnderlyingType(type) is var underlyingType && underlyingType != null)
                 type = underlyingType;
 
+            if (type == typeof(bool)) return new BoolConverterV1();
             if (type == typeof(byte)) return new ByteConverterV1();
             if (type == typeof(sbyte)) return new SByteConverterV1();
             if (type == typeof(ushort)) return new UInt16ConverterV1();
