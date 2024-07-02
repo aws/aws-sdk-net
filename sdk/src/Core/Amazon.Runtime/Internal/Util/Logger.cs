@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
@@ -20,6 +21,7 @@ using System.Globalization;
 using System.Reflection;
 using System.Text;
 using System.ComponentModel;
+using System.Threading;
 using Amazon.Runtime;
 using Amazon.Util.Internal;
 
@@ -31,7 +33,7 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public class Logger : ILogger
     {
-        private static IDictionary<Type, Logger> cachedLoggers = new Dictionary<Type, Logger>();
+        private static ConcurrentDictionary<Type, Lazy<Logger>> cachedLoggers = new ConcurrentDictionary<Type, Lazy<Logger>>();
         private List<InternalLogger> loggers;
         private static Logger emptyLogger = new Logger();
 
@@ -46,7 +48,7 @@ namespace Amazon.Runtime.Internal.Util
 #endif
         private Logger(Type type)
         {
-            loggers = new List<InternalLogger>();
+            loggers = new List<InternalLogger>(3);
 
             if(!InternalSDKUtils.IsRunningNativeAot())
             {
@@ -104,25 +106,32 @@ namespace Amazon.Runtime.Internal.Util
 
         public static Logger GetLogger(Type type)
         {
-            if (type == null) throw new ArgumentNullException("type");
+            if (type == null) throw new ArgumentNullException(nameof(type));
 
-            Logger l;
-            lock (cachedLoggers)
-            {
-                if (!cachedLoggers.TryGetValue(type, out l))
-                {
-                    l = new Logger(type);
-                    cachedLoggers[type] = l;
-                }
-            }
-            return l;
+            // Use a lazy initialization to ensure that we only create a logger for a given type once because
+            // the constructor does some heavy lifting including setting up event listeners.
+            var lazyLogger = cachedLoggers.GetOrAdd(type, static t => new Lazy<Logger>(() => new Logger(t)));
+            return lazyLogger.Value;
         }
 
         public static void ClearLoggerCache()
         {
-            lock (cachedLoggers)
+            var newLoggerCache = new ConcurrentDictionary<Type, Lazy<Logger>>();
+            ConcurrentDictionary<Type, Lazy<Logger>> oldLoggerCache;
+
+            do
             {
-                cachedLoggers = new Dictionary<Type, Logger>();
+                oldLoggerCache = cachedLoggers;
+            } while (Interlocked.CompareExchange(ref cachedLoggers, newLoggerCache, oldLoggerCache) != oldLoggerCache);
+
+            // Unregister all the loggers in the old cache
+            foreach (var item in oldLoggerCache)
+            {
+                var lazyLogger = item.Value;
+                if (lazyLogger.IsValueCreated)
+                {
+                    lazyLogger.Value.Unregister();
+                }
             }
         }
 
@@ -137,6 +146,11 @@ namespace Amazon.Runtime.Internal.Util
         internal virtual bool IsDebugEnabled { get; private set; }
 
         internal virtual bool IsInfoEnabled { get; private set; }
+
+        internal void Unregister()
+        {
+            AWSConfigs.PropertyChanged -= ConfigsChanged;
+        }
 
         #region Logging methods
 
