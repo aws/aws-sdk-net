@@ -633,9 +633,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you set <c>DesiredCapacityType</c> to <c>vcpu</c> or <c>memory-mib</c>, the price
-        /// protection threshold is based on the per vCPU or per memory price instead of the per
-        /// instance price.
+        /// If you set <c>TargetCapacityUnitType</c> to <c>vcpu</c> or <c>memory-mib</c>, the
+        /// price protection threshold is based on the per vCPU or per memory price instead of
+        /// the per instance price.
         /// </para>
         ///  <note> 
         /// <para>

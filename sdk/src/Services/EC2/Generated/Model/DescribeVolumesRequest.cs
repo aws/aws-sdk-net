@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates DescribeVolumesRequest with the parameterized properties
         /// </summary>
-        /// <param name="volumeIds">The volume IDs.</param>
+        /// <param name="volumeIds">The volume IDs. If not specified, then all volumes are included in the response.</param>
         public DescribeVolumesRequest(List<string> volumeIds)
         {
             _volumeIds = volumeIds;
@@ -216,7 +216,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeIds. 
         /// <para>
-        /// The volume IDs.
+        /// The volume IDs. If not specified, then all volumes are included in the response.
         /// </para>
         /// </summary>
         public List<string> VolumeIds

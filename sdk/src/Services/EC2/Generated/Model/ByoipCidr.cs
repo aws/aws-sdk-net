@@ -143,8 +143,47 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the address pool.
+        /// The state of the address range.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>advertised</c>: The address range is being advertised to the internet by Amazon
+        /// Web Services.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>deprovisioned</c>: The address range is deprovisioned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>failed-deprovision</c>: The request to deprovision the address range was unsuccessful.
+        /// Ensure that all EIPs from the range have been deallocated and try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>failed-provision</c>: The request to provision the address range was unsuccessful.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>pending-deprovision</c>: You’ve submitted a request to deprovision an address
+        /// range and it's pending.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>pending-provision</c>: You’ve submitted a request to provision an address range
+        /// and it's pending.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>provisioned</c>: The address range is provisioned and can be advertised. The range
+        /// is not currently advertised.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>provisioned-not-publicly-advertisable</c>: The address range is provisioned and
+        /// cannot be advertised.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ByoipCidrState State
         {

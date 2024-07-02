@@ -6455,6 +6455,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly HostTenancy Dedicated = new HostTenancy("dedicated");
         /// <summary>
+        /// Constant Default for HostTenancy
+        /// </summary>
+        public static readonly HostTenancy Default = new HostTenancy("default");
+        /// <summary>
         /// Constant Host for HostTenancy
         /// </summary>
         public static readonly HostTenancy Host = new HostTenancy("host");
