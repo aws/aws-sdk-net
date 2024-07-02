@@ -16,7 +16,8 @@
   </ItemGroup>
   
   <ItemGroup>
-    <!--<TrimmerRootAssembly Include="AWSSDK.DynamoDBv2.AotTest" />-->
+	<!--DynamoDbContext is still not AOT-compatible, so this property is needed-->  
+    <TrimmerRootAssembly Include="AWSSDK.DynamoDBv2.AotTest" />
   </ItemGroup>
 
 </Project>

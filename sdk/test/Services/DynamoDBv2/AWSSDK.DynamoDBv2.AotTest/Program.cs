@@ -1,8 +1,10 @@
-﻿using System.Collections.Immutable;
-using Amazon.DynamoDBv2;
+﻿using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
+
+// The code below was tested using DynamoDbLocal:
+// https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html
 
 var config = new AmazonDynamoDBConfig { ServiceURL = $"http://localhost:8000" };
 var credentials = new BasicAWSCredentials("access", "secret");
@@ -46,7 +48,7 @@ await context.SaveAsync(new TestType
     Id = "1",
     Name = "Test",
     Values = ["Value1", "Value2"],
-    //SubType = new() { SubName = "Subname" }
+    SubType = new() { SubName = "Subname" }
 });
 Console.WriteLine("Item saved.");
 
