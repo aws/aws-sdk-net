@@ -262,7 +262,7 @@ namespace Amazon.Runtime.EventStreams.Internal
         {
 #if AWS_ASYNC_API
             // Task only exists in framework 4.5 and up, and Standard.
-            _ = ProcessLoopAsync();
+            Task.Run(() => ProcessLoopAsync());
 #else
             // ThreadPool only exists in 3.5 and below. These implementations do not have the Task library.
             ThreadPool.QueueUserWorkItem(ProcessLoop);
