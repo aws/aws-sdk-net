@@ -42,14 +42,17 @@ namespace Amazon.Runtime.Internal.Util
 #endif
         private Logger(Type type)
         {
-            loggers = new List<InternalLogger>(3);
-
             if(!InternalSDKUtils.IsRunningNativeAot())
             {
+                loggers = new List<InternalLogger>(3);
 #pragma warning disable
                 InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
                 loggers.Add(log4netLogger);
 #pragma warning restore
+            }
+            else
+            {
+                loggers = new List<InternalLogger>(2);
             }
 
             loggers.Add(new InternalConsoleLogger(type));
