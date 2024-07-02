@@ -1,3 +1,11 @@
+### 3.7.843.0 (2024-07-02 18:19 UTC)
+* EC2 (3.7.333.0)
+	* Documentation updates for Elastic Compute Cloud (EC2).
+* FMS (3.7.303.0)
+	* Increases Customer API's ManagedServiceData length
+* S3 (3.7.310.0)
+	* Added response overrides to Head Object requests.
+
 ### 3.7.842.0 (2024-07-01 19:49 UTC)
 * APIGateway (3.7.301.0)
 	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
