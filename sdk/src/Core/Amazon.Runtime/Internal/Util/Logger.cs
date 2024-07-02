@@ -80,6 +80,23 @@ namespace Amazon.Runtime.Internal.Util
                     il.IsEnabled = (logging & LoggingOptions.Console) == LoggingOptions.Console;
                 if (il is InternalSystemDiagnosticsLogger)
                     il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
+
+                if (!IsEnabled)
+                {
+                    IsEnabled = il.IsEnabled;
+                }
+                if (!IsErrorEnabled)
+                {
+                    IsErrorEnabled = il.IsErrorEnabled;
+                }
+                if (!IsInfoEnabled)
+                {
+                    IsInfoEnabled = il.IsInfoEnabled;
+                }
+                if (!IsDebugEnabled)
+                {
+                    IsDebugEnabled = il.IsDebugEnabled;
+                }
             }
         }
 
@@ -112,6 +129,14 @@ namespace Amazon.Runtime.Internal.Util
         public static Logger EmptyLogger { get { return emptyLogger; } }
 
         #endregion
+
+        internal bool IsEnabled { get; private set; }
+
+        internal virtual bool IsErrorEnabled { get; private set; }
+
+        internal virtual bool IsDebugEnabled { get; private set; }
+
+        internal virtual bool IsInfoEnabled { get; private set; }
 
         #region Logging methods
 
