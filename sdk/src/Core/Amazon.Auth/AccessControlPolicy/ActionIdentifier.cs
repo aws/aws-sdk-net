@@ -77,6 +77,35 @@ namespace Amazon.Auth.AccessControlPolicy
         {
             return new ActionIdentifier(value);
         }
+
+        public override bool Equals(object obj)
+        {
+            string targetActionName;
+            if (obj is ActionIdentifier)
+            {
+                targetActionName = ((ActionIdentifier)obj).ActionName;
+            }
+            else if(obj is string)
+            {
+                targetActionName = obj as string;
+            }
+            else
+            {
+                return false;
+            }
+
+            return string.Equals(ActionName, targetActionName);
+        }
+
+        public override int GetHashCode()
+        {
+            return ActionName.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return ActionName;
+        }
     }
 }
 
