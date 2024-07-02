@@ -17,20 +17,13 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-
-using Amazon.DynamoDBv2.Model;
-using Amazon.Util;
 using ThirdParty.Json.LitJson;
-using System.IO;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     /// <summary>
     /// Utility methods to handle conversion from/to JSON
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal static class JsonUtils
     {
         /// <summary>
@@ -61,9 +54,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var json = JsonMapper.ToObject(jsonText);
             if (!json.IsArray)
                 throw new InvalidOperationException("Expected array at JSON root.");
-            
+
             var array = new List<Document>();
-            for(int i=0;i<json.Count;i++)
+            for (int i = 0; i < json.Count; i++)
             {
                 var item = json[i];
                 var entry = ToEntry(item, DynamoDBEntryConversion.V2) as Document;
@@ -112,7 +105,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var decodedValues = new Dictionary<string, DynamoDBEntry>(StringComparer.Ordinal);
 
             // Convert, but don't alter the original yet
-            foreach(var attributeName in attributeNames)
+            foreach (var attributeName in attributeNames)
             {
                 DynamoDBEntry entry;
                 // If an attribute is not present, do nothing
@@ -128,7 +121,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
 
             // Update document with decoded attribute values
-            foreach(var kvp in decodedValues)
+            foreach (var kvp in decodedValues)
             {
                 var attributeName = kvp.Key;
                 var decodedEntry = kvp.Value;
@@ -164,7 +157,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (primitiveList != null && primitiveList.Type == DynamoDBEntryType.String)
             {
                 var decodedList = new PrimitiveList(DynamoDBEntryType.Binary);
-                foreach(var item in primitiveList.Entries)
+                foreach (var item in primitiveList.Entries)
                 {
                     // Attempt to decode
                     DynamoDBEntry decodedItem;
@@ -189,7 +182,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (dynamoDBList != null)
             {
                 var decodedList = new DynamoDBList();
-                foreach(var item in dynamoDBList.Entries)
+                foreach (var item in dynamoDBList.Entries)
                 {
                     DynamoDBEntry decodedItem;
                     if (!TryDecodeBase64(item, out decodedItem))
@@ -248,7 +241,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (data.IsArray)
             {
                 var list = new DynamoDBList();
-                for(int i=0;i<data.Count;i++)
+                for (int i = 0; i < data.Count; i++)
                 {
                     var item = data[i];
                     var entry = ToEntry(item, conversion);
@@ -334,7 +327,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (ddbList != null)
             {
                 writer.WriteArrayStart();
-                foreach(var item in ddbList.Entries)
+                foreach (var item in ddbList.Entries)
                 {
                     WriteJson(item, writer, conversion);
                 }
@@ -387,7 +380,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         // Finds first instance of a character
         private static int FirstIndex(StringBuilder sb, char toMatch)
         {
-            for(int i=0;i<sb.Length;i++)
+            for (int i = 0; i < sb.Length; i++)
             {
                 var c = sb[i];
                 if (c.Equals(toMatch))
