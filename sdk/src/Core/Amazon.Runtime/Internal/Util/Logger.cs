@@ -30,7 +30,6 @@ namespace Amazon.Runtime.Internal.Util
     {
         private static ConcurrentDictionary<Type, Lazy<Logger>> cachedLoggers = new ConcurrentDictionary<Type, Lazy<Logger>>();
         private List<InternalLogger> loggers;
-        private static Logger emptyLogger = new Logger();
 
         private Logger()
         {
@@ -130,7 +129,7 @@ namespace Amazon.Runtime.Internal.Util
             }
         }
 
-        public static Logger EmptyLogger { get { return emptyLogger; } }
+        public static Logger EmptyLogger { get; } = new Logger();
 
         #endregion
 
