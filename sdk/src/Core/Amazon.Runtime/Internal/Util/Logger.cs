@@ -15,14 +15,8 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Diagnostics;
-using System.Globalization;
-using System.Reflection;
-using System.Text;
 using System.ComponentModel;
 using System.Threading;
-using Amazon.Runtime;
 using Amazon.Util.Internal;
 
 namespace Amazon.Runtime.Internal.Util
