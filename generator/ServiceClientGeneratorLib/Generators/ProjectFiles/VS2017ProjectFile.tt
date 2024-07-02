@@ -101,6 +101,14 @@
   </PropertyGroup>
 <#
     }
+    if (this.Project.AssemblyName.Contains("UnitTests") && this.Project.TargetFrameworks.Contains("net472"))
+    {
+#>
+  <PropertyGroup>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+<#
+    }
 #>
   <!-- 
     For .NET 8 LangVersion is set to 11 to allow using static interface methods. This is to allow

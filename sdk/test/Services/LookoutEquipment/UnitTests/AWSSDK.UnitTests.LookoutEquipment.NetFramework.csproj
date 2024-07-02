@@ -21,6 +21,9 @@
 
     <NoWarn>CS1591,CS0612,CS0618</NoWarn>
   </PropertyGroup>
+  <PropertyGroup>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
   <!-- 
     For .NET 8 LangVersion is set to 11 to allow using static interface methods. This is to allow
     the service interface factory method to exist for AWSSDK.Extensions.NETCore.Setup.
