@@ -104,7 +104,7 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// WorkSpaces pools
+    /// Pool of WorkSpaces
     /// </para>
     ///  </li> <li> 
     /// <para>

@@ -199,7 +199,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon WorkSpaces - The resource type is <c>workspacespool</c> and the unique identifier
+        /// Pool of WorkSpaces - The resource type is <c>workspacespool</c> and the unique identifier
         /// is the pool ID. Example: <c>workspacespool/wspool-123456</c>.
         /// </para>
         ///  </li> </ul>
@@ -334,8 +334,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>workspaces:workspacespool:DesiredUserSessions</c> - The capacity of a WorkSpaces
-        /// pool.
+        ///  <c>workspaces:workspacespool:DesiredUserSessions</c> - The number of user sessions
+        /// for the WorkSpaces in the pool.
         /// </para>
         ///  </li> </ul>
         /// </summary>
