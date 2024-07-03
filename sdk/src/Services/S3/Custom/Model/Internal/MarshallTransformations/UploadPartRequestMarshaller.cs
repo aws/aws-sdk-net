@@ -81,8 +81,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(uploadPartRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "UploadPartRequest.Key");
 
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
-                                                 S3Transforms.ToStringValue(uploadPartRequest.Key));
+            request.ResourcePath = "/{Key+}";
+            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(uploadPartRequest.Key));
 
             if (uploadPartRequest.IsSetPartNumber())
                 request.AddSubResource("partNumber", S3Transforms.ToStringValue(uploadPartRequest.PartNumber.Value));

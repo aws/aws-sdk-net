@@ -152,9 +152,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("SourceBucket is a required property and must be set before making this call.", "CopyObjectRequest.SourceBucket");
             if (string.IsNullOrEmpty(sourceKey))
                 throw new System.ArgumentException("SourceKey is a required property and must be set before making this call.", "CopyObjectRequest.SourceKey");
-
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
-                                                 S3Transforms.ToStringValue(destinationKey));
+            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(destinationKey));
+            request.ResourcePath = "/{Key+}";
 
 
             request.UseQueryString = true;

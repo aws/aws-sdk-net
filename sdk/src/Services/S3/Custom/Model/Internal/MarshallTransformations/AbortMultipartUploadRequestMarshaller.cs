@@ -48,9 +48,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "AbortMultipartUploadRequest.BucketName");
             if (string.IsNullOrEmpty(abortMultipartUploadRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "AbortMultipartUploadRequest.Key");
-
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}", 
-                                                 S3Transforms.ToStringValue(abortMultipartUploadRequest.Key));
+            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(abortMultipartUploadRequest.Key));
+            request.ResourcePath = "/{Key+}";
+                                                 
 
             request.AddSubResource("uploadId", S3Transforms.ToStringValue(abortMultipartUploadRequest.UploadId));
             request.UseQueryString = true;
