@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AWSSDK.UnitTests.DynamoDBv2.Net45.Custom
@@ -16,7 +13,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.Net45.Custom
     {
         [DataTestMethod]
         [DynamicData(nameof(V1PrimitiveData))]
-        public void V1_Primitives_ConvertToEntry(object value, DynamoDBEntry expectedPrimitive)
+        public void V1_ConvertToEntry_Primitives(object value, DynamoDBEntry expectedPrimitive)
         {
             var actualPrimitive = DynamoDBEntryConversion.V1.ConvertToEntry(value.GetType(), value);
             Assert.AreEqual(expectedPrimitive, actualPrimitive);
@@ -24,7 +21,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.Net45.Custom
 
         [DataTestMethod]
         [DynamicData(nameof(V1PrimitiveData))]
-        public void V1_Primitives_ConvertFromEntry(object expectedValue, DynamoDBEntry primitive)
+        public void V1_ConvertFromEntry_Primitives(object expectedValue, DynamoDBEntry primitive)
         {
             var actualValue = DynamoDBEntryConversion.V1.ConvertFromEntry(expectedValue.GetType(), primitive);
             Assert.AreEqual(expectedValue, actualValue);
@@ -32,7 +29,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.Net45.Custom
 
         [DataTestMethod]
         [DynamicData(nameof(V2PrimitiveData))]
-        public void V2_Primitives_ConvertToEntry(object value, DynamoDBEntry expectedPrimitive)
+        public void V2_ConvertToEntry_Primitives(object value, DynamoDBEntry expectedPrimitive)
         {
             var actualPrimitive = DynamoDBEntryConversion.V2.ConvertToEntry(value.GetType(), value);
             Assert.AreEqual(expectedPrimitive, actualPrimitive);
@@ -40,7 +37,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.Net45.Custom
 
         [DataTestMethod]
         [DynamicData(nameof(V2PrimitiveData))]
-        public void V2_Primitives_ConvertFromEntry(object expectedValue, DynamoDBEntry primitive)
+        public void V2_ConvertFromEntry_Primitives(object expectedValue, DynamoDBEntry primitive)
         {
             var actualValue = DynamoDBEntryConversion.V2.ConvertFromEntry(expectedValue.GetType(), primitive);
             Assert.AreEqual(expectedValue, actualValue);
@@ -86,8 +83,156 @@ namespace AWSSDK.UnitTests.DynamoDBv2.Net45.Custom
             Assert.AreEqual(expectedDateTime, utcDateTime);
         }
 
+        [DataTestMethod]
+        [DynamicData((nameof(DynamoDBEntryConversions)))]
+        public void ConvertToEntry_Dictionary(DynamoDBEntryConversion conversion)
+        {
+            var dictionary = new Dictionary<string, object>
+            {
+                ["key1"] = "str",
+                ["key2"] = 123,
+                ["key3"] = new Dictionary<string, object>
+                {
+                    ["innerKey"] = "innerStr"
+                }
+            };
 
-        private enum TestEnum { A, B }
+            var document = conversion.ConvertToEntry(dictionary).AsDocument();
+
+            var expectedDocument = new Document
+            {
+                ["key1"] = new Primitive("str"),
+                ["key2"] = new Primitive("123", true),
+                ["key3"] = new Document
+                {
+                    ["innerKey"] = new Primitive("innerStr")
+                }
+            };
+            Assert.AreEqual(expectedDocument, document);
+        }
+
+        [DataTestMethod]
+        [DynamicData((nameof(DynamoDBEntryConversions)))]
+        public void ConvertFromEntry_DynamoDbList_ToArray(DynamoDBEntryConversion conversion)
+        {
+            var dynamoDbList = new DynamoDBList(new DynamoDBEntry[]
+            {
+                new Primitive("A"), new Primitive("B"), new Primitive("C")
+            });
+            var convertedArray = conversion.ConvertFromEntry<string[]>(dynamoDbList);
+            CollectionAssert.AreEqual(new[] { "A", "B", "C" }, convertedArray);
+        }
+
+        [DataTestMethod]
+        [DynamicData((nameof(DynamoDBEntryConversions)))]
+        public void ConvertFromEntry_DynamoDbList_ToList(DynamoDBEntryConversion conversion)
+        {
+            var dynamoDbList = new DynamoDBList(new DynamoDBEntry[]
+            {
+                new Primitive("1", true), new Primitive("2", true), new Primitive("3", true)
+            });
+            var convertedList = conversion.ConvertFromEntry<List<int>>(dynamoDbList);
+            CollectionAssert.AreEqual(new[] { 1, 2, 3 }, convertedList);
+        }
+
+        [DataTestMethod]
+        [DynamicData((nameof(DynamoDBEntryConversions)))]
+        public void ConvertFromEntry_PrimitiveList_ToArray(DynamoDBEntryConversion conversion)
+        {
+            var primitiveList = new PrimitiveList(DynamoDBEntryType.String)
+            {
+                Entries = { "A", "B", "C" }
+            };
+            var convertedArray = conversion.ConvertFromEntry<string[]>(primitiveList);
+            CollectionAssert.AreEqual(new[] { "A", "B", "C" }, convertedArray);
+        }
+
+        [DataTestMethod]
+        [DynamicData((nameof(DynamoDBEntryConversions)))]
+        public void ConvertFromEntry_PrimitiveList_ToList(DynamoDBEntryConversion conversion)
+        {
+            var primitiveList = new PrimitiveList(DynamoDBEntryType.Numeric)
+            {
+                Entries = { 1, 2, 3 }
+            };
+            var convertedList = conversion.ConvertFromEntry<List<int>>(primitiveList);
+            CollectionAssert.AreEqual(new[] { 1, 2, 3 }, convertedList);
+        }
+
+        [DataTestMethod]
+        [DynamicData((nameof(DynamoDBEntryConversions)))]
+        public void ConvertFromEntry_PrimitiveList_ToHashSet(DynamoDBEntryConversion conversion)
+        {
+            var primitiveList = new PrimitiveList(DynamoDBEntryType.Numeric)
+            {
+                Entries = { 0, 1, 2 }
+            };
+            var convertedHashSet = conversion.ConvertFromEntry<HashSet<long>>(primitiveList);
+            Assert.IsTrue(convertedHashSet.SetEquals(new long[] { 0, 1, 2 }));
+        }
+
+        [TestMethod]
+        public void V1_ConvertToEntry_Array()
+        {
+            var array = new[] { "A", "B", "C" };
+            var entry = DynamoDBEntryConversion.V1.ConvertToEntry(array);
+            var expectedList = new PrimitiveList { Entries = { "A", "B", "C" } };
+            Assert.AreEqual(expectedList, entry);
+        }
+
+        [TestMethod]
+        public void V1_ConvertToEntry_List()
+        {
+            var list = new List<int> { 3, 2, 1 };
+            var entry = DynamoDBEntryConversion.V1.ConvertToEntry(list);
+            var expectedList = new PrimitiveList(DynamoDBEntryType.Numeric) { Entries = { 3, 2, 1 } };
+            Assert.AreEqual(expectedList, entry);
+        }
+
+        [TestMethod]
+        public void V1_ConvertToEntry_HashSet()
+        {
+            var hashSet = new HashSet<long> { 0, 1, 2 };
+            var entry = DynamoDBEntryConversion.V1.ConvertToEntry(hashSet);
+            var expectedList = new PrimitiveList(DynamoDBEntryType.Numeric) { Entries = { 0, 1, 2 } };
+            Assert.AreEqual(expectedList, entry);
+        }
+
+        [TestMethod]
+        public void V2_ConvertToEntry_Array()
+        {
+            var array = new[] { "A", "B", "C" };
+            var entry = DynamoDBEntryConversion.V2.ConvertToEntry(array);
+            var expectedList = new DynamoDBList(new DynamoDBEntry[]
+            {
+                new Primitive("A"), new Primitive("B"),  new Primitive("C")
+            });
+            Assert.AreEqual(expectedList, entry);
+        }
+
+        [TestMethod]
+        public void V2_ConvertToEntry_List()
+        {
+            var list = new List<int> { 3, 2, 1 };
+            var entry = DynamoDBEntryConversion.V2.ConvertToEntry(list);
+            var expectedList = new DynamoDBList(new DynamoDBEntry[]
+            {
+                new Primitive("3", true), new Primitive("2", true),  new Primitive("1", true)
+            });
+            Assert.AreEqual(expectedList, entry);
+        }
+
+        [TestMethod]
+        public void V2_ConvertToEntry_HashSet()
+        {
+            var hashSet = new HashSet<long> { 0, 1, 2 };
+            var entry = DynamoDBEntryConversion.V2.ConvertToEntry(hashSet);
+            var expectedList = new PrimitiveList(DynamoDBEntryType.Numeric)
+            {
+                Entries = { new Primitive("0", true), new Primitive("1", true), new Primitive("2", true) }
+            };
+            Assert.AreEqual(expectedList, entry);
+        }
 
         private static byte[] ByteArray = new byte[] { 1, 2, 3, 4, 5 };
 
@@ -129,5 +274,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.Net45.Custom
             new object[] { true, new DynamoDBBool(true) },
             new object[] { false, new DynamoDBBool(false) }
         });
+
+        private enum TestEnum { A, B, C }
     }
 }

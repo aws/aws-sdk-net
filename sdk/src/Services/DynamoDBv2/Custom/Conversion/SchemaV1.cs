@@ -59,7 +59,7 @@ namespace Amazon.DynamoDBv2
             if (type == typeof(Guid)) return new GuidConverterV1();
             if (type == typeof(byte[])) return new BytesConverterV1();
             if (type == typeof(MemoryStream)) return new MemoryStreamConverterV1();
-            if (type == typeof(Enum)) return new EnumConverterV1();
+            if (type == typeof(Enum) || type.IsEnum) return new EnumConverterV1();
             if (type == typeof(Dictionary<string, object>)) return new DictionaryConverterV1();
 
             return null;
