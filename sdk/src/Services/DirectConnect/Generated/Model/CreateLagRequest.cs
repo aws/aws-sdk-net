@@ -38,14 +38,14 @@ namespace Amazon.DirectConnect.Model
     /// 
     ///  
     /// <para>
-    /// All connections in a LAG must use the same bandwidth (either 1Gbps or 10Gbps) and
-    /// must terminate at the same Direct Connect endpoint.
+    /// All connections in a LAG must use the same bandwidth (either 1Gbps, 10Gbps, 100Gbps,
+    /// or 400Gbps) and must terminate at the same Direct Connect endpoint.
     /// </para>
     ///  
     /// <para>
-    /// You can have up to 10 dedicated connections per LAG. Regardless of this limit, if
-    /// you request more connections for the LAG than Direct Connect can allocate on a single
-    /// endpoint, no LAG is created.
+    /// You can have up to 10 dedicated connections per location. Regardless of this limit,
+    /// if you request more connections for the LAG than Direct Connect can allocate on a
+    /// single endpoint, no LAG is created..
     /// </para>
     ///  
     /// <para>
@@ -117,7 +117,7 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property ConnectionsBandwidth. 
         /// <para>
         /// The bandwidth of the individual physical dedicated connections bundled by the LAG.
-        /// The possible values are 1Gbps and 10Gbps. 
+        /// The possible values are 1Gbps,10Gbps, 100Gbps, and 400Gbps. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -175,8 +175,8 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property NumberOfConnections. 
         /// <para>
         /// The number of physical dedicated connections initially provisioned and bundled by
-        /// the LAG. You can have a maximum of four connections when the port speed is 1G or 10G,
-        /// or two when the port speed is 100G. 
+        /// the LAG. You can have a maximum of four connections when the port speed is 1Gbps or
+        /// 10Gbps, or two when the port speed is 100Gbps or 400Gbps.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

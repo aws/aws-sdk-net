@@ -151,7 +151,7 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property ConnectionsBandwidth. 
         /// <para>
         /// The individual bandwidth of the physical connections bundled by the LAG. The possible
-        /// values are 1Gbps and 10Gbps. 
+        /// values are 1Gbps, 10Gbps, 100Gbps, or 400 Gbps.. 
         /// </para>
         /// </summary>
         public string ConnectionsBandwidth
@@ -385,8 +385,9 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property NumberOfConnections. 
         /// <para>
-        /// The number of physical dedicated connections bundled by the LAG, up to a maximum of
-        /// 10.
+        /// The number of physical dedicated connections initially provisioned and bundled by
+        /// the LAG. You can have a maximum of four connections when the port speed is 1 Gbps
+        /// or 10 Gbps, or two when the port speed is 100 Gbps or 400 Gbps.
         /// </para>
         /// </summary>
         public int NumberOfConnections
