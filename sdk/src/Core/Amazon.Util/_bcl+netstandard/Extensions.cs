@@ -13,7 +13,7 @@ namespace Amazon.Util
             return str.ToUpperInvariant();
         }
 
-#if NETSTANDARD
+#if NETSTANDARD || NETFRAMEWORK
         /// <summary>
         ///     Encodes into a span of bytes a set of characters from the specified read-only span.
         /// </summary>
