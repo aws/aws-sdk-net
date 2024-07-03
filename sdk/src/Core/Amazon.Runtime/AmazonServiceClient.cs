@@ -417,8 +417,11 @@ namespace Amazon.Runtime
                     new Marshaller(),
                     preMarshallHandler,
                     errorCallbackHandler,
-                    new MetricsHandler()
-                },
+                    new MetricsHandler(),
+#if BCL
+                    new BindingRedirectCheckHandler(),
+#endif
+            },
                 _logger
             );
 
