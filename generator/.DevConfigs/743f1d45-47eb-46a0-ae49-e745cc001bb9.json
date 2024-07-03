@@ -1,9 +1,0 @@
-{
-    "core": {
-        "updateMinimum": true,
-        "type": "Patch",
-        "changeLogMessages": [
-            "Update the SDK not to perform dynamic endpoint discovery when a service URL is explicitly configured"
-        ]
-    }
-}

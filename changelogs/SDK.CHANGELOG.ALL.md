@@ -1,3 +1,19 @@
+### 3.7.844.0 (2024-07-03 18:24 UTC)
+* ApplicationAutoScaling (3.7.303.3)
+	* Doc only update for Application Auto Scaling that fixes resource name.
+* DirectConnect (3.7.301.6)
+	* This update includes documentation for support of new native 400 GBps ports for Direct Connect.
+* Organizations (3.7.303.0)
+	* Added a new reason under ConstraintViolationException in RegisterDelegatedAdministrator API to prevent registering suspended accounts as delegated administrator of a service.
+* Rekognition (3.7.304.0)
+	* This release adds support for tagging projects and datasets with the CreateProject and CreateDataset APIs.
+* WorkSpaces (3.7.306.0)
+	* Fix create workspace bundle RootStorage/UserStorage to accept non null values
+* Core 3.7.304.24
+	* Update the SDK not to perform dynamic endpoint discovery when a service URL is explicitly configured
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.843.0 (2024-07-02 18:19 UTC)
 * EC2 (3.7.333.0)
 	* Documentation updates for Elastic Compute Cloud (EC2).
