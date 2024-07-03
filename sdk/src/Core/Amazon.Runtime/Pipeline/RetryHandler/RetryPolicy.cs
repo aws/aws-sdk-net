@@ -266,7 +266,11 @@ namespace Amazon.Runtime
         public virtual bool IsTransientError(IExecutionContext executionContext, Exception exception)
         {
             // An IOException was thrown by the underlying http client.
-            if (exception is IOException)
+            // FileNotFoundException is not considered a transient error because
+            // we don't consider local .NET assembly file changes to be happening.
+            // If a FileNotFoundException happens there is most likey a bad install
+            // of the SDK or .NET assembly binding issue.
+            if (exception is IOException && exception is not FileNotFoundException)
             {
 
 #if !NETSTANDARD  // ThreadAbortException is not NetStandard
