@@ -126,7 +126,6 @@ public final class ProtocolTestCustomizations {
             "QueryXmlLists",
             "DocumentTypeAsPayloadOutputString",
             "RestJsonHttpPayloadWithUnsetUnion",
-            "RestJsonToleratesRegexCharsInSegments",
             "RestJsonInputAndOutputWithQuotedStringHeaders",
             "RestJsonInputAndOutputWithTimestampHeaders",
             "RestJsonInputAndOutputWithTimestampHeaders",
