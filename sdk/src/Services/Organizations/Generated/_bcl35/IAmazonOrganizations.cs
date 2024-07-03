@@ -639,9 +639,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1350,9 +1349,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1677,10 +1675,9 @@ namespace Amazon.Organizations
         /// <para>
         /// When you create an account in an organization using the Organizations console, API,
         /// or CLI commands, the information required for the account to operate as a standalone
-        /// account, such as a payment method and signing the end user license agreement (EULA)
-        /// is <i>not</i> automatically collected. If you must remove an account from your organization
-        /// later, you can do so only after you provide the missing information. For more information,
-        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
+        /// account, such as a payment method is <i>not</i> automatically collected. If you must
+        /// remove an account from your organization later, you can do so only after you provide
+        /// the missing information. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
         /// before removing an account from an organization</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -1861,9 +1858,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2437,9 +2433,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2888,9 +2883,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3327,9 +3321,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3770,9 +3763,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5026,9 +5018,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5361,9 +5352,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6192,9 +6182,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7298,9 +7287,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7627,9 +7615,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8135,9 +8122,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8581,9 +8567,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9337,9 +9322,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9780,9 +9764,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10255,9 +10238,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10834,9 +10816,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11674,9 +11655,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12505,9 +12485,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12940,9 +12919,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15435,9 +15413,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15883,9 +15860,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16347,9 +16323,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16798,9 +16773,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17247,9 +17221,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17878,9 +17851,8 @@ namespace Amazon.Organizations
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
         /// you first must migrate the organization's management account to the marketplace that
-        /// corresponds to the management account's address. For example, accounts with India
-        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
-        /// must be associated with the same marketplace.
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>

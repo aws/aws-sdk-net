@@ -321,6 +321,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR = new ConstraintViolationExceptionReason("CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR");
         /// <summary>
+        /// Constant CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR = new ConstraintViolationExceptionReason("CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR");
+        /// <summary>
         /// Constant CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG = new ConstraintViolationExceptionReason("CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG");
