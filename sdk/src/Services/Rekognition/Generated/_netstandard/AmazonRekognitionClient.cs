@@ -4069,6 +4069,11 @@ namespace Amazon.Rekognition
         /// To get the next page of results, call <c>GetlabelDetection</c> and populate the <c>NextToken</c>
         /// request parameter with the token value returned from the previous call to <c>GetLabelDetection</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you are retrieving results while using the Amazon Simple Notification Service,
+        /// note that you will receive an "ERROR" notification if the job encounters an issue.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLabelDetection service method.</param>
         /// <param name="cancellationToken">
