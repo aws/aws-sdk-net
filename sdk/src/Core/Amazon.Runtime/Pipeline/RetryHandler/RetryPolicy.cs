@@ -412,6 +412,8 @@ namespace Amazon.Runtime
         private const string clockSkewMessageParen = "(";
         private const string clockSkewMessagePlusSeparator = " + ";
         private const string clockSkewMessageMinusSeparator = " - ";
+        private const string clockSkewMessageColonSeparator = ":";
+        private const string clockSkewMessageSpaceSeparator = " ";
         private static TimeSpan clockSkewMaxThreshold = TimeSpan.FromMinutes(5);
 
         private bool IsClockskew(IExecutionContext executionContext, Exception exception)
@@ -439,13 +441,18 @@ namespace Amazon.Runtime
 
                 // If that fails, try to parse it from the exception message
                 if (!serverTimeDetermined)
-                    serverTimeDetermined = TryParseExceptionMessage(ase, out serverTime);
+                    serverTimeDetermined = TryParseExceptionMessageToGetServerTime(ase, out serverTime);
 
                 if (serverTimeDetermined)
                 {
                     // using accurate server time, calculate correction if local time is off
                     serverTime = serverTime.ToUniversalTime();
-                    var diff = correctedNow - serverTime;
+
+                    DateTime clientTime;
+                    bool clientTimeDetermined = TryParseExceptionMessageToGetClientTime(ase, out clientTime);
+                    clientTime = clientTime.ToUniversalTime();
+
+                    var diff = clientTimeDetermined ? clientTime - serverTime : correctedNow - serverTime;
                     var absDiff = diff.Ticks < 0 ? -diff : diff;
                     if (absDiff > clockSkewMaxThreshold)
                     {
@@ -497,7 +504,7 @@ namespace Amazon.Runtime
             serverTime = DateTime.MinValue;
             return false;
         }
-        private static bool TryParseExceptionMessage(AmazonServiceException ase, out DateTime serverTime)
+        private static bool TryParseExceptionMessageToGetServerTime(AmazonServiceException ase, out DateTime serverTime)
         {
             if (ase != null && !string.IsNullOrEmpty(ase.Message))
             {
@@ -535,6 +542,41 @@ namespace Amazon.Runtime
             return false;
         }
 
+        private static bool TryParseExceptionMessageToGetClientTime(AmazonServiceException ase, out DateTime clientTime)
+        {
+            if (ase != null && !string.IsNullOrEmpty(ase.Message))
+            {
+                var message = ase.Message;
+
+                // parse client time from exception message, if possible
+                var colonIndex = message.IndexOf(clockSkewMessageColonSeparator, StringComparison.Ordinal);
+                if (colonIndex >= 0)
+                {
+                    colonIndex++;
+
+                    // Locate " " separator that follows the client time string
+                    var separatorIndex = message.IndexOf(clockSkewMessageSpaceSeparator, colonIndex + 1, StringComparison.Ordinal);
+
+                    // Get the client time string and parse it
+                    if (separatorIndex > colonIndex)
+                    {
+                        var timestamp = message.Substring(colonIndex, separatorIndex - colonIndex).Trim();
+                        if (DateTime.TryParseExact(
+                                timestamp,
+                                AWSSDKUtils.ISO8601BasicDateTimeFormat,
+                                CultureInfo.InvariantCulture,
+                                DateTimeStyles.AssumeUniversal,
+                                out clientTime))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            clientTime = DateTime.MinValue;
+            return false;
+        }
         #endregion
 
         private static IWebResponseData GetWebData(AmazonServiceException ase)
