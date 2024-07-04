@@ -50,5 +50,18 @@ namespace UnitTests.NetStandard.Core
             var compressed = AWSSDKUtils.CompressSpaces(data);
             Assert.Equal("Hello, World!", compressed);
         }
+
+        [Theory]
+        [InlineData("https://s3.amazonaws.com", "s3")]
+        [InlineData("sqs.us-west-2.amazonaws.com", "sqs")]
+        [InlineData("queue.amazonaws.com", "sqs")]
+        [InlineData("https://sns.us-west-2.amazonaws.com", "sns")]
+        [InlineData("https://s3-external-1.amazonaws.com", "s3")]
+        public void DetermineService(string url, string expectedService)
+        {
+            var service = AWSSDKUtils.DetermineService(url);
+
+            Assert.Equal(expectedService, service);
+        }
     }
 }

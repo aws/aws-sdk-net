@@ -559,32 +559,31 @@ namespace Amazon.Util
         /// </returns>
         public static string DetermineService(string url)
         {
-            int delimIndex = url.IndexOf("//", StringComparison.Ordinal);
-            if (delimIndex >= 0)
-                url = url.Substring(delimIndex + 2);
+            var urlSpan = url.AsSpan();
 
-            string[] urlParts = url.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
-            if (urlParts == null || urlParts.Length == 0)
+            var doubleSlashIndex = urlSpan.IndexOf(DoubleSlash, StringComparison.Ordinal);
+            if (doubleSlashIndex >= 0)
+                urlSpan = urlSpan.Slice(doubleSlashIndex + 2);
+
+            var dotIndex = urlSpan.IndexOf('.');
+
+            if (dotIndex < 0)
                 return string.Empty;
 
-            string servicePart = urlParts[0];
-            int hyphenated = servicePart.IndexOf('-');
-            string service;
-            if (hyphenated < 0)
-            { service = servicePart; }
-            else
-            { service = servicePart.Substring(0, hyphenated); }
+            var servicePartSpan = urlSpan.Slice(0, dotIndex);
+            var hyphenIndex = servicePartSpan.IndexOf('-');
+            if (hyphenIndex > 0)
+            {
+                servicePartSpan = servicePartSpan.Slice(0, hyphenIndex);
+            }
 
-            // Check for SQS : return "sqs" incase service is determined to be "queue" as per the URL.
-            if (service.Equals("queue"))
-            {
-                return "sqs";
-            }
-            else
-            {
-                return service;
-            }
+            // Check for SQS : return "sqs" in case service is determined to be "queue" as per the URL.
+            return servicePartSpan.Equals(Queue, StringComparison.OrdinalIgnoreCase) ? "sqs" : servicePartSpan.ToString();
         }
+
+        // Compiler trick to directly refer to static data in the assembly
+        private static ReadOnlySpan<char> DoubleSlash => new[] { '/', '/' };
+        private static ReadOnlySpan<char> Queue => new[] { 'q', 'u', 'e', 'u', 'e' };
 
         /// <summary>
         /// Utility method for converting Unix epoch seconds to DateTime structure.
