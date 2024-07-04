@@ -486,32 +486,35 @@ namespace AWSSDKDocSamples.DynamoDBv2
                     { "Title", new AttributeValue { S = "The Adventures of Tom Sawyer" } }
                 };
 
-                // Define attribute updates
-                Dictionary<string, AttributeValueUpdate> updates = new Dictionary<string, AttributeValueUpdate>();
-                // Update item's Setting attribute
-                updates["Setting"] = new AttributeValueUpdate()
+                // Define expression attribute names
+                Dictionary<string, string> expressionAttributeNames = new Dictionary<string, string>
                 {
-                    Action = AttributeAction.PUT,
-                    Value = new AttributeValue { S = "St. Petersburg, Missouri" }
+                    { "#S", "Setting" },
+                    { "#B", "Bibliography" },
+                    { "#G", "Genres" }
                 };
-                // Remove item's Bibliography attribute
-                updates["Bibliography"] = new AttributeValueUpdate()
+
+                // Define expression attribute values
+                Dictionary<string, AttributeValue> expressionAttributeValues = new Dictionary<string, AttributeValue>
                 {
-                    Action = AttributeAction.DELETE
-                };   
-                // Add a new string to the item's Genres SS attribute
-                updates["Genres"] = new AttributeValueUpdate()
-                {
-                    Action = AttributeAction.ADD,
-                    Value = new AttributeValue { SS = new List<string> { "Bildungsroman" } }
+                    { ":newSetting", new AttributeValue { S = "St. Petersburg, Missouri" } },
+                    { ":newGenre", new AttributeValue { SS = new List<string> { "Bildungsroman" } } }
                 };
+
+                // Define expression, which:
+                //  1) Updates the setting to a different location
+                //  2) Adds a new genre
+                //  3) Removes the bibliography attribute
+                string updateExpression = "SET #S = :newSetting ADD #G :newGenre REMOVE #B";
 
                 // Create UpdateItem request
                 UpdateItemRequest request = new UpdateItemRequest
                 {
                     TableName = "SampleTable",
                     Key = key,
-                    AttributeUpdates = updates
+                    ExpressionAttributeNames = expressionAttributeNames,
+                    ExpressionAttributeValues = expressionAttributeValues,
+                    UpdateExpression = updateExpression
                 };
 
                 // Issue request
