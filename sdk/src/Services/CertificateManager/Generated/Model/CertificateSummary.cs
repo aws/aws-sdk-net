@@ -162,12 +162,11 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property HasAdditionalSubjectAlternativeNames. 
         /// <para>
-        /// When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>,
-        /// indicates whether the full list of subject alternative names has been included in
-        /// the response. If false, the response includes all of the subject alternative names
-        /// included in the certificate. If true, the response only includes the first 100 subject
-        /// alternative names included in the certificate. To display the full list of subject
-        /// alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.
+        /// When called by <a>ListCertificates</a>, indicates whether the full list of subject
+        /// alternative names has been included in the response. If false, the response includes
+        /// all of the subject alternative names included in the certificate. If true, the response
+        /// only includes the first 100 subject alternative names included in the certificate.
+        /// To display the full list of subject alternative names, use <a>DescribeCertificate</a>.
         /// </para>
         /// </summary>
         public bool HasAdditionalSubjectAlternativeNames
@@ -390,9 +389,9 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  
         /// <para>
-        /// When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>,
-        /// this parameter will only return the first 100 subject alternative names included in
-        /// the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.
+        /// When called by <a>ListCertificates</a>, this parameter will only return the first
+        /// 100 subject alternative names included in the certificate. To display the full list
+        /// of subject alternative names, use <a>DescribeCertificate</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

@@ -154,11 +154,11 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code/>SUCCESS
+        ///  <c>SUCCESS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code/>FAILED
+        ///  <c>FAILED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
