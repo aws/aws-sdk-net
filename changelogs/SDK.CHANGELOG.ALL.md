@@ -1,3 +1,16 @@
+### 3.7.845.0 (2024-07-05 18:18 UTC)
+* CertificateManager (3.7.301.16)
+	* Documentation updates, including fixes for xml formatting, broken links, and ListCertificates description.
+* ECR (3.7.303.0)
+	* This release for Amazon ECR makes change to bring the SDK into sync with the API.
+* PaymentCryptographyData (3.7.303.0)
+	* Added further restrictions on logging of potentially sensitive inputs and outputs.
+* QBusiness (3.7.305.0)
+	* Add personalization to Q Applications. Customers can enable or disable personalization when creating or updating a Q application with the personalization configuration.
+* Core 3.7.304.25
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.844.0 (2024-07-03 18:24 UTC)
 * ApplicationAutoScaling (3.7.303.3)
 	* Doc only update for Application Auto Scaling that fixes resource name.
