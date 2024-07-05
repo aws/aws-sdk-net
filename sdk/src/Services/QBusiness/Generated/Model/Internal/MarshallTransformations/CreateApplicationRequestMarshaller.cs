@@ -118,6 +118,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdentityCenterInstanceArn);
                 }
 
+                if(publicRequest.IsSetPersonalizationConfiguration())
+                {
+                    context.Writer.WritePropertyName("personalizationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PersonalizationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PersonalizationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetQAppsConfiguration())
                 {
                     context.Writer.WritePropertyName("qAppsConfiguration");

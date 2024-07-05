@@ -51,6 +51,7 @@ namespace Amazon.QBusiness.Model
         private string _displayName;
         private EncryptionConfiguration _encryptionConfiguration;
         private string _identityCenterInstanceArn;
+        private PersonalizationConfiguration _personalizationConfiguration;
         private QAppsConfiguration _qAppsConfiguration;
         private string _roleArn;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -168,6 +169,26 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetIdentityCenterInstanceArn()
         {
             return this._identityCenterInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PersonalizationConfiguration. 
+        /// <para>
+        /// Configuration information about chat response personalization. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing
+        /// chat responses</a> 
+        /// </para>
+        /// </summary>
+        public PersonalizationConfiguration PersonalizationConfiguration
+        {
+            get { return this._personalizationConfiguration; }
+            set { this._personalizationConfiguration = value; }
+        }
+
+        // Check to see if PersonalizationConfiguration property is set
+        internal bool IsSetPersonalizationConfiguration()
+        {
+            return this._personalizationConfiguration != null;
         }
 
         /// <summary>

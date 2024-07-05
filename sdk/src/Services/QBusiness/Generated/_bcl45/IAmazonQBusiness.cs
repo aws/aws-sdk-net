@@ -54,39 +54,6 @@ namespace Amazon.QBusiness
     /// </para>
     ///  
     /// <para>
-    /// You can use the following AWS SDKs to access Amazon Q Business APIs:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/sdk-for-cpp">AWS SDK for C++</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/sdk-for-go">AWS SDK for Go</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/sdk-for-java">AWS SDK for Java</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/sdk-for-javascript">AWS SDK for JavaScript</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/sdk-for-net">AWS SDK for .NET</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/pythonsdk">AWS SDK for Python (Boto3)</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/sdk-for-ruby">AWS SDK for Ruby</a> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
     /// The following resources provide additional information about using the Amazon Q Business
     /// API:
     /// </para>

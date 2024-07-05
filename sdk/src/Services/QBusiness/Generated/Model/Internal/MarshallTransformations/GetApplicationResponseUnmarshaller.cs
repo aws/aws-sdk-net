@@ -106,6 +106,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.IdentityCenterApplicationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("personalizationConfiguration", targetDepth))
+                {
+                    var unmarshaller = PersonalizationConfigurationUnmarshaller.Instance;
+                    response.PersonalizationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("qAppsConfiguration", targetDepth))
                 {
                     var unmarshaller = QAppsConfigurationUnmarshaller.Instance;
