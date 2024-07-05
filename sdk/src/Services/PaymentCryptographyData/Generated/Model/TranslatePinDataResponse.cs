@@ -88,7 +88,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The outgoing encrypted PIN block data after translation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=16, Max=32)]
+        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=32)]
         public string PinBlock
         {
             get { return this._pinBlock; }

@@ -63,7 +63,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Parameters that are required to generate or verify Visa PVV (PIN Verification Value).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=12)]
+        [AWSProperty(Required=true, Sensitive=true, Min=4, Max=12)]
         public string VerificationValue
         {
             get { return this._verificationValue; }

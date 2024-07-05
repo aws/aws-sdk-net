@@ -43,7 +43,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The encrypted PIN block data to verify.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=16, Max=32)]
+        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=32)]
         public string EncryptedPinBlock
         {
             get { return this._encryptedPinBlock; }
