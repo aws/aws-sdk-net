@@ -1042,7 +1042,7 @@ namespace Amazon.Util
                 var encodedByteLength = 2 * dataByteLength;
                 var dataBuffer = encodedByteLength <= MaxStackLimit
                     ? stackalloc byte[MaxStackLimit]
-                    : sharedDataBuffer = ArrayPool<byte>.Shared.Rent(dataByteLength);
+                    : sharedDataBuffer = ArrayPool<byte>.Shared.Rent(encodedByteLength);
                 // Instead of stack allocating or renting two buffers we use one buffer with at least twice the capacity of the
                 // max encoding length. Then store the character data as bytes in the second half reserving the first half of the buffer 
                 // for the encoded representation.
