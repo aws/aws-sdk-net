@@ -1033,7 +1033,7 @@ namespace Amazon.Util
                 if (!TryGetRFCEncodingSchemes(rfcNumber, out var validUrlCharacters))
                     validUrlCharacters = ValidUrlCharacters;
 
-                var unreservedChars = string.Concat(validUrlCharacters, path ? ValidPathCharacters : "");
+                var unreservedChars = string.Concat(validUrlCharacters, path ? ValidPathCharacters : string.Empty).AsSpan();
 
                 var dataAsSpan = data.AsSpan();
                 var encoding = Encoding.UTF8;
