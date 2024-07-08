@@ -1,3 +1,28 @@
+### 3.7.846.0 (2024-07-08 18:36 UTC)
+* CodeDeploy (3.7.302.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* DatabaseMigrationService (3.7.302.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* DeviceFarm (3.7.301.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* ElasticBeanstalk (3.7.301.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* Elasticsearch (3.7.303.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* GameLift (3.7.303.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* KinesisFirehose (3.7.306.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* QApps (3.7.300.0)
+	* This is a general availability (GA) release of Amazon Q Apps, a capability of Amazon Q Business. Q Apps leverages data sources your company has provided to enable users to build, share, and customize apps within your organization.
+* Route53Resolver (3.7.304.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* SimpleEmail (3.7.301.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* Core 3.7.304.26
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.845.0 (2024-07-05 18:18 UTC)
 * CertificateManager (3.7.301.16)
 	* Documentation updates, including fixes for xml formatting, broken links, and ListCertificates description.
