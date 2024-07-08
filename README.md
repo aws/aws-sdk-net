@@ -680,6 +680,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* (New Service) Amazon Managed Service for Prometheus is a fully managed Prometheus-compatible monitoring service that makes it easy to monitor containerized applications securely and at scale.
 * [AWSSDK.Proton](https://www.nuget.org/packages/AWSSDK.Proton/)
 	* This is the initial SDK release for AWS Proton
+* [AWSSDK.QApps](https://www.nuget.org/packages/AWSSDK.QApps/)
+	* This is a general availability (GA) release of Amazon Q Apps, a capability of Amazon Q Business. Q Apps leverages data sources your company has provided to enable users to build, share, and customize apps within your organization.
 * [AWSSDK.QBusiness](https://www.nuget.org/packages/AWSSDK.QBusiness/)
 	* Amazon Q - a generative AI powered application that your employees can use to ask questions and get answers from knowledge spread across disparate content repositories, summarize reports, write articles, take actions, and much more - all within their company's connected content repositories.
 * [AWSSDK.QConnect](https://www.nuget.org/packages/AWSSDK.QConnect/)
