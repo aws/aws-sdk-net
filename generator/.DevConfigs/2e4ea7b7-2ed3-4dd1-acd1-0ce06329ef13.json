@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Always retry on a clock skew error code even if the diff falls under the clockskew max threshold to eliminate race conditions in multi-threaded environments. "
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
