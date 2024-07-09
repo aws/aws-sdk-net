@@ -1,3 +1,16 @@
+### 3.7.847.0 (2024-07-09 18:20 UTC)
+* DataZone (3.7.306.0)
+	* This release deprecates dataProductItem field from SearchInventoryResultItem, along with some unused DataProduct shapes
+* FSx (3.7.306.0)
+	* Adds support for FSx for NetApp ONTAP 2nd Generation file systems, and FSx for OpenZFS Single AZ HA file systems.
+* OpenSearchService (3.7.311.0)
+	* This release adds support for enabling or disabling Natural Language Query Processing feature for Amazon OpenSearch Service domains, and provides visibility into the current state of the setup or tear-down.
+* SageMaker (3.7.331.0)
+	* This release 1/ enables optimization jobs that allows customers to perform Ahead-of-time compilation and quantization. 2/ allows customers to control access to Amazon Q integration in SageMaker Studio. 3/ enables AdditionalModelDataSources for CreateModel action.
+* Core 3.7.304.27
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.846.0 (2024-07-08 18:36 UTC)
 * CodeDeploy (3.7.302.0)
 	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
