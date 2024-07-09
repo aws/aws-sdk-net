@@ -89,6 +89,10 @@ namespace Amazon.FSx
     {
 
         /// <summary>
+        /// Constant DOWNLOAD_DATA_FROM_BACKUP for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType DOWNLOAD_DATA_FROM_BACKUP = new AdministrativeActionType("DOWNLOAD_DATA_FROM_BACKUP");
+        /// <summary>
         /// Constant FILE_SYSTEM_ALIAS_ASSOCIATION for AdministrativeActionType
         /// </summary>
         public static readonly AdministrativeActionType FILE_SYSTEM_ALIAS_ASSOCIATION = new AdministrativeActionType("FILE_SYSTEM_ALIAS_ASSOCIATION");
@@ -1763,6 +1767,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly OntapDeploymentType MULTI_AZ_1 = new OntapDeploymentType("MULTI_AZ_1");
         /// <summary>
+        /// Constant MULTI_AZ_2 for OntapDeploymentType
+        /// </summary>
+        public static readonly OntapDeploymentType MULTI_AZ_2 = new OntapDeploymentType("MULTI_AZ_2");
+        /// <summary>
         /// Constant SINGLE_AZ_1 for OntapDeploymentType
         /// </summary>
         public static readonly OntapDeploymentType SINGLE_AZ_1 = new OntapDeploymentType("SINGLE_AZ_1");
@@ -1986,6 +1994,14 @@ namespace Amazon.FSx
         /// Constant SINGLE_AZ_2 for OpenZFSDeploymentType
         /// </summary>
         public static readonly OpenZFSDeploymentType SINGLE_AZ_2 = new OpenZFSDeploymentType("SINGLE_AZ_2");
+        /// <summary>
+        /// Constant SINGLE_AZ_HA_1 for OpenZFSDeploymentType
+        /// </summary>
+        public static readonly OpenZFSDeploymentType SINGLE_AZ_HA_1 = new OpenZFSDeploymentType("SINGLE_AZ_HA_1");
+        /// <summary>
+        /// Constant SINGLE_AZ_HA_2 for OpenZFSDeploymentType
+        /// </summary>
+        public static readonly OpenZFSDeploymentType SINGLE_AZ_HA_2 = new OpenZFSDeploymentType("SINGLE_AZ_HA_2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2704,6 +2720,10 @@ namespace Amazon.FSx
         /// Constant IN_PROGRESS for Status
         /// </summary>
         public static readonly Status IN_PROGRESS = new Status("IN_PROGRESS");
+        /// <summary>
+        /// Constant OPTIMIZING for Status
+        /// </summary>
+        public static readonly Status OPTIMIZING = new Status("OPTIMIZING");
         /// <summary>
         /// Constant PENDING for Status
         /// </summary>

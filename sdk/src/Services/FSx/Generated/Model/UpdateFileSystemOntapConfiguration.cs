@@ -39,6 +39,7 @@ namespace Amazon.FSx.Model
         private string _dailyAutomaticBackupStartTime;
         private DiskIopsConfiguration _diskIopsConfiguration;
         private string _fsxAdminPassword;
+        private int? _haPairs;
         private List<string> _removeRouteTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _throughputCapacity;
         private int? _throughputCapacityPerHAPair;
@@ -142,6 +143,32 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HAPairs. 
+        /// <para>
+        /// Use to update the number of high-availability (HA) pairs for a second-generation single-AZ
+        /// file system. If you increase the number of HA pairs for your file system, you must
+        /// specify proportional increases for <c>StorageCapacity</c>, <c>Iops</c>, and <c>ThroughputCapacity</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability
+        /// (HA) pairs</a> in the FSx for ONTAP user guide. Block storage protocol support (iSCSI
+        /// and NVMe over TCP) is disabled on file systems with more than 6 HA pairs. For more
+        /// information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html#using-block-storage">Using
+        /// block storage protocols</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=12)]
+        public int HAPairs
+        {
+            get { return this._haPairs.GetValueOrDefault(); }
+            set { this._haPairs = value; }
+        }
+
+        // Check to see if HAPairs property is set
+        internal bool IsSetHAPairs()
+        {
+            return this._haPairs.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RemoveRouteTableIds. 
         /// <para>
         /// (Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables
@@ -216,12 +243,16 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <c>SINGLE_AZ_1</c> and <c>MULTI_AZ_1</c>, valid values are 128, 256, 512, 1024,
-        /// 2048, or 4096 MBps.
+        /// For <c>SINGLE_AZ_1</c> and <c>MULTI_AZ_1</c> file systems, valid values are 128, 256,
+        /// 512, 1024, 2048, or 4096 MBps.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>SINGLE_AZ_2</c>, valid values are 3072 or 6144 MBps.
+        /// For <c>SINGLE_AZ_2</c>, valid values are 1536, 3072, or 6144 MBps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <c>MULTI_AZ_2</c>, valid values are 384, 768, 1536, 3072, or 6144 MBps.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -235,7 +266,7 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         /// The value of deployment type is <c>SINGLE_AZ_2</c> and <c>ThroughputCapacity</c> /
-        /// <c>ThroughputCapacityPerHAPair</c> is a valid HA pair (a value between 2 and 12).
+        /// <c>ThroughputCapacityPerHAPair</c> is not a valid HA pair (a value between 1 and 12).
         /// </para>
         ///  </li> <li> 
         /// <para>

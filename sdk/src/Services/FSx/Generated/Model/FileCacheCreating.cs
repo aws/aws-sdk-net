@@ -129,7 +129,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FailureDetails. 
         /// <para>
-        /// A structure providing details of any failures that occurred.
+        /// A structure providing details of any failures that occurred in creating a cache.
         /// </para>
         /// </summary>
         public FileCacheFailureDetails FailureDetails

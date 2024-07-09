@@ -130,7 +130,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property DeploymentType. 
         /// <para>
         /// Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028;
-        /// <c>MULTI_AZ_1</c>, <c>SINGLE_AZ_1</c>, and <c>SINGLE_AZ_2</c>.
+        /// <c>MULTI_AZ_1</c>, <c>SINGLE_AZ_HA_2</c>, <c>SINGLE_AZ_HA_1</c>, <c>SINGLE_AZ_2</c>,
+        /// and <c>SINGLE_AZ_1</c>.
         /// </para>
         /// </summary>
         public OpenZFSDeploymentType DeploymentType
