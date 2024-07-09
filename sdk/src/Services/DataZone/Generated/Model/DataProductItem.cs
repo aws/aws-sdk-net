@@ -32,6 +32,7 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// 
     /// </summary>
+    [Obsolete("This structure is deprecated.")]
     public partial class DataProductItem
     {
         private string _domainId;

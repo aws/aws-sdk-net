@@ -63,6 +63,7 @@ namespace Amazon.DataZone.Model
         /// The data product item included in the search results.
         /// </para>
         /// </summary>
+        [Obsolete("This field is deprecated.")]
         public DataProductSummary DataProductItem
         {
             get { return this._dataProductItem; }
