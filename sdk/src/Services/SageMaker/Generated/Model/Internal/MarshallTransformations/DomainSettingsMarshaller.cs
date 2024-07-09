@@ -48,6 +48,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAmazonQSettings())
+            {
+                context.Writer.WritePropertyName("AmazonQSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AmazonQSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AmazonQSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDockerSettings())
             {
                 context.Writer.WritePropertyName("DockerSettings");

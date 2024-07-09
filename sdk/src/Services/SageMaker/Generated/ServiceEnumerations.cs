@@ -9047,6 +9047,60 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ListOptimizationJobsSortBy.
+    /// </summary>
+    public class ListOptimizationJobsSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreationTime for ListOptimizationJobsSortBy
+        /// </summary>
+        public static readonly ListOptimizationJobsSortBy CreationTime = new ListOptimizationJobsSortBy("CreationTime");
+        /// <summary>
+        /// Constant Name for ListOptimizationJobsSortBy
+        /// </summary>
+        public static readonly ListOptimizationJobsSortBy Name = new ListOptimizationJobsSortBy("Name");
+        /// <summary>
+        /// Constant Status for ListOptimizationJobsSortBy
+        /// </summary>
+        public static readonly ListOptimizationJobsSortBy Status = new ListOptimizationJobsSortBy("Status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListOptimizationJobsSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListOptimizationJobsSortBy FindValue(string value)
+        {
+            return FindValue<ListOptimizationJobsSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListOptimizationJobsSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ListWorkforcesSortByOptions.
     /// </summary>
     public class ListWorkforcesSortByOptions : ConstantClass
@@ -11426,6 +11480,218 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Operator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OptimizationJobDeploymentInstanceType.
+    /// </summary>
+    public class OptimizationJobDeploymentInstanceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MlG512xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG512xlarge = new OptimizationJobDeploymentInstanceType("ml.g5.12xlarge");
+        /// <summary>
+        /// Constant MlG516xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG516xlarge = new OptimizationJobDeploymentInstanceType("ml.g5.16xlarge");
+        /// <summary>
+        /// Constant MlG524xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG524xlarge = new OptimizationJobDeploymentInstanceType("ml.g5.24xlarge");
+        /// <summary>
+        /// Constant MlG52xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG52xlarge = new OptimizationJobDeploymentInstanceType("ml.g5.2xlarge");
+        /// <summary>
+        /// Constant MlG548xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG548xlarge = new OptimizationJobDeploymentInstanceType("ml.g5.48xlarge");
+        /// <summary>
+        /// Constant MlG54xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG54xlarge = new OptimizationJobDeploymentInstanceType("ml.g5.4xlarge");
+        /// <summary>
+        /// Constant MlG58xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG58xlarge = new OptimizationJobDeploymentInstanceType("ml.g5.8xlarge");
+        /// <summary>
+        /// Constant MlG5Xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG5Xlarge = new OptimizationJobDeploymentInstanceType("ml.g5.xlarge");
+        /// <summary>
+        /// Constant MlG612xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG612xlarge = new OptimizationJobDeploymentInstanceType("ml.g6.12xlarge");
+        /// <summary>
+        /// Constant MlG616xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG616xlarge = new OptimizationJobDeploymentInstanceType("ml.g6.16xlarge");
+        /// <summary>
+        /// Constant MlG624xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG624xlarge = new OptimizationJobDeploymentInstanceType("ml.g6.24xlarge");
+        /// <summary>
+        /// Constant MlG62xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG62xlarge = new OptimizationJobDeploymentInstanceType("ml.g6.2xlarge");
+        /// <summary>
+        /// Constant MlG648xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG648xlarge = new OptimizationJobDeploymentInstanceType("ml.g6.48xlarge");
+        /// <summary>
+        /// Constant MlG64xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG64xlarge = new OptimizationJobDeploymentInstanceType("ml.g6.4xlarge");
+        /// <summary>
+        /// Constant MlG68xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG68xlarge = new OptimizationJobDeploymentInstanceType("ml.g6.8xlarge");
+        /// <summary>
+        /// Constant MlG6Xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG6Xlarge = new OptimizationJobDeploymentInstanceType("ml.g6.xlarge");
+        /// <summary>
+        /// Constant MlInf224xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlInf224xlarge = new OptimizationJobDeploymentInstanceType("ml.inf2.24xlarge");
+        /// <summary>
+        /// Constant MlInf248xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlInf248xlarge = new OptimizationJobDeploymentInstanceType("ml.inf2.48xlarge");
+        /// <summary>
+        /// Constant MlInf28xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlInf28xlarge = new OptimizationJobDeploymentInstanceType("ml.inf2.8xlarge");
+        /// <summary>
+        /// Constant MlInf2Xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlInf2Xlarge = new OptimizationJobDeploymentInstanceType("ml.inf2.xlarge");
+        /// <summary>
+        /// Constant MlP4d24xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlP4d24xlarge = new OptimizationJobDeploymentInstanceType("ml.p4d.24xlarge");
+        /// <summary>
+        /// Constant MlP4de24xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlP4de24xlarge = new OptimizationJobDeploymentInstanceType("ml.p4de.24xlarge");
+        /// <summary>
+        /// Constant MlP548xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlP548xlarge = new OptimizationJobDeploymentInstanceType("ml.p5.48xlarge");
+        /// <summary>
+        /// Constant MlTrn12xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlTrn12xlarge = new OptimizationJobDeploymentInstanceType("ml.trn1.2xlarge");
+        /// <summary>
+        /// Constant MlTrn132xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlTrn132xlarge = new OptimizationJobDeploymentInstanceType("ml.trn1.32xlarge");
+        /// <summary>
+        /// Constant MlTrn1n32xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlTrn1n32xlarge = new OptimizationJobDeploymentInstanceType("ml.trn1n.32xlarge");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OptimizationJobDeploymentInstanceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OptimizationJobDeploymentInstanceType FindValue(string value)
+        {
+            return FindValue<OptimizationJobDeploymentInstanceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OptimizationJobDeploymentInstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OptimizationJobStatus.
+    /// </summary>
+    public class OptimizationJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for OptimizationJobStatus
+        /// </summary>
+        public static readonly OptimizationJobStatus COMPLETED = new OptimizationJobStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for OptimizationJobStatus
+        /// </summary>
+        public static readonly OptimizationJobStatus FAILED = new OptimizationJobStatus("FAILED");
+        /// <summary>
+        /// Constant INPROGRESS for OptimizationJobStatus
+        /// </summary>
+        public static readonly OptimizationJobStatus INPROGRESS = new OptimizationJobStatus("INPROGRESS");
+        /// <summary>
+        /// Constant STARTING for OptimizationJobStatus
+        /// </summary>
+        public static readonly OptimizationJobStatus STARTING = new OptimizationJobStatus("STARTING");
+        /// <summary>
+        /// Constant STOPPED for OptimizationJobStatus
+        /// </summary>
+        public static readonly OptimizationJobStatus STOPPED = new OptimizationJobStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for OptimizationJobStatus
+        /// </summary>
+        public static readonly OptimizationJobStatus STOPPING = new OptimizationJobStatus("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OptimizationJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OptimizationJobStatus FindValue(string value)
+        {
+            return FindValue<OptimizationJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OptimizationJobStatus(string value)
         {
             return FindValue(value);
         }

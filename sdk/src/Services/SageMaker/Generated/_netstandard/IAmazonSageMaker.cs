@@ -1883,6 +1883,41 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  CreateOptimizationJob
+
+
+
+        /// <summary>
+        /// Creates a job that optimizes a model for inference performance. To create the job,
+        /// you provide the location of a source model, and you provide the settings for the optimization
+        /// techniques that you want the job to apply. When the job completes successfully, SageMaker
+        /// uploads the new optimized model to the output destination that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how to use this action, and about the supported optimization
+        /// techniques, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-optimize.html">Optimize
+        /// model inference with Amazon SageMaker</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateOptimizationJob">REST API Reference for CreateOptimizationJob Operation</seealso>
+        Task<CreateOptimizationJobResponse> CreateOptimizationJobAsync(CreateOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreatePipeline
 
 
@@ -3464,6 +3499,27 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  DeleteOptimizationJob
+
+
+
+        /// <summary>
+        /// Deletes an optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteOptimizationJob">REST API Reference for DeleteOptimizationJob Operation</seealso>
+        Task<DeleteOptimizationJobResponse> DeleteOptimizationJobAsync(DeleteOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeletePipeline
 
 
@@ -4744,6 +4800,27 @@ namespace Amazon.SageMaker
         /// <returns>The response from the DescribeNotebookInstanceLifecycleConfig service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig">REST API Reference for DescribeNotebookInstanceLifecycleConfig Operation</seealso>
         Task<DescribeNotebookInstanceLifecycleConfigResponse> DescribeNotebookInstanceLifecycleConfigAsync(DescribeNotebookInstanceLifecycleConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeOptimizationJob
+
+
+
+        /// <summary>
+        /// Provides the properties of the specified optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeOptimizationJob">REST API Reference for DescribeOptimizationJob Operation</seealso>
+        Task<DescribeOptimizationJobResponse> DescribeOptimizationJobAsync(DescribeOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -6373,6 +6450,24 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  ListOptimizationJobs
+
+
+
+        /// <summary>
+        /// Lists the optimization jobs in your account and their properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOptimizationJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOptimizationJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListOptimizationJobs">REST API Reference for ListOptimizationJobs Operation</seealso>
+        Task<ListOptimizationJobsResponse> ListOptimizationJobsAsync(ListOptimizationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListPipelineExecutions
 
 
@@ -7440,6 +7535,27 @@ namespace Amazon.SageMaker
         /// <returns>The response from the StopNotebookInstance service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopNotebookInstance">REST API Reference for StopNotebookInstance Operation</seealso>
         Task<StopNotebookInstanceResponse> StopNotebookInstanceAsync(StopNotebookInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopOptimizationJob
+
+
+
+        /// <summary>
+        /// Ends a running inference optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopOptimizationJob">REST API Reference for StopOptimizationJob Operation</seealso>
+        Task<StopOptimizationJobResponse> StopOptimizationJobAsync(StopOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

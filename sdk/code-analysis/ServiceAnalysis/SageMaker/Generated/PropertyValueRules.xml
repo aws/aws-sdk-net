@@ -969,6 +969,23 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateOptimizationJobRequest.OptimizationJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateOptimizationJobRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateOptimizationJobResponse.OptimizationJobArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:optimization-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreatePipelineRequest.ClientRequestToken</property>
     <min>32</min>
     <max>128</max>
@@ -1605,6 +1622,12 @@
     <property>Amazon.SageMaker.Model.DeleteNotebookInstanceLifecycleConfigRequest.NotebookInstanceLifecycleConfigName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteOptimizationJobRequest.OptimizationJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeletePipelineRequest.ClientRequestToken</property>
@@ -3237,6 +3260,33 @@
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceLifecycleConfigResponse.NotebookInstanceLifecycleConfigName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeOptimizationJobRequest.OptimizationJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeOptimizationJobResponse.FailureReason</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeOptimizationJobResponse.OptimizationJobArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:optimization-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeOptimizationJobResponse.OptimizationJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeOptimizationJobResponse.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribePipelineRequest.PipelineName</property>
@@ -5131,6 +5181,31 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListOptimizationJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListOptimizationJobsRequest.NameContains</property>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListOptimizationJobsRequest.NextToken</property>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListOptimizationJobsRequest.OptimizationContains</property>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListOptimizationJobsResponse.NextToken</property>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ListPipelineExecutionsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -5848,6 +5923,12 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.StopOptimizationJobRequest.OptimizationJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.StopPipelineExecutionRequest.ClientRequestToken</property>
     <min>32</min>
     <max>128</max>
@@ -6555,6 +6636,12 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.AdditionalModelDataSource.ChannelName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9\.\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.AdditionalS3DataSource.S3Uri</property>
     <max>1024</max>
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
@@ -6615,6 +6702,10 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AmazonQSettings.QProfileArn</property>
+    <pattern>^arn:[-.a-z0-9]{1,63}:codewhisperer:([-.a-z0-9]{0,63}:){2}([a-zA-Z0-9-_:/]){1,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AnnotationConsolidationConfig.AnnotationConsolidationLambdaArn</property>
@@ -9206,6 +9297,11 @@
     <max>3600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ModelCompilationConfig.Image</property>
+    <max>255</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelConfiguration.CompilationJobName</property>
     <min>1</min>
     <max>63</max>
@@ -9482,6 +9578,11 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ModelQuantizationConfig.Image</property>
+    <max>255</max>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelRegisterSettings.CrossAccountModelRegisterRoleArn</property>
@@ -9872,6 +9973,37 @@
     <property>Amazon.SageMaker.Model.OnlineStoreSecurityConfig.KmsKeyId</property>
     <max>2048</max>
     <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OptimizationJobModelSourceS3.S3Uri</property>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OptimizationJobOutputConfig.KmsKeyId</property>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OptimizationJobOutputConfig.S3OutputLocation</property>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OptimizationJobSummary.OptimizationJobArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:optimization-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OptimizationJobSummary.OptimizationJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OptimizationOutput.RecommendedInferenceImage</property>
+    <max>255</max>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OutputConfig.CompilerOptions</property>

@@ -292,6 +292,11 @@ namespace Amazon.SageMaker.Model
         IListNotebookInstancesPaginator ListNotebookInstances(ListNotebookInstancesRequest request);
 
         /// <summary>
+        /// Paginator for ListOptimizationJobs operation
+        ///</summary>
+        IListOptimizationJobsPaginator ListOptimizationJobs(ListOptimizationJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListPipelineExecutions operation
         ///</summary>
         IListPipelineExecutionsPaginator ListPipelineExecutions(ListPipelineExecutionsRequest request);

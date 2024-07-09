@@ -2941,6 +2941,63 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateOptimizationJob
+
+
+        /// <summary>
+        /// Creates a job that optimizes a model for inference performance. To create the job,
+        /// you provide the location of a source model, and you provide the settings for the optimization
+        /// techniques that you want the job to apply. When the job completes successfully, SageMaker
+        /// uploads the new optimized model to the output destination that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how to use this action, and about the supported optimization
+        /// techniques, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-optimize.html">Optimize
+        /// model inference with Amazon SageMaker</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOptimizationJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateOptimizationJob">REST API Reference for CreateOptimizationJob Operation</seealso>
+        CreateOptimizationJobResponse CreateOptimizationJob(CreateOptimizationJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateOptimizationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateOptimizationJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateOptimizationJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateOptimizationJob">REST API Reference for CreateOptimizationJob Operation</seealso>
+        IAsyncResult BeginCreateOptimizationJob(CreateOptimizationJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateOptimizationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateOptimizationJob.</param>
+        /// 
+        /// <returns>Returns a  CreateOptimizationJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateOptimizationJob">REST API Reference for CreateOptimizationJob Operation</seealso>
+        CreateOptimizationJobResponse EndCreateOptimizationJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreatePipeline
 
 
@@ -5754,6 +5811,49 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteOptimizationJob
+
+
+        /// <summary>
+        /// Deletes an optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOptimizationJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteOptimizationJob">REST API Reference for DeleteOptimizationJob Operation</seealso>
+        DeleteOptimizationJobResponse DeleteOptimizationJob(DeleteOptimizationJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOptimizationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOptimizationJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteOptimizationJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteOptimizationJob">REST API Reference for DeleteOptimizationJob Operation</seealso>
+        IAsyncResult BeginDeleteOptimizationJob(DeleteOptimizationJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteOptimizationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOptimizationJob.</param>
+        /// 
+        /// <returns>Returns a  DeleteOptimizationJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteOptimizationJob">REST API Reference for DeleteOptimizationJob Operation</seealso>
+        DeleteOptimizationJobResponse EndDeleteOptimizationJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeletePipeline
 
 
@@ -8310,6 +8410,49 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  DescribeNotebookInstanceLifecycleConfigResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig">REST API Reference for DescribeNotebookInstanceLifecycleConfig Operation</seealso>
         DescribeNotebookInstanceLifecycleConfigResponse EndDescribeNotebookInstanceLifecycleConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeOptimizationJob
+
+
+        /// <summary>
+        /// Provides the properties of the specified optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOptimizationJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeOptimizationJob">REST API Reference for DescribeOptimizationJob Operation</seealso>
+        DescribeOptimizationJobResponse DescribeOptimizationJob(DescribeOptimizationJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeOptimizationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOptimizationJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeOptimizationJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeOptimizationJob">REST API Reference for DescribeOptimizationJob Operation</seealso>
+        IAsyncResult BeginDescribeOptimizationJob(DescribeOptimizationJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeOptimizationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOptimizationJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeOptimizationJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeOptimizationJob">REST API Reference for DescribeOptimizationJob Operation</seealso>
+        DescribeOptimizationJobResponse EndDescribeOptimizationJob(IAsyncResult asyncResult);
 
         #endregion
         
@@ -11721,6 +11864,46 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListOptimizationJobs
+
+
+        /// <summary>
+        /// Lists the optimization jobs in your account and their properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOptimizationJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListOptimizationJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListOptimizationJobs">REST API Reference for ListOptimizationJobs Operation</seealso>
+        ListOptimizationJobsResponse ListOptimizationJobs(ListOptimizationJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOptimizationJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOptimizationJobs operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOptimizationJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListOptimizationJobs">REST API Reference for ListOptimizationJobs Operation</seealso>
+        IAsyncResult BeginListOptimizationJobs(ListOptimizationJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOptimizationJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOptimizationJobs.</param>
+        /// 
+        /// <returns>Returns a  ListOptimizationJobsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListOptimizationJobs">REST API Reference for ListOptimizationJobs Operation</seealso>
+        ListOptimizationJobsResponse EndListOptimizationJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListPipelineExecutions
 
 
@@ -13778,6 +13961,49 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  StopNotebookInstanceResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopNotebookInstance">REST API Reference for StopNotebookInstance Operation</seealso>
         StopNotebookInstanceResponse EndStopNotebookInstance(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopOptimizationJob
+
+
+        /// <summary>
+        /// Ends a running inference optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopOptimizationJob service method.</param>
+        /// 
+        /// <returns>The response from the StopOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopOptimizationJob">REST API Reference for StopOptimizationJob Operation</seealso>
+        StopOptimizationJobResponse StopOptimizationJob(StopOptimizationJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopOptimizationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopOptimizationJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopOptimizationJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopOptimizationJob">REST API Reference for StopOptimizationJob Operation</seealso>
+        IAsyncResult BeginStopOptimizationJob(StopOptimizationJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopOptimizationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopOptimizationJob.</param>
+        /// 
+        /// <returns>Returns a  StopOptimizationJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopOptimizationJob">REST API Reference for StopOptimizationJob Operation</seealso>
+        StopOptimizationJobResponse EndStopOptimizationJob(IAsyncResult asyncResult);
 
         #endregion
         

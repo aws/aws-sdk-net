@@ -461,6 +461,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListOptimizationJobs operation
+        ///</summary>
+        public IListOptimizationJobsPaginator ListOptimizationJobs(ListOptimizationJobsRequest request) 
+        {
+            return new ListOptimizationJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPipelineExecutions operation
         ///</summary>
         public IListPipelineExecutionsPaginator ListPipelineExecutions(ListPipelineExecutionsRequest request) 
