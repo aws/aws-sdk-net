@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchService.Model
         private AccessPoliciesStatus _accessPolicies;
         private AdvancedOptionsStatus _advancedOptions;
         private AdvancedSecurityOptionsStatus _advancedSecurityOptions;
+        private AIMLOptionsStatus _aimlOptions;
         private AutoTuneOptionsStatus _autoTuneOptions;
         private ChangeProgressDetails _changeProgressDetails;
         private ClusterConfigStatus _clusterConfig;
@@ -108,6 +109,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAdvancedSecurityOptions()
         {
             return this._advancedSecurityOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AIMLOptions. 
+        /// <para>
+        /// Container for parameters required to enable all machine learning features.
+        /// </para>
+        /// </summary>
+        public AIMLOptionsStatus AIMLOptions
+        {
+            get { return this._aimlOptions; }
+            set { this._aimlOptions = value; }
+        }
+
+        // Check to see if AIMLOptions property is set
+        internal bool IsSetAIMLOptions()
+        {
+            return this._aimlOptions != null;
         }
 
         /// <summary>

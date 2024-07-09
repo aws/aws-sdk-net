@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchService.Model
         private string _accessPolicies;
         private Dictionary<string, string> _advancedOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AdvancedSecurityOptions _advancedSecurityOptions;
+        private AIMLOptionsOutput _aimlOptions;
         private string _arn;
         private AutoTuneOptionsOutput _autoTuneOptions;
         private ChangeProgressDetails _changeProgressDetails;
@@ -121,6 +122,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAdvancedSecurityOptions()
         {
             return this._advancedSecurityOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AIMLOptions. 
+        /// <para>
+        /// Container for parameters required to enable all machine learning features.
+        /// </para>
+        /// </summary>
+        public AIMLOptionsOutput AIMLOptions
+        {
+            get { return this._aimlOptions; }
+            set { this._aimlOptions = value; }
+        }
+
+        // Check to see if AIMLOptions property is set
+        internal bool IsSetAIMLOptions()
+        {
+            return this._aimlOptions != null;
         }
 
         /// <summary>

@@ -1413,6 +1413,126 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type NaturalLanguageQueryGenerationCurrentState.
+    /// </summary>
+    public class NaturalLanguageQueryGenerationCurrentState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLE_COMPLETE for NaturalLanguageQueryGenerationCurrentState
+        /// </summary>
+        public static readonly NaturalLanguageQueryGenerationCurrentState DISABLE_COMPLETE = new NaturalLanguageQueryGenerationCurrentState("DISABLE_COMPLETE");
+        /// <summary>
+        /// Constant DISABLE_FAILED for NaturalLanguageQueryGenerationCurrentState
+        /// </summary>
+        public static readonly NaturalLanguageQueryGenerationCurrentState DISABLE_FAILED = new NaturalLanguageQueryGenerationCurrentState("DISABLE_FAILED");
+        /// <summary>
+        /// Constant DISABLE_IN_PROGRESS for NaturalLanguageQueryGenerationCurrentState
+        /// </summary>
+        public static readonly NaturalLanguageQueryGenerationCurrentState DISABLE_IN_PROGRESS = new NaturalLanguageQueryGenerationCurrentState("DISABLE_IN_PROGRESS");
+        /// <summary>
+        /// Constant ENABLE_COMPLETE for NaturalLanguageQueryGenerationCurrentState
+        /// </summary>
+        public static readonly NaturalLanguageQueryGenerationCurrentState ENABLE_COMPLETE = new NaturalLanguageQueryGenerationCurrentState("ENABLE_COMPLETE");
+        /// <summary>
+        /// Constant ENABLE_FAILED for NaturalLanguageQueryGenerationCurrentState
+        /// </summary>
+        public static readonly NaturalLanguageQueryGenerationCurrentState ENABLE_FAILED = new NaturalLanguageQueryGenerationCurrentState("ENABLE_FAILED");
+        /// <summary>
+        /// Constant ENABLE_IN_PROGRESS for NaturalLanguageQueryGenerationCurrentState
+        /// </summary>
+        public static readonly NaturalLanguageQueryGenerationCurrentState ENABLE_IN_PROGRESS = new NaturalLanguageQueryGenerationCurrentState("ENABLE_IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_ENABLED for NaturalLanguageQueryGenerationCurrentState
+        /// </summary>
+        public static readonly NaturalLanguageQueryGenerationCurrentState NOT_ENABLED = new NaturalLanguageQueryGenerationCurrentState("NOT_ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NaturalLanguageQueryGenerationCurrentState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NaturalLanguageQueryGenerationCurrentState FindValue(string value)
+        {
+            return FindValue<NaturalLanguageQueryGenerationCurrentState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NaturalLanguageQueryGenerationCurrentState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NaturalLanguageQueryGenerationDesiredState.
+    /// </summary>
+    public class NaturalLanguageQueryGenerationDesiredState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for NaturalLanguageQueryGenerationDesiredState
+        /// </summary>
+        public static readonly NaturalLanguageQueryGenerationDesiredState DISABLED = new NaturalLanguageQueryGenerationDesiredState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for NaturalLanguageQueryGenerationDesiredState
+        /// </summary>
+        public static readonly NaturalLanguageQueryGenerationDesiredState ENABLED = new NaturalLanguageQueryGenerationDesiredState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NaturalLanguageQueryGenerationDesiredState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NaturalLanguageQueryGenerationDesiredState FindValue(string value)
+        {
+            return FindValue<NaturalLanguageQueryGenerationDesiredState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NaturalLanguageQueryGenerationDesiredState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NodeStatus.
     /// </summary>
     public class NodeStatus : ConstantClass
