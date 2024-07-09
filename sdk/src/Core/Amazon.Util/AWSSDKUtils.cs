@@ -447,7 +447,8 @@ namespace Amazon.Util
             //Otherwise there are key/values that need to be resolved
             foreach (var segment in pathSegments)
             {
-                if (!pathResources.ContainsKey(segment))
+                string resolvedSegment;
+                if (!pathResources.TryGetValue(segment, out resolvedSegment))
                 {
                     uriComponentSegments.Add(new UriComponent { SegmentType = SegmentType.Literal, Value = segment});
                     continue;
@@ -456,11 +457,11 @@ namespace Amazon.Util
                 //Determine if the path is greedy. If greedy the segment will be split at each / into multiple segments.
                 if (segment.EndsWith("+}", StringComparison.Ordinal))
                 {
-                    uriComponentSegments.AddRange(pathResources[segment].Split(splitChars, StringSplitOptions.None).Select(x => new UriComponent { Value = x, SegmentType = SegmentType.Label}));
+                    uriComponentSegments.AddRange(resolvedSegment.Split(splitChars, StringSplitOptions.None).Select(x => new UriComponent { Value = x, SegmentType = SegmentType.Label}));
                 }
                 else
                 {
-                    uriComponentSegments.Add(new UriComponent { SegmentType = SegmentType.Label, Value = pathResources[segment] });
+                    uriComponentSegments.Add(new UriComponent { SegmentType = SegmentType.Label, Value = resolvedSegment });
                 }
             }
 
@@ -516,7 +517,7 @@ namespace Amazon.Util
                     return UrlEncode(segment.Value, true);
             }).ToList();
             // join the encoded segments with /
-            return string.Join(Slash, encodedSegments.ToArray());
+            return string.Join(Slash, encodedSegments);
         }
 
 
