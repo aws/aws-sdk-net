@@ -23,6 +23,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// anything operation-specific should be added to derived classes.
     /// </remarks>
 #if NET8_0_OR_GREATER
+    // The DataModel namespace doesn't support trimming yet, so annotate public classes/methods as incompatible
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
     public abstract class BaseOperationConfig
@@ -41,9 +42,9 @@ namespace Amazon.DynamoDBv2.DataModel
         public string TableNamePrefix { get; set; }
 
         /// <summary>
-        /// The object persistence model API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
-        /// requests. This controls how the cache key is derived, which influences when the SDK will call
-        /// IAmazonDynamoDB.DescribeTable(string) internally to populate the cache.
+        /// The object persistence model API relies on an internal cache of the DynamoDB table's metadata to 
+        /// construct and validate  requests. This controls how the cache key is derived, which influences 
+        /// when the SDK will call DescribeTable internally to populate the cache.
         /// </summary>
         /// <remarks>
         /// For <see cref="MetadataCachingMode.Default"/> the cache key will be a combination of the table name, credentials, region and service URL. 
@@ -58,8 +59,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <remarks>
         /// Setting this to true can avoid latency and thread starvation due to blocking asynchronous 
-        /// IAmazonDynamoDB.DescribeTable(string) calls that are used to populate the SDK's cache of 
-        /// table metadata. It requires that the table's index schema be accurately described via the above methods, 
+        /// DescribeTable calls that are used to populate the SDK's cache of table metadata. 
+        /// It requires that the table's index schema be accurately described via the above methods, 
         /// otherwise exceptions may be thrown and/or the results of certain DynamoDB operations may change.
         /// </remarks>
         public bool? DisableFetchingTableMetadata { get; set; }
