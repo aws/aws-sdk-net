@@ -1,3 +1,29 @@
+### 3.7.848.0 (2024-07-10 18:59 UTC)
+* Batch (3.7.308.0)
+	* This feature allows AWS Batch Jobs with EKS container orchestration type to be run as Multi-Node Parallel Jobs.
+* Bedrock (3.7.303.0)
+	* Add support for contextual grounding check for Guardrails for Amazon Bedrock.
+* BedrockAgent (3.7.311.0)
+	* Introduces new data sources and chunking strategies for Knowledge bases, advanced parsing logic using FMs, session summary generation, and code interpretation (preview) for Claude V3 Sonnet and Haiku models. Also introduces Prompt Flows (preview) to link prompts, foundational models, and resources.
+* BedrockAgentRuntime (3.7.309.0)
+	* Introduces query decomposition, enhanced Agents integration with Knowledge bases, session summary generation, and code interpretation (preview) for Claude V3 Sonnet and Haiku models. Also introduces Prompt Flows (preview) to link prompts, foundational models, and resources for end-to-end solutions.
+* BedrockRuntime (3.7.307.0)
+	* Add support for contextual grounding check and ApplyGuardrail API for Guardrails for Amazon Bedrock.
+* EC2 (3.7.334.0)
+	* Add parameters to enable provisioning IPAM BYOIPv4 space at a Local Zone Network Border Group level
+* Glue (3.7.319.0)
+	* Add recipe step support for recipe node
+* GroundStation (3.7.301.49)
+	* Documentation update specifying OEM ephemeris units of measurement
+* LicenseManagerLinuxSubscriptions (3.7.301.0)
+	* Add support for third party subscription providers, starting with RHEL subscriptions through Red Hat Subscription Manager (RHSM). Additionally, add support for tagging subscription provider resources, and detect when an instance has more than one Linux subscription and notify the customer.
+* MediaConnect (3.7.302.0)
+	* AWS Elemental MediaConnect introduces the ability to disable outputs. Disabling an output allows you to keep the output attached to the flow, but stop streaming to the output destination. A disabled output does not incur data transfer costs.
+* Core 3.7.304.28
+	* Always retry on a clock skew error code even if the diff falls under the clockskew max threshold to eliminate race conditions in multi-threaded environments. 
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.847.0 (2024-07-09 18:20 UTC)
 * DataZone (3.7.306.0)
 	* This release deprecates dataProductItem field from SearchInventoryResultItem, along with some unused DataProduct shapes
