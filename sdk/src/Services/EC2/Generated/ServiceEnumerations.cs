@@ -11759,6 +11759,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type IpamNetworkInterfaceAttachmentStatus.
+    /// </summary>
+    public class IpamNetworkInterfaceAttachmentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for IpamNetworkInterfaceAttachmentStatus
+        /// </summary>
+        public static readonly IpamNetworkInterfaceAttachmentStatus Available = new IpamNetworkInterfaceAttachmentStatus("available");
+        /// <summary>
+        /// Constant InUse for IpamNetworkInterfaceAttachmentStatus
+        /// </summary>
+        public static readonly IpamNetworkInterfaceAttachmentStatus InUse = new IpamNetworkInterfaceAttachmentStatus("in-use");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamNetworkInterfaceAttachmentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamNetworkInterfaceAttachmentStatus FindValue(string value)
+        {
+            return FindValue<IpamNetworkInterfaceAttachmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamNetworkInterfaceAttachmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IpamOverlapStatus.
     /// </summary>
     public class IpamOverlapStatus : ConstantClass

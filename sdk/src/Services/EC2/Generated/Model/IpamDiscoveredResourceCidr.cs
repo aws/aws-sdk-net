@@ -37,8 +37,10 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class IpamDiscoveredResourceCidr
     {
+        private string _availabilityZoneId;
         private string _ipamResourceDiscoveryId;
         private double? _ipUsage;
+        private IpamNetworkInterfaceAttachmentStatus _networkInterfaceAttachmentStatus;
         private string _resourceCidr;
         private string _resourceId;
         private string _resourceOwnerId;
@@ -47,6 +49,24 @@ namespace Amazon.EC2.Model
         private IpamResourceType _resourceType;
         private DateTime? _sampleTime;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The Availability Zone ID.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IpamResourceDiscoveryId. 
@@ -102,6 +122,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpUsage()
         {
             return this._ipUsage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaceAttachmentStatus. 
+        /// <para>
+        /// For elastic IP addresses, this is the status of an attached network interface.
+        /// </para>
+        /// </summary>
+        public IpamNetworkInterfaceAttachmentStatus NetworkInterfaceAttachmentStatus
+        {
+            get { return this._networkInterfaceAttachmentStatus; }
+            set { this._networkInterfaceAttachmentStatus = value; }
+        }
+
+        // Check to see if NetworkInterfaceAttachmentStatus property is set
+        internal bool IsSetNetworkInterfaceAttachmentStatus()
+        {
+            return this._networkInterfaceAttachmentStatus != null;
         }
 
         /// <summary>
