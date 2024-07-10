@@ -46,11 +46,117 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
 
 
         
+        #region  DeregisterSubscriptionProvider
+
+
+        /// <summary>
+        /// Remove a third-party subscription provider from the Bring Your Own License (BYOL)
+        /// subscriptions registered to your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterSubscriptionProvider service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterSubscriptionProvider service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/DeregisterSubscriptionProvider">REST API Reference for DeregisterSubscriptionProvider Operation</seealso>
+        DeregisterSubscriptionProviderResponse DeregisterSubscriptionProvider(DeregisterSubscriptionProviderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterSubscriptionProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterSubscriptionProvider operation on AmazonLicenseManagerLinuxSubscriptionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterSubscriptionProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/DeregisterSubscriptionProvider">REST API Reference for DeregisterSubscriptionProvider Operation</seealso>
+        IAsyncResult BeginDeregisterSubscriptionProvider(DeregisterSubscriptionProviderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterSubscriptionProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterSubscriptionProvider.</param>
+        /// 
+        /// <returns>Returns a  DeregisterSubscriptionProviderResult from LicenseManagerLinuxSubscriptions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/DeregisterSubscriptionProvider">REST API Reference for DeregisterSubscriptionProvider Operation</seealso>
+        DeregisterSubscriptionProviderResponse EndDeregisterSubscriptionProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetRegisteredSubscriptionProvider
+
+
+        /// <summary>
+        /// Get details for a Bring Your Own License (BYOL) subscription that's registered to
+        /// your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegisteredSubscriptionProvider service method.</param>
+        /// 
+        /// <returns>The response from the GetRegisteredSubscriptionProvider service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/GetRegisteredSubscriptionProvider">REST API Reference for GetRegisteredSubscriptionProvider Operation</seealso>
+        GetRegisteredSubscriptionProviderResponse GetRegisteredSubscriptionProvider(GetRegisteredSubscriptionProviderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRegisteredSubscriptionProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRegisteredSubscriptionProvider operation on AmazonLicenseManagerLinuxSubscriptionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRegisteredSubscriptionProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/GetRegisteredSubscriptionProvider">REST API Reference for GetRegisteredSubscriptionProvider Operation</seealso>
+        IAsyncResult BeginGetRegisteredSubscriptionProvider(GetRegisteredSubscriptionProviderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRegisteredSubscriptionProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRegisteredSubscriptionProvider.</param>
+        /// 
+        /// <returns>Returns a  GetRegisteredSubscriptionProviderResult from LicenseManagerLinuxSubscriptions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/GetRegisteredSubscriptionProvider">REST API Reference for GetRegisteredSubscriptionProvider Operation</seealso>
+        GetRegisteredSubscriptionProviderResponse EndGetRegisteredSubscriptionProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetServiceSettings
 
 
         /// <summary>
-        /// Lists the Linux subscriptions service settings.
+        /// Lists the Linux subscriptions service settings for your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceSettings service method.</param>
         /// 
@@ -192,6 +298,249 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <returns>Returns a  ListLinuxSubscriptionsResult from LicenseManagerLinuxSubscriptions.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListLinuxSubscriptions">REST API Reference for ListLinuxSubscriptions Operation</seealso>
         ListLinuxSubscriptionsResponse EndListLinuxSubscriptions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListRegisteredSubscriptionProviders
+
+
+        /// <summary>
+        /// List Bring Your Own License (BYOL) subscription registration resources for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegisteredSubscriptionProviders service method.</param>
+        /// 
+        /// <returns>The response from the ListRegisteredSubscriptionProviders service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListRegisteredSubscriptionProviders">REST API Reference for ListRegisteredSubscriptionProviders Operation</seealso>
+        ListRegisteredSubscriptionProvidersResponse ListRegisteredSubscriptionProviders(ListRegisteredSubscriptionProvidersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRegisteredSubscriptionProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRegisteredSubscriptionProviders operation on AmazonLicenseManagerLinuxSubscriptionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRegisteredSubscriptionProviders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListRegisteredSubscriptionProviders">REST API Reference for ListRegisteredSubscriptionProviders Operation</seealso>
+        IAsyncResult BeginListRegisteredSubscriptionProviders(ListRegisteredSubscriptionProvidersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRegisteredSubscriptionProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRegisteredSubscriptionProviders.</param>
+        /// 
+        /// <returns>Returns a  ListRegisteredSubscriptionProvidersResult from LicenseManagerLinuxSubscriptions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListRegisteredSubscriptionProviders">REST API Reference for ListRegisteredSubscriptionProviders Operation</seealso>
+        ListRegisteredSubscriptionProvidersResponse EndListRegisteredSubscriptionProviders(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// List the metadata tags that are assigned to the specified Amazon Web Services resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonLicenseManagerLinuxSubscriptionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from LicenseManagerLinuxSubscriptions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RegisterSubscriptionProvider
+
+
+        /// <summary>
+        /// Register the supported third-party subscription provider for your Bring Your Own License
+        /// (BYOL) subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterSubscriptionProvider service method.</param>
+        /// 
+        /// <returns>The response from the RegisterSubscriptionProvider service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/RegisterSubscriptionProvider">REST API Reference for RegisterSubscriptionProvider Operation</seealso>
+        RegisterSubscriptionProviderResponse RegisterSubscriptionProvider(RegisterSubscriptionProviderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterSubscriptionProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterSubscriptionProvider operation on AmazonLicenseManagerLinuxSubscriptionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterSubscriptionProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/RegisterSubscriptionProvider">REST API Reference for RegisterSubscriptionProvider Operation</seealso>
+        IAsyncResult BeginRegisterSubscriptionProvider(RegisterSubscriptionProviderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterSubscriptionProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterSubscriptionProvider.</param>
+        /// 
+        /// <returns>Returns a  RegisterSubscriptionProviderResult from LicenseManagerLinuxSubscriptions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/RegisterSubscriptionProvider">REST API Reference for RegisterSubscriptionProvider Operation</seealso>
+        RegisterSubscriptionProviderResponse EndRegisterSubscriptionProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Add metadata tags to the specified Amazon Web Services resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonLicenseManagerLinuxSubscriptionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from LicenseManagerLinuxSubscriptions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Remove one or more metadata tag from the specified Amazon Web Services resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonLicenseManagerLinuxSubscriptionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from LicenseManagerLinuxSubscriptions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
         

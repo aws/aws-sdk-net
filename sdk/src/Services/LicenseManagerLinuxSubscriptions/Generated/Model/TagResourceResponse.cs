@@ -30,10 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetServiceSettings operation.
-    /// Lists the Linux subscriptions service settings for your account.
+    /// This is the response object from the TagResource operation.
     /// </summary>
-    public partial class GetServiceSettingsRequest : AmazonLicenseManagerLinuxSubscriptionsRequest
+    public partial class TagResourceResponse : AmazonWebServiceResponse
     {
 
     }

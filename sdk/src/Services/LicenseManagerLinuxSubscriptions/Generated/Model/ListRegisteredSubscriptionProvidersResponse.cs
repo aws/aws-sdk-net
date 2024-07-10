@@ -30,30 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model
 {
     /// <summary>
-    /// This is the response object from the ListLinuxSubscriptionInstances operation.
+    /// This is the response object from the ListRegisteredSubscriptionProviders operation.
     /// </summary>
-    public partial class ListLinuxSubscriptionInstancesResponse : AmazonWebServiceResponse
+    public partial class ListRegisteredSubscriptionProvidersResponse : AmazonWebServiceResponse
     {
-        private List<Instance> _instances = AWSConfigs.InitializeCollections ? new List<Instance>() : null;
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property Instances. 
-        /// <para>
-        /// An array that contains instance objects.
-        /// </para>
-        /// </summary>
-        public List<Instance> Instances
-        {
-            get { return this._instances; }
-            set { this._instances = value; }
-        }
-
-        // Check to see if Instances property is set
-        internal bool IsSetInstances()
-        {
-            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
+        private List<RegisteredSubscriptionProvider> _registeredSubscriptionProviders = AWSConfigs.InitializeCollections ? new List<RegisteredSubscriptionProvider>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,6 +55,25 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegisteredSubscriptionProviders. 
+        /// <para>
+        /// The list of BYOL registration resources that fit the criteria you specified in the
+        /// request.
+        /// </para>
+        /// </summary>
+        public List<RegisteredSubscriptionProvider> RegisteredSubscriptionProviders
+        {
+            get { return this._registeredSubscriptionProviders; }
+            set { this._registeredSubscriptionProviders = value; }
+        }
+
+        // Check to see if RegisteredSubscriptionProviders property is set
+        internal bool IsSetRegisteredSubscriptionProviders()
+        {
+            return this._registeredSubscriptionProviders != null && (this._registeredSubscriptionProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

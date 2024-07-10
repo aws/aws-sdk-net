@@ -30,11 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetServiceSettings operation.
-    /// Lists the Linux subscriptions service settings for your account.
+    /// Container for the parameters to the GetRegisteredSubscriptionProvider operation.
+    /// Get details for a Bring Your Own License (BYOL) subscription that's registered to
+    /// your account.
     /// </summary>
-    public partial class GetServiceSettingsRequest : AmazonLicenseManagerLinuxSubscriptionsRequest
+    public partial class GetRegisteredSubscriptionProviderRequest : AmazonLicenseManagerLinuxSubscriptionsRequest
     {
+        private string _subscriptionProviderArn;
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionProviderArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the BYOL registration resource to get details for.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string SubscriptionProviderArn
+        {
+            get { return this._subscriptionProviderArn; }
+            set { this._subscriptionProviderArn = value; }
+        }
+
+        // Check to see if SubscriptionProviderArn property is set
+        internal bool IsSetSubscriptionProviderArn()
+        {
+            return this._subscriptionProviderArn != null;
+        }
 
     }
 }

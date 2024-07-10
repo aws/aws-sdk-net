@@ -30,11 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetServiceSettings operation.
-    /// Lists the Linux subscriptions service settings for your account.
+    /// Container for the parameters to the DeregisterSubscriptionProvider operation.
+    /// Remove a third-party subscription provider from the Bring Your Own License (BYOL)
+    /// subscriptions registered to your account.
     /// </summary>
-    public partial class GetServiceSettingsRequest : AmazonLicenseManagerLinuxSubscriptionsRequest
+    public partial class DeregisterSubscriptionProviderRequest : AmazonLicenseManagerLinuxSubscriptionsRequest
     {
+        private string _subscriptionProviderArn;
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionProviderArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the subscription provider resource to deregister.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string SubscriptionProviderArn
+        {
+            get { return this._subscriptionProviderArn; }
+            set { this._subscriptionProviderArn = value; }
+        }
+
+        // Check to see if SubscriptionProviderArn property is set
+        internal bool IsSetSubscriptionProviderArn()
+        {
+            return this._subscriptionProviderArn != null;
+        }
 
     }
 }

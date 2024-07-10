@@ -30,11 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetServiceSettings operation.
-    /// Lists the Linux subscriptions service settings for your account.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class GetServiceSettingsRequest : AmazonLicenseManagerLinuxSubscriptionsRequest
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The metadata tags for the requested resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
     }
 }

@@ -30,11 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetServiceSettings operation.
-    /// Lists the Linux subscriptions service settings for your account.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// List the metadata tags that are assigned to the specified Amazon Web Services resource.
     /// </summary>
-    public partial class GetServiceSettingsRequest : AmazonLicenseManagerLinuxSubscriptionsRequest
+    public partial class ListTagsForResourceRequest : AmazonLicenseManagerLinuxSubscriptionsRequest
     {
+        private string _resourceArn;
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource for which to list metadata tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
+        }
 
     }
 }

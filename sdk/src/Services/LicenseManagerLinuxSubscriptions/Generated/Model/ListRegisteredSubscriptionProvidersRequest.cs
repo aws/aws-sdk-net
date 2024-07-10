@@ -30,61 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListLinuxSubscriptions operation.
-    /// Lists the Linux subscriptions that have been discovered. If you have linked your organization,
-    /// the returned results will include data aggregated across your accounts in Organizations.
+    /// Container for the parameters to the ListRegisteredSubscriptionProviders operation.
+    /// List Bring Your Own License (BYOL) subscription registration resources for your account.
     /// </summary>
-    public partial class ListLinuxSubscriptionsRequest : AmazonLicenseManagerLinuxSubscriptionsRequest
+    public partial class ListRegisteredSubscriptionProvidersRequest : AmazonLicenseManagerLinuxSubscriptionsRequest
     {
-        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property Filters. 
-        /// <para>
-        /// An array of structures that you can use to filter the results to those that match
-        /// one or more sets of key-value pairs that you specify. For example, you can filter
-        /// by the name of <c>Subscription</c> with an optional operator to see subscriptions
-        /// that match, partially match, or don't match a certain subscription's name.
-        /// </para>
-        ///  
-        /// <para>
-        /// The valid names for this filter are:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>Subscription</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The valid Operators for this filter are:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>contains</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>equals</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>Notequal</c> 
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        public List<Filter> Filters
-        {
-            get { return this._filters; }
-            set { this._filters = value; }
-        }
-
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
-        {
-            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
+        private List<string> _subscriptionProviderSources = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -92,6 +45,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         /// The maximum items to return in a request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -111,7 +65,6 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         /// truncated response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=16384)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -122,6 +75,24 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionProviderSources. 
+        /// <para>
+        /// To filter your results, specify which subscription providers to return in the list.
+        /// </para>
+        /// </summary>
+        public List<string> SubscriptionProviderSources
+        {
+            get { return this._subscriptionProviderSources; }
+            set { this._subscriptionProviderSources = value; }
+        }
+
+        // Check to see if SubscriptionProviderSources property is set
+        internal bool IsSetSubscriptionProviderSources()
+        {
+            return this._subscriptionProviderSources != null && (this._subscriptionProviderSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

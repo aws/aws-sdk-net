@@ -265,11 +265,145 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         #endregion
 
 
+        #region  DeregisterSubscriptionProvider
+
+
+        /// <summary>
+        /// Remove a third-party subscription provider from the Bring Your Own License (BYOL)
+        /// subscriptions registered to your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterSubscriptionProvider service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterSubscriptionProvider service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/DeregisterSubscriptionProvider">REST API Reference for DeregisterSubscriptionProvider Operation</seealso>
+        public virtual DeregisterSubscriptionProviderResponse DeregisterSubscriptionProvider(DeregisterSubscriptionProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterSubscriptionProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterSubscriptionProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterSubscriptionProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Remove a third-party subscription provider from the Bring Your Own License (BYOL)
+        /// subscriptions registered to your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterSubscriptionProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterSubscriptionProvider service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/DeregisterSubscriptionProvider">REST API Reference for DeregisterSubscriptionProvider Operation</seealso>
+        public virtual Task<DeregisterSubscriptionProviderResponse> DeregisterSubscriptionProviderAsync(DeregisterSubscriptionProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterSubscriptionProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterSubscriptionProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterSubscriptionProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRegisteredSubscriptionProvider
+
+
+        /// <summary>
+        /// Get details for a Bring Your Own License (BYOL) subscription that's registered to
+        /// your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegisteredSubscriptionProvider service method.</param>
+        /// 
+        /// <returns>The response from the GetRegisteredSubscriptionProvider service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/GetRegisteredSubscriptionProvider">REST API Reference for GetRegisteredSubscriptionProvider Operation</seealso>
+        public virtual GetRegisteredSubscriptionProviderResponse GetRegisteredSubscriptionProvider(GetRegisteredSubscriptionProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRegisteredSubscriptionProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegisteredSubscriptionProviderResponseUnmarshaller.Instance;
+
+            return Invoke<GetRegisteredSubscriptionProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get details for a Bring Your Own License (BYOL) subscription that's registered to
+        /// your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegisteredSubscriptionProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRegisteredSubscriptionProvider service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/GetRegisteredSubscriptionProvider">REST API Reference for GetRegisteredSubscriptionProvider Operation</seealso>
+        public virtual Task<GetRegisteredSubscriptionProviderResponse> GetRegisteredSubscriptionProviderAsync(GetRegisteredSubscriptionProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRegisteredSubscriptionProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegisteredSubscriptionProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRegisteredSubscriptionProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetServiceSettings
 
 
         /// <summary>
-        /// Lists the Linux subscriptions service settings.
+        /// Lists the Linux subscriptions service settings for your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceSettings service method.</param>
         /// 
@@ -295,7 +429,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
 
 
         /// <summary>
-        /// Lists the Linux subscriptions service settings.
+        /// Lists the Linux subscriptions service settings for your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceSettings service method.</param>
         /// <param name="cancellationToken">
@@ -442,6 +576,297 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
             options.ResponseUnmarshaller = ListLinuxSubscriptionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListLinuxSubscriptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRegisteredSubscriptionProviders
+
+
+        /// <summary>
+        /// List Bring Your Own License (BYOL) subscription registration resources for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegisteredSubscriptionProviders service method.</param>
+        /// 
+        /// <returns>The response from the ListRegisteredSubscriptionProviders service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListRegisteredSubscriptionProviders">REST API Reference for ListRegisteredSubscriptionProviders Operation</seealso>
+        public virtual ListRegisteredSubscriptionProvidersResponse ListRegisteredSubscriptionProviders(ListRegisteredSubscriptionProvidersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRegisteredSubscriptionProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegisteredSubscriptionProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListRegisteredSubscriptionProvidersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List Bring Your Own License (BYOL) subscription registration resources for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegisteredSubscriptionProviders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRegisteredSubscriptionProviders service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListRegisteredSubscriptionProviders">REST API Reference for ListRegisteredSubscriptionProviders Operation</seealso>
+        public virtual Task<ListRegisteredSubscriptionProvidersResponse> ListRegisteredSubscriptionProvidersAsync(ListRegisteredSubscriptionProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRegisteredSubscriptionProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegisteredSubscriptionProvidersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRegisteredSubscriptionProvidersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// List the metadata tags that are assigned to the specified Amazon Web Services resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List the metadata tags that are assigned to the specified Amazon Web Services resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterSubscriptionProvider
+
+
+        /// <summary>
+        /// Register the supported third-party subscription provider for your Bring Your Own License
+        /// (BYOL) subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterSubscriptionProvider service method.</param>
+        /// 
+        /// <returns>The response from the RegisterSubscriptionProvider service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/RegisterSubscriptionProvider">REST API Reference for RegisterSubscriptionProvider Operation</seealso>
+        public virtual RegisterSubscriptionProviderResponse RegisterSubscriptionProvider(RegisterSubscriptionProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterSubscriptionProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterSubscriptionProviderResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterSubscriptionProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Register the supported third-party subscription provider for your Bring Your Own License
+        /// (BYOL) subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterSubscriptionProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterSubscriptionProvider service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/RegisterSubscriptionProvider">REST API Reference for RegisterSubscriptionProvider Operation</seealso>
+        public virtual Task<RegisterSubscriptionProviderResponse> RegisterSubscriptionProviderAsync(RegisterSubscriptionProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterSubscriptionProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterSubscriptionProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterSubscriptionProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Add metadata tags to the specified Amazon Web Services resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Add metadata tags to the specified Amazon Web Services resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Remove one or more metadata tag from the specified Amazon Web Services resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Remove one or more metadata tag from the specified Amazon Web Services resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by LicenseManagerLinuxSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerLinuxSubscriptions.Model.ResourceNotFoundException">
+        /// Unable to find the requested Amazon Web Services resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

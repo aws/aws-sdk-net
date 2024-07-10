@@ -16,29 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the license-manager-linux-subscriptions-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model
 {
     /// <summary>
-    /// Paginators for the LicenseManagerLinuxSubscriptions service
+    /// Paginator for the ListRegisteredSubscriptionProviders operation
     ///</summary>
-    public interface ILicenseManagerLinuxSubscriptionsPaginatorFactory
+    public interface IListRegisteredSubscriptionProvidersPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListRegisteredSubscriptionProvidersResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListLinuxSubscriptionInstances operation
-        ///</summary>
-        IListLinuxSubscriptionInstancesPaginator ListLinuxSubscriptionInstances(ListLinuxSubscriptionInstancesRequest request);
-
-        /// <summary>
-        /// Paginator for ListLinuxSubscriptions operation
-        ///</summary>
-        IListLinuxSubscriptionsPaginator ListLinuxSubscriptions(ListLinuxSubscriptionsRequest request);
-
-        /// <summary>
-        /// Paginator for ListRegisteredSubscriptionProviders operation
-        ///</summary>
-        IListRegisteredSubscriptionProvidersPaginator ListRegisteredSubscriptionProviders(ListRegisteredSubscriptionProvidersRequest request);
+        /// Enumerable containing all of the RegisteredSubscriptionProviders
+        /// </summary>
+        IPaginatedEnumerable<RegisteredSubscriptionProvider> RegisteredSubscriptionProviders { get; }
     }
 }
