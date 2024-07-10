@@ -21,6 +21,8 @@
     <NoWarn>$(NoWarn);CS1591</NoWarn>
 
     <SignAssembly>True</SignAssembly>
+
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">

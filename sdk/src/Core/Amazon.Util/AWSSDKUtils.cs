@@ -33,6 +33,7 @@ using Amazon.Util.Internal;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using Amazon.Runtime.Endpoints;
 using ThirdParty.RuntimeBackports;
@@ -78,12 +79,6 @@ namespace Amazon.Util
 
         // Default value of progress update interval for streaming is 100KB.
         public const long DefaultProgressUpdateInterval = 102400;
-
-        internal static Dictionary<int, string> RFCEncodingSchemes = new Dictionary<int, string>
-        {
-            { 3986,  ValidUrlCharacters },
-            { 1738,  ValidUrlCharactersRFC1738 }
-        };
 
         internal const string S3Accelerate = "s3-accelerate";
         internal const string S3Control = "s3-control";
@@ -1028,35 +1023,76 @@ namespace Amazon.Util
         /// Currently recognised RFC versions are 1738 (Dec '94) and 3986 (Jan '05). 
         /// If the specified RFC is not recognised, 3986 is used by default.
         /// </remarks>
+        [SkipLocalsInit]
         public static string UrlEncode(int rfcNumber, string data, bool path)
         {
-            StringBuilder encoded = new StringBuilder(data.Length * 2);
-            string validUrlCharacters;
-            if (!RFCEncodingSchemes.TryGetValue(rfcNumber, out validUrlCharacters))
-                validUrlCharacters = ValidUrlCharacters;
-
-            string unreservedChars = String.Concat(validUrlCharacters, (path ? ValidPathCharacters : ""));
-            foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(data))
+            byte[] sharedDataBuffer = null;
+            const int MaxStackLimit = 256;
+            try
             {
-                if (unreservedChars.IndexOf(symbol) != -1)
-                {
-                    encoded.Append(symbol);
-                }
-                else
-                {
-                    encoded.Append('%');
+                if (!TryGetRFCEncodingSchemes(rfcNumber, out var validUrlCharacters))
+                    validUrlCharacters = ValidUrlCharacters;
 
-                    // Break apart the byte into two four-bit components and
-                    // then convert each into their hexadecimal equivalent.
-                    byte b = (byte)symbol;
-                    int hiNibble = b >> 4;
-                    int loNibble = b & 0xF;
-                    encoded.Append(ToUpperHex(hiNibble));
-                    encoded.Append(ToUpperHex(loNibble));
+                var unreservedChars = string.Concat(validUrlCharacters, path ? ValidPathCharacters : string.Empty).AsSpan();
+
+                var dataAsSpan = data.AsSpan();
+                var encoding = Encoding.UTF8;
+
+                var dataByteLength = encoding.GetMaxByteCount(dataAsSpan.Length);
+                var encodedByteLength = 2 * dataByteLength;
+                var dataBuffer = encodedByteLength <= MaxStackLimit
+                    ? stackalloc byte[MaxStackLimit]
+                    : sharedDataBuffer = ArrayPool<byte>.Shared.Rent(encodedByteLength);
+                // Instead of stack allocating or renting two buffers we use one buffer with at least twice the capacity of the
+                // max encoding length. Then store the character data as bytes in the second half reserving the first half of the buffer 
+                // for the encoded representation.
+                var encodingBuffer = dataBuffer.Slice(dataBuffer.Length - dataByteLength);
+                var bytesWritten = encoding.GetBytes(dataAsSpan, encodingBuffer);
+            
+                var index = 0;
+                foreach (var symbol in encodingBuffer.Slice(0, bytesWritten))
+                {
+                    if (unreservedChars.IndexOf((char)symbol) != -1)
+                    {
+                        dataBuffer[index++] = symbol;
+                    }
+                    else
+                    {
+                        dataBuffer[index++] = (byte)'%';
+
+                        // Break apart the byte into two four-bit components and
+                        // then convert each into their hexadecimal equivalent.
+                        var hiNibble = symbol >> 4;
+                        var loNibble = symbol & 0xF;
+                        dataBuffer[index++] = (byte)ToUpperHex(hiNibble);
+                        dataBuffer[index++] = (byte)ToUpperHex(loNibble);
+                    }
                 }
+
+                return encoding.GetString(dataBuffer.Slice(0, index));
+            }
+            finally
+            {
+                if (sharedDataBuffer != null) ArrayPool<byte>.Shared.Return(sharedDataBuffer);
+            }
+        }
+        
+        internal static bool TryGetRFCEncodingSchemes(int rfcNumber, out string encodingScheme)
+        {
+            if (rfcNumber == 3986)
+            {
+                encodingScheme = ValidUrlCharacters;
+                return true;
             }
 
-            return encoded.ToString();
+            if (rfcNumber == 1738)
+            {
+                encodingScheme = ValidUrlCharactersRFC1738;
+                return true;
+            }
+
+            encodingScheme = null;
+            return false;
         }
 
         private static void ToHexString(Span<byte> source, Span<char> destination, bool lowercase)
