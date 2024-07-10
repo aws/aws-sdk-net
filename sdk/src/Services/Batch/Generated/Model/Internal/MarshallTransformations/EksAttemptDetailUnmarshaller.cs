@@ -72,6 +72,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Containers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eksClusterArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EksClusterArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("initContainers", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<EksAttemptContainerDetail, EksAttemptContainerDetailUnmarshaller>(EksAttemptContainerDetailUnmarshaller.Instance);

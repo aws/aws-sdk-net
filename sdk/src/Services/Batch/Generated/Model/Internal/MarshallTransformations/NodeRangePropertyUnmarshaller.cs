@@ -78,6 +78,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.EcsProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eksProperties", targetDepth))
+                {
+                    var unmarshaller = EksPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.EksProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("instanceTypes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

@@ -37,6 +37,7 @@ namespace Amazon.Batch.Model
     {
         private ContainerProperties _container;
         private EcsProperties _ecsProperties;
+        private EksProperties _eksProperties;
         private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _targetNodes;
 
@@ -75,6 +76,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetEcsProperties()
         {
             return this._ecsProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EksProperties. 
+        /// <para>
+        /// This is an object that represents the properties of the node range for a multi-node
+        /// parallel job.
+        /// </para>
+        /// </summary>
+        public EksProperties EksProperties
+        {
+            get { return this._eksProperties; }
+            set { this._eksProperties = value; }
+        }
+
+        // Check to see if EksProperties property is set
+        internal bool IsSetEksProperties()
+        {
+            return this._eksProperties != null;
         }
 
         /// <summary>
