@@ -138,6 +138,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.OutputArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("outputStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutputStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("port", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

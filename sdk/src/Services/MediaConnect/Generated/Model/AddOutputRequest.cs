@@ -42,6 +42,7 @@ namespace Amazon.MediaConnect.Model
         private List<MediaStreamOutputConfigurationRequest> _mediaStreamOutputConfigurations = AWSConfigs.InitializeCollections ? new List<MediaStreamOutputConfigurationRequest>() : null;
         private int? _minLatency;
         private string _name;
+        private OutputStatus _outputStatus;
         private int? _port;
         private Protocol _protocol;
         private string _remoteId;
@@ -182,6 +183,23 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputStatus. An indication of whether the new output should
+        /// be enabled or disabled as soon as it is created. If you don't specify the outputStatus
+        /// field in your request, MediaConnect sets it to ENABLED.
+        /// </summary>
+        public OutputStatus OutputStatus
+        {
+            get { return this._outputStatus; }
+            set { this._outputStatus = value; }
+        }
+
+        // Check to see if OutputStatus property is set
+        internal bool IsSetOutputStatus()
+        {
+            return this._outputStatus != null;
         }
 
         /// <summary>
