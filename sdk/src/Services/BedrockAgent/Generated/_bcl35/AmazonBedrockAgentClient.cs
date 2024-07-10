@@ -370,6 +370,12 @@ namespace Amazon.BedrockAgent
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
+        /// To enable your agent to retain conversational context across multiple sessions, include
+        /// a <c>memoryConfiguration</c> object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-configure-memory.html">Configure
+        /// memory</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// To override the default prompt behavior for agent orchestration and to use advanced
         /// prompts, include a <c>promptOverrideConfiguration</c> object. For more information,
         /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
@@ -460,11 +466,21 @@ namespace Amazon.BedrockAgent
         /// <para>
         /// To allow your agent to request the user for additional information when trying to
         /// complete a task, add an action group with the <c>parentActionGroupSignature</c> field
-        /// set to <c>AMAZON.UserInput</c>. You must leave the <c>description</c>, <c>apiSchema</c>,
-        /// and <c>actionGroupExecutor</c> fields blank for this action group. During orchestration,
-        /// if your agent determines that it needs to invoke an API in an action group, but doesn't
-        /// have enough information to complete the API request, it will invoke this action group
-        /// instead and return an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a>
+        /// set to <c>AMAZON.UserInput</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To allow your agent to generate, run, and troubleshoot code when trying to complete
+        /// a task, add an action group with the <c>parentActionGroupSignature</c> field set to
+        /// <c>AMAZON.CodeInterpreter</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You must leave the <c>description</c>, <c>apiSchema</c>, and <c>actionGroupExecutor</c>
+        /// fields blank for this action group. During orchestration, if your agent determines
+        /// that it needs to invoke an API in an action group, but doesn't have enough information
+        /// to complete the API request, it will invoke this action group instead and return an
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a>
         /// reprompting the user for more information.
         /// </para>
         /// </summary>
@@ -618,11 +634,12 @@ namespace Amazon.BedrockAgent
         #region  CreateDataSource
 
         /// <summary>
-        /// Sets up a data source to be added to a knowledge base.
+        /// Creates a data source connector for a knowledge base.
         /// 
         ///  <important> 
         /// <para>
-        /// You can't change the <c>chunkingConfiguration</c> after you create the data source.
+        /// You can't change the <c>chunkingConfiguration</c> after you create the data source
+        /// connector.
         /// </para>
         ///  </important>
         /// </summary>
@@ -693,6 +710,237 @@ namespace Amazon.BedrockAgent
         public virtual CreateDataSourceResponse EndCreateDataSource(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDataSourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateFlow
+
+        /// <summary>
+        /// Creates a prompt flow that you can use to send an input through various steps to yield
+        /// an output. Configure nodes, each of which corresponds to a step of the flow, and create
+        /// connections between the nodes to create paths to different outputs. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-how-it-works.html">How
+        /// it works</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-create.html">Create
+        /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFlow service method.</param>
+        /// 
+        /// <returns>The response from the CreateFlow service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateFlow">REST API Reference for CreateFlow Operation</seealso>
+        public virtual CreateFlowResponse CreateFlow(CreateFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFlowResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFlowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFlow operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFlow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateFlow">REST API Reference for CreateFlow Operation</seealso>
+        public virtual IAsyncResult BeginCreateFlow(CreateFlowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFlowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFlow.</param>
+        /// 
+        /// <returns>Returns a  CreateFlowResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateFlow">REST API Reference for CreateFlow Operation</seealso>
+        public virtual CreateFlowResponse EndCreateFlow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateFlowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateFlowAlias
+
+        /// <summary>
+        /// Creates an alias of a flow for deployment. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html">Deploy
+        /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFlowAlias service method.</param>
+        /// 
+        /// <returns>The response from the CreateFlowAlias service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateFlowAlias">REST API Reference for CreateFlowAlias Operation</seealso>
+        public virtual CreateFlowAliasResponse CreateFlowAlias(CreateFlowAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFlowAliasResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFlowAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFlowAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFlowAlias operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFlowAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateFlowAlias">REST API Reference for CreateFlowAlias Operation</seealso>
+        public virtual IAsyncResult BeginCreateFlowAlias(CreateFlowAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFlowAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFlowAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFlowAlias.</param>
+        /// 
+        /// <returns>Returns a  CreateFlowAliasResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateFlowAlias">REST API Reference for CreateFlowAlias Operation</seealso>
+        public virtual CreateFlowAliasResponse EndCreateFlowAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateFlowAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateFlowVersion
+
+        /// <summary>
+        /// Creates a version of the flow that you can deploy. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html">Deploy
+        /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFlowVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateFlowVersion service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateFlowVersion">REST API Reference for CreateFlowVersion Operation</seealso>
+        public virtual CreateFlowVersionResponse CreateFlowVersion(CreateFlowVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFlowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFlowVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFlowVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFlowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFlowVersion operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFlowVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateFlowVersion">REST API Reference for CreateFlowVersion Operation</seealso>
+        public virtual IAsyncResult BeginCreateFlowVersion(CreateFlowVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFlowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFlowVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFlowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFlowVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateFlowVersionResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateFlowVersion">REST API Reference for CreateFlowVersion Operation</seealso>
+        public virtual CreateFlowVersionResponse EndCreateFlowVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateFlowVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -819,6 +1067,161 @@ namespace Amazon.BedrockAgent
         public virtual CreateKnowledgeBaseResponse EndCreateKnowledgeBase(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateKnowledgeBaseResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreatePrompt
+
+        /// <summary>
+        /// Creates a prompt in your prompt library that you can add to a flow. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt
+        /// management in Amazon Bedrock</a>, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create
+        /// a prompt using Prompt management</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows.html">Prompt
+        /// flows in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrompt service method.</param>
+        /// 
+        /// <returns>The response from the CreatePrompt service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreatePrompt">REST API Reference for CreatePrompt Operation</seealso>
+        public virtual CreatePromptResponse CreatePrompt(CreatePromptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePromptResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePromptResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrompt operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePrompt
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreatePrompt">REST API Reference for CreatePrompt Operation</seealso>
+        public virtual IAsyncResult BeginCreatePrompt(CreatePromptRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePromptResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePrompt.</param>
+        /// 
+        /// <returns>Returns a  CreatePromptResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreatePrompt">REST API Reference for CreatePrompt Operation</seealso>
+        public virtual CreatePromptResponse EndCreatePrompt(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePromptResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreatePromptVersion
+
+        /// <summary>
+        /// Creates a static snapshot of your prompt that can be deployed to production. For more
+        /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html">Deploy
+        /// prompts using Prompt management by creating versions</a> in the Amazon Bedrock User
+        /// Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePromptVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreatePromptVersion service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreatePromptVersion">REST API Reference for CreatePromptVersion Operation</seealso>
+        public virtual CreatePromptVersionResponse CreatePromptVersion(CreatePromptVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePromptVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePromptVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePromptVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePromptVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePromptVersion operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePromptVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreatePromptVersion">REST API Reference for CreatePromptVersion Operation</seealso>
+        public virtual IAsyncResult BeginCreatePromptVersion(CreatePromptVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePromptVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePromptVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePromptVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePromptVersion.</param>
+        /// 
+        /// <returns>Returns a  CreatePromptVersionResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreatePromptVersion">REST API Reference for CreatePromptVersion Operation</seealso>
+        public virtual CreatePromptVersionResponse EndCreatePromptVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePromptVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -1185,6 +1588,225 @@ namespace Amazon.BedrockAgent
 
         #endregion
         
+        #region  DeleteFlow
+
+        /// <summary>
+        /// Deletes a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFlow service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFlow service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteFlow">REST API Reference for DeleteFlow Operation</seealso>
+        public virtual DeleteFlowResponse DeleteFlow(DeleteFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFlowResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFlowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFlow operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFlow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteFlow">REST API Reference for DeleteFlow Operation</seealso>
+        public virtual IAsyncResult BeginDeleteFlow(DeleteFlowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFlowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFlow.</param>
+        /// 
+        /// <returns>Returns a  DeleteFlowResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteFlow">REST API Reference for DeleteFlow Operation</seealso>
+        public virtual DeleteFlowResponse EndDeleteFlow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteFlowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteFlowAlias
+
+        /// <summary>
+        /// Deletes an alias of a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFlowAlias service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFlowAlias service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteFlowAlias">REST API Reference for DeleteFlowAlias Operation</seealso>
+        public virtual DeleteFlowAliasResponse DeleteFlowAlias(DeleteFlowAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFlowAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFlowAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFlowAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFlowAlias operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFlowAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteFlowAlias">REST API Reference for DeleteFlowAlias Operation</seealso>
+        public virtual IAsyncResult BeginDeleteFlowAlias(DeleteFlowAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFlowAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFlowAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFlowAlias.</param>
+        /// 
+        /// <returns>Returns a  DeleteFlowAliasResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteFlowAlias">REST API Reference for DeleteFlowAlias Operation</seealso>
+        public virtual DeleteFlowAliasResponse EndDeleteFlowAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteFlowAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteFlowVersion
+
+        /// <summary>
+        /// Deletes a version of a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFlowVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFlowVersion service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteFlowVersion">REST API Reference for DeleteFlowVersion Operation</seealso>
+        public virtual DeleteFlowVersionResponse DeleteFlowVersion(DeleteFlowVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFlowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFlowVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFlowVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFlowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFlowVersion operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFlowVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteFlowVersion">REST API Reference for DeleteFlowVersion Operation</seealso>
+        public virtual IAsyncResult BeginDeleteFlowVersion(DeleteFlowVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFlowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFlowVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFlowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFlowVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteFlowVersionResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteFlowVersion">REST API Reference for DeleteFlowVersion Operation</seealso>
+        public virtual DeleteFlowVersionResponse EndDeleteFlowVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteFlowVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteKnowledgeBase
 
         /// <summary>
@@ -1256,6 +1878,83 @@ namespace Amazon.BedrockAgent
         public virtual DeleteKnowledgeBaseResponse EndDeleteKnowledgeBase(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteKnowledgeBaseResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePrompt
+
+        /// <summary>
+        /// Deletes a prompt or a prompt version from the Prompt management tool. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-delete.html">Delete
+        /// prompts from the Prompt management tool</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-delete.html">Delete
+        /// a version of a prompt from the Prompt management tool</a> in the Amazon Bedrock User
+        /// Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrompt service method.</param>
+        /// 
+        /// <returns>The response from the DeletePrompt service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeletePrompt">REST API Reference for DeletePrompt Operation</seealso>
+        public virtual DeletePromptResponse DeletePrompt(DeletePromptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePromptResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePromptResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrompt operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePrompt
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeletePrompt">REST API Reference for DeletePrompt Operation</seealso>
+        public virtual IAsyncResult BeginDeletePrompt(DeletePromptRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePromptResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePrompt.</param>
+        /// 
+        /// <returns>Returns a  DeletePromptResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeletePrompt">REST API Reference for DeletePrompt Operation</seealso>
+        public virtual DeletePromptResponse EndDeletePrompt(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePromptResponse>(asyncResult);
         }
 
         #endregion
@@ -1753,6 +2452,219 @@ namespace Amazon.BedrockAgent
 
         #endregion
         
+        #region  GetFlow
+
+        /// <summary>
+        /// Retrieves information about a flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-manage.html">Manage
+        /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFlow service method.</param>
+        /// 
+        /// <returns>The response from the GetFlow service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetFlow">REST API Reference for GetFlow Operation</seealso>
+        public virtual GetFlowResponse GetFlow(GetFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowResponseUnmarshaller.Instance;
+
+            return Invoke<GetFlowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFlow operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFlow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetFlow">REST API Reference for GetFlow Operation</seealso>
+        public virtual IAsyncResult BeginGetFlow(GetFlowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFlow.</param>
+        /// 
+        /// <returns>Returns a  GetFlowResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetFlow">REST API Reference for GetFlow Operation</seealso>
+        public virtual GetFlowResponse EndGetFlow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFlowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetFlowAlias
+
+        /// <summary>
+        /// Retrieves information about a flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html">Deploy
+        /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowAlias service method.</param>
+        /// 
+        /// <returns>The response from the GetFlowAlias service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetFlowAlias">REST API Reference for GetFlowAlias Operation</seealso>
+        public virtual GetFlowAliasResponse GetFlowAlias(GetFlowAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowAliasResponseUnmarshaller.Instance;
+
+            return Invoke<GetFlowAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFlowAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowAlias operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFlowAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetFlowAlias">REST API Reference for GetFlowAlias Operation</seealso>
+        public virtual IAsyncResult BeginGetFlowAlias(GetFlowAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFlowAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFlowAlias.</param>
+        /// 
+        /// <returns>Returns a  GetFlowAliasResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetFlowAlias">REST API Reference for GetFlowAlias Operation</seealso>
+        public virtual GetFlowAliasResponse EndGetFlowAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFlowAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetFlowVersion
+
+        /// <summary>
+        /// Retrieves information about a version of a flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html">Deploy
+        /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetFlowVersion service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetFlowVersion">REST API Reference for GetFlowVersion Operation</seealso>
+        public virtual GetFlowVersionResponse GetFlowVersion(GetFlowVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFlowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetFlowVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFlowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFlowVersion operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFlowVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetFlowVersion">REST API Reference for GetFlowVersion Operation</seealso>
+        public virtual IAsyncResult BeginGetFlowVersion(GetFlowVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFlowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFlowVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFlowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFlowVersion.</param>
+        /// 
+        /// <returns>Returns a  GetFlowVersionResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetFlowVersion">REST API Reference for GetFlowVersion Operation</seealso>
+        public virtual GetFlowVersionResponse EndGetFlowVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFlowVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetIngestionJob
 
         /// <summary>
@@ -1890,6 +2802,79 @@ namespace Amazon.BedrockAgent
         public virtual GetKnowledgeBaseResponse EndGetKnowledgeBase(IAsyncResult asyncResult)
         {
             return EndInvoke<GetKnowledgeBaseResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPrompt
+
+        /// <summary>
+        /// Retrieves information about a prompt or a version of it. For more information, see
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View
+        /// information about prompts using Prompt management</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-view.html">View
+        /// information about a version of your prompt</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPrompt service method.</param>
+        /// 
+        /// <returns>The response from the GetPrompt service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetPrompt">REST API Reference for GetPrompt Operation</seealso>
+        public virtual GetPromptResponse GetPrompt(GetPromptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPromptResponseUnmarshaller.Instance;
+
+            return Invoke<GetPromptResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPrompt operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPrompt
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetPrompt">REST API Reference for GetPrompt Operation</seealso>
+        public virtual IAsyncResult BeginGetPrompt(GetPromptRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPromptResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPrompt.</param>
+        /// 
+        /// <returns>Returns a  GetPromptResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetPrompt">REST API Reference for GetPrompt Operation</seealso>
+        public virtual GetPromptResponse EndGetPrompt(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPromptResponse>(asyncResult);
         }
 
         #endregion
@@ -2310,6 +3295,215 @@ namespace Amazon.BedrockAgent
 
         #endregion
         
+        #region  ListFlowAliases
+
+        /// <summary>
+        /// Returns a list of aliases for a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowAliases service method.</param>
+        /// 
+        /// <returns>The response from the ListFlowAliases service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListFlowAliases">REST API Reference for ListFlowAliases Operation</seealso>
+        public virtual ListFlowAliasesResponse ListFlowAliases(ListFlowAliasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListFlowAliasesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFlowAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowAliases operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFlowAliases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListFlowAliases">REST API Reference for ListFlowAliases Operation</seealso>
+        public virtual IAsyncResult BeginListFlowAliases(ListFlowAliasesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowAliasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFlowAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFlowAliases.</param>
+        /// 
+        /// <returns>Returns a  ListFlowAliasesResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListFlowAliases">REST API Reference for ListFlowAliases Operation</seealso>
+        public virtual ListFlowAliasesResponse EndListFlowAliases(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFlowAliasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListFlows
+
+        /// <summary>
+        /// Returns a list of flows and information about each flow. For more information, see
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-manage.html">Manage
+        /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlows service method.</param>
+        /// 
+        /// <returns>The response from the ListFlows service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListFlows">REST API Reference for ListFlows Operation</seealso>
+        public virtual ListFlowsResponse ListFlows(ListFlowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFlowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFlows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFlows operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFlows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListFlows">REST API Reference for ListFlows Operation</seealso>
+        public virtual IAsyncResult BeginListFlows(ListFlowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFlows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFlows.</param>
+        /// 
+        /// <returns>Returns a  ListFlowsResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListFlows">REST API Reference for ListFlows Operation</seealso>
+        public virtual ListFlowsResponse EndListFlows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFlowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListFlowVersions
+
+        /// <summary>
+        /// Returns a list of information about each flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html">Deploy
+        /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListFlowVersions service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListFlowVersions">REST API Reference for ListFlowVersions Operation</seealso>
+        public virtual ListFlowVersionsResponse ListFlowVersions(ListFlowVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFlowVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFlowVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowVersions operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFlowVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListFlowVersions">REST API Reference for ListFlowVersions Operation</seealso>
+        public virtual IAsyncResult BeginListFlowVersions(ListFlowVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFlowVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFlowVersions.</param>
+        /// 
+        /// <returns>Returns a  ListFlowVersionsResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListFlowVersions">REST API Reference for ListFlowVersions Operation</seealso>
+        public virtual ListFlowVersionsResponse EndListFlowVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFlowVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListIngestionJobs
 
         /// <summary>
@@ -2442,6 +3636,78 @@ namespace Amazon.BedrockAgent
         public virtual ListKnowledgeBasesResponse EndListKnowledgeBases(IAsyncResult asyncResult)
         {
             return EndInvoke<ListKnowledgeBasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPrompts
+
+        /// <summary>
+        /// Returns a list of prompts from the Prompt management tool and information about each
+        /// prompt. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View
+        /// information about prompts using Prompt management</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrompts service method.</param>
+        /// 
+        /// <returns>The response from the ListPrompts service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListPrompts">REST API Reference for ListPrompts Operation</seealso>
+        public virtual ListPromptsResponse ListPrompts(ListPromptsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPromptsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPromptsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPromptsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPrompts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPrompts operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPrompts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListPrompts">REST API Reference for ListPrompts Operation</seealso>
+        public virtual IAsyncResult BeginListPrompts(ListPromptsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPromptsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPromptsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPrompts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPrompts.</param>
+        /// 
+        /// <returns>Returns a  ListPromptsResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListPrompts">REST API Reference for ListPrompts Operation</seealso>
+        public virtual ListPromptsResponse EndListPrompts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPromptsResponse>(asyncResult);
         }
 
         #endregion
@@ -2588,6 +3854,84 @@ namespace Amazon.BedrockAgent
         public virtual PrepareAgentResponse EndPrepareAgent(IAsyncResult asyncResult)
         {
             return EndInvoke<PrepareAgentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PrepareFlow
+
+        /// <summary>
+        /// Prepares the <c>DRAFT</c> version of a flow so that it can be invoked. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html">Test
+        /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PrepareFlow service method.</param>
+        /// 
+        /// <returns>The response from the PrepareFlow service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/PrepareFlow">REST API Reference for PrepareFlow Operation</seealso>
+        public virtual PrepareFlowResponse PrepareFlow(PrepareFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PrepareFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PrepareFlowResponseUnmarshaller.Instance;
+
+            return Invoke<PrepareFlowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PrepareFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PrepareFlow operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPrepareFlow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/PrepareFlow">REST API Reference for PrepareFlow Operation</seealso>
+        public virtual IAsyncResult BeginPrepareFlow(PrepareFlowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PrepareFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PrepareFlowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PrepareFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPrepareFlow.</param>
+        /// 
+        /// <returns>Returns a  PrepareFlowResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/PrepareFlow">REST API Reference for PrepareFlow Operation</seealso>
+        public virtual PrepareFlowResponse EndPrepareFlow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PrepareFlowResponse>(asyncResult);
         }
 
         #endregion
@@ -3116,12 +4460,12 @@ namespace Amazon.BedrockAgent
         #region  UpdateDataSource
 
         /// <summary>
-        /// Updates configurations for a data source.
+        /// Updates the configurations for a data source connector.
         /// 
         ///  <important> 
         /// <para>
-        /// You can't change the <c>chunkingConfiguration</c> after you create the data source.
-        /// Specify the existing <c>chunkingConfiguration</c>.
+        /// You can't change the <c>chunkingConfiguration</c> after you create the data source
+        /// connector. Specify the existing <c>chunkingConfiguration</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3189,6 +4533,163 @@ namespace Amazon.BedrockAgent
         public virtual UpdateDataSourceResponse EndUpdateDataSource(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDataSourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateFlow
+
+        /// <summary>
+        /// Modifies a flow. Include both fields that you want to keep and fields that you want
+        /// to change. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-how-it-works.html">How
+        /// it works</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-create.html">Create
+        /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFlow service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFlow service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateFlow">REST API Reference for UpdateFlow Operation</seealso>
+        public virtual UpdateFlowResponse UpdateFlow(UpdateFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFlowResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFlowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFlow operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFlow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateFlow">REST API Reference for UpdateFlow Operation</seealso>
+        public virtual IAsyncResult BeginUpdateFlow(UpdateFlowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFlowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFlow.</param>
+        /// 
+        /// <returns>Returns a  UpdateFlowResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateFlow">REST API Reference for UpdateFlow Operation</seealso>
+        public virtual UpdateFlowResponse EndUpdateFlow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFlowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateFlowAlias
+
+        /// <summary>
+        /// Modifies the alias of a flow. Include both fields that you want to keep and ones that
+        /// you want to change. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html">Deploy
+        /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFlowAlias service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFlowAlias service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateFlowAlias">REST API Reference for UpdateFlowAlias Operation</seealso>
+        public virtual UpdateFlowAliasResponse UpdateFlowAlias(UpdateFlowAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFlowAliasResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFlowAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFlowAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFlowAlias operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFlowAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateFlowAlias">REST API Reference for UpdateFlowAlias Operation</seealso>
+        public virtual IAsyncResult BeginUpdateFlowAlias(UpdateFlowAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFlowAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFlowAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFlowAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFlowAlias.</param>
+        /// 
+        /// <returns>Returns a  UpdateFlowAliasResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateFlowAlias">REST API Reference for UpdateFlowAlias Operation</seealso>
+        public virtual UpdateFlowAliasResponse EndUpdateFlowAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFlowAliasResponse>(asyncResult);
         }
 
         #endregion
@@ -3288,6 +4789,85 @@ namespace Amazon.BedrockAgent
         public virtual UpdateKnowledgeBaseResponse EndUpdateKnowledgeBase(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateKnowledgeBaseResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdatePrompt
+
+        /// <summary>
+        /// Modifies a prompt in your prompt library. Include both fields that you want to keep
+        /// and fields that you want to replace. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt
+        /// management in Amazon Bedrock</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-edit">Edit
+        /// prompts in your prompt library</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePrompt service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePrompt service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdatePrompt">REST API Reference for UpdatePrompt Operation</seealso>
+        public virtual UpdatePromptResponse UpdatePrompt(UpdatePromptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePromptResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePromptResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePrompt operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePrompt
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdatePrompt">REST API Reference for UpdatePrompt Operation</seealso>
+        public virtual IAsyncResult BeginUpdatePrompt(UpdatePromptRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePromptResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePrompt.</param>
+        /// 
+        /// <returns>Returns a  UpdatePromptResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdatePrompt">REST API Reference for UpdatePrompt Operation</seealso>
+        public virtual UpdatePromptResponse EndUpdatePrompt(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdatePromptResponse>(asyncResult);
         }
 
         #endregion

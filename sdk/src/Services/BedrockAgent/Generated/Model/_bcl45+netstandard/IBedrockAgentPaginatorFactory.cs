@@ -57,6 +57,21 @@ namespace Amazon.BedrockAgent.Model
         IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request);
 
         /// <summary>
+        /// Paginator for ListFlowAliases operation
+        ///</summary>
+        IListFlowAliasesPaginator ListFlowAliases(ListFlowAliasesRequest request);
+
+        /// <summary>
+        /// Paginator for ListFlows operation
+        ///</summary>
+        IListFlowsPaginator ListFlows(ListFlowsRequest request);
+
+        /// <summary>
+        /// Paginator for ListFlowVersions operation
+        ///</summary>
+        IListFlowVersionsPaginator ListFlowVersions(ListFlowVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListIngestionJobs operation
         ///</summary>
         IListIngestionJobsPaginator ListIngestionJobs(ListIngestionJobsRequest request);
@@ -65,5 +80,10 @@ namespace Amazon.BedrockAgent.Model
         /// Paginator for ListKnowledgeBases operation
         ///</summary>
         IListKnowledgeBasesPaginator ListKnowledgeBases(ListKnowledgeBasesRequest request);
+
+        /// <summary>
+        /// Paginator for ListPrompts operation
+        ///</summary>
+        IListPromptsPaginator ListPrompts(ListPromptsRequest request);
     }
 }

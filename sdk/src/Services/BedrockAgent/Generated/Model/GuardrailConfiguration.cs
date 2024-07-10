@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// The details of the guardrails configuration.
+    /// Details about the guardrail associated with an agent.
     /// </summary>
     public partial class GuardrailConfiguration
     {
@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property GuardrailIdentifier. 
         /// <para>
-        /// The guardrails identifier assigned to the guardrails configuration.
+        /// The unique identifier of the guardrail.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -59,7 +59,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property GuardrailVersion. 
         /// <para>
-        /// The guardrails version assigned to the guardrails configuration.
+        /// The version of the guardrail.
         /// </para>
         /// </summary>
         public string GuardrailVersion

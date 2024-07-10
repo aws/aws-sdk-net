@@ -144,6 +144,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Instruction = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("memoryConfiguration", targetDepth))
+                {
+                    var unmarshaller = MemoryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.MemoryConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("promptOverrideConfiguration", targetDepth))
                 {
                     var unmarshaller = PromptOverrideConfigurationUnmarshaller.Instance;

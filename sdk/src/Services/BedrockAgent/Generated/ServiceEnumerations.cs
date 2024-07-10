@@ -31,6 +31,10 @@ namespace Amazon.BedrockAgent
     {
 
         /// <summary>
+        /// Constant AMAZONCodeInterpreter for ActionGroupSignature
+        /// </summary>
+        public static readonly ActionGroupSignature AMAZONCodeInterpreter = new ActionGroupSignature("AMAZON.CodeInterpreter");
+        /// <summary>
         /// Constant AMAZONUserInput for ActionGroupSignature
         /// </summary>
         public static readonly ActionGroupSignature AMAZONUserInput = new ActionGroupSignature("AMAZON.UserInput");
@@ -267,9 +271,17 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly ChunkingStrategy FIXED_SIZE = new ChunkingStrategy("FIXED_SIZE");
         /// <summary>
+        /// Constant HIERARCHICAL for ChunkingStrategy
+        /// </summary>
+        public static readonly ChunkingStrategy HIERARCHICAL = new ChunkingStrategy("HIERARCHICAL");
+        /// <summary>
         /// Constant NONE for ChunkingStrategy
         /// </summary>
         public static readonly ChunkingStrategy NONE = new ChunkingStrategy("NONE");
+        /// <summary>
+        /// Constant SEMANTIC for ChunkingStrategy
+        /// </summary>
+        public static readonly ChunkingStrategy SEMANTIC = new ChunkingStrategy("SEMANTIC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -300,6 +312,148 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ChunkingStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfluenceAuthType.
+    /// </summary>
+    public class ConfluenceAuthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASIC for ConfluenceAuthType
+        /// </summary>
+        public static readonly ConfluenceAuthType BASIC = new ConfluenceAuthType("BASIC");
+        /// <summary>
+        /// Constant OAUTH2_CLIENT_CREDENTIALS for ConfluenceAuthType
+        /// </summary>
+        public static readonly ConfluenceAuthType OAUTH2_CLIENT_CREDENTIALS = new ConfluenceAuthType("OAUTH2_CLIENT_CREDENTIALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfluenceAuthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfluenceAuthType FindValue(string value)
+        {
+            return FindValue<ConfluenceAuthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfluenceAuthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfluenceHostType.
+    /// </summary>
+    public class ConfluenceHostType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SAAS for ConfluenceHostType
+        /// </summary>
+        public static readonly ConfluenceHostType SAAS = new ConfluenceHostType("SAAS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfluenceHostType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfluenceHostType FindValue(string value)
+        {
+            return FindValue<ConfluenceHostType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfluenceHostType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CrawlFilterConfigurationType.
+    /// </summary>
+    public class CrawlFilterConfigurationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PATTERN for CrawlFilterConfigurationType
+        /// </summary>
+        public static readonly CrawlFilterConfigurationType PATTERN = new CrawlFilterConfigurationType("PATTERN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CrawlFilterConfigurationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CrawlFilterConfigurationType FindValue(string value)
+        {
+            return FindValue<CrawlFilterConfigurationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CrawlFilterConfigurationType(string value)
         {
             return FindValue(value);
         }
@@ -513,9 +667,25 @@ namespace Amazon.BedrockAgent
     {
 
         /// <summary>
+        /// Constant CONFLUENCE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType CONFLUENCE = new DataSourceType("CONFLUENCE");
+        /// <summary>
         /// Constant S3 for DataSourceType
         /// </summary>
         public static readonly DataSourceType S3 = new DataSourceType("S3");
+        /// <summary>
+        /// Constant SALESFORCE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType SALESFORCE = new DataSourceType("SALESFORCE");
+        /// <summary>
+        /// Constant SHAREPOINT for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType SHAREPOINT = new DataSourceType("SHAREPOINT");
+        /// <summary>
+        /// Constant WEB for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType WEB = new DataSourceType("WEB");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -546,6 +716,316 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlowConnectionType.
+    /// </summary>
+    public class FlowConnectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Conditional for FlowConnectionType
+        /// </summary>
+        public static readonly FlowConnectionType Conditional = new FlowConnectionType("Conditional");
+        /// <summary>
+        /// Constant Data for FlowConnectionType
+        /// </summary>
+        public static readonly FlowConnectionType Data = new FlowConnectionType("Data");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowConnectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowConnectionType FindValue(string value)
+        {
+            return FindValue<FlowConnectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowConnectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlowNodeIODataType.
+    /// </summary>
+    public class FlowNodeIODataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Array for FlowNodeIODataType
+        /// </summary>
+        public static readonly FlowNodeIODataType Array = new FlowNodeIODataType("Array");
+        /// <summary>
+        /// Constant Boolean for FlowNodeIODataType
+        /// </summary>
+        public static readonly FlowNodeIODataType Boolean = new FlowNodeIODataType("Boolean");
+        /// <summary>
+        /// Constant Number for FlowNodeIODataType
+        /// </summary>
+        public static readonly FlowNodeIODataType Number = new FlowNodeIODataType("Number");
+        /// <summary>
+        /// Constant Object for FlowNodeIODataType
+        /// </summary>
+        public static readonly FlowNodeIODataType Object = new FlowNodeIODataType("Object");
+        /// <summary>
+        /// Constant String for FlowNodeIODataType
+        /// </summary>
+        public static readonly FlowNodeIODataType String = new FlowNodeIODataType("String");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowNodeIODataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowNodeIODataType FindValue(string value)
+        {
+            return FindValue<FlowNodeIODataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowNodeIODataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlowNodeType.
+    /// </summary>
+    public class FlowNodeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Agent for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType Agent = new FlowNodeType("Agent");
+        /// <summary>
+        /// Constant Collector for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType Collector = new FlowNodeType("Collector");
+        /// <summary>
+        /// Constant Condition for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType Condition = new FlowNodeType("Condition");
+        /// <summary>
+        /// Constant Input for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType Input = new FlowNodeType("Input");
+        /// <summary>
+        /// Constant Iterator for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType Iterator = new FlowNodeType("Iterator");
+        /// <summary>
+        /// Constant KnowledgeBase for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType KnowledgeBase = new FlowNodeType("KnowledgeBase");
+        /// <summary>
+        /// Constant LambdaFunction for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType LambdaFunction = new FlowNodeType("LambdaFunction");
+        /// <summary>
+        /// Constant Lex for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType Lex = new FlowNodeType("Lex");
+        /// <summary>
+        /// Constant Output for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType Output = new FlowNodeType("Output");
+        /// <summary>
+        /// Constant Prompt for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType Prompt = new FlowNodeType("Prompt");
+        /// <summary>
+        /// Constant Retrieval for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType Retrieval = new FlowNodeType("Retrieval");
+        /// <summary>
+        /// Constant Storage for FlowNodeType
+        /// </summary>
+        public static readonly FlowNodeType Storage = new FlowNodeType("Storage");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowNodeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowNodeType FindValue(string value)
+        {
+            return FindValue<FlowNodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowNodeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlowStatus.
+    /// </summary>
+    public class FlowStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for FlowStatus
+        /// </summary>
+        public static readonly FlowStatus Failed = new FlowStatus("Failed");
+        /// <summary>
+        /// Constant NotPrepared for FlowStatus
+        /// </summary>
+        public static readonly FlowStatus NotPrepared = new FlowStatus("NotPrepared");
+        /// <summary>
+        /// Constant Prepared for FlowStatus
+        /// </summary>
+        public static readonly FlowStatus Prepared = new FlowStatus("Prepared");
+        /// <summary>
+        /// Constant Preparing for FlowStatus
+        /// </summary>
+        public static readonly FlowStatus Preparing = new FlowStatus("Preparing");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowStatus FindValue(string value)
+        {
+            return FindValue<FlowStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlowValidationSeverity.
+    /// </summary>
+    public class FlowValidationSeverity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Error for FlowValidationSeverity
+        /// </summary>
+        public static readonly FlowValidationSeverity Error = new FlowValidationSeverity("Error");
+        /// <summary>
+        /// Constant Warning for FlowValidationSeverity
+        /// </summary>
+        public static readonly FlowValidationSeverity Warning = new FlowValidationSeverity("Warning");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowValidationSeverity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowValidationSeverity FindValue(string value)
+        {
+            return FindValue<FlowValidationSeverity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowValidationSeverity(string value)
         {
             return FindValue(value);
         }
@@ -977,6 +1457,98 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type MemoryType.
+    /// </summary>
+    public class MemoryType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SESSION_SUMMARY for MemoryType
+        /// </summary>
+        public static readonly MemoryType SESSION_SUMMARY = new MemoryType("SESSION_SUMMARY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MemoryType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MemoryType FindValue(string value)
+        {
+            return FindValue<MemoryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MemoryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParsingStrategy.
+    /// </summary>
+    public class ParsingStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BEDROCK_FOUNDATION_MODEL for ParsingStrategy
+        /// </summary>
+        public static readonly ParsingStrategy BEDROCK_FOUNDATION_MODEL = new ParsingStrategy("BEDROCK_FOUNDATION_MODEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParsingStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParsingStrategy FindValue(string value)
+        {
+            return FindValue<ParsingStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParsingStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PromptState.
     /// </summary>
     public class PromptState : ConstantClass
@@ -1020,6 +1592,52 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PromptState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PromptTemplateType.
+    /// </summary>
+    public class PromptTemplateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TEXT for PromptTemplateType
+        /// </summary>
+        public static readonly PromptTemplateType TEXT = new PromptTemplateType("TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PromptTemplateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PromptTemplateType FindValue(string value)
+        {
+            return FindValue<PromptTemplateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PromptTemplateType(string value)
         {
             return FindValue(value);
         }
@@ -1085,6 +1703,144 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type SalesforceAuthType.
+    /// </summary>
+    public class SalesforceAuthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OAUTH2_CLIENT_CREDENTIALS for SalesforceAuthType
+        /// </summary>
+        public static readonly SalesforceAuthType OAUTH2_CLIENT_CREDENTIALS = new SalesforceAuthType("OAUTH2_CLIENT_CREDENTIALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SalesforceAuthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SalesforceAuthType FindValue(string value)
+        {
+            return FindValue<SalesforceAuthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SalesforceAuthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SharePointAuthType.
+    /// </summary>
+    public class SharePointAuthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OAUTH2_CLIENT_CREDENTIALS for SharePointAuthType
+        /// </summary>
+        public static readonly SharePointAuthType OAUTH2_CLIENT_CREDENTIALS = new SharePointAuthType("OAUTH2_CLIENT_CREDENTIALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SharePointAuthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SharePointAuthType FindValue(string value)
+        {
+            return FindValue<SharePointAuthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SharePointAuthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SharePointHostType.
+    /// </summary>
+    public class SharePointHostType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ONLINE for SharePointHostType
+        /// </summary>
+        public static readonly SharePointHostType ONLINE = new SharePointHostType("ONLINE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SharePointHostType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SharePointHostType FindValue(string value)
+        {
+            return FindValue<SharePointHostType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SharePointHostType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortOrder.
     /// </summary>
     public class SortOrder : ConstantClass
@@ -1128,6 +1884,52 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StepType.
+    /// </summary>
+    public class StepType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant POST_CHUNKING for StepType
+        /// </summary>
+        public static readonly StepType POST_CHUNKING = new StepType("POST_CHUNKING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StepType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StepType FindValue(string value)
+        {
+            return FindValue<StepType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StepType(string value)
         {
             return FindValue(value);
         }
@@ -1190,6 +1992,56 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Type(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WebScopeType.
+    /// </summary>
+    public class WebScopeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HOST_ONLY for WebScopeType
+        /// </summary>
+        public static readonly WebScopeType HOST_ONLY = new WebScopeType("HOST_ONLY");
+        /// <summary>
+        /// Constant SUBDOMAINS for WebScopeType
+        /// </summary>
+        public static readonly WebScopeType SUBDOMAINS = new WebScopeType("SUBDOMAINS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WebScopeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebScopeType FindValue(string value)
+        {
+            return FindValue<WebScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebScopeType(string value)
         {
             return FindValue(value);
         }

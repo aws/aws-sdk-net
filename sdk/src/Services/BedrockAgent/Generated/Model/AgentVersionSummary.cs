@@ -140,7 +140,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property GuardrailConfiguration. 
         /// <para>
-        /// The details of the guardrails configuration in the agent version summary.
+        /// Details about the guardrail associated with the agent.
         /// </para>
         /// </summary>
         public GuardrailConfiguration GuardrailConfiguration

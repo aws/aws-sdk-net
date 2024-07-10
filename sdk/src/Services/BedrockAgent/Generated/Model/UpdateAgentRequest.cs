@@ -44,6 +44,7 @@ namespace Amazon.BedrockAgent.Model
         private GuardrailConfiguration _guardrailConfiguration;
         private int? _idleSessionTTLInSeconds;
         private string _instruction;
+        private MemoryConfiguration _memoryConfiguration;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
 
         /// <summary>
@@ -223,6 +224,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetInstruction()
         {
             return this._instruction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryConfiguration. 
+        /// <para>
+        /// Specifies the new memory configuration for the agent. 
+        /// </para>
+        /// </summary>
+        public MemoryConfiguration MemoryConfiguration
+        {
+            get { return this._memoryConfiguration; }
+            set { this._memoryConfiguration = value; }
+        }
+
+        // Check to see if MemoryConfiguration property is set
+        internal bool IsSetMemoryConfiguration()
+        {
+            return this._memoryConfiguration != null;
         }
 
         /// <summary>

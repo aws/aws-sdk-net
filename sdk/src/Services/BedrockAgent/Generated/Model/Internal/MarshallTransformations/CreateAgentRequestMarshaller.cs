@@ -131,6 +131,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Instruction);
                 }
 
+                if(publicRequest.IsSetMemoryConfiguration())
+                {
+                    context.Writer.WritePropertyName("memoryConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MemoryConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MemoryConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPromptOverrideConfiguration())
                 {
                     context.Writer.WritePropertyName("promptOverrideConfiguration");

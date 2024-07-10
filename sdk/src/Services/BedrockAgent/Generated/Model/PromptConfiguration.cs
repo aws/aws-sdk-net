@@ -53,7 +53,7 @@ namespace Amazon.BedrockAgent.Model
         /// the prompt templates</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100000)]
         public string BasePromptTemplate
         {
             get { return this._basePromptTemplate; }

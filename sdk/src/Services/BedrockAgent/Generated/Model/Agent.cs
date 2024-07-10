@@ -49,6 +49,7 @@ namespace Amazon.BedrockAgent.Model
         private GuardrailConfiguration _guardrailConfiguration;
         private int? _idleSessionTTLInSeconds;
         private string _instruction;
+        private MemoryConfiguration _memoryConfiguration;
         private DateTime? _preparedAt;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
         private List<string> _recommendedActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -319,7 +320,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property GuardrailConfiguration. 
         /// <para>
-        /// The guardrails configuration assigned to the agent.
+        /// Details about the guardrail associated with the agent.
         /// </para>
         /// </summary>
         public GuardrailConfiguration GuardrailConfiguration
@@ -378,6 +379,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetInstruction()
         {
             return this._instruction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryConfiguration. 
+        /// <para>
+        /// Contains memory configuration for the agent.
+        /// </para>
+        /// </summary>
+        public MemoryConfiguration MemoryConfiguration
+        {
+            get { return this._memoryConfiguration; }
+            set { this._memoryConfiguration = value; }
+        }
+
+        // Check to see if MemoryConfiguration property is set
+        internal bool IsSetMemoryConfiguration()
+        {
+            return this._memoryConfiguration != null;
         }
 
         /// <summary>
