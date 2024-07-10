@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Recipe Object
+    /// Response Unmarshaller for RecipeStep Object
     /// </summary>  
-    public class RecipeUnmarshaller : IUnmarshaller<Recipe, XmlUnmarshallerContext>, IUnmarshaller<Recipe, JsonUnmarshallerContext>
+    public class RecipeStepUnmarshaller : IUnmarshaller<RecipeStep, XmlUnmarshallerContext>, IUnmarshaller<RecipeStep, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Recipe IUnmarshaller<Recipe, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RecipeStep IUnmarshaller<RecipeStep, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Recipe Unmarshall(JsonUnmarshallerContext context)
+        public RecipeStep Unmarshall(JsonUnmarshallerContext context)
         {
-            Recipe unmarshalledObject = new Recipe();
+            RecipeStep unmarshalledObject = new RecipeStep();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Inputs", targetDepth))
+                if (context.TestExpression("Action", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Inputs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = RecipeActionUnmarshaller.Instance;
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("ConditionExpressions", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RecipeReference", targetDepth))
-                {
-                    var unmarshaller = RecipeReferenceUnmarshaller.Instance;
-                    unmarshalledObject.RecipeReference = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RecipeSteps", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RecipeStep, RecipeStepUnmarshaller>(RecipeStepUnmarshaller.Instance);
-                    unmarshalledObject.RecipeSteps = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ConditionExpression, ConditionExpressionUnmarshaller>(ConditionExpressionUnmarshaller.Instance);
+                    unmarshalledObject.ConditionExpressions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecipeUnmarshaller _instance = new RecipeUnmarshaller();        
+        private static RecipeStepUnmarshaller _instance = new RecipeStepUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecipeUnmarshaller Instance
+        public static RecipeStepUnmarshaller Instance
         {
             get
             {

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Recipe Object
+    /// Response Unmarshaller for RecipeAction Object
     /// </summary>  
-    public class RecipeUnmarshaller : IUnmarshaller<Recipe, XmlUnmarshallerContext>, IUnmarshaller<Recipe, JsonUnmarshallerContext>
+    public class RecipeActionUnmarshaller : IUnmarshaller<RecipeAction, XmlUnmarshallerContext>, IUnmarshaller<RecipeAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Recipe IUnmarshaller<Recipe, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RecipeAction IUnmarshaller<RecipeAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Recipe Unmarshall(JsonUnmarshallerContext context)
+        public RecipeAction Unmarshall(JsonUnmarshallerContext context)
         {
-            Recipe unmarshalledObject = new Recipe();
+            RecipeAction unmarshalledObject = new RecipeAction();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Inputs", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Inputs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Operation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Operation = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RecipeReference", targetDepth))
+                if (context.TestExpression("Parameters", targetDepth))
                 {
-                    var unmarshaller = RecipeReferenceUnmarshaller.Instance;
-                    unmarshalledObject.RecipeReference = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RecipeSteps", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RecipeStep, RecipeStepUnmarshaller>(RecipeStepUnmarshaller.Instance);
-                    unmarshalledObject.RecipeSteps = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecipeUnmarshaller _instance = new RecipeUnmarshaller();        
+        private static RecipeActionUnmarshaller _instance = new RecipeActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecipeUnmarshaller Instance
+        public static RecipeActionUnmarshaller Instance
         {
             get
             {

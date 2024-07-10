@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Recipe Object
+    /// Response Unmarshaller for ConditionExpression Object
     /// </summary>  
-    public class RecipeUnmarshaller : IUnmarshaller<Recipe, XmlUnmarshallerContext>, IUnmarshaller<Recipe, JsonUnmarshallerContext>
+    public class ConditionExpressionUnmarshaller : IUnmarshaller<ConditionExpression, XmlUnmarshallerContext>, IUnmarshaller<ConditionExpression, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Recipe IUnmarshaller<Recipe, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ConditionExpression IUnmarshaller<ConditionExpression, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Recipe Unmarshall(JsonUnmarshallerContext context)
+        public ConditionExpression Unmarshall(JsonUnmarshallerContext context)
         {
-            Recipe unmarshalledObject = new Recipe();
+            ConditionExpression unmarshalledObject = new ConditionExpression();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Inputs", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Inputs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Condition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Condition = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RecipeReference", targetDepth))
+                if (context.TestExpression("TargetColumn", targetDepth))
                 {
-                    var unmarshaller = RecipeReferenceUnmarshaller.Instance;
-                    unmarshalledObject.RecipeReference = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetColumn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RecipeSteps", targetDepth))
+                if (context.TestExpression("Value", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RecipeStep, RecipeStepUnmarshaller>(RecipeStepUnmarshaller.Instance);
-                    unmarshalledObject.RecipeSteps = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +89,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecipeUnmarshaller _instance = new RecipeUnmarshaller();        
+        private static ConditionExpressionUnmarshaller _instance = new ConditionExpressionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecipeUnmarshaller Instance
+        public static ConditionExpressionUnmarshaller Instance
         {
             get
             {

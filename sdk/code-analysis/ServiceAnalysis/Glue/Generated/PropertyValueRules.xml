@@ -2852,6 +2852,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Aggregate.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.AmazonRedshiftNodeData.AccessType</property>
@@ -2882,12 +2883,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.AmazonRedshiftSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.AmazonRedshiftTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ApplyMapping.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.AthenaConnectorSource.ConnectionName</property>
@@ -2903,6 +2907,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.AthenaConnectorSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.AthenaConnectorSource.SchemaName</property>
@@ -2936,6 +2941,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.BasicCatalogTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.BasicCatalogTarget.Table</property>
@@ -3082,6 +3088,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CatalogDeltaSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CatalogDeltaSource.Table</property>
@@ -3101,6 +3108,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CatalogHudiSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CatalogHudiSource.Table</property>
@@ -3115,6 +3123,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CatalogKafkaSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CatalogKafkaSource.Table</property>
@@ -3128,6 +3137,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CatalogKinesisSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CatalogKinesisSource.Table</property>
@@ -3141,6 +3151,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CatalogSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CatalogSource.Table</property>
@@ -3276,6 +3287,20 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.ConditionExpression.Condition</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ConditionExpression.TargetColumn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ConditionExpression.Value</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.ConfigurationObject.DefaultValue</property>
     <min>1</min>
     <max>128</max>
@@ -3333,12 +3358,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ConnectorDataSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ConnectorDataTarget.ConnectionType</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ConnectorDataTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Crawl.ErrorMessage</property>
@@ -3505,6 +3532,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CustomCode.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CustomEntityType.Name</property>
@@ -3758,6 +3786,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DirectJDBCSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DirectJDBCSource.RedshiftTmpDir</property>
@@ -3767,6 +3796,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DirectKafkaSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DirectKafkaSource.WindowSize</property>
@@ -3774,6 +3804,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DirectKinesisSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DirectKinesisSource.WindowSize</property>
@@ -3802,12 +3833,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DropDuplicates.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DropFields.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DropNullFields.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DynamicTransform.FunctionName</property>
@@ -3829,6 +3863,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DynamoDBCatalogSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DynamoDBCatalogSource.Table</property>
@@ -3864,6 +3899,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.EvaluateDataQuality.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.EvaluateDataQuality.Ruleset</property>
@@ -3873,6 +3909,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.EvaluateDataQualityMultiFrame.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.EvaluateDataQualityMultiFrame.Ruleset</property>
@@ -3929,9 +3966,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.FillMissingValues.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Filter.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.FindMatchesMetrics.AreaUnderPRCurve</property>
@@ -4027,6 +4066,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GovernedCatalogSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GovernedCatalogSource.PartitionPredicate</property>
@@ -4039,6 +4079,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GovernedCatalogTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GovernedCatalogTarget.Table</property>
@@ -4098,6 +4139,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JDBCConnectorSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JDBCConnectorSource.Query</property>
@@ -4116,6 +4158,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JDBCConnectorTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Job.Description</property>
@@ -4250,6 +4293,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Join.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JoinColumn.From</property>
@@ -4440,6 +4484,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Merge.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Merge.Source</property>
@@ -4473,6 +4518,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.MicrosoftSQLServerCatalogSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.MicrosoftSQLServerCatalogSource.Table</property>
@@ -4482,6 +4528,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.MicrosoftSQLServerCatalogTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.MicrosoftSQLServerCatalogTarget.Table</property>
@@ -4521,6 +4568,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.MySQLCatalogSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.MySQLCatalogSource.Table</property>
@@ -4530,6 +4578,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.MySQLCatalogTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.MySQLCatalogTarget.Table</property>
@@ -4585,6 +4634,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.OracleSQLCatalogSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.OracleSQLCatalogSource.Table</property>
@@ -4594,6 +4644,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.OracleSQLCatalogTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.OracleSQLCatalogTarget.Table</property>
@@ -4657,6 +4708,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PIIDetection.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PIIDetection.OutputColumnName</property>
@@ -4676,6 +4728,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PostgreSQLCatalogSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PostgreSQLCatalogSource.Table</property>
@@ -4685,6 +4738,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PostgreSQLCatalogTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PostgreSQLCatalogTarget.Table</property>
@@ -4719,6 +4773,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Recipe.Name</property>
+    <pattern>([^\r\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.RecipeAction.Operation</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.RecipeReference.RecipeArn</property>
@@ -4733,6 +4793,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.RedshiftSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.RedshiftSource.RedshiftTmpDir</property>
@@ -4748,6 +4809,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.RedshiftTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.RedshiftTarget.RedshiftTmpDir</property>
@@ -4792,12 +4854,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.RelationalCatalogSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.RelationalCatalogSource.Table</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.RenameField.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ResourceUri.Uri</property>
@@ -4809,6 +4873,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3CatalogDeltaSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3CatalogDeltaSource.Table</property>
@@ -4818,6 +4883,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3CatalogHudiSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3CatalogHudiSource.Table</property>
@@ -4827,6 +4893,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3CatalogSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3CatalogSource.PartitionPredicate</property>
@@ -4839,6 +4906,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3CatalogTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3CatalogTarget.Table</property>
@@ -4862,24 +4930,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3CsvSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3DeltaCatalogTarget.Database</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3DeltaCatalogTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3DeltaCatalogTarget.Table</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3DeltaDirectTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3DeltaDirectTarget.Path</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3DeltaSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3DirectSourceAdditionalOptions.SamplePath</property>
@@ -4889,6 +4961,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3DirectTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3DirectTarget.Path</property>
@@ -4899,6 +4972,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3GlueParquetTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3GlueParquetTarget.Path</property>
@@ -4908,18 +4982,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3HudiCatalogTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3HudiCatalogTarget.Table</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3HudiDirectTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3HudiDirectTarget.Path</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3HudiSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3JsonSource.GroupFiles</property>
@@ -4940,6 +5017,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3JsonSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3ParquetSource.GroupFiles</property>
@@ -4957,6 +5035,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3ParquetSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SchemaColumn.DataType</property>
@@ -5063,6 +5142,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SelectFields.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SelectFromCollection.Index</property>
@@ -5070,6 +5150,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SelectFromCollection.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SerDeInfo.Name</property>
@@ -5148,9 +5229,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SnowflakeSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SnowflakeTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SortCriterion.FieldName</property>
@@ -5197,6 +5280,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SparkConnectorSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SparkConnectorTarget.ConnectionName</property>
@@ -5209,15 +5293,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SparkConnectorTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SparkSQL.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SparkSQL.SqlQuery</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Spigot.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Spigot.Path</property>
@@ -5234,6 +5321,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SplitFields.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SqlAlias.Alias</property>
@@ -5477,6 +5565,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Union.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateCsvClassifierRequest.Delimiter</property>

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Recipe Marshaller
+    /// RecipeStep Marshaller
     /// </summary>
-    public class RecipeMarshaller : IRequestMarshaller<Recipe, JsonMarshallerContext> 
+    public class RecipeStepMarshaller : IRequestMarshaller<RecipeStep, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,48 +44,31 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Recipe requestObject, JsonMarshallerContext context)
+        public void Marshall(RecipeStep requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetInputs())
+            if(requestObject.IsSetAction())
             {
-                context.Writer.WritePropertyName("Inputs");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectInputsListValue in requestObject.Inputs)
-                {
-                        context.Writer.Write(requestObjectInputsListValue);
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
-            }
-
-            if(requestObject.IsSetRecipeReference())
-            {
-                context.Writer.WritePropertyName("RecipeReference");
+                context.Writer.WritePropertyName("Action");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = RecipeReferenceMarshaller.Instance;
-                marshaller.Marshall(requestObject.RecipeReference, context);
+                var marshaller = RecipeActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Action, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetRecipeSteps())
+            if(requestObject.IsSetConditionExpressions())
             {
-                context.Writer.WritePropertyName("RecipeSteps");
+                context.Writer.WritePropertyName("ConditionExpressions");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectRecipeStepsListValue in requestObject.RecipeSteps)
+                foreach(var requestObjectConditionExpressionsListValue in requestObject.ConditionExpressions)
                 {
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = RecipeStepMarshaller.Instance;
-                    marshaller.Marshall(requestObjectRecipeStepsListValue, context);
+                    var marshaller = ConditionExpressionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectConditionExpressionsListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -97,7 +80,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RecipeMarshaller Instance = new RecipeMarshaller();
+        public readonly static RecipeStepMarshaller Instance = new RecipeStepMarshaller();
 
     }
 }
