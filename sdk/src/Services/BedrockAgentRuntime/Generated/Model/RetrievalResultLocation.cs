@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about the location of the data source.
+    /// Contains information about the data source location.
     /// 
     ///  
     /// <para>
@@ -55,13 +55,35 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class RetrievalResultLocation
     {
+        private RetrievalResultConfluenceLocation _confluenceLocation;
         private RetrievalResultS3Location _s3Location;
+        private RetrievalResultSalesforceLocation _salesforceLocation;
+        private RetrievalResultSharePointLocation _sharePointLocation;
         private RetrievalResultLocationType _type;
+        private RetrievalResultWebLocation _webLocation;
+
+        /// <summary>
+        /// Gets and sets the property ConfluenceLocation. 
+        /// <para>
+        /// The Confluence data source location.
+        /// </para>
+        /// </summary>
+        public RetrievalResultConfluenceLocation ConfluenceLocation
+        {
+            get { return this._confluenceLocation; }
+            set { this._confluenceLocation = value; }
+        }
+
+        // Check to see if ConfluenceLocation property is set
+        internal bool IsSetConfluenceLocation()
+        {
+            return this._confluenceLocation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3Location. 
         /// <para>
-        /// Contains the S3 location of the data source.
+        /// The S3 data source location.
         /// </para>
         /// </summary>
         public RetrievalResultS3Location S3Location
@@ -77,9 +99,45 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SalesforceLocation. 
+        /// <para>
+        /// The Salesforce data source location.
+        /// </para>
+        /// </summary>
+        public RetrievalResultSalesforceLocation SalesforceLocation
+        {
+            get { return this._salesforceLocation; }
+            set { this._salesforceLocation = value; }
+        }
+
+        // Check to see if SalesforceLocation property is set
+        internal bool IsSetSalesforceLocation()
+        {
+            return this._salesforceLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharePointLocation. 
+        /// <para>
+        /// The SharePoint data source location.
+        /// </para>
+        /// </summary>
+        public RetrievalResultSharePointLocation SharePointLocation
+        {
+            get { return this._sharePointLocation; }
+            set { this._sharePointLocation = value; }
+        }
+
+        // Check to see if SharePointLocation property is set
+        internal bool IsSetSharePointLocation()
+        {
+            return this._sharePointLocation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the location of the data source.
+        /// The type of data source location.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -93,6 +151,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebLocation. 
+        /// <para>
+        /// The web URL/URLs data source location.
+        /// </para>
+        /// </summary>
+        public RetrievalResultWebLocation WebLocation
+        {
+            get { return this._webLocation; }
+            set { this._webLocation = value; }
+        }
+
+        // Check to see if WebLocation property is set
+        internal bool IsSetWebLocation()
+        {
+            return this._webLocation != null;
         }
 
     }

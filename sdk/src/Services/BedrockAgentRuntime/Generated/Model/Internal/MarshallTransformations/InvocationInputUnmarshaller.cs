@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActionGroupInvocationInput = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("codeInterpreterInvocationInput", targetDepth))
+                {
+                    var unmarshaller = CodeInterpreterInvocationInputUnmarshaller.Instance;
+                    unmarshalledObject.CodeInterpreterInvocationInput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("invocationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

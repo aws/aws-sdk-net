@@ -264,12 +264,182 @@ namespace Amazon.BedrockAgentRuntime
         #endregion
 
 
+        #region  DeleteAgentMemory
+
+        /// <summary>
+        /// Deletes memory from the specified memory identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentMemory service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAgentMemory service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
+        /// There was an issue with a dependency due to a server issue. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/DeleteAgentMemory">REST API Reference for DeleteAgentMemory Operation</seealso>
+        public virtual DeleteAgentMemoryResponse DeleteAgentMemory(DeleteAgentMemoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAgentMemoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAgentMemoryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAgentMemoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAgentMemory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentMemory operation on AmazonBedrockAgentRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAgentMemory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/DeleteAgentMemory">REST API Reference for DeleteAgentMemory Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAgentMemory(DeleteAgentMemoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAgentMemoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAgentMemoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAgentMemory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAgentMemory.</param>
+        /// 
+        /// <returns>Returns a  DeleteAgentMemoryResult from BedrockAgentRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/DeleteAgentMemory">REST API Reference for DeleteAgentMemory Operation</seealso>
+        public virtual DeleteAgentMemoryResponse EndDeleteAgentMemory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAgentMemoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAgentMemory
+
+        /// <summary>
+        /// Gets the sessions stored in the memory of the agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentMemory service method.</param>
+        /// 
+        /// <returns>The response from the GetAgentMemory service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
+        /// There was an issue with a dependency due to a server issue. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetAgentMemory">REST API Reference for GetAgentMemory Operation</seealso>
+        public virtual GetAgentMemoryResponse GetAgentMemory(GetAgentMemoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAgentMemoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgentMemoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetAgentMemoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAgentMemory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentMemory operation on AmazonBedrockAgentRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAgentMemory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetAgentMemory">REST API Reference for GetAgentMemory Operation</seealso>
+        public virtual IAsyncResult BeginGetAgentMemory(GetAgentMemoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAgentMemoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgentMemoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAgentMemory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAgentMemory.</param>
+        /// 
+        /// <returns>Returns a  GetAgentMemoryResult from BedrockAgentRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetAgentMemory">REST API Reference for GetAgentMemory Operation</seealso>
+        public virtual GetAgentMemoryResponse EndGetAgentMemory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAgentMemoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  InvokeAgent
 
         /// <summary>
         /// <note> 
         /// <para>
-        /// The CLI doesn't support <c>InvokeAgent</c>.
+        /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeAgent</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -399,6 +569,94 @@ namespace Amazon.BedrockAgentRuntime
         public virtual InvokeAgentResponse EndInvokeAgent(IAsyncResult asyncResult)
         {
             return EndInvoke<InvokeAgentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  InvokeFlow
+
+        /// <summary>
+        /// Invokes an alias of a flow to run the inputs that you specify and return the output
+        /// of each node as a stream. If there's an error, the error is returned. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html">Test
+        /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeFlow service method.</param>
+        /// 
+        /// <returns>The response from the InvokeFlow service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
+        /// There was an issue with a dependency due to a server issue. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeFlow">REST API Reference for InvokeFlow Operation</seealso>
+        public virtual InvokeFlowResponse InvokeFlow(InvokeFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeFlowResponseUnmarshaller.Instance;
+
+            return Invoke<InvokeFlowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InvokeFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InvokeFlow operation on AmazonBedrockAgentRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInvokeFlow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeFlow">REST API Reference for InvokeFlow Operation</seealso>
+        public virtual IAsyncResult BeginInvokeFlow(InvokeFlowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeFlowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  InvokeFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInvokeFlow.</param>
+        /// 
+        /// <returns>Returns a  InvokeFlowResult from BedrockAgentRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeFlow">REST API Reference for InvokeFlow Operation</seealso>
+        public virtual InvokeFlowResponse EndInvokeFlow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<InvokeFlowResponse>(asyncResult);
         }
 
         #endregion

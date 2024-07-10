@@ -33,7 +33,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// Container for the parameters to the InvokeAgent operation.
     /// <note> 
     /// <para>
-    /// The CLI doesn't support <c>InvokeAgent</c>.
+    /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeAgent</c>.
     /// </para>
     ///  </note> 
     /// <para>
@@ -94,6 +94,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private bool? _enableTrace;
         private bool? _endSession;
         private string _inputText;
+        private string _memoryId;
         private string _sessionId;
         private SessionState _sessionState;
 
@@ -196,6 +197,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetInputText()
         {
             return this._inputText != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryId. 
+        /// <para>
+        /// The unique identifier of the agent memory.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=100)]
+        public string MemoryId
+        {
+            get { return this._memoryId; }
+            set { this._memoryId = value; }
+        }
+
+        // Check to see if MemoryId property is set
+        internal bool IsSetMemoryId()
+        {
+            return this._memoryId != null;
         }
 
         /// <summary>

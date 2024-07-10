@@ -41,10 +41,30 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class SessionState
     {
+        private List<InputFile> _files = AWSConfigs.InitializeCollections ? new List<InputFile>() : null;
         private string _invocationId;
+        private List<KnowledgeBaseConfiguration> _knowledgeBaseConfigurations = AWSConfigs.InitializeCollections ? new List<KnowledgeBaseConfiguration>() : null;
         private Dictionary<string, string> _promptSessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<InvocationResultMember> _returnControlInvocationResults = AWSConfigs.InitializeCollections ? new List<InvocationResultMember>() : null;
         private Dictionary<string, string> _sessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Files. 
+        /// <para>
+        /// Contains information about the files used by code interpreter.
+        /// </para>
+        /// </summary>
+        public List<InputFile> Files
+        {
+            get { return this._files; }
+            set { this._files = value; }
+        }
+
+        // Check to see if Files property is set
+        internal bool IsSetFiles()
+        {
+            return this._files != null && (this._files.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property InvocationId. 
@@ -66,6 +86,26 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetInvocationId()
         {
             return this._invocationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KnowledgeBaseConfigurations. 
+        /// <para>
+        /// An array of configurations, each of which applies to a knowledge base attached to
+        /// the agent.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<KnowledgeBaseConfiguration> KnowledgeBaseConfigurations
+        {
+            get { return this._knowledgeBaseConfigurations; }
+            set { this._knowledgeBaseConfigurations = value; }
+        }
+
+        // Check to see if KnowledgeBaseConfigurations property is set
+        internal bool IsSetKnowledgeBaseConfigurations()
+        {
+            return this._knowledgeBaseConfigurations != null && (this._knowledgeBaseConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -75,6 +75,56 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type ExecutionType.
+    /// </summary>
+    public class ExecutionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LAMBDA for ExecutionType
+        /// </summary>
+        public static readonly ExecutionType LAMBDA = new ExecutionType("LAMBDA");
+        /// <summary>
+        /// Constant RETURN_CONTROL for ExecutionType
+        /// </summary>
+        public static readonly ExecutionType RETURN_CONTROL = new ExecutionType("RETURN_CONTROL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionType FindValue(string value)
+        {
+            return FindValue<ExecutionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExternalSourceType.
     /// </summary>
     public class ExternalSourceType : ConstantClass
@@ -118,6 +168,152 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExternalSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FileSourceType.
+    /// </summary>
+    public class FileSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BYTE_CONTENT for FileSourceType
+        /// </summary>
+        public static readonly FileSourceType BYTE_CONTENT = new FileSourceType("BYTE_CONTENT");
+        /// <summary>
+        /// Constant S3 for FileSourceType
+        /// </summary>
+        public static readonly FileSourceType S3 = new FileSourceType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileSourceType FindValue(string value)
+        {
+            return FindValue<FileSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FileUseCase.
+    /// </summary>
+    public class FileUseCase : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CHAT for FileUseCase
+        /// </summary>
+        public static readonly FileUseCase CHAT = new FileUseCase("CHAT");
+        /// <summary>
+        /// Constant CODE_INTERPRETER for FileUseCase
+        /// </summary>
+        public static readonly FileUseCase CODE_INTERPRETER = new FileUseCase("CODE_INTERPRETER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileUseCase(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileUseCase FindValue(string value)
+        {
+            return FindValue<FileUseCase>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileUseCase(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlowCompletionReason.
+    /// </summary>
+    public class FlowCompletionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SUCCESS for FlowCompletionReason
+        /// </summary>
+        public static readonly FlowCompletionReason SUCCESS = new FlowCompletionReason("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowCompletionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowCompletionReason FindValue(string value)
+        {
+            return FindValue<FlowCompletionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowCompletionReason(string value)
         {
             return FindValue(value);
         }
@@ -805,6 +1001,10 @@ namespace Amazon.BedrockAgentRuntime
         /// </summary>
         public static readonly InvocationType ACTION_GROUP = new InvocationType("ACTION_GROUP");
         /// <summary>
+        /// Constant ACTION_GROUP_CODE_INTERPRETER for InvocationType
+        /// </summary>
+        public static readonly InvocationType ACTION_GROUP_CODE_INTERPRETER = new InvocationType("ACTION_GROUP_CODE_INTERPRETER");
+        /// <summary>
         /// Constant FINISH for InvocationType
         /// </summary>
         public static readonly InvocationType FINISH = new InvocationType("FINISH");
@@ -842,6 +1042,122 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InvocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MemoryType.
+    /// </summary>
+    public class MemoryType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SESSION_SUMMARY for MemoryType
+        /// </summary>
+        public static readonly MemoryType SESSION_SUMMARY = new MemoryType("SESSION_SUMMARY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MemoryType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MemoryType FindValue(string value)
+        {
+            return FindValue<MemoryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MemoryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeType.
+    /// </summary>
+    public class NodeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConditionNode for NodeType
+        /// </summary>
+        public static readonly NodeType ConditionNode = new NodeType("ConditionNode");
+        /// <summary>
+        /// Constant FlowInputNode for NodeType
+        /// </summary>
+        public static readonly NodeType FlowInputNode = new NodeType("FlowInputNode");
+        /// <summary>
+        /// Constant FlowOutputNode for NodeType
+        /// </summary>
+        public static readonly NodeType FlowOutputNode = new NodeType("FlowOutputNode");
+        /// <summary>
+        /// Constant KnowledgeBaseNode for NodeType
+        /// </summary>
+        public static readonly NodeType KnowledgeBaseNode = new NodeType("KnowledgeBaseNode");
+        /// <summary>
+        /// Constant LambdaFunctionNode for NodeType
+        /// </summary>
+        public static readonly NodeType LambdaFunctionNode = new NodeType("LambdaFunctionNode");
+        /// <summary>
+        /// Constant LexNode for NodeType
+        /// </summary>
+        public static readonly NodeType LexNode = new NodeType("LexNode");
+        /// <summary>
+        /// Constant PromptNode for NodeType
+        /// </summary>
+        public static readonly NodeType PromptNode = new NodeType("PromptNode");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeType FindValue(string value)
+        {
+            return FindValue<NodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeType(string value)
         {
             return FindValue(value);
         }
@@ -907,6 +1223,52 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type QueryTransformationType.
+    /// </summary>
+    public class QueryTransformationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant QUERY_DECOMPOSITION for QueryTransformationType
+        /// </summary>
+        public static readonly QueryTransformationType QUERY_DECOMPOSITION = new QueryTransformationType("QUERY_DECOMPOSITION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryTransformationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryTransformationType FindValue(string value)
+        {
+            return FindValue<QueryTransformationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryTransformationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResponseState.
     /// </summary>
     public class ResponseState : ConstantClass
@@ -963,9 +1325,25 @@ namespace Amazon.BedrockAgentRuntime
     {
 
         /// <summary>
+        /// Constant CONFLUENCE for RetrievalResultLocationType
+        /// </summary>
+        public static readonly RetrievalResultLocationType CONFLUENCE = new RetrievalResultLocationType("CONFLUENCE");
+        /// <summary>
         /// Constant S3 for RetrievalResultLocationType
         /// </summary>
         public static readonly RetrievalResultLocationType S3 = new RetrievalResultLocationType("S3");
+        /// <summary>
+        /// Constant SALESFORCE for RetrievalResultLocationType
+        /// </summary>
+        public static readonly RetrievalResultLocationType SALESFORCE = new RetrievalResultLocationType("SALESFORCE");
+        /// <summary>
+        /// Constant SHAREPOINT for RetrievalResultLocationType
+        /// </summary>
+        public static readonly RetrievalResultLocationType SHAREPOINT = new RetrievalResultLocationType("SHAREPOINT");
+        /// <summary>
+        /// Constant WEB for RetrievalResultLocationType
+        /// </summary>
+        public static readonly RetrievalResultLocationType WEB = new RetrievalResultLocationType("WEB");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private ResponseStream _completion;
         private string _contentType;
+        private string _memoryId;
         private string _sessionId;
 
         /// <summary>
@@ -74,6 +75,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetContentType()
         {
             return !string.IsNullOrEmpty(this._contentType);
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryId. 
+        /// <para>
+        /// The unique identifier of the agent memory.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=100)]
+        public string MemoryId
+        {
+            get { return this._memoryId; }
+            set { this._memoryId = value; }
+        }
+
+        // Check to see if MemoryId property is set
+        internal bool IsSetMemoryId()
+        {
+            return !string.IsNullOrEmpty(this._memoryId);
         }
 
         /// <summary>

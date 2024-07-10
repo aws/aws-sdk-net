@@ -53,12 +53,13 @@ namespace Amazon.BedrockAgentRuntime.Model
         private GenerationConfiguration _generationConfiguration;
         private string _knowledgeBaseId;
         private string _modelArn;
+        private OrchestrationConfiguration _orchestrationConfiguration;
         private KnowledgeBaseRetrievalConfiguration _retrievalConfiguration;
 
         /// <summary>
         /// Gets and sets the property GenerationConfiguration. 
         /// <para>
-        /// Contains configurations for response generation based on the knowwledge base query
+        /// Contains configurations for response generation based on the knowledge base query
         /// results.
         /// </para>
         /// </summary>
@@ -111,6 +112,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetModelArn()
         {
             return this._modelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestrationConfiguration. 
+        /// <para>
+        /// Settings for how the model processes the prompt prior to retrieval and generation.
+        /// </para>
+        /// </summary>
+        public OrchestrationConfiguration OrchestrationConfiguration
+        {
+            get { return this._orchestrationConfiguration; }
+            set { this._orchestrationConfiguration = value; }
+        }
+
+        // Check to see if OrchestrationConfiguration property is set
+        internal bool IsSetOrchestrationConfiguration()
+        {
+            return this._orchestrationConfiguration != null;
         }
 
         /// <summary>
