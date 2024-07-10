@@ -30,30 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Contains details about how to handle harmful content.
+    /// The details for the guardrails contextual grounding policy.
     /// </summary>
-    public partial class GuardrailContentPolicyConfig
+    public partial class GuardrailContextualGroundingPolicy
     {
-        private List<GuardrailContentFilterConfig> _filtersConfig = AWSConfigs.InitializeCollections ? new List<GuardrailContentFilterConfig>() : null;
+        private List<GuardrailContextualGroundingFilter> _filters = AWSConfigs.InitializeCollections ? new List<GuardrailContextualGroundingFilter>() : null;
 
         /// <summary>
-        /// Gets and sets the property FiltersConfig. 
+        /// Gets and sets the property Filters. 
         /// <para>
-        /// Contains the type of the content filter and how strongly it should apply to prompts
-        /// and model responses.
+        /// The filter details for the guardrails contextual grounding policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=6)]
-        public List<GuardrailContentFilterConfig> FiltersConfig
+        [AWSProperty(Required=true, Min=1)]
+        public List<GuardrailContextualGroundingFilter> Filters
         {
-            get { return this._filtersConfig; }
-            set { this._filtersConfig = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
-        // Check to see if FiltersConfig property is set
-        internal bool IsSetFiltersConfig()
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
         {
-            return this._filtersConfig != null && (this._filtersConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

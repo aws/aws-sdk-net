@@ -37,6 +37,7 @@ namespace Amazon.Bedrock.Model
         private string _blockedInputMessaging;
         private string _blockedOutputsMessaging;
         private GuardrailContentPolicy _contentPolicy;
+        private GuardrailContextualGroundingPolicy _contextualGroundingPolicy;
         private DateTime? _createdAt;
         private string _description;
         private List<string> _failureRecommendations = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -109,6 +110,24 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContextualGroundingPolicy. 
+        /// <para>
+        /// The contextual grounding policy used in the guardrail.
+        /// </para>
+        /// </summary>
+        public GuardrailContextualGroundingPolicy ContextualGroundingPolicy
+        {
+            get { return this._contextualGroundingPolicy; }
+            set { this._contextualGroundingPolicy = value; }
+        }
+
+        // Check to see if ContextualGroundingPolicy property is set
+        internal bool IsSetContextualGroundingPolicy()
+        {
+            return this._contextualGroundingPolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The date and time at which the guardrail was created.
@@ -169,7 +188,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property GuardrailArn. 
         /// <para>
-        /// The ARN of the guardrail that was created.
+        /// The ARN of the guardrail.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

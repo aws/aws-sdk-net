@@ -42,7 +42,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property GuardrailArn. 
         /// <para>
-        /// The ARN of the guardrail that was created.
+        /// The ARN of the guardrail.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

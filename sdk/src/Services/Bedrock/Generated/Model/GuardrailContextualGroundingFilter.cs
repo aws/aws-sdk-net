@@ -30,22 +30,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// The managed word list that was configured for the guardrail. (This is a list of words
-    /// that are pre-defined and managed by guardrails only.)
+    /// The details for the guardrails contextual grounding filter.
     /// </summary>
-    public partial class GuardrailManagedWords
+    public partial class GuardrailContextualGroundingFilter
     {
-        private GuardrailManagedWordsType _type;
+        private double? _threshold;
+        private GuardrailContextualGroundingFilterType _type;
+
+        /// <summary>
+        /// Gets and sets the property Threshold. 
+        /// <para>
+        /// The threshold details for the guardrails contextual grounding filter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0)]
+        public double Threshold
+        {
+            get { return this._threshold.GetValueOrDefault(); }
+            set { this._threshold = value; }
+        }
+
+        // Check to see if Threshold property is set
+        internal bool IsSetThreshold()
+        {
+            return this._threshold.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// ManagedWords$type The managed word type that was configured for the guardrail. (For
-        /// now, we only offer profanity word list)
+        /// The filter type details for the guardrails contextual grounding filter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public GuardrailManagedWordsType Type
+        public GuardrailContextualGroundingFilterType Type
         {
             get { return this._type; }
             set { this._type = value; }

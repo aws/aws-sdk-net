@@ -347,64 +347,48 @@ namespace Amazon.Bedrock
         #region  CreateGuardrail
 
         /// <summary>
-        /// Creates a guardrail to block topics and to filter out harmful content.
+        /// Creates a guardrail to block topics and to implement safeguards for your generative
+        /// AI applications.
         /// 
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// Specify a <c>name</c> and optional <c>description</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify messages for when the guardrail successfully blocks a prompt or a model response
-        /// in the <c>blockedInputMessaging</c> and <c>blockedOutputsMessaging</c> fields.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify topics for the guardrail to deny in the <c>topicPolicyConfig</c> object. Each
-        /// <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailTopicConfig.html">GuardrailTopicConfig</a>
-        /// object in the <c>topicsConfig</c> list pertains to one topic.
+        /// You can configure the following policies in a guardrail to avoid undesirable and harmful
+        /// content, filter out denied topics and words, and remove sensitive information for
+        /// privacy protection.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Give a <c>name</c> and <c>description</c> so that the guardrail can properly identify
-        /// the topic.
+        ///  <b>Content filters</b> - Adjust filter strengths to block input prompts or model
+        /// responses containing harmful content.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify <c>DENY</c> in the <c>type</c> field.
+        ///  <b>Denied topics</b> - Define a set of topics that are undesirable in the context
+        /// of your application. These topics will be blocked if detected in user queries or model
+        /// responses.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (Optional) Provide up to five prompts that you would categorize as belonging to the
-        /// topic in the <c>examples</c> list.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Specify filter strengths for the harmful categories defined in Amazon Bedrock in the
-        /// <c>contentPolicyConfig</c> object. Each <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>
-        /// object in the <c>filtersConfig</c> list pertains to a harmful category. For more information,
-        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-filters">Content
-        /// filters</a>. For more information about the fields in a content filter, see <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify the category in the <c>type</c> field.
+        ///  <b>Word filters</b> - Configure filters to block undesirable words, phrases, and
+        /// profanity. Such words can include offensive terms, competitor names etc.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify the strength of the filter for prompts in the <c>inputStrength</c> field and
-        /// for model responses in the <c>strength</c> field of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>.
+        ///  <b>Sensitive information filters</b> - Block or mask sensitive information such as
+        /// personally identifiable information (PII) or custom regex in user inputs and model
+        /// responses.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        /// (Optional) For security, include the ARN of a KMS key in the <c>kmsKeyId</c> field.
+        /// In addition to the above policies, you can also configure the messages to be returned
+        /// to the user if a user input or model response is in violation of the policies defined
+        /// in the guardrail.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// (Optional) Attach any tags to the guardrail in the <c>tags</c> object. For more information,
-        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging">Tag resources</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Guardrails
+        /// for Amazon Bedrock</a> in the <i>Amazon Bedrock User Guide</i>.
         /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGuardrail service method.</param>
         /// 
@@ -2437,7 +2421,7 @@ namespace Amazon.Bedrock
         /// Specify filter strengths for the harmful categories defined in Amazon Bedrock in the
         /// <c>contentPolicyConfig</c> object. Each <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>
         /// object in the <c>filtersConfig</c> list pertains to a harmful category. For more information,
-        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-filters">Content
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-content-filters">Content
         /// filters</a>. For more information about the fields in a content filter, see <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>.
         /// </para>
         ///  <ul> <li> 
@@ -2452,11 +2436,6 @@ namespace Amazon.Bedrock
         ///  </li> </ul> </li> <li> 
         /// <para>
         /// (Optional) For security, include the ARN of a KMS key in the <c>kmsKeyId</c> field.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// (Optional) Attach any tags to the guardrail in the <c>tags</c> object. For more information,
-        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging">Tag resources</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

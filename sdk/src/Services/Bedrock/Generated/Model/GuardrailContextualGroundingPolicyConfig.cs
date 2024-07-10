@@ -30,21 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Contains details about how to handle harmful content.
+    /// The policy configuration details for the guardrails contextual grounding policy.
     /// </summary>
-    public partial class GuardrailContentPolicyConfig
+    public partial class GuardrailContextualGroundingPolicyConfig
     {
-        private List<GuardrailContentFilterConfig> _filtersConfig = AWSConfigs.InitializeCollections ? new List<GuardrailContentFilterConfig>() : null;
+        private List<GuardrailContextualGroundingFilterConfig> _filtersConfig = AWSConfigs.InitializeCollections ? new List<GuardrailContextualGroundingFilterConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property FiltersConfig. 
         /// <para>
-        /// Contains the type of the content filter and how strongly it should apply to prompts
-        /// and model responses.
+        /// The filter configuration details for the guardrails contextual grounding policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=6)]
-        public List<GuardrailContentFilterConfig> FiltersConfig
+        [AWSProperty(Required=true, Min=1)]
+        public List<GuardrailContextualGroundingFilterConfig> FiltersConfig
         {
             get { return this._filtersConfig; }
             set { this._filtersConfig = value; }
