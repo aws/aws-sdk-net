@@ -158,5 +158,21 @@ namespace AWSSDK_DotNet.UnitTests
             [DynamoDBHashKey]
             public string Id { get; set; }
         }
+
+        [TestMethod]
+        public void QueryConfig()
+        {
+            // If this fails because you've added a property, be sure to add it to
+            // `ToDynamoDBOperationConfig` before updating this unit test
+            Assert.AreEqual(13, typeof(QueryConfig).GetProperties().Length);
+        }
+
+        [TestMethod]
+        public void ScanConfig()
+        {
+            // If this fails because you've added a property, be sure to add it to
+            // `ToDynamoDBOperationConfig` before updating this unit test
+            Assert.AreEqual(12, typeof(ScanConfig).GetProperties().Length);
+        }
     }
 }

@@ -339,35 +339,53 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Scan async
 
-        /// <summary>
-        ///  Configures an async Scan operation against DynamoDB, finding items
-        /// that match the specified conditions.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="conditions">
-        /// Conditions that the results should meet.
-        /// </param>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null)
+        /// <inheritdoc/>
+        public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions)
+        {
+            var scan = ConvertScan<T>(conditions, null);
+            return FromSearchAsync<T>(scan);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the ScanAsync overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to ScanAsync.")]
+        public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
         {
             var scan = ConvertScan<T>(conditions, operationConfig);
             return FromSearchAsync<T>(scan);
         }
 
-        /// <summary>
-        ///  Configures an async Scan operation against DynamoDB, finding items
-        /// that match the specified conditions.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="scanConfig">Scan request object.</param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null)
+        /// <inheritdoc/>
+        public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, ScanConfig scanConfig)
+        {
+            var scan = ConvertScan<T>(conditions, scanConfig?.ToDynamoDBOperationConfig());
+            return FromSearchAsync<T>(scan);
+        }
+
+        /// <inheritdoc/>
+        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig)
         {
             if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
-            var search = ConvertFromScan<T>(scanConfig, operationConfig);
+            var search = ConvertFromScan<T>(scanConfig, null);
+            return FromSearchAsync<T>(search);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the FromScanAsync overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromScanAsync.")]
+        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanOperationConfig, DynamoDBOperationConfig operationConfig)
+        {
+            if (scanOperationConfig == null) throw new ArgumentNullException("scanOperationConfig");
+
+            var search = ConvertFromScan<T>(scanOperationConfig, operationConfig);
+            return FromSearchAsync<T>(search);
+        }
+
+        /// <inheritdoc/>
+        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanOperationConfig, ScanConfig scanConfig)
+        {
+            if (scanOperationConfig == null) throw new ArgumentNullException("scanOperationConfig");
+
+            var search = ConvertFromScan<T>(scanOperationConfig, scanConfig?.ToDynamoDBOperationConfig());
             return FromSearchAsync<T>(search);
         }
 
@@ -375,35 +393,41 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Query async
 
-        /// <summary>
-        /// Configures an async Query operation against DynamoDB, finding items
-        /// that match the specified hash primary key.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKeyValue">Hash key of the items to query.</param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null)
+        /// <inheritdoc/>
+        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue)
+        {
+            var query = ConvertQueryByValue<T>(hashKeyValue, null, null);
+            return FromSearchAsync<T>(query);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the QueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to QueryAsync.")]
+        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig)
         {
             var query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
             return FromSearchAsync<T>(query);
         }
 
-        /// <summary>
-        /// Configures an async Query operation against DynamoDB, finding items
-        /// that match the specified range element condition for a hash-and-range primary key.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKeyValue">Hash key of the items to query.</param>
-        /// <param name="op">Operation of the condition.</param>
-        /// <param name="values">
-        /// Value(s) of the condition.
-        /// For all operations except QueryOperator.Between, values should be one value.
-        /// For QueryOperator.Between, values should be two values.
-        /// </param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig = null)
+        /// <inheritdoc/>
+        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryConfig queryConfig)
+        {
+            var query = ConvertQueryByValue<T>(hashKeyValue, null, queryConfig?.ToDynamoDBOperationConfig());
+            return FromSearchAsync<T>(query);
+        }
+
+        /// <inheritdoc/>
+        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values)
+        {
+            if (values == null)
+                throw new ArgumentNullException("values");
+
+            var query = ConvertQueryByValue<T>(hashKeyValue, op, values, null);
+            return FromSearchAsync<T>(query);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the QueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to QueryAsync.")]
+        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
         {
             if (values == null)
                 throw new ArgumentNullException("values");
@@ -412,19 +436,41 @@ namespace Amazon.DynamoDBv2.DataModel
             return FromSearchAsync<T>(query);
         }
 
-        /// <summary>
-        /// Configures an async Query operation against DynamoDB, finding items
-        /// that match the specified conditions.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="queryConfig">Query request object.</param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig = null)
+        /// <inheritdoc/>
+        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, QueryConfig queryConfig)
         {
-            if (queryConfig == null) throw new ArgumentNullException("queryConfig");
+            if (values == null)
+                throw new ArgumentNullException("values");
 
-            var search = ConvertFromQuery<T>(queryConfig, operationConfig);
+            var query = ConvertQueryByValue<T>(hashKeyValue, op, values, queryConfig?.ToDynamoDBOperationConfig());
+            return FromSearchAsync<T>(query);
+        }
+
+        /// <inheritdoc/>
+        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryOperationConfig)
+        {
+            if (queryOperationConfig == null) throw new ArgumentNullException("queryOperationConfig");
+
+            var search = ConvertFromQuery<T>(queryOperationConfig, null);
+            return FromSearchAsync<T>(search);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the FromQueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromQueryAsync.")]
+        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryOperationConfig, DynamoDBOperationConfig operationConfig)
+        {
+            if (queryOperationConfig == null) throw new ArgumentNullException("queryOperationConfig");
+
+            var search = ConvertFromQuery<T>(queryOperationConfig, operationConfig);
+            return FromSearchAsync<T>(search);
+        }
+
+        /// <inheritdoc/>
+        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryOperationConfig, QueryConfig queryConfig)
+        {
+            if (queryOperationConfig == null) throw new ArgumentNullException("queryOperationConfig");
+
+            var search = ConvertFromQuery<T>(queryOperationConfig, queryConfig?.ToDynamoDBOperationConfig());
             return FromSearchAsync<T>(search);
         }
 
