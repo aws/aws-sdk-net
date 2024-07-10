@@ -37,7 +37,7 @@
         //and load this current content page.
         var pageLink = jQuery("link[rel='canonical']").attr('href');
         if (pageLink !== '') {
-            //Canonical links look like this: http://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html?page=PAGE.html&tocid=TOCID
+            //Canonical links look like this: http://docs.aws.amazon.com/sdkfornet/v4/apidocs/index.html?page=PAGE.html&tocid=TOCID
             //Attempt to find where the relative path starts after the hostname.
             var seekFrom = 0;
             var protocolEndIndex = pageLink.indexOf('://');

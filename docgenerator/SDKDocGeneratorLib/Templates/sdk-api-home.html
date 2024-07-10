@@ -20,11 +20,11 @@
 
   </style>
 
-  <title>API Reference Home | AWS SDK for .NET V3</title>  
+  <title>API Reference Home | AWS SDK for .NET Version 4</title>  
   <script type="text/javascript" src="/assets/js/awsdocs-boot.js"></script>
 
   <meta name="guide-name" content="API Reference"/>
-  <meta name="service-name" content="AWS SDK for .NET Version 3"/>
+  <meta name="service-name" content="AWS SDK for .NET Version 4"/>
   <meta http-equiv="Content-Type" content= "text/html; charset=us-ascii">
   <meta http-equiv="X-UA-Compatible" content="IE=8">
   <meta http-equiv="X-UA-Compatible" content="IE=8">
@@ -34,7 +34,7 @@
 
   <link rel="icon" type="image/ico" href="../favicon.ico">
   <link rel="shortcut icon" type="image/ico" href="../favicon.ico">
-  <link rel="canonical" href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/items/sdk-api-home.html">
+  <link rel="canonical" href="http://docs.aws.amazon.com/sdkfornet/v4/apidocs/items/sdk-api-home.html">
   <link rel="stylesheet" type="text/css" href="../resources/style.css">
   <link rel="stylesheet" type="text/css" href="../resources/sdkstyle.css">
 
@@ -43,7 +43,7 @@
 <body id="top" class="yui-skin-sam noJS">
 
     <!-- used by search indexer -->
-    <div id="product_name">AWS SDK Version 3 for .NET</div>
+    <div id="product_name">AWS SDK Version 4 for .NET</div>
     <div id="guide_name">API Reference</div>
 
     <div id="divContent">
@@ -57,7 +57,7 @@
 
             <div id="pageHeader">
                 <div id="titles">
-                    <h1 class="title">AWS SDK for .NET Version 3 API Reference</h1>
+                    <h1 class="title">AWS SDK for .NET Version 4 API Reference</h1>
                 </div>
             </div>
 
@@ -83,7 +83,7 @@
                                 <input type="image" alt="Go" src="../resources/search-button.png" id="sb">
                             </div>
                         </div>
-                        <input id="this_doc_product" type="hidden" value="AWS SDK for .NET Version 3" name="this_doc_product">
+                        <input id="this_doc_product" type="hidden" value="AWS SDK for .NET Version 4" name="this_doc_product">
                         <input id="this_doc_guide" type="hidden" value="API Reference" name="this_doc_guide">
                         <input type="hidden" value="en_us" name="doc_locale">
                     </form>
@@ -96,7 +96,7 @@
                     The AWS SDK for .NET makes it easier for developers to build .NET applications that tap into the cost-effective, scalable, and reliable AWS infrastructure
                     services such as Amazon Simple Storage Service (Amazon S3) and Amazon Elastic Compute Cloud (Amazon EC2).
                 </p>
-                <p>The AWS SDK for .NET supports development on .NET Framework 3.5 or later, .NET Core 2.0 or later, and any platform that supports .NET Standard 2.0 or later. As of version 3.7, the AWS SDK for .NET no longer supports .NET Standard 1.3.</p>
+                <p>The AWS SDK for .NET supports development on .NET Framework 4.7.2 or later, .NET Core 2.0 or later, and any platform that supports .NET Standard 2.0 or later. As of version 4.0, the AWS SDK for .NET no longer supports .NET Framework 3.5 or 4.5.</p>
                 <p></p>
 
                 <div class="section">
@@ -172,91 +172,42 @@
 
                             <dt>
                                 <span class="term">
-                                    <a class="link" href="../v3-migration.html" target="_blank" title="V3 Migration Guide">
-                                        V3 Migration Guide
+                                    <a class="link" href="../v4-migration.html" target="_blank" title="V4 Migration Guide">
+                                        V4 Migration Guide
                                     </a>
                                 </span>
                             </dt>
 
                             <dd>
-                                <p>Guide to help developers move their applications from version 2 to version 3 of the AWS SDK for .NET.</p>
+                                <p>Guide to help developers move their applications from version 3 to version 4 of the AWS SDK for .NET.</p>
                             </dd>
 
                             <dt>
                                 <span class="term">
-                                    <a class="link" href="https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-v35.html" target="_blank" rel="noopener noreferrer" title="V3.5 Migration Guide">
-                                        V3.5 Migration Guide
+                                    <a class="link" href="https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-v4.html" target="_blank" rel="noopener noreferrer" title="V4.0 Migration Guide">
+                                        V4.0 Migration Guide
                                     </a>
                                 </span>
                             </dt>
 
                             <dd>
-                                <p>Guide to help developers move their applications from version 3.3 to version 3.5 of the AWS SDK for .NET.</p>
+                                <p>Guide to help developers move their applications using AWS SDK for .NET Version 3 targeting .NET Framework to a modern version of .NET.</p>
                             </dd>
 
                             <dt>
                                 <span class="term">
-                                    <a class="link" href="https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/migration-from-net-standard-1-3.html" target="_blank" rel="noopener noreferrer" title="Migrating from .NET Standard 1.3">
-                                        Migrating from .NET Standard 1.3
+                                    <a class="link" href="https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/migration-from-net-standard-1-3.html" target="_blank" rel="noopener noreferrer" title="Migrating from .NET Framework 3.5">
+                                        Migrating from .NET Framework 3.5
                                     </a>
                                 </span>
                             </dt>
 
                             <dd>
-                                <p>Guide to help developers move their .NET Standard 1.3 applications to a newer version of .NET, which is required as of version 3.7 of the AWS SDK for .NET.</p>
+                                <p>Guide to help developers move their .NET Framework 3.5 applications to a newer version of .NET, which is required as of version 4.0 of the AWS SDK for .NET.</p>
                             </dd>
 
                         </dl>
-                    </div>
-
-                    <p>As of version 3.5 of the AWS SDK for .NET, the following libraries have been extracted:</p>
-
-                    <div class="variablelist">
-                        <dl>
-
-                            <dt>
-                                <span class="term">
-                                    <a class="link" href="https://github.com/aws/aws-sdk-unity-net" target="_blank" rel="noopener noreferrer" title="AWS SDK for Unity - Archive">
-                                        AWS SDK for Unity - Archive
-                                    </a>
-                                </span>
-                            </dt>
-
-                            <dd>
-                                <p>
-                                    This is the archive for legacy Unity support. This repository is provided for customers who are using the legacy, Unity-specific binaries.
-                                </p>
-                            </dd>
-
-                            <dt>
-                                <span class="term">
-                                    <a class="link" href="https://github.com/aws/aws-mobile-analytics-manager-net" target="_blank" rel="noopener noreferrer" title="AWS SDK for .NET Mobile Analytics Manager - Archive">
-                                        AWS SDK for .NET Mobile Analytics Manager - Archive
-                                    </a>
-                                </span>
-                            </dt>
-
-                            <dd>
-                                <p>
-                                    The AWS SDK for .NET Mobile Analytics Manager makes it easy to gather usage information about mobile applications in the background and sync that data with AWS.
-                                </p>
-                            </dd>
-
-                            <dt>
-                                <span class="term">
-                                    <a class="link" href="https://github.com/aws/amazon-cognito-sync-manager-net" target="_blank" rel="noopener noreferrer" title="AWS SDK for .NET CognitoSync SyncManager - Archive">
-                                        AWS SDK for .NET CognitoSync SyncManager - Archive
-                                    </a>
-                                </span>
-                            </dt>
-
-                            <dd>
-                                <p>
-                                    The AWS SDK for .NET CognitoSync SyncManager enables customers to easily sync data with Amazon Cognito with non-constant network availability.
-                                </p>
-                            </dd>
-                        </dl>
-                    </div>
+                    </div>                                        
                 </div>
             </div>
         </div>
@@ -266,9 +217,9 @@
             <div class="newline feedback">
                 <div class="feedbackLinks">
                     Did this page help you?&nbsp;&nbsp;
-                    <a href="https://docs.aws.amazon.com/sdkfornet/latest/apidocs/feedbackyes.html?topic_id=sdk-api-home" target="_parent" rel="noopener noreferrer">Yes</a>&nbsp;&nbsp;
-                    <a href="https://docs.aws.amazon.com/sdkfornet/latest/apidocs/feedbackno.html?topic_id=sdk-api-home" target="_parent" rel="noopener noreferrer">No</a>&nbsp;&nbsp;&nbsp;
-                    <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?service_name=NET-Ref-V3&amp;file_name=sdk-api-home" target="_parent" rel="noopener noreferrer">Tell us about it...</a>
+                    <a href="https://docs.aws.amazon.com/sdkfornet/v4/apidocs/feedbackyes.html?topic_id=sdk-api-home" target="_parent" rel="noopener noreferrer">Yes</a>&nbsp;&nbsp;
+                    <a href="https://docs.aws.amazon.com/sdkfornet/v4/apidocs/feedbackno.html?topic_id=sdk-api-home" target="_parent" rel="noopener noreferrer">No</a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?service_name=NET-Ref-V4&amp;file_name=sdk-api-home" target="_parent" rel="noopener noreferrer">Tell us about it...</a>
                 </div>
             </div>
             <!-- END-FEEDBACK-SECTION -->

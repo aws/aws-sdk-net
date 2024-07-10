@@ -8,7 +8,7 @@ using System.Diagnostics;
 namespace SDKDocGenerator
 {
     /// <summary>
-    /// Documentation generator for the AWS SDK for .NET v3+ codebase.
+    /// Documentation generator for the AWS SDK for .NET v4+ codebase.
     /// </summary>
     public class SdkDocGenerator
     {
@@ -190,7 +190,7 @@ namespace SDKDocGenerator
         /// <summary>
         /// Enumerates the assembly, folder and platform settings in the options
         /// to construct a per-service manifest that we will then process. Our preferred
-        /// documentation source is for the 'net45' platform but if a subfolder does
+        /// documentation source is for the 'net472' platform but if a subfolder does
         /// not exist under the root for this platform, we'll generate using the
         /// assemblies in the first subfolder we find.
         /// </summary>

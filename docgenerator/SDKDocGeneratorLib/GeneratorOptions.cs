@@ -105,7 +105,7 @@ namespace SDKDocGenerator
 
         /// <summary>
         /// Constructs default options for the generator, which are to process
-        /// all services found for the .Net 4.5 platform, and emit the doc 
+        /// all services found for the .Net 4.7.2 platform, and emit the doc 
         /// framework static content files. The default paths are relative to 
         /// the executing generator assembly.
         /// </summary>
@@ -118,7 +118,7 @@ namespace SDKDocGenerator
             // we don't default the sdk assembly root, as it can
             // change between invoking from within Visual Studio
             // or via our build scripts
-            Platform = "net45";
+            Platform = "net472";
             Services = new [] { "*" };
             OutputFolder = @"..\..\..\..\Deployment\docs";
             ContentSubFolderName = "items";

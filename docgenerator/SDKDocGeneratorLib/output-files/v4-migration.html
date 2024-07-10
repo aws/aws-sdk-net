@@ -2,24 +2,29 @@
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="guide-name" content="API Reference"/>
-<meta name="service-name" content="AWS SDK for .NET Version 3"/>
+<meta name="service-name" content="AWS SDK for .NET Version 4"/>
 
 <link rel="stylesheet" type="text/css" href="./resources/style.css"/>
 <link rel="stylesheet" type="text/css" href="./resources/syntaxhighlighter/shCore.css">
 <link rel="stylesheet" type="text/css" href="./resources/syntaxhighlighter/shThemeDefault.css">
 <link rel="stylesheet" type="text/css" href="./resources/sdkstyle.css"/>
 <meta name="description" content="AWSConfigs.GenerateConfigTemplate Method">
-<title>Migration Guide from V2 to V3 | AWS SDK for .NET V3</title>
+<title>Migration Guide from V3 to V4 | AWS SDK for .NET Version 4</title>
 <script type="text/javascript" src="/assets/js/awsdocs-boot.js"></script>
-<link rel="canonical" href="http://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html?page=Amazon/TAWSConfigs.html&tocid=Amazon_AWSConfigs"/>
+<link rel="canonical" href="http://docs.aws.amazon.com/sdkfornet/v4/apidocs/index.html?page=Amazon/TAWSConfigs.html&tocid=Amazon_AWSConfigs"/>
 </head>
 <body>
 
-    <h2>Version 3 Migration Guide</h2>
+    <h2>Version 4 Migration Guide</h2>
     <p>
-        Version 3 is the AWS SDK for .NET has a high level of compatibility with version 2. For most applications you will just need to remove the old reference to version 2 and add the
-        reference to the services they are using. For instance, if you are using <code>S3</code> and <code>DynamoDB</code>, you'll need to add references to <code>AWSSDK.S3</code> and <code>AWSSDK.DynamoDBv2</code>. If you are using NuGet to get the SDK, the reference to our core runtime package - <code>AWSSDK.Core</code> will be added automatically. If you
+        Version 4 is the AWS SDK for .NET has a high level of compatibility with version 3. For most applications you will just need to remove the old reference to version 3 and add the
+        reference to the services they are using. For instance, if you are using <code>S3</code> and <code>DynamoDB</code>, you'll need to add references to the latest versions of <code>AWSSDK.S3</code> and <code>AWSSDK.DynamoDBv2</code>. If you are using NuGet to get the SDK, the reference to our core runtime package - <code>AWSSDK.Core</code> will be added automatically. If you
         are getting the SDK from the installer on our website, then you will need to add a reference to <code>AWSSDK.Core</code> as well as to the service-specific assemblies.
+    </p>
+
+    <p>
+        TODO: the table below will need to be updated before GA. The current version 4 changes are located here: <a href="https://github.com/aws/aws-sdk-net/issues/3362" target="_blank">https://github.com/aws/aws-sdk-net/issues/3362</a>
+
     </p>
 
     <table border="0" cellspacing="0" cellpadding="0">

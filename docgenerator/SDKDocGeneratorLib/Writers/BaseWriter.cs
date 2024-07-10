@@ -119,7 +119,7 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>");
 
                 writer.WriteLine("<meta name=\"guide-name\" content=\"API Reference\"/>");
-                writer.WriteLine("<meta name=\"service-name\" content=\"AWS SDK for .NET Version 3\"/>");
+                writer.WriteLine("<meta name=\"service-name\" content=\"AWS SDK for .NET Version 4\"/>");
 
                 writer.WriteLine("<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}/resources/style.css\"/>", RootRelativePath);
                 writer.WriteLine("<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}/resources/syntaxhighlighter/shCore.css\">", RootRelativePath);
@@ -130,9 +130,9 @@ namespace SDKDocGenerator.Writers
                 // text for an element has proven unreliable as a useful source for info the search results so stay with
                 // the page title for now
                 writer.WriteLine("<meta name=\"description\" content=\"{0}\">", GetTitle());
-                writer.WriteLine("<title>{0} | AWS SDK for .NET V3</title>", GetTitle());                
+                writer.WriteLine("<title>{0} | AWS SDK for .NET Version 4</title>", GetTitle());                
                 writer.WriteLine("<script type=\"text/javascript\" src=\"/assets/js/awsdocs-boot.js\"></script>");
-                writer.WriteLine("<link rel=\"canonical\" href=\"https://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html?page={0}&tocid={1}\"/>",
+                writer.WriteLine("<link rel=\"canonical\" href=\"https://docs.aws.amazon.com/sdkfornet/v4/apidocs/index.html?page={0}&tocid={1}\"/>",
                                 FilenameGenerator.Escape(this.GenerateFilename()),
                                 FilenameGenerator.Escape(this.GetTOCID()));
 
@@ -141,7 +141,7 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("<body>");
 
                     // every page needs two hidden divs giving the search indexer the product title and guide name
-                    writer.WriteLine("<div id=\"product_name\">AWS SDK Version 3 for .NET</div>");
+                    writer.WriteLine("<div id=\"product_name\">AWS SDK Version 4 for .NET</div>");
                     writer.WriteLine("<div id=\"guide_name\">API Reference</div>");
 
                     WriteRegionDisclaimer(writer);
@@ -228,7 +228,7 @@ namespace SDKDocGenerator.Writers
                                 writer.WriteLine("<input type=\"image\" alt=\"Go\" src=\"{0}/resources/search-button.png\" id=\"sb\">", RootRelativePath);
                             writer.WriteLine("</div>");
                         writer.WriteLine("</div>");
-                        writer.WriteLine("<input id=\"this_doc_product\" type=\"hidden\" value=\"AWS SDK for .NET Version 3\" name=\"this_doc_product\">");
+                        writer.WriteLine("<input id=\"this_doc_product\" type=\"hidden\" value=\"AWS SDK for .NET Version 4\" name=\"this_doc_product\">");
                         writer.WriteLine("<input id=\"this_doc_guide\" type=\"hidden\" value=\"API Reference\" name=\"this_doc_guide\">");
                         writer.WriteLine("<input type=\"hidden\" value=\"en_us\" name=\"doc_locale\">");
                     writer.WriteLine("</form>");
@@ -274,7 +274,7 @@ namespace SDKDocGenerator.Writers
             var filename = FilenameGenerator.Escape(Path.GetFileNameWithoutExtension(GenerateFilename()));
             const string baseUrl = "https://docs.aws.amazon.com/forms/aws-doc-feedback";
             var queryString = string.Format("?service_name={0}&amp;file_name={1}",
-                                            "NET-Ref-V3",  // service_name
+                                            "NET-Ref-V4",  // service_name
                                             filename   // guide_name
                                             );
             var fullUrl = baseUrl + queryString;
@@ -282,8 +282,8 @@ namespace SDKDocGenerator.Writers
             const string feedbackContentFormat = "<span id=\"feedback\">" +
                                                 "<!-- BEGIN-FEEDBACK-SECTION -->" +
                                                  "Did this page help you?&nbsp;&nbsp;" +
-                                                 "<a href=\"https://docs.aws.amazon.com/sdkfornet/latest/apidocs/feedbackyes.html?topic_id={0}\" target=\"_blank\">Yes</a>&nbsp;&nbsp;" +
-                                                 "<a href=\"https://docs.aws.amazon.com/sdkfornet/latest/apidocs/feedbackno.html?topic_id={0}\" target=\"_blank\">No</a>&nbsp;&nbsp;&nbsp;" +
+                                                 "<a href=\"https://docs.aws.amazon.com/sdkfornet/v4/apidocs/feedbackyes.html?topic_id={0}\" target=\"_blank\">Yes</a>&nbsp;&nbsp;" +
+                                                 "<a href=\"https://docs.aws.amazon.com/sdkfornet/v4/apidocs/feedbackno.html?topic_id={0}\" target=\"_blank\">No</a>&nbsp;&nbsp;&nbsp;" +
                                                  "<a href=\"{1}\" target=\"_blank\">Tell us about it...</a>" +
                                                  "</span>" +
                                                  "<!-- END-FEEDBACK-SECTION -->";
@@ -516,15 +516,13 @@ namespace SDKDocGenerator.Writers
         protected void AddVersionInformation(TextWriter writer, AbstractWrapper wrapper)
         {
             AddSectionHeader(writer, "Version Information");
-
-            var docs35 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net35"), wrapper);
-            var docs45 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net45"), wrapper);
+            
+            var docs472 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net472"), wrapper);
             var docsCore20 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netstandard2.0"), wrapper);
             var docsNetCoreApp31 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netcoreapp3.1"), wrapper);
 
             // If there is no documentation then assume it is available for all platforms.
-            var boolNoDocs = docs35 == null && docs45 == null 
-                && docsCore20 == null && docsNetCoreApp31 == null;
+            var boolNoDocs = docs472 == null && docsCore20 == null && docsNetCoreApp31 == null;
 
             // .NET Core App
             var netCoreAppVersions = new List<string>();
@@ -549,13 +547,8 @@ namespace SDKDocGenerator.Writers
 
             // .NET Framework
             var netframeworkVersions = new List<string>();
-            if (boolNoDocs || (wrapper != null && docs45 != null))
-                netframeworkVersions.Add("4.5");
-            if (boolNoDocs || (wrapper != null && docs35 != null))
-            {
-                netframeworkVersions.Add("4.0");
-                netframeworkVersions.Add("3.5");
-            }
+            if (boolNoDocs || (wrapper != null && docs472 != null))
+                netframeworkVersions.Add("4.7.2");
 
             if (netframeworkVersions.Count > 0)
             {
