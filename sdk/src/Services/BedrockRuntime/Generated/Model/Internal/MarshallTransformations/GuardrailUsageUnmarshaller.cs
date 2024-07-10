@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GuardrailConverseTextBlock Object
+    /// Response Unmarshaller for GuardrailUsage Object
     /// </summary>  
-    public class GuardrailConverseTextBlockUnmarshaller : IUnmarshaller<GuardrailConverseTextBlock, XmlUnmarshallerContext>, IUnmarshaller<GuardrailConverseTextBlock, JsonUnmarshallerContext>
+    public class GuardrailUsageUnmarshaller : IUnmarshaller<GuardrailUsage, XmlUnmarshallerContext>, IUnmarshaller<GuardrailUsage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GuardrailConverseTextBlock IUnmarshaller<GuardrailConverseTextBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GuardrailUsage IUnmarshaller<GuardrailUsage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GuardrailConverseTextBlock Unmarshall(JsonUnmarshallerContext context)
+        public GuardrailUsage Unmarshall(JsonUnmarshallerContext context)
         {
-            GuardrailConverseTextBlock unmarshalledObject = new GuardrailConverseTextBlock();
+            GuardrailUsage unmarshalledObject = new GuardrailUsage();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,40 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("qualifiers", targetDepth))
+                if (context.TestExpression("contentPolicyUnits", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Qualifiers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ContentPolicyUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("text", targetDepth))
+                if (context.TestExpression("contextualGroundingPolicyUnits", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ContextualGroundingPolicyUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sensitiveInformationPolicyFreeUnits", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SensitiveInformationPolicyFreeUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sensitiveInformationPolicyUnits", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SensitiveInformationPolicyUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("topicPolicyUnits", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TopicPolicyUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("wordPolicyUnits", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.WordPolicyUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +107,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static GuardrailConverseTextBlockUnmarshaller _instance = new GuardrailConverseTextBlockUnmarshaller();        
+        private static GuardrailUsageUnmarshaller _instance = new GuardrailUsageUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GuardrailConverseTextBlockUnmarshaller Instance
+        public static GuardrailUsageUnmarshaller Instance
         {
             get
             {

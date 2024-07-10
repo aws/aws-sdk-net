@@ -30,10 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// A text block that contains text that you want to assess with a guardrail. For more
-    /// information, see <a>GuardrailConverseContentBlock</a>.
+    /// The text block to be evaluated by the guardrail.
     /// </summary>
-    public partial class GuardrailConverseTextBlock
+    public partial class GuardrailTextBlock
     {
         private List<string> _qualifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _text;
@@ -41,7 +40,7 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Qualifiers. 
         /// <para>
-        /// The qualifier details for the guardrails contextual grounding filter.
+        /// The qualifiers describing the text block.
         /// </para>
         /// </summary>
         public List<string> Qualifiers
@@ -59,7 +58,7 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// The text that you want to guard.
+        /// The input text details to be evaluated by the guardrail.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

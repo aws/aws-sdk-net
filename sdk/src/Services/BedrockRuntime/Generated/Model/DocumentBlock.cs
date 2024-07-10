@@ -30,10 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// A document to include in a message when sending a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
-    /// or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
-    /// request. You can include up to 5 documents in a request. The maximum document size
-    /// is 50 MB.
+    /// A document to include in a message.
     /// </summary>
     public partial class DocumentBlock
     {
@@ -63,8 +60,34 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A name for the document.
+        /// A name for the document. The name can only contain the following characters:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Alphanumeric characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Whitespace characters (no more than one in a row)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Parentheses
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Square brackets
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This field is vulnerable to prompt injections, because the model might inadvertently
+        /// interpret it as instructions. Therefore, we recommend that you specify a neutral name.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
         public string Name

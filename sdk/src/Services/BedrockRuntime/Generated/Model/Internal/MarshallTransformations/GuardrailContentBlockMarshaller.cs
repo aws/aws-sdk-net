@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GuardrailConverseTextBlock Marshaller
+    /// GuardrailContentBlock Marshaller
     /// </summary>
-    public class GuardrailConverseTextBlockMarshaller : IRequestMarshaller<GuardrailConverseTextBlock, JsonMarshallerContext> 
+    public class GuardrailContentBlockMarshaller : IRequestMarshaller<GuardrailContentBlock, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,25 +44,19 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GuardrailConverseTextBlock requestObject, JsonMarshallerContext context)
+        public void Marshall(GuardrailContentBlock requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetQualifiers())
-            {
-                context.Writer.WritePropertyName("qualifiers");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectQualifiersListValue in requestObject.Qualifiers)
-                {
-                        context.Writer.Write(requestObjectQualifiersListValue);
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("text");
-                context.Writer.Write(requestObject.Text);
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GuardrailTextBlockMarshaller.Instance;
+                marshaller.Marshall(requestObject.Text, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -70,7 +64,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static GuardrailConverseTextBlockMarshaller Instance = new GuardrailConverseTextBlockMarshaller();
+        public readonly static GuardrailContentBlockMarshaller Instance = new GuardrailContentBlockMarshaller();
 
     }
 }

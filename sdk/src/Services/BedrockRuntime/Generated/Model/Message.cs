@@ -41,8 +41,28 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The message content.
+        /// The message content. Note the following restrictions:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can include up to 20 images. Each image's size, height, and width must be no more
+        /// than 3.75 MB, 8000 px, and 8000 px, respectively.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can include up to five documents. Each document's size must be no more than 4.5
+        /// MB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you include a <c>ContentBlock</c> with a <c>document</c> field in the array, you
+        /// must also include a <c>ContentBlock</c> with a <c>text</c> field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can only include images and documents if the <c>role</c> is <c>user</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<ContentBlock> Content

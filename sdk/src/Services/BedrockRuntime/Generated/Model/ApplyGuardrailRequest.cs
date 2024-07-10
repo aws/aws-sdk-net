@@ -30,19 +30,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// Configuration information for a guardrail that you use with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
-    /// operation.
+    /// Container for the parameters to the ApplyGuardrail operation.
+    /// The action to apply a guardrail.
     /// </summary>
-    public partial class GuardrailConfiguration
+    public partial class ApplyGuardrailRequest : AmazonBedrockRuntimeRequest
     {
+        private List<GuardrailContentBlock> _content = AWSConfigs.InitializeCollections ? new List<GuardrailContentBlock>() : null;
         private string _guardrailIdentifier;
         private string _guardrailVersion;
-        private GuardrailTrace _trace;
+        private GuardrailContentSource _source;
+
+        /// <summary>
+        /// Gets and sets the property Content. 
+        /// <para>
+        /// The content details used in the request to apply the guardrail.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<GuardrailContentBlock> Content
+        {
+            get { return this._content; }
+            set { this._content = value; }
+        }
+
+        // Check to see if Content property is set
+        internal bool IsSetContent()
+        {
+            return this._content != null && (this._content.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property GuardrailIdentifier. 
         /// <para>
-        /// The identifier for the guardrail.
+        /// The guardrail identifier used in the request to apply the guardrail.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -61,7 +81,7 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property GuardrailVersion. 
         /// <para>
-        /// The version of the guardrail.
+        /// The guardrail version used in the request to apply the guardrail.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,21 +98,22 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Trace. 
+        /// Gets and sets the property Source. 
         /// <para>
-        /// The trace behavior for the guardrail.
+        /// The source of data used in the request to apply the guardrail.
         /// </para>
         /// </summary>
-        public GuardrailTrace Trace
+        [AWSProperty(Required=true)]
+        public GuardrailContentSource Source
         {
-            get { return this._trace; }
-            set { this._trace = value; }
+            get { return this._source; }
+            set { this._source = value; }
         }
 
-        // Check to see if Trace property is set
-        internal bool IsSetTrace()
+        // Check to see if Source property is set
+        internal bool IsSetSource()
         {
-            return this._trace != null;
+            return this._source != null;
         }
 
     }

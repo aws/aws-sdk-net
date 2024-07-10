@@ -40,8 +40,9 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property GuardContent. 
         /// <para>
-        /// A content block to assess with the guardrail. Use with the Converse API (<a>Converse</a>
-        /// and <a>ConverseStream</a>). 
+        /// A content block to assess with the guardrail. Use with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+        /// or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
+        /// API operations. 
         /// </para>
         ///  
         /// <para>

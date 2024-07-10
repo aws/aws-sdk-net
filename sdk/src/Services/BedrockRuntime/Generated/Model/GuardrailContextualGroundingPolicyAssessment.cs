@@ -30,29 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The trace object in a response from <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>.
-    /// Currently, you can only trace guardrails.
+    /// The policy assessment details for the guardrails contextual grounding filter.
     /// </summary>
-    public partial class ConverseStreamTrace
+    public partial class GuardrailContextualGroundingPolicyAssessment
     {
-        private GuardrailTraceAssessment _guardrail;
+        private List<GuardrailContextualGroundingFilter> _filters = AWSConfigs.InitializeCollections ? new List<GuardrailContextualGroundingFilter>() : null;
 
         /// <summary>
-        /// Gets and sets the property Guardrail. 
+        /// Gets and sets the property Filters. 
         /// <para>
-        /// The guardrail trace object. 
+        /// The filter details for the guardrails contextual grounding filter.
         /// </para>
         /// </summary>
-        public GuardrailTraceAssessment Guardrail
+        public List<GuardrailContextualGroundingFilter> Filters
         {
-            get { return this._guardrail; }
-            set { this._guardrail = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
-        // Check to see if Guardrail property is set
-        internal bool IsSetGuardrail()
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
         {
-            return this._guardrail != null;
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

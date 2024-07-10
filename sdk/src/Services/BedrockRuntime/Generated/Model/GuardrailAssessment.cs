@@ -35,6 +35,7 @@ namespace Amazon.BedrockRuntime.Model
     public partial class GuardrailAssessment
     {
         private GuardrailContentPolicyAssessment _contentPolicy;
+        private GuardrailContextualGroundingPolicyAssessment _contextualGroundingPolicy;
         private GuardrailSensitiveInformationPolicyAssessment _sensitiveInformationPolicy;
         private GuardrailTopicPolicyAssessment _topicPolicy;
         private GuardrailWordPolicyAssessment _wordPolicy;
@@ -55,6 +56,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetContentPolicy()
         {
             return this._contentPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContextualGroundingPolicy. 
+        /// <para>
+        /// The contextual grounding policy used for the guardrail assessment.
+        /// </para>
+        /// </summary>
+        public GuardrailContextualGroundingPolicyAssessment ContextualGroundingPolicy
+        {
+            get { return this._contextualGroundingPolicy; }
+            set { this._contextualGroundingPolicy = value; }
+        }
+
+        // Check to see if ContextualGroundingPolicy property is set
+        internal bool IsSetContextualGroundingPolicy()
+        {
+            return this._contextualGroundingPolicy != null;
         }
 
         /// <summary>

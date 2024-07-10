@@ -246,6 +246,78 @@ namespace Amazon.BedrockRuntime
         #endregion
 
 
+        #region  ApplyGuardrail
+
+        /// <summary>
+        /// The action to apply a guardrail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApplyGuardrail service method.</param>
+        /// 
+        /// <returns>The response from the ApplyGuardrail service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ApplyGuardrail">REST API Reference for ApplyGuardrail Operation</seealso>
+        public virtual ApplyGuardrailResponse ApplyGuardrail(ApplyGuardrailRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ApplyGuardrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ApplyGuardrailResponseUnmarshaller.Instance;
+
+            return Invoke<ApplyGuardrailResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ApplyGuardrail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ApplyGuardrail operation on AmazonBedrockRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndApplyGuardrail
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ApplyGuardrail">REST API Reference for ApplyGuardrail Operation</seealso>
+        public virtual IAsyncResult BeginApplyGuardrail(ApplyGuardrailRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ApplyGuardrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ApplyGuardrailResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ApplyGuardrail operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginApplyGuardrail.</param>
+        /// 
+        /// <returns>Returns a  ApplyGuardrailResult from BedrockRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ApplyGuardrail">REST API Reference for ApplyGuardrail Operation</seealso>
+        public virtual ApplyGuardrailResponse EndApplyGuardrail(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ApplyGuardrailResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  Converse
 
         /// <summary>

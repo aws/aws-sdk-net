@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GuardrailConverseTextBlock Object
+    /// Response Unmarshaller for GuardrailOutputContent Object
     /// </summary>  
-    public class GuardrailConverseTextBlockUnmarshaller : IUnmarshaller<GuardrailConverseTextBlock, XmlUnmarshallerContext>, IUnmarshaller<GuardrailConverseTextBlock, JsonUnmarshallerContext>
+    public class GuardrailOutputContentUnmarshaller : IUnmarshaller<GuardrailOutputContent, XmlUnmarshallerContext>, IUnmarshaller<GuardrailOutputContent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GuardrailConverseTextBlock IUnmarshaller<GuardrailConverseTextBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GuardrailOutputContent IUnmarshaller<GuardrailOutputContent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GuardrailConverseTextBlock Unmarshall(JsonUnmarshallerContext context)
+        public GuardrailOutputContent Unmarshall(JsonUnmarshallerContext context)
         {
-            GuardrailConverseTextBlock unmarshalledObject = new GuardrailConverseTextBlock();
+            GuardrailOutputContent unmarshalledObject = new GuardrailOutputContent();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,12 +66,6 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("qualifiers", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Qualifiers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("text", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -83,12 +77,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static GuardrailConverseTextBlockUnmarshaller _instance = new GuardrailConverseTextBlockUnmarshaller();        
+        private static GuardrailOutputContentUnmarshaller _instance = new GuardrailOutputContentUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GuardrailConverseTextBlockUnmarshaller Instance
+        public static GuardrailOutputContentUnmarshaller Instance
         {
             get
             {

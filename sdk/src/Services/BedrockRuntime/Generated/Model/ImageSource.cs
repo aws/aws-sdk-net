@@ -39,8 +39,8 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Bytes. 
         /// <para>
-        /// The raw image bytes for the image. If you use an AWS SDK, you don't need to base64
-        /// encode the image bytes.
+        /// The raw image bytes for the image. If you use an AWS SDK, you don't need to encode
+        /// the image bytes in base64.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

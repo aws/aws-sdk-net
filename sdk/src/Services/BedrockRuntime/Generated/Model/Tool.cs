@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// Information about a tool that you can use with the Converse API.
+    /// Information about a tool that you can use with the Converse API. For more information,
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Tool
+    /// use (function calling)</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class Tool
     {

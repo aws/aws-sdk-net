@@ -30,9 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// Contains the content of the document included in a message when sending a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
-    /// or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
-    /// request or in the response.
+    /// Contains the content of a document.
     /// </summary>
     public partial class DocumentSource
     {
@@ -41,8 +39,8 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Bytes. 
         /// <para>
-        /// A base64-encoded string of a UTF-8 encoded file, that is the document to include in
-        /// the message.
+        /// The raw bytes for the document. If you use an Amazon Web Services SDK, you don't need
+        /// to encode the bytes in base64.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

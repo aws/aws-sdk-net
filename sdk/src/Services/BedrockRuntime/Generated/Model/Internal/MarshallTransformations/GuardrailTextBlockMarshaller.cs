@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GuardrailConverseTextBlock Marshaller
+    /// GuardrailTextBlock Marshaller
     /// </summary>
-    public class GuardrailConverseTextBlockMarshaller : IRequestMarshaller<GuardrailConverseTextBlock, JsonMarshallerContext> 
+    public class GuardrailTextBlockMarshaller : IRequestMarshaller<GuardrailTextBlock, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GuardrailConverseTextBlock requestObject, JsonMarshallerContext context)
+        public void Marshall(GuardrailTextBlock requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -70,7 +70,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static GuardrailConverseTextBlockMarshaller Instance = new GuardrailConverseTextBlockMarshaller();
+        public readonly static GuardrailTextBlockMarshaller Instance = new GuardrailTextBlockMarshaller();
 
     }
 }

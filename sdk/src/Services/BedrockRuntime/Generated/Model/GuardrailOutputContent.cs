@@ -30,29 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The trace object in a response from <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>.
-    /// Currently, you can only trace guardrails.
+    /// The output content produced by the guardrail.
     /// </summary>
-    public partial class ConverseStreamTrace
+    public partial class GuardrailOutputContent
     {
-        private GuardrailTraceAssessment _guardrail;
+        private string _text;
 
         /// <summary>
-        /// Gets and sets the property Guardrail. 
+        /// Gets and sets the property Text. 
         /// <para>
-        /// The guardrail trace object. 
+        /// The specific text for the output content produced by the guardrail.
         /// </para>
         /// </summary>
-        public GuardrailTraceAssessment Guardrail
+        public string Text
         {
-            get { return this._guardrail; }
-            set { this._guardrail = value; }
+            get { return this._text; }
+            set { this._text = value; }
         }
 
-        // Check to see if Guardrail property is set
-        internal bool IsSetGuardrail()
+        // Check to see if Text property is set
+        internal bool IsSetText()
         {
-            return this._guardrail != null;
+            return this._text != null;
         }
 
     }

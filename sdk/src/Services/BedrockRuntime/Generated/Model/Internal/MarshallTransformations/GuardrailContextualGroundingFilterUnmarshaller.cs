@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GuardrailConverseTextBlock Object
+    /// Response Unmarshaller for GuardrailContextualGroundingFilter Object
     /// </summary>  
-    public class GuardrailConverseTextBlockUnmarshaller : IUnmarshaller<GuardrailConverseTextBlock, XmlUnmarshallerContext>, IUnmarshaller<GuardrailConverseTextBlock, JsonUnmarshallerContext>
+    public class GuardrailContextualGroundingFilterUnmarshaller : IUnmarshaller<GuardrailContextualGroundingFilter, XmlUnmarshallerContext>, IUnmarshaller<GuardrailContextualGroundingFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GuardrailConverseTextBlock IUnmarshaller<GuardrailConverseTextBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GuardrailContextualGroundingFilter IUnmarshaller<GuardrailContextualGroundingFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GuardrailConverseTextBlock Unmarshall(JsonUnmarshallerContext context)
+        public GuardrailContextualGroundingFilter Unmarshall(JsonUnmarshallerContext context)
         {
-            GuardrailConverseTextBlock unmarshalledObject = new GuardrailConverseTextBlock();
+            GuardrailContextualGroundingFilter unmarshalledObject = new GuardrailContextualGroundingFilter();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,28 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("qualifiers", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Qualifiers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("text", targetDepth))
+                if (context.TestExpression("action", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("score", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Score = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("threshold", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +95,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static GuardrailConverseTextBlockUnmarshaller _instance = new GuardrailConverseTextBlockUnmarshaller();        
+        private static GuardrailContextualGroundingFilterUnmarshaller _instance = new GuardrailContextualGroundingFilterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GuardrailConverseTextBlockUnmarshaller Instance
+        public static GuardrailContextualGroundingFilterUnmarshaller Instance
         {
             get
             {

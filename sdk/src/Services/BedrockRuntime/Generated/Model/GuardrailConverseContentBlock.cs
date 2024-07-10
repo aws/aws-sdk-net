@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// A content block for selective guarding with the Converse API (<a>Converse</a> and
-    /// <a>ConverseStream</a>).
+    /// A content block for selective guarding with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+    /// or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
+    /// API operations.
     /// </summary>
     public partial class GuardrailConverseContentBlock
     {

@@ -65,8 +65,8 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Trace. 
         /// <para>
-        /// The trace object in the response from <a>ConverseStream</a> that contains information
-        /// about the guardrail behavior.
+        /// The trace object in the response from <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
+        /// that contains information about the guardrail behavior.
         /// </para>
         /// </summary>
         public ConverseStreamTrace Trace
