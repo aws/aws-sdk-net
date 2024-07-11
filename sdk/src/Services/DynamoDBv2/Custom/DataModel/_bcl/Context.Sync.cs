@@ -331,7 +331,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the FromScan overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromScan.")]
-        public IEnumerable<T> FromScan<T>(ScanOperationConfig scanOperationConfig, DynamoDBOperationConfig operationConfig)
+        public IEnumerable<T> FromScan<T>(ScanOperationConfig scanOperationConfig, DynamoDBOperationConfig operationConfig = null)
         {
             if (scanOperationConfig == null) throw new ArgumentNullException("scanOperationConfig");
 

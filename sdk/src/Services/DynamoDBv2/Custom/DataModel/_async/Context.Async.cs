@@ -348,7 +348,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the ScanAsync overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to ScanAsync.")]
-        public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
+        public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null)
         {
             var scan = ConvertScan<T>(conditions, operationConfig);
             return FromSearchAsync<T>(scan);
@@ -372,7 +372,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the FromScanAsync overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromScanAsync.")]
-        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanOperationConfig, DynamoDBOperationConfig operationConfig)
+        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanOperationConfig, DynamoDBOperationConfig operationConfig = null)
         {
             if (scanOperationConfig == null) throw new ArgumentNullException("scanOperationConfig");
 
@@ -402,7 +402,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the QueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to QueryAsync.")]
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig)
+        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null)
         {
             var query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
             return FromSearchAsync<T>(query);
@@ -427,7 +427,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the QueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to QueryAsync.")]
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
+        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig = null)
         {
             if (values == null)
                 throw new ArgumentNullException("values");
@@ -457,7 +457,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the FromQueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromQueryAsync.")]
-        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryOperationConfig, DynamoDBOperationConfig operationConfig)
+        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryOperationConfig, DynamoDBOperationConfig operationConfig = null)
         {
             if (queryOperationConfig == null) throw new ArgumentNullException("queryOperationConfig");
 

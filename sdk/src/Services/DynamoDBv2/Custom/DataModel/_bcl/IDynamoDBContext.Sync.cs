@@ -341,7 +341,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>Lazy-loaded collection of results.</returns>
         [Obsolete("Use the Query overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Query.")]
-        IEnumerable<T> Query<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig);
+        IEnumerable<T> Query<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
         /// Executes a Query operation against DynamoDB, finding items
@@ -400,8 +400,6 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </param>
         /// <param name="queryConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Lazy-loaded collection of results.</returns>
-        [Obsolete("Use the Query overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Query.")]
-
         IEnumerable<T> Query<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, QueryConfig queryConfig);
 
         /// <summary>
@@ -423,7 +421,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Lazy-loaded collection of results.</returns>
         [Obsolete("Use the FromQuery overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromQuery.")]
 
-        IEnumerable<T> FromQuery<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig);
+        IEnumerable<T> FromQuery<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
         /// Executes a Query operation against DynamoDB, finding items

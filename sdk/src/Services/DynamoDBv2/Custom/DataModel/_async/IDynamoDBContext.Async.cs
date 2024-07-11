@@ -346,7 +346,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         [Obsolete("Use the QueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to QueryAsync.")]
-        AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig);
+        AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB, finding items
@@ -388,7 +388,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         [Obsolete("Use the QueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to QueryAsync.")]
-        AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig);
+        AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB, finding items
@@ -424,7 +424,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         [Obsolete("Use the FromQueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromQueryAsync.")]
-        AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryOperationConfig, DynamoDBOperationConfig operationConfig);
+        AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryOperationConfig, DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB using a mid-level document model 
