@@ -1,8 +1,8 @@
 ﻿namespace Smithy.Identity.Abstractions
 {
     /// <summary>
-    /// The output from the authentication scheme resolver. The resolver returns a list of these, in the
-    /// order that they should be used.
+    /// The output from the authentication scheme resolver. The resolver returns a list of auth scheme options, 
+    /// in the order that they should be used.
     /// </summary>
     public interface IAuthSchemeOption
     {
