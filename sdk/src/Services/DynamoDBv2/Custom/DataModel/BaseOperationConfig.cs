@@ -71,7 +71,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public DynamoDBEntryConversion Conversion { get; set; }
 
         /// <summary>
-        /// Contorls how <see cref="DynamoDBContext"/> interprets emptry string values.
+        /// Controls how <see cref="DynamoDBContext"/> interprets empty string values.
         /// If the property is false (or not set), empty string values will be
         /// interpreted as null values.
         /// </summary>
