@@ -36,11 +36,8 @@ namespace Amazon.Runtime
         /// </summary>
         public class CredentialsRefreshState
         {
-            public ImmutableCredentials Credentials
-            {
-                get; 
-                set;
-            }
+            public ImmutableCredentials Credentials { get; }
+
             public DateTime Expiration { get; set; }
 
             public CredentialsRefreshState()
