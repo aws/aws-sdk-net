@@ -13,7 +13,7 @@ namespace Smithy.Identity.Abstractions
     /// authentication scheme options that the SDK should use when authenticating that request.
     /// </para>
     /// </summary>
-    public interface IAuthSchemeResolver
+    public interface IAuthSchemeResolver<T> where T : IAuthSchemeParameters
     {
         /// <summary>
         /// Resolve the authentication scheme that should be used. This is invoked once per SDK request, <i>before</i> endpoint resolution.
@@ -26,6 +26,6 @@ namespace Smithy.Identity.Abstractions
         /// The SDK will choose the first scheme it supports, or fail the request if no schemes are supported.
         /// </para>
         /// </returns>
-        List<IAuthSchemeOption> ResolveAuthScheme(IAuthSchemeParameters authParameters);
+        List<IAuthSchemeOption> ResolveAuthScheme(T authParameters);
     }
 }

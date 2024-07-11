@@ -2,8 +2,8 @@
 {
     /// <summary>
     /// <para>
-    /// The input to the authentication scheme resolver. A code-generated interface for passing 
-    /// in the data required for determining the authentication scheme.
+    /// The input to the authentication scheme resolver (an interface for passing in the data required 
+    /// for determining the authentication scheme).
     /// </para>
     /// </summary>
     /// <remarks>
