@@ -270,6 +270,153 @@ namespace Amazon.QuickSight
         #endregion
 
 
+        #region  BatchCreateTopicReviewedAnswer
+
+        /// <summary>
+        /// Creates new reviewed answers for a Q Topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateTopicReviewedAnswer service method.</param>
+        /// 
+        /// <returns>The response from the BatchCreateTopicReviewedAnswer service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchCreateTopicReviewedAnswer">REST API Reference for BatchCreateTopicReviewedAnswer Operation</seealso>
+        public virtual BatchCreateTopicReviewedAnswerResponse BatchCreateTopicReviewedAnswer(BatchCreateTopicReviewedAnswerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchCreateTopicReviewedAnswerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateTopicReviewedAnswerResponseUnmarshaller.Instance;
+
+            return Invoke<BatchCreateTopicReviewedAnswerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchCreateTopicReviewedAnswer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateTopicReviewedAnswer operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchCreateTopicReviewedAnswer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchCreateTopicReviewedAnswer">REST API Reference for BatchCreateTopicReviewedAnswer Operation</seealso>
+        public virtual IAsyncResult BeginBatchCreateTopicReviewedAnswer(BatchCreateTopicReviewedAnswerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchCreateTopicReviewedAnswerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateTopicReviewedAnswerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchCreateTopicReviewedAnswer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchCreateTopicReviewedAnswer.</param>
+        /// 
+        /// <returns>Returns a  BatchCreateTopicReviewedAnswerResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchCreateTopicReviewedAnswer">REST API Reference for BatchCreateTopicReviewedAnswer Operation</seealso>
+        public virtual BatchCreateTopicReviewedAnswerResponse EndBatchCreateTopicReviewedAnswer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchCreateTopicReviewedAnswerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteTopicReviewedAnswer
+
+        /// <summary>
+        /// Deletes reviewed answers for Q Topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTopicReviewedAnswer service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteTopicReviewedAnswer service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchDeleteTopicReviewedAnswer">REST API Reference for BatchDeleteTopicReviewedAnswer Operation</seealso>
+        public virtual BatchDeleteTopicReviewedAnswerResponse BatchDeleteTopicReviewedAnswer(BatchDeleteTopicReviewedAnswerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteTopicReviewedAnswerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteTopicReviewedAnswerResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteTopicReviewedAnswerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteTopicReviewedAnswer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTopicReviewedAnswer operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteTopicReviewedAnswer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchDeleteTopicReviewedAnswer">REST API Reference for BatchDeleteTopicReviewedAnswer Operation</seealso>
+        public virtual IAsyncResult BeginBatchDeleteTopicReviewedAnswer(BatchDeleteTopicReviewedAnswerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteTopicReviewedAnswerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteTopicReviewedAnswerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteTopicReviewedAnswer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteTopicReviewedAnswer.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteTopicReviewedAnswerResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchDeleteTopicReviewedAnswer">REST API Reference for BatchDeleteTopicReviewedAnswer Operation</seealso>
+        public virtual BatchDeleteTopicReviewedAnswerResponse EndBatchDeleteTopicReviewedAnswer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDeleteTopicReviewedAnswerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelIngestion
 
         /// <summary>
@@ -10279,6 +10426,78 @@ namespace Amazon.QuickSight
         public virtual ListTopicRefreshSchedulesResponse EndListTopicRefreshSchedules(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTopicRefreshSchedulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTopicReviewedAnswers
+
+        /// <summary>
+        /// Lists all reviewed answers for a Q Topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTopicReviewedAnswers service method.</param>
+        /// 
+        /// <returns>The response from the ListTopicReviewedAnswers service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopicReviewedAnswers">REST API Reference for ListTopicReviewedAnswers Operation</seealso>
+        public virtual ListTopicReviewedAnswersResponse ListTopicReviewedAnswers(ListTopicReviewedAnswersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTopicReviewedAnswersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTopicReviewedAnswersResponseUnmarshaller.Instance;
+
+            return Invoke<ListTopicReviewedAnswersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTopicReviewedAnswers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTopicReviewedAnswers operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTopicReviewedAnswers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopicReviewedAnswers">REST API Reference for ListTopicReviewedAnswers Operation</seealso>
+        public virtual IAsyncResult BeginListTopicReviewedAnswers(ListTopicReviewedAnswersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTopicReviewedAnswersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTopicReviewedAnswersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTopicReviewedAnswers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTopicReviewedAnswers.</param>
+        /// 
+        /// <returns>Returns a  ListTopicReviewedAnswersResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopicReviewedAnswers">REST API Reference for ListTopicReviewedAnswers Operation</seealso>
+        public virtual ListTopicReviewedAnswersResponse EndListTopicReviewedAnswers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTopicReviewedAnswersResponse>(asyncResult);
         }
 
         #endregion
