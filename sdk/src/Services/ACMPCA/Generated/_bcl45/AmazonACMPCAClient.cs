@@ -1822,27 +1822,11 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Authority key identifier
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Basic constraints (<i>must</i> be marked critical)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Certificate policies
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Extended key usage
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Inhibit anyPolicy
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Issuer alternative name
+        /// Subject alternative names
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1850,19 +1834,11 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Name constraints
+        /// Extended key usage
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Policy mappings
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Subject alternative name
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Subject directory attributes
+        /// Authority key identifier
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1870,7 +1846,27 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Issuer alternative name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subject directory attributes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Subject information access
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Certificate policies
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Policy mappings
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Inhibit anyPolicy
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1879,7 +1875,11 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Authority information access
+        /// Name constraints
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Policy constraints
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1887,17 +1887,17 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Authority information access
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Freshest CRL
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Policy constraints
+        /// Any other extension
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Amazon Web Services Private Certificate Authority will also reject any other extension
-        /// marked as critical not contained on the preceding list of allowed extensions.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportCertificateAuthorityCertificate service method.</param>
         /// 
@@ -2031,27 +2031,11 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Authority key identifier
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Basic constraints (<i>must</i> be marked critical)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Certificate policies
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Extended key usage
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Inhibit anyPolicy
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Issuer alternative name
+        /// Subject alternative names
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2059,19 +2043,11 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Name constraints
+        /// Extended key usage
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Policy mappings
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Subject alternative name
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Subject directory attributes
+        /// Authority key identifier
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2079,7 +2055,27 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Issuer alternative name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subject directory attributes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Subject information access
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Certificate policies
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Policy mappings
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Inhibit anyPolicy
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2088,7 +2084,11 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Authority information access
+        /// Name constraints
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Policy constraints
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2096,17 +2096,17 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Authority information access
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Freshest CRL
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Policy constraints
+        /// Any other extension
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Amazon Web Services Private Certificate Authority will also reject any other extension
-        /// marked as critical not contained on the preceding list of allowed extensions.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportCertificateAuthorityCertificate service method.</param>
         /// <param name="cancellationToken">

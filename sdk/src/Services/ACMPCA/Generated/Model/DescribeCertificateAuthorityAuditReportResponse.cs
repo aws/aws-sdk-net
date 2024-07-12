@@ -100,7 +100,7 @@ namespace Amazon.ACMPCA.Model
         /// S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string S3Key
         {
             get { return this._s3Key; }
