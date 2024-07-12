@@ -136,10 +136,16 @@ namespace Amazon.Runtime
         {
             if (!string.IsNullOrEmpty(value))
             {
-                var asUri = new Uri(value);
 #if BCL
+                if (!value.Contains("://"))
+                {
+                    value = "http://" + value;
+                }
+                var asUri = new Uri(value);
+
                 var parsedProxy = new WebProxy(asUri);
 #else
+                var asUri = new Uri(value);
                 var parsedProxy = new Amazon.Runtime.Internal.Util.WebProxy(asUri);
 #endif
                 if (!string.IsNullOrEmpty(asUri.UserInfo)) {
