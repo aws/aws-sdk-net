@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "If missing, prepend 'http://' to the value retreived from the HTTP_PROXY and HTTPS_PROXY environment variables for .NET Framework."
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }

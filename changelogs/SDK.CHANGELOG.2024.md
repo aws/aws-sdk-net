@@ -1,3 +1,30 @@
+### 3.7.849.0 (2024-07-12 18:57 UTC)
+* ACMPCA (3.7.304.0)
+	* Minor refactoring of C2J model for AWS Private CA
+* ARCZonalShift (3.7.302.0)
+	* Adds the option to subscribe to get notifications when a zonal autoshift occurs in a region.
+* AutoScaling (3.7.304.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* CodeBuild (3.7.311.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* DynamoDBv2 (3.7.305.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* GlobalAccelerator (3.7.303.0)
+	* This feature adds exceptions to the Customer API to avoid throwing Internal Service errors
+* Pinpoint (3.7.303.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* QuickSight (3.7.313.0)
+	* Vega ally control options and Support for Reviewed Answers in Topics
+* RDS (3.7.314.0)
+	* Update path for CreateDBCluster resource identifier, and Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* SimpleNotificationService (3.7.302.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* Core 3.7.304.29
+	* If missing, prepend 'http://' to the value retreived from the HTTP_PROXY and HTTPS_PROXY environment variables for .NET Framework.
+	* Update event stream apis use non blocking async io.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.848.0 (2024-07-10 18:59 UTC)
 * Batch (3.7.308.0)
 	* This feature allows AWS Batch Jobs with EKS container orchestration type to be run as Multi-Node Parallel Jobs.
