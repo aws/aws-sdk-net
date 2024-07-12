@@ -24,6 +24,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+#if AWS_ASYNC_API
+using System.Threading.Tasks;
+#endif
 
 namespace Amazon.Runtime.EventStreams.Internal
 {
@@ -44,7 +47,7 @@ namespace Amazon.Runtime.EventStreams.Internal
     /// <typeparam name="TE">An implementation of EventStreamException (e.g. S3EventStreamException).</typeparam>
     [SuppressMessage("Microsoft.Naming", "CA1710", Justification = "EventStreamCollection is not descriptive.")]
     [SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
-#if NET8_0_OR_GREATER    
+#if NET8_0_OR_GREATER
     public abstract class EnumerableEventStream<T, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TE> : EventStream<T, TE>, IEnumerableEventStream<T, TE> where T : IEventStreamEvent where TE : EventStreamException, new()
 #else
     public abstract class EnumerableEventStream<T, TE> : EventStream<T, TE>, IEnumerableEventStream<T, TE> where T : IEventStreamEvent where TE : EventStreamException, new()
@@ -161,5 +164,20 @@ namespace Amazon.Runtime.EventStreams.Internal
 
             base.StartProcessing();
         }
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Starts the background thread to start reading events from the network stream.
+        /// 
+        /// The Task will be completed when all of the events from the stream have been processed.
+        /// </summary>
+        public override async Task StartProcessingAsync()
+        {
+            // If they are/have enumerated, the event-driven mode should be disabled
+            if (IsEnumerated) throw new InvalidOperationException(MutuallyExclusiveExceptionMessage);
+
+            await base.StartProcessingAsync().ConfigureAwait(false);
+        }
+#endif
     }
 }
