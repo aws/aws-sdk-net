@@ -94,49 +94,50 @@ namespace Amazon.Runtime
             CheckIsIMDSEnabled();
             ImmutableCredentials credentials = null;
 
-            // It is best practice to work on local variable in multi-thread environment.
-            // Whether there is lock or not. Especially in read lock, it is technically still multi-thread environment.
-            CredentialsRefreshState lastRetrievedCredentials;
-
-            // Try to acquire read lock. The thread would be blocked if another thread has write lock.
-            if (_credentialsLock.TryEnterReadLock(_credentialsLockTimeout))
+            // Use local variable to avoid read lock, only return if it is not expired or retried before
+            CredentialsRefreshState lastRetrievedCredentials = _lastRetrievedCredentials;
+            if (lastRetrievedCredentials != null)
             {
-                try
-                {
-                    lastRetrievedCredentials = _lastRetrievedCredentials;
-
-                    // technically only expired time is not immutable, we could potentially drop read lock if expiration time is not an issue.
-                    if (null != lastRetrievedCredentials && !lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
-                    {
-                        // credentials does not have nullable check, potential improvement for future iteration.
-                        // Make it guarantee to not null can be beneficial.
-                        return lastRetrievedCredentials.Credentials?.Copy();
-                    }
+                if (!lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero)) {
+                    return lastRetrievedCredentials.Credentials?.Copy();
                 }
-                finally
-                {
-                    _credentialsLock.ExitReadLock();
+
+                // refreshed before, no more immediately retry
+                if (_imdsRefreshFailed) {
+                    _logger.InfoFormat(_usingExpiredCredentialsFromIMDS);
+                    return lastRetrievedCredentials.Credentials?.Copy();
                 }
             }
 
-            // If there's no credentials cached, hit IMDS directly. Try to acquire write lock.
+            // Credential is not cached or need immediately retry, hit IMDS directly. Try to acquire write lock.
             if (_credentialsLock.TryEnterWriteLock(_credentialsLockTimeout))
             {
                 try
                 {
                     lastRetrievedCredentials = _lastRetrievedCredentials;
 
-                    // Check for last retrieved credentials again in case other thread might have already fetched it.
+                    // Check cache again in case other thread might have already fetched it.
                     if (null != lastRetrievedCredentials && !lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero)) {
                         return lastRetrievedCredentials.Credentials?.Copy();
                     }
 
-                    // fetch once only, if failed, then it is failed.
-                    lastRetrievedCredentials = _lastRetrievedCredentials = FetchCredentials();
+                    // retrieve if it was null
+                    if (null == lastRetrievedCredentials) 
+                    {
+                        _lastRetrievedCredentials = FetchCredentials();
+                    }
+                    
+                    if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero) &&
+                        !_imdsRefreshFailed)
+                    {
+                        // first failure - immediately try to renew
+                        _imdsRefreshFailed = true;
+                        _lastRetrievedCredentials = FetchCredentials();
+                    }
 
                     // if credentials are expired, we'll still return them, but log a message about
                     // them being expired.
-                    if (lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
+                    if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
                     {
                         _logger.InfoFormat(_usingExpiredCredentialsFromIMDS);
                     }
@@ -145,7 +146,7 @@ namespace Amazon.Runtime
                         _imdsRefreshFailed = false;
                     }
 
-                    credentials = lastRetrievedCredentials.Credentials?.Copy();
+                    credentials = _lastRetrievedCredentials.Credentials?.Copy();
                 }
                 finally
                 {
