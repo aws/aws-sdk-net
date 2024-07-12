@@ -793,6 +793,9 @@ namespace Amazon.GlobalAccelerator
         /// <param name="request">Container for the necessary parameters to execute the CreateAccelerator service method.</param>
         /// 
         /// <returns>The response from the CreateAccelerator service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
         /// There was an internal error for Global Accelerator.
         /// </exception>
@@ -801,6 +804,9 @@ namespace Amazon.GlobalAccelerator
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
         /// Processing your request would cause you to exceed an Global Accelerator limit.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateAccelerator">REST API Reference for CreateAccelerator Operation</seealso>
         public virtual CreateAcceleratorResponse CreateAccelerator(CreateAcceleratorRequest request)
@@ -833,6 +839,9 @@ namespace Amazon.GlobalAccelerator
         /// </param>
         /// 
         /// <returns>The response from the CreateAccelerator service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
         /// There was an internal error for Global Accelerator.
         /// </exception>
@@ -841,6 +850,9 @@ namespace Amazon.GlobalAccelerator
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
         /// Processing your request would cause you to exceed an Global Accelerator limit.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateAccelerator">REST API Reference for CreateAccelerator Operation</seealso>
         public virtual Task<CreateAcceleratorResponse> CreateAcceleratorAsync(CreateAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1024,6 +1036,9 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
         /// Processing your request would cause you to exceed an Global Accelerator limit.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCustomRoutingAccelerator">REST API Reference for CreateCustomRoutingAccelerator Operation</seealso>
         public virtual CreateCustomRoutingAcceleratorResponse CreateCustomRoutingAccelerator(CreateCustomRoutingAcceleratorRequest request)
         {
@@ -1073,6 +1088,9 @@ namespace Amazon.GlobalAccelerator
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
         /// Processing your request would cause you to exceed an Global Accelerator limit.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCustomRoutingAccelerator">REST API Reference for CreateCustomRoutingAccelerator Operation</seealso>
         public virtual Task<CreateCustomRoutingAcceleratorResponse> CreateCustomRoutingAcceleratorAsync(CreateCustomRoutingAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1480,6 +1498,9 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteAccelerator">REST API Reference for DeleteAccelerator Operation</seealso>
         public virtual DeleteAcceleratorResponse DeleteAccelerator(DeleteAcceleratorRequest request)
         {
@@ -1536,6 +1557,9 @@ namespace Amazon.GlobalAccelerator
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteAccelerator">REST API Reference for DeleteAccelerator Operation</seealso>
         public virtual Task<DeleteAcceleratorResponse> DeleteAcceleratorAsync(DeleteAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1685,6 +1709,9 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCustomRoutingAccelerator">REST API Reference for DeleteCustomRoutingAccelerator Operation</seealso>
         public virtual DeleteCustomRoutingAcceleratorResponse DeleteCustomRoutingAccelerator(DeleteCustomRoutingAcceleratorRequest request)
         {
@@ -1740,6 +1767,9 @@ namespace Amazon.GlobalAccelerator
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCustomRoutingAccelerator">REST API Reference for DeleteCustomRoutingAccelerator Operation</seealso>
         public virtual Task<DeleteCustomRoutingAcceleratorResponse> DeleteCustomRoutingAcceleratorAsync(DeleteCustomRoutingAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3574,11 +3604,20 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
         /// The accelerator that you specified doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AttachmentNotFoundException">
+        /// No cross-account attachment was found.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupNotFoundException">
+        /// The endpoint group that you specified doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
         /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.ListenerNotFoundException">
+        /// The listener that you specified doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -3609,11 +3648,20 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
         /// The accelerator that you specified doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AttachmentNotFoundException">
+        /// No cross-account attachment was found.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupNotFoundException">
+        /// The endpoint group that you specified doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
         /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.ListenerNotFoundException">
+        /// The listener that you specified doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4107,11 +4155,17 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
         /// You don't have access permission.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.ConflictException">
+        /// You can't use both of those options.
+        /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
         /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAccelerator">REST API Reference for UpdateAccelerator Operation</seealso>
         public virtual UpdateAcceleratorResponse UpdateAccelerator(UpdateAcceleratorRequest request)
@@ -4173,11 +4227,17 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
         /// You don't have access permission.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.ConflictException">
+        /// You can't use both of those options.
+        /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
         /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAccelerator">REST API Reference for UpdateAccelerator Operation</seealso>
         public virtual Task<UpdateAcceleratorResponse> UpdateAcceleratorAsync(UpdateAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4212,6 +4272,9 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAcceleratorAttributes">REST API Reference for UpdateAcceleratorAttributes Operation</seealso>
         public virtual UpdateAcceleratorAttributesResponse UpdateAcceleratorAttributes(UpdateAcceleratorAttributesRequest request)
         {
@@ -4243,6 +4306,9 @@ namespace Amazon.GlobalAccelerator
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAcceleratorAttributes">REST API Reference for UpdateAcceleratorAttributes Operation</seealso>
         public virtual Task<UpdateAcceleratorAttributesResponse> UpdateAcceleratorAttributesAsync(UpdateAcceleratorAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4363,11 +4429,17 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
         /// The accelerator that you specified doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.ConflictException">
+        /// You can't use both of those options.
+        /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
         /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCustomRoutingAccelerator">REST API Reference for UpdateCustomRoutingAccelerator Operation</seealso>
         public virtual UpdateCustomRoutingAcceleratorResponse UpdateCustomRoutingAccelerator(UpdateCustomRoutingAcceleratorRequest request)
@@ -4392,11 +4464,17 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
         /// The accelerator that you specified doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.ConflictException">
+        /// You can't use both of those options.
+        /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
         /// There was an internal error for Global Accelerator.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCustomRoutingAccelerator">REST API Reference for UpdateCustomRoutingAccelerator Operation</seealso>
         public virtual Task<UpdateCustomRoutingAcceleratorResponse> UpdateCustomRoutingAcceleratorAsync(UpdateCustomRoutingAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4431,6 +4509,9 @@ namespace Amazon.GlobalAccelerator
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
         /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCustomRoutingAcceleratorAttributes">REST API Reference for UpdateCustomRoutingAcceleratorAttributes Operation</seealso>
         public virtual UpdateCustomRoutingAcceleratorAttributesResponse UpdateCustomRoutingAcceleratorAttributes(UpdateCustomRoutingAcceleratorAttributesRequest request)
         {
@@ -4462,6 +4543,9 @@ namespace Amazon.GlobalAccelerator
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
         /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCustomRoutingAcceleratorAttributes">REST API Reference for UpdateCustomRoutingAcceleratorAttributes Operation</seealso>
         public virtual Task<UpdateCustomRoutingAcceleratorAttributesResponse> UpdateCustomRoutingAcceleratorAttributesAsync(UpdateCustomRoutingAcceleratorAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
