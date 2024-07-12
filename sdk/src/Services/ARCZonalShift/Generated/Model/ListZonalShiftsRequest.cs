@@ -33,7 +33,7 @@ namespace Amazon.ARCZonalShift.Model
     /// Container for the parameters to the ListZonalShifts operation.
     /// Lists all active and completed zonal shifts in Amazon Route 53 Application Recovery
     /// Controller in your Amazon Web Services account in this Amazon Web Services Region.
-    /// <c>ListZonalShifts</c> returns customer-started zonal shifts, as well as practice
+    /// <c>ListZonalShifts</c> returns customer-initiated zonal shifts, as well as practice
     /// run zonal shifts that Route 53 ARC started on your behalf for zonal autoshift.
     /// 
     ///  

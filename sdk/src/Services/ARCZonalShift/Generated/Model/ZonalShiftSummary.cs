@@ -36,7 +36,7 @@ namespace Amazon.ARCZonalShift.Model
     /// 
     ///  
     /// <para>
-    /// Zonal shifts are temporary, including customer-started zonal shifts and the zonal
+    /// Zonal shifts are temporary, including customer-initiated zonal shifts and the zonal
     /// autoshift practice run zonal shifts that Route 53 ARC starts weekly, on your behalf.
     /// A zonal shift that a customer starts can be active for up to three days (72 hours).
     /// A practice run zonal shift has a 30 minute duration.
@@ -56,9 +56,10 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property AwayFrom. 
         /// <para>
-        /// The Availability Zone that traffic is moved away from for a resource when you start
-        /// a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource
-        /// is instead moved to other Availability Zones in the Amazon Web Services Region.
+        /// The Availability Zone (for example, <c>use1-az1</c>) that traffic is moved away from
+        /// for a resource when you start a zonal shift. Until the zonal shift expires or you
+        /// cancel it, traffic for the resource is instead moved to other Availability Zones in
+        /// the Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=20)]
@@ -98,7 +99,7 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property ExpiryTime. 
         /// <para>
-        /// The expiry time (expiration time) for a customer-started zonal shift. A zonal shift
+        /// The expiry time (expiration time) for a customer-initiated zonal shift. A zonal shift
         /// is temporary and must be set to expire when you start the zonal shift. You can initially
         /// set a zonal shift to expire in a maximum of three days (72 hours). However, you can
         /// update a zonal shift to set a new expiration at any time. 

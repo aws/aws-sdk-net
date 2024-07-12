@@ -45,9 +45,10 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property AwayFrom. 
         /// <para>
-        /// The Availability Zone that traffic is moved away from for a resource when you start
-        /// a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource
-        /// is instead moved to other Availability Zones in the Amazon Web Services Region.
+        /// The Availability Zone (for example, <c>use1-az1</c>) that traffic is moved away from
+        /// for a resource when you start a zonal shift. Until the zonal shift expires or you
+        /// cancel it, traffic for the resource is instead moved to other Availability Zones in
+        /// the Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=20)]
@@ -86,7 +87,7 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property ExpiryTime. 
         /// <para>
-        /// The expiry time (expiration time) for a customer-started zonal shift. A zonal shift
+        /// The expiry time (expiration time) for a customer-initiated zonal shift. A zonal shift
         /// is temporary and must be set to expire when you start the zonal shift. You can initially
         /// set a zonal shift to expire in a maximum of three days (72 hours). However, you can
         /// update a zonal shift to set a new expiration at any time. 
@@ -116,8 +117,8 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// The identifier for the resource to shift away traffic for. The identifier is the Amazon
-        /// Resource Name (ARN) for the resource.
+        /// The identifier for the resource that Amazon Web Services shifts traffic for. The identifier
+        /// is the Amazon Resource Name (ARN) for the resource.
         /// </para>
         ///  
         /// <para>
