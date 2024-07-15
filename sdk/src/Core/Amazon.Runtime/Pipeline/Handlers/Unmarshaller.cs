@@ -15,6 +15,8 @@
 
 using System;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Util;
 
 namespace Amazon.Runtime.Internal
@@ -211,6 +213,7 @@ namespace Amazon.Runtime.Internal
                 var unmarshaller = requestContext.Unmarshaller;
                 AmazonWebServiceResponse response = null;
                 using (requestContext.Metrics.StartEvent(Metric.ResponseUnmarshallTime))
+                using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.DeserializationDurationMetricName))
                 {
                     response = unmarshaller.UnmarshallResponse(context);
                 }

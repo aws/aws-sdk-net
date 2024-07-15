@@ -17,6 +17,8 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Util;
 using Amazon.Util.Internal;
 
@@ -77,23 +79,26 @@ namespace Amazon.Runtime.Internal
         /// request and response context.</param>
         protected static void PreInvoke(IExecutionContext executionContext)
         {
-            var requestContext = executionContext.RequestContext;
-            requestContext.Request = requestContext.Marshaller.Marshall(requestContext.OriginalRequest);
-            requestContext.Request.AuthenticationRegion = requestContext.ClientConfig.AuthenticationRegion;
-
-            // If the request has a body and its request-specific marshaller didn't already
-            // set Content-Type, follow our existing fallback logic
-            if (requestContext.Request.HasRequestBody() &&
-               !requestContext.Request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
+            using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.SerializationDurationMetricName))
             {
-                if (requestContext.Request.UseQueryString)
-                    requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = "application/x-amz-json-1.0";
-                else
-                    requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
-            }
+                var requestContext = executionContext.RequestContext;
+                requestContext.Request = requestContext.Marshaller.Marshall(requestContext.OriginalRequest);
+                requestContext.Request.AuthenticationRegion = requestContext.ClientConfig.AuthenticationRegion;
 
-            SetRecursionDetectionHeader(requestContext.Request.Headers);
-            SetUserAgentHeader(requestContext);
+                // If the request has a body and its request-specific marshaller didn't already
+                // set Content-Type, follow our existing fallback logic
+                if (requestContext.Request.HasRequestBody() &&
+                !requestContext.Request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
+                {
+                    if (requestContext.Request.UseQueryString)
+                        requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = "application/x-amz-json-1.0";
+                    else
+                        requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
+                }
+
+                SetRecursionDetectionHeader(requestContext.Request.Headers);
+                SetUserAgentHeader(requestContext);
+            }
         }
 
         /// <summary>

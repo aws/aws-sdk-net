@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using System;
 using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Runtime.Telemetry.Tracing;
 
@@ -27,25 +28,46 @@ namespace Amazon.Runtime.Telemetry
         /// <summary>
         /// Gets the <see cref="MeterProvider"/> used to create new metrics.
         /// </summary>
-        public abstract MeterProvider MeterProvider { get; protected set; }
+        public MeterProvider MeterProvider { get; private set; }
 
         /// <summary>
         /// Gets the <see cref="TracerProvider"/> used to create new tracers.
         /// </summary>
-        public abstract TracerProvider TracerProvider { get; protected set; }
+        public TracerProvider TracerProvider { get; private set; }
+
+        public TelemetryProvider(MeterProvider meterProvider, TracerProvider tracerProvider)
+        {
+            if (meterProvider == null)
+                throw new ArgumentNullException(nameof(meterProvider));
+            MeterProvider = meterProvider;
+
+            if (tracerProvider == null)
+                throw new ArgumentNullException(nameof(tracerProvider));
+            TracerProvider = tracerProvider;
+        }
 
         /// <summary>
         /// Registers a new <see cref="MeterProvider"/>.
         /// This method should be called to set a custom meter provider to enable metrics collection.
         /// </summary>
         /// <param name="meterProvider">The meter provider to register.</param>
-        public abstract void RegisterMeterProvider(MeterProvider meterProvider);
+        public virtual void RegisterMeterProvider(MeterProvider meterProvider)
+        {
+            if (meterProvider == null)
+                throw new ArgumentNullException(nameof(meterProvider));
+            MeterProvider = meterProvider;
+        }
 
         /// <summary>
         /// Registers a new <see cref="TracerProvider"/>.
         /// This method should be called to set a custom tracer provider to enable tracing.
         /// </summary>
         /// <param name="tracerProvider">The tracer provider to register.</param>
-        public abstract void RegisterTracerProvider(TracerProvider tracerProvider);
+        public virtual void RegisterTracerProvider(TracerProvider tracerProvider)
+        {
+            if (tracerProvider == null)
+                throw new ArgumentNullException(nameof(tracerProvider));
+            TracerProvider = tracerProvider;
+        }
     }
 }

@@ -16,6 +16,7 @@
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Runtime.Telemetry.Tracing;
 using Amazon.Util;
 using System;
@@ -53,8 +54,9 @@ namespace Amazon.Runtime.Internal
             ImmutableCredentials ic = null;
             if (Credentials != null && !(Credentials is AnonymousAWSCredentials) && !(executionContext.RequestContext.Signer is BearerTokenSigner))
             {
-                using (var traceSpan = TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.CredentialsRetrievalSpanName))
-                using(executionContext.RequestContext.Metrics.StartEvent(Metric.CredentialsRequestTime))
+                using (TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.CredentialsRetrievalSpanName))
+                using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.ResolveIdentityDurationMetricName))
+                using (executionContext.RequestContext.Metrics.StartEvent(Metric.CredentialsRequestTime))
                 {
                     ic = Credentials.GetCredentials();
                 }
@@ -90,7 +92,8 @@ namespace Amazon.Runtime.Internal
             ImmutableCredentials ic = null;
             if (Credentials != null && !(Credentials is AnonymousAWSCredentials))
             {
-                using (var traceSpan = TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.CredentialsRetrievalSpanName))
+                using (TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.CredentialsRetrievalSpanName))
+                using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.ResolveIdentityDurationMetricName))
                 using(executionContext.RequestContext.Metrics.StartEvent(Metric.CredentialsRequestTime))
                 {
                     ic = await Credentials.GetCredentialsAsync().ConfigureAwait(false);

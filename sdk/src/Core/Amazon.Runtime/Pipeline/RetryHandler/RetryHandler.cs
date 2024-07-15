@@ -14,6 +14,8 @@
  */
 
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Util;
 using System;
 using System.Net;
@@ -90,6 +92,8 @@ namespace Amazon.Runtime.Internal
                     {
                         requestContext.Retries++;
                         requestContext.Metrics.SetCounter(Metric.AttemptCount, requestContext.Retries);
+                        MetricsUtilities.AddMonotonicCounterValue(requestContext, TelemetryConstants.CallAttemptsMetricName, TelemetryConstants.AttemptUnitName);
+
                         LogForRetry(requestContext, exception);
                     }
 
@@ -149,6 +153,8 @@ namespace Amazon.Runtime.Internal
                     {
                         requestContext.Retries++;
                         requestContext.Metrics.SetCounter(Metric.AttemptCount, requestContext.Retries);
+                        MetricsUtilities.AddMonotonicCounterValue(requestContext, TelemetryConstants.CallAttemptsMetricName, TelemetryConstants.AttemptUnitName);
+
                         LogForRetry(requestContext, capturedException.SourceException);
                     }
 
@@ -188,6 +194,8 @@ namespace Amazon.Runtime.Internal
                 {
                     requestContext.Retries++;
                     requestContext.Metrics.SetCounter(Metric.AttemptCount, requestContext.Retries);
+                    MetricsUtilities.AddMonotonicCounterValue(requestContext, TelemetryConstants.CallAttemptsMetricName, TelemetryConstants.AttemptUnitName);
+
                     LogForRetry(requestContext, exception);
 
                     PrepareForRetry(requestContext);

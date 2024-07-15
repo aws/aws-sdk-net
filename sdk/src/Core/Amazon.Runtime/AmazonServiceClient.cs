@@ -27,6 +27,8 @@ using System.Text;
 using System.Linq;
 using System.Threading;
 using Amazon.Util.Internal;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Metrics;
 using ExecutionContext = Amazon.Runtime.Internal.ExecutionContext;
 
 namespace Amazon.Runtime
@@ -36,6 +38,7 @@ namespace Amazon.Runtime
         private static volatile bool _isProtocolUpdated;
         private readonly object _lock = new object();
 
+        private IDisposable _uptimeMetricMeasurer;
         private bool _disposed;
         private Logger _logger;
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
@@ -164,6 +167,8 @@ namespace Amazon.Runtime
             Initialize();
             UpdateSecurityProtocol();
             BuildRuntimePipeline();
+
+            _uptimeMetricMeasurer = MetricsUtilities.MeasureDuration(config, TelemetryConstants.ClientUptimeMetricName);
         }
 
         protected AbstractAWSSigner Signer
@@ -408,8 +413,11 @@ namespace Amazon.Runtime
 
             if (disposing)
             {
-                if (RuntimePipeline != null)
-                    RuntimePipeline.Dispose();
+                RuntimePipeline?.Dispose();
+                RuntimePipeline = null;
+
+                _uptimeMetricMeasurer?.Dispose();
+                _uptimeMetricMeasurer = null;
 
                 _disposed = true;
             }
