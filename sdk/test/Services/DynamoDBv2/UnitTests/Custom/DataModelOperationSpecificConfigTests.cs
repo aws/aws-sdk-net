@@ -298,5 +298,53 @@ namespace AWSSDK_DotNet.UnitTests
             [DynamoDBRangeKey]
             public string Name { get; set; }
         }
+
+        [TestMethod]
+        public void DeleteConfig()
+        {
+            // If this fails because you've added a property, be sure to add it to
+            // `ToDynamoDBOperationConfig` before updating this unit test
+            Assert.AreEqual(7, typeof(DeleteConfig).GetProperties().Length);
+        }
+
+        [TestMethod]
+        public void SaveConfig()
+        {
+            // If this fails because you've added a property, be sure to add it to
+            // `ToDynamoDBOperationConfig` before updating this unit test
+            Assert.AreEqual(8, typeof(SaveConfig).GetProperties().Length);
+        }
+
+        [TestMethod]
+        public void LoadConfig()
+        {
+            // If this fails because you've added a property, be sure to add it to
+            // `ToDynamoDBOperationConfig` before updating this unit test
+            Assert.AreEqual(9, typeof(LoadConfig).GetProperties().Length);
+        }
+
+        [TestMethod]
+        public void ToDocumentConfig()
+        {
+            // If this fails because you've added a property, be sure to add it to
+            // `ToDynamoDBOperationConfig` before updating this unit test
+            Assert.AreEqual(7, typeof(ToDocumentConfig).GetProperties().Length);
+        }
+
+        [TestMethod]
+        public void FromDocumentConfig()
+        {
+            // If this fails because you've added a property, be sure to add it to
+            // `ToDynamoDBOperationConfig` before updating this unit test
+            Assert.AreEqual(7, typeof(FromDocumentConfig).GetProperties().Length);
+        }
+
+        [TestMethod]
+        public void GetTargetTableConfig()
+        {
+            // If this fails because you've added a property, be sure to add it to
+            // `ToDynamoDBOperationConfig` before updating this unit test
+            Assert.AreEqual(6, typeof(GetTargetTableConfig).GetProperties().Length);
+        }
     }
 }

@@ -34,7 +34,22 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type to retrieve table for</typeparam>
         /// <returns>Table object</returns>
+        Table GetTargetTable<T>();
+
+        /// <summary>
+        /// Retrieves the target table for the specified type
+        /// </summary>
+        /// <typeparam name="T">Type to retrieve table for</typeparam>
+        /// <returns>Table object</returns>
+        [Obsolete("Use the GetTargetTable overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
         Table GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Retrieves the target table for the specified type
+        /// </summary>
+        /// <typeparam name="T">Type to retrieve table for</typeparam>
+        /// <returns>Table object</returns>
+        Table GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig);
 
         #endregion
     }
