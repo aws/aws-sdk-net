@@ -13,10 +13,7 @@
  * permissions and limitations under the License.
  */
 
-using System;
-using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Runtime.Telemetry.Metrics.NoOp;
-using Amazon.Runtime.Telemetry.Tracing;
 using Amazon.Runtime.Telemetry.Tracing.NoOp;
 
 namespace Amazon.Runtime.Telemetry
@@ -31,48 +28,9 @@ namespace Amazon.Runtime.Telemetry
         /// This setup prevents any telemetry actions from being performed unless explicitly registered using the
         /// registration methods.
         /// </summary>
-        public DefaultTelemetryProvider()
+        public DefaultTelemetryProvider() :
+            base(new NoOpMeterProvider(), new NoOpTracerProvider())
         {
-            TracerProvider = new NoOpTracerProvider();
-            MeterProvider = new NoOpMeterProvider();
-        }
-
-        /// <summary>
-        /// Gets the <see cref="TracerProvider"/> used to create new tracers.
-        /// This property is initialized with a no-op implementation by default.
-        /// </summary>
-        public override TracerProvider TracerProvider { get; protected set; }
-
-        /// <summary>
-        /// Gets the <see cref="MeterProvider"/> used to create new metrics.
-        /// This property is initialized with a no-op implementation by default.
-        /// </summary>
-        public override MeterProvider MeterProvider { get; protected set; }
-
-        /// <summary>
-        /// Registers a new <see cref="TracerProvider"/>.
-        /// This method sets a custom tracer provider to replace the default no-op provider,
-        /// enabling the collection of tracing data.
-        /// </summary>
-        /// <param name="tracerProvider">The tracer provider to register.</param>
-        public override void RegisterTracerProvider(TracerProvider tracerProvider)
-        {
-            if (tracerProvider == null)
-                throw new ArgumentNullException(nameof(tracerProvider));
-            TracerProvider = tracerProvider;
-        }
-
-        /// <summary>
-        /// Registers a new <see cref="MeterProvider"/>.
-        /// This method sets a custom meter provider to replace the default no-op provider,
-        /// enabling the collection of metrics data.
-        /// </summary>
-        /// <param name="meterProvider">The meter provider to register.</param>
-        public override void RegisterMeterProvider(MeterProvider meterProvider)
-        {
-            if (meterProvider == null)
-                throw new ArgumentNullException(nameof(meterProvider));
-            MeterProvider = meterProvider;
         }
     }
 }

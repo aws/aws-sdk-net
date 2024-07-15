@@ -17,6 +17,8 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Util;
 using Amazon.Util.Internal;
 
@@ -77,28 +79,31 @@ namespace Amazon.Runtime.Internal
         /// request and response context.</param>
         protected static void PreInvoke(IExecutionContext executionContext)
         {
-            var requestContext = executionContext.RequestContext;
-            requestContext.Request = requestContext.Marshaller.Marshall(requestContext.OriginalRequest);
-            requestContext.Request.AuthenticationRegion = requestContext.ClientConfig.AuthenticationRegion;
+            using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.SerializationDurationMetricName))
+            {
+                var requestContext = executionContext.RequestContext;
+                requestContext.Request = requestContext.Marshaller.Marshall(requestContext.OriginalRequest);
+                requestContext.Request.AuthenticationRegion = requestContext.ClientConfig.AuthenticationRegion;
 
 #if NETSTANDARD
-            var method = requestContext.Request.HttpMethod.ToUpperInvariant();
+                var method = requestContext.Request.HttpMethod.ToUpperInvariant();
 #else
-            var method = requestContext.Request.HttpMethod.ToUpper(CultureInfo.InvariantCulture);
+                var method = requestContext.Request.HttpMethod.ToUpper(CultureInfo.InvariantCulture);
 #endif
-            if (method != "GET" && method != "DELETE" && method != "HEAD")
-            {
-                if (!requestContext.Request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
+                if (method != "GET" && method != "DELETE" && method != "HEAD")
                 {
-                    if (requestContext.Request.UseQueryString)
-                        requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = "application/x-amz-json-1.0";
-                    else
-                        requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
+                    if (!requestContext.Request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
+                    {
+                        if (requestContext.Request.UseQueryString)
+                            requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = "application/x-amz-json-1.0";
+                        else
+                            requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
+                    }
                 }
-            }
 
-            SetRecursionDetectionHeader(requestContext.Request.Headers);
-            SetUserAgentHeader(requestContext);
+                SetRecursionDetectionHeader(requestContext.Request.Headers);
+                SetUserAgentHeader(requestContext);
+            }
         }
 
         /// <summary>

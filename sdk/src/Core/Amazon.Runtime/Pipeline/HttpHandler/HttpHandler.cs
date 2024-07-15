@@ -18,6 +18,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Tracing;
+using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Util;
 using Amazon.Util.Internal;
 using System;
@@ -71,6 +72,7 @@ namespace Amazon.Runtime.Internal
 
                 using (executionContext.RequestContext.Metrics.StartEvent(Metric.HttpRequestTime))
                 using (var traceSpan = TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.HTTPRequestSpanName))
+                using(MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallAttemptDurationMetricName))
                 {
                     // Send request body if present.
                     if (wrappedRequest.HasRequestBody())
@@ -89,7 +91,7 @@ namespace Amazon.Runtime.Internal
                     }
 
                     executionContext.ResponseContext.HttpResponse = httpRequest.GetResponse();
-                    SetTraceSpanHttpAttributes(traceSpan, httpRequest.Method, wrappedRequest, executionContext.ResponseContext.HttpResponse);
+                    RecordHttpTelemetryData(executionContext, traceSpan, wrappedRequest);
                 }
             }
             finally
@@ -136,15 +138,35 @@ namespace Amazon.Runtime.Internal
             catch { }
         }
 
-        private static void SetTraceSpanHttpAttributes(TraceSpan traceSpan, string method, IRequest request, IWebResponseData response)
+        private static void RecordHttpTelemetryData(IExecutionContext executionContext, TraceSpan traceSpan, IRequest request)
         {
-            traceSpan.SetAttribute(TelemetryConstants.HTTPMethodAttributeKey, method);
+            var response = executionContext.ResponseContext.HttpResponse;
+
+            var metricsAttributes = new Attributes();
+            metricsAttributes.Set(TelemetryConstants.ServerAddressAttributeKey, $"{request.Endpoint.Host}:{request.Endpoint.Port.ToString()}");
+
+            traceSpan.SetAttribute(TelemetryConstants.HTTPMethodAttributeKey, request.HttpMethod);
             traceSpan.SetAttribute(TelemetryConstants.HTTPStatusCodeAttributeKey, ((int)response.StatusCode));
 
             var contentLengthHeader = request.GetHeaderValue(HeaderKeys.ContentLengthHeader);
-            if (!string.IsNullOrEmpty(contentLengthHeader) && long.TryParse(contentLengthHeader, out var contentLength))
+            if (long.TryParse(contentLengthHeader, out var contentLength) && contentLength > 0)
             {
                 traceSpan.SetAttribute(TelemetryConstants.HTTPRequestContentLengthAttributeKey, contentLength);
+
+                MetricsUtilities.AddMonotonicCounterValue(executionContext.RequestContext,
+                    TelemetryConstants.HTTPBytesSentMetricName,
+                    TelemetryConstants.BytesUnitName,
+                    contentLength,
+                    metricsAttributes);
+            }
+
+            if (response.ContentLength > 0)
+            {
+                MetricsUtilities.AddMonotonicCounterValue(executionContext.RequestContext,
+                    TelemetryConstants.HTTPBytesReceivedMetricName,
+                    TelemetryConstants.BytesUnitName,
+                    response.ContentLength,
+                    metricsAttributes);
             }
 
             traceSpan.SetAttribute(TelemetryConstants.HTTPResponseContentLengthAttributeKey, response.ContentLength);
@@ -171,6 +193,7 @@ namespace Amazon.Runtime.Internal
 
                     using (executionContext.RequestContext.Metrics.StartEvent(Metric.HttpRequestTime))
                     using (var traceSpan = TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.HTTPRequestSpanName))
+                    using(MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallAttemptDurationMetricName))
                     {
                         // Send request body if present.
                         if (wrappedRequest.HasRequestBody())
@@ -206,7 +229,7 @@ namespace Amazon.Runtime.Internal
                         var response = await httpRequest.GetResponseAsync(executionContext.RequestContext.CancellationToken).
                             ConfigureAwait(false);
                         executionContext.ResponseContext.HttpResponse = response;
-                        SetTraceSpanHttpAttributes(traceSpan, httpRequest.Method, wrappedRequest, executionContext.ResponseContext.HttpResponse);
+                        RecordHttpTelemetryData(executionContext, traceSpan, wrappedRequest);
                 }
                 // The response is not unmarshalled yet.
                 return null;
