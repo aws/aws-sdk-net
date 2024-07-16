@@ -427,15 +427,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return results;
         }
 
-#if NETSTANDARD
-        private static void CallUntilCompletion(AmazonDynamoDBClient client, BatchGetItemRequest request, Results allResults)
-#else
         private static void CallUntilCompletion(IAmazonDynamoDB client, BatchGetItemRequest request, Results allResults)
-#endif
         {
             do
             {
-                var serviceResponse = client.BatchGetItem(request);
+#if AWS_ASYNC_API
+                // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
+                var internalClient = client as AmazonDynamoDBClient;
+                if (internalClient == null)
+                {
+                    throw new InvalidOperationException("Calling the synchronous DocumentBatchGet.Execute() from .NET or .NET Core requires initializing the Table " +
+                       "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when calling ExecuteAsync instead.");
+                }
+#else
+                internalClient = DDBClient;
+#endif
+                var serviceResponse = internalClient.BatchGetItem(request);
 
                 foreach (var kvp in serviceResponse.Responses)
                 {
@@ -448,12 +455,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
             } while (request.RequestItems.Count > 0);
         }
 
-#if AWS_ASYNC_API 
-#if NETSTANDARD
-        private static async Task CallUntilCompletionAsync(AmazonDynamoDBClient client, BatchGetItemRequest request, Results allResults, CancellationToken cancellationToken)
-#else
+#if AWS_ASYNC_API
         private static async Task CallUntilCompletionAsync(IAmazonDynamoDB client, BatchGetItemRequest request, Results allResults, CancellationToken cancellationToken)
-#endif
         {
             do
             {

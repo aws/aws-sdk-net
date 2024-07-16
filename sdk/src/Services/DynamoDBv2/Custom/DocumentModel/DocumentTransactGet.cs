@@ -307,8 +307,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (Items == null || !Items.Any()) return new Dictionary<DocumentTransactGet, List<Document>>();
 
             var request = ConstructRequest(isAsync: false);
-            var dynamoDbClient = Items[0].TransactionPart.TargetTable.DDBClient;
-            var response = dynamoDbClient.TransactGetItems(request);
+#if AWS_ASYNC_API
+            // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
+            var internalClient = Items[0].TransactionPart.TargetTable.DDBClient as AmazonDynamoDBClient;
+            if (internalClient == null)
+            {
+                throw new InvalidOperationException("Calling the synchronous DocumentBatchGet.Execute() from .NET or .NET Core requires initializing the Table " +
+                   "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when calling ExecuteAsync instead.");
+            }
+#else
+                internalClient = Items[0].TransactionPart.TargetTable.DDBClient;
+#endif
+            var response = internalClient.TransactGetItems(request);
             return GetDocuments(response.Responses);
         }
 

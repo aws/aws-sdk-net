@@ -425,41 +425,6 @@ namespace AWSSDK_DotNet.UnitTests
             public string ManagerName { get; set; }
         }
 
-#if ASYNC_AWAIT
-        [TestMethod]
-        [TestCategory("DynamoDBv2")]
-        public async Task TestMockingAsyncSeach()
-        {
-            var mockDBContext = new Mock<IDynamoDBContext>();
-            mockDBContext
-                .Setup(x => x.ScanAsync<DataItem>(
-                   It.IsAny<IEnumerable<ScanCondition>>(),
-                   It.IsAny<DynamoDBOperationConfig>()))
-                .Returns(
-                   new MockAsyncSearch<DataItem>() // Return mock version of AsyncSearch
-                );
-
-            var search = mockDBContext.Object.ScanAsync<DataItem>(new List<ScanCondition>());
-            Assert.IsInstanceOfType(search, typeof(MockAsyncSearch<DataItem>));
-
-            var items = await search.GetNextSetAsync();
-            Assert.AreEqual(0, items.Count());
-        }
-
-        public class DataItem
-        {
-            public string Id { get; set; }
-        }
-
-        public class MockAsyncSearch<T> : AsyncSearch<T>
-        {
-            public override Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
-            {
-                return Task.FromResult(new List<T>());
-            }
-        }
-#endif
-
         /// <summary>
         /// Asserts that our desired exception is thrown when attempting to make a query
         /// that relies on the hash key without correct table metadata

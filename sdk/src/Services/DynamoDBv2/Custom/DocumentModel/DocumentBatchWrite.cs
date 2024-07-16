@@ -469,15 +469,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return nextItems;
         }
 
-#if NETSTANDARD
-        private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, AmazonDynamoDBClient client)
-#else
         private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, IAmazonDynamoDB client)
-#endif
         {
             do
             {
-                var result = client.BatchWriteItem(request);
+#if AWS_ASYNC_API
+                // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
+                var internalClient = client as AmazonDynamoDBClient;
+                if (internalClient == null)
+                {
+                    throw new InvalidOperationException("Calling the synchronous DocumentBatchWrite.Execute() from .NET or .NET Core requires initializing the Table " +
+                       "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when calling ExecuteAsync instead.");
+                }
+#else
+                internalClient = DDBClient;
+#endif
+                var result = internalClient.BatchWriteItem(request);
                 request.RequestItems = result.UnprocessedItems;
 
                 Dictionary<Key, Document> unprocessedDocuments = new Dictionary<Key, Document>(keyComparer);
@@ -529,11 +536,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 #if AWS_ASYNC_API 
-#if NETSTANDARD
-        private async Task CallUntilCompletionAsync(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, AmazonDynamoDBClient client, CancellationToken cancellationToken)
-#else
         private async Task CallUntilCompletionAsync(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, IAmazonDynamoDB client, CancellationToken cancellationToken)
-#endif
         {
             do
             {
