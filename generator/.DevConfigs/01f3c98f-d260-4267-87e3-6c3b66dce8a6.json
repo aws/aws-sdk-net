@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Updated the generator to namespace RequestContext and DefaultRequest in clients to prevent naming collisions."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
