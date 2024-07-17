@@ -60,16 +60,17 @@ namespace Amazon.Runtime.Telemetry.Tracing
         }
 
         /// <summary>
-        /// Sets exception attributes on the span.
+        /// Records an exception in the provided trace span with additional attributes.
         /// </summary>
-        /// <param name="span">The span to set the exception attributes on.</param>
-        /// <param name="exception">The exception to log.</param>
-        public static void SetExceptionAttributes(this TraceSpan span, Exception exception) 
+        /// <param name="span">The trace span to record the exception in.</param>
+        /// <param name="exception">The exception to record.</param>
+        public static void CaptureException(this TraceSpan span, Exception exception) 
         {
+            span.RecordException(exception);
+
             span.SetAttribute(TelemetryConstants.ExceptionTypeAttributeKey, exception.GetType().ToString());
             span.SetAttribute(TelemetryConstants.ExceptionMessageAttributeKey, exception.Message);
             span.SetAttribute(TelemetryConstants.ExceptionStackTraceAttributeKey, exception.StackTrace);
-            span.SetAttribute(TelemetryConstants.ErrorAttributeKey, true);
             
             var amazonException = exception as AmazonServiceException;
             if (amazonException != null)

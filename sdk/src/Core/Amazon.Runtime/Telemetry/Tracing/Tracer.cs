@@ -13,13 +13,15 @@
  * permissions and limitations under the License.
  */
 
+using System;
+
 namespace Amazon.Runtime.Telemetry.Tracing
 {
     /// <summary>
     /// Abstract class representing a tracer used to record tracing information.
     /// Tracer providers are used to create tracers which record tracing data.
     /// </summary>
-    public abstract class Tracer
+    public abstract class Tracer : IDisposable
     {
         /// <summary>
         /// Creates a new <see cref="TraceSpan"/> with the given name.
@@ -35,5 +37,18 @@ namespace Amazon.Runtime.Telemetry.Tracing
             Attributes initialAttributes = null,
             SpanKind spanKind = SpanKind.INTERNAL,
             SpanContext parentContext = null);
+
+        /// <summary>
+        /// Disposes the span, releasing any resources associated with it.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+        }
     }
 }

@@ -40,7 +40,7 @@ namespace Amazon.Runtime.Internal
 
             var operationName = AWSSDKUtils.ExtractOperationName(executionContext.RequestContext.RequestName);
             var spanName = $"{executionContext.RequestContext.ServiceMetaData.ServiceId}.{operationName}";
-            var span = TracingUtilities.CreateSpan(executionContext.RequestContext, spanName);
+            var span = TracingUtilities.CreateSpan(executionContext.RequestContext, spanName, null, SpanKind.CLIENT);
             IDisposable callDurationMetricsMeasurer = null;
             
             try
@@ -53,7 +53,7 @@ namespace Amazon.Runtime.Internal
             }
             catch(Exception ex)
             {
-                span.SetExceptionAttributes(ex);
+                span.CaptureException(ex);
                 MetricsUtilities.RecordError(executionContext.RequestContext, ex);
                 throw;
             }
@@ -82,7 +82,7 @@ namespace Amazon.Runtime.Internal
             
             var operationName = AWSSDKUtils.ExtractOperationName(executionContext.RequestContext.RequestName);
             var spanName = $"{executionContext.RequestContext.ServiceMetaData.ServiceId}.{operationName}";
-            var span = TracingUtilities.CreateSpan(executionContext.RequestContext, spanName);
+            var span = TracingUtilities.CreateSpan(executionContext.RequestContext, spanName, null, SpanKind.CLIENT);
             IDisposable callDurationMetricsMeasurer = null;
 
             try
@@ -96,7 +96,7 @@ namespace Amazon.Runtime.Internal
             }
             catch (Exception ex)
             {
-                span.SetExceptionAttributes(ex);
+                span.CaptureException(ex);
                 MetricsUtilities.RecordError(executionContext.RequestContext, ex);
                 throw;
             }

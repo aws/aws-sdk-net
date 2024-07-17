@@ -85,7 +85,7 @@ namespace Amazon.Runtime.Internal
                         catch(Exception ex)
                         {
                             CompleteFailedRequest(httpRequest);
-                            traceSpan.SetExceptionAttributes(ex);
+                            traceSpan.CaptureException(ex);
                             throw;
                         }
                     }
@@ -214,7 +214,7 @@ namespace Amazon.Runtime.Internal
                             }
                             catch (Exception e)
                             {
-                                traceSpan.SetExceptionAttributes(e);
+                                traceSpan.CaptureException(e);
                                 edi = System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(e);
                             }
 

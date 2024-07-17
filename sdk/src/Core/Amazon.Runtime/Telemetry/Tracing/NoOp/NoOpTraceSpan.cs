@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 
+using System;
+
 namespace Amazon.Runtime.Telemetry.Tracing.NoOp
 {
     /// <summary>
@@ -50,6 +52,16 @@ namespace Amazon.Runtime.Telemetry.Tracing.NoOp
         /// </summary>
         /// <param name="status">The status to set for the span. This parameter is ignored in the no-op implementation.</param>
         public override void SetStatus(SpanStatus status)
+        {
+            // No-op implementation
+        }
+
+        /// <summary>
+        /// No-op implementation of the <see cref="RecordException(Exception, Attributes)"/> method.
+        /// </summary>
+        /// <param name="exception">The exception to record. This parameter is ignored in the no-op implementation.</param>
+        /// <param name="attributes">Optional attributes associated with the exception. This parameter is ignored in the no-op implementation.</param>
+        public override void RecordException(Exception exception, Attributes attributes = null)
         {
             // No-op implementation
         }

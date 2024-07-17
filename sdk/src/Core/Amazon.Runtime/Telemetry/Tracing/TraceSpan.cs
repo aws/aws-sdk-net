@@ -52,6 +52,13 @@ namespace Amazon.Runtime.Telemetry.Tracing
         public abstract void SetStatus(SpanStatus status);
 
         /// <summary>
+        /// Records an exception and its associated attributes in the trace span.
+        /// </summary>
+        /// <param name="exception">The exception to record.</param>
+        /// <param name="attributes">Optional attributes associated with the exception. These can provide additional context about the exception.</param>
+        public abstract void RecordException(Exception exception, Attributes attributes = null);
+
+        /// <summary>
         /// Marks the end of the span's execution.
         /// This should be called when the unit of work represented by the span has completed.
         /// </summary>
