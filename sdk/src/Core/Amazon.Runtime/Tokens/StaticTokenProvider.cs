@@ -7,7 +7,10 @@ using Amazon.Util;
 
 namespace Amazon.Runtime
 {
-    /// <inheritdoc cref="StaticTokenProvider(string, DateTime?)"/>
+    /// <summary>
+    /// An <see cref="IAWSTokenProvider"/> implementation can be assigned to
+    /// <see cref="IClientConfig.AWSTokenProvider"/> or added to a <see cref="AWSTokenProviderChain"/>.
+    /// </summary>
     public class StaticTokenProvider : IAWSTokenProvider
     {
         private readonly string _token;

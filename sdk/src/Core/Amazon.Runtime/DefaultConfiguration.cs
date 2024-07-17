@@ -72,7 +72,26 @@ namespace Amazon.Runtime
         TimeSpan? HttpRequestTimeout { get; }
     }
 
-    /// <inheritdoc cref="IDefaultConfiguration"/>
+    /// <summary>
+    /// A defaults mode determines how certain default configuration options are resolved in the SDK. Based on the provided
+    /// mode, the SDK will vend sensible default values tailored to the specific <see cref="DefaultConfigurationMode"/>.
+    /// <para />
+    /// All options above can be configured by users, and the overridden value will take precedence.
+    /// <para />
+    /// <b>Note:</b> for any mode other than <see cref="DefaultConfigurationMode.Legacy"/>, the vended default values
+    /// might change as best practices may evolve. As a result, it is encouraged to perform testing when upgrading the SDK
+    /// if you are using a mode other than <see cref="DefaultConfigurationMode.Legacy"/>.
+    /// <para />
+    /// While the <see cref="DefaultConfigurationMode.Legacy"/> defaults mode is specific to .NET,
+    /// other modes are standardized across all of the AWS SDKs.
+    /// <para />
+    /// The defaults mode can be configured:
+    /// <list type="number">
+    /// <item>When constructing an <see cref="AmazonServiceClient"/> implementation by setting <see cref="ClientConfig.DefaultConfigurationMode"/>.</item>
+    /// <item>Globally via the "AWS_DEFAULTS_MODE" environment variable.</item>
+    /// <item>On a configuration profile via the "defaults_mode" profile file property.</item>
+    /// </list>
+    /// </summary>
     [DebuggerDisplay("{" + nameof(Name) + "}")]
     public class DefaultConfiguration : IDefaultConfiguration
     {
