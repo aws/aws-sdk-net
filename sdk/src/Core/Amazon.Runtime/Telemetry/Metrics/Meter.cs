@@ -23,21 +23,6 @@ namespace Amazon.Runtime.Telemetry.Metrics
     public abstract class Meter : IDisposable
     {
         /// <summary>
-        /// Creates a gauge instrument which measures a value that can go up and down.
-        /// </summary>
-        /// <typeparam name="T">The type of value being measured by the gauge instrument. This can be a numeric type such as int, long, double, etc.</typeparam>
-        /// <param name="name">The name of the gauge instrument. This name uniquely identifies the instrument within the meter.</param>
-        /// <param name="callback">The callback function invoked when the gauge value is read. This function should update the gauge's value.</param>
-        /// <param name="units">Optional. The unit of measure for the gauge value, such as "seconds" or "bytes".</param>
-        /// <param name="description">Optional. A description of the gauge instrument.</param>
-        /// <returns>An <see cref="AsyncMeasurementHandle{T}"/> used to manage the async measurement of the gauge value.</returns>
-        public abstract AsyncMeasurementHandle<T> CreateGauge<T>(
-            string name,
-            Action<AsyncMeasurement<T>> callback,
-            string units = null,
-            string description = null) where T : struct;
-
-        /// <summary>
         /// Creates an up-down counter instrument which can be incremented or decremented by a specified value.
         /// </summary>
         /// <typeparam name="T">The type of value being measured by the up-down counter instrument. This can be a numeric type such as int, long, double, etc.</typeparam>
@@ -51,21 +36,6 @@ namespace Amazon.Runtime.Telemetry.Metrics
             string description = null) where T : struct;
 
         /// <summary>
-        /// Creates an async up-down counter instrument which can be incremented or decremented by a specified value.
-        /// </summary>
-        /// <typeparam name="T">The type of value being measured by the async up-down counter instrument. This can be a numeric type such as int, long, double, etc.</typeparam>
-        /// <param name="name">The name of the async up-down counter instrument. This name uniquely identifies the instrument within the meter.</param>
-        /// <param name="callback">The callback function invoked when the counter value is read. This function should update the counter's value.</param>
-        /// <param name="units">Optional. The unit of measure for the counter value, such as "seconds" or "bytes".</param>
-        /// <param name="description">Optional. A description of the async up-down counter instrument.</param>
-        /// <returns>An <see cref="AsyncMeasurementHandle{T}"/> used to manage the async measurement of the counter value.</returns>
-        public abstract AsyncMeasurementHandle<T> CreateAsyncUpDownCounter<T>(
-            string name,
-            Action<AsyncMeasurement<T>> callback,
-            string units = null,
-            string description = null) where T : struct;
-
-        /// <summary>
         /// Creates a monotonic counter instrument which can only be incremented by a specified value.
         /// </summary>
         /// <typeparam name="T">The type of value being measured by the monotonic counter instrument. This can be a numeric type such as int, long, double, etc.</typeparam>
@@ -75,21 +45,6 @@ namespace Amazon.Runtime.Telemetry.Metrics
         /// <returns>A <see cref="MonotonicCounter{T}"/> used to measure values that can only be incremented.</returns>
         public abstract MonotonicCounter<T> CreateMonotonicCounter<T>(
             string name,
-            string units = null,
-            string description = null) where T : struct;
-
-        /// <summary>
-        /// Creates an async monotonic counter instrument which can only be incremented by a specified value.
-        /// </summary>
-        /// <typeparam name="T">The type of value being measured by the async monotonic counter instrument. This can be a numeric type such as int, long, double, etc.</typeparam>
-        /// <param name="name">The name of the async monotonic counter instrument. This name uniquely identifies the instrument within the meter.</param>
-        /// <param name="callback">The callback function invoked when the counter value is read. This function should update the counter's value.</param>
-        /// <param name="units">Optional. The unit of measure for the counter value, such as "seconds" or "bytes".</param>
-        /// <param name="description">Optional. A description of the async monotonic counter instrument.</param>
-        /// <returns>An <see cref="AsyncMeasurementHandle{T}"/> used to manage the async measurement of the counter value.</returns>
-        public abstract AsyncMeasurementHandle<T> CreateAsyncMonotonicCounter<T>(
-            string name,
-            Action<AsyncMeasurement<T>> callback,
             string units = null,
             string description = null) where T : struct;
 

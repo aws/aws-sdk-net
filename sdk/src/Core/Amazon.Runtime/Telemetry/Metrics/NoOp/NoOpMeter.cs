@@ -25,25 +25,6 @@ namespace Amazon.Runtime.Telemetry.Metrics.NoOp
     internal class NoOpMeter : Meter
     {
         /// <summary>
-        /// No-op implementation of the <see cref="CreateGauge"/> method.
-        /// This method does nothing when called and returns a no-op handle.
-        /// </summary>
-        /// <typeparam name="T">The type of value being measured by the gauge instrument.</typeparam>
-        /// <param name="name">The name of the gauge instrument.</param>
-        /// <param name="callback">The callback function invoked when the gauge value is read.</param>
-        /// <param name="units">Optional. The unit of measure for the gauge value.</param>
-        /// <param name="description">Optional. A description of the gauge instrument.</param>
-        /// <returns>A no-op <see cref="AsyncMeasurementHandle{T}"/> instance.</returns>
-        public override AsyncMeasurementHandle<T> CreateGauge<T>(
-            string name,
-            Action<AsyncMeasurement<T>> callback,
-            string units = null,
-            string description = null)
-        {
-            return new NoOpAsyncMeasurementHandle<T>(this);
-        }
-
-        /// <summary>
         /// No-op implementation of the <see cref="CreateUpDownCounter"/> method.
         /// This method does nothing when called and returns a no-op counter.
         /// </summary>
@@ -61,25 +42,6 @@ namespace Amazon.Runtime.Telemetry.Metrics.NoOp
         }
 
         /// <summary>
-        /// No-op implementation of the <see cref="CreateAsyncUpDownCounter"/> method.
-        /// This method does nothing when called and returns a no-op handle.
-        /// </summary>
-        /// <typeparam name="T">The type of value being measured by the async up-down counter instrument.</typeparam>
-        /// <param name="name">The name of the async up-down counter instrument.</param>
-        /// <param name="callback">The callback function invoked when the counter value is read.</param>
-        /// <param name="units">Optional. The unit of measure for the counter value.</param>
-        /// <param name="description">Optional. A description of the async up-down counter instrument.</param>
-        /// <returns>A no-op <see cref="AsyncMeasurementHandle{T}"/> instance.</returns>
-        public override AsyncMeasurementHandle<T> CreateAsyncUpDownCounter<T>(
-            string name,
-            Action<AsyncMeasurement<T>> callback,
-            string units = null,
-            string description = null)
-        {
-            return new NoOpAsyncMeasurementHandle<T>(this);
-        }
-
-        /// <summary>
         /// No-op implementation of the <see cref="CreateMonotonicCounter"/> method.
         /// This method does nothing when called and returns a no-op counter.
         /// </summary>
@@ -94,25 +56,6 @@ namespace Amazon.Runtime.Telemetry.Metrics.NoOp
             string description = null)
         {
             return new NoOpMonotonicCounter<T>();
-        }
-
-        /// <summary>
-        /// No-op implementation of the <see cref="CreateAsyncMonotonicCounter"/> method.
-        /// This method does nothing when called and returns a no-op handle.
-        /// </summary>
-        /// <typeparam name="T">The type of value being measured by the async monotonic counter instrument.</typeparam>
-        /// <param name="name">The name of the async monotonic counter instrument.</param>
-        /// <param name="callback">The callback function invoked when the counter value is read.</param>
-        /// <param name="units">Optional. The unit of measure for the counter value.</param>
-        /// <param name="description">Optional. A description of the async monotonic counter instrument.</param>
-        /// <returns>A no-op <see cref="AsyncMeasurementHandle{T}"/> instance.</returns>
-        public override AsyncMeasurementHandle<T> CreateAsyncMonotonicCounter<T>(
-            string name,
-            Action<AsyncMeasurement<T>> callback,
-            string units = null,
-            string description = null)
-        {
-            return new NoOpAsyncMeasurementHandle<T>(this);
         }
 
         /// <summary>
