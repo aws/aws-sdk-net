@@ -189,7 +189,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// <summary>
         /// Gets and sets the property DeviceCreationTags. 
         /// <para>
-        /// "The tag keys and optional values for the newly created devices for this environment."
+        /// The tag keys and optional values for the newly created devices for this environment.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=50)]
