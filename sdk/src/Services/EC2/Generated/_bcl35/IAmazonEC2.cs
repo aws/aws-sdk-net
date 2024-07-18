@@ -3997,6 +3997,49 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateIpamExternalResourceVerificationToken
+
+
+        /// <summary>
+        /// Create a verification token. A verification token is an Amazon Web Services-generated
+        /// random value that you can use to prove ownership of an external resource. For example,
+        /// you can use a verification token to validate that you control a public IP address
+        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamExternalResourceVerificationToken service method.</param>
+        /// 
+        /// <returns>The response from the CreateIpamExternalResourceVerificationToken service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamExternalResourceVerificationToken">REST API Reference for CreateIpamExternalResourceVerificationToken Operation</seealso>
+        CreateIpamExternalResourceVerificationTokenResponse CreateIpamExternalResourceVerificationToken(CreateIpamExternalResourceVerificationTokenRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIpamExternalResourceVerificationToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamExternalResourceVerificationToken operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIpamExternalResourceVerificationToken
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamExternalResourceVerificationToken">REST API Reference for CreateIpamExternalResourceVerificationToken Operation</seealso>
+        IAsyncResult BeginCreateIpamExternalResourceVerificationToken(CreateIpamExternalResourceVerificationTokenRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIpamExternalResourceVerificationToken operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIpamExternalResourceVerificationToken.</param>
+        /// 
+        /// <returns>Returns a  CreateIpamExternalResourceVerificationTokenResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamExternalResourceVerificationToken">REST API Reference for CreateIpamExternalResourceVerificationToken Operation</seealso>
+        CreateIpamExternalResourceVerificationTokenResponse EndCreateIpamExternalResourceVerificationToken(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateIpamPool
 
 
@@ -7858,6 +7901,49 @@ namespace Amazon.EC2
         /// <returns>Returns a  DeleteIpamResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpam">REST API Reference for DeleteIpam Operation</seealso>
         DeleteIpamResponse EndDeleteIpam(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteIpamExternalResourceVerificationToken
+
+
+        /// <summary>
+        /// Delete a verification token. A verification token is an Amazon Web Services-generated
+        /// random value that you can use to prove ownership of an external resource. For example,
+        /// you can use a verification token to validate that you control a public IP address
+        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamExternalResourceVerificationToken service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIpamExternalResourceVerificationToken service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamExternalResourceVerificationToken">REST API Reference for DeleteIpamExternalResourceVerificationToken Operation</seealso>
+        DeleteIpamExternalResourceVerificationTokenResponse DeleteIpamExternalResourceVerificationToken(DeleteIpamExternalResourceVerificationTokenRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIpamExternalResourceVerificationToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamExternalResourceVerificationToken operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIpamExternalResourceVerificationToken
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamExternalResourceVerificationToken">REST API Reference for DeleteIpamExternalResourceVerificationToken Operation</seealso>
+        IAsyncResult BeginDeleteIpamExternalResourceVerificationToken(DeleteIpamExternalResourceVerificationTokenRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIpamExternalResourceVerificationToken operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIpamExternalResourceVerificationToken.</param>
+        /// 
+        /// <returns>Returns a  DeleteIpamExternalResourceVerificationTokenResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamExternalResourceVerificationToken">REST API Reference for DeleteIpamExternalResourceVerificationToken Operation</seealso>
+        DeleteIpamExternalResourceVerificationTokenResponse EndDeleteIpamExternalResourceVerificationToken(IAsyncResult asyncResult);
 
         #endregion
         
@@ -13783,6 +13869,49 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeIpamExternalResourceVerificationTokens
+
+
+        /// <summary>
+        /// Describe verification tokens. A verification token is an Amazon Web Services-generated
+        /// random value that you can use to prove ownership of an external resource. For example,
+        /// you can use a verification token to validate that you control a public IP address
+        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamExternalResourceVerificationTokens service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpamExternalResourceVerificationTokens service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamExternalResourceVerificationTokens">REST API Reference for DescribeIpamExternalResourceVerificationTokens Operation</seealso>
+        DescribeIpamExternalResourceVerificationTokensResponse DescribeIpamExternalResourceVerificationTokens(DescribeIpamExternalResourceVerificationTokensRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIpamExternalResourceVerificationTokens operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamExternalResourceVerificationTokens operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIpamExternalResourceVerificationTokens
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamExternalResourceVerificationTokens">REST API Reference for DescribeIpamExternalResourceVerificationTokens Operation</seealso>
+        IAsyncResult BeginDescribeIpamExternalResourceVerificationTokens(DescribeIpamExternalResourceVerificationTokensRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIpamExternalResourceVerificationTokens operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIpamExternalResourceVerificationTokens.</param>
+        /// 
+        /// <returns>Returns a  DescribeIpamExternalResourceVerificationTokensResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamExternalResourceVerificationTokens">REST API Reference for DescribeIpamExternalResourceVerificationTokens Operation</seealso>
+        DescribeIpamExternalResourceVerificationTokensResponse EndDescribeIpamExternalResourceVerificationTokens(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeIpamPools
 
 
@@ -15014,9 +15143,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified placement groups or all of your placement groups. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// Describes the specified placement groups or all of your placement groups.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To describe a specific placement group that is <i>shared</i> with your account, you
+        /// must specify the ID of the placement group using the <c>GroupId</c> parameter. Specifying
+        /// the name of a <i>shared</i> placement group using the <c>GroupNames</c> parameter
+        /// will result in an error.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// groups</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by EC2.</returns>
@@ -15024,9 +15164,20 @@ namespace Amazon.EC2
         DescribePlacementGroupsResponse DescribePlacementGroups();
 
         /// <summary>
-        /// Describes the specified placement groups or all of your placement groups. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// Describes the specified placement groups or all of your placement groups.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To describe a specific placement group that is <i>shared</i> with your account, you
+        /// must specify the ID of the placement group using the <c>GroupId</c> parameter. Specifying
+        /// the name of a <i>shared</i> placement group using the <c>GroupNames</c> parameter
+        /// will result in an error.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// groups</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlacementGroups service method.</param>
         /// 
@@ -17822,12 +17973,6 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes the most recent volume modification request for the specified EBS volumes.
         /// 
-        ///  
-        /// <para>
-        /// If a volume has never been modified, some information in the output will be null.
-        /// If a volume has been modified more than once, the output includes only the most recent
-        /// modification request.
-        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">
@@ -21641,19 +21786,6 @@ namespace Amazon.EC2
         /// on a physical monitor attached to a computer. For Windows instances, the instance
         /// console output includes the last three system event log errors.
         /// 
-        ///  
-        /// <para>
-        /// By default, the console output returns buffered information that was posted shortly
-        /// after an instance transition state (start, stop, reboot, or terminate). This information
-        /// is available for at least one hour after the most recent post. Only the most recent
-        /// 64 KB of console output is available.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can optionally retrieve the latest serial console output at any time during the
-        /// instance lifecycle. This option is supported on instance types that use the Nitro
-        /// hypervisor.
-        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance

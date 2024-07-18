@@ -127,7 +127,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaceAttachmentStatus. 
         /// <para>
-        /// For elastic IP addresses, this is the status of an attached network interface.
+        /// For elastic network interfaces, this is the status of whether or not the elastic network
+        /// interface is attached.
         /// </para>
         /// </summary>
         public IpamNetworkInterfaceAttachmentStatus NetworkInterfaceAttachmentStatus

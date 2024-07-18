@@ -30,75 +30,65 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeVolumesModifications operation.
-    /// Describes the most recent volume modification request for the specified EBS volumes.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">
-    /// Monitor the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.
-    /// </para>
+    /// Container for the parameters to the DescribeIpamExternalResourceVerificationTokens operation.
+    /// Describe verification tokens. A verification token is an Amazon Web Services-generated
+    /// random value that you can use to prove ownership of an external resource. For example,
+    /// you can use a verification token to validate that you control a public IP address
+    /// range when you bring an IP address range to Amazon Web Services (BYOIP).
     /// </summary>
-    public partial class DescribeVolumesModificationsRequest : AmazonEC2Request
+    public partial class DescribeIpamExternalResourceVerificationTokensRequest : AmazonEC2Request
     {
         private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<string> _ipamExternalResourceVerificationTokenIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _volumeIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters.
+        /// One or more filters for the request. For more information about filtering, see <a
+        /// href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering
+        /// CLI output</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Available filters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>modification-state</c> - The current modification state (modifying | optimizing
-        /// | completed | failed).
+        ///  <c>ipam-arn</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>original-iops</c> - The original IOPS rate of the volume.
+        ///  <c>ipam-external-resource-verification-token-arn</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>original-size</c> - The original size of the volume, in GiB.
+        ///  <c>ipam-external-resource-verification-token-id</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>original-volume-type</c> - The original volume type of the volume (standard |
-        /// io1 | io2 | gp2 | sc1 | st1).
+        ///  <c>ipam-id</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>originalMultiAttachEnabled</c> - Indicates whether Multi-Attach support was enabled
-        /// (true | false).
+        ///  <c>ipam-region</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>start-time</c> - The modification start time.
+        ///  <c>state</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>target-iops</c> - The target IOPS rate of the volume.
+        ///  <c>status</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>target-size</c> - The target size of the volume, in GiB.
+        ///  <c>token-name</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>target-volume-type</c> - The target volume type of the volume (standard | io1
-        /// | io2 | gp2 | sc1 | st1).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>targetMultiAttachEnabled</c> - Indicates whether Multi-Attach support is to be
-        /// enabled (true | false).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>volume-id</c> - The ID of the volume.
+        ///  <c>token-value</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -115,12 +105,30 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property IpamExternalResourceVerificationTokenIds. 
         /// <para>
-        /// The maximum number of results (up to a limit of 500) to be returned in a paginated
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+        /// Verification token IDs.
         /// </para>
         /// </summary>
+        public List<string> IpamExternalResourceVerificationTokenIds
+        {
+            get { return this._ipamExternalResourceVerificationTokenIds; }
+            set { this._ipamExternalResourceVerificationTokenIds = value; }
+        }
+
+        // Check to see if IpamExternalResourceVerificationTokenIds property is set
+        internal bool IsSetIpamExternalResourceVerificationTokenIds()
+        {
+            return this._ipamExternalResourceVerificationTokenIds != null && (this._ipamExternalResourceVerificationTokenIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of tokens to return in one page of results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -136,8 +144,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token returned from a previous paginated request. Pagination continues from the
-        /// end of the items returned by the previous request.
+        /// The token for the next page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -150,24 +157,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VolumeIds. 
-        /// <para>
-        /// The IDs of the volumes.
-        /// </para>
-        /// </summary>
-        public List<string> VolumeIds
-        {
-            get { return this._volumeIds; }
-            set { this._volumeIds = value; }
-        }
-
-        // Check to see if VolumeIds property is set
-        internal bool IsSetVolumeIds()
-        {
-            return this._volumeIds != null && (this._volumeIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

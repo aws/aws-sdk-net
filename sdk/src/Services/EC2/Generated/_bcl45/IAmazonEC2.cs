@@ -4000,6 +4000,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateIpamExternalResourceVerificationToken
+
+
+        /// <summary>
+        /// Create a verification token. A verification token is an Amazon Web Services-generated
+        /// random value that you can use to prove ownership of an external resource. For example,
+        /// you can use a verification token to validate that you control a public IP address
+        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamExternalResourceVerificationToken service method.</param>
+        /// 
+        /// <returns>The response from the CreateIpamExternalResourceVerificationToken service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamExternalResourceVerificationToken">REST API Reference for CreateIpamExternalResourceVerificationToken Operation</seealso>
+        CreateIpamExternalResourceVerificationTokenResponse CreateIpamExternalResourceVerificationToken(CreateIpamExternalResourceVerificationTokenRequest request);
+
+
+
+        /// <summary>
+        /// Create a verification token. A verification token is an Amazon Web Services-generated
+        /// random value that you can use to prove ownership of an external resource. For example,
+        /// you can use a verification token to validate that you control a public IP address
+        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamExternalResourceVerificationToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpamExternalResourceVerificationToken service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamExternalResourceVerificationToken">REST API Reference for CreateIpamExternalResourceVerificationToken Operation</seealso>
+        Task<CreateIpamExternalResourceVerificationTokenResponse> CreateIpamExternalResourceVerificationTokenAsync(CreateIpamExternalResourceVerificationTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateIpamPool
 
 
@@ -7773,6 +7807,40 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteIpam service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpam">REST API Reference for DeleteIpam Operation</seealso>
         Task<DeleteIpamResponse> DeleteIpamAsync(DeleteIpamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteIpamExternalResourceVerificationToken
+
+
+        /// <summary>
+        /// Delete a verification token. A verification token is an Amazon Web Services-generated
+        /// random value that you can use to prove ownership of an external resource. For example,
+        /// you can use a verification token to validate that you control a public IP address
+        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamExternalResourceVerificationToken service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIpamExternalResourceVerificationToken service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamExternalResourceVerificationToken">REST API Reference for DeleteIpamExternalResourceVerificationToken Operation</seealso>
+        DeleteIpamExternalResourceVerificationTokenResponse DeleteIpamExternalResourceVerificationToken(DeleteIpamExternalResourceVerificationTokenRequest request);
+
+
+
+        /// <summary>
+        /// Delete a verification token. A verification token is an Amazon Web Services-generated
+        /// random value that you can use to prove ownership of an external resource. For example,
+        /// you can use a verification token to validate that you control a public IP address
+        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamExternalResourceVerificationToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpamExternalResourceVerificationToken service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamExternalResourceVerificationToken">REST API Reference for DeleteIpamExternalResourceVerificationToken Operation</seealso>
+        Task<DeleteIpamExternalResourceVerificationTokenResponse> DeleteIpamExternalResourceVerificationTokenAsync(DeleteIpamExternalResourceVerificationTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -13237,6 +13305,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeIpamExternalResourceVerificationTokens
+
+
+        /// <summary>
+        /// Describe verification tokens. A verification token is an Amazon Web Services-generated
+        /// random value that you can use to prove ownership of an external resource. For example,
+        /// you can use a verification token to validate that you control a public IP address
+        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamExternalResourceVerificationTokens service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpamExternalResourceVerificationTokens service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamExternalResourceVerificationTokens">REST API Reference for DescribeIpamExternalResourceVerificationTokens Operation</seealso>
+        DescribeIpamExternalResourceVerificationTokensResponse DescribeIpamExternalResourceVerificationTokens(DescribeIpamExternalResourceVerificationTokensRequest request);
+
+
+
+        /// <summary>
+        /// Describe verification tokens. A verification token is an Amazon Web Services-generated
+        /// random value that you can use to prove ownership of an external resource. For example,
+        /// you can use a verification token to validate that you control a public IP address
+        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamExternalResourceVerificationTokens service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamExternalResourceVerificationTokens service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamExternalResourceVerificationTokens">REST API Reference for DescribeIpamExternalResourceVerificationTokens Operation</seealso>
+        Task<DescribeIpamExternalResourceVerificationTokensResponse> DescribeIpamExternalResourceVerificationTokensAsync(DescribeIpamExternalResourceVerificationTokensRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeIpamPools
 
 
@@ -14254,9 +14356,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified placement groups or all of your placement groups. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// Describes the specified placement groups or all of your placement groups.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To describe a specific placement group that is <i>shared</i> with your account, you
+        /// must specify the ID of the placement group using the <c>GroupId</c> parameter. Specifying
+        /// the name of a <i>shared</i> placement group using the <c>GroupNames</c> parameter
+        /// will result in an error.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// groups</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by EC2.</returns>
@@ -14265,9 +14378,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified placement groups or all of your placement groups. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// Describes the specified placement groups or all of your placement groups.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To describe a specific placement group that is <i>shared</i> with your account, you
+        /// must specify the ID of the placement group using the <c>GroupId</c> parameter. Specifying
+        /// the name of a <i>shared</i> placement group using the <c>GroupNames</c> parameter
+        /// will result in an error.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// groups</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlacementGroups service method.</param>
         /// 
@@ -14277,9 +14401,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified placement groups or all of your placement groups. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// Describes the specified placement groups or all of your placement groups.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To describe a specific placement group that is <i>shared</i> with your account, you
+        /// must specify the ID of the placement group using the <c>GroupId</c> parameter. Specifying
+        /// the name of a <i>shared</i> placement group using the <c>GroupNames</c> parameter
+        /// will result in an error.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// groups</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -14292,9 +14427,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified placement groups or all of your placement groups. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// Describes the specified placement groups or all of your placement groups.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To describe a specific placement group that is <i>shared</i> with your account, you
+        /// must specify the ID of the placement group using the <c>GroupId</c> parameter. Specifying
+        /// the name of a <i>shared</i> placement group using the <c>GroupNames</c> parameter
+        /// will result in an error.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// groups</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlacementGroups service method.</param>
         /// <param name="cancellationToken">
@@ -17293,12 +17439,6 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// If a volume has never been modified, some information in the output will be null.
-        /// If a volume has been modified more than once, the output includes only the most recent
-        /// modification request.
-        /// </para>
-        ///  
-        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">
         /// Monitor the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
@@ -17314,12 +17454,6 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes the most recent volume modification request for the specified EBS volumes.
         /// 
-        ///  
-        /// <para>
-        /// If a volume has never been modified, some information in the output will be null.
-        /// If a volume has been modified more than once, the output includes only the most recent
-        /// modification request.
-        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">
@@ -20845,19 +20979,6 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// By default, the console output returns buffered information that was posted shortly
-        /// after an instance transition state (start, stop, reboot, or terminate). This information
-        /// is available for at least one hour after the most recent post. Only the most recent
-        /// 64 KB of console output is available.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can optionally retrieve the latest serial console output at any time during the
-        /// instance lifecycle. This option is supported on instance types that use the Nitro
-        /// hypervisor.
-        /// </para>
-        ///  
-        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
         /// console output</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
@@ -20876,19 +20997,6 @@ namespace Amazon.EC2
         /// on a physical monitor attached to a computer. For Windows instances, the instance
         /// console output includes the last three system event log errors.
         /// 
-        ///  
-        /// <para>
-        /// By default, the console output returns buffered information that was posted shortly
-        /// after an instance transition state (start, stop, reboot, or terminate). This information
-        /// is available for at least one hour after the most recent post. Only the most recent
-        /// 64 KB of console output is available.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can optionally retrieve the latest serial console output at any time during the
-        /// instance lifecycle. This option is supported on instance types that use the Nitro
-        /// hypervisor.
-        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
