@@ -1,3 +1,33 @@
+### 3.7.850.0 (2024-07-18 19:42 UTC)
+* ACMPCA (3.7.305.0)
+	* Fix broken waiters for the acm-pca client.  Waiters broke in version 1.13.144 of the Boto3 SDK.
+* Connect (3.7.323.0)
+	* Amazon Connect expands search API coverage for additional resources.  Search for hierarchy groups by name, ID, tag, or other criteria (new endpoint). Search for agent statuses by name, ID, tag, or other criteria (new endpoint). Search for users by their assigned proficiencies (enhanced endpoint)
+* EC2 (3.7.335.0)
+	* Amazon VPC IP Address Manager (IPAM) now supports Bring-Your-Own-IP (BYOIP) for IP addresses registered with any Internet Registry. This feature uses DNS TXT records to validate ownership of a public IP address range.
+* Ivschat (3.7.301.114)
+	* Documentation update for IVS Chat API Reference.
+* KinesisFirehose (3.7.307.0)
+	* This release 1) Add configurable buffering hints for Snowflake as destination. 2) Add ReadFromTimestamp for MSK As Source. Firehose will start reading data from MSK Cluster using offset associated with this timestamp. 3) Gated public beta release to add Apache Iceberg tables as destination.
+* MediaLive (3.7.309.0)
+	* AWS Elemental MediaLive now supports the SRT protocol via the new SRT Caller input type.
+* RDS (3.7.314.1)
+	* Updates Amazon RDS documentation to specify an eventual consistency model for DescribePendingMaintenanceActions.
+* SageMaker (3.7.332.0)
+	* SageMaker Training supports R5, T3 and R5D instances family. And SageMaker Processing supports G5 and R5D instances family.
+* SecretsManager (3.7.304.15)
+	* Doc only update for Secrets Manager
+* TaxSettings (3.7.301.0)
+	* Set default endpoint for aws partition. Requests from all regions in aws partition will be forward to us-east-1 endpoint.
+* TimestreamQuery (3.7.301.35)
+	* Doc-only update for TimestreamQuery. Added guidance about the accepted valid value for the QueryPricingModel parameter.
+* WorkSpacesThinClient (3.7.303.10)
+	* Documentation update for WorkSpaces Thin Client.
+* Core 3.7.304.30
+	* Updated the generator to namespace RequestContext and DefaultRequest in clients to prevent naming collisions.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.849.0 (2024-07-12 18:57 UTC)
 * ACMPCA (3.7.304.0)
 	* Minor refactoring of C2J model for AWS Private CA

@@ -32,7 +32,7 @@ namespace Amazon.CodeDeploy
     public partial class AmazonCodeDeployConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CodeDeploy", "3.7.302.3");
+            InternalSDKUtils.BuildUserAgentString("CodeDeploy", "3.7.302.4");
 
         private string _userAgent = UserAgentString;
         ///<summary>
