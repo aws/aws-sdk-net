@@ -27,6 +27,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Amazon.Runtime.Internal.Util;
+using System.Reflection;
 
 namespace AWSSDK.UnitTests
 {                                           
@@ -259,8 +260,12 @@ namespace AWSSDK.UnitTests
             {
                 OriginalRequest = putMetricDataRequest,
                 Request = new PutMetricDataRequestMarshaller().Marshall(putMetricDataRequest),
-                ClientConfig = new AmazonCloudWatchConfig()
+                ClientConfig = new AmazonCloudWatchConfig(),
             };
+
+            // Create and set the internal ServiceMetadata via reflection
+            var serviceMetaData = Assembly.GetAssembly(requestContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
+            requestContext.GetType().GetProperty("ServiceMetaData").SetValue(requestContext, serviceMetaData);
 
             var request = requestContext.Request;
             if (isStreaming)
