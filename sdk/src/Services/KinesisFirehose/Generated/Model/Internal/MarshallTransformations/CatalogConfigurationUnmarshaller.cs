@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MSKSourceDescription Object
+    /// Response Unmarshaller for CatalogConfiguration Object
     /// </summary>  
-    public class MSKSourceDescriptionUnmarshaller : IUnmarshaller<MSKSourceDescription, XmlUnmarshallerContext>, IUnmarshaller<MSKSourceDescription, JsonUnmarshallerContext>
+    public class CatalogConfigurationUnmarshaller : IUnmarshaller<CatalogConfiguration, XmlUnmarshallerContext>, IUnmarshaller<CatalogConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MSKSourceDescription IUnmarshaller<MSKSourceDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CatalogConfiguration IUnmarshaller<CatalogConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MSKSourceDescription Unmarshall(JsonUnmarshallerContext context)
+        public CatalogConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            MSKSourceDescription unmarshalledObject = new MSKSourceDescription();
+            CatalogConfiguration unmarshalledObject = new CatalogConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AuthenticationConfiguration", targetDepth))
-                {
-                    var unmarshaller = AuthenticationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeliveryStartTimestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DeliveryStartTimestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MSKClusterARN", targetDepth))
+                if (context.TestExpression("CatalogARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MSKClusterARN = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ReadFromTimestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ReadFromTimestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TopicName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TopicName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         }
 
 
-        private static MSKSourceDescriptionUnmarshaller _instance = new MSKSourceDescriptionUnmarshaller();        
+        private static CatalogConfigurationUnmarshaller _instance = new CatalogConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MSKSourceDescriptionUnmarshaller Instance
+        public static CatalogConfigurationUnmarshaller Instance
         {
             get
             {

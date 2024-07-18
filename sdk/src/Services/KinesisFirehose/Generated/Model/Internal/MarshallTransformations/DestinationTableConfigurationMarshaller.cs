@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MSKSourceConfiguration Marshaller
+    /// DestinationTableConfiguration Marshaller
     /// </summary>
-    public class MSKSourceConfigurationMarshaller : IRequestMarshaller<MSKSourceConfiguration, JsonMarshallerContext> 
+    public class DestinationTableConfigurationMarshaller : IRequestMarshaller<DestinationTableConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,37 +44,37 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MSKSourceConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(DestinationTableConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAuthenticationConfiguration())
+            if(requestObject.IsSetDestinationDatabaseName())
             {
-                context.Writer.WritePropertyName("AuthenticationConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AuthenticationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AuthenticationConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("DestinationDatabaseName");
+                context.Writer.Write(requestObject.DestinationDatabaseName);
             }
 
-            if(requestObject.IsSetMSKClusterARN())
+            if(requestObject.IsSetDestinationTableName())
             {
-                context.Writer.WritePropertyName("MSKClusterARN");
-                context.Writer.Write(requestObject.MSKClusterARN);
+                context.Writer.WritePropertyName("DestinationTableName");
+                context.Writer.Write(requestObject.DestinationTableName);
             }
 
-            if(requestObject.IsSetReadFromTimestamp())
+            if(requestObject.IsSetS3ErrorOutputPrefix())
             {
-                context.Writer.WritePropertyName("ReadFromTimestamp");
-                context.Writer.Write(requestObject.ReadFromTimestamp);
+                context.Writer.WritePropertyName("S3ErrorOutputPrefix");
+                context.Writer.Write(requestObject.S3ErrorOutputPrefix);
             }
 
-            if(requestObject.IsSetTopicName())
+            if(requestObject.IsSetUniqueKeys())
             {
-                context.Writer.WritePropertyName("TopicName");
-                context.Writer.Write(requestObject.TopicName);
+                context.Writer.WritePropertyName("UniqueKeys");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectUniqueKeysListValue in requestObject.UniqueKeys)
+                {
+                        context.Writer.Write(requestObjectUniqueKeysListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -82,7 +82,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MSKSourceConfigurationMarshaller Instance = new MSKSourceConfigurationMarshaller();
+        public readonly static DestinationTableConfigurationMarshaller Instance = new DestinationTableConfigurationMarshaller();
 
     }
 }

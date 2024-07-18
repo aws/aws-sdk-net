@@ -132,6 +132,7 @@ namespace Amazon.KinesisFirehose.Model
         private ElasticsearchDestinationConfiguration _elasticsearchDestinationConfiguration;
         private ExtendedS3DestinationConfiguration _extendedS3DestinationConfiguration;
         private HttpEndpointDestinationConfiguration _httpEndpointDestinationConfiguration;
+        private IcebergDestinationConfiguration _icebergDestinationConfiguration;
         private KinesisStreamSourceConfiguration _kinesisStreamSourceConfiguration;
         private MSKSourceConfiguration _mskSourceConfiguration;
         private RedshiftDestinationConfiguration _redshiftDestinationConfiguration;
@@ -299,6 +300,28 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetHttpEndpointDestinationConfiguration()
         {
             return this._httpEndpointDestinationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IcebergDestinationConfiguration. 
+        /// <para>
+        ///  Configure Apache Iceberg Tables destination. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Data Firehose is in preview release and is subject to change.
+        /// </para>
+        /// </summary>
+        public IcebergDestinationConfiguration IcebergDestinationConfiguration
+        {
+            get { return this._icebergDestinationConfiguration; }
+            set { this._icebergDestinationConfiguration = value; }
+        }
+
+        // Check to see if IcebergDestinationConfiguration property is set
+        internal bool IsSetIcebergDestinationConfiguration()
+        {
+            return this._icebergDestinationConfiguration != null;
         }
 
         /// <summary>

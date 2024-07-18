@@ -72,6 +72,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BufferingHints", targetDepth))
+                {
+                    var unmarshaller = SnowflakeBufferingHintsUnmarshaller.Instance;
+                    unmarshalledObject.BufferingHints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CloudWatchLoggingOptions", targetDepth))
                 {
                     var unmarshaller = CloudWatchLoggingOptionsUnmarshaller.Instance;

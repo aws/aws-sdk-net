@@ -102,6 +102,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.HttpEndpointDestinationDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IcebergDestinationDescription", targetDepth))
+                {
+                    var unmarshaller = IcebergDestinationDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.IcebergDestinationDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RedshiftDestinationDescription", targetDepth))
                 {
                     var unmarshaller = RedshiftDestinationDescriptionUnmarshaller.Instance;

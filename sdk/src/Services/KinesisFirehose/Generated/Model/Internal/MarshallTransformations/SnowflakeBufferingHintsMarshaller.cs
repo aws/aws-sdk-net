@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MSKSourceConfiguration Marshaller
+    /// SnowflakeBufferingHints Marshaller
     /// </summary>
-    public class MSKSourceConfigurationMarshaller : IRequestMarshaller<MSKSourceConfiguration, JsonMarshallerContext> 
+    public class SnowflakeBufferingHintsMarshaller : IRequestMarshaller<SnowflakeBufferingHints, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,37 +44,20 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MSKSourceConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(SnowflakeBufferingHints requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAuthenticationConfiguration())
+            if(requestObject.IsSetIntervalInSeconds())
             {
-                context.Writer.WritePropertyName("AuthenticationConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AuthenticationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AuthenticationConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("IntervalInSeconds");
+                context.Writer.Write(requestObject.IntervalInSeconds);
             }
 
-            if(requestObject.IsSetMSKClusterARN())
+            if(requestObject.IsSetSizeInMBs())
             {
-                context.Writer.WritePropertyName("MSKClusterARN");
-                context.Writer.Write(requestObject.MSKClusterARN);
-            }
-
-            if(requestObject.IsSetReadFromTimestamp())
-            {
-                context.Writer.WritePropertyName("ReadFromTimestamp");
-                context.Writer.Write(requestObject.ReadFromTimestamp);
-            }
-
-            if(requestObject.IsSetTopicName())
-            {
-                context.Writer.WritePropertyName("TopicName");
-                context.Writer.Write(requestObject.TopicName);
+                context.Writer.WritePropertyName("SizeInMBs");
+                context.Writer.Write(requestObject.SizeInMBs);
             }
 
         }
@@ -82,7 +65,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MSKSourceConfigurationMarshaller Instance = new MSKSourceConfigurationMarshaller();
+        public readonly static SnowflakeBufferingHintsMarshaller Instance = new SnowflakeBufferingHintsMarshaller();
 
     }
 }

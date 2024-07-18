@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MSKSourceDescription Object
+    /// Response Unmarshaller for DestinationTableConfiguration Object
     /// </summary>  
-    public class MSKSourceDescriptionUnmarshaller : IUnmarshaller<MSKSourceDescription, XmlUnmarshallerContext>, IUnmarshaller<MSKSourceDescription, JsonUnmarshallerContext>
+    public class DestinationTableConfigurationUnmarshaller : IUnmarshaller<DestinationTableConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DestinationTableConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MSKSourceDescription IUnmarshaller<MSKSourceDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DestinationTableConfiguration IUnmarshaller<DestinationTableConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MSKSourceDescription Unmarshall(JsonUnmarshallerContext context)
+        public DestinationTableConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            MSKSourceDescription unmarshalledObject = new MSKSourceDescription();
+            DestinationTableConfiguration unmarshalledObject = new DestinationTableConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,28 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AuthenticationConfiguration", targetDepth))
-                {
-                    var unmarshaller = AuthenticationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeliveryStartTimestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DeliveryStartTimestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MSKClusterARN", targetDepth))
+                if (context.TestExpression("DestinationDatabaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MSKClusterARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationDatabaseName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ReadFromTimestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ReadFromTimestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TopicName", targetDepth))
+                if (context.TestExpression("DestinationTableName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TopicName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationTableName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3ErrorOutputPrefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3ErrorOutputPrefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UniqueKeys", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.UniqueKeys = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +95,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         }
 
 
-        private static MSKSourceDescriptionUnmarshaller _instance = new MSKSourceDescriptionUnmarshaller();        
+        private static DestinationTableConfigurationUnmarshaller _instance = new DestinationTableConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MSKSourceDescriptionUnmarshaller Instance
+        public static DestinationTableConfigurationUnmarshaller Instance
         {
             get
             {
