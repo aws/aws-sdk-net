@@ -44,7 +44,7 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property Bitrate. Average bitrate in bits/second. Valid bitrates
-        /// depend on the coding mode.//  * @affectsRightSizing true
+        /// depend on the coding mode.
         /// </summary>
         public double Bitrate
         {

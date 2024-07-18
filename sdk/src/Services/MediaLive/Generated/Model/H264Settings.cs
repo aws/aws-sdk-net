@@ -216,8 +216,15 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterSettings. Optional filters that you can apply to
-        /// an encode.
+        /// Gets and sets the property FilterSettings. Optional. Both filters reduce bandwidth
+        /// by removing imperceptible details. You can enable one of the filters. Werecommend
+        /// that you try both filters and observe the results to decide which one to use.The Temporal
+        /// Filter reduces bandwidth by removing imperceptible details in the content. It combines
+        /// perceptualfiltering and motion compensated temporal filtering (MCTF). It operates
+        /// independently of the compression level.The Bandwidth Reduction filter is a perceptual
+        /// filter located within the encoding loop. It adapts to the currentcompression level
+        /// to filter imperceptible signals. This filter works only when the resolution is 1080p
+        /// or lower.
         /// </summary>
         public H264FilterSettings FilterSettings
         {

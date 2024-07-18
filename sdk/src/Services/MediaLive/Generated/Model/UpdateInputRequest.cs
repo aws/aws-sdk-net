@@ -43,6 +43,7 @@ namespace Amazon.MediaLive.Model
         private string _name;
         private string _roleArn;
         private List<InputSourceRequest> _sources = AWSConfigs.InitializeCollections ? new List<InputSourceRequest>() : null;
+        private SrtSettingsRequest _srtSettings;
 
         /// <summary>
         /// Gets and sets the property Destinations. Destination settings for PUSH type inputs.
@@ -171,6 +172,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetSources()
         {
             return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SrtSettings. The settings associated with an SRT input.
+        /// </summary>
+        public SrtSettingsRequest SrtSettings
+        {
+            get { return this._srtSettings; }
+            set { this._srtSettings = value; }
+        }
+
+        // Check to see if SrtSettings property is set
+        internal bool IsSetSrtSettings()
+        {
+            return this._srtSettings != null;
         }
 
     }
