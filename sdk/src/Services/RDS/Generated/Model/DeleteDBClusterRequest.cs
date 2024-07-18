@@ -91,8 +91,15 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specifies whether to remove automated backups immediately after the DB cluster is
         /// deleted. This parameter isn't case-sensitive. The default is to remove automated backups
-        /// immediately after the DB cluster is deleted.
+        /// immediately after the DB cluster is deleted. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must delete automated backups for Amazon RDS Multi-AZ DB clusters. For more information
+        /// about managing automated backups for RDS Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ManagingAutomatedBackups.html">Managing
+        /// automated backups</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool DeleteAutomatedBackups
         {

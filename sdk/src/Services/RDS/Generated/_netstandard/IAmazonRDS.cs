@@ -3827,6 +3827,14 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns a list of resources (for example, DB instances) that have at least one pending
         /// maintenance action.
+        /// 
+        ///  
+        /// <para>
+        /// This API follows an eventual consistency model. This means that the result of the
+        /// <c>DescribePendingMaintenanceActions</c> command might not be immediately visible
+        /// to all subsequent RDS commands. Keep this in mind when you use <c>DescribePendingMaintenanceActions</c>
+        /// immediately after using a previous API command such as <c>ApplyPendingMaintenanceActions</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePendingMaintenanceActions service method.</param>
         /// <param name="cancellationToken">

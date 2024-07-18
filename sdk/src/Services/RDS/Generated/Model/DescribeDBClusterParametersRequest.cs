@@ -157,7 +157,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>customer</c> 
+        ///  <c>user</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
