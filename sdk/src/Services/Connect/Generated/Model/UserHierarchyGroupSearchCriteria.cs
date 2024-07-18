@@ -30,32 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The search criteria to be used to return users.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// The <c>name</c> and <c>description</c> fields support "contains" queries with a minimum
-    /// of 2 characters and a maximum of 25 characters. Any queries with character lengths
-    /// outside of this range will throw invalid results. 
-    /// </para>
-    ///  </note>
+    /// The search criteria to be used to return userHierarchyGroup.
     /// </summary>
-    public partial class UserSearchCriteria
+    public partial class UserHierarchyGroupSearchCriteria
     {
-        private List<UserSearchCriteria> _andConditions = AWSConfigs.InitializeCollections ? new List<UserSearchCriteria>() : null;
-        private HierarchyGroupCondition _hierarchyGroupCondition;
-        private ListCondition _listCondition;
-        private List<UserSearchCriteria> _orConditions = AWSConfigs.InitializeCollections ? new List<UserSearchCriteria>() : null;
+        private List<UserHierarchyGroupSearchCriteria> _andConditions = AWSConfigs.InitializeCollections ? new List<UserHierarchyGroupSearchCriteria>() : null;
+        private List<UserHierarchyGroupSearchCriteria> _orConditions = AWSConfigs.InitializeCollections ? new List<UserHierarchyGroupSearchCriteria>() : null;
         private StringCondition _stringCondition;
 
         /// <summary>
         /// Gets and sets the property AndConditions. 
         /// <para>
-        /// A list of conditions which would be applied together with an <c>AND</c> condition.
-        /// 
+        /// A list of conditions which would be applied together with an AND condition.
         /// </para>
         /// </summary>
-        public List<UserSearchCriteria> AndConditions
+        public List<UserHierarchyGroupSearchCriteria> AndConditions
         {
             get { return this._andConditions; }
             set { this._andConditions = value; }
@@ -68,49 +57,12 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HierarchyGroupCondition. 
-        /// <para>
-        /// A leaf node condition which can be used to specify a hierarchy group condition.
-        /// </para>
-        /// </summary>
-        public HierarchyGroupCondition HierarchyGroupCondition
-        {
-            get { return this._hierarchyGroupCondition; }
-            set { this._hierarchyGroupCondition = value; }
-        }
-
-        // Check to see if HierarchyGroupCondition property is set
-        internal bool IsSetHierarchyGroupCondition()
-        {
-            return this._hierarchyGroupCondition != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ListCondition. 
-        /// <para>
-        /// A leaf node condition which can be used to specify a List condition to search users
-        /// with attributes included in Lists like Proficiencies.
-        /// </para>
-        /// </summary>
-        public ListCondition ListCondition
-        {
-            get { return this._listCondition; }
-            set { this._listCondition = value; }
-        }
-
-        // Check to see if ListCondition property is set
-        internal bool IsSetListCondition()
-        {
-            return this._listCondition != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property OrConditions. 
         /// <para>
-        /// A list of conditions which would be applied together with an <c>OR</c> condition.
+        /// A list of conditions which would be applied together with an OR condition.
         /// </para>
         /// </summary>
-        public List<UserSearchCriteria> OrConditions
+        public List<UserHierarchyGroupSearchCriteria> OrConditions
         {
             get { return this._orConditions; }
             set { this._orConditions = value; }
@@ -127,11 +79,12 @@ namespace Amazon.Connect.Model
         /// <para>
         /// A leaf node condition which can be used to specify a string condition.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// The currently supported values for <c>FieldName</c> are <c>Username</c>, <c>FirstName</c>,
-        /// <c>LastName</c>, <c>RoutingProfileId</c>, <c>SecurityProfileId</c>, <c>ResourceId</c>.
+        /// The currently supported values for <c>FieldName</c> are <c>name</c>,&#x2028;&#x2028;
+        /// <c>parentId</c>, <c>levelId</c>, and <c>resourceID</c>.
         /// </para>
+        ///  </note>
         /// </summary>
         public StringCondition StringCondition
         {

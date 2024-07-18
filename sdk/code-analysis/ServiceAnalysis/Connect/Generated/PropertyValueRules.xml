@@ -2019,6 +2019,26 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.SearchAgentStatusesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchAgentStatusesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchAgentStatusesRequest.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchAgentStatusesResponse.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.SearchAvailablePhoneNumbersRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -2260,6 +2280,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SearchSecurityProfilesResponse.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchUserHierarchyGroupsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchUserHierarchyGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchUserHierarchyGroupsRequest.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchUserHierarchyGroupsResponse.NextToken</property>
     <min>1</min>
     <max>2500</max>
   </property-value-rule>
@@ -4520,7 +4560,7 @@
     <property>Amazon.Connect.Model.TagSet.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(?!aws:)[a-zA-Z+-=._:/]+$</pattern>
+    <pattern>^(?!aws:)[\p{L}\p{Z}\p{N}_.:/=+\-@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TagSet.Value</property>

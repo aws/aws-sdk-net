@@ -10718,6 +10718,61 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchAgentStatuses
+
+
+        /// <summary>
+        /// Searches AgentStatuses in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAgentStatuses service method.</param>
+        /// 
+        /// <returns>The response from the SearchAgentStatuses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchAgentStatuses">REST API Reference for SearchAgentStatuses Operation</seealso>
+        SearchAgentStatusesResponse SearchAgentStatuses(SearchAgentStatusesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchAgentStatuses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchAgentStatuses operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchAgentStatuses
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchAgentStatuses">REST API Reference for SearchAgentStatuses Operation</seealso>
+        IAsyncResult BeginSearchAgentStatuses(SearchAgentStatusesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchAgentStatuses operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchAgentStatuses.</param>
+        /// 
+        /// <returns>Returns a  SearchAgentStatusesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchAgentStatuses">REST API Reference for SearchAgentStatuses Operation</seealso>
+        SearchAgentStatusesResponse EndSearchAgentStatuses(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SearchAvailablePhoneNumbers
 
 
@@ -11379,6 +11434,68 @@ namespace Amazon.Connect
         /// <returns>Returns a  SearchSecurityProfilesResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchSecurityProfiles">REST API Reference for SearchSecurityProfiles Operation</seealso>
         SearchSecurityProfilesResponse EndSearchSecurityProfiles(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SearchUserHierarchyGroups
+
+
+        /// <summary>
+        /// Searches UserHierarchyGroups in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The UserHierarchyGroup with <c>"LevelId": "0"</c> is the foundation for building levels
+        /// on top of an instance. It is not user-definable, nor is it visible in the UI.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchUserHierarchyGroups service method.</param>
+        /// 
+        /// <returns>The response from the SearchUserHierarchyGroups service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUserHierarchyGroups">REST API Reference for SearchUserHierarchyGroups Operation</seealso>
+        SearchUserHierarchyGroupsResponse SearchUserHierarchyGroups(SearchUserHierarchyGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchUserHierarchyGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchUserHierarchyGroups operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchUserHierarchyGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUserHierarchyGroups">REST API Reference for SearchUserHierarchyGroups Operation</seealso>
+        IAsyncResult BeginSearchUserHierarchyGroups(SearchUserHierarchyGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchUserHierarchyGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchUserHierarchyGroups.</param>
+        /// 
+        /// <returns>Returns a  SearchUserHierarchyGroupsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUserHierarchyGroups">REST API Reference for SearchUserHierarchyGroups Operation</seealso>
+        SearchUserHierarchyGroupsResponse EndSearchUserHierarchyGroups(IAsyncResult asyncResult);
 
         #endregion
         

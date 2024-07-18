@@ -30,25 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the SearchResourceTags operation.
-    /// Searches tags used in an Amazon Connect instance using optional search criteria.
+    /// Container for the parameters to the SearchUserHierarchyGroups operation.
+    /// Searches UserHierarchyGroups in an Amazon Connect instance, with optional filtering.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// The UserHierarchyGroup with <c>"LevelId": "0"</c> is the foundation for building levels
+    /// on top of an instance. It is not user-definable, nor is it visible in the UI.
+    /// </para>
+    ///  </important>
     /// </summary>
-    public partial class SearchResourceTagsRequest : AmazonConnectRequest
+    public partial class SearchUserHierarchyGroupsRequest : AmazonConnectRequest
     {
         private string _instanceId;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private ResourceTagsSearchCriteria _searchCriteria;
+        private UserHierarchyGroupSearchCriteria _searchCriteria;
+        private UserHierarchyGroupSearchFilter _searchFilter;
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// Amazon Resource Name (ARN) of the instance.
+        /// ARN of the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=250)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -101,68 +108,12 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceTypes. 
-        /// <para>
-        /// The list of resource types to be used to search tags from. If not provided or if any
-        /// empty list is provided, this API will search from all supported resource types.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Supported resource types</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// AGENT
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// ROUTING_PROFILE
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// STANDARD_QUEUE
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// SECURITY_PROFILE
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// OPERATING_HOURS
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// PROMPT
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// CONTACT_FLOW
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// FLOW_MODULE
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        public List<string> ResourceTypes
-        {
-            get { return this._resourceTypes; }
-            set { this._resourceTypes = value; }
-        }
-
-        // Check to see if ResourceTypes property is set
-        internal bool IsSetResourceTypes()
-        {
-            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
         /// Gets and sets the property SearchCriteria. 
         /// <para>
-        /// The search criteria to be used to return tags.
+        /// The search criteria to be used to return UserHierarchyGroups.
         /// </para>
         /// </summary>
-        public ResourceTagsSearchCriteria SearchCriteria
+        public UserHierarchyGroupSearchCriteria SearchCriteria
         {
             get { return this._searchCriteria; }
             set { this._searchCriteria = value; }
@@ -172,6 +123,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetSearchCriteria()
         {
             return this._searchCriteria != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SearchFilter. 
+        /// <para>
+        /// Filters to be applied to search results.
+        /// </para>
+        /// </summary>
+        public UserHierarchyGroupSearchFilter SearchFilter
+        {
+            get { return this._searchFilter; }
+            set { this._searchFilter = value; }
+        }
+
+        // Check to see if SearchFilter property is set
+        internal bool IsSetSearchFilter()
+        {
+            return this._searchFilter != null;
         }
 
     }

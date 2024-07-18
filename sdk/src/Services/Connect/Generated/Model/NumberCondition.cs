@@ -30,21 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A leaf node condition which can be used to specify a string condition.
+    /// A leaf node condition which can be used to specify a numeric condition.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The currently supported value for <c>FieldName</c> is <c>limit</c>.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class StringCondition
+    public partial class NumberCondition
     {
-        private StringComparisonType _comparisonType;
+        private NumberComparisonType _comparisonType;
         private string _fieldName;
-        private string _value;
+        private int? _maxValue;
+        private int? _minValue;
 
         /// <summary>
         /// Gets and sets the property ComparisonType. 
         /// <para>
-        /// The type of comparison to be made when evaluating the string condition.
+        /// The type of comparison to be made when evaluating the number condition.
         /// </para>
         /// </summary>
-        public StringComparisonType ComparisonType
+        public NumberComparisonType ComparisonType
         {
             get { return this._comparisonType; }
             set { this._comparisonType = value; }
@@ -59,7 +66,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property FieldName. 
         /// <para>
-        /// The name of the field in the string condition.
+        /// The name of the field in the number condition.
         /// </para>
         /// </summary>
         public string FieldName
@@ -75,21 +82,39 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
+        /// Gets and sets the property MaxValue. 
         /// <para>
-        /// The value of the string.
+        /// The maxValue to be used while evaluating the number condition.
         /// </para>
         /// </summary>
-        public string Value
+        public int MaxValue
         {
-            get { return this._value; }
-            set { this._value = value; }
+            get { return this._maxValue.GetValueOrDefault(); }
+            set { this._maxValue = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if MaxValue property is set
+        internal bool IsSetMaxValue()
         {
-            return this._value != null;
+            return this._maxValue.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinValue. 
+        /// <para>
+        /// The minValue to be used while evaluating the number condition.
+        /// </para>
+        /// </summary>
+        public int MinValue
+        {
+            get { return this._minValue.GetValueOrDefault(); }
+            set { this._minValue = value; }
+        }
+
+        // Check to see if MinValue property is set
+        internal bool IsSetMinValue()
+        {
+            return this._minValue.HasValue; 
         }
 
     }

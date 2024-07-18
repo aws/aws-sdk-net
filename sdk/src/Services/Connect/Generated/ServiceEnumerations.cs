@@ -2949,6 +2949,76 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type NumberComparisonType.
+    /// </summary>
+    public class NumberComparisonType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUAL for NumberComparisonType
+        /// </summary>
+        public static readonly NumberComparisonType EQUAL = new NumberComparisonType("EQUAL");
+        /// <summary>
+        /// Constant GREATER for NumberComparisonType
+        /// </summary>
+        public static readonly NumberComparisonType GREATER = new NumberComparisonType("GREATER");
+        /// <summary>
+        /// Constant GREATER_OR_EQUAL for NumberComparisonType
+        /// </summary>
+        public static readonly NumberComparisonType GREATER_OR_EQUAL = new NumberComparisonType("GREATER_OR_EQUAL");
+        /// <summary>
+        /// Constant LESSER for NumberComparisonType
+        /// </summary>
+        public static readonly NumberComparisonType LESSER = new NumberComparisonType("LESSER");
+        /// <summary>
+        /// Constant LESSER_OR_EQUAL for NumberComparisonType
+        /// </summary>
+        public static readonly NumberComparisonType LESSER_OR_EQUAL = new NumberComparisonType("LESSER_OR_EQUAL");
+        /// <summary>
+        /// Constant NOT_EQUAL for NumberComparisonType
+        /// </summary>
+        public static readonly NumberComparisonType NOT_EQUAL = new NumberComparisonType("NOT_EQUAL");
+        /// <summary>
+        /// Constant RANGE for NumberComparisonType
+        /// </summary>
+        public static readonly NumberComparisonType RANGE = new NumberComparisonType("RANGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NumberComparisonType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NumberComparisonType FindValue(string value)
+        {
+            return FindValue<NumberComparisonType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NumberComparisonType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NumericQuestionPropertyAutomationLabel.
     /// </summary>
     public class NumericQuestionPropertyAutomationLabel : ConstantClass
@@ -5716,6 +5786,52 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StringComparisonType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetListType.
+    /// </summary>
+    public class TargetListType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROFICIENCIES for TargetListType
+        /// </summary>
+        public static readonly TargetListType PROFICIENCIES = new TargetListType("PROFICIENCIES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetListType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetListType FindValue(string value)
+        {
+            return FindValue<TargetListType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetListType(string value)
         {
             return FindValue(value);
         }

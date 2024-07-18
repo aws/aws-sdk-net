@@ -12360,6 +12360,64 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchAgentStatuses
+
+
+        /// <summary>
+        /// Searches AgentStatuses in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAgentStatuses service method.</param>
+        /// 
+        /// <returns>The response from the SearchAgentStatuses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchAgentStatuses">REST API Reference for SearchAgentStatuses Operation</seealso>
+        SearchAgentStatusesResponse SearchAgentStatuses(SearchAgentStatusesRequest request);
+
+
+
+        /// <summary>
+        /// Searches AgentStatuses in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAgentStatuses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchAgentStatuses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchAgentStatuses">REST API Reference for SearchAgentStatuses Operation</seealso>
+        Task<SearchAgentStatusesResponse> SearchAgentStatusesAsync(SearchAgentStatusesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SearchAvailablePhoneNumbers
 
 
@@ -13061,6 +13119,78 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchSecurityProfiles">REST API Reference for SearchSecurityProfiles Operation</seealso>
         Task<SearchSecurityProfilesResponse> SearchSecurityProfilesAsync(SearchSecurityProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SearchUserHierarchyGroups
+
+
+        /// <summary>
+        /// Searches UserHierarchyGroups in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The UserHierarchyGroup with <c>"LevelId": "0"</c> is the foundation for building levels
+        /// on top of an instance. It is not user-definable, nor is it visible in the UI.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchUserHierarchyGroups service method.</param>
+        /// 
+        /// <returns>The response from the SearchUserHierarchyGroups service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUserHierarchyGroups">REST API Reference for SearchUserHierarchyGroups Operation</seealso>
+        SearchUserHierarchyGroupsResponse SearchUserHierarchyGroups(SearchUserHierarchyGroupsRequest request);
+
+
+
+        /// <summary>
+        /// Searches UserHierarchyGroups in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The UserHierarchyGroup with <c>"LevelId": "0"</c> is the foundation for building levels
+        /// on top of an instance. It is not user-definable, nor is it visible in the UI.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchUserHierarchyGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchUserHierarchyGroups service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUserHierarchyGroups">REST API Reference for SearchUserHierarchyGroups Operation</seealso>
+        Task<SearchUserHierarchyGroupsResponse> SearchUserHierarchyGroupsAsync(SearchUserHierarchyGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

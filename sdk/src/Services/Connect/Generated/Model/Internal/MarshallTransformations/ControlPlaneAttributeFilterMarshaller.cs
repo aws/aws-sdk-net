@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UserSearchCriteria Marshaller
+    /// ControlPlaneAttributeFilter Marshaller
     /// </summary>
-    public class UserSearchCriteriaMarshaller : IRequestMarshaller<UserSearchCriteria, JsonMarshallerContext> 
+    public class ControlPlaneAttributeFilterMarshaller : IRequestMarshaller<ControlPlaneAttributeFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,44 +44,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UserSearchCriteria requestObject, JsonMarshallerContext context)
+        public void Marshall(ControlPlaneAttributeFilter requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAndConditions())
+            if(requestObject.IsSetAndCondition())
             {
-                context.Writer.WritePropertyName("AndConditions");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectAndConditionsListValue in requestObject.AndConditions)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserSearchCriteriaMarshaller.Instance;
-                    marshaller.Marshall(requestObjectAndConditionsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetHierarchyGroupCondition())
-            {
-                context.Writer.WritePropertyName("HierarchyGroupCondition");
+                context.Writer.WritePropertyName("AndCondition");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = HierarchyGroupConditionMarshaller.Instance;
-                marshaller.Marshall(requestObject.HierarchyGroupCondition, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetListCondition())
-            {
-                context.Writer.WritePropertyName("ListCondition");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ListConditionMarshaller.Instance;
-                marshaller.Marshall(requestObject.ListCondition, context);
+                var marshaller = CommonAttributeAndConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.AndCondition, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -94,7 +67,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = UserSearchCriteriaMarshaller.Instance;
+                    var marshaller = CommonAttributeAndConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectOrConditionsListValue, context);
 
                     context.Writer.WriteObjectEnd();
@@ -102,13 +75,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetStringCondition())
+            if(requestObject.IsSetTagCondition())
             {
-                context.Writer.WritePropertyName("StringCondition");
+                context.Writer.WritePropertyName("TagCondition");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = StringConditionMarshaller.Instance;
-                marshaller.Marshall(requestObject.StringCondition, context);
+                var marshaller = TagConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.TagCondition, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -118,7 +91,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UserSearchCriteriaMarshaller Instance = new UserSearchCriteriaMarshaller();
+        public readonly static ControlPlaneAttributeFilterMarshaller Instance = new ControlPlaneAttributeFilterMarshaller();
 
     }
 }

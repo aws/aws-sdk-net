@@ -9903,6 +9903,55 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchAgentStatuses
+
+        internal virtual SearchAgentStatusesResponse SearchAgentStatuses(SearchAgentStatusesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchAgentStatusesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchAgentStatusesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchAgentStatusesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches AgentStatuses in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAgentStatuses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchAgentStatuses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchAgentStatuses">REST API Reference for SearchAgentStatuses Operation</seealso>
+        public virtual Task<SearchAgentStatusesResponse> SearchAgentStatusesAsync(SearchAgentStatusesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchAgentStatusesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchAgentStatusesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchAgentStatusesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchAvailablePhoneNumbers
 
         internal virtual SearchAvailablePhoneNumbersResponse SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request)
@@ -10491,6 +10540,62 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = SearchSecurityProfilesResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchSecurityProfilesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchUserHierarchyGroups
+
+        internal virtual SearchUserHierarchyGroupsResponse SearchUserHierarchyGroups(SearchUserHierarchyGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchUserHierarchyGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchUserHierarchyGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchUserHierarchyGroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches UserHierarchyGroups in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The UserHierarchyGroup with <c>"LevelId": "0"</c> is the foundation for building levels
+        /// on top of an instance. It is not user-definable, nor is it visible in the UI.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchUserHierarchyGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchUserHierarchyGroups service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUserHierarchyGroups">REST API Reference for SearchUserHierarchyGroups Operation</seealso>
+        public virtual Task<SearchUserHierarchyGroupsResponse> SearchUserHierarchyGroupsAsync(SearchUserHierarchyGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchUserHierarchyGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchUserHierarchyGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchUserHierarchyGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion

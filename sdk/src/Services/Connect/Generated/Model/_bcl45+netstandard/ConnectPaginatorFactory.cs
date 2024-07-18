@@ -413,6 +413,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for SearchAgentStatuses operation
+        ///</summary>
+        public ISearchAgentStatusesPaginator SearchAgentStatuses(SearchAgentStatusesRequest request) 
+        {
+            return new SearchAgentStatusesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchAvailablePhoneNumbers operation
         ///</summary>
         public ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request) 
@@ -506,6 +514,14 @@ namespace Amazon.Connect.Model
         public ISearchSecurityProfilesPaginator SearchSecurityProfiles(SearchSecurityProfilesRequest request) 
         {
             return new SearchSecurityProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchUserHierarchyGroups operation
+        ///</summary>
+        public ISearchUserHierarchyGroupsPaginator SearchUserHierarchyGroups(SearchUserHierarchyGroupsRequest request) 
+        {
+            return new SearchUserHierarchyGroupsPaginator(this.client, request);
         }
 
         /// <summary>

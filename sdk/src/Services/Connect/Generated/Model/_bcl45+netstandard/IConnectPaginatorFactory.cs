@@ -262,6 +262,11 @@ namespace Amazon.Connect.Model
         IListViewVersionsPaginator ListViewVersions(ListViewVersionsRequest request);
 
         /// <summary>
+        /// Paginator for SearchAgentStatuses operation
+        ///</summary>
+        ISearchAgentStatusesPaginator SearchAgentStatuses(SearchAgentStatusesRequest request);
+
+        /// <summary>
         /// Paginator for SearchAvailablePhoneNumbers operation
         ///</summary>
         ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request);
@@ -320,6 +325,11 @@ namespace Amazon.Connect.Model
         /// Paginator for SearchSecurityProfiles operation
         ///</summary>
         ISearchSecurityProfilesPaginator SearchSecurityProfiles(SearchSecurityProfilesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchUserHierarchyGroups operation
+        ///</summary>
+        ISearchUserHierarchyGroupsPaginator SearchUserHierarchyGroups(SearchUserHierarchyGroupsRequest request);
 
         /// <summary>
         /// Paginator for SearchUsers operation

@@ -1112,7 +1112,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// UI name: This metric is not available in Amazon Connect admin website. 
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-removed-historical">Contacts
+        /// removed from queue in X seconds</a> 
         /// </para>
         ///  </dd> <dt>CONTACTS_RESOLVED_IN_X</dt> <dd> 
         /// <para>
