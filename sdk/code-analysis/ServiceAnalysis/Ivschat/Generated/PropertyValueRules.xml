@@ -4,7 +4,7 @@
     <property>Amazon.Ivschat.Model.CreateChatTokenRequest.RoomIdentifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.CreateChatTokenRequest.SessionDurationInMinutes</property>
@@ -20,25 +20,25 @@
     <property>Amazon.Ivschat.Model.CreateLoggingConfigurationRequest.Name</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.CreateLoggingConfigurationResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.CreateLoggingConfigurationResponse.Id</property>
     <min>12</min>
     <max>12</max>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.CreateLoggingConfigurationResponse.Name</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.CreateRoomRequest.MaximumMessageLength</property>
@@ -54,19 +54,19 @@
     <property>Amazon.Ivschat.Model.CreateRoomRequest.Name</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.CreateRoomResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.CreateRoomResponse.Id</property>
     <min>12</min>
     <max>12</max>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.CreateRoomResponse.MaximumMessageLength</property>
@@ -82,19 +82,19 @@
     <property>Amazon.Ivschat.Model.CreateRoomResponse.Name</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.DeleteLoggingConfigurationRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.DeleteMessageRequest.Id</property>
     <min>12</min>
     <max>12</max>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.DeleteMessageRequest.Reason</property>
@@ -105,19 +105,19 @@
     <property>Amazon.Ivschat.Model.DeleteMessageRequest.RoomIdentifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.DeleteMessageResponse.Id</property>
     <min>12</min>
     <max>12</max>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.DeleteRoomRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.DisconnectUserRequest.Reason</property>
@@ -128,7 +128,7 @@
     <property>Amazon.Ivschat.Model.DisconnectUserRequest.RoomIdentifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.DisconnectUserRequest.UserId</property>
@@ -139,43 +139,43 @@
     <property>Amazon.Ivschat.Model.GetLoggingConfigurationRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.GetLoggingConfigurationResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.GetLoggingConfigurationResponse.Id</property>
     <min>12</min>
     <max>12</max>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.GetLoggingConfigurationResponse.Name</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.GetRoomRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.GetRoomResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.GetRoomResponse.Id</property>
     <min>12</min>
     <max>12</max>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.GetRoomResponse.MaximumMessageLength</property>
@@ -191,7 +191,7 @@
     <property>Amazon.Ivschat.Model.GetRoomResponse.Name</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.ListLoggingConfigurationsRequest.MaxResults</property>
@@ -212,7 +212,7 @@
     <property>Amazon.Ivschat.Model.ListRoomsRequest.LoggingConfigurationIdentifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.ListRoomsRequest.MaxResults</property>
@@ -223,13 +223,13 @@
     <property>Amazon.Ivschat.Model.ListRoomsRequest.MessageReviewHandlerUri</property>
     <min>0</min>
     <max>170</max>
-    <pattern>^$|^arn:aws:lambda:[a-z0-9-]+:[0-9]{12}:function:.+</pattern>
+    <pattern>$|^arn:aws:lambda:[a-z0-9-]+:[0-9]{12}:function:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.ListRoomsRequest.Name</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.ListRoomsRequest.NextToken</property>
@@ -245,7 +245,7 @@
     <property>Amazon.Ivschat.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.SendEventRequest.EventName</property>
@@ -256,61 +256,61 @@
     <property>Amazon.Ivschat.Model.SendEventRequest.RoomIdentifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.SendEventResponse.Id</property>
     <min>12</min>
     <max>12</max>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UpdateLoggingConfigurationRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UpdateLoggingConfigurationRequest.Name</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UpdateLoggingConfigurationResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UpdateLoggingConfigurationResponse.Id</property>
     <min>12</min>
     <max>12</max>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UpdateLoggingConfigurationResponse.Name</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UpdateRoomRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UpdateRoomRequest.MaximumMessageLength</property>
@@ -326,19 +326,19 @@
     <property>Amazon.Ivschat.Model.UpdateRoomRequest.Name</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UpdateRoomResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UpdateRoomResponse.Id</property>
     <min>12</min>
     <max>12</max>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.UpdateRoomResponse.MaximumMessageLength</property>
@@ -354,82 +354,82 @@
     <property>Amazon.Ivschat.Model.UpdateRoomResponse.Name</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.CloudWatchLogsDestinationConfiguration.LogGroupName</property>
     <min>1</min>
     <max>512</max>
-    <pattern>^[\.\-_/#A-Za-z0-9]+$</pattern>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.ConflictException.ResourceId</property>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.FirehoseDestinationConfiguration.DeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.LoggingConfigurationSummary.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:logging-configuration/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.LoggingConfigurationSummary.Id</property>
     <min>12</min>
     <max>12</max>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.LoggingConfigurationSummary.Name</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.MessageReviewHandler.Uri</property>
     <min>0</min>
     <max>170</max>
-    <pattern>^$|^arn:aws:lambda:[a-z0-9-]+:[0-9]{12}:function:.+</pattern>
+    <pattern>$|^arn:aws:lambda:[a-z0-9-]+:[0-9]{12}:function:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.ResourceNotFoundException.ResourceId</property>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.RoomSummary.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+$</pattern>
+    <pattern>arn:aws:ivschat:[a-z0-9-]+:[0-9]+:room/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.RoomSummary.Id</property>
     <min>12</min>
     <max>12</max>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.RoomSummary.Name</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.S3DestinationConfiguration.BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^[a-z0-9-.]+$</pattern>
+    <pattern>[a-z0-9-.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.ServiceQuotaExceededException.ResourceId</property>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Ivschat.Model.ThrottlingException.ResourceId</property>
-    <pattern>^[a-zA-Z0-9]+$</pattern>
+    <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
 </property-value-rules>
