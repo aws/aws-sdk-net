@@ -470,21 +470,7 @@ namespace Amazon.Runtime
             {
                 if (resourcePath.StartsWith("/", StringComparison.Ordinal))
                     resourcePath = resourcePath.Substring(1);
-
-                // Since S3 is the only service that is single encoded, we send the URL unencoded for special characters
-                // to match the previous behavior compatible with the SigV2 backend.
-                if (internalRequest.SignatureVersion == SignatureVersion.SigV2 && String.Equals(internalRequest.ServiceName, "AmazonS3"))
-                {
-#pragma warning disable CS0618 // Type or member is obsolete
-                    resourcePath = AWSSDKUtils.ResolveResourcePath(resourcePath, internalRequest.PathResources,skipEncodingValidPathChars);
-#pragma warning restore CS0618 // Type or member is obsolete
-                }
-                //for all other requests, we need to encode according to RFC3986 in accordance to smithy protocol tests
-                else
-                {
-                    resourcePath = AWSSDKUtils.ResolveResourcePathV2(resourcePath, internalRequest.PathResources);
-                }
-
+                resourcePath = AWSSDKUtils.ResolveResourcePathV2(resourcePath, internalRequest.PathResources);
             }
 
             // Construct any sub resource/query parameter additions to append to the
@@ -532,6 +518,7 @@ namespace Amazon.Runtime
             DontUnescapePathDotsAndSlashes(uri);
             return uri;
         }
+ 
 
         /// <summary>
         /// Patches the in-flight uri to stop it unescaping the path etc (what Uri did before

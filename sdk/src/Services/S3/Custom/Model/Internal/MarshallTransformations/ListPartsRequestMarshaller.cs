@@ -48,9 +48,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "ListPartsRequest.BucketName");
             if (string.IsNullOrEmpty(listPartsRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "ListPartsRequest.Key");
-
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
-                                                 S3Transforms.ToStringValue(listPartsRequest.Key));
+            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(listPartsRequest.Key));
+            request.ResourcePath = "/{Key+}";
 
             if (listPartsRequest.IsSetUploadId())
                 request.AddSubResource("uploadId", S3Transforms.ToStringValue(listPartsRequest.UploadId));

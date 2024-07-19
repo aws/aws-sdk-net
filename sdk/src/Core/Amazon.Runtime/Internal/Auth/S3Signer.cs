@@ -215,7 +215,7 @@ namespace Amazon.Runtime.Internal.Auth
             var sb = new StringBuilder(request.CanonicalResourcePrefix);
 #pragma warning disable CS0618 // Type or member is obsolete
             sb.Append(!string.IsNullOrEmpty(request.ResourcePath)
-                                ? AWSSDKUtils.ResolveResourcePath(request.ResourcePath, request.PathResources,true)
+                                ? AWSSDKUtils.ResolveResourcePathV2(request.ResourcePath, request.PathResources)
                                 : "/");
 #pragma warning restore CS0618 // Type or member is obsolete
 

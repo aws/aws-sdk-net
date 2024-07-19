@@ -1,5 +1,6 @@
 {
   "version": "1.0",
+  "outputDirectory": "../../../sdk/test/ProtocolTests/Generated",
   "projections": {
     "RestJsonProtocol": {
       "transforms": [
