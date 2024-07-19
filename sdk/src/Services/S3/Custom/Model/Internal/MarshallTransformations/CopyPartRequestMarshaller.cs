@@ -106,9 +106,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (string.IsNullOrEmpty(destinationKey))
                 throw new System.ArgumentException("DestinationKey is a required property and must be set before making this call.", "CopyPartRequest.DestinationKey");
+            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(destinationKey));
 
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
-                                                 S3Transforms.ToStringValue(destinationKey));
+
+            request.ResourcePath = "/{Key+}";
 
             request.AddSubResource("partNumber", S3Transforms.ToStringValue(copyPartRequest.PartNumber.Value));
             request.AddSubResource("uploadId", S3Transforms.ToStringValue(copyPartRequest.UploadId));

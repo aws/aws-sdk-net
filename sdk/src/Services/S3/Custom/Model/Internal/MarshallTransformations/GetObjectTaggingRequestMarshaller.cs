@@ -53,9 +53,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetObjectTaggingRequest.BucketName");
             if (string.IsNullOrEmpty(getObjectTaggingRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "GetObjectTaggingRequest.Key");
+            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(getObjectTaggingRequest.Key));
+            request.ResourcePath = "/{Key+}";
 
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}", 
-                                                 S3Transforms.ToStringValue(getObjectTaggingRequest.Key));
             request.AddSubResource("tagging");
 
             if (getObjectTaggingRequest.IsSetVersionId())

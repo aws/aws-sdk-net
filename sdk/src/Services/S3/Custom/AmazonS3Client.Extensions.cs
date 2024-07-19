@@ -218,10 +218,11 @@ namespace Amazon.S3
 
             var queryParameters = request.Parameters;
 
-            var uriResourcePath = new StringBuilder("/");
+            var uriResourcePath = new StringBuilder("");
             if (!string.IsNullOrEmpty(getPreSignedUrlRequest.Key))
             {
-                uriResourcePath.Append(S3Transforms.ToStringValue(getPreSignedUrlRequest.Key));
+                uriResourcePath.Append("/{Key+}");
+                request.AddPathResource("{Key+}", S3Transforms.ToStringValue(getPreSignedUrlRequest.Key));
             }
 
             var expires = GetSecondsUntilExpiration(config, getPreSignedUrlRequest, signatureVersion);

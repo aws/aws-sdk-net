@@ -68,7 +68,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "publicRequest.BucketName");
             if (!publicRequest.IsSetKey())
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "publicRequest.Key");
-            uriResourcePath = uriResourcePath.Replace("{Key+}", StringUtils.FromString(publicRequest.Key));
+            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(publicRequest.Key));
             
             if (publicRequest.IsSetVersionId())
                 request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));

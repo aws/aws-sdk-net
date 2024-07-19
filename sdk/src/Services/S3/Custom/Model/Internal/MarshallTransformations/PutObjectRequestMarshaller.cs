@@ -123,11 +123,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutObjectRequest.BucketName");
             if (string.IsNullOrEmpty(putObjectRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "PutObjectRequest.Key");
-
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
-                                                 S3Transforms.ToStringValue(putObjectRequest.Key));
-
-
+            request.ResourcePath = "/{Key+}";
+            request.AddPathResource("{Key+}",S3Transforms.ToStringValue(putObjectRequest.Key));
             if (!request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
                 request.Headers.Add(HeaderKeys.ContentTypeHeader, "text/plain");
 
