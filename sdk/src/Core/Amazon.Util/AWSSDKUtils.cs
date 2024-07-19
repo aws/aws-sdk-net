@@ -1650,7 +1650,7 @@ namespace Amazon.Util
         /// <returns>
         /// The operation name if the request name ends with "Request"; otherwise, returns the original request name.
         /// </returns>
-        public static string ExtractOperationName(string requestName)
+        internal static string ExtractOperationName(string requestName)
         {
             if (requestName.EndsWith("Request", StringComparison.Ordinal))
             {
