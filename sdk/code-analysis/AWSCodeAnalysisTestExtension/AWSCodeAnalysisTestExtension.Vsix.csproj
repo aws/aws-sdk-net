@@ -944,10 +944,6 @@
       <Project>{27A60892-7646-4606-91DC-17E930FB0F13}</Project>
       <Name>AWSSDK.MigrationHubStrategyRecommendations.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/Mobile/AWSSDK.Mobile.CodeAnalysis.csproj">
-      <Project>{C3190A64-6C58-4A8C-A0D5-49E539A5627C}</Project>
-      <Name>AWSSDK.Mobile.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MobileAnalytics/AWSSDK.MobileAnalytics.CodeAnalysis.csproj">
       <Project>{1DEBD742-421A-4D5B-A03D-9CAD38CAEFAB}</Project>
       <Name>AWSSDK.MobileAnalytics.CodeAnalysis</Name>
