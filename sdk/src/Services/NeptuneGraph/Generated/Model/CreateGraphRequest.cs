@@ -114,7 +114,7 @@ namespace Amazon.NeptuneGraph.Model
         /// Min = 128
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=128, Max=24576)]
+        [AWSProperty(Required=true, Min=32, Max=24576)]
         public int ProvisionedMemory
         {
             get { return this._provisionedMemory.GetValueOrDefault(); }
