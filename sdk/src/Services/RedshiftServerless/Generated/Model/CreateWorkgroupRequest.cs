@@ -38,6 +38,7 @@ namespace Amazon.RedshiftServerless.Model
         private int? _baseCapacity;
         private List<ConfigParameter> _configParameters = AWSConfigs.InitializeCollections ? new List<ConfigParameter>() : null;
         private bool? _enhancedVpcRouting;
+        private string _ipAddressType;
         private int? _maxCapacity;
         private string _namespaceName;
         private int? _port;
@@ -106,6 +107,25 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetEnhancedVpcRouting()
         {
             return this._enhancedVpcRouting.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type that the workgroup supports. Possible values are <c>ipv4</c> and
+        /// <c>dualstack</c>.
+        /// </para>
+        /// </summary>
+        public string IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>
