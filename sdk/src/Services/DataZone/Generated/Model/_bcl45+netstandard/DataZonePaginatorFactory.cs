@@ -37,6 +37,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListAssetFilters operation
+        ///</summary>
+        public IListAssetFiltersPaginator ListAssetFilters(ListAssetFiltersRequest request) 
+        {
+            return new ListAssetFiltersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssetRevisions operation
         ///</summary>
         public IListAssetRevisionsPaginator ListAssetRevisions(ListAssetRevisionsRequest request) 
