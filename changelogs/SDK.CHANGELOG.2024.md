@@ -3,6 +3,8 @@
 	* This release adds 1/ support of register S3 locations of assets in AWS Lake Formation hybrid access mode for DefaultDataLake blueprint. 2/ support of CRUD operations for Asset Filters.
 * IVS (3.7.305.0)
 	* Documentation update for IVS Low Latency API Reference.
+* Mobile (Removed)
+	* AWS Mobile has been removed from the SDK because it has been discontinued.
 * NeptuneGraph (3.7.306.0)
 	* Amazon Neptune Analytics provides new options for customers to start with smaller graphs at a lower cost. CreateGraph, CreaateGraphImportTask, UpdateGraph and StartImportTask APIs will now allow 32 and 64 for `provisioned-memory`
 * RedshiftServerless (3.7.304.0)
