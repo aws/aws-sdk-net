@@ -1,3 +1,16 @@
+### 3.7.851.0 (2024-07-22 20:09 UTC)
+* DataZone (3.7.307.0)
+	* This release adds 1/ support of register S3 locations of assets in AWS Lake Formation hybrid access mode for DefaultDataLake blueprint. 2/ support of CRUD operations for Asset Filters.
+* IVS (3.7.305.0)
+	* Documentation update for IVS Low Latency API Reference.
+* NeptuneGraph (3.7.306.0)
+	* Amazon Neptune Analytics provides new options for customers to start with smaller graphs at a lower cost. CreateGraph, CreaateGraphImportTask, UpdateGraph and StartImportTask APIs will now allow 32 and 64 for `provisioned-memory`
+* RedshiftServerless (3.7.304.0)
+	* Adds dualstack support for Redshift Serverless workgroup.
+* Core 3.7.304.31
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.850.0 (2024-07-18 19:42 UTC)
 * ACMPCA (3.7.305.0)
 	* Fix broken waiters for the acm-pca client.  Waiters broke in version 1.13.144 of the Boto3 SDK.

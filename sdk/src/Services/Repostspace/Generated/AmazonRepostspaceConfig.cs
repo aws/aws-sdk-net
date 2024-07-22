@@ -32,7 +32,7 @@ namespace Amazon.Repostspace
     public partial class AmazonRepostspaceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("repostspace", "3.7.300.111");
+            InternalSDKUtils.BuildUserAgentString("repostspace", "3.7.300.112");
 
         private string _userAgent = UserAgentString;
         ///<summary>
