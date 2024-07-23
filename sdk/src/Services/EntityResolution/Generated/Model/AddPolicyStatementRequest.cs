@@ -110,6 +110,13 @@ namespace Amazon.EntityResolution.Model
         /// Determines whether the permissions specified in the policy are to be allowed (<c>Allow</c>)
         /// or denied (<c>Deny</c>).
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  If you set the value of the <c>effect</c> parameter to <c>Deny</c> for the <c>AddPolicyStatement</c>
+        /// operation, you must also set the value of the <c>effect</c> parameter in the <c>policy</c>
+        /// to <c>Deny</c> for the <c>PutPolicy</c> operation.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public StatementEffect Effect

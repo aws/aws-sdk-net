@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IdNamespaceIdMappingWorkflowProperties Object
+    /// Response Unmarshaller for IdNamespaceIdMappingWorkflowMetadata Object
     /// </summary>  
-    public class IdNamespaceIdMappingWorkflowPropertiesUnmarshaller : IUnmarshaller<IdNamespaceIdMappingWorkflowProperties, XmlUnmarshallerContext>, IUnmarshaller<IdNamespaceIdMappingWorkflowProperties, JsonUnmarshallerContext>
+    public class IdNamespaceIdMappingWorkflowMetadataUnmarshaller : IUnmarshaller<IdNamespaceIdMappingWorkflowMetadata, XmlUnmarshallerContext>, IUnmarshaller<IdNamespaceIdMappingWorkflowMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        IdNamespaceIdMappingWorkflowProperties IUnmarshaller<IdNamespaceIdMappingWorkflowProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IdNamespaceIdMappingWorkflowMetadata IUnmarshaller<IdNamespaceIdMappingWorkflowMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public IdNamespaceIdMappingWorkflowProperties Unmarshall(JsonUnmarshallerContext context)
+        public IdNamespaceIdMappingWorkflowMetadata Unmarshall(JsonUnmarshallerContext context)
         {
-            IdNamespaceIdMappingWorkflowProperties unmarshalledObject = new IdNamespaceIdMappingWorkflowProperties();
+            IdNamespaceIdMappingWorkflowMetadata unmarshalledObject = new IdNamespaceIdMappingWorkflowMetadata();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -72,29 +72,17 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                     unmarshalledObject.IdMappingType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("providerProperties", targetDepth))
-                {
-                    var unmarshaller = NamespaceProviderPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.ProviderProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ruleBasedProperties", targetDepth))
-                {
-                    var unmarshaller = NamespaceRuleBasedPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.RuleBasedProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static IdNamespaceIdMappingWorkflowPropertiesUnmarshaller _instance = new IdNamespaceIdMappingWorkflowPropertiesUnmarshaller();        
+        private static IdNamespaceIdMappingWorkflowMetadataUnmarshaller _instance = new IdNamespaceIdMappingWorkflowMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IdNamespaceIdMappingWorkflowPropertiesUnmarshaller Instance
+        public static IdNamespaceIdMappingWorkflowMetadataUnmarshaller Instance
         {
             get
             {

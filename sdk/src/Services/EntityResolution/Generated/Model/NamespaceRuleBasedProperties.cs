@@ -30,13 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object which defines the list of matching rules to run in a matching workflow.
-    /// RuleBasedProperties contain a <c>Rules</c> field, which is a list of rule objects.
+    /// The rule-based properties of an ID namespace. These properties define how the ID
+    /// namespace can be used in an ID mapping workflow.
     /// </summary>
-    public partial class RuleBasedProperties
+    public partial class NamespaceRuleBasedProperties
     {
         private AttributeMatchingModel _attributeMatchingModel;
-        private MatchPurpose _matchPurpose;
+        private List<string> _recordMatchingModels = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _ruleDefinitionTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
 
         /// <summary>
@@ -49,8 +50,8 @@ namespace Amazon.EntityResolution.Model
         /// <para>
         /// If you choose <c>MANY_TO_MANY</c>, the system can match attributes across the sub-types
         /// of an attribute type. For example, if the value of the <c>Email</c> field of Profile
-        /// A and the value of <c>BusinessEmail</c> field of Profile B matches, the two profiles
-        /// are matched on the <c>Email</c> attribute type. 
+        /// A matches the value of <c>BusinessEmail</c> field of Profile B, the two profiles are
+        /// matched on the <c>Email</c> attribute type. 
         /// </para>
         ///  
         /// <para>
@@ -60,7 +61,6 @@ namespace Amazon.EntityResolution.Model
         /// the value of the <c>Email</c> field of Profile B.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AttributeMatchingModel AttributeMatchingModel
         {
             get { return this._attributeMatchingModel; }
@@ -74,39 +74,60 @@ namespace Amazon.EntityResolution.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MatchPurpose. 
+        /// Gets and sets the property RecordMatchingModels. 
         /// <para>
-        ///  An indicator of whether to generate IDs and index the data or not.
+        ///  The type of matching record that is allowed to be used in an ID mapping workflow.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// If you choose <c>IDENTIFIER_GENERATION</c>, the process generates IDs and indexes
-        /// the data.
+        /// If the value is set to <c>ONE_SOURCE_TO_ONE_TARGET</c>, only one record in the source
+        /// is matched to one record in the target. 
         /// </para>
         ///  
         /// <para>
-        /// If you choose <c>INDEXING</c>, the process indexes the data without generating IDs.
+        /// If the value is set to <c>MANY_SOURCE_TO_ONE_TARGET</c>, all matching records in the
+        /// source are matched to one record in the target.
         /// </para>
         /// </summary>
-        public MatchPurpose MatchPurpose
+        public List<string> RecordMatchingModels
         {
-            get { return this._matchPurpose; }
-            set { this._matchPurpose = value; }
+            get { return this._recordMatchingModels; }
+            set { this._recordMatchingModels = value; }
         }
 
-        // Check to see if MatchPurpose property is set
-        internal bool IsSetMatchPurpose()
+        // Check to see if RecordMatchingModels property is set
+        internal bool IsSetRecordMatchingModels()
         {
-            return this._matchPurpose != null;
+            return this._recordMatchingModels != null && (this._recordMatchingModels.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleDefinitionTypes. 
+        /// <para>
+        ///  The sets of rules you can use in an ID mapping workflow. The limitations specified
+        /// for the source and target must be compatible.
+        /// </para>
+        /// </summary>
+        public List<string> RuleDefinitionTypes
+        {
+            get { return this._ruleDefinitionTypes; }
+            set { this._ruleDefinitionTypes = value; }
+        }
+
+        // Check to see if RuleDefinitionTypes property is set
+        internal bool IsSetRuleDefinitionTypes()
+        {
+            return this._ruleDefinitionTypes != null && (this._ruleDefinitionTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// A list of <c>Rule</c> objects, each of which have fields <c>RuleName</c> and <c>MatchingKeys</c>.
+        ///  The rules for the ID namespace.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=25)]
         public List<Rule> Rules
         {
             get { return this._rules; }

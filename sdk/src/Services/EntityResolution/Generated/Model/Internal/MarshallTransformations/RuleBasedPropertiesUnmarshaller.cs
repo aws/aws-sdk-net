@@ -72,6 +72,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                     unmarshalledObject.AttributeMatchingModel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("matchPurpose", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MatchPurpose = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("rules", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Rule, RuleUnmarshaller>(RuleUnmarshaller.Instance);

@@ -78,6 +78,24 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecordsNotProcessed = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("totalMappedRecords", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TotalMappedRecords = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("totalMappedSourceRecords", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TotalMappedSourceRecords = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("totalMappedTargetRecords", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TotalMappedTargetRecords = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("totalRecordsProcessed", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

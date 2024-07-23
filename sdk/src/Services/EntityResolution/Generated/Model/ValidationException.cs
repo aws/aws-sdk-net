@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-    /// Status Code: 400</c>
+    /// The input fails to satisfy the constraints specified by Entity Resolution.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

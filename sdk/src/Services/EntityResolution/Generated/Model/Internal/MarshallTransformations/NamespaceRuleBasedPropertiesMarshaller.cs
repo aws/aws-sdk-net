@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RuleBasedProperties Marshaller
+    /// NamespaceRuleBasedProperties Marshaller
     /// </summary>
-    public class RuleBasedPropertiesMarshaller : IRequestMarshaller<RuleBasedProperties, JsonMarshallerContext> 
+    public class NamespaceRuleBasedPropertiesMarshaller : IRequestMarshaller<NamespaceRuleBasedProperties, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RuleBasedProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(NamespaceRuleBasedProperties requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -54,10 +54,26 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AttributeMatchingModel);
             }
 
-            if(requestObject.IsSetMatchPurpose())
+            if(requestObject.IsSetRecordMatchingModels())
             {
-                context.Writer.WritePropertyName("matchPurpose");
-                context.Writer.Write(requestObject.MatchPurpose);
+                context.Writer.WritePropertyName("recordMatchingModels");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRecordMatchingModelsListValue in requestObject.RecordMatchingModels)
+                {
+                        context.Writer.Write(requestObjectRecordMatchingModelsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetRuleDefinitionTypes())
+            {
+                context.Writer.WritePropertyName("ruleDefinitionTypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRuleDefinitionTypesListValue in requestObject.RuleDefinitionTypes)
+                {
+                        context.Writer.Write(requestObjectRuleDefinitionTypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetRules())
@@ -81,7 +97,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RuleBasedPropertiesMarshaller Instance = new RuleBasedPropertiesMarshaller();
+        public readonly static NamespaceRuleBasedPropertiesMarshaller Instance = new NamespaceRuleBasedPropertiesMarshaller();
 
     }
 }

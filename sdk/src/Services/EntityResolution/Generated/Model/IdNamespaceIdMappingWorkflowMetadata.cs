@@ -30,13 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object which defines the ID mapping technique and any additional configurations.
+    /// The settings for the ID namespace for the ID mapping workflow job.
     /// </summary>
-    public partial class IdMappingTechniques
+    public partial class IdNamespaceIdMappingWorkflowMetadata
     {
         private IdMappingType _idMappingType;
-        private ProviderProperties _providerProperties;
-        private IdMappingRuleBasedProperties _ruleBasedProperties;
 
         /// <summary>
         /// Gets and sets the property IdMappingType. 
@@ -55,42 +53,6 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetIdMappingType()
         {
             return this._idMappingType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProviderProperties. 
-        /// <para>
-        /// An object which defines any additional configurations required by the provider service.
-        /// </para>
-        /// </summary>
-        public ProviderProperties ProviderProperties
-        {
-            get { return this._providerProperties; }
-            set { this._providerProperties = value; }
-        }
-
-        // Check to see if ProviderProperties property is set
-        internal bool IsSetProviderProperties()
-        {
-            return this._providerProperties != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RuleBasedProperties. 
-        /// <para>
-        ///  An object which defines any additional configurations required by rule-based matching.
-        /// </para>
-        /// </summary>
-        public IdMappingRuleBasedProperties RuleBasedProperties
-        {
-            get { return this._ruleBasedProperties; }
-            set { this._ruleBasedProperties = value; }
-        }
-
-        // Check to see if RuleBasedProperties property is set
-        internal bool IsSetRuleBasedProperties()
-        {
-            return this._ruleBasedProperties != null;
         }
 
     }

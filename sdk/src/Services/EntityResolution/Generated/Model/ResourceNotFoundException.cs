@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// The resource could not be found. <c>HTTP Status Code: 404</c>
+    /// The resource could not be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

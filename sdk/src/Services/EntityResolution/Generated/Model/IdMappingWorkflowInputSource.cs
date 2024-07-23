@@ -41,7 +41,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property InputSourceARN. 
         /// <para>
-        /// An Glue table ARN for the input source table.
+        /// An Glue table Amazon Resource Name (ARN) or a matching workflow ARN for the input
+        /// source table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -88,7 +89,7 @@ namespace Amazon.EntityResolution.Model
         /// </para>
         ///  
         /// <para>
-        /// The <c>TARGET</c> contains a configuration of <c>targetId</c> to which all <c>sourceIds</c>
+        /// The <c>TARGET</c> contains a configuration of <c>targetId</c> which all <c>sourceIds</c>
         /// will resolve to.
         /// </para>
         /// </summary>

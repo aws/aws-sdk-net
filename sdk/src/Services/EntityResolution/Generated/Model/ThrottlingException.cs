@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+    /// The request was denied due to request throttling.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

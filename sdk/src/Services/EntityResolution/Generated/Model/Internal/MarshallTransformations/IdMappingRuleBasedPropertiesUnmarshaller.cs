@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IdNamespaceSummary Object
+    /// Response Unmarshaller for IdMappingRuleBasedProperties Object
     /// </summary>  
-    public class IdNamespaceSummaryUnmarshaller : IUnmarshaller<IdNamespaceSummary, XmlUnmarshallerContext>, IUnmarshaller<IdNamespaceSummary, JsonUnmarshallerContext>
+    public class IdMappingRuleBasedPropertiesUnmarshaller : IUnmarshaller<IdMappingRuleBasedProperties, XmlUnmarshallerContext>, IUnmarshaller<IdMappingRuleBasedProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        IdNamespaceSummary IUnmarshaller<IdNamespaceSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IdMappingRuleBasedProperties IUnmarshaller<IdMappingRuleBasedProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public IdNamespaceSummary Unmarshall(JsonUnmarshallerContext context)
+        public IdMappingRuleBasedProperties Unmarshall(JsonUnmarshallerContext context)
         {
-            IdNamespaceSummary unmarshalledObject = new IdNamespaceSummary();
+            IdMappingRuleBasedProperties unmarshalledObject = new IdMappingRuleBasedProperties();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,46 +66,28 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("createdAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("attributeMatchingModel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AttributeMatchingModel = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("idMappingWorkflowProperties", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<IdNamespaceIdMappingWorkflowMetadata, IdNamespaceIdMappingWorkflowMetadataUnmarshaller>(IdNamespaceIdMappingWorkflowMetadataUnmarshaller.Instance);
-                    unmarshalledObject.IdMappingWorkflowProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("idNamespaceArn", targetDepth))
+                if (context.TestExpression("recordMatchingModel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdNamespaceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordMatchingModel = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("idNamespaceName", targetDepth))
+                if (context.TestExpression("ruleDefinitionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdNamespaceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleDefinitionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("rules", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("updatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Rule, RuleUnmarshaller>(RuleUnmarshaller.Instance);
+                    unmarshalledObject.Rules = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,12 +95,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         }
 
 
-        private static IdNamespaceSummaryUnmarshaller _instance = new IdNamespaceSummaryUnmarshaller();        
+        private static IdMappingRuleBasedPropertiesUnmarshaller _instance = new IdMappingRuleBasedPropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IdNamespaceSummaryUnmarshaller Instance
+        public static IdMappingRuleBasedPropertiesUnmarshaller Instance
         {
             get
             {

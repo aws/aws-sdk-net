@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// IdMappingTechniques Marshaller
+    /// IdMappingRuleBasedProperties Marshaller
     /// </summary>
-    public class IdMappingTechniquesMarshaller : IRequestMarshaller<IdMappingTechniques, JsonMarshallerContext> 
+    public class IdMappingRuleBasedPropertiesMarshaller : IRequestMarshaller<IdMappingRuleBasedProperties, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,36 +44,42 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IdMappingTechniques requestObject, JsonMarshallerContext context)
+        public void Marshall(IdMappingRuleBasedProperties requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetIdMappingType())
+            if(requestObject.IsSetAttributeMatchingModel())
             {
-                context.Writer.WritePropertyName("idMappingType");
-                context.Writer.Write(requestObject.IdMappingType);
+                context.Writer.WritePropertyName("attributeMatchingModel");
+                context.Writer.Write(requestObject.AttributeMatchingModel);
             }
 
-            if(requestObject.IsSetProviderProperties())
+            if(requestObject.IsSetRecordMatchingModel())
             {
-                context.Writer.WritePropertyName("providerProperties");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ProviderPropertiesMarshaller.Instance;
-                marshaller.Marshall(requestObject.ProviderProperties, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("recordMatchingModel");
+                context.Writer.Write(requestObject.RecordMatchingModel);
             }
 
-            if(requestObject.IsSetRuleBasedProperties())
+            if(requestObject.IsSetRuleDefinitionType())
             {
-                context.Writer.WritePropertyName("ruleBasedProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("ruleDefinitionType");
+                context.Writer.Write(requestObject.RuleDefinitionType);
+            }
 
-                var marshaller = IdMappingRuleBasedPropertiesMarshaller.Instance;
-                marshaller.Marshall(requestObject.RuleBasedProperties, context);
+            if(requestObject.IsSetRules())
+            {
+                context.Writer.WritePropertyName("rules");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRulesListValue in requestObject.Rules)
+                {
+                    context.Writer.WriteObjectStart();
 
-                context.Writer.WriteObjectEnd();
+                    var marshaller = RuleMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRulesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -81,7 +87,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static IdMappingTechniquesMarshaller Instance = new IdMappingTechniquesMarshaller();
+        public readonly static IdMappingRuleBasedPropertiesMarshaller Instance = new IdMappingRuleBasedPropertiesMarshaller();
 
     }
 }

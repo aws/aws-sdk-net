@@ -32,7 +32,7 @@ namespace Amazon.EntityResolution.Model
     /// <summary>
     /// The request could not be processed because of conflict in the current state of the
     /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
-    /// running, etc. <c>HTTP Status Code: 400</c>
+    /// running, etc.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

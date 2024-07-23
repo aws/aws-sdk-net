@@ -30,13 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object which defines the list of matching rules to run in a matching workflow.
-    /// RuleBasedProperties contain a <c>Rules</c> field, which is a list of rule objects.
+    /// An object that defines the list of matching rules to run in an ID mapping workflow.
     /// </summary>
-    public partial class RuleBasedProperties
+    public partial class IdMappingRuleBasedProperties
     {
         private AttributeMatchingModel _attributeMatchingModel;
-        private MatchPurpose _matchPurpose;
+        private RecordMatchingModel _recordMatchingModel;
+        private IdMappingWorkflowRuleDefinitionType _ruleDefinitionType;
         private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.EntityResolution.Model
         /// <para>
         /// If you choose <c>MANY_TO_MANY</c>, the system can match attributes across the sub-types
         /// of an attribute type. For example, if the value of the <c>Email</c> field of Profile
-        /// A and the value of <c>BusinessEmail</c> field of Profile B matches, the two profiles
+        /// A matches the value of the <c>BusinessEmail</c> field of Profile B, the two profiles
         /// are matched on the <c>Email</c> attribute type. 
         /// </para>
         ///  
@@ -74,39 +74,62 @@ namespace Amazon.EntityResolution.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MatchPurpose. 
+        /// Gets and sets the property RecordMatchingModel. 
         /// <para>
-        ///  An indicator of whether to generate IDs and index the data or not.
+        ///  The type of matching record that is allowed to be used in an ID mapping workflow.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// If you choose <c>IDENTIFIER_GENERATION</c>, the process generates IDs and indexes
-        /// the data.
+        /// If the value is set to <c>ONE_SOURCE_TO_ONE_TARGET</c>, only one record in the source
+        /// can be matched to the same record in the target.
         /// </para>
         ///  
         /// <para>
-        /// If you choose <c>INDEXING</c>, the process indexes the data without generating IDs.
+        /// If the value is set to <c>MANY_SOURCE_TO_ONE_TARGET</c>, multiple records in the source
+        /// can be matched to one record in the target.
         /// </para>
         /// </summary>
-        public MatchPurpose MatchPurpose
+        [AWSProperty(Required=true)]
+        public RecordMatchingModel RecordMatchingModel
         {
-            get { return this._matchPurpose; }
-            set { this._matchPurpose = value; }
+            get { return this._recordMatchingModel; }
+            set { this._recordMatchingModel = value; }
         }
 
-        // Check to see if MatchPurpose property is set
-        internal bool IsSetMatchPurpose()
+        // Check to see if RecordMatchingModel property is set
+        internal bool IsSetRecordMatchingModel()
         {
-            return this._matchPurpose != null;
+            return this._recordMatchingModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleDefinitionType. 
+        /// <para>
+        ///  The set of rules you can use in an ID mapping workflow. The limitations specified
+        /// for the source or target to define the match rules must be compatible.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public IdMappingWorkflowRuleDefinitionType RuleDefinitionType
+        {
+            get { return this._ruleDefinitionType; }
+            set { this._ruleDefinitionType = value; }
+        }
+
+        // Check to see if RuleDefinitionType property is set
+        internal bool IsSetRuleDefinitionType()
+        {
+            return this._ruleDefinitionType != null;
         }
 
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// A list of <c>Rule</c> objects, each of which have fields <c>RuleName</c> and <c>MatchingKeys</c>.
+        ///  The rules that can be used for ID mapping.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=25)]
         public List<Rule> Rules
         {
             get { return this._rules; }

@@ -64,7 +64,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property IdMappingTechniques. 
         /// <para>
-        /// An object which defines the <c>idMappingType</c> and the <c>providerProperties</c>.
+        /// An object which defines the ID mapping technique and any additional configurations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -127,7 +127,7 @@ namespace Amazon.EntityResolution.Model
         /// to create resources on your behalf as part of workflow execution.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=32, Max=512)]
+        [AWSProperty(Min=0, Max=512)]
         public string RoleArn
         {
             get { return this._roleArn; }
