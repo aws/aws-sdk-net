@@ -25,7 +25,7 @@ The [GitHub issues][sdk-issues] are intended for bug reports and feature request
 
 ## SDK Change Log
 
-The change log for the SDK can be found in the [SDK.CHANGELOG.ALL.md](https://github.com/aws/aws-sdk-net/blob/master/changelogs/SDK.CHANGELOG.ALL.md) file. Change logs divided up by year can be found in the [changelogs folder](https://github.com/aws/aws-sdk-net/tree/master/changelogs).
+The change log for the SDK can be found in the [SDK.CHANGELOG.ALL.md](https://github.com/aws/aws-sdk-net/blob/main/changelogs/SDK.CHANGELOG.ALL.md) file. Change logs divided up by year can be found in the [changelogs folder](https://github.com/aws/aws-sdk-net/tree/main/changelogs).
 
 ## Maintenance and support for SDK major versions
 
