@@ -132,6 +132,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.SchemaStatusDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("schemaTypeProperties", targetDepth))
+                {
+                    var unmarshaller = SchemaTypePropertiesUnmarshaller.Instance;
+                    unmarshalledObject.SchemaTypeProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

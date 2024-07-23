@@ -42,6 +42,11 @@ namespace Amazon.CleanRooms.Model
         IListCollaborationConfiguredAudienceModelAssociationsPaginator ListCollaborationConfiguredAudienceModelAssociations(ListCollaborationConfiguredAudienceModelAssociationsRequest request);
 
         /// <summary>
+        /// Paginator for ListCollaborationIdNamespaceAssociations operation
+        ///</summary>
+        IListCollaborationIdNamespaceAssociationsPaginator ListCollaborationIdNamespaceAssociations(ListCollaborationIdNamespaceAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for ListCollaborationPrivacyBudgets operation
         ///</summary>
         IListCollaborationPrivacyBudgetsPaginator ListCollaborationPrivacyBudgets(ListCollaborationPrivacyBudgetsRequest request);
@@ -70,6 +75,16 @@ namespace Amazon.CleanRooms.Model
         /// Paginator for ListConfiguredTables operation
         ///</summary>
         IListConfiguredTablesPaginator ListConfiguredTables(ListConfiguredTablesRequest request);
+
+        /// <summary>
+        /// Paginator for ListIdMappingTables operation
+        ///</summary>
+        IListIdMappingTablesPaginator ListIdMappingTables(ListIdMappingTablesRequest request);
+
+        /// <summary>
+        /// Paginator for ListIdNamespaceAssociations operation
+        ///</summary>
+        IListIdNamespaceAssociationsPaginator ListIdNamespaceAssociations(ListIdNamespaceAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListMembers operation

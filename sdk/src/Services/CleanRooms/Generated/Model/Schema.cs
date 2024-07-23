@@ -45,13 +45,14 @@ namespace Amazon.CleanRooms.Model
         private string _name;
         private List<Column> _partitionKeys = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private List<SchemaStatusDetail> _schemaStatusDetails = AWSConfigs.InitializeCollections ? new List<SchemaStatusDetail>() : null;
+        private SchemaTypeProperties _schemaTypeProperties;
         private SchemaType _type;
         private DateTime? _updateTime;
 
         /// <summary>
         /// Gets and sets the property AnalysisMethod. 
         /// <para>
-        /// The analysis method for the schema. The only valid value is currently DIRECT_QUERY.
+        /// The analysis method for the schema. The only valid value is currently <c>DIRECT_QUERY</c>.
         /// </para>
         /// </summary>
         public AnalysisMethod AnalysisMethod
@@ -69,7 +70,8 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property AnalysisRuleTypes. 
         /// <para>
-        /// The analysis rule types associated with the schema. Currently, only one entry is present.
+        /// The analysis rule types that are associated with the schema. Currently, only one entry
+        /// is present.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -88,7 +90,8 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property CollaborationArn. 
         /// <para>
-        /// The unique ARN for the collaboration that the schema belongs to.
+        /// The unique Amazon Resource Name (ARN) for the collaboration that the schema belongs
+        /// to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
@@ -126,7 +129,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property Columns. 
         /// <para>
-        /// The columns for the relation this schema represents.
+        /// The columns for the relation that this schema represents.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -145,7 +148,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The time the schema was created.
+        /// The time at which the schema was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -258,9 +261,27 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SchemaTypeProperties. 
+        /// <para>
+        /// The schema type properties.
+        /// </para>
+        /// </summary>
+        public SchemaTypeProperties SchemaTypeProperties
+        {
+            get { return this._schemaTypeProperties; }
+            set { this._schemaTypeProperties = value; }
+        }
+
+        // Check to see if SchemaTypeProperties property is set
+        internal bool IsSetSchemaTypeProperties()
+        {
+            return this._schemaTypeProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of schema. The only valid value is currently `TABLE`.
+        /// The type of schema.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -279,7 +300,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        /// The time the schema was last updated.
+        /// The most recent time at which the schema was updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

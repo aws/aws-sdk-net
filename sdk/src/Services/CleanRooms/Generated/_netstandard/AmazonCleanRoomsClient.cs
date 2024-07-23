@@ -759,6 +759,116 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  CreateIdMappingTable
+
+        internal virtual CreateIdMappingTableResponse CreateIdMappingTable(CreateIdMappingTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdMappingTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIdMappingTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an ID mapping table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdMappingTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIdMappingTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIdMappingTable">REST API Reference for CreateIdMappingTable Operation</seealso>
+        public virtual Task<CreateIdMappingTableResponse> CreateIdMappingTableAsync(CreateIdMappingTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdMappingTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIdMappingTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateIdNamespaceAssociation
+
+        internal virtual CreateIdNamespaceAssociationResponse CreateIdNamespaceAssociation(CreateIdNamespaceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIdNamespaceAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an ID namespace association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdNamespaceAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIdNamespaceAssociation service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIdNamespaceAssociation">REST API Reference for CreateIdNamespaceAssociation Operation</seealso>
+        public virtual Task<CreateIdNamespaceAssociationResponse> CreateIdNamespaceAssociationAsync(CreateIdNamespaceAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIdNamespaceAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateMembership
 
         internal virtual CreateMembershipResponse CreateMembership(CreateMembershipRequest request)
@@ -1169,6 +1279,104 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  DeleteIdMappingTable
+
+        internal virtual DeleteIdMappingTableResponse DeleteIdMappingTable(DeleteIdMappingTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdMappingTableResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIdMappingTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an ID mapping table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdMappingTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIdMappingTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIdMappingTable">REST API Reference for DeleteIdMappingTable Operation</seealso>
+        public virtual Task<DeleteIdMappingTableResponse> DeleteIdMappingTableAsync(DeleteIdMappingTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdMappingTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIdMappingTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteIdNamespaceAssociation
+
+        internal virtual DeleteIdNamespaceAssociationResponse DeleteIdNamespaceAssociation(DeleteIdNamespaceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIdNamespaceAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an ID namespace association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdNamespaceAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIdNamespaceAssociation service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIdNamespaceAssociation">REST API Reference for DeleteIdNamespaceAssociation Operation</seealso>
+        public virtual Task<DeleteIdNamespaceAssociationResponse> DeleteIdNamespaceAssociationAsync(DeleteIdNamespaceAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIdNamespaceAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteMember
 
         internal virtual DeleteMemberResponse DeleteMember(DeleteMemberRequest request)
@@ -1517,6 +1725,55 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  GetCollaborationIdNamespaceAssociation
+
+        internal virtual GetCollaborationIdNamespaceAssociationResponse GetCollaborationIdNamespaceAssociation(GetCollaborationIdNamespaceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCollaborationIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCollaborationIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetCollaborationIdNamespaceAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves an ID namespace association from a specific collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationIdNamespaceAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCollaborationIdNamespaceAssociation service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationIdNamespaceAssociation">REST API Reference for GetCollaborationIdNamespaceAssociation Operation</seealso>
+        public virtual Task<GetCollaborationIdNamespaceAssociationResponse> GetCollaborationIdNamespaceAssociationAsync(GetCollaborationIdNamespaceAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCollaborationIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCollaborationIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCollaborationIdNamespaceAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCollaborationPrivacyBudgetTemplate
 
         internal virtual GetCollaborationPrivacyBudgetTemplateResponse GetCollaborationPrivacyBudgetTemplate(GetCollaborationPrivacyBudgetTemplateRequest request)
@@ -1758,6 +2015,104 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = GetConfiguredTableAssociationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetConfiguredTableAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIdMappingTable
+
+        internal virtual GetIdMappingTableResponse GetIdMappingTable(GetIdMappingTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdMappingTableResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdMappingTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves an ID mapping table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdMappingTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIdMappingTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIdMappingTable">REST API Reference for GetIdMappingTable Operation</seealso>
+        public virtual Task<GetIdMappingTableResponse> GetIdMappingTableAsync(GetIdMappingTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdMappingTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIdMappingTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIdNamespaceAssociation
+
+        internal virtual GetIdNamespaceAssociationResponse GetIdNamespaceAssociation(GetIdNamespaceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdNamespaceAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves an ID namespace association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdNamespaceAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIdNamespaceAssociation service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIdNamespaceAssociation">REST API Reference for GetIdNamespaceAssociation Operation</seealso>
+        public virtual Task<GetIdNamespaceAssociationResponse> GetIdNamespaceAssociationAsync(GetIdNamespaceAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIdNamespaceAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2154,6 +2509,55 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  ListCollaborationIdNamespaceAssociations
+
+        internal virtual ListCollaborationIdNamespaceAssociationsResponse ListCollaborationIdNamespaceAssociations(ListCollaborationIdNamespaceAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCollaborationIdNamespaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCollaborationIdNamespaceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCollaborationIdNamespaceAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of the ID namespace associations in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationIdNamespaceAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCollaborationIdNamespaceAssociations service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationIdNamespaceAssociations">REST API Reference for ListCollaborationIdNamespaceAssociations Operation</seealso>
+        public virtual Task<ListCollaborationIdNamespaceAssociationsResponse> ListCollaborationIdNamespaceAssociationsAsync(ListCollaborationIdNamespaceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCollaborationIdNamespaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCollaborationIdNamespaceAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCollaborationIdNamespaceAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCollaborationPrivacyBudgets
 
         internal virtual ListCollaborationPrivacyBudgetsResponse ListCollaborationPrivacyBudgets(ListCollaborationPrivacyBudgetsRequest request)
@@ -2440,6 +2844,104 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = ListConfiguredTablesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListConfiguredTablesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListIdMappingTables
+
+        internal virtual ListIdMappingTablesResponse ListIdMappingTables(ListIdMappingTablesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdMappingTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdMappingTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdMappingTablesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of ID mapping tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdMappingTables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIdMappingTables service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIdMappingTables">REST API Reference for ListIdMappingTables Operation</seealso>
+        public virtual Task<ListIdMappingTablesResponse> ListIdMappingTablesAsync(ListIdMappingTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdMappingTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdMappingTablesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIdMappingTablesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListIdNamespaceAssociations
+
+        internal virtual ListIdNamespaceAssociationsResponse ListIdNamespaceAssociations(ListIdNamespaceAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdNamespaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdNamespaceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdNamespaceAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of ID namespace associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdNamespaceAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIdNamespaceAssociations service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIdNamespaceAssociations">REST API Reference for ListIdNamespaceAssociations Operation</seealso>
+        public virtual Task<ListIdNamespaceAssociationsResponse> ListIdNamespaceAssociationsAsync(ListIdNamespaceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdNamespaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdNamespaceAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIdNamespaceAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2771,6 +3273,58 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PopulateIdMappingTable
+
+        internal virtual PopulateIdMappingTableResponse PopulateIdMappingTable(PopulateIdMappingTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PopulateIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PopulateIdMappingTableResponseUnmarshaller.Instance;
+
+            return Invoke<PopulateIdMappingTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Defines the information that's necessary to populate an ID mapping table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PopulateIdMappingTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PopulateIdMappingTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PopulateIdMappingTable">REST API Reference for PopulateIdMappingTable Operation</seealso>
+        public virtual Task<PopulateIdMappingTableResponse> PopulateIdMappingTableAsync(PopulateIdMappingTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PopulateIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PopulateIdMappingTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PopulateIdMappingTableResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3253,6 +3807,104 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = UpdateConfiguredTableAssociationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateConfiguredTableAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateIdMappingTable
+
+        internal virtual UpdateIdMappingTableResponse UpdateIdMappingTable(UpdateIdMappingTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdMappingTableResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIdMappingTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides the details that are necessary to update an ID mapping table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdMappingTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIdMappingTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIdMappingTable">REST API Reference for UpdateIdMappingTable Operation</seealso>
+        public virtual Task<UpdateIdMappingTableResponse> UpdateIdMappingTableAsync(UpdateIdMappingTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdMappingTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateIdMappingTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateIdNamespaceAssociation
+
+        internal virtual UpdateIdNamespaceAssociationResponse UpdateIdNamespaceAssociation(UpdateIdNamespaceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIdNamespaceAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides the details that are necessary to update an ID namespace association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdNamespaceAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIdNamespaceAssociation service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIdNamespaceAssociation">REST API Reference for UpdateIdNamespaceAssociation Operation</seealso>
+        public virtual Task<UpdateIdNamespaceAssociationResponse> UpdateIdNamespaceAssociationAsync(UpdateIdNamespaceAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateIdNamespaceAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion

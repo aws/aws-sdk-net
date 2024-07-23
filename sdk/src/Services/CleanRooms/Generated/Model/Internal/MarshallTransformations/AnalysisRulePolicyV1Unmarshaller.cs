@@ -78,6 +78,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.Custom = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("idMappingTable", targetDepth))
+                {
+                    var unmarshaller = AnalysisRuleIdMappingTableUnmarshaller.Instance;
+                    unmarshalledObject.IdMappingTable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("list", targetDepth))
                 {
                     var unmarshaller = AnalysisRuleListUnmarshaller.Instance;

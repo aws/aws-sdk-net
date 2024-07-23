@@ -61,6 +61,14 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Paginator for ListCollaborationIdNamespaceAssociations operation
+        ///</summary>
+        public IListCollaborationIdNamespaceAssociationsPaginator ListCollaborationIdNamespaceAssociations(ListCollaborationIdNamespaceAssociationsRequest request) 
+        {
+            return new ListCollaborationIdNamespaceAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCollaborationPrivacyBudgets operation
         ///</summary>
         public IListCollaborationPrivacyBudgetsPaginator ListCollaborationPrivacyBudgets(ListCollaborationPrivacyBudgetsRequest request) 
@@ -106,6 +114,22 @@ namespace Amazon.CleanRooms.Model
         public IListConfiguredTablesPaginator ListConfiguredTables(ListConfiguredTablesRequest request) 
         {
             return new ListConfiguredTablesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListIdMappingTables operation
+        ///</summary>
+        public IListIdMappingTablesPaginator ListIdMappingTables(ListIdMappingTablesRequest request) 
+        {
+            return new ListIdMappingTablesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListIdNamespaceAssociations operation
+        ///</summary>
+        public IListIdNamespaceAssociationsPaginator ListIdNamespaceAssociations(ListIdNamespaceAssociationsRequest request) 
+        {
+            return new ListIdNamespaceAssociationsPaginator(this.client, request);
         }
 
         /// <summary>

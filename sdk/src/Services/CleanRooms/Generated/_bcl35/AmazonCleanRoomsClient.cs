@@ -935,6 +935,156 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  CreateIdMappingTable
+
+        /// <summary>
+        /// Creates an ID mapping table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdMappingTable service method.</param>
+        /// 
+        /// <returns>The response from the CreateIdMappingTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIdMappingTable">REST API Reference for CreateIdMappingTable Operation</seealso>
+        public virtual CreateIdMappingTableResponse CreateIdMappingTable(CreateIdMappingTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdMappingTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIdMappingTableResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIdMappingTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdMappingTable operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIdMappingTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIdMappingTable">REST API Reference for CreateIdMappingTable Operation</seealso>
+        public virtual IAsyncResult BeginCreateIdMappingTable(CreateIdMappingTableRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdMappingTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIdMappingTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIdMappingTable.</param>
+        /// 
+        /// <returns>Returns a  CreateIdMappingTableResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIdMappingTable">REST API Reference for CreateIdMappingTable Operation</seealso>
+        public virtual CreateIdMappingTableResponse EndCreateIdMappingTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateIdMappingTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateIdNamespaceAssociation
+
+        /// <summary>
+        /// Creates an ID namespace association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdNamespaceAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateIdNamespaceAssociation service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIdNamespaceAssociation">REST API Reference for CreateIdNamespaceAssociation Operation</seealso>
+        public virtual CreateIdNamespaceAssociationResponse CreateIdNamespaceAssociation(CreateIdNamespaceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIdNamespaceAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIdNamespaceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdNamespaceAssociation operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIdNamespaceAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIdNamespaceAssociation">REST API Reference for CreateIdNamespaceAssociation Operation</seealso>
+        public virtual IAsyncResult BeginCreateIdNamespaceAssociation(CreateIdNamespaceAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIdNamespaceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIdNamespaceAssociation.</param>
+        /// 
+        /// <returns>Returns a  CreateIdNamespaceAssociationResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIdNamespaceAssociation">REST API Reference for CreateIdNamespaceAssociation Operation</seealso>
+        public virtual CreateIdNamespaceAssociationResponse EndCreateIdNamespaceAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateIdNamespaceAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateMembership
 
         /// <summary>
@@ -1505,6 +1655,144 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  DeleteIdMappingTable
+
+        /// <summary>
+        /// Deletes an ID mapping table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdMappingTable service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIdMappingTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIdMappingTable">REST API Reference for DeleteIdMappingTable Operation</seealso>
+        public virtual DeleteIdMappingTableResponse DeleteIdMappingTable(DeleteIdMappingTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdMappingTableResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIdMappingTableResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIdMappingTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdMappingTable operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIdMappingTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIdMappingTable">REST API Reference for DeleteIdMappingTable Operation</seealso>
+        public virtual IAsyncResult BeginDeleteIdMappingTable(DeleteIdMappingTableRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdMappingTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIdMappingTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIdMappingTable.</param>
+        /// 
+        /// <returns>Returns a  DeleteIdMappingTableResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIdMappingTable">REST API Reference for DeleteIdMappingTable Operation</seealso>
+        public virtual DeleteIdMappingTableResponse EndDeleteIdMappingTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteIdMappingTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteIdNamespaceAssociation
+
+        /// <summary>
+        /// Deletes an ID namespace association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdNamespaceAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIdNamespaceAssociation service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIdNamespaceAssociation">REST API Reference for DeleteIdNamespaceAssociation Operation</seealso>
+        public virtual DeleteIdNamespaceAssociationResponse DeleteIdNamespaceAssociation(DeleteIdNamespaceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIdNamespaceAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIdNamespaceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdNamespaceAssociation operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIdNamespaceAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIdNamespaceAssociation">REST API Reference for DeleteIdNamespaceAssociation Operation</seealso>
+        public virtual IAsyncResult BeginDeleteIdNamespaceAssociation(DeleteIdNamespaceAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIdNamespaceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIdNamespaceAssociation.</param>
+        /// 
+        /// <returns>Returns a  DeleteIdNamespaceAssociationResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIdNamespaceAssociation">REST API Reference for DeleteIdNamespaceAssociation Operation</seealso>
+        public virtual DeleteIdNamespaceAssociationResponse EndDeleteIdNamespaceAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteIdNamespaceAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteMember
 
         /// <summary>
@@ -1993,6 +2281,75 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  GetCollaborationIdNamespaceAssociation
+
+        /// <summary>
+        /// Retrieves an ID namespace association from a specific collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationIdNamespaceAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetCollaborationIdNamespaceAssociation service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationIdNamespaceAssociation">REST API Reference for GetCollaborationIdNamespaceAssociation Operation</seealso>
+        public virtual GetCollaborationIdNamespaceAssociationResponse GetCollaborationIdNamespaceAssociation(GetCollaborationIdNamespaceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCollaborationIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCollaborationIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetCollaborationIdNamespaceAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCollaborationIdNamespaceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationIdNamespaceAssociation operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCollaborationIdNamespaceAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationIdNamespaceAssociation">REST API Reference for GetCollaborationIdNamespaceAssociation Operation</seealso>
+        public virtual IAsyncResult BeginGetCollaborationIdNamespaceAssociation(GetCollaborationIdNamespaceAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCollaborationIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCollaborationIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCollaborationIdNamespaceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCollaborationIdNamespaceAssociation.</param>
+        /// 
+        /// <returns>Returns a  GetCollaborationIdNamespaceAssociationResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationIdNamespaceAssociation">REST API Reference for GetCollaborationIdNamespaceAssociation Operation</seealso>
+        public virtual GetCollaborationIdNamespaceAssociationResponse EndGetCollaborationIdNamespaceAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCollaborationIdNamespaceAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetCollaborationPrivacyBudgetTemplate
 
         /// <summary>
@@ -2334,6 +2691,144 @@ namespace Amazon.CleanRooms
         public virtual GetConfiguredTableAssociationResponse EndGetConfiguredTableAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<GetConfiguredTableAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetIdMappingTable
+
+        /// <summary>
+        /// Retrieves an ID mapping table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdMappingTable service method.</param>
+        /// 
+        /// <returns>The response from the GetIdMappingTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIdMappingTable">REST API Reference for GetIdMappingTable Operation</seealso>
+        public virtual GetIdMappingTableResponse GetIdMappingTable(GetIdMappingTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdMappingTableResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdMappingTableResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdMappingTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdMappingTable operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdMappingTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIdMappingTable">REST API Reference for GetIdMappingTable Operation</seealso>
+        public virtual IAsyncResult BeginGetIdMappingTable(GetIdMappingTableRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdMappingTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIdMappingTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdMappingTable.</param>
+        /// 
+        /// <returns>Returns a  GetIdMappingTableResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIdMappingTable">REST API Reference for GetIdMappingTable Operation</seealso>
+        public virtual GetIdMappingTableResponse EndGetIdMappingTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetIdMappingTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetIdNamespaceAssociation
+
+        /// <summary>
+        /// Retrieves an ID namespace association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdNamespaceAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetIdNamespaceAssociation service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIdNamespaceAssociation">REST API Reference for GetIdNamespaceAssociation Operation</seealso>
+        public virtual GetIdNamespaceAssociationResponse GetIdNamespaceAssociation(GetIdNamespaceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdNamespaceAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdNamespaceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdNamespaceAssociation operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdNamespaceAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIdNamespaceAssociation">REST API Reference for GetIdNamespaceAssociation Operation</seealso>
+        public virtual IAsyncResult BeginGetIdNamespaceAssociation(GetIdNamespaceAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIdNamespaceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdNamespaceAssociation.</param>
+        /// 
+        /// <returns>Returns a  GetIdNamespaceAssociationResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIdNamespaceAssociation">REST API Reference for GetIdNamespaceAssociation Operation</seealso>
+        public virtual GetIdNamespaceAssociationResponse EndGetIdNamespaceAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetIdNamespaceAssociationResponse>(asyncResult);
         }
 
         #endregion
@@ -2890,6 +3385,75 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  ListCollaborationIdNamespaceAssociations
+
+        /// <summary>
+        /// Returns a list of the ID namespace associations in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationIdNamespaceAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListCollaborationIdNamespaceAssociations service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationIdNamespaceAssociations">REST API Reference for ListCollaborationIdNamespaceAssociations Operation</seealso>
+        public virtual ListCollaborationIdNamespaceAssociationsResponse ListCollaborationIdNamespaceAssociations(ListCollaborationIdNamespaceAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCollaborationIdNamespaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCollaborationIdNamespaceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCollaborationIdNamespaceAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCollaborationIdNamespaceAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationIdNamespaceAssociations operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCollaborationIdNamespaceAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationIdNamespaceAssociations">REST API Reference for ListCollaborationIdNamespaceAssociations Operation</seealso>
+        public virtual IAsyncResult BeginListCollaborationIdNamespaceAssociations(ListCollaborationIdNamespaceAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCollaborationIdNamespaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCollaborationIdNamespaceAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCollaborationIdNamespaceAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCollaborationIdNamespaceAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListCollaborationIdNamespaceAssociationsResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationIdNamespaceAssociations">REST API Reference for ListCollaborationIdNamespaceAssociations Operation</seealso>
+        public virtual ListCollaborationIdNamespaceAssociationsResponse EndListCollaborationIdNamespaceAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCollaborationIdNamespaceAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListCollaborationPrivacyBudgets
 
         /// <summary>
@@ -3296,6 +3860,144 @@ namespace Amazon.CleanRooms
         public virtual ListConfiguredTablesResponse EndListConfiguredTables(IAsyncResult asyncResult)
         {
             return EndInvoke<ListConfiguredTablesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListIdMappingTables
+
+        /// <summary>
+        /// Returns a list of ID mapping tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdMappingTables service method.</param>
+        /// 
+        /// <returns>The response from the ListIdMappingTables service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIdMappingTables">REST API Reference for ListIdMappingTables Operation</seealso>
+        public virtual ListIdMappingTablesResponse ListIdMappingTables(ListIdMappingTablesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdMappingTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdMappingTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdMappingTablesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIdMappingTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIdMappingTables operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIdMappingTables
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIdMappingTables">REST API Reference for ListIdMappingTables Operation</seealso>
+        public virtual IAsyncResult BeginListIdMappingTables(ListIdMappingTablesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdMappingTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdMappingTablesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIdMappingTables operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIdMappingTables.</param>
+        /// 
+        /// <returns>Returns a  ListIdMappingTablesResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIdMappingTables">REST API Reference for ListIdMappingTables Operation</seealso>
+        public virtual ListIdMappingTablesResponse EndListIdMappingTables(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListIdMappingTablesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListIdNamespaceAssociations
+
+        /// <summary>
+        /// Returns a list of ID namespace associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdNamespaceAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListIdNamespaceAssociations service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIdNamespaceAssociations">REST API Reference for ListIdNamespaceAssociations Operation</seealso>
+        public virtual ListIdNamespaceAssociationsResponse ListIdNamespaceAssociations(ListIdNamespaceAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdNamespaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdNamespaceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdNamespaceAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIdNamespaceAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIdNamespaceAssociations operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIdNamespaceAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIdNamespaceAssociations">REST API Reference for ListIdNamespaceAssociations Operation</seealso>
+        public virtual IAsyncResult BeginListIdNamespaceAssociations(ListIdNamespaceAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdNamespaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdNamespaceAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIdNamespaceAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIdNamespaceAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListIdNamespaceAssociationsResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIdNamespaceAssociations">REST API Reference for ListIdNamespaceAssociations Operation</seealso>
+        public virtual ListIdNamespaceAssociationsResponse EndListIdNamespaceAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListIdNamespaceAssociationsResponse>(asyncResult);
         }
 
         #endregion
@@ -3767,6 +4469,78 @@ namespace Amazon.CleanRooms
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PopulateIdMappingTable
+
+        /// <summary>
+        /// Defines the information that's necessary to populate an ID mapping table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PopulateIdMappingTable service method.</param>
+        /// 
+        /// <returns>The response from the PopulateIdMappingTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PopulateIdMappingTable">REST API Reference for PopulateIdMappingTable Operation</seealso>
+        public virtual PopulateIdMappingTableResponse PopulateIdMappingTable(PopulateIdMappingTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PopulateIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PopulateIdMappingTableResponseUnmarshaller.Instance;
+
+            return Invoke<PopulateIdMappingTableResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PopulateIdMappingTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PopulateIdMappingTable operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPopulateIdMappingTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PopulateIdMappingTable">REST API Reference for PopulateIdMappingTable Operation</seealso>
+        public virtual IAsyncResult BeginPopulateIdMappingTable(PopulateIdMappingTableRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PopulateIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PopulateIdMappingTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PopulateIdMappingTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPopulateIdMappingTable.</param>
+        /// 
+        /// <returns>Returns a  PopulateIdMappingTableResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PopulateIdMappingTable">REST API Reference for PopulateIdMappingTable Operation</seealso>
+        public virtual PopulateIdMappingTableResponse EndPopulateIdMappingTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PopulateIdMappingTableResponse>(asyncResult);
         }
 
         #endregion
@@ -4449,6 +5223,144 @@ namespace Amazon.CleanRooms
         public virtual UpdateConfiguredTableAssociationResponse EndUpdateConfiguredTableAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateConfiguredTableAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateIdMappingTable
+
+        /// <summary>
+        /// Provides the details that are necessary to update an ID mapping table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdMappingTable service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIdMappingTable service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIdMappingTable">REST API Reference for UpdateIdMappingTable Operation</seealso>
+        public virtual UpdateIdMappingTableResponse UpdateIdMappingTable(UpdateIdMappingTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdMappingTableResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIdMappingTableResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateIdMappingTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdMappingTable operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIdMappingTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIdMappingTable">REST API Reference for UpdateIdMappingTable Operation</seealso>
+        public virtual IAsyncResult BeginUpdateIdMappingTable(UpdateIdMappingTableRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdMappingTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdMappingTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateIdMappingTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIdMappingTable.</param>
+        /// 
+        /// <returns>Returns a  UpdateIdMappingTableResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIdMappingTable">REST API Reference for UpdateIdMappingTable Operation</seealso>
+        public virtual UpdateIdMappingTableResponse EndUpdateIdMappingTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateIdMappingTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateIdNamespaceAssociation
+
+        /// <summary>
+        /// Provides the details that are necessary to update an ID namespace association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdNamespaceAssociation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIdNamespaceAssociation service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIdNamespaceAssociation">REST API Reference for UpdateIdNamespaceAssociation Operation</seealso>
+        public virtual UpdateIdNamespaceAssociationResponse UpdateIdNamespaceAssociation(UpdateIdNamespaceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIdNamespaceAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateIdNamespaceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdNamespaceAssociation operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIdNamespaceAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIdNamespaceAssociation">REST API Reference for UpdateIdNamespaceAssociation Operation</seealso>
+        public virtual IAsyncResult BeginUpdateIdNamespaceAssociation(UpdateIdNamespaceAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdNamespaceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdNamespaceAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateIdNamespaceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIdNamespaceAssociation.</param>
+        /// 
+        /// <returns>Returns a  UpdateIdNamespaceAssociationResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIdNamespaceAssociation">REST API Reference for UpdateIdNamespaceAssociation Operation</seealso>
+        public virtual UpdateIdNamespaceAssociationResponse EndUpdateIdNamespaceAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateIdNamespaceAssociationResponse>(asyncResult);
         }
 
         #endregion

@@ -36,6 +36,7 @@ namespace Amazon.CleanRooms.Model
     {
         private AnalysisRuleAggregation _aggregation;
         private AnalysisRuleCustom _custom;
+        private AnalysisRuleIdMappingTable _idMappingTable;
         private AnalysisRuleList _list;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetCustom()
         {
             return this._custom != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdMappingTable. 
+        /// <para>
+        /// The ID mapping table.
+        /// </para>
+        /// </summary>
+        public AnalysisRuleIdMappingTable IdMappingTable
+        {
+            get { return this._idMappingTable; }
+            set { this._idMappingTable = value; }
+        }
+
+        // Check to see if IdMappingTable property is set
+        internal bool IsSetIdMappingTable()
+        {
+            return this._idMappingTable != null;
         }
 
         /// <summary>

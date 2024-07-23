@@ -285,6 +285,10 @@ namespace Amazon.CleanRooms
         /// </summary>
         public static readonly AnalysisRuleType CUSTOM = new AnalysisRuleType("CUSTOM");
         /// <summary>
+        /// Constant ID_MAPPING_TABLE for AnalysisRuleType
+        /// </summary>
+        public static readonly AnalysisRuleType ID_MAPPING_TABLE = new AnalysisRuleType("ID_MAPPING_TABLE");
+        /// <summary>
         /// Constant LIST for AnalysisRuleType
         /// </summary>
         public static readonly AnalysisRuleType LIST = new AnalysisRuleType("LIST");
@@ -688,6 +692,56 @@ namespace Amazon.CleanRooms
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FilterableMemberStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IdNamespaceType.
+    /// </summary>
+    public class IdNamespaceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SOURCE for IdNamespaceType
+        /// </summary>
+        public static readonly IdNamespaceType SOURCE = new IdNamespaceType("SOURCE");
+        /// <summary>
+        /// Constant TARGET for IdNamespaceType
+        /// </summary>
+        public static readonly IdNamespaceType TARGET = new IdNamespaceType("TARGET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdNamespaceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdNamespaceType FindValue(string value)
+        {
+            return FindValue<IdNamespaceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdNamespaceType(string value)
         {
             return FindValue(value);
         }
@@ -1569,9 +1623,25 @@ namespace Amazon.CleanRooms
     {
 
         /// <summary>
+        /// Constant CUSTOM_ANALYSIS_NOT_ALLOWED for SchemaConfiguration
+        /// </summary>
+        public static readonly SchemaConfiguration CUSTOM_ANALYSIS_NOT_ALLOWED = new SchemaConfiguration("CUSTOM_ANALYSIS_NOT_ALLOWED");
+        /// <summary>
         /// Constant DIFFERENTIAL_PRIVACY for SchemaConfiguration
         /// </summary>
         public static readonly SchemaConfiguration DIFFERENTIAL_PRIVACY = new SchemaConfiguration("DIFFERENTIAL_PRIVACY");
+        /// <summary>
+        /// Constant DIFFERENTIAL_PRIVACY_BUDGET_NOT_CONFIGURED for SchemaConfiguration
+        /// </summary>
+        public static readonly SchemaConfiguration DIFFERENTIAL_PRIVACY_BUDGET_NOT_CONFIGURED = new SchemaConfiguration("DIFFERENTIAL_PRIVACY_BUDGET_NOT_CONFIGURED");
+        /// <summary>
+        /// Constant ID_MAPPING_TABLE_NOT_POPULATED for SchemaConfiguration
+        /// </summary>
+        public static readonly SchemaConfiguration ID_MAPPING_TABLE_NOT_POPULATED = new SchemaConfiguration("ID_MAPPING_TABLE_NOT_POPULATED");
+        /// <summary>
+        /// Constant NO_MEMBER_ACCOUNT_ALLOWED_TO_PROVIDE_ANALYSIS for SchemaConfiguration
+        /// </summary>
+        public static readonly SchemaConfiguration NO_MEMBER_ACCOUNT_ALLOWED_TO_PROVIDE_ANALYSIS = new SchemaConfiguration("NO_MEMBER_ACCOUNT_ALLOWED_TO_PROVIDE_ANALYSIS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1680,6 +1750,10 @@ namespace Amazon.CleanRooms
         /// Constant DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED for SchemaStatusReasonCode
         /// </summary>
         public static readonly SchemaStatusReasonCode DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED = new SchemaStatusReasonCode("DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED");
+        /// <summary>
+        /// Constant ID_MAPPING_TABLE_NOT_POPULATED for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode ID_MAPPING_TABLE_NOT_POPULATED = new SchemaStatusReasonCode("ID_MAPPING_TABLE_NOT_POPULATED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1722,6 +1796,10 @@ namespace Amazon.CleanRooms
     public class SchemaType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ID_MAPPING_TABLE for SchemaType
+        /// </summary>
+        public static readonly SchemaType ID_MAPPING_TABLE = new SchemaType("ID_MAPPING_TABLE");
         /// <summary>
         /// Constant TABLE for SchemaType
         /// </summary>
