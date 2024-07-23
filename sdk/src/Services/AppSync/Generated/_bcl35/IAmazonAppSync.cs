@@ -37,6 +37,12 @@ namespace Amazon.AppSync
     {
 
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAppSyncPaginatorFactory Paginators { get; }
+#endif
 
 
         
