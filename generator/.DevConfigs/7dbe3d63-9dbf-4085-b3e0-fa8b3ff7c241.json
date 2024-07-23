@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Fixes the loop logic in ErrorHandler.ProcessException() and ErrorHandler.ProcessExceptionAsync() in case the initial exception is of type System.Exception."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
