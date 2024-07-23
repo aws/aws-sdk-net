@@ -113,7 +113,7 @@ namespace ServiceClientGenerator
                     // Skip orphan clean for DynamoDB because of the complex nature of DynamoDB and DynamoDB Streams
                     if (!serviceConfig.ClassName.StartsWith("DynamoDB") && !options.SkipRemoveOrphanCleanup)
                     {
-                        GeneratorDriver.RemoveOrphanedShapes(driver.FilesWrittenToGeneratorFolder, null, driver.GeneratedFilesRoot);
+                        GeneratorDriver.RemoveOrphanedShapes(driver.FilesWrittenToGeneratorFolder, driver.GeneratedFilesRoot);
                     }
                 }
             }
