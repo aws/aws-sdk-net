@@ -50,7 +50,7 @@ namespace Amazon.S3.Util
         {
             try
             {
-                s3Client.GetACL(bucketName);
+                var response = s3Client.GetBucketAcl(new GetBucketAclRequest() { BucketName = bucketName});
             }
             catch (AmazonS3Exception e)
             {
@@ -166,7 +166,7 @@ namespace Amazon.S3.Util
         public static void SetObjectStorageClass(IAmazonS3 s3Client, string bucketName, string key, string version, S3StorageClass sClass)
         {
             CopyObjectRequest copyRequest;
-            PutACLRequest putACLRequest;
+            PutObjectAclRequest putACLRequest;
 
             SetupForObjectModification(s3Client, bucketName, key, version, out copyRequest, out putACLRequest);
 
@@ -176,7 +176,7 @@ namespace Amazon.S3.Util
             if (!string.IsNullOrEmpty(copyResponse.SourceVersionId))
                 putACLRequest.VersionId = copyResponse.SourceVersionId;
 
-            s3Client.PutACL(putACLRequest);
+            s3Client.PutObjectAcl(putACLRequest);
         }
 
         ///// <summary>
@@ -228,17 +228,17 @@ namespace Amazon.S3.Util
         public static void SetServerSideEncryption(IAmazonS3 s3Client, string bucketName, string key, string version, ServerSideEncryptionMethod method)
         {
             CopyObjectRequest copyRequest;
-            PutACLRequest putACLRequest;
+            PutObjectAclRequest putObjectAclRequest;
 
-            SetupForObjectModification(s3Client, bucketName, key, version, out copyRequest, out putACLRequest);
+            SetupForObjectModification(s3Client, bucketName, key, version, out copyRequest, out putObjectAclRequest);
 
             copyRequest.ServerSideEncryptionMethod = method;
             CopyObjectResponse copyResponse = s3Client.CopyObject(copyRequest);
 
             if (!string.IsNullOrEmpty(copyResponse.SourceVersionId))
-                putACLRequest.VersionId = copyResponse.SourceVersionId;
+                putObjectAclRequest.VersionId = copyResponse.SourceVersionId;
 
-            s3Client.PutACL(putACLRequest);
+            s3Client.PutObjectAcl(putObjectAclRequest);
         }
 
         ///// <summary>
@@ -262,17 +262,17 @@ namespace Amazon.S3.Util
         public static void SetWebsiteRedirectLocation(IAmazonS3 s3Client, string bucketName, string key, string websiteRedirectLocation)
         {
             CopyObjectRequest copyRequest;
-            PutACLRequest putACLRequest;
+            PutObjectAclRequest putObjectAclRequest;
 
-            SetupForObjectModification(s3Client, bucketName, key, null, out copyRequest, out putACLRequest);
+            SetupForObjectModification(s3Client, bucketName, key, null, out copyRequest, out putObjectAclRequest);
 
             copyRequest.WebsiteRedirectLocation = websiteRedirectLocation;
             CopyObjectResponse copyResponse = s3Client.CopyObject(copyRequest);
 
             if (!string.IsNullOrEmpty(copyResponse.SourceVersionId))
-                putACLRequest.VersionId = copyResponse.SourceVersionId;
+                putObjectAclRequest.VersionId = copyResponse.SourceVersionId;
 
-            s3Client.PutACL(putACLRequest);
+            s3Client.PutObjectAcl(putObjectAclRequest);
         }
 
         /// <summary>
@@ -284,25 +284,25 @@ namespace Amazon.S3.Util
         /// <param name="version"></param>
         /// <param name="s3Client"></param>
         /// <param name="copyRequest"></param>
-        /// <param name="putACLRequest"></param>
+        /// <param name="putObjectAclRequest"></param>
         static void SetupForObjectModification(IAmazonS3 s3Client, string bucketName, string key, string version, 
-            out CopyObjectRequest copyRequest, out PutACLRequest putACLRequest)
+            out CopyObjectRequest copyRequest, out PutObjectAclRequest putObjectAclRequest)
         {
             // Get the existing ACL of the object
-            GetACLRequest getACLRequest = new GetACLRequest();
-            getACLRequest.BucketName = bucketName;
-            getACLRequest.Key = key;
+            GetObjectAclRequest getObjectAclRequest = new GetObjectAclRequest();
+            getObjectAclRequest.BucketName = bucketName;
+            getObjectAclRequest.Key = key;
             if (version != null)
-                getACLRequest.VersionId = version;
-            GetACLResponse getACLResponse = s3Client.GetACL(getACLRequest);
+                getObjectAclRequest.VersionId = version;
+            GetObjectAclResponse getObjectAclResponse = s3Client.GetObjectAcl(getObjectAclRequest);
 
 
             // Set the object's original ACL back onto it because a COPY
             // operation resets the ACL on the destination object.
-            putACLRequest = new PutACLRequest();
-            putACLRequest.BucketName = bucketName;
-            putACLRequest.Key = key;
-            putACLRequest.AccessControlList = getACLResponse.AccessControlList;
+            putObjectAclRequest = new PutObjectAclRequest();
+            putObjectAclRequest.BucketName = bucketName;
+            putObjectAclRequest.Key = key;
+            putObjectAclRequest.AccessControlPolicy.Grants = getObjectAclResponse.Grants;
 
 
             ListObjectsResponse listObjectResponse = s3Client.ListObjects(new ListObjectsRequest

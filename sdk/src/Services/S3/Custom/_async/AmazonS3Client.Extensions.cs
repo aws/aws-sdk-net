@@ -134,13 +134,13 @@ namespace Amazon.S3
 
         Task ICoreAmazonS3.MakeObjectPublicAsync(string bucket, string objectKey, bool enable)
         {
-            var request = new PutACLRequest
+            var request = new PutObjectAclRequest
             {
                 BucketName = bucket,
                 Key = objectKey,
-                CannedACL = enable ? S3CannedACL.PublicRead : S3CannedACL.Private
+                ACL = enable ? S3CannedACL.PublicRead : S3CannedACL.Private
             };
-            return this.PutACLAsync(request);
+            return this.PutObjectAclAsync(request);
         }
 
         Task ICoreAmazonS3.EnsureBucketExistsAsync(string bucketName)
