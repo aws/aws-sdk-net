@@ -46,6 +46,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectContactLens.Model.PostContactSummary.Content</property>
+    <min>1</min>
+    <max>1762</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectContactLens.Model.Transcript.BeginOffsetMillis</property>
     <min>0</min>
   </property-value-rule>

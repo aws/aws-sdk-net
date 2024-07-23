@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RealtimeContactAnalysisSegment Object
+    /// Response Unmarshaller for PostContactSummary Object
     /// </summary>  
-    public class RealtimeContactAnalysisSegmentUnmarshaller : IUnmarshaller<RealtimeContactAnalysisSegment, XmlUnmarshallerContext>, IUnmarshaller<RealtimeContactAnalysisSegment, JsonUnmarshallerContext>
+    public class PostContactSummaryUnmarshaller : IUnmarshaller<PostContactSummary, XmlUnmarshallerContext>, IUnmarshaller<PostContactSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RealtimeContactAnalysisSegment IUnmarshaller<RealtimeContactAnalysisSegment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PostContactSummary IUnmarshaller<PostContactSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RealtimeContactAnalysisSegment Unmarshall(JsonUnmarshallerContext context)
+        public PostContactSummary Unmarshall(JsonUnmarshallerContext context)
         {
-            RealtimeContactAnalysisSegment unmarshalledObject = new RealtimeContactAnalysisSegment();
+            PostContactSummary unmarshalledObject = new PostContactSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,22 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Categories", targetDepth))
+                if (context.TestExpression("Content", targetDepth))
                 {
-                    var unmarshaller = CategoriesUnmarshaller.Instance;
-                    unmarshalledObject.Categories = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PostContactSummary", targetDepth))
+                if (context.TestExpression("FailureCode", targetDepth))
                 {
-                    var unmarshaller = PostContactSummaryUnmarshaller.Instance;
-                    unmarshalledObject.PostContactSummary = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FailureCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Transcript", targetDepth))
+                if (context.TestExpression("Status", targetDepth))
                 {
-                    var unmarshaller = TranscriptUnmarshaller.Instance;
-                    unmarshalledObject.Transcript = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +89,12 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
         }
 
 
-        private static RealtimeContactAnalysisSegmentUnmarshaller _instance = new RealtimeContactAnalysisSegmentUnmarshaller();        
+        private static PostContactSummaryUnmarshaller _instance = new PostContactSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RealtimeContactAnalysisSegmentUnmarshaller Instance
+        public static PostContactSummaryUnmarshaller Instance
         {
             get
             {
