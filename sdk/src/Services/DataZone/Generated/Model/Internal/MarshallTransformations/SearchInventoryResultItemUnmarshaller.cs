@@ -72,12 +72,6 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssetItem = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("dataProductItem", targetDepth))
-                {
-                    var unmarshaller = DataProductSummaryUnmarshaller.Instance;
-                    unmarshalledObject.DataProductItem = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("glossaryItem", targetDepth))
                 {
                     var unmarshaller = GlossaryItemUnmarshaller.Instance;
