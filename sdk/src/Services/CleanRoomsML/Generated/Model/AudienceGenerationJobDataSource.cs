@@ -37,6 +37,7 @@ namespace Amazon.CleanRoomsML.Model
     {
         private S3ConfigMap _dataSource;
         private string _roleArn;
+        private ProtectedQuerySQLParameters _sqlParameters;
 
         /// <summary>
         /// Gets and sets the property DataSource. 
@@ -57,7 +58,6 @@ namespace Amazon.CleanRoomsML.Model
         ///  <c>...</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public S3ConfigMap DataSource
         {
             get { return this._dataSource; }
@@ -73,7 +73,7 @@ namespace Amazon.CleanRoomsML.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role that can read the Amazon S3 bucket where the training data
+        /// The ARN of the IAM role that can read the Amazon S3 bucket where the seed audience
         /// is stored.
         /// </para>
         /// </summary>
@@ -88,6 +88,25 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SqlParameters. 
+        /// <para>
+        /// The protected SQL query parameters.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public ProtectedQuerySQLParameters SqlParameters
+        {
+            get { return this._sqlParameters; }
+            set { this._sqlParameters = value; }
+        }
+
+        // Check to see if SqlParameters property is set
+        internal bool IsSetSqlParameters()
+        {
+            return this._sqlParameters != null;
         }
 
     }

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AudienceGenerationJobDataSource Marshaller
+    /// ProtectedQuerySQLParameters Marshaller
     /// </summary>
-    public class AudienceGenerationJobDataSourceMarshaller : IRequestMarshaller<AudienceGenerationJobDataSource, JsonMarshallerContext> 
+    public class ProtectedQuerySQLParametersMarshaller : IRequestMarshaller<ProtectedQuerySQLParameters, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,36 +44,34 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AudienceGenerationJobDataSource requestObject, JsonMarshallerContext context)
+        public void Marshall(ProtectedQuerySQLParameters requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDataSource())
+            if(requestObject.IsSetAnalysisTemplateArn())
             {
-                context.Writer.WritePropertyName("dataSource");
+                context.Writer.WritePropertyName("analysisTemplateArn");
+                context.Writer.Write(requestObject.AnalysisTemplateArn);
+            }
+
+            if(requestObject.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("parameters");
                 context.Writer.WriteObjectStart();
+                foreach (var requestObjectParametersKvp in requestObject.Parameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
+                    var requestObjectParametersValue = requestObjectParametersKvp.Value;
 
-                var marshaller = S3ConfigMapMarshaller.Instance;
-                marshaller.Marshall(requestObject.DataSource, context);
-
+                        context.Writer.Write(requestObjectParametersValue);
+                }
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetRoleArn())
+            if(requestObject.IsSetQueryString())
             {
-                context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
-            }
-
-            if(requestObject.IsSetSqlParameters())
-            {
-                context.Writer.WritePropertyName("sqlParameters");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ProtectedQuerySQLParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.SqlParameters, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("queryString");
+                context.Writer.Write(requestObject.QueryString);
             }
 
         }
@@ -81,7 +79,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AudienceGenerationJobDataSourceMarshaller Instance = new AudienceGenerationJobDataSourceMarshaller();
+        public readonly static ProtectedQuerySQLParametersMarshaller Instance = new ProtectedQuerySQLParametersMarshaller();
 
     }
 }

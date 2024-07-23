@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AudienceGenerationJobDataSource Object
+    /// Response Unmarshaller for ProtectedQuerySQLParameters Object
     /// </summary>  
-    public class AudienceGenerationJobDataSourceUnmarshaller : IUnmarshaller<AudienceGenerationJobDataSource, XmlUnmarshallerContext>, IUnmarshaller<AudienceGenerationJobDataSource, JsonUnmarshallerContext>
+    public class ProtectedQuerySQLParametersUnmarshaller : IUnmarshaller<ProtectedQuerySQLParameters, XmlUnmarshallerContext>, IUnmarshaller<ProtectedQuerySQLParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AudienceGenerationJobDataSource IUnmarshaller<AudienceGenerationJobDataSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ProtectedQuerySQLParameters IUnmarshaller<ProtectedQuerySQLParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudienceGenerationJobDataSource Unmarshall(JsonUnmarshallerContext context)
+        public ProtectedQuerySQLParameters Unmarshall(JsonUnmarshallerContext context)
         {
-            AudienceGenerationJobDataSource unmarshalledObject = new AudienceGenerationJobDataSource();
+            ProtectedQuerySQLParameters unmarshalledObject = new ProtectedQuerySQLParameters();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,22 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dataSource", targetDepth))
-                {
-                    var unmarshaller = S3ConfigMapUnmarshaller.Instance;
-                    unmarshalledObject.DataSource = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("analysisTemplateArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AnalysisTemplateArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sqlParameters", targetDepth))
+                if (context.TestExpression("parameters", targetDepth))
                 {
-                    var unmarshaller = ProtectedQuerySQLParametersUnmarshaller.Instance;
-                    unmarshalledObject.SqlParameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("queryString", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QueryString = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +89,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         }
 
 
-        private static AudienceGenerationJobDataSourceUnmarshaller _instance = new AudienceGenerationJobDataSourceUnmarshaller();        
+        private static ProtectedQuerySQLParametersUnmarshaller _instance = new ProtectedQuerySQLParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AudienceGenerationJobDataSourceUnmarshaller Instance
+        public static ProtectedQuerySQLParametersUnmarshaller Instance
         {
             get
             {
