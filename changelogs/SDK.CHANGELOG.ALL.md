@@ -1,3 +1,19 @@
+### 3.7.852.0 (2024-07-23 18:25 UTC)
+* AppSync (3.7.306.0)
+	* Adding support for paginators in AppSync list APIs
+* CleanRooms (3.7.305.0)
+	* This release adds AWS Entity Resolution integration to associate ID namespaces & ID mapping workflow resources as part of ID namespace association and  ID mapping table  in AWS Clean Rooms. It also introduces a new ID_MAPPING_TABLE analysis rule to manage the protection on ID mapping table.
+* CleanRoomsML (3.7.303.0)
+	* Adds SQL query as the source of seed audience for audience generation job.
+* Connect (3.7.324.0)
+	* Added PostContactSummary segment type on ListRealTimeContactAnalysisSegmentsV2 API
+* ConnectContactLens (3.7.301.0)
+	* Added PostContactSummary segment type on ListRealTimeContactAnalysisSegments API
+* DataZone (3.7.308.0)
+	* This release removes the deprecated dataProductItem field from Search API output.
+* EntityResolution (3.7.303.0)
+	* Support First Party ID Mapping
+
 ### 3.7.851.0 (2024-07-22 20:09 UTC)
 * DataZone (3.7.307.0)
 	* This release adds 1/ support of register S3 locations of assets in AWS Lake Formation hybrid access mode for DefaultDataLake blueprint. 2/ support of CRUD operations for Asset Filters.
