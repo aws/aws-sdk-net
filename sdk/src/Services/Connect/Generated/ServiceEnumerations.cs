@@ -4685,6 +4685,118 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type RealTimeContactAnalysisPostContactSummaryFailureCode.
+    /// </summary>
+    public class RealTimeContactAnalysisPostContactSummaryFailureCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED_SAFETY_GUIDELINES for RealTimeContactAnalysisPostContactSummaryFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisPostContactSummaryFailureCode FAILED_SAFETY_GUIDELINES = new RealTimeContactAnalysisPostContactSummaryFailureCode("FAILED_SAFETY_GUIDELINES");
+        /// <summary>
+        /// Constant INSUFFICIENT_CONVERSATION_CONTENT for RealTimeContactAnalysisPostContactSummaryFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisPostContactSummaryFailureCode INSUFFICIENT_CONVERSATION_CONTENT = new RealTimeContactAnalysisPostContactSummaryFailureCode("INSUFFICIENT_CONVERSATION_CONTENT");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for RealTimeContactAnalysisPostContactSummaryFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisPostContactSummaryFailureCode INTERNAL_ERROR = new RealTimeContactAnalysisPostContactSummaryFailureCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant INVALID_ANALYSIS_CONFIGURATION for RealTimeContactAnalysisPostContactSummaryFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisPostContactSummaryFailureCode INVALID_ANALYSIS_CONFIGURATION = new RealTimeContactAnalysisPostContactSummaryFailureCode("INVALID_ANALYSIS_CONFIGURATION");
+        /// <summary>
+        /// Constant QUOTA_EXCEEDED for RealTimeContactAnalysisPostContactSummaryFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisPostContactSummaryFailureCode QUOTA_EXCEEDED = new RealTimeContactAnalysisPostContactSummaryFailureCode("QUOTA_EXCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RealTimeContactAnalysisPostContactSummaryFailureCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RealTimeContactAnalysisPostContactSummaryFailureCode FindValue(string value)
+        {
+            return FindValue<RealTimeContactAnalysisPostContactSummaryFailureCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RealTimeContactAnalysisPostContactSummaryFailureCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RealTimeContactAnalysisPostContactSummaryStatus.
+    /// </summary>
+    public class RealTimeContactAnalysisPostContactSummaryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for RealTimeContactAnalysisPostContactSummaryStatus
+        /// </summary>
+        public static readonly RealTimeContactAnalysisPostContactSummaryStatus COMPLETED = new RealTimeContactAnalysisPostContactSummaryStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for RealTimeContactAnalysisPostContactSummaryStatus
+        /// </summary>
+        public static readonly RealTimeContactAnalysisPostContactSummaryStatus FAILED = new RealTimeContactAnalysisPostContactSummaryStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RealTimeContactAnalysisPostContactSummaryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RealTimeContactAnalysisPostContactSummaryStatus FindValue(string value)
+        {
+            return FindValue<RealTimeContactAnalysisPostContactSummaryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RealTimeContactAnalysisPostContactSummaryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RealTimeContactAnalysisSegmentType.
     /// </summary>
     public class RealTimeContactAnalysisSegmentType : ConstantClass
@@ -4706,6 +4818,10 @@ namespace Amazon.Connect
         /// Constant Issues for RealTimeContactAnalysisSegmentType
         /// </summary>
         public static readonly RealTimeContactAnalysisSegmentType Issues = new RealTimeContactAnalysisSegmentType("Issues");
+        /// <summary>
+        /// Constant PostContactSummary for RealTimeContactAnalysisSegmentType
+        /// </summary>
+        public static readonly RealTimeContactAnalysisSegmentType PostContactSummary = new RealTimeContactAnalysisSegmentType("PostContactSummary");
         /// <summary>
         /// Constant Transcript for RealTimeContactAnalysisSegmentType
         /// </summary>

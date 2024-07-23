@@ -147,7 +147,7 @@ namespace Amazon.Connect.Model
         /// may have different sets of supported segment types.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=5)]
+        [AWSProperty(Required=true, Max=6)]
         public List<string> SegmentTypes
         {
             get { return this._segmentTypes; }
