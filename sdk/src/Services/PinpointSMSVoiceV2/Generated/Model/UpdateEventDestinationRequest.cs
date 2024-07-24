@@ -32,14 +32,14 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// <summary>
     /// Container for the parameters to the UpdateEventDestination operation.
     /// Updates an existing event destination in a configuration set. You can update the IAM
-    /// role ARN for CloudWatch Logs and Kinesis Data Firehose. You can also enable or disable
-    /// the event destination.
+    /// role ARN for CloudWatch Logs and Firehose. You can also enable or disable the event
+    /// destination.
     /// 
     ///  
     /// <para>
     /// You may want to update an event destination to change its matching event types or
     /// updating the destination resource ARN. You can't change an event destination's type
-    /// between CloudWatch Logs, Kinesis Data Firehose, and Amazon SNS.
+    /// between CloudWatch Logs, Firehose, and Amazon SNS.
     /// </para>
     /// </summary>
     public partial class UpdateEventDestinationRequest : AmazonPinpointSMSVoiceV2Request
@@ -131,8 +131,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property KinesisFirehoseDestination. 
         /// <para>
-        /// An object that contains information about an event destination for logging to Kinesis
-        /// Data Firehose.
+        /// An object that contains information about an event destination for logging to Firehose.
         /// </para>
         /// </summary>
         public KinesisFirehoseDestination KinesisFirehoseDestination

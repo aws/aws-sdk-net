@@ -36,16 +36,15 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     ///  
     /// <para>
     /// An event destination is a location where you send message events. The event options
-    /// are Amazon CloudWatch, Amazon Kinesis Data Firehose, or Amazon SNS. For example, when
-    /// a message is delivered successfully, you can send information about that event to
-    /// an event destination, or send notifications to endpoints that are subscribed to an
-    /// Amazon SNS topic.
+    /// are Amazon CloudWatch, Amazon Data Firehose, or Amazon SNS. For example, when a message
+    /// is delivered successfully, you can send information about that event to an event destination,
+    /// or send notifications to endpoints that are subscribed to an Amazon SNS topic.
     /// </para>
     ///  
     /// <para>
     /// Each configuration set can contain between 0 and 5 event destinations. Each event
     /// destination can contain a reference to a single destination, such as a CloudWatch
-    /// or Kinesis Data Firehose destination.
+    /// or Firehose destination.
     /// </para>
     /// </summary>
     public partial class CreateEventDestinationRequest : AmazonPinpointSMSVoiceV2Request
@@ -142,7 +141,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Gets and sets the property KinesisFirehoseDestination. 
         /// <para>
         /// An object that contains information about an event destination for logging to Amazon
-        /// Kinesis Data Firehose.
+        /// Data Firehose.
         /// </para>
         /// </summary>
         public KinesisFirehoseDestination KinesisFirehoseDestination
@@ -161,7 +160,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Gets and sets the property MatchingEventTypes. 
         /// <para>
         /// An array of event types that determine which events to log. If "ALL" is used, then
-        /// Amazon Pinpoint logs every event type.
+        /// AWS End User Messaging SMS and Voice logs every event type.
         /// </para>
         ///  <note> 
         /// <para>

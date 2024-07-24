@@ -31,9 +31,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
     /// Container for the parameters to the SendVoiceMessage operation.
-    /// Allows you to send a request that sends a voice message through Amazon Pinpoint. This
-    /// operation uses <a href="http://aws.amazon.com/polly/">Amazon Polly</a> to convert
-    /// a text script into a voice message.
+    /// Allows you to send a request that sends a voice message. This operation uses <a href="http://aws.amazon.com/polly/">Amazon
+    /// Polly</a> to convert a text script into a voice message.
     /// </summary>
     public partial class SendVoiceMessageRequest : AmazonPinpointSMSVoiceV2Request
     {
