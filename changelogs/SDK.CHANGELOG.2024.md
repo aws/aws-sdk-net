@@ -1,3 +1,21 @@
+### 3.7.853.0 (2024-07-24 18:33 UTC)
+* CleanRooms (3.7.400.0)
+	* Three enhancements to the AWS Clean Rooms: Disallowed Output Columns, Flexible Result Receivers, SQL as a Seed
+* DynamoDBv2 (3.7.400.0)
+	* DynamoDB doc only update for July
+* IoTSiteWise (3.7.400.0)
+	* Adds support for creating SiteWise Edge gateways that run on a Siemens Industrial Edge Device.
+* MediaPackageV2 (3.7.400.0)
+	* This release adds support for Irdeto DRM encryption in DASH manifests.
+* MedicalImaging (3.7.400.0)
+	* CopyImageSet API adds copying selected instances between image sets, and overriding inconsistent metadata with a force parameter. UpdateImageSetMetadata API enables reverting to prior versions; updates to Study, Series, and SOP Instance UIDs; and updates to private elements, with a force parameter.
+* PinpointSMSVoiceV2 (3.7.400.0)
+	* Update for rebrand to AWS End User Messaging SMS and Voice.
+* Core 3.7.400.0
+	* Implement observability features in the SDK including metrics and tracing.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.852.0 (2024-07-23 18:25 UTC)
 * AppSync (3.7.306.0)
 	* Adding support for paginators in AppSync list APIs

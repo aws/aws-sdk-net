@@ -32,7 +32,7 @@ namespace Amazon.Pricing
     public partial class AmazonPricingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pricing", "3.7.302.60");
+            InternalSDKUtils.BuildUserAgentString("Pricing", "3.7.400.0");
 
         private string _userAgent = UserAgentString;
         ///<summary>
