@@ -509,6 +509,10 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly DrmSystem FAIRPLAY = new DrmSystem("FAIRPLAY");
         /// <summary>
+        /// Constant IRDETO for DrmSystem
+        /// </summary>
+        public static readonly DrmSystem IRDETO = new DrmSystem("IRDETO");
+        /// <summary>
         /// Constant PLAYREADY for DrmSystem
         /// </summary>
         public static readonly DrmSystem PLAYREADY = new DrmSystem("PLAYREADY");
