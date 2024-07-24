@@ -73,7 +73,8 @@ namespace Amazon.DynamoDBv2
         /// This operation allows you to perform batch reads or writes on data stored in DynamoDB,
         /// using PartiQL. Each read statement in a <c>BatchExecuteStatement</c> must specify
         /// an equality condition on all key attributes. This enforces that each <c>SELECT</c>
-        /// statement in a batch returns at most a single item.
+        /// statement in a batch returns at most a single item. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.multiplestatements.batching.html">Running
+        /// batch operations with PartiQL for DynamoDB </a>.
         /// 
         ///  <note> 
         /// <para>
@@ -108,7 +109,8 @@ namespace Amazon.DynamoDBv2
         /// This operation allows you to perform batch reads or writes on data stored in DynamoDB,
         /// using PartiQL. Each read statement in a <c>BatchExecuteStatement</c> must specify
         /// an equality condition on all key attributes. This enforces that each <c>SELECT</c>
-        /// statement in a batch returns at most a single item.
+        /// statement in a batch returns at most a single item. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.multiplestatements.batching.html">Running
+        /// batch operations with PartiQL for DynamoDB </a>.
         /// 
         ///  <note> 
         /// <para>
@@ -768,8 +770,12 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// For tables and indexes with provisioned capacity, if none of the items can be processed
+        /// due to insufficient provisioned throughput on all of the tables in the request, then
+        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
+        /// all tables and indexes, if none of the items can be processed due to other throttling
+        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
+        /// a <c>ThrottlingException</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -910,8 +916,12 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// For tables and indexes with provisioned capacity, if none of the items can be processed
+        /// due to insufficient provisioned throughput on all of the tables in the request, then
+        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
+        /// all tables and indexes, if none of the items can be processed due to other throttling
+        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
+        /// a <c>ThrottlingException</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1053,8 +1063,12 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// For tables and indexes with provisioned capacity, if none of the items can be processed
+        /// due to insufficient provisioned throughput on all of the tables in the request, then
+        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
+        /// all tables and indexes, if none of the items can be processed due to other throttling
+        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
+        /// a <c>ThrottlingException</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1199,8 +1213,12 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// For tables and indexes with provisioned capacity, if none of the items can be processed
+        /// due to insufficient provisioned throughput on all of the tables in the request, then
+        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
+        /// all tables and indexes, if none of the items can be processed due to other throttling
+        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
+        /// a <c>ThrottlingException</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -2830,7 +2848,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
         /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
-        /// is complete.
+        /// is complete. For the full list of table states, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2916,7 +2934,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
         /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
-        /// is complete.
+        /// is complete. For the full list of table states, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3003,7 +3021,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
         /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
-        /// is complete.
+        /// is complete. For the full list of table states, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3093,7 +3111,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
         /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
-        /// is complete.
+        /// is complete. For the full list of table states, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.
         /// </para>
         ///  </note> 
         /// <para>
