@@ -39,7 +39,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property ConfiguredTableAssociation. 
         /// <para>
-        /// The entire configured table association object.
+        /// The configured table association.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

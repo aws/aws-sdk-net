@@ -179,7 +179,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of schema object.
+        /// The type of schema object. The only valid schema type is currently `TABLE`.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -39,7 +39,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property Collaboration. 
         /// <para>
-        /// The entire created collaboration object.
+        /// The collaboration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

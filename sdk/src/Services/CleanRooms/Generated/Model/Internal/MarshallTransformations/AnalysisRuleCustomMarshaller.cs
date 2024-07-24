@@ -48,6 +48,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalAnalyses())
+            {
+                context.Writer.WritePropertyName("additionalAnalyses");
+                context.Writer.Write(requestObject.AdditionalAnalyses);
+            }
+
             if(requestObject.IsSetAllowedAnalyses())
             {
                 context.Writer.WritePropertyName("allowedAnalyses");
@@ -79,6 +85,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.DifferentialPrivacy, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDisallowedOutputColumns())
+            {
+                context.Writer.WritePropertyName("disallowedOutputColumns");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDisallowedOutputColumnsListValue in requestObject.DisallowedOutputColumns)
+                {
+                        context.Writer.Write(requestObjectDisallowedOutputColumnsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }

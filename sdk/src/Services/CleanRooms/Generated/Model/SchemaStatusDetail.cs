@@ -41,6 +41,7 @@ namespace Amazon.CleanRooms.Model
     public partial class SchemaStatusDetail
     {
         private AnalysisRuleType _analysisRuleType;
+        private AnalysisType _analysisType;
         private List<string> _configurations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<SchemaStatusReason> _reasons = AWSConfigs.InitializeCollections ? new List<SchemaStatusReason>() : null;
         private SchemaStatus _status;
@@ -61,6 +62,30 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetAnalysisRuleType()
         {
             return this._analysisRuleType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AnalysisType. 
+        /// <para>
+        /// The type of analysis that can be performed on the schema.
+        /// </para>
+        ///  
+        /// <para>
+        /// A schema can have an <c>analysisType</c> of <c>DIRECT_ANALYSIS</c>, <c>ADDITIONAL_ANALYSIS_FOR_AUDIENCE_GENERATION</c>,
+        /// or both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public AnalysisType AnalysisType
+        {
+            get { return this._analysisType; }
+            set { this._analysisType = value; }
+        }
+
+        // Check to see if AnalysisType property is set
+        internal bool IsSetAnalysisType()
+        {
+            return this._analysisType != null;
         }
 
         /// <summary>
@@ -102,7 +127,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the schema.
+        /// The status of the schema, indicating if it is ready to query.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

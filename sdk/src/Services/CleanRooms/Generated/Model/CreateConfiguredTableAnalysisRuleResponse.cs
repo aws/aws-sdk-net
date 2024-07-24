@@ -39,7 +39,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property AnalysisRule. 
         /// <para>
-        /// The entire created analysis rule.
+        /// The analysis rule that was created for the configured table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

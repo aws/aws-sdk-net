@@ -90,6 +90,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.MembershipId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("receiverConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ReceiverConfiguration, ReceiverConfigurationUnmarshaller>(ReceiverConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ReceiverConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
