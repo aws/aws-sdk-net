@@ -63,7 +63,8 @@ namespace UnitTests
             "CredentialProfileStoreChain",
             "DisableRequestCompression",
             "RequestMinCompressionSizeBytes",
-            "ClientAppId"
+            "ClientAppId",
+            "TelemetryProvider",
         };
 
         [Fact]

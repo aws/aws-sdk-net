@@ -9,6 +9,7 @@ using System.IO;
 using AWSSDK_DotNet35.UnitTests;
 using Amazon.Runtime.Internal.Util;
 using System.Net;
+using System.Reflection;
 
 using Amazon.S3;
 using Amazon.S3.Model;
@@ -206,6 +207,11 @@ namespace AWSSDK.UnitTests
                 },
                 new ResponseContext()
             );
+
+            // Create and set the internal ServiceMetadata via reflection
+            var serviceMetaData = Assembly.GetAssembly(executionContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
+            executionContext.RequestContext.GetType().GetProperty("ServiceMetaData").SetValue(executionContext.RequestContext, serviceMetaData);
+
             executionContext.RequestContext.Request.Endpoint = new Uri(@"http://ListBuckets");
             return executionContext;
         }
@@ -224,6 +230,11 @@ namespace AWSSDK.UnitTests
                 },
                 new AsyncResponseContext()
             );
+
+            // Create and set the internal ServiceMetadata via reflection
+            var serviceMetaData = Assembly.GetAssembly(executionContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
+            executionContext.RequestContext.GetType().GetProperty("ServiceMetaData").SetValue(executionContext.RequestContext, serviceMetaData);
+
             executionContext.RequestContext.Request.Endpoint = new Uri(@"http://ListBuckets");
             return executionContext;
         }

@@ -27,6 +27,7 @@ using AWSSDK.UnitTests;
 using System.IO;
 using System.Net;
 using System.Data.SqlTypes;
+using System.Reflection;
 
 namespace AWSSDK.ProtocolTests.Utils
 {
@@ -53,6 +54,11 @@ namespace AWSSDK.ProtocolTests.Utils
                 IsAsync = false,
                 ImmutableCredentials = new ImmutableCredentials("access key", "secret", "token")
             };
+
+            // Create and set the internal ServiceMetadata via reflection
+            var serviceMetaData = Assembly.GetAssembly(requestContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
+            requestContext.GetType().GetProperty("ServiceMetaData").SetValue(requestContext, serviceMetaData);
+
             var executionContext = new ExecutionContext(
                 requestContext,
                 new ResponseContext()

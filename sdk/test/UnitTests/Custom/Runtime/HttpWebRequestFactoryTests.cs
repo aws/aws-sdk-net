@@ -13,6 +13,7 @@ using Amazon.Runtime.Internal.Util;
 using Moq;
 using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.AutoMoq;
+using Amazon.Runtime.Telemetry;
 
 
 namespace AWSSDK.UnitTests
@@ -158,6 +159,7 @@ namespace AWSSDK.UnitTests
                 .With(config => config.UseNagleAlgorithm, useNagleAlgorithm)
                 .With(config => config.ConnectionLimit, 10)
                 .With(config => config.ServiceURL, "")
+                .With(config => config.TelemetryProvider, new DefaultTelemetryProvider())
             );
 
             _fixture.Customize<RequestContext>(cc => cc

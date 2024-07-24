@@ -27,6 +27,7 @@ using Amazon.Util;
 using Amazon.Util.Internal;
 using System.Collections.Generic;
 using Amazon.Runtime;
+using Amazon.Runtime.Telemetry;
 
 namespace Amazon
 {
@@ -90,6 +91,7 @@ namespace Amazon
         // for reading from awsconfigs.xml
         private static object _lock = new object();
         private static List<string> standardConfigs = new List<string>() { "region", "logging", "correctForClockSkew" };
+        private static TelemetryProvider _telemetryProvider = new DefaultTelemetryProvider();
 
 #pragma warning disable 414
         private static bool configPresent = true;
@@ -472,6 +474,19 @@ namespace Amazon
         {
             get { return _rootConfig.UseAlternateUserAgentHeader; }
             set { _rootConfig.UseAlternateUserAgentHeader = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the global <see cref="TelemetryProvider"/> instance.
+        /// <para>
+        /// This global telemetry provider is used to collect and report telemetry data 
+        /// (such as traces and metrics) for all AWS SDK operations.
+        /// </para>
+        /// </summary>
+        public static TelemetryProvider TelemetryProvider
+        {
+            get { return _telemetryProvider; }
+            set { _telemetryProvider = value; }
         }
 
         /// <summary>

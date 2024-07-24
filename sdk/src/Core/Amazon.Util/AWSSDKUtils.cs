@@ -1644,6 +1644,22 @@ namespace Amazon.Util
         }
 
         /// <summary>
+        /// Extracts the operation name from a given request name.
+        /// </summary>
+        /// <param name="requestName">The name of the request from which the operation name is to be extracted.</param>
+        /// <returns>
+        /// The operation name if the request name ends with "Request"; otherwise, returns the original request name.
+        /// </returns>
+        internal static string ExtractOperationName(string requestName)
+        {
+            if (requestName.EndsWith("Request", StringComparison.Ordinal))
+            {
+                return requestName.Substring(0, requestName.Length - 7);
+            }
+            return requestName;
+        }
+
+        /// <summary>
         /// Runs a process with the below input parameters.
         /// </summary>
         /// <param name="processStartInfo"></param>

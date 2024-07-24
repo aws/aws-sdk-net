@@ -17,6 +17,8 @@ using System;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Compression;
+using Amazon.Runtime.Telemetry.Tracing;
+using Amazon.Runtime.Telemetry;
 
 namespace Amazon.Runtime.Internal
 {
@@ -105,6 +107,7 @@ namespace Amazon.Runtime.Internal
                 if (input.Length >= minCompressionSize)
                 {
                     executionContext.RequestContext.Metrics.AddProperty(Metric.UncompressedRequestSize, input.Length);
+                    using (TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.RequestCompressionSpanName))
                     using (executionContext.RequestContext.Metrics.StartEvent(Metric.RequestCompressionTime))
                     {
                         request.Content = compressionAlgorithm.Compress(input);
