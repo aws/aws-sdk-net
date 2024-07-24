@@ -100,6 +100,12 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                     response.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("overrides", targetDepth))
+                {
+                    var unmarshaller = OverridesUnmarshaller.Instance;
+                    response.Overrides = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

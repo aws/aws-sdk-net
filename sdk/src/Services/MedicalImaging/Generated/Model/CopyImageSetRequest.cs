@@ -37,6 +37,7 @@ namespace Amazon.MedicalImaging.Model
     {
         private CopyImageSetInformation _copyImageSetInformation;
         private string _datastoreId;
+        private bool? _force;
         private string _sourceImageSetId;
 
         /// <summary>
@@ -75,6 +76,25 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetDatastoreId()
         {
             return this._datastoreId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// Setting this flag will force the <c>CopyImageSet</c> operation, even if Patient, Study,
+        /// or Series level metadata are mismatched across the <c>sourceImageSet</c> and <c>destinationImageSet</c>.
+        /// </para>
+        /// </summary>
+        public bool Force
+        {
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
         }
 
         /// <summary>

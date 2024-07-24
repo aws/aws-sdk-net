@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MetadataUpdates Marshaller
+    /// MetadataCopies Marshaller
     /// </summary>
-    public class MetadataUpdatesMarshaller : IRequestMarshaller<MetadataUpdates, JsonMarshallerContext> 
+    public class MetadataCopiesMarshaller : IRequestMarshaller<MetadataCopies, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,25 +44,14 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MetadataUpdates requestObject, JsonMarshallerContext context)
+        public void Marshall(MetadataCopies requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDICOMUpdates())
+            if(requestObject.IsSetCopiableAttributes())
             {
-                context.Writer.WritePropertyName("DICOMUpdates");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DICOMUpdatesMarshaller.Instance;
-                marshaller.Marshall(requestObject.DICOMUpdates, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRevertToVersionId())
-            {
-                context.Writer.WritePropertyName("revertToVersionId");
-                context.Writer.Write(requestObject.RevertToVersionId);
+                context.Writer.WritePropertyName("copiableAttributes");
+                context.Writer.Write(requestObject.CopiableAttributes);
             }
 
         }
@@ -70,7 +59,7 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MetadataUpdatesMarshaller Instance = new MetadataUpdatesMarshaller();
+        public readonly static MetadataCopiesMarshaller Instance = new MetadataCopiesMarshaller();
 
     }
 }

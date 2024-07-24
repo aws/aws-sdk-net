@@ -36,6 +36,7 @@ namespace Amazon.MedicalImaging.Model
     public partial class UpdateImageSetMetadataRequest : AmazonMedicalImagingRequest
     {
         private string _datastoreId;
+        private bool? _force;
         private string _imageSetId;
         private string _latestVersionId;
         private MetadataUpdates _updateImageSetMetadataUpdates;
@@ -57,6 +58,35 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetDatastoreId()
         {
             return this._datastoreId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// Setting this flag will force the <c>UpdateImageSetMetadata</c> operation for the following
+        /// attributes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Tag.StudyInstanceUID</c>, <c>Tag.SeriesInstanceUID</c>, <c>Tag.SOPInstanceUID</c>,
+        /// and <c>Tag.StudyID</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding, removing, or updating private tags for an individual SOP Instance
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool Force
+        {
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
         }
 
         /// <summary>
