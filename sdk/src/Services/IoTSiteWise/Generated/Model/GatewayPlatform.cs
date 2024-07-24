@@ -36,6 +36,7 @@ namespace Amazon.IoTSiteWise.Model
     {
         private Greengrass _greengrass;
         private GreengrassV2 _greengrassv2;
+        private SiemensIE _siemensie;
 
         /// <summary>
         /// Gets and sets the property Greengrass. 
@@ -71,6 +72,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetGreengrassV2()
         {
             return this._greengrassv2 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SiemensIE. 
+        /// <para>
+        /// A SiteWise Edge gateway that runs on a Siemens Industrial Edge Device.
+        /// </para>
+        /// </summary>
+        public SiemensIE SiemensIE
+        {
+            get { return this._siemensie; }
+            set { this._siemensie = value; }
+        }
+
+        // Check to see if SiemensIE property is set
+        internal bool IsSetSiemensIE()
+        {
+            return this._siemensie != null;
         }
 
     }

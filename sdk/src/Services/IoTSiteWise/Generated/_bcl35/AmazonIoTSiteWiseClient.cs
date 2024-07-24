@@ -2265,6 +2265,10 @@ namespace Amazon.IoTSiteWise
         /// <param name="request">Container for the necessary parameters to execute the DeleteGateway service method.</param>
         /// 
         /// <returns>The response from the DeleteGateway service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
         /// IoT SiteWise can't process your request right now. Try again later.
         /// </exception>
@@ -6658,18 +6662,25 @@ namespace Amazon.IoTSiteWise
         /// 
         ///  <important> 
         /// <para>
-        /// This operation overwrites the existing model with the provided model. To avoid deleting
-        /// your asset model's properties or hierarchies, you must include their IDs and definitions
-        /// in the updated asset model payload. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.
+        /// If you remove a property from an asset model, IoT SiteWise deletes all previous data
+        /// for that property. You can’t change the type or data type of an existing property.
         /// </para>
         ///  
         /// <para>
-        /// If you remove a property from an asset model, IoT SiteWise deletes all previous data
-        /// for that property. If you remove a hierarchy definition from an asset model, IoT SiteWise
-        /// disassociates every asset associated with that hierarchy. You can't change the type
-        /// or data type of an existing property.
+        /// To replace an existing asset model property with a new one with the same <c>name</c>,
+        /// do the following:
         /// </para>
-        ///  </important>
+        ///  <ol> <li> 
+        /// <para>
+        /// Submit an <c>UpdateAssetModel</c> request with the entire existing property removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a second <c>UpdateAssetModel</c> request that includes the new property. The
+        /// new asset property will have the same <c>name</c> as the previous one and IoT SiteWise
+        /// will generate a new unique <c>id</c>.
+        /// </para>
+        ///  </li> </ol> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssetModel service method.</param>
         /// 

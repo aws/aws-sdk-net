@@ -80,7 +80,8 @@ namespace Amazon.IoTSiteWise.Model
         ///  <note> 
         /// <para>
         /// When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
-        /// For more information, see &lt;LINK&gt;.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-custom-composite-models.html">Creating
+        /// custom composite models (Components)</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -188,7 +189,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetModelName. 
         /// <para>
-        /// A unique, friendly name for the asset model.
+        /// A unique name for the asset model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

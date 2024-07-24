@@ -711,6 +711,10 @@ namespace Amazon.IoTSiteWise
         /// </summary>
         public static readonly CapabilitySyncStatus IN_SYNC = new CapabilitySyncStatus("IN_SYNC");
         /// <summary>
+        /// Constant NOT_APPLICABLE for CapabilitySyncStatus
+        /// </summary>
+        public static readonly CapabilitySyncStatus NOT_APPLICABLE = new CapabilitySyncStatus("NOT_APPLICABLE");
+        /// <summary>
         /// Constant OUT_OF_SYNC for CapabilitySyncStatus
         /// </summary>
         public static readonly CapabilitySyncStatus OUT_OF_SYNC = new CapabilitySyncStatus("OUT_OF_SYNC");

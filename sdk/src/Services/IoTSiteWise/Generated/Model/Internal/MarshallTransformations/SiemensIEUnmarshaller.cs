@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GatewayPlatform Object
+    /// Response Unmarshaller for SiemensIE Object
     /// </summary>  
-    public class GatewayPlatformUnmarshaller : IUnmarshaller<GatewayPlatform, XmlUnmarshallerContext>, IUnmarshaller<GatewayPlatform, JsonUnmarshallerContext>
+    public class SiemensIEUnmarshaller : IUnmarshaller<SiemensIE, XmlUnmarshallerContext>, IUnmarshaller<SiemensIE, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GatewayPlatform IUnmarshaller<GatewayPlatform, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SiemensIE IUnmarshaller<SiemensIE, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GatewayPlatform Unmarshall(JsonUnmarshallerContext context)
+        public SiemensIE Unmarshall(JsonUnmarshallerContext context)
         {
-            GatewayPlatform unmarshalledObject = new GatewayPlatform();
+            SiemensIE unmarshalledObject = new SiemensIE();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("greengrass", targetDepth))
+                if (context.TestExpression("iotCoreThingName", targetDepth))
                 {
-                    var unmarshaller = GreengrassUnmarshaller.Instance;
-                    unmarshalledObject.Greengrass = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("greengrassV2", targetDepth))
-                {
-                    var unmarshaller = GreengrassV2Unmarshaller.Instance;
-                    unmarshalledObject.GreengrassV2 = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("siemensIE", targetDepth))
-                {
-                    var unmarshaller = SiemensIEUnmarshaller.Instance;
-                    unmarshalledObject.SiemensIE = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IotCoreThingName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         }
 
 
-        private static GatewayPlatformUnmarshaller _instance = new GatewayPlatformUnmarshaller();        
+        private static SiemensIEUnmarshaller _instance = new SiemensIEUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GatewayPlatformUnmarshaller Instance
+        public static SiemensIEUnmarshaller Instance
         {
             get
             {
