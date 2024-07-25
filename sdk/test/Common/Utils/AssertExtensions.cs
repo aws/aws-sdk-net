@@ -142,7 +142,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
         private static void AssertStringListUnchanged(List<string> list, string expectedHash, string whatChanged, string notes)
         {
-            SHA256CryptoServiceProvider provider = new SHA256CryptoServiceProvider();
+            SHA256 provider = SHA256.Create();
             // make sure string to hash is repeatable
             list.Sort();
             var stringToHash = string.Join("::", list.ToArray());
@@ -170,7 +170,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             {
                 sourceCodeSB.Append(File.ReadAllText(Path.Combine(sourceRoot, srcRelativeFilename)));
             }
-            SHA256CryptoServiceProvider provider = new SHA256CryptoServiceProvider();
+            SHA256 provider = SHA256.Create();
             var actualHash = BitConverter.ToString(provider.ComputeHash(Encoding.Default.GetBytes(sourceCodeSB.ToString()))).Replace("-", "");
 
             // compare the hash to the expected hash

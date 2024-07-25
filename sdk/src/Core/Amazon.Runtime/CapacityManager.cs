@@ -111,17 +111,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-        /// <summary>
-        /// This method calls a method to release capacity back 
-        /// based on whether it was a successful response or a successful retry response. This is invoked by a retry request response.
-        /// </summary>
-        /// <param name="isRetryRequest">if this request is a retry, use a different capacity cost</param>
-        /// <param name="retryCapacity">Contains the RetryCapacity object for the said ServiceURL.</param>
-        [Obsolete("This method is no longer used in favor of allowing the caller to specify the type of capacity to release.")]
-        public void TryReleaseCapacity(bool isRetryRequest, RetryCapacity retryCapacity) 
-        {
-            ReleaseCapacity(isRetryRequest ? CapacityType.Retry : CapacityType.Increment, retryCapacity);
-        }
+
 
         /// <summary>
         /// This method calls a method to release capacity back 
