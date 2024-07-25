@@ -285,9 +285,17 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly MetricType RDSReaderAverageDatabaseConnections = new MetricType("RDSReaderAverageDatabaseConnections");
         /// <summary>
+        /// Constant SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution for MetricType
+        /// </summary>
+        public static readonly MetricType SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution = new MetricType("SageMakerInferenceComponentConcurrentRequestsPerCopyHighResolution");
+        /// <summary>
         /// Constant SageMakerInferenceComponentInvocationsPerCopy for MetricType
         /// </summary>
         public static readonly MetricType SageMakerInferenceComponentInvocationsPerCopy = new MetricType("SageMakerInferenceComponentInvocationsPerCopy");
+        /// <summary>
+        /// Constant SageMakerVariantConcurrentRequestsPerModelHighResolution for MetricType
+        /// </summary>
+        public static readonly MetricType SageMakerVariantConcurrentRequestsPerModelHighResolution = new MetricType("SageMakerVariantConcurrentRequestsPerModelHighResolution");
         /// <summary>
         /// Constant SageMakerVariantInvocationsPerInstance for MetricType
         /// </summary>
