@@ -2036,6 +2036,9 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidTagsMapException">
         /// The map of tags is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.OperationNotAllowedException">
+        /// The requested action is not allowed.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryLimitExceededException">
         /// A repository resource limit was exceeded.
         /// </exception>
