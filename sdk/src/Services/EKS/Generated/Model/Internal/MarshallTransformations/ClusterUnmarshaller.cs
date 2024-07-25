@@ -186,6 +186,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("upgradePolicy", targetDepth))
+                {
+                    var unmarshaller = UpgradePolicyResponseUnmarshaller.Instance;
+                    unmarshalledObject.UpgradePolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

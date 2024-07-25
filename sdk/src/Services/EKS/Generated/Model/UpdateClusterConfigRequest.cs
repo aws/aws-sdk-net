@@ -79,6 +79,7 @@ namespace Amazon.EKS.Model
         private Logging _logging;
         private string _name;
         private VpcConfigRequest _resourcesVpcConfig;
+        private UpgradePolicyRequest _upgradePolicy;
 
         /// <summary>
         /// Gets and sets the property AccessConfig. 
@@ -177,6 +178,26 @@ namespace Amazon.EKS.Model
         internal bool IsSetResourcesVpcConfig()
         {
             return this._resourcesVpcConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpgradePolicy. 
+        /// <para>
+        /// You can enable or disable extended support for clusters currently on standard support.
+        /// You cannot disable extended support once it starts. You must enable extended support
+        /// before your cluster exits standard support.
+        /// </para>
+        /// </summary>
+        public UpgradePolicyRequest UpgradePolicy
+        {
+            get { return this._upgradePolicy; }
+            set { this._upgradePolicy = value; }
+        }
+
+        // Check to see if UpgradePolicy property is set
+        internal bool IsSetUpgradePolicy()
+        {
+            return this._upgradePolicy != null;
         }
 
     }

@@ -54,6 +54,7 @@ namespace Amazon.EKS.Model
         private string _roleArn;
         private ClusterStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private UpgradePolicyResponse _upgradePolicy;
         private string _version;
 
         /// <summary>
@@ -431,6 +432,29 @@ namespace Amazon.EKS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpgradePolicy. 
+        /// <para>
+        /// This value indicates if extended support is enabled or disabled for the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn
+        /// more about EKS Extended Support in the EKS User Guide.</a> 
+        /// </para>
+        /// </summary>
+        public UpgradePolicyResponse UpgradePolicy
+        {
+            get { return this._upgradePolicy; }
+            set { this._upgradePolicy = value; }
+        }
+
+        // Check to see if UpgradePolicy property is set
+        internal bool IsSetUpgradePolicy()
+        {
+            return this._upgradePolicy != null;
         }
 
         /// <summary>
