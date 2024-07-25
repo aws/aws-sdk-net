@@ -35,6 +35,7 @@ namespace Amazon.ApplicationSignals.Model
     public partial class GetServiceResponse : AmazonWebServiceResponse
     {
         private DateTime? _endTime;
+        private List<Dictionary<string, string>> _logGroupReferences = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
         private Service _service;
         private DateTime? _startTime;
 
@@ -43,6 +44,11 @@ namespace Amazon.ApplicationSignals.Model
         /// <para>
         /// The end time of the data included in the response. In a raw HTTP Query API, it is
         /// formatted as be epoch time in seconds. For example: <c>1698778057</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This displays the time that Application Signals used for the request. It might not
+        /// match your request exactly, because it was rounded to the nearest hour.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -56,6 +62,38 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogGroupReferences. 
+        /// <para>
+        /// An array of string-to-string maps that each contain information about one log group
+        /// associated with this service. Each string-to-string map includes the following fields:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>"Type": "AWS::Resource"</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>"ResourceType": "AWS::Logs::LogGroup"</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>"Identifier": "<i>name-of-log-group</i>"</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<Dictionary<string, string>> LogGroupReferences
+        {
+            get { return this._logGroupReferences; }
+            set { this._logGroupReferences = value; }
+        }
+
+        // Check to see if LogGroupReferences property is set
+        internal bool IsSetLogGroupReferences()
+        {
+            return this._logGroupReferences != null && (this._logGroupReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,6 +120,11 @@ namespace Amazon.ApplicationSignals.Model
         /// <para>
         /// The start time of the data included in the response. In a raw HTTP Query API, it is
         /// formatted as be epoch time in seconds. For example: <c>1698778057</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This displays the time that Application Signals used for the request. It might not
+        /// match your request exactly, because it was rounded to the nearest hour.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

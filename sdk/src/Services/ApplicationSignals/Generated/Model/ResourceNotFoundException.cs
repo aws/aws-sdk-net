@@ -130,7 +130,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// Cannot find the resource id.
+        /// Can't find the resource id.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -37,6 +37,7 @@ namespace Amazon.ApplicationSignals.Model
     {
         private List<Dictionary<string, string>> _attributeMaps = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
         private Dictionary<string, string> _keyAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Dictionary<string, string>> _logGroupReferences = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
         private List<MetricReference> _metricReferences = AWSConfigs.InitializeCollections ? new List<MetricReference>() : null;
 
         /// <summary>
@@ -183,6 +184,38 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetKeyAttributes()
         {
             return this._keyAttributes != null && (this._keyAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogGroupReferences. 
+        /// <para>
+        /// An array of string-to-string maps that each contain information about one log group
+        /// associated with this service. Each string-to-string map includes the following fields:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>"Type": "AWS::Resource"</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>"ResourceType": "AWS::Logs::LogGroup"</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>"Identifier": "<i>name-of-log-group</i>"</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<Dictionary<string, string>> LogGroupReferences
+        {
+            get { return this._logGroupReferences; }
+            set { this._logGroupReferences = value; }
+        }
+
+        // Check to see if LogGroupReferences property is set
+        internal bool IsSetLogGroupReferences()
+        {
+            return this._logGroupReferences != null && (this._logGroupReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

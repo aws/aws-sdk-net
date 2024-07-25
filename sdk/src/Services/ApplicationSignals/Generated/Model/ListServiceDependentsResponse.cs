@@ -46,6 +46,11 @@ namespace Amazon.ApplicationSignals.Model
         /// a raw HTTP Query API, it is formatted as be epoch time in seconds. For example: <c>1698778057</c>
         /// 
         /// </para>
+        ///  
+        /// <para>
+        /// This displays the time that Application Signals used for the request. It might not
+        /// match your request exactly, because it was rounded to the nearest hour.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime EndTime
@@ -104,6 +109,11 @@ namespace Amazon.ApplicationSignals.Model
         /// The start of the time period that the returned information applies to. When used in
         /// a raw HTTP Query API, it is formatted as be epoch time in seconds. For example: <c>1698778057</c>
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This displays the time that Application Signals used for the request. It might not
+        /// match your request exactly, because it was rounded to the nearest hour.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
