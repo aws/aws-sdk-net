@@ -1,3 +1,31 @@
+### 3.7.854.0 (2024-07-25 19:48 UTC)
+* ApplicationAutoScaling (3.7.401.0)
+	* Application Auto Scaling is now more responsive to the changes in demand of your SageMaker Inference endpoints. To get started, create or update a Target Tracking policy based on High Resolution CloudWatch metrics.
+* ApplicationSignals (3.7.401.0)
+	* CloudWatch Application Signals now supports application logs correlation with traces and operational health metrics of applications running on EC2 instances. Users can view the most relevant telemetry to troubleshoot application health anomalies such as spikes in latency, errors, and availability.
+* BedrockRuntime (3.7.401.0)
+	* Provides ServiceUnavailableException error message
+* CloudSearch (3.7.400.1)
+	* Removed hand-written integration tests
+* CodeCommit (3.7.401.0)
+	* CreateRepository API now throws OperationNotAllowedException when the account has been restricted from creating a repository.
+* DataZone (3.7.401.0)
+	* Introduces GetEnvironmentCredentials operation to SDK
+* EC2 (3.7.401.0)
+	* EC2 Fleet now supports using custom identifiers to reference Amazon Machine Images (AMI) in launch requests that are configured to choose from a diversified list of instance types.
+* ECR (3.7.401.0)
+	* API and documentation updates for Amazon ECR, adding support for creating, updating, describing and deleting ECR Repository Creation Template.
+* EKS (3.7.401.0)
+	* This release adds support for EKS cluster to manage extended support.
+* ElasticLoadBalancingV2 (3.7.401.0)
+	* This release adds support for sharing trust stores across accounts and organizations through integration with AWS Resource Access Manager.
+* NetworkFirewall (3.7.401.0)
+	* You can now log events that are related to TLS inspection, in addition to the existing alert and flow logging.
+* Outposts (3.7.401.0)
+	* Adding default vCPU information to GetOutpostSupportedInstanceTypes and GetOutpostInstanceTypes responses
+* StepFunctions (3.7.401.0)
+	* This release adds support to customer managed KMS key encryption in AWS Step Functions.
+
 ### 3.7.853.0 (2024-07-24 18:33 UTC)
 * CleanRooms (3.7.400.0)
 	* Three enhancements to the AWS Clean Rooms: Disallowed Output Columns, Flexible Result Receivers, SQL as a Seed
