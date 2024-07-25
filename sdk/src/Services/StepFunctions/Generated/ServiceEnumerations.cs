@@ -25,6 +25,56 @@ namespace Amazon.StepFunctions
 {
 
     /// <summary>
+    /// Constants used for properties of type EncryptionType.
+    /// </summary>
+    public class EncryptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_OWNED_KEY for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType AWS_OWNED_KEY = new EncryptionType("AWS_OWNED_KEY");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED_KMS_KEY for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType CUSTOMER_MANAGED_KMS_KEY = new EncryptionType("CUSTOMER_MANAGED_KMS_KEY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionType FindValue(string value)
+        {
+            return FindValue<EncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExecutionRedriveFilter.
     /// </summary>
     public class ExecutionRedriveFilter : ConstantClass
@@ -481,6 +531,56 @@ namespace Amazon.StepFunctions
 
 
     /// <summary>
+    /// Constants used for properties of type IncludedData.
+    /// </summary>
+    public class IncludedData : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_DATA for IncludedData
+        /// </summary>
+        public static readonly IncludedData ALL_DATA = new IncludedData("ALL_DATA");
+        /// <summary>
+        /// Constant METADATA_ONLY for IncludedData
+        /// </summary>
+        public static readonly IncludedData METADATA_ONLY = new IncludedData("METADATA_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IncludedData(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IncludedData FindValue(string value)
+        {
+            return FindValue<IncludedData>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IncludedData(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InspectionLevel.
     /// </summary>
     public class InspectionLevel : ConstantClass
@@ -528,6 +628,68 @@ namespace Amazon.StepFunctions
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InspectionLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KmsKeyState.
+    /// </summary>
+    public class KmsKeyState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATING for KmsKeyState
+        /// </summary>
+        public static readonly KmsKeyState CREATING = new KmsKeyState("CREATING");
+        /// <summary>
+        /// Constant DISABLED for KmsKeyState
+        /// </summary>
+        public static readonly KmsKeyState DISABLED = new KmsKeyState("DISABLED");
+        /// <summary>
+        /// Constant PENDING_DELETION for KmsKeyState
+        /// </summary>
+        public static readonly KmsKeyState PENDING_DELETION = new KmsKeyState("PENDING_DELETION");
+        /// <summary>
+        /// Constant PENDING_IMPORT for KmsKeyState
+        /// </summary>
+        public static readonly KmsKeyState PENDING_IMPORT = new KmsKeyState("PENDING_IMPORT");
+        /// <summary>
+        /// Constant UNAVAILABLE for KmsKeyState
+        /// </summary>
+        public static readonly KmsKeyState UNAVAILABLE = new KmsKeyState("UNAVAILABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KmsKeyState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KmsKeyState FindValue(string value)
+        {
+            return FindValue<KmsKeyState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KmsKeyState(string value)
         {
             return FindValue(value);
         }

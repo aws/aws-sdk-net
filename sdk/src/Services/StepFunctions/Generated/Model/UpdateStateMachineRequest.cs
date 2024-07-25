@@ -32,9 +32,10 @@ namespace Amazon.StepFunctions.Model
     /// <summary>
     /// Container for the parameters to the UpdateStateMachine operation.
     /// Updates an existing state machine by modifying its <c>definition</c>, <c>roleArn</c>,
-    /// or <c>loggingConfiguration</c>. Running executions will continue to use the previous
-    /// <c>definition</c> and <c>roleArn</c>. You must include at least one of <c>definition</c>
-    /// or <c>roleArn</c> or you will receive a <c>MissingRequiredParameter</c> error.
+    /// <c>loggingConfiguration</c>, or <c>EncryptionConfiguration</c>. Running executions
+    /// will continue to use the previous <c>definition</c> and <c>roleArn</c>. You must include
+    /// at least one of <c>definition</c> or <c>roleArn</c> or you will receive a <c>MissingRequiredParameter</c>
+    /// error.
     /// 
     ///  
     /// <para>
@@ -112,6 +113,7 @@ namespace Amazon.StepFunctions.Model
     public partial class UpdateStateMachineRequest : AmazonStepFunctionsRequest
     {
         private string _definition;
+        private EncryptionConfiguration _encryptionConfiguration;
         private LoggingConfiguration _loggingConfiguration;
         private bool? _publish;
         private string _roleArn;
@@ -137,6 +139,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetDefinition()
         {
             return this._definition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Settings to configure server-side encryption. 
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

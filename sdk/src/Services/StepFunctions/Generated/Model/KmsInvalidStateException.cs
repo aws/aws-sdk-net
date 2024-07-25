@@ -30,41 +30,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// State machine type is not supported.
+    /// The KMS key is not in valid state, for example: Disabled or Deleted.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class StateMachineTypeNotSupportedException : AmazonStepFunctionsException
+    public partial class KmsInvalidStateException : AmazonStepFunctionsException
     {
+        private KmsKeyState _kmsKeyState;
 
         /// <summary>
-        /// Constructs a new StateMachineTypeNotSupportedException with the specified error
+        /// Constructs a new KmsInvalidStateException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public StateMachineTypeNotSupportedException(string message) 
+        public KmsInvalidStateException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of StateMachineTypeNotSupportedException
+        /// Construct instance of KmsInvalidStateException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public StateMachineTypeNotSupportedException(string message, Exception innerException) 
+        public KmsInvalidStateException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of StateMachineTypeNotSupportedException
+        /// Construct instance of KmsInvalidStateException
         /// </summary>
         /// <param name="innerException"></param>
-        public StateMachineTypeNotSupportedException(Exception innerException) 
+        public KmsInvalidStateException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of StateMachineTypeNotSupportedException
+        /// Construct instance of KmsInvalidStateException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -72,32 +73,33 @@ namespace Amazon.StepFunctions.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public StateMachineTypeNotSupportedException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public KmsInvalidStateException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of StateMachineTypeNotSupportedException
+        /// Construct instance of KmsInvalidStateException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public StateMachineTypeNotSupportedException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public KmsInvalidStateException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the StateMachineTypeNotSupportedException class with serialized data.
+        /// Constructs a new instance of the KmsInvalidStateException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected StateMachineTypeNotSupportedException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected KmsInvalidStateException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.KmsKeyState = (KmsKeyState)info.GetValue("KmsKeyState", typeof(KmsKeyState));
         }
 
         /// <summary>
@@ -118,8 +120,28 @@ namespace Amazon.StepFunctions.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("KmsKeyState", this.KmsKeyState);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyState. 
+        /// <para>
+        /// Current status of the KMS; key. For example: <c>DISABLED</c>, <c>PENDING_DELETION</c>,
+        /// <c>PENDING_IMPORT</c>, <c>UNAVAILABLE</c>, <c>CREATING</c>.
+        /// </para>
+        /// </summary>
+        public KmsKeyState KmsKeyState
+        {
+            get { return this._kmsKeyState; }
+            set { this._kmsKeyState = value; }
+        }
+
+        // Check to see if KmsKeyState property is set
+        internal bool IsSetKmsKeyState()
+        {
+            return this._kmsKeyState != null;
+        }
 
     }
 }

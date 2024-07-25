@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// 
+    /// Configuration is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

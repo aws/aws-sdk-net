@@ -43,6 +43,14 @@ namespace Amazon.StepFunctions.Model
     /// If you set the <c>publish</c> parameter of this API action to <c>true</c>, it publishes
     /// version <c>1</c> as the first revision of the state machine.
     /// </para>
+    ///  
+    /// <para>
+    ///  For additional control over security, you can encrypt your data using a <b>customer-managed
+    /// key</b> for Step Functions state machines. You can configure a symmetric KMS key and
+    /// data key reuse period when creating or updating a <b>State Machine</b>. The execution
+    /// history and state machine definition will be encrypted with the key applied to the
+    /// State Machine. 
+    /// </para>
     ///  <note> 
     /// <para>
     /// This operation is eventually consistent. The results are best effort and may not reflect
@@ -53,17 +61,18 @@ namespace Amazon.StepFunctions.Model
     ///  <c>CreateStateMachine</c> is an idempotent API. Subsequent requests won’t create
     /// a duplicate resource if it was already created. <c>CreateStateMachine</c>'s idempotency
     /// check is based on the state machine <c>name</c>, <c>definition</c>, <c>type</c>, <c>LoggingConfiguration</c>,
-    /// and <c>TracingConfiguration</c>. The check is also based on the <c>publish</c> and
-    /// <c>versionDescription</c> parameters. If a following request has a different <c>roleArn</c>
-    /// or <c>tags</c>, Step Functions will ignore these differences and treat it as an idempotent
-    /// request of the previous. In this case, <c>roleArn</c> and <c>tags</c> will not be
-    /// updated, even if they are different.
+    /// <c>TracingConfiguration</c>, and <c>EncryptionConfiguration</c> The check is also
+    /// based on the <c>publish</c> and <c>versionDescription</c> parameters. If a following
+    /// request has a different <c>roleArn</c> or <c>tags</c>, Step Functions will ignore
+    /// these differences and treat it as an idempotent request of the previous. In this case,
+    /// <c>roleArn</c> and <c>tags</c> will not be updated, even if they are different.
     /// </para>
     ///  </note>
     /// </summary>
     public partial class CreateStateMachineRequest : AmazonStepFunctionsRequest
     {
         private string _definition;
+        private EncryptionConfiguration _encryptionConfiguration;
         private LoggingConfiguration _loggingConfiguration;
         private string _name;
         private bool? _publish;
@@ -91,6 +100,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetDefinition()
         {
             return this._definition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Settings to configure server-side encryption.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

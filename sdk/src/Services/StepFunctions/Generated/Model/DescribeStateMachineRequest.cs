@@ -95,7 +95,36 @@ namespace Amazon.StepFunctions.Model
     /// </summary>
     public partial class DescribeStateMachineRequest : AmazonStepFunctionsRequest
     {
+        private IncludedData _includedData;
         private string _stateMachineArn;
+
+        /// <summary>
+        /// Gets and sets the property IncludedData. 
+        /// <para>
+        /// If your state machine definition is encrypted with a KMS key, callers must have <c>kms:Decrypt</c>
+        /// permission to decrypt the definition. Alternatively, you can call the API with <c>includedData
+        /// = METADATA_ONLY</c> to get a successful response without the encrypted definition.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  When calling a labelled ARN for an encrypted state machine, the <c>includedData =
+        /// METADATA_ONLY</c> parameter will not apply because Step Functions needs to decrypt
+        /// the entire state machine definition to get the Distributed Map state’s definition.
+        /// In this case, the API caller needs to have <c>kms:Decrypt</c> permission. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public IncludedData IncludedData
+        {
+            get { return this._includedData; }
+            set { this._includedData = value; }
+        }
+
+        // Check to see if IncludedData property is set
+        internal bool IsSetIncludedData()
+        {
+            return this._includedData != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StateMachineArn. 

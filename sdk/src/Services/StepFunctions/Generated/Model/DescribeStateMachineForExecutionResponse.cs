@@ -35,6 +35,7 @@ namespace Amazon.StepFunctions.Model
     public partial class DescribeStateMachineForExecutionResponse : AmazonWebServiceResponse
     {
         private string _definition;
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _label;
         private LoggingConfiguration _loggingConfiguration;
         private string _mapRunArn;
@@ -63,6 +64,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetDefinition()
         {
             return this._definition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Settings to configure server-side encryption. 
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

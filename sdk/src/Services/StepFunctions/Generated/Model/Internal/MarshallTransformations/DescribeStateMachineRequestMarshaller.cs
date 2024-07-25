@@ -69,6 +69,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetIncludedData())
+                {
+                    context.Writer.WritePropertyName("includedData");
+                    context.Writer.Write(publicRequest.IncludedData);
+                }
+
                 if(publicRequest.IsSetStateMachineArn())
                 {
                     context.Writer.WritePropertyName("stateMachineArn");
