@@ -59,7 +59,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The registry ID.
+        /// The registry ID associated with the request.
         /// </para>
         /// </summary>
         public string RegistryId

@@ -30,12 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeRegistry operation.
+    /// This is the response object from the DeleteRepositoryCreationTemplate operation.
     /// </summary>
-    public partial class DescribeRegistryResponse : AmazonWebServiceResponse
+    public partial class DeleteRepositoryCreationTemplateResponse : AmazonWebServiceResponse
     {
         private string _registryId;
-        private ReplicationConfiguration _replicationConfiguration;
+        private RepositoryCreationTemplate _repositoryCreationTemplate;
 
         /// <summary>
         /// Gets and sets the property RegistryId. 
@@ -56,21 +56,21 @@ namespace Amazon.ECR.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationConfiguration. 
+        /// Gets and sets the property RepositoryCreationTemplate. 
         /// <para>
-        /// The replication configuration for the registry.
+        /// The details of the repository creation template that was deleted.
         /// </para>
         /// </summary>
-        public ReplicationConfiguration ReplicationConfiguration
+        public RepositoryCreationTemplate RepositoryCreationTemplate
         {
-            get { return this._replicationConfiguration; }
-            set { this._replicationConfiguration = value; }
+            get { return this._repositoryCreationTemplate; }
+            set { this._repositoryCreationTemplate = value; }
         }
 
-        // Check to see if ReplicationConfiguration property is set
-        internal bool IsSetReplicationConfiguration()
+        // Check to see if RepositoryCreationTemplate property is set
+        internal bool IsSetRepositoryCreationTemplate()
         {
-            return this._replicationConfiguration != null;
+            return this._repositoryCreationTemplate != null;
         }
 
     }

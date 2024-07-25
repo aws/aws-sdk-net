@@ -529,6 +529,67 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  CreateRepositoryCreationTemplate
+
+
+        /// <summary>
+        /// Creates a repository creation template. This template is used to define the settings
+        /// for repositories created by Amazon ECR on your behalf. For example, repositories created
+        /// through pull through cache actions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-creation-templates.html">Private
+        /// repository creation templates</a> in the <i>Amazon Elastic Container Registry User
+        /// Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRepositoryCreationTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateRepositoryCreationTemplate service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.TemplateAlreadyExistsException">
+        /// The repository creation template already exists. Specify a unique prefix and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepositoryCreationTemplate">REST API Reference for CreateRepositoryCreationTemplate Operation</seealso>
+        CreateRepositoryCreationTemplateResponse CreateRepositoryCreationTemplate(CreateRepositoryCreationTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRepositoryCreationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRepositoryCreationTemplate operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRepositoryCreationTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepositoryCreationTemplate">REST API Reference for CreateRepositoryCreationTemplate Operation</seealso>
+        IAsyncResult BeginCreateRepositoryCreationTemplate(CreateRepositoryCreationTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRepositoryCreationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRepositoryCreationTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateRepositoryCreationTemplateResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepositoryCreationTemplate">REST API Reference for CreateRepositoryCreationTemplate Operation</seealso>
+        CreateRepositoryCreationTemplateResponse EndCreateRepositoryCreationTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteLifecyclePolicy
 
 
@@ -746,6 +807,59 @@ namespace Amazon.ECR
         /// <returns>Returns a  DeleteRepositoryResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         DeleteRepositoryResponse EndDeleteRepository(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteRepositoryCreationTemplate
+
+
+        /// <summary>
+        /// Deletes a repository creation template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRepositoryCreationTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRepositoryCreationTemplate service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.TemplateNotFoundException">
+        /// The specified repository creation template can't be found. Verify the registry ID
+        /// and prefix and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryCreationTemplate">REST API Reference for DeleteRepositoryCreationTemplate Operation</seealso>
+        DeleteRepositoryCreationTemplateResponse DeleteRepositoryCreationTemplate(DeleteRepositoryCreationTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRepositoryCreationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRepositoryCreationTemplate operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRepositoryCreationTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryCreationTemplate">REST API Reference for DeleteRepositoryCreationTemplate Operation</seealso>
+        IAsyncResult BeginDeleteRepositoryCreationTemplate(DeleteRepositoryCreationTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRepositoryCreationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRepositoryCreationTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteRepositoryCreationTemplateResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryCreationTemplate">REST API Reference for DeleteRepositoryCreationTemplate Operation</seealso>
+        DeleteRepositoryCreationTemplateResponse EndDeleteRepositoryCreationTemplate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1131,6 +1245,57 @@ namespace Amazon.ECR
         /// <returns>Returns a  DescribeRepositoriesResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories">REST API Reference for DescribeRepositories Operation</seealso>
         DescribeRepositoriesResponse EndDescribeRepositories(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeRepositoryCreationTemplates
+
+
+        /// <summary>
+        /// Returns details about the repository creation templates in a registry. The <c>prefixes</c>
+        /// request parameter can be used to return the details for a specific repository creation
+        /// template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRepositoryCreationTemplates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRepositoryCreationTemplates service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositoryCreationTemplates">REST API Reference for DescribeRepositoryCreationTemplates Operation</seealso>
+        DescribeRepositoryCreationTemplatesResponse DescribeRepositoryCreationTemplates(DescribeRepositoryCreationTemplatesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRepositoryCreationTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRepositoryCreationTemplates operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRepositoryCreationTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositoryCreationTemplates">REST API Reference for DescribeRepositoryCreationTemplates Operation</seealso>
+        IAsyncResult BeginDescribeRepositoryCreationTemplates(DescribeRepositoryCreationTemplatesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRepositoryCreationTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRepositoryCreationTemplates.</param>
+        /// 
+        /// <returns>Returns a  DescribeRepositoryCreationTemplatesResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositoryCreationTemplates">REST API Reference for DescribeRepositoryCreationTemplates Operation</seealso>
+        DescribeRepositoryCreationTemplatesResponse EndDescribeRepositoryCreationTemplates(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2085,7 +2250,8 @@ namespace Amazon.ECR
         /// IAM role is created in your account for the replication process. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using
         /// service-linked roles for Amazon ECR</a> in the <i>Amazon Elastic Container Registry
-        /// User Guide</i>.
+        /// User Guide</i>. For more information on the custom role for replication, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/replication-creation-templates.html#roles-creatingrole-user-console">Creating
+        /// an IAM role for replication</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -2496,6 +2662,59 @@ namespace Amazon.ECR
         /// <returns>Returns a  UpdatePullThroughCacheRuleResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdatePullThroughCacheRule">REST API Reference for UpdatePullThroughCacheRule Operation</seealso>
         UpdatePullThroughCacheRuleResponse EndUpdatePullThroughCacheRule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateRepositoryCreationTemplate
+
+
+        /// <summary>
+        /// Updates an existing repository creation template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRepositoryCreationTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRepositoryCreationTemplate service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.TemplateNotFoundException">
+        /// The specified repository creation template can't be found. Verify the registry ID
+        /// and prefix and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdateRepositoryCreationTemplate">REST API Reference for UpdateRepositoryCreationTemplate Operation</seealso>
+        UpdateRepositoryCreationTemplateResponse UpdateRepositoryCreationTemplate(UpdateRepositoryCreationTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRepositoryCreationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRepositoryCreationTemplate operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRepositoryCreationTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdateRepositoryCreationTemplate">REST API Reference for UpdateRepositoryCreationTemplate Operation</seealso>
+        IAsyncResult BeginUpdateRepositoryCreationTemplate(UpdateRepositoryCreationTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRepositoryCreationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRepositoryCreationTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateRepositoryCreationTemplateResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdateRepositoryCreationTemplate">REST API Reference for UpdateRepositoryCreationTemplate Operation</seealso>
+        UpdateRepositoryCreationTemplateResponse EndUpdateRepositoryCreationTemplate(IAsyncResult asyncResult);
 
         #endregion
         

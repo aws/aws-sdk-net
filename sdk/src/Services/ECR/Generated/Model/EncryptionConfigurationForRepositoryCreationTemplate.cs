@@ -30,25 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// The encryption configuration for the repository. This determines how the contents
-    /// of your repository are encrypted at rest.
-    /// 
-    ///  
-    /// <para>
-    /// By default, when no encryption configuration is set or the <c>AES256</c> encryption
-    /// type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption
-    /// keys which encrypts your data at rest using an AES256 encryption algorithm. This does
-    /// not require any action on your part.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more control over the encryption of the contents of your repository, you can use
-    /// server-side encryption with Key Management Service key stored in Key Management Service
-    /// (KMS) to encrypt your images. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html">Amazon
-    /// ECR encryption at rest</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
-    /// </para>
+    /// The encryption configuration to associate with the repository creation template.
     /// </summary>
-    public partial class EncryptionConfiguration
+    public partial class EncryptionConfigurationForRepositoryCreationTemplate
     {
         private EncryptionType _encryptionType;
         private string _kmsKey;
@@ -94,12 +78,12 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property KmsKey. 
         /// <para>
         /// If you use the <c>KMS</c> encryption type, specify the KMS key to use for encryption.
-        /// The alias, key ID, or full ARN of the KMS key can be specified. The key must exist
-        /// in the same Region as the repository. If no key is specified, the default Amazon Web
-        /// Services managed KMS key for Amazon ECR will be used.
+        /// The full ARN of the KMS key must be specified. The key must exist in the same Region
+        /// as the repository. If no key is specified, the default Amazon Web Services managed
+        /// KMS key for Amazon ECR will be used.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKey
         {
             get { return this._kmsKey; }
