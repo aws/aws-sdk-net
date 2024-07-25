@@ -42,6 +42,15 @@ namespace Amazon.BedrockRuntime.Model
     /// To find out if a model supports streaming, call <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html">GetFoundationModel</a>
     /// and check the <c>responseStreamingSupported</c> field in the response.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>ConverseStream</c>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Amazon Bedrock doesn't store any text, images, or documents that you provide as content.
+    /// The data is only used to generate the response.
+    /// </para>
     ///  
     /// <para>
     /// For information about the Converse API, see <i>Use the Converse API</i> in the <i>Amazon

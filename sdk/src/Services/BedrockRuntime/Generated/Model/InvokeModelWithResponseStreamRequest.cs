@@ -41,7 +41,7 @@ namespace Amazon.BedrockRuntime.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The CLI doesn't support <c>InvokeModelWithResponseStream</c>.
+    /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeModelWithResponseStream</c>.
     /// </para>
     ///  </note> 
     /// <para>
