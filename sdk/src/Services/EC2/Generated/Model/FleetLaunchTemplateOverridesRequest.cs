@@ -65,10 +65,65 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the AMI. An AMI is required to launch an instance. This parameter is only
-        /// available for fleets of type <c>instant</c>. For fleets of type <c>maintain</c> and
-        /// <c>request</c>, you must specify the AMI ID in the launch template.
+        /// The ID of the AMI in the format <c>ami-17characters00000</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// Alternatively, you can specify a Systems Manager parameter, using one of the following
+        /// formats. The Systems Manager parameter will resolve to an AMI ID on launch.
+        /// </para>
+        ///  
+        /// <para>
+        /// To reference a public parameter:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>resolve:ssm:<i>public-parameter</i> </c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To reference a parameter stored in the same account:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>resolve:ssm:<i>parameter-name</i> </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resolve:ssm:<i>parameter-name:version-number</i> </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resolve:ssm:<i>parameter-name:label</i> </c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To reference a parameter shared from another Amazon Web Services account:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>resolve:ssm:<i>parameter-ARN</i> </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resolve:ssm:<i>parameter-ARN:version-number</i> </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resolve:ssm:<i>parameter-ARN:label</i> </c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+        /// a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is only available for fleets of type <c>instant</c>. For fleets of
+        /// type <c>maintain</c> and <c>request</c>, you must specify the AMI ID in the launch
+        /// template.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string ImageId
         {
