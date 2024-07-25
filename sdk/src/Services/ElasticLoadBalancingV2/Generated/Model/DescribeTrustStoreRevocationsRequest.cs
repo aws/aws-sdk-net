@@ -31,8 +31,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrustStoreRevocations operation.
-    /// Describes the revocation files in use by the specified trust store arn, or revocation
-    /// ID.
+    /// Describes the revocation files in use by the specified trust store or revocation files.
     /// </summary>
     public partial class DescribeTrustStoreRevocationsRequest : AmazonElasticLoadBalancingV2Request
     {
