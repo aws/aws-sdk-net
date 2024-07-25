@@ -65,7 +65,6 @@ namespace Amazon.Runtime
         private string signatureVersion = "4";
         private string clientAppId = null;
         private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
-        private bool readEntireResponse = false;
         private bool logResponse = false;
         private int bufferSize = AWSSDKUtils.DefaultBufferSize;
         private long progressUpdateInterval = AWSSDKUtils.DefaultProgressUpdateInterval;
@@ -387,15 +386,7 @@ namespace Amazon.Runtime
             set { this.useHttp = value; }
         }
 
-        /// <summary>
-        /// Given this client configuration, return a DNS suffix for service endpoint url.
-        /// </summary>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
-        public virtual string DetermineDnsSuffix()
-        {
-            var endpoint = regionEndpoint.GetEndpointForService(this);
-            return endpoint.DnsSuffix;
-        }
+
 
         internal static string GetUrl(IClientConfig config, RegionEndpoint regionEndpoint)
         {
@@ -499,19 +490,7 @@ namespace Amazon.Runtime
             set { this.logResponse = value; }
         }
 
-        /// <summary>
-        /// Gets and sets the ReadEntireResponse property.
-        /// NOTE: This property does not effect response processing and is deprecated.
-        /// To enable response logging, the ClientConfig.LogResponse and AWSConfigs.LoggingConfig
-        /// properties can be used.
-        /// </summary>
-        [Obsolete("This property does not effect response processing and is deprecated." +
-            "To enable response logging, the ClientConfig.LogResponse and AWSConfigs.LoggingConfig.LogResponses properties can be used.")]
-        public bool ReadEntireResponse
-        {
-            get { return this.readEntireResponse; }
-            set { this.readEntireResponse = value; }
-        }
+
 
         /// <summary>
         /// Gets and Sets the BufferSize property.
@@ -949,31 +928,9 @@ namespace Amazon.Runtime
 #endif
         }
 
-        /// <summary>
-        /// Returns the current UTC now after clock correction for AWSConfigs.ManualClockCorrection.
-        /// </summary>
-        [Obsolete("Please use CorrectClockSkew.GetCorrectedUtcNowForEndpoint(string endpoint) instead.", false)]
-        public DateTime CorrectedUtcNow
-        {
-            get
-            {
-                // Passing null will cause GetCorrectedUtcNowForEndpoint to skip calculating ClockSkew based on 
-                // endpoint and only use ManualClockCorrection if is set.
-                return CorrectClockSkew.GetCorrectedUtcNowForEndpoint(null);
-            }
-        }
 
-        /// <summary>
-        /// Wrapper around <seealso cref="AWSConfigs.ManualClockCorrection"/>
-        /// </summary>
-        [Obsolete("Please use CorrectClockSkew.GetClockCorrectionForEndpoint(string endpoint) instead.", false)]
-        public TimeSpan ClockOffset
-        {
-            get
-            {
-                return AWSConfigs.ManualClockCorrection.GetValueOrDefault();
-            }
-        }
+
+
 
         /// <summary>
         /// Gets and sets the DisableHostPrefixInjection flag. If true, host prefix injection will be disabled for this client, the default value of this flag is false. 
