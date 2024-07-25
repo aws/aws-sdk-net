@@ -21,8 +21,8 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
     <NoWarn>$(NoWarn);CS1591;CA1822</NoWarn>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <SignAssembly>True</SignAssembly>
+	  <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	  <SignAssembly>True</SignAssembly>
 
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
