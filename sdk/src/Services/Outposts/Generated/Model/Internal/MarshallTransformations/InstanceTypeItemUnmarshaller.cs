@@ -72,6 +72,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VCPUs", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.VCPUs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
