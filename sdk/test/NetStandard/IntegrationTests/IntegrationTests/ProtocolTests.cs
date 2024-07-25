@@ -1,5 +1,3 @@
-using Amazon.CloudSearch;
-using Amazon.CloudSearch.Model;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.ElasticTranscoder;
@@ -120,42 +118,6 @@ namespace Amazon.DNXCore.IntegrationTests
                 {
                     await UtilityMethods.DeleteBucketWithObjectsAsync(client, bucketName);
                 }
-            }
-        }
-
-        [Fact]
-        public async Task TestQuery()
-        {
-            var digits = DateTime.Now.Ticks.ToString();
-            var domainName = string.Format("net-sdk-test-{0}", digits.Substring(digits.Length - 15));
-
-            using (var client = UtilityMethods.CreateClient<AmazonCloudSearchClient>())
-            {
-                await client.CreateDomainAsync(new CreateDomainRequest
-                {
-                    DomainName = domainName
-                });
-
-                try
-                {
-                    var domains = (await client.ListDomainNamesAsync(new ListDomainNamesRequest())).DomainNames;
-                    Assert.NotNull(domains);
-                    Assert.NotEmpty(domains);
-                }
-                finally
-                {
-                    await client.DeleteDomainAsync(new DeleteDomainRequest
-                    {
-                        DomainName = domainName
-                    });
-                }
-                
-
-                var fakeDomain = new string('a', 30); // service defines valid domains as 28 characters long
-                await AssertExtensions.ExpectExceptionAsync(client.DeleteDomainAsync(new DeleteDomainRequest
-                {
-                    DomainName = fakeDomain
-                }));
             }
         }
     }

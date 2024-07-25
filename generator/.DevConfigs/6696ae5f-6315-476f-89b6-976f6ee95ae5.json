@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "CloudSearch",
+            "type": "patch",
+            "changeLogMessages": [
+                "Removed hand-written integration tests"
+            ]
+        }
+    ]
+}
