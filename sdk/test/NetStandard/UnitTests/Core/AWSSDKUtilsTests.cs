@@ -84,5 +84,22 @@ namespace UnitTests.NetStandard.Core
 
             Assert.Equal(expected, encoded);
         }
+
+        [Theory]
+        [InlineData(null, null)]
+        [InlineData("no-delimiters-at-all", "")]
+        [InlineData("delimiter-end-of-string.", "")]
+        [InlineData("relative-path/no-file-extension", "")]
+        [InlineData("relative-path\\no-file-extension", "")]
+        [InlineData("relative-path:no-file-extension", "")]
+        [InlineData("simple-file.pdf", ".pdf")]
+        [InlineData("relative-path/with-file-extension.pdf", ".pdf")]
+        [InlineData("relative-path.with-dot/with-file-extension.pdf", ".pdf")]
+        public void GetExtension(string input, string expected)
+        {
+            var actual = AWSSDKUtils.GetExtension(input);
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

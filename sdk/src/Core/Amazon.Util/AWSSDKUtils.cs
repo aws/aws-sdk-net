@@ -195,8 +195,31 @@ namespace Amazon.Util
         /// <returns></returns>
         public static string GetExtension(string path)
         {
-            if (path == null)
+            if (path is null)
                 return null;
+
+#if NET8_0_OR_GREATER
+            // LastIndexOf and LastIndexOfAny is vectorized on .NET8+ and is
+            // significantly faster for cases where 'path' does not end with a short file
+            // extension, such as GUIDs
+            ReadOnlySpan<char> pathSpan = path.AsSpan();
+            int extensionIndex = pathSpan.LastIndexOf('.');
+            if (extensionIndex == -1)
+            {
+                return string.Empty;
+            }
+
+            int directoryIndex = pathSpan.LastIndexOfAny('/', '\\', ':');
+
+            // extension separator is found and exists before path separator or path separator doesn't exist
+            // AND it's not the last one in the string
+            if (directoryIndex < extensionIndex && extensionIndex < pathSpan.Length - 1)
+            {
+                return pathSpan.Slice(extensionIndex).ToString();
+            }
+
+            return string.Empty;
+#else
             int length = path.Length;
             int index = length;
 
@@ -213,15 +236,16 @@ namespace Amazon.Util
                 else if (IsPathSeparator(ch))
                     break;
             }
-            return string.Empty;
-        }
 
-        // Checks if the character is one \ / :
-        private static bool IsPathSeparator(char ch)
-        {
-            return (ch == '\\' ||
-                    ch == '/' ||
-                    ch == ':');
+            return string.Empty;
+
+            bool IsPathSeparator(char ch)
+            {
+                return (ch == '\\' ||
+                        ch == '/' ||
+                        ch == ':');
+            }
+#endif
         }
 
         /*
