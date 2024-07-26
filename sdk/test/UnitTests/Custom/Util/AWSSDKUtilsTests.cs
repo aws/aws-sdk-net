@@ -12,13 +12,11 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
-using Amazon.Util;
 using System.Reflection;
-using Moq;
-using Amazon.Util.Internal;
 using System.Text;
 
 namespace AWSSDK.UnitTests
@@ -177,6 +175,25 @@ namespace AWSSDK.UnitTests
             var hexString = AWSSDKUtils.ToHex(bytes, lowercase);
 
             Assert.AreEqual(expectedResult, hexString);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [DataTestMethod]
+        [DataRow(null, null)]
+        [DataRow("no-delimiters-at-all", "")]
+        [DataRow("delimiter-end-of-string.", "")]
+        [DataRow("relative-path/no-file-extension", "")]
+        [DataRow("relative-path\\no-file-extension", "")]
+        [DataRow("relative-path:no-file-extension", "")]
+        [DataRow("simple-file.pdf", ".pdf")]
+        [DataRow("relative-path/with-file-extension.pdf", ".pdf")]
+        [DataRow("relative-path.with-dot/with-file-extension.pdf", ".pdf")]
+        public void GetExtension(string input, string expected)
+        {
+            var actual = AWSSDKUtils.GetExtension(input);
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }
