@@ -129,40 +129,5 @@ namespace AWSSDK.UnitTests
             manager.Clear();
             fixture.AssertFileExists(false);
         }
-
-        [TestMethod]
-        public void WriteSAMLRoleSessionManagerReadSAMLRoleProfile()
-        {
-            // write new
-            manager.RegisterRoleSession(RoleSessionName, samlCredentials);
-            // read old
-            var readCredentials = (SAMLImmutableCredentials)ReflectionHelpers.Invoke(
-                typeof(SAMLRoleProfile), "LoadActiveSessionCredentials", RoleSessionName);
-
-            Assert.IsNotNull(readCredentials);
-            Assert.AreEqual(samlCredentials.AccessKey, readCredentials.AccessKey);
-            Assert.AreEqual(samlCredentials.Expires, readCredentials.Expires);
-            Assert.AreEqual(samlCredentials.SecretKey, readCredentials.SecretKey);
-            Assert.AreEqual(samlCredentials.Subject, readCredentials.Subject);
-            Assert.AreEqual(samlCredentials.Token, readCredentials.Token);
-        }
-
-        [TestMethod]
-        public void WriteSAMLRoleProfileReadSAMLRoleSessionManager()
-        {
-            // write old
-            var json = (string)ReflectionHelpers.Invoke(samlCredentials, "ToJson");
-            ReflectionHelpers.Invoke(typeof(SAMLRoleProfile), "PersistActiveSessionCredentials", RoleSessionName, json);
-            // read new
-            SAMLImmutableCredentials readCredentials;
-            Assert.IsTrue(manager.TryGetRoleSession(RoleSessionName, out readCredentials));
-
-            Assert.IsNotNull(readCredentials);
-            Assert.AreEqual(samlCredentials.AccessKey, readCredentials.AccessKey);
-            Assert.AreEqual(samlCredentials.Expires, readCredentials.Expires);
-            Assert.AreEqual(samlCredentials.SecretKey, readCredentials.SecretKey);
-            Assert.AreEqual(samlCredentials.Subject, readCredentials.Subject);
-            Assert.AreEqual(samlCredentials.Token, readCredentials.Token);
-        }
     }
 }

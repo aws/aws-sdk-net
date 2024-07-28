@@ -19,10 +19,10 @@
 
     <LangVersion>9.0</LangVersion>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
-    <SignAssembly>True</SignAssembly>
-
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	<SignAssembly>true</SignAssembly>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">
