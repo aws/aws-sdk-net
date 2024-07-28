@@ -78,8 +78,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(headObjectRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "GetObjectMetadataRequest.Key");
 
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
-                                                 S3Transforms.ToStringValue(headObjectRequest.Key));
+            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(headObjectRequest.Key));
+            request.ResourcePath = "/{Key+}";
 
             if (headObjectRequest.IsSetVersionId())
                 request.AddSubResource("versionId", S3Transforms.ToStringValue(headObjectRequest.VersionId));

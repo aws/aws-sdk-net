@@ -65,3 +65,8 @@ codesign-zip
 /sdk/src/netsdk-*
 
 sdk/test/Performance/**/BenchmarkDotNet.Artifacts/*
+
+#protocol-tests
+sdk/test/ProtocolTests/Generated/**/model
+sdk/test/ProtocolTests/Generated/**/sources
+sdk/test/ProtocolTests/Generated/**/build-info

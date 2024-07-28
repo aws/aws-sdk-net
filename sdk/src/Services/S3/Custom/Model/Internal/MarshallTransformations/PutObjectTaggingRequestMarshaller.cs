@@ -58,8 +58,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(putObjectTaggingRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "PutObjectTaggingRequest.Key");
 
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}", 
-                                                 S3Transforms.ToStringValue(putObjectTaggingRequest.Key));
+            request.AddPathResource("{Key+}", putObjectTaggingRequest.Key);
+            request.ResourcePath = "/{Key+}";
             request.AddSubResource("tagging");
 
             if (putObjectTaggingRequest.IsSetVersionId())
