@@ -30,6 +30,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Property that directs <see cref="DynamoDBContext"/> to use consistent reads.
         /// If property is not set, behavior defaults to non-consistent reads.
         /// </summary>
+        /// <remarks>
+        /// Refer to the <see href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+        /// Read Consistency</see> topic in the DynamoDB Developer Guide for more information.
+        /// </remarks>
         public bool? ConsistentRead { get; set; }
 
         /// <summary>
