@@ -198,16 +198,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 var aace = new AdfsAuthenticationControllerException("Message");
                 TestException(aace);
 
-#pragma warning disable 618
-
-                var ccre = new CredentialCallbackRequiredException("Message");
-                TestException(ccre);
-
-                var afe = new AuthenticationFailedException("Message");
-                TestException(afe);
-
-#pragma warning restore 618
-
             }
         }
 

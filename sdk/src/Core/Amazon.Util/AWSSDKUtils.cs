@@ -540,39 +540,6 @@ namespace Amazon.Util
         /// </summary>
         /// <param name="resourcePath">The patterned resourcePath</param>
         /// <param name="pathResources">The key/value lookup for the patterned resourcePath</param>
-        /// <returns>A segmented encoded URL</returns>
-        [Obsolete("ResolveResourcePath has been deprecated in favor of ResolveResourcePathV2 due to an encoding issue. Use ResolveResourcePathV2 instead.")]
-        public static string ResolveResourcePath(string resourcePath, IDictionary<string, string> pathResources)
-        {
-#pragma warning disable 0618
-            return ResolveResourcePath(resourcePath, pathResources, true);
-#pragma warning restore 0618
-        }
-
-        /// <summary>
-        /// Takes a patterned resource path and resolves it using the key/value path resources into
-        /// a segmented encoded URL.
-        /// </summary>
-        /// <param name="resourcePath">The patterned resourcePath</param>
-        /// <param name="pathResources">The key/value lookup for the patterned resourcePath</param>
-        /// <param name="skipEncodingValidPathChars">If true valid path characters {/+:} are not encoded</param>
-        /// <returns>A segmented encoded URL</returns>
-        [Obsolete("This method has been deprecated in favor of ResolveResourcePathV2 due to an encoding issue with special characters. Please use ResolveResourcePathV2.")]
-        public static string ResolveResourcePath(string resourcePath, IDictionary<string, string> pathResources, bool skipEncodingValidPathChars)
-        {
-            if (string.IsNullOrEmpty(resourcePath))
-            {
-                return resourcePath;
-            }
-
-            return JoinResourcePathSegments(SplitResourcePathIntoSegments(resourcePath, pathResources), skipEncodingValidPathChars);
-        }
-        /// <summary>
-        /// Takes a patterned resource path and resolves it using the key/value path resources into
-        /// a segmented encoded URL.
-        /// </summary>
-        /// <param name="resourcePath">The patterned resourcePath</param>
-        /// <param name="pathResources">The key/value lookup for the patterned resourcePath</param>
         /// <returns></returns>
         public static string ResolveResourcePathV2(string resourcePath, IDictionary<string, string> pathResources)
         {
@@ -677,11 +644,6 @@ namespace Amazon.Util
             return Convert.ToInt64(GetTimeSpanInTicks(dateTime).TotalSeconds).ToString(CultureInfo.InvariantCulture);
         }
 
-        [Obsolete("This method isn't named correctly: it returns seconds instead of milliseconds. Use ConvertToUnixEpochSecondsDouble instead.", false)]
-        public static double ConvertToUnixEpochMilliSeconds(DateTime dateTime)
-        {
-            return ConvertToUnixEpochSecondsDouble(dateTime);
-        }
 
         public static double ConvertToUnixEpochSecondsDouble(DateTime dateTime)
         {
@@ -1235,45 +1197,6 @@ namespace Amazon.Util
             return encoded.ToString();
         }
 
-        /// <summary>
-        /// URL encodes a string per the specified RFC with the exception of preserving the encoding of previously encoded slashes.
-        /// If the path property is specified, the accepted path characters {/+:} are not encoded. 
-        /// </summary>
-        /// <param name="data">The string to encode</param>
-        /// <param name="path">Whether the string is a URL path or not</param>
-        /// <returns>The encoded string with any previously encoded %2F preserved</returns>
-        [Obsolete("This method is not supported in AWSSDK 3.5")]
-        public static string ProtectEncodedSlashUrlEncode(string data, bool path)
-        {
-            if (string.IsNullOrEmpty(data))
-            {
-                return data;
-            }
-
-            var index = 0;
-            var sb = new StringBuilder();
-            var findIndex = data.IndexOf(EncodedSlash, index, StringComparison.OrdinalIgnoreCase);
-            while (findIndex != -1)
-            {
-                sb.Append(UrlEncode(data.Substring(index, findIndex - index), path));
-                sb.Append(EncodedSlash);
-                index = findIndex + EncodedSlash.Length;
-                findIndex = data.IndexOf(EncodedSlash, index, StringComparison.OrdinalIgnoreCase);
-            }            
-
-            //If encoded slash was not found return the original data
-            if(index == 0)
-            {
-                return UrlEncode(data, path);
-            }
-
-            if(data.Length > index)
-            {
-                sb.Append(UrlEncode(data.Substring(index), path));
-            }
-            
-            return sb.ToString();
-        }
 
         /// <summary>
         /// Generates an MD5 Digest for the stream specified
