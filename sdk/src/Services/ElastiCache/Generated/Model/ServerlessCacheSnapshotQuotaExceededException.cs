@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// The number of serverless cache snapshots exceeds the customer snapshot quota. Available
-    /// for Redis only.
+    /// for Redis OSS and Serverless Memcached only.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

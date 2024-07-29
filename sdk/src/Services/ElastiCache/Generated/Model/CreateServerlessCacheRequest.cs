@@ -72,7 +72,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The daily time that snapshots will be created from the new serverless cache. By default
         /// this number is populated with 0, i.e. no snapshots will be created on an automatic
-        /// daily basis. Available for Redis only.
+        /// daily basis. Available for Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public string DailySnapshotTime
@@ -208,7 +208,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotArnsToRestore. 
         /// <para>
         /// The ARN(s) of the snapshot that the new serverless cache will be created from. Available
-        /// for Redis only.
+        /// for Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public List<string> SnapshotArnsToRestore
@@ -228,7 +228,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The number of snapshots that will be retained for the serverless cache that is being
         /// created. As new snapshots beyond this limit are added, the oldest snapshots will be
-        /// deleted on a rolling basis. Available for Redis only.
+        /// deleted on a rolling basis. Available for Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public int SnapshotRetentionLimit
@@ -285,7 +285,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property UserGroupId. 
         /// <para>
         /// The identifier of the UserGroup to be associated with the serverless cache. Available
-        /// for Redis only. Default is NULL.
+        /// for Redis OSS only. Default is NULL.
         /// </para>
         /// </summary>
         public string UserGroupId

@@ -65,7 +65,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The current supported value is Redis. 
+        /// The current supported value is Redis user. 
         /// </para>
         /// </summary>
         public string Engine
@@ -83,7 +83,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property MinimumEngineVersion. 
         /// <para>
-        /// The minimum engine version required, which is Redis 6.0
+        /// The minimum engine version required, which is Redis OSS 6.0
         /// </para>
         /// </summary>
         public string MinimumEngineVersion
@@ -138,7 +138,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ServerlessCaches. 
         /// <para>
         /// Indicates which serverless caches the specified user group is associated with. Available
-        /// for Redis only.
+        /// for Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public List<string> ServerlessCaches

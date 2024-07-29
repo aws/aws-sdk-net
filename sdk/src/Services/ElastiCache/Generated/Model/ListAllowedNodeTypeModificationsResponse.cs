@@ -42,9 +42,9 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ScaleDownModifications. 
         /// <para>
         /// A string list, each element of which specifies a cache node type which you can use
-        /// to scale your cluster or replication group. When scaling down a Redis cluster or replication
-        /// group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list
-        /// for the CacheNodeType parameter. 
+        /// to scale your cluster or replication group. When scaling down a Redis OSS cluster
+        /// or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value
+        /// from this list for the CacheNodeType parameter. 
         /// </para>
         /// </summary>
         public List<string> ScaleDownModifications
@@ -67,7 +67,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// When scaling up a Redis cluster or replication group using <c>ModifyCacheCluster</c>
+        /// When scaling up a Redis OSS cluster or replication group using <c>ModifyCacheCluster</c>
         /// or <c>ModifyReplicationGroup</c>, use a value from this list for the <c>CacheNodeType</c>
         /// parameter.
         /// </para>

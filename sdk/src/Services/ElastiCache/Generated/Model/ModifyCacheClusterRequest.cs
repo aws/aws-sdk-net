@@ -167,7 +167,7 @@ namespace Amazon.ElastiCache.Model
         ///  </li> </ul> 
         /// <para>
         ///  For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
-        /// Users with Redis AUTH</a> 
+        /// Users with Redis OSS AUTH</a> 
         /// </para>
         /// </summary>
         public AuthTokenUpdateStrategyType AuthTokenUpdateStrategy
@@ -185,8 +185,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  If you are running Redis engine version 6.0 or later, set this parameter to yes if
-        /// you want to opt-in to the next auto minor version upgrade campaign. This parameter
+        ///  If you are running Redis OSS engine version 6.0 or later, set this parameter to yes
+        /// if you want to opt-in to the next auto minor version upgrade campaign. This parameter
         /// is disabled for previous versions.  
         /// </para>
         /// </summary>
@@ -383,7 +383,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property IpDiscovery. 
         /// <para>
         /// The network type you choose when modifying a cluster, either <c>ipv4</c> | <c>ipv6</c>.
-        /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+        /// IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached
         /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
         /// </para>
@@ -619,7 +619,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// For clusters running Redis, this value must be 1. For clusters running Memcached,
+        /// For clusters running Redis OSS, this value must be 1. For clusters running Memcached,
         /// this value must be between 1 and 40.
         /// </para>
         ///  <note> 

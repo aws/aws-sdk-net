@@ -31,8 +31,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUserGroup operation.
-    /// For Redis engine version 6.0 onwards: Creates a Redis user group. For more information,
-    /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+    /// For Redis OSS engine version 6.0 onwards: Creates a Redis OSS user group. For more
+    /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
     /// Role Based Access Control (RBAC)</a>
     /// </summary>
     public partial class CreateUserGroupRequest : AmazonElastiCacheRequest
@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The current supported value is Redis. 
+        /// The current supported value is Redis user. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -66,7 +66,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// A list of tags to be added to this resource. A tag is a key-value pair. A tag key
         /// must be accompanied by a tag value, although null is accepted. Available for Redis
-        /// only.
+        /// OSS only.
         /// </para>
         /// </summary>
         public List<Tag> Tags

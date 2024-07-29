@@ -31,8 +31,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateReplicationGroup operation.
-    /// Creates a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication
-    /// group.
+    /// Creates a Redis OSS (cluster mode disabled) or a Redis OSS (cluster mode enabled)
+    /// replication group.
     /// 
     ///  
     /// <para>
@@ -41,13 +41,13 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  
     /// <para>
-    /// A Redis (cluster mode disabled) replication group is a collection of nodes, where
+    /// A Redis OSS (cluster mode disabled) replication group is a collection of nodes, where
     /// one of the nodes is a read/write primary and the others are read-only replicas. Writes
     /// to the primary are asynchronously propagated to the replicas.
     /// </para>
     ///  
     /// <para>
-    /// A Redis cluster-mode enabled cluster is comprised of from 1 to 90 shards (API/CLI:
+    /// A Redis OSS cluster-mode enabled cluster is comprised of from 1 to 90 shards (API/CLI:
     /// node groups). Each shard has a primary node and up to 5 read-only replica nodes. The
     /// configuration can range from 90 shards and 0 replicas to 15 shards and 5 replicas,
     /// which is the maximum number or replicas allowed. 
@@ -55,8 +55,8 @@ namespace Amazon.ElastiCache.Model
     ///  
     /// <para>
     /// The node or shard limit can be increased to a maximum of 500 per cluster if the Redis
-    /// engine version is 5.0.6 or higher. For example, you can choose to configure a 500
-    /// node cluster that ranges between 83 shards (one primary and 5 replicas per shard)
+    /// OSS engine version is 5.0.6 or higher. For example, you can choose to configure a
+    /// 500 node cluster that ranges between 83 shards (one primary and 5 replicas per shard)
     /// and 500 shards (single primary and no replicas). Make sure there are enough available
     /// IP addresses to accommodate the increase. Common pitfalls include the subnets in the
     /// subnet group have too small a CIDR range or the subnets are shared and heavily used
@@ -71,16 +71,15 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  
     /// <para>
-    /// When a Redis (cluster mode disabled) replication group has been successfully created,
+    /// When a Redis OSS (cluster mode disabled) replication group has been successfully created,
     /// you can add one or more read replicas to it, up to a total of 5 read replicas. If
     /// you need to increase or decrease the number of node groups (console: shards), you
-    /// can avail yourself of ElastiCache for Redis' scaling. For more information, see <a
-    /// href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling
-    /// ElastiCache for Redis Clusters</a> in the <i>ElastiCache User Guide</i>.
+    /// can use ElastiCache (Redis OSS) scaling. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling
+    /// ElastiCache (Redis OSS) Clusters</a> in the <i>ElastiCache User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
-    /// This operation is valid for Redis only.
+    /// This operation is valid for Redis OSS only.
     /// </para>
     ///  </note>
     /// </summary>
@@ -141,7 +140,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <c>3.2.6</c>, <c>4.x</c> or later.
+        /// using Redis OSS version <c>3.2.6</c>, <c>4.x</c> or later.
         /// </para>
         ///  
         /// <para>
@@ -218,7 +217,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>AutomaticFailoverEnabled</c> must be enabled for Redis (cluster mode enabled)
+        ///  <c>AutomaticFailoverEnabled</c> must be enabled for Redis OSS (cluster mode enabled)
         /// replication groups.
         /// </para>
         ///  
@@ -241,8 +240,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  If you are running Redis engine version 6.0 or later, set this parameter to yes if
-        /// you want to opt-in to the next auto minor version upgrade campaign. This parameter
+        ///  If you are running Redis OSS engine version 6.0 or later, set this parameter to yes
+        /// if you want to opt-in to the next auto minor version upgrade campaign. This parameter
         /// is disabled for previous versions.  
         /// </para>
         /// </summary>
@@ -290,8 +289,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for
-        /// Memcached engine version 1.5.16 onward): <c>cache.m6g.large</c>, <c>cache.m6g.xlarge</c>,
+        ///  <b>M6g node types</b> (available only for Redis OSS engine version 5.0.6 onward and
+        /// for Memcached engine version 1.5.16 onward): <c>cache.m6g.large</c>, <c>cache.m6g.xlarge</c>,
         /// <c>cache.m6g.2xlarge</c>, <c>cache.m6g.4xlarge</c>, <c>cache.m6g.8xlarge</c>, <c>cache.m6g.12xlarge</c>,
         /// <c>cache.m6g.16xlarge</c> 
         /// </para>
@@ -307,9 +306,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached
-        /// engine version 1.5.16 onward): <c>cache.t4g.micro</c>, <c>cache.t4g.small</c>, <c>cache.t4g.medium</c>
-        /// 
+        ///  <b>T4g node types</b> (available only for Redis OSS engine version 5.0.6 onward and
+        /// Memcached engine version 1.5.16 onward): <c>cache.t4g.micro</c>, <c>cache.t4g.small</c>,
+        /// <c>cache.t4g.medium</c> 
         /// </para>
         ///  
         /// <para>
@@ -374,8 +373,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for
-        /// Memcached engine version 1.5.16 onward): <c>cache.r6g.large</c>, <c>cache.r6g.xlarge</c>,
+        ///  <b>R6g node types</b> (available only for Redis OSS engine version 5.0.6 onward and
+        /// for Memcached engine version 1.5.16 onward): <c>cache.r6g.large</c>, <c>cache.r6g.xlarge</c>,
         /// <c>cache.r6g.2xlarge</c>, <c>cache.r6g.4xlarge</c>, <c>cache.r6g.8xlarge</c>, <c>cache.r6g.12xlarge</c>,
         /// <c>cache.r6g.16xlarge</c> 
         /// </para>
@@ -414,16 +413,16 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis append-only files (AOF) are not supported for T1 or T2 instances.
+        /// Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis Multi-AZ with automatic failover is not supported on T1 instances.
+        /// Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis configuration variables <c>appendonly</c> and <c>appendfsync</c> are not supported
-        /// on Redis version 2.8.22 and later.
+        /// Redis OSS configuration variables <c>appendonly</c> and <c>appendfsync</c> are not
+        /// supported on Redis OSS version 2.8.22 and later.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -448,17 +447,17 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// If you are running Redis version 3.2.4 or later, only one node group (shard), and
-        /// want to use a default parameter group, we recommend that you specify the parameter
+        /// If you are running Redis OSS version 3.2.4 or later, only one node group (shard),
+        /// and want to use a default parameter group, we recommend that you specify the parameter
         /// group by name. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To create a Redis (cluster mode disabled) replication group, use <c>CacheParameterGroupName=default.redis3.2</c>.
+        /// To create a Redis OSS (cluster mode disabled) replication group, use <c>CacheParameterGroupName=default.redis3.2</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To create a Redis (cluster mode enabled) replication group, use <c>CacheParameterGroupName=default.redis3.2.cluster.on</c>.
+        /// To create a Redis OSS (cluster mode enabled) replication group, use <c>CacheParameterGroupName=default.redis3.2.cluster.on</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -521,10 +520,10 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ClusterMode. 
         /// <para>
         /// Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first
-        /// set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect
-        /// using both cluster mode enabled and cluster mode disabled. After you migrate all Redis
-        /// clients to use cluster mode enabled, you can then complete cluster mode configuration
-        /// and set the cluster mode to Enabled.
+        /// set the cluster mode to Compatible. Compatible mode allows your Redis OSS clients
+        /// to connect using both cluster mode enabled and cluster mode disabled. After you migrate
+        /// all Redis OSS clients to use cluster mode enabled, you can then complete cluster mode
+        /// configuration and set the cluster mode to Enabled.
         /// </para>
         /// </summary>
         public ClusterMode ClusterMode
@@ -629,8 +628,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property IpDiscovery. 
         /// <para>
         /// The network type you choose when creating a replication group, either <c>ipv4</c>
-        /// | <c>ipv6</c>. IPv6 is supported for workloads using Redis engine version 6.2 onward
-        /// or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
+        /// | <c>ipv6</c>. IPv6 is supported for workloads using Redis OSS engine version 6.2
+        /// onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
         /// </para>
         /// </summary>
@@ -706,7 +705,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NetworkType. 
         /// <para>
         /// Must be either <c>ipv4</c> | <c>ipv6</c> | <c>dual_stack</c>. IPv6 is supported for
-        /// workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6
+        /// workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6
         /// on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
         /// </para>
         /// </summary>
@@ -731,12 +730,12 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled)
-        /// replication group, you can use this parameter to individually configure each node
-        /// group (shard), or you can omit this parameter. However, it is required when seeding
-        /// a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each
-        /// node group (shard) using this parameter because you must specify the slots for each
-        /// node group.
+        /// If you're creating a Redis OSS (cluster mode disabled) or a Redis OSS (cluster mode
+        /// enabled) replication group, you can use this parameter to individually configure each
+        /// node group (shard), or you can omit this parameter. However, it is required when seeding
+        /// a Redis OSS (cluster mode enabled) cluster from a S3 rdb file. You must configure
+        /// each node group (shard) using this parameter because you must specify the slots for
+        /// each node group.
         /// </para>
         /// </summary>
         public List<NodeGroupConfiguration> NodeGroupConfiguration
@@ -813,8 +812,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NumNodeGroups. 
         /// <para>
         /// An optional parameter that specifies the number of node groups (shards) for this Redis
-        /// (cluster mode enabled) replication group. For Redis (cluster mode disabled) either
-        /// omit this parameter or set it to 1.
+        /// OSS (cluster mode enabled) replication group. For Redis OSS (cluster mode disabled)
+        /// either omit this parameter or set it to 1.
         /// </para>
         ///  
         /// <para>
@@ -1070,7 +1069,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ServerlessCacheSnapshotName. 
         /// <para>
-        /// The name of the snapshot used to create a replication group. Available for Redis only.
+        /// The name of the snapshot used to create a replication group. Available for Redis OSS
+        /// only.
         /// </para>
         /// </summary>
         public string ServerlessCacheSnapshotName
@@ -1088,7 +1088,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotArns. 
         /// <para>
-        /// A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot
+        /// A list of Amazon Resource Names (ARN) that uniquely identify the Redis OSS RDB snapshot
         /// files stored in Amazon S3. The snapshot files are used to populate the new replication
         /// group. The Amazon S3 object name in the ARN cannot contain any commas. The new replication
         /// group will have the number of node groups (console: shards) specified by the parameter
@@ -1224,7 +1224,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <c>3.2.6</c>, <c>4.x</c> or later.
+        /// using Redis OSS version <c>3.2.6</c>, <c>4.x</c> or later.
         /// </para>
         ///  
         /// <para>
@@ -1259,7 +1259,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// When setting <c>TransitEncryptionEnabled</c> to <c>true</c>, you can set your <c>TransitEncryptionMode</c>
         /// to <c>preferred</c> in the same request, to allow both encrypted and unencrypted connections
-        /// at the same time. Once you migrate all your Redis clients to use encrypted connections
+        /// at the same time. Once you migrate all your Redis OSS clients to use encrypted connections
         /// you can modify the value to <c>required</c> to allow encrypted connections only.
         /// </para>
         ///  
