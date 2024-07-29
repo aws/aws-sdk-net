@@ -1,3 +1,13 @@
+### 3.7.854.1 (2024-07-29 18:14 UTC)
+* ElastiCache (3.7.400.1)
+	* Renaming full service name as it appears in developer documentation.
+* MemoryDB (3.7.400.1)
+	* Renaming full service name as it appears in developer documentation.
+* Core 3.7.400.1
+	* Fixes the loop logic in ErrorHandler.ProcessException() and ErrorHandler.ProcessExceptionAsync() in case the initial exception is of type System.Exception.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.854.0 (2024-07-25 19:48 UTC)
 * ApplicationAutoScaling (3.7.401.0)
 	* Application Auto Scaling is now more responsive to the changes in demand of your SageMaker Inference endpoints. To get started, create or update a Target Tracking policy based on High Resolution CloudWatch metrics.
