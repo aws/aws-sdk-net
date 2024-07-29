@@ -13,51 +13,40 @@
  * permissions and limitations under the License.
  */
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using Amazon.DynamoDBv2.Model;
-using Amazon.DynamoDBv2.DocumentModel;
-
 namespace Amazon.DynamoDBv2.DataModel
 {
-    /// <summary>
-    /// Represents a non-generic object for retrieving a batch of items
-    /// from a single DynamoDB table
-    /// </summary>
-    public abstract partial class BatchGet
+    public partial interface IBatchGet
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to batch-get the items requested.
         /// </summary>
+        void Execute();
+    }
+
+    public partial class BatchGet<T> : IBatchGet<T>
+    {
+        /// <inheritdoc/>
         public void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
     }
 
-    /// <summary>
-    /// Class for retrieving a batch of items from multiple DynamoDB tables,
-    /// using multiple strongly-typed BatchGet objects
-    /// </summary>
-    public partial class MultiTableBatchGet
+   public partial interface IMultiTableBatchGet
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a multi-table batch request against all configured batches.
         /// Results are stored in the respective BatchGet objects.
         /// </summary>
+        void Execute();
+    }
+
+    public partial class MultiTableBatchGet
+    {
+        /// <inheritdoc/>/>
         public void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
     }
 }

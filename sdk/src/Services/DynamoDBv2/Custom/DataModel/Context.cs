@@ -209,13 +209,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region BatchGet
 
-        /// <summary>
-        /// Creates a strongly-typed BatchGet object, allowing
-        /// a batch-get operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to get</typeparam>
-        /// <returns>Empty strongly-typed BatchGet object</returns>
-        public BatchGet<T> CreateBatchGet<T>()
+        /// <inheritdoc/>
+        public IBatchGet<T> CreateBatchGet<T>()
         {
             return CreateBatchGet<T>((BatchGetConfig)null);
         }
@@ -229,6 +224,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Empty strongly-typed BatchGet object</returns>
         [Obsolete("Use the CreateBatchGet overload that takes BatchGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
         public BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig)
+        /// <inheritdoc/>
+        public IBatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new BatchGet<T>(this, config);
@@ -253,6 +250,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="batches">Individual BatchGet objects</param>
         /// <returns>Composite MultiTableBatchGet object</returns>
         public MultiTableBatchGet CreateMultiTableBatchGet(params BatchGet[] batches)
+        /// <inheritdoc/>
+        public IMultiTableBatchGet CreateMultiTableBatchGet(params IBatchGet[] batches)
         {
             return new MultiTableBatchGet(batches);
         }

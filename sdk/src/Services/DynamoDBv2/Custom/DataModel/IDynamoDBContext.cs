@@ -17,7 +17,6 @@ using System;
 using System.Collections.Generic;
 
 using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -165,6 +164,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Empty strongly-typed BatchGet object</returns>
         [Obsolete("Use the CreateBatchGet overload that takes BatchGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
         BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig = null);
+        /// <returns>An interface with the ability to perform BatchGet operations</returns>
+        IBatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
         /// Creates a strongly-typed BatchGet object, allowing
@@ -180,8 +181,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// individual BatchGet objects.
         /// </summary>
         /// <param name="batches">Individual BatchGet objects</param>
-        /// <returns>Composite MultiTableBatchGet object</returns>
-        MultiTableBatchGet CreateMultiTableBatchGet(params BatchGet[] batches);
+        /// <returns>An interface with the ability to perform MultiTableBatchGet operations</returns>
+        IMultiTableBatchGet CreateMultiTableBatchGet(params IBatchGet[] batches);
 
         #endregion
 
