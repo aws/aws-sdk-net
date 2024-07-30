@@ -1490,11 +1490,16 @@ namespace Amazon.ElastiCache
         /// When you receive a successful response from this operation, Amazon ElastiCache immediately
         /// begins deleting the selected resources; you cannot cancel or revert this operation.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        ///  <c>CreateSnapshot</c> permission is required to create a final snapshot. Without
+        /// this permission, the API call will fail with an <c>Access Denied</c> exception.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// This operation is valid for Redis OSS only.
         /// </para>
-        ///  </note>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1548,6 +1553,13 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Deletes a specified existing serverless cache.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <c>CreateServerlessCacheSnapshot</c> permission is required to create a final snapshot.
+        /// Without this permission, the API call will fail with an <c>Access Denied</c> exception.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServerlessCache service method.</param>
         /// <param name="cancellationToken">
