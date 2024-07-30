@@ -66,6 +66,12 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("acceptRoleSessionName", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AcceptRoleSessionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("attributeMappings", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AttributeMapping, AttributeMappingUnmarshaller>(AttributeMappingUnmarshaller.Instance);
