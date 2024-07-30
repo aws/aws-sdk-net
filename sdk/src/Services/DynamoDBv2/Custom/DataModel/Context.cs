@@ -19,7 +19,6 @@ using System.Threading;
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
-using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
 
 namespace Amazon.DynamoDBv2.DataModel
@@ -208,7 +207,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #endregion
 
-        #region Factory Creates
+        #region BatchGet
 
         /// <summary>
         /// Creates a strongly-typed BatchGet object, allowing
@@ -218,7 +217,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Empty strongly-typed BatchGet object</returns>
         public BatchGet<T> CreateBatchGet<T>()
         {
-            return CreateBatchGet<T>(null);
+            return CreateBatchGet<T>((BatchGetConfig)null);
         }
 
         /// <summary>
@@ -228,10 +227,23 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to get</typeparam>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchGet object</returns>
+        [Obsolete("Use the CreateBatchGet overload that takes BatchGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
         public BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new BatchGet<T>(this, config);
+        }
+
+        /// <summary>
+        /// Creates a strongly-typed BatchGet object, allowing
+        /// a batch-get operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to get</typeparam>
+        /// <param name="batchGetConfig">Config object that can be used to override properties on the table's context for this request</param>
+        /// <returns>Empty strongly-typed BatchGet object</returns>
+        public BatchGet<T> CreateBatchGet<T>(BatchGetConfig batchGetConfig)
+        {
+            return new BatchGet<T>(this, new DynamoDBFlatConfig(batchGetConfig?.ToDynamoDBOperationConfig(), Config));
         }
 
         /// <summary>
@@ -245,6 +257,10 @@ namespace Amazon.DynamoDBv2.DataModel
             return new MultiTableBatchGet(batches);
         }
 
+        #endregion
+
+        #region BatchWrite
+
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
         /// a batch-write operation against DynamoDB.
@@ -253,7 +269,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Empty strongly-typed BatchWrite object</returns>
         public BatchWrite<T> CreateBatchWrite<T>()
         {
-            return CreateBatchWrite<T>(null);
+            return CreateBatchWrite<T>((BatchWriteConfig)null);
         }
 
         /// <summary>
@@ -263,6 +279,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to write</typeparam>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
+        [Obsolete("Use the CreateBatchWrite overload that takes BatchWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchWrite.")]
         public BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
@@ -283,7 +300,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Empty strongly-typed BatchWrite object</returns>
         public BatchWrite<object> CreateBatchWrite(Type valuesType)
         {
-            return CreateBatchWrite(valuesType, null);
+            return CreateBatchWrite(valuesType, (BatchWriteConfig)null);
         }
 
         /// <summary>
@@ -299,10 +316,41 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="valuesType">Type of objects to write</param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
+        [Obsolete("Use the CreateBatchWrite overload that takes BatchWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchWrite.")]
         public BatchWrite<object> CreateBatchWrite(Type valuesType, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new BatchWrite<object>(this, valuesType, config);
+        }
+
+        /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to write</typeparam>
+        /// <param name="batchWriteConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        public BatchWrite<T> CreateBatchWrite<T>(BatchWriteConfig batchWriteConfig)
+        {
+            return new BatchWrite<T>(this, new DynamoDBFlatConfig(batchWriteConfig?.ToDynamoDBOperationConfig(), Config));
+        }
+
+        /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// 
+        /// This is intended for use only when the valuesType is not known at compile-time, for example,
+        /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
+        /// 
+        /// In scenarios when the valuesType is known at compile-time, the 
+        /// <see cref="CreateBatchWrite{T}(DynamoDBOperationConfig)"/> method is generally preferred.
+        /// </summary>
+        /// <param name="valuesType">The type of data which will be persisted in this batch.</param>
+        /// <param name="batchWriteConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        public BatchWrite<object> CreateBatchWrite(Type valuesType, BatchWriteConfig batchWriteConfig)
+        {
+            return new BatchWrite<object>(this, valuesType, new DynamoDBFlatConfig(batchWriteConfig.ToDynamoDBOperationConfig(), Config));
         }
 
         /// <summary>
@@ -316,6 +364,10 @@ namespace Amazon.DynamoDBv2.DataModel
             return new MultiTableBatchWrite(batches);
         }
 
+        #endregion
+
+        #region TransactGet
+
         /// <summary>
         /// Creates a strongly-typed TransactGet object, allowing
         /// a transactional get operation against DynamoDB.
@@ -324,7 +376,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Empty strongly-typed TransactGet object.</returns>
         public TransactGet<T> CreateTransactGet<T>()
         {
-            return CreateTransactGet<T>(null);
+            return CreateTransactGet<T>((TransactGetConfig)null);
         }
 
         /// <summary>
@@ -334,9 +386,23 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to get.</typeparam>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed TransactGet object.</returns>
+        [Obsolete("Use the CreateTransactGet overload that takes TransactGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
         public TransactGet<T> CreateTransactGet<T>(DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
+            return new TransactGet<T>(this, config);
+        }
+
+        /// <summary>
+        /// Creates a strongly-typed TransactGet object, allowing
+        /// a transactional get operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to get.</typeparam>
+        /// <param name="transactGetConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>Empty strongly-typed TransactGet object.</returns>
+        public TransactGet<T> CreateTransactGet<T>(TransactGetConfig transactGetConfig)
+        {
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(transactGetConfig?.ToDynamoDBOperationConfig(), this.Config);
             return new TransactGet<T>(this, config);
         }
 
@@ -351,6 +417,10 @@ namespace Amazon.DynamoDBv2.DataModel
             return new MultiTableTransactGet(transactionParts);
         }
 
+        #endregion
+
+        #region TransactWrite
+
         /// <summary>
         /// Creates a strongly-typed TransactWrite object, allowing
         /// a transactional write operation against DynamoDB.
@@ -359,7 +429,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Empty strongly-typed TransactWrite object.</returns>
         public TransactWrite<T> CreateTransactWrite<T>()
         {
-            return CreateTransactWrite<T>(null);
+            return CreateTransactWrite<T>((TransactWriteConfig)null);
         }
 
         /// <summary>
@@ -369,9 +439,24 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to write.</typeparam>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed TransactWrite object.</returns>
+
+        [Obsolete("Use the CreateTransactWrite overload that takes TransactWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to CreateTransactWrite.")]
         public TransactWrite<T> CreateTransactWrite<T>(DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
+            return new TransactWrite<T>(this, config);
+        }
+
+        /// <summary>
+        /// Creates a strongly-typed TransactWrite object, allowing
+        /// a transactional write operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to write.</typeparam>
+        /// <param name="transactWriteConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>Empty strongly-typed TransactWrite object.</returns>
+        public TransactWrite<T> CreateTransactWrite<T>(TransactWriteConfig transactWriteConfig)
+        {
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(transactWriteConfig?.ToDynamoDBOperationConfig(), this.Config);
             return new TransactWrite<T>(this, config);
         }
 
