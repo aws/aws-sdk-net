@@ -1592,6 +1592,108 @@ namespace Amazon.CodePipeline
 
         #endregion
         
+        #region  ListRuleExecutions
+
+
+        /// <summary>
+        /// Lists the rule executions that have occurred in a pipeline configured for conditions
+        /// with rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListRuleExecutions service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provide is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineExecutionNotFoundException">
+        /// The pipeline execution was specified in an invalid format or cannot be found, or an
+        /// execution ID does not belong to the specified pipeline.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListRuleExecutions">REST API Reference for ListRuleExecutions Operation</seealso>
+        ListRuleExecutionsResponse ListRuleExecutions(ListRuleExecutionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRuleExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleExecutions operation on AmazonCodePipelineClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRuleExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListRuleExecutions">REST API Reference for ListRuleExecutions Operation</seealso>
+        IAsyncResult BeginListRuleExecutions(ListRuleExecutionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRuleExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRuleExecutions.</param>
+        /// 
+        /// <returns>Returns a  ListRuleExecutionsResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListRuleExecutions">REST API Reference for ListRuleExecutions Operation</seealso>
+        ListRuleExecutionsResponse EndListRuleExecutions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListRuleTypes
+
+
+        /// <summary>
+        /// Lists the rules for the condition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleTypes service method.</param>
+        /// 
+        /// <returns>The response from the ListRuleTypes service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provide is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListRuleTypes">REST API Reference for ListRuleTypes Operation</seealso>
+        ListRuleTypesResponse ListRuleTypes(ListRuleTypesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRuleTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleTypes operation on AmazonCodePipelineClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRuleTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListRuleTypes">REST API Reference for ListRuleTypes Operation</seealso>
+        IAsyncResult BeginListRuleTypes(ListRuleTypesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRuleTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRuleTypes.</param>
+        /// 
+        /// <returns>Returns a  ListRuleTypesResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListRuleTypes">REST API Reference for ListRuleTypes Operation</seealso>
+        ListRuleTypesResponse EndListRuleTypes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -1691,6 +1793,69 @@ namespace Amazon.CodePipeline
         /// <returns>Returns a  ListWebhooksResult from CodePipeline.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
         ListWebhooksResponse EndListWebhooks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  OverrideStageCondition
+
+
+        /// <summary>
+        /// Used to override a stage condition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the OverrideStageCondition service method.</param>
+        /// 
+        /// <returns>The response from the OverrideStageCondition service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentPipelineExecutionsLimitExceededException">
+        /// The pipeline has reached the limit for concurrent pipeline executions.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ConditionNotOverridableException">
+        /// Unable to override because the condition does not allow overrides.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
+        /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
+        /// Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.NotLatestPipelineExecutionException">
+        /// The stage has failed in a later run of the pipeline and the <c>pipelineExecutionId</c>
+        /// associated with the request is out of date.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
+        /// The stage was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/OverrideStageCondition">REST API Reference for OverrideStageCondition Operation</seealso>
+        OverrideStageConditionResponse OverrideStageCondition(OverrideStageConditionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the OverrideStageCondition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the OverrideStageCondition operation on AmazonCodePipelineClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndOverrideStageCondition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/OverrideStageCondition">REST API Reference for OverrideStageCondition Operation</seealso>
+        IAsyncResult BeginOverrideStageCondition(OverrideStageConditionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  OverrideStageCondition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginOverrideStageCondition.</param>
+        /// 
+        /// <returns>Returns a  OverrideStageConditionResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/OverrideStageCondition">REST API Reference for OverrideStageCondition Operation</seealso>
+        OverrideStageConditionResponse EndOverrideStageCondition(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1818,6 +1983,9 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the PutActionRevision service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.ActionNotFoundException">
         /// The specified action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentPipelineExecutionsLimitExceededException">
+        /// The pipeline has reached the limit for concurrent pipeline executions.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
         /// The pipeline was specified in an invalid format or cannot be found.
@@ -2305,6 +2473,9 @@ namespace Amazon.CodePipeline
         /// <param name="request">Container for the necessary parameters to execute the RetryStageExecution service method.</param>
         /// 
         /// <returns>The response from the RetryStageExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentPipelineExecutionsLimitExceededException">
+        /// The pipeline has reached the limit for concurrent pipeline executions.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
         /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
         /// Try again later.

@@ -64,6 +64,17 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetBeforeEntry())
+            {
+                context.Writer.WritePropertyName("beforeEntry");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BeforeEntryConditionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.BeforeEntry, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetBlockers())
             {
                 context.Writer.WritePropertyName("blockers");
@@ -93,6 +104,17 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
                 var marshaller = FailureConditionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.OnFailure, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetOnSuccess())
+            {
+                context.Writer.WritePropertyName("onSuccess");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SuccessConditionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnSuccess, context);
 
                 context.Writer.WriteObjectEnd();
             }

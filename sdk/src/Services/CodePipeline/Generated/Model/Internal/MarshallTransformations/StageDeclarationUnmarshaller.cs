@@ -72,6 +72,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.Actions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("beforeEntry", targetDepth))
+                {
+                    var unmarshaller = BeforeEntryConditionsUnmarshaller.Instance;
+                    unmarshalledObject.BeforeEntry = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("blockers", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<BlockerDeclaration, BlockerDeclarationUnmarshaller>(BlockerDeclarationUnmarshaller.Instance);
@@ -88,6 +94,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = FailureConditionsUnmarshaller.Instance;
                     unmarshalledObject.OnFailure = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("onSuccess", targetDepth))
+                {
+                    var unmarshaller = SuccessConditionsUnmarshaller.Instance;
+                    unmarshalledObject.OnSuccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

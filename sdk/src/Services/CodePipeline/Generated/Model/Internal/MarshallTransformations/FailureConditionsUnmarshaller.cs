@@ -66,6 +66,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("conditions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Condition, ConditionUnmarshaller>(ConditionUnmarshaller.Instance);
+                    unmarshalledObject.Conditions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("result", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

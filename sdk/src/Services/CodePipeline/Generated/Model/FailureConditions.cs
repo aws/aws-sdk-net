@@ -35,7 +35,27 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class FailureConditions
     {
+        private List<Condition> _conditions = AWSConfigs.InitializeCollections ? new List<Condition>() : null;
         private Result _result;
+
+        /// <summary>
+        /// Gets and sets the property Conditions. 
+        /// <para>
+        /// The conditions that are configured as failure conditions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<Condition> Conditions
+        {
+            get { return this._conditions; }
+            set { this._conditions = value; }
+        }
+
+        // Check to see if Conditions property is set
+        internal bool IsSetConditions()
+        {
+            return this._conditions != null && (this._conditions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Result. 
