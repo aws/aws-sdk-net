@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BedrockModelSpecification Object
+    /// Response Unmarshaller for BedrockKnowledgeStoreExactResponseFields Object
     /// </summary>  
-    public class BedrockModelSpecificationUnmarshaller : IUnmarshaller<BedrockModelSpecification, XmlUnmarshallerContext>, IUnmarshaller<BedrockModelSpecification, JsonUnmarshallerContext>
+    public class BedrockKnowledgeStoreExactResponseFieldsUnmarshaller : IUnmarshaller<BedrockKnowledgeStoreExactResponseFields, XmlUnmarshallerContext>, IUnmarshaller<BedrockKnowledgeStoreExactResponseFields, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BedrockModelSpecification IUnmarshaller<BedrockModelSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BedrockKnowledgeStoreExactResponseFields IUnmarshaller<BedrockKnowledgeStoreExactResponseFields, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public BedrockModelSpecification Unmarshall(JsonUnmarshallerContext context)
+        public BedrockKnowledgeStoreExactResponseFields Unmarshall(JsonUnmarshallerContext context)
         {
-            BedrockModelSpecification unmarshalledObject = new BedrockModelSpecification();
+            BedrockKnowledgeStoreExactResponseFields unmarshalledObject = new BedrockKnowledgeStoreExactResponseFields();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("customPrompt", targetDepth))
+                if (context.TestExpression("answerField", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomPrompt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("guardrail", targetDepth))
-                {
-                    var unmarshaller = BedrockGuardrailConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Guardrail = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modelArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("traceStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TraceStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AnswerField = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static BedrockModelSpecificationUnmarshaller _instance = new BedrockModelSpecificationUnmarshaller();        
+        private static BedrockKnowledgeStoreExactResponseFieldsUnmarshaller _instance = new BedrockKnowledgeStoreExactResponseFieldsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BedrockModelSpecificationUnmarshaller Instance
+        public static BedrockKnowledgeStoreExactResponseFieldsUnmarshaller Instance
         {
             get
             {

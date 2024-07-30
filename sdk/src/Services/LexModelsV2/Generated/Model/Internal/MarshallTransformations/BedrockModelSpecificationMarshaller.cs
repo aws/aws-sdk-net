@@ -48,10 +48,33 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCustomPrompt())
+            {
+                context.Writer.WritePropertyName("customPrompt");
+                context.Writer.Write(requestObject.CustomPrompt);
+            }
+
+            if(requestObject.IsSetGuardrail())
+            {
+                context.Writer.WritePropertyName("guardrail");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BedrockGuardrailConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Guardrail, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetModelArn())
             {
                 context.Writer.WritePropertyName("modelArn");
                 context.Writer.Write(requestObject.ModelArn);
+            }
+
+            if(requestObject.IsSetTraceStatus())
+            {
+                context.Writer.WritePropertyName("traceStatus");
+                context.Writer.Write(requestObject.TraceStatus);
             }
 
         }

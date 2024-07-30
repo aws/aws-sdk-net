@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// BedrockKnowledgeStoreConfiguration Marshaller
+    /// BedrockGuardrailConfiguration Marshaller
     /// </summary>
-    public class BedrockKnowledgeStoreConfigurationMarshaller : IRequestMarshaller<BedrockKnowledgeStoreConfiguration, JsonMarshallerContext> 
+    public class BedrockGuardrailConfigurationMarshaller : IRequestMarshaller<BedrockGuardrailConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,31 +44,20 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BedrockKnowledgeStoreConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(BedrockGuardrailConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBedrockKnowledgeBaseArn())
+            if(requestObject.IsSetIdentifier())
             {
-                context.Writer.WritePropertyName("bedrockKnowledgeBaseArn");
-                context.Writer.Write(requestObject.BedrockKnowledgeBaseArn);
+                context.Writer.WritePropertyName("identifier");
+                context.Writer.Write(requestObject.Identifier);
             }
 
-            if(requestObject.IsSetExactResponse())
+            if(requestObject.IsSetVersion())
             {
-                context.Writer.WritePropertyName("exactResponse");
-                context.Writer.Write(requestObject.ExactResponse);
-            }
-
-            if(requestObject.IsSetExactResponseFields())
-            {
-                context.Writer.WritePropertyName("exactResponseFields");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = BedrockKnowledgeStoreExactResponseFieldsMarshaller.Instance;
-                marshaller.Marshall(requestObject.ExactResponseFields, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("version");
+                context.Writer.Write(requestObject.Version);
             }
 
         }
@@ -76,7 +65,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static BedrockKnowledgeStoreConfigurationMarshaller Instance = new BedrockKnowledgeStoreConfigurationMarshaller();
+        public readonly static BedrockGuardrailConfigurationMarshaller Instance = new BedrockGuardrailConfigurationMarshaller();
 
     }
 }

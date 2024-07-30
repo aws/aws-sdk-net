@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// BedrockKnowledgeStoreConfiguration Marshaller
+    /// BedrockKnowledgeStoreExactResponseFields Marshaller
     /// </summary>
-    public class BedrockKnowledgeStoreConfigurationMarshaller : IRequestMarshaller<BedrockKnowledgeStoreConfiguration, JsonMarshallerContext> 
+    public class BedrockKnowledgeStoreExactResponseFieldsMarshaller : IRequestMarshaller<BedrockKnowledgeStoreExactResponseFields, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,31 +44,14 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BedrockKnowledgeStoreConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(BedrockKnowledgeStoreExactResponseFields requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBedrockKnowledgeBaseArn())
+            if(requestObject.IsSetAnswerField())
             {
-                context.Writer.WritePropertyName("bedrockKnowledgeBaseArn");
-                context.Writer.Write(requestObject.BedrockKnowledgeBaseArn);
-            }
-
-            if(requestObject.IsSetExactResponse())
-            {
-                context.Writer.WritePropertyName("exactResponse");
-                context.Writer.Write(requestObject.ExactResponse);
-            }
-
-            if(requestObject.IsSetExactResponseFields())
-            {
-                context.Writer.WritePropertyName("exactResponseFields");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = BedrockKnowledgeStoreExactResponseFieldsMarshaller.Instance;
-                marshaller.Marshall(requestObject.ExactResponseFields, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("answerField");
+                context.Writer.Write(requestObject.AnswerField);
             }
 
         }
@@ -76,7 +59,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static BedrockKnowledgeStoreConfigurationMarshaller Instance = new BedrockKnowledgeStoreConfigurationMarshaller();
+        public readonly static BedrockKnowledgeStoreExactResponseFieldsMarshaller Instance = new BedrockKnowledgeStoreExactResponseFieldsMarshaller();
 
     }
 }

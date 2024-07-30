@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BedrockModelSpecification Object
+    /// Response Unmarshaller for BedrockGuardrailConfiguration Object
     /// </summary>  
-    public class BedrockModelSpecificationUnmarshaller : IUnmarshaller<BedrockModelSpecification, XmlUnmarshallerContext>, IUnmarshaller<BedrockModelSpecification, JsonUnmarshallerContext>
+    public class BedrockGuardrailConfigurationUnmarshaller : IUnmarshaller<BedrockGuardrailConfiguration, XmlUnmarshallerContext>, IUnmarshaller<BedrockGuardrailConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BedrockModelSpecification IUnmarshaller<BedrockModelSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BedrockGuardrailConfiguration IUnmarshaller<BedrockGuardrailConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public BedrockModelSpecification Unmarshall(JsonUnmarshallerContext context)
+        public BedrockGuardrailConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            BedrockModelSpecification unmarshalledObject = new BedrockModelSpecification();
+            BedrockGuardrailConfiguration unmarshalledObject = new BedrockGuardrailConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("customPrompt", targetDepth))
+                if (context.TestExpression("identifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomPrompt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("guardrail", targetDepth))
-                {
-                    var unmarshaller = BedrockGuardrailConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Guardrail = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modelArn", targetDepth))
+                if (context.TestExpression("version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("traceStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TraceStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static BedrockModelSpecificationUnmarshaller _instance = new BedrockModelSpecificationUnmarshaller();        
+        private static BedrockGuardrailConfigurationUnmarshaller _instance = new BedrockGuardrailConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BedrockModelSpecificationUnmarshaller Instance
+        public static BedrockGuardrailConfigurationUnmarshaller Instance
         {
             get
             {
