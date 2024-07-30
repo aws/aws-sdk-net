@@ -42,8 +42,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ActiveUserSessions. 
         /// <para>
-        /// The number of user sessions currently being used for pool sessions. This only applies
-        /// to multi-session pools.
+        /// The number of user sessions currently being used for your pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -62,7 +61,12 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ActualUserSessions. 
         /// <para>
-        /// The total number of session slots that are available for a pool of WorkSpaces.
+        /// The total number of user sessions that are available for streaming or are currently
+        /// streaming in your pool.
+        /// </para>
+        ///  
+        /// <para>
+        /// ActualUserSessions = AvailableUserSessions + ActiveUserSessions
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -81,8 +85,11 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property AvailableUserSessions. 
         /// <para>
-        /// The number of user sessions currently being used for pool sessions. This only applies
-        /// to multi-session pools.
+        /// The number of user sessions currently available for streaming from your pool.
+        /// </para>
+        ///  
+        /// <para>
+        /// AvailableUserSessions = ActualUserSessions - ActiveUserSessions
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

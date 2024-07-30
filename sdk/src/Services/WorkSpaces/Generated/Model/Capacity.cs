@@ -39,8 +39,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DesiredUserSessions. 
         /// <para>
-        /// The desired number of user sessions for a multi-session pool. This is not allowed
-        /// for single-session pools.
+        /// The desired number of user sessions for the WorkSpaces in the pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
