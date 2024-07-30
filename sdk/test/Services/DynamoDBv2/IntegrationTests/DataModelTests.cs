@@ -347,7 +347,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             filter.AddCondition("CreationTime", QueryOperator.Equal, currTime);
             storedEmployee = Context.FromQuery<AnnotatedNumericEpochEmployee>(
                 new QueryOperationConfig { Filter = filter }, 
-                new QueryConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc}).First();
+                new FromQueryConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc}).First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);

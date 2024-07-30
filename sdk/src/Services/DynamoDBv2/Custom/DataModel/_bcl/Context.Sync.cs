@@ -321,30 +321,30 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public IEnumerable<T> FromScan<T>(ScanOperationConfig scanOperationConfig)
+        public IEnumerable<T> FromScan<T>(ScanOperationConfig scanConfig)
         {
-            if (scanOperationConfig == null) throw new ArgumentNullException("scanOperationConfig");
+            if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
-            var search = ConvertFromScan<T>(scanOperationConfig, null);
+            var search = ConvertFromScan<T>(scanConfig, null);
             return FromSearch<T>(search);
         }
 
         /// <inheritdoc/>
         [Obsolete("Use the FromScan overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromScan.")]
-        public IEnumerable<T> FromScan<T>(ScanOperationConfig scanOperationConfig, DynamoDBOperationConfig operationConfig = null)
+        public IEnumerable<T> FromScan<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null)
         {
-            if (scanOperationConfig == null) throw new ArgumentNullException("scanOperationConfig");
+            if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
-            var search = ConvertFromScan<T>(scanOperationConfig, operationConfig);
+            var search = ConvertFromScan<T>(scanConfig, operationConfig);
             return FromSearch<T>(search);
         }
 
         /// <inheritdoc/>
-        public IEnumerable<T> FromScan<T>(ScanOperationConfig scanOperationConfig, ScanConfig scanConfig)
+        public IEnumerable<T> FromScan<T>(ScanOperationConfig scanConfig, FromScanConfig fromScanConfig)
         {
-            if (scanOperationConfig == null) throw new ArgumentNullException("scanOperationConfig");
+            if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
-            var search = ConvertFromScan<T>(scanOperationConfig, scanConfig?.ToDynamoDBOperationConfig());
+            var search = ConvertFromScan<T>(scanConfig, fromScanConfig?.ToDynamoDBOperationConfig());
             return FromSearch<T>(search);
         }
 
@@ -407,7 +407,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <inheritdoc/>
         public IEnumerable<T> FromQuery<T>(QueryOperationConfig queryConfig)
         {
-            return FromQuery<T>(queryConfig, (QueryConfig)null);
+            return FromQuery<T>(queryConfig, (FromQueryConfig)null);
         }
 
         /// <inheritdoc/>
@@ -421,11 +421,11 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public IEnumerable<T> FromQuery<T>(QueryOperationConfig queryOperationConfig, QueryConfig queryConfig)
+        public IEnumerable<T> FromQuery<T>(QueryOperationConfig queryConfig, FromQueryConfig fromQueryConfig)
         {
-            if (queryOperationConfig == null) throw new ArgumentNullException("queryOperationConfig");
+            if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 
-            var search = ConvertFromQuery<T>(queryOperationConfig, queryConfig?.ToDynamoDBOperationConfig());
+            var search = ConvertFromQuery<T>(queryConfig, fromQueryConfig?.ToDynamoDBOperationConfig());
             return FromSearch<T>(search);
         }
 

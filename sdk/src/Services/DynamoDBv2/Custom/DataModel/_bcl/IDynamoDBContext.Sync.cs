@@ -314,10 +314,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// that match the specified conditions.
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="scanOperationConfig">Scan request object.</param>
-        /// <param name="scanConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <param name="scanConfig">Scan request object.</param>
+        /// <param name="fromScanConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Lazy-loaded collection of results.</returns>
-        IEnumerable<T> FromScan<T>(ScanOperationConfig scanOperationConfig, ScanConfig scanConfig);
+        IEnumerable<T> FromScan<T>(ScanOperationConfig scanConfig, FromScanConfig fromScanConfig);
 
         #endregion
 
@@ -428,10 +428,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// that match the specified conditions.
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="queryOperationConfig">Query request object.</param>
-        /// <param name="queryConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <param name="queryConfig">Query request object.</param>
+        /// <param name="fromQueryConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Lazy-loaded collection of results.</returns>
-        IEnumerable<T> FromQuery<T>(QueryOperationConfig queryOperationConfig, QueryConfig queryConfig);
+        IEnumerable<T> FromQuery<T>(QueryOperationConfig queryConfig, FromQueryConfig fromQueryConfig);
 
         #endregion
 

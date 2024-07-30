@@ -63,17 +63,13 @@ namespace Amazon.DynamoDBv2.DataModel
         public List<ScanCondition> QueryFilter { get; set; }
 
         /// <summary>
-        /// Directs <see cref="DynamoDBContext" /> to ignore null values when 
-        /// converting an object to a DynamoDB item. If the property is false 
-        /// (or not set), null values will be interpreted as directives to 
-        /// delete the specific attributes on the DynamoDB item.
-        /// </summary>
-        public bool? IgnoreNullValues { get; set; }
-
-        /// <summary>
         /// Property that directs <see cref="DynamoDBContext" /> to use consistent reads.
         /// If property is not set, behavior defaults to non-consistent reads.
         /// </summary>
+        /// <remarks>
+        /// Refer to the <see href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+        /// Read Consistency</see> topic in the DynamoDB Developer Guide for more information.
+        /// </remarks>
         public bool? ConsistentRead { get; set; }
 
         /// <summary>
@@ -92,7 +88,6 @@ namespace Amazon.DynamoDBv2.DataModel
             config.IndexName = IndexName;
             config.ConditionalOperator = ConditionalOperator;
             config.QueryFilter = QueryFilter;
-            config.IgnoreNullValues = IgnoreNullValues;
             config.ConsistentRead = ConsistentRead;
             config.RetrieveDateTimeInUtc = RetrieveDateTimeInUtc;
 

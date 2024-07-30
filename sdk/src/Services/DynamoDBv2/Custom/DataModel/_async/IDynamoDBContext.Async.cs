@@ -258,7 +258,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Scan async
 
         /// <summary>
-        ///  Configures an async Scan operation against DynamoDB, finding items
+        /// Configures an async Scan operation against DynamoDB, finding items
         /// that match the specified conditions.
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
@@ -269,7 +269,7 @@ namespace Amazon.DynamoDBv2.DataModel
         AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions);
 
         /// <summary>
-        ///  Configures an async Scan operation against DynamoDB, finding items
+        /// Configures an async Scan operation against DynamoDB, finding items
         /// that match the specified conditions.
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
@@ -283,7 +283,7 @@ namespace Amazon.DynamoDBv2.DataModel
         AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
-        ///  Configures an async Scan operation against DynamoDB, finding items
+        /// Configures an async Scan operation against DynamoDB, finding items
         /// that match the specified conditions.
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
@@ -295,7 +295,7 @@ namespace Amazon.DynamoDBv2.DataModel
         AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, ScanConfig scanConfig);
 
         /// <summary>
-        ///  Configures an async Scan operation against DynamoDB, finding items
+        /// Configures an async Scan operation against DynamoDB, finding items
         /// that match the specified conditions.
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
@@ -304,7 +304,7 @@ namespace Amazon.DynamoDBv2.DataModel
         AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig);
 
         /// <summary>
-        ///  Configures an async Scan operation against DynamoDB, finding items
+        /// Configures an async Scan operation against DynamoDB, finding items
         /// that match the specified conditions.
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
@@ -319,10 +319,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// that match the specified conditions.
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="scanOperationConfig">Scan request object.</param>
-        /// <param name="scanConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <param name="scanConfig">Scan request object.</param>
+        /// <param name="fromScanConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanOperationConfig, ScanConfig scanConfig);
+        AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, FromScanConfig fromScanConfig);
 
         #endregion
 
@@ -420,21 +420,21 @@ namespace Amazon.DynamoDBv2.DataModel
         /// that match the specified conditions.
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="queryOperationConfig">Mid-level, document model query request object.</param>
+        /// <param name="queryConfig">Mid-level, document model query request object.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         [Obsolete("Use the FromQueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromQueryAsync.")]
-        AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryOperationConfig, DynamoDBOperationConfig operationConfig = null);
+        AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
         /// Configures an async Query operation against DynamoDB using a mid-level document model 
         /// query configration, finding items that match the specified conditions. 
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="queryOperationConfig">Mid-level, document model query request object.</param>
-        /// <param name="queryConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <param name="queryConfig">Mid-level, document model query request object.</param>
+        /// <param name="fromQueryConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryOperationConfig, QueryConfig queryConfig);
+        AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, FromQueryConfig fromQueryConfig);
 
         #endregion
     }

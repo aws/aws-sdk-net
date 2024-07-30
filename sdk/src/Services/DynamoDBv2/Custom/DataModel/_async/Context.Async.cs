@@ -372,20 +372,20 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         [Obsolete("Use the FromScanAsync overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromScanAsync.")]
-        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanOperationConfig, DynamoDBOperationConfig operationConfig = null)
+        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null)
         {
-            if (scanOperationConfig == null) throw new ArgumentNullException("scanOperationConfig");
+            if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
-            var search = ConvertFromScan<T>(scanOperationConfig, operationConfig);
+            var search = ConvertFromScan<T>(scanConfig, operationConfig);
             return FromSearchAsync<T>(search);
         }
 
         /// <inheritdoc/>
-        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanOperationConfig, ScanConfig scanConfig)
+        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, FromScanConfig fromScanConfig)
         {
-            if (scanOperationConfig == null) throw new ArgumentNullException("scanOperationConfig");
+            if (scanConfig == null) throw new ArgumentNullException("scanConfig");
 
-            var search = ConvertFromScan<T>(scanOperationConfig, scanConfig?.ToDynamoDBOperationConfig());
+            var search = ConvertFromScan<T>(scanConfig, fromScanConfig?.ToDynamoDBOperationConfig());
             return FromSearchAsync<T>(search);
         }
 
@@ -447,30 +447,30 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryOperationConfig)
+        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig)
         {
-            if (queryOperationConfig == null) throw new ArgumentNullException("queryOperationConfig");
+            if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 
-            var search = ConvertFromQuery<T>(queryOperationConfig, null);
+            var search = ConvertFromQuery<T>(queryConfig, null);
             return FromSearchAsync<T>(search);
         }
 
         /// <inheritdoc/>
         [Obsolete("Use the FromQueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromQueryAsync.")]
-        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryOperationConfig, DynamoDBOperationConfig operationConfig = null)
+        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig = null)
         {
-            if (queryOperationConfig == null) throw new ArgumentNullException("queryOperationConfig");
+            if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 
-            var search = ConvertFromQuery<T>(queryOperationConfig, operationConfig);
+            var search = ConvertFromQuery<T>(queryConfig, operationConfig);
             return FromSearchAsync<T>(search);
         }
 
         /// <inheritdoc/>
-        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryOperationConfig, QueryConfig queryConfig)
+        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, FromQueryConfig fromQueryConfig)
         {
-            if (queryOperationConfig == null) throw new ArgumentNullException("queryOperationConfig");
+            if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 
-            var search = ConvertFromQuery<T>(queryOperationConfig, queryConfig?.ToDynamoDBOperationConfig());
+            var search = ConvertFromQuery<T>(queryConfig, fromQueryConfig?.ToDynamoDBOperationConfig());
             return FromSearchAsync<T>(search);
         }
 
