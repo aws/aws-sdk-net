@@ -176,7 +176,7 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify a value between 60 and 360000.
+        /// Specify a value between 60 and 36000.
         /// </para>
         /// </summary>
         public int DisconnectTimeoutInSeconds
@@ -291,7 +291,7 @@ namespace Amazon.AppStream.Model
         ///  
         /// <para>
         /// To prevent users from being disconnected due to inactivity, specify a value of 0.
-        /// Otherwise, specify a value between 60 and 3600. The default value is 0.
+        /// Otherwise, specify a value between 60 and 36000. The default value is 0.
         /// </para>
         ///  <note> 
         /// <para>
