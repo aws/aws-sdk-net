@@ -1,3 +1,30 @@
+### 3.7.855.0 (2024-07-30 18:28 UTC)
+* AppStream (3.7.401.0)
+	* Added support for Red Hat Enterprise Linux 8 on Amazon AppStream 2.0
+* AutoScaling (3.7.401.0)
+	* Increase the length limit for VPCZoneIdentifier from 2047 to 5000
+* CloudWatchLogs (3.7.401.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* CodePipeline (3.7.401.0)
+	* AWS CodePipeline V2 type pipelines now support stage level conditions to enable development teams to safely release changes that meet quality and compliance requirements.
+* ElastiCache (3.7.400.2)
+	* Doc only update for changes to deletion API.
+* ElasticLoadBalancing (3.7.401.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* EventBridge (3.7.401.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* IAMRolesAnywhere (3.7.401.0)
+	* IAM RolesAnywhere now supports custom role session name on the CreateSession. This release adds the acceptRoleSessionName option to a profile to control whether a role session name will be accepted in a session request with a given profile.
+* LexModelsV2 (3.7.401.0)
+	* This release adds new capabilities to the AMAZON.QnAIntent: Custom prompting, Guardrails integration and ExactResponse support for Bedrock Knowledge Base.
+* Tnb (3.7.401.0)
+	* This release adds Network Service Update, through which customers will be able to update their instantiated networks to a new network package. See the documentation for limitations. The release also enhances the Get network operation API to return parameter overrides used during the operation.
+* WorkSpaces (3.7.400.2)
+	* Removing multi-session as it isn't supported for pools
+* Core 3.7.400.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.854.1 (2024-07-29 18:14 UTC)
 * ElastiCache (3.7.400.1)
 	* Renaming full service name as it appears in developer documentation.
