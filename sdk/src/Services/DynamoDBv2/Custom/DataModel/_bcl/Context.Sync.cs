@@ -307,44 +307,38 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Scan
 
-        /// <summary>
-        /// Executes a Scan operation against DynamoDB, finding items
-        /// that match the specified conditions.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="conditions">
-        /// Conditions that the results should meet.
-        /// </param>
-        /// <returns>Lazy-loaded collection of results.</returns>
+        /// <inheritdoc/>
         public IEnumerable<T> Scan<T>(params ScanCondition[] conditions)
         {
-            return Scan<T>(conditions, null);
+            return Scan<T>(conditions, (ScanConfig)null);
         }
 
-        /// <summary>
-        /// Executes a Scan operation against DynamoDB, finding items
-        /// that match the specified conditions.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="conditions">
-        /// Conditions that the results should meet.
-        /// </param>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <returns>Lazy-loaded collection of results.</returns>
+        /// <inheritdoc/>
+        [Obsolete("Use the Scan overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Scan.")]
         public IEnumerable<T> Scan<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
         {
             var scan = ConvertScan<T>(conditions, operationConfig);
             return FromSearch<T>(scan);
         }
 
-        /// <summary>
-        /// Executes a Scan operation against DynamoDB, finding items
-        /// that match the specified conditions.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="scanConfig">Scan request object.</param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>Lazy-loaded collection of results.</returns>
+        /// <inheritdoc/>
+        public IEnumerable<T> Scan<T>(IEnumerable<ScanCondition> conditions, ScanConfig scanConfig)
+        {
+            var scan = ConvertScan<T>(conditions, scanConfig?.ToDynamoDBOperationConfig());
+            return FromSearch<T>(scan);
+        }
+
+        /// <inheritdoc/>
+        public IEnumerable<T> FromScan<T>(ScanOperationConfig scanConfig)
+        {
+            if (scanConfig == null) throw new ArgumentNullException("scanConfig");
+
+            var search = ConvertFromScan<T>(scanConfig, null);
+            return FromSearch<T>(search);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the FromScan overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromScan.")]
         public IEnumerable<T> FromScan<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null)
         {
             if (scanConfig == null) throw new ArgumentNullException("scanConfig");
@@ -353,72 +347,52 @@ namespace Amazon.DynamoDBv2.DataModel
             return FromSearch<T>(search);
         }
 
+        /// <inheritdoc/>
+        public IEnumerable<T> FromScan<T>(ScanOperationConfig scanConfig, FromScanConfig fromScanConfig)
+        {
+            if (scanConfig == null) throw new ArgumentNullException("scanConfig");
+
+            var search = ConvertFromScan<T>(scanConfig, fromScanConfig?.ToDynamoDBOperationConfig());
+            return FromSearch<T>(search);
+        }
+
         #endregion
 
         #region Query
 
-        /// <summary>
-        /// Executes a Query operation against DynamoDB, finding items
-        /// that match the specified hash primary key.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKeyValue">Hash key of the items to query.</param>
-        /// <returns>Lazy-loaded collection of results.</returns>
+        /// <inheritdoc/>
         public IEnumerable<T> Query<T>(object hashKeyValue)
         {
             var query = ConvertQueryByValue<T>(hashKeyValue, null, null);
             return FromSearch<T>(query);
         }
 
-        /// <summary>
-        /// Executes a Query operation against DynamoDB, finding items
-        /// that match the specified hash primary key.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKeyValue">Hash key of the items to query.</param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>Lazy-loaded collection of results.</returns>
+        /// <inheritdoc/>
+        [Obsolete("Use the Query overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Query.")]
         public IEnumerable<T> Query<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig)
         {
             var query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
             return FromSearch<T>(query);
         }
 
-        /// <summary>
-        /// Executes a Query operation against DynamoDB, finding items
-        /// that match the specified range element condition for a hash-and-range primary key.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKeyValue">Hash key of the items to query.</param>
-        /// <param name="op">Operation of the condition.</param>
-        /// <param name="values">
-        /// Value(s) of the condition.
-        /// For all operations except QueryOperator.Between, values should be one value.
-        /// For QueryOperator.Betwee, values should be two values.
-        /// </param>
-        /// <returns>Lazy-loaded collection of results.</returns>
+        /// <inheritdoc/>
+        public IEnumerable<T> Query<T>(object hashKeyValue, QueryConfig queryConfig)
+        {
+            var query = ConvertQueryByValue<T>(hashKeyValue, null, queryConfig?.ToDynamoDBOperationConfig());
+            return FromSearch<T>(query);
+        }
+
+        /// <inheritdoc/>
         public IEnumerable<T> Query<T>(object hashKeyValue, QueryOperator op, params object[] values)
         {
             if (values == null || values.Length == 0)
                 throw new ArgumentOutOfRangeException("values");
 
-            return Query<T>(hashKeyValue, op, values, null);
+            return Query<T>(hashKeyValue, op, values, (QueryConfig)null);
         }
 
-        /// <summary>
-        /// Executes a Query operation against DynamoDB, finding items
-        /// that match the specified range element condition for a hash-and-range primary key.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKeyValue">Hash key of the items to query.</param>
-        /// <param name="op">Operation of the condition.</param>
-        /// <param name="values">
-        /// Value(s) of the condition.
-        /// For all operations except QueryOperator.Between, values should be one value.
-        /// For QueryOperator.Betwee, values should be two values.
-        /// </param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>Lazy-loaded collection of results.</returns>
+        /// <inheritdoc/>
+        [Obsolete("Use the Query overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Query.")]
         public IEnumerable<T> Query<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
         {
             if (values == null)
@@ -428,31 +402,38 @@ namespace Amazon.DynamoDBv2.DataModel
             return FromSearch<T>(query);
         }
 
-        /// <summary>
-        /// Executes a Query operation against DynamoDB, finding items
-        /// that match the specified conditions.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="queryConfig">Query request object.</param>
-        /// <returns>Lazy-loaded collection of results.</returns>
-        public IEnumerable<T> FromQuery<T>(QueryOperationConfig queryConfig)
+        /// <inheritdoc/>
+        public IEnumerable<T> Query<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, QueryConfig queryConfig)
         {
-            return FromQuery<T>(queryConfig, null);
+            if (values == null)
+                throw new ArgumentNullException("values");
+
+            var query = ConvertQueryByValue<T>(hashKeyValue, op, values, queryConfig?.ToDynamoDBOperationConfig());
+            return FromSearch<T>(query);
         }
 
-        /// <summary>
-        /// Executes a Query operation against DynamoDB, finding items
-        /// that match the specified conditions.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="queryConfig">Query request object.</param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>Lazy-loaded collection of results.</returns>
+        /// <inheritdoc/>
+        public IEnumerable<T> FromQuery<T>(QueryOperationConfig queryConfig)
+        {
+            return FromQuery<T>(queryConfig, (FromQueryConfig)null);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the FromQuery overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromQuery.")]
         public IEnumerable<T> FromQuery<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig)
         {
             if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 
             var search = ConvertFromQuery<T>(queryConfig, operationConfig);
+            return FromSearch<T>(search);
+        }
+
+        /// <inheritdoc/>
+        public IEnumerable<T> FromQuery<T>(QueryOperationConfig queryConfig, FromQueryConfig fromQueryConfig)
+        {
+            if (queryConfig == null) throw new ArgumentNullException("queryConfig");
+
+            var search = ConvertFromQuery<T>(queryConfig, fromQueryConfig?.ToDynamoDBOperationConfig());
             return FromSearch<T>(search);
         }
 
