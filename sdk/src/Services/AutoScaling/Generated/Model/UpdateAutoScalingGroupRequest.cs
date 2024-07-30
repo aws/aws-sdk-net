@@ -614,7 +614,7 @@ namespace Amazon.AutoScaling.Model
         /// must reside in those Availability Zones.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2047)]
+        [AWSProperty(Min=1, Max=5000)]
         public string VPCZoneIdentifier
         {
             get { return this._vpcZoneIdentifier; }

@@ -99,7 +99,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest.VPCZoneIdentifier</property>
     <min>1</min>
-    <max>2047</max>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.CreateLaunchConfigurationRequest.ClassicLinkVPCId</property>
@@ -618,7 +618,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest.VPCZoneIdentifier</property>
     <min>1</min>
-    <max>2047</max>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AcceleratorCountRequest.Max</property>
@@ -728,7 +728,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AutoScalingGroup.VPCZoneIdentifier</property>
     <min>1</min>
-    <max>2047</max>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AutoScalingInstanceDetails.AutoScalingGroupName</property>

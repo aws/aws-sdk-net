@@ -771,7 +771,7 @@ namespace Amazon.AutoScaling.Model
         /// Zones.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2047)]
+        [AWSProperty(Min=1, Max=5000)]
         public string VPCZoneIdentifier
         {
             get { return this._vpcZoneIdentifier; }
