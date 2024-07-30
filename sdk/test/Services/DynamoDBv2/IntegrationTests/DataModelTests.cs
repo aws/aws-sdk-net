@@ -345,7 +345,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Query
             QueryFilter filter = new QueryFilter();
             filter.AddCondition("CreationTime", QueryOperator.Equal, currTime);
-            storedEmployee = Context.FromQuery<AnnotatedNumericEpochEmployee>(new QueryOperationConfig { Filter = filter }, operationConfig).First();
+            storedEmployee = Context.FromQuery<AnnotatedNumericEpochEmployee>(
+                new QueryOperationConfig { Filter = filter }, 
+                new FromQueryConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc}).First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -355,7 +357,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(employee.Age, storedEmployee.Age);
 
             // Scan
-            storedEmployee = Context.Scan<AnnotatedNumericEpochEmployee>(new List<ScanCondition>(), operationConfig).First();
+            storedEmployee = Context.Scan<AnnotatedNumericEpochEmployee>(
+                new List<ScanCondition>(), 
+                new ScanConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc }).First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -942,7 +946,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     product.CompanyName,            // Hash-key for the index is Company
                     QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
                     new object[] { 90 },            // condition is against a numerical value
-                    new DynamoDBOperationConfig     // Configure the index to use
+                    new QueryConfig     // Configure the index to use
                     {
                         IndexName = "GlobalIndex",
                     });
@@ -953,7 +957,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     product.CompanyName,            // Hash-key for the index is Company
                     QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
                     new object[] { 90 },            // condition is against a numerical value
-                    new DynamoDBOperationConfig     // Configure the index to use
+                    new QueryConfig     // Configure the index to use
                     {
                         IndexName = "GlobalIndex",
                         QueryFilter = new List<ScanCondition> 
@@ -975,7 +979,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Scan the table with consistent read
                 products = Context.Scan<Product>(
                     new ScanCondition[] { },
-                    new DynamoDBOperationConfig { ConsistentRead = true });
+                    new ScanConfig { ConsistentRead = true });
                 Assert.AreEqual(1, products.Count());
 
                 // Test a versioned product
@@ -1089,21 +1093,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Index Query
 
             // Query local index for items with Hash-Key = "Diane"
-            employees = Context.Query<T>("Diane", new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
+            employees = Context.Query<T>("Diane", new QueryConfig { IndexName = "LocalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Query local index for items with Hash-Key = "Diane" and Range-Key = "Eva"
             employees = Context.Query<T>("Diane", QueryOperator.Equal, new object[] { "Eva" },
-                new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
+                new QueryConfig { IndexName = "LocalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Query global index for item with Hash-Key (Company) = "Big River"
-            employees = Context.Query<T>("Big River", new DynamoDBOperationConfig { IndexName = "GlobalIndex" }).ToList();
+            employees = Context.Query<T>("Big River", new QueryConfig { IndexName = "GlobalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Query global index for item with Hash-Key (Company) = "Big River", with QueryFilter for CurrentStatus = Status.Active
             employees = Context.Query<T>("Big River",
-                new DynamoDBOperationConfig
+                new QueryConfig
                 {
                     IndexName = "GlobalIndex",
                     QueryFilter = new List<ScanCondition>
@@ -1119,7 +1123,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Scan local index for items with Hash-Key = "Diane"
             employees = Context.Scan<T>(
                 new List<ScanCondition> { new ScanCondition("Name", ScanOperator.Equal, "Diane") },
-                new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
+                new ScanConfig { IndexName = "LocalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Scan local index for items with Hash-Key = "Diane" and Range-Key = "Eva"
@@ -1129,13 +1133,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     new ScanCondition("Name", ScanOperator.Equal, "Diane"),
                     new ScanCondition("ManagerName", ScanOperator.Equal, "Eva")
                 },                
-                new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
+                new ScanConfig { IndexName = "LocalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Scan global index for item with Hash-Key (Company) = "Big River"
             employees = Context.Scan<T>(
                 new List<ScanCondition> { new ScanCondition("CompanyName", ScanOperator.Equal, "Big River") },
-                new DynamoDBOperationConfig { IndexName = "GlobalIndex" }).ToList();
+                new ScanConfig { IndexName = "GlobalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Scan global index for item with Hash-Key (Company) = "Big River", with QueryFilter for CurrentStatus = Status.Active
@@ -1145,7 +1149,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     new ScanCondition("CompanyName", ScanOperator.Equal, "Big River"),
                     new ScanCondition("CurrentStatus", ScanOperator.Equal, Status.Active)
                 },
-                new DynamoDBOperationConfig
+                new ScanConfig
                 {
                     IndexName = "GlobalIndex"
                 }).ToList();

@@ -435,8 +435,7 @@ namespace AWSSDK_DotNet.UnitTests
             var mockDBContext = new Mock<IDynamoDBContext>();
             mockDBContext
                 .Setup(x => x.ScanAsync<DataItem>(
-                   It.IsAny<IEnumerable<ScanCondition>>(),
-                   It.IsAny<DynamoDBOperationConfig>()))
+                   It.IsAny<IEnumerable<ScanCondition>>()))
                 .Returns(
                    new MockAsyncSearch<DataItem>() // Return mock version of AsyncSearch
                 );
