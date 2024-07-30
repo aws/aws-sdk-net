@@ -42,6 +42,8 @@ namespace Amazon.Tnb.Model
     {
         private DateTime? _createdAt;
         private DateTime? _lastModified;
+        private string _nsdInfoId;
+        private string _vnfInstanceId;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -79,6 +81,50 @@ namespace Amazon.Tnb.Model
         internal bool IsSetLastModified()
         {
             return this._lastModified.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NsdInfoId. 
+        /// <para>
+        /// The network service descriptor id used for the operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only present if the updateType is <c>UPDATE_NS</c>.
+        /// </para>
+        /// </summary>
+        public string NsdInfoId
+        {
+            get { return this._nsdInfoId; }
+            set { this._nsdInfoId = value; }
+        }
+
+        // Check to see if NsdInfoId property is set
+        internal bool IsSetNsdInfoId()
+        {
+            return this._nsdInfoId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VnfInstanceId. 
+        /// <para>
+        /// The network function id used for the operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only present if the updateType is <c>MODIFY_VNF_INFO</c>.
+        /// </para>
+        /// </summary>
+        public string VnfInstanceId
+        {
+            get { return this._vnfInstanceId; }
+            set { this._vnfInstanceId = value; }
+        }
+
+        // Check to see if VnfInstanceId property is set
+        internal bool IsSetVnfInstanceId()
+        {
+            return this._vnfInstanceId != null;
         }
 
     }

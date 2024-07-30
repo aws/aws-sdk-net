@@ -978,7 +978,7 @@ namespace Amazon.Tnb
 
 
         /// <summary>
-        /// Gets the details of a network function instance, including the instantation state
+        /// Gets the details of a network function instance, including the instantiation state
         /// and metadata from the function package descriptor in the network function package.
         /// 
         ///  
@@ -1017,7 +1017,7 @@ namespace Amazon.Tnb
 
 
         /// <summary>
-        /// Gets the details of a network function instance, including the instantation state
+        /// Gets the details of a network function instance, including the instantiation state
         /// and metadata from the function package descriptor in the network function package.
         /// 
         ///  
@@ -2906,6 +2906,11 @@ namespace Amazon.Tnb
         /// be deployed and on which life-cycle operations (like terminate, update, and delete)
         /// can be performed.
         /// </para>
+        ///  
+        /// <para>
+        /// Choose the <i>updateType</i> parameter to target the necessary update of the network
+        /// instance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSolNetworkInstance service method.</param>
         /// 
@@ -2948,6 +2953,11 @@ namespace Amazon.Tnb
         /// A network instance is a single network created in Amazon Web Services TNB that can
         /// be deployed and on which life-cycle operations (like terminate, update, and delete)
         /// can be performed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Choose the <i>updateType</i> parameter to target the necessary update of the network
+        /// instance.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSolNetworkInstance service method.</param>

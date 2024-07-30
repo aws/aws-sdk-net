@@ -30,63 +30,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Tnb.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutSolNetworkPackageContent operation.
-    /// Uploads the contents of a network package.
-    /// 
-    ///  
-    /// <para>
-    /// A network package is a .zip file in CSAR (Cloud Service Archive) format defines the
-    /// function packages you want to deploy and the Amazon Web Services infrastructure you
-    /// want to deploy them on.
-    /// </para>
+    /// Metadata related to the configuration properties used during instantiation of the
+    /// network instance.
     /// </summary>
-    public partial class PutSolNetworkPackageContentRequest : AmazonTnbRequest
+    public partial class InstantiateMetadata
     {
-        private PackageContentType _contentType;
-        private MemoryStream _file;
+        private Amazon.Runtime.Documents.Document _additionalParamsForNs;
         private string _nsdInfoId;
 
         /// <summary>
-        /// Gets and sets the property ContentType. 
+        /// Gets and sets the property AdditionalParamsForNs. 
         /// <para>
-        /// Network package content type.
+        /// The configurable properties used during instantiation.
         /// </para>
         /// </summary>
-        public PackageContentType ContentType
+        public Amazon.Runtime.Documents.Document AdditionalParamsForNs
         {
-            get { return this._contentType; }
-            set { this._contentType = value; }
+            get { return this._additionalParamsForNs; }
+            set { this._additionalParamsForNs = value; }
         }
 
-        // Check to see if ContentType property is set
-        internal bool IsSetContentType()
+        // Check to see if AdditionalParamsForNs property is set
+        internal bool IsSetAdditionalParamsForNs()
         {
-            return !string.IsNullOrEmpty(this._contentType);
-        }
-
-        /// <summary>
-        /// Gets and sets the property File. 
-        /// <para>
-        /// Network package file.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
-        public MemoryStream File
-        {
-            get { return this._file; }
-            set { this._file = value; }
-        }
-
-        // Check to see if File property is set
-        internal bool IsSetFile()
-        {
-            return this._file != null;
+            return !this._additionalParamsForNs.IsNull();
         }
 
         /// <summary>
         /// Gets and sets the property NsdInfoId. 
         /// <para>
-        /// Network service descriptor info ID.
+        /// The network service descriptor used for instantiating the network instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

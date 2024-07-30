@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Tnb.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetSolNetworkOperationMetadata Object
+    /// Response Unmarshaller for UpdateNsMetadata Object
     /// </summary>  
-    public class GetSolNetworkOperationMetadataUnmarshaller : IUnmarshaller<GetSolNetworkOperationMetadata, XmlUnmarshallerContext>, IUnmarshaller<GetSolNetworkOperationMetadata, JsonUnmarshallerContext>
+    public class UpdateNsMetadataUnmarshaller : IUnmarshaller<UpdateNsMetadata, XmlUnmarshallerContext>, IUnmarshaller<UpdateNsMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GetSolNetworkOperationMetadata IUnmarshaller<GetSolNetworkOperationMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        UpdateNsMetadata IUnmarshaller<UpdateNsMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GetSolNetworkOperationMetadata Unmarshall(JsonUnmarshallerContext context)
+        public UpdateNsMetadata Unmarshall(JsonUnmarshallerContext context)
         {
-            GetSolNetworkOperationMetadata unmarshalledObject = new GetSolNetworkOperationMetadata();
+            UpdateNsMetadata unmarshalledObject = new UpdateNsMetadata();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("additionalParamsForNs", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalParamsForNs = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("instantiateMetadata", targetDepth))
+                if (context.TestExpression("nsdInfoId", targetDepth))
                 {
-                    var unmarshaller = InstantiateMetadataUnmarshaller.Instance;
-                    unmarshalledObject.InstantiateMetadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastModified", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modifyVnfInfoMetadata", targetDepth))
-                {
-                    var unmarshaller = ModifyVnfInfoMetadataUnmarshaller.Instance;
-                    unmarshalledObject.ModifyVnfInfoMetadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("updateNsMetadata", targetDepth))
-                {
-                    var unmarshaller = UpdateNsMetadataUnmarshaller.Instance;
-                    unmarshalledObject.UpdateNsMetadata = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NsdInfoId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         }
 
 
-        private static GetSolNetworkOperationMetadataUnmarshaller _instance = new GetSolNetworkOperationMetadataUnmarshaller();        
+        private static UpdateNsMetadataUnmarshaller _instance = new UpdateNsMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetSolNetworkOperationMetadataUnmarshaller Instance
+        public static UpdateNsMetadataUnmarshaller Instance
         {
             get
             {

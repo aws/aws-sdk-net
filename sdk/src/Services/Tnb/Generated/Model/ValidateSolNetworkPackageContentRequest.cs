@@ -71,7 +71,7 @@ namespace Amazon.Tnb.Model
         /// Network package file.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public MemoryStream File
         {
             get { return this._file; }

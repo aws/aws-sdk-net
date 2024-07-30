@@ -78,6 +78,18 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nsdInfoId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NsdInfoId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vnfInstanceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VnfInstanceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

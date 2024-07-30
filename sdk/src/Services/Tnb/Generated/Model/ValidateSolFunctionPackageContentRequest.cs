@@ -72,7 +72,7 @@ namespace Amazon.Tnb.Model
         /// Function package file.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public MemoryStream File
         {
             get { return this._file; }

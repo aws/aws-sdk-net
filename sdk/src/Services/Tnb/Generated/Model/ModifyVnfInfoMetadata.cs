@@ -30,23 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Tnb.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetSolFunctionInstance operation.
-    /// Gets the details of a network function instance, including the instantiation state
-    /// and metadata from the function package descriptor in the network function package.
-    /// 
-    ///  
-    /// <para>
-    /// A network function instance is a function in a function package .
-    /// </para>
+    /// Metadata related to the configuration properties used during update of a specific
+    /// network function in a network instance.
     /// </summary>
-    public partial class GetSolFunctionInstanceRequest : AmazonTnbRequest
+    public partial class ModifyVnfInfoMetadata
     {
+        private Amazon.Runtime.Documents.Document _vnfConfigurableProperties;
         private string _vnfInstanceId;
+
+        /// <summary>
+        /// Gets and sets the property VnfConfigurableProperties. 
+        /// <para>
+        /// The configurable properties used during update of the network function instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public Amazon.Runtime.Documents.Document VnfConfigurableProperties
+        {
+            get { return this._vnfConfigurableProperties; }
+            set { this._vnfConfigurableProperties = value; }
+        }
+
+        // Check to see if VnfConfigurableProperties property is set
+        internal bool IsSetVnfConfigurableProperties()
+        {
+            return !this._vnfConfigurableProperties.IsNull();
+        }
 
         /// <summary>
         /// Gets and sets the property VnfInstanceId. 
         /// <para>
-        /// ID of the network function.
+        /// The network function instance that was updated in the network instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

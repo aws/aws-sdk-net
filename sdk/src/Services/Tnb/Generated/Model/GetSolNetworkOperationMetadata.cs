@@ -41,7 +41,10 @@ namespace Amazon.Tnb.Model
     public partial class GetSolNetworkOperationMetadata
     {
         private DateTime? _createdAt;
+        private InstantiateMetadata _instantiateMetadata;
         private DateTime? _lastModified;
+        private ModifyVnfInfoMetadata _modifyVnfInfoMetadata;
+        private UpdateNsMetadata _updateNsMetadata;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -63,6 +66,25 @@ namespace Amazon.Tnb.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstantiateMetadata. 
+        /// <para>
+        /// Metadata related to the network operation occurrence for network instantiation. This
+        /// is populated only if the lcmOperationType is <c>INSTANTIATE</c>.
+        /// </para>
+        /// </summary>
+        public InstantiateMetadata InstantiateMetadata
+        {
+            get { return this._instantiateMetadata; }
+            set { this._instantiateMetadata = value; }
+        }
+
+        // Check to see if InstantiateMetadata property is set
+        internal bool IsSetInstantiateMetadata()
+        {
+            return this._instantiateMetadata != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
         /// The date that the resource was last modified.
@@ -79,6 +101,46 @@ namespace Amazon.Tnb.Model
         internal bool IsSetLastModified()
         {
             return this._lastModified.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModifyVnfInfoMetadata. 
+        /// <para>
+        /// Metadata related to the network operation occurrence for network function updates
+        /// in a network instance. This is populated only if the lcmOperationType is <c>UPDATE</c>
+        /// and the updateType is <c>MODIFY_VNF_INFORMATION</c>.
+        /// </para>
+        /// </summary>
+        public ModifyVnfInfoMetadata ModifyVnfInfoMetadata
+        {
+            get { return this._modifyVnfInfoMetadata; }
+            set { this._modifyVnfInfoMetadata = value; }
+        }
+
+        // Check to see if ModifyVnfInfoMetadata property is set
+        internal bool IsSetModifyVnfInfoMetadata()
+        {
+            return this._modifyVnfInfoMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateNsMetadata. 
+        /// <para>
+        /// Metadata related to the network operation occurrence for network instance updates.
+        /// This is populated only if the lcmOperationType is <c>UPDATE</c> and the updateType
+        /// is <c>UPDATE_NS</c>.
+        /// </para>
+        /// </summary>
+        public UpdateNsMetadata UpdateNsMetadata
+        {
+            get { return this._updateNsMetadata; }
+            set { this._updateNsMetadata = value; }
+        }
+
+        // Check to see if UpdateNsMetadata property is set
+        internal bool IsSetUpdateNsMetadata()
+        {
+            return this._updateNsMetadata != null;
         }
 
     }
