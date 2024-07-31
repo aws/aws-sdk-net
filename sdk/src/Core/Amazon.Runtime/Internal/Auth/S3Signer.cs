@@ -213,11 +213,9 @@ namespace Amazon.Runtime.Internal.Auth
             // CanonicalResourcePrefix will hold the bucket name if we switched to virtual host addressing
             // during request preprocessing (where it would have been removed from ResourcePath)
             var sb = new StringBuilder(request.CanonicalResourcePrefix);
-#pragma warning disable CS0618 // Type or member is obsolete
             sb.Append(!string.IsNullOrEmpty(request.ResourcePath)
                                 ? AWSSDKUtils.ResolveResourcePathV2(request.ResourcePath, request.PathResources)
                                 : "/");
-#pragma warning restore CS0618 // Type or member is obsolete
 
             // form up the set of all subresources and specific query parameters that must be 
             // included in the canonical resource, then append them ordered by key to the 

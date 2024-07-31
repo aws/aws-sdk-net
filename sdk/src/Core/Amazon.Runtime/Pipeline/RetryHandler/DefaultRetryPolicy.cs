@@ -251,24 +251,5 @@ namespace Amazon.Runtime.Internal
             return delay;
         }
 
-        [Obsolete("This method is no longer used within DefaultRetryPolicy")]
-        protected static bool ContainErrorMessage(Exception exception)
-        {
-            return ContainErrorMessage(exception, _netStandardRetryErrorMessages);
-        }
-
-        [Obsolete("This method has been moved to AWSSDK.Runtime.Internal.Util.ExceptionUtils")]
-        protected static bool IsInnerException<T>(Exception exception)
-            where T : Exception
-        {
-            return ExceptionUtils.IsInnerException<T>(exception);
-        }
-
-        [Obsolete("This method has been moved to AWSSDK.Runtime.Internal.Util.ExceptionUtils")]
-        protected static bool IsInnerException<T>(Exception exception, out T inner)
-            where T : Exception
-        {
-            return ExceptionUtils.IsInnerException<T>(exception, out inner);
-        }
     }
 }

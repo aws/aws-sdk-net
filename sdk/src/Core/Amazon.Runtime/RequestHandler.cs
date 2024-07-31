@@ -41,14 +41,10 @@ namespace Amazon.Runtime
         #region Properties
 
         public IDictionary<string, string> Headers { get; protected set; }
-        [Obsolete("Parameters property has been deprecated in favor of the ParameterCollection property")]
-        public IDictionary<string, string> Parameters { get; protected set; }
         public ParameterCollection ParameterCollection { get; protected set; }
         public string ServiceName { get; protected set; }
         public Uri Endpoint { get; protected set; }
         public AmazonWebServiceRequest Request { get; protected set; }
-        [Obsolete("OriginalRequest property has been deprecated in favor of the Request property")]
-        public AmazonWebServiceRequest OriginalRequest { get { return Request; } }
 
         #endregion
 
@@ -59,12 +55,8 @@ namespace Amazon.Runtime
             WebServiceRequestEventArgs args = new WebServiceRequestEventArgs
             {
                 Headers = request.Headers,
-#pragma warning disable CS0618 // Type or member is obsolete
-                Parameters = request.Parameters,
-#pragma warning restore CS0618 // Type or member is obsolete
                 ParameterCollection = request.ParameterCollection,
                 ServiceName = request.ServiceName,
-                Request = request.OriginalRequest,
                 Endpoint = request.Endpoint
             };
             return args;
