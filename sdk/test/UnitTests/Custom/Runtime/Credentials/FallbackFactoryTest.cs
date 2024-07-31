@@ -109,10 +109,7 @@ namespace AWSSDK.UnitTests
                 var region = FallbackRegionFactory.GetRegionEndpoint(false);
                 Assert.AreEqual(RegionEndpoint.USWest2, region);
 
-                var enabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
-                Assert.IsFalse(enabled.HasValue);
-
-                enabled = FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled;
+                var enabled = FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled;
                 Assert.IsFalse(enabled.HasValue);
 
                 var retryMode = FallbackInternalConfigurationFactory.RetryMode;
@@ -140,11 +137,8 @@ namespace AWSSDK.UnitTests
                 var region = FallbackRegionFactory.GetRegionEndpoint(false);
                 Assert.AreEqual(RegionEndpoint.USWest1, region);
 
-                var enabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
-                Assert.IsTrue(enabled.HasValue);
-                Assert.IsFalse(enabled.Value);
 
-                enabled = FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled;
+                var enabled = FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled;
                 Assert.IsTrue(enabled.HasValue);
                 Assert.IsFalse(enabled.Value);
             }
@@ -154,12 +148,8 @@ namespace AWSSDK.UnitTests
         public void TestOther2Profile()
         {
             using (new FallbackFactoryTestFixture(ProfileText, "other2"))
-            {            
-                var enabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
-                Assert.IsTrue(enabled.HasValue);
-                Assert.IsTrue(enabled.Value);
-
-                enabled = FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled;
+            {
+                var enabled = FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled;
                 Assert.IsTrue(enabled.HasValue);
                 Assert.IsTrue(enabled.Value);
             }
@@ -261,11 +251,7 @@ namespace AWSSDK.UnitTests
 
             using (new FallbackFactoryTestFixture(ProfileText, "other2", envVariables))
             {
-                var enabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
-                Assert.IsTrue(enabled.HasValue);
-                Assert.IsFalse(enabled.Value);
-
-                enabled = FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled;
+                var enabled = FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled;
                 Assert.IsTrue(enabled.HasValue);
                 Assert.IsFalse(enabled.Value);
             }
@@ -861,7 +847,6 @@ namespace AWSSDK.UnitTests
 
             private readonly CredentialProfileStoreChain originalCredsChain;
             private readonly CredentialProfileStoreChain originalRegionChain;
-            private readonly CredentialProfileStoreChain originalEndpointDiscoveryEnabledChain;
             private readonly CredentialProfileStoreChain originalConfigurationChain;
 
             private readonly string originalAWSProfileValue;
@@ -883,8 +868,6 @@ namespace AWSSDK.UnitTests
                 originalRegionChain = (CredentialProfileStoreChain)ReflectionHelpers.Invoke(typeof(FallbackRegionFactory), "credentialProfileChain");
                 ReflectionHelpers.Invoke(typeof(FallbackRegionFactory), "credentialProfileChain", new CredentialProfileStoreChain(sharedFixture.CredentialsFilePath));
 
-                originalEndpointDiscoveryEnabledChain = (CredentialProfileStoreChain)ReflectionHelpers.Invoke(typeof(FallbackEndpointDiscoveryEnabledFactory), "credentialProfileChain");
-                ReflectionHelpers.Invoke(typeof(FallbackEndpointDiscoveryEnabledFactory), "credentialProfileChain", new CredentialProfileStoreChain(sharedFixture.CredentialsFilePath));
 
                 originalConfigurationChain = (CredentialProfileStoreChain)ReflectionHelpers.Invoke(typeof(FallbackInternalConfigurationFactory), "_credentialProfileChain");
                 ReflectionHelpers.Invoke(typeof(FallbackInternalConfigurationFactory), "_credentialProfileChain", new CredentialProfileStoreChain(sharedFixture.CredentialsFilePath));
@@ -915,7 +898,6 @@ namespace AWSSDK.UnitTests
                     // reset before use to ensure the new credentialProfileChains are used.
                     FallbackCredentialsFactory.Reset();
                     FallbackRegionFactory.Reset();
-                    FallbackEndpointDiscoveryEnabledFactory.Reset();
                     FallbackInternalConfigurationFactory.Reset();
                 }
                 catch (Exception ex)
@@ -940,7 +922,6 @@ namespace AWSSDK.UnitTests
 
                 ReflectionHelpers.Invoke(typeof(FallbackRegionFactory), "credentialProfileChain", originalRegionChain);
                 ReflectionHelpers.Invoke(typeof(FallbackCredentialsFactory), "credentialProfileChain", originalCredsChain);
-                ReflectionHelpers.Invoke(typeof(FallbackEndpointDiscoveryEnabledFactory), "credentialProfileChain", originalEndpointDiscoveryEnabledChain);
                 ReflectionHelpers.Invoke(typeof(FallbackInternalConfigurationFactory), "_credentialProfileChain", originalConfigurationChain);
 
                 netSdkFixture.Dispose();
@@ -948,7 +929,6 @@ namespace AWSSDK.UnitTests
 
                 FallbackCredentialsFactory.Reset();
                 FallbackRegionFactory.Reset();
-                FallbackEndpointDiscoveryEnabledFactory.Reset();
                 FallbackInternalConfigurationFactory.Reset();
             }
         }

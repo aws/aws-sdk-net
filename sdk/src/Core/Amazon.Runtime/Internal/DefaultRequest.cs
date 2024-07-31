@@ -70,9 +70,6 @@ namespace Amazon.Runtime.Internal
             this.serviceName = serviceName;
             this.originalRequest = request;
             this.requestName = this.originalRequest.GetType().Name;
-#pragma warning disable CS0612,CS0618
-            this.UseSigV4 = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)this.originalRequest).UseSigV4;
-#pragma warning restore CS0612,CS0618
             this.SignatureVersion = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)this.originalRequest).SignatureVersion;
             this.HostPrefix = string.Empty;
 
@@ -446,18 +443,6 @@ namespace Amazon.Runtime.Internal
         {
             get;
             set;
-        }
-
-        /// <summary>
-        /// This flag specifies if SigV4 is required for the current request.
-        /// Returns true if the request will use SigV4.
-        /// Setting it to false will use SigV2.
-        /// </summary>
-        [Obsolete("UseSigV4 is deprecated. Use SignatureVersion directly instead.")]
-        public bool UseSigV4
-        {
-            get { return SignatureVersion == SignatureVersion.SigV4; }
-            set { this.SignatureVersion = value ? SignatureVersion.SigV4 : SignatureVersion.SigV2; }
         }
 
         /// <summary>

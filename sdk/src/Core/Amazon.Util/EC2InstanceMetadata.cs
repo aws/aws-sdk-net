@@ -51,20 +51,6 @@ namespace Amazon.Util
     /// </remarks>
     public static class EC2InstanceMetadata
     {
-        [Obsolete("EC2_METADATA_SVC is obsolete, refer to ServiceEndpoint instead to respect environment and profile overrides.")]
-        public static readonly string EC2_METADATA_SVC = "http://169.254.169.254";
-
-        [Obsolete("EC2_METADATA_ROOT is obsolete, refer to EC2MetadataRoot instead to respect environment and profile overrides.")]
-        public static readonly string EC2_METADATA_ROOT = EC2_METADATA_SVC + LATEST + "/meta-data";
-
-        [Obsolete("EC2_USERDATA_ROOT is obsolete, refer to EC2UserDataRoot instead to respect environment and profile overrides.")]
-        public static readonly string EC2_USERDATA_ROOT = EC2_METADATA_SVC + LATEST + "/user-data";
-
-        [Obsolete("EC2_DYNAMICDATA_ROOT is obsolete, refer to EC2DynamicDataRoot instead to respect environment and profile overrides.")]
-        public static readonly string EC2_DYNAMICDATA_ROOT = EC2_METADATA_SVC + LATEST + "/dynamic";
-
-        [Obsolete("EC2_APITOKEN_URL is obsolete, refer to EC2ApiTokenUrl instead to respect environment and profile overrides.")]
-        public static readonly string EC2_APITOKEN_URL = EC2_METADATA_SVC + LATEST + "/api/token";
 
         public static readonly string
             LATEST = "/latest",

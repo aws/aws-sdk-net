@@ -261,7 +261,6 @@ namespace AWSSDK.UnitTests
             // reset before use to ensure the new credentialProfileChains are used.
             FallbackCredentialsFactory.Reset();
             FallbackRegionFactory.Reset();
-            FallbackEndpointDiscoveryEnabledFactory.Reset();
             FallbackInternalConfigurationFactory.Reset();
         }
 
@@ -274,7 +273,6 @@ namespace AWSSDK.UnitTests
 
             FallbackCredentialsFactory.Reset();
             FallbackRegionFactory.Reset();
-            FallbackEndpointDiscoveryEnabledFactory.Reset();
             FallbackInternalConfigurationFactory.Reset();
         }
     }

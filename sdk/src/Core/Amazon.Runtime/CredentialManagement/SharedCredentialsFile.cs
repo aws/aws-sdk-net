@@ -447,7 +447,7 @@ namespace Amazon.Runtime.CredentialManagement
 
         private void UpdateConfigSectionsFromProfile(CredentialProfile profile, Dictionary<string, string> profileDictionary)
         {
-            if (_configFile == null || !_configFile.TryGetSection(profile.Name, out var configProperties))
+            if (_configFile == null || !_configFile.TryGetSection(profile.Name, false, false, out var configProperties, out _))
                 return;
 
             var configPropertiesNames = configProperties.Keys.ToArray();

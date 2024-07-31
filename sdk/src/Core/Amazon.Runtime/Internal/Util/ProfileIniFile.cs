@@ -79,36 +79,6 @@ namespace Amazon.Runtime.Internal.Util
             return hasCredentialsProperties;
         }
 
-#pragma warning disable CS0809
-        [Obsolete("TryGetSection(string sectionName, bool isSsoSession, out Dictionary<string,string> properties is deprecated. Please use the overloaded" +
-    "method with nestedProperties instead")]
-        public override bool TryGetSection(string sectionName, out Dictionary<string, string> properties)
-        {
-            return this.TryGetSection(sectionName, isSsoSession: false, out properties);
-        }
-#pragma warning restore CS0809
-
-        // This is no longer used, as this implementation didn't take into account nested properties
-        // The overloaded method above correctly fills out a dictionary of nested properties
-        [Obsolete("TryGetSection(string sectionName, bool isSsoSession, out Dictionary<string,string> properties is deprecated. Please use the overloaded" +
-            "method with nestedProperties instead")]
-        public bool TryGetSection(string sectionName, bool isSsoSession, out Dictionary<string, string> properties)
-        {
-            bool hasCredentialsProperties = false;
-            properties = null;
-
-            if (!ProfileMarkerRequired && !isSsoSession)
-                hasCredentialsProperties = base.TryGetSection(sectionName, out properties);
-
-            if (!hasCredentialsProperties)
-            {
-                var marker = isSsoSession ? SsoSessionMarker : ProfileMarker;
-
-                var credentialSectionNameRegex = new Regex("^" + marker + "[ \\t]+" + Regex.Escape(sectionName) + "$", RegexOptions.Singleline);
-                hasCredentialsProperties = this.TryGetSection(credentialSectionNameRegex, out properties);
-            }
-            return hasCredentialsProperties;
-        }
 
         public override void EditSection(string sectionName, SortedDictionary<string, string> properties)
         {

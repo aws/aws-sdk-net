@@ -24,27 +24,6 @@ namespace Amazon.Runtime
 {
     public abstract partial class AmazonWebServiceRequest : IAmazonWebServiceRequest
     {
-        /// <summary>
-        /// This flag specifies if SigV4 will be used for the current request.
-        /// </summary>
-        [Obsolete("UseSigV4 is deprecated. Use SignatureVersion directly instead.")]
-        bool IAmazonWebServiceRequest.UseSigV4
-        {
-            get { return UseSigV4; }
-            set { UseSigV4 = value; }
-        }
-
-        /// <summary>
-        /// This flag specifies if SigV4 will be used for the current request.
-        /// Returns true if the request will use SigV4.
-        /// Setting it to false will use SigV2.
-        /// </summary>
-        [Obsolete("UseSigV4 is deprecated. Use SignatureVersion directly instead.")]
-        protected bool UseSigV4
-        {
-            get { return ((IAmazonWebServiceRequest)this).SignatureVersion == SignatureVersion.SigV4; }
-            set { ((IAmazonWebServiceRequest)this).SignatureVersion = value ? SignatureVersion.SigV4 : SignatureVersion.SigV2; }
-        }
 
         /// <summary>
         /// Specifies which signature version will be used for the current request.

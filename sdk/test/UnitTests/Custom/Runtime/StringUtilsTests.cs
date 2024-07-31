@@ -34,38 +34,6 @@ namespace AWSSDK.UnitTests
         const string EXPECTED_FROM_DATE_STRING = "2018-07-18T00:00:00.000Z";
         static readonly DateTime EPOCH = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
 
-#pragma warning disable CS0618 // Type or member is obsolete
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void TestStringUtilsFromDateTimeUtc()
-        {
-            string convertedDateTime = StringUtils.FromDateTime(new DateTime(2018, 7, 18, 0, 0, 0, DateTimeKind.Utc));
-
-            Assert.AreEqual(EXPECTED_FROM_DATE_STRING, convertedDateTime);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void TestStringUtilsFromDateTimeUnspecified()
-        {
-            string convertedDateTime = StringUtils.FromDateTime(new DateTime(2018, 7, 18, 0, 0, 0));
-
-            Assert.AreEqual(EXPECTED_FROM_DATE_STRING, convertedDateTime);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void TestStringUtilsFromDateTimeLocal()
-        {
-            string convertedDateTime = StringUtils.FromDateTime(new DateTime(2018, 7, 18, 0, 0, 0, DateTimeKind.Local));
-
-            Assert.AreEqual(EXPECTED_FROM_DATE_STRING, convertedDateTime);
-        }
-#pragma warning restore CS0618 // Type or member is obsolete
-
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]

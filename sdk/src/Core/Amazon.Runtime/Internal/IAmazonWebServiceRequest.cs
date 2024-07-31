@@ -15,8 +15,6 @@ namespace Amazon.Runtime.Internal
 
         Dictionary<string, object> RequestState { get; }
 
-        [Obsolete("UseSigV4 is deprecated. Use SignatureVersion directly instead.")]
-        bool UseSigV4 { get; set; }
 
         SignatureVersion SignatureVersion { get; set; }
     }
