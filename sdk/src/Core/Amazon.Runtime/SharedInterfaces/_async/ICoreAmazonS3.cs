@@ -100,13 +100,5 @@ namespace Amazon.Runtime.SharedInterfaces
         /// </summary>
         /// <param name="bucketName"></param>
         Task EnsureBucketExistsAsync(string bucketName);
-
-        /// <summary>
-        /// Check to see if the bucket exists.
-        /// </summary>
-        /// <param name="bucketName"></param>
-        /// <returns></returns>
-        [Obsolete("This method is deprecated: its behavior is inconsistent and always uses HTTP. Please use Amazon.S3.Util.AmazonS3Util.DoesS3BucketExistV2Async instead.")]
-        Task<bool> DoesS3BucketExistAsync(string bucketName);
     }
 }

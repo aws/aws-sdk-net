@@ -314,11 +314,6 @@ namespace Amazon.Runtime.Internal
             set;
         }
 
-        /// <summary>
-        /// This flag specifies if SigV4 is required for the current request.
-        /// </summary>
-        [Obsolete("UseSigV4 is deprecated. Use SignatureVersion directly instead.")]
-        bool UseSigV4 { get; set; }
 
         /// <summary>
         /// Specifies which signature version shall be used for the current request.
