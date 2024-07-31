@@ -26,7 +26,7 @@ namespace SDKDocGenerator
         /// <summary>
         /// The preferred platform against which we generate documentation, if it's available.
         /// </summary>
-        public const string PreferredPlatform = "net45";
+        public const string PreferredPlatform = "net472";
 
         /// <summary>
         /// Represents a single service, supported on one or more platforms, that we will be

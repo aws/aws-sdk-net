@@ -39,8 +39,8 @@ namespace SDKDocGenerator
     public static class SDKDocRedirectWriter
     {
         public const string RedirectFileName = @"package.redirects.conf";
-        public const string DocPathPrefix    = @"/sdkfornet/v3/apidocs/index.html?page=";
-        public const string ToolId           = @"DotNetSDKV3";
+        public const string DocPathPrefix    = @"/sdkfornet/v4/apidocs/index.html?page=";
+        public const string ToolId           = @"DotNetSDKV4";
         
         private static Regex UrlPattern = new Regex(".*/WebAPI/(.*)/(.*)");
         private static IDictionary<string, ISet<RewriteRule>> _rulesForServices = new SortedDictionary<string, ISet<RewriteRule>>();
@@ -56,7 +56,7 @@ namespace SDKDocGenerator
                 }
 
                 // skip rule for all rules
-                writer.WriteLine(@"RewriteCond ""%{REQUEST_URI}"" ""!^/goto/DotNetSDKV3/""");
+                writer.WriteLine(@"RewriteCond ""%{REQUEST_URI}"" ""!^/goto/DotNetSDKV4/""");
                 writer.WriteLine(string.Format(@"RewriteRule "".?"" ""-"" [S={0}]", totalRuleCount));
 
                 foreach (var service in _rulesForServices)
