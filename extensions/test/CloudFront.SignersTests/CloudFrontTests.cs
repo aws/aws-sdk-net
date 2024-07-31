@@ -2,7 +2,6 @@ using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon.CloudFront;
-using Json.LitJson;
 using System.IO;
 
 namespace AWSSDK_DotNet.UnitTests

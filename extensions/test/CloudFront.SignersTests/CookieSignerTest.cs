@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 using Amazon.CloudFront;
-using Json.LitJson;
+using ThirdParty.Json.LitJson;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AWSSDK_DotNet.UnitTests
@@ -15,7 +15,9 @@ namespace AWSSDK_DotNet.UnitTests
         [TestInitialize]
         public void Initialize()
         {
-            privateRSAKeyStreamReader = new StreamReader(Utils.GetResourceStream("sample.rsa.private.key.txt"));
+            var resourceDirectory = Path.Combine(Environment.CurrentDirectory,"EmbeddedResource");
+            var privateKeyTxtPath = Path.Combine(resourceDirectory, "sample.rsa.private.key.txt");
+            privateRSAKeyStreamReader = new StreamReader(privateKeyTxtPath);
         }
 
         [TestMethod]

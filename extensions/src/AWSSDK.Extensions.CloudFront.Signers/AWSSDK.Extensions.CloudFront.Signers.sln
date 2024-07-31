@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35004.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.CloudFront.Signers.NetStandard", "AWSSDK.Extensions.CloudFront.Signers.NetStandard.csproj", "{E3C0A3CB-D6F7-4C1A-BFA7-DBF9BED717DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.NetStandard", "..\..\..\sdk\src\Core\AWSSDK.Core.NetStandard.csproj", "{15BAC258-3AB2-410E-9CEF-5BAA3DABD386}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudFront.NetStandard", "..\..\..\sdk\src\Services\CloudFront\AWSSDK.CloudFront.NetStandard.csproj", "{4DDC4D19-D7CE-4B82-AB8B-6D5FF61B912B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.CloudFront.Signers.NetFramework", "AWSSDK.Extensions.CloudFront.Signers.NetFramework.csproj", "{BE7CAD3A-8394-4AB5-88B1-559F5FFF1D9F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.NetFramework", "..\..\..\sdk\src\Core\AWSSDK.Core.NetFramework.csproj", "{7E772E19-83B8-4937-84E3-203503CFF3E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CloudFront.NetFramework", "..\..\..\sdk\src\Services\CloudFront\AWSSDK.CloudFront.NetFramework.csproj", "{8DB0ABF5-665F-42E1-8B42-D63D9F161B2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3C0A3CB-D6F7-4C1A-BFA7-DBF9BED717DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3C0A3CB-D6F7-4C1A-BFA7-DBF9BED717DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3C0A3CB-D6F7-4C1A-BFA7-DBF9BED717DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3C0A3CB-D6F7-4C1A-BFA7-DBF9BED717DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15BAC258-3AB2-410E-9CEF-5BAA3DABD386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15BAC258-3AB2-410E-9CEF-5BAA3DABD386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15BAC258-3AB2-410E-9CEF-5BAA3DABD386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15BAC258-3AB2-410E-9CEF-5BAA3DABD386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DDC4D19-D7CE-4B82-AB8B-6D5FF61B912B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DDC4D19-D7CE-4B82-AB8B-6D5FF61B912B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DDC4D19-D7CE-4B82-AB8B-6D5FF61B912B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DDC4D19-D7CE-4B82-AB8B-6D5FF61B912B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE7CAD3A-8394-4AB5-88B1-559F5FFF1D9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE7CAD3A-8394-4AB5-88B1-559F5FFF1D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE7CAD3A-8394-4AB5-88B1-559F5FFF1D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE7CAD3A-8394-4AB5-88B1-559F5FFF1D9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E772E19-83B8-4937-84E3-203503CFF3E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E772E19-83B8-4937-84E3-203503CFF3E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E772E19-83B8-4937-84E3-203503CFF3E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E772E19-83B8-4937-84E3-203503CFF3E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB0ABF5-665F-42E1-8B42-D63D9F161B2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB0ABF5-665F-42E1-8B42-D63D9F161B2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB0ABF5-665F-42E1-8B42-D63D9F161B2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB0ABF5-665F-42E1-8B42-D63D9F161B2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58B4B485-D9A1-4702-AD7F-0FB577945016}
+	EndGlobalSection
+EndGlobal

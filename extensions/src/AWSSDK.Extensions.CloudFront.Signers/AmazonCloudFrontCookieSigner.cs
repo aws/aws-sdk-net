@@ -22,7 +22,6 @@ using Amazon.CloudFront.Model;
 using Amazon.Runtime;
 using Amazon.Util;
 
-using ThirdParty.BouncyCastle.OpenSsl;
 using System.Globalization;
 
 namespace Amazon.CloudFront
