@@ -16,14 +16,15 @@ using Amazon.Runtime.Internal.Transform;
 using AWSSDK_DotNet.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.IO;
 
 namespace AWSSDK.UnitTests
 {
     [TestClass]
     public class SimpleTypeUnmarshallerTests
     {
-        private static readonly string JsonWithValues = "{'Priority': 1, 'ReservoirQuotaTTL': 1533081600, 'StartTimeISO8601': '2018-08-01T00:00:00.0000000Z', 'StartTimeEpoch': 1533081600, 'StartTimeRFC822': 'Wed, 01 Aug 2018 00:00:00 GMT'}".Replace("'", "\"");
-        private static readonly string JsonWithNullValues = "{'Priority': null, 'ReservoirQuotaTTL': null, 'StartTimeISO8601': null, 'StartTimeEpoch': null, 'StartTimeRFC822': null}".Replace("'", "\"");
+        private static readonly string JsonWithValues = "{'Priority': 1, 'ReservoirQuotaTTL': 1533081600, 'StartTimeISO8601': '2018-08-01T00:00:00.0000000Z', 'StartTimeEpoch': 1533081600, 'StartTimeRFC822': 'Wed, 01 Aug 2018 00:00:00 GMT', 'Stream':'SEVMTE8='}".Replace("'", "\"");
+        private static readonly string JsonWithNullValues = "{'Priority': null, 'ReservoirQuotaTTL': null, 'StartTimeISO8601': null, 'StartTimeEpoch': null, 'StartTimeRFC822': null, 'Stream': null}".Replace("'", "\"");
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -64,7 +65,7 @@ namespace AWSSDK.UnitTests
             int targetDepth = context.CurrentDepth;
             var model = new Model();
             bool isSetPriority = false, isSetReservoirQuotaTTL = false, isSetStartTimeISO8601 = false, 
-                isSetStartTimeEpoch = false, isSetStartTimeRFC822 = false;
+                isSetStartTimeEpoch = false, isSetStartTimeRFC822 = false, isSetStream = false;
             while (context.ReadAtDepth(targetDepth))
             {
                 if (context.TestExpression("Priority", targetDepth))
@@ -97,8 +98,21 @@ namespace AWSSDK.UnitTests
                     model.StartTimeRFC822 = unmarshaller.Unmarshall(context);
                     isSetStartTimeRFC822 = true;
                 }
+                if (context.TestExpression("Stream", targetDepth))
+                {
+                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
+                    model.Stream = unmarshaller.Unmarshall(context);
+
+                    if (model.Stream != null)
+                    {
+                        // V4 added support for getting access to the buffer to allow customers to avoid copying data.
+                        Assert.IsTrue(model.Stream.GetBuffer().Length > 0);
+                    }
+
+                    isSetStream = true;
+                }
             }
-            if (!(isSetPriority && isSetReservoirQuotaTTL && isSetStartTimeISO8601 && isSetStartTimeEpoch && isSetStartTimeRFC822))
+            if (!(isSetPriority && isSetReservoirQuotaTTL && isSetStartTimeISO8601 && isSetStartTimeEpoch && isSetStartTimeRFC822 && isSetStream))
             {
                 throw new Exception($"Could not parse all properties in JSON '{json}'");
             }
@@ -112,6 +126,7 @@ namespace AWSSDK.UnitTests
             public DateTime StartTimeISO8601 { get; set; }
             public DateTime StartTimeEpoch { get; set; }
             public DateTime StartTimeRFC822 { get; set; }
+            public MemoryStream Stream { get; set; }
         }
     }
 }
