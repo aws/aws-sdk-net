@@ -238,23 +238,6 @@ namespace Amazon.Auth.AccessControlPolicy
         }
 
         /// <summary>
-        /// This method is deprecated. Invoking this method results in non-UTC DateTimes
-        /// not being marshalled correctly. Use NewConditionUtc instead.
-        /// Constructs a new access policy condition that compares the current time
-        /// (on the AWS servers) to the specified date.
-        /// </summary>
-        /// <param name="type">The type of comparison to perform. For example,
-        ///            DateComparisonType.DateLessThan will cause this policy
-        ///            condition to evaluate to true if the current date is less than
-        ///            the date specified in the second argument.</param>
-        /// <param name="date">The date to compare against.</param>
-        [Obsolete("Invoking this method results in non-UTC DateTimes not being marshalled correctly. Use NewConditionUtc instead.", false)]
-        public static Condition NewCondition(DateComparisonType type, DateTime date)
-        {
-            return new Condition(type.ToString(), CURRENT_TIME_CONDITION_KEY, date.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture));
-        }
-
-        /// <summary>
         /// Constructs a new access policy condition that compares the current time
         /// (on the AWS servers) to the specified date.
         /// </summary>
