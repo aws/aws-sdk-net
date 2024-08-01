@@ -62,8 +62,5 @@
     <Reference Include="System.Configuration"/>
   </ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Include="Custom/EmbeddedResource/*"/>
-  </ItemGroup>
 
 </Project>
