@@ -84,6 +84,14 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <c>all-open</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>customer-action-completed</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>opened</c> 
     /// </para>
     ///  </li> <li> 
@@ -299,6 +307,14 @@ namespace Amazon.AWSSupport.Model
         /// Valid values:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <c>all-open</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>customer-action-completed</c> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <c>opened</c> 
         /// </para>

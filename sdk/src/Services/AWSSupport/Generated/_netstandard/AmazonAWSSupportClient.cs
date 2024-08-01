@@ -90,8 +90,8 @@ namespace Amazon.AWSSupport
     ///  </li> </ul> 
     /// <para>
     /// You can also use the Amazon Web Services Support API to call the Trusted Advisor operations.
-    /// For more information, see <a href="https://docs.aws.amazon.com/">Trusted Advisor</a>
-    /// in the <i>Amazon Web Services Support User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html">Trusted
+    /// Advisor</a> in the <i>Amazon Web Services Support User Guide</i>.
     /// </para>
     ///  
     /// <para>
