@@ -1,3 +1,23 @@
+### 3.7.856.0 (2024-08-01 18:28 UTC)
+* AWSSupport (3.7.400.3)
+	* Doc only updates to CaseDetails
+* Bedrock (3.7.401.0)
+	* API and Documentation for Bedrock Model Copy feature. This feature lets you share and copy a custom model from one region to another or one account to another.
+* ControlCatalog (3.7.401.0)
+	* AWS Control Tower provides two new public APIs controlcatalog:ListControls and controlcatalog:GetControl under controlcatalog service namespace, which enable customers to programmatically retrieve control metadata of available controls.
+* ControlTower (3.7.400.3)
+	* Updated Control Tower service documentation for controlcatalog control ARN support with existing Control Tower public APIs
+* IdentityManagement (3.7.401.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* MemoryDB (3.7.400.3)
+	* Doc only update for changes to deletion API.
+* RDS (3.7.401.0)
+	* This release adds support for specifying optional MinACU parameter in CreateDBShardGroup and ModifyDBShardGroup API. DBShardGroup response will contain MinACU if specified.
+* SageMaker (3.7.401.0)
+	* This release adds support for Amazon EMR Serverless applications in SageMaker Studio for running data processing jobs.
+* SSMQuickSetup (3.7.400.0)
+	* This release adds API support for the QuickSetup feature of AWS Systems Manager
+
 ### 3.7.855.0 (2024-07-30 18:28 UTC)
 * AppStream (3.7.401.0)
 	* Added support for Red Hat Enterprise Linux 8 on Amazon AppStream 2.0
