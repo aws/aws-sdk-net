@@ -423,6 +423,13 @@ namespace Amazon.MemoryDB
 
         /// <summary>
         /// Deletes a cluster. It also deletes all associated nodes and node endpoints
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <c>CreateSnapshot</c> permission is required to create a final snapshot. Without
+        /// this permission, the API call will fail with an <c>Access Denied</c> exception.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
         /// <param name="cancellationToken">
