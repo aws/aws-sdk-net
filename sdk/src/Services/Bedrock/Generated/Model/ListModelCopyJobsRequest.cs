@@ -30,32 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListModelCustomizationJobs operation.
-    /// Returns a list of model customization jobs that you have submitted. You can filter
-    /// the jobs to return based on one or more criteria.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-    /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+    /// Container for the parameters to the ListModelCopyJobs operation.
+    /// Returns a list of model copy jobs that you have submitted. You can filter the jobs
+    /// to return based on one or more criteria. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
+    /// models to be used in other regions</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
     /// Bedrock User Guide</a>.
-    /// </para>
     /// </summary>
-    public partial class ListModelCustomizationJobsRequest : AmazonBedrockRequest
+    public partial class ListModelCopyJobsRequest : AmazonBedrockRequest
     {
         private DateTime? _creationTimeAfter;
         private DateTime? _creationTimeBefore;
         private int? _maxResults;
-        private string _nameContains;
         private string _nextToken;
         private SortJobsBy _sortBy;
         private SortOrder _sortOrder;
-        private FineTuningJobStatus _statusEquals;
+        private string _sourceAccountEquals;
+        private string _sourceModelArnEquals;
+        private ModelCopyJobStatus _statusEquals;
+        private string _targetModelNameContains;
 
         /// <summary>
         /// Gets and sets the property CreationTimeAfter. 
         /// <para>
-        /// Return customization jobs created after the specified time. 
+        /// Filters for model copy jobs created after the specified time.
         /// </para>
         /// </summary>
         public DateTime CreationTimeAfter
@@ -73,7 +70,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property CreationTimeBefore. 
         /// <para>
-        /// Return customization jobs created before the specified time. 
+        /// Filters for model copy jobs created before the specified time. 
         /// </para>
         /// </summary>
         public DateTime CreationTimeBefore
@@ -110,25 +107,6 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NameContains. 
-        /// <para>
-        /// Return customization jobs only if the job name contains these characters.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=63)]
-        public string NameContains
-        {
-            get { return this._nameContains; }
-            set { this._nameContains = value; }
-        }
-
-        // Check to see if NameContains property is set
-        internal bool IsSetNameContains()
-        {
-            return this._nameContains != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the total number of results is greater than the <c>maxResults</c> value provided
@@ -152,7 +130,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The field to sort by in the returned list of jobs.
+        /// The field to sort by in the returned list of model copy jobs.
         /// </para>
         /// </summary>
         public SortJobsBy SortBy
@@ -170,7 +148,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order of the results.
+        /// Specifies whether to sort the results in ascending or descending order.
         /// </para>
         /// </summary>
         public SortOrder SortOrder
@@ -186,12 +164,51 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusEquals. 
+        /// Gets and sets the property SourceAccountEquals. 
         /// <para>
-        /// Return customization jobs with the specified status. 
+        /// Filters for model copy jobs in which the account that the source model belongs to
+        /// is equal to the value that you specify.
         /// </para>
         /// </summary>
-        public FineTuningJobStatus StatusEquals
+        public string SourceAccountEquals
+        {
+            get { return this._sourceAccountEquals; }
+            set { this._sourceAccountEquals = value; }
+        }
+
+        // Check to see if SourceAccountEquals property is set
+        internal bool IsSetSourceAccountEquals()
+        {
+            return this._sourceAccountEquals != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceModelArnEquals. 
+        /// <para>
+        /// Filters for model copy jobs in which the Amazon Resource Name (ARN) of the source
+        /// model to is equal to the value that you specify.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=1011)]
+        public string SourceModelArnEquals
+        {
+            get { return this._sourceModelArnEquals; }
+            set { this._sourceModelArnEquals = value; }
+        }
+
+        // Check to see if SourceModelArnEquals property is set
+        internal bool IsSetSourceModelArnEquals()
+        {
+            return this._sourceModelArnEquals != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusEquals. 
+        /// <para>
+        /// Filters for model copy jobs whose status matches the value that you specify.
+        /// </para>
+        /// </summary>
+        public ModelCopyJobStatus StatusEquals
         {
             get { return this._statusEquals; }
             set { this._statusEquals = value; }
@@ -201,6 +218,26 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetStatusEquals()
         {
             return this._statusEquals != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetModelNameContains. 
+        /// <para>
+        /// Filters for model copy jobs in which the name of the copied model contains the string
+        /// that you specify.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string TargetModelNameContains
+        {
+            get { return this._targetModelNameContains; }
+            set { this._targetModelNameContains = value; }
+        }
+
+        // Check to see if TargetModelNameContains property is set
+        internal bool IsSetTargetModelNameContains()
+        {
+            return this._targetModelNameContains != null;
         }
 
     }

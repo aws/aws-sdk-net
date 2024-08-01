@@ -30,32 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteCustomModel operation.
-    /// Deletes a custom model that you created earlier. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-    /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
-    /// Bedrock User Guide</a>.
+    /// This is the response object from the CreateModelCopyJob operation.
     /// </summary>
-    public partial class DeleteCustomModelRequest : AmazonBedrockRequest
+    public partial class CreateModelCopyJobResponse : AmazonWebServiceResponse
     {
-        private string _modelIdentifier;
+        private string _jobArn;
 
         /// <summary>
-        /// Gets and sets the property ModelIdentifier. 
+        /// Gets and sets the property JobArn. 
         /// <para>
-        /// Name of the model to delete.
+        /// The Amazon Resource Name (ARN) of the model copy job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
-        public string ModelIdentifier
+        [AWSProperty(Required=true, Min=0, Max=1011)]
+        public string JobArn
         {
-            get { return this._modelIdentifier; }
-            set { this._modelIdentifier = value; }
+            get { return this._jobArn; }
+            set { this._jobArn = value; }
         }
 
-        // Check to see if ModelIdentifier property is set
-        internal bool IsSetModelIdentifier()
+        // Check to see if JobArn property is set
+        internal bool IsSetJobArn()
         {
-            return this._modelIdentifier != null;
+            return this._jobArn != null;
         }
 
     }

@@ -59,7 +59,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of PII entity. For example, Social Security Number.
+        /// The type of PII entity. For exampvle, Social Security Number.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

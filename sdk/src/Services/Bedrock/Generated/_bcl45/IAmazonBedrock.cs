@@ -51,7 +51,7 @@ namespace Amazon.Bedrock
         /// API operation for creating and managing Amazon Bedrock automatic model evaluation
         /// jobs and model evaluation jobs that use human workers. To learn more about the requirements
         /// for creating a model evaluation job see, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-        /// evaluations</a>.
+        /// evaluation</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEvaluationJob service method.</param>
         /// 
@@ -87,7 +87,7 @@ namespace Amazon.Bedrock
         /// API operation for creating and managing Amazon Bedrock automatic model evaluation
         /// jobs and model evaluation jobs that use human workers. To learn more about the requirements
         /// for creating a model evaluation job see, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-        /// evaluations</a>.
+        /// evaluation</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEvaluationJob service method.</param>
         /// <param name="cancellationToken">
@@ -362,6 +362,70 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  CreateModelCopyJob
+
+
+        /// <summary>
+        /// Copies a model to another region so that it can be used there. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
+        /// models to be used in other regions</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelCopyJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateModelCopyJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelCopyJob">REST API Reference for CreateModelCopyJob Operation</seealso>
+        CreateModelCopyJobResponse CreateModelCopyJob(CreateModelCopyJobRequest request);
+
+
+
+        /// <summary>
+        /// Copies a model to another region so that it can be used there. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
+        /// models to be used in other regions</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelCopyJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateModelCopyJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelCopyJob">REST API Reference for CreateModelCopyJob Operation</seealso>
+        Task<CreateModelCopyJobResponse> CreateModelCopyJobAsync(CreateModelCopyJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateModelCustomizationJob
 
 
@@ -389,7 +453,8 @@ namespace Amazon.Bedrock
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateModelCustomizationJob service method.</param>
@@ -451,7 +516,8 @@ namespace Amazon.Bedrock
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateModelCustomizationJob service method.</param>
@@ -499,7 +565,8 @@ namespace Amazon.Bedrock
         /// Creates dedicated throughput for a base or custom model with the model units and for
         /// the duration that you specify. For pricing details, see <a href="http://aws.amazon.com/bedrock/pricing/">Amazon
         /// Bedrock Pricing</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> in the Amazon Bedrock User Guide.
+        /// Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisionedModelThroughput service method.</param>
         /// 
@@ -537,7 +604,8 @@ namespace Amazon.Bedrock
         /// Creates dedicated throughput for a base or custom model with the model units and for
         /// the duration that you specify. For pricing details, see <a href="http://aws.amazon.com/bedrock/pricing/">Amazon
         /// Bedrock Pricing</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> in the Amazon Bedrock User Guide.
+        /// Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisionedModelThroughput service method.</param>
         /// <param name="cancellationToken">
@@ -579,7 +647,8 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Deletes a custom model that you created earlier. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomModel service method.</param>
         /// 
@@ -610,7 +679,8 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Deletes a custom model that you created earlier. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomModel service method.</param>
         /// <param name="cancellationToken">
@@ -784,7 +854,8 @@ namespace Amazon.Bedrock
         /// <summary>
         /// Deletes a Provisioned Throughput. You can't delete a Provisioned Throughput before
         /// the commitment term is over. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> in the Amazon Bedrock User Guide.
+        /// Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProvisionedModelThroughput service method.</param>
         /// 
@@ -816,7 +887,8 @@ namespace Amazon.Bedrock
         /// <summary>
         /// Deletes a Provisioned Throughput. You can't delete a Provisioned Throughput before
         /// the commitment term is over. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> in the Amazon Bedrock User Guide.
+        /// Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProvisionedModelThroughput service method.</param>
         /// <param name="cancellationToken">
@@ -854,7 +926,8 @@ namespace Amazon.Bedrock
         /// <summary>
         /// Get the properties associated with a Amazon Bedrock custom model that you have created.For
         /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCustomModel service method.</param>
         /// 
@@ -883,7 +956,8 @@ namespace Amazon.Bedrock
         /// <summary>
         /// Get the properties associated with a Amazon Bedrock custom model that you have created.For
         /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCustomModel service method.</param>
         /// <param name="cancellationToken">
@@ -917,8 +991,8 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Retrieves the properties associated with a model evaluation job, including the status
-        /// of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/latest/userguide/model-evaluation.html">Model
-        /// evaluations</a>.
+        /// of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
+        /// evaluation</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvaluationJob service method.</param>
         /// 
@@ -946,8 +1020,8 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Retrieves the properties associated with a model evaluation job, including the status
-        /// of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/latest/userguide/model-evaluation.html">Model
-        /// evaluations</a>.
+        /// of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
+        /// evaluation</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvaluationJob service method.</param>
         /// <param name="cancellationToken">
@@ -1098,13 +1172,78 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  GetModelCopyJob
+
+
+        /// <summary>
+        /// Retrieves information about a model copy job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
+        /// models to be used in other regions</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetModelCopyJob service method.</param>
+        /// 
+        /// <returns>The response from the GetModelCopyJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelCopyJob">REST API Reference for GetModelCopyJob Operation</seealso>
+        GetModelCopyJobResponse GetModelCopyJob(GetModelCopyJobRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about a model copy job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
+        /// models to be used in other regions</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetModelCopyJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetModelCopyJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelCopyJob">REST API Reference for GetModelCopyJob Operation</seealso>
+        Task<GetModelCopyJobResponse> GetModelCopyJobAsync(GetModelCopyJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetModelCustomizationJob
 
 
         /// <summary>
         /// Retrieves the properties associated with a model-customization job, including the
         /// status of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetModelCustomizationJob service method.</param>
         /// 
@@ -1133,7 +1272,8 @@ namespace Amazon.Bedrock
         /// <summary>
         /// Retrieves the properties associated with a model-customization job, including the
         /// status of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetModelCustomizationJob service method.</param>
         /// <param name="cancellationToken">
@@ -1213,7 +1353,8 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Returns details for a Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> in the Amazon Bedrock User Guide.
+        /// Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProvisionedModelThroughput service method.</param>
         /// 
@@ -1241,7 +1382,8 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Returns details for a Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> in the Amazon Bedrock User Guide.
+        /// Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProvisionedModelThroughput service method.</param>
         /// <param name="cancellationToken">
@@ -1280,7 +1422,8 @@ namespace Amazon.Bedrock
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCustomModels service method.</param>
@@ -1310,7 +1453,8 @@ namespace Amazon.Bedrock
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCustomModels service method.</param>
@@ -1394,7 +1538,8 @@ namespace Amazon.Bedrock
         /// <summary>
         /// Lists Amazon Bedrock foundation models that you can use. You can filter the results
         /// with the request parameters. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFoundationModels service method.</param>
         /// 
@@ -1419,7 +1564,8 @@ namespace Amazon.Bedrock
         /// <summary>
         /// Lists Amazon Bedrock foundation models that you can use. You can filter the results
         /// with the request parameters. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFoundationModels service method.</param>
         /// <param name="cancellationToken">
@@ -1526,6 +1672,72 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  ListModelCopyJobs
+
+
+        /// <summary>
+        /// Returns a list of model copy jobs that you have submitted. You can filter the jobs
+        /// to return based on one or more criteria. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
+        /// models to be used in other regions</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelCopyJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListModelCopyJobs service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelCopyJobs">REST API Reference for ListModelCopyJobs Operation</seealso>
+        ListModelCopyJobsResponse ListModelCopyJobs(ListModelCopyJobsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of model copy jobs that you have submitted. You can filter the jobs
+        /// to return based on one or more criteria. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
+        /// models to be used in other regions</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelCopyJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListModelCopyJobs service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelCopyJobs">REST API Reference for ListModelCopyJobs Operation</seealso>
+        Task<ListModelCopyJobsResponse> ListModelCopyJobsAsync(ListModelCopyJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListModelCustomizationJobs
 
 
@@ -1536,7 +1748,8 @@ namespace Amazon.Bedrock
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListModelCustomizationJobs service method.</param>
@@ -1566,7 +1779,8 @@ namespace Amazon.Bedrock
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListModelCustomizationJobs service method.</param>
@@ -1597,7 +1811,8 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Lists the Provisioned Throughputs in the account. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> in the Amazon Bedrock User Guide.
+        /// Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProvisionedModelThroughputs service method.</param>
         /// 
@@ -1621,7 +1836,8 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Lists the Provisioned Throughputs in the account. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> in the Amazon Bedrock User Guide.
+        /// Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProvisionedModelThroughputs service method.</param>
         /// <param name="cancellationToken">
@@ -1655,7 +1871,8 @@ namespace Amazon.Bedrock
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
-        /// resources</a> in the Amazon Bedrock User Guide.
+        /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -1688,7 +1905,8 @@ namespace Amazon.Bedrock
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
-        /// resources</a> in the Amazon Bedrock User Guide.
+        /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -1841,7 +2059,8 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Stops an active model customization job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopModelCustomizationJob service method.</param>
         /// 
@@ -1872,7 +2091,8 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Stops an active model customization job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopModelCustomizationJob service method.</param>
         /// <param name="cancellationToken">
@@ -1909,7 +2129,8 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
-        /// resources</a> in the Amazon Bedrock User Guide.
+        /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1942,7 +2163,8 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
-        /// resources</a> in the Amazon Bedrock User Guide.
+        /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1981,7 +2203,8 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Remove one or more tags from a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
-        /// resources</a> in the Amazon Bedrock User Guide.
+        /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -2009,7 +2232,8 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Remove one or more tags from a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
-        /// resources</a> in the Amazon Bedrock User Guide.
+        /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2220,7 +2444,8 @@ namespace Amazon.Bedrock
         /// <summary>
         /// Updates the name or associated model for a Provisioned Throughput. For more information,
         /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> in the Amazon Bedrock User Guide.
+        /// Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProvisionedModelThroughput service method.</param>
         /// 
@@ -2249,7 +2474,8 @@ namespace Amazon.Bedrock
         /// <summary>
         /// Updates the name or associated model for a Provisioned Throughput. For more information,
         /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> in the Amazon Bedrock User Guide.
+        /// Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProvisionedModelThroughput service method.</param>
         /// <param name="cancellationToken">

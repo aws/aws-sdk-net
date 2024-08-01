@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListCustomModels Request Marshaller
+    /// ListModelCopyJobs Request Marshaller
     /// </summary>       
-    public class ListCustomModelsRequestMarshaller : IMarshaller<IRequest, ListCustomModelsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListModelCopyJobsRequestMarshaller : IMarshaller<IRequest, ListModelCopyJobsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListCustomModelsRequest)input);
+            return this.Marshall((ListModelCopyJobsRequest)input);
         }
 
         /// <summary>
@@ -53,15 +53,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListCustomModelsRequest publicRequest)
+        public IRequest Marshall(ListModelCopyJobsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Bedrock");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-04-20";
             request.HttpMethod = "GET";
 
-            
-            if (publicRequest.IsSetBaseModelArnEquals())
-                request.Parameters.Add("baseModelArnEquals", StringUtils.FromString(publicRequest.BaseModelArnEquals));
             
             if (publicRequest.IsSetCreationTimeAfter())
                 request.Parameters.Add("creationTimeAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreationTimeAfter));
@@ -69,17 +66,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetCreationTimeBefore())
                 request.Parameters.Add("creationTimeBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreationTimeBefore));
             
-            if (publicRequest.IsSetFoundationModelArnEquals())
-                request.Parameters.Add("foundationModelArnEquals", StringUtils.FromString(publicRequest.FoundationModelArnEquals));
-            
-            if (publicRequest.IsSetIsOwned())
-                request.Parameters.Add("isOwned", StringUtils.FromBool(publicRequest.IsOwned));
-            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNameContains())
-                request.Parameters.Add("nameContains", StringUtils.FromString(publicRequest.NameContains));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
@@ -89,14 +77,26 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetSortOrder())
                 request.Parameters.Add("sortOrder", StringUtils.FromString(publicRequest.SortOrder));
-            request.ResourcePath = "/custom-models";
+            
+            if (publicRequest.IsSetSourceAccountEquals())
+                request.Parameters.Add("sourceAccountEquals", StringUtils.FromString(publicRequest.SourceAccountEquals));
+            
+            if (publicRequest.IsSetSourceModelArnEquals())
+                request.Parameters.Add("sourceModelArnEquals", StringUtils.FromString(publicRequest.SourceModelArnEquals));
+            
+            if (publicRequest.IsSetStatusEquals())
+                request.Parameters.Add("statusEquals", StringUtils.FromString(publicRequest.StatusEquals));
+            
+            if (publicRequest.IsSetTargetModelNameContains())
+                request.Parameters.Add("outputModelNameContains", StringUtils.FromString(publicRequest.TargetModelNameContains));
+            request.ResourcePath = "/model-copy-jobs";
             request.UseQueryString = true;
 
             return request;
         }
-        private static ListCustomModelsRequestMarshaller _instance = new ListCustomModelsRequestMarshaller();        
+        private static ListModelCopyJobsRequestMarshaller _instance = new ListModelCopyJobsRequestMarshaller();        
 
-        internal static ListCustomModelsRequestMarshaller GetInstance()
+        internal static ListModelCopyJobsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -104,7 +104,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListCustomModelsRequestMarshaller Instance
+        public static ListModelCopyJobsRequestMarshaller Instance
         {
             get
             {

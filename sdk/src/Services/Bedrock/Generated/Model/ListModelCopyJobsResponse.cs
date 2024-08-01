@@ -30,29 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// This is the response object from the ListModelCustomizationJobs operation.
+    /// This is the response object from the ListModelCopyJobs operation.
     /// </summary>
-    public partial class ListModelCustomizationJobsResponse : AmazonWebServiceResponse
+    public partial class ListModelCopyJobsResponse : AmazonWebServiceResponse
     {
-        private List<ModelCustomizationJobSummary> _modelCustomizationJobSummaries = AWSConfigs.InitializeCollections ? new List<ModelCustomizationJobSummary>() : null;
+        private List<ModelCopyJobSummary> _modelCopyJobSummaries = AWSConfigs.InitializeCollections ? new List<ModelCopyJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ModelCustomizationJobSummaries. 
+        /// Gets and sets the property ModelCopyJobSummaries. 
         /// <para>
-        /// Job summaries.
+        /// A list of information about each model copy job.
         /// </para>
         /// </summary>
-        public List<ModelCustomizationJobSummary> ModelCustomizationJobSummaries
+        public List<ModelCopyJobSummary> ModelCopyJobSummaries
         {
-            get { return this._modelCustomizationJobSummaries; }
-            set { this._modelCustomizationJobSummaries = value; }
+            get { return this._modelCopyJobSummaries; }
+            set { this._modelCopyJobSummaries = value; }
         }
 
-        // Check to see if ModelCustomizationJobSummaries property is set
-        internal bool IsSetModelCustomizationJobSummaries()
+        // Check to see if ModelCopyJobSummaries property is set
+        internal bool IsSetModelCopyJobSummaries()
         {
-            return this._modelCustomizationJobSummaries != null && (this._modelCustomizationJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._modelCopyJobSummaries != null && (this._modelCopyJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

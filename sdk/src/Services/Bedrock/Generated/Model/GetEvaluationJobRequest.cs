@@ -32,8 +32,8 @@ namespace Amazon.Bedrock.Model
     /// <summary>
     /// Container for the parameters to the GetEvaluationJob operation.
     /// Retrieves the properties associated with a model evaluation job, including the status
-    /// of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/latest/userguide/model-evaluation.html">Model
-    /// evaluations</a>.
+    /// of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
+    /// evaluation</a>.
     /// </summary>
     public partial class GetEvaluationJobRequest : AmazonBedrockRequest
     {
