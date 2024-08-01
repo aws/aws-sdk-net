@@ -522,18 +522,7 @@ namespace Amazon.CloudFront
                 var pemReader = new PemReader(privateKeyReader);
                 var keyPair = pemReader.ReadObject() as AsymmetricCipherKeyPair;
                 var privateKey = keyPair.Private as RsaPrivateCrtKeyParameters;
-
-                rsaParams = new RSAParameters
-                {
-                    Modulus = privateKey.Modulus.ToByteArrayUnsigned(),
-                    Exponent = privateKey.PublicExponent.ToByteArrayUnsigned(),
-                    D = privateKey.Exponent.ToByteArrayUnsigned(),
-                    P = privateKey.P.ToByteArrayUnsigned(),
-                    Q = privateKey.Q.ToByteArrayUnsigned(),
-                    DP = privateKey.DP.ToByteArrayUnsigned(),
-                    DQ = privateKey.DQ.ToByteArrayUnsigned(),
-                    InverseQ = privateKey.QInv.ToByteArrayUnsigned()
-                };
+                rsaParams = DotNetUtilities.ToRSAParameters(privateKey);
 
             }
             catch (Exception e)

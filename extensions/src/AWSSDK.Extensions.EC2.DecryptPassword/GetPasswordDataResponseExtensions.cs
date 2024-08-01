@@ -26,6 +26,8 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
+using Org.BouncyCastle.Security;
+using ThirdParty.BouncyCastle.OpenSsl;
 namespace Amazon.EC2.Model
 {
     public static class GetPasswordDataResponseExtensions
@@ -41,19 +43,32 @@ namespace Amazon.EC2.Model
             RSAParameters rsaParams;
             try
             {
-                var keyPair  = new PemReader(new StringReader(rsaPrivateKey.Trim())).ReadObject() as AsymmetricCipherKeyPair;
+                //rsaParams = new PemReader(new StringReader(rsaPrivateKey.Trim())).ReadPrivatekey();
+                var keyPair = new Org.BouncyCastle.OpenSsl.PemReader(new StringReader(rsaPrivateKey.Trim())).ReadObject() as AsymmetricCipherKeyPair;
                 var privateKey = keyPair.Private as RsaPrivateCrtKeyParameters;
-                rsaParams = new RSAParameters
-                {
-                    Modulus = privateKey.Modulus.ToByteArrayUnsigned(),
-                    Exponent = privateKey.PublicExponent.ToByteArrayUnsigned(),
-                    D = privateKey.Exponent.ToByteArrayUnsigned(),
-                    P = privateKey.P.ToByteArrayUnsigned(),
-                    Q = privateKey.Q.ToByteArrayUnsigned(),
-                    DP = privateKey.DP.ToByteArrayUnsigned(),
-                    DQ = privateKey.DQ.ToByteArrayUnsigned(),
-                    InverseQ = privateKey.QInv.ToByteArrayUnsigned()
-                };
+                rsaParams = DotNetUtilities.ToRSAParameters(privateKey);
+            }
+            catch (Exception e)
+            {
+                throw new AmazonEC2Exception("Invalid RSA Private Key", e);
+            }
+
+            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            rsa.ImportParameters(rsaParams);
+
+            byte[] encryptedBytes = Convert.FromBase64String(getPasswordDataResponse.PasswordData);
+            var decryptedBytes = rsa.Decrypt(encryptedBytes, false);
+
+            string decrypted = Encoding.UTF8.GetString(decryptedBytes);
+            return decrypted;
+        }
+
+        public static string GetDecryptedPasswordOld(this GetPasswordDataResponse getPasswordDataResponse, string rsaPrivateKey)
+        {
+            RSAParameters rsaParams;
+            try
+            {
+                rsaParams = new ThirdParty.BouncyCastle.OpenSsl.PemReader(new StringReader(rsaPrivateKey.Trim())).ReadPrivatekey();
             }
             catch (Exception e)
             {
