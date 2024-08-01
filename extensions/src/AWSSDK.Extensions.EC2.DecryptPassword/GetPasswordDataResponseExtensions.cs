@@ -62,27 +62,5 @@ namespace Amazon.EC2.Model
             string decrypted = Encoding.UTF8.GetString(decryptedBytes);
             return decrypted;
         }
-
-        public static string GetDecryptedPasswordOld(this GetPasswordDataResponse getPasswordDataResponse, string rsaPrivateKey)
-        {
-            RSAParameters rsaParams;
-            try
-            {
-                rsaParams = new ThirdParty.BouncyCastle.OpenSsl.PemReader(new StringReader(rsaPrivateKey.Trim())).ReadPrivatekey();
-            }
-            catch (Exception e)
-            {
-                throw new AmazonEC2Exception("Invalid RSA Private Key", e);
-            }
-
-            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
-            rsa.ImportParameters(rsaParams);
-
-            byte[] encryptedBytes = Convert.FromBase64String(getPasswordDataResponse.PasswordData);
-            var decryptedBytes = rsa.Decrypt(encryptedBytes, false);
-
-            string decrypted = Encoding.UTF8.GetString(decryptedBytes);
-            return decrypted;
-        }
     }
 }
