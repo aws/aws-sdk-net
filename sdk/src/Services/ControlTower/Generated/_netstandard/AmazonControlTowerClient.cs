@@ -109,6 +109,11 @@ namespace Amazon.ControlTower
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListLandingZoneOperations.html">ListLandingZoneOperations</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ResetLandingZone.html">ResetLandingZone</a>
     /// 
     /// </para>
@@ -169,8 +174,8 @@ namespace Amazon.ControlTower
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/tagging.html">Tagging</a>
-    /// 
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/tagging.html">
+    /// <i>Tagging</i> </a> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -231,9 +236,13 @@ namespace Amazon.ControlTower
     /// </para>
     ///  
     /// <para>
-    /// The <c>controlIdentifier</c> is unique in each Amazon Web Services Region for each
-    /// control. You can find the <c>controlIdentifier</c> for each Region and control in
-    /// the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-metadata-tables.html">Tables
+    ///  <b>About identifiers for Amazon Web Services Control Tower</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The Amazon Web Services Control Tower <c>controlIdentifier</c> is unique in each Amazon
+    /// Web Services Region for each control. You can find the <c>controlIdentifier</c> for
+    /// each Region and control in the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-metadata-tables.html">Tables
     /// of control metadata</a> or the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-region-tables.html">Control
     /// availability by Region tables</a> in the <i>Amazon Web Services Control Tower Controls
     /// Reference Guide</i>.
@@ -248,7 +257,12 @@ namespace Amazon.ControlTower
     /// </para>
     ///  <note> 
     /// <para>
-    ///  <b>ARN format:</b> <c>arn:aws:controltower:{REGION}::control/{CONTROL_NAME}</c> 
+    ///  <b>Some controls have two identifiers</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>ARN format for Amazon Web Services Control Tower:</b> <c>arn:aws:controltower:{REGION}::control/{CONTROL_TOWER_OPAQUE_ID}</c>
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -258,6 +272,23 @@ namespace Amazon.ControlTower
     /// <para>
     ///  <c>arn:aws:controltower:us-west-2::control/AWS-GR_AUTOSCALING_LAUNCH_CONFIG_PUBLIC_IP_DISABLED</c>
     /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>ARN format for Amazon Web Services Control Catalog:</b> <c>arn:{PARTITION}:controlcatalog:::control/{CONTROL_CATALOG_OPAQUE_ID}</c>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can find the <c>{CONTROL_CATALOG_OPAQUE_ID}</c> in the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/all-global-identifiers.html">
+    /// <i>Amazon Web Services Control Tower Controls Reference Guide</i> </a>, or in the
+    /// Amazon Web Services Control Tower console, on the <b>Control details</b> page.
+    /// </para>
+    ///  
+    /// <para>
+    /// The Amazon Web Services Control Tower APIs for enabled controls, such as <c>GetEnabledControl</c>
+    /// and <c>ListEnabledControls</c> always return an ARN of the same type given when the
+    /// control was enabled.
     /// </para>
     ///  </note> 
     /// <para>
@@ -324,6 +355,30 @@ namespace Amazon.ControlTower
     /// API input and output examples with CLI</a>.
     /// </para>
     ///  
+    /// <para>
+    ///  <b> About Amazon Web Services Control Catalog identifiers</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The <c>EnableControl</c> and <c>DisableControl</c> API operations can be called by
+    /// specifying either the Amazon Web Services Control Tower identifer or the Amazon Web
+    /// Services Control Catalog identifier. The API response returns the same type of identifier
+    /// that you specified when calling the API.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you use an Amazon Web Services Control Tower identifier to call the <c>EnableControl</c>
+    /// API, and then call <c>EnableControl</c> again with an Amazon Web Services Control
+    /// Catalog identifier, Amazon Web Services Control Tower returns an error message stating
+    /// that the control is already enabled. Similar behavior applies to the <c>DisableControl</c>
+    /// API operation. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Mandatory controls and the landing-zone-level Region deny control have Amazon Web
+    /// Services Control Tower identifiers only.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     ///  <b>Details and examples</b> 
     /// </para>
