@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JupyterLabAppSettings Object
+    /// Response Unmarshaller for EmrSettings Object
     /// </summary>  
-    public class JupyterLabAppSettingsUnmarshaller : IUnmarshaller<JupyterLabAppSettings, XmlUnmarshallerContext>, IUnmarshaller<JupyterLabAppSettings, JsonUnmarshallerContext>
+    public class EmrSettingsUnmarshaller : IUnmarshaller<EmrSettings, XmlUnmarshallerContext>, IUnmarshaller<EmrSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JupyterLabAppSettings IUnmarshaller<JupyterLabAppSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EmrSettings IUnmarshaller<EmrSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public JupyterLabAppSettings Unmarshall(JsonUnmarshallerContext context)
+        public EmrSettings Unmarshall(JsonUnmarshallerContext context)
         {
-            JupyterLabAppSettings unmarshalledObject = new JupyterLabAppSettings();
+            EmrSettings unmarshalledObject = new EmrSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CodeRepositories", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<CodeRepository, CodeRepositoryUnmarshaller>(CodeRepositoryUnmarshaller.Instance);
-                    unmarshalledObject.CodeRepositories = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CustomImages", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<CustomImage, CustomImageUnmarshaller>(CustomImageUnmarshaller.Instance);
-                    unmarshalledObject.CustomImages = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultResourceSpec", targetDepth))
-                {
-                    var unmarshaller = ResourceSpecUnmarshaller.Instance;
-                    unmarshalledObject.DefaultResourceSpec = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EmrSettings", targetDepth))
-                {
-                    var unmarshaller = EmrSettingsUnmarshaller.Instance;
-                    unmarshalledObject.EmrSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LifecycleConfigArns", targetDepth))
+                if (context.TestExpression("AssumableRoleArns", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.LifecycleConfigArns = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssumableRoleArns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExecutionRoleArns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ExecutionRoleArns = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static JupyterLabAppSettingsUnmarshaller _instance = new JupyterLabAppSettingsUnmarshaller();        
+        private static EmrSettingsUnmarshaller _instance = new EmrSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JupyterLabAppSettingsUnmarshaller Instance
+        public static EmrSettingsUnmarshaller Instance
         {
             get
             {
