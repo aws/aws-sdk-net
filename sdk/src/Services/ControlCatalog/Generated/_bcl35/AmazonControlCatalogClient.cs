@@ -296,6 +296,87 @@ namespace Amazon.ControlCatalog
         #endregion
 
 
+        #region  GetControl
+
+        /// <summary>
+        /// Returns details about a specific control, most notably a list of Amazon Web Services
+        /// Regions where this control is supported. Input a value for the <i>ControlArn</i> parameter,
+        /// in ARN form. <c>GetControl</c> accepts <i>controltower</i> or <i>controlcatalog</i>
+        /// control ARNs as input. Returns a <i>controlcatalog</i> ARN format.
+        /// 
+        ///  
+        /// <para>
+        /// In the API response, controls that have the value <c>GLOBAL</c> in the <c>Scope</c>
+        /// field do not show the <c>DeployableRegions</c> field, because it does not apply. Controls
+        /// that have the value <c>REGIONAL</c> in the <c>Scope</c> field return a value for the
+        /// <c>DeployableRegions</c> field, as shown in the example.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetControl service method.</param>
+        /// 
+        /// <returns>The response from the GetControl service method, as returned by ControlCatalog.</returns>
+        /// <exception cref="Amazon.ControlCatalog.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.ResourceNotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/GetControl">REST API Reference for GetControl Operation</seealso>
+        public virtual GetControlResponse GetControl(GetControlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetControlResponseUnmarshaller.Instance;
+
+            return Invoke<GetControlResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetControl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetControl operation on AmazonControlCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetControl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/GetControl">REST API Reference for GetControl Operation</seealso>
+        public virtual IAsyncResult BeginGetControl(GetControlRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetControlResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetControl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetControl.</param>
+        /// 
+        /// <returns>Returns a  GetControlResult from ControlCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/GetControl">REST API Reference for GetControl Operation</seealso>
+        public virtual GetControlResponse EndGetControl(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetControlResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListCommonControls
 
         /// <summary>
@@ -365,6 +446,76 @@ namespace Amazon.ControlCatalog
         public virtual ListCommonControlsResponse EndListCommonControls(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCommonControlsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListControls
+
+        /// <summary>
+        /// Returns a paginated list of all available controls in the Amazon Web Services Control
+        /// Catalog library. Allows you to discover available controls. The list of controls is
+        /// given as structures of type <i>controlSummary</i>. The ARN is returned in the global
+        /// <i>controlcatalog</i> format, as shown in the examples.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListControls service method.</param>
+        /// 
+        /// <returns>The response from the ListControls service method, as returned by ControlCatalog.</returns>
+        /// <exception cref="Amazon.ControlCatalog.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListControls">REST API Reference for ListControls Operation</seealso>
+        public virtual ListControlsResponse ListControls(ListControlsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListControlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListControlsResponseUnmarshaller.Instance;
+
+            return Invoke<ListControlsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListControls operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListControls operation on AmazonControlCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListControls
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListControls">REST API Reference for ListControls Operation</seealso>
+        public virtual IAsyncResult BeginListControls(ListControlsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListControlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListControlsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListControls operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListControls.</param>
+        /// 
+        /// <returns>Returns a  ListControlsResult from ControlCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListControls">REST API Reference for ListControls Operation</seealso>
+        public virtual ListControlsResponse EndListControls(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListControlsResponse>(asyncResult);
         }
 
         #endregion

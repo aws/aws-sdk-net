@@ -16,34 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the controlcatalog-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
-    /// Paginators for the ControlCatalog service
+    /// Paginator for the ListControls operation
     ///</summary>
-    public interface IControlCatalogPaginatorFactory
+    public interface IListControlsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListControlsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListCommonControls operation
-        ///</summary>
-        IListCommonControlsPaginator ListCommonControls(ListCommonControlsRequest request);
-
-        /// <summary>
-        /// Paginator for ListControls operation
-        ///</summary>
-        IListControlsPaginator ListControls(ListControlsRequest request);
-
-        /// <summary>
-        /// Paginator for ListDomains operation
-        ///</summary>
-        IListDomainsPaginator ListDomains(ListDomainsRequest request);
-
-        /// <summary>
-        /// Paginator for ListObjectives operation
-        ///</summary>
-        IListObjectivesPaginator ListObjectives(ListObjectivesRequest request);
+        /// Enumerable containing all of the Controls
+        /// </summary>
+        IPaginatedEnumerable<ControlSummary> Controls { get; }
     }
 }
