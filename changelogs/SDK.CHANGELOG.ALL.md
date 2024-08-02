@@ -1,3 +1,21 @@
+### 3.7.857.0 (2024-08-02 18:27 UTC)
+* CloudWatch (3.7.401.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* ECS (3.7.401.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* Glue (3.7.401.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* Kinesis (3.7.401.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* ResilienceHub (3.7.401.0)
+	* Customers are presented with the grouping recommendations and can determine if the recommendations are accurate and apply to their case. This feature simplifies onboarding by organizing resources into appropriate AppComponents.
+* Route53 (3.7.401.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* SimpleSystemsManagement (3.7.401.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* WAFRegional (3.7.401.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+
 ### 3.7.856.0 (2024-08-01 18:28 UTC)
 * AWSSupport (3.7.400.3)
 	* Doc only updates to CaseDetails
