@@ -36,7 +36,7 @@ namespace AWSSDK_NetStandard.UnitTests
             Assert.False(boolAV.BOOL.HasValue);
         }
 
-        #region MockingTests - these are similar to AWSSDK_DotNet.UnitTests.MockingTests, if we unify .NET Framework 4.5 and .NET tests they can be de-duplicated
+        #region MockingTests
 
         [Fact]
         [Trait("Category", "DynamoDBv2")]
