@@ -598,7 +598,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             try
             {
-#if AWS_ASYNC_API
+#if NETSTANDARD
                 // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
                 var internalClient = Items[0].TransactionPart.TargetTable.DDBClient as AmazonDynamoDBClient;
                 if (internalClient == null)
@@ -607,7 +607,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                        "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when calling ExecuteAsync instead.");
                 }
 #else
-                internalClient = DDBClient;
+                var internalClient = Items[0].TransactionPart.TargetTable.DDBClient;
 #endif
 
                 internalClient.TransactWriteItems(request);

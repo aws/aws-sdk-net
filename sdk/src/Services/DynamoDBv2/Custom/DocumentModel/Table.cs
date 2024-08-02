@@ -361,7 +361,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             };
             this.AddRequestHandler(req, isAsync: false);
 
-#if AWS_ASYNC_API
+#if NETSTANDARD
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var client = DDBClient as AmazonDynamoDBClient;
             if (client == null)
@@ -941,7 +941,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 currentConfig.ConditionalExpression.ApplyExpression(req, this);
             }
 
-#if AWS_ASYNC_API
+#if NETSTANDARD
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var client = DDBClient as AmazonDynamoDBClient;
             if (client == null)
@@ -1028,7 +1028,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             this.AddRequestHandler(request, isAsync: false);
 
-#if AWS_ASYNC_API
+#if NETSTANDARD
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var client = DDBClient as AmazonDynamoDBClient;
             if (client == null)
@@ -1159,7 +1159,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
                 }
             }
-#if AWS_ASYNC_API
+#if NETSTANDARD
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var client = DDBClient as AmazonDynamoDBClient;
             if (client == null)
@@ -1313,7 +1313,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 currentConfig.ConditionalExpression.ApplyExpression(req, this);
             }
 
-#if AWS_ASYNC_API
+#if NETSTANDARD
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var client = DDBClient as AmazonDynamoDBClient;
             if (client == null)

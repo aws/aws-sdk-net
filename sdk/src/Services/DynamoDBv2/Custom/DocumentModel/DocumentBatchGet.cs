@@ -429,19 +429,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private static void CallUntilCompletion(IAmazonDynamoDB client, BatchGetItemRequest request, Results allResults)
         {
+#if NETSTANDARD
+            // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
+            var internalClient = client as AmazonDynamoDBClient;
+            if (internalClient == null)
+            {
+                throw new InvalidOperationException("Calling the synchronous DocumentBatchGet.Execute() from .NET or .NET Core requires initializing the Table " +
+                   "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when calling ExecuteAsync instead.");
+            }
+#else
+            var internalClient = client;
+#endif
             do
             {
-#if AWS_ASYNC_API
-                // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
-                var internalClient = client as AmazonDynamoDBClient;
-                if (internalClient == null)
-                {
-                    throw new InvalidOperationException("Calling the synchronous DocumentBatchGet.Execute() from .NET or .NET Core requires initializing the Table " +
-                       "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when calling ExecuteAsync instead.");
-                }
-#else
-                internalClient = DDBClient;
-#endif
                 var serviceResponse = internalClient.BatchGetItem(request);
 
                 foreach (var kvp in serviceResponse.Responses)

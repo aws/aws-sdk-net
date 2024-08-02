@@ -471,19 +471,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, IAmazonDynamoDB client)
         {
+#if NETSTANDARD
+            // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
+            var internalClient = client as AmazonDynamoDBClient;
+            if (internalClient == null)
+            {
+                throw new InvalidOperationException("Calling the synchronous DocumentBatchWrite.Execute() from .NET or .NET Core requires initializing the Table " +
+                   "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when calling ExecuteAsync instead.");
+            }
+#else
+            var internalClient = client;
+#endif
             do
             {
-#if AWS_ASYNC_API
-                // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
-                var internalClient = client as AmazonDynamoDBClient;
-                if (internalClient == null)
-                {
-                    throw new InvalidOperationException("Calling the synchronous DocumentBatchWrite.Execute() from .NET or .NET Core requires initializing the Table " +
-                       "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when calling ExecuteAsync instead.");
-                }
-#else
-                internalClient = DDBClient;
-#endif
                 var result = internalClient.BatchWriteItem(request);
                 request.RequestItems = result.UnprocessedItems;
 
