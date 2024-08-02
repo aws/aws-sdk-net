@@ -761,7 +761,7 @@ namespace Amazon.Runtime.Internal.Transform
         public MemoryStream Unmarshall(XmlUnmarshallerContext context)
         {
             byte[] bytes = Convert.FromBase64String(context.ReadText());
-            MemoryStream stream = new MemoryStream(bytes);
+            MemoryStream stream = new MemoryStream(bytes, 0, bytes.Length, true, true);
             return stream;
         }
 
@@ -772,7 +772,7 @@ namespace Amazon.Runtime.Internal.Transform
                 return null;
 
             byte[] bytes = Convert.FromBase64String(context.ReadText());
-            MemoryStream stream = new MemoryStream(bytes);
+            MemoryStream stream = new MemoryStream(bytes, 0, bytes.Length, true, true);
             return stream;
         }
     }
