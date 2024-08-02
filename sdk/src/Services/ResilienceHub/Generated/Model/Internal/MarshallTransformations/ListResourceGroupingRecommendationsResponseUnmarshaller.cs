@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AddDraftAppVersionResourceMappings operation
+    /// Response Unmarshaller for ListResourceGroupingRecommendations operation
     /// </summary>  
-    public class AddDraftAppVersionResourceMappingsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListResourceGroupingRecommendationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,28 +46,22 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            AddDraftAppVersionResourceMappingsResponse response = new AddDraftAppVersionResourceMappingsResponse();
+            ListResourceGroupingRecommendationsResponse response = new ListResourceGroupingRecommendationsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("appArn", targetDepth))
+                if (context.TestExpression("groupingRecommendations", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AppArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<GroupingRecommendation, GroupingRecommendationUnmarshaller>(GroupingRecommendationUnmarshaller.Instance);
+                    response.GroupingRecommendations = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("appVersion", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AppVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceMappings", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ResourceMapping, ResourceMappingUnmarshaller>(ResourceMappingUnmarshaller.Instance);
-                    response.ResourceMappings = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -97,10 +91,6 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -108,10 +98,6 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -125,9 +111,9 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             return new AmazonResilienceHubException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static AddDraftAppVersionResourceMappingsResponseUnmarshaller _instance = new AddDraftAppVersionResourceMappingsResponseUnmarshaller();        
+        private static ListResourceGroupingRecommendationsResponseUnmarshaller _instance = new ListResourceGroupingRecommendationsResponseUnmarshaller();        
 
-        internal static AddDraftAppVersionResourceMappingsResponseUnmarshaller GetInstance()
+        internal static ListResourceGroupingRecommendationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -135,7 +121,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AddDraftAppVersionResourceMappingsResponseUnmarshaller Instance
+        public static ListResourceGroupingRecommendationsResponseUnmarshaller Instance
         {
             get
             {

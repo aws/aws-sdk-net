@@ -60,8 +60,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token number of the next application to be checked for compliance and regulatory requirements
-        /// from the list of applications.
+        /// Null, or the token from a previous call to get the next set of results.
         /// </para>
         /// </summary>
         public string NextToken

@@ -30,48 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// A list of errors retrieving an application's resources.
+    /// Indicates the rejected grouping recommendation.
     /// </summary>
-    public partial class ResourceErrorsDetails
+    public partial class RejectGroupingRecommendationEntry
     {
-        private bool? _hasMoreErrors;
-        private List<ResourceError> _resourceErrors = AWSConfigs.InitializeCollections ? new List<ResourceError>() : null;
+        private string _groupingRecommendationId;
+        private GroupingRecommendationRejectionReason _rejectionReason;
 
         /// <summary>
-        /// Gets and sets the property HasMoreErrors. 
+        /// Gets and sets the property GroupingRecommendationId. 
         /// <para>
-        ///  This indicates if there are more errors not listed in the <c>resourceErrors</c> list.
-        /// 
+        /// Indicates the identifier of the grouping recommendation.
         /// </para>
         /// </summary>
-        public bool HasMoreErrors
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string GroupingRecommendationId
         {
-            get { return this._hasMoreErrors.GetValueOrDefault(); }
-            set { this._hasMoreErrors = value; }
+            get { return this._groupingRecommendationId; }
+            set { this._groupingRecommendationId = value; }
         }
 
-        // Check to see if HasMoreErrors property is set
-        internal bool IsSetHasMoreErrors()
+        // Check to see if GroupingRecommendationId property is set
+        internal bool IsSetGroupingRecommendationId()
         {
-            return this._hasMoreErrors.HasValue; 
+            return this._groupingRecommendationId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceErrors. 
+        /// Gets and sets the property RejectionReason. 
         /// <para>
-        ///  A list of errors retrieving an application's resources. 
+        /// Indicates the reason you had selected while rejecting a grouping recommendation.
         /// </para>
         /// </summary>
-        public List<ResourceError> ResourceErrors
+        public GroupingRecommendationRejectionReason RejectionReason
         {
-            get { return this._resourceErrors; }
-            set { this._resourceErrors = value; }
+            get { return this._rejectionReason; }
+            set { this._rejectionReason = value; }
         }
 
-        // Check to see if ResourceErrors property is set
-        internal bool IsSetResourceErrors()
+        // Check to see if RejectionReason property is set
+        internal bool IsSetRejectionReason()
         {
-            return this._resourceErrors != null && (this._resourceErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._rejectionReason != null;
         }
 
     }

@@ -149,6 +149,14 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Paginator for ListResourceGroupingRecommendations operation
+        ///</summary>
+        public IListResourceGroupingRecommendationsPaginator ListResourceGroupingRecommendations(ListResourceGroupingRecommendationsRequest request) 
+        {
+            return new ListResourceGroupingRecommendationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSopRecommendations operation
         ///</summary>
         public IListSopRecommendationsPaginator ListSopRecommendations(ListSopRecommendationsRequest request) 

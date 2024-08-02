@@ -269,14 +269,87 @@ namespace Amazon.ResilienceHub
         #endregion
 
 
+        #region  AcceptResourceGroupingRecommendations
+
+        /// <summary>
+        /// Accepts the resource grouping recommendations suggested by Resilience Hub for your
+        /// application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptResourceGroupingRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the AcceptResourceGroupingRecommendations service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AcceptResourceGroupingRecommendations">REST API Reference for AcceptResourceGroupingRecommendations Operation</seealso>
+        public virtual AcceptResourceGroupingRecommendationsResponse AcceptResourceGroupingRecommendations(AcceptResourceGroupingRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptResourceGroupingRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptResourceGroupingRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptResourceGroupingRecommendationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptResourceGroupingRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptResourceGroupingRecommendations operation on AmazonResilienceHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptResourceGroupingRecommendations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AcceptResourceGroupingRecommendations">REST API Reference for AcceptResourceGroupingRecommendations Operation</seealso>
+        public virtual IAsyncResult BeginAcceptResourceGroupingRecommendations(AcceptResourceGroupingRecommendationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptResourceGroupingRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptResourceGroupingRecommendationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptResourceGroupingRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptResourceGroupingRecommendations.</param>
+        /// 
+        /// <returns>Returns a  AcceptResourceGroupingRecommendationsResult from ResilienceHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AcceptResourceGroupingRecommendations">REST API Reference for AcceptResourceGroupingRecommendations Operation</seealso>
+        public virtual AcceptResourceGroupingRecommendationsResponse EndAcceptResourceGroupingRecommendations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AcceptResourceGroupingRecommendationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AddDraftAppVersionResourceMappings
 
         /// <summary>
         /// Adds the source of resource-maps to the draft version of an application. During assessment,
         /// Resilience Hub will use these resource-maps to resolve the latest physical ID for
         /// each resource in the application template. For more information about different types
-        /// of resources suported by Resilience Hub and how to add them in your application, see
-        /// <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step
+        /// of resources supported by Resilience Hub and how to add them in your application,
+        /// see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step
         /// 2: How is your application managed?</a> in the Resilience Hub User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddDraftAppVersionResourceMappings service method.</param>
@@ -298,6 +371,11 @@ namespace Amazon.ResilienceHub
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
         /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ServiceQuotaExceededException">
+        /// This exception occurs when you have exceeded your service quota. To perform the requested
+        /// action, remove some of the relevant resources, or use Service Quotas to request a
+        /// service quota increase.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
         /// This exception occurs when you have exceeded the limit on the number of requests per
@@ -1760,7 +1838,7 @@ namespace Amazon.ResilienceHub
         /// 
         ///  <note> 
         /// <para>
-        /// This API accepts only one of the following parameters to descibe the resource:
+        /// This API accepts only one of the following parameters to describe the resource:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2147,6 +2225,79 @@ namespace Amazon.ResilienceHub
         public virtual DescribeResiliencyPolicyResponse EndDescribeResiliencyPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeResiliencyPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeResourceGroupingRecommendationTask
+
+        /// <summary>
+        /// Describes the resource grouping recommendation tasks run by Resilience Hub for your
+        /// application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceGroupingRecommendationTask service method.</param>
+        /// 
+        /// <returns>The response from the DescribeResourceGroupingRecommendationTask service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeResourceGroupingRecommendationTask">REST API Reference for DescribeResourceGroupingRecommendationTask Operation</seealso>
+        public virtual DescribeResourceGroupingRecommendationTaskResponse DescribeResourceGroupingRecommendationTask(DescribeResourceGroupingRecommendationTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourceGroupingRecommendationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourceGroupingRecommendationTaskResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourceGroupingRecommendationTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeResourceGroupingRecommendationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceGroupingRecommendationTask operation on AmazonResilienceHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeResourceGroupingRecommendationTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeResourceGroupingRecommendationTask">REST API Reference for DescribeResourceGroupingRecommendationTask Operation</seealso>
+        public virtual IAsyncResult BeginDescribeResourceGroupingRecommendationTask(DescribeResourceGroupingRecommendationTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourceGroupingRecommendationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourceGroupingRecommendationTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeResourceGroupingRecommendationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeResourceGroupingRecommendationTask.</param>
+        /// 
+        /// <returns>Returns a  DescribeResourceGroupingRecommendationTaskResult from ResilienceHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeResourceGroupingRecommendationTask">REST API Reference for DescribeResourceGroupingRecommendationTask Operation</seealso>
+        public virtual DescribeResourceGroupingRecommendationTaskResponse EndDescribeResourceGroupingRecommendationTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeResourceGroupingRecommendationTaskResponse>(asyncResult);
         }
 
         #endregion
@@ -3259,6 +3410,78 @@ namespace Amazon.ResilienceHub
 
         #endregion
         
+        #region  ListResourceGroupingRecommendations
+
+        /// <summary>
+        /// Lists the resource grouping recommendations suggested by Resilience Hub for your application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceGroupingRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceGroupingRecommendations service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListResourceGroupingRecommendations">REST API Reference for ListResourceGroupingRecommendations Operation</seealso>
+        public virtual ListResourceGroupingRecommendationsResponse ListResourceGroupingRecommendations(ListResourceGroupingRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceGroupingRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceGroupingRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceGroupingRecommendationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceGroupingRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceGroupingRecommendations operation on AmazonResilienceHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceGroupingRecommendations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListResourceGroupingRecommendations">REST API Reference for ListResourceGroupingRecommendations Operation</seealso>
+        public virtual IAsyncResult BeginListResourceGroupingRecommendations(ListResourceGroupingRecommendationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceGroupingRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceGroupingRecommendationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceGroupingRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceGroupingRecommendations.</param>
+        /// 
+        /// <returns>Returns a  ListResourceGroupingRecommendationsResult from ResilienceHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListResourceGroupingRecommendations">REST API Reference for ListResourceGroupingRecommendations Operation</seealso>
+        public virtual ListResourceGroupingRecommendationsResponse EndListResourceGroupingRecommendations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceGroupingRecommendationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListSopRecommendations
 
         /// <summary>
@@ -3796,6 +4019,78 @@ namespace Amazon.ResilienceHub
 
         #endregion
         
+        #region  RejectResourceGroupingRecommendations
+
+        /// <summary>
+        /// Rejects resource grouping recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectResourceGroupingRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the RejectResourceGroupingRecommendations service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RejectResourceGroupingRecommendations">REST API Reference for RejectResourceGroupingRecommendations Operation</seealso>
+        public virtual RejectResourceGroupingRecommendationsResponse RejectResourceGroupingRecommendations(RejectResourceGroupingRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectResourceGroupingRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectResourceGroupingRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<RejectResourceGroupingRecommendationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectResourceGroupingRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectResourceGroupingRecommendations operation on AmazonResilienceHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectResourceGroupingRecommendations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RejectResourceGroupingRecommendations">REST API Reference for RejectResourceGroupingRecommendations Operation</seealso>
+        public virtual IAsyncResult BeginRejectResourceGroupingRecommendations(RejectResourceGroupingRecommendationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectResourceGroupingRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectResourceGroupingRecommendationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RejectResourceGroupingRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectResourceGroupingRecommendations.</param>
+        /// 
+        /// <returns>Returns a  RejectResourceGroupingRecommendationsResult from ResilienceHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RejectResourceGroupingRecommendations">REST API Reference for RejectResourceGroupingRecommendations Operation</seealso>
+        public virtual RejectResourceGroupingRecommendationsResponse EndRejectResourceGroupingRecommendations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RejectResourceGroupingRecommendationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RemoveDraftAppVersionResourceMappings
 
         /// <summary>
@@ -4031,6 +4326,84 @@ namespace Amazon.ResilienceHub
         public virtual StartAppAssessmentResponse EndStartAppAssessment(IAsyncResult asyncResult)
         {
             return EndInvoke<StartAppAssessmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartResourceGroupingRecommendationTask
+
+        /// <summary>
+        /// Starts grouping recommendation task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartResourceGroupingRecommendationTask service method.</param>
+        /// 
+        /// <returns>The response from the StartResourceGroupingRecommendationTask service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartResourceGroupingRecommendationTask">REST API Reference for StartResourceGroupingRecommendationTask Operation</seealso>
+        public virtual StartResourceGroupingRecommendationTaskResponse StartResourceGroupingRecommendationTask(StartResourceGroupingRecommendationTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartResourceGroupingRecommendationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartResourceGroupingRecommendationTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartResourceGroupingRecommendationTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartResourceGroupingRecommendationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartResourceGroupingRecommendationTask operation on AmazonResilienceHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartResourceGroupingRecommendationTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartResourceGroupingRecommendationTask">REST API Reference for StartResourceGroupingRecommendationTask Operation</seealso>
+        public virtual IAsyncResult BeginStartResourceGroupingRecommendationTask(StartResourceGroupingRecommendationTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartResourceGroupingRecommendationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartResourceGroupingRecommendationTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartResourceGroupingRecommendationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartResourceGroupingRecommendationTask.</param>
+        /// 
+        /// <returns>Returns a  StartResourceGroupingRecommendationTaskResult from ResilienceHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartResourceGroupingRecommendationTask">REST API Reference for StartResourceGroupingRecommendationTask Operation</seealso>
+        public virtual StartResourceGroupingRecommendationTaskResponse EndStartResourceGroupingRecommendationTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartResourceGroupingRecommendationTaskResponse>(asyncResult);
         }
 
         #endregion

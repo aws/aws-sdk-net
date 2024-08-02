@@ -35,7 +35,7 @@ namespace Amazon.ResilienceHub.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This API accepts only one of the following parameters to descibe the resource:
+    /// This API accepts only one of the following parameters to describe the resource:
     /// </para>
     ///  <ul> <li> 
     /// <para>

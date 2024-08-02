@@ -30,18 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the AddDraftAppVersionResourceMappings operation.
-    /// Adds the source of resource-maps to the draft version of an application. During assessment,
-    /// Resilience Hub will use these resource-maps to resolve the latest physical ID for
-    /// each resource in the application template. For more information about different types
-    /// of resources supported by Resilience Hub and how to add them in your application,
-    /// see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step
-    /// 2: How is your application managed?</a> in the Resilience Hub User Guide.
+    /// Container for the parameters to the ListResourceGroupingRecommendations operation.
+    /// Lists the resource grouping recommendations suggested by Resilience Hub for your application.
     /// </summary>
-    public partial class AddDraftAppVersionResourceMappingsRequest : AmazonResilienceHubRequest
+    public partial class ListResourceGroupingRecommendationsRequest : AmazonResilienceHubRequest
     {
         private string _appArn;
-        private List<ResourceMapping> _resourceMappings = AWSConfigs.InitializeCollections ? new List<ResourceMapping>() : null;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
@@ -53,7 +49,6 @@ namespace Amazon.ResilienceHub.Model
         /// guide.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string AppArn
         {
             get { return this._appArn; }
@@ -67,26 +62,40 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceMappings. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Mappings used to map logical resources from the template to physical resources. You
-        /// can use the mapping type <c>CFN_STACK</c> if the application template uses a logical
-        /// stack name. Or you can map individual resources by using the mapping type <c>RESOURCE</c>.
-        /// We recommend using the mapping type <c>CFN_STACK</c> if the application is backed
-        /// by a CloudFormation stack.
+        /// Maximum number of grouping recommendations to be displayed per Resilience Hub application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<ResourceMapping> ResourceMappings
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
         {
-            get { return this._resourceMappings; }
-            set { this._resourceMappings = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if ResourceMappings property is set
-        internal bool IsSetResourceMappings()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._resourceMappings != null && (this._resourceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Null, or the token from a previous call to get the next set of results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

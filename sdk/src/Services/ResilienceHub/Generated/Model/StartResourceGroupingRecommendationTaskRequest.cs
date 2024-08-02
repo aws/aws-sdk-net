@@ -30,18 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the AddDraftAppVersionResourceMappings operation.
-    /// Adds the source of resource-maps to the draft version of an application. During assessment,
-    /// Resilience Hub will use these resource-maps to resolve the latest physical ID for
-    /// each resource in the application template. For more information about different types
-    /// of resources supported by Resilience Hub and how to add them in your application,
-    /// see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step
-    /// 2: How is your application managed?</a> in the Resilience Hub User Guide.
+    /// Container for the parameters to the StartResourceGroupingRecommendationTask operation.
+    /// Starts grouping recommendation task.
     /// </summary>
-    public partial class AddDraftAppVersionResourceMappingsRequest : AmazonResilienceHubRequest
+    public partial class StartResourceGroupingRecommendationTaskRequest : AmazonResilienceHubRequest
     {
         private string _appArn;
-        private List<ResourceMapping> _resourceMappings = AWSConfigs.InitializeCollections ? new List<ResourceMapping>() : null;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
@@ -64,29 +58,6 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetAppArn()
         {
             return this._appArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceMappings. 
-        /// <para>
-        /// Mappings used to map logical resources from the template to physical resources. You
-        /// can use the mapping type <c>CFN_STACK</c> if the application template uses a logical
-        /// stack name. Or you can map individual resources by using the mapping type <c>RESOURCE</c>.
-        /// We recommend using the mapping type <c>CFN_STACK</c> if the application is backed
-        /// by a CloudFormation stack.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<ResourceMapping> ResourceMappings
-        {
-            get { return this._resourceMappings; }
-            set { this._resourceMappings = value; }
-        }
-
-        // Check to see if ResourceMappings property is set
-        internal bool IsSetResourceMappings()
-        {
-            return this._resourceMappings != null && (this._resourceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -97,6 +97,11 @@ namespace Amazon.ResilienceHub.Model
         IListResiliencyPoliciesPaginator ListResiliencyPolicies(ListResiliencyPoliciesRequest request);
 
         /// <summary>
+        /// Paginator for ListResourceGroupingRecommendations operation
+        ///</summary>
+        IListResourceGroupingRecommendationsPaginator ListResourceGroupingRecommendations(ListResourceGroupingRecommendationsRequest request);
+
+        /// <summary>
         /// Paginator for ListSopRecommendations operation
         ///</summary>
         IListSopRecommendationsPaginator ListSopRecommendations(ListSopRecommendationsRequest request);

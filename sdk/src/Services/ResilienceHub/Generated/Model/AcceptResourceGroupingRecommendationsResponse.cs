@@ -30,18 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the AddDraftAppVersionResourceMappings operation.
-    /// Adds the source of resource-maps to the draft version of an application. During assessment,
-    /// Resilience Hub will use these resource-maps to resolve the latest physical ID for
-    /// each resource in the application template. For more information about different types
-    /// of resources supported by Resilience Hub and how to add them in your application,
-    /// see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step
-    /// 2: How is your application managed?</a> in the Resilience Hub User Guide.
+    /// This is the response object from the AcceptResourceGroupingRecommendations operation.
     /// </summary>
-    public partial class AddDraftAppVersionResourceMappingsRequest : AmazonResilienceHubRequest
+    public partial class AcceptResourceGroupingRecommendationsResponse : AmazonWebServiceResponse
     {
         private string _appArn;
-        private List<ResourceMapping> _resourceMappings = AWSConfigs.InitializeCollections ? new List<ResourceMapping>() : null;
+        private List<FailedGroupingRecommendationEntry> _failedEntries = AWSConfigs.InitializeCollections ? new List<FailedGroupingRecommendationEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
@@ -67,26 +61,23 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceMappings. 
+        /// Gets and sets the property FailedEntries. 
         /// <para>
-        /// Mappings used to map logical resources from the template to physical resources. You
-        /// can use the mapping type <c>CFN_STACK</c> if the application template uses a logical
-        /// stack name. Or you can map individual resources by using the mapping type <c>RESOURCE</c>.
-        /// We recommend using the mapping type <c>CFN_STACK</c> if the application is backed
-        /// by a CloudFormation stack.
+        /// Indicates the list of resource grouping recommendations that could not be included
+        /// in your application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<ResourceMapping> ResourceMappings
+        public List<FailedGroupingRecommendationEntry> FailedEntries
         {
-            get { return this._resourceMappings; }
-            set { this._resourceMappings = value; }
+            get { return this._failedEntries; }
+            set { this._failedEntries = value; }
         }
 
-        // Check to see if ResourceMappings property is set
-        internal bool IsSetResourceMappings()
+        // Check to see if FailedEntries property is set
+        internal bool IsSetFailedEntries()
         {
-            return this._resourceMappings != null && (this._resourceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._failedEntries != null && (this._failedEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

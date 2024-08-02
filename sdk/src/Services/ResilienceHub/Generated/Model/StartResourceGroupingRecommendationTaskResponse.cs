@@ -30,18 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the AddDraftAppVersionResourceMappings operation.
-    /// Adds the source of resource-maps to the draft version of an application. During assessment,
-    /// Resilience Hub will use these resource-maps to resolve the latest physical ID for
-    /// each resource in the application template. For more information about different types
-    /// of resources supported by Resilience Hub and how to add them in your application,
-    /// see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step
-    /// 2: How is your application managed?</a> in the Resilience Hub User Guide.
+    /// This is the response object from the StartResourceGroupingRecommendationTask operation.
     /// </summary>
-    public partial class AddDraftAppVersionResourceMappingsRequest : AmazonResilienceHubRequest
+    public partial class StartResourceGroupingRecommendationTaskResponse : AmazonWebServiceResponse
     {
         private string _appArn;
-        private List<ResourceMapping> _resourceMappings = AWSConfigs.InitializeCollections ? new List<ResourceMapping>() : null;
+        private string _errorMessage;
+        private string _groupingId;
+        private ResourcesGroupingRecGenStatusType _status;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
@@ -67,26 +63,60 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceMappings. 
+        /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// Mappings used to map logical resources from the template to physical resources. You
-        /// can use the mapping type <c>CFN_STACK</c> if the application template uses a logical
-        /// stack name. Or you can map individual resources by using the mapping type <c>RESOURCE</c>.
-        /// We recommend using the mapping type <c>CFN_STACK</c> if the application is backed
-        /// by a CloudFormation stack.
+        /// Indicates the error that occurred while executing a grouping recommendation task.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
+        public string ErrorMessage
+        {
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
+        }
+
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
+        {
+            return this._errorMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupingId. 
+        /// <para>
+        /// Indicates the identifier of the grouping recommendation task.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string GroupingId
+        {
+            get { return this._groupingId; }
+            set { this._groupingId = value; }
+        }
+
+        // Check to see if GroupingId property is set
+        internal bool IsSetGroupingId()
+        {
+            return this._groupingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Status of the action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<ResourceMapping> ResourceMappings
+        public ResourcesGroupingRecGenStatusType Status
         {
-            get { return this._resourceMappings; }
-            set { this._resourceMappings = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if ResourceMappings property is set
-        internal bool IsSetResourceMappings()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._resourceMappings != null && (this._resourceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._status != null;
         }
 
     }

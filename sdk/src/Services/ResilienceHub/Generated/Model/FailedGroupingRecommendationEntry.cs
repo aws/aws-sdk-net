@@ -30,48 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// A list of errors retrieving an application's resources.
+    /// Indicates the accepted grouping recommendation whose implementation failed.
     /// </summary>
-    public partial class ResourceErrorsDetails
+    public partial class FailedGroupingRecommendationEntry
     {
-        private bool? _hasMoreErrors;
-        private List<ResourceError> _resourceErrors = AWSConfigs.InitializeCollections ? new List<ResourceError>() : null;
+        private string _errorMessage;
+        private string _groupingRecommendationId;
 
         /// <summary>
-        /// Gets and sets the property HasMoreErrors. 
+        /// Gets and sets the property ErrorMessage. 
         /// <para>
-        ///  This indicates if there are more errors not listed in the <c>resourceErrors</c> list.
-        /// 
+        /// Indicates the error that occurred while implementing a grouping recommendation.
         /// </para>
         /// </summary>
-        public bool HasMoreErrors
+        [AWSProperty(Required=true, Min=0, Max=500)]
+        public string ErrorMessage
         {
-            get { return this._hasMoreErrors.GetValueOrDefault(); }
-            set { this._hasMoreErrors = value; }
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
         }
 
-        // Check to see if HasMoreErrors property is set
-        internal bool IsSetHasMoreErrors()
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
         {
-            return this._hasMoreErrors.HasValue; 
+            return this._errorMessage != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceErrors. 
+        /// Gets and sets the property GroupingRecommendationId. 
         /// <para>
-        ///  A list of errors retrieving an application's resources. 
+        /// Indicates the identifier of the grouping recommendation.
         /// </para>
         /// </summary>
-        public List<ResourceError> ResourceErrors
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string GroupingRecommendationId
         {
-            get { return this._resourceErrors; }
-            set { this._resourceErrors = value; }
+            get { return this._groupingRecommendationId; }
+            set { this._groupingRecommendationId = value; }
         }
 
-        // Check to see if ResourceErrors property is set
-        internal bool IsSetResourceErrors()
+        // Check to see if GroupingRecommendationId property is set
+        internal bool IsSetGroupingRecommendationId()
         {
-            return this._resourceErrors != null && (this._resourceErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._groupingRecommendationId != null;
         }
 
     }
