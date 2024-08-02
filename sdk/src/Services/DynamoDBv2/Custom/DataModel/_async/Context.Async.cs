@@ -143,7 +143,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        [Obsolete("Use the DeleteAsync overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
+        [Obsolete("Use the DeleteAsync overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
         public Task DeleteAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
         {
             return DeleteHelperAsync(value, new DynamoDBFlatConfig(operationConfig, Config), cancellationToken);
@@ -162,7 +162,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        [Obsolete("Use the DeleteAsync overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
+        [Obsolete("Use the DeleteAsync overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
         public Task DeleteAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
         {
             return DeleteHelperAsync<T>(hashKey, null, new DynamoDBFlatConfig(operationConfig, Config), cancellationToken);
@@ -181,7 +181,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        [Obsolete("Use the DeleteAsync overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
+        [Obsolete("Use the DeleteAsync overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
         public Task DeleteAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
         {
             return DeleteHelperAsync<T>(hashKey, rangeKey, new DynamoDBFlatConfig(operationConfig, Config), cancellationToken);

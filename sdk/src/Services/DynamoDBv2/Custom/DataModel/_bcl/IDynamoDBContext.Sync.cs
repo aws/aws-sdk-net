@@ -232,7 +232,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="value">Object to delete.</param>
         /// <param name="operationConfig">Overriding configuration.</param>
-        [Obsolete("Use the Delete overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
+        [Obsolete("Use the Delete overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
         void Delete<T>(T value, DynamoDBOperationConfig operationConfig);
 
         /// <summary>
@@ -271,7 +271,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        [Obsolete("Use the Delete overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
+        [Obsolete("Use the Delete overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
         void Delete<T>(object hashKey, DynamoDBOperationConfig operationConfig);
 
         /// <summary>
@@ -312,7 +312,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="hashKey">Hash key element of the object to delete.</param>
         /// <param name="rangeKey">Range key element of the object to delete.</param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        [Obsolete("Use the Delete overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
+        [Obsolete("Use the Delete overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
         void Delete<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig);
 
         /// <summary>
@@ -579,7 +579,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type to retrieve table for</typeparam>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Table object</returns>
-        [Obsolete("Use the GetTargetTable overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
+        [Obsolete("Use the GetTargetTable overload that takes GetTargetTableConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
         Table GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>

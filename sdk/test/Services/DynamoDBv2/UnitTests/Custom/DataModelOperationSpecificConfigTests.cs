@@ -289,22 +289,35 @@ namespace AWSSDK_DotNet.UnitTests
             mockClient.VerifyAll();
         }
 
-        [DynamoDBTable("TableName")]
-        private class DataModel
-        {
-            [DynamoDBHashKey]
-            public string Id { get; set; }
-
-            [DynamoDBRangeKey]
-            public string Name { get; set; }
-        }
-
         [TestMethod]
         public void DeleteConfig()
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
             Assert.AreEqual(7, typeof(DeleteConfig).GetProperties().Length);
+        }
+
+        [TestMethod]
+        public void DeleteConfig_OverridesTableName()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient.Setup(client => client.DeleteItem(It.Is<DeleteItemRequest>(request => request.TableName == "OperationPrefix-TableName")))
+               .Returns(new DeleteItemResponse())
+               .Verifiable();
+
+            // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                TableNamePrefix = "ContextPrefix-",
+                DisableFetchingTableMetadata = true
+            });
+
+            var deleteConfig = new DeleteConfig() { TableNamePrefix = "OperationPrefix-" };
+
+            context.Delete<DataModel>("123", "Name", deleteConfig);
+
+            // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
+            mockClient.VerifyAll();
         }
 
         [TestMethod]
@@ -316,11 +329,57 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
+        public void SaveConfig_OverridesTableName()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient.Setup(client => client.UpdateItem(It.Is<UpdateItemRequest>(request => request.TableName == "OperationPrefix-TableName")))
+               .Returns(new UpdateItemResponse())
+               .Verifiable();
+
+            // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                TableNamePrefix = "ContextPrefix-",
+                DisableFetchingTableMetadata = true
+            });
+
+            var saveConfig = new SaveConfig() { TableNamePrefix = "OperationPrefix-" };
+
+            context.Save(new DataModel { Id = "123", Name = "Name"}, saveConfig);
+
+            // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
+            mockClient.VerifyAll();
+        }
+
+        [TestMethod]
         public void LoadConfig()
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(9, typeof(LoadConfig).GetProperties().Length);
+            Assert.AreEqual(8, typeof(LoadConfig).GetProperties().Length);
+        }
+
+        [TestMethod]
+        public void Loadonfig_OverridesTableName()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient.Setup(client => client.GetItem(It.Is<GetItemRequest>(request => request.TableName == "OperationPrefix-TableName")))
+               .Returns(new GetItemResponse())
+               .Verifiable();
+
+            // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                TableNamePrefix = "ContextPrefix-",
+                DisableFetchingTableMetadata = true
+            });
+
+            var loadConfig = new LoadConfig() { TableNamePrefix = "OperationPrefix-" };
+
+            context.Load<DataModel>("123", "Name", loadConfig);
+
+            // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
+            mockClient.VerifyAll();
         }
 
         [TestMethod]
@@ -345,6 +404,16 @@ namespace AWSSDK_DotNet.UnitTests
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
             Assert.AreEqual(6, typeof(GetTargetTableConfig).GetProperties().Length);
+        }
+
+        [DynamoDBTable("TableName")]
+        private class DataModel
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBRangeKey]
+            public string Name { get; set; }
         }
     }
 }

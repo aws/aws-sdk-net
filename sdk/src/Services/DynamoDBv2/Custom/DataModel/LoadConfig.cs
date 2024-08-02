@@ -33,14 +33,6 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool? ConsistentRead { get; set; }
 
         /// <summary>
-        /// Directs <see cref="DynamoDBContext" /> to ignore null values when 
-        /// converting an object to a DynamoDB item. If the property is false 
-        /// (or not set), null values will be interpreted as directives to 
-        /// delete the specific attributes on the DynamoDB item.
-        /// </summary>
-        public bool? IgnoreNullValues { get; set; }
-
-        /// <summary>
         /// If true, all <see cref="DateTime"/> properties are retrieved in UTC timezone while reading data from DynamoDB. Else, the local timezone is used.
         /// </summary>
         /// <remarks>
@@ -54,7 +46,6 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             var config = base.ToDynamoDBOperationConfig();
             config.ConsistentRead = ConsistentRead;
-            config.IgnoreNullValues = IgnoreNullValues;
             config.RetrieveDateTimeInUtc = RetrieveDateTimeInUtc;
 
             return config;

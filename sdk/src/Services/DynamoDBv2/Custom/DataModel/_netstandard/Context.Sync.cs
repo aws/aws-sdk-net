@@ -33,6 +33,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+        [Obsolete("Use the GetTargetTable overload that takes GetTargetTableConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
         public Table GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null)
         {
             return GetTargetTableInternal<T>(new DynamoDBFlatConfig(operationConfig, Config));

@@ -137,14 +137,13 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        [Obsolete("Use the Delete overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
+        [Obsolete("Use the Delete overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
         public void Delete<T>(object hashKey, DynamoDBOperationConfig operationConfig)
         {
             DeleteHelper<T>(hashKey, null, new DynamoDBFlatConfig(operationConfig, Config));
         }
 
         /// <inheritdoc/>
-        [Obsolete("Use the Delete overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
         public void Delete<T>(object hashKey, DeleteConfig deleteConfig)
         {
             DeleteHelper<T>(hashKey, null, new DynamoDBFlatConfig(deleteConfig?.ToDynamoDBOperationConfig(), Config));
@@ -157,14 +156,13 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        [Obsolete("Use the Delete overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
+        [Obsolete("Use the Delete overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
         public void Delete<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
         {
             DeleteHelper<T>(hashKey, rangeKey, new DynamoDBFlatConfig(operationConfig, Config));
         }
 
         /// <inheritdoc/>
-        [Obsolete("Use the Delete overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
         public void Delete<T>(object hashKey, object rangeKey, DeleteConfig deleteConfig)
         {
             DeleteHelper<T>(hashKey, rangeKey, new DynamoDBFlatConfig(deleteConfig?.ToDynamoDBOperationConfig(), Config));
@@ -377,7 +375,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        [Obsolete("Use the GetTargetTable overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
+        [Obsolete("Use the GetTargetTable overload that takes GetTargetTableConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
         public Table GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null)
         {
             return GetTargetTableInternal<T>(new DynamoDBFlatConfig(operationConfig, Config));
