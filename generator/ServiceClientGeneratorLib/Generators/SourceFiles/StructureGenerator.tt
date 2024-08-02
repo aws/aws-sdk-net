@@ -90,7 +90,7 @@ namespace <#=this.Config.Namespace#>.Model
     }
 #>
 <#
-    bool hasStreamingMember = this.Structure?.Members.Any(member => member.IsStreaming) ?? false;
+    bool hasStreamingMember = this.Structure?.Members.Any(member => member.Shape.IsStreaming) ?? false;
         
     bool structureContainsEventPayload = this.Structure?.Members.Any(member => member.IsEventPayload) ?? false;
     Member payloadMember = this.Structure?.GetExplicitEventPayloadMember();
@@ -316,9 +316,18 @@ namespace <#=this.Config.Namespace#>.Model
                     }
                     else
                     {
+                        if(member.Shape.IsString && (member.MarshallLocation == MarshallLocation.Header || member.MarshallLocation == MarshallLocation.Headers))
+                        {
+#>
+            return !string.IsNullOrEmpty(this.<#=member.VariableName#>);
+<#
+                        }
+                        else
+                        {
 #>
             return this.<#=member.VariableName#> != null;
 <#
+                        }
                     }
 #>
         }
@@ -541,7 +550,7 @@ namespace <#=this.Config.Namespace#>.Model
                 {
                     foreach (var member in this.Structure.Members) 
                     {
-                        if (member.IsStreaming) 
+                        if (member.Shape.IsStreaming) 
                         {
 #>
                 this.<#=member.VariableName#>?.Dispose();

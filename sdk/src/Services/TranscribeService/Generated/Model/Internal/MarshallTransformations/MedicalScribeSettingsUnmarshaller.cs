@@ -57,6 +57,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public MedicalScribeSettings Unmarshall(JsonUnmarshallerContext context)
         {
             MedicalScribeSettings unmarshalledObject = new MedicalScribeSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public MetadataTransferJobSummary Unmarshall(JsonUnmarshallerContext context)
         {
             MetadataTransferJobSummary unmarshalledObject = new MetadataTransferJobSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         public InvocationInput Unmarshall(JsonUnmarshallerContext context)
         {
             InvocationInput unmarshalledObject = new InvocationInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ActionGroupInvocationInputUnmarshaller.Instance;
                     unmarshalledObject.ActionGroupInvocationInput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("codeInterpreterInvocationInput", targetDepth))
+                {
+                    var unmarshaller = CodeInterpreterInvocationInputUnmarshaller.Instance;
+                    unmarshalledObject.CodeInterpreterInvocationInput = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("invocationType", targetDepth))

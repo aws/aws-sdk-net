@@ -57,6 +57,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         public ControlMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             ControlMetadata unmarshalledObject = new ControlMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

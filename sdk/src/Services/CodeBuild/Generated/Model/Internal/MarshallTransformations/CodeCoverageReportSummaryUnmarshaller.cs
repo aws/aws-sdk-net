@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public CodeCoverageReportSummary Unmarshall(JsonUnmarshallerContext context)
         {
             CodeCoverageReportSummary unmarshalledObject = new CodeCoverageReportSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

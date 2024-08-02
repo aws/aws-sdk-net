@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public DisplayData Unmarshall(JsonUnmarshallerContext context)
         {
             DisplayData unmarshalledObject = new DisplayData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

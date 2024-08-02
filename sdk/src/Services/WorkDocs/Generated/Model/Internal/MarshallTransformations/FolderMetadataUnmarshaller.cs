@@ -57,6 +57,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         public FolderMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             FolderMetadata unmarshalledObject = new FolderMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public ImportFileTaskInformation Unmarshall(JsonUnmarshallerContext context)
         {
             ImportFileTaskInformation unmarshalledObject = new ImportFileTaskInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubConfig.Model.Internal.MarshallTransformations
         public HomeRegionControl Unmarshall(JsonUnmarshallerContext context)
         {
             HomeRegionControl unmarshalledObject = new HomeRegionControl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

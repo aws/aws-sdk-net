@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ContinuousParameterRange Unmarshall(JsonUnmarshallerContext context)
         {
             ContinuousParameterRange unmarshalledObject = new ContinuousParameterRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

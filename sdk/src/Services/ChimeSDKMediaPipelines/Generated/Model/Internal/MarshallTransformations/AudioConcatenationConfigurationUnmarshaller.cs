@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public AudioConcatenationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AudioConcatenationConfiguration unmarshalledObject = new AudioConcatenationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

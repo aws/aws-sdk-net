@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public PostgreSQLCatalogSource Unmarshall(JsonUnmarshallerContext context)
         {
             PostgreSQLCatalogSource unmarshalledObject = new PostgreSQLCatalogSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

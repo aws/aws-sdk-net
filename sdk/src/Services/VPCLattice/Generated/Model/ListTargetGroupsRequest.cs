@@ -100,7 +100,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property VpcIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the service.
+        /// The ID or Amazon Resource Name (ARN) of the VPC.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=50)]

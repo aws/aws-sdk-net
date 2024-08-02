@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public LiveConnectorSourceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LiveConnectorSourceConfiguration unmarshalledObject = new LiveConnectorSourceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public SecurityDetails Unmarshall(JsonUnmarshallerContext context)
         {
             SecurityDetails unmarshalledObject = new SecurityDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

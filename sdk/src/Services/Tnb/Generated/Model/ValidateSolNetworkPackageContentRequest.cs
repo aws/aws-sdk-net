@@ -62,7 +62,7 @@ namespace Amazon.Tnb.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Tnb.Model
         /// Network package file.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public MemoryStream File
         {
             get { return this._file; }

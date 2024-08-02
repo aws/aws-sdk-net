@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public DnsRuleGroupLimitExceededViolation Unmarshall(JsonUnmarshallerContext context)
         {
             DnsRuleGroupLimitExceededViolation unmarshalledObject = new DnsRuleGroupLimitExceededViolation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

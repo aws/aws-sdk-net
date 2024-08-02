@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public UpdateCACertificateParams Unmarshall(JsonUnmarshallerContext context)
         {
             UpdateCACertificateParams unmarshalledObject = new UpdateCACertificateParams();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

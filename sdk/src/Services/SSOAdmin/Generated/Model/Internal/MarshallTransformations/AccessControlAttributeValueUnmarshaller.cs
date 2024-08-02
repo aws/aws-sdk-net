@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public AccessControlAttributeValue Unmarshall(JsonUnmarshallerContext context)
         {
             AccessControlAttributeValue unmarshalledObject = new AccessControlAttributeValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

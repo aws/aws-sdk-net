@@ -50,7 +50,7 @@ namespace Amazon.SageMaker.Model
         /// this file system in Amazon SageMaker Studio.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2)]
+        [AWSProperty(Max=10)]
         public List<CustomFileSystemConfig> CustomFileSystemConfigs
         {
             get { return this._customFileSystemConfigs; }

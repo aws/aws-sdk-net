@@ -1,0 +1,119 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the location-2020-11-19.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.LocationService.Model
+{
+    /// <summary>
+    /// The inferred state of the device, given the provided position, IP address, cellular
+    /// signals, and Wi-Fi- access points.
+    /// </summary>
+    public partial class InferredState
+    {
+        private PositionalAccuracy _accuracy;
+        private double? _deviationDistance;
+        private List<double> _position = AWSConfigs.InitializeCollections ? new List<double>() : null;
+        private bool? _proxyDetected;
+
+        /// <summary>
+        /// Gets and sets the property Accuracy. 
+        /// <para>
+        /// The level of certainty of the inferred position.
+        /// </para>
+        /// </summary>
+        public PositionalAccuracy Accuracy
+        {
+            get { return this._accuracy; }
+            set { this._accuracy = value; }
+        }
+
+        // Check to see if Accuracy property is set
+        internal bool IsSetAccuracy()
+        {
+            return this._accuracy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviationDistance. 
+        /// <para>
+        /// The distance between the inferred position and the device's self-reported position.
+        /// </para>
+        /// </summary>
+        public double DeviationDistance
+        {
+            get { return this._deviationDistance.GetValueOrDefault(); }
+            set { this._deviationDistance = value; }
+        }
+
+        // Check to see if DeviationDistance property is set
+        internal bool IsSetDeviationDistance()
+        {
+            return this._deviationDistance.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Position. 
+        /// <para>
+        /// The device position inferred by the provided position, IP address, cellular signals,
+        /// and Wi-Fi- access points.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=2, Max=2)]
+        public List<double> Position
+        {
+            get { return this._position; }
+            set { this._position = value; }
+        }
+
+        // Check to see if Position property is set
+        internal bool IsSetPosition()
+        {
+            return this._position != null && (this._position.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProxyDetected. 
+        /// <para>
+        /// Indicates if a proxy was used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public bool ProxyDetected
+        {
+            get { return this._proxyDetected.GetValueOrDefault(); }
+            set { this._proxyDetected = value; }
+        }
+
+        // Check to see if ProxyDetected property is set
+        internal bool IsSetProxyDetected()
+        {
+            return this._proxyDetected.HasValue; 
+        }
+
+    }
+}

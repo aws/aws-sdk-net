@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public DocumentParameter Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentParameter unmarshalledObject = new DocumentParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

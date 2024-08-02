@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public ServiceResourceCost Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceResourceCost unmarshalledObject = new ServiceResourceCost();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

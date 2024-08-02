@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public SnowconeDeviceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SnowconeDeviceConfiguration unmarshalledObject = new SnowconeDeviceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

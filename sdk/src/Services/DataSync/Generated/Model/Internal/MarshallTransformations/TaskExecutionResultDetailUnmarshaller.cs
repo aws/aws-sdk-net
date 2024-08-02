@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public TaskExecutionResultDetail Unmarshall(JsonUnmarshallerContext context)
         {
             TaskExecutionResultDetail unmarshalledObject = new TaskExecutionResultDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

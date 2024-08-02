@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public OpenSearchServerlessFieldMapping Unmarshall(JsonUnmarshallerContext context)
         {
             OpenSearchServerlessFieldMapping unmarshalledObject = new OpenSearchServerlessFieldMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

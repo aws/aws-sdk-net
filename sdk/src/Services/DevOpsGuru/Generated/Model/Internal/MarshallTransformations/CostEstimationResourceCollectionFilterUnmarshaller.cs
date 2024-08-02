@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public CostEstimationResourceCollectionFilter Unmarshall(JsonUnmarshallerContext context)
         {
             CostEstimationResourceCollectionFilter unmarshalledObject = new CostEstimationResourceCollectionFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

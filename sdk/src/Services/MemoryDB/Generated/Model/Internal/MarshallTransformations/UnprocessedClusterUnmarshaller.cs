@@ -57,6 +57,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public UnprocessedCluster Unmarshall(JsonUnmarshallerContext context)
         {
             UnprocessedCluster unmarshalledObject = new UnprocessedCluster();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

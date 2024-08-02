@@ -57,6 +57,8 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         public InstanceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceConfig unmarshalledObject = new InstanceConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

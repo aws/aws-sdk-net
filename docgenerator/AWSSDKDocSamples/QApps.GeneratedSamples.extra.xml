@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.AssociateLibraryItemReview(Amazon.QApps.Model.AssociateLibraryItemReviewRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.AssociateLibraryItemReview(Amazon.QApps.Model.AssociateLibraryItemReviewRequest)" />
+            <member name="T:Amazon.QApps.Model.AssociateLibraryItemReviewRequest" />
+            <member name="T:Amazon.QApps.Model.AssociateLibraryItemReviewResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Increase the rating counter by 1 for the related app for this user"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.AssociateQAppWithUser(Amazon.QApps.Model.AssociateQAppWithUserRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.AssociateQAppWithUser(Amazon.QApps.Model.AssociateQAppWithUserRequest)" />
+            <member name="T:Amazon.QApps.Model.AssociateQAppWithUserRequest" />
+            <member name="T:Amazon.QApps.Model.AssociateQAppWithUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Links an Amazon Q App to the invoker's list of apps"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.CreateLibraryItem(Amazon.QApps.Model.CreateLibraryItemRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.CreateLibraryItem(Amazon.QApps.Model.CreateLibraryItemRequest)" />
+            <member name="T:Amazon.QApps.Model.CreateLibraryItemRequest" />
+            <member name="T:Amazon.QApps.Model.CreateLibraryItemResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create a Library Item"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.CreateQApp(Amazon.QApps.Model.CreateQAppRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.CreateQApp(Amazon.QApps.Model.CreateQAppRequest)" />
+            <member name="T:Amazon.QApps.Model.CreateQAppRequest" />
+            <member name="T:Amazon.QApps.Model.CreateQAppResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="A basic application with 1 text input card and 1 output card"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.DeleteLibraryItem(Amazon.QApps.Model.DeleteLibraryItemRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.DeleteLibraryItem(Amazon.QApps.Model.DeleteLibraryItemRequest)" />
+            <member name="T:Amazon.QApps.Model.DeleteLibraryItemRequest" />
+            <member name="T:Amazon.QApps.Model.DeleteLibraryItemResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete a library item"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.DeleteQApp(Amazon.QApps.Model.DeleteQAppRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.DeleteQApp(Amazon.QApps.Model.DeleteQAppRequest)" />
+            <member name="T:Amazon.QApps.Model.DeleteQAppRequest" />
+            <member name="T:Amazon.QApps.Model.DeleteQAppResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete an Amazon Q App"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.DisassociateLibraryItemReview(Amazon.QApps.Model.DisassociateLibraryItemReviewRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.DisassociateLibraryItemReview(Amazon.QApps.Model.DisassociateLibraryItemReviewRequest)" />
+            <member name="T:Amazon.QApps.Model.DisassociateLibraryItemReviewRequest" />
+            <member name="T:Amazon.QApps.Model.DisassociateLibraryItemReviewResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Decrease the rating counter by 1 for the related app for this user"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.DisassociateQAppFromUser(Amazon.QApps.Model.DisassociateQAppFromUserRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.DisassociateQAppFromUser(Amazon.QApps.Model.DisassociateQAppFromUserRequest)" />
+            <member name="T:Amazon.QApps.Model.DisassociateQAppFromUserRequest" />
+            <member name="T:Amazon.QApps.Model.DisassociateQAppFromUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Unlinks an Amazon Q App from the invoker's list of apps"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.GetLibraryItem(Amazon.QApps.Model.GetLibraryItemRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.GetLibraryItem(Amazon.QApps.Model.GetLibraryItemRequest)" />
+            <member name="T:Amazon.QApps.Model.GetLibraryItemRequest" />
+            <member name="T:Amazon.QApps.Model.GetLibraryItemResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Retrieve a library item"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.GetQApp(Amazon.QApps.Model.GetQAppRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.GetQApp(Amazon.QApps.Model.GetQAppRequest)" />
+            <member name="T:Amazon.QApps.Model.GetQAppRequest" />
+            <member name="T:Amazon.QApps.Model.GetQAppResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="A basic application with 1 text input card and 1 output card"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.GetQAppSession(Amazon.QApps.Model.GetQAppSessionRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.GetQAppSession(Amazon.QApps.Model.GetQAppSessionRequest)" />
+            <member name="T:Amazon.QApps.Model.GetQAppSessionRequest" />
+            <member name="T:Amazon.QApps.Model.GetQAppSessionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Retrieves an existing session for an Amazon Q App"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.ImportDocument(Amazon.QApps.Model.ImportDocumentRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.ImportDocument(Amazon.QApps.Model.ImportDocumentRequest)" />
+            <member name="T:Amazon.QApps.Model.ImportDocumentRequest" />
+            <member name="T:Amazon.QApps.Model.ImportDocumentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Upload a file to a specific session"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.ImportDocument(Amazon.QApps.Model.ImportDocumentRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.ImportDocument(Amazon.QApps.Model.ImportDocumentRequest)" />
+            <member name="T:Amazon.QApps.Model.ImportDocumentRequest" />
+            <member name="T:Amazon.QApps.Model.ImportDocumentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Upload a file into a application"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.ListLibraryItems(Amazon.QApps.Model.ListLibraryItemsRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.ListLibraryItems(Amazon.QApps.Model.ListLibraryItemsRequest)" />
+            <member name="T:Amazon.QApps.Model.ListLibraryItemsRequest" />
+            <member name="T:Amazon.QApps.Model.ListLibraryItemsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List at most 3 library items for this instance"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.ListQApps(Amazon.QApps.Model.ListQAppsRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.ListQApps(Amazon.QApps.Model.ListQAppsRequest)" />
+            <member name="T:Amazon.QApps.Model.ListQAppsRequest" />
+            <member name="T:Amazon.QApps.Model.ListQAppsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List at most 3 Amazon Q Apps in an Q Business application"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.ListQApps(Amazon.QApps.Model.ListQAppsRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.ListQApps(Amazon.QApps.Model.ListQAppsRequest)" />
+            <member name="T:Amazon.QApps.Model.ListQAppsRequest" />
+            <member name="T:Amazon.QApps.Model.ListQAppsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Retrieve the next page of Amazon Q Apps"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.ListTagsForResource(Amazon.QApps.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.ListTagsForResource(Amazon.QApps.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.QApps.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.QApps.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="A call to list tags for a resource"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.StartQAppSession(Amazon.QApps.Model.StartQAppSessionRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.StartQAppSession(Amazon.QApps.Model.StartQAppSessionRequest)" />
+            <member name="T:Amazon.QApps.Model.StartQAppSessionRequest" />
+            <member name="T:Amazon.QApps.Model.StartQAppSessionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Start a session for an Amazon Q App using version 1, passing in initial values for one card"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.TagResource(Amazon.QApps.Model.TagResourceRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.TagResource(Amazon.QApps.Model.TagResourceRequest)" />
+            <member name="T:Amazon.QApps.Model.TagResourceRequest" />
+            <member name="T:Amazon.QApps.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="A call to tag a resource"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.UntagResource(Amazon.QApps.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.UntagResource(Amazon.QApps.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.QApps.Model.UntagResourceRequest" />
+            <member name="T:Amazon.QApps.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="A call to untag a resource"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.UpdateLibraryItem(Amazon.QApps.Model.UpdateLibraryItemRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.UpdateLibraryItem(Amazon.QApps.Model.UpdateLibraryItemRequest)" />
+            <member name="T:Amazon.QApps.Model.UpdateLibraryItemRequest" />
+            <member name="T:Amazon.QApps.Model.UpdateLibraryItemResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sets the status of a library item to DISABLED"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.UpdateQApp(Amazon.QApps.Model.UpdateQAppRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.UpdateQApp(Amazon.QApps.Model.UpdateQAppRequest)" />
+            <member name="T:Amazon.QApps.Model.UpdateQAppRequest" />
+            <member name="T:Amazon.QApps.Model.UpdateQAppResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Updating the title of an app"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.UpdateQApp(Amazon.QApps.Model.UpdateQAppRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.UpdateQApp(Amazon.QApps.Model.UpdateQAppRequest)" />
+            <member name="T:Amazon.QApps.Model.UpdateQAppRequest" />
+            <member name="T:Amazon.QApps.Model.UpdateQAppResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Updating the app so it has a single q-query card"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+</docs>

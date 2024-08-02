@@ -147,7 +147,7 @@ namespace Amazon.EC2.Model
         /// The priority to assign to the instance type. This value is used to determine which
         /// of the instance types specified for the Fleet should be prioritized for use. A lower
         /// value indicates a high priority. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">Instance
-        /// type priority</a> in the Amazon EC2 User Guide.
+        /// type priority</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -170,7 +170,7 @@ namespace Amazon.EC2.Model
         /// together with the total target capacity that you specify for the Fleet determine the
         /// number of instances for which the Fleet reserves capacity. Both values are based on
         /// units that make sense for your workload. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total
-        /// target capacity</a> in the Amazon EC2 User Guide.
+        /// target capacity</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public double? Weight

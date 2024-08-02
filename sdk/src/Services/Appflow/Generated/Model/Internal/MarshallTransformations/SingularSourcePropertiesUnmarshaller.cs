@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public SingularSourceProperties Unmarshall(JsonUnmarshallerContext context)
         {
             SingularSourceProperties unmarshalledObject = new SingularSourceProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

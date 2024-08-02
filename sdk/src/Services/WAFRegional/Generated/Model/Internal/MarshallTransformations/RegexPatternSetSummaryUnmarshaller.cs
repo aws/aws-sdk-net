@@ -57,6 +57,8 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         public RegexPatternSetSummary Unmarshall(JsonUnmarshallerContext context)
         {
             RegexPatternSetSummary unmarshalledObject = new RegexPatternSetSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

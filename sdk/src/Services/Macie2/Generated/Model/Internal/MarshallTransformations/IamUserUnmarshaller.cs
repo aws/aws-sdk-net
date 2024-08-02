@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public IamUser Unmarshall(JsonUnmarshallerContext context)
         {
             IamUser unmarshalledObject = new IamUser();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

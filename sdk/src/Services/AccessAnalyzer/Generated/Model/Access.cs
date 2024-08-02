@@ -30,11 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
-    /// Contains information about actions that define permissions to check against a policy.
+    /// Contains information about actions and resources that define permissions to check
+    /// against a policy.
     /// </summary>
     public partial class Access
     {
         private List<string> _actions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resources = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -43,7 +45,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// in an IAM policy can be used in the list of actions to check.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public List<string> Actions
         {
             get { return this._actions; }
@@ -54,6 +56,26 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetActions()
         {
             return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Resources. 
+        /// <para>
+        /// A list of resources for the access permissions. Any strings that can be used as a
+        /// resource in an IAM policy can be used in the list of resources to check.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> Resources
+        {
+            get { return this._resources; }
+            set { this._resources = value; }
+        }
+
+        // Check to see if Resources property is set
+        internal bool IsSetResources()
+        {
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

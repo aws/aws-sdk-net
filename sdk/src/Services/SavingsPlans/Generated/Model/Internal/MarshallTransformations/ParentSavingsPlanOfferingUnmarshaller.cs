@@ -57,6 +57,8 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
         public ParentSavingsPlanOffering Unmarshall(JsonUnmarshallerContext context)
         {
             ParentSavingsPlanOffering unmarshalledObject = new ParentSavingsPlanOffering();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

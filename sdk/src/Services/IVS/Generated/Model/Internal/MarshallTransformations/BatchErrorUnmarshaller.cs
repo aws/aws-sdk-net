@@ -57,6 +57,8 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         public BatchError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchError unmarshalledObject = new BatchError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

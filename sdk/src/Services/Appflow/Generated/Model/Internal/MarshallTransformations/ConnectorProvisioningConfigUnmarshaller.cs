@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public ConnectorProvisioningConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectorProvisioningConfig unmarshalledObject = new ConnectorProvisioningConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

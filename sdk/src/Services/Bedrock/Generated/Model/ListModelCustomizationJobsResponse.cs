@@ -58,7 +58,9 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Page continuation token to use in the next request.
+        /// If the total number of results is greater than the <c>maxResults</c> value provided
+        /// in the request, use this token when making another request in the <c>nextToken</c>
+        /// field to return the next batch of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

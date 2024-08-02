@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public ResourceServerScopeType Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceServerScopeType unmarshalledObject = new ResourceServerScopeType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -138,7 +138,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The operation's status.
+        /// The association status.
         /// </para>
         /// </summary>
         public ServiceNetworkServiceAssociationStatus Status

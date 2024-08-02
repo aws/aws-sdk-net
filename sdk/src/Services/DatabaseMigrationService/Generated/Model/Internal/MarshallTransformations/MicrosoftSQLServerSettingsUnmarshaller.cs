@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public MicrosoftSQLServerSettings Unmarshall(JsonUnmarshallerContext context)
         {
             MicrosoftSQLServerSettings unmarshalledObject = new MicrosoftSQLServerSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

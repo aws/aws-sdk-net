@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public Vocabulary Unmarshall(JsonUnmarshallerContext context)
         {
             Vocabulary unmarshalledObject = new Vocabulary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

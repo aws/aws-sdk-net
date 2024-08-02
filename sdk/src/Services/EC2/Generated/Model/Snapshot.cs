@@ -115,8 +115,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was
-        /// used to protect the volume encryption key for the parent volume.
+        /// The Amazon Resource Name (ARN) of the KMS key that was used to protect the volume
+        /// encryption key for the parent volume.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -302,9 +302,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property StateMessage. 
         /// <para>
         /// Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation
-        /// fails (for example, if the proper Key Management Service (KMS) permissions are not
-        /// obtained) this field displays error state details to help you diagnose why the error
-        /// occurred. This parameter is only returned by <a>DescribeSnapshots</a>.
+        /// fails (for example, if the proper KMS permissions are not obtained) this field displays
+        /// error state details to help you diagnose why the error occurred. This parameter is
+        /// only returned by <a>DescribeSnapshots</a>.
         /// </para>
         /// </summary>
         public string StateMessage

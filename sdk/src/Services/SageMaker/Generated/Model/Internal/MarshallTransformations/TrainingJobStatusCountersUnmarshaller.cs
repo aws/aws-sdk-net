@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public TrainingJobStatusCounters Unmarshall(JsonUnmarshallerContext context)
         {
             TrainingJobStatusCounters unmarshalledObject = new TrainingJobStatusCounters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

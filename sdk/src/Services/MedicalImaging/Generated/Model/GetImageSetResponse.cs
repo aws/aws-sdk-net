@@ -42,6 +42,7 @@ namespace Amazon.MedicalImaging.Model
         private ImageSetState _imageSetState;
         private ImageSetWorkflowStatus _imageSetWorkflowStatus;
         private string _message;
+        private Overrides _overrides;
         private DateTime? _updatedAt;
         private string _versionId;
 
@@ -191,6 +192,26 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetMessage()
         {
             return this._message != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Overrides. 
+        /// <para>
+        /// This object contains the details of any overrides used while creating a specific image
+        /// set version. If an image set was copied or updated using the <c>force</c> flag, this
+        /// object will contain the <c>forced</c> flag.
+        /// </para>
+        /// </summary>
+        public Overrides Overrides
+        {
+            get { return this._overrides; }
+            set { this._overrides = value; }
+        }
+
+        // Check to see if Overrides property is set
+        internal bool IsSetOverrides()
+        {
+            return this._overrides != null;
         }
 
         /// <summary>

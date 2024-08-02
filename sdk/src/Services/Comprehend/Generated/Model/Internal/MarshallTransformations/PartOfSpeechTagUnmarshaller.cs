@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public PartOfSpeechTag Unmarshall(JsonUnmarshallerContext context)
         {
             PartOfSpeechTag unmarshalledObject = new PartOfSpeechTag();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         public PortForwardingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             PortForwardingConfig unmarshalledObject = new PortForwardingConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

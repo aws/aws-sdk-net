@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public MetricBasedObservation Unmarshall(JsonUnmarshallerContext context)
         {
             MetricBasedObservation unmarshalledObject = new MetricBasedObservation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

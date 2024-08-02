@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public AnalysisStatusUnion Unmarshall(JsonUnmarshallerContext context)
         {
             AnalysisStatusUnion unmarshalledObject = new AnalysisStatusUnion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

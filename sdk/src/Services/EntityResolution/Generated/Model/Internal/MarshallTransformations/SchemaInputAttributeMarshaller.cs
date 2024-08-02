@@ -60,6 +60,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.GroupName);
             }
 
+            if(requestObject.IsSetHashed())
+            {
+                context.Writer.WritePropertyName("hashed");
+                context.Writer.Write(requestObject.Hashed);
+            }
+
             if(requestObject.IsSetMatchKey())
             {
                 context.Writer.WritePropertyName("matchKey");

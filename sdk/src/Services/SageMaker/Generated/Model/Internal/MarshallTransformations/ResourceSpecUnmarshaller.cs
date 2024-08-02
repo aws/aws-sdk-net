@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ResourceSpec Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceSpec unmarshalledObject = new ResourceSpec();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

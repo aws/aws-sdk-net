@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public RowLevelPermissionTagRule Unmarshall(JsonUnmarshallerContext context)
         {
             RowLevelPermissionTagRule unmarshalledObject = new RowLevelPermissionTagRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

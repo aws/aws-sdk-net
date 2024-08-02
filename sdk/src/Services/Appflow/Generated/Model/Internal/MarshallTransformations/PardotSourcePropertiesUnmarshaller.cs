@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public PardotSourceProperties Unmarshall(JsonUnmarshallerContext context)
         {
             PardotSourceProperties unmarshalledObject = new PardotSourceProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

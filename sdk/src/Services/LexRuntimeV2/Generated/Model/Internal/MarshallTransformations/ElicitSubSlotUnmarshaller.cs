@@ -57,6 +57,8 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         public ElicitSubSlot Unmarshall(JsonUnmarshallerContext context)
         {
             ElicitSubSlot unmarshalledObject = new ElicitSubSlot();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -245,6 +245,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamExternalResourceVerificationTokensRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeIpamPoolsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -437,6 +442,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeSubnetsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTrafficMirrorFilterRulesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -916,6 +926,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.Ipam.IpamArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamExternalResourceVerificationToken.IpamArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamExternalResourceVerificationToken.IpamExternalResourceVerificationTokenArn</property>
     <min>1</min>
     <max>1283</max>
   </property-value-rule>

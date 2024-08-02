@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public PatternToken Unmarshall(JsonUnmarshallerContext context)
         {
             PatternToken unmarshalledObject = new PatternToken();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

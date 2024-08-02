@@ -57,6 +57,8 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         public BackupRetentionPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             BackupRetentionPolicy unmarshalledObject = new BackupRetentionPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

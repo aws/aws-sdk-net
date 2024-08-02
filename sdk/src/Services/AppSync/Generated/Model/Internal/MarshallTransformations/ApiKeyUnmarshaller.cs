@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public ApiKey Unmarshall(JsonUnmarshallerContext context)
         {
             ApiKey unmarshalledObject = new ApiKey();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

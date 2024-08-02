@@ -82,6 +82,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.ManageAccessRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("provisioningConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProvisioningConfiguration, ProvisioningConfigurationUnmarshaller>(ProvisioningConfigurationUnmarshaller.Instance);
+                    response.ProvisioningConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("provisioningRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

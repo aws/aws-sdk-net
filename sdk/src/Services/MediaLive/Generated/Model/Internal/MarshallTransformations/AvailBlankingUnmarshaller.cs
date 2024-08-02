@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public AvailBlanking Unmarshall(JsonUnmarshallerContext context)
         {
             AvailBlanking unmarshalledObject = new AvailBlanking();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

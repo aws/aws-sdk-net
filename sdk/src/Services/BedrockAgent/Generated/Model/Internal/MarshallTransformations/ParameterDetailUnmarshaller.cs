@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public ParameterDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ParameterDetail unmarshalledObject = new ParameterDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public CapacityUsageSummary Unmarshall(JsonUnmarshallerContext context)
         {
             CapacityUsageSummary unmarshalledObject = new CapacityUsageSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public WhatIfRangeScenario Unmarshall(JsonUnmarshallerContext context)
         {
             WhatIfRangeScenario unmarshalledObject = new WhatIfRangeScenario();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

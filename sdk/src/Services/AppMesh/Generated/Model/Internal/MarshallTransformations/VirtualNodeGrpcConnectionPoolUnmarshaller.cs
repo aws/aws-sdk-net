@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public VirtualNodeGrpcConnectionPool Unmarshall(JsonUnmarshallerContext context)
         {
             VirtualNodeGrpcConnectionPool unmarshalledObject = new VirtualNodeGrpcConnectionPool();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

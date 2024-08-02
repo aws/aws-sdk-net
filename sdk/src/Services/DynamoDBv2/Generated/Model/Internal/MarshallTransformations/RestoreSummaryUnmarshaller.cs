@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public RestoreSummary Unmarshall(JsonUnmarshallerContext context)
         {
             RestoreSummary unmarshalledObject = new RestoreSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

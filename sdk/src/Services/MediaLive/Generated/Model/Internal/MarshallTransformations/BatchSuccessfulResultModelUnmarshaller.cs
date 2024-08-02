@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public BatchSuccessfulResultModel Unmarshall(JsonUnmarshallerContext context)
         {
             BatchSuccessfulResultModel unmarshalledObject = new BatchSuccessfulResultModel();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

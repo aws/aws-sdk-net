@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AssetBundleResourcePermissions Unmarshall(JsonUnmarshallerContext context)
         {
             AssetBundleResourcePermissions unmarshalledObject = new AssetBundleResourcePermissions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         public ValidationSettings Unmarshall(JsonUnmarshallerContext context)
         {
             ValidationSettings unmarshalledObject = new ValidationSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

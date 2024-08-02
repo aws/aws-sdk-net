@@ -57,6 +57,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         public SupportedAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             SupportedAssociation unmarshalledObject = new SupportedAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

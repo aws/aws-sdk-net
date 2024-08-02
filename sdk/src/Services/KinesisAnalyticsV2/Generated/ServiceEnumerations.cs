@@ -535,6 +535,64 @@ namespace Amazon.KinesisAnalyticsV2
 
 
     /// <summary>
+    /// Constants used for properties of type OperationStatus.
+    /// </summary>
+    public class OperationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus CANCELLED = new OperationStatus("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus FAILED = new OperationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus IN_PROGRESS = new OperationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCESSFUL for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus SUCCESSFUL = new OperationStatus("SUCCESSFUL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationStatus FindValue(string value)
+        {
+            return FindValue<OperationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecordFormatType.
     /// </summary>
     public class RecordFormatType : ConstantClass
@@ -606,6 +664,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// Constant FLINK1_18 for RuntimeEnvironment
         /// </summary>
         public static readonly RuntimeEnvironment FLINK1_18 = new RuntimeEnvironment("FLINK-1_18");
+        /// <summary>
+        /// Constant FLINK1_19 for RuntimeEnvironment
+        /// </summary>
+        public static readonly RuntimeEnvironment FLINK1_19 = new RuntimeEnvironment("FLINK-1_19");
         /// <summary>
         /// Constant FLINK1_6 for RuntimeEnvironment
         /// </summary>

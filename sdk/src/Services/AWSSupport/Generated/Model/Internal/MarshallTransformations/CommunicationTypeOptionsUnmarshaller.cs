@@ -57,6 +57,8 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
         public CommunicationTypeOptions Unmarshall(JsonUnmarshallerContext context)
         {
             CommunicationTypeOptions unmarshalledObject = new CommunicationTypeOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

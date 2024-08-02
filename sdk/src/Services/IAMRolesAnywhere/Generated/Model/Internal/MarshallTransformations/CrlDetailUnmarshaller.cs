@@ -57,6 +57,8 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         public CrlDetail Unmarshall(JsonUnmarshallerContext context)
         {
             CrlDetail unmarshalledObject = new CrlDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

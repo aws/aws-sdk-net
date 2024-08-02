@@ -57,6 +57,8 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         public NotificationSettingDetail Unmarshall(JsonUnmarshallerContext context)
         {
             NotificationSettingDetail unmarshalledObject = new NotificationSettingDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

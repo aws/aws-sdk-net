@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public ClusterOperationV2 Unmarshall(JsonUnmarshallerContext context)
         {
             ClusterOperationV2 unmarshalledObject = new ClusterOperationV2();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

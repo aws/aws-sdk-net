@@ -57,6 +57,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         public SocialProviderSettings Unmarshall(JsonUnmarshallerContext context)
         {
             SocialProviderSettings unmarshalledObject = new SocialProviderSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

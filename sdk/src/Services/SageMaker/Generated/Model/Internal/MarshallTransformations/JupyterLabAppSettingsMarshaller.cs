@@ -91,6 +91,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEmrSettings())
+            {
+                context.Writer.WritePropertyName("EmrSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EmrSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.EmrSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLifecycleConfigArns())
             {
                 context.Writer.WritePropertyName("LifecycleConfigArns");

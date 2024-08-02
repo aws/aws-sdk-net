@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public VideoSelectorColorSpaceSettings Unmarshall(JsonUnmarshallerContext context)
         {
             VideoSelectorColorSpaceSettings unmarshalledObject = new VideoSelectorColorSpaceSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

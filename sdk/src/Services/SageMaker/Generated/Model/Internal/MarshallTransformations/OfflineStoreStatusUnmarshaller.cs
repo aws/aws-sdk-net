@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public OfflineStoreStatus Unmarshall(JsonUnmarshallerContext context)
         {
             OfflineStoreStatus unmarshalledObject = new OfflineStoreStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

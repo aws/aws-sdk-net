@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public OnFailure Unmarshall(JsonUnmarshallerContext context)
         {
             OnFailure unmarshalledObject = new OnFailure();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

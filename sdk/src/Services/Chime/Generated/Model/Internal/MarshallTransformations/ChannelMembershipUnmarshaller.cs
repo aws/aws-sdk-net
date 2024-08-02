@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public ChannelMembership Unmarshall(JsonUnmarshallerContext context)
         {
             ChannelMembership unmarshalledObject = new ChannelMembership();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

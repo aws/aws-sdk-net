@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public AnalysisRuleAggregation Unmarshall(JsonUnmarshallerContext context)
         {
             AnalysisRuleAggregation unmarshalledObject = new AnalysisRuleAggregation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("additionalAnalyses", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalAnalyses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("aggregateColumns", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AggregateColumn, AggregateColumnUnmarshaller>(AggregateColumnUnmarshaller.Instance);

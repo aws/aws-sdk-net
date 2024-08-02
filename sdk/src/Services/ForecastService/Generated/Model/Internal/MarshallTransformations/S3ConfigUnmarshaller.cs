@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public S3Config Unmarshall(JsonUnmarshallerContext context)
         {
             S3Config unmarshalledObject = new S3Config();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

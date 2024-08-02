@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public Ingestion Unmarshall(JsonUnmarshallerContext context)
         {
             Ingestion unmarshalledObject = new Ingestion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

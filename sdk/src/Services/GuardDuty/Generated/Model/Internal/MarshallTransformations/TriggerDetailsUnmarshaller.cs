@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public TriggerDetails Unmarshall(JsonUnmarshallerContext context)
         {
             TriggerDetails unmarshalledObject = new TriggerDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

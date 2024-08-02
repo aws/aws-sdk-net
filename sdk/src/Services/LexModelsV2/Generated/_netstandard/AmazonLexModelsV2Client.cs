@@ -1019,6 +1019,11 @@ namespace Amazon.LexModelsV2
         /// <para>
         /// You can't create a resource policy statement that allows cross-account access.
         /// </para>
+        ///  
+        /// <para>
+        /// You need to add the <c>CreateResourcePolicy</c> or <c>UpdateResourcePolicy</c> action
+        /// to the bot role in order to call the API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourcePolicyStatement service method.</param>
         /// <param name="cancellationToken">
@@ -1882,6 +1887,12 @@ namespace Amazon.LexModelsV2
         /// from a policy, the policy is deleted. If you specify a statement ID that doesn't exist
         /// in the policy, or if the bot or bot alias doesn't have a policy attached, Amazon Lex
         /// returns an exception.
+        /// 
+        ///  
+        /// <para>
+        /// You need to add the <c>DeleteResourcePolicy</c> or <c>UpdateResourcePolicy</c> action
+        /// to the bot role in order to call the API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicyStatement service method.</param>
         /// <param name="cancellationToken">
@@ -6020,8 +6031,32 @@ namespace Amazon.LexModelsV2
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonLexModelsV2EndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonLexModelsV2EndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

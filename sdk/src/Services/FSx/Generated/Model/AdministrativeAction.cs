@@ -79,8 +79,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ProgressPercent. 
         /// <para>
-        /// The percentage-complete status of a <c>STORAGE_OPTIMIZATION</c> administrative action.
-        /// Does not apply to any other administrative action type.
+        /// The percentage-complete status of a <c>STORAGE_OPTIMIZATION</c> or <c>DOWNLOAD_DATA_FROM_BACKUP</c>
+        /// administrative action. Does not apply to any other administrative action type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -154,11 +154,30 @@ namespace Amazon.FSx.Model
         /// <para>
         ///  <c>COMPLETED</c> - Amazon FSx has finished processing the administrative task.
         /// </para>
+        ///  
+        /// <para>
+        /// For a backup restore to a second-generation FSx for ONTAP file system, indicates that
+        /// all data has been downloaded to the volume, and clients now have read-write access
+        /// to volume.
+        /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>UPDATED_OPTIMIZING</c> - For a storage-capacity increase update, Amazon FSx has
         /// updated the file system with the new storage capacity, and is now performing the storage-optimization
         /// process.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PENDING</c> - For a backup restore to a second-generation FSx for ONTAP file system,
+        /// indicates that the file metadata is being downloaded onto the volume. The volume's
+        /// Lifecycle state is CREATING.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IN_PROGRESS</c> - For a backup restore to a second-generation FSx for ONTAP file
+        /// system, indicates that all metadata has been downloaded to the new volume and client
+        /// can access data with read-only access while Amazon FSx downloads the file data to
+        /// the volume. Track the progress of this process with the <c>ProgressPercent</c> element.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public JobBookmarksEncryption Unmarshall(JsonUnmarshallerContext context)
         {
             JobBookmarksEncryption unmarshalledObject = new JobBookmarksEncryption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

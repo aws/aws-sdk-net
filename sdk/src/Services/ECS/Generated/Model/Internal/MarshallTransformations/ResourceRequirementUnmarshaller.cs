@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public ResourceRequirement Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceRequirement unmarshalledObject = new ResourceRequirement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

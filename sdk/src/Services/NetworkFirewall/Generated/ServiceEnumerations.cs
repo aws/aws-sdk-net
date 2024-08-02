@@ -470,6 +470,10 @@ namespace Amazon.NetworkFirewall
         /// Constant FLOW for LogType
         /// </summary>
         public static readonly LogType FLOW = new LogType("FLOW");
+        /// <summary>
+        /// Constant TLS for LogType
+        /// </summary>
+        public static readonly LogType TLS = new LogType("TLS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

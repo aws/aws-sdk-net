@@ -59,8 +59,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AllowListIds. 
         /// <para>
-        /// An array of unique identifiers, one for each allow list that the job uses when it
-        /// analyzes data.
+        /// An array of unique identifiers, one for each allow list that the job is configured
+        /// to use when it analyzes data.
         /// </para>
         /// </summary>
         public List<string> AllowListIds
@@ -115,9 +115,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property CustomDataIdentifierIds. 
         /// <para>
-        /// An array of unique identifiers, one for each custom data identifier that the job uses
-        /// when it analyzes data. This value is null if the job uses only managed data identifiers
-        /// to analyze data.
+        /// An array of unique identifiers, one for each custom data identifier that the job is
+        /// configured to use when it analyzes data. This value is null if the job is configured
+        /// to use only managed data identifiers to analyze data.
         /// </para>
         /// </summary>
         public List<string> CustomDataIdentifierIds
@@ -395,9 +395,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about individual managed data identifiers or to determine which ones
-        /// are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
-        /// managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+        /// To learn about individual managed data identifiers or determine which ones are in
+        /// the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
+        /// managed data identifiers</a> or <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
         /// managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.
         /// </para>
         /// </summary>
@@ -510,7 +510,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A map of key-value pairs that specifies which tags (keys and values) are associated
-        /// with the classification job.
+        /// with the job.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

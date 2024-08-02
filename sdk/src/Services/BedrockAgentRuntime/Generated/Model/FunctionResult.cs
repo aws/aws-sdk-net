@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// In the <c>returnControlInvocationResults</c> of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+    /// In the <c>returnControlInvocationResults</c> of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_RequestSyntax">InvokeAgent
     /// request</a> 
     /// </para>
     ///  </li> </ul>
@@ -91,7 +91,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ResponseBody. 
         /// <para>
-        /// The response from the function call using the parameters. The response may be returned
+        /// The response from the function call using the parameters. The key of the object is
+        /// the content type (currently, only <c>TEXT</c> is supported). The response may be returned
         /// directly or from the Lambda function.
         /// </para>
         /// </summary>

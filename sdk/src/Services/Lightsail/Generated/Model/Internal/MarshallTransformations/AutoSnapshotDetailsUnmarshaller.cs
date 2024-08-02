@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public AutoSnapshotDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AutoSnapshotDetails unmarshalledObject = new AutoSnapshotDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

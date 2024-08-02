@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public ValidationError Unmarshall(JsonUnmarshallerContext context)
         {
             ValidationError unmarshalledObject = new ValidationError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

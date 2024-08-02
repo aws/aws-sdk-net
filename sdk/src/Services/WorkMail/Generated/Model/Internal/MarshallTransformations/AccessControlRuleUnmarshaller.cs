@@ -57,6 +57,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         public AccessControlRule Unmarshall(JsonUnmarshallerContext context)
         {
             AccessControlRule unmarshalledObject = new AccessControlRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

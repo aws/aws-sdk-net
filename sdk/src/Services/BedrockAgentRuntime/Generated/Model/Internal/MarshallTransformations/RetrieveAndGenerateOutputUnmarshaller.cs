@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         public RetrieveAndGenerateOutput Unmarshall(JsonUnmarshallerContext context)
         {
             RetrieveAndGenerateOutput unmarshalledObject = new RetrieveAndGenerateOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

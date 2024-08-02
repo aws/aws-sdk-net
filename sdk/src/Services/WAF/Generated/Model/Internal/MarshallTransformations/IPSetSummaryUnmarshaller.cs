@@ -57,6 +57,8 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         public IPSetSummary Unmarshall(JsonUnmarshallerContext context)
         {
             IPSetSummary unmarshalledObject = new IPSetSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

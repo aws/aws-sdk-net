@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public CompromisedCredentialsActionsType Unmarshall(JsonUnmarshallerContext context)
         {
             CompromisedCredentialsActionsType unmarshalledObject = new CompromisedCredentialsActionsType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

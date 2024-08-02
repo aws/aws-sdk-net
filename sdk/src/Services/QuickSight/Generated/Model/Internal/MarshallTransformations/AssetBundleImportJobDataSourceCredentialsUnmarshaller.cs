@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AssetBundleImportJobDataSourceCredentials Unmarshall(JsonUnmarshallerContext context)
         {
             AssetBundleImportJobDataSourceCredentials unmarshalledObject = new AssetBundleImportJobDataSourceCredentials();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public PartitionObjects Unmarshall(JsonUnmarshallerContext context)
         {
             PartitionObjects unmarshalledObject = new PartitionObjects();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

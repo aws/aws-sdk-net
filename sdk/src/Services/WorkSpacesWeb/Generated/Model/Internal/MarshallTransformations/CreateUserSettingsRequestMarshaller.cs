@@ -115,6 +115,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CustomerManagedKey);
                 }
 
+                if(publicRequest.IsSetDeepLinkAllowed())
+                {
+                    context.Writer.WritePropertyName("deepLinkAllowed");
+                    context.Writer.Write(publicRequest.DeepLinkAllowed);
+                }
+
                 if(publicRequest.IsSetDisconnectTimeoutInMinutes())
                 {
                     context.Writer.WritePropertyName("disconnectTimeoutInMinutes");

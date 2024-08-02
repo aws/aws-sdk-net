@@ -421,6 +421,10 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For GitLab: the commit ID, branch, or Git tag to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version
         /// of the source code you want to build. If a branch name is specified, the branch's
         /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
@@ -480,12 +484,20 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
-        /// The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
-        /// timing out any related build that did not get marked as completed.
+        /// The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait
+        /// before timing out any related build that did not get marked as completed.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=5, Max=480)]
         public int? TimeoutInMinutes
+||||||| Commit version number update changes
+        [AWSProperty(Min=5, Max=480)]
+        public int TimeoutInMinutes
+=======
+        [AWSProperty(Min=5, Max=2160)]
+        public int TimeoutInMinutes
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         {
             get { return this._timeoutInMinutes; }
             set { this._timeoutInMinutes = value; }

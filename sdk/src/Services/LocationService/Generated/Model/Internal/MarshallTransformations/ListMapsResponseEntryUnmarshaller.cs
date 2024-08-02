@@ -57,6 +57,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public ListMapsResponseEntry Unmarshall(JsonUnmarshallerContext context)
         {
             ListMapsResponseEntry unmarshalledObject = new ListMapsResponseEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

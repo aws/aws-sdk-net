@@ -30,7 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The severity assigned to the finding by the finding provider.
+    /// The severity assigned to a finding by the finding provider. This object may include
+    /// one or more of the following attributes:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>Label</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Normalized</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Original</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Product</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If a <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
+    /// <c>BatchImportFindings</c> </a> request for a new finding only provides <c>Label</c>
+    /// or only provides <c>Normalized</c>, Security Hub automatically populates the value
+    /// of the other field.
+    /// </para>
+    ///  
+    /// <para>
+    /// The <c>Normalized</c> and <c>Product</c> attributes are included in the <c>FindingProviderSeverity</c>
+    /// structure to preserve the historical information associated with the finding, even
+    /// if the top-level <c>Severity</c> object is later modified using the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
+    /// <c>BatchUpdateFindings</c> </a> operation.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the top-level <c>Finding.Severity</c> object is present, but <c>Finding.FindingProviderFields</c>
+    /// isn't present, Security Hub creates the <c>FindingProviderFields.Severity</c> object
+    /// and copies the entire <c>Finding.Severity</c> object into it. This ensures that the
+    /// original, provider-supplied details are retained within the <c>FindingProviderFields.Severity</c>
+    /// object, even if the top-level <c>Severity</c> object is overwritten. 
+    /// </para>
     /// </summary>
     public partial class FindingProviderSeverity
     {
@@ -59,6 +99,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Original. 
         /// <para>
         /// The finding provider's original value for the severity.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum length of 1. Maximum length of 64.
         /// </para>
         /// </summary>
         public string Original

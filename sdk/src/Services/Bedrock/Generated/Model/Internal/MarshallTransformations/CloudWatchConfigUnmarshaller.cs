@@ -57,6 +57,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         public CloudWatchConfig Unmarshall(JsonUnmarshallerContext context)
         {
             CloudWatchConfig unmarshalledObject = new CloudWatchConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

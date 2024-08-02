@@ -43,7 +43,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property EndDate. 
         /// <para>
-        /// The end date of the interval which you want to retrieve metrics from.
+        /// The end date of the interval which you want to retrieve metrics from. Round to the
+        /// nearest day.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +66,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// The maximum number of results to return in the response. Use this parameter when paginating
         /// results. If additional results exist beyond the number you specify, the <c>nextToken</c>
         /// element is returned in the response. Use <c>nextToken</c> in a subsequent request
-        /// to retrieve additional results.
+        /// to retrieve additional results. If not specified, returns 1000 results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -106,7 +107,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        /// The start date of the interval which you want to retrieve metrics from.
+        /// The start date of the interval which you want to retrieve metrics from. Rounds to
+        /// the nearest day.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

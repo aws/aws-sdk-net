@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public AssociationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             AssociationDescription unmarshalledObject = new AssociationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public ImplicitDeny Unmarshall(JsonUnmarshallerContext context)
         {
             ImplicitDeny unmarshalledObject = new ImplicitDeny();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

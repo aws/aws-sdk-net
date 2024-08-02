@@ -51,8 +51,9 @@ namespace Amazon.VerifiedPermissions.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// If you delete a Amazon Cognito user pool or user, tokens from that deleted pool or
-    /// that deleted user continue to be usable until they expire.
+    /// Tokens from an identity source user continue to be usable until they expire. Token
+    /// revocation and resource deletion have no effect on the validity of a token in your
+    /// policy store
     /// </para>
     ///  </important>
     /// </summary>

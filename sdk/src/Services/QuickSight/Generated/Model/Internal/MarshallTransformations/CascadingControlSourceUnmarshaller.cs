@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public CascadingControlSource Unmarshall(JsonUnmarshallerContext context)
         {
             CascadingControlSource unmarshalledObject = new CascadingControlSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

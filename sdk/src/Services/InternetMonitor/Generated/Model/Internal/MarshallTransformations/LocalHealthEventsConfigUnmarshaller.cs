@@ -57,6 +57,8 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         public LocalHealthEventsConfig Unmarshall(JsonUnmarshallerContext context)
         {
             LocalHealthEventsConfig unmarshalledObject = new LocalHealthEventsConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

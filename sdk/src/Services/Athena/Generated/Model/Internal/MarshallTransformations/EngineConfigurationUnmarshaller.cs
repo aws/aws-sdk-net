@@ -57,6 +57,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         public EngineConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EngineConfiguration unmarshalledObject = new EngineConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

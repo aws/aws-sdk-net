@@ -31,12 +31,13 @@ namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUploadUrl operation.
-    /// Generates a pre-signed URL and request headers used to upload a code resource.
+    /// Generates a pre-signed URL, request headers used to upload a code resource, and code
+    /// artifact identifier for the uploaded resource.
     /// 
     ///  
     /// <para>
-    /// You can upload your code resource to the URL and add the request headers using any
-    /// HTTP client.
+    /// You can upload your code resource to the URL with the request headers using any HTTP
+    /// client.
     /// </para>
     /// </summary>
     public partial class CreateUploadUrlRequest : AmazonCodeGuruSecurityRequest

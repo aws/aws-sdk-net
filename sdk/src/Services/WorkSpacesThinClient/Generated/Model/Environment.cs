@@ -41,6 +41,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         private string _desktopArn;
         private string _desktopEndpoint;
         private DesktopType _desktopType;
+        private Dictionary<string, string> _deviceCreationTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _id;
         private string _kmsKeyArn;
         private MaintenanceWindow _maintenanceWindow;
@@ -183,6 +184,25 @@ namespace Amazon.WorkSpacesThinClient.Model
         internal bool IsSetDesktopType()
         {
             return this._desktopType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceCreationTags. 
+        /// <para>
+        /// The tag keys and optional values for the newly created devices for this environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
+        public Dictionary<string, string> DeviceCreationTags
+        {
+            get { return this._deviceCreationTags; }
+            set { this._deviceCreationTags = value; }
+        }
+
+        // Check to see if DeviceCreationTags property is set
+        internal bool IsSetDeviceCreationTags()
+        {
+            return this._deviceCreationTags != null && (this._deviceCreationTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

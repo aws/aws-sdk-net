@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ContainerDefinition
     {
+        private List<AdditionalModelDataSource> _additionalModelDataSources = AWSConfigs.InitializeCollections ? new List<AdditionalModelDataSource>() : null;
         private string _containerHostname;
         private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _image;
@@ -44,6 +45,26 @@ namespace Amazon.SageMaker.Model
         private string _modelDataUrl;
         private string _modelPackageName;
         private MultiModelConfig _multiModelConfig;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalModelDataSources. 
+        /// <para>
+        /// Data sources that are available to your model in addition to the one that you specify
+        /// for <c>ModelDataSource</c> when you use the <c>CreateModel</c> action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<AdditionalModelDataSource> AdditionalModelDataSources
+        {
+            get { return this._additionalModelDataSources; }
+            set { this._additionalModelDataSources = value; }
+        }
+
+        // Check to see if AdditionalModelDataSources property is set
+        internal bool IsSetAdditionalModelDataSources()
+        {
+            return this._additionalModelDataSources != null && (this._additionalModelDataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ContainerHostname. 

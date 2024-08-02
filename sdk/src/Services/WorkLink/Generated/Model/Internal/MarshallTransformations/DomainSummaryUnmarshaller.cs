@@ -57,6 +57,8 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
         public DomainSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DomainSummary unmarshalledObject = new DomainSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

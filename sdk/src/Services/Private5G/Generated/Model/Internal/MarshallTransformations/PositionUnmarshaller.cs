@@ -57,6 +57,8 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
         public Position Unmarshall(JsonUnmarshallerContext context)
         {
             Position unmarshalledObject = new Position();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

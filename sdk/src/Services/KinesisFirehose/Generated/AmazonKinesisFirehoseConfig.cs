@@ -34,10 +34,16 @@ namespace Amazon.KinesisFirehose
     public partial class AmazonKinesisFirehoseConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Firehose", "4.0.0.0");
 
         private static readonly AmazonKinesisFirehoseEndpointResolver EndpointResolver =
             new AmazonKinesisFirehoseEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Firehose", "3.7.304.32");
+=======
+            InternalSDKUtils.BuildUserAgentString("Firehose", "3.7.400.2");
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
 
         private string _userAgent = UserAgentString;
         ///<summary>

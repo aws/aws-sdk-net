@@ -57,6 +57,8 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         public GetSolNetworkOperationTaskDetails Unmarshall(JsonUnmarshallerContext context)
         {
             GetSolNetworkOperationTaskDetails unmarshalledObject = new GetSolNetworkOperationTaskDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

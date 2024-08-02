@@ -576,6 +576,10 @@ namespace Amazon.RedshiftServerless
         /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.Ipv6CidrBlockNotFoundException">
+        /// There are no subnets in your VPC with associated IPv6 CIDR blocks. To use dual-stack
+        /// mode, associate an IPv6 CIDR block with each subnet in your VPC.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -607,6 +611,10 @@ namespace Amazon.RedshiftServerless
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.Ipv6CidrBlockNotFoundException">
+        /// There are no subnets in your VPC with associated IPv6 CIDR blocks. To use dual-stack
+        /// mode, associate an IPv6 CIDR block with each subnet in your VPC.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
         /// The resource could not be found.
@@ -3008,6 +3016,10 @@ namespace Amazon.RedshiftServerless
         /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.Ipv6CidrBlockNotFoundException">
+        /// There are no subnets in your VPC with associated IPv6 CIDR blocks. To use dual-stack
+        /// mode, associate an IPv6 CIDR block with each subnet in your VPC.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -3038,6 +3050,10 @@ namespace Amazon.RedshiftServerless
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.Ipv6CidrBlockNotFoundException">
+        /// There are no subnets in your VPC with associated IPv6 CIDR blocks. To use dual-stack
+        /// mode, associate an IPv6 CIDR block with each subnet in your VPC.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
         /// The resource could not be found.

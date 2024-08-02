@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public AdministrativeAction Unmarshall(JsonUnmarshallerContext context)
         {
             AdministrativeAction unmarshalledObject = new AdministrativeAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -258,6 +258,14 @@ namespace Amazon.S3.Transfer.Internal
             uploadPartRequest.PartNumber = partNumber;
             uploadPartRequest.PartSize = partSize;
             uploadPartRequest.IsLastPart = isLastPart;
+            // we can only determine the percentage uploaded if content length is known. For an unseekable stream with unknown length we will not
+            // report on the transfer progress. The part numbers uploaded can still be looked at through verbose logging.
+            if (this._fileTransporterRequest.ContentLength != -1)
+            {
+                var progressHandler = new ProgressHandler(this.UploadPartProgressEventCallback);
+                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadPartRequest).StreamUploadProgressCallback += progressHandler.OnTransferProgress;
+                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadPartRequest).AddBeforeRequestHandler(this.RequestEventHandler);
+            }
 
             return uploadPartRequest;
         }

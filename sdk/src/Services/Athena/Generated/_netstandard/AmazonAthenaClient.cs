@@ -1621,10 +1621,12 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Returns query execution runtime statistics related to a single execution of a query
-        /// if you have access to the workgroup in which the query ran. Query execution runtime
-        /// statistics are returned only when <a>QueryExecutionStatus$State</a> is in a SUCCEEDED
-        /// or FAILED state. Stage-level input and output row count and data size statistics are
-        /// not shown when a query has row-level filters defined in Lake Formation.
+        /// if you have access to the workgroup in which the query ran. Statistics from the <c>Timeline</c>
+        /// section of the response object are available as soon as <a>QueryExecutionStatus$State</a>
+        /// is in a SUCCEEDED or FAILED state. The remaining non-timeline statistics in the response
+        /// (like stage-level input and output row count and data size) are updated asynchronously
+        /// and may not be available immediately after a query completes. The non-timeline statistics
+        /// are also not included when a query has row-level filters defined in Lake Formation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryRuntimeStatistics service method.</param>
         /// <param name="cancellationToken">
@@ -3331,8 +3333,32 @@ namespace Amazon.Athena
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonAthenaEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonAthenaEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

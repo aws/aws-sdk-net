@@ -57,6 +57,8 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         public GatewayDetails Unmarshall(JsonUnmarshallerContext context)
         {
             GatewayDetails unmarshalledObject = new GatewayDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

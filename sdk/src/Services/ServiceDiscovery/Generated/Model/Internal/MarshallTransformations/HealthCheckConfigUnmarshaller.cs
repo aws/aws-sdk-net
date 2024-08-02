@@ -57,6 +57,8 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         public HealthCheckConfig Unmarshall(JsonUnmarshallerContext context)
         {
             HealthCheckConfig unmarshalledObject = new HealthCheckConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

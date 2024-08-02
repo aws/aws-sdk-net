@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public PerformanceInsightsReferenceMetric Unmarshall(JsonUnmarshallerContext context)
         {
             PerformanceInsightsReferenceMetric unmarshalledObject = new PerformanceInsightsReferenceMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

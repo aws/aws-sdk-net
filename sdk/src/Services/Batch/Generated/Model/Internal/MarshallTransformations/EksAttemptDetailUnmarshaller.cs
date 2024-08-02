@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public EksAttemptDetail Unmarshall(JsonUnmarshallerContext context)
         {
             EksAttemptDetail unmarshalledObject = new EksAttemptDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<EksAttemptContainerDetail, EksAttemptContainerDetailUnmarshaller>(EksAttemptContainerDetailUnmarshaller.Instance);
                     unmarshalledObject.Containers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eksClusterArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EksClusterArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("initContainers", targetDepth))

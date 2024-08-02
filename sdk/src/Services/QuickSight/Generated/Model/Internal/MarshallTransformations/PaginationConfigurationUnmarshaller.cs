@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public PaginationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             PaginationConfiguration unmarshalledObject = new PaginationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

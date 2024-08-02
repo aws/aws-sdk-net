@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public StatelessCustomPublishMetricActionDimension Unmarshall(JsonUnmarshallerContext context)
         {
             StatelessCustomPublishMetricActionDimension unmarshalledObject = new StatelessCustomPublishMetricActionDimension();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

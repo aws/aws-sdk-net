@@ -57,6 +57,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         public PoDetailAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             PoDetailAttributes unmarshalledObject = new PoDetailAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

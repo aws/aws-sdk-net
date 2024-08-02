@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public TransportMediaInfo Unmarshall(JsonUnmarshallerContext context)
         {
             TransportMediaInfo unmarshalledObject = new TransportMediaInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

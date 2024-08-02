@@ -57,6 +57,8 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         public NetworkImpairment Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkImpairment unmarshalledObject = new NetworkImpairment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

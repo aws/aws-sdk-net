@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public ECSEstimatedMonthlySavings Unmarshall(JsonUnmarshallerContext context)
         {
             ECSEstimatedMonthlySavings unmarshalledObject = new ECSEstimatedMonthlySavings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

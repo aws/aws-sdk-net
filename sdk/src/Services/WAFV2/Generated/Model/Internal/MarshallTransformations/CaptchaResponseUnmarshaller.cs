@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public CaptchaResponse Unmarshall(JsonUnmarshallerContext context)
         {
             CaptchaResponse unmarshalledObject = new CaptchaResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

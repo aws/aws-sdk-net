@@ -57,6 +57,8 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
         public FraudDetectionResult Unmarshall(JsonUnmarshallerContext context)
         {
             FraudDetectionResult unmarshalledObject = new FraudDetectionResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

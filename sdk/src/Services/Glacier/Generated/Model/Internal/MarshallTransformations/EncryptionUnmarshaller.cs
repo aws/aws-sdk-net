@@ -57,6 +57,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public Encryption Unmarshall(JsonUnmarshallerContext context)
         {
             Encryption unmarshalledObject = new Encryption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

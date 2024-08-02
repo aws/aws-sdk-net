@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public ShareDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ShareDetails unmarshalledObject = new ShareDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

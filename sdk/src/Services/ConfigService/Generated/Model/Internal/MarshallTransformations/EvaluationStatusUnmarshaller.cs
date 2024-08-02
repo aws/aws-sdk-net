@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public EvaluationStatus Unmarshall(JsonUnmarshallerContext context)
         {
             EvaluationStatus unmarshalledObject = new EvaluationStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

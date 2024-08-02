@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public UploadSettings Unmarshall(JsonUnmarshallerContext context)
         {
             UploadSettings unmarshalledObject = new UploadSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

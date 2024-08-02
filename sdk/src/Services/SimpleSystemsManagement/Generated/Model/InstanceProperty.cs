@@ -271,7 +271,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// to the node, this value is blank.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=46)]
+        [AWSProperty(Sensitive=true, Min=1, Max=46)]
         public string IPAddress
         {
             get { return this._ipAddress; }

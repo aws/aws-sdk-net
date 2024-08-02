@@ -57,6 +57,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public FederationParameters Unmarshall(JsonUnmarshallerContext context)
         {
             FederationParameters unmarshalledObject = new FederationParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

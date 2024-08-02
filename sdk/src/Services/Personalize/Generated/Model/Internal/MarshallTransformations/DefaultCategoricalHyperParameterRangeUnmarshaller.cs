@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public DefaultCategoricalHyperParameterRange Unmarshall(JsonUnmarshallerContext context)
         {
             DefaultCategoricalHyperParameterRange unmarshalledObject = new DefaultCategoricalHyperParameterRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

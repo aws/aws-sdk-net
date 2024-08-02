@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public VirtualGatewayListenerTlsValidationContextTrust Unmarshall(JsonUnmarshallerContext context)
         {
             VirtualGatewayListenerTlsValidationContextTrust unmarshalledObject = new VirtualGatewayListenerTlsValidationContextTrust();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

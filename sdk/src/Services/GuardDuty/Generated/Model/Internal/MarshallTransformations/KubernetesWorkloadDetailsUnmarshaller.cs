@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public KubernetesWorkloadDetails Unmarshall(JsonUnmarshallerContext context)
         {
             KubernetesWorkloadDetails unmarshalledObject = new KubernetesWorkloadDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

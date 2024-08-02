@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public ScoreAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             ScoreAttributes unmarshalledObject = new ScoreAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

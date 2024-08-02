@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AnonymousUserSnapshotJobResult Unmarshall(JsonUnmarshallerContext context)
         {
             AnonymousUserSnapshotJobResult unmarshalledObject = new AnonymousUserSnapshotJobResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

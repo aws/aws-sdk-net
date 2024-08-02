@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public GitHubDocumentCrawlProperties Unmarshall(JsonUnmarshallerContext context)
         {
             GitHubDocumentCrawlProperties unmarshalledObject = new GitHubDocumentCrawlProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

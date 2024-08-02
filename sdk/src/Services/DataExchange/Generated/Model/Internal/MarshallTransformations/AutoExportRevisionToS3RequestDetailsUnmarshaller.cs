@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public AutoExportRevisionToS3RequestDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AutoExportRevisionToS3RequestDetails unmarshalledObject = new AutoExportRevisionToS3RequestDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

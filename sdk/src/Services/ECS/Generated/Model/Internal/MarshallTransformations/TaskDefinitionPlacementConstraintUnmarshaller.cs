@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public TaskDefinitionPlacementConstraint Unmarshall(JsonUnmarshallerContext context)
         {
             TaskDefinitionPlacementConstraint unmarshalledObject = new TaskDefinitionPlacementConstraint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

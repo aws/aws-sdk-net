@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AssociationStateDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AssociationStateDetails unmarshalledObject = new AssociationStateDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

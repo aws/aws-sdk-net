@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public BoxPlotAggregatedFieldWells Unmarshall(JsonUnmarshallerContext context)
         {
             BoxPlotAggregatedFieldWells unmarshalledObject = new BoxPlotAggregatedFieldWells();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

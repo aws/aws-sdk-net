@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public LambdaAuthorizerConfig Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaAuthorizerConfig unmarshalledObject = new LambdaAuthorizerConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

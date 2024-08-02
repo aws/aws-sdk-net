@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public TrafficDistributionGroupUserSummary Unmarshall(JsonUnmarshallerContext context)
         {
             TrafficDistributionGroupUserSummary unmarshalledObject = new TrafficDistributionGroupUserSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

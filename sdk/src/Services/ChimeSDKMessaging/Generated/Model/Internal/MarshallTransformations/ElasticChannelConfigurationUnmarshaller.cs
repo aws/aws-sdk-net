@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public ElasticChannelConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ElasticChannelConfiguration unmarshalledObject = new ElasticChannelConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

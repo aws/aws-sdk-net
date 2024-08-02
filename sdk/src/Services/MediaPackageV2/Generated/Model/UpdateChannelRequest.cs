@@ -125,7 +125,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this._eTag != null;
+            return !string.IsNullOrEmpty(this._eTag);
         }
 
     }

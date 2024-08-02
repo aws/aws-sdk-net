@@ -40,6 +40,7 @@ namespace Amazon.RDS.Model
         private string _dbShardGroupResourceId;
         private string _endpoint;
         private double? _maxACU;
+        private double? _minACU;
         private bool? _publiclyAccessible;
         private string _status;
 
@@ -167,6 +168,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetMaxACU()
         {
             return this._maxACU.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinACU. 
+        /// <para>
+        /// The minimum capacity of the DB shard group in Aurora capacity units (ACUs).
+        /// </para>
+        /// </summary>
+        public double MinACU
+        {
+            get { return this._minACU.GetValueOrDefault(); }
+            set { this._minACU = value; }
+        }
+
+        // Check to see if MinACU property is set
+        internal bool IsSetMinACU()
+        {
+            return this._minACU.HasValue; 
         }
 
         /// <summary>

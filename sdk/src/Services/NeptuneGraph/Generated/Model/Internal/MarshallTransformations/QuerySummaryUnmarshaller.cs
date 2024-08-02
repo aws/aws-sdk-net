@@ -57,6 +57,8 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         public QuerySummary Unmarshall(JsonUnmarshallerContext context)
         {
             QuerySummary unmarshalledObject = new QuerySummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

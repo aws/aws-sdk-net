@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public CustomResponseBody Unmarshall(JsonUnmarshallerContext context)
         {
             CustomResponseBody unmarshalledObject = new CustomResponseBody();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

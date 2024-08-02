@@ -89,6 +89,10 @@ namespace Amazon.FSx
     {
 
         /// <summary>
+        /// Constant DOWNLOAD_DATA_FROM_BACKUP for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType DOWNLOAD_DATA_FROM_BACKUP = new AdministrativeActionType("DOWNLOAD_DATA_FROM_BACKUP");
+        /// <summary>
         /// Constant FILE_SYSTEM_ALIAS_ASSOCIATION for AdministrativeActionType
         /// </summary>
         public static readonly AdministrativeActionType FILE_SYSTEM_ALIAS_ASSOCIATION = new AdministrativeActionType("FILE_SYSTEM_ALIAS_ASSOCIATION");
@@ -1657,6 +1661,56 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type MetadataConfigurationMode.
+    /// </summary>
+    public class MetadataConfigurationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for MetadataConfigurationMode
+        /// </summary>
+        public static readonly MetadataConfigurationMode AUTOMATIC = new MetadataConfigurationMode("AUTOMATIC");
+        /// <summary>
+        /// Constant USER_PROVISIONED for MetadataConfigurationMode
+        /// </summary>
+        public static readonly MetadataConfigurationMode USER_PROVISIONED = new MetadataConfigurationMode("USER_PROVISIONED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetadataConfigurationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetadataConfigurationMode FindValue(string value)
+        {
+            return FindValue<MetadataConfigurationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetadataConfigurationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NfsVersion.
     /// </summary>
     public class NfsVersion : ConstantClass
@@ -1712,6 +1766,10 @@ namespace Amazon.FSx
         /// Constant MULTI_AZ_1 for OntapDeploymentType
         /// </summary>
         public static readonly OntapDeploymentType MULTI_AZ_1 = new OntapDeploymentType("MULTI_AZ_1");
+        /// <summary>
+        /// Constant MULTI_AZ_2 for OntapDeploymentType
+        /// </summary>
+        public static readonly OntapDeploymentType MULTI_AZ_2 = new OntapDeploymentType("MULTI_AZ_2");
         /// <summary>
         /// Constant SINGLE_AZ_1 for OntapDeploymentType
         /// </summary>
@@ -1936,6 +1994,14 @@ namespace Amazon.FSx
         /// Constant SINGLE_AZ_2 for OpenZFSDeploymentType
         /// </summary>
         public static readonly OpenZFSDeploymentType SINGLE_AZ_2 = new OpenZFSDeploymentType("SINGLE_AZ_2");
+        /// <summary>
+        /// Constant SINGLE_AZ_HA_1 for OpenZFSDeploymentType
+        /// </summary>
+        public static readonly OpenZFSDeploymentType SINGLE_AZ_HA_1 = new OpenZFSDeploymentType("SINGLE_AZ_HA_1");
+        /// <summary>
+        /// Constant SINGLE_AZ_HA_2 for OpenZFSDeploymentType
+        /// </summary>
+        public static readonly OpenZFSDeploymentType SINGLE_AZ_HA_2 = new OpenZFSDeploymentType("SINGLE_AZ_HA_2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2654,6 +2720,10 @@ namespace Amazon.FSx
         /// Constant IN_PROGRESS for Status
         /// </summary>
         public static readonly Status IN_PROGRESS = new Status("IN_PROGRESS");
+        /// <summary>
+        /// Constant OPTIMIZING for Status
+        /// </summary>
+        public static readonly Status OPTIMIZING = new Status("OPTIMIZING");
         /// <summary>
         /// Constant PENDING for Status
         /// </summary>

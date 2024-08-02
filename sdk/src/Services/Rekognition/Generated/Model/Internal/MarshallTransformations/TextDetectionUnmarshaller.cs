@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public TextDetection Unmarshall(JsonUnmarshallerContext context)
         {
             TextDetection unmarshalledObject = new TextDetection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

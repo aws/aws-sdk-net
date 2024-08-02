@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public SidewalkAccountInfoWithFingerprint Unmarshall(JsonUnmarshallerContext context)
         {
             SidewalkAccountInfoWithFingerprint unmarshalledObject = new SidewalkAccountInfoWithFingerprint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

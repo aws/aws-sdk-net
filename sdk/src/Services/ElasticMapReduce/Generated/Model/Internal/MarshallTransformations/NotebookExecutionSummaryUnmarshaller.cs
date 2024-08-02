@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public NotebookExecutionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             NotebookExecutionSummary unmarshalledObject = new NotebookExecutionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

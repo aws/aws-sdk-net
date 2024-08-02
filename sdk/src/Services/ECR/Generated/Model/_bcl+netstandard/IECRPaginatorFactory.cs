@@ -47,6 +47,11 @@ namespace Amazon.ECR.Model
         IDescribeRepositoriesPaginator DescribeRepositories(DescribeRepositoriesRequest request);
 
         /// <summary>
+        /// Paginator for DescribeRepositoryCreationTemplates operation
+        ///</summary>
+        IDescribeRepositoryCreationTemplatesPaginator DescribeRepositoryCreationTemplates(DescribeRepositoryCreationTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for GetLifecyclePolicyPreview operation
         ///</summary>
         IGetLifecyclePolicyPreviewPaginator GetLifecyclePolicyPreview(GetLifecyclePolicyPreviewRequest request);

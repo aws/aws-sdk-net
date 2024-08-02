@@ -48,6 +48,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalAnalyses())
+            {
+                context.Writer.WritePropertyName("additionalAnalyses");
+                context.Writer.Write(requestObject.AdditionalAnalyses);
+            }
+
             if(requestObject.IsSetAggregateColumns())
             {
                 context.Writer.WritePropertyName("aggregateColumns");

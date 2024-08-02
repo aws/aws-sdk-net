@@ -302,6 +302,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("MutualAuthentication" + "." + "TrustStoreArn", StringUtils.FromString(publicRequest.MutualAuthentication.TrustStoreArn));
                     }
+                    if(publicRequest.MutualAuthentication.IsSetTrustStoreAssociationStatus())
+                    {
+                        request.Parameters.Add("MutualAuthentication" + "." + "TrustStoreAssociationStatus", StringUtils.FromString(publicRequest.MutualAuthentication.TrustStoreAssociationStatus));
+                    }
                 }
                 if(publicRequest.IsSetPort())
                 {

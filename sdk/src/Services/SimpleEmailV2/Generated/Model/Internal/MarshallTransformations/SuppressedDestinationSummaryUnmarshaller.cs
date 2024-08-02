@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public SuppressedDestinationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SuppressedDestinationSummary unmarshalledObject = new SuppressedDestinationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

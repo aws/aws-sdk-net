@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEcsTaskDefinitionProxyConfigurationDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEcsTaskDefinitionProxyConfigurationDetails unmarshalledObject = new AwsEcsTaskDefinitionProxyConfigurationDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

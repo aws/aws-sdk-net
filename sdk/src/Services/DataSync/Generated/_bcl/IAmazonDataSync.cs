@@ -2792,10 +2792,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Updates some parameters of an existing object storage location that DataSync accesses
-        /// for a transfer. For information about creating a self-managed object storage location,
-        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
-        /// a location for object storage</a>.
+        /// Updates some parameters of an existing DataSync location for an object storage system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLocationObjectStorage service method.</param>
         /// 
@@ -2812,10 +2809,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Updates some parameters of an existing object storage location that DataSync accesses
-        /// for a transfer. For information about creating a self-managed object storage location,
-        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
-        /// a location for object storage</a>.
+        /// Updates some parameters of an existing DataSync location for an object storage system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLocationObjectStorage service method.</param>
         /// <param name="cancellationToken">

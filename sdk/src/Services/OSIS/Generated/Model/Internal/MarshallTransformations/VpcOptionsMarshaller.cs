@@ -70,6 +70,23 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetVpcAttachmentOptions())
+            {
+                context.Writer.WritePropertyName("VpcAttachmentOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VpcAttachmentOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.VpcAttachmentOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetVpcEndpointManagement())
+            {
+                context.Writer.WritePropertyName("VpcEndpointManagement");
+                context.Writer.Write(requestObject.VpcEndpointManagement);
+            }
+
         }
 
         /// <summary>

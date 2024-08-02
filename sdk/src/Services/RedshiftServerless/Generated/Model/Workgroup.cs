@@ -43,6 +43,7 @@ namespace Amazon.RedshiftServerless.Model
         private string _customDomainName;
         private Endpoint _endpoint;
         private bool? _enhancedVpcRouting;
+        private string _ipAddressType;
         private int? _maxCapacity;
         private string _namespaceName;
         private string _patchVersion;
@@ -79,9 +80,9 @@ namespace Amazon.RedshiftServerless.Model
         /// <para>
         /// An array of parameters to set for advanced control over a database. The options are
         /// <c>auto_mv</c>, <c>datestyle</c>, <c>enable_case_sensitive_identifier</c>, <c>enable_user_activity_logging</c>,
-        /// <c>query_group</c>, <c>search_path</c>, <c>require_ssl</c>, and query monitoring metrics
-        /// that let you define performance boundaries. For more information about query monitoring
-        /// rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">
+        /// <c>query_group</c>, <c>search_path</c>, <c>require_ssl</c>, <c>use_fips_ssl</c>, and
+        /// query monitoring metrics that let you define performance boundaries. For more information
+        /// about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">
         /// Query monitoring metrics for Amazon Redshift Serverless</a>.
         /// </para>
         /// </summary>
@@ -229,6 +230,25 @@ namespace Amazon.RedshiftServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type that the workgroup supports. Possible values are <c>ipv4</c> and
+        /// <c>dualstack</c>.
+        /// </para>
+        /// </summary>
+        public string IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
         /// The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries.
@@ -307,7 +327,7 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// A value that specifies whether the workgroup can be accessible from a public network
+        /// A value that specifies whether the workgroup can be accessible from a public network.
         /// </para>
         /// </summary>
         public bool? PubliclyAccessible

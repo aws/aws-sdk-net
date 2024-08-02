@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public CampaignLimits Unmarshall(JsonUnmarshallerContext context)
         {
             CampaignLimits unmarshalledObject = new CampaignLimits();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

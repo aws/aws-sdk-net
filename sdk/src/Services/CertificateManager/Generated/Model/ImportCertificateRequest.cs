@@ -63,16 +63,6 @@ namespace Amazon.CertificateManager.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If the certificate you are importing is not self-signed, you must enter its certificate
-    /// chain.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If a certificate chain is included, the issuer must be the subject of one of the certificates
-    /// in the chain.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// The certificate, private key, and certificate chain must be PEM-encoded.
     /// </para>
     ///  </li> <li> 

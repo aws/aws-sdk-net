@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEcrRepositoryImageScanningConfigurationDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEcrRepositoryImageScanningConfigurationDetails unmarshalledObject = new AwsEcrRepositoryImageScanningConfigurationDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

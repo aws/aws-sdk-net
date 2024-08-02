@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public ComputeSavingsPlans Unmarshall(JsonUnmarshallerContext context)
         {
             ComputeSavingsPlans unmarshalledObject = new ComputeSavingsPlans();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

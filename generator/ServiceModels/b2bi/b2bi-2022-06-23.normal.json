@@ -2,9 +2,11 @@
   "version":"2.0",
   "metadata":{
     "apiVersion":"2022-06-23",
+    "auth":["aws.auth#sigv4"],
     "endpointPrefix":"b2bi",
     "jsonVersion":"1.0",
     "protocol":"json",
+    "protocols":["json"],
     "serviceAbbreviation":"AWS B2BI",
     "serviceFullName":"AWS B2B Data Interchange",
     "serviceId":"b2bi",
@@ -259,6 +261,12 @@
       },
       "input":{"shape":"ListCapabilitiesRequest"},
       "output":{"shape":"ListCapabilitiesResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
       "documentation":"<p>Lists the capabilities associated with your Amazon Web Services account for your current or specified region. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs.</p>"
     },
     "ListPartnerships":{
@@ -286,6 +294,12 @@
       },
       "input":{"shape":"ListProfilesRequest"},
       "output":{"shape":"ListProfilesResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
       "documentation":"<p>Lists the profiles associated with your Amazon Web Services account for your current or specified region. A profile is the mechanism used to create the concept of a private network.</p>"
     },
     "ListTagsForResource":{
@@ -311,6 +325,12 @@
       },
       "input":{"shape":"ListTransformersRequest"},
       "output":{"shape":"ListTransformersResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
       "documentation":"<p>Lists the available transformers. A transformer describes how to process the incoming EDI documents and extract the necessary information to the output file.</p>"
     },
     "StartTransformerJob":{
@@ -322,6 +342,7 @@
       "input":{"shape":"StartTransformerJobRequest"},
       "output":{"shape":"StartTransformerJobResponse"},
       "errors":[
+        {"shape":"ConflictException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
         {"shape":"ThrottlingException"},
@@ -655,7 +676,8 @@
       "required":[
         "profileId",
         "name",
-        "email"
+        "email",
+        "capabilities"
       ],
       "members":{
         "profileId":{
@@ -844,7 +866,7 @@
         },
         "mappingTemplate":{
           "shape":"MappingTemplate",
-          "documentation":"<p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>"
+          "documentation":"<p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>"
         },
         "ediType":{
           "shape":"EdiType",
@@ -896,7 +918,7 @@
         },
         "mappingTemplate":{
           "shape":"MappingTemplate",
-          "documentation":"<p>Returns the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>"
+          "documentation":"<p>Returns the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>"
         },
         "status":{
           "shape":"TransformerStatus",
@@ -1278,7 +1300,7 @@
         },
         "mappingTemplate":{
           "shape":"MappingTemplate",
-          "documentation":"<p>Returns the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>"
+          "documentation":"<p>Returns the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>"
         },
         "status":{
           "shape":"TransformerStatus",
@@ -1792,7 +1814,7 @@
         },
         "mappingTemplate":{
           "shape":"MappingTemplate",
-          "documentation":"<p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>"
+          "documentation":"<p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>"
         },
         "fileFormat":{
           "shape":"FileFormat",
@@ -1924,7 +1946,7 @@
         },
         "mappingTemplate":{
           "shape":"MappingTemplate",
-          "documentation":"<p>Returns the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>"
+          "documentation":"<p>Returns the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>"
         },
         "status":{
           "shape":"TransformerStatus",
@@ -2199,7 +2221,7 @@
         },
         "mappingTemplate":{
           "shape":"MappingTemplate",
-          "documentation":"<p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>"
+          "documentation":"<p>Specifies the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>"
         },
         "status":{
           "shape":"TransformerStatus",
@@ -2247,7 +2269,7 @@
         },
         "mappingTemplate":{
           "shape":"MappingTemplate",
-          "documentation":"<p>Returns the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>"
+          "documentation":"<p>Returns the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata or XSLT.</p>"
         },
         "status":{
           "shape":"TransformerStatus",

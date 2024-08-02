@@ -57,6 +57,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         public DataReplicationCounterpart Unmarshall(JsonUnmarshallerContext context)
         {
             DataReplicationCounterpart unmarshalledObject = new DataReplicationCounterpart();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

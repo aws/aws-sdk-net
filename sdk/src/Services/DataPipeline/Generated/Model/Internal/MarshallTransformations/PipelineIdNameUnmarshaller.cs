@@ -57,6 +57,8 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
         public PipelineIdName Unmarshall(JsonUnmarshallerContext context)
         {
             PipelineIdName unmarshalledObject = new PipelineIdName();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

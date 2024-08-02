@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public HostVolumeProperties Unmarshall(JsonUnmarshallerContext context)
         {
             HostVolumeProperties unmarshalledObject = new HostVolumeProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

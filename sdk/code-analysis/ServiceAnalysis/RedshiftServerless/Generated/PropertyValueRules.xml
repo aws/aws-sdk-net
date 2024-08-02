@@ -72,6 +72,10 @@
     <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.CreateWorkgroupRequest.IpAddressType</property>
+    <pattern>^(ipv4|dualstack)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.CreateWorkgroupRequest.NamespaceName</property>
     <min>3</min>
     <max>64</max>
@@ -403,6 +407,10 @@
     <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.UpdateWorkgroupRequest.IpAddressType</property>
+    <pattern>^(ipv4|dualstack)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.UpdateWorkgroupRequest.WorkgroupName</property>
     <min>3</min>
     <max>64</max>
@@ -461,6 +469,18 @@
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ScheduledActionAssociation.NamespaceName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ScheduledActionAssociation.ScheduledActionName</property>
+    <min>3</min>
+    <max>60</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.ScheduledActionResponse.NamespaceName</property>
     <min>3</min>
     <max>64</max>
@@ -504,6 +524,10 @@
     <min>1</min>
     <max>253</max>
     <pattern>^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.Workgroup.IpAddressType</property>
+    <pattern>^(ipv4|dualstack)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.Workgroup.WorkgroupName</property>

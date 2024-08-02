@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public VcenterBasedRemoteInfo Unmarshall(JsonUnmarshallerContext context)
         {
             VcenterBasedRemoteInfo unmarshalledObject = new VcenterBasedRemoteInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

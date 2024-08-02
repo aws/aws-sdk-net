@@ -42,7 +42,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property GuardrailIdentifier. 
         /// <para>
-        /// The unique identifier of the guardrail for which to get details.
+        /// The unique identifier of the guardrail for which to get details. This can be an ID
+        /// or the ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

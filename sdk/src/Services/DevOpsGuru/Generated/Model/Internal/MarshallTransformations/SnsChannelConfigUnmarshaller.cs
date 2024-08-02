@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public SnsChannelConfig Unmarshall(JsonUnmarshallerContext context)
         {
             SnsChannelConfig unmarshalledObject = new SnsChannelConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public RowAlternateColorOptions Unmarshall(JsonUnmarshallerContext context)
         {
             RowAlternateColorOptions unmarshalledObject = new RowAlternateColorOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeAddressTransfers operation.
     /// Describes an Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
-    /// Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// Elastic IP addresses</a> in the <i>Amazon VPC User Guide</i>.
     /// 
     ///  
     /// <para>

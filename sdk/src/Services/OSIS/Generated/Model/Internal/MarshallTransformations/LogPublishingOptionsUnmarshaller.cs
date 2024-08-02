@@ -57,6 +57,8 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         public LogPublishingOptions Unmarshall(JsonUnmarshallerContext context)
         {
             LogPublishingOptions unmarshalledObject = new LogPublishingOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -61,7 +61,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property GuardrailArn. 
         /// <para>
-        /// The ARN of the guardrail that was created.
+        /// The ARN of the guardrail.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -99,7 +99,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the guardrail that was created. This value should be 1.
+        /// The version of the guardrail that was created. This value will always be <c>DRAFT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=5)]

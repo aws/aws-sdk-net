@@ -57,6 +57,8 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         public SOA Unmarshall(JsonUnmarshallerContext context)
         {
             SOA unmarshalledObject = new SOA();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

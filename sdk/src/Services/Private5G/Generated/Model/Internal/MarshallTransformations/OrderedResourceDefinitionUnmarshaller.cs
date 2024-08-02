@@ -57,6 +57,8 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
         public OrderedResourceDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             OrderedResourceDefinition unmarshalledObject = new OrderedResourceDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

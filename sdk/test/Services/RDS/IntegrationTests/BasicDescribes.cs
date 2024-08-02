@@ -334,6 +334,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
 
         [TestMethod]
         [TestCategory("RDS")]
+<<<<<<< HEAD
         public void DescribeOptionGroups()
         {
             var response = Client.DescribeOptionGroups();
@@ -441,6 +442,116 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
 
         [TestMethod]
         [TestCategory("RDS")]
+||||||| Commit version number update changes
+        public void DescribeOptionGroups()
+        {
+            var response = Client.DescribeOptionGroups();
+            Assert.IsNotNull(response);
+
+            string engineName = null;
+            string optionGroupName = null;
+            if (response.OptionGroupsList.Count > 0)
+            {
+                foreach (var og in response.OptionGroupsList)
+                {
+                    Assert.IsFalse(string.IsNullOrEmpty(og.EngineName));
+                    if (engineName == null)
+                        engineName = og.EngineName;
+                    Assert.IsFalse(string.IsNullOrEmpty(og.OptionGroupName));
+                    if (optionGroupName == null)
+                        optionGroupName = og.OptionGroupName;
+
+                    if (og.Options != null && og.Options.Count > 0)
+                    {
+                        foreach (var o in og.Options)
+                        {
+                            Assert.IsFalse(string.IsNullOrEmpty(o.OptionName));
+                            if (o.OptionSettings.Count > 0)
+                            {
+                                foreach (var os in o.OptionSettings)
+                                {
+                                    Assert.IsFalse(string.IsNullOrEmpty(os.Name));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (engineName != null)
+            {
+                var specificEngineResponse =
+                    Client.DescribeOptionGroups(new DescribeOptionGroupsRequest {EngineName = engineName});
+                Assert.IsNotNull(specificEngineResponse);
+                Assert.IsTrue(specificEngineResponse.OptionGroupsList.Count > 0);
+            }
+
+            if (optionGroupName != null)
+            {
+                var specificGroupResponse =
+                    Client.DescribeOptionGroups(new DescribeOptionGroupsRequest {OptionGroupName = optionGroupName});
+                Assert.IsNotNull(specificGroupResponse);
+                Assert.AreEqual(specificGroupResponse.OptionGroupsList.Count, 1);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("RDS")]
+        public void OptionGroupTests()
+        {
+            string ogNamePrefix = "simple-og";
+
+            var groups = Client.DescribeOptionGroups().OptionGroupsList;
+            foreach(var group in groups)
+            {
+                var groupName = group.OptionGroupName;
+
+                if (groupName.IndexOf(ogNamePrefix, StringComparison.OrdinalIgnoreCase) >= 0)
+                    Client.DeleteOptionGroup(new DeleteOptionGroupRequest
+                    {
+                        OptionGroupName = groupName
+                    });
+            }
+
+
+            var name = "simple-og" + DateTime.Now.Ticks;
+            var optionGroup = Client.CreateOptionGroup(new CreateOptionGroupRequest
+            {
+                EngineName = "mysql",
+                MajorEngineVersion = "8.0",
+                 OptionGroupName = name,
+                 OptionGroupDescription = "Basic test OptionGroup"                  
+            }).OptionGroup;
+
+            var optionGroupName = optionGroup.OptionGroupName;
+            var copyOptionGroupName = optionGroupName + "copy";
+            Client.CopyOptionGroup(new CopyOptionGroupRequest
+            {
+                SourceOptionGroupIdentifier = optionGroupName,
+                TargetOptionGroupIdentifier = copyOptionGroupName,
+                TargetOptionGroupDescription = "copy"
+            });
+
+            groups = Client.DescribeOptionGroups(new DescribeOptionGroupsRequest
+            {
+                OptionGroupName = copyOptionGroupName
+            }).OptionGroupsList;
+            Assert.AreEqual(1, groups.Count);
+
+            Client.DeleteOptionGroup(new DeleteOptionGroupRequest
+            {
+                OptionGroupName = copyOptionGroupName
+            });
+            Client.DeleteOptionGroup(new DeleteOptionGroupRequest
+            {
+                OptionGroupName = optionGroupName
+            });
+        }
+
+        [TestMethod]
+        [TestCategory("RDS")]
+=======
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         public void DescribeReservedDBInstances()
         {
             var response = Client.DescribeReservedDBInstances();

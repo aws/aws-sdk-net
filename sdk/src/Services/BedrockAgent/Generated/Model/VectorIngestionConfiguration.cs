@@ -35,6 +35,8 @@ namespace Amazon.BedrockAgent.Model
     public partial class VectorIngestionConfiguration
     {
         private ChunkingConfiguration _chunkingConfiguration;
+        private CustomTransformationConfiguration _customTransformationConfiguration;
+        private ParsingConfiguration _parsingConfiguration;
 
         /// <summary>
         /// Gets and sets the property ChunkingConfiguration. 
@@ -54,6 +56,42 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetChunkingConfiguration()
         {
             return this._chunkingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomTransformationConfiguration. 
+        /// <para>
+        /// A custom document transformer for parsed data source documents.
+        /// </para>
+        /// </summary>
+        public CustomTransformationConfiguration CustomTransformationConfiguration
+        {
+            get { return this._customTransformationConfiguration; }
+            set { this._customTransformationConfiguration = value; }
+        }
+
+        // Check to see if CustomTransformationConfiguration property is set
+        internal bool IsSetCustomTransformationConfiguration()
+        {
+            return this._customTransformationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParsingConfiguration. 
+        /// <para>
+        /// A custom parser for data source documents.
+        /// </para>
+        /// </summary>
+        public ParsingConfiguration ParsingConfiguration
+        {
+            get { return this._parsingConfiguration; }
+            set { this._parsingConfiguration = value; }
+        }
+
+        // Check to see if ParsingConfiguration property is set
+        internal bool IsSetParsingConfiguration()
+        {
+            return this._parsingConfiguration != null;
         }
 
     }

@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public ScannedItemCount Unmarshall(JsonUnmarshallerContext context)
         {
             ScannedItemCount unmarshalledObject = new ScannedItemCount();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

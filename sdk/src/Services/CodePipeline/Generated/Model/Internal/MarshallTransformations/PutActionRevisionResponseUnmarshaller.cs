@@ -91,6 +91,10 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 {
                     return ActionNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentPipelineExecutionsLimitExceededException"))
+                {
+                    return ConcurrentPipelineExecutionsLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("PipelineNotFoundException"))
                 {
                     return PipelineNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

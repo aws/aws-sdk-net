@@ -477,6 +477,56 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailContextualGroundingFilterType.
+    /// </summary>
+    public class GuardrailContextualGroundingFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GROUNDING for GuardrailContextualGroundingFilterType
+        /// </summary>
+        public static readonly GuardrailContextualGroundingFilterType GROUNDING = new GuardrailContextualGroundingFilterType("GROUNDING");
+        /// <summary>
+        /// Constant RELEVANCE for GuardrailContextualGroundingFilterType
+        /// </summary>
+        public static readonly GuardrailContextualGroundingFilterType RELEVANCE = new GuardrailContextualGroundingFilterType("RELEVANCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContextualGroundingFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContextualGroundingFilterType FindValue(string value)
+        {
+            return FindValue<GuardrailContextualGroundingFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContextualGroundingFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailFilterStrength.
     /// </summary>
     public class GuardrailFilterStrength : ConstantClass
@@ -952,6 +1002,60 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InferenceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ModelCopyJobStatus.
+    /// </summary>
+    public class ModelCopyJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for ModelCopyJobStatus
+        /// </summary>
+        public static readonly ModelCopyJobStatus Completed = new ModelCopyJobStatus("Completed");
+        /// <summary>
+        /// Constant Failed for ModelCopyJobStatus
+        /// </summary>
+        public static readonly ModelCopyJobStatus Failed = new ModelCopyJobStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for ModelCopyJobStatus
+        /// </summary>
+        public static readonly ModelCopyJobStatus InProgress = new ModelCopyJobStatus("InProgress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelCopyJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelCopyJobStatus FindValue(string value)
+        {
+            return FindValue<ModelCopyJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelCopyJobStatus(string value)
         {
             return FindValue(value);
         }

@@ -87,8 +87,8 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property MappingTemplate. 
         /// <para>
-        /// Specifies the name of the mapping template for the transformer. This template is used
-        /// to convert the input document into the correct set of objects.
+        /// Specifies the mapping template for the transformer. This template is used to map the
+        /// parsed EDI file using JSONata or XSLT.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=350000)]

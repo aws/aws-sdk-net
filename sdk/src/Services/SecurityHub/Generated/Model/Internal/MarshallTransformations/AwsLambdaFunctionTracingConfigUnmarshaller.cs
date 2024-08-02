@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsLambdaFunctionTracingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AwsLambdaFunctionTracingConfig unmarshalledObject = new AwsLambdaFunctionTracingConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

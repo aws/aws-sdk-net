@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public DeploymentProperties Unmarshall(JsonUnmarshallerContext context)
         {
             DeploymentProperties unmarshalledObject = new DeploymentProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

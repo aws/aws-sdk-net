@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         public EffectiveLifecyclePolicyDetail Unmarshall(JsonUnmarshallerContext context)
         {
             EffectiveLifecyclePolicyDetail unmarshalledObject = new EffectiveLifecyclePolicyDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

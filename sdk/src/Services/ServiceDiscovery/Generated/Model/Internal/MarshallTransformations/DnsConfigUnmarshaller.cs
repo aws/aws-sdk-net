@@ -57,6 +57,8 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         public DnsConfig Unmarshall(JsonUnmarshallerContext context)
         {
             DnsConfig unmarshalledObject = new DnsConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

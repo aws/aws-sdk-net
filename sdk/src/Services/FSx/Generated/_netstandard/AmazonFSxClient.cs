@@ -985,7 +985,7 @@ namespace Amazon.FSx
         /// If a file system with the specified client request token exists and the parameters
         /// don't match, this call returns <c>IncompatibleParameterError</c>. If a file system
         /// with the specified client request token doesn't exist, <c>CreateFileSystem</c> does
-        /// the following: 
+        /// the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1643,7 +1643,7 @@ namespace Amazon.FSx
         /// <para>
         /// To delete an Amazon FSx for NetApp ONTAP file system, first delete all the volumes
         /// and storage virtual machines (SVMs) on the file system. Then provide a <c>FileSystemId</c>
-        /// value to the <c>DeleFileSystem</c> operation.
+        /// value to the <c>DeleteFileSystem</c> operation.
         /// </para>
         ///  
         /// <para>
@@ -1655,7 +1655,7 @@ namespace Amazon.FSx
         /// <para>
         /// To delete an Amazon FSx for Lustre file system, first <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/unmounting-fs.html">unmount</a>
         /// it from every connected Amazon EC2 instance, then provide a <c>FileSystemId</c> value
-        /// to the <c>DeleFileSystem</c> operation. By default, Amazon FSx will not take a final
+        /// to the <c>DeleteFileSystem</c> operation. By default, Amazon FSx will not take a final
         /// backup when the <c>DeleteFileSystem</c> operation is invoked. On file systems not
         /// linked to an Amazon S3 bucket, set <c>SkipFinalBackup</c> to <c>false</c> to take
         /// a final backup of the file system you are deleting. Backups cannot be enabled on S3-linked
@@ -3076,6 +3076,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>MetadataConfiguration</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>PerUnitStorageThroughput</c> 
         /// </para>
         ///  </li> <li> 
@@ -3438,8 +3442,32 @@ namespace Amazon.FSx
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonFSxEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonFSxEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

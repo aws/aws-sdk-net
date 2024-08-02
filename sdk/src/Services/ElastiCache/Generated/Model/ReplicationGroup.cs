@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Contains all of the attributes of a specific Redis replication group.
+    /// Contains all of the attributes of a specific Redis OSS replication group.
     /// </summary>
     public partial class ReplicationGroup
     {
@@ -98,7 +98,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <c>3.2.6</c>, <c>4.x</c> or later.
+        /// using Redis OSS version <c>3.2.6</c>, <c>4.x</c> or later.
         /// </para>
         ///  
         /// <para>
@@ -120,7 +120,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AuthTokenEnabled. 
         /// <para>
-        /// A flag that enables using an <c>AuthToken</c> (password) when issuing Redis commands.
+        /// A flag that enables using an <c>AuthToken</c> (password) when issuing Redis OSS commands.
         /// </para>
         ///  
         /// <para>
@@ -160,7 +160,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutomaticFailover. 
         /// <para>
-        /// Indicates the status of automatic failover for this Redis replication group.
+        /// Indicates the status of automatic failover for this Redis OSS replication group.
         /// </para>
         /// </summary>
         public AutomaticFailoverStatus AutomaticFailover
@@ -178,8 +178,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// If you are running Redis engine version 6.0 or later, set this parameter to yes if
-        /// you want to opt-in to the next auto minor version upgrade campaign. This parameter
+        /// If you are running Redis OSS engine version 6.0 or later, set this parameter to yes
+        /// if you want to opt-in to the next auto minor version upgrade campaign. This parameter
         /// is disabled for previous versions. 
         /// </para>
         /// </summary>
@@ -241,10 +241,10 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ClusterMode. 
         /// <para>
         /// Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first
-        /// set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect
-        /// using both cluster mode enabled and cluster mode disabled. After you migrate all Redis
-        /// clients to use cluster mode enabled, you can then complete cluster mode configuration
-        /// and set the cluster mode to Enabled.
+        /// set the cluster mode to Compatible. Compatible mode allows your Redis OSS clients
+        /// to connect using both cluster mode enabled and cluster mode disabled. After you migrate
+        /// all Redis OSS clients to use cluster mode enabled, you can then complete cluster mode
+        /// configuration and set the cluster mode to Enabled.
         /// </para>
         /// </summary>
         public ClusterMode ClusterMode
@@ -340,7 +340,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property IpDiscovery. 
         /// <para>
         /// The network type you choose when modifying a cluster, either <c>ipv4</c> | <c>ipv6</c>.
-        /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+        /// IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached
         /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
         /// </para>
@@ -453,7 +453,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NetworkType. 
         /// <para>
         /// Must be either <c>ipv4</c> | <c>ipv6</c> | <c>dual_stack</c>. IPv6 is supported for
-        /// workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6
+        /// workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6
         /// on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
         /// </para>
         /// </summary>
@@ -472,8 +472,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NodeGroups. 
         /// <para>
-        /// A list of node groups in this replication group. For Redis (cluster mode disabled)
-        /// replication groups, this is a single-element list. For Redis (cluster mode enabled)
+        /// A list of node groups in this replication group. For Redis OSS (cluster mode disabled)
+        /// replication groups, this is a single-element list. For Redis OSS (cluster mode enabled)
         /// replication groups, the list contains an entry for each node group (shard).
         /// </para>
         /// </summary>
@@ -648,7 +648,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <c>3.2.6</c>, <c>4.x</c> or later.
+        /// using Redis OSS version <c>3.2.6</c>, <c>4.x</c> or later.
         /// </para>
         ///  
         /// <para>

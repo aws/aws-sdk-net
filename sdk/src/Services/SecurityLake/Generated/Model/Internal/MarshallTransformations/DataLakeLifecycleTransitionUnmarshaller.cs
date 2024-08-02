@@ -57,6 +57,8 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         public DataLakeLifecycleTransition Unmarshall(JsonUnmarshallerContext context)
         {
             DataLakeLifecycleTransition unmarshalledObject = new DataLakeLifecycleTransition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

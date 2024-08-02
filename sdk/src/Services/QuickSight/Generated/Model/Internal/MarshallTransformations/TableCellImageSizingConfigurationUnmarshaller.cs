@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TableCellImageSizingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TableCellImageSizingConfiguration unmarshalledObject = new TableCellImageSizingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

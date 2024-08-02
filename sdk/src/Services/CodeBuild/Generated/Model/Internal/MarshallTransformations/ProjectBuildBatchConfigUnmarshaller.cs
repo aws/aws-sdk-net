@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public ProjectBuildBatchConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ProjectBuildBatchConfig unmarshalledObject = new ProjectBuildBatchConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

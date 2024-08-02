@@ -59,7 +59,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// The default AWS OpsWorks Stacks agent version. You have the following options:
+        /// The default OpsWorks Stacks agent version. You have the following options:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -69,8 +69,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         ///  <i>version_number</i> - Use the specified agent version. This value overrides the
         /// stack's default setting. To update the agent version, you must edit the instance configuration
-        /// and specify a new version. AWS OpsWorks Stacks then automatically installs that version
-        /// on the instance.
+        /// and specify a new version. OpsWorks Stacks installs that version on the instance.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -177,8 +176,17 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Hostname. 
         /// <para>
-        /// The instance host name.
+        /// The instance host name. The following are character limits for instance host names.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Linux-based instances: 63 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Windows-based instances: 15 characters
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Hostname
         {
@@ -289,14 +297,14 @@ namespace Amazon.OpsWorks.Model
         ///  <ul> <li> 
         /// <para>
         /// A supported Linux operating system: An Amazon Linux version, such as <c>Amazon Linux
-        /// 2018.03</c>, <c>Amazon Linux 2017.09</c>, <c>Amazon Linux 2017.03</c>, <c>Amazon Linux
-        /// 2016.09</c>, <c>Amazon Linux 2016.03</c>, <c>Amazon Linux 2015.09</c>, or <c>Amazon
-        /// Linux 2015.03</c>.
+        /// 2</c>, <c>Amazon Linux 2018.03</c>, <c>Amazon Linux 2017.09</c>, <c>Amazon Linux 2017.03</c>,
+        /// <c>Amazon Linux 2016.09</c>, <c>Amazon Linux 2016.03</c>, <c>Amazon Linux 2015.09</c>,
+        /// or <c>Amazon Linux 2015.03</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A supported Ubuntu operating system, such as <c>Ubuntu 16.04 LTS</c>, <c>Ubuntu 14.04
-        /// LTS</c>, or <c>Ubuntu 12.04 LTS</c>.
+        /// A supported Ubuntu operating system, such as <c>Ubuntu 18.04 LTS</c>, <c>Ubuntu 16.04
+        /// LTS</c>, <c>Ubuntu 14.04 LTS</c>, or <c>Ubuntu 12.04 LTS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -315,16 +323,16 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-        /// OpsWorks Stacks Operating Systems</a>.
+        /// Not all operating systems are supported with all versions of Chef. For more information
+        /// about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks
+        /// Stacks Operating Systems</a>.
         /// </para>
         ///  
         /// <para>
         /// The default option is the current Amazon Linux version. If you set this parameter
         /// to <c>Custom</c>, you must use the AmiId parameter to specify the custom AMI that
-        /// you want to use. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-        /// Systems</a>. For more information about how to use custom AMIs with OpsWorks, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+        /// you want to use. For more information about how to use custom AMIs with OpsWorks,
+        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
         /// Custom AMIs</a>.
         /// </para>
         ///  <note> 

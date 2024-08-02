@@ -57,6 +57,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         public FailedItemDetails Unmarshall(JsonUnmarshallerContext context)
         {
             FailedItemDetails unmarshalledObject = new FailedItemDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

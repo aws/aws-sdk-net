@@ -57,6 +57,8 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
         public RetainedMessageSummary Unmarshall(JsonUnmarshallerContext context)
         {
             RetainedMessageSummary unmarshalledObject = new RetainedMessageSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

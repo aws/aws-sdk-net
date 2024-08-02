@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public ProactiveInsightSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ProactiveInsightSummary unmarshalledObject = new ProactiveInsightSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

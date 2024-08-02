@@ -31,7 +31,7 @@ namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTags operation.
-    /// Gets a list of tags for the specified AWS CloudHSM cluster.
+    /// Gets a list of tags for the specified CloudHSM cluster.
     /// 
     ///  
     /// <para>
@@ -40,6 +40,11 @@ namespace Amazon.CloudHSMV2.Model
     /// a <c>NextToken</c> value. Use this value in a subsequent <c>ListTags</c> request to
     /// get more tags. When you receive a response with no <c>NextToken</c> (or an empty or
     /// null value), that means there are no more tags to get.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM resource
+    /// in a different Amazon Web Services account.
     /// </para>
     /// </summary>
     public partial class ListTagsRequest : AmazonCloudHSMV2Request

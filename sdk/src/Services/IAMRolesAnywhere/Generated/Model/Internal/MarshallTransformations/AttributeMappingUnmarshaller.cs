@@ -57,6 +57,8 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         public AttributeMapping Unmarshall(JsonUnmarshallerContext context)
         {
             AttributeMapping unmarshalledObject = new AttributeMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

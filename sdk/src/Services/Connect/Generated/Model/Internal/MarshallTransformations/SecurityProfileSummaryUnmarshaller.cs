@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public SecurityProfileSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SecurityProfileSummary unmarshalledObject = new SecurityProfileSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

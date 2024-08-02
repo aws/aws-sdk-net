@@ -70,6 +70,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRepeatConfiguration())
+            {
+                context.Writer.WritePropertyName("RepeatConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BodySectionRepeatConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RepeatConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSectionId())
             {
                 context.Writer.WritePropertyName("SectionId");

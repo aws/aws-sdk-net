@@ -70,6 +70,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEksPropertiesOverride())
+            {
+                context.Writer.WritePropertyName("eksPropertiesOverride");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EksPropertiesOverrideMarshaller.Instance;
+                marshaller.Marshall(requestObject.EksPropertiesOverride, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInstanceTypes())
             {
                 context.Writer.WritePropertyName("instanceTypes");

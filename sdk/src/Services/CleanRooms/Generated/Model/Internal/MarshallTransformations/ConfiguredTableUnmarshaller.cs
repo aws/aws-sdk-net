@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public ConfiguredTable Unmarshall(JsonUnmarshallerContext context)
         {
             ConfiguredTable unmarshalledObject = new ConfiguredTable();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

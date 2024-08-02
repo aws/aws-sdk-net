@@ -31,11 +31,12 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataSource operation.
-    /// Sets up a data source to be added to a knowledge base.
+    /// Creates a data source connector for a knowledge base.
     /// 
     ///  <important> 
     /// <para>
-    /// You can't change the <c>chunkingConfiguration</c> after you create the data source.
+    /// You can't change the <c>chunkingConfiguration</c> after you create the data source
+    /// connector.
     /// </para>
     ///  </important>
     /// </summary>
@@ -75,8 +76,25 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property DataDeletionPolicy. 
         /// <para>
-        /// The deletion policy for the requested data source
+        /// The data deletion policy for the data source.
         /// </para>
+        ///  
+        /// <para>
+        /// You can set the data deletion policy to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// DELETE: Deletes all underlying data belonging to the data source from the vector store
+        /// upon deletion of a knowledge base or data source resource. Note that the vector store
+        /// itself is not deleted, only the underlying data. This flag is ignored if an Amazon
+        /// Web Services account is deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RETAIN: Retains all underlying data in your vector store upon deletion of a knowledge
+        /// base or data source resource.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DataDeletionPolicy DataDeletionPolicy
         {
@@ -93,7 +111,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property DataSourceConfiguration. 
         /// <para>
-        /// Contains metadata about where the data source is stored.
+        /// The connection configuration for the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

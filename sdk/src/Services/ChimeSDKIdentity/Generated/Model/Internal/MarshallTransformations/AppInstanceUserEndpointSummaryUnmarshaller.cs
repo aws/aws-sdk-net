@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
         public AppInstanceUserEndpointSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AppInstanceUserEndpointSummary unmarshalledObject = new AppInstanceUserEndpointSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

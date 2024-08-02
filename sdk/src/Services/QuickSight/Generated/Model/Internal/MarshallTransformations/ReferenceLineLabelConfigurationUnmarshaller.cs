@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ReferenceLineLabelConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ReferenceLineLabelConfiguration unmarshalledObject = new ReferenceLineLabelConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

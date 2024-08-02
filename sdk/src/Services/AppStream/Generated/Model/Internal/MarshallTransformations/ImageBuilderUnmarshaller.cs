@@ -57,6 +57,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public ImageBuilder Unmarshall(JsonUnmarshallerContext context)
         {
             ImageBuilder unmarshalledObject = new ImageBuilder();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

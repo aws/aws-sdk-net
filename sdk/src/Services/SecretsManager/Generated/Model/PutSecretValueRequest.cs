@@ -66,8 +66,8 @@ namespace Amazon.SecretsManager.Model
     ///  
     /// <para>
     /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
-    /// include sensitive information in request parameters except <c>SecretBinary</c> or
-    /// <c>SecretString</c> because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+    /// include sensitive information in request parameters except <c>SecretBinary</c>, <c>SecretString</c>,
+    /// or <c>RotationToken</c> because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
     /// Secrets Manager events with CloudTrail</a>.
     /// </para>
     ///  
@@ -77,10 +77,19 @@ namespace Amazon.SecretsManager.Model
     /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
     /// and access control in Secrets Manager</a>. 
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// When you enter commands in a command shell, there is a risk of the command history
+    /// being accessed or utilities having access to your command parameters. This is a concern
+    /// if the command includes the value of a secret. Learn how to <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+    /// the risks of using command-line tools to store Secrets Manager secrets</a>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class PutSecretValueRequest : AmazonSecretsManagerRequest
     {
         private string _clientRequestToken;
+        private string _rotationToken;
         private MemoryStream _secretBinary;
         private string _secretId;
         private string _secretString;
@@ -147,6 +156,36 @@ namespace Amazon.SecretsManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RotationToken. 
+        /// <para>
+        /// A unique identifier that indicates the source of the request. For cross-account rotation
+        /// (when you rotate a secret in one account by using a Lambda rotation function in another
+        /// account) and the Lambda rotation function assumes an IAM role to call Secrets Manager,
+        /// Secrets Manager validates the identity with the rotation token. For more information,
+        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">How
+        /// rotation works</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Sensitive: This field contains sensitive information, so the service does not include
+        /// it in CloudTrail log entries. If you create your own log entries, you must also avoid
+        /// logging the information in this field.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=36, Max=256)]
+        public string RotationToken
+        {
+            get { return this._rotationToken; }
+            set { this._rotationToken = value; }
+        }
+
+        // Check to see if RotationToken property is set
+        internal bool IsSetRotationToken()
+        {
+            return this._rotationToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SecretBinary. 
         /// <para>
         /// The binary data to encrypt and store in the new version of the secret. To use this
@@ -160,6 +199,12 @@ namespace Amazon.SecretsManager.Model
         ///  
         /// <para>
         /// You can't access this value from the Secrets Manager console.
+        /// </para>
+        ///  
+        /// <para>
+        /// Sensitive: This field contains sensitive information, so the service does not include
+        /// it in CloudTrail log entries. If you create your own log entries, you must also avoid
+        /// logging the information in this field.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=65536)]
@@ -217,6 +262,12 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// We recommend you create the secret string as JSON key/value pairs, as shown in the
         /// example.
+        /// </para>
+        ///  
+        /// <para>
+        /// Sensitive: This field contains sensitive information, so the service does not include
+        /// it in CloudTrail log entries. If you create your own log entries, you must also avoid
+        /// logging the information in this field.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=65536)]

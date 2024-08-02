@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public AcceleratorCountRange Unmarshall(JsonUnmarshallerContext context)
         {
             AcceleratorCountRange unmarshalledObject = new AcceleratorCountRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public InputClipping Unmarshall(JsonUnmarshallerContext context)
         {
             InputClipping unmarshalledObject = new InputClipping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

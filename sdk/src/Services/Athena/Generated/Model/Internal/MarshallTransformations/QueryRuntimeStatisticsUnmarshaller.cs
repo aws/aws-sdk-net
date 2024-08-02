@@ -57,6 +57,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         public QueryRuntimeStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             QueryRuntimeStatistics unmarshalledObject = new QueryRuntimeStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

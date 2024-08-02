@@ -82,6 +82,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
+                if(publicRequest.IsSetIpamExternalResourceVerificationTokenId())
+                {
+                    request.Parameters.Add("IpamExternalResourceVerificationTokenId", StringUtils.FromString(publicRequest.IpamExternalResourceVerificationTokenId));
+                }
                 if(publicRequest.IsSetIpamPoolId())
                 {
                     request.Parameters.Add("IpamPoolId", StringUtils.FromString(publicRequest.IpamPoolId));
@@ -89,6 +93,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNetmaskLength())
                 {
                     request.Parameters.Add("NetmaskLength", StringUtils.FromInt(publicRequest.NetmaskLength));
+                }
+                if(publicRequest.IsSetVerificationMethod())
+                {
+                    request.Parameters.Add("VerificationMethod", StringUtils.FromString(publicRequest.VerificationMethod));
                 }
             }
             return request;

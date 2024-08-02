@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public InstanceTypeDetails Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceTypeDetails unmarshalledObject = new InstanceTypeDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

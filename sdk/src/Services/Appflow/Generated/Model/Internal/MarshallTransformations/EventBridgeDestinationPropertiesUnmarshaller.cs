@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public EventBridgeDestinationProperties Unmarshall(JsonUnmarshallerContext context)
         {
             EventBridgeDestinationProperties unmarshalledObject = new EventBridgeDestinationProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

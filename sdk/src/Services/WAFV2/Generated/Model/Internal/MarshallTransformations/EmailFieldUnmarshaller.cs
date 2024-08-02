@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public EmailField Unmarshall(JsonUnmarshallerContext context)
         {
             EmailField unmarshalledObject = new EmailField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

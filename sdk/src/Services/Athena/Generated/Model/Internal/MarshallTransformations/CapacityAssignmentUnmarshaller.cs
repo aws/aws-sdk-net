@@ -57,6 +57,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         public CapacityAssignment Unmarshall(JsonUnmarshallerContext context)
         {
             CapacityAssignment unmarshalledObject = new CapacityAssignment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -78,6 +78,12 @@ namespace Amazon.Runtime
         public Action<SsoVerificationArguments> SsoVerificationCallback { get; set; }
 
         /// <summary>
+        /// This property MUST be specified if the client wishes to use the Authorization Code Flow 
+        /// with PKCE (if null, the SSO Token Manager will default to the Device Authorization Flow).
+        /// </summary>
+        public PkceFlowOptions PkceFlowOptions { get; set; }
+
+        /// <summary>
         /// This field controls whether a new sso token will be generated if a valid cached token or 
         /// refreshable token is not found.
         /// <para />
@@ -85,8 +91,8 @@ namespace Amazon.Runtime
         /// sso authorization flow is started, a new token is generated and the result is cached.
         /// If <c>false</c> and a valid cached token or refreshable token is not found, an exception is thrown.
         /// <para />
-        /// NOTE: If setting to <c>true</c>, <see cref="SsoVerificationCallback"/> must also be set
-        /// for authorization flow to succeed.
+        /// NOTE: If setting to <c>true</c>, either <see cref="SsoVerificationCallback"/> or <see cref="PkceFlowOptions"/> must 
+        /// also be set for authorization flow to succeed.
         /// </summary>
         public bool SupportsGettingNewToken { get; set; } = true;
 

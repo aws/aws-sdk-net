@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public HistogramAggregatedFieldWells Unmarshall(JsonUnmarshallerContext context)
         {
             HistogramAggregatedFieldWells unmarshalledObject = new HistogramAggregatedFieldWells();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

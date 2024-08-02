@@ -57,6 +57,8 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         public UpdateError Unmarshall(JsonUnmarshallerContext context)
         {
             UpdateError unmarshalledObject = new UpdateError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

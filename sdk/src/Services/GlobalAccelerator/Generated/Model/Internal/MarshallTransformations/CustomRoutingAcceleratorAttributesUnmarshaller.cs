@@ -57,6 +57,8 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         public CustomRoutingAcceleratorAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             CustomRoutingAcceleratorAttributes unmarshalledObject = new CustomRoutingAcceleratorAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         public S3ReferenceDataSourceDescription Unmarshall(JsonUnmarshallerContext context)
         {
             S3ReferenceDataSourceDescription unmarshalledObject = new S3ReferenceDataSourceDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

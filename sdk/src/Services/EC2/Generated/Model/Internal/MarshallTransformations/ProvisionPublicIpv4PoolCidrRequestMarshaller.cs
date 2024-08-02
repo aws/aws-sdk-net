@@ -67,6 +67,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NetmaskLength", StringUtils.FromInt(publicRequest.NetmaskLength));
                 }
+                if(publicRequest.IsSetNetworkBorderGroup())
+                {
+                    request.Parameters.Add("NetworkBorderGroup", StringUtils.FromString(publicRequest.NetworkBorderGroup));
+                }
                 if(publicRequest.IsSetPoolId())
                 {
                     request.Parameters.Add("PoolId", StringUtils.FromString(publicRequest.PoolId));

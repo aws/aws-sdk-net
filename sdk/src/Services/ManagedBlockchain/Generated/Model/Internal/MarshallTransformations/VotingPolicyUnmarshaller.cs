@@ -57,6 +57,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         public VotingPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             VotingPolicy unmarshalledObject = new VotingPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

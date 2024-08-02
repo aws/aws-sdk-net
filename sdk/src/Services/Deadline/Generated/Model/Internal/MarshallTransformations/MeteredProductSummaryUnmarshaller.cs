@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public MeteredProductSummary Unmarshall(JsonUnmarshallerContext context)
         {
             MeteredProductSummary unmarshalledObject = new MeteredProductSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

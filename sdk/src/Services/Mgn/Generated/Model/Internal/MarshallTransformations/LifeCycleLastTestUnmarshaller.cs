@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public LifeCycleLastTest Unmarshall(JsonUnmarshallerContext context)
         {
             LifeCycleLastTest unmarshalledObject = new LifeCycleLastTest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

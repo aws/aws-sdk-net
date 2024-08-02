@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public DetectMitigationActionsTaskTarget Unmarshall(JsonUnmarshallerContext context)
         {
             DetectMitigationActionsTaskTarget unmarshalledObject = new DetectMitigationActionsTaskTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

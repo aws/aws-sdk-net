@@ -57,6 +57,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         public AdapterVersionOverview Unmarshall(JsonUnmarshallerContext context)
         {
             AdapterVersionOverview unmarshalledObject = new AdapterVersionOverview();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

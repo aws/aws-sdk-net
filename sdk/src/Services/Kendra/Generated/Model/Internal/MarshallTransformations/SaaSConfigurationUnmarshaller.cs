@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public SaaSConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SaaSConfiguration unmarshalledObject = new SaaSConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         public S3Source Unmarshall(JsonUnmarshallerContext context)
         {
             S3Source unmarshalledObject = new S3Source();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

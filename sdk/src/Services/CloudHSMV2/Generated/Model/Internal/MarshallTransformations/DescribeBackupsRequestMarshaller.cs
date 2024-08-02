@@ -100,6 +100,12 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetShared())
+                {
+                    context.Writer.WritePropertyName("Shared");
+                    context.Writer.Write(publicRequest.Shared);
+                }
+
                 if(publicRequest.IsSetSortAscending())
                 {
                     context.Writer.WritePropertyName("SortAscending");

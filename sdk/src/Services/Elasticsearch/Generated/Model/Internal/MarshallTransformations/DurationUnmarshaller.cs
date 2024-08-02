@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public Duration Unmarshall(JsonUnmarshallerContext context)
         {
             Duration unmarshalledObject = new Duration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public DomainValidationRecord Unmarshall(JsonUnmarshallerContext context)
         {
             DomainValidationRecord unmarshalledObject = new DomainValidationRecord();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

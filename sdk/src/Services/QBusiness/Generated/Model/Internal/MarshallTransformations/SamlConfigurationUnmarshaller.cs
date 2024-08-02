@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public SamlConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SamlConfiguration unmarshalledObject = new SamlConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

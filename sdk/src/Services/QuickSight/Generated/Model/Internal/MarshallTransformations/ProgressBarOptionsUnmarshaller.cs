@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ProgressBarOptions Unmarshall(JsonUnmarshallerContext context)
         {
             ProgressBarOptions unmarshalledObject = new ProgressBarOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public TableAutoScalingDescription Unmarshall(JsonUnmarshallerContext context)
         {
             TableAutoScalingDescription unmarshalledObject = new TableAutoScalingDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public SentimentFilter Unmarshall(JsonUnmarshallerContext context)
         {
             SentimentFilter unmarshalledObject = new SentimentFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

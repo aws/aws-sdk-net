@@ -57,6 +57,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         public ContinuousExportDescription Unmarshall(JsonUnmarshallerContext context)
         {
             ContinuousExportDescription unmarshalledObject = new ContinuousExportDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -217,9 +217,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>db-instance</c> | <c>db-cluster</c> | <c>db-parameter-group</c> |
-        /// <c>db-security-group</c> | <c>db-snapshot</c> | <c>db-cluster-snapshot</c> | <c>db-proxy</c>
-        /// 
+        /// Valid Values:<c> db-instance | db-cluster | db-parameter-group | db-security-group
+        /// | db-snapshot | db-cluster-snapshot | db-proxy | zero-etl | custom-engine-version
+        /// | blue-green-deployment </c> 
         /// </para>
         /// </summary>
         public string SourceType

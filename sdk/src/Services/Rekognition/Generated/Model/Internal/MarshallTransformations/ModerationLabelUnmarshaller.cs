@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public ModerationLabel Unmarshall(JsonUnmarshallerContext context)
         {
             ModerationLabel unmarshalledObject = new ModerationLabel();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

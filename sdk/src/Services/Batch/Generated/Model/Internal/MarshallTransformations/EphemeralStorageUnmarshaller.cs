@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public EphemeralStorage Unmarshall(JsonUnmarshallerContext context)
         {
             EphemeralStorage unmarshalledObject = new EphemeralStorage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

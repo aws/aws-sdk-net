@@ -57,6 +57,8 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         public PackagingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             PackagingConfiguration unmarshalledObject = new PackagingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

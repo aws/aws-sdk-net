@@ -42,6 +42,12 @@ namespace Amazon.Glue.Model
         /// </summary>
         public IPaginatedEnumerable<GetWorkflowRunsResponse> Responses => new PaginatedResponse<GetWorkflowRunsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Runs
+        /// </summary>
+        public IPaginatedEnumerable<WorkflowRun> Runs => 
+            new PaginatedResultKeyResponse<GetWorkflowRunsResponse, WorkflowRun>(this, (i) => i.Runs ?? new List<WorkflowRun>());
+
         internal GetWorkflowRunsPaginator(IAmazonGlue client, GetWorkflowRunsRequest request)
         {
             this._client = client;

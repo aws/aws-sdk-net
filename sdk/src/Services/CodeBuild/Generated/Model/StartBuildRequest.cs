@@ -662,7 +662,8 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property SourceAuthOverride. 
         /// <para>
         /// An authorization type for this build that overrides the one defined in the build project.
-        /// This override applies only if the build project's source is BitBucket or GitHub.
+        /// This override applies only if the build project's source is BitBucket, GitHub, GitLab,
+        /// or GitLab Self Managed.
         /// </para>
         /// </summary>
         public SourceAuth SourceAuthOverride
@@ -733,6 +734,10 @@ namespace Amazon.CodeBuild.Model
         /// is specified, the branch's HEAD commit ID is used. If not specified, the default branch's
         /// HEAD commit ID is used.
         /// </para>
+        ///  </dd> <dt>GitLab</dt> <dd> 
+        /// <para>
+        /// The commit ID, branch, or Git tag to use.
+        /// </para>
         ///  </dd> <dt>Bitbucket</dt> <dd> 
         /// <para>
         /// The commit ID, branch name, or tag name that corresponds to the version of the source
@@ -769,12 +774,20 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutesOverride. 
         /// <para>
-        /// The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for
+        /// The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for
         /// this build only, the latest setting already defined in the build project.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=5, Max=480)]
         public int? TimeoutInMinutesOverride
+||||||| Commit version number update changes
+        [AWSProperty(Min=5, Max=480)]
+        public int TimeoutInMinutesOverride
+=======
+        [AWSProperty(Min=5, Max=2160)]
+        public int TimeoutInMinutesOverride
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         {
             get { return this._timeoutInMinutesOverride; }
             set { this._timeoutInMinutesOverride = value; }

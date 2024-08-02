@@ -57,6 +57,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         public HttpMatch Unmarshall(JsonUnmarshallerContext context)
         {
             HttpMatch unmarshalledObject = new HttpMatch();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

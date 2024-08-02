@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public ComponentChild Unmarshall(JsonUnmarshallerContext context)
         {
             ComponentChild unmarshalledObject = new ComponentChild();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

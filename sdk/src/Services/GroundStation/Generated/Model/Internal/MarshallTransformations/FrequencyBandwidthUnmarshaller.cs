@@ -57,6 +57,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public FrequencyBandwidth Unmarshall(JsonUnmarshallerContext context)
         {
             FrequencyBandwidth unmarshalledObject = new FrequencyBandwidth();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

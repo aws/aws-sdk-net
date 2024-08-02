@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         public PostProcessingTrace Unmarshall(JsonUnmarshallerContext context)
         {
             PostProcessingTrace unmarshalledObject = new PostProcessingTrace();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         public SuiteDefinitionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SuiteDefinitionConfiguration unmarshalledObject = new SuiteDefinitionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

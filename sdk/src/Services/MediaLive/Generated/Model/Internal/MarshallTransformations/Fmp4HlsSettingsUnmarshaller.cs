@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public Fmp4HlsSettings Unmarshall(JsonUnmarshallerContext context)
         {
             Fmp4HlsSettings unmarshalledObject = new Fmp4HlsSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

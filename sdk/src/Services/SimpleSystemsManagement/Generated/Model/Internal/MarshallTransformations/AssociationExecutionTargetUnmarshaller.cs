@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public AssociationExecutionTarget Unmarshall(JsonUnmarshallerContext context)
         {
             AssociationExecutionTarget unmarshalledObject = new AssociationExecutionTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

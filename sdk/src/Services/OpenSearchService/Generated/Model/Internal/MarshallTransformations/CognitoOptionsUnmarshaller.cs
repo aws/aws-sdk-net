@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public CognitoOptions Unmarshall(JsonUnmarshallerContext context)
         {
             CognitoOptions unmarshalledObject = new CognitoOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

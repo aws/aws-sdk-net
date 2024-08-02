@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public AccountFreeTrialInfo Unmarshall(JsonUnmarshallerContext context)
         {
             AccountFreeTrialInfo unmarshalledObject = new AccountFreeTrialInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

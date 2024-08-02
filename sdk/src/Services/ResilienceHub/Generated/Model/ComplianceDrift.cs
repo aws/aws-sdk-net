@@ -125,7 +125,7 @@ namespace Amazon.ResilienceHub.Model
         /// Gets and sets the property DiffType. 
         /// <para>
         /// Difference type between actual and expected recovery point objective (RPO) and recovery
-        /// time objective (RTO) values. Currently, Resilience Hub supports only <b>NotEqual</b>
+        /// time objective (RTO) values. Currently, Resilience Hub supports only <c>NotEqual</c>
         /// difference type.
         /// </para>
         /// </summary>

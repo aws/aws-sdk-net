@@ -57,6 +57,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         public ParametricConfigurationOverrides Unmarshall(JsonUnmarshallerContext context)
         {
             ParametricConfigurationOverrides unmarshalledObject = new ParametricConfigurationOverrides();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

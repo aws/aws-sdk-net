@@ -31,7 +31,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMediaPipelineKinesisVideoStreamPool operation.
-    /// Updates an Kinesis video stream pool in a media pipeline.
+    /// Updates an Amazon Kinesis Video Stream pool in a media pipeline.
     /// </summary>
     public partial class UpdateMediaPipelineKinesisVideoStreamPoolRequest : AmazonChimeSDKMediaPipelinesRequest
     {
@@ -41,7 +41,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The ID of the video stream pool.
+        /// The unique identifier of the requested resource. Valid values include the name and
+        /// ARN of the media pipeline Kinesis Video Stream pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

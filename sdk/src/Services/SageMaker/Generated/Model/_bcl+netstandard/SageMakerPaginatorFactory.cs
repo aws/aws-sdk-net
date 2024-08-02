@@ -325,6 +325,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListMlflowTrackingServers operation
+        ///</summary>
+        public IListMlflowTrackingServersPaginator ListMlflowTrackingServers(ListMlflowTrackingServersRequest request) 
+        {
+            return new ListMlflowTrackingServersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListModelBiasJobDefinitions operation
         ///</summary>
         public IListModelBiasJobDefinitionsPaginator ListModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest request) 
@@ -450,6 +458,14 @@ namespace Amazon.SageMaker.Model
         public IListNotebookInstancesPaginator ListNotebookInstances(ListNotebookInstancesRequest request) 
         {
             return new ListNotebookInstancesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListOptimizationJobs operation
+        ///</summary>
+        public IListOptimizationJobsPaginator ListOptimizationJobs(ListOptimizationJobsRequest request) 
+        {
+            return new ListOptimizationJobsPaginator(this.client, request);
         }
 
         /// <summary>

@@ -5,12 +5,14 @@
     "endpointPrefix":"wafv2",
     "jsonVersion":"1.1",
     "protocol":"json",
+    "protocols":["json"],
     "serviceAbbreviation":"WAFV2",
     "serviceFullName":"AWS WAFV2",
     "serviceId":"WAFV2",
     "signatureVersion":"v4",
     "targetPrefix":"AWSWAF_20190729",
-    "uid":"wafv2-2019-07-29"
+    "uid":"wafv2-2019-07-29",
+    "auth":["aws.auth#sigv4"]
   },
   "operations":{
     "AssociateWebACL":{
@@ -1710,7 +1712,9 @@
       "type":"structure",
       "required":["ResourceArn"],
       "members":{
-        "ResourceArn":{"shape":"ResourceArn"}
+        "ResourceArn":{"shape":"ResourceArn"},
+        "LogType":{"shape":"LogType"},
+        "LogScope":{"shape":"LogScope"}
       }
     },
     "DeleteLoggingConfigurationResponse":{
@@ -2107,7 +2111,9 @@
       "type":"structure",
       "required":["ResourceArn"],
       "members":{
-        "ResourceArn":{"shape":"ResourceArn"}
+        "ResourceArn":{"shape":"ResourceArn"},
+        "LogType":{"shape":"LogType"},
+        "LogScope":{"shape":"LogScope"}
       }
     },
     "GetLoggingConfigurationResponse":{
@@ -2617,7 +2623,8 @@
       "members":{
         "Scope":{"shape":"Scope"},
         "NextMarker":{"shape":"NextMarker"},
-        "Limit":{"shape":"PaginationLimit"}
+        "Limit":{"shape":"PaginationLimit"},
+        "LogScope":{"shape":"LogScope"}
       }
     },
     "ListLoggingConfigurationsResponse":{
@@ -2754,6 +2761,17 @@
       "max":100,
       "min":1
     },
+    "LogScope":{
+      "type":"string",
+      "enum":[
+        "CUSTOMER",
+        "SECURITY_LAKE"
+      ]
+    },
+    "LogType":{
+      "type":"string",
+      "enum":["WAF_LOGS"]
+    },
     "LoggingConfiguration":{
       "type":"structure",
       "required":[
@@ -2765,7 +2783,9 @@
         "LogDestinationConfigs":{"shape":"LogDestinationConfigs"},
         "RedactedFields":{"shape":"RedactedFields"},
         "ManagedByFirewallManager":{"shape":"Boolean"},
-        "LoggingFilter":{"shape":"LoggingFilter"}
+        "LoggingFilter":{"shape":"LoggingFilter"},
+        "LogType":{"shape":"LogType"},
+        "LogScope":{"shape":"LogScope"}
       }
     },
     "LoggingConfigurations":{

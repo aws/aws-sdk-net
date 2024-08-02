@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public VectorKnowledgeBaseConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             VectorKnowledgeBaseConfiguration unmarshalledObject = new VectorKnowledgeBaseConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EmbeddingModelArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("embeddingModelConfiguration", targetDepth))
+                {
+                    var unmarshaller = EmbeddingModelConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EmbeddingModelConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public ApiCache Unmarshall(JsonUnmarshallerContext context)
         {
             ApiCache unmarshalledObject = new ApiCache();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

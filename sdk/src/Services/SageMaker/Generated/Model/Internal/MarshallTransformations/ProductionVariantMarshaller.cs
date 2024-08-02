@@ -77,6 +77,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EnableSSMAccess.Value);
             }
 
+            if(requestObject.IsSetInferenceAmiVersion())
+            {
+                context.Writer.WritePropertyName("InferenceAmiVersion");
+                context.Writer.Write(requestObject.InferenceAmiVersion);
+            }
+
             if(requestObject.IsSetInitialInstanceCount())
             {
                 context.Writer.WritePropertyName("InitialInstanceCount");

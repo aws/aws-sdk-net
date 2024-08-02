@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails unmarshalledObject = new AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

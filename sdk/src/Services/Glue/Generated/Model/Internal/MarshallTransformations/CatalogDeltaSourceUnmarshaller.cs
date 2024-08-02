@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public CatalogDeltaSource Unmarshall(JsonUnmarshallerContext context)
         {
             CatalogDeltaSource unmarshalledObject = new CatalogDeltaSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public ProtectedQuerySummary Unmarshall(JsonUnmarshallerContext context)
         {
             ProtectedQuerySummary unmarshalledObject = new ProtectedQuerySummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -86,6 +88,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MembershipId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("receiverConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ReceiverConfiguration, ReceiverConfigurationUnmarshaller>(ReceiverConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ReceiverConfigurations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

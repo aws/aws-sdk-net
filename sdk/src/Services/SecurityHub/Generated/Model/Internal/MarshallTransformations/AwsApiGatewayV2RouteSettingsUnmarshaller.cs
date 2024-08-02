@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsApiGatewayV2RouteSettings Unmarshall(JsonUnmarshallerContext context)
         {
             AwsApiGatewayV2RouteSettings unmarshalledObject = new AwsApiGatewayV2RouteSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

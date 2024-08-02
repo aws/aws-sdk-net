@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsIamAccessKeySessionContext Unmarshall(JsonUnmarshallerContext context)
         {
             AwsIamAccessKeySessionContext unmarshalledObject = new AwsIamAccessKeySessionContext();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

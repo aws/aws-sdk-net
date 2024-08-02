@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public AndroidPushNotificationTemplate Unmarshall(JsonUnmarshallerContext context)
         {
             AndroidPushNotificationTemplate unmarshalledObject = new AndroidPushNotificationTemplate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

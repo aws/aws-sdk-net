@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public CellValueSynonym Unmarshall(JsonUnmarshallerContext context)
         {
             CellValueSynonym unmarshalledObject = new CellValueSynonym();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

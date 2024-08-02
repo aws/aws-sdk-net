@@ -57,6 +57,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public SearchPlaceIndexForSuggestionsSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SearchPlaceIndexForSuggestionsSummary unmarshalledObject = new SearchPlaceIndexForSuggestionsSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

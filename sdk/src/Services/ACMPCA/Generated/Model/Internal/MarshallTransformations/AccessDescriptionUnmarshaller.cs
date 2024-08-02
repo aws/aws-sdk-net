@@ -57,6 +57,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         public AccessDescription Unmarshall(JsonUnmarshallerContext context)
         {
             AccessDescription unmarshalledObject = new AccessDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

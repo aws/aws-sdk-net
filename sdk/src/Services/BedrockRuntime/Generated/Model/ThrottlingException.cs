@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The number of requests exceeds the limit. Resubmit your request later.
+    /// Your request was throttled because of service-wide limitations. Resubmit your request
+    /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+    /// Throughput</a> to increase the rate or number of tokens you can process.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

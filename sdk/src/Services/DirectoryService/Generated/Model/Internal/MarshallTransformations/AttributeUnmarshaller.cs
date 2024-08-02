@@ -57,6 +57,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         public Attribute Unmarshall(JsonUnmarshallerContext context)
         {
             Attribute unmarshalledObject = new Attribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public ACL Unmarshall(JsonUnmarshallerContext context)
         {
             ACL unmarshalledObject = new ACL();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

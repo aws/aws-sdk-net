@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsIamPermissionsBoundary Unmarshall(JsonUnmarshallerContext context)
         {
             AwsIamPermissionsBoundary unmarshalledObject = new AwsIamPermissionsBoundary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public DeltaTimeSessionWindowConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DeltaTimeSessionWindowConfiguration unmarshalledObject = new DeltaTimeSessionWindowConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

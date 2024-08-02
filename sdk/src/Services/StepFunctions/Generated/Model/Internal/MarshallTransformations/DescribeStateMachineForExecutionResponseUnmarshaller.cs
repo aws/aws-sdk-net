@@ -58,6 +58,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     response.Definition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("encryptionConfiguration", targetDepth))
+                {
+                    var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
+                    response.EncryptionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("label", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -142,6 +148,18 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArn"))
                 {
                     return InvalidArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("KmsAccessDeniedException"))
+                {
+                    return KmsAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("KmsInvalidStateException"))
+                {
+                    return KmsInvalidStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("KmsThrottlingException"))
+                {
+                    return KmsThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonStepFunctionsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

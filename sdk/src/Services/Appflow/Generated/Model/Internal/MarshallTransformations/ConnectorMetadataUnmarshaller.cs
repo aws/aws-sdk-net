@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public ConnectorMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectorMetadata unmarshalledObject = new ConnectorMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

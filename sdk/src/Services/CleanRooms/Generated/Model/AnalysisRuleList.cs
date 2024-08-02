@@ -34,9 +34,29 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class AnalysisRuleList
     {
+        private AdditionalAnalyses _additionalAnalyses;
         private List<string> _allowedJoinOperators = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _joinColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _listColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalAnalyses. 
+        /// <para>
+        ///  An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied
+        /// to the output of the direct query.
+        /// </para>
+        /// </summary>
+        public AdditionalAnalyses AdditionalAnalyses
+        {
+            get { return this._additionalAnalyses; }
+            set { this._additionalAnalyses = value; }
+        }
+
+        // Check to see if AdditionalAnalyses property is set
+        internal bool IsSetAdditionalAnalyses()
+        {
+            return this._additionalAnalyses != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AllowedJoinOperators. 

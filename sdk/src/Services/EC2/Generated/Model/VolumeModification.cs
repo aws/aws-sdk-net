@@ -31,11 +31,6 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Describes the modification status of an EBS volume.
-    /// 
-    ///  
-    /// <para>
-    /// If the volume has never been modified, some element values will be null.
-    /// </para>
     /// </summary>
     public partial class VolumeModification
     {
@@ -77,7 +72,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ModificationState. 
         /// <para>
-        /// The current modification state. The modification state is null for unmodified volumes.
+        /// The current modification state.
         /// </para>
         /// </summary>
         public VolumeModificationState ModificationState

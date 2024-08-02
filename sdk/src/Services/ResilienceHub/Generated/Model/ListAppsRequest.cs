@@ -158,7 +158,7 @@ namespace Amazon.ResilienceHub.Model
         /// Gets and sets the property ReverseOrder. 
         /// <para>
         /// The application list is sorted based on the values of <c>lastAppComplianceEvaluationTime</c>
-        /// field. By default, application list is sorted in ascending order. To sort the appliation
+        /// field. By default, application list is sorted in ascending order. To sort the application
         /// list in descending order, set this field to <c>True</c>.
         /// </para>
         /// </summary>

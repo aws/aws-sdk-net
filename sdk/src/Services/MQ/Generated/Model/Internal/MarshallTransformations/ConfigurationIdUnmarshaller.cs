@@ -57,6 +57,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         public ConfigurationId Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigurationId unmarshalledObject = new ConfigurationId();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

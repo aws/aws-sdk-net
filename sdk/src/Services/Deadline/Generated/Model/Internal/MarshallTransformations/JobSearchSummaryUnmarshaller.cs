@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public JobSearchSummary Unmarshall(JsonUnmarshallerContext context)
         {
             JobSearchSummary unmarshalledObject = new JobSearchSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

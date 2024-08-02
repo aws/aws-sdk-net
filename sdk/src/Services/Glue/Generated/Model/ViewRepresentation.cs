@@ -38,6 +38,7 @@ namespace Amazon.Glue.Model
         private ViewDialect _dialect;
         private string _dialectVersion;
         private bool? _isStale;
+        private string _validationConnection;
         private string _viewExpandedText;
         private string _viewOriginalText;
 
@@ -98,6 +99,26 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ValidationConnection. 
+        /// <para>
+        /// The name of the connection to be used to validate the specific representation of the
+        /// view.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ValidationConnection
+        {
+            get { return this._validationConnection; }
+            set { this._validationConnection = value; }
+        }
+
+        // Check to see if ValidationConnection property is set
+        internal bool IsSetValidationConnection()
+        {
+            return this._validationConnection != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ViewExpandedText. 
         /// <para>
         /// The expanded SQL for the view. This SQL is used by engines while processing a query
@@ -106,7 +127,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Fully qualify identifiers: <c>SELECT * from table1 → SELECT * from db1.table1</c>
+        /// Fully qualified identifiers: <c>SELECT * from table1 -&gt; SELECT * from db1.table1</c>
         /// 
         /// </para>
         ///  </li> </ul>

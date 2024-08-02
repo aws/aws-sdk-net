@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public BadRequestDetail Unmarshall(JsonUnmarshallerContext context)
         {
             BadRequestDetail unmarshalledObject = new BadRequestDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

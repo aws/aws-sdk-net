@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public EC2AssociateRouteTableAction Unmarshall(JsonUnmarshallerContext context)
         {
             EC2AssociateRouteTableAction unmarshalledObject = new EC2AssociateRouteTableAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -31,6 +31,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.CreateCertificateAuthorityAuditReportResponse.S3Key</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -43,7 +44,7 @@
     <property>Amazon.ACMPCA.Model.CreatePermissionRequest.Principal</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[^*]+$</pattern>
+    <pattern>[^*]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.CreatePermissionRequest.SourceAccount</property>
@@ -72,7 +73,7 @@
     <property>Amazon.ACMPCA.Model.DeletePermissionRequest.Principal</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[^*]+$</pattern>
+    <pattern>[^*]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.DeletePermissionRequest.SourceAccount</property>
@@ -111,6 +112,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.DescribeCertificateAuthorityAuditReportResponse.S3Key</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -302,7 +304,7 @@
     <property>Amazon.ACMPCA.Model.AccessMethod.CustomObjectIdentifier</property>
     <min>0</min>
     <max>64</max>
-    <pattern>^([0-2])\.([0-9]|([0-3][0-9]))((\.([0-9]+)){0,126})$</pattern>
+    <pattern>([0-2])\.([0-9]|([0-3][0-9]))((\.([0-9]+)){0,126})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.ASN1Subject.CommonName</property>
@@ -393,7 +395,7 @@
     <property>Amazon.ACMPCA.Model.CrlConfiguration.CustomCname</property>
     <min>0</min>
     <max>253</max>
-    <pattern>^[-a-zA-Z0-9;/?:@&amp;=+$,%_.!~*()']*$</pattern>
+    <pattern>[-a-zA-Z0-9;/?:@&amp;=+$,%_.!~*()']*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.CrlConfiguration.ExpirationInDays</property>
@@ -404,13 +406,13 @@
     <property>Amazon.ACMPCA.Model.CrlConfiguration.S3BucketName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>^[-a-zA-Z0-9._/]+$</pattern>
+    <pattern>[-a-zA-Z0-9._/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.CustomAttribute.ObjectIdentifier</property>
     <min>0</min>
     <max>64</max>
-    <pattern>^([0-2])\.([0-9]|([0-3][0-9]))((\.([0-9]+)){0,126})$</pattern>
+    <pattern>([0-2])\.([0-9]|([0-3][0-9]))((\.([0-9]+)){0,126})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.CustomAttribute.Value</property>
@@ -421,13 +423,13 @@
     <property>Amazon.ACMPCA.Model.CustomExtension.ObjectIdentifier</property>
     <min>0</min>
     <max>64</max>
-    <pattern>^([0-2])\.([0-9]|([0-3][0-9]))((\.([0-9]+)){0,126})$</pattern>
+    <pattern>([0-2])\.([0-9]|([0-3][0-9]))((\.([0-9]+)){0,126})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.CustomExtension.Value</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$</pattern>
+    <pattern>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.EdiPartyName.NameAssigner</property>
@@ -443,7 +445,7 @@
     <property>Amazon.ACMPCA.Model.ExtendedKeyUsage.ExtendedKeyUsageObjectIdentifier</property>
     <min>0</min>
     <max>64</max>
-    <pattern>^([0-2])\.([0-9]|([0-3][0-9]))((\.([0-9]+)){0,126})$</pattern>
+    <pattern>([0-2])\.([0-9]|([0-3][0-9]))((\.([0-9]+)){0,126})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.GeneralName.DnsName</property>
@@ -459,7 +461,7 @@
     <property>Amazon.ACMPCA.Model.GeneralName.RegisteredId</property>
     <min>0</min>
     <max>64</max>
-    <pattern>^([0-2])\.([0-9]|([0-3][0-9]))((\.([0-9]+)){0,126})$</pattern>
+    <pattern>([0-2])\.([0-9]|([0-3][0-9]))((\.([0-9]+)){0,126})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.GeneralName.Rfc822Name</property>
@@ -475,13 +477,13 @@
     <property>Amazon.ACMPCA.Model.OcspConfiguration.OcspCustomCname</property>
     <min>0</min>
     <max>253</max>
-    <pattern>^[-a-zA-Z0-9;/?:@&amp;=+$,%_.!~*()']*$</pattern>
+    <pattern>[-a-zA-Z0-9;/?:@&amp;=+$,%_.!~*()']*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.OtherName.TypeId</property>
     <min>0</min>
     <max>64</max>
-    <pattern>^([0-2])\.([0-9]|([0-3][0-9]))((\.([0-9]+)){0,126})$</pattern>
+    <pattern>([0-2])\.([0-9]|([0-3][0-9]))((\.([0-9]+)){0,126})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.OtherName.Value</property>
@@ -504,7 +506,7 @@
     <property>Amazon.ACMPCA.Model.Permission.Principal</property>
     <min>0</min>
     <max>128</max>
-    <pattern>^[^*]+$</pattern>
+    <pattern>[^*]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.Permission.SourceAccount</property>
@@ -516,7 +518,7 @@
     <property>Amazon.ACMPCA.Model.PolicyInformation.CertPolicyId</property>
     <min>0</min>
     <max>64</max>
-    <pattern>^([0-2])\.([0-9]|([0-3][0-9]))((\.([0-9]+)){0,126})$</pattern>
+    <pattern>([0-2])\.([0-9]|([0-3][0-9]))((\.([0-9]+)){0,126})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.Qualifier.CpsUri</property>
@@ -527,13 +529,13 @@
     <property>Amazon.ACMPCA.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.Validity.Value</property>

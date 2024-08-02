@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsWafRegionalWebAclRulesListDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsWafRegionalWebAclRulesListDetails unmarshalledObject = new AwsWafRegionalWebAclRulesListDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

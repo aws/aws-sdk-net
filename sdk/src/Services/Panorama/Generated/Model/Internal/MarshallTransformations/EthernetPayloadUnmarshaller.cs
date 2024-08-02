@@ -57,6 +57,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         public EthernetPayload Unmarshall(JsonUnmarshallerContext context)
         {
             EthernetPayload unmarshalledObject = new EthernetPayload();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

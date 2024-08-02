@@ -46,11 +46,13 @@ namespace Amazon.LaunchWizard.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>WORKLOAD_NAME</c> 
+        ///  <c>WORKLOAD_NAME</c> - The name used in deployments.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DEPLOYMENT_STATUS</c> 
+        ///  <c>DEPLOYMENT_STATUS</c> - <c>COMPLETED</c> | <c>CREATING</c> | <c>DELETE_IN_PROGRESS</c>
+        /// | <c>DELETE_INITIATING</c> | <c>DELETE_FAILED</c> | <c>DELETED</c> | <c>FAILED</c>
+        /// | <c>IN_PROGRESS</c> | <c>VALIDATING</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

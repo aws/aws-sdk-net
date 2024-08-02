@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public MaximumLabelType Unmarshall(JsonUnmarshallerContext context)
         {
             MaximumLabelType unmarshalledObject = new MaximumLabelType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

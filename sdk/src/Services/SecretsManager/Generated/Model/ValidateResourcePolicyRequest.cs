@@ -97,7 +97,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// This field is reserved for internal use.
+        /// The ARN or name of the secret with the resource-based policy you want to validate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public SetupRequest Unmarshall(JsonUnmarshallerContext context)
         {
             SetupRequest unmarshalledObject = new SetupRequest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

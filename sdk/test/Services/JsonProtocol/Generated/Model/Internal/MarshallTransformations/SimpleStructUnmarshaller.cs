@@ -57,6 +57,8 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
         public SimpleStruct Unmarshall(JsonUnmarshallerContext context)
         {
             SimpleStruct unmarshalledObject = new SimpleStruct();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

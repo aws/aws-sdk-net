@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public AddThingsToThingGroupParams Unmarshall(JsonUnmarshallerContext context)
         {
             AddThingsToThingGroupParams unmarshalledObject = new AddThingsToThingGroupParams();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

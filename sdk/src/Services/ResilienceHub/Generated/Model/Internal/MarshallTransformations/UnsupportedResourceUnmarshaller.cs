@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public UnsupportedResource Unmarshall(JsonUnmarshallerContext context)
         {
             UnsupportedResource unmarshalledObject = new UnsupportedResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

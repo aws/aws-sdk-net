@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public UncertaintyRange Unmarshall(JsonUnmarshallerContext context)
         {
             UncertaintyRange unmarshalledObject = new UncertaintyRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

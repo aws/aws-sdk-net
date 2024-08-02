@@ -57,6 +57,8 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         public EventIntegration Unmarshall(JsonUnmarshallerContext context)
         {
             EventIntegration unmarshalledObject = new EventIntegration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

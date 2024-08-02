@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public DiskIopsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DiskIopsConfiguration unmarshalledObject = new DiskIopsConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

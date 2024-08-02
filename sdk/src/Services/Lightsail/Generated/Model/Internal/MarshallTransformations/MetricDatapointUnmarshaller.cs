@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public MetricDatapoint Unmarshall(JsonUnmarshallerContext context)
         {
             MetricDatapoint unmarshalledObject = new MetricDatapoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

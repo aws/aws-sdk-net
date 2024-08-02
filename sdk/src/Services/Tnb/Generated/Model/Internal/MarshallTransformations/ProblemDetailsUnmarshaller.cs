@@ -57,6 +57,8 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         public ProblemDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ProblemDetails unmarshalledObject = new ProblemDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public BatchGetVariableError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchGetVariableError unmarshalledObject = new BatchGetVariableError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

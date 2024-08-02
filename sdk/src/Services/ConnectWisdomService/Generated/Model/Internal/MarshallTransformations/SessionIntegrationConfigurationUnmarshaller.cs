@@ -57,6 +57,8 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         public SessionIntegrationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SessionIntegrationConfiguration unmarshalledObject = new SessionIntegrationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

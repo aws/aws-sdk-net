@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public NetworkInputSettings Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkInputSettings unmarshalledObject = new NetworkInputSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

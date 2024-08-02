@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public StreamFile Unmarshall(JsonUnmarshallerContext context)
         {
             StreamFile unmarshalledObject = new StreamFile();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

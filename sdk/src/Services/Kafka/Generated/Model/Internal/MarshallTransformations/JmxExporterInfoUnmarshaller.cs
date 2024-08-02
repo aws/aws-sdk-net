@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public JmxExporterInfo Unmarshall(JsonUnmarshallerContext context)
         {
             JmxExporterInfo unmarshalledObject = new JmxExporterInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -1004,6 +1004,48 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  GetJobQueueSnapshot
+
+        internal virtual GetJobQueueSnapshotResponse GetJobQueueSnapshot(GetJobQueueSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobQueueSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobQueueSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<GetJobQueueSnapshotResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides a list of the first 100 <c>RUNNABLE</c> jobs associated to a single job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobQueueSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJobQueueSnapshot service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/GetJobQueueSnapshot">REST API Reference for GetJobQueueSnapshot Operation</seealso>
+        public virtual Task<GetJobQueueSnapshotResponse> GetJobQueueSnapshotAsync(GetJobQueueSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetJobQueueSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetJobQueueSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetJobQueueSnapshotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListJobs
 
         internal virtual ListJobsResponse ListJobs(ListJobsRequest request)
@@ -1524,8 +1566,32 @@ namespace Amazon.Batch
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonBatchEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonBatchEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

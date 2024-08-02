@@ -57,6 +57,8 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
         public ResourceCount Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceCount unmarshalledObject = new ResourceCount();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

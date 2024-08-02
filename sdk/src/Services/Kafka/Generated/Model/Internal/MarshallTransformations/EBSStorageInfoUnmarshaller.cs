@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public EBSStorageInfo Unmarshall(JsonUnmarshallerContext context)
         {
             EBSStorageInfo unmarshalledObject = new EBSStorageInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

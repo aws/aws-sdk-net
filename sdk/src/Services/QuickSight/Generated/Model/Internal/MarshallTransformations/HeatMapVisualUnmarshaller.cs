@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public HeatMapVisual Unmarshall(JsonUnmarshallerContext context)
         {
             HeatMapVisual unmarshalledObject = new HeatMapVisual();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

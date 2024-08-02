@@ -40,6 +40,7 @@ namespace Amazon.NetworkManager.Model
         private string _description;
         private List<CoreNetworkEdge> _edges = AWSConfigs.InitializeCollections ? new List<CoreNetworkEdge>() : null;
         private string _globalNetworkId;
+        private List<CoreNetworkNetworkFunctionGroup> _networkFunctionGroups = AWSConfigs.InitializeCollections ? new List<CoreNetworkNetworkFunctionGroup>() : null;
         private List<CoreNetworkSegment> _segments = AWSConfigs.InitializeCollections ? new List<CoreNetworkSegment>() : null;
         private CoreNetworkState _state;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -154,6 +155,24 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetGlobalNetworkId()
         {
             return this._globalNetworkId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkFunctionGroups. 
+        /// <para>
+        /// The network function groups associated with a core network.
+        /// </para>
+        /// </summary>
+        public List<CoreNetworkNetworkFunctionGroup> NetworkFunctionGroups
+        {
+            get { return this._networkFunctionGroups; }
+            set { this._networkFunctionGroups = value; }
+        }
+
+        // Check to see if NetworkFunctionGroups property is set
+        internal bool IsSetNetworkFunctionGroups()
+        {
+            return this._networkFunctionGroups != null && (this._networkFunctionGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

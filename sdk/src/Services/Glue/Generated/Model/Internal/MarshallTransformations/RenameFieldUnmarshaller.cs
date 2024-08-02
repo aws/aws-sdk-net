@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public RenameField Unmarshall(JsonUnmarshallerContext context)
         {
             RenameField unmarshalledObject = new RenameField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

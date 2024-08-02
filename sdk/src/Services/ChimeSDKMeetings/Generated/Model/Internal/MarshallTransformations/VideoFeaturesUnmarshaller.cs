@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         public VideoFeatures Unmarshall(JsonUnmarshallerContext context)
         {
             VideoFeatures unmarshalledObject = new VideoFeatures();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

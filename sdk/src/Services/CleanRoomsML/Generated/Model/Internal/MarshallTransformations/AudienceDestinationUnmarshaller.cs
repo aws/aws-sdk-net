@@ -57,6 +57,8 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         public AudienceDestination Unmarshall(JsonUnmarshallerContext context)
         {
             AudienceDestination unmarshalledObject = new AudienceDestination();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

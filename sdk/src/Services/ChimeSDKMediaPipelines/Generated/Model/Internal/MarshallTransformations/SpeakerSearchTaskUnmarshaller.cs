@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public SpeakerSearchTask Unmarshall(JsonUnmarshallerContext context)
         {
             SpeakerSearchTask unmarshalledObject = new SpeakerSearchTask();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

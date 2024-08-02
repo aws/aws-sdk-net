@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public EksEmptyDir Unmarshall(JsonUnmarshallerContext context)
         {
             EksEmptyDir unmarshalledObject = new EksEmptyDir();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

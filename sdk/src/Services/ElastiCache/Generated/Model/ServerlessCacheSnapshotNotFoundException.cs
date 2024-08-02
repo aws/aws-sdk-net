@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// This serverless cache snapshot could not be found or does not exist. Available for
-    /// Redis only.
+    /// Redis OSS and Serverless Memcached only.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

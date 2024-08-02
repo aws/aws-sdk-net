@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public AdvancedSecurityOptions Unmarshall(JsonUnmarshallerContext context)
         {
             AdvancedSecurityOptions unmarshalledObject = new AdvancedSecurityOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -86,6 +88,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InternalUserDatabaseEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JWTOptions", targetDepth))
+                {
+                    var unmarshaller = JWTOptionsOutputUnmarshaller.Instance;
+                    unmarshalledObject.JWTOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SAMLOptions", targetDepth))

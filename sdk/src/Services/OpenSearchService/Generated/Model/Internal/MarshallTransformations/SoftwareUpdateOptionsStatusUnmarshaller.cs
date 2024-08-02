@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public SoftwareUpdateOptionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
             SoftwareUpdateOptionsStatus unmarshalledObject = new SoftwareUpdateOptionsStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

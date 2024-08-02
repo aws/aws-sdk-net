@@ -57,6 +57,8 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
         public ICD10CMEntity Unmarshall(JsonUnmarshallerContext context)
         {
             ICD10CMEntity unmarshalledObject = new ICD10CMEntity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

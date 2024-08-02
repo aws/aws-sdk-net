@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public DestinationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             DestinationDescription unmarshalledObject = new DestinationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -98,6 +100,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = HttpEndpointDestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.HttpEndpointDestinationDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IcebergDestinationDescription", targetDepth))
+                {
+                    var unmarshaller = IcebergDestinationDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.IcebergDestinationDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RedshiftDestinationDescription", targetDepth))

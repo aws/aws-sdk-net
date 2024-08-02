@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public KeywordMatchConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             KeywordMatchConfiguration unmarshalledObject = new KeywordMatchConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

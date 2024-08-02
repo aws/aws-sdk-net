@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public AppsListDataSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AppsListDataSummary unmarshalledObject = new AppsListDataSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

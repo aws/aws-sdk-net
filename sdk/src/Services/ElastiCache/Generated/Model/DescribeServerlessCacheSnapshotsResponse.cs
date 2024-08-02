@@ -42,7 +42,8 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// An optional marker returned from a prior request to support pagination of results
         /// from this operation. If this parameter is specified, the response includes only records
-        /// beyond the marker, up to the value specified by max-results. Available for Redis only.
+        /// beyond the marker, up to the value specified by max-results. Available for Redis OSS
+        /// and Serverless Memcached only.
         /// </para>
         /// </summary>
         public string NextToken
@@ -61,7 +62,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ServerlessCacheSnapshots. 
         /// <para>
         /// The serverless caches snapshots associated with a given description request. Available
-        /// for Redis only.
+        /// for Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public List<ServerlessCacheSnapshot> ServerlessCacheSnapshots

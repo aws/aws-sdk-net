@@ -57,6 +57,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         public IotSiteWiseAction Unmarshall(JsonUnmarshallerContext context)
         {
             IotSiteWiseAction unmarshalledObject = new IotSiteWiseAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

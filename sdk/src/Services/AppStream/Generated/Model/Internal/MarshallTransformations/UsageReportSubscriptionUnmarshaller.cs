@@ -57,6 +57,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public UsageReportSubscription Unmarshall(JsonUnmarshallerContext context)
         {
             UsageReportSubscription unmarshalledObject = new UsageReportSubscription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

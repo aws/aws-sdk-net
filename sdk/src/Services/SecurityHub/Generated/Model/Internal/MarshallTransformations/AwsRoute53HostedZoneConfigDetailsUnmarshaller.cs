@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRoute53HostedZoneConfigDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRoute53HostedZoneConfigDetails unmarshalledObject = new AwsRoute53HostedZoneConfigDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

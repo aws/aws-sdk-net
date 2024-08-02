@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public PillarMetric Unmarshall(JsonUnmarshallerContext context)
         {
             PillarMetric unmarshalledObject = new PillarMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

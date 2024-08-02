@@ -34,6 +34,27 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class CreateConnectionResponse : AmazonWebServiceResponse
     {
+        private ConnectionStatus _createConnectionStatus;
+
+        /// <summary>
+        /// Gets and sets the property CreateConnectionStatus. 
+        /// <para>
+        /// The status of the connection creation request. The request can take some time for
+        /// certain authentication types, for example when creating an OAuth connection with token
+        /// exchange over VPC.
+        /// </para>
+        /// </summary>
+        public ConnectionStatus CreateConnectionStatus
+        {
+            get { return this._createConnectionStatus; }
+            set { this._createConnectionStatus = value; }
+        }
+
+        // Check to see if CreateConnectionStatus property is set
+        internal bool IsSetCreateConnectionStatus()
+        {
+            return this._createConnectionStatus != null;
+        }
 
     }
 }

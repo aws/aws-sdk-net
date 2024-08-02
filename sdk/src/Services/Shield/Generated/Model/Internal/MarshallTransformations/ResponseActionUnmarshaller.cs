@@ -57,6 +57,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         public ResponseAction Unmarshall(JsonUnmarshallerContext context)
         {
             ResponseAction unmarshalledObject = new ResponseAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

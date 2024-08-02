@@ -40,18 +40,18 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AlgorithmsConfig. 
         /// <para>
-        /// Stores the configuration information for the selection of algorithms used to train
-        /// the model candidates.
+        /// Stores the configuration information for the selection of algorithms trained on tabular
+        /// data.
         /// </para>
         ///  
         /// <para>
         /// The list of available algorithms to choose from depends on the training mode set in
-        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html">
-        /// <c>AutoMLJobConfig.Mode</c> </a>.
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TabularJobConfig.html">
+        /// <c>TabularJobConfig.Mode</c> </a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>AlgorithmsConfig</c> should not be set in <c>AUTO</c> training mode.
+        ///  <c>AlgorithmsConfig</c> should not be set if the training mode is set on <c>AUTO</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -61,17 +61,17 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// If the list of algorithms provided as values for <c>AutoMLAlgorithms</c> is empty,
-        /// <c>AutoMLCandidateGenerationConfig</c> uses the full set of algorithms for the given
-        /// training mode.
+        /// <c>CandidateGenerationConfig</c> uses the full set of algorithms for the given training
+        /// mode.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When <c>AlgorithmsConfig</c> is not provided, <c>AutoMLCandidateGenerationConfig</c>
-        /// uses the full set of algorithms for the given training mode.
+        /// When <c>AlgorithmsConfig</c> is not provided, <c>CandidateGenerationConfig</c> uses
+        /// the full set of algorithms for the given training mode.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the list of all algorithms per training mode, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
+        /// For the list of all algorithms per problem type and training mode, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
         /// AutoMLAlgorithmConfig</a>.
         /// </para>
         ///  

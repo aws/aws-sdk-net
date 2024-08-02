@@ -243,8 +243,8 @@ namespace Amazon.QuickSight.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>READER_PRO</c>: Reader Pro adds Generative BI capabilities to the Reader role.
-        /// Reader Pros have access to Amazon Q Business, can build stories with Amazon Q, and
-        /// can generate executive summaries from dashboards.
+        /// Reader Pros have access to Amazon Q in Amazon QuickSight, can build stories with Amazon
+        /// Q, and can generate executive summaries from dashboards.
         /// </para>
         ///  </li> <li> 
         /// <para>

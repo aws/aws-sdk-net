@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public OAuth2CustomParameter Unmarshall(JsonUnmarshallerContext context)
         {
             OAuth2CustomParameter unmarshalledObject = new OAuth2CustomParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

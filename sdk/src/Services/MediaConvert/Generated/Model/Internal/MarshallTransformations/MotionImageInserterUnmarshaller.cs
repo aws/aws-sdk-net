@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public MotionImageInserter Unmarshall(JsonUnmarshallerContext context)
         {
             MotionImageInserter unmarshalledObject = new MotionImageInserter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public Attachment Unmarshall(JsonUnmarshallerContext context)
         {
             Attachment unmarshalledObject = new Attachment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -106,10 +108,28 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.EdgeLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastModificationErrors", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AttachmentError, AttachmentErrorUnmarshaller>(AttachmentErrorUnmarshaller.Instance);
+                    unmarshalledObject.LastModificationErrors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFunctionGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFunctionGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OwnerAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProposedNetworkFunctionGroupChange", targetDepth))
+                {
+                    var unmarshaller = ProposedNetworkFunctionGroupChangeUnmarshaller.Instance;
+                    unmarshalledObject.ProposedNetworkFunctionGroupChange = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProposedSegmentChange", targetDepth))

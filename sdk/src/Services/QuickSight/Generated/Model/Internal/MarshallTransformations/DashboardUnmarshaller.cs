@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public Dashboard Unmarshall(JsonUnmarshallerContext context)
         {
             Dashboard unmarshalledObject = new Dashboard();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

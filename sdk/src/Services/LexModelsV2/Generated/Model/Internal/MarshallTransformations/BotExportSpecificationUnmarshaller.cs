@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public BotExportSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             BotExportSpecification unmarshalledObject = new BotExportSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

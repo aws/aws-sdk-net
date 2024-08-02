@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         public LambdaEndpointSummary Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaEndpointSummary unmarshalledObject = new LambdaEndpointSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

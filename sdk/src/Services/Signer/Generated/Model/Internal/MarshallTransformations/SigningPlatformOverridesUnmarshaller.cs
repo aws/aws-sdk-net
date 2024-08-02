@@ -57,6 +57,8 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         public SigningPlatformOverrides Unmarshall(JsonUnmarshallerContext context)
         {
             SigningPlatformOverrides unmarshalledObject = new SigningPlatformOverrides();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

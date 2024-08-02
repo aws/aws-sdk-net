@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsAutoScalingLaunchConfigurationMetadataOptions Unmarshall(JsonUnmarshallerContext context)
         {
             AwsAutoScalingLaunchConfigurationMetadataOptions unmarshalledObject = new AwsAutoScalingLaunchConfigurationMetadataOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

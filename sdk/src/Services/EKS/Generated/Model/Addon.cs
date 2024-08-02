@@ -45,6 +45,7 @@ namespace Amazon.EKS.Model
         private MarketplaceInformation _marketplaceInformation;
         private DateTime? _modifiedAt;
         private string _owner;
+        private List<string> _podIdentityAssociations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _publisher;
         private string _serviceAccountRoleArn;
         private AddonStatus _status;
@@ -229,6 +230,30 @@ namespace Amazon.EKS.Model
         internal bool IsSetOwner()
         {
             return this._owner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PodIdentityAssociations. 
+        /// <para>
+        /// An array of Pod Identity Assocations owned by the Addon. Each EKS Pod Identity association
+        /// maps a role to a service account in a namespace in the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
+        /// an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User Guide.
+        /// </para>
+        /// </summary>
+        public List<string> PodIdentityAssociations
+        {
+            get { return this._podIdentityAssociations; }
+            set { this._podIdentityAssociations = value; }
+        }
+
+        // Check to see if PodIdentityAssociations property is set
+        internal bool IsSetPodIdentityAssociations()
+        {
+            return this._podIdentityAssociations != null && (this._podIdentityAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

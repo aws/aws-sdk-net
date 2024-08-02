@@ -57,6 +57,8 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         public OrganizationEventDetailsErrorItem Unmarshall(JsonUnmarshallerContext context)
         {
             OrganizationEventDetailsErrorItem unmarshalledObject = new OrganizationEventDetailsErrorItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

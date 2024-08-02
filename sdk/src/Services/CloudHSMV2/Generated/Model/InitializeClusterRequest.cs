@@ -31,10 +31,16 @@ namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
     /// Container for the parameters to the InitializeCluster operation.
-    /// Claims an AWS CloudHSM cluster by submitting the cluster certificate issued by your
-    /// issuing certificate authority (CA) and the CA's root certificate. Before you can claim
-    /// a cluster, you must sign the cluster's certificate signing request (CSR) with your
-    /// issuing CA. To get the cluster's CSR, use <a>DescribeClusters</a>.
+    /// Claims an CloudHSM cluster by submitting the cluster certificate issued by your issuing
+    /// certificate authority (CA) and the CA's root certificate. Before you can claim a cluster,
+    /// you must sign the cluster's certificate signing request (CSR) with your issuing CA.
+    /// To get the cluster's CSR, use <a>DescribeClusters</a>.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM cluster
+    /// in a different Amazon Web Services account.
+    /// </para>
     /// </summary>
     public partial class InitializeClusterRequest : AmazonCloudHSMV2Request
     {
@@ -69,7 +75,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The certificate must be in PEM format and can contain a maximum of 5000 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=5000)]
+        [AWSProperty(Required=true, Max=20000)]
         public string SignedCert
         {
             get { return this._signedCert; }
@@ -91,7 +97,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The certificate must be in PEM format and can contain a maximum of 5000 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=5000)]
+        [AWSProperty(Required=true, Max=20000)]
         public string TrustAnchor
         {
             get { return this._trustAnchor; }

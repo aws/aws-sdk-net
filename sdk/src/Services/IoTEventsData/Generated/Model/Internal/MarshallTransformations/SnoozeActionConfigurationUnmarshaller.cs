@@ -57,6 +57,8 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
         public SnoozeActionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SnoozeActionConfiguration unmarshalledObject = new SnoozeActionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

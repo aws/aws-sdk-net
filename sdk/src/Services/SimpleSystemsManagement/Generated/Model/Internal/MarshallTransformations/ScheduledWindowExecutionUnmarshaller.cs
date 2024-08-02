@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public ScheduledWindowExecution Unmarshall(JsonUnmarshallerContext context)
         {
             ScheduledWindowExecution unmarshalledObject = new ScheduledWindowExecution();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails unmarshalledObject = new AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

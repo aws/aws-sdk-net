@@ -52,7 +52,7 @@ namespace Amazon.DocumentTypesTest.Model
         // Check to see if TestId property is set
         internal bool IsSetTestId()
         {
-            return this._testId != null;
+            return !string.IsNullOrEmpty(this._testId);
         }
 
     }

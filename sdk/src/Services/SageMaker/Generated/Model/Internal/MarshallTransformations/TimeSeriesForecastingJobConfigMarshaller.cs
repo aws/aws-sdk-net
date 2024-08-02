@@ -48,6 +48,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCandidateGenerationConfig())
+            {
+                context.Writer.WritePropertyName("CandidateGenerationConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CandidateGenerationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CandidateGenerationConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCompletionCriteria())
             {
                 context.Writer.WritePropertyName("CompletionCriteria");

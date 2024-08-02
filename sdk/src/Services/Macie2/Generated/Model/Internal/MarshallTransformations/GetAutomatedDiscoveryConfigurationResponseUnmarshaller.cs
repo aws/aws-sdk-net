@@ -52,6 +52,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("autoEnableOrganizationMembers", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AutoEnableOrganizationMembers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("classificationScopeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

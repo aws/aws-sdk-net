@@ -57,6 +57,8 @@ namespace Amazon.ElasticInference.Model.Internal.MarshallTransformations
         public AcceleratorType Unmarshall(JsonUnmarshallerContext context)
         {
             AcceleratorType unmarshalledObject = new AcceleratorType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

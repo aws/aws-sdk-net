@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FilterSelectableValues Unmarshall(JsonUnmarshallerContext context)
         {
             FilterSelectableValues unmarshalledObject = new FilterSelectableValues();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

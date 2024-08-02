@@ -57,6 +57,8 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         public DimensionMapping Unmarshall(JsonUnmarshallerContext context)
         {
             DimensionMapping unmarshalledObject = new DimensionMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

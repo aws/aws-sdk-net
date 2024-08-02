@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public RefreshSchemasStatus Unmarshall(JsonUnmarshallerContext context)
         {
             RefreshSchemasStatus unmarshalledObject = new RefreshSchemasStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

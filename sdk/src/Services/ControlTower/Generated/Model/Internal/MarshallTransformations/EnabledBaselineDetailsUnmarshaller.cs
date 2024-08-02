@@ -57,6 +57,8 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         public EnabledBaselineDetails Unmarshall(JsonUnmarshallerContext context)
         {
             EnabledBaselineDetails unmarshalledObject = new EnabledBaselineDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

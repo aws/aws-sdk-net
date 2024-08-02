@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public SnapStartResponse Unmarshall(JsonUnmarshallerContext context)
         {
             SnapStartResponse unmarshalledObject = new SnapStartResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

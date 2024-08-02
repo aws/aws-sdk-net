@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public InsightTimeRange Unmarshall(JsonUnmarshallerContext context)
         {
             InsightTimeRange unmarshalledObject = new InsightTimeRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

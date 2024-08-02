@@ -57,6 +57,8 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public EventSelector Unmarshall(JsonUnmarshallerContext context)
         {
             EventSelector unmarshalledObject = new EventSelector();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

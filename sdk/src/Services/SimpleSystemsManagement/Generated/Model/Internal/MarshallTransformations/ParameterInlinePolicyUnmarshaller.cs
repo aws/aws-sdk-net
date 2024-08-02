@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public ParameterInlinePolicy Unmarshall(JsonUnmarshallerContext context)
         {
             ParameterInlinePolicy unmarshalledObject = new ParameterInlinePolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

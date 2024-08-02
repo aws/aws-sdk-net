@@ -57,6 +57,11 @@ namespace Amazon.Connect.Model
         IListApprovedOriginsPaginator ListApprovedOrigins(ListApprovedOriginsRequest request);
 
         /// <summary>
+        /// Paginator for ListAuthenticationProfiles operation
+        ///</summary>
+        IListAuthenticationProfilesPaginator ListAuthenticationProfiles(ListAuthenticationProfilesRequest request);
+
+        /// <summary>
         /// Paginator for ListBots operation
         ///</summary>
         IListBotsPaginator ListBots(ListBotsRequest request);
@@ -257,9 +262,24 @@ namespace Amazon.Connect.Model
         IListViewVersionsPaginator ListViewVersions(ListViewVersionsRequest request);
 
         /// <summary>
+        /// Paginator for SearchAgentStatuses operation
+        ///</summary>
+        ISearchAgentStatusesPaginator SearchAgentStatuses(SearchAgentStatusesRequest request);
+
+        /// <summary>
         /// Paginator for SearchAvailablePhoneNumbers operation
         ///</summary>
         ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request);
+
+        /// <summary>
+        /// Paginator for SearchContactFlowModules operation
+        ///</summary>
+        ISearchContactFlowModulesPaginator SearchContactFlowModules(SearchContactFlowModulesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchContactFlows operation
+        ///</summary>
+        ISearchContactFlowsPaginator SearchContactFlows(SearchContactFlowsRequest request);
 
         /// <summary>
         /// Paginator for SearchContacts operation
@@ -305,6 +325,11 @@ namespace Amazon.Connect.Model
         /// Paginator for SearchSecurityProfiles operation
         ///</summary>
         ISearchSecurityProfilesPaginator SearchSecurityProfiles(SearchSecurityProfilesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchUserHierarchyGroups operation
+        ///</summary>
+        ISearchUserHierarchyGroupsPaginator SearchUserHierarchyGroups(SearchUserHierarchyGroupsRequest request);
 
         /// <summary>
         /// Paginator for SearchUsers operation

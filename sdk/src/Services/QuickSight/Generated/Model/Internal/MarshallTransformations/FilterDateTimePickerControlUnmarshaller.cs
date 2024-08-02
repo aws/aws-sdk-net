@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FilterDateTimePickerControl Unmarshall(JsonUnmarshallerContext context)
         {
             FilterDateTimePickerControl unmarshalledObject = new FilterDateTimePickerControl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

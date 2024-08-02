@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public OrganizationalUnitScope Unmarshall(JsonUnmarshallerContext context)
         {
             OrganizationalUnitScope unmarshalledObject = new OrganizationalUnitScope();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

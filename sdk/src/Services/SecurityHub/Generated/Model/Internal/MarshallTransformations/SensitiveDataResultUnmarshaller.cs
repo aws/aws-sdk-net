@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public SensitiveDataResult Unmarshall(JsonUnmarshallerContext context)
         {
             SensitiveDataResult unmarshalledObject = new SensitiveDataResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

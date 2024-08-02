@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public InputAttachment Unmarshall(JsonUnmarshallerContext context)
         {
             InputAttachment unmarshalledObject = new InputAttachment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

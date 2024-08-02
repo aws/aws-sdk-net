@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public WeeklyAutoScalingSchedule Unmarshall(JsonUnmarshallerContext context)
         {
             WeeklyAutoScalingSchedule unmarshalledObject = new WeeklyAutoScalingSchedule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

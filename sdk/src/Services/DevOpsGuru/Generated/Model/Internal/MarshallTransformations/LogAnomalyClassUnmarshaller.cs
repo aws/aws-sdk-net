@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public LogAnomalyClass Unmarshall(JsonUnmarshallerContext context)
         {
             LogAnomalyClass unmarshalledObject = new LogAnomalyClass();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

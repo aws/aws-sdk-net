@@ -67,7 +67,7 @@ namespace Amazon.Bedrock.Model
     /// Specify filter strengths for the harmful categories defined in Amazon Bedrock in the
     /// <c>contentPolicyConfig</c> object. Each <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>
     /// object in the <c>filtersConfig</c> list pertains to a harmful category. For more information,
-    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-filters">Content
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-content-filters">Content
     /// filters</a>. For more information about the fields in a content filter, see <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>.
     /// </para>
     ///  <ul> <li> 
@@ -83,11 +83,6 @@ namespace Amazon.Bedrock.Model
     /// <para>
     /// (Optional) For security, include the ARN of a KMS key in the <c>kmsKeyId</c> field.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// (Optional) Attach any tags to the guardrail in the <c>tags</c> object. For more information,
-    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging">Tag resources</a>.
-    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class UpdateGuardrailRequest : AmazonBedrockRequest
@@ -95,6 +90,7 @@ namespace Amazon.Bedrock.Model
         private string _blockedInputMessaging;
         private string _blockedOutputsMessaging;
         private GuardrailContentPolicyConfig _contentPolicyConfig;
+        private GuardrailContextualGroundingPolicyConfig _contextualGroundingPolicyConfig;
         private string _description;
         private string _guardrailIdentifier;
         private string _kmsKeyId;
@@ -160,6 +156,24 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContextualGroundingPolicyConfig. 
+        /// <para>
+        /// The contextual grounding policy configuration used to update a guardrail.
+        /// </para>
+        /// </summary>
+        public GuardrailContextualGroundingPolicyConfig ContextualGroundingPolicyConfig
+        {
+            get { return this._contextualGroundingPolicyConfig; }
+            set { this._contextualGroundingPolicyConfig = value; }
+        }
+
+        // Check to see if ContextualGroundingPolicyConfig property is set
+        internal bool IsSetContextualGroundingPolicyConfig()
+        {
+            return this._contextualGroundingPolicyConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A description of the guardrail.
@@ -181,7 +195,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property GuardrailIdentifier. 
         /// <para>
-        /// The unique identifier of the guardrail
+        /// The unique identifier of the guardrail. This can be an ID or the ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

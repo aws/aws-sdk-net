@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public ConfigurationRevision Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigurationRevision unmarshalledObject = new ConfigurationRevision();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

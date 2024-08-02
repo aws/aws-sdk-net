@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public OpenZFSClientConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             OpenZFSClientConfiguration unmarshalledObject = new OpenZFSClientConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

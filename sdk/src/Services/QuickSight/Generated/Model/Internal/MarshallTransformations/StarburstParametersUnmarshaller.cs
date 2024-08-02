@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public StarburstParameters Unmarshall(JsonUnmarshallerContext context)
         {
             StarburstParameters unmarshalledObject = new StarburstParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

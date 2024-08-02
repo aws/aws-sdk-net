@@ -38,6 +38,7 @@ namespace Amazon.EKS.Model
         private DateTime? _createdAt;
         private string _fargateProfileArn;
         private string _fargateProfileName;
+        private FargateProfileHealth _health;
         private string _podExecutionRoleArn;
         private List<FargateProfileSelector> _selectors = AWSConfigs.InitializeCollections ? new List<FargateProfileSelector>() : null;
         private FargateProfileStatus _status;
@@ -114,6 +115,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetFargateProfileName()
         {
             return this._fargateProfileName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Health. 
+        /// <para>
+        /// The health status of the Fargate profile. If there are issues with your Fargate profile's
+        /// health, they are listed here.
+        /// </para>
+        /// </summary>
+        public FargateProfileHealth Health
+        {
+            get { return this._health; }
+            set { this._health = value; }
+        }
+
+        // Check to see if Health property is set
+        internal bool IsSetHealth()
+        {
+            return this._health != null;
         }
 
         /// <summary>

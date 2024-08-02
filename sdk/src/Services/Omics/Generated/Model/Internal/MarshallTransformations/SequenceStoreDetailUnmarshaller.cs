@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public SequenceStoreDetail Unmarshall(JsonUnmarshallerContext context)
         {
             SequenceStoreDetail unmarshalledObject = new SequenceStoreDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public LookbackWindow Unmarshall(JsonUnmarshallerContext context)
         {
             LookbackWindow unmarshalledObject = new LookbackWindow();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

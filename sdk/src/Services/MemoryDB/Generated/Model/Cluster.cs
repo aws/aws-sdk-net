@@ -195,7 +195,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property EnginePatchVersion. 
         /// <para>
-        /// The Redis engine patch version used by the cluster
+        /// The Redis OSS engine patch version used by the cluster
         /// </para>
         /// </summary>
         public string EnginePatchVersion
@@ -213,7 +213,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The Redis engine version used by the cluster
+        /// The Redis OSS engine version used by the cluster
         /// </para>
         /// </summary>
         public string EngineVersion

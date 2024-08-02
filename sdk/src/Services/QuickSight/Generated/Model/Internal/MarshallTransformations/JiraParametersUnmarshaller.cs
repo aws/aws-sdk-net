@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public JiraParameters Unmarshall(JsonUnmarshallerContext context)
         {
             JiraParameters unmarshalledObject = new JiraParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

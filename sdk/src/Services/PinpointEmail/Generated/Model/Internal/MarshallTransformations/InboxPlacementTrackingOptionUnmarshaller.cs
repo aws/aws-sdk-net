@@ -57,6 +57,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         public InboxPlacementTrackingOption Unmarshall(JsonUnmarshallerContext context)
         {
             InboxPlacementTrackingOption unmarshalledObject = new InboxPlacementTrackingOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

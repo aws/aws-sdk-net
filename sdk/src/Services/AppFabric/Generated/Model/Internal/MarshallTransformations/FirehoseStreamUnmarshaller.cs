@@ -57,6 +57,8 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
         public FirehoseStream Unmarshall(JsonUnmarshallerContext context)
         {
             FirehoseStream unmarshalledObject = new FirehoseStream();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

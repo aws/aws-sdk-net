@@ -57,6 +57,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         public LambdaFunctionTimedOutEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaFunctionTimedOutEventAttributes unmarshalledObject = new LambdaFunctionTimedOutEventAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

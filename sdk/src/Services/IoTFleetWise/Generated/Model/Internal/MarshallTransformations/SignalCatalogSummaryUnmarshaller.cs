@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public SignalCatalogSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SignalCatalogSummary unmarshalledObject = new SignalCatalogSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

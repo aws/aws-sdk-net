@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public ChildBlock Unmarshall(JsonUnmarshallerContext context)
         {
             ChildBlock unmarshalledObject = new ChildBlock();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         public LineItemAssetInformation Unmarshall(JsonUnmarshallerContext context)
         {
             LineItemAssetInformation unmarshalledObject = new LineItemAssetInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

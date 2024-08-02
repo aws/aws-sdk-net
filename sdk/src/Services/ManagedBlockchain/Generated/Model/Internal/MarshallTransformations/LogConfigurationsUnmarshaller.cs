@@ -57,6 +57,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         public LogConfigurations Unmarshall(JsonUnmarshallerContext context)
         {
             LogConfigurations unmarshalledObject = new LogConfigurations();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

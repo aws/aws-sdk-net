@@ -57,6 +57,8 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
         public WebsiteCaSummary Unmarshall(JsonUnmarshallerContext context)
         {
             WebsiteCaSummary unmarshalledObject = new WebsiteCaSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

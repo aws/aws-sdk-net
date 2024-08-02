@@ -102,7 +102,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property GatewayName. 
         /// <para>
-        /// The name of the asset.
+        /// The name of the gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

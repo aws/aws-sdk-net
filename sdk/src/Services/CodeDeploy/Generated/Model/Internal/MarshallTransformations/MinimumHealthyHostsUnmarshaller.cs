@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public MinimumHealthyHosts Unmarshall(JsonUnmarshallerContext context)
         {
             MinimumHealthyHosts unmarshalledObject = new MinimumHealthyHosts();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

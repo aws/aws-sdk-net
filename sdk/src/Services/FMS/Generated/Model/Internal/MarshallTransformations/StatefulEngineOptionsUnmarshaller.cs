@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public StatefulEngineOptions Unmarshall(JsonUnmarshallerContext context)
         {
             StatefulEngineOptions unmarshalledObject = new StatefulEngineOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

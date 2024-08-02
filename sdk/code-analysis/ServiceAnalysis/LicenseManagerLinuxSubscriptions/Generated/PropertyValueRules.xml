@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.LicenseManagerLinuxSubscriptions.Model.DeregisterSubscriptionProviderRequest.SubscriptionProviderArn</property>
+    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,510}/[a-z0-9-\.]{1,510}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManagerLinuxSubscriptions.Model.GetRegisteredSubscriptionProviderRequest.SubscriptionProviderArn</property>
+    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,510}/[a-z0-9-\.]{1,510}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManagerLinuxSubscriptions.Model.GetRegisteredSubscriptionProviderResponse.SecretArn</property>
+    <pattern>^arn:[a-z0-9-\.]{1,63}:secretsmanager:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:secret:[^/]{1,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManagerLinuxSubscriptions.Model.GetRegisteredSubscriptionProviderResponse.SubscriptionProviderArn</property>
+    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,510}/[a-z0-9-\.]{1,510}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LicenseManagerLinuxSubscriptions.Model.ListLinuxSubscriptionInstancesRequest.NextToken</property>
     <min>1</min>
     <max>16384</max>
@@ -11,8 +27,37 @@
     <max>16384</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LicenseManagerLinuxSubscriptions.Model.ListRegisteredSubscriptionProvidersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManagerLinuxSubscriptions.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,510}/[a-z0-9-\.]{1,510}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManagerLinuxSubscriptions.Model.RegisterSubscriptionProviderRequest.SecretArn</property>
+    <pattern>^arn:[a-z0-9-\.]{1,63}:secretsmanager:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:secret:[^/]{1,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManagerLinuxSubscriptions.Model.TagResourceRequest.ResourceArn</property>
+    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,510}/[a-z0-9-\.]{1,510}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManagerLinuxSubscriptions.Model.UntagResourceRequest.ResourceArn</property>
+    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,510}/[a-z0-9-\.]{1,510}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LicenseManagerLinuxSubscriptions.Model.Filter.Operator</property>
     <min>1</min>
     <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManagerLinuxSubscriptions.Model.RegisteredSubscriptionProvider.SecretArn</property>
+    <pattern>^arn:[a-z0-9-\.]{1,63}:secretsmanager:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:secret:[^/]{1,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManagerLinuxSubscriptions.Model.RegisteredSubscriptionProvider.SubscriptionProviderArn</property>
+    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,510}/[a-z0-9-\.]{1,510}$</pattern>
   </property-value-rule>
 </property-value-rules>

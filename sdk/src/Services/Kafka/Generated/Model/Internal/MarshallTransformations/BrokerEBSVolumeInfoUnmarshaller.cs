@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public BrokerEBSVolumeInfo Unmarshall(JsonUnmarshallerContext context)
         {
             BrokerEBSVolumeInfo unmarshalledObject = new BrokerEBSVolumeInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public ResourcePendingMaintenanceActions Unmarshall(JsonUnmarshallerContext context)
         {
             ResourcePendingMaintenanceActions unmarshalledObject = new ResourcePendingMaintenanceActions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

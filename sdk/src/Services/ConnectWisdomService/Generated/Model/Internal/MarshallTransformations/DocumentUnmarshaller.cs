@@ -57,6 +57,8 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         public Document Unmarshall(JsonUnmarshallerContext context)
         {
             Document unmarshalledObject = new Document();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

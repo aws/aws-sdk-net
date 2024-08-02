@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SparkParameters Unmarshall(JsonUnmarshallerContext context)
         {
             SparkParameters unmarshalledObject = new SparkParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

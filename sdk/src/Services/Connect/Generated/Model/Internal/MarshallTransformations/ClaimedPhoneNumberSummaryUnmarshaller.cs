@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public ClaimedPhoneNumberSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ClaimedPhoneNumberSummary unmarshalledObject = new ClaimedPhoneNumberSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

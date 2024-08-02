@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public DeltaSyncConfig Unmarshall(JsonUnmarshallerContext context)
         {
             DeltaSyncConfig unmarshalledObject = new DeltaSyncConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

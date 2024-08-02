@@ -195,8 +195,16 @@ namespace Amazon.NeptuneGraph.Model
         /// specified 128 m-NCUs are used.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=128, Max=24576)]
         public int? MaxProvisionedMemory
+||||||| Commit version number update changes
+        [AWSProperty(Min=128, Max=24576)]
+        public int MaxProvisionedMemory
+=======
+        [AWSProperty(Min=32, Max=24576)]
+        public int MaxProvisionedMemory
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         {
             get { return this._maxProvisionedMemory; }
             set { this._maxProvisionedMemory = value; }
@@ -215,8 +223,16 @@ namespace Amazon.NeptuneGraph.Model
         /// the graph. Default: 128
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=128, Max=24576)]
         public int? MinProvisionedMemory
+||||||| Commit version number update changes
+        [AWSProperty(Min=128, Max=24576)]
+        public int MinProvisionedMemory
+=======
+        [AWSProperty(Min=32, Max=24576)]
+        public int MinProvisionedMemory
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         {
             get { return this._minProvisionedMemory; }
             set { this._minProvisionedMemory = value; }

@@ -57,6 +57,8 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
         public MemberIndex Unmarshall(JsonUnmarshallerContext context)
         {
             MemberIndex unmarshalledObject = new MemberIndex();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

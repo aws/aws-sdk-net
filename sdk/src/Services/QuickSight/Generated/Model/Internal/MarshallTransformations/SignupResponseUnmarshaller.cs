@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SignupResponse Unmarshall(JsonUnmarshallerContext context)
         {
             SignupResponse unmarshalledObject = new SignupResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

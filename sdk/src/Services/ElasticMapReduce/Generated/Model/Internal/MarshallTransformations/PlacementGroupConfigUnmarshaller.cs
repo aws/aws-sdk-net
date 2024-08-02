@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public PlacementGroupConfig Unmarshall(JsonUnmarshallerContext context)
         {
             PlacementGroupConfig unmarshalledObject = new PlacementGroupConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

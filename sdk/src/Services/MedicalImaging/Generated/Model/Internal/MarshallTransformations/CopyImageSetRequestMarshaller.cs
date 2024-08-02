@@ -66,6 +66,9 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetSourceImageSetId())
                 throw new AmazonMedicalImagingException("Request object does not have required field SourceImageSetId set");
             request.AddPathResource("{sourceImageSetId}", StringUtils.FromString(publicRequest.SourceImageSetId));
+            
+            if (publicRequest.IsSetForce())
+                request.Parameters.Add("force", StringUtils.FromBool(publicRequest.Force));
             request.ResourcePath = "/datastore/{datastoreId}/imageSet/{sourceImageSetId}/copyImageSet";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -82,6 +85,7 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            request.UseQueryString = true;
             
             request.HostPrefix = $"runtime-";
 

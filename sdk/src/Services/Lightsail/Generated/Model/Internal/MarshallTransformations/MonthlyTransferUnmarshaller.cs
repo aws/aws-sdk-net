@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public MonthlyTransfer Unmarshall(JsonUnmarshallerContext context)
         {
             MonthlyTransfer unmarshalledObject = new MonthlyTransfer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

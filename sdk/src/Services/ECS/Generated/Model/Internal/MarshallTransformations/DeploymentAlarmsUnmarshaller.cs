@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public DeploymentAlarms Unmarshall(JsonUnmarshallerContext context)
         {
             DeploymentAlarms unmarshalledObject = new DeploymentAlarms();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

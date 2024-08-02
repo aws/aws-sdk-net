@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public BlackoutSlate Unmarshall(JsonUnmarshallerContext context)
         {
             BlackoutSlate unmarshalledObject = new BlackoutSlate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

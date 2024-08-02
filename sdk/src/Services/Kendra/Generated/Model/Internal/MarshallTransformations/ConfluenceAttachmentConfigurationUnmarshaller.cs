@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public ConfluenceAttachmentConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ConfluenceAttachmentConfiguration unmarshalledObject = new ConfluenceAttachmentConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

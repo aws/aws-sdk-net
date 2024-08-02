@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public ProjectDeletionError Unmarshall(JsonUnmarshallerContext context)
         {
             ProjectDeletionError unmarshalledObject = new ProjectDeletionError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public ColumnStatisticsTaskRun Unmarshall(JsonUnmarshallerContext context)
         {
             ColumnStatisticsTaskRun unmarshalledObject = new ColumnStatisticsTaskRun();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

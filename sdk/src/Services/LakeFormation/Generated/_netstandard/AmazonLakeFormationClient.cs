@@ -1374,6 +1374,49 @@ namespace Amazon.LakeFormation
 
         #endregion
         
+        #region  GetDataLakePrincipal
+
+        internal virtual GetDataLakePrincipalResponse GetDataLakePrincipal(GetDataLakePrincipalRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataLakePrincipalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataLakePrincipalResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataLakePrincipalResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the identity of the invoking principal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakePrincipal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataLakePrincipal service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal">REST API Reference for GetDataLakePrincipal Operation</seealso>
+        public virtual Task<GetDataLakePrincipalResponse> GetDataLakePrincipalAsync(GetDataLakePrincipalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataLakePrincipalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataLakePrincipalResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataLakePrincipalResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDataLakeSettings
 
         internal virtual GetDataLakeSettingsResponse GetDataLakeSettings(GetDataLakeSettingsRequest request)
@@ -3084,8 +3127,32 @@ namespace Amazon.LakeFormation
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonLakeFormationEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonLakeFormationEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

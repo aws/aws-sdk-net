@@ -72,6 +72,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetFoundationModelArnEquals())
                 request.Parameters.Add("foundationModelArnEquals", StringUtils.FromString(publicRequest.FoundationModelArnEquals));
             
+            if (publicRequest.IsSetIsOwned())
+                request.Parameters.Add("isOwned", StringUtils.FromBool(publicRequest.IsOwned));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

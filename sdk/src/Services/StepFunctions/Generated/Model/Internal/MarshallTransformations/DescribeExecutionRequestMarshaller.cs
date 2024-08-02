@@ -75,6 +75,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExecutionArn);
                 }
 
+                if(publicRequest.IsSetIncludedData())
+                {
+                    context.Writer.WritePropertyName("includedData");
+                    context.Writer.Write(publicRequest.IncludedData);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

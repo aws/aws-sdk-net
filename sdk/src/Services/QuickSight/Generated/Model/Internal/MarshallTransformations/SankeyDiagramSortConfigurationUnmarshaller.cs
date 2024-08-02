@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SankeyDiagramSortConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SankeyDiagramSortConfiguration unmarshalledObject = new SankeyDiagramSortConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DisplayFormatOptions Unmarshall(JsonUnmarshallerContext context)
         {
             DisplayFormatOptions unmarshalledObject = new DisplayFormatOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

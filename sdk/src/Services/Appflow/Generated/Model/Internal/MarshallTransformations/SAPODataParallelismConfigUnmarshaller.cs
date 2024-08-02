@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public SAPODataParallelismConfig Unmarshall(JsonUnmarshallerContext context)
         {
             SAPODataParallelismConfig unmarshalledObject = new SAPODataParallelismConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         public SummarizedCounter Unmarshall(JsonUnmarshallerContext context)
         {
             SummarizedCounter unmarshalledObject = new SummarizedCounter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -49,6 +49,7 @@ namespace Amazon.Macie2.Model
     {
         private string _accountId;
         private AllowsUnencryptedObjectUploads _allowsUnencryptedObjectUploads;
+        private AutomatedDiscoveryMonitoringStatus _automatedDiscoveryMonitoringStatus;
         private string _bucketArn;
         private DateTime? _bucketCreatedAt;
         private string _bucketName;
@@ -131,6 +132,27 @@ namespace Amazon.Macie2.Model
         internal bool IsSetAllowsUnencryptedObjectUploads()
         {
             return this._allowsUnencryptedObjectUploads != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomatedDiscoveryMonitoringStatus. 
+        /// <para>
+        /// Specifies whether automated sensitive data discovery is currently configured to analyze
+        /// objects in the bucket. Possible values are: MONITORED, the bucket is included in analyses;
+        /// and, NOT_MONITORED, the bucket is excluded from analyses. If automated sensitive data
+        /// discovery is disabled for your account, this value is NOT_MONITORED.
+        /// </para>
+        /// </summary>
+        public AutomatedDiscoveryMonitoringStatus AutomatedDiscoveryMonitoringStatus
+        {
+            get { return this._automatedDiscoveryMonitoringStatus; }
+            set { this._automatedDiscoveryMonitoringStatus = value; }
+        }
+
+        // Check to see if AutomatedDiscoveryMonitoringStatus property is set
+        internal bool IsSetAutomatedDiscoveryMonitoringStatus()
+        {
+            return this._automatedDiscoveryMonitoringStatus != null;
         }
 
         /// <summary>
@@ -281,7 +303,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property JobDetails. 
         /// <para>
         /// Specifies whether any one-time or recurring classification jobs are configured to
-        /// analyze data in the bucket, and, if so, the details of the job that ran most recently.
+        /// analyze objects in the bucket, and, if so, the details of the job that ran most recently.
         /// </para>
         /// </summary>
         public JobDetails JobDetails
@@ -300,9 +322,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property LastAutomatedDiscoveryTime. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently
-        /// analyzed data in the bucket while performing automated sensitive data discovery for
-        /// your account. This value is null if automated sensitive data discovery is currently
-        /// disabled for your account.
+        /// analyzed objects in the bucket while performing automated sensitive data discovery.
+        /// This value is null if automated sensitive data discovery is disabled for your account.
         /// </para>
         /// </summary>
         public DateTime? LastAutomatedDiscoveryTime
@@ -434,8 +455,14 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property SensitivityScore. 
         /// <para>
         /// The sensitivity score for the bucket, ranging from -1 (classification error) to 100
-        /// (sensitive). This value is null if automated sensitive data discovery is currently
-        /// disabled for your account.
+        /// (sensitive).
+        /// </para>
+        /// 
+        /// <para>
+        /// If automated sensitive data discovery has never been enabled for your account or it’s
+        /// been disabled for your organization or your standalone account for more than 30 days,
+        /// possible values are: 1, the bucket is empty; or, 50, the bucket stores objects but
+        /// it’s been excluded from recent analyses.
         /// </para>
         /// </summary>
         public int? SensitivityScore

@@ -54,6 +54,7 @@ namespace Amazon.RDS.Model
         private string _databaseName;
         private bool? _deletionProtection;
         private string _engine;
+        private string _engineLifecycleSupport;
         private string _engineVersion;
         private string _globalClusterIdentifier;
         private string _sourceDBClusterIdentifier;
@@ -137,6 +138,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngine()
         {
             return this._engine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineLifecycleSupport. 
+        /// <para>
+        /// The life cycle type for this global database cluster.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// By default, this value is set to <c>open-source-rds-extended-support</c>, which enrolls
+        /// your global cluster into Amazon RDS Extended Support. At the end of standard support,
+        /// you can avoid charges for Extended Support by setting the value to <c>open-source-rds-extended-support-disabled</c>.
+        /// In this case, creating the global cluster will fail if the DB major version is past
+        /// its end of standard support date.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This setting only applies to Aurora PostgreSQL-based global databases.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this setting to enroll your global cluster into Amazon RDS Extended Support.
+        /// With RDS Extended Support, you can run the selected major engine version on your global
+        /// cluster past the end of standard support for that engine version. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
+        /// Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>open-source-rds-extended-support | open-source-rds-extended-support-disabled</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>open-source-rds-extended-support</c> 
+        /// </para>
+        /// </summary>
+        public string EngineLifecycleSupport
+        {
+            get { return this._engineLifecycleSupport; }
+            set { this._engineLifecycleSupport = value; }
+        }
+
+        // Check to see if EngineLifecycleSupport property is set
+        internal bool IsSetEngineLifecycleSupport()
+        {
+            return this._engineLifecycleSupport != null;
         }
 
         /// <summary>

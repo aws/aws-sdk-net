@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public CloudWatchLogs Unmarshall(JsonUnmarshallerContext context)
         {
             CloudWatchLogs unmarshalledObject = new CloudWatchLogs();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

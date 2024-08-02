@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public InferenceS3InputConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             InferenceS3InputConfiguration unmarshalledObject = new InferenceS3InputConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

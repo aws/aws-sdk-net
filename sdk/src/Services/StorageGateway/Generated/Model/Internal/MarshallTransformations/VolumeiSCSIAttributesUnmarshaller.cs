@@ -57,6 +57,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         public VolumeiSCSIAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             VolumeiSCSIAttributes unmarshalledObject = new VolumeiSCSIAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

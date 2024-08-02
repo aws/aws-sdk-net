@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public DateColumnStatisticsData Unmarshall(JsonUnmarshallerContext context)
         {
             DateColumnStatisticsData unmarshalledObject = new DateColumnStatisticsData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

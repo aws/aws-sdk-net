@@ -57,6 +57,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         public CustomModelSummary Unmarshall(JsonUnmarshallerContext context)
         {
             CustomModelSummary unmarshalledObject = new CustomModelSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -98,6 +100,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ownerAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

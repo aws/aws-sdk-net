@@ -41,6 +41,7 @@ namespace Amazon.LaunchWizard.Model
         private bool? _dryRun;
         private string _name;
         private Dictionary<string, string> _specifications = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workloadName;
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.LaunchWizard.Model
         /// The name of the deployment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string Name
         {
             get { return this._name; }
@@ -107,9 +108,12 @@ namespace Amazon.LaunchWizard.Model
         /// <summary>
         /// Gets and sets the property Specifications. 
         /// <para>
-        /// The settings specified for the deployment. For more information on the specifications
-        /// required for creating a deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload
-        /// specifications</a>.
+        /// The settings specified for the deployment. These settings define how to deploy and
+        /// configure your resources created by the deployment. For more information about the
+        /// specifications required for creating a deployment for a SAP workload, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+        /// deployment specifications</a>. To retrieve the specifications required to create a
+        /// deployment for other workloads, use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+        /// <c>GetWorkloadDeploymentPattern</c> </a> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]
@@ -126,14 +130,32 @@ namespace Amazon.LaunchWizard.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WorkloadName. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The name of the workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">
-        /// <c>ListWorkloadDeploymentPatterns</c> </a> operation to discover supported values
-        /// for this parameter.
+        /// The tags to add to the deployment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkloadName. 
+        /// <para>
+        /// The name of the workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">
+        /// <c>ListWorkloads</c> </a> operation to discover supported values for this parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string WorkloadName
         {
             get { return this._workloadName; }

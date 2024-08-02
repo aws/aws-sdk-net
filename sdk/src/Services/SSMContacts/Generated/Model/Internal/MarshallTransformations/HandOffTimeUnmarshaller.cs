@@ -57,6 +57,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         public HandOffTime Unmarshall(JsonUnmarshallerContext context)
         {
             HandOffTime unmarshalledObject = new HandOffTime();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

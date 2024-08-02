@@ -57,6 +57,8 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
         public SupportedLanguage Unmarshall(JsonUnmarshallerContext context)
         {
             SupportedLanguage unmarshalledObject = new SupportedLanguage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

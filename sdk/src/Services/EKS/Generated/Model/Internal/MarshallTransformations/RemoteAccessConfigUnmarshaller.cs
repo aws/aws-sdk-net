@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public RemoteAccessConfig Unmarshall(JsonUnmarshallerContext context)
         {
             RemoteAccessConfig unmarshalledObject = new RemoteAccessConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

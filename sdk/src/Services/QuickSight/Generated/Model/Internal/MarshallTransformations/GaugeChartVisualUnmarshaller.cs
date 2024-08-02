@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public GaugeChartVisual Unmarshall(JsonUnmarshallerContext context)
         {
             GaugeChartVisual unmarshalledObject = new GaugeChartVisual();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         public BulkDeploymentMetrics Unmarshall(JsonUnmarshallerContext context)
         {
             BulkDeploymentMetrics unmarshalledObject = new BulkDeploymentMetrics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

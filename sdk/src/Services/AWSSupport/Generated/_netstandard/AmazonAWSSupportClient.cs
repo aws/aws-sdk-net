@@ -91,8 +91,8 @@ namespace Amazon.AWSSupport
     ///  </li> </ul> 
     /// <para>
     /// You can also use the Amazon Web Services Support API to call the Trusted Advisor operations.
-    /// For more information, see <a href="https://docs.aws.amazon.com/">Trusted Advisor</a>
-    /// in the <i>Amazon Web Services Support User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html">Trusted
+    /// Advisor</a> in the <i>Amazon Web Services Support User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -1519,8 +1519,32 @@ namespace Amazon.AWSSupport
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonAWSSupportEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonAWSSupportEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

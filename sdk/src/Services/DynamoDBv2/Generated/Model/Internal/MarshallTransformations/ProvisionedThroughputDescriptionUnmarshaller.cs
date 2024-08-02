@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public ProvisionedThroughputDescription Unmarshall(JsonUnmarshallerContext context)
         {
             ProvisionedThroughputDescription unmarshalledObject = new ProvisionedThroughputDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         public RetrievalResultLocation Unmarshall(JsonUnmarshallerContext context)
         {
             RetrievalResultLocation unmarshalledObject = new RetrievalResultLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,16 +66,40 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("confluenceLocation", targetDepth))
+                {
+                    var unmarshaller = RetrievalResultConfluenceLocationUnmarshaller.Instance;
+                    unmarshalledObject.ConfluenceLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3Location", targetDepth))
                 {
                     var unmarshaller = RetrievalResultS3LocationUnmarshaller.Instance;
                     unmarshalledObject.S3Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("salesforceLocation", targetDepth))
+                {
+                    var unmarshaller = RetrievalResultSalesforceLocationUnmarshaller.Instance;
+                    unmarshalledObject.SalesforceLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sharePointLocation", targetDepth))
+                {
+                    var unmarshaller = RetrievalResultSharePointLocationUnmarshaller.Instance;
+                    unmarshalledObject.SharePointLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("webLocation", targetDepth))
+                {
+                    var unmarshaller = RetrievalResultWebLocationUnmarshaller.Instance;
+                    unmarshalledObject.WebLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

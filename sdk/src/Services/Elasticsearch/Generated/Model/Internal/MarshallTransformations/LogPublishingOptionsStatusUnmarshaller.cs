@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public LogPublishingOptionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
             LogPublishingOptionsStatus unmarshalledObject = new LogPublishingOptionsStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

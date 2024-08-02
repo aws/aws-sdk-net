@@ -57,6 +57,8 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         public VpcConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             VpcConfiguration unmarshalledObject = new VpcConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

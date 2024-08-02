@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public ProfileQuestion Unmarshall(JsonUnmarshallerContext context)
         {
             ProfileQuestion unmarshalledObject = new ProfileQuestion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

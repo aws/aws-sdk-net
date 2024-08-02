@@ -57,6 +57,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         public GridConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             GridConfiguration unmarshalledObject = new GridConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

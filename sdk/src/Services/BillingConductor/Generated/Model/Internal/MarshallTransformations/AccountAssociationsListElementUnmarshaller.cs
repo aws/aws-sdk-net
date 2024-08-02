@@ -57,6 +57,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         public AccountAssociationsListElement Unmarshall(JsonUnmarshallerContext context)
         {
             AccountAssociationsListElement unmarshalledObject = new AccountAssociationsListElement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

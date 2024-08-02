@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public EnvironmentLanguage Unmarshall(JsonUnmarshallerContext context)
         {
             EnvironmentLanguage unmarshalledObject = new EnvironmentLanguage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

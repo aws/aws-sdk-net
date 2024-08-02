@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public ProvisionedProductAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             ProvisionedProductAttribute unmarshalledObject = new ProvisionedProductAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -39,7 +39,9 @@ namespace Amazon.NetworkManager.Model
         private string _destinationIdentifier;
         private List<string> _edgeLocations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _insideCidrBlocks = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _networkFunctionGroupName;
         private string _segmentName;
+        private List<ServiceInsertionAction> _serviceInsertionActions = AWSConfigs.InitializeCollections ? new List<ServiceInsertionAction>() : null;
         private List<string> _sharedSegments = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -135,6 +137,26 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkFunctionGroupName. 
+        /// <para>
+        /// The network function group name if the change event is associated with a network function
+        /// group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string NetworkFunctionGroupName
+        {
+            get { return this._networkFunctionGroupName; }
+            set { this._networkFunctionGroupName = value; }
+        }
+
+        // Check to see if NetworkFunctionGroupName property is set
+        internal bool IsSetNetworkFunctionGroupName()
+        {
+            return this._networkFunctionGroupName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SegmentName. 
         /// <para>
         /// The names of the segments in a core network.
@@ -151,6 +173,24 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetSegmentName()
         {
             return this._segmentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceInsertionActions. 
+        /// <para>
+        /// Describes the service insertion action. 
+        /// </para>
+        /// </summary>
+        public List<ServiceInsertionAction> ServiceInsertionActions
+        {
+            get { return this._serviceInsertionActions; }
+            set { this._serviceInsertionActions = value; }
+        }
+
+        // Check to see if ServiceInsertionActions property is set
+        internal bool IsSetServiceInsertionActions()
+        {
+            return this._serviceInsertionActions != null && (this._serviceInsertionActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

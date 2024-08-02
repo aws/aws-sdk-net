@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public GoogleAnalyticsConnectorProfileProperties Unmarshall(JsonUnmarshallerContext context)
         {
             GoogleAnalyticsConnectorProfileProperties unmarshalledObject = new GoogleAnalyticsConnectorProfileProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

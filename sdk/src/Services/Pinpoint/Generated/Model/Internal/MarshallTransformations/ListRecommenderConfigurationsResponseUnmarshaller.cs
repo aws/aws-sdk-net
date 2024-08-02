@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public ListRecommenderConfigurationsResponse Unmarshall(JsonUnmarshallerContext context)
         {
             ListRecommenderConfigurationsResponse unmarshalledObject = new ListRecommenderConfigurationsResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

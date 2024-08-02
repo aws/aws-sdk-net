@@ -57,6 +57,8 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
         public KitchenSink Unmarshall(JsonUnmarshallerContext context)
         {
             KitchenSink unmarshalledObject = new KitchenSink();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

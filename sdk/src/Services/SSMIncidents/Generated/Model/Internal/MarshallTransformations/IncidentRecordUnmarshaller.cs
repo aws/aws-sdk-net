@@ -57,6 +57,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         public IncidentRecord Unmarshall(JsonUnmarshallerContext context)
         {
             IncidentRecord unmarshalledObject = new IncidentRecord();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

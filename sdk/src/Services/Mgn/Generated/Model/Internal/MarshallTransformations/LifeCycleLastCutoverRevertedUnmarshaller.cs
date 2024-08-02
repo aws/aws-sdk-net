@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public LifeCycleLastCutoverReverted Unmarshall(JsonUnmarshallerContext context)
         {
             LifeCycleLastCutoverReverted unmarshalledObject = new LifeCycleLastCutoverReverted();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

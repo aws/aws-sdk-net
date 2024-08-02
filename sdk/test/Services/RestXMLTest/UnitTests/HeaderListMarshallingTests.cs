@@ -35,7 +35,7 @@ namespace AWSSDK.UnitTests.RestJsonTest.Net35
             var internalRequest = marshaller.Marshall(request);
 
             Assert.IsTrue(internalRequest.Headers.ContainsKey(ExpectedStringHeaderKey));
-            Assert.AreEqual("\"English\",\"French,German\",'German'", internalRequest.Headers[ExpectedStringHeaderKey]);
+            Assert.AreEqual("\"\\\"English\\\"\",\"French,German\",'German'", internalRequest.Headers[ExpectedStringHeaderKey]);
         }
 
         [TestMethod]

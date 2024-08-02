@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public SubjectAlternativeNameMatchers Unmarshall(JsonUnmarshallerContext context)
         {
             SubjectAlternativeNameMatchers unmarshalledObject = new SubjectAlternativeNameMatchers();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         public NewAsoDetail Unmarshall(JsonUnmarshallerContext context)
         {
             NewAsoDetail unmarshalledObject = new NewAsoDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

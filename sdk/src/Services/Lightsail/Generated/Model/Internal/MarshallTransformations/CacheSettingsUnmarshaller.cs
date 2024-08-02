@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public CacheSettings Unmarshall(JsonUnmarshallerContext context)
         {
             CacheSettings unmarshalledObject = new CacheSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

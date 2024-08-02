@@ -57,6 +57,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public DimensionValueContribution Unmarshall(JsonUnmarshallerContext context)
         {
             DimensionValueContribution unmarshalledObject = new DimensionValueContribution();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

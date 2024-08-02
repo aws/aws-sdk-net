@@ -38,9 +38,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// 
     ///  
     /// <para>
-    /// New Amazon Pinpoint accounts are placed into an SMS or voice sandbox. The sandbox
-    /// protects both Amazon Web Services end recipients and SMS or voice recipients from
-    /// fraud and abuse. 
+    /// New accounts are placed into an SMS or voice sandbox. The sandbox protects both Amazon
+    /// Web Services end recipients and SMS or voice recipients from fraud and abuse. 
     /// </para>
     /// </summary>
     public partial class DescribeAccountAttributesRequest : AmazonPinpointSMSVoiceV2Request

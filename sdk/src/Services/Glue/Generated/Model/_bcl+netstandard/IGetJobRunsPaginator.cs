@@ -30,5 +30,10 @@ namespace Amazon.Glue.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<GetJobRunsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the JobRuns
+        /// </summary>
+        IPaginatedEnumerable<JobRun> JobRuns { get; }
     }
 }

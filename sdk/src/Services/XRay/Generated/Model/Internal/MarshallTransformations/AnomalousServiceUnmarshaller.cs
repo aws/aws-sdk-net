@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public AnomalousService Unmarshall(JsonUnmarshallerContext context)
         {
             AnomalousService unmarshalledObject = new AnomalousService();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

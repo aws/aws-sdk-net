@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public SuggestionHighlight Unmarshall(JsonUnmarshallerContext context)
         {
             SuggestionHighlight unmarshalledObject = new SuggestionHighlight();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

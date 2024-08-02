@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public S3ExportConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             S3ExportConfiguration unmarshalledObject = new S3ExportConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

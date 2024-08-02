@@ -81,6 +81,7 @@ namespace Amazon.KinesisFirehose.Model
         private ElasticsearchDestinationUpdate _elasticsearchDestinationUpdate;
         private ExtendedS3DestinationUpdate _extendedS3DestinationUpdate;
         private HttpEndpointDestinationUpdate _httpEndpointDestinationUpdate;
+        private IcebergDestinationUpdate _icebergDestinationUpdate;
         private RedshiftDestinationUpdate _redshiftDestinationUpdate;
         private S3DestinationUpdate _s3DestinationUpdate;
         private SnowflakeDestinationUpdate _snowflakeDestinationUpdate;
@@ -239,6 +240,28 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IcebergDestinationUpdate. 
+        /// <para>
+        ///  Describes an update for a destination in Apache Iceberg Tables. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Data Firehose is in preview release and is subject to change.
+        /// </para>
+        /// </summary>
+        public IcebergDestinationUpdate IcebergDestinationUpdate
+        {
+            get { return this._icebergDestinationUpdate; }
+            set { this._icebergDestinationUpdate = value; }
+        }
+
+        // Check to see if IcebergDestinationUpdate property is set
+        internal bool IsSetIcebergDestinationUpdate()
+        {
+            return this._icebergDestinationUpdate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RedshiftDestinationUpdate. 
         /// <para>
         /// Describes an update for a destination in Amazon Redshift.
@@ -278,7 +301,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property SnowflakeDestinationUpdate. 
         /// <para>
-        /// Update to the Snowflake destination condiguration settings
+        /// Update to the Snowflake destination configuration settings.
         /// </para>
         /// </summary>
         public SnowflakeDestinationUpdate SnowflakeDestinationUpdate

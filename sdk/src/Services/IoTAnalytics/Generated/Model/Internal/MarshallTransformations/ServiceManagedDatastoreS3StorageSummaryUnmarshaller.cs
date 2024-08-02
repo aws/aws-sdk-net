@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public ServiceManagedDatastoreS3StorageSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceManagedDatastoreS3StorageSummary unmarshalledObject = new ServiceManagedDatastoreS3StorageSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

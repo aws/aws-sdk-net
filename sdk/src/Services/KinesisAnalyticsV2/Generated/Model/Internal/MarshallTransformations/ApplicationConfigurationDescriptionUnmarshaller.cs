@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public ApplicationConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationConfigurationDescription unmarshalledObject = new ApplicationConfigurationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ApplicationSnapshotConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ApplicationSnapshotConfigurationDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ApplicationSystemRollbackConfigurationDescription", targetDepth))
+                {
+                    var unmarshaller = ApplicationSystemRollbackConfigurationDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.ApplicationSystemRollbackConfigurationDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnvironmentPropertyDescriptions", targetDepth))

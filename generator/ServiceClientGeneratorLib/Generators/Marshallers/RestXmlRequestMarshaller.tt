@@ -346,6 +346,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 
 			// Use shape's ListMarshallName if the structure is a list.
 			var marshallName = member.Shape.IsList ? member.Shape.ListMarshallName ?? "member" : member.MarshallName;
+			if(member.IsFlattened)
+				marshallName =  member.LocationName ?? member.ModeledName;
 #>
 <#=new string(' ', level * 4)#>				if (<#=variableName#> != null)
 <#=new string(' ', level * 4)#>				{
@@ -368,26 +370,29 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#=new string(' ', level * 4)#>				if (<#=listVariable#> != null && (<#=listVariable#>.Count > 0 || !AWSConfigs.InitializeCollections)) 
 <#=new string(' ', level * 4)#>				{
 <#+
-				if(string.IsNullOrEmpty(member.XmlNamespace))
+				if (!member.IsFlattened)
 				{
-#>
-<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>");
-<#+
-				}
-				else
-				{
-					if(string.IsNullOrEmpty(member.XmlNamespacePrefix))
+					if (string.IsNullOrEmpty(member.XmlNamespace))
 					{
 #>
-<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>", "<#=member.XmlNamespace#>");
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>");
 <#+
 					}
 					else
 					{
+						if (string.IsNullOrEmpty(member.XmlNamespacePrefix))
+						{
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>", "<#=member.XmlNamespace#>");
+<#+
+						}
+						else
+						{
 #>
 <#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.MarshallName#>");
 <#=new string(' ', level * 4)#>					xmlWriter.WriteAttributeString("xmlns","<#=member.XmlNamespacePrefix#>",null,"<#=member.XmlNamespace#>");
 <#+
+						}
 					}
 				}
 #>
@@ -401,6 +406,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			else
 			{
 				var listMarshallName = member.Shape.ListMarshallName ?? "member";
+				// see https://smithy.io/2.0/spec/protocol-traits.html#xmlflattened-trait
+				if(member.IsFlattened)
+					listMarshallName = member.LocationName ?? member.ModeledName;
 				if(member.Shape.ListShape.IsDateTime)
 				{
 					// Use shape's ListMarshallName as it's a list structure.
@@ -415,6 +423,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				{
 					var listNode = member.Shape.data;
 					var listMemberNode = listNode[Shape.MemberKey];
+					Member innerShape = null;
+					if(this.Structure != null)
+						innerShape = new Member(this.Structure.model, member.Shape, listMemberNode["shape"].ToString(), listMarshallName, listMemberNode, null);
+					
 					// Use shape's ListMarshallName as it's a list structure.
 					if(listMemberNode == null || listMemberNode[ServiceModel.XmlNamespaceKey] == null || string.IsNullOrEmpty((string)listMemberNode[ServiceModel.XmlNamespaceKey]))
 					{
@@ -441,15 +453,33 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#+
 						}
 					}
+					if (innerShape != null && innerShape.Shape.IsList)
+					{
+						ProcessNestedList(level + 1, variableName, innerShape, member);
+					}
+#>
+<#+
+					if (innerShape == null || (innerShape != null && !innerShape.Shape.IsList))
+					{
 #>
 <#=new string(' ', level * 4)#>						xmlWriter.WriteValue(<#=listItemVariable#>);
+<#+
+					}
+#>
 <#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
 <#+				
 				}
 			}			
 #>
 <#=new string(' ', level * 4)#>					}			
+<#+
+			if (!member.IsFlattened)
+			{
+#>
 <#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();			
+<#+
+			}
+#>
 <#=new string(' ', level * 4)#>				}
 <#+				
 	}
@@ -667,6 +697,36 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			ProcessMembers(level + 1, variableName, shape.Members, insideMap: true);
 #>
 <#=new string(' ', level * 4)#>				}
+<#+
+	}
+#>
+<#+
+	protected void ProcessNestedList(int level, string variableName, Member innerMember, Member owningMember)
+	{
+		// ListItemVariable corresponds to the innerList, which is named via the owningMember. 
+		// The innerMember is only used if the list has another layer of nesting
+		var listVariable = (variableName + owningMember.PropertyName).Replace(".",string.Empty);
+		var listItemVariable = (variableName + owningMember.PropertyName).Replace(".",string.Empty) + "Value";
+		var listMarshallName = innerMember.Shape.ListMarshallName ?? "member";
+		var innerListItemVariable = listItemVariable + "InnerValue";
+		var listNode = innerMember.Shape.data;
+		var listMemberNode = listNode[Shape.MemberKey];
+		var innerShape = new Member(this.Structure.model, innerMember.Shape, listMemberNode["shape"].ToString(), listMarshallName, listMemberNode, null);
+		
+
+#>
+<#=new string(' ', (level) * 4)#>					foreach (var <#=innerListItemVariable#> in <#=listItemVariable#>)
+<#=new string(' ', (level) * 4)#>					{
+<#=new string(' ', (level) * 4)#>						xmlWriter.WriteStartElement("<#=listMarshallName#>");
+<#=new string(' ', (level) * 4)#>						xmlWriter.WriteValue(<#=innerListItemVariable#>);
+<#=new string(' ', (level) * 4)#>						xmlWriter.WriteEndElement();
+<#+
+		if (innerShape != null && innerShape.Shape.IsList)
+		{
+			ProcessNestedList(level + 1, variableName, innerShape, innerMember);
+		}
+#>
+<#=new string(' ', (level) * 4)#>					}
 <#+
 	}
 #>

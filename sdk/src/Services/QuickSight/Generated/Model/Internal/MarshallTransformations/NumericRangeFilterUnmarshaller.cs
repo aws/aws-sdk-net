@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public NumericRangeFilter Unmarshall(JsonUnmarshallerContext context)
         {
             NumericRangeFilter unmarshalledObject = new NumericRangeFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public AggregatedVariablesImpactExplanation Unmarshall(JsonUnmarshallerContext context)
         {
             AggregatedVariablesImpactExplanation unmarshalledObject = new AggregatedVariablesImpactExplanation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

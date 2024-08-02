@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public FlowDefinitionOutputConfig Unmarshall(JsonUnmarshallerContext context)
         {
             FlowDefinitionOutputConfig unmarshalledObject = new FlowDefinitionOutputConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

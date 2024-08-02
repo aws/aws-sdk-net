@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public DataSourceErrorMessage Unmarshall(JsonUnmarshallerContext context)
         {
             DataSourceErrorMessage unmarshalledObject = new DataSourceErrorMessage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

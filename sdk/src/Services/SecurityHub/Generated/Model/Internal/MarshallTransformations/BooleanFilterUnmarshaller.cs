@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public BooleanFilter Unmarshall(JsonUnmarshallerContext context)
         {
             BooleanFilter unmarshalledObject = new BooleanFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

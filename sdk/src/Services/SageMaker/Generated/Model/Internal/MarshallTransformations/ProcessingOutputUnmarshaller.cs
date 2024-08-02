@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ProcessingOutput Unmarshall(JsonUnmarshallerContext context)
         {
             ProcessingOutput unmarshalledObject = new ProcessingOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

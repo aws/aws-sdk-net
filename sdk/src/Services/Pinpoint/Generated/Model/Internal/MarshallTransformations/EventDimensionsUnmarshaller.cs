@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public EventDimensions Unmarshall(JsonUnmarshallerContext context)
         {
             EventDimensions unmarshalledObject = new EventDimensions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

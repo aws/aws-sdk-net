@@ -91,6 +91,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MaxACU = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MinACU", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.MinACU = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PubliclyAccessible", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;

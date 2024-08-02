@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public BlockedPhrasesConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             BlockedPhrasesConfiguration unmarshalledObject = new BlockedPhrasesConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

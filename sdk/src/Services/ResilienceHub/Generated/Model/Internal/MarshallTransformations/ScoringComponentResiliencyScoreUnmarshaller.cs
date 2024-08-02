@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public ScoringComponentResiliencyScore Unmarshall(JsonUnmarshallerContext context)
         {
             ScoringComponentResiliencyScore unmarshalledObject = new ScoringComponentResiliencyScore();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

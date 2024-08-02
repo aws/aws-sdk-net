@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public VideoMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             VideoMetadata unmarshalledObject = new VideoMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

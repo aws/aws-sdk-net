@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public RedshiftDestinationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             RedshiftDestinationDescription unmarshalledObject = new RedshiftDestinationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -116,6 +118,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecretsManagerConfiguration", targetDepth))
+                {
+                    var unmarshaller = SecretsManagerConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SecretsManagerConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Username", targetDepth))

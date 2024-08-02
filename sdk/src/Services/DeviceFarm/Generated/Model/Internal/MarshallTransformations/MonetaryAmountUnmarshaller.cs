@@ -57,6 +57,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         public MonetaryAmount Unmarshall(JsonUnmarshallerContext context)
         {
             MonetaryAmount unmarshalledObject = new MonetaryAmount();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

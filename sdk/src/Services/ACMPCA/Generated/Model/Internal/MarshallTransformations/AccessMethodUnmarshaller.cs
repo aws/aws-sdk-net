@@ -57,6 +57,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         public AccessMethod Unmarshall(JsonUnmarshallerContext context)
         {
             AccessMethod unmarshalledObject = new AccessMethod();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

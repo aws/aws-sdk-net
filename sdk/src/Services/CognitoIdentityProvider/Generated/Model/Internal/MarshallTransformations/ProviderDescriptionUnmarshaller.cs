@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public ProviderDescription Unmarshall(JsonUnmarshallerContext context)
         {
             ProviderDescription unmarshalledObject = new ProviderDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

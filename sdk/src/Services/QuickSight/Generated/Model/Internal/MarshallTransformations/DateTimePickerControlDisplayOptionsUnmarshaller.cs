@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DateTimePickerControlDisplayOptions Unmarshall(JsonUnmarshallerContext context)
         {
             DateTimePickerControlDisplayOptions unmarshalledObject = new DateTimePickerControlDisplayOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,10 +66,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DateIconVisibility", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DateIconVisibility = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DateTimeFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DateTimeFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HelperTextVisibility", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HelperTextVisibility = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InfoIconLabelOptions", targetDepth))

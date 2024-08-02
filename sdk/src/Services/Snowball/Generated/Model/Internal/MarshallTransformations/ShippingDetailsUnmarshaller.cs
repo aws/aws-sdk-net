@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public ShippingDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ShippingDetails unmarshalledObject = new ShippingDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

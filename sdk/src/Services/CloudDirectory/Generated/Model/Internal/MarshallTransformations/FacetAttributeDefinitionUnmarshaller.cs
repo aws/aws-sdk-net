@@ -57,6 +57,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         public FacetAttributeDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             FacetAttributeDefinition unmarshalledObject = new FacetAttributeDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

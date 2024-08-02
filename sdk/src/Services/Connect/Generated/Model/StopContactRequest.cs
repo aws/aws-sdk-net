@@ -46,6 +46,14 @@ namespace Amazon.Connect.Model
     /// <para>
     /// QUEUE_TRANSFER
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// EXTERNAL_OUTBOUND
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// MONITOR
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// Chat and task contacts can be terminated in any state, regardless of initiation method.

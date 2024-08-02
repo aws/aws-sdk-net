@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public IngestedFilesSummary Unmarshall(JsonUnmarshallerContext context)
         {
             IngestedFilesSummary unmarshalledObject = new IngestedFilesSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

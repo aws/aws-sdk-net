@@ -57,6 +57,8 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
         public UsageRecord Unmarshall(JsonUnmarshallerContext context)
         {
             UsageRecord unmarshalledObject = new UsageRecord();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

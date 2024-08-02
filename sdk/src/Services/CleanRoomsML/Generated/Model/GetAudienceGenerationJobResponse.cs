@@ -42,6 +42,7 @@ namespace Amazon.CleanRoomsML.Model
         private bool? _includeSeedInOutput;
         private AudienceQualityMetrics _metrics;
         private string _name;
+        private string _protectedQueryIdentifier;
         private AudienceGenerationJobDataSource _seedAudience;
         private string _startedBy;
         private AudienceGenerationJobStatus _status;
@@ -204,6 +205,24 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProtectedQueryIdentifier. 
+        /// <para>
+        /// The unique identifier of the protected query for this audience generation job.
+        /// </para>
+        /// </summary>
+        public string ProtectedQueryIdentifier
+        {
+            get { return this._protectedQueryIdentifier; }
+            set { this._protectedQueryIdentifier = value; }
+        }
+
+        // Check to see if ProtectedQueryIdentifier property is set
+        internal bool IsSetProtectedQueryIdentifier()
+        {
+            return this._protectedQueryIdentifier != null;
         }
 
         /// <summary>

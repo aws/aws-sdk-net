@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsLambdaLayerVersionDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsLambdaLayerVersionDetails unmarshalledObject = new AwsLambdaLayerVersionDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

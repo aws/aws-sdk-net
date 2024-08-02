@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public SlotTypeValue Unmarshall(JsonUnmarshallerContext context)
         {
             SlotTypeValue unmarshalledObject = new SlotTypeValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

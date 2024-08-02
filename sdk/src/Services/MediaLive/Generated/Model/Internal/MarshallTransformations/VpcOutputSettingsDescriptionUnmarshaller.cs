@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public VpcOutputSettingsDescription Unmarshall(JsonUnmarshallerContext context)
         {
             VpcOutputSettingsDescription unmarshalledObject = new VpcOutputSettingsDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

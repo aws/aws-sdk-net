@@ -208,9 +208,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ProvisionedBandwidth. 
         /// <para>
-        /// Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
-        /// limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support
-        /// Center</a>.
+        /// Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-gateways">documented
+        /// limits</a>, contact Amazon Web Services Support.
         /// </para>
         /// </summary>
         public ProvisionedBandwidth ProvisionedBandwidth

@@ -57,6 +57,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         public BackendAPIAppSyncAuthSettings Unmarshall(JsonUnmarshallerContext context)
         {
             BackendAPIAppSyncAuthSettings unmarshalledObject = new BackendAPIAppSyncAuthSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

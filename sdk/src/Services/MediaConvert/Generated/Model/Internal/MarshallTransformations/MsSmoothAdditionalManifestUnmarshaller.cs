@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public MsSmoothAdditionalManifest Unmarshall(JsonUnmarshallerContext context)
         {
             MsSmoothAdditionalManifest unmarshalledObject = new MsSmoothAdditionalManifest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

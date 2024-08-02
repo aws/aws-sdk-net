@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public RecoveryInstanceDisk Unmarshall(JsonUnmarshallerContext context)
         {
             RecoveryInstanceDisk unmarshalledObject = new RecoveryInstanceDisk();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

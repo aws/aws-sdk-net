@@ -57,6 +57,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         public TimeSpan Unmarshall(JsonUnmarshallerContext context)
         {
             TimeSpan unmarshalledObject = new TimeSpan();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

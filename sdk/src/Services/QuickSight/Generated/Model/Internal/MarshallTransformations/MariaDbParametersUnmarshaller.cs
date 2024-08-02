@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public MariaDbParameters Unmarshall(JsonUnmarshallerContext context)
         {
             MariaDbParameters unmarshalledObject = new MariaDbParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

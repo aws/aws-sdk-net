@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public RequestBodyAssociatedResourceTypeConfig Unmarshall(JsonUnmarshallerContext context)
         {
             RequestBodyAssociatedResourceTypeConfig unmarshalledObject = new RequestBodyAssociatedResourceTypeConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

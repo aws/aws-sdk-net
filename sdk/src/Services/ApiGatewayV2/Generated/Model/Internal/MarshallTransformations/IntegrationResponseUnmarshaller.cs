@@ -57,6 +57,8 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         public IntegrationResponse Unmarshall(JsonUnmarshallerContext context)
         {
             IntegrationResponse unmarshalledObject = new IntegrationResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

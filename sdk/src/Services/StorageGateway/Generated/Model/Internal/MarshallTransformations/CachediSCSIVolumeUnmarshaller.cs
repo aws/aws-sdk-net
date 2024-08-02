@@ -57,6 +57,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         public CachediSCSIVolume Unmarshall(JsonUnmarshallerContext context)
         {
             CachediSCSIVolume unmarshalledObject = new CachediSCSIVolume();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

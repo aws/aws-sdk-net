@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public XavcSettings Unmarshall(JsonUnmarshallerContext context)
         {
             XavcSettings unmarshalledObject = new XavcSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

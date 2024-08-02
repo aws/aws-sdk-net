@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsLambdaFunctionVpcConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AwsLambdaFunctionVpcConfig unmarshalledObject = new AwsLambdaFunctionVpcConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

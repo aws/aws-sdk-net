@@ -74,7 +74,7 @@ namespace Amazon.LocationService.Model
         ///  </li> <li> 
         /// <para>
         /// VectorEsriNavigation – <c>Arial Regular</c> | <c>Arial Italic</c> | <c>Arial Bold</c>
-        /// | <c>Arial Unicode MS Bold</c> | <c>Arial Unicode MS Regular</c> 
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>

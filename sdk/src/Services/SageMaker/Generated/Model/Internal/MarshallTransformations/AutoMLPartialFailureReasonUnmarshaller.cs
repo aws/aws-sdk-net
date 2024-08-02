@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public AutoMLPartialFailureReason Unmarshall(JsonUnmarshallerContext context)
         {
             AutoMLPartialFailureReason unmarshalledObject = new AutoMLPartialFailureReason();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         public JWTConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             JWTConfiguration unmarshalledObject = new JWTConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public RepositoryCredentials Unmarshall(JsonUnmarshallerContext context)
         {
             RepositoryCredentials unmarshalledObject = new RepositoryCredentials();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

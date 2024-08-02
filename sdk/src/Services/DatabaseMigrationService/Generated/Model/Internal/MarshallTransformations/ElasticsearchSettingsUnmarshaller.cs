@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public ElasticsearchSettings Unmarshall(JsonUnmarshallerContext context)
         {
             ElasticsearchSettings unmarshalledObject = new ElasticsearchSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

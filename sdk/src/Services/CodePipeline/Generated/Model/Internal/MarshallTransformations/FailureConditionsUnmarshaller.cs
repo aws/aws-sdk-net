@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public FailureConditions Unmarshall(JsonUnmarshallerContext context)
         {
             FailureConditions unmarshalledObject = new FailureConditions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("conditions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Condition, ConditionUnmarshaller>(ConditionUnmarshaller.Instance);
+                    unmarshalledObject.Conditions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("result", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public OverrideButtonConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             OverrideButtonConfiguration unmarshalledObject = new OverrideButtonConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

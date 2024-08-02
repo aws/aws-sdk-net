@@ -75,6 +75,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetListCondition())
+            {
+                context.Writer.WritePropertyName("ListCondition");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ListConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ListCondition, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOrConditions())
             {
                 context.Writer.WritePropertyName("OrConditions");

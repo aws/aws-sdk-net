@@ -32,6 +32,10 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OSIS.Model.GetPipelineBlueprintRequest.Format</property>
+    <pattern>(YAML|JSON)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OSIS.Model.GetPipelineChangeProgressRequest.PipelineName</property>
     <min>3</min>
     <max>28</max>
@@ -150,5 +154,9 @@
     <min>0</min>
     <max>256</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.VpcAttachmentOptions.CidrBlock</property>
+    <pattern>^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)/(3[0-2]|[12]?[0-9])$</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -509,6 +509,10 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly DrmSystem FAIRPLAY = new DrmSystem("FAIRPLAY");
         /// <summary>
+        /// Constant IRDETO for DrmSystem
+        /// </summary>
+        public static readonly DrmSystem IRDETO = new DrmSystem("IRDETO");
+        /// <summary>
         /// Constant PLAYREADY for DrmSystem
         /// </summary>
         public static readonly DrmSystem PLAYREADY = new DrmSystem("PLAYREADY");
@@ -546,6 +550,114 @@ namespace Amazon.MediaPackageV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DrmSystem(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EndpointErrorCondition.
+    /// </summary>
+    public class EndpointErrorCondition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INCOMPLETE_MANIFEST for EndpointErrorCondition
+        /// </summary>
+        public static readonly EndpointErrorCondition INCOMPLETE_MANIFEST = new EndpointErrorCondition("INCOMPLETE_MANIFEST");
+        /// <summary>
+        /// Constant MISSING_DRM_KEY for EndpointErrorCondition
+        /// </summary>
+        public static readonly EndpointErrorCondition MISSING_DRM_KEY = new EndpointErrorCondition("MISSING_DRM_KEY");
+        /// <summary>
+        /// Constant SLATE_INPUT for EndpointErrorCondition
+        /// </summary>
+        public static readonly EndpointErrorCondition SLATE_INPUT = new EndpointErrorCondition("SLATE_INPUT");
+        /// <summary>
+        /// Constant STALE_MANIFEST for EndpointErrorCondition
+        /// </summary>
+        public static readonly EndpointErrorCondition STALE_MANIFEST = new EndpointErrorCondition("STALE_MANIFEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndpointErrorCondition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointErrorCondition FindValue(string value)
+        {
+            return FindValue<EndpointErrorCondition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointErrorCondition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputType.
+    /// </summary>
+    public class InputType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CMAF for InputType
+        /// </summary>
+        public static readonly InputType CMAF = new InputType("CMAF");
+        /// <summary>
+        /// Constant HLS for InputType
+        /// </summary>
+        public static readonly InputType HLS = new InputType("HLS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputType FindValue(string value)
+        {
+            return FindValue<InputType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputType(string value)
         {
             return FindValue(value);
         }
@@ -1001,6 +1113,10 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType NUM_MANIFESTS_LOW = new ValidationExceptionType("NUM_MANIFESTS_LOW");
         /// <summary>
+        /// Constant ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION");
+        /// <summary>
         /// Constant PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES = new ValidationExceptionType("PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES");
@@ -1016,6 +1132,10 @@ namespace Amazon.MediaPackageV2
         /// Constant ROLE_ARN_NOT_ASSUMABLE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType ROLE_ARN_NOT_ASSUMABLE = new ValidationExceptionType("ROLE_ARN_NOT_ASSUMABLE");
+        /// <summary>
+        /// Constant SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY = new ValidationExceptionType("SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY");
         /// <summary>
         /// Constant TIMING_SOURCE_MISSING for ValidationExceptionType
         /// </summary>

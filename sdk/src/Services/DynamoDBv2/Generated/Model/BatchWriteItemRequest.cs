@@ -59,8 +59,12 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
-    /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-    /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+    /// For tables and indexes with provisioned capacity, if none of the items can be processed
+    /// due to insufficient provisioned throughput on all of the tables in the request, then
+    /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
+    /// all tables and indexes, if none of the items can be processed due to other throttling
+    /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
+    /// a <c>ThrottlingException</c>.
     /// </para>
     ///  <important> 
     /// <para>
@@ -135,6 +139,11 @@ namespace Amazon.DynamoDBv2.Model
     ///  </li> <li> 
     /// <para>
     /// The total request size exceeds 16 MB.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Any individual items with keys exceeding the key length limits. For a partition key,
+    /// the limit is 2048 bytes and for a sort key, the limit is 1024 bytes.
     /// </para>
     ///  </li> </ul>
     /// </summary>

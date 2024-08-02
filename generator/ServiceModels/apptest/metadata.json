@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "AWS Mainframe Modernization Application Testing is an AWS Mainframe Modernization service feature that automates functional equivalence testing for mainframe application modernization and migration to AWS, and regression testing.",
+  "generate-client-constructors": true
+}

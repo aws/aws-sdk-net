@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public UdpGroupSettings Unmarshall(JsonUnmarshallerContext context)
         {
             UdpGroupSettings unmarshalledObject = new UdpGroupSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

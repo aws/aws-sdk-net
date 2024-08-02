@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public CloudFormationProperties Unmarshall(JsonUnmarshallerContext context)
         {
             CloudFormationProperties unmarshalledObject = new CloudFormationProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

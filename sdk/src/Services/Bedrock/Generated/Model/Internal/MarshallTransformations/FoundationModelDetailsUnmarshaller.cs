@@ -57,6 +57,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         public FoundationModelDetails Unmarshall(JsonUnmarshallerContext context)
         {
             FoundationModelDetails unmarshalledObject = new FoundationModelDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

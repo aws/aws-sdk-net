@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public AggregateConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AggregateConfiguration unmarshalledObject = new AggregateConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

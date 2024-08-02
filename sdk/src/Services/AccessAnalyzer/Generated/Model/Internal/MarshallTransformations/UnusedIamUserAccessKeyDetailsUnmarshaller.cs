@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public UnusedIamUserAccessKeyDetails Unmarshall(JsonUnmarshallerContext context)
         {
             UnusedIamUserAccessKeyDetails unmarshalledObject = new UnusedIamUserAccessKeyDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

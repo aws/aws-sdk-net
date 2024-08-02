@@ -57,6 +57,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         public LogSubscription Unmarshall(JsonUnmarshallerContext context)
         {
             LogSubscription unmarshalledObject = new LogSubscription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

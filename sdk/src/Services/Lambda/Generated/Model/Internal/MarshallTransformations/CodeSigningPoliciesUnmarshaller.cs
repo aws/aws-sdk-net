@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public CodeSigningPolicies Unmarshall(JsonUnmarshallerContext context)
         {
             CodeSigningPolicies unmarshalledObject = new CodeSigningPolicies();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

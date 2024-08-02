@@ -57,6 +57,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         public KinesisFirehoseDestination Unmarshall(JsonUnmarshallerContext context)
         {
             KinesisFirehoseDestination unmarshalledObject = new KinesisFirehoseDestination();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public AppFlowConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AppFlowConfig unmarshalledObject = new AppFlowConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

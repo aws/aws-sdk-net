@@ -40,7 +40,7 @@ namespace Amazon.OSIS.Model
         /// <summary>
         /// Gets and sets the property PipelineName. 
         /// <para>
-        /// The name of the pipeline to get information about.
+        /// The name of the pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=28)]

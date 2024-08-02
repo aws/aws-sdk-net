@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public DeliveryChannelStatus Unmarshall(JsonUnmarshallerContext context)
         {
             DeliveryChannelStatus unmarshalledObject = new DeliveryChannelStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

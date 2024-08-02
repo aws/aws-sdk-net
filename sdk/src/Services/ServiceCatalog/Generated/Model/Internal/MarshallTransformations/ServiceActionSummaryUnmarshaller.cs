@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public ServiceActionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceActionSummary unmarshalledObject = new ServiceActionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

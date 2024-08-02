@@ -80,6 +80,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetRotationToken())
+                {
+                    context.Writer.WritePropertyName("RotationToken");
+                    context.Writer.Write(publicRequest.RotationToken);
+                }
+
                 if(publicRequest.IsSetSecretBinary())
                 {
                     context.Writer.WritePropertyName("SecretBinary");

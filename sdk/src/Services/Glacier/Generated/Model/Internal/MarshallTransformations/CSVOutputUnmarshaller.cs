@@ -57,6 +57,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public CSVOutput Unmarshall(JsonUnmarshallerContext context)
         {
             CSVOutput unmarshalledObject = new CSVOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

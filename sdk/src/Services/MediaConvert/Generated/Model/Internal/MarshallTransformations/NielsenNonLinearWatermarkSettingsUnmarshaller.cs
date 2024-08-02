@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public NielsenNonLinearWatermarkSettings Unmarshall(JsonUnmarshallerContext context)
         {
             NielsenNonLinearWatermarkSettings unmarshalledObject = new NielsenNonLinearWatermarkSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

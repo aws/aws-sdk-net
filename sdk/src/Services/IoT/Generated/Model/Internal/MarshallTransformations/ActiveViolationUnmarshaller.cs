@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public ActiveViolation Unmarshall(JsonUnmarshallerContext context)
         {
             ActiveViolation unmarshalledObject = new ActiveViolation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

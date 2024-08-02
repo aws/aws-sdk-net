@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public LinkSharingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LinkSharingConfiguration unmarshalledObject = new LinkSharingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

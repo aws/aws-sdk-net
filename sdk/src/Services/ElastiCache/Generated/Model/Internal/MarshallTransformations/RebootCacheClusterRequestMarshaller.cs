@@ -68,7 +68,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.CacheNodeIdsToReboot)
                     {
-                        request.Parameters.Add("CacheNodeIdsToReboot" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        request.Parameters.Add("CacheNodeIdsToReboot" + "." + "CacheNodeId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
                 }

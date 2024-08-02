@@ -57,6 +57,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         public RuleBasedMatchingResponse Unmarshall(JsonUnmarshallerContext context)
         {
             RuleBasedMatchingResponse unmarshalledObject = new RuleBasedMatchingResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

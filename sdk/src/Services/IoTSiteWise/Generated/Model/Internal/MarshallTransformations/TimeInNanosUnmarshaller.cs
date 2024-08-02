@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public TimeInNanos Unmarshall(JsonUnmarshallerContext context)
         {
             TimeInNanos unmarshalledObject = new TimeInNanos();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

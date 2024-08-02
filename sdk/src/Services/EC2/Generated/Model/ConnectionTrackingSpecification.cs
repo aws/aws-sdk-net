@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// A security group connection tracking specification that enables you to set the idle
     /// timeout for connection tracking on an Elastic network interface. For more information,
     /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
-    /// tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// tracking timeouts</a> in the <i>Amazon EC2 User Guide</i>.
     /// </summary>
     public partial class ConnectionTrackingSpecification
     {

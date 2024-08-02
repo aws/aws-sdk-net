@@ -54,24 +54,24 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>upgrade_os_to</c> - Specifies the desired Amazon Linux version for instances whose
-        /// OS you want to upgrade, such as <c>Amazon Linux 2016.09</c>. You must also set the
-        /// <c>allow_reboot</c> argument to true.
+        ///  <c>upgrade_os_to</c> - Specifies the Amazon Linux version that you want instances
+        /// to run, such as <c>Amazon Linux 2</c>. You must also set the <c>allow_reboot</c> argument
+        /// to true.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>allow_reboot</c> - Specifies whether to allow AWS OpsWorks Stacks to reboot the
-        /// instances if necessary, after installing the updates. This argument can be set to
-        /// either <c>true</c> or <c>false</c>. The default value is <c>false</c>.
+        ///  <c>allow_reboot</c> - Specifies whether to allow OpsWorks Stacks to reboot the instances
+        /// if necessary, after installing the updates. This argument can be set to either <c>true</c>
+        /// or <c>false</c>. The default value is <c>false</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, to upgrade an instance to Amazon Linux 2016.09, set <c>Args</c> to the
+        /// For example, to upgrade an instance to Amazon Linux 2018.03, set <c>Args</c> to the
         /// following.
         /// </para>
         ///  
         /// <para>
-        ///  <c> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </c> 
+        ///  <c> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </c> 
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Args
@@ -132,8 +132,8 @@ namespace Amazon.OpsWorks.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>rollback</c> Roll the app back to the previous version. When you update an app,
-        /// AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions.
-        /// You can use this command to roll an app back as many as four versions.
+        /// OpsWorks Stacks stores the previous version, up to a maximum of five versions. You
+        /// can use this command to roll an app back as many as four versions.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -57,6 +57,8 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
         public SearchFilter Unmarshall(JsonUnmarshallerContext context)
         {
             SearchFilter unmarshalledObject = new SearchFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

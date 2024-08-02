@@ -57,6 +57,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         public RuleUpdateSuccess Unmarshall(JsonUnmarshallerContext context)
         {
             RuleUpdateSuccess unmarshalledObject = new RuleUpdateSuccess();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

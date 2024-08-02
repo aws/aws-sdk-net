@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public TtmlDestinationSettings Unmarshall(JsonUnmarshallerContext context)
         {
             TtmlDestinationSettings unmarshalledObject = new TtmlDestinationSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

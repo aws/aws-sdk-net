@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public GroundTruthManifest Unmarshall(JsonUnmarshallerContext context)
         {
             GroundTruthManifest unmarshalledObject = new GroundTruthManifest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

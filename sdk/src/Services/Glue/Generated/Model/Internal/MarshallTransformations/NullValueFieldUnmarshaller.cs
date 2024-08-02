@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public NullValueField Unmarshall(JsonUnmarshallerContext context)
         {
             NullValueField unmarshalledObject = new NullValueField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

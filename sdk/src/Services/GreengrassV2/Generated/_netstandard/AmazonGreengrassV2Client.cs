@@ -561,45 +561,11 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  
         /// <para>
-        /// This function only accepts Lambda functions that use the following runtimes:
+        /// This function accepts Lambda functions in all supported versions of Python, Node.js,
+        /// and Java runtimes. IoT Greengrass doesn't apply any additional restrictions on deprecated
+        /// Lambda runtime versions.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Python 2.7 – <c>python2.7</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Python 3.7 – <c>python3.7</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Python 3.8 – <c>python3.8</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Python 3.9 – <c>python3.9</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Java 8 – <c>java8</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Java 11 – <c>java11</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Node.js 10 – <c>nodejs10.x</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Node.js 12 – <c>nodejs12.x</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Node.js 14 – <c>nodejs14.x</c> 
-        /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// To create a component from a Lambda function, specify <c>lambdaFunction</c> when you
         /// call this operation.
@@ -2047,8 +2013,32 @@ namespace Amazon.GreengrassV2
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonGreengrassV2EndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonGreengrassV2EndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

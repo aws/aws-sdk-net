@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public AutoScalingPolicyStatus Unmarshall(JsonUnmarshallerContext context)
         {
             AutoScalingPolicyStatus unmarshalledObject = new AutoScalingPolicyStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public AccessConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AccessConfiguration unmarshalledObject = new AccessConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

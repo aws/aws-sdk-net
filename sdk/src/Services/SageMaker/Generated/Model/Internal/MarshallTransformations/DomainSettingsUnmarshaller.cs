@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public DomainSettings Unmarshall(JsonUnmarshallerContext context)
         {
             DomainSettings unmarshalledObject = new DomainSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AmazonQSettings", targetDepth))
+                {
+                    var unmarshaller = AmazonQSettingsUnmarshaller.Instance;
+                    unmarshalledObject.AmazonQSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DockerSettings", targetDepth))
                 {
                     var unmarshaller = DockerSettingsUnmarshaller.Instance;

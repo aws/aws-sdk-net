@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public S3OutputFormatConfig Unmarshall(JsonUnmarshallerContext context)
         {
             S3OutputFormatConfig unmarshalledObject = new S3OutputFormatConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

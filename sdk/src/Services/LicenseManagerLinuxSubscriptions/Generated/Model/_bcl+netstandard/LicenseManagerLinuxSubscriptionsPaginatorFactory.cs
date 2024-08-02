@@ -51,5 +51,13 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         {
             return new ListLinuxSubscriptionsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListRegisteredSubscriptionProviders operation
+        ///</summary>
+        public IListRegisteredSubscriptionProvidersPaginator ListRegisteredSubscriptionProviders(ListRegisteredSubscriptionProvidersRequest request) 
+        {
+            return new ListRegisteredSubscriptionProvidersPaginator(this.client, request);
+        }
     }
 }

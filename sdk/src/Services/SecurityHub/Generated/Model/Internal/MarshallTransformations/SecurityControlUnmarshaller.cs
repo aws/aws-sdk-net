@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public SecurityControl Unmarshall(JsonUnmarshallerContext context)
         {
             SecurityControl unmarshalledObject = new SecurityControl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -82,6 +82,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetInputType())
+                {
+                    context.Writer.WritePropertyName("InputType");
+                    context.Writer.Write(publicRequest.InputType);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public GlueSchema Unmarshall(JsonUnmarshallerContext context)
         {
             GlueSchema unmarshalledObject = new GlueSchema();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

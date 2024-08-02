@@ -57,6 +57,8 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
         public RDFGraphSummaryValueMap Unmarshall(JsonUnmarshallerContext context)
         {
             RDFGraphSummaryValueMap unmarshalledObject = new RDFGraphSummaryValueMap();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

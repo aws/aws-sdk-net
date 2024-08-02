@@ -57,6 +57,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public DataCellsFilterResource Unmarshall(JsonUnmarshallerContext context)
         {
             DataCellsFilterResource unmarshalledObject = new DataCellsFilterResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

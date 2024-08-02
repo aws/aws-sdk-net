@@ -37,6 +37,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private bool? _ignoreClientCertificateExpiry;
         private string _mode;
         private string _trustStoreArn;
+        private TrustStoreAssociationStatusEnum _trustStoreAssociationStatus;
 
         /// <summary>
         /// Gets and sets the property IgnoreClientCertificateExpiry. 
@@ -91,6 +92,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetTrustStoreArn()
         {
             return this._trustStoreArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrustStoreAssociationStatus. 
+        /// <para>
+        /// Indicates a shared trust stores association status.
+        /// </para>
+        /// </summary>
+        public TrustStoreAssociationStatusEnum TrustStoreAssociationStatus
+        {
+            get { return this._trustStoreAssociationStatus; }
+            set { this._trustStoreAssociationStatus = value; }
+        }
+
+        // Check to see if TrustStoreAssociationStatus property is set
+        internal bool IsSetTrustStoreAssociationStatus()
+        {
+            return this._trustStoreAssociationStatus != null;
         }
 
     }

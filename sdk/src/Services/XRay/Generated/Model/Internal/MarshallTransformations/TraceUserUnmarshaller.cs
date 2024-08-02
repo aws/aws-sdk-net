@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public TraceUser Unmarshall(JsonUnmarshallerContext context)
         {
             TraceUser unmarshalledObject = new TraceUser();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

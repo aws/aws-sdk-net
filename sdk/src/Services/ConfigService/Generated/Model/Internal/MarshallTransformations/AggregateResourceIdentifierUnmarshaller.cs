@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public AggregateResourceIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             AggregateResourceIdentifier unmarshalledObject = new AggregateResourceIdentifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

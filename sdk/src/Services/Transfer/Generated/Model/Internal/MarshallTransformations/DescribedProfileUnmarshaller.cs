@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public DescribedProfile Unmarshall(JsonUnmarshallerContext context)
         {
             DescribedProfile unmarshalledObject = new DescribedProfile();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

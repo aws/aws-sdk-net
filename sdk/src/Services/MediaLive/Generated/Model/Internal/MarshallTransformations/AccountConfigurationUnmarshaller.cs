@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public AccountConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AccountConfiguration unmarshalledObject = new AccountConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

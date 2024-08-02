@@ -35,12 +35,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// you cannot create new tasks of that activity type. Tasks of this type that were scheduled
     /// before the type was deprecated continue to run.
     /// 
-    ///  <note> 
-    /// <para>
-    /// This operation is eventually consistent. The results are best effort and may not exactly
-    /// reflect recent updates and changes.
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     ///  <b>Access Control</b> 
     /// </para>

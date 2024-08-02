@@ -65,6 +65,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MSKClusterARN);
             }
 
+            if(requestObject.IsSetReadFromTimestamp())
+            {
+                context.Writer.WritePropertyName("ReadFromTimestamp");
+                context.Writer.Write(requestObject.ReadFromTimestamp);
+            }
+
             if(requestObject.IsSetTopicName())
             {
                 context.Writer.WritePropertyName("TopicName");

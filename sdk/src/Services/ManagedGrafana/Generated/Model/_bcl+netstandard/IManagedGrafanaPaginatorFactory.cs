@@ -40,5 +40,15 @@ namespace Amazon.ManagedGrafana.Model
         /// Paginator for ListWorkspaces operation
         ///</summary>
         IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkspaceServiceAccounts operation
+        ///</summary>
+        IListWorkspaceServiceAccountsPaginator ListWorkspaceServiceAccounts(ListWorkspaceServiceAccountsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkspaceServiceAccountTokens operation
+        ///</summary>
+        IListWorkspaceServiceAccountTokensPaginator ListWorkspaceServiceAccountTokens(ListWorkspaceServiceAccountTokensRequest request);
     }
 }

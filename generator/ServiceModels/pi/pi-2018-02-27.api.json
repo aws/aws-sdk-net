@@ -5,13 +5,15 @@
     "endpointPrefix":"pi",
     "jsonVersion":"1.1",
     "protocol":"json",
+    "protocols":["json"],
     "serviceAbbreviation":"AWS PI",
     "serviceFullName":"AWS Performance Insights",
     "serviceId":"PI",
     "signatureVersion":"v4",
     "signingName":"pi",
     "targetPrefix":"PerformanceInsightsv20180227",
-    "uid":"pi-2018-02-27"
+    "uid":"pi-2018-02-27",
+    "auth":["aws.auth#sigv4"]
   },
   "operations":{
     "CreatePerformanceAnalysisReport":{
@@ -204,7 +206,7 @@
     },
     "AdditionalMetricsList":{
       "type":"list",
-      "member":{"shape":"RequestString"},
+      "member":{"shape":"SanitizedString"},
       "max":30,
       "min":1
     },
@@ -261,6 +263,12 @@
         "SUCCEEDED",
         "FAILED"
       ]
+    },
+    "AuthorizedActionsList":{
+      "type":"list",
+      "member":{"shape":"FineGrainedAction"},
+      "max":3,
+      "min":0
     },
     "Boolean":{"type":"boolean"},
     "ContextType":{
@@ -408,8 +416,8 @@
       "type":"structure",
       "required":["Group"],
       "members":{
-        "Group":{"shape":"RequestString"},
-        "Dimensions":{"shape":"RequestStringList"},
+        "Group":{"shape":"SanitizedString"},
+        "Dimensions":{"shape":"SanitizedStringList"},
         "Limit":{"shape":"Limit"}
       }
     },
@@ -456,7 +464,7 @@
     },
     "DimensionsMetricList":{
       "type":"list",
-      "member":{"shape":"RequestString"},
+      "member":{"shape":"SanitizedString"},
       "max":5,
       "min":1
     },
@@ -482,6 +490,14 @@
         "ENABLED_PENDING_REBOOT",
         "DISABLED_PENDING_REBOOT",
         "UNKNOWN"
+      ]
+    },
+    "FineGrainedAction":{
+      "type":"string",
+      "enum":[
+        "DescribeDimensionKeys",
+        "GetDimensionKeyDetails",
+        "GetResourceMetrics"
       ]
     },
     "GetDimensionKeyDetailsRequest":{
@@ -637,7 +653,8 @@
         "Identifier":{"shape":"IdentifierString"},
         "Metrics":{"shape":"DimensionsMetricList"},
         "MaxResults":{"shape":"MaxResults"},
-        "NextToken":{"shape":"NextToken"}
+        "NextToken":{"shape":"NextToken"},
+        "AuthorizedActions":{"shape":"AuthorizedActionsList"}
       }
     },
     "ListAvailableResourceDimensionsResponse":{
@@ -745,14 +762,14 @@
       "type":"structure",
       "required":["Metric"],
       "members":{
-        "Metric":{"shape":"RequestString"},
+        "Metric":{"shape":"SanitizedString"},
         "GroupBy":{"shape":"DimensionGroup"},
         "Filter":{"shape":"MetricQueryFilterMap"}
       }
     },
     "MetricQueryFilterMap":{
       "type":"map",
-      "key":{"shape":"RequestString"},
+      "key":{"shape":"SanitizedString"},
       "value":{"shape":"RequestString"}
     },
     "MetricQueryList":{
@@ -763,7 +780,7 @@
     },
     "MetricTypeList":{
       "type":"list",
-      "member":{"shape":"RequestString"}
+      "member":{"shape":"SanitizedString"}
     },
     "MetricValuesList":{
       "type":"list",
@@ -815,15 +832,9 @@
       "min":0,
       "pattern":".*\\S.*"
     },
-    "RequestStringList":{
-      "type":"list",
-      "member":{"shape":"RequestString"},
-      "max":10,
-      "min":1
-    },
     "RequestedDimensionList":{
       "type":"list",
-      "member":{"shape":"RequestString"},
+      "member":{"shape":"SanitizedString"},
       "max":10,
       "min":1
     },
@@ -857,6 +868,18 @@
     "ResponseResourceMetricList":{
       "type":"list",
       "member":{"shape":"ResponseResourceMetric"}
+    },
+    "SanitizedString":{
+      "type":"string",
+      "max":256,
+      "min":0,
+      "pattern":"^[a-zA-Z0-9-_\\.:/*)( ]+$"
+    },
+    "SanitizedStringList":{
+      "type":"list",
+      "member":{"shape":"SanitizedString"},
+      "max":10,
+      "min":1
     },
     "ServiceType":{
       "type":"string",

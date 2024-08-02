@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public ListedBridge Unmarshall(JsonUnmarshallerContext context)
         {
             ListedBridge unmarshalledObject = new ListedBridge();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

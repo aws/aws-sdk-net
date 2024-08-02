@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public EksAnywhereSubscription Unmarshall(JsonUnmarshallerContext context)
         {
             EksAnywhereSubscription unmarshalledObject = new EksAnywhereSubscription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

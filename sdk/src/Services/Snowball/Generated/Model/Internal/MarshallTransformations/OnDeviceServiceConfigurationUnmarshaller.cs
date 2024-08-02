@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public OnDeviceServiceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             OnDeviceServiceConfiguration unmarshalledObject = new OnDeviceServiceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -1057,6 +1057,20 @@ namespace Amazon.B2bi
         /// </param>
         /// 
         /// <returns>The response from the ListCapabilities service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ThrottlingException">
+        /// The request was denied due to throttling: the data speed and rendering may be limited
+        /// depending on various parameters and conditions.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListCapabilities">REST API Reference for ListCapabilities Operation</seealso>
         public virtual Task<ListCapabilitiesResponse> ListCapabilitiesAsync(ListCapabilitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1147,6 +1161,20 @@ namespace Amazon.B2bi
         /// </param>
         /// 
         /// <returns>The response from the ListProfiles service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ThrottlingException">
+        /// The request was denied due to throttling: the data speed and rendering may be limited
+        /// depending on various parameters and conditions.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
         public virtual Task<ListProfilesResponse> ListProfilesAsync(ListProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1228,6 +1256,20 @@ namespace Amazon.B2bi
         /// </param>
         /// 
         /// <returns>The response from the ListTransformers service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ThrottlingException">
+        /// The request was denied due to throttling: the data speed and rendering may be limited
+        /// depending on various parameters and conditions.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListTransformers">REST API Reference for ListTransformers Operation</seealso>
         public virtual Task<ListTransformersResponse> ListTransformersAsync(ListTransformersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1272,6 +1314,10 @@ namespace Amazon.B2bi
         /// <returns>The response from the StartTransformerJob service method, as returned by B2bi.</returns>
         /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ConflictException">
+        /// A conflict exception is thrown when you attempt to delete a resource (such as a profile
+        /// or a capability) that is being used by other resources.
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.InternalServerException">
         /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
@@ -1769,8 +1815,32 @@ namespace Amazon.B2bi
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonB2biEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonB2biEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

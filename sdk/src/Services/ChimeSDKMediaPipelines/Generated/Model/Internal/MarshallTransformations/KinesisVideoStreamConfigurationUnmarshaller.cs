@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public KinesisVideoStreamConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             KinesisVideoStreamConfiguration unmarshalledObject = new KinesisVideoStreamConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

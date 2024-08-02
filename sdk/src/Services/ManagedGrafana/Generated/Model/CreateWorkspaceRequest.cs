@@ -150,7 +150,7 @@ namespace Amazon.ManagedGrafana.Model
         /// Gets and sets the property GrafanaVersion. 
         /// <para>
         /// Specifies the version of Grafana to support in the new workspace. If not specified,
-        /// defaults to the latest version (for example, 9.4).
+        /// defaults to the latest version (for example, 10.4).
         /// </para>
         ///  
         /// <para>

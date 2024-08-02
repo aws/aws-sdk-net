@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public ExecutionRecord Unmarshall(JsonUnmarshallerContext context)
         {
             ExecutionRecord unmarshalledObject = new ExecutionRecord();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         public RetryPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             RetryPolicy unmarshalledObject = new RetryPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

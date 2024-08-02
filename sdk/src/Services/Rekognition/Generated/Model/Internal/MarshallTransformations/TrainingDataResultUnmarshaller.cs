@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public TrainingDataResult Unmarshall(JsonUnmarshallerContext context)
         {
             TrainingDataResult unmarshalledObject = new TrainingDataResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

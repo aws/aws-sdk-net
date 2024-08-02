@@ -57,6 +57,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         public ShiftDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ShiftDetails unmarshalledObject = new ShiftDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

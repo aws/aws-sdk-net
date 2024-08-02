@@ -57,6 +57,8 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         public MacSecKey Unmarshall(JsonUnmarshallerContext context)
         {
             MacSecKey unmarshalledObject = new MacSecKey();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

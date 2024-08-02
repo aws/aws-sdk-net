@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public CaptionRectangle Unmarshall(JsonUnmarshallerContext context)
         {
             CaptionRectangle unmarshalledObject = new CaptionRectangle();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public KeyPhrase Unmarshall(JsonUnmarshallerContext context)
         {
             KeyPhrase unmarshalledObject = new KeyPhrase();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public ServiceVolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceVolumeConfiguration unmarshalledObject = new ServiceVolumeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

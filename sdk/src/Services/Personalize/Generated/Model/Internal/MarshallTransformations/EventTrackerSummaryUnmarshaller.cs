@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public EventTrackerSummary Unmarshall(JsonUnmarshallerContext context)
         {
             EventTrackerSummary unmarshalledObject = new EventTrackerSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

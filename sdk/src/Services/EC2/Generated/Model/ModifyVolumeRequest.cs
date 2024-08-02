@@ -47,12 +47,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    ///  You can use CloudWatch Events to check the status of a modification to an EBS volume.
-    /// For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
-    /// CloudWatch Events User Guide</a>. You can also track the status of a modification
-    /// using <a>DescribeVolumesModifications</a>. For information about tracking status changes
-    /// using either method, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
-    /// the progress of volume modifications</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
+    /// the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -99,7 +95,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For <c>io2</c> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+        /// For <c>io2</c> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances
         /// built on the Nitro System</a>. On other instances, you can achieve performance up
         /// to 32,000 IOPS.
         /// </para>
@@ -125,7 +121,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MultiAttachEnabled. 
         /// <para>
         /// Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you
-        /// can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
+        /// can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">
         /// Nitro-based instances</a> in the same Availability Zone. This parameter is supported
         /// with <c>io1</c> and <c>io2</c> volumes only. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html">
         /// Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.

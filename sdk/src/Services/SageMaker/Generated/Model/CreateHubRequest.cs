@@ -32,12 +32,6 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the CreateHub operation.
     /// Create a hub.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Hub APIs are only callable through SageMaker Studio.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class CreateHubRequest : AmazonSageMakerRequest
     {

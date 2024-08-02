@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public LocalPortDetails Unmarshall(JsonUnmarshallerContext context)
         {
             LocalPortDetails unmarshalledObject = new LocalPortDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -612,6 +612,49 @@ namespace Amazon.EMRServerless
 
         #endregion
         
+        #region  ListJobRunAttempts
+
+        internal virtual ListJobRunAttemptsResponse ListJobRunAttempts(ListJobRunAttemptsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobRunAttemptsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobRunAttemptsResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobRunAttemptsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all attempt of a job run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobRunAttempts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJobRunAttempts service method, as returned by EMRServerless.</returns>
+        /// <exception cref="Amazon.EMRServerless.Model.InternalServerException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.EMRServerless.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ListJobRunAttempts">REST API Reference for ListJobRunAttempts Operation</seealso>
+        public virtual Task<ListJobRunAttemptsResponse> ListJobRunAttemptsAsync(ListJobRunAttemptsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobRunAttemptsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobRunAttemptsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListJobRunAttemptsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListJobRuns
 
         internal virtual ListJobRunsResponse ListJobRuns(ListJobRunsRequest request)
@@ -976,8 +1019,32 @@ namespace Amazon.EMRServerless
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonEMRServerlessEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonEMRServerlessEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

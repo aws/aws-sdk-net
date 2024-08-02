@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public IotTwinMakerDestinationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             IotTwinMakerDestinationConfiguration unmarshalledObject = new IotTwinMakerDestinationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

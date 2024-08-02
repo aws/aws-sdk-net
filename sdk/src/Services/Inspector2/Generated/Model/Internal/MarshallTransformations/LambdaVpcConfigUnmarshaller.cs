@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public LambdaVpcConfig Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaVpcConfig unmarshalledObject = new LambdaVpcConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

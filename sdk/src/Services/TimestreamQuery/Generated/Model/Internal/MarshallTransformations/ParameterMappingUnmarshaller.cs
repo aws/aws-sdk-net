@@ -57,6 +57,8 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         public ParameterMapping Unmarshall(JsonUnmarshallerContext context)
         {
             ParameterMapping unmarshalledObject = new ParameterMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

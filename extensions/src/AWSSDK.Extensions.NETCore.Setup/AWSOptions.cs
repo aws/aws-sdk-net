@@ -51,6 +51,11 @@ namespace Amazon.Extensions.NETCore.Setup
         public string SessionName { get; set; } = "DefaultSessionName";
 
         /// <summary>
+        /// A unique identifier that is used by third parties for the assumed session using the SessionRoleArn.
+        /// </summary>
+        public string ExternalId { get; set; }
+
+        /// <summary>
         /// AWS Credentials used for creating service clients. If this is set it overrides the Profile property.
         /// </summary>
         public AWSCredentials Credentials { get; set; }

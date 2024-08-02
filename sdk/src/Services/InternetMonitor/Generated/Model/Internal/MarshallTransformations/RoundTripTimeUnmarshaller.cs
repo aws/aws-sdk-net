@@ -57,6 +57,8 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         public RoundTripTime Unmarshall(JsonUnmarshallerContext context)
         {
             RoundTripTime unmarshalledObject = new RoundTripTime();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

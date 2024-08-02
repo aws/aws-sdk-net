@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public FulfillmentCodeHookSettings Unmarshall(JsonUnmarshallerContext context)
         {
             FulfillmentCodeHookSettings unmarshalledObject = new FulfillmentCodeHookSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

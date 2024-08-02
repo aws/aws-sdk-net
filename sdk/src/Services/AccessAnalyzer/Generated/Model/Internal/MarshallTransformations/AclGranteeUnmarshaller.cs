@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public AclGrantee Unmarshall(JsonUnmarshallerContext context)
         {
             AclGrantee unmarshalledObject = new AclGrantee();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public ReactionValueFormats Unmarshall(JsonUnmarshallerContext context)
         {
             ReactionValueFormats unmarshalledObject = new ReactionValueFormats();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

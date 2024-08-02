@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public PartitionIndexDescriptor Unmarshall(JsonUnmarshallerContext context)
         {
             PartitionIndexDescriptor unmarshalledObject = new PartitionIndexDescriptor();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

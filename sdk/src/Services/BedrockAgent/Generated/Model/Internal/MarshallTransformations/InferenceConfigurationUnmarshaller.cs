@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public InferenceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             InferenceConfiguration unmarshalledObject = new InferenceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

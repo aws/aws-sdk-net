@@ -603,7 +603,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>private-ip-address</c> - The private IPv4 address of the instance.
+        ///  <c>private-ip-address</c> - The private IPv4 address of the instance. This can only
+        /// be used to filter by the primary IP address of the network interface attached to the
+        /// instance. To filter by additional IP addresses assigned to the network interface,
+        /// use the filter <c>network-interface.addresses.private-ip-address</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

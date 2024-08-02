@@ -57,6 +57,8 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         public ResolverEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
             ResolverEndpoint unmarshalledObject = new ResolverEndpoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

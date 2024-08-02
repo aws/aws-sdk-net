@@ -87,6 +87,17 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetWrappedKey())
+                {
+                    context.Writer.WritePropertyName("WrappedKey");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WrappedKeyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WrappedKey, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

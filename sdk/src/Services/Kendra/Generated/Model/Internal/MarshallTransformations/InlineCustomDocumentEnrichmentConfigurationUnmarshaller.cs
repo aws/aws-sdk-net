@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public InlineCustomDocumentEnrichmentConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             InlineCustomDocumentEnrichmentConfiguration unmarshalledObject = new InlineCustomDocumentEnrichmentConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public ProcessorParameter Unmarshall(JsonUnmarshallerContext context)
         {
             ProcessorParameter unmarshalledObject = new ProcessorParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This operation is valid for Redis only.
+    /// This operation is valid for Redis OSS only.
     /// </para>
     ///  </note> <important> 
     /// <para>

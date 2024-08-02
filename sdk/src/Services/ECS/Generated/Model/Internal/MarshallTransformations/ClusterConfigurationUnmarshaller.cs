@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public ClusterConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ClusterConfiguration unmarshalledObject = new ClusterConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ExecuteCommandConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ExecuteCommandConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("managedStorageConfiguration", targetDepth))
+                {
+                    var unmarshaller = ManagedStorageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ManagedStorageConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

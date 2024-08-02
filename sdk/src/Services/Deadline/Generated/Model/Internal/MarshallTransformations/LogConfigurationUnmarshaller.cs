@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public LogConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LogConfiguration unmarshalledObject = new LogConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -151,7 +151,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ComplianceStatus. 
         /// <para>
-        /// TCurrent status of compliance for the resiliency policy.
+        /// Current status of compliance for the resiliency policy.
         /// </para>
         /// </summary>
         public ComplianceStatus ComplianceStatus

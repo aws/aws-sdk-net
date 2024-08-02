@@ -85,6 +85,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListAuthenticationProfiles operation
+        ///</summary>
+        public IListAuthenticationProfilesPaginator ListAuthenticationProfiles(ListAuthenticationProfilesRequest request) 
+        {
+            return new ListAuthenticationProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListBots operation
         ///</summary>
         public IListBotsPaginator ListBots(ListBotsRequest request) 
@@ -405,11 +413,35 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for SearchAgentStatuses operation
+        ///</summary>
+        public ISearchAgentStatusesPaginator SearchAgentStatuses(SearchAgentStatusesRequest request) 
+        {
+            return new SearchAgentStatusesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchAvailablePhoneNumbers operation
         ///</summary>
         public ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request) 
         {
             return new SearchAvailablePhoneNumbersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchContactFlowModules operation
+        ///</summary>
+        public ISearchContactFlowModulesPaginator SearchContactFlowModules(SearchContactFlowModulesRequest request) 
+        {
+            return new SearchContactFlowModulesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchContactFlows operation
+        ///</summary>
+        public ISearchContactFlowsPaginator SearchContactFlows(SearchContactFlowsRequest request) 
+        {
+            return new SearchContactFlowsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -482,6 +514,14 @@ namespace Amazon.Connect.Model
         public ISearchSecurityProfilesPaginator SearchSecurityProfiles(SearchSecurityProfilesRequest request) 
         {
             return new SearchSecurityProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchUserHierarchyGroups operation
+        ///</summary>
+        public ISearchUserHierarchyGroupsPaginator SearchUserHierarchyGroups(SearchUserHierarchyGroupsRequest request) 
+        {
+            return new SearchUserHierarchyGroupsPaginator(this.client, request);
         }
 
         /// <summary>

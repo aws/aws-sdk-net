@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public ConnectionAlias Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectionAlias unmarshalledObject = new ConnectionAlias();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

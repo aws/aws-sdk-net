@@ -57,6 +57,8 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         public OrganizationalUnit Unmarshall(JsonUnmarshallerContext context)
         {
             OrganizationalUnit unmarshalledObject = new OrganizationalUnit();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

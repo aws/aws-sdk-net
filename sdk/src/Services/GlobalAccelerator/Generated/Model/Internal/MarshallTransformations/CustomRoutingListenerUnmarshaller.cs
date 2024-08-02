@@ -57,6 +57,8 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         public CustomRoutingListener Unmarshall(JsonUnmarshallerContext context)
         {
             CustomRoutingListener unmarshalledObject = new CustomRoutingListener();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

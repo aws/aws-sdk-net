@@ -57,6 +57,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         public TemplateParameterConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TemplateParameterConfiguration unmarshalledObject = new TemplateParameterConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

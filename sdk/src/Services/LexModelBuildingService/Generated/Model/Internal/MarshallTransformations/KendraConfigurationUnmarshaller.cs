@@ -57,6 +57,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         public KendraConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             KendraConfiguration unmarshalledObject = new KendraConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

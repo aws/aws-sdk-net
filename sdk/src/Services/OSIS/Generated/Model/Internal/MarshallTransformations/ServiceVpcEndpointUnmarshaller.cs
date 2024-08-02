@@ -57,6 +57,8 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         public ServiceVpcEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceVpcEndpoint unmarshalledObject = new ServiceVpcEndpoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

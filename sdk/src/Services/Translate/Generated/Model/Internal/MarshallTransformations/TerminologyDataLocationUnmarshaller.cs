@@ -57,6 +57,8 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         public TerminologyDataLocation Unmarshall(JsonUnmarshallerContext context)
         {
             TerminologyDataLocation unmarshalledObject = new TerminologyDataLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

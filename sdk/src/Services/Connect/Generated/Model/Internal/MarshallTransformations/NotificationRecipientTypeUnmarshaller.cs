@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public NotificationRecipientType Unmarshall(JsonUnmarshallerContext context)
         {
             NotificationRecipientType unmarshalledObject = new NotificationRecipientType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

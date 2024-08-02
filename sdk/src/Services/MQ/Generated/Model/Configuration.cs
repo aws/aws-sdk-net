@@ -144,9 +144,10 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// Required. The broker engine's version. For a list of supported engine versions, see,
-        /// <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
-        /// engines</a>.
+        /// The broker engine version. Defaults to the latest available version for the specified
+        /// broker engine type. For a list of supported engine versions, see the <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/activemq-version-management.html">ActiveMQ
+        /// version management</a> and the <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/rabbitmq-version-management.html">RabbitMQ
+        /// version management</a> sections in the Amazon MQ Developer Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

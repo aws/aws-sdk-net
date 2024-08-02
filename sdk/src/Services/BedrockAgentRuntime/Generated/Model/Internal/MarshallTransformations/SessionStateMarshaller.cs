@@ -48,10 +48,42 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetFiles())
+            {
+                context.Writer.WritePropertyName("files");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFilesListValue in requestObject.Files)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InputFileMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFilesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetInvocationId())
             {
                 context.Writer.WritePropertyName("invocationId");
                 context.Writer.Write(requestObject.InvocationId);
+            }
+
+            if(requestObject.IsSetKnowledgeBaseConfigurations())
+            {
+                context.Writer.WritePropertyName("knowledgeBaseConfigurations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectKnowledgeBaseConfigurationsListValue in requestObject.KnowledgeBaseConfigurations)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KnowledgeBaseConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectKnowledgeBaseConfigurationsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetPromptSessionAttributes())

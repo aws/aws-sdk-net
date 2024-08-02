@@ -57,6 +57,8 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         public VpcConfigOutput Unmarshall(JsonUnmarshallerContext context)
         {
             VpcConfigOutput unmarshalledObject = new VpcConfigOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

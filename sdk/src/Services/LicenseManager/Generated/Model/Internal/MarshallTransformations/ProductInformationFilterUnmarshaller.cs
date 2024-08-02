@@ -57,6 +57,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         public ProductInformationFilter Unmarshall(JsonUnmarshallerContext context)
         {
             ProductInformationFilter unmarshalledObject = new ProductInformationFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public GeoSpatialColumnGroup Unmarshall(JsonUnmarshallerContext context)
         {
             GeoSpatialColumnGroup unmarshalledObject = new GeoSpatialColumnGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

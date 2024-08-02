@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Describes the backend properties associated with an Amplify <c>Branch</c>.
+    /// Describes the backend associated with an Amplify <c>Branch</c>.
+    /// 
+    ///  
+    /// <para>
+    /// This property is available to Amplify Gen 2 apps only. When you deploy an application
+    /// with Amplify Gen 2, you provision the app's backend infrastructure using Typescript
+    /// code.
+    /// </para>
     /// </summary>
     public partial class Backend
     {

@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public DefaultServerSideEncryption Unmarshall(JsonUnmarshallerContext context)
         {
             DefaultServerSideEncryption unmarshalledObject = new DefaultServerSideEncryption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

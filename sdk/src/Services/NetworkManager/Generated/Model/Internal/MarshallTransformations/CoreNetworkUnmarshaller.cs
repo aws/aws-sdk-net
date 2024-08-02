@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public CoreNetwork Unmarshall(JsonUnmarshallerContext context)
         {
             CoreNetwork unmarshalledObject = new CoreNetwork();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -98,6 +100,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GlobalNetworkId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFunctionGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CoreNetworkNetworkFunctionGroup, CoreNetworkNetworkFunctionGroupUnmarshaller>(CoreNetworkNetworkFunctionGroupUnmarshaller.Instance);
+                    unmarshalledObject.NetworkFunctionGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Segments", targetDepth))

@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public RepositoryTrigger Unmarshall(JsonUnmarshallerContext context)
         {
             RepositoryTrigger unmarshalledObject = new RepositoryTrigger();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

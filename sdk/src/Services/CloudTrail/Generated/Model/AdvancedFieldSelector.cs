@@ -302,6 +302,10 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>AWS::QApps:QApp</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>AWS::QBusiness::Application</c> 
         /// </para>
         ///  </li> <li> 
@@ -366,15 +370,19 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>AWS::SWF::Domain</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>AWS::SQS::Queue</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>AWS::SSM::ManagedNode</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>AWS::SSMMessages::ControlChannel</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::SWF::Domain</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -396,6 +404,10 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         ///  <c>AWS::VerifiedPermissions::PolicyStore</c> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::XRay::Trace</c> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  You can have only one <c>resources.type</c> ﬁeld per selector. To log data events
@@ -406,10 +418,22 @@ namespace Amazon.CloudTrail.Model
         ///  <b> <c>resources.ARN</c> </b> - You can use any operator with <c>resources.ARN</c>,
         /// but if you use <c>Equals</c> or <c>NotEquals</c>, the value must exactly match the
         /// ARN of a valid resource of the type you've speciﬁed in the template as the value of
-        /// resources.type. For example, if resources.type equals <c>AWS::S3::Object</c>, the
-        /// ARN must be in one of the following formats. To log all data events for all objects
-        /// in a specific S3 bucket, use the <c>StartsWith</c> operator, and include only the
-        /// bucket ARN as the matching value.
+        /// resources.type.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't use the <c>resources.ARN</c> field to filter resource types that do not
+        /// have ARNs.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The <c>resources.ARN</c> field can be set one of the following.
+        /// </para>
+        ///  
+        /// <para>
+        /// If resources.type equals <c>AWS::S3::Object</c>, the ARN must be in one of the following
+        /// formats. To log all data events for all objects in a specific S3 bucket, use the <c>StartsWith</c>
+        /// operator, and include only the bucket ARN as the matching value.
         /// </para>
         ///  
         /// <para>
@@ -757,6 +781,16 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::QApps:QApp</c>, and the operator is set
+        /// to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:qapps:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_UUID&gt;/qapp/&lt;qapp_UUID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// When <c>resources.type</c> equals <c>AWS::QBusiness::Application</c>, and the operator
         /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
         /// </para>
@@ -928,22 +962,28 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When <c>resources.type</c> equals <c>AWS::SWF::Domain</c>, and the operator is set
-        /// to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</c>
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
         /// When <c>resources.type</c> equals <c>AWS::SQS::Queue</c>, and the operator is set
         /// to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::SSM::ManagedNode</c>, and the operator is
+        /// set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in one of the following
+        /// formats:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:ssm:&lt;region&gt;:&lt;account_ID&gt;:managed-instance/&lt;instance_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:ec2:&lt;region&gt;:&lt;account_ID&gt;:instance/&lt;instance_ID&gt;</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -955,6 +995,16 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::SWF::Domain</c>, and the operator is set
+        /// to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</c>
         /// 
         /// </para>
         ///  </li> </ul> 

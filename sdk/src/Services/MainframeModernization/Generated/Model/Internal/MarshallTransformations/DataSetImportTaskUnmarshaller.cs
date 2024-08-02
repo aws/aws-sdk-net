@@ -57,6 +57,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         public DataSetImportTask Unmarshall(JsonUnmarshallerContext context)
         {
             DataSetImportTask unmarshalledObject = new DataSetImportTask();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

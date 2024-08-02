@@ -41,15 +41,39 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class SessionState
     {
+        private List<InputFile> _files = AWSConfigs.InitializeCollections ? new List<InputFile>() : null;
         private string _invocationId;
+        private List<KnowledgeBaseConfiguration> _knowledgeBaseConfigurations = AWSConfigs.InitializeCollections ? new List<KnowledgeBaseConfiguration>() : null;
         private Dictionary<string, string> _promptSessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<InvocationResultMember> _returnControlInvocationResults = AWSConfigs.InitializeCollections ? new List<InvocationResultMember>() : null;
         private Dictionary<string, string> _sessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
+        /// Gets and sets the property Files. 
+        /// <para>
+        /// Contains information about the files used by code interpreter.
+        /// </para>
+        /// </summary>
+        public List<InputFile> Files
+        {
+            get { return this._files; }
+            set { this._files = value; }
+        }
+
+        // Check to see if Files property is set
+        internal bool IsSetFiles()
+        {
+            return this._files != null && (this._files.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property InvocationId. 
         /// <para>
-        /// The identifier of the invocation.
+        /// The identifier of the invocation of an action. This value must match the <c>invocationId</c>
+        /// returned in the <c>InvokeAgent</c> response for the action whose results are provided
+        /// in the <c>returnControlInvocationResults</c> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+        /// control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+        /// session context</a>.
         /// </para>
         /// </summary>
         public string InvocationId
@@ -62,6 +86,26 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetInvocationId()
         {
             return this._invocationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KnowledgeBaseConfigurations. 
+        /// <para>
+        /// An array of configurations, each of which applies to a knowledge base attached to
+        /// the agent.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<KnowledgeBaseConfiguration> KnowledgeBaseConfigurations
+        {
+            get { return this._knowledgeBaseConfigurations; }
+            set { this._knowledgeBaseConfigurations = value; }
+        }
+
+        // Check to see if KnowledgeBaseConfigurations property is set
+        internal bool IsSetKnowledgeBaseConfigurations()
+        {
+            return this._knowledgeBaseConfigurations != null && (this._knowledgeBaseConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,8 +132,16 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ReturnControlInvocationResults. 
         /// <para>
-        /// Contains information about the results from the action group invocation.
+        /// Contains information about the results from the action group invocation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+        /// control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+        /// session context</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you include this field, the <c>inputText</c> field will be ignored.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
         public List<InvocationResultMember> ReturnControlInvocationResults

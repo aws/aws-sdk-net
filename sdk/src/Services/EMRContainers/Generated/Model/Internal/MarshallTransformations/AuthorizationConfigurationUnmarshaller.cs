@@ -57,6 +57,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         public AuthorizationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AuthorizationConfiguration unmarshalledObject = new AuthorizationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

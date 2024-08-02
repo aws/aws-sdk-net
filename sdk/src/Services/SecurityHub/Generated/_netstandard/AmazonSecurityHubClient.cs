@@ -4678,13 +4678,20 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// <c>UpdateFindings</c> is deprecated. Instead of <c>UpdateFindings</c>, use <c>BatchUpdateFindings</c>.
+        /// <c>UpdateFindings</c> is a deprecated operation. Instead of <c>UpdateFindings</c>,
+        /// use the <c>BatchUpdateFindings</c> operation.
         /// 
         ///  
         /// <para>
         /// Updates the <c>Note</c> and <c>RecordState</c> of the Security Hub-aggregated findings
         /// that the filter attributes specify. Any member account that can view the finding also
         /// sees the update to the finding.
+        /// </para>
+        ///  
+        /// <para>
+        /// Finding updates made with <c>UpdateFindings</c> might not be persisted if the same
+        /// finding is later updated by the finding provider through the <c>BatchImportFindings</c>
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindings service method.</param>
@@ -5008,8 +5015,32 @@ namespace Amazon.SecurityHub
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonSecurityHubEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonSecurityHubEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

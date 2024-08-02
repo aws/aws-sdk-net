@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public NumericEqualityDrillDownFilter Unmarshall(JsonUnmarshallerContext context)
         {
             NumericEqualityDrillDownFilter unmarshalledObject = new NumericEqualityDrillDownFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

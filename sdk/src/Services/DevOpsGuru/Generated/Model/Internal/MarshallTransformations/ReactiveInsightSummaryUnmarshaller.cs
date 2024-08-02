@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public ReactiveInsightSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ReactiveInsightSummary unmarshalledObject = new ReactiveInsightSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

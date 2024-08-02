@@ -40,7 +40,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property InputSourceARN. 
         /// <para>
-        /// An Glue table ARN for the input source table.
+        /// An Glue table Amazon Resource Name (ARN) or a matching workflow ARN for the input
+        /// source table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -57,6 +57,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         public ClientCertAuthSettings Unmarshall(JsonUnmarshallerContext context)
         {
             ClientCertAuthSettings unmarshalledObject = new ClientCertAuthSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

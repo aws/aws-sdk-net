@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public RealTimeContactAnalysisSegmentCategories Unmarshall(JsonUnmarshallerContext context)
         {
             RealTimeContactAnalysisSegmentCategories unmarshalledObject = new RealTimeContactAnalysisSegmentCategories();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

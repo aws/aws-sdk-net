@@ -73,6 +73,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.TrustStoreArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("TrustStoreAssociationStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TrustStoreAssociationStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

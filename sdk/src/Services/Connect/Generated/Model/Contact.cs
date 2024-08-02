@@ -35,9 +35,15 @@ namespace Amazon.Connect.Model
     public partial class Contact
     {
         private AgentInfo _agentInfo;
+        private AnsweringMachineDetectionStatus _answeringMachineDetectionStatus;
         private string _arn;
+        private Campaign _campaign;
         private Channel _channel;
+        private DateTime? _connectedToSystemTimestamp;
+        private Customer _customer;
+        private CustomerVoiceActivity _customerVoiceActivity;
         private string _description;
+        private DisconnectDetails _disconnectDetails;
         private DateTime? _disconnectTimestamp;
         private string _id;
         private string _initialContactId;
@@ -48,11 +54,14 @@ namespace Amazon.Connect.Model
         private DateTime? _lastUpdateTimestamp;
         private string _name;
         private string _previousContactId;
+        private QualityMetrics _qualityMetrics;
         private QueueInfo _queueInfo;
         private long? _queuePriority;
         private int? _queueTimeAdjustmentSeconds;
         private string _relatedContactId;
+        private RoutingCriteria _routingCriteria;
         private DateTime? _scheduledTimestamp;
+        private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _totalPauseCount;
         private int? _totalPauseDurationInSeconds;
@@ -77,6 +86,25 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AnsweringMachineDetectionStatus. 
+        /// <para>
+        /// Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound
+        /// campaign</a> call is actually disposed if the contact is connected to Amazon Connect.
+        /// </para>
+        /// </summary>
+        public AnsweringMachineDetectionStatus AnsweringMachineDetectionStatus
+        {
+            get { return this._answeringMachineDetectionStatus; }
+            set { this._answeringMachineDetectionStatus = value; }
+        }
+
+        // Check to see if AnsweringMachineDetectionStatus property is set
+        internal bool IsSetAnsweringMachineDetectionStatus()
+        {
+            return this._answeringMachineDetectionStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the contact.
@@ -92,6 +120,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Campaign.
+        /// </summary>
+        public Campaign Campaign
+        {
+            get { return this._campaign; }
+            set { this._campaign = value; }
+        }
+
+        // Check to see if Campaign property is set
+        internal bool IsSetCampaign()
+        {
+            return this._campaign != null;
         }
 
         /// <summary>
@@ -113,6 +156,60 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectedToSystemTimestamp. 
+        /// <para>
+        /// The timestamp when customer endpoint connected to Amazon Connect.
+        /// </para>
+        /// </summary>
+        public DateTime ConnectedToSystemTimestamp
+        {
+            get { return this._connectedToSystemTimestamp.GetValueOrDefault(); }
+            set { this._connectedToSystemTimestamp = value; }
+        }
+
+        // Check to see if ConnectedToSystemTimestamp property is set
+        internal bool IsSetConnectedToSystemTimestamp()
+        {
+            return this._connectedToSystemTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Customer. 
+        /// <para>
+        /// Information about the Customer on the contact.
+        /// </para>
+        /// </summary>
+        public Customer Customer
+        {
+            get { return this._customer; }
+            set { this._customer = value; }
+        }
+
+        // Check to see if Customer property is set
+        internal bool IsSetCustomer()
+        {
+            return this._customer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerVoiceActivity. 
+        /// <para>
+        /// Information about customer’s voice activity.
+        /// </para>
+        /// </summary>
+        public CustomerVoiceActivity CustomerVoiceActivity
+        {
+            get { return this._customerVoiceActivity; }
+            set { this._customerVoiceActivity = value; }
+        }
+
+        // Check to see if CustomerVoiceActivity property is set
+        internal bool IsSetCustomerVoiceActivity()
+        {
+            return this._customerVoiceActivity != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the contact.
@@ -129,6 +226,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisconnectDetails. 
+        /// <para>
+        /// Information about the call disconnect experience.
+        /// </para>
+        /// </summary>
+        public DisconnectDetails DisconnectDetails
+        {
+            get { return this._disconnectDetails; }
+            set { this._disconnectDetails = value; }
+        }
+
+        // Check to see if DisconnectDetails property is set
+        internal bool IsSetDisconnectDetails()
+        {
+            return this._disconnectDetails != null;
         }
 
         /// <summary>
@@ -322,6 +437,24 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QualityMetrics. 
+        /// <para>
+        /// Information about the quality of the participant's media connection.
+        /// </para>
+        /// </summary>
+        public QualityMetrics QualityMetrics
+        {
+            get { return this._qualityMetrics; }
+            set { this._qualityMetrics = value; }
+        }
+
+        // Check to see if QualityMetrics property is set
+        internal bool IsSetQualityMetrics()
+        {
+            return this._qualityMetrics != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property QueueInfo. 
         /// <para>
         /// If this contact was queued, this contains information about the queue. 
@@ -403,6 +536,24 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RoutingCriteria. 
+        /// <para>
+        /// Latest routing criteria on the contact.
+        /// </para>
+        /// </summary>
+        public RoutingCriteria RoutingCriteria
+        {
+            get { return this._routingCriteria; }
+            set { this._routingCriteria = value; }
+        }
+
+        // Check to see if RoutingCriteria property is set
+        internal bool IsSetRoutingCriteria()
+        {
+            return this._routingCriteria != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ScheduledTimestamp. 
         /// <para>
         /// The timestamp, in Unix epoch time format, at which to start running the inbound flow.
@@ -419,6 +570,28 @@ namespace Amazon.Connect.Model
         internal bool IsSetScheduledTimestamp()
         {
             return this._scheduledTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentAttributes. 
+        /// <para>
+        /// A set of system defined key-value pairs stored on individual contact segments using
+        /// an attribute map. The attributes are standard Amazon Connect attributes and can be
+        /// accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters.
+        /// This field can be used to show channel subtype. For example, <c>connect:Guide</c>
+        /// or <c>connect:SMS</c>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, SegmentAttributeValue> SegmentAttributes
+        {
+            get { return this._segmentAttributes; }
+            set { this._segmentAttributes = value; }
+        }
+
+        // Check to see if SegmentAttributes property is set
+        internal bool IsSetSegmentAttributes()
+        {
+            return this._segmentAttributes != null && (this._segmentAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

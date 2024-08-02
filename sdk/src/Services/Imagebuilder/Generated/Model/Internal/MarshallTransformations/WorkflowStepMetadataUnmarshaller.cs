@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public WorkflowStepMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             WorkflowStepMetadata unmarshalledObject = new WorkflowStepMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

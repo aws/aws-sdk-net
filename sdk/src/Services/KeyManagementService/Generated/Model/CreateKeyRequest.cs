@@ -97,10 +97,14 @@ namespace Amazon.KeyManagementService.Model
     /// Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, or an
     /// SM2 key pair (China Regions only). The private key in an asymmetric KMS key never
     /// leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a> operation to
-    /// download the public key so it can be used outside of KMS. KMS keys with RSA or SM2
-    /// key pairs can be used to encrypt or decrypt data or sign and verify messages (but
-    /// not both). KMS keys with ECC key pairs can be used only to sign and verify messages.
-    /// For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+    /// download the public key so it can be used outside of KMS. Each KMS key can have only
+    /// one key usage. KMS keys with RSA key pairs can be used to encrypt and decrypt data
+    /// or sign and verify messages (but not both). KMS keys with NIST-recommended ECC key
+    /// pairs can be used to sign and verify messages or derive shared secrets (but not both).
+    /// KMS keys with <c>ECC_SECG_P256K1</c> can be used only to sign and verify messages.
+    /// KMS keys with SM2 key pairs (China Regions only) can be used to either encrypt and
+    /// decrypt data, sign and verify messages, or derive shared secrets (you must choose
+    /// one key usage type). For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
     /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
@@ -473,7 +477,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Asymmetric RSA key pairs
+        /// Asymmetric RSA key pairs (encryption and decryption -or- signing and verification)
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -489,7 +493,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Asymmetric NIST-recommended elliptic curve key pairs
+        /// Asymmetric NIST-recommended elliptic curve key pairs (signing and verification -or-
+        /// deriving shared secrets)
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -505,7 +510,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Other asymmetric elliptic curve key pairs
+        /// Other asymmetric elliptic curve key pairs (signing and verification)
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -513,11 +518,12 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// SM2 key pairs (China Regions only)
+        /// SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving
+        /// shared secrets)
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>SM2</c> 
+        ///  <c>SM2</c> (China Regions only)
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -555,16 +561,21 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For asymmetric KMS keys with RSA key material, specify <c>ENCRYPT_DECRYPT</c> or <c>SIGN_VERIFY</c>.
+        /// For asymmetric KMS keys with RSA key pairs, specify <c>ENCRYPT_DECRYPT</c> or <c>SIGN_VERIFY</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For asymmetric KMS keys with ECC key material, specify <c>SIGN_VERIFY</c>.
+        /// For asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify <c>SIGN_VERIFY</c>
+        /// or <c>KEY_AGREEMENT</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For asymmetric KMS keys with SM2 key material (China Regions only), specify <c>ENCRYPT_DECRYPT</c>
-        /// or <c>SIGN_VERIFY</c>.
+        /// For asymmetric KMS keys with <c>ECC_SECG_P256K1</c> key pairs specify <c>SIGN_VERIFY</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <c>ENCRYPT_DECRYPT</c>,
+        /// <c>SIGN_VERIFY</c>, or <c>KEY_AGREEMENT</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -60,7 +60,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property Findings. 
         /// <para>
-        ///  A list of all requested findings.
+        ///  A list of all findings which were successfully fetched.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

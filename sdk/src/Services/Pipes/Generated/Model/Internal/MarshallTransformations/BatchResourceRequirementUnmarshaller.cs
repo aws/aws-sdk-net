@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public BatchResourceRequirement Unmarshall(JsonUnmarshallerContext context)
         {
             BatchResourceRequirement unmarshalledObject = new BatchResourceRequirement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

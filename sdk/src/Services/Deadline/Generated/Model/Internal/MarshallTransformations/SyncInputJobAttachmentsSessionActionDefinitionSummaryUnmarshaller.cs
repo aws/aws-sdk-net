@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public SyncInputJobAttachmentsSessionActionDefinitionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SyncInputJobAttachmentsSessionActionDefinitionSummary unmarshalledObject = new SyncInputJobAttachmentsSessionActionDefinitionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

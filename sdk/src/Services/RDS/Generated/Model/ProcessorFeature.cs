@@ -105,8 +105,9 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring
-    /// the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i> 
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">
+    /// Configuring the processor for a DB instance class in RDS for Oracle</a> in the <i>Amazon
+    /// RDS User Guide. </i> 
     /// </para>
     /// </summary>
     public partial class ProcessorFeature
@@ -135,7 +136,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of a processor feature name.
+        /// The value of a processor feature.
         /// </para>
         /// </summary>
         public string Value

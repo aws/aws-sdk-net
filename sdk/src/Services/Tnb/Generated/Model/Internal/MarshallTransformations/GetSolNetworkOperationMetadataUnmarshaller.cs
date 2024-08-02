@@ -57,6 +57,8 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         public GetSolNetworkOperationMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             GetSolNetworkOperationMetadata unmarshalledObject = new GetSolNetworkOperationMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -70,10 +72,28 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("instantiateMetadata", targetDepth))
+                {
+                    var unmarshaller = InstantiateMetadataUnmarshaller.Instance;
+                    unmarshalledObject.InstantiateMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastModified", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("modifyVnfInfoMetadata", targetDepth))
+                {
+                    var unmarshaller = ModifyVnfInfoMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ModifyVnfInfoMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("updateNsMetadata", targetDepth))
+                {
+                    var unmarshaller = UpdateNsMetadataUnmarshaller.Instance;
+                    unmarshalledObject.UpdateNsMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -5,11 +5,13 @@
     "endpointPrefix":"batch",
     "jsonVersion":"1.1",
     "protocol":"rest-json",
+    "protocols":["rest-json"],
     "serviceAbbreviation":"AWS Batch",
     "serviceFullName":"AWS Batch",
     "serviceId":"Batch",
     "signatureVersion":"v4",
-    "uid":"batch-2016-08-10"
+    "uid":"batch-2016-08-10",
+    "auth":["aws.auth#sigv4"]
   },
   "operations":{
     "CancelJob":{
@@ -176,6 +178,19 @@
       },
       "input":{"shape":"DescribeSchedulingPoliciesRequest"},
       "output":{"shape":"DescribeSchedulingPoliciesResponse"},
+      "errors":[
+        {"shape":"ClientException"},
+        {"shape":"ServerException"}
+      ]
+    },
+    "GetJobQueueSnapshot":{
+      "name":"GetJobQueueSnapshot",
+      "http":{
+        "method":"POST",
+        "requestUri":"/v1/getjobqueuesnapshot"
+      },
+      "input":{"shape":"GetJobQueueSnapshotRequest"},
+      "output":{"shape":"GetJobQueueSnapshotResponse"},
       "errors":[
         {"shape":"ClientException"},
         {"shape":"ServerException"}
@@ -1009,6 +1024,7 @@
       "members":{
         "containers":{"shape":"EksAttemptContainerDetails"},
         "initContainers":{"shape":"EksAttemptContainerDetails"},
+        "eksClusterArn":{"shape":"String"},
         "podName":{"shape":"String"},
         "nodeName":{"shape":"String"},
         "startedAt":{"shape":"Long"},
@@ -1279,6 +1295,37 @@
       }
     },
     "Float":{"type":"float"},
+    "FrontOfQueueDetail":{
+      "type":"structure",
+      "members":{
+        "jobs":{"shape":"FrontOfQueueJobSummaryList"},
+        "lastUpdatedAt":{"shape":"Long"}
+      }
+    },
+    "FrontOfQueueJobSummary":{
+      "type":"structure",
+      "members":{
+        "jobArn":{"shape":"String"},
+        "earliestTimeAtPosition":{"shape":"Long"}
+      }
+    },
+    "FrontOfQueueJobSummaryList":{
+      "type":"list",
+      "member":{"shape":"FrontOfQueueJobSummary"}
+    },
+    "GetJobQueueSnapshotRequest":{
+      "type":"structure",
+      "required":["jobQueue"],
+      "members":{
+        "jobQueue":{"shape":"String"}
+      }
+    },
+    "GetJobQueueSnapshotResponse":{
+      "type":"structure",
+      "members":{
+        "frontOfQueue":{"shape":"FrontOfQueueDetail"}
+      }
+    },
     "Host":{
       "type":"structure",
       "members":{
@@ -1746,7 +1793,8 @@
         "targetNodes":{"shape":"String"},
         "containerOverrides":{"shape":"ContainerOverrides"},
         "ecsPropertiesOverride":{"shape":"EcsPropertiesOverride"},
-        "instanceTypes":{"shape":"StringList"}
+        "instanceTypes":{"shape":"StringList"},
+        "eksPropertiesOverride":{"shape":"EksPropertiesOverride"}
       }
     },
     "NodePropertyOverrides":{
@@ -1764,7 +1812,8 @@
         "targetNodes":{"shape":"String"},
         "container":{"shape":"ContainerProperties"},
         "instanceTypes":{"shape":"StringList"},
-        "ecsProperties":{"shape":"EcsProperties"}
+        "ecsProperties":{"shape":"EcsProperties"},
+        "eksProperties":{"shape":"EksProperties"}
       }
     },
     "OrchestrationType":{

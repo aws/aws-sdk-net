@@ -219,6 +219,21 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
             #endregion
         }
 
+        public void ElasticLoadBalancingV2DeleteSharedTrustStoreAssociation()
+        {
+            #region delete-a-shared-trust-store-association-1721684063527
+
+            var client = new AmazonElasticLoadBalancingV2Client();
+            var response = client.DeleteSharedTrustStoreAssociation(new DeleteSharedTrustStoreAssociationRequest 
+            {
+                ResourceArn = "arn:aws:elasticloadbalancing:us-east-1:123456789012:loadbalancer/app/my-load-balancer/80233fa81d678c2c",
+                TrustStoreArn = "arn:aws:elasticloadbalancing:us-east-1:123456789012:truststore/my-trust-store/73e2d6bc24d8a063"
+            });
+
+
+            #endregion
+        }
+
         public void ElasticLoadBalancingV2DeleteTargetGroup()
         {
             #region elbv2-delete-target-group-1
@@ -414,6 +429,20 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
             });
 
             List<TargetHealthDescription> targetHealthDescriptions = response.TargetHealthDescriptions;
+
+            #endregion
+        }
+
+        public void ElasticLoadBalancingV2GetResourcePolicy()
+        {
+            #region retrieve-a-resource-policy-1721684356628
+
+            var client = new AmazonElasticLoadBalancingV2Client();
+            var response = client.GetResourcePolicy(new GetResourcePolicyRequest 
+            {
+                ResourceArn = "arn:aws:elasticloadbalancing:us-east-1:123456789012:truststore/my-trust-store/73e2d6bc24d8a067"
+            });
+
 
             #endregion
         }

@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public PipeEnrichmentHttpParameters Unmarshall(JsonUnmarshallerContext context)
         {
             PipeEnrichmentHttpParameters unmarshalledObject = new PipeEnrichmentHttpParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

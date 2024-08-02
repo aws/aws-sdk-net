@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public ResourceCreationLimitPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceCreationLimitPolicy unmarshalledObject = new ResourceCreationLimitPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

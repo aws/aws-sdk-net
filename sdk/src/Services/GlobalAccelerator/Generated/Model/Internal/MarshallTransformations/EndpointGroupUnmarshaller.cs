@@ -57,6 +57,8 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         public EndpointGroup Unmarshall(JsonUnmarshallerContext context)
         {
             EndpointGroup unmarshalledObject = new EndpointGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

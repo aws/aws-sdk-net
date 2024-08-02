@@ -57,6 +57,8 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         public SentimentResponse Unmarshall(JsonUnmarshallerContext context)
         {
             SentimentResponse unmarshalledObject = new SentimentResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

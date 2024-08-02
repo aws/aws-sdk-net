@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public PhoneNumberField Unmarshall(JsonUnmarshallerContext context)
         {
             PhoneNumberField unmarshalledObject = new PhoneNumberField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

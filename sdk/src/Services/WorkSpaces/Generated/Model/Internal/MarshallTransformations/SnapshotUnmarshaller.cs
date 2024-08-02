@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public Snapshot Unmarshall(JsonUnmarshallerContext context)
         {
             Snapshot unmarshalledObject = new Snapshot();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

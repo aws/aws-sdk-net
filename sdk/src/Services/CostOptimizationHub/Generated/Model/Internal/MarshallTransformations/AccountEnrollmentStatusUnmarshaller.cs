@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public AccountEnrollmentStatus Unmarshall(JsonUnmarshallerContext context)
         {
             AccountEnrollmentStatus unmarshalledObject = new AccountEnrollmentStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

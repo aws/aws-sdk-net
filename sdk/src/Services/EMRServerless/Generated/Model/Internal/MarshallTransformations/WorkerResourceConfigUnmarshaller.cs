@@ -57,6 +57,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         public WorkerResourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             WorkerResourceConfig unmarshalledObject = new WorkerResourceConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

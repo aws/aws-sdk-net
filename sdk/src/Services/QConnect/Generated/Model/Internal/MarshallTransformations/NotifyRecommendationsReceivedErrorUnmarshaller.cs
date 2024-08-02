@@ -57,6 +57,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         public NotifyRecommendationsReceivedError Unmarshall(JsonUnmarshallerContext context)
         {
             NotifyRecommendationsReceivedError unmarshalledObject = new NotifyRecommendationsReceivedError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

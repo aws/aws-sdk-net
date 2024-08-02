@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public HolidayConfigAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             HolidayConfigAttributes unmarshalledObject = new HolidayConfigAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

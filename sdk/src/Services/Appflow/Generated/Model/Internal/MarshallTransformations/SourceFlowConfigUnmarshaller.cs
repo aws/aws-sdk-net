@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public SourceFlowConfig Unmarshall(JsonUnmarshallerContext context)
         {
             SourceFlowConfig unmarshalledObject = new SourceFlowConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

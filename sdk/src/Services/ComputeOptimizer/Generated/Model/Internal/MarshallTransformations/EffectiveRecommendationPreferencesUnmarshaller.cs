@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public EffectiveRecommendationPreferences Unmarshall(JsonUnmarshallerContext context)
         {
             EffectiveRecommendationPreferences unmarshalledObject = new EffectiveRecommendationPreferences();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -34,10 +34,16 @@ namespace Amazon.ResilienceHub
     public partial class AmazonResilienceHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("resiliencehub", "4.0.0.0");
 
         private static readonly AmazonResilienceHubEndpointResolver EndpointResolver =
             new AmazonResilienceHubEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("resiliencehub", "3.7.300.84");
+=======
+            InternalSDKUtils.BuildUserAgentString("resiliencehub", "3.7.401.0");
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -57,6 +57,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         public SMBLocalGroups Unmarshall(JsonUnmarshallerContext context)
         {
             SMBLocalGroups unmarshalledObject = new SMBLocalGroups();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

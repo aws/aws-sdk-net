@@ -449,7 +449,7 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1, Max=10000)]
+        [AWSProperty(Min=1, Max=30000)]
         public string ManagedServiceData
         {
             get { return this._managedServiceData; }

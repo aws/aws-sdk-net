@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public AutoScalingTargetTrackingScalingPolicyConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             AutoScalingTargetTrackingScalingPolicyConfigurationDescription unmarshalledObject = new AutoScalingTargetTrackingScalingPolicyConfigurationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

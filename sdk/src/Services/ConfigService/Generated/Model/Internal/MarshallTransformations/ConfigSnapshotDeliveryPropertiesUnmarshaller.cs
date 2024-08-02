@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public ConfigSnapshotDeliveryProperties Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigSnapshotDeliveryProperties unmarshalledObject = new ConfigSnapshotDeliveryProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

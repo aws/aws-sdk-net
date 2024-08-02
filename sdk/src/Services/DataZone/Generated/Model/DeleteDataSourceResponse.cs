@@ -49,7 +49,9 @@ namespace Amazon.DataZone.Model
         private string _name;
         private string _projectId;
         private bool? _publishOnImport;
+        private bool? _retainPermissionsOnRevokeFailure;
         private ScheduleConfiguration _schedule;
+        private SelfGrantStatusOutput _selfGrantStatus;
         private DataSourceStatus _status;
         private string _type;
         private DateTime? _updatedAt;
@@ -336,6 +338,25 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RetainPermissionsOnRevokeFailure. 
+        /// <para>
+        /// Specifies that the granted permissions are retained in case of a self-subscribe functionality
+        /// failure for a data source.
+        /// </para>
+        /// </summary>
+        public bool RetainPermissionsOnRevokeFailure
+        {
+            get { return this._retainPermissionsOnRevokeFailure.GetValueOrDefault(); }
+            set { this._retainPermissionsOnRevokeFailure = value; }
+        }
+
+        // Check to see if RetainPermissionsOnRevokeFailure property is set
+        internal bool IsSetRetainPermissionsOnRevokeFailure()
+        {
+            return this._retainPermissionsOnRevokeFailure.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
         /// The schedule of runs for this data source.
@@ -352,6 +373,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetSchedule()
         {
             return this._schedule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfGrantStatus. 
+        /// <para>
+        /// Specifies the status of the self-granting functionality.
+        /// </para>
+        /// </summary>
+        public SelfGrantStatusOutput SelfGrantStatus
+        {
+            get { return this._selfGrantStatus; }
+            set { this._selfGrantStatus = value; }
+        }
+
+        // Check to see if SelfGrantStatus property is set
+        internal bool IsSetSelfGrantStatus()
+        {
+            return this._selfGrantStatus != null;
         }
 
         /// <summary>

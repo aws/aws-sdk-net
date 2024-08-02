@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ModelExplainabilityJobInput Unmarshall(JsonUnmarshallerContext context)
         {
             ModelExplainabilityJobInput unmarshalledObject = new ModelExplainabilityJobInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

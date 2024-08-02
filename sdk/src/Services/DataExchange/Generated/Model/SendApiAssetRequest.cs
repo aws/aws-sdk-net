@@ -61,7 +61,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if AssetId property is set
         internal bool IsSetAssetId()
         {
-            return this._assetId != null;
+            return !string.IsNullOrEmpty(this._assetId);
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if DataSetId property is set
         internal bool IsSetDataSetId()
         {
-            return this._dataSetId != null;
+            return !string.IsNullOrEmpty(this._dataSetId);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if Method property is set
         internal bool IsSetMethod()
         {
-            return this._method != null;
+            return !string.IsNullOrEmpty(this._method);
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this._path != null;
+            return !string.IsNullOrEmpty(this._path);
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if RevisionId property is set
         internal bool IsSetRevisionId()
         {
-            return this._revisionId != null;
+            return !string.IsNullOrEmpty(this._revisionId);
         }
 
     }

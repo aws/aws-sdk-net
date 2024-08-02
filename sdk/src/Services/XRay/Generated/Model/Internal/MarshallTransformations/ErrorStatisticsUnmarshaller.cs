@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public ErrorStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             ErrorStatistics unmarshalledObject = new ErrorStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

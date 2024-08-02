@@ -57,6 +57,8 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
         public NodeStructure Unmarshall(JsonUnmarshallerContext context)
         {
             NodeStructure unmarshalledObject = new NodeStructure();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

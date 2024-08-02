@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public PermissionsBoundary Unmarshall(JsonUnmarshallerContext context)
         {
             PermissionsBoundary unmarshalledObject = new PermissionsBoundary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -909,6 +909,10 @@ namespace Amazon.CodeBuild
     {
 
         /// <summary>
+        /// Constant ACTION_REQUIRED for FleetContextCode
+        /// </summary>
+        public static readonly FleetContextCode ACTION_REQUIRED = new FleetContextCode("ACTION_REQUIRED");
+        /// <summary>
         /// Constant CREATE_FAILED for FleetContextCode
         /// </summary>
         public static readonly FleetContextCode CREATE_FAILED = new FleetContextCode("CREATE_FAILED");
@@ -2538,6 +2542,56 @@ namespace Amazon.CodeBuild
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WebhookFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WebhookScopeType.
+    /// </summary>
+    public class WebhookScopeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GITHUB_GLOBAL for WebhookScopeType
+        /// </summary>
+        public static readonly WebhookScopeType GITHUB_GLOBAL = new WebhookScopeType("GITHUB_GLOBAL");
+        /// <summary>
+        /// Constant GITHUB_ORGANIZATION for WebhookScopeType
+        /// </summary>
+        public static readonly WebhookScopeType GITHUB_ORGANIZATION = new WebhookScopeType("GITHUB_ORGANIZATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WebhookScopeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebhookScopeType FindValue(string value)
+        {
+            return FindValue<WebhookScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebhookScopeType(string value)
         {
             return FindValue(value);
         }

@@ -130,7 +130,7 @@ namespace Amazon.ConnectParticipant.Model
         // Check to see if ParticipantToken property is set
         internal bool IsSetParticipantToken()
         {
-            return this._participantToken != null;
+            return !string.IsNullOrEmpty(this._participantToken);
         }
 
         /// <summary>

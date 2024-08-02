@@ -57,6 +57,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public LanguageModel Unmarshall(JsonUnmarshallerContext context)
         {
             LanguageModel unmarshalledObject = new LanguageModel();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

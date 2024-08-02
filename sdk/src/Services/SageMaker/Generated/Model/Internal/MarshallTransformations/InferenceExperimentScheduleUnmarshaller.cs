@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public InferenceExperimentSchedule Unmarshall(JsonUnmarshallerContext context)
         {
             InferenceExperimentSchedule unmarshalledObject = new InferenceExperimentSchedule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

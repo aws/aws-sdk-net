@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public TimePeriod Unmarshall(JsonUnmarshallerContext context)
         {
             TimePeriod unmarshalledObject = new TimePeriod();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

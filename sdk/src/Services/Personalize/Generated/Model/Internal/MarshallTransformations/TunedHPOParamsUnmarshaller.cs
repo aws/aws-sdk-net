@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public TunedHPOParams Unmarshall(JsonUnmarshallerContext context)
         {
             TunedHPOParams unmarshalledObject = new TunedHPOParams();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public AttachmentOutput Unmarshall(JsonUnmarshallerContext context)
         {
             AttachmentOutput unmarshalledObject = new AttachmentOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

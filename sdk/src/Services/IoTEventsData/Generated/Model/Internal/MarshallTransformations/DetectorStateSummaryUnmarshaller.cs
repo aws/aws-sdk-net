@@ -57,6 +57,8 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
         public DetectorStateSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DetectorStateSummary unmarshalledObject = new DetectorStateSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

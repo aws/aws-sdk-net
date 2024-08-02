@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public UserPausedDetails Unmarshall(JsonUnmarshallerContext context)
         {
             UserPausedDetails unmarshalledObject = new UserPausedDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -34,10 +34,16 @@ namespace Amazon.DocDB
     public partial class AmazonDocDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("DocDB", "4.0.0.0");
 
         private static readonly AmazonDocDBEndpointResolver EndpointResolver =
             new AmazonDocDBEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("DocDB", "3.7.303.16");
+=======
+            InternalSDKUtils.BuildUserAgentString("DocDB", "3.7.400.2");
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public CostCategoryReference Unmarshall(JsonUnmarshallerContext context)
         {
             CostCategoryReference unmarshalledObject = new CostCategoryReference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

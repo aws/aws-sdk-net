@@ -36,8 +36,7 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// For more information about preventing instances that are part of an Auto Scaling group
-    /// from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Use
     /// instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     ///  

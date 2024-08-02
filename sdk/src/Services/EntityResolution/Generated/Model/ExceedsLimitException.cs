@@ -32,7 +32,6 @@ namespace Amazon.EntityResolution.Model
     /// <summary>
     /// The request was rejected because it attempted to create resources beyond the current
     /// Entity Resolution account limits. The error message describes the limit exceeded.
-    /// <c>HTTP Status Code: 402</c>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

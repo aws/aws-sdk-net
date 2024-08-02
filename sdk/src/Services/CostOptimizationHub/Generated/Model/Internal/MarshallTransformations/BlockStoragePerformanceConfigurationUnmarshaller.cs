@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public BlockStoragePerformanceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             BlockStoragePerformanceConfiguration unmarshalledObject = new BlockStoragePerformanceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

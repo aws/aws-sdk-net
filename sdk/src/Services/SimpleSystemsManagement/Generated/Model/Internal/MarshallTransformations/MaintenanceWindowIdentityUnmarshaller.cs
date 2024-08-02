@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public MaintenanceWindowIdentity Unmarshall(JsonUnmarshallerContext context)
         {
             MaintenanceWindowIdentity unmarshalledObject = new MaintenanceWindowIdentity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

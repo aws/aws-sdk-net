@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public RelationshipsListItem Unmarshall(JsonUnmarshallerContext context)
         {
             RelationshipsListItem unmarshalledObject = new RelationshipsListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

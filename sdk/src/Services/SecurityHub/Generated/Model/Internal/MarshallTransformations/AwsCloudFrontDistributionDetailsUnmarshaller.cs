@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsCloudFrontDistributionDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsCloudFrontDistributionDetails unmarshalledObject = new AwsCloudFrontDistributionDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

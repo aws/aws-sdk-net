@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public DocumentIdOptions Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentIdOptions unmarshalledObject = new DocumentIdOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

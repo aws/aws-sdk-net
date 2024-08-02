@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public InternetConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             InternetConfiguration unmarshalledObject = new InternetConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

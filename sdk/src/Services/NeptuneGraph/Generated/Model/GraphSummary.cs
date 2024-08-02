@@ -162,8 +162,16 @@ namespace Amazon.NeptuneGraph.Model
         /// The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=128, Max=24576)]
         public int? ProvisionedMemory
+||||||| Commit version number update changes
+        [AWSProperty(Min=128, Max=24576)]
+        public int ProvisionedMemory
+=======
+        [AWSProperty(Min=32, Max=24576)]
+        public int ProvisionedMemory
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         {
             get { return this._provisionedMemory; }
             set { this._provisionedMemory = value; }

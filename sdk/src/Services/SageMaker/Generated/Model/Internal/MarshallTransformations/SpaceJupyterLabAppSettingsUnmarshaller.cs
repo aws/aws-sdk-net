@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public SpaceJupyterLabAppSettings Unmarshall(JsonUnmarshallerContext context)
         {
             SpaceJupyterLabAppSettings unmarshalledObject = new SpaceJupyterLabAppSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

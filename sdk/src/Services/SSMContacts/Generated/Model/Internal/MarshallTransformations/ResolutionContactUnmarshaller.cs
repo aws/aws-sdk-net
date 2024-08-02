@@ -57,6 +57,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         public ResolutionContact Unmarshall(JsonUnmarshallerContext context)
         {
             ResolutionContact unmarshalledObject = new ResolutionContact();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

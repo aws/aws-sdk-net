@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public Beaconing Unmarshall(JsonUnmarshallerContext context)
         {
             Beaconing unmarshalledObject = new Beaconing();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

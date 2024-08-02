@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The number of requests exceeds the service quota. Resubmit your request later.
+    /// Your request exceeds the service quota for your account. You can view your quotas
+    /// at <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/gs-request-quota.html">Viewing
+    /// service quotas</a>. You can resubmit your request later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -57,6 +57,8 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
         public NameValuePair Unmarshall(JsonUnmarshallerContext context)
         {
             NameValuePair unmarshalledObject = new NameValuePair();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

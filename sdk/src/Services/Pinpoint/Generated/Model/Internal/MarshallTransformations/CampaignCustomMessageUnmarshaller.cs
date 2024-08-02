@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public CampaignCustomMessage Unmarshall(JsonUnmarshallerContext context)
         {
             CampaignCustomMessage unmarshalledObject = new CampaignCustomMessage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

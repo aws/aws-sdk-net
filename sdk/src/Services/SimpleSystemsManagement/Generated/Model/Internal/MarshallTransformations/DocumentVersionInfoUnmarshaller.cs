@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public DocumentVersionInfo Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentVersionInfo unmarshalledObject = new DocumentVersionInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public KinesisAction Unmarshall(JsonUnmarshallerContext context)
         {
             KinesisAction unmarshalledObject = new KinesisAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

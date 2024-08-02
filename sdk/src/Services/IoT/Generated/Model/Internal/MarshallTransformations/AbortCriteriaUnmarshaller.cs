@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public AbortCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             AbortCriteria unmarshalledObject = new AbortCriteria();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

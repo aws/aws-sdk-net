@@ -148,8 +148,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property GeneratorId. 
         /// <para>
-        /// The identifier for the component that generated a finding such as AWSCodeGuruSecurity
-        /// or AWSInspector.
+        /// The identifier for the component that generated a finding such as AmazonCodeGuruSecurity.
         /// </para>
         /// </summary>
         public string GeneratorId
@@ -239,7 +238,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity of the finding.
+        /// The severity of the finding. Severity can be critical, high, medium, low, or informational.
+        /// For information on severity levels, see <a href="https://docs.aws.amazon.com/codeguru/latest/security-ug/findings-overview.html#severity-distribution">Finding
+        /// severity</a> in the <i>Amazon CodeGuru Security User Guide</i>.
         /// </para>
         /// </summary>
         public Severity Severity

@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public PullRequestSourceReferenceUpdatedEventMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             PullRequestSourceReferenceUpdatedEventMetadata unmarshalledObject = new PullRequestSourceReferenceUpdatedEventMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

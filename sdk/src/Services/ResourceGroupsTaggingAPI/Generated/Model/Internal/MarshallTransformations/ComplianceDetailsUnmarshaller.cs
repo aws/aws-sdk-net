@@ -57,6 +57,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
         public ComplianceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ComplianceDetails unmarshalledObject = new ComplianceDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public CustomIndicesInput Unmarshall(JsonUnmarshallerContext context)
         {
             CustomIndicesInput unmarshalledObject = new CustomIndicesInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

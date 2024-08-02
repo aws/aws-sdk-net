@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public PITPolicyRule Unmarshall(JsonUnmarshallerContext context)
         {
             PITPolicyRule unmarshalledObject = new PITPolicyRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

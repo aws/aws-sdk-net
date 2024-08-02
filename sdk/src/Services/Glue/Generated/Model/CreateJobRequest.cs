@@ -44,7 +44,9 @@ namespace Amazon.Glue.Model
         private ExecutionClass _executionClass;
         private ExecutionProperty _executionProperty;
         private string _glueVersion;
+        private JobMode _jobMode;
         private string _logUri;
+        private string _maintenanceWindow;
         private double? _maxCapacity;
         private int? _maxRetries;
         private string _name;
@@ -296,6 +298,41 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JobMode. 
+        /// <para>
+        /// A mode that describes how a job was created. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SCRIPT</c> - The job was created using the Glue Studio script editor.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VISUAL</c> - The job was created using the Glue Studio visual editor.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NOTEBOOK</c> - The job was created using an interactive sessions notebook.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When the <c>JobMode</c> field is missing or null, <c>SCRIPT</c> is assigned as the
+        /// default value.
+        /// </para>
+        /// </summary>
+        public JobMode JobMode
+        {
+            get { return this._jobMode; }
+            set { this._jobMode = value; }
+        }
+
+        // Check to see if JobMode property is set
+        internal bool IsSetJobMode()
+        {
+            return this._jobMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogUri. 
         /// <para>
         /// This field is reserved for future use.
@@ -311,6 +348,32 @@ namespace Amazon.Glue.Model
         internal bool IsSetLogUri()
         {
             return this._logUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceWindow. 
+        /// <para>
+        /// This field specifies a day of the week and hour for a maintenance window for streaming
+        /// jobs. Glue periodically performs maintenance activities. During these maintenance
+        /// windows, Glue will need to restart your streaming jobs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Glue will restart the job within 3 hours of the specified maintenance window. For
+        /// instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs
+        /// will be restarted between 10:00AM GMT to 1:00PM GMT.
+        /// </para>
+        /// </summary>
+        public string MaintenanceWindow
+        {
+            get { return this._maintenanceWindow; }
+            set { this._maintenanceWindow = value; }
+        }
+
+        // Check to see if MaintenanceWindow property is set
+        internal bool IsSetMaintenanceWindow()
+        {
+            return this._maintenanceWindow != null;
         }
 
         /// <summary>
@@ -539,7 +602,14 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The job timeout in minutes. This is the maximum time that a job run can consume resources
         /// before it is terminated and enters <c>TIMEOUT</c> status. The default is 2,880 minutes
-        /// (48 hours).
+        /// (48 hours) for batch jobs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Streaming jobs must have timeout values less than 7 days or 10080 minutes. When the
+        /// value is left blank, the job will be restarted after 7 days based if you have not
+        /// setup a maintenance window. If you have setup maintenance window, it will be restarted
+        /// during the maintenance window after 7 days.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

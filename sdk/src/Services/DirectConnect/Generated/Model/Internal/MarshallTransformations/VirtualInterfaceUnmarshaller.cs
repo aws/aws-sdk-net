@@ -57,6 +57,8 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         public VirtualInterface Unmarshall(JsonUnmarshallerContext context)
         {
             VirtualInterface unmarshalledObject = new VirtualInterface();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

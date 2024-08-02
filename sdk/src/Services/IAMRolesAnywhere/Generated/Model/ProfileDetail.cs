@@ -34,6 +34,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// </summary>
     public partial class ProfileDetail
     {
+        private bool? _acceptRoleSessionName;
         private List<AttributeMapping> _attributeMappings = AWSConfigs.InitializeCollections ? new List<AttributeMapping>() : null;
         private DateTime? _createdAt;
         private string _createdBy;
@@ -47,6 +48,25 @@ namespace Amazon.IAMRolesAnywhere.Model
         private List<string> _roleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sessionPolicy;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property AcceptRoleSessionName. 
+        /// <para>
+        /// Used to determine if a custom role session name will be accepted in a temporary credential
+        /// request.
+        /// </para>
+        /// </summary>
+        public bool AcceptRoleSessionName
+        {
+            get { return this._acceptRoleSessionName.GetValueOrDefault(); }
+            set { this._acceptRoleSessionName = value; }
+        }
+
+        // Check to see if AcceptRoleSessionName property is set
+        internal bool IsSetAcceptRoleSessionName()
+        {
+            return this._acceptRoleSessionName.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AttributeMappings. 

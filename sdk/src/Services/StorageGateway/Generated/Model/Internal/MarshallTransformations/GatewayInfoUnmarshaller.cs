@@ -57,6 +57,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         public GatewayInfo Unmarshall(JsonUnmarshallerContext context)
         {
             GatewayInfo unmarshalledObject = new GatewayInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

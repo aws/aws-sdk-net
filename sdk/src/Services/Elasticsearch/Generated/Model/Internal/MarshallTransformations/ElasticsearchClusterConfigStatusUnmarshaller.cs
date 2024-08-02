@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public ElasticsearchClusterConfigStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ElasticsearchClusterConfigStatus unmarshalledObject = new ElasticsearchClusterConfigStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

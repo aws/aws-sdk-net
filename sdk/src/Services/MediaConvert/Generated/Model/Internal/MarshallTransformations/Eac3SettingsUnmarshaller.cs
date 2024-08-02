@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public Eac3Settings Unmarshall(JsonUnmarshallerContext context)
         {
             Eac3Settings unmarshalledObject = new Eac3Settings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

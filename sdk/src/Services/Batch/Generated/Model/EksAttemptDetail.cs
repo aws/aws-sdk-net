@@ -36,6 +36,7 @@ namespace Amazon.Batch.Model
     public partial class EksAttemptDetail
     {
         private List<EksAttemptContainerDetail> _containers = AWSConfigs.InitializeCollections ? new List<EksAttemptContainerDetail>() : null;
+        private string _eksClusterArn;
         private List<EksAttemptContainerDetail> _initContainers = AWSConfigs.InitializeCollections ? new List<EksAttemptContainerDetail>() : null;
         private string _nodeName;
         private string _podName;
@@ -59,6 +60,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetContainers()
         {
             return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EksClusterArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon EKS cluster.
+        /// </para>
+        /// </summary>
+        public string EksClusterArn
+        {
+            get { return this._eksClusterArn; }
+            set { this._eksClusterArn = value; }
+        }
+
+        // Check to see if EksClusterArn property is set
+        internal bool IsSetEksClusterArn()
+        {
+            return this._eksClusterArn != null;
         }
 
         /// <summary>

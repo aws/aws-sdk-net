@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public KeyRange Unmarshall(JsonUnmarshallerContext context)
         {
             KeyRange unmarshalledObject = new KeyRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public OrganizationDataSourceConfigurationsResult Unmarshall(JsonUnmarshallerContext context)
         {
             OrganizationDataSourceConfigurationsResult unmarshalledObject = new OrganizationDataSourceConfigurationsResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

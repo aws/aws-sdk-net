@@ -31,7 +31,7 @@ namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountConfiguration operation.
-    /// Use to update account-level configuration with an encryption key.
+    /// Use to update the encryption configuration for an account.
     /// </summary>
     public partial class UpdateAccountConfigurationRequest : AmazonCodeGuruSecurityRequest
     {
@@ -40,8 +40,10 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfig. 
         /// <para>
-        /// The KMS key ARN you want to use for encryption. Defaults to service-side encryption
-        /// if missing.
+        /// The customer-managed KMS key ARN you want to use for encryption. If not specified,
+        /// CodeGuru Security will use an AWS-managed key for encryption. If you previously specified
+        /// a customer-managed KMS key and want CodeGuru Security to use an AWS-managed key for
+        /// encryption instead, pass nothing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

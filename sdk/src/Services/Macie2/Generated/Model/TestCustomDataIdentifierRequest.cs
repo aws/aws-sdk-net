@@ -31,7 +31,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the TestCustomDataIdentifier operation.
-    /// Tests a custom data identifier.
+    /// Tests criteria for a custom data identifier.
     /// </summary>
     public partial class TestCustomDataIdentifierRequest : AmazonMacie2Request
     {

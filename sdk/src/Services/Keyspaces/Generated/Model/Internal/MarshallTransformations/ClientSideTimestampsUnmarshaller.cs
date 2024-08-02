@@ -57,6 +57,8 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         public ClientSideTimestamps Unmarshall(JsonUnmarshallerContext context)
         {
             ClientSideTimestamps unmarshalledObject = new ClientSideTimestamps();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

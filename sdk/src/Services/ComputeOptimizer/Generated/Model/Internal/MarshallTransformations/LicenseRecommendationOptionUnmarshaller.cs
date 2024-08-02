@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public LicenseRecommendationOption Unmarshall(JsonUnmarshallerContext context)
         {
             LicenseRecommendationOption unmarshalledObject = new LicenseRecommendationOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

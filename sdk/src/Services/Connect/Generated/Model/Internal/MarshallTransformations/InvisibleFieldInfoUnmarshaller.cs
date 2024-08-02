@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public InvisibleFieldInfo Unmarshall(JsonUnmarshallerContext context)
         {
             InvisibleFieldInfo unmarshalledObject = new InvisibleFieldInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

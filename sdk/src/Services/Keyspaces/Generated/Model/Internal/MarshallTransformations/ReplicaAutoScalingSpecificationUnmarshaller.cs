@@ -57,6 +57,8 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         public ReplicaAutoScalingSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             ReplicaAutoScalingSpecification unmarshalledObject = new ReplicaAutoScalingSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

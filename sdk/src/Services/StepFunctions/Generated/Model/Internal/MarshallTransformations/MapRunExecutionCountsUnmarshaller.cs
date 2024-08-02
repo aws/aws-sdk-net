@@ -57,6 +57,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         public MapRunExecutionCounts Unmarshall(JsonUnmarshallerContext context)
         {
             MapRunExecutionCounts unmarshalledObject = new MapRunExecutionCounts();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

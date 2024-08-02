@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public ExecutionError Unmarshall(JsonUnmarshallerContext context)
         {
             ExecutionError unmarshalledObject = new ExecutionError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

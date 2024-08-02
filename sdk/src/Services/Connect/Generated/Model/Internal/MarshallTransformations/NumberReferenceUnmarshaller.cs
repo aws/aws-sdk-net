@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public NumberReference Unmarshall(JsonUnmarshallerContext context)
         {
             NumberReference unmarshalledObject = new NumberReference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

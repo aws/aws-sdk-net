@@ -40,7 +40,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ServerlessCacheSnapshot. 
         /// <para>
         /// The state of a serverless cache at a specific point in time, to the millisecond. Available
-        /// for Redis only.
+        /// for Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public ServerlessCacheSnapshot ServerlessCacheSnapshot

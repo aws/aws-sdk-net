@@ -57,6 +57,8 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         public RecordingConfigurationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             RecordingConfigurationSummary unmarshalledObject = new RecordingConfigurationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

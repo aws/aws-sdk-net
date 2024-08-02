@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public JobListEntry Unmarshall(JsonUnmarshallerContext context)
         {
             JobListEntry unmarshalledObject = new JobListEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

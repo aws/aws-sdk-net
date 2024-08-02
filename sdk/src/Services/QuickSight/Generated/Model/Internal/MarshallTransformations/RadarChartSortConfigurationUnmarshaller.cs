@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public RadarChartSortConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             RadarChartSortConfiguration unmarshalledObject = new RadarChartSortConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

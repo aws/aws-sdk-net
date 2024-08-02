@@ -57,6 +57,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         public ProtectionGroupPatternTypeLimits Unmarshall(JsonUnmarshallerContext context)
         {
             ProtectionGroupPatternTypeLimits unmarshalledObject = new ProtectionGroupPatternTypeLimits();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

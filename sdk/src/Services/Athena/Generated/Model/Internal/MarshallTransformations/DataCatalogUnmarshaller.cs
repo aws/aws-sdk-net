@@ -57,6 +57,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         public DataCatalog Unmarshall(JsonUnmarshallerContext context)
         {
             DataCatalog unmarshalledObject = new DataCatalog();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

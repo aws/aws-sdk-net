@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public FollowModeScheduleActionStartSettings Unmarshall(JsonUnmarshallerContext context)
         {
             FollowModeScheduleActionStartSettings unmarshalledObject = new FollowModeScheduleActionStartSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

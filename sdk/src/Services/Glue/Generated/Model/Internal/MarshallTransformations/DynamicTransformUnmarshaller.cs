@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public DynamicTransform Unmarshall(JsonUnmarshallerContext context)
         {
             DynamicTransform unmarshalledObject = new DynamicTransform();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

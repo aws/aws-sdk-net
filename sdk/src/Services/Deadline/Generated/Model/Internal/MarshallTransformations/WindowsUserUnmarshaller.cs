@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public WindowsUser Unmarshall(JsonUnmarshallerContext context)
         {
             WindowsUser unmarshalledObject = new WindowsUser();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public SystemControl Unmarshall(JsonUnmarshallerContext context)
         {
             SystemControl unmarshalledObject = new SystemControl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

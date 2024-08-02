@@ -2143,6 +2143,284 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type ExportableRDSDBField.
+    /// </summary>
+    public class ExportableRDSDBField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccountId for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField AccountId = new ExportableRDSDBField("AccountId");
+        /// <summary>
+        /// Constant CurrentDBInstanceClass for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField CurrentDBInstanceClass = new ExportableRDSDBField("CurrentDBInstanceClass");
+        /// <summary>
+        /// Constant CurrentInstanceOnDemandHourlyPrice for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField CurrentInstanceOnDemandHourlyPrice = new ExportableRDSDBField("CurrentInstanceOnDemandHourlyPrice");
+        /// <summary>
+        /// Constant CurrentStorageConfigurationAllocatedStorage for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField CurrentStorageConfigurationAllocatedStorage = new ExportableRDSDBField("CurrentStorageConfigurationAllocatedStorage");
+        /// <summary>
+        /// Constant CurrentStorageConfigurationIOPS for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField CurrentStorageConfigurationIOPS = new ExportableRDSDBField("CurrentStorageConfigurationIOPS");
+        /// <summary>
+        /// Constant CurrentStorageConfigurationMaxAllocatedStorage for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField CurrentStorageConfigurationMaxAllocatedStorage = new ExportableRDSDBField("CurrentStorageConfigurationMaxAllocatedStorage");
+        /// <summary>
+        /// Constant CurrentStorageConfigurationStorageThroughput for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField CurrentStorageConfigurationStorageThroughput = new ExportableRDSDBField("CurrentStorageConfigurationStorageThroughput");
+        /// <summary>
+        /// Constant CurrentStorageConfigurationStorageType for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField CurrentStorageConfigurationStorageType = new ExportableRDSDBField("CurrentStorageConfigurationStorageType");
+        /// <summary>
+        /// Constant CurrentStorageOnDemandMonthlyPrice for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField CurrentStorageOnDemandMonthlyPrice = new ExportableRDSDBField("CurrentStorageOnDemandMonthlyPrice");
+        /// <summary>
+        /// Constant EffectiveRecommendationPreferencesCpuVendorArchitectures for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField EffectiveRecommendationPreferencesCpuVendorArchitectures = new ExportableRDSDBField("EffectiveRecommendationPreferencesCpuVendorArchitectures");
+        /// <summary>
+        /// Constant EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics = new ExportableRDSDBField("EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics");
+        /// <summary>
+        /// Constant EffectiveRecommendationPreferencesLookBackPeriod for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField EffectiveRecommendationPreferencesLookBackPeriod = new ExportableRDSDBField("EffectiveRecommendationPreferencesLookBackPeriod");
+        /// <summary>
+        /// Constant EffectiveRecommendationPreferencesSavingsEstimationMode for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField EffectiveRecommendationPreferencesSavingsEstimationMode = new ExportableRDSDBField("EffectiveRecommendationPreferencesSavingsEstimationMode");
+        /// <summary>
+        /// Constant Engine for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField Engine = new ExportableRDSDBField("Engine");
+        /// <summary>
+        /// Constant EngineVersion for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField EngineVersion = new ExportableRDSDBField("EngineVersion");
+        /// <summary>
+        /// Constant Idle for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField Idle = new ExportableRDSDBField("Idle");
+        /// <summary>
+        /// Constant InstanceFinding for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField InstanceFinding = new ExportableRDSDBField("InstanceFinding");
+        /// <summary>
+        /// Constant InstanceFindingReasonCodes for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField InstanceFindingReasonCodes = new ExportableRDSDBField("InstanceFindingReasonCodes");
+        /// <summary>
+        /// Constant InstanceRecommendationOptionsDBInstanceClass for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField InstanceRecommendationOptionsDBInstanceClass = new ExportableRDSDBField("InstanceRecommendationOptionsDBInstanceClass");
+        /// <summary>
+        /// Constant InstanceRecommendationOptionsEstimatedMonthlySavingsCurrency for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField InstanceRecommendationOptionsEstimatedMonthlySavingsCurrency = new ExportableRDSDBField("InstanceRecommendationOptionsEstimatedMonthlySavingsCurrency");
+        /// <summary>
+        /// Constant InstanceRecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField InstanceRecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts = new ExportableRDSDBField("InstanceRecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts");
+        /// <summary>
+        /// Constant InstanceRecommendationOptionsEstimatedMonthlySavingsValue for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField InstanceRecommendationOptionsEstimatedMonthlySavingsValue = new ExportableRDSDBField("InstanceRecommendationOptionsEstimatedMonthlySavingsValue");
+        /// <summary>
+        /// Constant InstanceRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField InstanceRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts = new ExportableRDSDBField("InstanceRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
+        /// <summary>
+        /// Constant InstanceRecommendationOptionsInstanceOnDemandHourlyPrice for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField InstanceRecommendationOptionsInstanceOnDemandHourlyPrice = new ExportableRDSDBField("InstanceRecommendationOptionsInstanceOnDemandHourlyPrice");
+        /// <summary>
+        /// Constant InstanceRecommendationOptionsPerformanceRisk for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField InstanceRecommendationOptionsPerformanceRisk = new ExportableRDSDBField("InstanceRecommendationOptionsPerformanceRisk");
+        /// <summary>
+        /// Constant InstanceRecommendationOptionsProjectedUtilizationMetricsCpuMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField InstanceRecommendationOptionsProjectedUtilizationMetricsCpuMaximum = new ExportableRDSDBField("InstanceRecommendationOptionsProjectedUtilizationMetricsCpuMaximum");
+        /// <summary>
+        /// Constant InstanceRecommendationOptionsRank for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField InstanceRecommendationOptionsRank = new ExportableRDSDBField("InstanceRecommendationOptionsRank");
+        /// <summary>
+        /// Constant InstanceRecommendationOptionsSavingsOpportunityAfterDiscountsPercentage for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField InstanceRecommendationOptionsSavingsOpportunityAfterDiscountsPercentage = new ExportableRDSDBField("InstanceRecommendationOptionsSavingsOpportunityAfterDiscountsPercentage");
+        /// <summary>
+        /// Constant InstanceRecommendationOptionsSavingsOpportunityPercentage for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField InstanceRecommendationOptionsSavingsOpportunityPercentage = new ExportableRDSDBField("InstanceRecommendationOptionsSavingsOpportunityPercentage");
+        /// <summary>
+        /// Constant LastRefreshTimestamp for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField LastRefreshTimestamp = new ExportableRDSDBField("LastRefreshTimestamp");
+        /// <summary>
+        /// Constant LookbackPeriodInDays for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField LookbackPeriodInDays = new ExportableRDSDBField("LookbackPeriodInDays");
+        /// <summary>
+        /// Constant MultiAZDBInstance for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField MultiAZDBInstance = new ExportableRDSDBField("MultiAZDBInstance");
+        /// <summary>
+        /// Constant ResourceArn for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField ResourceArn = new ExportableRDSDBField("ResourceArn");
+        /// <summary>
+        /// Constant StorageFinding for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageFinding = new ExportableRDSDBField("StorageFinding");
+        /// <summary>
+        /// Constant StorageFindingReasonCodes for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageFindingReasonCodes = new ExportableRDSDBField("StorageFindingReasonCodes");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsAllocatedStorage for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsAllocatedStorage = new ExportableRDSDBField("StorageRecommendationOptionsAllocatedStorage");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsEstimatedMonthlySavingsCurrency for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsEstimatedMonthlySavingsCurrency = new ExportableRDSDBField("StorageRecommendationOptionsEstimatedMonthlySavingsCurrency");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts = new ExportableRDSDBField("StorageRecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsEstimatedMonthlySavingsValue for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsEstimatedMonthlySavingsValue = new ExportableRDSDBField("StorageRecommendationOptionsEstimatedMonthlySavingsValue");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts = new ExportableRDSDBField("StorageRecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsIOPS for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsIOPS = new ExportableRDSDBField("StorageRecommendationOptionsIOPS");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsMaxAllocatedStorage for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsMaxAllocatedStorage = new ExportableRDSDBField("StorageRecommendationOptionsMaxAllocatedStorage");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsOnDemandMonthlyPrice for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsOnDemandMonthlyPrice = new ExportableRDSDBField("StorageRecommendationOptionsOnDemandMonthlyPrice");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsRank for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsRank = new ExportableRDSDBField("StorageRecommendationOptionsRank");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsSavingsOpportunityAfterDiscountsPercentage for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsSavingsOpportunityAfterDiscountsPercentage = new ExportableRDSDBField("StorageRecommendationOptionsSavingsOpportunityAfterDiscountsPercentage");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsSavingsOpportunityPercentage for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsSavingsOpportunityPercentage = new ExportableRDSDBField("StorageRecommendationOptionsSavingsOpportunityPercentage");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsStorageThroughput for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsStorageThroughput = new ExportableRDSDBField("StorageRecommendationOptionsStorageThroughput");
+        /// <summary>
+        /// Constant StorageRecommendationOptionsStorageType for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField StorageRecommendationOptionsStorageType = new ExportableRDSDBField("StorageRecommendationOptionsStorageType");
+        /// <summary>
+        /// Constant Tags for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField Tags = new ExportableRDSDBField("Tags");
+        /// <summary>
+        /// Constant UtilizationMetricsCpuMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsCpuMaximum = new ExportableRDSDBField("UtilizationMetricsCpuMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsDatabaseConnectionsMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsDatabaseConnectionsMaximum = new ExportableRDSDBField("UtilizationMetricsDatabaseConnectionsMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEBSVolumeReadIOPSMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsEBSVolumeReadIOPSMaximum = new ExportableRDSDBField("UtilizationMetricsEBSVolumeReadIOPSMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEBSVolumeReadThroughputMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsEBSVolumeReadThroughputMaximum = new ExportableRDSDBField("UtilizationMetricsEBSVolumeReadThroughputMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEBSVolumeStorageSpaceUtilizationMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsEBSVolumeStorageSpaceUtilizationMaximum = new ExportableRDSDBField("UtilizationMetricsEBSVolumeStorageSpaceUtilizationMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEBSVolumeWriteIOPSMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsEBSVolumeWriteIOPSMaximum = new ExportableRDSDBField("UtilizationMetricsEBSVolumeWriteIOPSMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEBSVolumeWriteThroughputMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsEBSVolumeWriteThroughputMaximum = new ExportableRDSDBField("UtilizationMetricsEBSVolumeWriteThroughputMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsMemoryMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsMemoryMaximum = new ExportableRDSDBField("UtilizationMetricsMemoryMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsNetworkReceiveThroughputMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsNetworkReceiveThroughputMaximum = new ExportableRDSDBField("UtilizationMetricsNetworkReceiveThroughputMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsNetworkTransmitThroughputMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsNetworkTransmitThroughputMaximum = new ExportableRDSDBField("UtilizationMetricsNetworkTransmitThroughputMaximum");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportableRDSDBField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportableRDSDBField FindValue(string value)
+        {
+            return FindValue<ExportableRDSDBField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportableRDSDBField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExportableVolumeField.
     /// </summary>
     public class ExportableVolumeField : ConstantClass
@@ -2670,6 +2948,56 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FindingReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Idle.
+    /// </summary>
+    public class Idle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant False for Idle
+        /// </summary>
+        public static readonly Idle False = new Idle("False");
+        /// <summary>
+        /// Constant True for Idle
+        /// </summary>
+        public static readonly Idle True = new Idle("True");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Idle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Idle FindValue(string value)
+        {
+            return FindValue<Idle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Idle(string value)
         {
             return FindValue(value);
         }
@@ -4367,6 +4695,506 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type RDSDBMetricName.
+    /// </summary>
+    public class RDSDBMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CPU for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName CPU = new RDSDBMetricName("CPU");
+        /// <summary>
+        /// Constant DatabaseConnections for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName DatabaseConnections = new RDSDBMetricName("DatabaseConnections");
+        /// <summary>
+        /// Constant EBSVolumeReadIOPS for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName EBSVolumeReadIOPS = new RDSDBMetricName("EBSVolumeReadIOPS");
+        /// <summary>
+        /// Constant EBSVolumeReadThroughput for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName EBSVolumeReadThroughput = new RDSDBMetricName("EBSVolumeReadThroughput");
+        /// <summary>
+        /// Constant EBSVolumeStorageSpaceUtilization for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName EBSVolumeStorageSpaceUtilization = new RDSDBMetricName("EBSVolumeStorageSpaceUtilization");
+        /// <summary>
+        /// Constant EBSVolumeWriteIOPS for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName EBSVolumeWriteIOPS = new RDSDBMetricName("EBSVolumeWriteIOPS");
+        /// <summary>
+        /// Constant EBSVolumeWriteThroughput for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName EBSVolumeWriteThroughput = new RDSDBMetricName("EBSVolumeWriteThroughput");
+        /// <summary>
+        /// Constant Memory for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName Memory = new RDSDBMetricName("Memory");
+        /// <summary>
+        /// Constant NetworkReceiveThroughput for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName NetworkReceiveThroughput = new RDSDBMetricName("NetworkReceiveThroughput");
+        /// <summary>
+        /// Constant NetworkTransmitThroughput for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName NetworkTransmitThroughput = new RDSDBMetricName("NetworkTransmitThroughput");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RDSDBMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RDSDBMetricName FindValue(string value)
+        {
+            return FindValue<RDSDBMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RDSDBMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RDSDBMetricStatistic.
+    /// </summary>
+    public class RDSDBMetricStatistic : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Average for RDSDBMetricStatistic
+        /// </summary>
+        public static readonly RDSDBMetricStatistic Average = new RDSDBMetricStatistic("Average");
+        /// <summary>
+        /// Constant Maximum for RDSDBMetricStatistic
+        /// </summary>
+        public static readonly RDSDBMetricStatistic Maximum = new RDSDBMetricStatistic("Maximum");
+        /// <summary>
+        /// Constant Minimum for RDSDBMetricStatistic
+        /// </summary>
+        public static readonly RDSDBMetricStatistic Minimum = new RDSDBMetricStatistic("Minimum");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RDSDBMetricStatistic(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RDSDBMetricStatistic FindValue(string value)
+        {
+            return FindValue<RDSDBMetricStatistic>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RDSDBMetricStatistic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RDSDBRecommendationFilterName.
+    /// </summary>
+    public class RDSDBRecommendationFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Idle for RDSDBRecommendationFilterName
+        /// </summary>
+        public static readonly RDSDBRecommendationFilterName Idle = new RDSDBRecommendationFilterName("Idle");
+        /// <summary>
+        /// Constant InstanceFinding for RDSDBRecommendationFilterName
+        /// </summary>
+        public static readonly RDSDBRecommendationFilterName InstanceFinding = new RDSDBRecommendationFilterName("InstanceFinding");
+        /// <summary>
+        /// Constant InstanceFindingReasonCode for RDSDBRecommendationFilterName
+        /// </summary>
+        public static readonly RDSDBRecommendationFilterName InstanceFindingReasonCode = new RDSDBRecommendationFilterName("InstanceFindingReasonCode");
+        /// <summary>
+        /// Constant StorageFinding for RDSDBRecommendationFilterName
+        /// </summary>
+        public static readonly RDSDBRecommendationFilterName StorageFinding = new RDSDBRecommendationFilterName("StorageFinding");
+        /// <summary>
+        /// Constant StorageFindingReasonCode for RDSDBRecommendationFilterName
+        /// </summary>
+        public static readonly RDSDBRecommendationFilterName StorageFindingReasonCode = new RDSDBRecommendationFilterName("StorageFindingReasonCode");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RDSDBRecommendationFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RDSDBRecommendationFilterName FindValue(string value)
+        {
+            return FindValue<RDSDBRecommendationFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RDSDBRecommendationFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RDSInstanceFinding.
+    /// </summary>
+    public class RDSInstanceFinding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Optimized for RDSInstanceFinding
+        /// </summary>
+        public static readonly RDSInstanceFinding Optimized = new RDSInstanceFinding("Optimized");
+        /// <summary>
+        /// Constant Overprovisioned for RDSInstanceFinding
+        /// </summary>
+        public static readonly RDSInstanceFinding Overprovisioned = new RDSInstanceFinding("Overprovisioned");
+        /// <summary>
+        /// Constant Underprovisioned for RDSInstanceFinding
+        /// </summary>
+        public static readonly RDSInstanceFinding Underprovisioned = new RDSInstanceFinding("Underprovisioned");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RDSInstanceFinding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RDSInstanceFinding FindValue(string value)
+        {
+            return FindValue<RDSInstanceFinding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RDSInstanceFinding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RDSInstanceFindingReasonCode.
+    /// </summary>
+    public class RDSInstanceFindingReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CPUOverprovisioned for RDSInstanceFindingReasonCode
+        /// </summary>
+        public static readonly RDSInstanceFindingReasonCode CPUOverprovisioned = new RDSInstanceFindingReasonCode("CPUOverprovisioned");
+        /// <summary>
+        /// Constant CPUUnderprovisioned for RDSInstanceFindingReasonCode
+        /// </summary>
+        public static readonly RDSInstanceFindingReasonCode CPUUnderprovisioned = new RDSInstanceFindingReasonCode("CPUUnderprovisioned");
+        /// <summary>
+        /// Constant EBSIOPSOverprovisioned for RDSInstanceFindingReasonCode
+        /// </summary>
+        public static readonly RDSInstanceFindingReasonCode EBSIOPSOverprovisioned = new RDSInstanceFindingReasonCode("EBSIOPSOverprovisioned");
+        /// <summary>
+        /// Constant EBSThroughputOverprovisioned for RDSInstanceFindingReasonCode
+        /// </summary>
+        public static readonly RDSInstanceFindingReasonCode EBSThroughputOverprovisioned = new RDSInstanceFindingReasonCode("EBSThroughputOverprovisioned");
+        /// <summary>
+        /// Constant EBSThroughputUnderprovisioned for RDSInstanceFindingReasonCode
+        /// </summary>
+        public static readonly RDSInstanceFindingReasonCode EBSThroughputUnderprovisioned = new RDSInstanceFindingReasonCode("EBSThroughputUnderprovisioned");
+        /// <summary>
+        /// Constant NetworkBandwidthOverprovisioned for RDSInstanceFindingReasonCode
+        /// </summary>
+        public static readonly RDSInstanceFindingReasonCode NetworkBandwidthOverprovisioned = new RDSInstanceFindingReasonCode("NetworkBandwidthOverprovisioned");
+        /// <summary>
+        /// Constant NetworkBandwidthUnderprovisioned for RDSInstanceFindingReasonCode
+        /// </summary>
+        public static readonly RDSInstanceFindingReasonCode NetworkBandwidthUnderprovisioned = new RDSInstanceFindingReasonCode("NetworkBandwidthUnderprovisioned");
+        /// <summary>
+        /// Constant NewEngineVersionAvailable for RDSInstanceFindingReasonCode
+        /// </summary>
+        public static readonly RDSInstanceFindingReasonCode NewEngineVersionAvailable = new RDSInstanceFindingReasonCode("NewEngineVersionAvailable");
+        /// <summary>
+        /// Constant NewGenerationDBInstanceClassAvailable for RDSInstanceFindingReasonCode
+        /// </summary>
+        public static readonly RDSInstanceFindingReasonCode NewGenerationDBInstanceClassAvailable = new RDSInstanceFindingReasonCode("NewGenerationDBInstanceClassAvailable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RDSInstanceFindingReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RDSInstanceFindingReasonCode FindValue(string value)
+        {
+            return FindValue<RDSInstanceFindingReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RDSInstanceFindingReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RDSSavingsEstimationModeSource.
+    /// </summary>
+    public class RDSSavingsEstimationModeSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CostExplorerRightsizing for RDSSavingsEstimationModeSource
+        /// </summary>
+        public static readonly RDSSavingsEstimationModeSource CostExplorerRightsizing = new RDSSavingsEstimationModeSource("CostExplorerRightsizing");
+        /// <summary>
+        /// Constant CostOptimizationHub for RDSSavingsEstimationModeSource
+        /// </summary>
+        public static readonly RDSSavingsEstimationModeSource CostOptimizationHub = new RDSSavingsEstimationModeSource("CostOptimizationHub");
+        /// <summary>
+        /// Constant PublicPricing for RDSSavingsEstimationModeSource
+        /// </summary>
+        public static readonly RDSSavingsEstimationModeSource PublicPricing = new RDSSavingsEstimationModeSource("PublicPricing");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RDSSavingsEstimationModeSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RDSSavingsEstimationModeSource FindValue(string value)
+        {
+            return FindValue<RDSSavingsEstimationModeSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RDSSavingsEstimationModeSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RDSStorageFinding.
+    /// </summary>
+    public class RDSStorageFinding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Optimized for RDSStorageFinding
+        /// </summary>
+        public static readonly RDSStorageFinding Optimized = new RDSStorageFinding("Optimized");
+        /// <summary>
+        /// Constant Overprovisioned for RDSStorageFinding
+        /// </summary>
+        public static readonly RDSStorageFinding Overprovisioned = new RDSStorageFinding("Overprovisioned");
+        /// <summary>
+        /// Constant Underprovisioned for RDSStorageFinding
+        /// </summary>
+        public static readonly RDSStorageFinding Underprovisioned = new RDSStorageFinding("Underprovisioned");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RDSStorageFinding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RDSStorageFinding FindValue(string value)
+        {
+            return FindValue<RDSStorageFinding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RDSStorageFinding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RDSStorageFindingReasonCode.
+    /// </summary>
+    public class RDSStorageFindingReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EBSVolumeAllocatedStorageUnderprovisioned for RDSStorageFindingReasonCode
+        /// </summary>
+        public static readonly RDSStorageFindingReasonCode EBSVolumeAllocatedStorageUnderprovisioned = new RDSStorageFindingReasonCode("EBSVolumeAllocatedStorageUnderprovisioned");
+        /// <summary>
+        /// Constant EBSVolumeIOPSOverprovisioned for RDSStorageFindingReasonCode
+        /// </summary>
+        public static readonly RDSStorageFindingReasonCode EBSVolumeIOPSOverprovisioned = new RDSStorageFindingReasonCode("EBSVolumeIOPSOverprovisioned");
+        /// <summary>
+        /// Constant EBSVolumeThroughputOverprovisioned for RDSStorageFindingReasonCode
+        /// </summary>
+        public static readonly RDSStorageFindingReasonCode EBSVolumeThroughputOverprovisioned = new RDSStorageFindingReasonCode("EBSVolumeThroughputOverprovisioned");
+        /// <summary>
+        /// Constant EBSVolumeThroughputUnderprovisioned for RDSStorageFindingReasonCode
+        /// </summary>
+        public static readonly RDSStorageFindingReasonCode EBSVolumeThroughputUnderprovisioned = new RDSStorageFindingReasonCode("EBSVolumeThroughputUnderprovisioned");
+        /// <summary>
+        /// Constant NewGenerationStorageTypeAvailable for RDSStorageFindingReasonCode
+        /// </summary>
+        public static readonly RDSStorageFindingReasonCode NewGenerationStorageTypeAvailable = new RDSStorageFindingReasonCode("NewGenerationStorageTypeAvailable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RDSStorageFindingReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RDSStorageFindingReasonCode FindValue(string value)
+        {
+            return FindValue<RDSStorageFindingReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RDSStorageFindingReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecommendationPreferenceName.
     /// </summary>
     public class RecommendationPreferenceName : ConstantClass
@@ -4462,6 +5290,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant License for RecommendationSourceType
         /// </summary>
         public static readonly RecommendationSourceType License = new RecommendationSourceType("License");
+        /// <summary>
+        /// Constant RdsDBInstance for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType RdsDBInstance = new RecommendationSourceType("RdsDBInstance");
+        /// <summary>
+        /// Constant RdsDBInstanceStorage for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType RdsDBInstanceStorage = new RecommendationSourceType("RdsDBInstanceStorage");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4532,6 +5368,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant NotApplicable for ResourceType
         /// </summary>
         public static readonly ResourceType NotApplicable = new ResourceType("NotApplicable");
+        /// <summary>
+        /// Constant RdsDBInstance for ResourceType
+        /// </summary>
+        public static readonly ResourceType RdsDBInstance = new ResourceType("RdsDBInstance");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

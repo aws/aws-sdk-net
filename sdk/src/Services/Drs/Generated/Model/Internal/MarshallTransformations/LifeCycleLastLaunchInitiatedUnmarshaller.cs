@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public LifeCycleLastLaunchInitiated Unmarshall(JsonUnmarshallerContext context)
         {
             LifeCycleLastLaunchInitiated unmarshalledObject = new LifeCycleLastLaunchInitiated();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

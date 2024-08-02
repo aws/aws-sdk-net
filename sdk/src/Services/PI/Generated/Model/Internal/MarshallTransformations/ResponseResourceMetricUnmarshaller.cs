@@ -57,6 +57,8 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         public ResponseResourceMetric Unmarshall(JsonUnmarshallerContext context)
         {
             ResponseResourceMetric unmarshalledObject = new ResponseResourceMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

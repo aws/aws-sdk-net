@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsIamInstanceProfileRole Unmarshall(JsonUnmarshallerContext context)
         {
             AwsIamInstanceProfileRole unmarshalledObject = new AwsIamInstanceProfileRole();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

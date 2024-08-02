@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public ExportedEnvironmentVariable Unmarshall(JsonUnmarshallerContext context)
         {
             ExportedEnvironmentVariable unmarshalledObject = new ExportedEnvironmentVariable();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

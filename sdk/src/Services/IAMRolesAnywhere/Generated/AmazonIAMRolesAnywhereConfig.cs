@@ -34,10 +34,16 @@ namespace Amazon.IAMRolesAnywhere
     public partial class AmazonIAMRolesAnywhereConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("RolesAnywhere", "4.0.0.0");
 
         private static readonly AmazonIAMRolesAnywhereEndpointResolver EndpointResolver =
             new AmazonIAMRolesAnywhereEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("RolesAnywhere", "3.7.303.7");
+=======
+            InternalSDKUtils.BuildUserAgentString("RolesAnywhere", "3.7.401.0");
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
 
         private string _userAgent = UserAgentString;
         ///<summary>

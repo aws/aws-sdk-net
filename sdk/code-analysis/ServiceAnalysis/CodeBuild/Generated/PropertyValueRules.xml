@@ -5,6 +5,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CreateFleetRequest.FleetServiceRole</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateFleetRequest.Name</property>
     <min>2</min>
     <max>128</max>
@@ -22,8 +26,8 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateProjectRequest.Name</property>
     <min>2</min>
-    <max>255</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,254}</pattern>
+    <max>150</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,149}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateProjectRequest.QueuedTimeoutInMinutes</property>
@@ -37,7 +41,7 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateProjectRequest.TimeoutInMinutes</property>
     <min>5</min>
-    <max>480</max>
+    <max>2160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateReportGroupRequest.Name</property>
@@ -47,8 +51,8 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateWebhookRequest.ProjectName</property>
     <min>2</min>
-    <max>255</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,254}</pattern>
+    <max>150</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,149}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.DeleteBuildBatchRequest.Id</property>
@@ -85,8 +89,8 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.DeleteWebhookRequest.ProjectName</property>
     <min>2</min>
-    <max>255</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,254}</pattern>
+    <max>150</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,149}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.DescribeCodeCoveragesRequest.MaxLineCoveragePercentage</property>
@@ -249,12 +253,12 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.StartBuildRequest.TimeoutInMinutesOverride</property>
     <min>5</min>
-    <max>480</max>
+    <max>2160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.StartBuildBatchRequest.BuildTimeoutInMinutesOverride</property>
     <min>5</min>
-    <max>480</max>
+    <max>2160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.StartBuildBatchRequest.EncryptionKeyOverride</property>
@@ -298,6 +302,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.UpdateFleetRequest.FleetServiceRole</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.UpdateProjectRequest.Description</property>
     <min>0</min>
     <max>255</max>
@@ -322,7 +330,7 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.UpdateProjectRequest.TimeoutInMinutes</property>
     <min>5</min>
-    <max>480</max>
+    <max>2160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.UpdateProjectVisibilityRequest.ProjectArn</property>
@@ -347,8 +355,8 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.UpdateWebhookRequest.ProjectName</property>
     <min>2</min>
-    <max>255</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,254}</pattern>
+    <max>150</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,149}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.Build.Arn</property>
@@ -495,6 +503,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Fleet.FleetServiceRole</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.Fleet.Id</property>
     <min>1</min>
   </property-value-rule>
@@ -524,8 +536,8 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.Project.Name</property>
     <min>2</min>
-    <max>255</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,254}</pattern>
+    <max>150</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,149}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.Project.PublicProjectAlias</property>
@@ -547,7 +559,7 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.Project.TimeoutInMinutes</property>
     <min>5</min>
-    <max>480</max>
+    <max>2160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.ProjectBuildBatchConfig.ServiceRole</property>

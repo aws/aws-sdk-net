@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         public InputStartingPositionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             InputStartingPositionConfiguration unmarshalledObject = new InputStartingPositionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

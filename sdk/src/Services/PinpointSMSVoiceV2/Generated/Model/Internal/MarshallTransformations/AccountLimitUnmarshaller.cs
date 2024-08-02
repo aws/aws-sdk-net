@@ -57,6 +57,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         public AccountLimit Unmarshall(JsonUnmarshallerContext context)
         {
             AccountLimit unmarshalledObject = new AccountLimit();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

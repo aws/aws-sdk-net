@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public TimeWindow Unmarshall(JsonUnmarshallerContext context)
         {
             TimeWindow unmarshalledObject = new TimeWindow();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

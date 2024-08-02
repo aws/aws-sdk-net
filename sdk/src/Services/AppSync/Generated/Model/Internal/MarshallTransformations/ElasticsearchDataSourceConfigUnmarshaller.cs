@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public ElasticsearchDataSourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ElasticsearchDataSourceConfig unmarshalledObject = new ElasticsearchDataSourceConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

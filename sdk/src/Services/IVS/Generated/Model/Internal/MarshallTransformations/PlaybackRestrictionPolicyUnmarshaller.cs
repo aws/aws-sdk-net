@@ -57,6 +57,8 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         public PlaybackRestrictionPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             PlaybackRestrictionPolicy unmarshalledObject = new PlaybackRestrictionPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

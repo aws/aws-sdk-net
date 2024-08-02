@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public PipeSourceManagedStreamingKafkaParameters Unmarshall(JsonUnmarshallerContext context)
         {
             PipeSourceManagedStreamingKafkaParameters unmarshalledObject = new PipeSourceManagedStreamingKafkaParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

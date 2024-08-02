@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public P95Metrics Unmarshall(JsonUnmarshallerContext context)
         {
             P95Metrics unmarshalledObject = new P95Metrics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

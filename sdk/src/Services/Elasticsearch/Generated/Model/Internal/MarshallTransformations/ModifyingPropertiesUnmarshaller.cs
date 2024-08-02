@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public ModifyingProperties Unmarshall(JsonUnmarshallerContext context)
         {
             ModifyingProperties unmarshalledObject = new ModifyingProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

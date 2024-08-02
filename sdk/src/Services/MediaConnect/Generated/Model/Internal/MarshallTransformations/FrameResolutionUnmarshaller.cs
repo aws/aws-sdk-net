@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public FrameResolution Unmarshall(JsonUnmarshallerContext context)
         {
             FrameResolution unmarshalledObject = new FrameResolution();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

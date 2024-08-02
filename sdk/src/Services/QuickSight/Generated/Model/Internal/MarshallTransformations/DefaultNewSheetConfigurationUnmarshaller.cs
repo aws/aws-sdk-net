@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DefaultNewSheetConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DefaultNewSheetConfiguration unmarshalledObject = new DefaultNewSheetConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public EBSOptions Unmarshall(JsonUnmarshallerContext context)
         {
             EBSOptions unmarshalledObject = new EBSOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

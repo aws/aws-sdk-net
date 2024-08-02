@@ -57,6 +57,8 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         public ListSolFunctionInstanceMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             ListSolFunctionInstanceMetadata unmarshalledObject = new ListSolFunctionInstanceMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         public ImageSetsMetadataSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ImageSetsMetadataSummary unmarshalledObject = new ImageSetsMetadataSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -69,6 +69,14 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
+        /// Paginator for ListRuleExecutions operation
+        ///</summary>
+        public IListRuleExecutionsPaginator ListRuleExecutions(ListRuleExecutionsRequest request) 
+        {
+            return new ListRuleExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
         public IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request) 

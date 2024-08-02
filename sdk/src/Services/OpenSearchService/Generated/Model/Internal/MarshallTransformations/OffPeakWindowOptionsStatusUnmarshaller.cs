@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public OffPeakWindowOptionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
             OffPeakWindowOptionsStatus unmarshalledObject = new OffPeakWindowOptionsStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

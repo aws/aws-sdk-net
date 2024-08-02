@@ -57,6 +57,8 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         public ChangesetErrorInfo Unmarshall(JsonUnmarshallerContext context)
         {
             ChangesetErrorInfo unmarshalledObject = new ChangesetErrorInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

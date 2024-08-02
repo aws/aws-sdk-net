@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ModelDigests Unmarshall(JsonUnmarshallerContext context)
         {
             ModelDigests unmarshalledObject = new ModelDigests();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

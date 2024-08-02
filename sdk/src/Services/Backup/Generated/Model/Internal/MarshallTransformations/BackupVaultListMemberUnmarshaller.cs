@@ -57,6 +57,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public BackupVaultListMember Unmarshall(JsonUnmarshallerContext context)
         {
             BackupVaultListMember unmarshalledObject = new BackupVaultListMember();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

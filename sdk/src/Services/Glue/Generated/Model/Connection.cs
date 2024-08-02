@@ -34,15 +34,37 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class Connection
     {
+        private AuthenticationConfiguration _authenticationConfiguration;
         private Dictionary<string, string> _connectionProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ConnectionType _connectionType;
         private DateTime? _creationTime;
         private string _description;
+        private DateTime? _lastConnectionValidationTime;
         private string _lastUpdatedBy;
         private DateTime? _lastUpdatedTime;
         private List<string> _matchCriteria = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private PhysicalConnectionRequirements _physicalConnectionRequirements;
+        private ConnectionStatus _status;
+        private string _statusReason;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationConfiguration. 
+        /// <para>
+        /// The authentication properties of the connection.
+        /// </para>
+        /// </summary>
+        public AuthenticationConfiguration AuthenticationConfiguration
+        {
+            get { return this._authenticationConfiguration; }
+            set { this._authenticationConfiguration = value; }
+        }
+
+        // Check to see if AuthenticationConfiguration property is set
+        internal bool IsSetAuthenticationConfiguration()
+        {
+            return this._authenticationConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConnectionProperties. 
@@ -304,7 +326,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time that this connection definition was created.
+        /// The timestamp of the time that this connection definition was created.
         /// </para>
         /// </summary>
         public DateTime? CreationTime
@@ -339,6 +361,24 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastConnectionValidationTime. 
+        /// <para>
+        /// A timestamp of the time this connection was last validated.
+        /// </para>
+        /// </summary>
+        public DateTime LastConnectionValidationTime
+        {
+            get { return this._lastConnectionValidationTime.GetValueOrDefault(); }
+            set { this._lastConnectionValidationTime = value; }
+        }
+
+        // Check to see if LastConnectionValidationTime property is set
+        internal bool IsSetLastConnectionValidationTime()
+        {
+            return this._lastConnectionValidationTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdatedBy. 
         /// <para>
         /// The user, group, or role that last updated this connection definition.
@@ -360,7 +400,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The last time that this connection definition was updated.
+        /// The timestamp of the last time the connection definition was updated.
         /// </para>
         /// </summary>
         public DateTime? LastUpdatedTime
@@ -416,8 +456,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PhysicalConnectionRequirements. 
         /// <para>
-        /// A map of physical connection requirements, such as virtual private cloud (VPC) and
-        /// <c>SecurityGroup</c>, that are needed to make this connection successfully.
+        /// The physical connection requirements, such as virtual private cloud (VPC) and <c>SecurityGroup</c>,
+        /// that are needed to make this connection successfully.
         /// </para>
         /// </summary>
         public PhysicalConnectionRequirements PhysicalConnectionRequirements
@@ -430,6 +470,44 @@ namespace Amazon.Glue.Model
         internal bool IsSetPhysicalConnectionRequirements()
         {
             return this._physicalConnectionRequirements != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the connection. Can be one of: <c>READY</c>, <c>IN_PROGRESS</c>, or
+        /// <c>FAILED</c>.
+        /// </para>
+        /// </summary>
+        public ConnectionStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// The reason for the connection status.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=16384)]
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
     }

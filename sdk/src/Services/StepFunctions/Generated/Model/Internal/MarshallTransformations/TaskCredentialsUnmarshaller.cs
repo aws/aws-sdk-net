@@ -57,6 +57,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         public TaskCredentials Unmarshall(JsonUnmarshallerContext context)
         {
             TaskCredentials unmarshalledObject = new TaskCredentials();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

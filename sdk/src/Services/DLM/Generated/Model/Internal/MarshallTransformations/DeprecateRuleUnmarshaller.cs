@@ -57,6 +57,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         public DeprecateRule Unmarshall(JsonUnmarshallerContext context)
         {
             DeprecateRule unmarshalledObject = new DeprecateRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public AnalyzedResource Unmarshall(JsonUnmarshallerContext context)
         {
             AnalyzedResource unmarshalledObject = new AnalyzedResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

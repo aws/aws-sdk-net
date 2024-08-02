@@ -57,6 +57,8 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         public InstanceTypeItem Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceTypeItem unmarshalledObject = new InstanceTypeItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VCPUs", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.VCPUs = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

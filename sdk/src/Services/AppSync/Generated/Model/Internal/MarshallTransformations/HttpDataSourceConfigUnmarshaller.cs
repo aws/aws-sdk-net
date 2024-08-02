@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public HttpDataSourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             HttpDataSourceConfig unmarshalledObject = new HttpDataSourceConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

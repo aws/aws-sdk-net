@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public SchemaInputAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             SchemaInputAttribute unmarshalledObject = new SchemaInputAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hashed", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Hashed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("matchKey", targetDepth))

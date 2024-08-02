@@ -49,7 +49,7 @@ namespace Amazon.EventBridge.Model
     ///  </note> 
     /// <para>
     /// For a list of services you can configure as targets for events, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-targets.html">EventBridge
-    /// targets</a> in the <i>Amazon EventBridge User Guide</i>.
+    /// targets</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
     /// </para>
     ///  
     /// <para>
@@ -97,7 +97,7 @@ namespace Amazon.EventBridge.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
-    /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
+    /// and Access Control</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
     /// </para>
     ///  
     /// <para>

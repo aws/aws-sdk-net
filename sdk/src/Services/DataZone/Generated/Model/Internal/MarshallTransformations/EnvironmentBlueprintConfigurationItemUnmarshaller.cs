@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public EnvironmentBlueprintConfigurationItem Unmarshall(JsonUnmarshallerContext context)
         {
             EnvironmentBlueprintConfigurationItem unmarshalledObject = new EnvironmentBlueprintConfigurationItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -92,6 +94,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManageAccessRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("provisioningConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProvisioningConfiguration, ProvisioningConfigurationUnmarshaller>(ProvisioningConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ProvisioningConfigurations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("provisioningRoleArn", targetDepth))

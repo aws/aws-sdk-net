@@ -40,60 +40,51 @@ namespace Amazon.IVSRealTime
     /// <summary>
     /// <para>Implementation for accessing IVSRealTime</para>
     ///
-    /// <b>Introduction</b> 
-    /// 
-    ///  
-    /// <para>
     /// The Amazon Interactive Video Service (IVS) real-time API is REST compatible, using
     /// a standard HTTP API and an AWS EventBridge event stream for responses. JSON is used
     /// for both requests and responses, including errors. 
-    /// </para>
+    /// 
     ///  
     /// <para>
-    /// Terminology:
+    ///  <b>Key Concepts</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// A <i>stage</i> is a virtual space where participants can exchange video in real time.
+    ///  <b>Stage</b> — A virtual space where participants can exchange video in real time.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A <i>participant token</i> is a token that authenticates a participant when they join
+    ///  <b>Participant token</b> — A token that authenticates a participant when they join
     /// a stage.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A <i>participant object</i> represents participants (people) in the stage and contains
+    ///  <b>Participant object</b> — Represents participants (people) in the stage and contains
     /// information about them. When a token is created, it includes a participant ID; when
     /// a participant uses that token to join a stage, the participant is associated with
     /// that participant ID. There is a 1:1 mapping between participant tokens and participants.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Server-side composition: The <i>composition</i> process composites participants of
-    /// a stage into a single video and forwards it to a set of outputs (e.g., IVS channels).
-    /// Composition endpoints support this process.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Server-side composition: A <i>composition</i> controls the look of the outputs, including
-    /// how participants are positioned in the video.
-    /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Resources</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// The following resources contain information about your IVS live stream (see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html">Getting
-    /// Started with Amazon IVS Real-Time Streaming</a>):
+    /// For server-side composition:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Stage</b> — A stage is a virtual space where participants can exchange video in
-    /// real time.
+    ///  <b>Composition process</b> — Composites participants of a stage into a single video
+    /// and forwards it to a set of outputs (e.g., IVS channels). Composition endpoints support
+    /// this process.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Composition</b> — Controls the look of the outputs, including how participants
+    /// are positioned in the video.
     /// </para>
     ///  </li> </ul> 
+    /// <para>
+    /// For more information about your IVS live stream, also see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html">Getting
+    /// Started with Amazon IVS Real-Time Streaming</a>.
+    /// </para>
+    ///  
     /// <para>
     ///  <b>Tagging</b> 
     /// </para>
@@ -123,151 +114,6 @@ namespace Amazon.IVSRealTime
     /// <para>
     /// At most 50 tags can be applied to a resource.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Stages Endpoints</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateParticipantToken</a> — Creates an additional token for a specified stage.
-    /// This can be done after stage creation or when tokens expire.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreateStage</a> — Creates a new stage (and optionally participant tokens).
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteStage</a> — Shuts down and deletes the specified stage (disconnecting all
-    /// participants).
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DisconnectParticipant</a> — Disconnects a specified participant and revokes the
-    /// participant permanently from a specified stage.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetParticipant</a> — Gets information about the specified participant token.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetStage</a> — Gets information for the specified stage.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetStageSession</a> — Gets information for the specified stage session.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListParticipantEvents</a> — Lists events for a specified participant that occurred
-    /// during a specified stage session.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListParticipants</a> — Lists all participants in a specified stage session.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListStages</a> — Gets summary information about all stages in your account, in
-    /// the AWS region where the API request is processed.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListStageSessions</a> — Gets all sessions for a specified stage.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateStage</a> — Updates a stage’s configuration.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Composition Endpoints</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>GetComposition</a> — Gets information about the specified Composition resource.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListCompositions</a> — Gets summary information about all Compositions in your
-    /// account, in the AWS region where the API request is processed.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartComposition</a> — Starts a Composition from a stage based on the configuration
-    /// provided in the request.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopComposition</a> — Stops and deletes a Composition resource. Any broadcast
-    /// from the Composition resource is stopped.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>EncoderConfiguration Endpoints</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateEncoderConfiguration</a> — Creates an EncoderConfiguration object.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteEncoderConfiguration</a> — Deletes an EncoderConfiguration resource. Ensures
-    /// that no Compositions are using this template; otherwise, returns an error.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetEncoderConfiguration</a> — Gets information about the specified EncoderConfiguration
-    /// resource.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListEncoderConfigurations</a> — Gets summary information about all EncoderConfigurations
-    /// in your account, in the AWS region where the API request is processed.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>StorageConfiguration Endpoints</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateStorageConfiguration</a> — Creates a new storage configuration, used to
-    /// enable recording to Amazon S3.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteStorageConfiguration</a> — Deletes the storage configuration for the specified
-    /// ARN.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetStorageConfiguration</a> — Gets the storage configuration for the specified
-    /// ARN.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListStorageConfigurations</a> — Gets summary information about all storage configurations
-    /// in your account, in the AWS region where the API request is processed.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Tags Endpoints</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>ListTagsForResource</a> — Gets information about AWS tags for the specified ARN.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>TagResource</a> — Adds or updates tags for the AWS resource with the specified
-    /// ARN.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UntagResource</a> — Removes tags from the resource with the specified ARN.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class AmazonIVSRealTimeClient : AmazonServiceClient, IAmazonIVSRealTime
     {
@@ -763,6 +609,56 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  DeletePublicKey
+
+        internal virtual DeletePublicKeyResponse DeletePublicKey(DeletePublicKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePublicKeyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified public key used to sign stage participant tokens. This invalidates
+        /// future participant tokens generated using the key pair’s private key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePublicKey service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
+        public virtual Task<DeletePublicKeyResponse> DeletePublicKeyAsync(DeletePublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePublicKeyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteStage
 
         internal virtual DeleteStageResponse DeleteStage(DeleteStageRequest request)
@@ -1066,6 +962,49 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  GetPublicKey
+
+        internal virtual GetPublicKeyResponse GetPublicKey(GetPublicKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPublicKeyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information for the specified public key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPublicKey service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
+        public virtual Task<GetPublicKeyResponse> GetPublicKeyAsync(GetPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPublicKeyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetStage
 
         internal virtual GetStageResponse GetStage(GetStageRequest request)
@@ -1200,6 +1139,55 @@ namespace Amazon.IVSRealTime
             options.ResponseUnmarshaller = GetStorageConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetStorageConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportPublicKey
+
+        internal virtual ImportPublicKeyResponse ImportPublicKey(ImportPublicKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportPublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportPublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<ImportPublicKeyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Import a public key to be used for signing stage participant tokens.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportPublicKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportPublicKey service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ImportPublicKey">REST API Reference for ImportPublicKey Operation</seealso>
+        public virtual Task<ImportPublicKeyResponse> ImportPublicKeyAsync(ImportPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportPublicKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportPublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportPublicKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1380,6 +1368,47 @@ namespace Amazon.IVSRealTime
             options.ResponseUnmarshaller = ListParticipantsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListParticipantsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPublicKeys
+
+        internal virtual ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPublicKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
+
+            return Invoke<ListPublicKeysResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets summary information about all public keys in your account, in the AWS region
+        /// where the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPublicKeys service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPublicKeys service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
+        public virtual Task<ListPublicKeysResponse> ListPublicKeysAsync(ListPublicKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPublicKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPublicKeysResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1844,8 +1873,32 @@ namespace Amazon.IVSRealTime
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonIVSRealTimeEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonIVSRealTimeEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

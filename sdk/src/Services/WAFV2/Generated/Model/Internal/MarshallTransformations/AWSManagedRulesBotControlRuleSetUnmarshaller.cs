@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public AWSManagedRulesBotControlRuleSet Unmarshall(JsonUnmarshallerContext context)
         {
             AWSManagedRulesBotControlRuleSet unmarshalledObject = new AWSManagedRulesBotControlRuleSet();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public ContentSourceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ContentSourceConfiguration unmarshalledObject = new ContentSourceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

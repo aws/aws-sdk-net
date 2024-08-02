@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public ConversationLogsDataSource Unmarshall(JsonUnmarshallerContext context)
         {
             ConversationLogsDataSource unmarshalledObject = new ConversationLogsDataSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

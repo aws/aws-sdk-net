@@ -18,6 +18,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Metrics;
 
 namespace Amazon.Runtime.Internal
 {
@@ -44,7 +46,10 @@ namespace Amazon.Runtime.Internal
 
         protected virtual void PreInvoke(IExecutionContext executionContext)
         {
-            ProcessRequestHandlers(executionContext);
+            using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.ResolveEndpointDurationMetricName))
+            {
+                ProcessRequestHandlers(executionContext);
+            }
         }
 
         public virtual void ProcessRequestHandlers(IExecutionContext executionContext)

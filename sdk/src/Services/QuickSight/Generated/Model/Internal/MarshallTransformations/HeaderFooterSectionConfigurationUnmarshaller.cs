@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public HeaderFooterSectionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             HeaderFooterSectionConfiguration unmarshalledObject = new HeaderFooterSectionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

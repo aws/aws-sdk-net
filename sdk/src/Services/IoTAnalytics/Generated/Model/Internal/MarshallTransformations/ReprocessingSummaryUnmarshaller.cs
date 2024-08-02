@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public ReprocessingSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ReprocessingSummary unmarshalledObject = new ReprocessingSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SemanticEntityType Unmarshall(JsonUnmarshallerContext context)
         {
             SemanticEntityType unmarshalledObject = new SemanticEntityType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
         public CognitoStreams Unmarshall(JsonUnmarshallerContext context)
         {
             CognitoStreams unmarshalledObject = new CognitoStreams();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

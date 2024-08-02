@@ -61,7 +61,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.StartSpeechSynthesisTaskRequest.SnsTopicArn</property>
-    <pattern>^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$</pattern>
+    <pattern>^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,251}([a-zA-Z0-9_-]{0,5}|\.fifo)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.Lexicon.Name</property>
@@ -73,7 +73,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.SynthesisTask.SnsTopicArn</property>
-    <pattern>^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$</pattern>
+    <pattern>^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,251}([a-zA-Z0-9_-]{0,5}|\.fifo)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.SynthesisTask.TaskId</property>

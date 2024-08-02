@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public SimpleCondition Unmarshall(JsonUnmarshallerContext context)
         {
             SimpleCondition unmarshalledObject = new SimpleCondition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

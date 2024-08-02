@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchService.Model
         private string _accessPolicies;
         private Dictionary<string, string> _advancedOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AdvancedSecurityOptions _advancedSecurityOptions;
+        private AIMLOptionsOutput _aimlOptions;
         private string _arn;
         private AutoTuneOptionsOutput _autoTuneOptions;
         private ChangeProgressDetails _changeProgressDetails;
@@ -121,6 +122,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAdvancedSecurityOptions()
         {
             return this._advancedSecurityOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AIMLOptions. 
+        /// <para>
+        /// Container for parameters required to enable all machine learning features.
+        /// </para>
+        /// </summary>
+        public AIMLOptionsOutput AIMLOptions
+        {
+            get { return this._aimlOptions; }
+            set { this._aimlOptions = value; }
+        }
+
+        // Check to see if AIMLOptions property is set
+        internal bool IsSetAIMLOptions()
+        {
+            return this._aimlOptions != null;
         }
 
         /// <summary>
@@ -277,7 +296,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainEndpointV2HostedZoneId. 
         /// <para>
-        /// The DualStack Hosted Zone Id for the domain. 
+        /// The dual stack hosted zone ID for the domain. 
         /// </para>
         /// </summary>
         public string DomainEndpointV2HostedZoneId

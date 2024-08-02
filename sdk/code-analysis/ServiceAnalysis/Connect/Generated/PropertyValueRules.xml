@@ -151,6 +151,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.BatchGetAttachedFileMetadataRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.BatchGetFlowAssociationRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -182,6 +187,16 @@
     <min>0</min>
     <max>500</max>
     <pattern>^[\W\S_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CompleteAttachedFileUploadRequest.FileId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CompleteAttachedFileUploadRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateAgentStatusRequest.Description</property>
@@ -681,6 +696,16 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteAttachedFileRequest.FileId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteAttachedFileRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DeleteContactEvaluationRequest.EvaluationId</property>
     <min>1</min>
     <max>500</max>
@@ -869,6 +894,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeAgentStatusRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeAuthenticationProfileRequest.AuthenticationProfileId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeAuthenticationProfileRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -1151,6 +1186,36 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.GetAttachedFileRequest.FileId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetAttachedFileRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetAttachedFileRequest.UrlExpiryInSeconds</property>
+    <min>5</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetAttachedFileResponse.FileId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetAttachedFileResponse.FileName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetAttachedFileResponse.FileSizeInBytes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.GetContactAttributesRequest.InitialContactId</property>
     <min>1</min>
     <max>256</max>
@@ -1339,6 +1404,16 @@
     <property>Amazon.Connect.Model.ListApprovedOriginsRequest.MaxResults</property>
     <min>1</min>
     <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListAuthenticationProfilesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListAuthenticationProfilesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListBotsRequest.InstanceId</property>
@@ -1944,6 +2019,26 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.SearchAgentStatusesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchAgentStatusesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchAgentStatusesRequest.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchAgentStatusesResponse.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.SearchAvailablePhoneNumbersRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -1966,6 +2061,46 @@
     <property>Amazon.Connect.Model.SearchAvailablePhoneNumbersResponse.NextToken</property>
     <min>1</min>
     <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchContactFlowModulesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchContactFlowModulesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchContactFlowModulesRequest.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchContactFlowModulesResponse.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchContactFlowsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchContactFlowsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchContactFlowsRequest.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchContactFlowsResponse.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SearchContactsRequest.InstanceId</property>
@@ -2149,6 +2284,26 @@
     <max>2500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.SearchUserHierarchyGroupsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchUserHierarchyGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchUserHierarchyGroupsRequest.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchUserHierarchyGroupsResponse.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.SearchUsersRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -2213,6 +2368,35 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SendChatIntegrationEventResponse.InitialContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAttachedFileUploadRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAttachedFileUploadRequest.FileName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAttachedFileUploadRequest.FileSizeInBytes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAttachedFileUploadRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAttachedFileUploadRequest.UrlExpiryInSeconds</property>
+    <min>5</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAttachedFileUploadResponse.FileId</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -2581,6 +2765,31 @@
     <property>Amazon.Connect.Model.UpdateAgentStatusRequest.Name</property>
     <min>1</min>
     <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAuthenticationProfileRequest.AuthenticationProfileId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAuthenticationProfileRequest.Description</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAuthenticationProfileRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAuthenticationProfileRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAuthenticationProfileRequest.PeriodicSessionDuration</property>
+    <min>10</min>
+    <max>60</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactRequest.ContactId</property>
@@ -3172,6 +3381,26 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AttachedFile.FileId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttachedFile.FileName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttachedFile.FileSizeInBytes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttachedFileError.FileId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AttachmentReference.Name</property>
     <min>1</min>
     <max>4096</max>
@@ -3185,6 +3414,69 @@
     <property>Amazon.Connect.Model.Attribute.Value</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttributeCondition.ComparisonOperator</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttributeCondition.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttributeCondition.ProficiencyLevel</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttributeCondition.Value</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AuthenticationProfile.Description</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AuthenticationProfile.Id</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AuthenticationProfile.LastModifiedRegion</property>
+    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AuthenticationProfile.MaxSessionDuration</property>
+    <min>360</min>
+    <max>720</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AuthenticationProfile.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AuthenticationProfile.PeriodicSessionDuration</property>
+    <min>10</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AuthenticationProfileSummary.Id</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AuthenticationProfileSummary.LastModifiedRegion</property>
+    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AuthenticationProfileSummary.Name</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AvailableNumberSummary.PhoneNumber</property>
@@ -3384,9 +3676,29 @@
     <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DeviceInfo.OperatingSystem</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeviceInfo.PlatformName</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeviceInfo.PlatformVersion</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.Dimensions.RoutingStepExpression</property>
     <min>1</min>
     <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisconnectDetails.PotentialDisconnectIssue</property>
+    <min>0</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Distribution.Percentage</property>
@@ -3398,6 +3710,11 @@
     <min>8</min>
     <max>31</max>
     <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DownloadUrlMetadata.Url</property>
+    <min>1</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EmailReference.Name</property>
@@ -4001,6 +4318,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentPostContactSummary.Content</property>
+    <min>1</min>
+    <max>1270</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentTranscript.Content</property>
     <min>1</min>
     <max>16384</max>
@@ -4243,7 +4565,7 @@
     <property>Amazon.Connect.Model.TagSet.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(?!aws:)[a-zA-Z+-=._:/]+$</pattern>
+    <pattern>^(?!aws:)[\p{L}\p{Z}\p{N}_.:/=+\-@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TagSet.Value</property>
@@ -4344,6 +4666,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>(^[\S].*[\S]$)|(^[\S]$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UploadUrlMetadata.Url</property>
+    <min>1</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UrlReference.Name</property>

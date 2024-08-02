@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public S3ClassificationScope Unmarshall(JsonUnmarshallerContext context)
         {
             S3ClassificationScope unmarshalledObject = new S3ClassificationScope();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public DataTransferApi Unmarshall(JsonUnmarshallerContext context)
         {
             DataTransferApi unmarshalledObject = new DataTransferApi();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

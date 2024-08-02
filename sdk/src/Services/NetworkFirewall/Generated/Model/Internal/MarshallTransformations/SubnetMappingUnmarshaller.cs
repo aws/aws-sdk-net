@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public SubnetMapping Unmarshall(JsonUnmarshallerContext context)
         {
             SubnetMapping unmarshalledObject = new SubnetMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

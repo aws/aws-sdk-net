@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public AccountTakeoverRiskConfigurationType Unmarshall(JsonUnmarshallerContext context)
         {
             AccountTakeoverRiskConfigurationType unmarshalledObject = new AccountTakeoverRiskConfigurationType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEc2TransitGatewayDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEc2TransitGatewayDetails unmarshalledObject = new AwsEc2TransitGatewayDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

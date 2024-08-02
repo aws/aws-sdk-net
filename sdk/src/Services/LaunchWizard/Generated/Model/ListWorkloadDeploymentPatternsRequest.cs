@@ -31,7 +31,9 @@ namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
     /// Container for the parameters to the ListWorkloadDeploymentPatterns operation.
-    /// Lists the workload deployment patterns.
+    /// Lists the workload deployment patterns for a given workload name. You can use the
+    /// <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">ListWorkloads</a>
+    /// operation to discover the available workload names.
     /// </summary>
     public partial class ListWorkloadDeploymentPatternsRequest : AmazonLaunchWizardRequest
     {
@@ -85,7 +87,7 @@ namespace Amazon.LaunchWizard.Model
         /// The name of the workload.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string WorkloadName
         {
             get { return this._workloadName; }

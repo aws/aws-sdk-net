@@ -40,7 +40,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property CaseSensitive. 
         /// <para>
-        /// Indicates whether the match is case sensitive. Defaults to false.
+        /// Indicates whether the match is case sensitive.
         /// </para>
         /// </summary>
         public bool? CaseSensitive

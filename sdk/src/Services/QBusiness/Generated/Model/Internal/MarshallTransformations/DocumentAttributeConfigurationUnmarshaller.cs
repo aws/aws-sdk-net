@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public DocumentAttributeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentAttributeConfiguration unmarshalledObject = new DocumentAttributeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

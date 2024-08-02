@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public CustomerManagedS3Storage Unmarshall(JsonUnmarshallerContext context)
         {
             CustomerManagedS3Storage unmarshalledObject = new CustomerManagedS3Storage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

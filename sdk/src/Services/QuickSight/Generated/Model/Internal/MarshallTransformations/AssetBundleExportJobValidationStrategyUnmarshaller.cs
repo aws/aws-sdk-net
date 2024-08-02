@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AssetBundleExportJobValidationStrategy Unmarshall(JsonUnmarshallerContext context)
         {
             AssetBundleExportJobValidationStrategy unmarshalledObject = new AssetBundleExportJobValidationStrategy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
-    /// Information about an action that returns a custom HTTP response.
+    /// Describes an action that returns a custom HTTP response.
     /// </summary>
     public partial class FixedResponseAction
     {

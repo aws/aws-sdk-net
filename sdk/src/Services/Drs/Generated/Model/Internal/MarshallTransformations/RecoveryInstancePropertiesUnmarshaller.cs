@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public RecoveryInstanceProperties Unmarshall(JsonUnmarshallerContext context)
         {
             RecoveryInstanceProperties unmarshalledObject = new RecoveryInstanceProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

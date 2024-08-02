@@ -726,6 +726,10 @@ namespace Amazon.RedshiftServerless
         /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.Ipv6CidrBlockNotFoundException">
+        /// There are no subnets in your VPC with associated IPv6 CIDR blocks. To use dual-stack
+        /// mode, associate an IPv6 CIDR block with each subnet in your VPC.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -2863,6 +2867,10 @@ namespace Amazon.RedshiftServerless
         /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.Ipv6CidrBlockNotFoundException">
+        /// There are no subnets in your VPC with associated IPv6 CIDR blocks. To use dual-stack
+        /// mode, associate an IPv6 CIDR block with each subnet in your VPC.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -2890,8 +2898,32 @@ namespace Amazon.RedshiftServerless
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonRedshiftServerlessEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonRedshiftServerlessEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

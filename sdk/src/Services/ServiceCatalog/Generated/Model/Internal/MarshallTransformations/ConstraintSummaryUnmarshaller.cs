@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public ConstraintSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ConstraintSummary unmarshalledObject = new ConstraintSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

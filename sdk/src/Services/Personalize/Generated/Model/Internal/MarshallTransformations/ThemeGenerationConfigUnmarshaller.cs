@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public ThemeGenerationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ThemeGenerationConfig unmarshalledObject = new ThemeGenerationConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -35,6 +35,7 @@ namespace Amazon.OSIS.Model
     public partial class GetPipelineBlueprintResponse : AmazonWebServiceResponse
     {
         private PipelineBlueprint _blueprint;
+        private string _format;
 
         /// <summary>
         /// Gets and sets the property Blueprint. 
@@ -52,6 +53,24 @@ namespace Amazon.OSIS.Model
         internal bool IsSetBlueprint()
         {
             return this._blueprint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The format of the blueprint.
+        /// </para>
+        /// </summary>
+        public string Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
         }
 
     }

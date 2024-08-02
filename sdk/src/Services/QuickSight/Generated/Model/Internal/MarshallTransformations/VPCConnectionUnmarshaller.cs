@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public VPCConnection Unmarshall(JsonUnmarshallerContext context)
         {
             VPCConnection unmarshalledObject = new VPCConnection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

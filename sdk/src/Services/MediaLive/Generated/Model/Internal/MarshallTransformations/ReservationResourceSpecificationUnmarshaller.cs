@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public ReservationResourceSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             ReservationResourceSpecification unmarshalledObject = new ReservationResourceSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -44,6 +44,7 @@ namespace Amazon.KinesisFirehose.Model
         private SplunkRetryOptions _retryOptions;
         private SplunkS3BackupMode _s3BackupMode;
         private S3DestinationConfiguration _s3Configuration;
+        private SecretsManagerConfiguration _secretsManagerConfiguration;
 
         /// <summary>
         /// Gets and sets the property BufferingHints. 
@@ -148,7 +149,7 @@ namespace Amazon.KinesisFirehose.Model
         /// endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string HECToken
         {
             get { return this._hecToken; }
@@ -241,6 +242,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetS3Configuration()
         {
             return this._s3Configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManagerConfiguration. 
+        /// <para>
+        ///  The configuration that defines how you access secrets for Splunk. 
+        /// </para>
+        /// </summary>
+        public SecretsManagerConfiguration SecretsManagerConfiguration
+        {
+            get { return this._secretsManagerConfiguration; }
+            set { this._secretsManagerConfiguration = value; }
+        }
+
+        // Check to see if SecretsManagerConfiguration property is set
+        internal bool IsSetSecretsManagerConfiguration()
+        {
+            return this._secretsManagerConfiguration != null;
         }
 
     }

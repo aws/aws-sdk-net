@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public TeletextSourceSettings Unmarshall(JsonUnmarshallerContext context)
         {
             TeletextSourceSettings unmarshalledObject = new TeletextSourceSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

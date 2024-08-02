@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FreeFormLayoutElement Unmarshall(JsonUnmarshallerContext context)
         {
             FreeFormLayoutElement unmarshalledObject = new FreeFormLayoutElement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

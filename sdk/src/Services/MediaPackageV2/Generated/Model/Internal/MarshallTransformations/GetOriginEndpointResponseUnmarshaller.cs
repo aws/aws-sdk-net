@@ -100,6 +100,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     response.ETag = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ForceEndpointErrorConfiguration", targetDepth))
+                {
+                    var unmarshaller = ForceEndpointErrorConfigurationUnmarshaller.Instance;
+                    response.ForceEndpointErrorConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HlsManifests", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<GetHlsManifestConfiguration, GetHlsManifestConfigurationUnmarshaller>(GetHlsManifestConfigurationUnmarshaller.Instance);

@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         public OriginationRoute Unmarshall(JsonUnmarshallerContext context)
         {
             OriginationRoute unmarshalledObject = new OriginationRoute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public OTAUpdateInfo Unmarshall(JsonUnmarshallerContext context)
         {
             OTAUpdateInfo unmarshalledObject = new OTAUpdateInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public ReasonSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ReasonSummary unmarshalledObject = new ReasonSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

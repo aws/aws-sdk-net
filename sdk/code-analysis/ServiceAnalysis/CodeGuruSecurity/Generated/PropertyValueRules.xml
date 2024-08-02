@@ -45,7 +45,7 @@
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.GetFindingsRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.GetFindingsRequest.NextToken</property>
@@ -74,6 +74,10 @@
     <min>1</min>
     <max>140</max>
     <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruSecurity.Model.GetScanResponse.ErrorMessage</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.GetScanResponse.RunId</property>

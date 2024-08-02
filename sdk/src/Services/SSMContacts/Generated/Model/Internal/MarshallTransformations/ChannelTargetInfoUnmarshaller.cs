@@ -57,6 +57,8 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
         public ChannelTargetInfo Unmarshall(JsonUnmarshallerContext context)
         {
             ChannelTargetInfo unmarshalledObject = new ChannelTargetInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

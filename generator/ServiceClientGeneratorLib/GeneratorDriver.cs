@@ -197,6 +197,8 @@ namespace ServiceClientGenerator
             if (Configuration.Namespace == "Amazon.S3")
             {
                 ExecuteProjectFileGenerators();
+                // The AmazonS3RetryPolicy simply populates the static list of requests to retry for a status code of 200 which returns an exception.
+                ExecuteGenerator(new AmazonS3RetryPolicy(), "AmazonS3RetryPolicy.cs");
                 return;
             }
             // The top level request that all operation requests are children of
@@ -1416,17 +1418,17 @@ namespace ServiceClientGenerator
             command.Execute(CodeAnalysisRoot, this.Configuration);
         }
 
-        public static void RemoveOrphanedShapesAndServices(HashSet<string> generatedFiles, HashSet<string> generatedTestFolders, string sdkRootFolder)
+        public static void RemoveOrphanedShapesAndServices(HashSet<string> generatedFiles, HashSet<string> generatedTestFiles, string sdkRootFolder)
         {
             var codeGeneratedServiceList = codeGeneratedServiceNames.Distinct();
 
             // Cleanup services within the main sdk/services folder
             var srcFolder = Utils.PathCombineAlt(sdkRootFolder, SourceSubFoldername, ServicesSubFoldername);
-            RemoveOrphanedShapes(generatedFiles, null, srcFolder);
+            RemoveOrphanedShapes(generatedFiles, srcFolder);
 
-            // Cleanup services within the sdk/test folder where it is a generated test service
+            // Cleanup services within the sdk/test/services folder where it is a generated test service
             var testSrcFolder = Utils.PathCombineAlt(sdkRootFolder, TestsSubFoldername, ServicesSubFoldername);
-            RemoveOrphanedShapes(generatedFiles, generatedTestFolders, testSrcFolder);
+            RemoveOrphanedShapes(generatedFiles, generatedTestFiles, testSrcFolder);
                         
             // Cleanup orphaned Service src artifacts. This is encountered when the service identifier is modified.
             RemoveOrphanedServices(srcFolder, codeGeneratedServiceList);
@@ -1435,18 +1437,52 @@ namespace ServiceClientGenerator
             // Cleanup orphaned Service code analysis artifacts. This is encountered when the service identifier is modified.
             RemoveOrphanedServices(Utils.PathCombineAlt(sdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName), codeGeneratedServiceList);
         }
-        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, HashSet<string> generatedTestFolders, string srcFolder)
+
+        /// <summary>
+        /// Removes orphaned */generated/* files from specified srcFolder. This can be encountered when a model 
+        /// removes an operation or shape and the sub shapes are no longer needed. The file will be deleted if
+        /// the file contains */generated/* as part of the path and is not a file from a current run generated 
+        /// service (generatedFiles).
+        /// </summary>
+        /// <param name="generatedFiles">Lookup of all files that have been generated.</param>
+        /// <param name="srcFolder">The path to the sdk/services folder containing generated services and manual source code.</param>
+        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, string srcFolder)
         {
-            // Remove orphaned shapes. Most likely due to taking in a model that was still under development.
             foreach (var file in Directory.GetFiles(srcFolder, "*.cs", SearchOption.AllDirectories).OrderBy(f => f))
             {
                 var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(file));
                 if (fullPath.IndexOf($"/{GeneratedCodeFoldername}/", StringComparison.OrdinalIgnoreCase) < 0)
                     continue;
 
-                if (!generatedFiles.Contains(fullPath) && generatedTestFolders?.Contains(fullPath) == false)
+                if (!generatedFiles.Contains(fullPath))
                 {
                     Console.Error.WriteLine("**** Warning: Removing orphaned generated code " + Path.GetFileName(file));
+                    File.Delete(file);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Removes orphaned */generated/* files from specified srcFolder. This can be encountered when a test service model 
+        /// removes an operation or shape and the sub shapes are no longer needed. Special care must be taken within the 
+        /// sdk/test/services folder because there is a mix of generated tests and test services. The file will be deleted if
+        /// the file contains */generated/* as part of the path, is not a file from a current run generated test service (generatedFiles),
+        /// and is not a file from a current run generated test (generatedTestFiles).
+        /// </summary>
+        /// <param name="generatedFiles">Lookup of all files that have been generated.</param>
+        /// <param name="generatedTestFiles">Lookup of all the generated test files.</param>
+        /// <param name="srcFolder">The path to the sdk/test/services folder containing generated tests and test services.</param>
+        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, HashSet<string> generatedTestFiles, string srcFolder)
+        {
+            foreach (var file in Directory.GetFiles(srcFolder, "*.cs", SearchOption.AllDirectories).OrderBy(f => f))
+            {
+                var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(file));
+                if (fullPath.IndexOf($"/{GeneratedCodeFoldername}/", StringComparison.OrdinalIgnoreCase) < 0)
+                    continue;
+
+                if (!generatedFiles.Contains(fullPath) && !generatedTestFiles.Contains(fullPath))
+                {
+                    Console.Error.WriteLine("**** Warning: Removing orphaned generated test code " + Path.GetFileName(file));
                     File.Delete(file);
                 }
             }

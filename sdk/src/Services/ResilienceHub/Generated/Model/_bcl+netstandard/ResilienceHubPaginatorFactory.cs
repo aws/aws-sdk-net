@@ -53,6 +53,14 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Paginator for ListAppAssessmentResourceDrifts operation
+        ///</summary>
+        public IListAppAssessmentResourceDriftsPaginator ListAppAssessmentResourceDrifts(ListAppAssessmentResourceDriftsRequest request) 
+        {
+            return new ListAppAssessmentResourceDriftsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAppAssessments operation
         ///</summary>
         public IListAppAssessmentsPaginator ListAppAssessments(ListAppAssessmentsRequest request) 
@@ -138,6 +146,14 @@ namespace Amazon.ResilienceHub.Model
         public IListResiliencyPoliciesPaginator ListResiliencyPolicies(ListResiliencyPoliciesRequest request) 
         {
             return new ListResiliencyPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourceGroupingRecommendations operation
+        ///</summary>
+        public IListResourceGroupingRecommendationsPaginator ListResourceGroupingRecommendations(ListResourceGroupingRecommendationsRequest request) 
+        {
+            return new ListResourceGroupingRecommendationsPaginator(this.client, request);
         }
 
         /// <summary>

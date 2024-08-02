@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public ChoiceImprovementPlan Unmarshall(JsonUnmarshallerContext context)
         {
             ChoiceImprovementPlan unmarshalledObject = new ChoiceImprovementPlan();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

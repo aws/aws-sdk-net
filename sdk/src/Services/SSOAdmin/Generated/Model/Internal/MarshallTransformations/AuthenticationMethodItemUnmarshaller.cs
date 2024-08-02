@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public AuthenticationMethodItem Unmarshall(JsonUnmarshallerContext context)
         {
             AuthenticationMethodItem unmarshalledObject = new AuthenticationMethodItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

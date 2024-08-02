@@ -57,6 +57,8 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         public RouteFilterPrefix Unmarshall(JsonUnmarshallerContext context)
         {
             RouteFilterPrefix unmarshalledObject = new RouteFilterPrefix();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

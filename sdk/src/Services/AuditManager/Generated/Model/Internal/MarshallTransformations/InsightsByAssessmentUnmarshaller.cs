@@ -57,6 +57,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         public InsightsByAssessment Unmarshall(JsonUnmarshallerContext context)
         {
             InsightsByAssessment unmarshalledObject = new InsightsByAssessment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -338,6 +338,72 @@ namespace Amazon.AccessAnalyzer
 
         #endregion
         
+        #region  CheckNoPublicAccess
+
+
+        /// <summary>
+        /// Checks whether a resource policy can grant public access to the specified resource
+        /// type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckNoPublicAccess service method.</param>
+        /// 
+        /// <returns>The response from the CheckNoPublicAccess service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InvalidParameterException">
+        /// The specified parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.UnprocessableEntityException">
+        /// The specified entity could not be processed.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckNoPublicAccess">REST API Reference for CheckNoPublicAccess Operation</seealso>
+        CheckNoPublicAccessResponse CheckNoPublicAccess(CheckNoPublicAccessRequest request);
+
+
+
+        /// <summary>
+        /// Checks whether a resource policy can grant public access to the specified resource
+        /// type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckNoPublicAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CheckNoPublicAccess service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InvalidParameterException">
+        /// The specified parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.UnprocessableEntityException">
+        /// The specified entity could not be processed.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckNoPublicAccess">REST API Reference for CheckNoPublicAccess Operation</seealso>
+        Task<CheckNoPublicAccessResponse> CheckNoPublicAccessAsync(CheckNoPublicAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateAccessPreview
 
 
@@ -678,6 +744,58 @@ namespace Amazon.AccessAnalyzer
 
         #endregion
         
+        #region  GenerateFindingRecommendation
+
+
+        /// <summary>
+        /// Creates a recommendation for an unused permissions finding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateFindingRecommendation service method.</param>
+        /// 
+        /// <returns>The response from the GenerateFindingRecommendation service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GenerateFindingRecommendation">REST API Reference for GenerateFindingRecommendation Operation</seealso>
+        GenerateFindingRecommendationResponse GenerateFindingRecommendation(GenerateFindingRecommendationRequest request);
+
+
+
+        /// <summary>
+        /// Creates a recommendation for an unused permissions finding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateFindingRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GenerateFindingRecommendation service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GenerateFindingRecommendation">REST API Reference for GenerateFindingRecommendation Operation</seealso>
+        Task<GenerateFindingRecommendationResponse> GenerateFindingRecommendationAsync(GenerateFindingRecommendationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAccessPreview
 
 
@@ -983,6 +1101,64 @@ namespace Amazon.AccessAnalyzer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFinding">REST API Reference for GetFinding Operation</seealso>
         Task<GetFindingResponse> GetFindingAsync(GetFindingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetFindingRecommendation
+
+
+        /// <summary>
+        /// Retrieves information about a finding recommendation for the specified analyzer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingRecommendation service method.</param>
+        /// 
+        /// <returns>The response from the GetFindingRecommendation service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingRecommendation">REST API Reference for GetFindingRecommendation Operation</seealso>
+        GetFindingRecommendationResponse GetFindingRecommendation(GetFindingRecommendationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about a finding recommendation for the specified analyzer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFindingRecommendation service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingRecommendation">REST API Reference for GetFindingRecommendation Operation</seealso>
+        Task<GetFindingRecommendationResponse> GetFindingRecommendationAsync(GetFindingRecommendationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

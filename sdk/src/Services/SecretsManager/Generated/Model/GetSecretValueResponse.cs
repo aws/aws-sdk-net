@@ -114,6 +114,12 @@ namespace Amazon.SecretsManager.Model
         /// was originally provided as a string, then this field is omitted. The secret value
         /// appears in <c>SecretString</c> instead.
         /// </para>
+        ///  
+        /// <para>
+        /// Sensitive: This field contains sensitive information, so the service does not include
+        /// it in CloudTrail log entries. If you create your own log entries, you must also avoid
+        /// logging the information in this field.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=65536)]
         public MemoryStream SecretBinary
@@ -138,6 +144,12 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// If this secret was created by using the console, then Secrets Manager stores the information
         /// as a JSON structure of key/value pairs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Sensitive: This field contains sensitive information, so the service does not include
+        /// it in CloudTrail log entries. If you create your own log entries, you must also avoid
+        /// logging the information in this field.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=65536)]

@@ -57,6 +57,8 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         public KeyListEntry Unmarshall(JsonUnmarshallerContext context)
         {
             KeyListEntry unmarshalledObject = new KeyListEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

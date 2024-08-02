@@ -57,6 +57,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         public InspectorServiceAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             InspectorServiceAttributes unmarshalledObject = new InspectorServiceAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

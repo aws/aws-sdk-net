@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public RightsizingRecommendationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             RightsizingRecommendationConfiguration unmarshalledObject = new RightsizingRecommendationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

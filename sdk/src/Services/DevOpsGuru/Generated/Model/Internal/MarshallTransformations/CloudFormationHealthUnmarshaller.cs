@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public CloudFormationHealth Unmarshall(JsonUnmarshallerContext context)
         {
             CloudFormationHealth unmarshalledObject = new CloudFormationHealth();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

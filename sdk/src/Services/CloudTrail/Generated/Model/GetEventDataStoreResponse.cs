@@ -44,6 +44,7 @@ namespace Amazon.CloudTrail.Model
         private bool? _multiRegionEnabled;
         private string _name;
         private bool? _organizationEnabled;
+        private List<PartitionKey> _partitionKeys = AWSConfigs.InitializeCollections ? new List<PartitionKey>() : null;
         private int? _retentionPeriod;
         private EventDataStoreStatus _status;
         private bool? _terminationProtectionEnabled;
@@ -243,6 +244,27 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetOrganizationEnabled()
         {
             return this._organizationEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PartitionKeys. 
+        /// <para>
+        /// The partition keys for the event data store. To improve query performance and efficiency,
+        /// CloudTrail Lake organizes event data into partitions based on values derived from
+        /// partition keys.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2)]
+        public List<PartitionKey> PartitionKeys
+        {
+            get { return this._partitionKeys; }
+            set { this._partitionKeys = value; }
+        }
+
+        // Check to see if PartitionKeys property is set
+        internal bool IsSetPartitionKeys()
+        {
+            return this._partitionKeys != null && (this._partitionKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

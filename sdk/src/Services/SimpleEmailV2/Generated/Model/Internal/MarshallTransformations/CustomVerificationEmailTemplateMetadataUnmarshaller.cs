@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public CustomVerificationEmailTemplateMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             CustomVerificationEmailTemplateMetadata unmarshalledObject = new CustomVerificationEmailTemplateMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

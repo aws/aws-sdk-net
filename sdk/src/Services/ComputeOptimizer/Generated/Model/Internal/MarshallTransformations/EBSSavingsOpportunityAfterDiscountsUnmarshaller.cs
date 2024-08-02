@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public EBSSavingsOpportunityAfterDiscounts Unmarshall(JsonUnmarshallerContext context)
         {
             EBSSavingsOpportunityAfterDiscounts unmarshalledObject = new EBSSavingsOpportunityAfterDiscounts();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

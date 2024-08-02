@@ -90,9 +90,11 @@ namespace Amazon.PaymentCryptographyData.Model
         private DukptDerivationAttributes _incomingDukptAttributes;
         private string _incomingKeyIdentifier;
         private TranslationIsoFormats _incomingTranslationAttributes;
+        private WrappedKey _incomingWrappedKey;
         private DukptDerivationAttributes _outgoingDukptAttributes;
         private string _outgoingKeyIdentifier;
         private TranslationIsoFormats _outgoingTranslationAttributes;
+        private WrappedKey _outgoingWrappedKey;
 
         /// <summary>
         /// Gets and sets the property EncryptedPinBlock. 
@@ -137,6 +139,11 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The <c>keyARN</c> of the encryption key under which incoming PIN block data is encrypted.
         /// This key type can be PEK or BDK.
         /// </para>
+        ///  
+        /// <para>
+        /// When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping
+        /// key for PIN block. Otherwise, it is the key identifier used to perform the operation.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=322)]
         public string IncomingKeyIdentifier
@@ -169,6 +176,25 @@ namespace Amazon.PaymentCryptographyData.Model
         internal bool IsSetIncomingTranslationAttributes()
         {
             return this._incomingTranslationAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncomingWrappedKey. 
+        /// <para>
+        /// The WrappedKeyBlock containing the encryption key under which incoming PIN block data
+        /// is encrypted.
+        /// </para>
+        /// </summary>
+        public WrappedKey IncomingWrappedKey
+        {
+            get { return this._incomingWrappedKey; }
+            set { this._incomingWrappedKey = value; }
+        }
+
+        // Check to see if IncomingWrappedKey property is set
+        internal bool IsSetIncomingWrappedKey()
+        {
+            return this._incomingWrappedKey != null;
         }
 
         /// <summary>
@@ -228,6 +254,25 @@ namespace Amazon.PaymentCryptographyData.Model
         internal bool IsSetOutgoingTranslationAttributes()
         {
             return this._outgoingTranslationAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutgoingWrappedKey. 
+        /// <para>
+        /// The WrappedKeyBlock containing the encryption key for encrypting outgoing PIN block
+        /// data.
+        /// </para>
+        /// </summary>
+        public WrappedKey OutgoingWrappedKey
+        {
+            get { return this._outgoingWrappedKey; }
+            set { this._outgoingWrappedKey = value; }
+        }
+
+        // Check to see if OutgoingWrappedKey property is set
+        internal bool IsSetOutgoingWrappedKey()
+        {
+            return this._outgoingWrappedKey != null;
         }
 
     }

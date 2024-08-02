@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public SourceAuth Unmarshall(JsonUnmarshallerContext context)
         {
             SourceAuth unmarshalledObject = new SourceAuth();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

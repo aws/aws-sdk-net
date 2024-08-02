@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public Autotune Unmarshall(JsonUnmarshallerContext context)
         {
             Autotune unmarshalledObject = new Autotune();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

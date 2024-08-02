@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public InstanceRecommendation Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceRecommendation unmarshalledObject = new InstanceRecommendation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

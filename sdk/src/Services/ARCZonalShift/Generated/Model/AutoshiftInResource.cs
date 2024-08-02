@@ -50,17 +50,17 @@ namespace Amazon.ARCZonalShift.Model
         /// Gets and sets the property AppliedStatus. 
         /// <para>
         /// The <c>appliedStatus</c> field specifies which application traffic shift is in effect
-        /// for a resource when there is more than one traffic shift active. There can be more
+        /// for a resource when there is more than one active traffic shift. There can be more
         /// than one application traffic shift in progress at the same time - that is, practice
-        /// run zonal shifts, customer-started zonal shifts, or an autoshift. The <c>appliedStatus</c>
-        /// field for an autoshift for a resource can have one of two values: <c>APPLIED</c> or
-        /// <c>NOT_APPLIED</c>. The zonal shift or autoshift that is currently in effect for the
-        /// resource has an applied status set to <c>APPLIED</c>.
+        /// run zonal shifts, customer-initiated zonal shifts, or an autoshift. The <c>appliedStatus</c>
+        /// field for a shift that is in progress for a resource can have one of two values: <c>APPLIED</c>
+        /// or <c>NOT_APPLIED</c>. The zonal shift or autoshift that is currently in effect for
+        /// the resource has an <c>appliedStatus</c> set to <c>APPLIED</c>.
         /// </para>
         ///  
         /// <para>
         /// The overall principle for precedence is that zonal shifts that you start as a customer
-        /// take precedence autoshifts, which take precedence over practice runs. That is, customer-started
+        /// take precedence autoshifts, which take precedence over practice runs. That is, customer-initiated
         /// zonal shifts &gt; autoshifts &gt; practice run zonal shifts.
         /// </para>
         ///  
@@ -86,11 +86,12 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property AwayFrom. 
         /// <para>
-        /// The Availability Zone that traffic is shifted away from for a resource, when Amazon
-        /// Web Services starts an autoshift. Until the autoshift ends, traffic for the resource
-        /// is instead directed to other Availability Zones in the Amazon Web Services Region.
-        /// An autoshift can end for a resource, for example, when Amazon Web Services ends the
-        /// autoshift for the Availability Zone or when you disable zonal autoshift for the resource.
+        /// The Availability Zone (for example, <c>use1-az1</c>) that traffic is shifted away
+        /// from for a resource, when Amazon Web Services starts an autoshift. Until the autoshift
+        /// ends, traffic for the resource is instead directed to other Availability Zones in
+        /// the Amazon Web Services Region. An autoshift can end for a resource, for example,
+        /// when Amazon Web Services ends the autoshift for the Availability Zone or when you
+        /// disable zonal autoshift for the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=20)]

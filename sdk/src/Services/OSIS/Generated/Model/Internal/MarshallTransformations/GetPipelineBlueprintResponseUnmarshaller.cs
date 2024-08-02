@@ -58,6 +58,12 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                     response.Blueprint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Format", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Format = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -84,6 +90,10 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DisabledOperationException"))
+                {
+                    return DisabledOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
                 {

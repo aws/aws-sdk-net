@@ -57,6 +57,8 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         public TagInfoForResource Unmarshall(JsonUnmarshallerContext context)
         {
             TagInfoForResource unmarshalledObject = new TagInfoForResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

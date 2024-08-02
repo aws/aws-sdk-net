@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsDynamoDbTableRestoreSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AwsDynamoDbTableRestoreSummary unmarshalledObject = new AwsDynamoDbTableRestoreSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

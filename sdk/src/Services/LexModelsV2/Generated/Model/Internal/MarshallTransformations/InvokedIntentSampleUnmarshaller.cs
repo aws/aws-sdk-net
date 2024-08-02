@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public InvokedIntentSample Unmarshall(JsonUnmarshallerContext context)
         {
             InvokedIntentSample unmarshalledObject = new InvokedIntentSample();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

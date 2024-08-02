@@ -157,7 +157,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The search criteria based on user-defined contact attributes that have been configured
         /// for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search
-        /// by customer contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// by custom contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>

@@ -57,6 +57,8 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         public HashAlgorithmOptions Unmarshall(JsonUnmarshallerContext context)
         {
             HashAlgorithmOptions unmarshalledObject = new HashAlgorithmOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public LocalIpDetails Unmarshall(JsonUnmarshallerContext context)
         {
             LocalIpDetails unmarshalledObject = new LocalIpDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

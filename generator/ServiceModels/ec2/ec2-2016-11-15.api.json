@@ -4,12 +4,14 @@
     "apiVersion":"2016-11-15",
     "endpointPrefix":"ec2",
     "protocol":"ec2",
+    "protocols":["ec2"],
     "serviceAbbreviation":"Amazon EC2",
     "serviceFullName":"Amazon Elastic Compute Cloud",
     "serviceId":"EC2",
     "signatureVersion":"v4",
     "uid":"ec2-2016-11-15",
-    "xmlNamespace":"http://ec2.amazonaws.com/doc/2016-11-15"
+    "xmlNamespace":"http://ec2.amazonaws.com/doc/2016-11-15",
+    "auth":["aws.auth#sigv4"]
   },
   "operations":{
     "AcceptAddressTransfer":{
@@ -692,6 +694,15 @@
       "input":{"shape":"CreateIpamRequest"},
       "output":{"shape":"CreateIpamResult"}
     },
+    "CreateIpamExternalResourceVerificationToken":{
+      "name":"CreateIpamExternalResourceVerificationToken",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateIpamExternalResourceVerificationTokenRequest"},
+      "output":{"shape":"CreateIpamExternalResourceVerificationTokenResult"}
+    },
     "CreateIpamPool":{
       "name":"CreateIpamPool",
       "http":{
@@ -1369,6 +1380,15 @@
       },
       "input":{"shape":"DeleteIpamRequest"},
       "output":{"shape":"DeleteIpamResult"}
+    },
+    "DeleteIpamExternalResourceVerificationToken":{
+      "name":"DeleteIpamExternalResourceVerificationToken",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteIpamExternalResourceVerificationTokenRequest"},
+      "output":{"shape":"DeleteIpamExternalResourceVerificationTokenResult"}
     },
     "DeleteIpamPool":{
       "name":"DeleteIpamPool",
@@ -2469,6 +2489,15 @@
       "input":{"shape":"DescribeIpamByoasnRequest"},
       "output":{"shape":"DescribeIpamByoasnResult"}
     },
+    "DescribeIpamExternalResourceVerificationTokens":{
+      "name":"DescribeIpamExternalResourceVerificationTokens",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeIpamExternalResourceVerificationTokensRequest"},
+      "output":{"shape":"DescribeIpamExternalResourceVerificationTokensResult"}
+    },
     "DescribeIpamPools":{
       "name":"DescribeIpamPools",
       "http":{
@@ -2981,6 +3010,15 @@
       },
       "input":{"shape":"DescribeTagsRequest"},
       "output":{"shape":"DescribeTagsResult"}
+    },
+    "DescribeTrafficMirrorFilterRules":{
+      "name":"DescribeTrafficMirrorFilterRules",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeTrafficMirrorFilterRulesRequest"},
+      "output":{"shape":"DescribeTrafficMirrorFilterRulesResult"}
     },
     "DescribeTrafficMirrorFilters":{
       "name":"DescribeTrafficMirrorFilters",
@@ -3963,6 +4001,15 @@
       },
       "input":{"shape":"GetInstanceMetadataDefaultsRequest"},
       "output":{"shape":"GetInstanceMetadataDefaultsResult"}
+    },
+    "GetInstanceTpmEkPub":{
+      "name":"GetInstanceTpmEkPub",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetInstanceTpmEkPubRequest"},
+      "output":{"shape":"GetInstanceTpmEkPubResult"}
     },
     "GetInstanceTypesFromInstanceRequirements":{
       "name":"GetInstanceTypesFromInstanceRequirements",
@@ -10488,7 +10535,8 @@
         "DryRun":{
           "shape":"Boolean",
           "locationName":"dryRun"
-        }
+        },
+        "BgpAsnExtended":{"shape":"Long"}
       }
     },
     "CreateCustomerGatewayResult":{
@@ -10927,6 +10975,31 @@
         "InternetGateway":{
           "shape":"InternetGateway",
           "locationName":"internetGateway"
+        }
+      }
+    },
+    "CreateIpamExternalResourceVerificationTokenRequest":{
+      "type":"structure",
+      "required":["IpamId"],
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "IpamId":{"shape":"IpamId"},
+        "TagSpecifications":{
+          "shape":"TagSpecificationList",
+          "locationName":"TagSpecification"
+        },
+        "ClientToken":{
+          "shape":"String",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "CreateIpamExternalResourceVerificationTokenResult":{
+      "type":"structure",
+      "members":{
+        "IpamExternalResourceVerificationToken":{
+          "shape":"IpamExternalResourceVerificationToken",
+          "locationName":"ipamExternalResourceVerificationToken"
         }
       }
     },
@@ -11598,7 +11671,8 @@
         "TagSpecifications":{
           "shape":"TagSpecificationList",
           "locationName":"TagSpecification"
-        }
+        },
+        "NetworkBorderGroup":{"shape":"String"}
       }
     },
     "CreatePublicIpv4PoolResult":{
@@ -12061,6 +12135,10 @@
         "ClientToken":{
           "shape":"String",
           "idempotencyToken":true
+        },
+        "TagSpecifications":{
+          "shape":"TagSpecificationList",
+          "locationName":"TagSpecification"
         }
       }
     },
@@ -12992,6 +13070,10 @@
         "Tags":{
           "shape":"TagList",
           "locationName":"tagSet"
+        },
+        "BgpAsnExtended":{
+          "shape":"String",
+          "locationName":"bgpAsnExtended"
         }
       }
     },
@@ -13442,6 +13524,23 @@
         "InternetGatewayId":{
           "shape":"InternetGatewayId",
           "locationName":"internetGatewayId"
+        }
+      }
+    },
+    "DeleteIpamExternalResourceVerificationTokenRequest":{
+      "type":"structure",
+      "required":["IpamExternalResourceVerificationTokenId"],
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "IpamExternalResourceVerificationTokenId":{"shape":"IpamExternalResourceVerificationTokenId"}
+      }
+    },
+    "DeleteIpamExternalResourceVerificationTokenResult":{
+      "type":"structure",
+      "members":{
+        "IpamExternalResourceVerificationToken":{
+          "shape":"IpamExternalResourceVerificationToken",
+          "locationName":"ipamExternalResourceVerificationToken"
         }
       }
     },
@@ -13897,7 +13996,8 @@
       "required":["PoolId"],
       "members":{
         "DryRun":{"shape":"Boolean"},
-        "PoolId":{"shape":"Ipv4PoolEc2Id"}
+        "PoolId":{"shape":"Ipv4PoolEc2Id"},
+        "NetworkBorderGroup":{"shape":"String"}
       }
     },
     "DeletePublicIpv4PoolResult":{
@@ -16592,6 +16692,35 @@
         }
       }
     },
+    "DescribeIpamExternalResourceVerificationTokensRequest":{
+      "type":"structure",
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "Filters":{
+          "shape":"FilterList",
+          "locationName":"Filter"
+        },
+        "NextToken":{"shape":"NextToken"},
+        "MaxResults":{"shape":"IpamMaxResults"},
+        "IpamExternalResourceVerificationTokenIds":{
+          "shape":"ValueStringList",
+          "locationName":"IpamExternalResourceVerificationTokenId"
+        }
+      }
+    },
+    "DescribeIpamExternalResourceVerificationTokensResult":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"NextToken",
+          "locationName":"nextToken"
+        },
+        "IpamExternalResourceVerificationTokens":{
+          "shape":"IpamExternalResourceVerificationTokenSet",
+          "locationName":"ipamExternalResourceVerificationTokenSet"
+        }
+      }
+    },
     "DescribeIpamPoolsRequest":{
       "type":"structure",
       "members":{
@@ -18483,6 +18612,36 @@
         "Tags":{
           "shape":"TagDescriptionList",
           "locationName":"tagSet"
+        }
+      }
+    },
+    "DescribeTrafficMirrorFilterRulesRequest":{
+      "type":"structure",
+      "members":{
+        "TrafficMirrorFilterRuleIds":{
+          "shape":"TrafficMirrorFilterRuleIdList",
+          "locationName":"TrafficMirrorFilterRuleId"
+        },
+        "TrafficMirrorFilterId":{"shape":"TrafficMirrorFilterId"},
+        "DryRun":{"shape":"Boolean"},
+        "Filters":{
+          "shape":"FilterList",
+          "locationName":"Filter"
+        },
+        "MaxResults":{"shape":"TrafficMirroringMaxResults"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
+    "DescribeTrafficMirrorFilterRulesResult":{
+      "type":"structure",
+      "members":{
+        "TrafficMirrorFilterRules":{
+          "shape":"TrafficMirrorFilterRuleSet",
+          "locationName":"trafficMirrorFilterRuleSet"
+        },
+        "NextToken":{
+          "shape":"String",
+          "locationName":"nextToken"
         }
       }
     },
@@ -21054,6 +21213,24 @@
         "shape":"ElasticIpAssociationId",
         "locationName":"item"
       }
+    },
+    "EkPubKeyFormat":{
+      "type":"string",
+      "enum":[
+        "der",
+        "tpmt"
+      ]
+    },
+    "EkPubKeyType":{
+      "type":"string",
+      "enum":[
+        "rsa-2048",
+        "ecc-sec-p384"
+      ]
+    },
+    "EkPubKeyValue":{
+      "type":"string",
+      "sensitive":true
     },
     "ElasticGpuAssociation":{
       "type":"structure",
@@ -23706,6 +23883,41 @@
         }
       }
     },
+    "GetInstanceTpmEkPubRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "KeyType",
+        "KeyFormat"
+      ],
+      "members":{
+        "InstanceId":{"shape":"InstanceId"},
+        "KeyType":{"shape":"EkPubKeyType"},
+        "KeyFormat":{"shape":"EkPubKeyFormat"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "GetInstanceTpmEkPubResult":{
+      "type":"structure",
+      "members":{
+        "InstanceId":{
+          "shape":"InstanceId",
+          "locationName":"instanceId"
+        },
+        "KeyType":{
+          "shape":"EkPubKeyType",
+          "locationName":"keyType"
+        },
+        "KeyFormat":{
+          "shape":"EkPubKeyFormat",
+          "locationName":"keyFormat"
+        },
+        "KeyValue":{
+          "shape":"EkPubKeyValue",
+          "locationName":"keyValue"
+        }
+      }
+    },
     "GetInstanceTypesFromInstanceRequirementsRequest":{
       "type":"structure",
       "required":[
@@ -25070,6 +25282,7 @@
     "HostTenancy":{
       "type":"string",
       "enum":[
+        "default",
         "dedicated",
         "host"
       ]
@@ -28639,7 +28852,31 @@
         "g6.24xlarge",
         "g6.48xlarge",
         "gr6.4xlarge",
-        "gr6.8xlarge"
+        "gr6.8xlarge",
+        "c7i-flex.large",
+        "c7i-flex.xlarge",
+        "c7i-flex.2xlarge",
+        "c7i-flex.4xlarge",
+        "c7i-flex.8xlarge",
+        "u7i-12tb.224xlarge",
+        "u7in-16tb.224xlarge",
+        "u7in-24tb.224xlarge",
+        "u7in-32tb.224xlarge",
+        "u7ib-12tb.224xlarge",
+        "c7gn.metal",
+        "r8g.medium",
+        "r8g.large",
+        "r8g.xlarge",
+        "r8g.2xlarge",
+        "r8g.4xlarge",
+        "r8g.8xlarge",
+        "r8g.12xlarge",
+        "r8g.16xlarge",
+        "r8g.24xlarge",
+        "r8g.48xlarge",
+        "r8g.metal-24xl",
+        "r8g.metal-48xl",
+        "mac2-m1ultra.metal"
       ]
     },
     "InstanceTypeHypervisor":{
@@ -28767,6 +29004,10 @@
         "NeuronInfo":{
           "shape":"NeuronInfo",
           "locationName":"neuronInfo"
+        },
+        "PhcSupport":{
+          "shape":"PhcSupport",
+          "locationName":"phcSupport"
         }
       }
     },
@@ -29362,9 +29603,17 @@
           "shape":"String",
           "locationName":"vpcId"
         },
+        "NetworkInterfaceAttachmentStatus":{
+          "shape":"IpamNetworkInterfaceAttachmentStatus",
+          "locationName":"networkInterfaceAttachmentStatus"
+        },
         "SampleTime":{
           "shape":"MillisecondDateTime",
           "locationName":"sampleTime"
+        },
+        "AvailabilityZoneId":{
+          "shape":"String",
+          "locationName":"availabilityZoneId"
         }
       }
     },
@@ -29396,6 +29645,74 @@
         }
       }
     },
+    "IpamExternalResourceVerificationToken":{
+      "type":"structure",
+      "members":{
+        "IpamExternalResourceVerificationTokenId":{
+          "shape":"IpamExternalResourceVerificationTokenId",
+          "locationName":"ipamExternalResourceVerificationTokenId"
+        },
+        "IpamExternalResourceVerificationTokenArn":{
+          "shape":"ResourceArn",
+          "locationName":"ipamExternalResourceVerificationTokenArn"
+        },
+        "IpamId":{
+          "shape":"IpamId",
+          "locationName":"ipamId"
+        },
+        "IpamArn":{
+          "shape":"ResourceArn",
+          "locationName":"ipamArn"
+        },
+        "IpamRegion":{
+          "shape":"String",
+          "locationName":"ipamRegion"
+        },
+        "TokenValue":{
+          "shape":"String",
+          "locationName":"tokenValue"
+        },
+        "TokenName":{
+          "shape":"String",
+          "locationName":"tokenName"
+        },
+        "NotAfter":{
+          "shape":"MillisecondDateTime",
+          "locationName":"notAfter"
+        },
+        "Status":{
+          "shape":"TokenState",
+          "locationName":"status"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "locationName":"tagSet"
+        },
+        "State":{
+          "shape":"IpamExternalResourceVerificationTokenState",
+          "locationName":"state"
+        }
+      }
+    },
+    "IpamExternalResourceVerificationTokenId":{"type":"string"},
+    "IpamExternalResourceVerificationTokenSet":{
+      "type":"list",
+      "member":{
+        "shape":"IpamExternalResourceVerificationToken",
+        "locationName":"item"
+      }
+    },
+    "IpamExternalResourceVerificationTokenState":{
+      "type":"string",
+      "enum":[
+        "create-in-progress",
+        "create-complete",
+        "create-failed",
+        "delete-in-progress",
+        "delete-complete",
+        "delete-failed"
+      ]
+    },
     "IpamId":{"type":"string"},
     "IpamManagementState":{
       "type":"string",
@@ -29414,6 +29731,13 @@
       "type":"integer",
       "max":128,
       "min":0
+    },
+    "IpamNetworkInterfaceAttachmentStatus":{
+      "type":"string",
+      "enum":[
+        "available",
+        "in-use"
+      ]
     },
     "IpamOperatingRegion":{
       "type":"structure",
@@ -29883,6 +30207,10 @@
         "VpcId":{
           "shape":"String",
           "locationName":"vpcId"
+        },
+        "AvailabilityZoneId":{
+          "shape":"String",
+          "locationName":"availabilityZoneId"
         }
       }
     },
@@ -36168,6 +36496,13 @@
         "Value":{"shape":"String"}
       }
     },
+    "PhcSupport":{
+      "type":"string",
+      "enum":[
+        "unsupported",
+        "supported"
+      ]
+    },
     "Placement":{
       "type":"structure",
       "members":{
@@ -36884,7 +37219,9 @@
         "ClientToken":{
           "shape":"String",
           "idempotencyToken":true
-        }
+        },
+        "VerificationMethod":{"shape":"VerificationMethod"},
+        "IpamExternalResourceVerificationTokenId":{"shape":"IpamExternalResourceVerificationTokenId"}
       }
     },
     "ProvisionIpamPoolCidrResult":{
@@ -36907,7 +37244,8 @@
         "DryRun":{"shape":"Boolean"},
         "IpamPoolId":{"shape":"IpamPoolId"},
         "PoolId":{"shape":"Ipv4PoolEc2Id"},
-        "NetmaskLength":{"shape":"Integer"}
+        "NetmaskLength":{"shape":"Integer"},
+        "NetworkBorderGroup":{"shape":"String"}
       }
     },
     "ProvisionPublicIpv4PoolCidrResult":{
@@ -39048,7 +39386,8 @@
         "vpc-block-public-access-exclusion",
         "ipam-resource-discovery",
         "ipam-resource-discovery-association",
-        "instance-connect-endpoint"
+        "instance-connect-endpoint",
+        "ipam-external-resource-verification-token"
       ]
     },
     "ResponseError":{
@@ -42927,6 +43266,13 @@
         "permanent-restore-failed"
       ]
     },
+    "TokenState":{
+      "type":"string",
+      "enum":[
+        "valid",
+        "expired"
+      ]
+    },
     "TotalLocalStorageGB":{
       "type":"structure",
       "members":{
@@ -43043,6 +43389,10 @@
         "Description":{
           "shape":"String",
           "locationName":"description"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "locationName":"tagSet"
         }
       }
     },
@@ -43059,8 +43409,22 @@
       "type":"list",
       "member":{"shape":"TrafficMirrorFilterRuleField"}
     },
+    "TrafficMirrorFilterRuleIdList":{
+      "type":"list",
+      "member":{
+        "shape":"TrafficMirrorFilterRuleIdWithResolver",
+        "locationName":"item"
+      }
+    },
     "TrafficMirrorFilterRuleIdWithResolver":{"type":"string"},
     "TrafficMirrorFilterRuleList":{
+      "type":"list",
+      "member":{
+        "shape":"TrafficMirrorFilterRule",
+        "locationName":"item"
+      }
+    },
+    "TrafficMirrorFilterRuleSet":{
       "type":"list",
       "member":{
         "shape":"TrafficMirrorFilterRule",
@@ -45294,6 +45658,13 @@
         "shape":"String",
         "locationName":"item"
       }
+    },
+    "VerificationMethod":{
+      "type":"string",
+      "enum":[
+        "remarks-x509",
+        "dns-token"
+      ]
     },
     "VerifiedAccessEndpoint":{
       "type":"structure",

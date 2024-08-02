@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsCertificateManagerCertificateDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsCertificateManagerCertificateDetails unmarshalledObject = new AwsCertificateManagerCertificateDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

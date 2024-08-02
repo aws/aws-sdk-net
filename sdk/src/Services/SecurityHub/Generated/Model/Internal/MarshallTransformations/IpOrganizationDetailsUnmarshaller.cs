@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public IpOrganizationDetails Unmarshall(JsonUnmarshallerContext context)
         {
             IpOrganizationDetails unmarshalledObject = new IpOrganizationDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

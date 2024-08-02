@@ -57,6 +57,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public KxAttachedCluster Unmarshall(JsonUnmarshallerContext context)
         {
             KxAttachedCluster unmarshalledObject = new KxAttachedCluster();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

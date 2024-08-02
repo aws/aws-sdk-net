@@ -41,6 +41,16 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
+<<<<<<< HEAD
+||||||| Commit version number update changes
+[assembly: AssemblyVersion("3.3")]
+[assembly: AssemblyFileVersion("3.7.312.1")]
+
+=======
+[assembly: AssemblyVersion("3.3")]
+[assembly: AssemblyFileVersion("3.7.401.0")]
+
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
 #if BCL
 [assembly: AssemblyVersion("4.0")]
 #else

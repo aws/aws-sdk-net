@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public SplunkRetryOptions Unmarshall(JsonUnmarshallerContext context)
         {
             SplunkRetryOptions unmarshalledObject = new SplunkRetryOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

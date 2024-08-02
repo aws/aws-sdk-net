@@ -722,6 +722,12 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// User-decoupled WorkSpaces are only supported by Amazon WorkSpaces Core.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review your running mode to ensure you are using one that is optimal for your needs
+        /// and budget. For more information on switching running modes, see <a href="http://aws.amazon.com/workspaces-family/workspaces/faqs/#:~:text=Can%20I%20switch%20between%20hourly%20and%20monthly%20billing%20on%20WorkSpaces%20Personal%3F">
+        /// Can I switch between hourly and monthly billing?</a> 
+        /// </para>
         ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaces service method.</param>
@@ -738,6 +744,42 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
         Task<CreateWorkspacesResponse> CreateWorkspacesAsync(CreateWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateWorkspacesPool
+
+
+
+        /// <summary>
+        /// Creates a pool of WorkSpaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspacesPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWorkspacesPool service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspacesPool">REST API Reference for CreateWorkspacesPool Operation</seealso>
+        Task<CreateWorkspacesPoolResponse> CreateWorkspacesPoolAsync(CreateWorkspacesPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1723,6 +1765,60 @@ namespace Amazon.WorkSpaces
 
         #endregion
                 
+        #region  DescribeWorkspacesPools
+
+
+
+        /// <summary>
+        /// Describes the specified WorkSpaces Pools.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspacesPools service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkspacesPools service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesPools">REST API Reference for DescribeWorkspacesPools Operation</seealso>
+        Task<DescribeWorkspacesPoolsResponse> DescribeWorkspacesPoolsAsync(DescribeWorkspacesPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeWorkspacesPoolSessions
+
+
+
+        /// <summary>
+        /// Retrieves a list that describes the streaming sessions for a specified pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspacesPoolSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkspacesPoolSessions service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesPoolSessions">REST API Reference for DescribeWorkspacesPoolSessions Operation</seealso>
+        Task<DescribeWorkspacesPoolSessionsResponse> DescribeWorkspacesPoolSessionsAsync(DescribeWorkspacesPoolSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisassociateConnectionAlias
 
 
@@ -1788,6 +1884,9 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
         /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
@@ -2164,6 +2263,9 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -2225,11 +2327,44 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySelfservicePermissions">REST API Reference for ModifySelfservicePermissions Operation</seealso>
         Task<ModifySelfservicePermissionsResponse> ModifySelfservicePermissionsAsync(ModifySelfservicePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyStreamingProperties
+
+
+
+        /// <summary>
+        /// Modifies the specified streaming properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyStreamingProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyStreamingProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyStreamingProperties">REST API Reference for ModifyStreamingProperties Operation</seealso>
+        Task<ModifyStreamingPropertiesResponse> ModifyStreamingPropertiesAsync(ModifyStreamingPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2477,6 +2612,9 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
         /// This operation is not supported.
         /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
         /// Your resource limits have been exceeded.
         /// </exception>
@@ -2634,6 +2772,51 @@ namespace Amazon.WorkSpaces
 
         #endregion
                 
+        #region  StartWorkspacesPool
+
+
+
+        /// <summary>
+        /// Starts the specified pool.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot start a pool unless it has a running mode of <c>AutoStop</c> and a state
+        /// of <c>STOPPED</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartWorkspacesPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartWorkspacesPool service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationInProgressException">
+        /// The properties of this WorkSpace are currently being modified. Try again in a moment.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspacesPool">REST API Reference for StartWorkspacesPool Operation</seealso>
+        Task<StartWorkspacesPoolResponse> StartWorkspacesPoolAsync(StartWorkspacesPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StopWorkspaces
 
 
@@ -2655,6 +2838,45 @@ namespace Amazon.WorkSpaces
         /// <returns>The response from the StopWorkspaces service method, as returned by WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces">REST API Reference for StopWorkspaces Operation</seealso>
         Task<StopWorkspacesResponse> StopWorkspacesAsync(StopWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopWorkspacesPool
+
+
+
+        /// <summary>
+        /// Stops the specified pool.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot stop a WorkSpace pool unless it has a running mode of <c>AutoStop</c> and
+        /// a state of <c>AVAILABLE</c>, <c>IMPAIRED</c>, <c>UNHEALTHY</c>, or <c>ERROR</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopWorkspacesPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopWorkspacesPool service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationInProgressException">
+        /// The properties of this WorkSpace are currently being modified. Try again in a moment.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspacesPool">REST API Reference for StopWorkspacesPool Operation</seealso>
+        Task<StopWorkspacesPoolResponse> StopWorkspacesPoolAsync(StopWorkspacesPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2710,6 +2932,72 @@ namespace Amazon.WorkSpaces
         /// <returns>The response from the TerminateWorkspaces service method, as returned by WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">REST API Reference for TerminateWorkspaces Operation</seealso>
         Task<TerminateWorkspacesResponse> TerminateWorkspacesAsync(TerminateWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TerminateWorkspacesPool
+
+
+
+        /// <summary>
+        /// Terminates the specified pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateWorkspacesPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TerminateWorkspacesPool service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationInProgressException">
+        /// The properties of this WorkSpace are currently being modified. Try again in a moment.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspacesPool">REST API Reference for TerminateWorkspacesPool Operation</seealso>
+        Task<TerminateWorkspacesPoolResponse> TerminateWorkspacesPoolAsync(TerminateWorkspacesPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TerminateWorkspacesPoolSession
+
+
+
+        /// <summary>
+        /// Terminates the pool session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateWorkspacesPoolSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TerminateWorkspacesPoolSession service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationInProgressException">
+        /// The properties of this WorkSpace are currently being modified. Try again in a moment.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspacesPoolSession">REST API Reference for TerminateWorkspacesPoolSession Operation</seealso>
+        Task<TerminateWorkspacesPoolSessionResponse> TerminateWorkspacesPoolSessionAsync(TerminateWorkspacesPoolSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2944,6 +3232,45 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission">REST API Reference for UpdateWorkspaceImagePermission Operation</seealso>
         Task<UpdateWorkspaceImagePermissionResponse> UpdateWorkspaceImagePermissionAsync(UpdateWorkspaceImagePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateWorkspacesPool
+
+
+
+        /// <summary>
+        /// Updates the specified pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspacesPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkspacesPool service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationInProgressException">
+        /// The properties of this WorkSpace are currently being modified. Try again in a moment.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspacesPool">REST API Reference for UpdateWorkspacesPool Operation</seealso>
+        Task<UpdateWorkspacesPoolResponse> UpdateWorkspacesPoolAsync(UpdateWorkspacesPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

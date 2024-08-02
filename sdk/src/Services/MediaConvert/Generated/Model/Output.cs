@@ -120,7 +120,7 @@ namespace Amazon.MediaConvert.Model
         /// ISO outputs, if you use the format identifiers $Number$ or $Time$ in one output, you
         /// must use them in the same way in all outputs of the output group.
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=256)]
         public string NameModifier
         {
             get { return this._nameModifier; }

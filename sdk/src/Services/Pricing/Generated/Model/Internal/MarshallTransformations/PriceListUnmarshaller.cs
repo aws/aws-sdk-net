@@ -57,6 +57,8 @@ namespace Amazon.Pricing.Model.Internal.MarshallTransformations
         public PriceList Unmarshall(JsonUnmarshallerContext context)
         {
             PriceList unmarshalledObject = new PriceList();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

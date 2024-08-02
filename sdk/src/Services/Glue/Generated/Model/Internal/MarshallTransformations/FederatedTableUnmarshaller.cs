@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public FederatedTable Unmarshall(JsonUnmarshallerContext context)
         {
             FederatedTable unmarshalledObject = new FederatedTable();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

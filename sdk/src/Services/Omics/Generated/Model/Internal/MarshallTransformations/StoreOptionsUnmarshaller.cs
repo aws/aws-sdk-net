@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public StoreOptions Unmarshall(JsonUnmarshallerContext context)
         {
             StoreOptions unmarshalledObject = new StoreOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

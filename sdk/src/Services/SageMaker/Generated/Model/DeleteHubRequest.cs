@@ -32,12 +32,6 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the DeleteHub operation.
     /// Delete a hub.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Hub APIs are only callable through SageMaker Studio.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class DeleteHubRequest : AmazonSageMakerRequest
     {
@@ -49,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the hub to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Required=true)]
         public string HubName
         {
             get { return this._hubName; }

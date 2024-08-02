@@ -57,6 +57,8 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         public ImageSetProperties Unmarshall(JsonUnmarshallerContext context)
         {
             ImageSetProperties unmarshalledObject = new ImageSetProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -98,6 +100,12 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("overrides", targetDepth))
+                {
+                    var unmarshaller = OverridesUnmarshaller.Instance;
+                    unmarshalledObject.Overrides = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("updatedAt", targetDepth))

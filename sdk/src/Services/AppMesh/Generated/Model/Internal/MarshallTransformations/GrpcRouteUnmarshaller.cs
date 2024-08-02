@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public GrpcRoute Unmarshall(JsonUnmarshallerContext context)
         {
             GrpcRoute unmarshalledObject = new GrpcRoute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

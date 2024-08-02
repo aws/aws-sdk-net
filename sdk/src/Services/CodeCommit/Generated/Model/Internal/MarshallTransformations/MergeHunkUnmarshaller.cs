@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public MergeHunk Unmarshall(JsonUnmarshallerContext context)
         {
             MergeHunk unmarshalledObject = new MergeHunk();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

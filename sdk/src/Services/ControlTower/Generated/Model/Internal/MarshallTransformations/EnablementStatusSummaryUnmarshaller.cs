@@ -57,6 +57,8 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         public EnablementStatusSummary Unmarshall(JsonUnmarshallerContext context)
         {
             EnablementStatusSummary unmarshalledObject = new EnablementStatusSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

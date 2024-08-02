@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public DomainDeliverabilityTrackingOption Unmarshall(JsonUnmarshallerContext context)
         {
             DomainDeliverabilityTrackingOption unmarshalledObject = new DomainDeliverabilityTrackingOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

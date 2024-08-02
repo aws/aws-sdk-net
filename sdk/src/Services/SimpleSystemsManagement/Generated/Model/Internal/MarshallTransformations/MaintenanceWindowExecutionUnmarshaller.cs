@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public MaintenanceWindowExecution Unmarshall(JsonUnmarshallerContext context)
         {
             MaintenanceWindowExecution unmarshalledObject = new MaintenanceWindowExecution();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

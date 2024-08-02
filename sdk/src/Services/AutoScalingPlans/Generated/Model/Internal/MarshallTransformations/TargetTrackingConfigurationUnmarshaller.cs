@@ -57,6 +57,8 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
         public TargetTrackingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TargetTrackingConfiguration unmarshalledObject = new TargetTrackingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public SchemaAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             SchemaAttribute unmarshalledObject = new SchemaAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

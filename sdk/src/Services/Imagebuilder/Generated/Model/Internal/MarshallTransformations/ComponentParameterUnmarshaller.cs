@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public ComponentParameter Unmarshall(JsonUnmarshallerContext context)
         {
             ComponentParameter unmarshalledObject = new ComponentParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public RemixSettings Unmarshall(JsonUnmarshallerContext context)
         {
             RemixSettings unmarshalledObject = new RemixSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

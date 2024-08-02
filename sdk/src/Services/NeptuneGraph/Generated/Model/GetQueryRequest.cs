@@ -62,7 +62,7 @@ namespace Amazon.NeptuneGraph.Model
         // Check to see if GraphIdentifier property is set
         internal bool IsSetGraphIdentifier()
         {
-            return this._graphIdentifier != null;
+            return !string.IsNullOrEmpty(this._graphIdentifier);
         }
 
         /// <summary>

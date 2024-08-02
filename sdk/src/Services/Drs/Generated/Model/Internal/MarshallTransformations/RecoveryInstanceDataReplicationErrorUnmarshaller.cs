@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public RecoveryInstanceDataReplicationError Unmarshall(JsonUnmarshallerContext context)
         {
             RecoveryInstanceDataReplicationError unmarshalledObject = new RecoveryInstanceDataReplicationError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

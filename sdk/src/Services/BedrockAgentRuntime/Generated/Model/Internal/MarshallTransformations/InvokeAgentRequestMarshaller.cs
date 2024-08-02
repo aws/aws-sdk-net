@@ -94,6 +94,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.InputText);
                 }
 
+                if(publicRequest.IsSetMemoryId())
+                {
+                    context.Writer.WritePropertyName("memoryId");
+                    context.Writer.Write(publicRequest.MemoryId);
+                }
+
                 if(publicRequest.IsSetSessionState())
                 {
                     context.Writer.WritePropertyName("sessionState");

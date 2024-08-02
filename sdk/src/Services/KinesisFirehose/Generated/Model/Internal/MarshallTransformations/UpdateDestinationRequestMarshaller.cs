@@ -142,6 +142,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetIcebergDestinationUpdate())
+                {
+                    context.Writer.WritePropertyName("IcebergDestinationUpdate");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IcebergDestinationUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IcebergDestinationUpdate, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRedshiftDestinationUpdate())
                 {
                     context.Writer.WritePropertyName("RedshiftDestinationUpdate");

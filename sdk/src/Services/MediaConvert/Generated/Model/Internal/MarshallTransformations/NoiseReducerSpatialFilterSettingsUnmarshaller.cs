@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public NoiseReducerSpatialFilterSettings Unmarshall(JsonUnmarshallerContext context)
         {
             NoiseReducerSpatialFilterSettings unmarshalledObject = new NoiseReducerSpatialFilterSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

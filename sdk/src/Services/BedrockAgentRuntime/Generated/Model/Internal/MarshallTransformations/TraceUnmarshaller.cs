@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         public Trace Unmarshall(JsonUnmarshallerContext context)
         {
             Trace unmarshalledObject = new Trace();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = FailureTraceUnmarshaller.Instance;
                     unmarshalledObject.FailureTrace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("guardrailTrace", targetDepth))
+                {
+                    var unmarshaller = GuardrailTraceUnmarshaller.Instance;
+                    unmarshalledObject.GuardrailTrace = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("orchestrationTrace", targetDepth))

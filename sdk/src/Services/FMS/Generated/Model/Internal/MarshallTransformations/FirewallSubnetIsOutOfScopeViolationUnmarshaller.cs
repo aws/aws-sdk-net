@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public FirewallSubnetIsOutOfScopeViolation Unmarshall(JsonUnmarshallerContext context)
         {
             FirewallSubnetIsOutOfScopeViolation unmarshalledObject = new FirewallSubnetIsOutOfScopeViolation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

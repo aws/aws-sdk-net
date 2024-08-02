@@ -57,6 +57,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         public LendingDocument Unmarshall(JsonUnmarshallerContext context)
         {
             LendingDocument unmarshalledObject = new LendingDocument();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

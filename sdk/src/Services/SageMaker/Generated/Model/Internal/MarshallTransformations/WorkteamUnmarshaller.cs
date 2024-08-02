@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public Workteam Unmarshall(JsonUnmarshallerContext context)
         {
             Workteam unmarshalledObject = new Workteam();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -104,6 +106,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubDomain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WorkerAccessConfiguration", targetDepth))
+                {
+                    var unmarshaller = WorkerAccessConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.WorkerAccessConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WorkforceArn", targetDepth))

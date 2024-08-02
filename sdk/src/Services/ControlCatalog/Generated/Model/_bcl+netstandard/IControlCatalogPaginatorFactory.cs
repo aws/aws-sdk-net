@@ -32,6 +32,11 @@ namespace Amazon.ControlCatalog.Model
         IListCommonControlsPaginator ListCommonControls(ListCommonControlsRequest request);
 
         /// <summary>
+        /// Paginator for ListControls operation
+        ///</summary>
+        IListControlsPaginator ListControls(ListControlsRequest request);
+
+        /// <summary>
         /// Paginator for ListDomains operation
         ///</summary>
         IListDomainsPaginator ListDomains(ListDomainsRequest request);

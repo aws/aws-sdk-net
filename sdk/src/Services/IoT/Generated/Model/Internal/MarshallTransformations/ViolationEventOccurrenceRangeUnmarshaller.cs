@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public ViolationEventOccurrenceRange Unmarshall(JsonUnmarshallerContext context)
         {
             ViolationEventOccurrenceRange unmarshalledObject = new ViolationEventOccurrenceRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public AvailabilityZoneDetail Unmarshall(JsonUnmarshallerContext context)
         {
             AvailabilityZoneDetail unmarshalledObject = new AvailabilityZoneDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

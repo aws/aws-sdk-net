@@ -57,6 +57,8 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         public RepositoryDescription Unmarshall(JsonUnmarshallerContext context)
         {
             RepositoryDescription unmarshalledObject = new RepositoryDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

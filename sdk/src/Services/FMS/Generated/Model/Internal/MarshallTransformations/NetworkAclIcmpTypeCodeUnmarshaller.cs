@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public NetworkAclIcmpTypeCode Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkAclIcmpTypeCode unmarshalledObject = new NetworkAclIcmpTypeCode();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

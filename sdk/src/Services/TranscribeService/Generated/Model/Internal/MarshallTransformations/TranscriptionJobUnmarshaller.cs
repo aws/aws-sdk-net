@@ -57,6 +57,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public TranscriptionJob Unmarshall(JsonUnmarshallerContext context)
         {
             TranscriptionJob unmarshalledObject = new TranscriptionJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

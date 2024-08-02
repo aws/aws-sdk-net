@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         public CommitDiffSourceCodeType Unmarshall(JsonUnmarshallerContext context)
         {
             CommitDiffSourceCodeType unmarshalledObject = new CommitDiffSourceCodeType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

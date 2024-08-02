@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public ElasticsearchBufferingHints Unmarshall(JsonUnmarshallerContext context)
         {
             ElasticsearchBufferingHints unmarshalledObject = new ElasticsearchBufferingHints();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

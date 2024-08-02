@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ReferenceLineDynamicDataConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ReferenceLineDynamicDataConfiguration unmarshalledObject = new ReferenceLineDynamicDataConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

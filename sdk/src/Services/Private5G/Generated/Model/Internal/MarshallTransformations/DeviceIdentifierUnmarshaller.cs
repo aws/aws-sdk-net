@@ -57,6 +57,8 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
         public DeviceIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             DeviceIdentifier unmarshalledObject = new DeviceIdentifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

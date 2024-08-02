@@ -57,6 +57,8 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         public MessageMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             MessageMetadata unmarshalledObject = new MessageMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

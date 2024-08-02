@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ParameterDropDownControl Unmarshall(JsonUnmarshallerContext context)
         {
             ParameterDropDownControl unmarshalledObject = new ParameterDropDownControl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         public IndexAttachment Unmarshall(JsonUnmarshallerContext context)
         {
             IndexAttachment unmarshalledObject = new IndexAttachment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

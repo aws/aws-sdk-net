@@ -57,6 +57,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         public ValidateStateMachineDefinitionDiagnostic Unmarshall(JsonUnmarshallerContext context)
         {
             ValidateStateMachineDefinitionDiagnostic unmarshalledObject = new ValidateStateMachineDefinitionDiagnostic();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public NetAppONTAPCluster Unmarshall(JsonUnmarshallerContext context)
         {
             NetAppONTAPCluster unmarshalledObject = new NetAppONTAPCluster();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

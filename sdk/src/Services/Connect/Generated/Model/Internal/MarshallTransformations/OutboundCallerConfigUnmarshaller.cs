@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public OutboundCallerConfig Unmarshall(JsonUnmarshallerContext context)
         {
             OutboundCallerConfig unmarshalledObject = new OutboundCallerConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

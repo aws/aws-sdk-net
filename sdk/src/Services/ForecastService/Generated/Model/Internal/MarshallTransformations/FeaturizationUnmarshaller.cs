@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public Featurization Unmarshall(JsonUnmarshallerContext context)
         {
             Featurization unmarshalledObject = new Featurization();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         public PrivateKeyAttributesV3 Unmarshall(JsonUnmarshallerContext context)
         {
             PrivateKeyAttributesV3 unmarshalledObject = new PrivateKeyAttributesV3();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

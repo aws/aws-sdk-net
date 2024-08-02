@@ -85,6 +85,14 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AddonIssueCode AccessDenied = new AddonIssueCode("AccessDenied");
         /// <summary>
+        /// Constant AddonPermissionFailure for AddonIssueCode
+        /// </summary>
+        public static readonly AddonIssueCode AddonPermissionFailure = new AddonIssueCode("AddonPermissionFailure");
+        /// <summary>
+        /// Constant AddonSubscriptionNeeded for AddonIssueCode
+        /// </summary>
+        public static readonly AddonIssueCode AddonSubscriptionNeeded = new AddonIssueCode("AddonSubscriptionNeeded");
+        /// <summary>
         /// Constant AdmissionRequestDenied for AddonIssueCode
         /// </summary>
         public static readonly AddonIssueCode AdmissionRequestDenied = new AddonIssueCode("AdmissionRequestDenied");
@@ -380,6 +388,10 @@ namespace Amazon.EKS
     public class CapacityTypes : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CAPACITY_BLOCK for CapacityTypes
+        /// </summary>
+        public static readonly CapacityTypes CAPACITY_BLOCK = new CapacityTypes("CAPACITY_BLOCK");
         /// <summary>
         /// Constant ON_DEMAND for CapacityTypes
         /// </summary>
@@ -1055,6 +1067,64 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type FargateProfileIssueCode.
+    /// </summary>
+    public class FargateProfileIssueCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDenied for FargateProfileIssueCode
+        /// </summary>
+        public static readonly FargateProfileIssueCode AccessDenied = new FargateProfileIssueCode("AccessDenied");
+        /// <summary>
+        /// Constant ClusterUnreachable for FargateProfileIssueCode
+        /// </summary>
+        public static readonly FargateProfileIssueCode ClusterUnreachable = new FargateProfileIssueCode("ClusterUnreachable");
+        /// <summary>
+        /// Constant InternalFailure for FargateProfileIssueCode
+        /// </summary>
+        public static readonly FargateProfileIssueCode InternalFailure = new FargateProfileIssueCode("InternalFailure");
+        /// <summary>
+        /// Constant PodExecutionRoleAlreadyInUse for FargateProfileIssueCode
+        /// </summary>
+        public static readonly FargateProfileIssueCode PodExecutionRoleAlreadyInUse = new FargateProfileIssueCode("PodExecutionRoleAlreadyInUse");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FargateProfileIssueCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FargateProfileIssueCode FindValue(string value)
+        {
+            return FindValue<FargateProfileIssueCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FargateProfileIssueCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FargateProfileStatus.
     /// </summary>
     public class FargateProfileStatus : ConstantClass
@@ -1593,6 +1663,56 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type SupportType.
+    /// </summary>
+    public class SupportType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXTENDED for SupportType
+        /// </summary>
+        public static readonly SupportType EXTENDED = new SupportType("EXTENDED");
+        /// <summary>
+        /// Constant STANDARD for SupportType
+        /// </summary>
+        public static readonly SupportType STANDARD = new SupportType("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupportType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupportType FindValue(string value)
+        {
+            return FindValue<SupportType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupportType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TaintEffect.
     /// </summary>
     public class TaintEffect : ConstantClass
@@ -1725,6 +1845,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType PlatformVersion = new UpdateParamType("PlatformVersion");
         /// <summary>
+        /// Constant PodIdentityAssociations for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType PodIdentityAssociations = new UpdateParamType("PodIdentityAssociations");
+        /// <summary>
         /// Constant PublicAccessCidrs for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType PublicAccessCidrs = new UpdateParamType("PublicAccessCidrs");
@@ -1756,6 +1880,10 @@ namespace Amazon.EKS
         /// Constant TaintsToRemove for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType TaintsToRemove = new UpdateParamType("TaintsToRemove");
+        /// <summary>
+        /// Constant UpgradePolicy for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType UpgradePolicy = new UpdateParamType("UpgradePolicy");
         /// <summary>
         /// Constant Version for UpdateParamType
         /// </summary>
@@ -1892,6 +2020,10 @@ namespace Amazon.EKS
         /// Constant LoggingUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType LoggingUpdate = new UpdateType("LoggingUpdate");
+        /// <summary>
+        /// Constant UpgradePolicyUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType UpgradePolicyUpdate = new UpdateType("UpgradePolicyUpdate");
         /// <summary>
         /// Constant VersionUpdate for UpdateType
         /// </summary>

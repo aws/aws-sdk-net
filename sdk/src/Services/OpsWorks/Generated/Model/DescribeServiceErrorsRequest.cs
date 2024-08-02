@@ -31,7 +31,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeServiceErrors operation.
-    /// Describes AWS OpsWorks Stacks service errors.
+    /// Describes OpsWorks Stacks service errors.
     /// 
     ///  
     /// <para>

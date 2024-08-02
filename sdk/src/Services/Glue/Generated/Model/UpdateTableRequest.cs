@@ -37,10 +37,12 @@ namespace Amazon.Glue.Model
     {
         private string _catalogId;
         private string _databaseName;
+        private bool? _force;
         private bool? _skipArchive;
         private TableInput _tableInput;
         private string _transactionId;
         private string _versionId;
+        private ViewUpdateAction _viewUpdateAction;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -80,6 +82,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// A flag that can be set to true to ignore matching storage descriptor and subobject
+        /// matching requirements.
+        /// </para>
+        /// </summary>
+        public bool Force
+        {
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
         }
 
         /// <summary>
@@ -157,6 +178,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetVersionId()
         {
             return this._versionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ViewUpdateAction. 
+        /// <para>
+        /// The operation to be performed when updating the view.
+        /// </para>
+        /// </summary>
+        public ViewUpdateAction ViewUpdateAction
+        {
+            get { return this._viewUpdateAction; }
+            set { this._viewUpdateAction = value; }
+        }
+
+        // Check to see if ViewUpdateAction property is set
+        internal bool IsSetViewUpdateAction()
+        {
+            return this._viewUpdateAction != null;
         }
 
     }

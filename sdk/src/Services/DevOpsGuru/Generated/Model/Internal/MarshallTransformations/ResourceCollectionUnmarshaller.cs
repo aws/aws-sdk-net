@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public ResourceCollection Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceCollection unmarshalledObject = new ResourceCollection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

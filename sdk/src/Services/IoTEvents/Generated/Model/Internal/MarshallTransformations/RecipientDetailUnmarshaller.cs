@@ -57,6 +57,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         public RecipientDetail Unmarshall(JsonUnmarshallerContext context)
         {
             RecipientDetail unmarshalledObject = new RecipientDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

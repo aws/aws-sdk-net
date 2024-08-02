@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public NotificationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             NotificationConfig unmarshalledObject = new NotificationConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

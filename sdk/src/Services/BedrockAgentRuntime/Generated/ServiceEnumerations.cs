@@ -75,6 +75,56 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type ExecutionType.
+    /// </summary>
+    public class ExecutionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LAMBDA for ExecutionType
+        /// </summary>
+        public static readonly ExecutionType LAMBDA = new ExecutionType("LAMBDA");
+        /// <summary>
+        /// Constant RETURN_CONTROL for ExecutionType
+        /// </summary>
+        public static readonly ExecutionType RETURN_CONTROL = new ExecutionType("RETURN_CONTROL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionType FindValue(string value)
+        {
+            return FindValue<ExecutionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExternalSourceType.
     /// </summary>
     public class ExternalSourceType : ConstantClass
@@ -125,6 +175,822 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type FileSourceType.
+    /// </summary>
+    public class FileSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BYTE_CONTENT for FileSourceType
+        /// </summary>
+        public static readonly FileSourceType BYTE_CONTENT = new FileSourceType("BYTE_CONTENT");
+        /// <summary>
+        /// Constant S3 for FileSourceType
+        /// </summary>
+        public static readonly FileSourceType S3 = new FileSourceType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileSourceType FindValue(string value)
+        {
+            return FindValue<FileSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FileUseCase.
+    /// </summary>
+    public class FileUseCase : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CHAT for FileUseCase
+        /// </summary>
+        public static readonly FileUseCase CHAT = new FileUseCase("CHAT");
+        /// <summary>
+        /// Constant CODE_INTERPRETER for FileUseCase
+        /// </summary>
+        public static readonly FileUseCase CODE_INTERPRETER = new FileUseCase("CODE_INTERPRETER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileUseCase(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileUseCase FindValue(string value)
+        {
+            return FindValue<FileUseCase>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileUseCase(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlowCompletionReason.
+    /// </summary>
+    public class FlowCompletionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SUCCESS for FlowCompletionReason
+        /// </summary>
+        public static readonly FlowCompletionReason SUCCESS = new FlowCompletionReason("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowCompletionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowCompletionReason FindValue(string value)
+        {
+            return FindValue<FlowCompletionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowCompletionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuadrailAction.
+    /// </summary>
+    public class GuadrailAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERVENED for GuadrailAction
+        /// </summary>
+        public static readonly GuadrailAction INTERVENED = new GuadrailAction("INTERVENED");
+        /// <summary>
+        /// Constant NONE for GuadrailAction
+        /// </summary>
+        public static readonly GuadrailAction NONE = new GuadrailAction("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuadrailAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuadrailAction FindValue(string value)
+        {
+            return FindValue<GuadrailAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuadrailAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailAction.
+    /// </summary>
+    public class GuardrailAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERVENED for GuardrailAction
+        /// </summary>
+        public static readonly GuardrailAction INTERVENED = new GuardrailAction("INTERVENED");
+        /// <summary>
+        /// Constant NONE for GuardrailAction
+        /// </summary>
+        public static readonly GuardrailAction NONE = new GuardrailAction("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailAction FindValue(string value)
+        {
+            return FindValue<GuardrailAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailContentFilterConfidence.
+    /// </summary>
+    public class GuardrailContentFilterConfidence : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for GuardrailContentFilterConfidence
+        /// </summary>
+        public static readonly GuardrailContentFilterConfidence HIGH = new GuardrailContentFilterConfidence("HIGH");
+        /// <summary>
+        /// Constant LOW for GuardrailContentFilterConfidence
+        /// </summary>
+        public static readonly GuardrailContentFilterConfidence LOW = new GuardrailContentFilterConfidence("LOW");
+        /// <summary>
+        /// Constant MEDIUM for GuardrailContentFilterConfidence
+        /// </summary>
+        public static readonly GuardrailContentFilterConfidence MEDIUM = new GuardrailContentFilterConfidence("MEDIUM");
+        /// <summary>
+        /// Constant NONE for GuardrailContentFilterConfidence
+        /// </summary>
+        public static readonly GuardrailContentFilterConfidence NONE = new GuardrailContentFilterConfidence("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContentFilterConfidence(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContentFilterConfidence FindValue(string value)
+        {
+            return FindValue<GuardrailContentFilterConfidence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContentFilterConfidence(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailContentFilterType.
+    /// </summary>
+    public class GuardrailContentFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HATE for GuardrailContentFilterType
+        /// </summary>
+        public static readonly GuardrailContentFilterType HATE = new GuardrailContentFilterType("HATE");
+        /// <summary>
+        /// Constant INSULTS for GuardrailContentFilterType
+        /// </summary>
+        public static readonly GuardrailContentFilterType INSULTS = new GuardrailContentFilterType("INSULTS");
+        /// <summary>
+        /// Constant MISCONDUCT for GuardrailContentFilterType
+        /// </summary>
+        public static readonly GuardrailContentFilterType MISCONDUCT = new GuardrailContentFilterType("MISCONDUCT");
+        /// <summary>
+        /// Constant PROMPT_ATTACK for GuardrailContentFilterType
+        /// </summary>
+        public static readonly GuardrailContentFilterType PROMPT_ATTACK = new GuardrailContentFilterType("PROMPT_ATTACK");
+        /// <summary>
+        /// Constant SEXUAL for GuardrailContentFilterType
+        /// </summary>
+        public static readonly GuardrailContentFilterType SEXUAL = new GuardrailContentFilterType("SEXUAL");
+        /// <summary>
+        /// Constant VIOLENCE for GuardrailContentFilterType
+        /// </summary>
+        public static readonly GuardrailContentFilterType VIOLENCE = new GuardrailContentFilterType("VIOLENCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContentFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContentFilterType FindValue(string value)
+        {
+            return FindValue<GuardrailContentFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContentFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailContentPolicyAction.
+    /// </summary>
+    public class GuardrailContentPolicyAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCKED for GuardrailContentPolicyAction
+        /// </summary>
+        public static readonly GuardrailContentPolicyAction BLOCKED = new GuardrailContentPolicyAction("BLOCKED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContentPolicyAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContentPolicyAction FindValue(string value)
+        {
+            return FindValue<GuardrailContentPolicyAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContentPolicyAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailManagedWordType.
+    /// </summary>
+    public class GuardrailManagedWordType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROFANITY for GuardrailManagedWordType
+        /// </summary>
+        public static readonly GuardrailManagedWordType PROFANITY = new GuardrailManagedWordType("PROFANITY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailManagedWordType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailManagedWordType FindValue(string value)
+        {
+            return FindValue<GuardrailManagedWordType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailManagedWordType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailPiiEntityType.
+    /// </summary>
+    public class GuardrailPiiEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDRESS for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType ADDRESS = new GuardrailPiiEntityType("ADDRESS");
+        /// <summary>
+        /// Constant AGE for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType AGE = new GuardrailPiiEntityType("AGE");
+        /// <summary>
+        /// Constant AWS_ACCESS_KEY for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType AWS_ACCESS_KEY = new GuardrailPiiEntityType("AWS_ACCESS_KEY");
+        /// <summary>
+        /// Constant AWS_SECRET_KEY for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType AWS_SECRET_KEY = new GuardrailPiiEntityType("AWS_SECRET_KEY");
+        /// <summary>
+        /// Constant CA_HEALTH_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType CA_HEALTH_NUMBER = new GuardrailPiiEntityType("CA_HEALTH_NUMBER");
+        /// <summary>
+        /// Constant CA_SOCIAL_INSURANCE_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType CA_SOCIAL_INSURANCE_NUMBER = new GuardrailPiiEntityType("CA_SOCIAL_INSURANCE_NUMBER");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CARD_CVV for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType CREDIT_DEBIT_CARD_CVV = new GuardrailPiiEntityType("CREDIT_DEBIT_CARD_CVV");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CARD_EXPIRY for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType CREDIT_DEBIT_CARD_EXPIRY = new GuardrailPiiEntityType("CREDIT_DEBIT_CARD_EXPIRY");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CARD_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType CREDIT_DEBIT_CARD_NUMBER = new GuardrailPiiEntityType("CREDIT_DEBIT_CARD_NUMBER");
+        /// <summary>
+        /// Constant DRIVER_ID for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType DRIVER_ID = new GuardrailPiiEntityType("DRIVER_ID");
+        /// <summary>
+        /// Constant EMAIL for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType EMAIL = new GuardrailPiiEntityType("EMAIL");
+        /// <summary>
+        /// Constant INTERNATIONAL_BANK_ACCOUNT_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType INTERNATIONAL_BANK_ACCOUNT_NUMBER = new GuardrailPiiEntityType("INTERNATIONAL_BANK_ACCOUNT_NUMBER");
+        /// <summary>
+        /// Constant IP_ADDRESS for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType IP_ADDRESS = new GuardrailPiiEntityType("IP_ADDRESS");
+        /// <summary>
+        /// Constant LICENSE_PLATE for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType LICENSE_PLATE = new GuardrailPiiEntityType("LICENSE_PLATE");
+        /// <summary>
+        /// Constant MAC_ADDRESS for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType MAC_ADDRESS = new GuardrailPiiEntityType("MAC_ADDRESS");
+        /// <summary>
+        /// Constant NAME for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType NAME = new GuardrailPiiEntityType("NAME");
+        /// <summary>
+        /// Constant PASSWORD for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType PASSWORD = new GuardrailPiiEntityType("PASSWORD");
+        /// <summary>
+        /// Constant PHONE for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType PHONE = new GuardrailPiiEntityType("PHONE");
+        /// <summary>
+        /// Constant PIN for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType PIN = new GuardrailPiiEntityType("PIN");
+        /// <summary>
+        /// Constant SWIFT_CODE for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType SWIFT_CODE = new GuardrailPiiEntityType("SWIFT_CODE");
+        /// <summary>
+        /// Constant UK_NATIONAL_HEALTH_SERVICE_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType UK_NATIONAL_HEALTH_SERVICE_NUMBER = new GuardrailPiiEntityType("UK_NATIONAL_HEALTH_SERVICE_NUMBER");
+        /// <summary>
+        /// Constant UK_NATIONAL_INSURANCE_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType UK_NATIONAL_INSURANCE_NUMBER = new GuardrailPiiEntityType("UK_NATIONAL_INSURANCE_NUMBER");
+        /// <summary>
+        /// Constant UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER = new GuardrailPiiEntityType("UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER");
+        /// <summary>
+        /// Constant URL for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType URL = new GuardrailPiiEntityType("URL");
+        /// <summary>
+        /// Constant US_BANK_ACCOUNT_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType US_BANK_ACCOUNT_NUMBER = new GuardrailPiiEntityType("US_BANK_ACCOUNT_NUMBER");
+        /// <summary>
+        /// Constant US_BANK_ROUTING_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType US_BANK_ROUTING_NUMBER = new GuardrailPiiEntityType("US_BANK_ROUTING_NUMBER");
+        /// <summary>
+        /// Constant US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER = new GuardrailPiiEntityType("US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER");
+        /// <summary>
+        /// Constant US_PASSPORT_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType US_PASSPORT_NUMBER = new GuardrailPiiEntityType("US_PASSPORT_NUMBER");
+        /// <summary>
+        /// Constant US_SOCIAL_SECURITY_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType US_SOCIAL_SECURITY_NUMBER = new GuardrailPiiEntityType("US_SOCIAL_SECURITY_NUMBER");
+        /// <summary>
+        /// Constant USERNAME for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType USERNAME = new GuardrailPiiEntityType("USERNAME");
+        /// <summary>
+        /// Constant VEHICLE_IDENTIFICATION_NUMBER for GuardrailPiiEntityType
+        /// </summary>
+        public static readonly GuardrailPiiEntityType VEHICLE_IDENTIFICATION_NUMBER = new GuardrailPiiEntityType("VEHICLE_IDENTIFICATION_NUMBER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailPiiEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailPiiEntityType FindValue(string value)
+        {
+            return FindValue<GuardrailPiiEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailPiiEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailSensitiveInformationPolicyAction.
+    /// </summary>
+    public class GuardrailSensitiveInformationPolicyAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANONYMIZED for GuardrailSensitiveInformationPolicyAction
+        /// </summary>
+        public static readonly GuardrailSensitiveInformationPolicyAction ANONYMIZED = new GuardrailSensitiveInformationPolicyAction("ANONYMIZED");
+        /// <summary>
+        /// Constant BLOCKED for GuardrailSensitiveInformationPolicyAction
+        /// </summary>
+        public static readonly GuardrailSensitiveInformationPolicyAction BLOCKED = new GuardrailSensitiveInformationPolicyAction("BLOCKED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailSensitiveInformationPolicyAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailSensitiveInformationPolicyAction FindValue(string value)
+        {
+            return FindValue<GuardrailSensitiveInformationPolicyAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailSensitiveInformationPolicyAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailTopicPolicyAction.
+    /// </summary>
+    public class GuardrailTopicPolicyAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCKED for GuardrailTopicPolicyAction
+        /// </summary>
+        public static readonly GuardrailTopicPolicyAction BLOCKED = new GuardrailTopicPolicyAction("BLOCKED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailTopicPolicyAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailTopicPolicyAction FindValue(string value)
+        {
+            return FindValue<GuardrailTopicPolicyAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailTopicPolicyAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailTopicType.
+    /// </summary>
+    public class GuardrailTopicType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DENY for GuardrailTopicType
+        /// </summary>
+        public static readonly GuardrailTopicType DENY = new GuardrailTopicType("DENY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailTopicType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailTopicType FindValue(string value)
+        {
+            return FindValue<GuardrailTopicType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailTopicType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailWordPolicyAction.
+    /// </summary>
+    public class GuardrailWordPolicyAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCKED for GuardrailWordPolicyAction
+        /// </summary>
+        public static readonly GuardrailWordPolicyAction BLOCKED = new GuardrailWordPolicyAction("BLOCKED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailWordPolicyAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailWordPolicyAction FindValue(string value)
+        {
+            return FindValue<GuardrailWordPolicyAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailWordPolicyAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InvocationType.
     /// </summary>
     public class InvocationType : ConstantClass
@@ -134,6 +1000,10 @@ namespace Amazon.BedrockAgentRuntime
         /// Constant ACTION_GROUP for InvocationType
         /// </summary>
         public static readonly InvocationType ACTION_GROUP = new InvocationType("ACTION_GROUP");
+        /// <summary>
+        /// Constant ACTION_GROUP_CODE_INTERPRETER for InvocationType
+        /// </summary>
+        public static readonly InvocationType ACTION_GROUP_CODE_INTERPRETER = new InvocationType("ACTION_GROUP_CODE_INTERPRETER");
         /// <summary>
         /// Constant FINISH for InvocationType
         /// </summary>
@@ -172,6 +1042,122 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InvocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MemoryType.
+    /// </summary>
+    public class MemoryType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SESSION_SUMMARY for MemoryType
+        /// </summary>
+        public static readonly MemoryType SESSION_SUMMARY = new MemoryType("SESSION_SUMMARY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MemoryType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MemoryType FindValue(string value)
+        {
+            return FindValue<MemoryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MemoryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeType.
+    /// </summary>
+    public class NodeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConditionNode for NodeType
+        /// </summary>
+        public static readonly NodeType ConditionNode = new NodeType("ConditionNode");
+        /// <summary>
+        /// Constant FlowInputNode for NodeType
+        /// </summary>
+        public static readonly NodeType FlowInputNode = new NodeType("FlowInputNode");
+        /// <summary>
+        /// Constant FlowOutputNode for NodeType
+        /// </summary>
+        public static readonly NodeType FlowOutputNode = new NodeType("FlowOutputNode");
+        /// <summary>
+        /// Constant KnowledgeBaseNode for NodeType
+        /// </summary>
+        public static readonly NodeType KnowledgeBaseNode = new NodeType("KnowledgeBaseNode");
+        /// <summary>
+        /// Constant LambdaFunctionNode for NodeType
+        /// </summary>
+        public static readonly NodeType LambdaFunctionNode = new NodeType("LambdaFunctionNode");
+        /// <summary>
+        /// Constant LexNode for NodeType
+        /// </summary>
+        public static readonly NodeType LexNode = new NodeType("LexNode");
+        /// <summary>
+        /// Constant PromptNode for NodeType
+        /// </summary>
+        public static readonly NodeType PromptNode = new NodeType("PromptNode");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeType FindValue(string value)
+        {
+            return FindValue<NodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeType(string value)
         {
             return FindValue(value);
         }
@@ -237,6 +1223,52 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type QueryTransformationType.
+    /// </summary>
+    public class QueryTransformationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant QUERY_DECOMPOSITION for QueryTransformationType
+        /// </summary>
+        public static readonly QueryTransformationType QUERY_DECOMPOSITION = new QueryTransformationType("QUERY_DECOMPOSITION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryTransformationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryTransformationType FindValue(string value)
+        {
+            return FindValue<QueryTransformationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryTransformationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResponseState.
     /// </summary>
     public class ResponseState : ConstantClass
@@ -293,9 +1325,25 @@ namespace Amazon.BedrockAgentRuntime
     {
 
         /// <summary>
+        /// Constant CONFLUENCE for RetrievalResultLocationType
+        /// </summary>
+        public static readonly RetrievalResultLocationType CONFLUENCE = new RetrievalResultLocationType("CONFLUENCE");
+        /// <summary>
         /// Constant S3 for RetrievalResultLocationType
         /// </summary>
         public static readonly RetrievalResultLocationType S3 = new RetrievalResultLocationType("S3");
+        /// <summary>
+        /// Constant SALESFORCE for RetrievalResultLocationType
+        /// </summary>
+        public static readonly RetrievalResultLocationType SALESFORCE = new RetrievalResultLocationType("SALESFORCE");
+        /// <summary>
+        /// Constant SHAREPOINT for RetrievalResultLocationType
+        /// </summary>
+        public static readonly RetrievalResultLocationType SHAREPOINT = new RetrievalResultLocationType("SHAREPOINT");
+        /// <summary>
+        /// Constant WEB for RetrievalResultLocationType
+        /// </summary>
+        public static readonly RetrievalResultLocationType WEB = new RetrievalResultLocationType("WEB");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

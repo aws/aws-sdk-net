@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public GlueTable Unmarshall(JsonUnmarshallerContext context)
         {
             GlueTable unmarshalledObject = new GlueTable();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

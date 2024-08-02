@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public IdNamespaceIdMappingWorkflowProperties Unmarshall(JsonUnmarshallerContext context)
         {
             IdNamespaceIdMappingWorkflowProperties unmarshalledObject = new IdNamespaceIdMappingWorkflowProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NamespaceProviderPropertiesUnmarshaller.Instance;
                     unmarshalledObject.ProviderProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ruleBasedProperties", targetDepth))
+                {
+                    var unmarshaller = NamespaceRuleBasedPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.RuleBasedProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

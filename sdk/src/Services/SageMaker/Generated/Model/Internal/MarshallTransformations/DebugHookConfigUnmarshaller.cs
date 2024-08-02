@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public DebugHookConfig Unmarshall(JsonUnmarshallerContext context)
         {
             DebugHookConfig unmarshalledObject = new DebugHookConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

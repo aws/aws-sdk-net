@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public GetLabelDetectionRequestMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             GetLabelDetectionRequestMetadata unmarshalledObject = new GetLabelDetectionRequestMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

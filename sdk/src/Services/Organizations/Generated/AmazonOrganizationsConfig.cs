@@ -34,10 +34,16 @@ namespace Amazon.Organizations
     public partial class AmazonOrganizationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Organizations", "4.0.0.0");
 
         private static readonly AmazonOrganizationsEndpointResolver EndpointResolver =
             new AmazonOrganizationsEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Organizations", "3.7.302.30");
+=======
+            InternalSDKUtils.BuildUserAgentString("Organizations", "3.7.400.2");
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
 
         private string _userAgent = UserAgentString;
         ///<summary>

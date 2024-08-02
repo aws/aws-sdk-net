@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public PrefetchRetrieval Unmarshall(JsonUnmarshallerContext context)
         {
             PrefetchRetrieval unmarshalledObject = new PrefetchRetrieval();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

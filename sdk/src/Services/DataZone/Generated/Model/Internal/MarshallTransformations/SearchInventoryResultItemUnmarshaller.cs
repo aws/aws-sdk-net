@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public SearchInventoryResultItem Unmarshall(JsonUnmarshallerContext context)
         {
             SearchInventoryResultItem unmarshalledObject = new SearchInventoryResultItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,12 +70,6 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AssetItemUnmarshaller.Instance;
                     unmarshalledObject.AssetItem = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dataProductItem", targetDepth))
-                {
-                    var unmarshaller = DataProductSummaryUnmarshaller.Instance;
-                    unmarshalledObject.DataProductItem = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("glossaryItem", targetDepth))

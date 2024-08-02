@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public DetectLabelsImageQuality Unmarshall(JsonUnmarshallerContext context)
         {
             DetectLabelsImageQuality unmarshalledObject = new DetectLabelsImageQuality();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

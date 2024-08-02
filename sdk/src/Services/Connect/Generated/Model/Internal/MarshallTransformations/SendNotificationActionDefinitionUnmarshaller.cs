@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public SendNotificationActionDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             SendNotificationActionDefinition unmarshalledObject = new SendNotificationActionDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

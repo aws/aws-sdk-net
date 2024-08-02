@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public SecurityHubPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             SecurityHubPolicy unmarshalledObject = new SecurityHubPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

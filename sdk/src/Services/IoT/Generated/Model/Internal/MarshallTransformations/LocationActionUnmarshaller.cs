@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public LocationAction Unmarshall(JsonUnmarshallerContext context)
         {
             LocationAction unmarshalledObject = new LocationAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         public UnionWithJsonName Unmarshall(JsonUnmarshallerContext context)
         {
             UnionWithJsonName unmarshalledObject = new UnionWithJsonName();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public AnnotationValue Unmarshall(JsonUnmarshallerContext context)
         {
             AnnotationValue unmarshalledObject = new AnnotationValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

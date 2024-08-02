@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public HyperParameterAlgorithmSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             HyperParameterAlgorithmSpecification unmarshalledObject = new HyperParameterAlgorithmSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

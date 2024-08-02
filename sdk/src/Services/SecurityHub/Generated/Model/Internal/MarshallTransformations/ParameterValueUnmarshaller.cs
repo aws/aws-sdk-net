@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public ParameterValue Unmarshall(JsonUnmarshallerContext context)
         {
             ParameterValue unmarshalledObject = new ParameterValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -45,8 +45,8 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Enumerable containing all of the ScheduledActions
         /// </summary>
-        public IPaginatedEnumerable<string> ScheduledActions => 
-            new PaginatedResultKeyResponse<ListScheduledActionsResponse, string>(this, (i) => i.ScheduledActions ?? new List<string>());
+        public IPaginatedEnumerable<ScheduledActionAssociation> ScheduledActions => 
+            new PaginatedResultKeyResponse<ListScheduledActionsResponse, ScheduledActionAssociation>(this, (i) => i.ScheduledActions ?? new List<ScheduledActionAssociation>());
 
         internal ListScheduledActionsPaginator(IAmazonRedshiftServerless client, ListScheduledActionsRequest request)
         {

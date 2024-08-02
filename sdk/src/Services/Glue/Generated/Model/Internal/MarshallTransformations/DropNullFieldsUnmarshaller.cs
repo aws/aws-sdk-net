@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public DropNullFields Unmarshall(JsonUnmarshallerContext context)
         {
             DropNullFields unmarshalledObject = new DropNullFields();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

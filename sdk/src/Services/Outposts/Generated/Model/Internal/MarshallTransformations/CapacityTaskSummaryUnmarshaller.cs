@@ -57,6 +57,8 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         public CapacityTaskSummary Unmarshall(JsonUnmarshallerContext context)
         {
             CapacityTaskSummary unmarshalledObject = new CapacityTaskSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

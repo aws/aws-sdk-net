@@ -48,6 +48,7 @@ namespace Amazon.CustomerProfiles.Model
         private int? _expirationDays;
         private Dictionary<string, ObjectTypeField> _fields = AWSConfigs.InitializeCollections ? new Dictionary<string, ObjectTypeField>() : null;
         private Dictionary<string, List<ObjectTypeKey>> _keys = AWSConfigs.InitializeCollections ? new Dictionary<string, List<ObjectTypeKey>>() : null;
+        private int? _maxProfileObjectCount;
         private string _objectTypeName;
         private string _sourceLastUpdatedTimestampFormat;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -188,6 +189,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetKeys()
         {
             return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxProfileObjectCount. 
+        /// <para>
+        /// The amount of profile object max count assigned to the object type
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MaxProfileObjectCount
+        {
+            get { return this._maxProfileObjectCount.GetValueOrDefault(); }
+            set { this._maxProfileObjectCount = value; }
+        }
+
+        // Check to see if MaxProfileObjectCount property is set
+        internal bool IsSetMaxProfileObjectCount()
+        {
+            return this._maxProfileObjectCount.HasValue; 
         }
 
         /// <summary>

@@ -57,6 +57,8 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
         public Item Unmarshall(JsonUnmarshallerContext context)
         {
             Item unmarshalledObject = new Item();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

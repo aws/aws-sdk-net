@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ClusterNodeSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ClusterNodeSummary unmarshalledObject = new ClusterNodeSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

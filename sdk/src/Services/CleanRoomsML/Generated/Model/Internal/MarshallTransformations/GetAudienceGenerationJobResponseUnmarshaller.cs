@@ -100,6 +100,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("protectedQueryIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProtectedQueryIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("seedAudience", targetDepth))
                 {
                     var unmarshaller = AudienceGenerationJobDataSourceUnmarshaller.Instance;

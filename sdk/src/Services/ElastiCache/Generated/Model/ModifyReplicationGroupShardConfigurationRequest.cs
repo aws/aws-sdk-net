@@ -96,7 +96,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// ElastiCache for Redis will attempt to remove all node groups listed by <c>NodeGroupsToRemove</c>
+        /// ElastiCache (Redis OSS) will attempt to remove all node groups listed by <c>NodeGroupsToRemove</c>
         /// from the cluster.
         /// </para>
         /// </summary>
@@ -121,8 +121,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// ElastiCache for Redis will attempt to remove all node groups except those listed by
-        /// <c>NodeGroupsToRetain</c> from the cluster.
+        /// ElastiCache (Redis OSS) will attempt to remove all node groups except those listed
+        /// by <c>NodeGroupsToRetain</c> from the cluster.
         /// </para>
         /// </summary>
         public List<string> NodeGroupsToRetain
@@ -140,7 +140,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ReplicationGroupId. 
         /// <para>
-        /// The name of the Redis (cluster mode enabled) cluster (replication group) on which
+        /// The name of the Redis OSS (cluster mode enabled) cluster (replication group) on which
         /// the shards are to be configured.
         /// </para>
         /// </summary>

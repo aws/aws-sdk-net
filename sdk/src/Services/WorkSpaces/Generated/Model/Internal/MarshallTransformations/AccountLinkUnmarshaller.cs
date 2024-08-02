@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public AccountLink Unmarshall(JsonUnmarshallerContext context)
         {
             AccountLink unmarshalledObject = new AccountLink();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

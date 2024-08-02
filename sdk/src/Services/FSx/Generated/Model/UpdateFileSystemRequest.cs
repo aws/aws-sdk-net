@@ -104,6 +104,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <c>MetadataConfiguration</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>PerUnitStorageThroughput</c> 
     /// </para>
     ///  </li> <li> 

@@ -57,6 +57,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         public DatetimeRange Unmarshall(JsonUnmarshallerContext context)
         {
             DatetimeRange unmarshalledObject = new DatetimeRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

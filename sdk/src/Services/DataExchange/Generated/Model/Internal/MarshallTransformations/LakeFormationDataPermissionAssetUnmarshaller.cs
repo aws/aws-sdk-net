@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public LakeFormationDataPermissionAsset Unmarshall(JsonUnmarshallerContext context)
         {
             LakeFormationDataPermissionAsset unmarshalledObject = new LakeFormationDataPermissionAsset();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

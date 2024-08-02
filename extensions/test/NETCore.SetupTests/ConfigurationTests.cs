@@ -49,6 +49,7 @@ namespace NETCore.SetupTests
             Assert.Equal(RegionEndpoint.USWest2, options.Region);
             Assert.Equal("arn:aws:iam::123456789012:role/fake_role", options.SessionRoleArn);
             Assert.Equal("TestSessionName", options.SessionName);
+            Assert.Equal("TestExternalId", options.ExternalId);
 
             IAmazonS3 client = options.CreateServiceClient<IAmazonS3>();
             Assert.NotNull(client);

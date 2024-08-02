@@ -32,22 +32,18 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// <summary>
     /// Container for the parameters to the RollbackApplication operation.
     /// Reverts the application to the previous running version. You can roll back an application
-    /// if you suspect it is stuck in a transient status. 
+    /// if you suspect it is stuck in a transient status or in the running status. 
     /// 
     ///  
     /// <para>
-    /// You can roll back an application only if it is in the <c>UPDATING</c> or <c>AUTOSCALING</c>
-    /// status.
+    /// You can roll back an application only if it is in the <c>UPDATING</c>, <c>AUTOSCALING</c>,
+    /// or <c>RUNNING</c> statuses.
     /// </para>
     ///  
     /// <para>
     /// When you rollback an application, it loads state data from the last successful snapshot.
     /// If the application has no snapshots, Managed Service for Apache Flink rejects the
     /// rollback request.
-    /// </para>
-    ///  
-    /// <para>
-    /// This action is not supported for Managed Service for Apache Flink for SQL applications.
     /// </para>
     /// </summary>
     public partial class RollbackApplicationRequest : AmazonKinesisAnalyticsV2Request

@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public DailyVolume Unmarshall(JsonUnmarshallerContext context)
         {
             DailyVolume unmarshalledObject = new DailyVolume();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

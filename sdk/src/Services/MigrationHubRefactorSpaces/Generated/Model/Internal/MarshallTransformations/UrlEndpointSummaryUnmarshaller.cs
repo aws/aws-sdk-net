@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         public UrlEndpointSummary Unmarshall(JsonUnmarshallerContext context)
         {
             UrlEndpointSummary unmarshalledObject = new UrlEndpointSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

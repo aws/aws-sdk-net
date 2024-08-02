@@ -60,7 +60,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DownScaling. 
         /// <para>
         /// An <c>AutoScalingThresholds</c> object with the downscaling threshold configuration.
-        /// If the load falls below these thresholds for a specified amount of time, AWS OpsWorks
+        /// If the load falls below these thresholds for a specified amount of time, OpsWorks
         /// Stacks stops a specified number of instances.
         /// </para>
         /// </summary>
@@ -117,8 +117,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property UpScaling. 
         /// <para>
         /// An <c>AutoScalingThresholds</c> object with the upscaling threshold configuration.
-        /// If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks
-        /// Stacks starts a specified number of instances.
+        /// If the load exceeds these thresholds for a specified amount of time, OpsWorks Stacks
+        /// starts a specified number of instances.
         /// </para>
         /// </summary>
         public AutoScalingThresholds UpScaling

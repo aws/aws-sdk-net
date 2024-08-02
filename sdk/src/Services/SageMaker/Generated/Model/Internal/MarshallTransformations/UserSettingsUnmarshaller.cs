@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public UserSettings Unmarshall(JsonUnmarshallerContext context)
         {
             UserSettings unmarshalledObject = new UserSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -152,6 +154,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StudioWebPortal = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StudioWebPortalSettings", targetDepth))
+                {
+                    var unmarshaller = StudioWebPortalSettingsUnmarshaller.Instance;
+                    unmarshalledObject.StudioWebPortalSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TensorBoardAppSettings", targetDepth))

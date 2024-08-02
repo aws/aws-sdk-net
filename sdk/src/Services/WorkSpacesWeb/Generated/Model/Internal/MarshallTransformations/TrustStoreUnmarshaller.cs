@@ -57,6 +57,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         public TrustStore Unmarshall(JsonUnmarshallerContext context)
         {
             TrustStore unmarshalledObject = new TrustStore();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

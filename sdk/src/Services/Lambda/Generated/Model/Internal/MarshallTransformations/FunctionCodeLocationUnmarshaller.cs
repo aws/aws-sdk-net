@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public FunctionCodeLocation Unmarshall(JsonUnmarshallerContext context)
         {
             FunctionCodeLocation unmarshalledObject = new FunctionCodeLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public TimeBasedAutoScalingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TimeBasedAutoScalingConfiguration unmarshalledObject = new TimeBasedAutoScalingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

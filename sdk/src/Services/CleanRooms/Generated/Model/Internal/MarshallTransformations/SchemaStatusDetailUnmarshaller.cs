@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public SchemaStatusDetail Unmarshall(JsonUnmarshallerContext context)
         {
             SchemaStatusDetail unmarshalledObject = new SchemaStatusDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AnalysisRuleType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("analysisType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AnalysisType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("configurations", targetDepth))

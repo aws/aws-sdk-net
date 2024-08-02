@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "service": "<fullname>Amazon Data Firehose</fullname> <note> <p>Amazon Data Firehose was previously known as Amazon Kinesis Data Firehose.</p> </note> <p>Amazon Data Firehose is a fully managed service that delivers real-time streaming data to destinations such as Amazon Simple Storage Service (Amazon S3), Amazon OpenSearch Service, Amazon Redshift, Splunk, and various other supportd destinations.</p>",
+  "service": "<fullname>Amazon Data Firehose</fullname> <note> <p>Amazon Data Firehose was previously known as Amazon Kinesis Data Firehose.</p> </note> <p>Amazon Data Firehose is a fully managed service that delivers real-time streaming data to destinations such as Amazon Simple Storage Service (Amazon S3), Amazon OpenSearch Service, Amazon Redshift, Splunk, and various other supported destinations.</p>",
   "operations": {
     "CreateDeliveryStream": "<p>Creates a Firehose delivery stream.</p> <p>By default, you can create up to 50 delivery streams per Amazon Web Services Region.</p> <p>This is an asynchronous operation that immediately returns. The initial status of the delivery stream is <code>CREATING</code>. After the delivery stream is created, its status is <code>ACTIVE</code> and it now accepts data. If the delivery stream creation fails, the status transitions to <code>CREATING_FAILED</code>. Attempts to send data to a delivery stream that is not in the <code>ACTIVE</code> state cause an exception. To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.</p> <p>If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <a>DeleteDeliveryStream</a> operation to delete it.</p> <p>A Firehose delivery stream can be configured to receive records directly from providers using <a>PutRecord</a> or <a>PutRecordBatch</a>, or it can be configured to use an existing Kinesis stream as its source. To specify a Kinesis data stream as input, set the <code>DeliveryStreamType</code> parameter to <code>KinesisStreamAsSource</code>, and provide the Kinesis stream Amazon Resource Name (ARN) and role ARN in the <code>KinesisStreamSourceConfiguration</code> parameter.</p> <p>To create a delivery stream with server-side encryption (SSE) enabled, include <a>DeliveryStreamEncryptionConfigurationInput</a> in your request. This is optional. You can also invoke <a>StartDeliveryStreamEncryption</a> to turn on SSE for an existing delivery stream that doesn't have SSE enabled.</p> <p>A delivery stream is configured with a single destination, such as Amazon Simple Storage Service (Amazon S3), Amazon Redshift, Amazon OpenSearch Service, Amazon OpenSearch Serverless, Splunk, and any custom HTTP endpoint or HTTP endpoints owned by or supported by third-party service providers, including Datadog, Dynatrace, LogicMonitor, MongoDB, New Relic, and Sumo Logic. You must specify only one of the following destination configuration parameters: <code>ExtendedS3DestinationConfiguration</code>, <code>S3DestinationConfiguration</code>, <code>ElasticsearchDestinationConfiguration</code>, <code>RedshiftDestinationConfiguration</code>, or <code>SplunkDestinationConfiguration</code>.</p> <p>When you specify <code>S3DestinationConfiguration</code>, you can also provide the following optional values: BufferingHints, <code>EncryptionConfiguration</code>, and <code>CompressionFormat</code>. By default, if no <code>BufferingHints</code> value is provided, Firehose buffers data up to 5 MB or for 5 minutes, whichever condition is satisfied first. <code>BufferingHints</code> is a hint, so there are some cases where the service cannot adhere to these conditions strictly. For example, record boundaries might be such that the size is a little over or under the configured buffering size. By default, no encryption is performed. We strongly recommend that you enable encryption to ensure secure data storage in Amazon S3.</p> <p>A few notes about Amazon Redshift as a destination:</p> <ul> <li> <p>An Amazon Redshift destination requires an S3 bucket as intermediate location. Firehose first delivers data to Amazon S3 and then uses <code>COPY</code> syntax to load data into an Amazon Redshift table. This is specified in the <code>RedshiftDestinationConfiguration.S3Configuration</code> parameter.</p> </li> <li> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p> </li> <li> <p>We strongly recommend that you use the user name and password you provide exclusively with Firehose, and that the permissions for the account are restricted for Amazon Redshift <code>INSERT</code> permissions.</p> </li> </ul> <p>Firehose assumes the IAM role that is configured as part of the destination. The role should allow the Firehose principal to assume the role, and the role should have permissions that allow the service to deliver the data. For more information, see <a href=\"https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3\">Grant Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon Firehose Developer Guide</i>.</p>",
     "DeleteDeliveryStream": "<p>Deletes a delivery stream and its data.</p> <p>You can delete a delivery stream only if it is in one of the following states: <code>ACTIVE</code>, <code>DELETING</code>, <code>CREATING_FAILED</code>, or <code>DELETING_FAILED</code>. You can't delete a delivery stream that is in the <code>CREATING</code> state. To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>. </p> <p>DeleteDeliveryStream is an asynchronous API. When an API request to DeleteDeliveryStream succeeds, the delivery stream is marked for deletion, and it goes into the <code>DELETING</code> state.While the delivery stream is in the <code>DELETING</code> state, the service might continue to accept records, but it doesn't make any guarantees with respect to delivering the data. Therefore, as a best practice, first stop any applications that are sending records before you delete a delivery stream.</p> <p>Removal of a delivery stream that is in the <code>DELETING</code> state is a low priority operation for the service. A stream may remain in the <code>DELETING</code> state for several minutes. Therefore, as a best practice, applications should not wait for streams in the <code>DELETING</code> state to be removed. </p>",
@@ -9,7 +9,7 @@
     "ListTagsForDeliveryStream": "<p>Lists the tags for the specified delivery stream. This operation has a limit of five transactions per second per account. </p>",
     "PutRecord": "<p>Writes a single data record into an Amazon Firehose delivery stream. To write multiple data records into a delivery stream, use <a>PutRecordBatch</a>. Applications using these operations are referred to as producers.</p> <p>By default, each delivery stream can take in up to 2,000 transactions per second, 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations for each delivery stream. For more information about limits and how to request an increase, see <a href=\"https://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Firehose Limits</a>. </p> <p>Firehose accumulates and publishes a particular metric for a customer account in one minute intervals. It is possible that the bursts of incoming bytes/records ingested to a delivery stream last only for a few seconds. Due to this, the actual spikes in the traffic might not be fully visible in the customer's 1 minute CloudWatch metrics.</p> <p>You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>. The data record consists of a data blob that can be up to 1,000 KiB in size, and any kind of data. For example, it can be a segment from a log file, geographic location data, website clickstream data, and so on.</p> <p>Firehose buffers records before delivering them to the destination. To disambiguate the data blobs at the destination, a common solution is to use delimiters in the data, such as a newline (<code>\\n</code>) or some other character unique within the data. This allows the consumer application to parse individual data items when reading the data from the destination.</p> <p>The <code>PutRecord</code> operation returns a <code>RecordId</code>, which is a unique string assigned to each record. Producer applications can use this ID for purposes such as auditability and investigation.</p> <p>If the <code>PutRecord</code> operation throws a <code>ServiceUnavailableException</code>, the API is automatically reinvoked (retried) 3 times. If the exception persists, it is possible that the throughput limits have been exceeded for the delivery stream. </p> <p>Re-invoking the Put API operations (for example, PutRecord and PutRecordBatch) can result in data duplicates. For larger data assets, allow for a longer time out before retrying Put API operations.</p> <p>Data records sent to Firehose are stored for 24 hours from the time they are added to a delivery stream as it tries to send the records to the destination. If the destination is unreachable for more than 24 hours, the data is no longer available.</p> <important> <p>Don't concatenate two or more base64 strings to form the data fields of your records. Instead, concatenate the raw data, then perform base64 encoding.</p> </important>",
     "PutRecordBatch": "<p>Writes multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records. To write single data records into a delivery stream, use <a>PutRecord</a>. Applications using these operations are referred to as producers.</p> <p>Firehose accumulates and publishes a particular metric for a customer account in one minute intervals. It is possible that the bursts of incoming bytes/records ingested to a delivery stream last only for a few seconds. Due to this, the actual spikes in the traffic might not be fully visible in the customer's 1 minute CloudWatch metrics.</p> <p>For information about service quota, see <a href=\"https://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Firehose Quota</a>.</p> <p>Each <a>PutRecordBatch</a> request supports up to 500 records. Each record in the request can be as large as 1,000 KB (before base64 encoding), up to a limit of 4 MB for the entire request. These limits cannot be changed.</p> <p>You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>. The data record consists of a data blob that can be up to 1,000 KB in size, and any kind of data. For example, it could be a segment from a log file, geographic location data, website clickstream data, and so on.</p> <p>Firehose buffers records before delivering them to the destination. To disambiguate the data blobs at the destination, a common solution is to use delimiters in the data, such as a newline (<code>\\n</code>) or some other character unique within the data. This allows the consumer application to parse individual data items when reading the data from the destination.</p> <p>The <a>PutRecordBatch</a> response includes a count of failed records, <code>FailedPutCount</code>, and an array of responses, <code>RequestResponses</code>. Even if the <a>PutRecordBatch</a> call succeeds, the value of <code>FailedPutCount</code> may be greater than 0, indicating that there are records for which the operation didn't succeed. Each entry in the <code>RequestResponses</code> array provides additional information about the processed record. It directly correlates with a record in the request array using the same ordering, from the top to the bottom. The response array always includes the same number of records as the request array. <code>RequestResponses</code> includes both successfully and unsuccessfully processed records. Firehose tries to process all records in each <a>PutRecordBatch</a> request. A single record failure does not stop the processing of subsequent records. </p> <p>A successfully processed record includes a <code>RecordId</code> value, which is unique for the record. An unsuccessfully processed record includes <code>ErrorCode</code> and <code>ErrorMessage</code> values. <code>ErrorCode</code> reflects the type of error, and is one of the following values: <code>ServiceUnavailableException</code> or <code>InternalFailure</code>. <code>ErrorMessage</code> provides more detailed information about the error.</p> <p>If there is an internal server error or a timeout, the write might have completed or it might have failed. If <code>FailedPutCount</code> is greater than 0, retry the request, resending only those records that might have failed processing. This minimizes the possible duplicate records and also reduces the total bytes sent (and corresponding charges). We recommend that you handle any duplicates at the destination.</p> <p>If <a>PutRecordBatch</a> throws <code>ServiceUnavailableException</code>, the API is automatically reinvoked (retried) 3 times. If the exception persists, it is possible that the throughput limits have been exceeded for the delivery stream.</p> <p>Re-invoking the Put API operations (for example, PutRecord and PutRecordBatch) can result in data duplicates. For larger data assets, allow for a longer time out before retrying Put API operations.</p> <p>Data records sent to Firehose are stored for 24 hours from the time they are added to a delivery stream as it attempts to send the records to the destination. If the destination is unreachable for more than 24 hours, the data is no longer available.</p> <important> <p>Don't concatenate two or more base64 strings to form the data fields of your records. Instead, concatenate the raw data, then perform base64 encoding.</p> </important>",
-    "StartDeliveryStreamEncryption": "<p>Enables server-side encryption (SSE) for the delivery stream. </p> <p>This operation is asynchronous. It returns immediately. When you invoke it, Firehose first sets the encryption status of the stream to <code>ENABLING</code>, and then to <code>ENABLED</code>. The encryption status of a delivery stream is the <code>Status</code> property in <a>DeliveryStreamEncryptionConfiguration</a>. If the operation fails, the encryption status changes to <code>ENABLING_FAILED</code>. You can continue to read and write data to your delivery stream while the encryption status is <code>ENABLING</code>, but the data is not encrypted. It can take up to 5 seconds after the encryption status changes to <code>ENABLED</code> before all records written to the delivery stream are encrypted. To find out whether a record or a batch of records was encrypted, check the response elements <a>PutRecordOutput$Encrypted</a> and <a>PutRecordBatchOutput$Encrypted</a>, respectively.</p> <p>To check the encryption status of a delivery stream, use <a>DescribeDeliveryStream</a>.</p> <p>Even if encryption is currently enabled for a delivery stream, you can still invoke this operation on it to change the ARN of the CMK or both its type and ARN. If you invoke this method to change the CMK, and the old CMK is of type <code>CUSTOMER_MANAGED_CMK</code>, Firehose schedules the grant it had on the old CMK for retirement. If the new CMK is of type <code>CUSTOMER_MANAGED_CMK</code>, Firehose creates a grant that enables it to use the new CMK to encrypt and decrypt data and to manage the grant.</p> <p>For the KMS grant creation to be successful, Firehose APIs <code>StartDeliveryStreamEncryption</code> and <code>CreateDeliveryStream</code> should not be called with session credentials that are more than 6 hours old.</p> <p>If a delivery stream already has encryption enabled and then you invoke this operation to change the ARN of the CMK or both its type and ARN and you get <code>ENABLING_FAILED</code>, this only means that the attempt to change the CMK failed. In this case, encryption remains enabled with the old CMK.</p> <p>If the encryption status of your delivery stream is <code>ENABLING_FAILED</code>, you can invoke this operation again with a valid CMK. The CMK must be enabled and the key policy mustn't explicitly deny the permission for Firehose to invoke KMS encrypt and decrypt operations.</p> <p>You can enable SSE for a delivery stream only if it's a delivery stream that uses <code>DirectPut</code> as its source. </p> <p>The <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25 calls per delivery stream per 24 hours. For example, you reach the limit if you call <code>StartDeliveryStreamEncryption</code> 13 times and <code>StopDeliveryStreamEncryption</code> 12 times for the same delivery stream in a 24-hour period.</p>",
+    "StartDeliveryStreamEncryption": "<p>Enables server-side encryption (SSE) for the delivery stream. </p> <p>This operation is asynchronous. It returns immediately. When you invoke it, Firehose first sets the encryption status of the stream to <code>ENABLING</code>, and then to <code>ENABLED</code>. The encryption status of a delivery stream is the <code>Status</code> property in <a>DeliveryStreamEncryptionConfiguration</a>. If the operation fails, the encryption status changes to <code>ENABLING_FAILED</code>. You can continue to read and write data to your delivery stream while the encryption status is <code>ENABLING</code>, but the data is not encrypted. It can take up to 5 seconds after the encryption status changes to <code>ENABLED</code> before all records written to the delivery stream are encrypted. To find out whether a record or a batch of records was encrypted, check the response elements <a>PutRecordOutput$Encrypted</a> and <a>PutRecordBatchOutput$Encrypted</a>, respectively.</p> <p>To check the encryption status of a delivery stream, use <a>DescribeDeliveryStream</a>.</p> <p>Even if encryption is currently enabled for a delivery stream, you can still invoke this operation on it to change the ARN of the CMK or both its type and ARN. If you invoke this method to change the CMK, and the old CMK is of type <code>CUSTOMER_MANAGED_CMK</code>, Firehose schedules the grant it had on the old CMK for retirement. If the new CMK is of type <code>CUSTOMER_MANAGED_CMK</code>, Firehose creates a grant that enables it to use the new CMK to encrypt and decrypt data and to manage the grant.</p> <p>For the KMS grant creation to be successful, the Firehose API operations <code>StartDeliveryStreamEncryption</code> and <code>CreateDeliveryStream</code> should not be called with session credentials that are more than 6 hours old.</p> <p>If a delivery stream already has encryption enabled and then you invoke this operation to change the ARN of the CMK or both its type and ARN and you get <code>ENABLING_FAILED</code>, this only means that the attempt to change the CMK failed. In this case, encryption remains enabled with the old CMK.</p> <p>If the encryption status of your delivery stream is <code>ENABLING_FAILED</code>, you can invoke this operation again with a valid CMK. The CMK must be enabled and the key policy mustn't explicitly deny the permission for Firehose to invoke KMS encrypt and decrypt operations.</p> <p>You can enable SSE for a delivery stream only if it's a delivery stream that uses <code>DirectPut</code> as its source. </p> <p>The <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25 calls per delivery stream per 24 hours. For example, you reach the limit if you call <code>StartDeliveryStreamEncryption</code> 13 times and <code>StopDeliveryStreamEncryption</code> 12 times for the same delivery stream in a 24-hour period.</p>",
     "StopDeliveryStreamEncryption": "<p>Disables server-side encryption (SSE) for the delivery stream. </p> <p>This operation is asynchronous. It returns immediately. When you invoke it, Firehose first sets the encryption status of the stream to <code>DISABLING</code>, and then to <code>DISABLED</code>. You can continue to read and write data to your stream while its status is <code>DISABLING</code>. It can take up to 5 seconds after the encryption status changes to <code>DISABLED</code> before all records written to the delivery stream are no longer subject to encryption. To find out whether a record or a batch of records was encrypted, check the response elements <a>PutRecordOutput$Encrypted</a> and <a>PutRecordBatchOutput$Encrypted</a>, respectively.</p> <p>To check the encryption state of a delivery stream, use <a>DescribeDeliveryStream</a>. </p> <p>If SSE is enabled using a customer managed CMK and then you invoke <code>StopDeliveryStreamEncryption</code>, Firehose schedules the related KMS grant for retirement and then retires it after it ensures that it is finished delivering records to the destination.</p> <p>The <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25 calls per delivery stream per 24 hours. For example, you reach the limit if you call <code>StartDeliveryStreamEncryption</code> 13 times and <code>StopDeliveryStreamEncryption</code> 12 times for the same delivery stream in a 24-hour period.</p>",
     "TagDeliveryStream": "<p>Adds or updates tags for the specified delivery stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href=\"https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html\">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>. </p> <p>Each delivery stream can have up to 50 tags. </p> <p>This operation has a limit of five transactions per second per account. </p>",
     "UntagDeliveryStream": "<p>Removes tags from the specified delivery stream. Removed tags are deleted, and you can't recover them after this operation successfully completes.</p> <p>If you specify a tag that doesn't exist, the operation ignores it.</p> <p>This operation has a limit of five transactions per second per account. </p>",
@@ -229,6 +229,7 @@
         "ProcessingConfiguration$Enabled": "<p>Enables or disables data processing.</p>",
         "PutRecordBatchOutput$Encrypted": "<p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>",
         "PutRecordOutput$Encrypted": "<p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>",
+        "SecretsManagerConfiguration$Enabled": "<p>Specifies whether you want to use the the secrets manager feature. When set as <code>True</code> the secrets manager configuration overwrites the existing secrets in the destination configuration. When it's set to <code>False</code> Firehose falls back to the credentials in the destination configuration.</p>",
         "SnowflakeRoleConfiguration$Enabled": "<p>Enable Snowflake role</p>"
       }
     },
@@ -249,9 +250,20 @@
         "ExtendedS3DestinationConfiguration$BufferingHints": "<p>The buffering option.</p>",
         "ExtendedS3DestinationDescription$BufferingHints": "<p>The buffering option.</p>",
         "ExtendedS3DestinationUpdate$BufferingHints": "<p>The buffering option.</p>",
+        "IcebergDestinationConfiguration$BufferingHints": null,
+        "IcebergDestinationDescription$BufferingHints": null,
+        "IcebergDestinationUpdate$BufferingHints": null,
         "S3DestinationConfiguration$BufferingHints": "<p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>",
         "S3DestinationDescription$BufferingHints": "<p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>",
         "S3DestinationUpdate$BufferingHints": "<p>The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.</p>"
+      }
+    },
+    "CatalogConfiguration": {
+      "base": "<p> Describes the containers where the destination Apache Iceberg Tables are persisted. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
+      "refs": {
+        "IcebergDestinationConfiguration$CatalogConfiguration": "<p> Configuration describing where the destination Apache Iceberg Tables are persisted. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
+        "IcebergDestinationDescription$CatalogConfiguration": "<p> Configuration describing where the destination Iceberg tables are persisted. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
+        "IcebergDestinationUpdate$CatalogConfiguration": "<p> Configuration describing where the destination Iceberg tables are persisted. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>"
       }
     },
     "CloudWatchLoggingOptions": {
@@ -272,6 +284,9 @@
         "HttpEndpointDestinationConfiguration$CloudWatchLoggingOptions": null,
         "HttpEndpointDestinationDescription$CloudWatchLoggingOptions": null,
         "HttpEndpointDestinationUpdate$CloudWatchLoggingOptions": null,
+        "IcebergDestinationConfiguration$CloudWatchLoggingOptions": null,
+        "IcebergDestinationDescription$CloudWatchLoggingOptions": null,
+        "IcebergDestinationUpdate$CloudWatchLoggingOptions": null,
         "RedshiftDestinationConfiguration$CloudWatchLoggingOptions": "<p>The CloudWatch logging options for your delivery stream.</p>",
         "RedshiftDestinationDescription$CloudWatchLoggingOptions": "<p>The Amazon CloudWatch logging options for your delivery stream.</p>",
         "RedshiftDestinationUpdate$CloudWatchLoggingOptions": "<p>The Amazon CloudWatch logging options for your delivery stream.</p>",
@@ -535,6 +550,20 @@
         "UpdateDestinationInput$DestinationId": "<p>The ID of the destination.</p>"
       }
     },
+    "DestinationTableConfiguration": {
+      "base": "<p> Describes the configuration of a destination in Apache Iceberg Tables. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
+      "refs": {
+        "DestinationTableConfigurationList$member": null
+      }
+    },
+    "DestinationTableConfigurationList": {
+      "base": null,
+      "refs": {
+        "IcebergDestinationConfiguration$DestinationTableConfigurationList": "<p> Provides a list of <code>DestinationTableConfigurations</code> which Firehose uses to deliver data to Apache Iceberg tables. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
+        "IcebergDestinationDescription$DestinationTableConfigurationList": "<p> Provides a list of <code>DestinationTableConfigurations</code> which Firehose uses to deliver data to Apache Iceberg tables. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
+        "IcebergDestinationUpdate$DestinationTableConfigurationList": "<p> Provides a list of <code>DestinationTableConfigurations</code> which Firehose uses to deliver data to Apache Iceberg tables. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>"
+      }
+    },
     "DocumentIdOptions": {
       "base": "<p>Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and OpenSearch Service generated document ID.</p> <p/>",
       "refs": {
@@ -689,6 +718,7 @@
     "ErrorOutputPrefix": {
       "base": null,
       "refs": {
+        "DestinationTableConfiguration$S3ErrorOutputPrefix": "<p> The table specific S3 error output prefix. All the errors that occurred while delivering to this table will be prefixed with this value in S3 destination. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
         "ExtendedS3DestinationConfiguration$ErrorOutputPrefix": "<p>A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href=\"https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html\">Custom Prefixes for Amazon S3 Objects</a>.</p>",
         "ExtendedS3DestinationDescription$ErrorOutputPrefix": "<p>A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href=\"https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html\">Custom Prefixes for Amazon S3 Objects</a>.</p>",
         "ExtendedS3DestinationUpdate$ErrorOutputPrefix": "<p>A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href=\"https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html\">Custom Prefixes for Amazon S3 Objects</a>.</p>",
@@ -728,6 +758,12 @@
         "ExtendedS3DestinationConfiguration$FileExtension": "<p>Specify a file extension. It will override the default file extension</p>",
         "ExtendedS3DestinationDescription$FileExtension": "<p>Specify a file extension. It will override the default file extension</p>",
         "ExtendedS3DestinationUpdate$FileExtension": "<p>Specify a file extension. It will override the default file extension</p>"
+      }
+    },
+    "GlueDataCatalogARN": {
+      "base": null,
+      "refs": {
+        "CatalogConfiguration$CatalogARN": "<p> Specifies the Glue catalog ARN indentifier of the destination Apache Iceberg Tables. You must specify the ARN in the format <code>arn:aws:glue:region:account-id:catalog</code>. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>"
       }
     },
     "HECAcknowledgmentTimeoutInSeconds": {
@@ -859,7 +895,7 @@
     "HttpEndpointRequestConfiguration": {
       "base": "<p>The configuration of the HTTP endpoint request.</p>",
       "refs": {
-        "HttpEndpointDestinationConfiguration$RequestConfiguration": "<p>The configuration of the requeste sent to the HTTP endpoint specified as the destination.</p>",
+        "HttpEndpointDestinationConfiguration$RequestConfiguration": "<p>The configuration of the request sent to the HTTP endpoint that is specified as the destination.</p>",
         "HttpEndpointDestinationDescription$RequestConfiguration": "<p>The configuration of request sent to the HTTP endpoint specified as the destination.</p>",
         "HttpEndpointDestinationUpdate$RequestConfiguration": "<p>The configuration of the request sent to the HTTP endpoint specified as the destination.</p>"
       }
@@ -891,6 +927,32 @@
       "refs": {
         "HttpEndpointConfiguration$Url": "<p>The URL of the HTTP endpoint selected as the destination.</p> <important> <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href=\"https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html\">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p> </important>",
         "HttpEndpointDescription$Url": "<p>The URL of the HTTP endpoint selected as the destination.</p>"
+      }
+    },
+    "IcebergDestinationConfiguration": {
+      "base": "<p> Specifies the destination configure settings for Apache Iceberg Table. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
+      "refs": {
+        "CreateDeliveryStreamInput$IcebergDestinationConfiguration": "<p> Configure Apache Iceberg Tables destination. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>"
+      }
+    },
+    "IcebergDestinationDescription": {
+      "base": "<p> Describes a destination in Apache Iceberg Tables. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
+      "refs": {
+        "DestinationDescription$IcebergDestinationDescription": "<p> Describes a destination in Apache Iceberg Tables. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>"
+      }
+    },
+    "IcebergDestinationUpdate": {
+      "base": "<p> Describes an update for a destination in Apache Iceberg Tables. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
+      "refs": {
+        "UpdateDestinationInput$IcebergDestinationUpdate": "<p> Describes an update for a destination in Apache Iceberg Tables. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>"
+      }
+    },
+    "IcebergS3BackupMode": {
+      "base": null,
+      "refs": {
+        "IcebergDestinationConfiguration$S3BackupMode": "<p> Describes how Firehose will backup records. Currently,Firehose only supports <code>FailedDataOnly</code> for preview. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
+        "IcebergDestinationDescription$S3BackupMode": "<p> Describes how Firehose will backup records. Currently,Firehose only supports <code>FailedDataOnly</code> for preview. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
+        "IcebergDestinationUpdate$S3BackupMode": "<p> Describes how Firehose will backup records. Currently,Firehose only supports <code>FailedDataOnly</code> for preview. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>"
       }
     },
     "InputFormatConfiguration": {
@@ -982,6 +1044,7 @@
     "ListOfNonEmptyStringsWithoutWhitespace": {
       "base": null,
       "refs": {
+        "DestinationTableConfiguration$UniqueKeys": "<p> A list of unique keys for a given Apache Iceberg table. Firehose will use these for running Create/Update/Delete operations on the given Iceberg table. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
         "OrcSerDe$BloomFilterColumns": "<p>The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.</p>"
       }
     },
@@ -1056,6 +1119,8 @@
       "base": null,
       "refs": {
         "ColumnToJsonKeyMappings$key": null,
+        "DestinationTableConfiguration$DestinationTableName": "<p> Specifies the name of the Apache Iceberg Table. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
+        "DestinationTableConfiguration$DestinationDatabaseName": "<p> The name of the Apache Iceberg database. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
         "ListOfNonEmptyStringsWithoutWhitespace$member": null,
         "SchemaConfiguration$RoleARN": "<p>The role that Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Firehose. Cross-account roles aren't allowed.</p> <important> <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value must be specified.</p> </important>",
         "SchemaConfiguration$CatalogId": "<p>The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the Amazon Web Services account ID is used by default.</p>",
@@ -1130,7 +1195,7 @@
       }
     },
     "ParquetSerDe": {
-      "base": "<p>A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href=\"https://parquet.apache.org/documentation/latest/\">Apache Parquet</a>.</p>",
+      "base": "<p>A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href=\"https://parquet.apache.org/docs/\">Apache Parquet</a>.</p>",
       "refs": {
         "Serializer$ParquetSerDe": "<p>A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href=\"https://parquet.apache.org/documentation/latest/\">Apache Parquet</a>.</p>"
       }
@@ -1177,6 +1242,9 @@
         "HttpEndpointDestinationConfiguration$ProcessingConfiguration": null,
         "HttpEndpointDestinationDescription$ProcessingConfiguration": null,
         "HttpEndpointDestinationUpdate$ProcessingConfiguration": null,
+        "IcebergDestinationConfiguration$ProcessingConfiguration": null,
+        "IcebergDestinationDescription$ProcessingConfiguration": null,
+        "IcebergDestinationUpdate$ProcessingConfiguration": null,
         "RedshiftDestinationConfiguration$ProcessingConfiguration": "<p>The data processing configuration.</p>",
         "RedshiftDestinationDescription$ProcessingConfiguration": "<p>The data processing configuration.</p>",
         "RedshiftDestinationUpdate$ProcessingConfiguration": "<p>The data processing configuration.</p>",
@@ -1283,6 +1351,13 @@
         "PutRecordOutput$RecordId": "<p>The ID of the record.</p>"
       }
     },
+    "ReadFromTimestamp": {
+      "base": null,
+      "refs": {
+        "MSKSourceConfiguration$ReadFromTimestamp": "<p>The start date and time in UTC for the offset position within your MSK topic from where Firehose begins to read. By default, this is set to timestamp when Firehose becomes Active. </p> <p>If you want to create a Firehose stream with Earliest start position from SDK or CLI, you need to set the <code>ReadFromTimestamp</code> parameter to Epoch (1970-01-01T00:00:00Z). </p>",
+        "MSKSourceDescription$ReadFromTimestamp": "<p>The start date and time in UTC for the offset position within your MSK topic from where Firehose begins to read. By default, this is set to timestamp when Firehose becomes Active. </p> <p>If you want to create a Firehose stream with Earliest start position from SDK or CLI, you need to set the <code>ReadFromTimestampUTC</code> parameter to Epoch (1970-01-01T00:00:00Z). </p>"
+      }
+    },
     "Record": {
       "base": "<p>The unit of data in a delivery stream.</p>",
       "refs": {
@@ -1349,7 +1424,10 @@
     "RetryOptions": {
       "base": "<p> The retry behavior in case Firehose is unable to deliver data to an Amazon S3 prefix.</p>",
       "refs": {
-        "DynamicPartitioningConfiguration$RetryOptions": "<p>The retry behavior in case Firehose is unable to deliver data to an Amazon S3 prefix.</p>"
+        "DynamicPartitioningConfiguration$RetryOptions": "<p>The retry behavior in case Firehose is unable to deliver data to an Amazon S3 prefix.</p>",
+        "IcebergDestinationConfiguration$RetryOptions": null,
+        "IcebergDestinationDescription$RetryOptions": null,
+        "IcebergDestinationUpdate$RetryOptions": null
       }
     },
     "RoleARN": {
@@ -1371,6 +1449,9 @@
         "HttpEndpointDestinationConfiguration$RoleARN": "<p>Firehose uses this IAM role for all the permissions that the delivery stream needs.</p>",
         "HttpEndpointDestinationDescription$RoleARN": "<p>Firehose uses this IAM role for all the permissions that the delivery stream needs.</p>",
         "HttpEndpointDestinationUpdate$RoleARN": "<p>Firehose uses this IAM role for all the permissions that the delivery stream needs.</p>",
+        "IcebergDestinationConfiguration$RoleARN": "<p> The Amazon Resource Name (ARN) of the Apache Iceberg tables role. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
+        "IcebergDestinationDescription$RoleARN": "<p> The Amazon Resource Name (ARN) of the Apache Iceberg Tables role. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
+        "IcebergDestinationUpdate$RoleARN": "<p> The Amazon Resource Name (ARN) of the Apache Iceberg Tables role. </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>",
         "KinesisStreamSourceConfiguration$RoleARN": "<p>The ARN of the role that provides access to the source Kinesis data stream. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam\">Amazon Web Services Identity and Access Management (IAM) ARN Format</a>.</p>",
         "KinesisStreamSourceDescription$RoleARN": "<p>The ARN of the role used by the source Kinesis data stream. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam\">Amazon Web Services Identity and Access Management (IAM) ARN Format</a>.</p>",
         "RedshiftDestinationConfiguration$RoleARN": "<p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>",
@@ -1379,6 +1460,7 @@
         "S3DestinationConfiguration$RoleARN": "<p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>",
         "S3DestinationDescription$RoleARN": "<p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>",
         "S3DestinationUpdate$RoleARN": "<p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>",
+        "SecretsManagerConfiguration$RoleARN": "<p> Specifies the role that Firehose assumes when calling the Secrets Manager API operation. When you provide the role, it overrides any destination specific role defined in the destination configuration. If you do not provide the then we use the destination specific role. This parameter is required for Splunk. </p>",
         "SnowflakeDestinationConfiguration$RoleARN": "<p>The Amazon Resource Name (ARN) of the Snowflake role</p>",
         "SnowflakeDestinationDescription$RoleARN": "<p>The Amazon Resource Name (ARN) of the Snowflake role</p>",
         "SnowflakeDestinationUpdate$RoleARN": "<p>The Amazon Resource Name (ARN) of the Snowflake role</p>",
@@ -1403,6 +1485,8 @@
         "ElasticsearchDestinationConfiguration$S3Configuration": "<p>The configuration for the backup Amazon S3 location.</p>",
         "ExtendedS3DestinationConfiguration$S3BackupConfiguration": "<p>The configuration for backup in Amazon S3.</p>",
         "HttpEndpointDestinationConfiguration$S3Configuration": null,
+        "IcebergDestinationConfiguration$S3Configuration": null,
+        "IcebergDestinationUpdate$S3Configuration": null,
         "RedshiftDestinationConfiguration$S3Configuration": "<p>The configuration for the intermediate Amazon S3 location from which Amazon Redshift obtains data. Restrictions are described in the topic for <a>CreateDeliveryStream</a>.</p> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p>",
         "RedshiftDestinationConfiguration$S3BackupConfiguration": "<p>The configuration for backup in Amazon S3.</p>",
         "SnowflakeDestinationConfiguration$S3Configuration": null,
@@ -1418,6 +1502,7 @@
         "ElasticsearchDestinationDescription$S3DestinationDescription": "<p>The Amazon S3 destination.</p>",
         "ExtendedS3DestinationDescription$S3BackupDescription": "<p>The configuration for backup in Amazon S3.</p>",
         "HttpEndpointDestinationDescription$S3DestinationDescription": null,
+        "IcebergDestinationDescription$S3DestinationDescription": null,
         "RedshiftDestinationDescription$S3DestinationDescription": "<p>The Amazon S3 destination.</p>",
         "RedshiftDestinationDescription$S3BackupDescription": "<p>The configuration for backup in Amazon S3.</p>",
         "SnowflakeDestinationDescription$S3DestinationDescription": null,
@@ -1443,6 +1528,29 @@
       "base": "<p>Specifies the schema to which you want Firehose to configure your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true.</p>",
       "refs": {
         "DataFormatConversionConfiguration$SchemaConfiguration": "<p>Specifies the Amazon Web Services Glue Data Catalog table that contains the column information. This parameter is required if <code>Enabled</code> is set to true.</p>"
+      }
+    },
+    "SecretARN": {
+      "base": null,
+      "refs": {
+        "SecretsManagerConfiguration$SecretARN": "<p>The ARN of the secret that stores your credentials. It must be in the same region as the Firehose stream and the role. The secret ARN can reside in a different account than the delivery stream and role as Firehose supports cross-account secret access. This parameter is required when <b>Enabled</b> is set to <code>True</code>.</p>"
+      }
+    },
+    "SecretsManagerConfiguration": {
+      "base": "<p>The structure that defines how Firehose accesses the secret.</p>",
+      "refs": {
+        "HttpEndpointDestinationConfiguration$SecretsManagerConfiguration": "<p> The configuration that defines how you access secrets for HTTP Endpoint destination. </p>",
+        "HttpEndpointDestinationDescription$SecretsManagerConfiguration": "<p> The configuration that defines how you access secrets for HTTP Endpoint destination. </p>",
+        "HttpEndpointDestinationUpdate$SecretsManagerConfiguration": "<p> The configuration that defines how you access secrets for HTTP Endpoint destination. </p>",
+        "RedshiftDestinationConfiguration$SecretsManagerConfiguration": "<p> The configuration that defines how you access secrets for Amazon Redshift. </p>",
+        "RedshiftDestinationDescription$SecretsManagerConfiguration": "<p> The configuration that defines how you access secrets for Amazon Redshift. </p>",
+        "RedshiftDestinationUpdate$SecretsManagerConfiguration": "<p> The configuration that defines how you access secrets for Amazon Redshift. </p>",
+        "SnowflakeDestinationConfiguration$SecretsManagerConfiguration": "<p> The configuration that defines how you access secrets for Snowflake. </p>",
+        "SnowflakeDestinationDescription$SecretsManagerConfiguration": "<p> The configuration that defines how you access secrets for Snowflake. </p>",
+        "SnowflakeDestinationUpdate$SecretsManagerConfiguration": "<p> Describes the Secrets Manager configuration in Snowflake. </p>",
+        "SplunkDestinationConfiguration$SecretsManagerConfiguration": "<p> The configuration that defines how you access secrets for Splunk. </p>",
+        "SplunkDestinationDescription$SecretsManagerConfiguration": "<p> The configuration that defines how you access secrets for Splunk. </p>",
+        "SplunkDestinationUpdate$SecretsManagerConfiguration": "<p> The configuration that defines how you access secrets for Splunk. </p>"
       }
     },
     "SecurityGroupIdList": {
@@ -1475,6 +1583,26 @@
         "SnowflakeDestinationConfiguration$AccountUrl": "<p>URL for accessing your Snowflake account. This URL must include your <a href=\"https://docs.snowflake.com/en/user-guide/admin-account-identifier\">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>",
         "SnowflakeDestinationDescription$AccountUrl": "<p>URL for accessing your Snowflake account. This URL must include your <a href=\"https://docs.snowflake.com/en/user-guide/admin-account-identifier\">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>",
         "SnowflakeDestinationUpdate$AccountUrl": "<p>URL for accessing your Snowflake account. This URL must include your <a href=\"https://docs.snowflake.com/en/user-guide/admin-account-identifier\">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>"
+      }
+    },
+    "SnowflakeBufferingHints": {
+      "base": "<p> Describes the buffering to perform before delivering data to the Snowflake destination. If you do not specify any value, Firehose uses the default values. </p>",
+      "refs": {
+        "SnowflakeDestinationConfiguration$BufferingHints": "<p> Describes the buffering to perform before delivering data to the Snowflake destination. If you do not specify any value, Firehose uses the default values. </p>",
+        "SnowflakeDestinationDescription$BufferingHints": "<p> Describes the buffering to perform before delivering data to the Snowflake destination. If you do not specify any value, Firehose uses the default values. </p>",
+        "SnowflakeDestinationUpdate$BufferingHints": "<p> Describes the buffering to perform before delivering data to the Snowflake destination. </p>"
+      }
+    },
+    "SnowflakeBufferingIntervalInSeconds": {
+      "base": null,
+      "refs": {
+        "SnowflakeBufferingHints$IntervalInSeconds": "<p> Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 0. </p>"
+      }
+    },
+    "SnowflakeBufferingSizeInMBs": {
+      "base": null,
+      "refs": {
+        "SnowflakeBufferingHints$SizeInMBs": "<p> Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 1. </p>"
       }
     },
     "SnowflakeContentColumnName": {
@@ -1516,7 +1644,7 @@
     "SnowflakeDestinationUpdate": {
       "base": "<p>Update to configuration settings</p>",
       "refs": {
-        "UpdateDestinationInput$SnowflakeDestinationUpdate": "<p>Update to the Snowflake destination condiguration settings</p>"
+        "UpdateDestinationInput$SnowflakeDestinationUpdate": "<p>Update to the Snowflake destination configuration settings.</p>"
       }
     },
     "SnowflakeKeyPassphrase": {

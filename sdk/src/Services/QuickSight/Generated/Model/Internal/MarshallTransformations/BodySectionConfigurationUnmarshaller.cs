@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public BodySectionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             BodySectionConfiguration unmarshalledObject = new BodySectionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SectionPageBreakConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PageBreakConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RepeatConfiguration", targetDepth))
+                {
+                    var unmarshaller = BodySectionRepeatConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RepeatConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SectionId", targetDepth))

@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public DiskResourceUtilization Unmarshall(JsonUnmarshallerContext context)
         {
             DiskResourceUtilization unmarshalledObject = new DiskResourceUtilization();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

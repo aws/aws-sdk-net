@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public WhatIfAnalysisSummary Unmarshall(JsonUnmarshallerContext context)
         {
             WhatIfAnalysisSummary unmarshalledObject = new WhatIfAnalysisSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

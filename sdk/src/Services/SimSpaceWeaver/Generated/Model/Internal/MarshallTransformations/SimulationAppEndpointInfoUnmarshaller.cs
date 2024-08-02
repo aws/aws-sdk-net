@@ -57,6 +57,8 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
         public SimulationAppEndpointInfo Unmarshall(JsonUnmarshallerContext context)
         {
             SimulationAppEndpointInfo unmarshalledObject = new SimulationAppEndpointInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

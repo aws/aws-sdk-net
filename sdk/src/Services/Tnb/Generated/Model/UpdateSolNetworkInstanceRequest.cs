@@ -39,12 +39,18 @@ namespace Amazon.Tnb.Model
     /// be deployed and on which life-cycle operations (like terminate, update, and delete)
     /// can be performed.
     /// </para>
+    ///  
+    /// <para>
+    /// Choose the <i>updateType</i> parameter to target the necessary update of the network
+    /// instance.
+    /// </para>
     /// </summary>
     public partial class UpdateSolNetworkInstanceRequest : AmazonTnbRequest
     {
         private UpdateSolNetworkModify _modifyVnfInfoData;
         private string _nsInstanceId;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private UpdateSolNetworkServiceData _updateNs;
         private UpdateSolNetworkType _updateType;
 
         /// <summary>
@@ -52,6 +58,10 @@ namespace Amazon.Tnb.Model
         /// <para>
         /// Identifies the network function information parameters and/or the configurable properties
         /// of the network function to be modified.
+        /// </para>
+        ///  
+        /// <para>
+        /// Include this property only if the update type is <c>MODIFY_VNF_INFORMATION</c>.
         /// </para>
         /// </summary>
         public UpdateSolNetworkModify ModifyVnfInfoData
@@ -89,9 +99,9 @@ namespace Amazon.Tnb.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A tag is a label that you assign to an Amazon Web Services resource. Each tag consists
-        /// of a key and an optional value. When you use this API, the tags are transferred to
-        /// the network operation that is created. Use tags to search and filter your resources
-        /// or track your Amazon Web Services costs.
+        /// of a key and an optional value. When you use this API, the tags are only applied to
+        /// the network operation that is created. These tags are not applied to the network instance.
+        /// Use tags to search and filter your resources or track your Amazon Web Services costs.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=200)]
@@ -108,10 +118,44 @@ namespace Amazon.Tnb.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UpdateNs. 
+        /// <para>
+        /// Identifies the network service descriptor and the configurable properties of the descriptor,
+        /// to be used for the update.
+        /// </para>
+        ///  
+        /// <para>
+        /// Include this property only if the update type is <c>UPDATE_NS</c>.
+        /// </para>
+        /// </summary>
+        public UpdateSolNetworkServiceData UpdateNs
+        {
+            get { return this._updateNs; }
+            set { this._updateNs = value; }
+        }
+
+        // Check to see if UpdateNs property is set
+        internal bool IsSetUpdateNs()
+        {
+            return this._updateNs != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UpdateType. 
         /// <para>
         /// The type of update.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <c>MODIFY_VNF_INFORMATION</c> update type, to update a specific network function
+        /// configuration, in the network instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <c>UPDATE_NS</c> update type, to update the network instance to a new network
+        /// service descriptor.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public UpdateSolNetworkType UpdateType

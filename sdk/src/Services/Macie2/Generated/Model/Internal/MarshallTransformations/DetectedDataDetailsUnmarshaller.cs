@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public DetectedDataDetails Unmarshall(JsonUnmarshallerContext context)
         {
             DetectedDataDetails unmarshalledObject = new DetectedDataDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

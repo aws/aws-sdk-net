@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TextFieldControlDisplayOptions Unmarshall(JsonUnmarshallerContext context)
         {
             TextFieldControlDisplayOptions unmarshalledObject = new TextFieldControlDisplayOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

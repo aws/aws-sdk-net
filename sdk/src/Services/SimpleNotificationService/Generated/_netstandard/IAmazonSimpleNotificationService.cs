@@ -326,23 +326,23 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <c>ADM</c>, <c>PlatformPrincipal</c> is <c>client id</c> and <c>PlatformCredential</c>
+        /// For ADM, <c>PlatformPrincipal</c> is <c>client id</c> and <c>PlatformCredential</c>
         /// is <c>client secret</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>Baidu</c>, <c>PlatformPrincipal</c> is <c>API key</c> and <c>PlatformCredential</c>
-        /// is <c>secret key</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For <c>APNS</c> and <c>APNS_SANDBOX</c> using certificate credentials, <c>PlatformPrincipal</c>
+        /// For APNS and <c>APNS_SANDBOX</c> using certificate credentials, <c>PlatformPrincipal</c>
         /// is <c>SSL certificate</c> and <c>PlatformCredential</c> is <c>private key</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>APNS</c> and <c>APNS_SANDBOX</c> using token credentials, <c>PlatformPrincipal</c>
+        /// For APNS and <c>APNS_SANDBOX</c> using token credentials, <c>PlatformPrincipal</c>
         /// is <c>signing key ID</c> and <c>PlatformCredential</c> is <c>signing key</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Baidu, <c>PlatformPrincipal</c> is <c>API key</c> and <c>PlatformCredential</c>
+        /// is <c>secret key</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -359,13 +359,13 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>MPNS</c>, <c>PlatformPrincipal</c> is <c>TLS certificate</c> and <c>PlatformCredential</c>
+        /// For MPNS, <c>PlatformPrincipal</c> is <c>TLS certificate</c> and <c>PlatformCredential</c>
         /// is <c>private key</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>WNS</c>, <c>PlatformPrincipal</c> is <c>Package Security Identifier</c> and
-        /// <c>PlatformCredential</c> is <c>secret key</c>.
+        /// For WNS, <c>PlatformPrincipal</c> is <c>Package Security Identifier</c> and <c>PlatformCredential</c>
+        /// is <c>secret key</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1823,7 +1823,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="topicArn">The topic you want to publish to. If you don't specify a value for the <c>TopicArn</c> parameter, you must specify a value for the <c>PhoneNumber</c> or <c>TargetArn</c> parameters.</param>
         /// <param name="message">The message you want to send. If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <c>MessageStructure</c> parameter to <c>json</c> and use a JSON object for the <c>Message</c> parameter.  <p/> Constraints: <ul> <li> With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters). </li> <li> For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters. If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries. The total size limit for a single SMS <c>Publish</c> action is 1,600 characters. </li> </ul> JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <c>Publish</c> call to return an error (no partial delivery). </li> </ul></param>
-        /// <param name="subject">Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints. Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</param>
+        /// <param name="subject">Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints. Constraints: Subjects must be UTF-8 text with no line breaks or control characters, and less than 100 characters long.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2333,7 +2333,7 @@ namespace Amazon.SimpleNotificationService
         /// Allows a subscription owner to set an attribute of the subscription to a new value.
         /// </summary>
         /// <param name="subscriptionArn">The ARN of the subscription to modify.</param>
-        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that this action uses: <ul> <li>  <c>DeliveryPolicy</c> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <c>FilterPolicy</c> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic. </li> <li>  <c>FilterPolicyScope</c> – This attribute lets you choose the filtering scope by using one of the following string value types: <ul> <li>  <c>MessageAttributes</c> (default) – The filter is applied on the message attributes. </li> <li>  <c>MessageBody</c> – The filter is applied on the message body. </li> </ul> </li> <li>  <c>RawMessageDelivery</c> – When set to <c>true</c>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata. </li> <li>  <c>RedrivePolicy</c> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing. </li> </ul> The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions: <ul> <li>  <c>SubscriptionRoleArn</c> – The ARN of the IAM role that has the following: <ul> <li> Permission to write to the Kinesis Data Firehose delivery stream </li> <li> Amazon SNS listed as a trusted entity </li> </ul> Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>. </li> </ul></param>
+        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that this action uses: <ul> <li>  <c>DeliveryPolicy</c> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <c>FilterPolicy</c> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic. </li> <li>  <c>FilterPolicyScope</c> – This attribute lets you choose the filtering scope by using one of the following string value types: <ul> <li>  <c>MessageAttributes</c> (default) – The filter is applied on the message attributes. </li> <li>  <c>MessageBody</c> – The filter is applied on the message body. </li> </ul> </li> <li>  <c>RawMessageDelivery</c> – When set to <c>true</c>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata. </li> <li>  <c>RedrivePolicy</c> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing. </li> </ul> The following attribute applies only to Amazon Data Firehose delivery stream subscriptions: <ul> <li>  <c>SubscriptionRoleArn</c> – The ARN of the IAM role that has the following: <ul> <li> Permission to write to the Firehose delivery stream </li> <li> Amazon SNS listed as a trusted entity </li> </ul> Specifying a valid ARN for this attribute is required for Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>. </li> </ul></param>
         /// <param name="attributeValue">The new value for the attribute in JSON format.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public OrganizationKubernetesAuditLogsConfigurationResult Unmarshall(JsonUnmarshallerContext context)
         {
             OrganizationKubernetesAuditLogsConfigurationResult unmarshalledObject = new OrganizationKubernetesAuditLogsConfigurationResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

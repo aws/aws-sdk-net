@@ -37,13 +37,14 @@ namespace Amazon.Runtime.Internal
         private LruCache<string, IList<DiscoveryEndpointBase>> _cache;
         private object objectCacheLock = new object();
         private const int _cacheKeyValidityInSeconds = 3600;
+        private readonly bool _isServiceUrlSet;
 
         protected EndpointDiscoveryResolverBase(IClientConfig config, Logger logger)
         {
             _config = config;
             _logger = logger;
             _cache = new LruCache<string, IList<DiscoveryEndpointBase>>(config.EndpointDiscoveryCacheLimit);
-
+            _isServiceUrlSet = !string.IsNullOrEmpty(config.ServiceURL);
         }
 
         /// <summary>
@@ -54,6 +55,17 @@ namespace Amazon.Runtime.Internal
         /// <returns></returns>
         public virtual IEnumerable<DiscoveryEndpointBase> ResolveEndpoints(EndpointOperationContextBase context, Func<IList<DiscoveryEndpointBase>> InvokeEndpointOperation)
         {
+            // If customers explicitly set the service URL, we will not attempt to discover endpoints dynamically.
+            // This check handles the scenario where customers configured a VPC endpoint, but the discovery operation is not supported by the endpoint.
+
+            // For example, in TimestreamQuery the "Query" API requires endpoint discovery, but if invoked through a VPC
+            // endpoint (i.e. "query-cell1.timestream.us-west-2.amazonaws.com") the "DescribeEndpoints" API performed by this resolver will fail.
+            // Original report: https://github.com/aws/aws-sdk-net/issues/3349
+            if (_isServiceUrlSet)
+            {
+                return null;
+            }
+
             //Build the cacheKey
             var cacheKey = BuildEndpointDiscoveryCacheKey(context);
 

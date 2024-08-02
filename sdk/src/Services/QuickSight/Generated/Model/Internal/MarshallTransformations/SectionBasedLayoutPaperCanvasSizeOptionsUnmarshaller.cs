@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SectionBasedLayoutPaperCanvasSizeOptions Unmarshall(JsonUnmarshallerContext context)
         {
             SectionBasedLayoutPaperCanvasSizeOptions unmarshalledObject = new SectionBasedLayoutPaperCanvasSizeOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

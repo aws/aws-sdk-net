@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public JobLog Unmarshall(JsonUnmarshallerContext context)
         {
             JobLog unmarshalledObject = new JobLog();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

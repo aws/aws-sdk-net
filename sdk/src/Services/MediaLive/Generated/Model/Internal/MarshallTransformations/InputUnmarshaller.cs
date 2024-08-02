@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public Input Unmarshall(JsonUnmarshallerContext context)
         {
             Input unmarshalledObject = new Input();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -140,6 +142,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<InputSource, InputSourceUnmarshaller>(InputSourceUnmarshaller.Instance);
                     unmarshalledObject.Sources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("srtSettings", targetDepth))
+                {
+                    var unmarshaller = SrtSettingsUnmarshaller.Instance;
+                    unmarshalledObject.SrtSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("state", targetDepth))

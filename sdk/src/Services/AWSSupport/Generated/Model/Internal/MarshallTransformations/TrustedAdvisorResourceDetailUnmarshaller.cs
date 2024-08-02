@@ -57,6 +57,8 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
         public TrustedAdvisorResourceDetail Unmarshall(JsonUnmarshallerContext context)
         {
             TrustedAdvisorResourceDetail unmarshalledObject = new TrustedAdvisorResourceDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

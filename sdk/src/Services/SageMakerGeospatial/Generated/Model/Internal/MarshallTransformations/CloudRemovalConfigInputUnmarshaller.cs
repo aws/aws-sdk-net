@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public CloudRemovalConfigInput Unmarshall(JsonUnmarshallerContext context)
         {
             CloudRemovalConfigInput unmarshalledObject = new CloudRemovalConfigInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

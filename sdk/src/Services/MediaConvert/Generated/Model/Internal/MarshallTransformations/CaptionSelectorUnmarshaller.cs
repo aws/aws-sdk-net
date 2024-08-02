@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public CaptionSelector Unmarshall(JsonUnmarshallerContext context)
         {
             CaptionSelector unmarshalledObject = new CaptionSelector();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

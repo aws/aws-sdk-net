@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public CSVMappingParameters Unmarshall(JsonUnmarshallerContext context)
         {
             CSVMappingParameters unmarshalledObject = new CSVMappingParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

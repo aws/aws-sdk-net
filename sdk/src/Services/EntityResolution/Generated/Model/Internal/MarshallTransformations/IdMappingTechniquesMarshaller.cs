@@ -65,6 +65,17 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRuleBasedProperties())
+            {
+                context.Writer.WritePropertyName("ruleBasedProperties");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IdMappingRuleBasedPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.RuleBasedProperties, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

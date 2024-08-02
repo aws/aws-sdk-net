@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public UsersAndGroups Unmarshall(JsonUnmarshallerContext context)
         {
             UsersAndGroups unmarshalledObject = new UsersAndGroups();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

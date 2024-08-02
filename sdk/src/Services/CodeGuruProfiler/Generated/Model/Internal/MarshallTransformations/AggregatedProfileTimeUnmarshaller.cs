@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         public AggregatedProfileTime Unmarshall(JsonUnmarshallerContext context)
         {
             AggregatedProfileTime unmarshalledObject = new AggregatedProfileTime();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public ExportTaskSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ExportTaskSummary unmarshalledObject = new ExportTaskSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

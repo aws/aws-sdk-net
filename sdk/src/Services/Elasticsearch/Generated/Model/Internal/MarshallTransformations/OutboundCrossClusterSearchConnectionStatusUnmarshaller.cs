@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public OutboundCrossClusterSearchConnectionStatus Unmarshall(JsonUnmarshallerContext context)
         {
             OutboundCrossClusterSearchConnectionStatus unmarshalledObject = new OutboundCrossClusterSearchConnectionStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsLambdaFunctionEnvironmentError Unmarshall(JsonUnmarshallerContext context)
         {
             AwsLambdaFunctionEnvironmentError unmarshalledObject = new AwsLambdaFunctionEnvironmentError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

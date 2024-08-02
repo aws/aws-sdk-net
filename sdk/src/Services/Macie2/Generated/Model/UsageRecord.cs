@@ -61,9 +61,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property AutomatedDiscoveryFreeTrialStartDate. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when the free trial of automated
-        /// sensitive data discovery started for the account. If the account is a member account
-        /// in an organization, this value is the same as the value for the organization's Amazon
-        /// Macie administrator account.
+        /// sensitive data discovery started for the account. This value is null if automated
+        /// sensitive data discovery hasn't been enabled for the account.
         /// </para>
         /// </summary>
         public DateTime? AutomatedDiscoveryFreeTrialStartDate

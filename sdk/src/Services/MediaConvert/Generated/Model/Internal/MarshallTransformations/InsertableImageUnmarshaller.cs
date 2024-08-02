@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public InsertableImage Unmarshall(JsonUnmarshallerContext context)
         {
             InsertableImage unmarshalledObject = new InsertableImage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

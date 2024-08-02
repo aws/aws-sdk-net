@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public BatchDetectSyntaxItemResult Unmarshall(JsonUnmarshallerContext context)
         {
             BatchDetectSyntaxItemResult unmarshalledObject = new BatchDetectSyntaxItemResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An issue with your local Amazon EKS cluster on an Amazon Web Services Outpost. You
-    /// can't use this API with an Amazon EKS cluster on the Amazon Web Services cloud.
+    /// An issue with your Amazon EKS cluster.
     /// </summary>
     public partial class ClusterIssue
     {

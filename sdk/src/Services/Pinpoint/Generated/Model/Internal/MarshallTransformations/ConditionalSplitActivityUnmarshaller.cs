@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public ConditionalSplitActivity Unmarshall(JsonUnmarshallerContext context)
         {
             ConditionalSplitActivity unmarshalledObject = new ConditionalSplitActivity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

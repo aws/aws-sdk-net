@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public TreatmentResource Unmarshall(JsonUnmarshallerContext context)
         {
             TreatmentResource unmarshalledObject = new TreatmentResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

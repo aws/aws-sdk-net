@@ -1119,13 +1119,13 @@ namespace Amazon.MedicalImaging
         ///  <note> 
         /// <para>
         ///  <c>SearchImageSets</c> accepts a single search query parameter and returns a paginated
-        /// response of all image sets that have the matching criteria. All range queries must
-        /// be input as <c>(lowerBound, upperBound)</c>.
+        /// response of all image sets that have the matching criteria. All date range queries
+        /// must be input as <c>(lowerBound, upperBound)</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <c>SearchImageSets</c> uses the <c>updatedAt</c> field for sorting in decreasing
-        /// order from latest to oldest.
+        /// By default, <c>SearchImageSets</c> uses the <c>updatedAt</c> field for sorting in
+        /// descending order from newest to oldest.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1385,8 +1385,32 @@ namespace Amazon.MedicalImaging
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonMedicalImagingEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonMedicalImagingEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

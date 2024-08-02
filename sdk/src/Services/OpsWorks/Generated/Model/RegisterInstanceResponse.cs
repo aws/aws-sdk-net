@@ -39,7 +39,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The registered instance's AWS OpsWorks Stacks ID.
+        /// The registered instance's OpsWorks Stacks ID.
         /// </para>
         /// </summary>
         public string InstanceId

@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public TestReportSummary Unmarshall(JsonUnmarshallerContext context)
         {
             TestReportSummary unmarshalledObject = new TestReportSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

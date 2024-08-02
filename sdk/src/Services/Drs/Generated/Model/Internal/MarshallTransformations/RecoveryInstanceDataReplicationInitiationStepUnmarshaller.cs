@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public RecoveryInstanceDataReplicationInitiationStep Unmarshall(JsonUnmarshallerContext context)
         {
             RecoveryInstanceDataReplicationInitiationStep unmarshalledObject = new RecoveryInstanceDataReplicationInitiationStep();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

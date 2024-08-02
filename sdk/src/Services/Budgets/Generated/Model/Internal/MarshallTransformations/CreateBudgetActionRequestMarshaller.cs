@@ -127,6 +127,22 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NotificationType);
                 }
 
+                if(publicRequest.IsSetResourceTags())
+                {
+                    context.Writer.WritePropertyName("ResourceTags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceTagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestResourceTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetSubscribers())
                 {
                     context.Writer.WritePropertyName("Subscribers");

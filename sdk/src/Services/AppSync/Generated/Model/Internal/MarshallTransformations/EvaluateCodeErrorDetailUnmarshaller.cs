@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public EvaluateCodeErrorDetail Unmarshall(JsonUnmarshallerContext context)
         {
             EvaluateCodeErrorDetail unmarshalledObject = new EvaluateCodeErrorDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

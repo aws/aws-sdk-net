@@ -62,6 +62,7 @@ namespace Amazon.EKS.Model
         private string _associationId;
         private string _clusterName;
         private string _awsNamespace;
+        private string _ownerArn;
         private string _serviceAccount;
 
         /// <summary>
@@ -136,6 +137,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetNamespace()
         {
             return this._awsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerArn. 
+        /// <para>
+        /// If defined, the Pod Identity Association is owned by an Amazon EKS Addon.
+        /// </para>
+        /// </summary>
+        public string OwnerArn
+        {
+            get { return this._ownerArn; }
+            set { this._ownerArn = value; }
+        }
+
+        // Check to see if OwnerArn property is set
+        internal bool IsSetOwnerArn()
+        {
+            return this._ownerArn != null;
         }
 
         /// <summary>

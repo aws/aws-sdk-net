@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public PartitionValueList Unmarshall(JsonUnmarshallerContext context)
         {
             PartitionValueList unmarshalledObject = new PartitionValueList();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

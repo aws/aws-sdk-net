@@ -163,6 +163,15 @@ namespace AWSSDKDocSamples.Amazon.SSOOIDC.Generated
             {
                 ClientName = "My IDE Plugin",
                 ClientType = "public",
+                EntitledApplicationArn = "arn:aws:sso::ACCOUNTID:application/ssoins-1111111111111111/apl-1111111111111111",
+                GrantTypes = new List<string> {
+                    "authorization_code",
+                    "refresh_token"
+                },
+                IssuerUrl = "https://identitycenter.amazonaws.com/ssoins-1111111111111111",
+                RedirectUris = new List<string> {
+                    "127.0.0.1:PORT/oauth/callback"
+                },
                 Scopes = new List<string> {
                     "sso:account:access",
                     "codewhisperer:completions"

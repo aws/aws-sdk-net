@@ -57,6 +57,8 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         public AccessPointDescription Unmarshall(JsonUnmarshallerContext context)
         {
             AccessPointDescription unmarshalledObject = new AccessPointDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -59,6 +59,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECR.IAmazonECR.CreateRepositoryCreationTemplate(Amazon.ECR.Model.CreateRepositoryCreationTemplateRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.CreateRepositoryCreationTemplate(Amazon.ECR.Model.CreateRepositoryCreationTemplateRequest)" />
+            <member name="T:Amazon.ECR.Model.CreateRepositoryCreationTemplateRequest" />
+            <member name="T:Amazon.ECR.Model.CreateRepositoryCreationTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a repository creation template.
+                </para>
+                <code
+                    title="Create a new repository creation template"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="create-a-new-repository-creation-template-1713296923053" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECR.IAmazonECR.DeleteRepository(Amazon.ECR.Model.DeleteRepositoryRequest)" />
             <member name="M:Amazon.ECR.AmazonECRClient.DeleteRepository(Amazon.ECR.Model.DeleteRepositoryRequest)" />
             <member name="T:Amazon.ECR.Model.DeleteRepositoryRequest" />
@@ -73,6 +92,25 @@
                     title="To force delete a repository"
                     source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
                     region="deleterepository-example-1470863805703" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.DeleteRepositoryCreationTemplate(Amazon.ECR.Model.DeleteRepositoryCreationTemplateRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.DeleteRepositoryCreationTemplate(Amazon.ECR.Model.DeleteRepositoryCreationTemplateRequest)" />
+            <member name="T:Amazon.ECR.Model.DeleteRepositoryCreationTemplateRequest" />
+            <member name="T:Amazon.ECR.Model.DeleteRepositoryCreationTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes a repository creation template.
+                </para>
+                <code
+                    title="Delete a repository creation template"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="delete-a-repository-creation-template-1713298142230" />
             </example>
         </value>
     </doc>
@@ -111,6 +149,25 @@
                     title="To describe all repositories in the current account"
                     source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
                     region="describe-repositories-1470856017467" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.DescribeRepositoryCreationTemplates(Amazon.ECR.Model.DescribeRepositoryCreationTemplatesRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.DescribeRepositoryCreationTemplates(Amazon.ECR.Model.DescribeRepositoryCreationTemplatesRequest)" />
+            <member name="T:Amazon.ECR.Model.DescribeRepositoryCreationTemplatesRequest" />
+            <member name="T:Amazon.ECR.Model.DescribeRepositoryCreationTemplatesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the contents of a repository creation template.
+                </para>
+                <code
+                    title="Describe a repository creation template"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="describe-a-repository-creation-template-1713298784302" />
             </example>
         </value>
     </doc>
@@ -168,6 +225,25 @@
                     title="To list all images in a repository"
                     source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
                     region="listimages-example-1470868161594" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.UpdateRepositoryCreationTemplate(Amazon.ECR.Model.UpdateRepositoryCreationTemplateRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.UpdateRepositoryCreationTemplate(Amazon.ECR.Model.UpdateRepositoryCreationTemplateRequest)" />
+            <member name="T:Amazon.ECR.Model.UpdateRepositoryCreationTemplateRequest" />
+            <member name="T:Amazon.ECR.Model.UpdateRepositoryCreationTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates a repository creation template.
+                </para>
+                <code
+                    title="Update a repository creation template"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="update-a-repository-creation-template-1713299261276" />
             </example>
         </value>
     </doc>

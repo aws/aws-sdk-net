@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public VpcEndpointSummary Unmarshall(JsonUnmarshallerContext context)
         {
             VpcEndpointSummary unmarshalledObject = new VpcEndpointSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

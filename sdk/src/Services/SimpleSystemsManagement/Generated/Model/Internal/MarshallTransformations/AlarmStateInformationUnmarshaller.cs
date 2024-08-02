@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public AlarmStateInformation Unmarshall(JsonUnmarshallerContext context)
         {
             AlarmStateInformation unmarshalledObject = new AlarmStateInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

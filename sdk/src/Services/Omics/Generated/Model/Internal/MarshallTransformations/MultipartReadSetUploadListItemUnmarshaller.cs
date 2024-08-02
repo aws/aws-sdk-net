@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public MultipartReadSetUploadListItem Unmarshall(JsonUnmarshallerContext context)
         {
             MultipartReadSetUploadListItem unmarshalledObject = new MultipartReadSetUploadListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

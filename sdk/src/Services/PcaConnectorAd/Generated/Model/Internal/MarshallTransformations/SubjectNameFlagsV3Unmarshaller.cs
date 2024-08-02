@@ -57,6 +57,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         public SubjectNameFlagsV3 Unmarshall(JsonUnmarshallerContext context)
         {
             SubjectNameFlagsV3 unmarshalledObject = new SubjectNameFlagsV3();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

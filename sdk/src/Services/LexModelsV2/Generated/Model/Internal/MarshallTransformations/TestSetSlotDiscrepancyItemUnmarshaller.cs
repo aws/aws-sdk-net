@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public TestSetSlotDiscrepancyItem Unmarshall(JsonUnmarshallerContext context)
         {
             TestSetSlotDiscrepancyItem unmarshalledObject = new TestSetSlotDiscrepancyItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -43,6 +43,7 @@ namespace Amazon.KinesisFirehose.Model
         private string _roleARN;
         private HttpEndpointS3BackupMode _s3BackupMode;
         private S3DestinationConfiguration _s3Configuration;
+        private SecretsManagerConfiguration _secretsManagerConfiguration;
 
         /// <summary>
         /// Gets and sets the property BufferingHints. 
@@ -118,7 +119,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RequestConfiguration. 
         /// <para>
-        /// The configuration of the requeste sent to the HTTP endpoint specified as the destination.
+        /// The configuration of the request sent to the HTTP endpoint that is specified as the
+        /// destination.
         /// </para>
         /// </summary>
         public HttpEndpointRequestConfiguration RequestConfiguration
@@ -207,6 +209,25 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetS3Configuration()
         {
             return this._s3Configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManagerConfiguration. 
+        /// <para>
+        ///  The configuration that defines how you access secrets for HTTP Endpoint destination.
+        /// 
+        /// </para>
+        /// </summary>
+        public SecretsManagerConfiguration SecretsManagerConfiguration
+        {
+            get { return this._secretsManagerConfiguration; }
+            set { this._secretsManagerConfiguration = value; }
+        }
+
+        // Check to see if SecretsManagerConfiguration property is set
+        internal bool IsSetSecretsManagerConfiguration()
+        {
+            return this._secretsManagerConfiguration != null;
         }
 
     }

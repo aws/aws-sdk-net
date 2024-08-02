@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public AutoTuneMaintenanceSchedule Unmarshall(JsonUnmarshallerContext context)
         {
             AutoTuneMaintenanceSchedule unmarshalledObject = new AutoTuneMaintenanceSchedule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         public CloudWatchLogsDestination Unmarshall(JsonUnmarshallerContext context)
         {
             CloudWatchLogsDestination unmarshalledObject = new CloudWatchLogsDestination();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

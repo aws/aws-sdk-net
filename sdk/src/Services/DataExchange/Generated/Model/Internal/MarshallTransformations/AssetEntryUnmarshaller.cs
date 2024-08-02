@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public AssetEntry Unmarshall(JsonUnmarshallerContext context)
         {
             AssetEntry unmarshalledObject = new AssetEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public SidewalkDevice Unmarshall(JsonUnmarshallerContext context)
         {
             SidewalkDevice unmarshalledObject = new SidewalkDevice();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

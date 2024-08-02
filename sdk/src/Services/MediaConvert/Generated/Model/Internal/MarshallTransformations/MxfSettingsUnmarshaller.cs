@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public MxfSettings Unmarshall(JsonUnmarshallerContext context)
         {
             MxfSettings unmarshalledObject = new MxfSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

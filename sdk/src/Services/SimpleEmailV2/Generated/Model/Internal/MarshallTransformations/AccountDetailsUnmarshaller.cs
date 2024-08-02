@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public AccountDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AccountDetails unmarshalledObject = new AccountDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

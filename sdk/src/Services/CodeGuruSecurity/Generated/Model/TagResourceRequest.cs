@@ -41,8 +41,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the <c>ScanName</c> object. You can retrieve this ARN by calling <c>ListScans</c>
-        /// or <c>GetScan</c>.
+        /// The ARN of the <c>ScanName</c> object. You can retrieve this ARN by calling <c>CreateScan</c>,
+        /// <c>ListScans</c>, or <c>GetScan</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

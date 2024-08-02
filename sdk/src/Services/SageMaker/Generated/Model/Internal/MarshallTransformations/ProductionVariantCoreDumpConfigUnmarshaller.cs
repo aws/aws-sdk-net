@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ProductionVariantCoreDumpConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ProductionVariantCoreDumpConfig unmarshalledObject = new ProductionVariantCoreDumpConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

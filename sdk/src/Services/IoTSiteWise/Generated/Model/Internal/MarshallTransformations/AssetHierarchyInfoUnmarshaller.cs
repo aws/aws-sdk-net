@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public AssetHierarchyInfo Unmarshall(JsonUnmarshallerContext context)
         {
             AssetHierarchyInfo unmarshalledObject = new AssetHierarchyInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

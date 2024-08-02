@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public TestRecommendation Unmarshall(JsonUnmarshallerContext context)
         {
             TestRecommendation unmarshalledObject = new TestRecommendation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

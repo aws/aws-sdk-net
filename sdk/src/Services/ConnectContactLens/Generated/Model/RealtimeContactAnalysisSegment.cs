@@ -35,6 +35,7 @@ namespace Amazon.ConnectContactLens.Model
     public partial class RealtimeContactAnalysisSegment
     {
         private Categories _categories;
+        private PostContactSummary _postContactSummary;
         private Transcript _transcript;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.ConnectContactLens.Model
         internal bool IsSetCategories()
         {
             return this._categories != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostContactSummary. 
+        /// <para>
+        /// Information about the post-contact summary.
+        /// </para>
+        /// </summary>
+        public PostContactSummary PostContactSummary
+        {
+            get { return this._postContactSummary; }
+            set { this._postContactSummary = value; }
+        }
+
+        // Check to see if PostContactSummary property is set
+        internal bool IsSetPostContactSummary()
+        {
+            return this._postContactSummary != null;
         }
 
         /// <summary>

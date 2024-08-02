@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SnapshotFileSheetSelection Unmarshall(JsonUnmarshallerContext context)
         {
             SnapshotFileSheetSelection unmarshalledObject = new SnapshotFileSheetSelection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

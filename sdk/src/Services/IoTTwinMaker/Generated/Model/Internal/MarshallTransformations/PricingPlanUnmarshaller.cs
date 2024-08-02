@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public PricingPlan Unmarshall(JsonUnmarshallerContext context)
         {
             PricingPlan unmarshalledObject = new PricingPlan();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         public DeployedVersionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DeployedVersionSummary unmarshalledObject = new DeployedVersionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

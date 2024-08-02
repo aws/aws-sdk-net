@@ -57,6 +57,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         public SubResourceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SubResourceSummary unmarshalledObject = new SubResourceSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

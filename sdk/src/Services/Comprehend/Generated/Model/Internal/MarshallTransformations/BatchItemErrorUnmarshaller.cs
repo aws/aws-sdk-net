@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public BatchItemError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchItemError unmarshalledObject = new BatchItemError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

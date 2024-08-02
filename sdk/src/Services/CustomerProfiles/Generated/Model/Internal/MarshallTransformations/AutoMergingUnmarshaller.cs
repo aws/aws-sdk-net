@@ -57,6 +57,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         public AutoMerging Unmarshall(JsonUnmarshallerContext context)
         {
             AutoMerging unmarshalledObject = new AutoMerging();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

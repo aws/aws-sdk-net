@@ -102,6 +102,22 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetResourceTags())
+                {
+                    context.Writer.WritePropertyName("ResourceTags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceTagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestResourceTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

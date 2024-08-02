@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public TableLFTagPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             TableLFTagPolicy unmarshalledObject = new TableLFTagPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public NetworkBinding Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkBinding unmarshalledObject = new NetworkBinding();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRedshiftClusterClusterSecurityGroup Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRedshiftClusterClusterSecurityGroup unmarshalledObject = new AwsRedshiftClusterClusterSecurityGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

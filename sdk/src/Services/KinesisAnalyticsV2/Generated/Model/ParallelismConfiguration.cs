@@ -31,8 +31,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Describes parameters for how a Managed Service for Apache Flink application executes
-    /// multiple tasks simultaneously. For more information about parallelism, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/dev/parallel.html">Parallel
-    /// Execution</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache
+    /// multiple tasks simultaneously. For more information about parallelism, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.19/dev/parallel.html">Parallel
+    /// Execution</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.19/">Apache
     /// Flink Documentation</a>.
     /// </summary>
     public partial class ParallelismConfiguration

@@ -57,6 +57,8 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         public ConnectionCredentials Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectionCredentials unmarshalledObject = new ConnectionCredentials();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

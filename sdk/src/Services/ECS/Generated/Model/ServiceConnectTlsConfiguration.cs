@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An object that represents the configuration for Service Connect TLS.
+    /// The key that encrypts and decrypts your resources for Service Connect TLS.
     /// </summary>
     public partial class ServiceConnectTlsConfiguration
     {

@@ -57,6 +57,8 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         public PackageDependency Unmarshall(JsonUnmarshallerContext context)
         {
             PackageDependency unmarshalledObject = new PackageDependency();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

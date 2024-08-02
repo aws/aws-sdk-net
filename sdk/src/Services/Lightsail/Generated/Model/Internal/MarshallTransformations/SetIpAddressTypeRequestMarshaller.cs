@@ -69,6 +69,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAcceptBundleUpdate())
+                {
+                    context.Writer.WritePropertyName("acceptBundleUpdate");
+                    context.Writer.Write(publicRequest.AcceptBundleUpdate);
+                }
+
                 if(publicRequest.IsSetIpAddressType())
                 {
                     context.Writer.WritePropertyName("ipAddressType");

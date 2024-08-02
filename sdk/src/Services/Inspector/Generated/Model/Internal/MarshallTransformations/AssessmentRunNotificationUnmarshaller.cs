@@ -57,6 +57,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         public AssessmentRunNotification Unmarshall(JsonUnmarshallerContext context)
         {
             AssessmentRunNotification unmarshalledObject = new AssessmentRunNotification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

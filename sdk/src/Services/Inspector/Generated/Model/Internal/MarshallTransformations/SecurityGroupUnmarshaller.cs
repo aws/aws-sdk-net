@@ -57,6 +57,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         public SecurityGroup Unmarshall(JsonUnmarshallerContext context)
         {
             SecurityGroup unmarshalledObject = new SecurityGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public UnsupportedTimestamps Unmarshall(JsonUnmarshallerContext context)
         {
             UnsupportedTimestamps unmarshalledObject = new UnsupportedTimestamps();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

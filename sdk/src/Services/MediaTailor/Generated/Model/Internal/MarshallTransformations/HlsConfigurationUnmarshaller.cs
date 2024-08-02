@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public HlsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             HlsConfiguration unmarshalledObject = new HlsConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

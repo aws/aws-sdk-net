@@ -593,8 +593,9 @@ namespace Amazon.SecretsManager
         ///  
         /// <para>
         ///  <b>Required permissions: </b> <c>secretsmanager:CreateSecret</c>. If you include
-        /// tags in the secret, you also need <c>secretsmanager:TagResource</c>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        /// tags in the secret, you also need <c>secretsmanager:TagResource</c>. To add replica
+        /// Regions, you must also have <c>secretsmanager:ReplicateSecretToRegions</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -603,6 +604,14 @@ namespace Amazon.SecretsManager
         /// To encrypt the secret with a KMS key other than <c>aws/secretsmanager</c>, you need
         /// <c>kms:GenerateDataKey</c> and <c>kms:Decrypt</c> permission to the key. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you enter commands in a command shell, there is a risk of the command history
+        /// being accessed or utilities having access to your command parameters. This is a concern
+        /// if the command includes the value of a secret. Learn how to <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+        /// the risks of using command-line tools to store Secrets Manager secrets</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecret service method.</param>
         /// <param name="cancellationToken">
@@ -1522,8 +1531,8 @@ namespace Amazon.SecretsManager
         ///  
         /// <para>
         /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
-        /// include sensitive information in request parameters except <c>SecretBinary</c> or
-        /// <c>SecretString</c> because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+        /// include sensitive information in request parameters except <c>SecretBinary</c>, <c>SecretString</c>,
+        /// or <c>RotationToken</c> because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
         /// Secrets Manager events with CloudTrail</a>.
         /// </para>
         ///  
@@ -1533,6 +1542,14 @@ namespace Amazon.SecretsManager
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you enter commands in a command shell, there is a risk of the command history
+        /// being accessed or utilities having access to your command parameters. This is a concern
+        /// if the command includes the value of a secret. Learn how to <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+        /// the risks of using command-line tools to store Secrets Manager secrets</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSecretValue service method.</param>
         /// <param name="cancellationToken">
@@ -2296,10 +2313,18 @@ namespace Amazon.SecretsManager
         /// and access control in Secrets Manager</a>. If you use a customer managed key, you
         /// must also have <c>kms:GenerateDataKey</c>, <c>kms:Encrypt</c>, and <c>kms:Decrypt</c>
         /// permissions on the key. If you change the KMS key and you don't have <c>kms:Encrypt</c>
-        /// permission to the new key, Secrets Manager does not re-ecrypt existing secret versions
+        /// permission to the new key, Secrets Manager does not re-encrypt existing secret versions
         /// with the new key. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html">
         /// Secret encryption and decryption</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you enter commands in a command shell, there is a risk of the command history
+        /// being accessed or utilities having access to your command parameters. This is a concern
+        /// if the command includes the value of a secret. Learn how to <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+        /// the risks of using command-line tools to store Secrets Manager secrets</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecret service method.</param>
         /// <param name="cancellationToken">
@@ -2597,8 +2622,32 @@ namespace Amazon.SecretsManager
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonSecretsManagerEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonSecretsManagerEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

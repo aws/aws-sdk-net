@@ -57,6 +57,8 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         public SnapshotCopyConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SnapshotCopyConfiguration unmarshalledObject = new SnapshotCopyConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

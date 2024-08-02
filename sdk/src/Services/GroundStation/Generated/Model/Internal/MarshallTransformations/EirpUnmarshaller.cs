@@ -57,6 +57,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public Eirp Unmarshall(JsonUnmarshallerContext context)
         {
             Eirp unmarshalledObject = new Eirp();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

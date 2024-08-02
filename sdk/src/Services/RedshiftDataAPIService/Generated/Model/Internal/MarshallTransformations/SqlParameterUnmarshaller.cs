@@ -57,6 +57,8 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         public SqlParameter Unmarshall(JsonUnmarshallerContext context)
         {
             SqlParameter unmarshalledObject = new SqlParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

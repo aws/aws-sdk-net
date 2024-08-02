@@ -33,7 +33,8 @@ namespace Amazon.ControlTower.Model
     /// Container for the parameters to the ListEnabledBaselines operation.
     /// Returns a list of summaries describing <c>EnabledBaseline</c> resources. You can filter
     /// the list by the corresponding <c>Baseline</c> or <c>Target</c> of the <c>EnabledBaseline</c>
-    /// resources.
+    /// resources. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html">
+    /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
     /// </summary>
     public partial class ListEnabledBaselinesRequest : AmazonControlTowerRequest
     {

@@ -57,6 +57,8 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         public NetworkInterface Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkInterface unmarshalledObject = new NetworkInterface();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ipv6Address", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Ipv6Address = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("networkInterfaceId", targetDepth))

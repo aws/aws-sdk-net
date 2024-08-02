@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public LocationTimestamp Unmarshall(JsonUnmarshallerContext context)
         {
             LocationTimestamp unmarshalledObject = new LocationTimestamp();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

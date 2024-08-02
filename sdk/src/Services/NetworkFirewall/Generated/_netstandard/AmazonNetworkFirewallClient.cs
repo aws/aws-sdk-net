@@ -791,16 +791,15 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration
-        /// contains Certificate Manager certificate associations between and the scope configurations
-        /// that Network Firewall uses to decrypt and re-encrypt traffic traveling through your
-        /// firewall.
+        /// Creates an Network Firewall TLS inspection configuration. Network Firewall uses TLS
+        /// inspection configurations to decrypt your firewall's inbound and outbound SSL/TLS
+        /// traffic. After decryption, Network Firewall inspects the traffic according to your
+        /// firewall policy's stateful rules, and then re-encrypts it before sending it to its
+        /// destination. You can enable inspection of your firewall's inbound traffic, outbound
+        /// traffic, or both. To use TLS inspection with your firewall, you must first import
+        /// or provision certificates using ACM, create a TLS inspection configuration, add that
+        /// configuration to a new firewall policy, and then associate that policy with your firewall.
         /// 
-        ///  
-        /// <para>
-        /// After you create a TLS inspection configuration, you can associate it with a new firewall
-        /// policy.
-        /// </para>
         ///  
         /// <para>
         /// To update the settings for a TLS inspection configuration, use <a>UpdateTLSInspectionConfiguration</a>.
@@ -2964,8 +2963,32 @@ namespace Amazon.NetworkFirewall
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonNetworkFirewallEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonNetworkFirewallEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

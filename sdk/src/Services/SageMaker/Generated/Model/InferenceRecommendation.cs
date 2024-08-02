@@ -102,7 +102,6 @@ namespace Amazon.SageMaker.Model
         /// The metrics used to decide what recommendation to make.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public RecommendationMetrics Metrics
         {
             get { return this._metrics; }

@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public InsightHealth Unmarshall(JsonUnmarshallerContext context)
         {
             InsightHealth unmarshalledObject = new InsightHealth();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

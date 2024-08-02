@@ -34,9 +34,29 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class DateTimePickerControlDisplayOptions
     {
+        private Visibility _dateIconVisibility;
         private string _dateTimeFormat;
+        private Visibility _helperTextVisibility;
         private SheetControlInfoIconLabelOptions _infoIconLabelOptions;
         private LabelOptions _titleOptions;
+
+        /// <summary>
+        /// Gets and sets the property DateIconVisibility. 
+        /// <para>
+        /// The date icon visibility of the <c>DateTimePickerControlDisplayOptions</c>.
+        /// </para>
+        /// </summary>
+        public Visibility DateIconVisibility
+        {
+            get { return this._dateIconVisibility; }
+            set { this._dateIconVisibility = value; }
+        }
+
+        // Check to see if DateIconVisibility property is set
+        internal bool IsSetDateIconVisibility()
+        {
+            return this._dateIconVisibility != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DateTimeFormat. 
@@ -55,6 +75,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDateTimeFormat()
         {
             return this._dateTimeFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HelperTextVisibility. 
+        /// <para>
+        /// The helper text visibility of the <c>DateTimePickerControlDisplayOptions</c>.
+        /// </para>
+        /// </summary>
+        public Visibility HelperTextVisibility
+        {
+            get { return this._helperTextVisibility; }
+            set { this._helperTextVisibility = value; }
+        }
+
+        // Check to see if HelperTextVisibility property is set
+        internal bool IsSetHelperTextVisibility()
+        {
+            return this._helperTextVisibility != null;
         }
 
         /// <summary>

@@ -57,6 +57,8 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         public CommonControlSummary Unmarshall(JsonUnmarshallerContext context)
         {
             CommonControlSummary unmarshalledObject = new CommonControlSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

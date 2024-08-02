@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this._eTag != null;
+            return !string.IsNullOrEmpty(this._eTag);
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this._location != null;
+            return !string.IsNullOrEmpty(this._location);
         }
 
     }

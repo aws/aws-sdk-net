@@ -71,15 +71,15 @@ namespace Amazon.BedrockRuntime.Model
         // Check to see if Accept property is set
         internal bool IsSetAccept()
         {
-            return this._accept != null;
+            return !string.IsNullOrEmpty(this._accept);
         }
 
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
         /// The prompt and inference parameters in the format specified in the <c>contentType</c>
-        /// in the header. To see the format and content of the request and response bodies for
-        /// different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+        /// in the header. You must provide the body in JSON format. To see the format and content
+        /// of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
         /// parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
         /// inference</a> in the Bedrock User Guide.
         /// </para>
@@ -100,7 +100,7 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The MIME type of the input data in the request. The default value is <c>application/json</c>.
+        /// The MIME type of the input data in the request. You must specify <c>application/json</c>.
         /// </para>
         /// </summary>
         public string ContentType
@@ -112,7 +112,7 @@ namespace Amazon.BedrockRuntime.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace Amazon.BedrockRuntime.Model
         // Check to see if GuardrailIdentifier property is set
         internal bool IsSetGuardrailIdentifier()
         {
-            return this._guardrailIdentifier != null;
+            return !string.IsNullOrEmpty(this._guardrailIdentifier);
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace Amazon.BedrockRuntime.Model
         // Check to see if GuardrailVersion property is set
         internal bool IsSetGuardrailVersion()
         {
-            return this._guardrailVersion != null;
+            return !string.IsNullOrEmpty(this._guardrailVersion);
         }
 
         /// <summary>
@@ -229,7 +229,7 @@ namespace Amazon.BedrockRuntime.Model
         // Check to see if Trace property is set
         internal bool IsSetTrace()
         {
-            return this._trace != null;
+            return !string.IsNullOrEmpty(this._trace);
         }
 
     }

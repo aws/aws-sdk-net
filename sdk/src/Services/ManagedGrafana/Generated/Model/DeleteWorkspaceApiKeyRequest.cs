@@ -32,6 +32,13 @@ namespace Amazon.ManagedGrafana.Model
     /// <summary>
     /// Container for the parameters to the DeleteWorkspaceApiKey operation.
     /// Deletes a Grafana API key for the workspace.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// In workspaces compatible with Grafana version 9 or above, use workspace service accounts
+    /// instead of API keys. API keys will be removed in a future release.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteWorkspaceApiKeyRequest : AmazonManagedGrafanaRequest
     {

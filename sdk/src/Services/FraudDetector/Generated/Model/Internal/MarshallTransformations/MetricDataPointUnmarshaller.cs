@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public MetricDataPoint Unmarshall(JsonUnmarshallerContext context)
         {
             MetricDataPoint unmarshalledObject = new MetricDataPoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

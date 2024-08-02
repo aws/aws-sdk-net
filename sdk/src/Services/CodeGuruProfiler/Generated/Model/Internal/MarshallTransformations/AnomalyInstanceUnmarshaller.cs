@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         public AnomalyInstance Unmarshall(JsonUnmarshallerContext context)
         {
             AnomalyInstance unmarshalledObject = new AnomalyInstance();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         public QueryResultsS3AccessGrantsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             QueryResultsS3AccessGrantsConfiguration unmarshalledObject = new QueryResultsS3AccessGrantsConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

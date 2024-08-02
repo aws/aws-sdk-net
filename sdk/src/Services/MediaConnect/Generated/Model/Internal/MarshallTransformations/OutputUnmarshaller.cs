@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public Output Unmarshall(JsonUnmarshallerContext context)
         {
             Output unmarshalledObject = new Output();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -134,6 +136,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("outputStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutputStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("port", targetDepth))

@@ -57,6 +57,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         public IoTJobExponentialRolloutRate Unmarshall(JsonUnmarshallerContext context)
         {
             IoTJobExponentialRolloutRate unmarshalledObject = new IoTJobExponentialRolloutRate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

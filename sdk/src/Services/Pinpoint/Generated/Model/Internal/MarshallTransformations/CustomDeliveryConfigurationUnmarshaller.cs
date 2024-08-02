@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public CustomDeliveryConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CustomDeliveryConfiguration unmarshalledObject = new CustomDeliveryConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

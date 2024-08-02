@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public ListWebhookItem Unmarshall(JsonUnmarshallerContext context)
         {
             ListWebhookItem unmarshalledObject = new ListWebhookItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

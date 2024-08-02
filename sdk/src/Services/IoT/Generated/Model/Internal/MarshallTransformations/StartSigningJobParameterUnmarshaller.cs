@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public StartSigningJobParameter Unmarshall(JsonUnmarshallerContext context)
         {
             StartSigningJobParameter unmarshalledObject = new StartSigningJobParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

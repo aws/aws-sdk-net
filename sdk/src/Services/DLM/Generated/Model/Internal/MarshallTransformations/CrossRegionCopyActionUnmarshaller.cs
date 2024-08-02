@@ -57,6 +57,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         public CrossRegionCopyAction Unmarshall(JsonUnmarshallerContext context)
         {
             CrossRegionCopyAction unmarshalledObject = new CrossRegionCopyAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

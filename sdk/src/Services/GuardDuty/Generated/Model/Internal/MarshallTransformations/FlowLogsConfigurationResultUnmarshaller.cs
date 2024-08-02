@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public FlowLogsConfigurationResult Unmarshall(JsonUnmarshallerContext context)
         {
             FlowLogsConfigurationResult unmarshalledObject = new FlowLogsConfigurationResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

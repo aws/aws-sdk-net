@@ -57,6 +57,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         public ResultReuseByAgeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ResultReuseByAgeConfiguration unmarshalledObject = new ResultReuseByAgeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

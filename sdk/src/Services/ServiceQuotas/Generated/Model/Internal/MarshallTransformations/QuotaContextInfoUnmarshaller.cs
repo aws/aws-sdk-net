@@ -57,6 +57,8 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
         public QuotaContextInfo Unmarshall(JsonUnmarshallerContext context)
         {
             QuotaContextInfo unmarshalledObject = new QuotaContextInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public RemoteIpDetails Unmarshall(JsonUnmarshallerContext context)
         {
             RemoteIpDetails unmarshalledObject = new RemoteIpDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
         public CategoryDetails Unmarshall(JsonUnmarshallerContext context)
         {
             CategoryDetails unmarshalledObject = new CategoryDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

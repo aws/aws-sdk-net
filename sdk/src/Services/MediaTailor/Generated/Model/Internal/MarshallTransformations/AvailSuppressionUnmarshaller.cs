@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public AvailSuppression Unmarshall(JsonUnmarshallerContext context)
         {
             AvailSuppression unmarshalledObject = new AvailSuppression();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

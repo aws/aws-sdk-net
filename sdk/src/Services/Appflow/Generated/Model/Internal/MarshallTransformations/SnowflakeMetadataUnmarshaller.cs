@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public SnowflakeMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             SnowflakeMetadata unmarshalledObject = new SnowflakeMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -30,13 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// The Amazon S3 buckets, Lambda functions, or Amazon DynamoDB tables that you specify
-    /// in your event selectors for your trail to log data events. Data events provide information
-    /// about the resource operations performed on or within a resource itself. These are
-    /// also known as data plane operations. You can specify up to 250 data resources for
-    /// a trail.
+    /// Data events provide information about the resource operations performed on or within
+    /// a resource itself. These are also known as data plane operations. You can specify
+    /// up to 250 data resources for a trail.
     /// 
-    ///  <note> 
+    ///  
+    /// <para>
+    /// Configure the <c>DataResource</c> to specify the resource type and resource ARNs for
+    /// which you want to log data events.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can specify the following resource types in your event selectors for your trail:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>AWS::DynamoDB::Table</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AWS::Lambda::Function</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AWS::S3::Object</c> 
+    /// </para>
+    ///  </li> </ul> <note> 
     /// <para>
     /// The total number of allowed data resources is 250. This number can be distributed
     /// between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors
@@ -146,7 +165,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property Values. 
         /// <para>
         /// An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified
-        /// objects.
+        /// resource type.
         /// </para>
         ///  <ul> <li> 
         /// <para>

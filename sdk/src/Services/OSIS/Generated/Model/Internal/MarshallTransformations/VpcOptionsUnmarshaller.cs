@@ -57,6 +57,8 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         public VpcOptions Unmarshall(JsonUnmarshallerContext context)
         {
             VpcOptions unmarshalledObject = new VpcOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,18 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpcAttachmentOptions", targetDepth))
+                {
+                    var unmarshaller = VpcAttachmentOptionsUnmarshaller.Instance;
+                    unmarshalledObject.VpcAttachmentOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpcEndpointManagement", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcEndpointManagement = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

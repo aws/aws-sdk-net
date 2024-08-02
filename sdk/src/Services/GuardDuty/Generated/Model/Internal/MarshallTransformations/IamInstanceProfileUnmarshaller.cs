@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public IamInstanceProfile Unmarshall(JsonUnmarshallerContext context)
         {
             IamInstanceProfile unmarshalledObject = new IamInstanceProfile();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

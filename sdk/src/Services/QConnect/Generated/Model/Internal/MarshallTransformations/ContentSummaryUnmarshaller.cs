@@ -57,6 +57,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         public ContentSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ContentSummary unmarshalledObject = new ContentSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

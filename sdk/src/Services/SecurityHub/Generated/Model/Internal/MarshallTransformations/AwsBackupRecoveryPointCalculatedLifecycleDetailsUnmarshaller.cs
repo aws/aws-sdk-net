@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsBackupRecoveryPointCalculatedLifecycleDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsBackupRecoveryPointCalculatedLifecycleDetails unmarshalledObject = new AwsBackupRecoveryPointCalculatedLifecycleDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

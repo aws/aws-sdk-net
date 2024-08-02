@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public BranchInfo Unmarshall(JsonUnmarshallerContext context)
         {
             BranchInfo unmarshalledObject = new BranchInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

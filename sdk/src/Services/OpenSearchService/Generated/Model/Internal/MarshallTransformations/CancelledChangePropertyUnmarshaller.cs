@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public CancelledChangeProperty Unmarshall(JsonUnmarshallerContext context)
         {
             CancelledChangeProperty unmarshalledObject = new CancelledChangeProperty();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

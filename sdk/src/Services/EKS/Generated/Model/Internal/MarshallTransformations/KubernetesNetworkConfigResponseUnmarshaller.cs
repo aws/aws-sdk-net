@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public KubernetesNetworkConfigResponse Unmarshall(JsonUnmarshallerContext context)
         {
             KubernetesNetworkConfigResponse unmarshalledObject = new KubernetesNetworkConfigResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

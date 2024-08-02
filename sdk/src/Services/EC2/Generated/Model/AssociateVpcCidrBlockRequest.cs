@@ -35,7 +35,6 @@ namespace Amazon.EC2.Model
     /// an Amazon-provided IPv6 CIDR block, or an IPv6 CIDR block from an IPv6 address pool
     /// that you provisioned through bring your own IP addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
     /// 
-    /// 
     ///  
     /// <para>
     /// You must specify one of the following in the request: an IPv4 CIDR block, an IPv6

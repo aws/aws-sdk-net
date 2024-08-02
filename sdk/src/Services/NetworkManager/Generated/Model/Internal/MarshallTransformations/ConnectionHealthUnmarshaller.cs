@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public ConnectionHealth Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectionHealth unmarshalledObject = new ConnectionHealth();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

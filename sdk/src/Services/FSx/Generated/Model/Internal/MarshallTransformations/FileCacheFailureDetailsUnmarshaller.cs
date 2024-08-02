@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public FileCacheFailureDetails Unmarshall(JsonUnmarshallerContext context)
         {
             FileCacheFailureDetails unmarshalledObject = new FileCacheFailureDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

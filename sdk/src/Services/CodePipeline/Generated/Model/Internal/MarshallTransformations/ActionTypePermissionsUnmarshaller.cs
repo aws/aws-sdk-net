@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public ActionTypePermissions Unmarshall(JsonUnmarshallerContext context)
         {
             ActionTypePermissions unmarshalledObject = new ActionTypePermissions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

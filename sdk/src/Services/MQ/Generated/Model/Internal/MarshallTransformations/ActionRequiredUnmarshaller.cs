@@ -57,6 +57,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         public ActionRequired Unmarshall(JsonUnmarshallerContext context)
         {
             ActionRequired unmarshalledObject = new ActionRequired();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

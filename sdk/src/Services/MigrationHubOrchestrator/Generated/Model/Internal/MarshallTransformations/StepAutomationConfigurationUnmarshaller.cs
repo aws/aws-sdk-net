@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
         public StepAutomationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             StepAutomationConfiguration unmarshalledObject = new StepAutomationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

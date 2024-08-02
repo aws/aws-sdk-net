@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public Ulimit Unmarshall(JsonUnmarshallerContext context)
         {
             Ulimit unmarshalledObject = new Ulimit();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public ReportResult Unmarshall(JsonUnmarshallerContext context)
         {
             ReportResult unmarshalledObject = new ReportResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

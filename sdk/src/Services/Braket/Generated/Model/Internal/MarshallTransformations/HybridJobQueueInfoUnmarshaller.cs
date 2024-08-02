@@ -57,6 +57,8 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         public HybridJobQueueInfo Unmarshall(JsonUnmarshallerContext context)
         {
             HybridJobQueueInfo unmarshalledObject = new HybridJobQueueInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

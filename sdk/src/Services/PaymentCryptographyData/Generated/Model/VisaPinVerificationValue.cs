@@ -43,7 +43,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The encrypted PIN block data to verify.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=16, Max=32)]
+        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=32)]
         public string EncryptedPinBlock
         {
             get { return this._encryptedPinBlock; }
@@ -63,8 +63,16 @@ namespace Amazon.PaymentCryptographyData.Model
         /// the PVV (PIN Verification Value).
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true, Min=0, Max=9)]
         public int? PinVerificationKeyIndex
+||||||| Commit version number update changes
+        [AWSProperty(Required=true, Min=0, Max=9)]
+        public int PinVerificationKeyIndex
+=======
+        [AWSProperty(Required=true, Min=0, Max=6)]
+        public int PinVerificationKeyIndex
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         {
             get { return this._pinVerificationKeyIndex; }
             set { this._pinVerificationKeyIndex = value; }

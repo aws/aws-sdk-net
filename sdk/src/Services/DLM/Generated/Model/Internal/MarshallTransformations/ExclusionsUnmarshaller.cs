@@ -57,6 +57,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         public Exclusions Unmarshall(JsonUnmarshallerContext context)
         {
             Exclusions unmarshalledObject = new Exclusions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

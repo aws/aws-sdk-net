@@ -57,6 +57,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         public ExecutionFailedEventDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ExecutionFailedEventDetails unmarshalledObject = new ExecutionFailedEventDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         public TimeSeriesDataPoint Unmarshall(JsonUnmarshallerContext context)
         {
             TimeSeriesDataPoint unmarshalledObject = new TimeSeriesDataPoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

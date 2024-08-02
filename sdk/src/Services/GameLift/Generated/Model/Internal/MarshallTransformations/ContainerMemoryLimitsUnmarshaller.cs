@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public ContainerMemoryLimits Unmarshall(JsonUnmarshallerContext context)
         {
             ContainerMemoryLimits unmarshalledObject = new ContainerMemoryLimits();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

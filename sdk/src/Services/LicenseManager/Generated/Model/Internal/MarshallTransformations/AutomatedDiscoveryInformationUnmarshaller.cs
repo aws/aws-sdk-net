@@ -57,6 +57,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         public AutomatedDiscoveryInformation Unmarshall(JsonUnmarshallerContext context)
         {
             AutomatedDiscoveryInformation unmarshalledObject = new AutomatedDiscoveryInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

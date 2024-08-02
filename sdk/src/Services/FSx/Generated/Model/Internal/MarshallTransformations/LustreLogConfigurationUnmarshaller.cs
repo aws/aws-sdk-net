@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public LustreLogConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LustreLogConfiguration unmarshalledObject = new LustreLogConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

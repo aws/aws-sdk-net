@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public CelebrityDetail Unmarshall(JsonUnmarshallerContext context)
         {
             CelebrityDetail unmarshalledObject = new CelebrityDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

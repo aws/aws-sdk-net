@@ -57,6 +57,8 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         public CustomRoutingEndpointDescription Unmarshall(JsonUnmarshallerContext context)
         {
             CustomRoutingEndpointDescription unmarshalledObject = new CustomRoutingEndpointDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

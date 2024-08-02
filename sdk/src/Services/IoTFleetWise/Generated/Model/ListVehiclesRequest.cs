@@ -42,9 +42,54 @@ namespace Amazon.IoTFleetWise.Model
     /// </summary>
     public partial class ListVehiclesRequest : AmazonIoTFleetWiseRequest
     {
+        private List<string> _attributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _attributeValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _modelManifestArn;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property AttributeNames. 
+        /// <para>
+        /// The fully qualified names of the attributes. For example, the fully qualified name
+        /// of an attribute might be <c>Vehicle.Body.Engine.Type</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> AttributeNames
+        {
+            get { return this._attributeNames; }
+            set { this._attributeNames = value; }
+        }
+
+        // Check to see if AttributeNames property is set
+        internal bool IsSetAttributeNames()
+        {
+            return this._attributeNames != null && (this._attributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttributeValues. 
+        /// <para>
+        /// Static information about a vehicle attribute value in string format. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>"1.3 L R2"</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> AttributeValues
+        {
+            get { return this._attributeValues; }
+            set { this._attributeValues = value; }
+        }
+
+        // Check to see if AttributeValues property is set
+        internal bool IsSetAttributeValues()
+        {
+            return this._attributeValues != null && (this._attributeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

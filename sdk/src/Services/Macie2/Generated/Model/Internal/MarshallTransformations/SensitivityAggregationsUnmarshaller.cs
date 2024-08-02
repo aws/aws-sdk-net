@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public SensitivityAggregations Unmarshall(JsonUnmarshallerContext context)
         {
             SensitivityAggregations unmarshalledObject = new SensitivityAggregations();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

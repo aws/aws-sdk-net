@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public OrganizationNode Unmarshall(JsonUnmarshallerContext context)
         {
             OrganizationNode unmarshalledObject = new OrganizationNode();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

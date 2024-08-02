@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public BlockPublicAccessConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             BlockPublicAccessConfiguration unmarshalledObject = new BlockPublicAccessConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

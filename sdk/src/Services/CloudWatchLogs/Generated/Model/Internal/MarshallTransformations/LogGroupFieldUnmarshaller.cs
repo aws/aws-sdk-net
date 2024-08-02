@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public LogGroupField Unmarshall(JsonUnmarshallerContext context)
         {
             LogGroupField unmarshalledObject = new LogGroupField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

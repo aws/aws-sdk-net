@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public Ec2InstanceSavingsPlansConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             Ec2InstanceSavingsPlansConfiguration unmarshalledObject = new Ec2InstanceSavingsPlansConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

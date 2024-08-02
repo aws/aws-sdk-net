@@ -99,6 +99,7 @@ namespace Amazon.RDS.Model
         private List<string> _enabledCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _endpoint;
         private string _engine;
+        private string _engineLifecycleSupport;
         private string _engineMode;
         private string _engineVersion;
         private bool? _globalWriteForwardingRequested;
@@ -865,6 +866,28 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineLifecycleSupport. 
+        /// <para>
+        /// The life cycle type for the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see CreateDBCluster.
+        /// </para>
+        /// </summary>
+        public string EngineLifecycleSupport
+        {
+            get { return this._engineLifecycleSupport; }
+            set { this._engineLifecycleSupport = value; }
+        }
+
+        // Check to see if EngineLifecycleSupport property is set
+        internal bool IsSetEngineLifecycleSupport()
+        {
+            return this._engineLifecycleSupport != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineMode. 
         /// <para>
         /// The DB engine mode of the DB cluster, either <c>provisioned</c> or <c>serverless</c>.
@@ -1473,12 +1496,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
-        /// resolves to the private IP address from within the DB cluster's virtual private cloud
-        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC.
-        /// Access to the DB cluster is ultimately controlled by the security group it uses. That
-        /// public access isn't permitted if the security group assigned to the DB cluster doesn't
-        /// permit it.
+        /// When the DB cluster is publicly accessible and you connect from outside of the DB
+        /// cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves
+        /// to the public IP address. When you connect from within the same VPC as the DB cluster,
+        /// the endpoint resolves to the private IP address. Access to the DB cluster is ultimately
+        /// controlled by the security group it uses. That public access isn't permitted if the
+        /// security group assigned to the DB cluster doesn't permit it.
         /// </para>
         ///  
         /// <para>

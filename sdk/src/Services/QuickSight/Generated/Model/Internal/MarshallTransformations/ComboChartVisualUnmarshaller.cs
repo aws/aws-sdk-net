@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ComboChartVisual Unmarshall(JsonUnmarshallerContext context)
         {
             ComboChartVisual unmarshalledObject = new ComboChartVisual();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

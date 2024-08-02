@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public CognitoConfig Unmarshall(JsonUnmarshallerContext context)
         {
             CognitoConfig unmarshalledObject = new CognitoConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

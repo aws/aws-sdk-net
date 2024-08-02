@@ -57,6 +57,8 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         public WafOverrideAction Unmarshall(JsonUnmarshallerContext context)
         {
             WafOverrideAction unmarshalledObject = new WafOverrideAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

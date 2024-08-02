@@ -75,5 +75,13 @@ namespace Amazon.MediaConvert.Model
         {
             return new ListQueuesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for SearchJobs operation
+        ///</summary>
+        public ISearchJobsPaginator SearchJobs(SearchJobsRequest request) 
+        {
+            return new SearchJobsPaginator(this.client, request);
+        }
     }
 }

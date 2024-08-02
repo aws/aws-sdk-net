@@ -57,6 +57,8 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
         public EnvironmentMember Unmarshall(JsonUnmarshallerContext context)
         {
             EnvironmentMember unmarshalledObject = new EnvironmentMember();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

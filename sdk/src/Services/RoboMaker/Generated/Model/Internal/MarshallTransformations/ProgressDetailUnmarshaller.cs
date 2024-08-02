@@ -57,6 +57,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         public ProgressDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ProgressDetail unmarshalledObject = new ProgressDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

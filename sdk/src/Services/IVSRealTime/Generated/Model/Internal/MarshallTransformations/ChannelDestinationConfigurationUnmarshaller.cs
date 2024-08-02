@@ -57,6 +57,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         public ChannelDestinationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ChannelDestinationConfiguration unmarshalledObject = new ChannelDestinationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

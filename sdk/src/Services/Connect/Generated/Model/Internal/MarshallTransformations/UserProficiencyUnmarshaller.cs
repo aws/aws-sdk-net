@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public UserProficiency Unmarshall(JsonUnmarshallerContext context)
         {
             UserProficiency unmarshalledObject = new UserProficiency();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

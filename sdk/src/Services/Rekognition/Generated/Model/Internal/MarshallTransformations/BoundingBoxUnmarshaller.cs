@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public BoundingBox Unmarshall(JsonUnmarshallerContext context)
         {
             BoundingBox unmarshalledObject = new BoundingBox();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

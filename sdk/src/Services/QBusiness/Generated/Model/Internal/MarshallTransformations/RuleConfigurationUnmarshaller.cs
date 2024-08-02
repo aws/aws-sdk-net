@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public RuleConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             RuleConfiguration unmarshalledObject = new RuleConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

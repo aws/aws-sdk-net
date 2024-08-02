@@ -57,6 +57,8 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         public ResolverRuleAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             ResolverRuleAssociation unmarshalledObject = new ResolverRuleAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

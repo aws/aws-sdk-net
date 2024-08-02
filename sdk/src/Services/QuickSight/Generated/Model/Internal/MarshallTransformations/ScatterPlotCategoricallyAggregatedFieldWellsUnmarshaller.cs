@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ScatterPlotCategoricallyAggregatedFieldWells Unmarshall(JsonUnmarshallerContext context)
         {
             ScatterPlotCategoricallyAggregatedFieldWells unmarshalledObject = new ScatterPlotCategoricallyAggregatedFieldWells();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

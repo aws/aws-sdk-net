@@ -20,11 +20,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_ACM_PCA"
   },
   {
-    "service_id": "Alexa For Business",
-    "services_section_name": "alexa_for_business",
-    "service_envvar_name": "AWS_ENDPOINT_URL_ALEXA_FOR_BUSINESS"
-  },
-  {
     "service_id": "amp",
     "services_section_name": "amp",
     "service_envvar_name": "AWS_ENDPOINT_URL_AMP"
@@ -143,11 +138,6 @@
     "service_id": "Backup Gateway",
     "services_section_name": "backup_gateway",
     "service_envvar_name": "AWS_ENDPOINT_URL_BACKUP_GATEWAY"
-  },
-  {
-    "service_id": "BackupStorage",
-    "services_section_name": "backupstorage",
-    "service_envvar_name": "AWS_ENDPOINT_URL_BACKUPSTORAGE"
   },
   {
     "service_id": "Batch",
@@ -670,11 +660,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_HEALTHLAKE"
   },
   {
-    "service_id": "Honeycode",
-    "services_section_name": "honeycode",
-    "service_envvar_name": "AWS_ENDPOINT_URL_HONEYCODE"
-  },
-  {
     "service_id": "IAM",
     "services_section_name": "iam",
     "service_envvar_name": "AWS_ENDPOINT_URL_IAM"
@@ -1038,11 +1023,6 @@
     "service_id": "MigrationHubStrategy",
     "services_section_name": "migrationhubstrategy",
     "service_envvar_name": "AWS_ENDPOINT_URL_MIGRATIONHUBSTRATEGY"
-  },
-  {
-    "service_id": "Mobile",
-    "services_section_name": "mobile",
-    "service_envvar_name": "AWS_ENDPOINT_URL_MOBILE"
   },
   {
     "service_id": "mq",

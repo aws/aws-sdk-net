@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         public SipMediaApplication Unmarshall(JsonUnmarshallerContext context)
         {
             SipMediaApplication unmarshalledObject = new SipMediaApplication();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -41,6 +41,7 @@ namespace Amazon.EMRServerless.Model
         private string _clientToken;
         private ImageConfigurationInput _imageConfiguration;
         private Dictionary<string, InitialCapacityConfig> _initialCapacity = AWSConfigs.InitializeCollections ? new Dictionary<string, InitialCapacityConfig>() : null;
+        private InteractiveConfiguration _interactiveConfiguration;
         private MaximumAllowedResources _maximumCapacity;
         private MonitoringConfiguration _monitoringConfiguration;
         private string _name;
@@ -162,6 +163,25 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetInitialCapacity()
         {
             return this._initialCapacity != null && (this._initialCapacity.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InteractiveConfiguration. 
+        /// <para>
+        /// The interactive configuration object that enables the interactive use cases to use
+        /// when running an application.
+        /// </para>
+        /// </summary>
+        public InteractiveConfiguration InteractiveConfiguration
+        {
+            get { return this._interactiveConfiguration; }
+            set { this._interactiveConfiguration = value; }
+        }
+
+        // Check to see if InteractiveConfiguration property is set
+        internal bool IsSetInteractiveConfiguration()
+        {
+            return this._interactiveConfiguration != null;
         }
 
         /// <summary>

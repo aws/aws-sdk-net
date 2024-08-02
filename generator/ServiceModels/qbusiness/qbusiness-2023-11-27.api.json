@@ -2,6 +2,7 @@
   "version":"2.0",
   "metadata":{
     "apiVersion":"2023-11-27",
+    "auth":["aws.auth#sigv4"],
     "endpointPrefix":"qbusiness",
     "protocol":"rest-json",
     "protocolSettings":{"h2":"eventstream"},
@@ -1730,7 +1731,9 @@
           "shape":"ClientToken",
           "idempotencyToken":true
         },
-        "attachmentsConfiguration":{"shape":"AttachmentsConfiguration"}
+        "attachmentsConfiguration":{"shape":"AttachmentsConfiguration"},
+        "qAppsConfiguration":{"shape":"QAppsConfiguration"},
+        "personalizationConfiguration":{"shape":"PersonalizationConfiguration"}
       }
     },
     "CreateApplicationResponse":{
@@ -2653,7 +2656,9 @@
         "createdAt":{"shape":"Timestamp"},
         "updatedAt":{"shape":"Timestamp"},
         "error":{"shape":"ErrorDetail"},
-        "attachmentsConfiguration":{"shape":"AppliedAttachmentsConfiguration"}
+        "attachmentsConfiguration":{"shape":"AppliedAttachmentsConfiguration"},
+        "qAppsConfiguration":{"shape":"QAppsConfiguration"},
+        "personalizationConfiguration":{"shape":"PersonalizationConfiguration"}
       }
     },
     "GetChatControlsConfigurationRequest":{
@@ -3817,6 +3822,20 @@
       "type":"string",
       "sensitive":true
     },
+    "PersonalizationConfiguration":{
+      "type":"structure",
+      "required":["personalizationControlMode"],
+      "members":{
+        "personalizationControlMode":{"shape":"PersonalizationControlMode"}
+      }
+    },
+    "PersonalizationControlMode":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
+    },
     "Plugin":{
       "type":"structure",
       "members":{
@@ -3994,6 +4013,20 @@
       "type":"structure",
       "members":{
       }
+    },
+    "QAppsConfiguration":{
+      "type":"structure",
+      "required":["qAppsControlMode"],
+      "members":{
+        "qAppsControlMode":{"shape":"QAppsControlMode"}
+      }
+    },
+    "QAppsControlMode":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
     },
     "ReadAccessType":{
       "type":"string",
@@ -4532,7 +4565,9 @@
         "displayName":{"shape":"ApplicationName"},
         "description":{"shape":"Description"},
         "roleArn":{"shape":"RoleArn"},
-        "attachmentsConfiguration":{"shape":"AttachmentsConfiguration"}
+        "attachmentsConfiguration":{"shape":"AttachmentsConfiguration"},
+        "qAppsConfiguration":{"shape":"QAppsConfiguration"},
+        "personalizationConfiguration":{"shape":"PersonalizationConfiguration"}
       }
     },
     "UpdateApplicationResponse":{

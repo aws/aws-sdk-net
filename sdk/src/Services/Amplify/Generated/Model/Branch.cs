@@ -121,6 +121,12 @@ namespace Amazon.Amplify.Model
         ///  The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
         /// app. 
         /// </para>
+        ///  
+        /// <para>
+        /// This property is available to Amplify Gen 1 apps only. When you deploy an application
+        /// with Amplify Gen 2, you provision the app's backend infrastructure using Typescript
+        /// code.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
         public string BackendEnvironmentArn

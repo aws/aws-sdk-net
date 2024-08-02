@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsElasticBeanstalkEnvironmentTier Unmarshall(JsonUnmarshallerContext context)
         {
             AwsElasticBeanstalkEnvironmentTier unmarshalledObject = new AwsElasticBeanstalkEnvironmentTier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

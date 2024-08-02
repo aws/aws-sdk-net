@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public DuplicateTimestamps Unmarshall(JsonUnmarshallerContext context)
         {
             DuplicateTimestamps unmarshalledObject = new DuplicateTimestamps();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

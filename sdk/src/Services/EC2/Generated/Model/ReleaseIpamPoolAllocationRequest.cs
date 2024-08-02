@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// All EC2 API actions follow an <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency">eventual
+    /// All EC2 API actions follow an <a href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">eventual
     /// consistency</a> model.
     /// </para>
     ///  </note>

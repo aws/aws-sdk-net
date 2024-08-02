@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public VpcConnectionInfoServerless Unmarshall(JsonUnmarshallerContext context)
         {
             VpcConnectionInfoServerless unmarshalledObject = new VpcConnectionInfoServerless();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

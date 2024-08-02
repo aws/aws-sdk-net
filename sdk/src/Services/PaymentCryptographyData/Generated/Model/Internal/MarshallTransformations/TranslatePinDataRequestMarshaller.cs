@@ -101,6 +101,17 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetIncomingWrappedKey())
+                {
+                    context.Writer.WritePropertyName("IncomingWrappedKey");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WrappedKeyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IncomingWrappedKey, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOutgoingDukptAttributes())
                 {
                     context.Writer.WritePropertyName("OutgoingDukptAttributes");
@@ -125,6 +136,17 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 
                     var marshaller = TranslationIsoFormatsMarshaller.Instance;
                     marshaller.Marshall(publicRequest.OutgoingTranslationAttributes, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOutgoingWrappedKey())
+                {
+                    context.Writer.WritePropertyName("OutgoingWrappedKey");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WrappedKeyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutgoingWrappedKey, context);
 
                     context.Writer.WriteObjectEnd();
                 }

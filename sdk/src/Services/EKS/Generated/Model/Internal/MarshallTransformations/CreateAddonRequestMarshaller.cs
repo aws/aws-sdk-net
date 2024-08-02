@@ -99,6 +99,22 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConfigurationValues);
                 }
 
+                if(publicRequest.IsSetPodIdentityAssociations())
+                {
+                    context.Writer.WritePropertyName("podIdentityAssociations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPodIdentityAssociationsListValue in publicRequest.PodIdentityAssociations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AddonPodIdentityAssociationsMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPodIdentityAssociationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetResolveConflicts())
                 {
                     context.Writer.WritePropertyName("resolveConflicts");

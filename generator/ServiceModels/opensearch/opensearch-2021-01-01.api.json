@@ -4,10 +4,12 @@
     "apiVersion":"2021-01-01",
     "endpointPrefix":"es",
     "protocol":"rest-json",
+    "protocols":["rest-json"],
     "serviceFullName":"Amazon OpenSearch Service",
     "serviceId":"OpenSearch",
     "signatureVersion":"v4",
-    "uid":"opensearch-2021-01-01"
+    "uid":"opensearch-2021-01-01",
+    "auth":["aws.auth#sigv4"]
   },
   "operations":{
     "AcceptInboundConnection":{
@@ -998,6 +1000,25 @@
     }
   },
   "shapes":{
+    "AIMLOptionsInput":{
+      "type":"structure",
+      "members":{
+        "NaturalLanguageQueryGenerationOptions":{"shape":"NaturalLanguageQueryGenerationOptionsInput"}
+      }
+    },
+    "AIMLOptionsOutput":{
+      "type":"structure",
+      "members":{
+        "NaturalLanguageQueryGenerationOptions":{"shape":"NaturalLanguageQueryGenerationOptionsOutput"}
+      }
+    },
+    "AIMLOptionsStatus":{
+      "type":"structure",
+      "members":{
+        "Options":{"shape":"AIMLOptionsOutput"},
+        "Status":{"shape":"OptionStatus"}
+      }
+    },
     "ARN":{
       "type":"string",
       "max":2048,
@@ -1147,6 +1168,7 @@
         "Enabled":{"shape":"Boolean"},
         "InternalUserDatabaseEnabled":{"shape":"Boolean"},
         "SAMLOptions":{"shape":"SAMLOptionsOutput"},
+        "JWTOptions":{"shape":"JWTOptionsOutput"},
         "AnonymousAuthDisableDate":{"shape":"DisableTimestamp"},
         "AnonymousAuthEnabled":{"shape":"Boolean"}
       }
@@ -1158,6 +1180,7 @@
         "InternalUserDatabaseEnabled":{"shape":"Boolean"},
         "MasterUserOptions":{"shape":"MasterUserOptions"},
         "SAMLOptions":{"shape":"SAMLOptionsInput"},
+        "JWTOptions":{"shape":"JWTOptionsInput"},
         "AnonymousAuthEnabled":{"shape":"Boolean"}
       }
     },
@@ -1615,7 +1638,8 @@
         "TagList":{"shape":"TagList"},
         "AutoTuneOptions":{"shape":"AutoTuneOptionsInput"},
         "OffPeakWindowOptions":{"shape":"OffPeakWindowOptions"},
-        "SoftwareUpdateOptions":{"shape":"SoftwareUpdateOptions"}
+        "SoftwareUpdateOptions":{"shape":"SoftwareUpdateOptions"},
+        "AIMLOptions":{"shape":"AIMLOptionsInput"}
       }
     },
     "CreateDomainResponse":{
@@ -1707,7 +1731,8 @@
       "members":{
         "DataSourceType":{"shape":"DataSourceType"},
         "Name":{"shape":"DataSourceName"},
-        "Description":{"shape":"DataSourceDescription"}
+        "Description":{"shape":"DataSourceDescription"},
+        "Status":{"shape":"DataSourceStatus"}
       }
     },
     "DataSourceList":{
@@ -1719,6 +1744,13 @@
       "max":80,
       "min":3,
       "pattern":"[a-z][a-z0-9_]+"
+    },
+    "DataSourceStatus":{
+      "type":"string",
+      "enum":[
+        "ACTIVE",
+        "DISABLED"
+      ]
     },
     "DataSourceType":{
       "type":"structure",
@@ -2266,7 +2298,8 @@
         "ChangeProgressDetails":{"shape":"ChangeProgressDetails"},
         "OffPeakWindowOptions":{"shape":"OffPeakWindowOptionsStatus"},
         "SoftwareUpdateOptions":{"shape":"SoftwareUpdateOptionsStatus"},
-        "ModifyingProperties":{"shape":"ModifyingPropertiesList"}
+        "ModifyingProperties":{"shape":"ModifyingPropertiesList"},
+        "AIMLOptions":{"shape":"AIMLOptionsStatus"}
       }
     },
     "DomainEndpointOptions":{
@@ -2459,7 +2492,8 @@
         "OffPeakWindowOptions":{"shape":"OffPeakWindowOptions"},
         "SoftwareUpdateOptions":{"shape":"SoftwareUpdateOptions"},
         "DomainProcessingStatus":{"shape":"DomainProcessingStatusType"},
-        "ModifyingProperties":{"shape":"ModifyingPropertiesList"}
+        "ModifyingProperties":{"shape":"ModifyingPropertiesList"},
+        "AIMLOptions":{"shape":"AIMLOptionsOutput"}
       }
     },
     "DomainStatusList":{
@@ -2649,7 +2683,8 @@
       "members":{
         "DataSourceType":{"shape":"DataSourceType"},
         "Name":{"shape":"DataSourceName"},
-        "Description":{"shape":"DataSourceDescription"}
+        "Description":{"shape":"DataSourceDescription"},
+        "Status":{"shape":"DataSourceStatus"}
       }
     },
     "GetDomainMaintenanceStatusRequest":{
@@ -2896,6 +2931,24 @@
     "Issues":{
       "type":"list",
       "member":{"shape":"Issue"}
+    },
+    "JWTOptionsInput":{
+      "type":"structure",
+      "members":{
+        "Enabled":{"shape":"Boolean"},
+        "SubjectKey":{"shape":"SubjectKey"},
+        "RolesKey":{"shape":"RolesKey"},
+        "PublicKey":{"shape":"String"}
+      }
+    },
+    "JWTOptionsOutput":{
+      "type":"structure",
+      "members":{
+        "Enabled":{"shape":"Boolean"},
+        "SubjectKey":{"shape":"String"},
+        "RolesKey":{"shape":"String"},
+        "PublicKey":{"shape":"String"}
+      }
     },
     "KmsKeyId":{
       "type":"string",
@@ -3333,6 +3386,38 @@
     "ModifyingPropertiesList":{
       "type":"list",
       "member":{"shape":"ModifyingProperties"}
+    },
+    "NaturalLanguageQueryGenerationCurrentState":{
+      "type":"string",
+      "enum":[
+        "NOT_ENABLED",
+        "ENABLE_COMPLETE",
+        "ENABLE_IN_PROGRESS",
+        "ENABLE_FAILED",
+        "DISABLE_COMPLETE",
+        "DISABLE_IN_PROGRESS",
+        "DISABLE_FAILED"
+      ]
+    },
+    "NaturalLanguageQueryGenerationDesiredState":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
+    },
+    "NaturalLanguageQueryGenerationOptionsInput":{
+      "type":"structure",
+      "members":{
+        "DesiredState":{"shape":"NaturalLanguageQueryGenerationDesiredState"}
+      }
+    },
+    "NaturalLanguageQueryGenerationOptionsOutput":{
+      "type":"structure",
+      "members":{
+        "DesiredState":{"shape":"NaturalLanguageQueryGenerationDesiredState"},
+        "CurrentState":{"shape":"NaturalLanguageQueryGenerationCurrentState"}
+      }
     },
     "NextToken":{"type":"string"},
     "NodeId":{
@@ -3896,6 +3981,11 @@
       "min":20,
       "pattern":"arn:(aws|aws\\-cn|aws\\-us\\-gov|aws\\-iso|aws\\-iso\\-b):iam::[0-9]+:role\\/.*"
     },
+    "RolesKey":{
+      "type":"string",
+      "max":64,
+      "min":1
+    },
     "RollbackOnDisable":{
       "type":"string",
       "enum":[
@@ -4168,6 +4258,11 @@
       "type":"list",
       "member":{"shape":"String"}
     },
+    "SubjectKey":{
+      "type":"string",
+      "max":64,
+      "min":1
+    },
     "TLSSecurityPolicy":{
       "type":"string",
       "enum":[
@@ -4232,7 +4327,8 @@
           "locationName":"DataSourceName"
         },
         "DataSourceType":{"shape":"DataSourceType"},
-        "Description":{"shape":"DataSourceDescription"}
+        "Description":{"shape":"DataSourceDescription"},
+        "Status":{"shape":"DataSourceStatus"}
       }
     },
     "UpdateDataSourceResponse":{
@@ -4267,7 +4363,8 @@
         "DryRun":{"shape":"DryRun"},
         "DryRunMode":{"shape":"DryRunMode"},
         "OffPeakWindowOptions":{"shape":"OffPeakWindowOptions"},
-        "SoftwareUpdateOptions":{"shape":"SoftwareUpdateOptions"}
+        "SoftwareUpdateOptions":{"shape":"SoftwareUpdateOptions"},
+        "AIMLOptions":{"shape":"AIMLOptionsInput"}
       }
     },
     "UpdateDomainConfigResponse":{

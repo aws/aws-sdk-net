@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public StoredQuery Unmarshall(JsonUnmarshallerContext context)
         {
             StoredQuery unmarshalledObject = new StoredQuery();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

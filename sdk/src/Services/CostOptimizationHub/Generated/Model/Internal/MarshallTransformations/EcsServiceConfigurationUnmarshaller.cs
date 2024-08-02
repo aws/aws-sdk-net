@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public EcsServiceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EcsServiceConfiguration unmarshalledObject = new EcsServiceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

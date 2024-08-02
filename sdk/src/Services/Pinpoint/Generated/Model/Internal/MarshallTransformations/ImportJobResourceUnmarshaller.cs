@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public ImportJobResource Unmarshall(JsonUnmarshallerContext context)
         {
             ImportJobResource unmarshalledObject = new ImportJobResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

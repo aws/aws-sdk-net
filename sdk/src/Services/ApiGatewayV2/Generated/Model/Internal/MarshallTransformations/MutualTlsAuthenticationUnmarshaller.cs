@@ -57,6 +57,8 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         public MutualTlsAuthentication Unmarshall(JsonUnmarshallerContext context)
         {
             MutualTlsAuthentication unmarshalledObject = new MutualTlsAuthentication();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

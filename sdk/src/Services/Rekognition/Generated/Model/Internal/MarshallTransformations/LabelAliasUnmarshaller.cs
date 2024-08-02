@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public LabelAlias Unmarshall(JsonUnmarshallerContext context)
         {
             LabelAlias unmarshalledObject = new LabelAlias();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

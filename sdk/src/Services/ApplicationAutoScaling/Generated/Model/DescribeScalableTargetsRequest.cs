@@ -99,7 +99,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  <ul> <li> 
         /// <para>
         /// ECS service - The resource type is <c>service</c> and the unique identifier is the
-        /// cluster name and service name. Example: <c>service/default/sample-webapp</c>.
+        /// cluster name and service name. Example: <c>service/my-cluster/my-service</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -181,13 +181,18 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SageMaker Serverless endpoint - The resource type is <c>variant</c> and the unique
+        /// SageMaker serverless endpoint - The resource type is <c>variant</c> and the unique
         /// identifier is the resource ID. Example: <c>endpoint/my-end-point/variant/KMeansClustering</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// SageMaker inference component - The resource type is <c>inference-component</c> and
         /// the unique identifier is the resource ID. Example: <c>inference-component/my-inference-component</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pool of WorkSpaces - The resource type is <c>workspacespool</c> and the unique identifier
+        /// is the pool ID. Example: <c>workspacespool/wspool-123456</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -213,7 +218,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ecs:service:DesiredCount</c> - The desired task count of an ECS service.
+        ///  <c>ecs:service:DesiredCount</c> - The task count of an ECS service.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -226,8 +231,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>appstream:fleet:DesiredCapacity</c> - The desired capacity of an AppStream 2.0
-        /// fleet.
+        ///  <c>appstream:fleet:DesiredCapacity</c> - The capacity of an AppStream 2.0 fleet.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -313,12 +317,17 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>sagemaker:variant:DesiredProvisionedConcurrency</c> - The provisioned concurrency
-        /// for a SageMaker Serverless endpoint.
+        /// for a SageMaker serverless endpoint.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>sagemaker:inference-component:DesiredCopyCount</c> - The number of copies across
         /// an endpoint for a SageMaker inference component.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>workspaces:workspacespool:DesiredUserSessions</c> - The number of user sessions
+        /// for the WorkSpaces in the pool.
         /// </para>
         ///  </li> </ul>
         /// </summary>

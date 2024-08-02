@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Artifact.IAmazonArtifact.GetAccountSettings(Amazon.Artifact.Model.GetAccountSettingsRequest)" />
+            <member name="M:Amazon.Artifact.AmazonArtifactClient.GetAccountSettings(Amazon.Artifact.Model.GetAccountSettingsRequest)" />
+            <member name="T:Amazon.Artifact.Model.GetAccountSettingsRequest" />
+            <member name="T:Amazon.Artifact.Model.GetAccountSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Get the current account settings.
+                </para>
+                <code
+                    title="Invoke GetAccountSettings operation"
+                    source=".\AWSSDKDocSamples\Artifact\Artifact.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Artifact.IAmazonArtifact.GetReport(Amazon.Artifact.Model.GetReportRequest)" />
+            <member name="M:Amazon.Artifact.AmazonArtifactClient.GetReport(Amazon.Artifact.Model.GetReportRequest)" />
+            <member name="T:Amazon.Artifact.Model.GetReportRequest" />
+            <member name="T:Amazon.Artifact.Model.GetReportResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The GetReport operation is invoked on a reportId and on a optional version.
+                        Callers must provide a termToken, which is provided by the GetTermForReport
+                        operation. If callers do not provide a version, it will default to the
+                        report's latest version
+                </para>
+                <code
+                    title="Invoke GetReport operation on the latest version of a specific report"
+                    source=".\AWSSDKDocSamples\Artifact\Artifact.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Artifact.IAmazonArtifact.GetReportMetadata(Amazon.Artifact.Model.GetReportMetadataRequest)" />
+            <member name="M:Amazon.Artifact.AmazonArtifactClient.GetReportMetadata(Amazon.Artifact.Model.GetReportMetadataRequest)" />
+            <member name="T:Amazon.Artifact.Model.GetReportMetadataRequest" />
+            <member name="T:Amazon.Artifact.Model.GetReportMetadataResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The GetReportMetadata operation is invoked on a reportId and on a optional version.
+                        If callers do not provide a version, it will default to the report's latest version.
+                </para>
+                <code
+                    title="Invoke GetReportMetadata operation on the latest version of a specific report"
+                    source=".\AWSSDKDocSamples\Artifact\Artifact.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Artifact.IAmazonArtifact.GetTermForReport(Amazon.Artifact.Model.GetTermForReportRequest)" />
+            <member name="M:Amazon.Artifact.AmazonArtifactClient.GetTermForReport(Amazon.Artifact.Model.GetTermForReportRequest)" />
+            <member name="T:Amazon.Artifact.Model.GetTermForReportRequest" />
+            <member name="T:Amazon.Artifact.Model.GetTermForReportResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The GetTermForReport operation is invoked on a reportId and on a optional version.
+                        If callers do not provide a version, it will default to the report's latest version.
+                </para>
+                <code
+                    title="Invoke GetTermForReport operation on the latest version of a specific report"
+                    source=".\AWSSDKDocSamples\Artifact\Artifact.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Artifact.IAmazonArtifact.ListReports(Amazon.Artifact.Model.ListReportsRequest)" />
+            <member name="M:Amazon.Artifact.AmazonArtifactClient.ListReports(Amazon.Artifact.Model.ListReportsRequest)" />
+            <member name="T:Amazon.Artifact.Model.ListReportsRequest" />
+            <member name="T:Amazon.Artifact.Model.ListReportsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The ListReports operation returns a collection of report resources.
+                </para>
+                <code
+                    title="Invoke ListReports operation"
+                    source=".\AWSSDKDocSamples\Artifact\Artifact.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Artifact.IAmazonArtifact.PutAccountSettings(Amazon.Artifact.Model.PutAccountSettingsRequest)" />
+            <member name="M:Amazon.Artifact.AmazonArtifactClient.PutAccountSettings(Amazon.Artifact.Model.PutAccountSettingsRequest)" />
+            <member name="T:Amazon.Artifact.Model.PutAccountSettingsRequest" />
+            <member name="T:Amazon.Artifact.Model.PutAccountSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Set the account settings.
+                </para>
+                <code
+                    title="Invoke PutAccountSettings operation"
+                    source=".\AWSSDKDocSamples\Artifact\Artifact.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

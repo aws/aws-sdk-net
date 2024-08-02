@@ -57,6 +57,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         public StreamInfo Unmarshall(JsonUnmarshallerContext context)
         {
             StreamInfo unmarshalledObject = new StreamInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

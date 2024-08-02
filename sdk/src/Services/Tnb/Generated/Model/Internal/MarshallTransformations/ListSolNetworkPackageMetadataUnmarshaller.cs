@@ -57,6 +57,8 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         public ListSolNetworkPackageMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             ListSolNetworkPackageMetadata unmarshalledObject = new ListSolNetworkPackageMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

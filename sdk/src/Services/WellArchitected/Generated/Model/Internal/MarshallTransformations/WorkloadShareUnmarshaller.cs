@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public WorkloadShare Unmarshall(JsonUnmarshallerContext context)
         {
             WorkloadShare unmarshalledObject = new WorkloadShare();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

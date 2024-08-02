@@ -57,6 +57,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         public PhoneNumberInformation Unmarshall(JsonUnmarshallerContext context)
         {
             PhoneNumberInformation unmarshalledObject = new PhoneNumberInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

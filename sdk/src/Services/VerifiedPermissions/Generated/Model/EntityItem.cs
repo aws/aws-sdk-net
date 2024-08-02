@@ -90,10 +90,18 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Parents. 
         /// <para>
-        /// The parents in the hierarchy that contains the entity.
+        /// The parent entities in the hierarchy that contains the entity. A principal or resource
+        /// entity can be defined with at most 99 <i>transitive parents</i> per authorization
+        /// request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// A transitive parent is an entity in the hierarchy of entities including all direct
+        /// parents, and parents of parents. For example, a user can be a member of 91 groups
+        /// if one of those groups is a member of eight groups, for a total of 100: one entity,
+        /// 91 entity parents, and eight parents of parents. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
         public List<EntityIdentifier> Parents
         {
             get { return this._parents; }

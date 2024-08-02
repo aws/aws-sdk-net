@@ -57,6 +57,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         public DatasetDetailOrgAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             DatasetDetailOrgAttributes unmarshalledObject = new DatasetDetailOrgAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

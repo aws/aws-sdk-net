@@ -4070,6 +4070,11 @@ namespace Amazon.Rekognition
         /// To get the next page of results, call <c>GetlabelDetection</c> and populate the <c>NextToken</c>
         /// request parameter with the token value returned from the previous call to <c>GetLabelDetection</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you are retrieving results while using the Amazon Simple Notification Service,
+        /// note that you will receive an "ERROR" notification if the job encounters an issue.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLabelDetection service method.</param>
         /// <param name="cancellationToken">
@@ -7218,8 +7223,32 @@ namespace Amazon.Rekognition
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonRekognitionEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonRekognitionEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

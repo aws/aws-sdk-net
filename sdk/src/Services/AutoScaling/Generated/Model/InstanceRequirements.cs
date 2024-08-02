@@ -64,8 +64,8 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-    /// an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-mixed-instances-group-attribute-based-instance-type-selection.html">Create
+    /// a mixed instances group using attribute-based instance type selection</a> in the <i>Amazon
     /// EC2 Auto Scaling User Guide</i>. For help determining which instance types match your
     /// attributes before you apply them to your Auto Scaling group, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-get-instance-types-from-instance-requirements">Preview
     /// instance types with specified attributes</a> in the <i>Amazon EC2 User Guide for Linux

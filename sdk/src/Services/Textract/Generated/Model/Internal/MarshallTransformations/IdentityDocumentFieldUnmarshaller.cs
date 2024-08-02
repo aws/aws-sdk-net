@@ -57,6 +57,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         public IdentityDocumentField Unmarshall(JsonUnmarshallerContext context)
         {
             IdentityDocumentField unmarshalledObject = new IdentityDocumentField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

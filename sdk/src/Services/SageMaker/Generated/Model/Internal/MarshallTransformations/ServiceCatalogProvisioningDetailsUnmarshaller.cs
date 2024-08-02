@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ServiceCatalogProvisioningDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceCatalogProvisioningDetails unmarshalledObject = new ServiceCatalogProvisioningDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

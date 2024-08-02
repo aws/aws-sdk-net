@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public EoCloudCoverInput Unmarshall(JsonUnmarshallerContext context)
         {
             EoCloudCoverInput unmarshalledObject = new EoCloudCoverInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

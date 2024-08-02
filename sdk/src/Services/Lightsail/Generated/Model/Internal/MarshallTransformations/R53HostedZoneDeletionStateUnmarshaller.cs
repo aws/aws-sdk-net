@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public R53HostedZoneDeletionState Unmarshall(JsonUnmarshallerContext context)
         {
             R53HostedZoneDeletionState unmarshalledObject = new R53HostedZoneDeletionState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public GroupSummary Unmarshall(JsonUnmarshallerContext context)
         {
             GroupSummary unmarshalledObject = new GroupSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

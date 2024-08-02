@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public DataReplicationSettings Unmarshall(JsonUnmarshallerContext context)
         {
             DataReplicationSettings unmarshalledObject = new DataReplicationSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

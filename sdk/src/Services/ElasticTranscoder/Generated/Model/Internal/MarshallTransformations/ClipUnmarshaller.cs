@@ -57,6 +57,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         public Clip Unmarshall(JsonUnmarshallerContext context)
         {
             Clip unmarshalledObject = new Clip();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

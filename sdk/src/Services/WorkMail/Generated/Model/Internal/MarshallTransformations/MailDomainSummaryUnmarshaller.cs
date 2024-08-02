@@ -57,6 +57,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         public MailDomainSummary Unmarshall(JsonUnmarshallerContext context)
         {
             MailDomainSummary unmarshalledObject = new MailDomainSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

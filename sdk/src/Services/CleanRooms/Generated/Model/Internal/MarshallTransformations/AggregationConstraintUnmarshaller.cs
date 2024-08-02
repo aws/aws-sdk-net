@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public AggregationConstraint Unmarshall(JsonUnmarshallerContext context)
         {
             AggregationConstraint unmarshalledObject = new AggregationConstraint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

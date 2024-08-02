@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public GatewayPlatform Unmarshall(JsonUnmarshallerContext context)
         {
             GatewayPlatform unmarshalledObject = new GatewayPlatform();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = GreengrassV2Unmarshaller.Instance;
                     unmarshalledObject.GreengrassV2 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("siemensIE", targetDepth))
+                {
+                    var unmarshaller = SiemensIEUnmarshaller.Instance;
+                    unmarshalledObject.SiemensIE = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

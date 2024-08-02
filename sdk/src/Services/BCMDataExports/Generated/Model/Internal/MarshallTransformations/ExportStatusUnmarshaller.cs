@@ -57,6 +57,8 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
         public ExportStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ExportStatus unmarshalledObject = new ExportStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

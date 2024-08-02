@@ -82,7 +82,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if Accept property is set
         internal bool IsSetAccept()
         {
-            return this._accept != null;
+            return !string.IsNullOrEmpty(this._accept);
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if CustomAttributes property is set
         internal bool IsSetCustomAttributes()
         {
-            return this._customAttributes != null;
+            return !string.IsNullOrEmpty(this._customAttributes);
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if InferenceId property is set
         internal bool IsSetInferenceId()
         {
-            return this._inferenceId != null;
+            return !string.IsNullOrEmpty(this._inferenceId);
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if InputLocation property is set
         internal bool IsSetInputLocation()
         {
-            return this._inputLocation != null;
+            return !string.IsNullOrEmpty(this._inputLocation);
         }
 
         /// <summary>

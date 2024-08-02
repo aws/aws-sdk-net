@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public M2tsSettings Unmarshall(JsonUnmarshallerContext context)
         {
             M2tsSettings unmarshalledObject = new M2tsSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

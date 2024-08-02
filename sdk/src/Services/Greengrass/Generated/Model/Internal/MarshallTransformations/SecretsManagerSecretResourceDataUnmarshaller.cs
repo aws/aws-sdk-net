@@ -57,6 +57,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         public SecretsManagerSecretResourceData Unmarshall(JsonUnmarshallerContext context)
         {
             SecretsManagerSecretResourceData unmarshalledObject = new SecretsManagerSecretResourceData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

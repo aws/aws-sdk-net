@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public DataTransfer Unmarshall(JsonUnmarshallerContext context)
         {
             DataTransfer unmarshalledObject = new DataTransfer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

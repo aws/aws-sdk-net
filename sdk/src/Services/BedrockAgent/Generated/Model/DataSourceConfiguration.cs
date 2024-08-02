@@ -30,17 +30,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains details about how a data source is stored.
+    /// The connection configuration for the data source.
     /// </summary>
     public partial class DataSourceConfiguration
     {
+        private ConfluenceDataSourceConfiguration _confluenceConfiguration;
         private S3DataSourceConfiguration _s3Configuration;
+        private SalesforceDataSourceConfiguration _salesforceConfiguration;
+        private SharePointDataSourceConfiguration _sharePointConfiguration;
         private DataSourceType _type;
+        private WebDataSourceConfiguration _webConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property ConfluenceConfiguration. 
+        /// <para>
+        /// The configuration information to connect to Confluence as your data source.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Confluence data source connector is in preview release and is subject to change.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ConfluenceDataSourceConfiguration ConfluenceConfiguration
+        {
+            get { return this._confluenceConfiguration; }
+            set { this._confluenceConfiguration = value; }
+        }
+
+        // Check to see if ConfluenceConfiguration property is set
+        internal bool IsSetConfluenceConfiguration()
+        {
+            return this._confluenceConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3Configuration. 
         /// <para>
-        /// Contains details about the configuration of the S3 object containing the data source.
+        /// The configuration information to connect to Amazon S3 as your data source.
         /// </para>
         /// </summary>
         public S3DataSourceConfiguration S3Configuration
@@ -56,9 +83,55 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SalesforceConfiguration. 
+        /// <para>
+        /// The configuration information to connect to Salesforce as your data source.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Salesforce data source connector is in preview release and is subject to change.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public SalesforceDataSourceConfiguration SalesforceConfiguration
+        {
+            get { return this._salesforceConfiguration; }
+            set { this._salesforceConfiguration = value; }
+        }
+
+        // Check to see if SalesforceConfiguration property is set
+        internal bool IsSetSalesforceConfiguration()
+        {
+            return this._salesforceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharePointConfiguration. 
+        /// <para>
+        /// The configuration information to connect to SharePoint as your data source.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// SharePoint data source connector is in preview release and is subject to change.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public SharePointDataSourceConfiguration SharePointConfiguration
+        {
+            get { return this._sharePointConfiguration; }
+            set { this._sharePointConfiguration = value; }
+        }
+
+        // Check to see if SharePointConfiguration property is set
+        internal bool IsSetSharePointConfiguration()
+        {
+            return this._sharePointConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of storage for the data source.
+        /// The type of data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -72,6 +145,30 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebConfiguration. 
+        /// <para>
+        /// The configuration of web URLs to crawl for your data source. You should be authorized
+        /// to crawl the URLs.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Crawling web URLs as your data source is in preview release and is subject to change.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public WebDataSourceConfiguration WebConfiguration
+        {
+            get { return this._webConfiguration; }
+            set { this._webConfiguration = value; }
+        }
+
+        // Check to see if WebConfiguration property is set
+        internal bool IsSetWebConfiguration()
+        {
+            return this._webConfiguration != null;
         }
 
     }

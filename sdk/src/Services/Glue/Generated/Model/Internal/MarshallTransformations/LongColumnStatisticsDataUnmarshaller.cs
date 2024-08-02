@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public LongColumnStatisticsData Unmarshall(JsonUnmarshallerContext context)
         {
             LongColumnStatisticsData unmarshalledObject = new LongColumnStatisticsData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

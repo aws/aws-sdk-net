@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public RemoteAccountDetails Unmarshall(JsonUnmarshallerContext context)
         {
             RemoteAccountDetails unmarshalledObject = new RemoteAccountDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

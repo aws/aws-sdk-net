@@ -57,6 +57,8 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         public HarvestJob Unmarshall(JsonUnmarshallerContext context)
         {
             HarvestJob unmarshalledObject = new HarvestJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

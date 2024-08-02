@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public RelationalDatabaseParameter Unmarshall(JsonUnmarshallerContext context)
         {
             RelationalDatabaseParameter unmarshalledObject = new RelationalDatabaseParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

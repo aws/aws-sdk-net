@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public ServiceLimit Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceLimit unmarshalledObject = new ServiceLimit();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

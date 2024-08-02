@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public ContainerRecipeSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ContainerRecipeSummary unmarshalledObject = new ContainerRecipeSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public SelectFields Unmarshall(JsonUnmarshallerContext context)
         {
             SelectFields unmarshalledObject = new SelectFields();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

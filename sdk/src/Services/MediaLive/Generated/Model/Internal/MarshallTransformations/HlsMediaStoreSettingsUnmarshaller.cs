@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public HlsMediaStoreSettings Unmarshall(JsonUnmarshallerContext context)
         {
             HlsMediaStoreSettings unmarshalledObject = new HlsMediaStoreSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public TaskTemplateDefaults Unmarshall(JsonUnmarshallerContext context)
         {
             TaskTemplateDefaults unmarshalledObject = new TaskTemplateDefaults();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

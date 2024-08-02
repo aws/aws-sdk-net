@@ -57,6 +57,8 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         public OperationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             OperationSummary unmarshalledObject = new OperationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

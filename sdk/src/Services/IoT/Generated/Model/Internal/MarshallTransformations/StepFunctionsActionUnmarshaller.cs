@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public StepFunctionsAction Unmarshall(JsonUnmarshallerContext context)
         {
             StepFunctionsAction unmarshalledObject = new StepFunctionsAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

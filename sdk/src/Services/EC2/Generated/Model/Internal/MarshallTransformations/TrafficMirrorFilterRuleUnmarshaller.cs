@@ -103,6 +103,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SourcePortRange = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("tagSet/item", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("trafficDirection", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

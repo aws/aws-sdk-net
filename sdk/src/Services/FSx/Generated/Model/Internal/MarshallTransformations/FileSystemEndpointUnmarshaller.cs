@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public FileSystemEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
             FileSystemEndpoint unmarshalledObject = new FileSystemEndpoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

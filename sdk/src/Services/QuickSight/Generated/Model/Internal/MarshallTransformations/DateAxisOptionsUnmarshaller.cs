@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DateAxisOptions Unmarshall(JsonUnmarshallerContext context)
         {
             DateAxisOptions unmarshalledObject = new DateAxisOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public ServerSideEncryptionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ServerSideEncryptionConfiguration unmarshalledObject = new ServerSideEncryptionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

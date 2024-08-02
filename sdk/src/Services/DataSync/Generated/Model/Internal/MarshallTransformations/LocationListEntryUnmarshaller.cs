@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public LocationListEntry Unmarshall(JsonUnmarshallerContext context)
         {
             LocationListEntry unmarshalledObject = new LocationListEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public AdminAccountSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AdminAccountSummary unmarshalledObject = new AdminAccountSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

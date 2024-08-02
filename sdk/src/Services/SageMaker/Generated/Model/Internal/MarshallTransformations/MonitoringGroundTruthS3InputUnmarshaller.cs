@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public MonitoringGroundTruthS3Input Unmarshall(JsonUnmarshallerContext context)
         {
             MonitoringGroundTruthS3Input unmarshalledObject = new MonitoringGroundTruthS3Input();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

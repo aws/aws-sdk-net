@@ -57,6 +57,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         public InitializationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             InitializationConfiguration unmarshalledObject = new InitializationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         public ArchiveRule Unmarshall(JsonUnmarshallerContext context)
         {
             ArchiveRule unmarshalledObject = new ArchiveRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

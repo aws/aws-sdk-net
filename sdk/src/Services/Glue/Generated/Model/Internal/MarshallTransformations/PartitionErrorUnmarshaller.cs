@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public PartitionError Unmarshall(JsonUnmarshallerContext context)
         {
             PartitionError unmarshalledObject = new PartitionError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

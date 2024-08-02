@@ -31,8 +31,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
-    /// For Redis engine version 6.0 onwards: Deletes a user. The user will be removed from
-    /// all user groups and in turn removed from all replication groups. For more information,
+    /// For Redis OSS engine version 6.0 onwards: Deletes a user. The user will be removed
+    /// from all user groups and in turn removed from all replication groups. For more information,
     /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
     /// Role Based Access Control (RBAC)</a>.
     /// </summary>

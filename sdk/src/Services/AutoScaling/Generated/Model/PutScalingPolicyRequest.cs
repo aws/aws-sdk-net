@@ -125,7 +125,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// Valid only if the policy type is <c>SimpleScaling</c>. For more information, see <a
-        /// href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        /// href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-scaling-cooldowns.html">Scaling
         /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
@@ -149,7 +149,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         /// Indicates whether the scaling policy is enabled or disabled. The default is enabled.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disable
         /// a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User
         /// Guide</i>.
         /// </para>

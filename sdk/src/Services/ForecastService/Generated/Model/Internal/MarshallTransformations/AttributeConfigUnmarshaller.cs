@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public AttributeConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AttributeConfig unmarshalledObject = new AttributeConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

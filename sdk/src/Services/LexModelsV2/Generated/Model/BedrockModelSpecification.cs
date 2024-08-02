@@ -35,7 +35,47 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class BedrockModelSpecification
     {
+        private string _customPrompt;
+        private BedrockGuardrailConfiguration _guardrail;
         private string _modelArn;
+        private BedrockTraceStatus _traceStatus;
+
+        /// <summary>
+        /// Gets and sets the property CustomPrompt. 
+        /// <para>
+        /// The custom prompt used in the Bedrock model specification details.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4000)]
+        public string CustomPrompt
+        {
+            get { return this._customPrompt; }
+            set { this._customPrompt = value; }
+        }
+
+        // Check to see if CustomPrompt property is set
+        internal bool IsSetCustomPrompt()
+        {
+            return this._customPrompt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Guardrail. 
+        /// <para>
+        /// The guardrail configuration in the Bedrock model specification details.
+        /// </para>
+        /// </summary>
+        public BedrockGuardrailConfiguration Guardrail
+        {
+            get { return this._guardrail; }
+            set { this._guardrail = value; }
+        }
+
+        // Check to see if Guardrail property is set
+        internal bool IsSetGuardrail()
+        {
+            return this._guardrail != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ModelArn. 
@@ -54,6 +94,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetModelArn()
         {
             return this._modelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceStatus. 
+        /// <para>
+        /// The Bedrock trace status in the Bedrock model specification details.
+        /// </para>
+        /// </summary>
+        public BedrockTraceStatus TraceStatus
+        {
+            get { return this._traceStatus; }
+            set { this._traceStatus = value; }
+        }
+
+        // Check to see if TraceStatus property is set
+        internal bool IsSetTraceStatus()
+        {
+            return this._traceStatus != null;
         }
 
     }

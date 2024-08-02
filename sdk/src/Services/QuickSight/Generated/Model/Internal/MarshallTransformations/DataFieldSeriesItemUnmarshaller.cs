@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DataFieldSeriesItem Unmarshall(JsonUnmarshallerContext context)
         {
             DataFieldSeriesItem unmarshalledObject = new DataFieldSeriesItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

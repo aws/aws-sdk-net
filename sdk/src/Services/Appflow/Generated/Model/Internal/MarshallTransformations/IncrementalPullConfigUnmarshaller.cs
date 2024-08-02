@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public IncrementalPullConfig Unmarshall(JsonUnmarshallerContext context)
         {
             IncrementalPullConfig unmarshalledObject = new IncrementalPullConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

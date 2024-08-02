@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public HlsRenditionGroupSettings Unmarshall(JsonUnmarshallerContext context)
         {
             HlsRenditionGroupSettings unmarshalledObject = new HlsRenditionGroupSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

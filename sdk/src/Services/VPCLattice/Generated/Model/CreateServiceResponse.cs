@@ -177,8 +177,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status. If the status is <c>CREATE_FAILED</c>, you will have to delete and recreate
-        /// the service.
+        /// The status. If the status is <c>CREATE_FAILED</c>, you must delete and recreate the
+        /// service.
         /// </para>
         /// </summary>
         public ServiceStatus Status

@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public ProximityEventConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ProximityEventConfiguration unmarshalledObject = new ProximityEventConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

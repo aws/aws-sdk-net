@@ -57,6 +57,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         public StateMachineVersionListItem Unmarshall(JsonUnmarshallerContext context)
         {
             StateMachineVersionListItem unmarshalledObject = new StateMachineVersionListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

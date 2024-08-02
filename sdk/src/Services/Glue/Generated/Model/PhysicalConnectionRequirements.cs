@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies the physical requirements for a connection.
+    /// The OAuth client app in GetConnection response.
     /// </summary>
     public partial class PhysicalConnectionRequirements
     {
@@ -41,9 +41,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The connection's Availability Zone. This field is redundant because the specified
-        /// subnet implies the Availability Zone to be used. Currently the field must be populated,
-        /// but it will be deprecated in the future.
+        /// The connection's Availability Zone.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

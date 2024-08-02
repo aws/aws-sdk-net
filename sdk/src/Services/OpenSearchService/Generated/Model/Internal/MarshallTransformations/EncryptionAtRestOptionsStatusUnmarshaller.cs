@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public EncryptionAtRestOptionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
             EncryptionAtRestOptionsStatus unmarshalledObject = new EncryptionAtRestOptionsStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

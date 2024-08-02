@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public AuthorizerSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AuthorizerSummary unmarshalledObject = new AuthorizerSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

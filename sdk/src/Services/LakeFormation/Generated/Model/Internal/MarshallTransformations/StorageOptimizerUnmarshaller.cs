@@ -57,6 +57,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public StorageOptimizer Unmarshall(JsonUnmarshallerContext context)
         {
             StorageOptimizer unmarshalledObject = new StorageOptimizer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

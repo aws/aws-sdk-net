@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public S3ReportExportConfig Unmarshall(JsonUnmarshallerContext context)
         {
             S3ReportExportConfig unmarshalledObject = new S3ReportExportConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public CreateTemplateMessageBody Unmarshall(JsonUnmarshallerContext context)
         {
             CreateTemplateMessageBody unmarshalledObject = new CreateTemplateMessageBody();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

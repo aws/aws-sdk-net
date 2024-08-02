@@ -57,6 +57,8 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
         public Voice Unmarshall(JsonUnmarshallerContext context)
         {
             Voice unmarshalledObject = new Voice();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
         public AssumedRoleUser Unmarshall(JsonUnmarshallerContext context)
         {
             AssumedRoleUser unmarshalledObject = new AssumedRoleUser();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

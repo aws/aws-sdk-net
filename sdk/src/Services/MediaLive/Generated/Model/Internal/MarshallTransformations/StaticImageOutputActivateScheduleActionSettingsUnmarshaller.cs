@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public StaticImageOutputActivateScheduleActionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             StaticImageOutputActivateScheduleActionSettings unmarshalledObject = new StaticImageOutputActivateScheduleActionSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

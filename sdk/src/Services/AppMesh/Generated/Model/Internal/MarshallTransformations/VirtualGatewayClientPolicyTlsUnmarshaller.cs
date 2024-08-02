@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public VirtualGatewayClientPolicyTls Unmarshall(JsonUnmarshallerContext context)
         {
             VirtualGatewayClientPolicyTls unmarshalledObject = new VirtualGatewayClientPolicyTls();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

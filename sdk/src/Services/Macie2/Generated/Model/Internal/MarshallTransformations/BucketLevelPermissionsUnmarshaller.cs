@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public BucketLevelPermissions Unmarshall(JsonUnmarshallerContext context)
         {
             BucketLevelPermissions unmarshalledObject = new BucketLevelPermissions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

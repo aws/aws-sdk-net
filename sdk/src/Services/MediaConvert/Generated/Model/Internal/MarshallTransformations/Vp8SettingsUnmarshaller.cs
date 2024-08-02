@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public Vp8Settings Unmarshall(JsonUnmarshallerContext context)
         {
             Vp8Settings unmarshalledObject = new Vp8Settings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

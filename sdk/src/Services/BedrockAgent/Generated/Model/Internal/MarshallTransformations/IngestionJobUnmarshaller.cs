@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public IngestionJob Unmarshall(JsonUnmarshallerContext context)
         {
             IngestionJob unmarshalledObject = new IngestionJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

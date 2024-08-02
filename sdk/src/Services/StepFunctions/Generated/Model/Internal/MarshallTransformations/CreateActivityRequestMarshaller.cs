@@ -69,6 +69,17 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEncryptionConfiguration())
+                {
+                    context.Writer.WritePropertyName("encryptionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EncryptionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

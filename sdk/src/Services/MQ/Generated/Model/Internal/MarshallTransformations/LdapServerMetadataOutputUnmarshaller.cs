@@ -57,6 +57,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         public LdapServerMetadataOutput Unmarshall(JsonUnmarshallerContext context)
         {
             LdapServerMetadataOutput unmarshalledObject = new LdapServerMetadataOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

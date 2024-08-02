@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public ClassificationDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ClassificationDetails unmarshalledObject = new ClassificationDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

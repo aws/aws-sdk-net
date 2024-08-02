@@ -102,7 +102,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets to list.
+        /// The targets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]

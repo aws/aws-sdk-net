@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
-    /// The identifier for a resource object that contains resources where a finding was detected.
+    /// The identifier for a resource object that contains resources to scan. Specifying a
+    /// codeArtifactId is required to create a scan.
     /// </summary>
     public partial class ResourceId
     {
@@ -39,7 +40,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property CodeArtifactId. 
         /// <para>
-        /// The identifier for the code file uploaded to the resource where a finding was detected.
+        /// The identifier for the code file uploaded to the resource object. Returned by <c>CreateUploadUrl</c>
+        /// when you upload resources to be scanned.
         /// </para>
         /// </summary>
         public string CodeArtifactId

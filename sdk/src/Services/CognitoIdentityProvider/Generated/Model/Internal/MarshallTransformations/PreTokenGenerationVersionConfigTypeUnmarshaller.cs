@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public PreTokenGenerationVersionConfigType Unmarshall(JsonUnmarshallerContext context)
         {
             PreTokenGenerationVersionConfigType unmarshalledObject = new PreTokenGenerationVersionConfigType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

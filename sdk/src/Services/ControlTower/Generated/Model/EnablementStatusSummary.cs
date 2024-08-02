@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// The deployment summary of the enabled control.
+    /// The deployment summary of an <c>EnabledControl</c> or <c>EnabledBaseline</c> resource.
     /// </summary>
     public partial class EnablementStatusSummary
     {
@@ -40,7 +40,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property LastOperationIdentifier. 
         /// <para>
-        /// The last operation identifier for the enabled control.
+        /// The last operation identifier for the enabled resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -59,7 +59,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The deployment status of the enabled control.
+        ///  The deployment status of the enabled resource.
         /// </para>
         ///  
         /// <para>
@@ -67,15 +67,18 @@ namespace Amazon.ControlTower.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>SUCCEEDED</c>: The <c>enabledControl</c> configuration was deployed successfully.
+        ///  <c>SUCCEEDED</c>: The <c>EnabledControl</c> or <c>EnabledBaseline</c> configuration
+        /// was deployed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>UNDER_CHANGE</c>: The <c>enabledControl</c> configuration is changing. 
+        ///  <c>UNDER_CHANGE</c>: The <c>EnabledControl</c> or <c>EnabledBaseline</c> configuration
+        /// is changing. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FAILED</c>: The <c>enabledControl</c> configuration failed to deploy.
+        ///  <c>FAILED</c>: The <c>EnabledControl</c> or <c>EnabledBaseline</c> configuration
+        /// failed to deploy.
         /// </para>
         ///  </li> </ul>
         /// </summary>

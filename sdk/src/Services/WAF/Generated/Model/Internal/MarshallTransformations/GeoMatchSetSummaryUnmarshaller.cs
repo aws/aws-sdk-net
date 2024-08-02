@@ -57,6 +57,8 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         public GeoMatchSetSummary Unmarshall(JsonUnmarshallerContext context)
         {
             GeoMatchSetSummary unmarshalledObject = new GeoMatchSetSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

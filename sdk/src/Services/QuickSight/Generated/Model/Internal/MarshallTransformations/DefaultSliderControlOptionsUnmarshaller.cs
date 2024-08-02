@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DefaultSliderControlOptions Unmarshall(JsonUnmarshallerContext context)
         {
             DefaultSliderControlOptions unmarshalledObject = new DefaultSliderControlOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

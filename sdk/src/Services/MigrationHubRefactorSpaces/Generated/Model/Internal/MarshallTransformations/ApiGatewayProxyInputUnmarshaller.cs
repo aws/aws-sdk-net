@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         public ApiGatewayProxyInput Unmarshall(JsonUnmarshallerContext context)
         {
             ApiGatewayProxyInput unmarshalledObject = new ApiGatewayProxyInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

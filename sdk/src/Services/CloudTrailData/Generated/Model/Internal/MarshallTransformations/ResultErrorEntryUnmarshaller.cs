@@ -57,6 +57,8 @@ namespace Amazon.CloudTrailData.Model.Internal.MarshallTransformations
         public ResultErrorEntry Unmarshall(JsonUnmarshallerContext context)
         {
             ResultErrorEntry unmarshalledObject = new ResultErrorEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

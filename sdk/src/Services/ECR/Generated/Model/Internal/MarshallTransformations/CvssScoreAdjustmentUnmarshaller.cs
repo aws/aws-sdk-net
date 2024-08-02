@@ -57,6 +57,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         public CvssScoreAdjustment Unmarshall(JsonUnmarshallerContext context)
         {
             CvssScoreAdjustment unmarshalledObject = new CvssScoreAdjustment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

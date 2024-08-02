@@ -57,6 +57,8 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
         public ConfigurationEvent Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigurationEvent unmarshalledObject = new ConfigurationEvent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

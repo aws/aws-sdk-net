@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TrendArrowOptions Unmarshall(JsonUnmarshallerContext context)
         {
             TrendArrowOptions unmarshalledObject = new TrendArrowOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

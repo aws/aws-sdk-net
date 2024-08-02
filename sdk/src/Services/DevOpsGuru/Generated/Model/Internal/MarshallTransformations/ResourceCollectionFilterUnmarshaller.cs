@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public ResourceCollectionFilter Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceCollectionFilter unmarshalledObject = new ResourceCollectionFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

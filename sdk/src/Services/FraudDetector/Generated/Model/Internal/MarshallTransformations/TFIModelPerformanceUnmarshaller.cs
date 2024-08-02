@@ -57,6 +57,8 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         public TFIModelPerformance Unmarshall(JsonUnmarshallerContext context)
         {
             TFIModelPerformance unmarshalledObject = new TFIModelPerformance();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

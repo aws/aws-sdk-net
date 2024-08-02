@@ -42,6 +42,12 @@ namespace Amazon.Glue.Model
         /// </summary>
         public IPaginatedEnumerable<ListBlueprintsResponse> Responses => new PaginatedResponse<ListBlueprintsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Blueprints
+        /// </summary>
+        public IPaginatedEnumerable<string> Blueprints => 
+            new PaginatedResultKeyResponse<ListBlueprintsResponse, string>(this, (i) => i.Blueprints ?? new List<string>());
+
         internal ListBlueprintsPaginator(IAmazonGlue client, ListBlueprintsRequest request)
         {
             this._client = client;

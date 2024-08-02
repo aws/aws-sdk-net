@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public RegionOfInterest Unmarshall(JsonUnmarshallerContext context)
         {
             RegionOfInterest unmarshalledObject = new RegionOfInterest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
         public EventBridgeParameters Unmarshall(JsonUnmarshallerContext context)
         {
             EventBridgeParameters unmarshalledObject = new EventBridgeParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         public ExpiryEventsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ExpiryEventsConfiguration unmarshalledObject = new ExpiryEventsConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

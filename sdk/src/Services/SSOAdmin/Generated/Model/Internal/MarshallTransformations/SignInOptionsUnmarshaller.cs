@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public SignInOptions Unmarshall(JsonUnmarshallerContext context)
         {
             SignInOptions unmarshalledObject = new SignInOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

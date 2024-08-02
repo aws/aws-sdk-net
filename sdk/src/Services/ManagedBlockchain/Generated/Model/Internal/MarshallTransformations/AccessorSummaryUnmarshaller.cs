@@ -57,6 +57,8 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         public AccessorSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AccessorSummary unmarshalledObject = new AccessorSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

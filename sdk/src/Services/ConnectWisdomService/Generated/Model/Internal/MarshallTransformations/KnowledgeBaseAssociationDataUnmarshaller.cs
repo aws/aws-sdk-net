@@ -57,6 +57,8 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         public KnowledgeBaseAssociationData Unmarshall(JsonUnmarshallerContext context)
         {
             KnowledgeBaseAssociationData unmarshalledObject = new KnowledgeBaseAssociationData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

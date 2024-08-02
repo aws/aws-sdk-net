@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkAcls. 
         /// <para>
-        /// Information about one or more network ACLs.
+        /// Information about the network ACLs.
         /// </para>
         /// </summary>
         public List<NetworkAcl> NetworkAcls

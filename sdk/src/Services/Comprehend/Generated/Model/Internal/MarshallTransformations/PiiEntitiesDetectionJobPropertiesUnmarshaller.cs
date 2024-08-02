@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public PiiEntitiesDetectionJobProperties Unmarshall(JsonUnmarshallerContext context)
         {
             PiiEntitiesDetectionJobProperties unmarshalledObject = new PiiEntitiesDetectionJobProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

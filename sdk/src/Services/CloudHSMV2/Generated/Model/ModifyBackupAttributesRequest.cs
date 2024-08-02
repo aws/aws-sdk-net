@@ -31,7 +31,13 @@ namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyBackupAttributes operation.
-    /// Modifies attributes for AWS CloudHSM backup.
+    /// Modifies attributes for CloudHSM backup.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM backup
+    /// in a different Amazon Web Services account.
+    /// </para>
     /// </summary>
     public partial class ModifyBackupAttributesRequest : AmazonCloudHSMV2Request
     {

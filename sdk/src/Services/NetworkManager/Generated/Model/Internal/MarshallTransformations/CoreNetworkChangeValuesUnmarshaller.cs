@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public CoreNetworkChangeValues Unmarshall(JsonUnmarshallerContext context)
         {
             CoreNetworkChangeValues unmarshalledObject = new CoreNetworkChangeValues();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -94,10 +96,22 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.InsideCidrBlocks = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NetworkFunctionGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFunctionGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SegmentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SegmentName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServiceInsertionActions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServiceInsertionAction, ServiceInsertionActionUnmarshaller>(ServiceInsertionActionUnmarshaller.Instance);
+                    unmarshalledObject.ServiceInsertionActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SharedSegments", targetDepth))

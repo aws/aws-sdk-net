@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public NetworkResourceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkResourceSummary unmarshalledObject = new NetworkResourceSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

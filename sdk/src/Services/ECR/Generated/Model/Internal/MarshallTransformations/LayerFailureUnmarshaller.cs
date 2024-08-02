@@ -57,6 +57,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         public LayerFailure Unmarshall(JsonUnmarshallerContext context)
         {
             LayerFailure unmarshalledObject = new LayerFailure();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

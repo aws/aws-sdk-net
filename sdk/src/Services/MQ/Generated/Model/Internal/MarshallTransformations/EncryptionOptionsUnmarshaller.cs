@@ -57,6 +57,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         public EncryptionOptions Unmarshall(JsonUnmarshallerContext context)
         {
             EncryptionOptions unmarshalledObject = new EncryptionOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

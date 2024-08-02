@@ -57,6 +57,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         public BudgetedAndActualAmounts Unmarshall(JsonUnmarshallerContext context)
         {
             BudgetedAndActualAmounts unmarshalledObject = new BudgetedAndActualAmounts();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

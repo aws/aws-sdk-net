@@ -57,6 +57,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         public DeregistrationPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             DeregistrationPolicy unmarshalledObject = new DeregistrationPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

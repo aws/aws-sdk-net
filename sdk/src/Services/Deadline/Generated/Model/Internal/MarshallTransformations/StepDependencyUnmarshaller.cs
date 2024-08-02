@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public StepDependency Unmarshall(JsonUnmarshallerContext context)
         {
             StepDependency unmarshalledObject = new StepDependency();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

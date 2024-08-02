@@ -57,6 +57,8 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         public LandingZoneOperationDetail Unmarshall(JsonUnmarshallerContext context)
         {
             LandingZoneOperationDetail unmarshalledObject = new LandingZoneOperationDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("operationIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OperationIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("operationType", targetDepth))

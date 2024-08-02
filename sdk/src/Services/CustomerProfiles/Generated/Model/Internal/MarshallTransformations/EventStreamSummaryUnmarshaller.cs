@@ -57,6 +57,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         public EventStreamSummary Unmarshall(JsonUnmarshallerContext context)
         {
             EventStreamSummary unmarshalledObject = new EventStreamSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

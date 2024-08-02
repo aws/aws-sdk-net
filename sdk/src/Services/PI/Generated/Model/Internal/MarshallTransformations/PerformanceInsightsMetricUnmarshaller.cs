@@ -57,6 +57,8 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         public PerformanceInsightsMetric Unmarshall(JsonUnmarshallerContext context)
         {
             PerformanceInsightsMetric unmarshalledObject = new PerformanceInsightsMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

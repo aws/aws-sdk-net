@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public SnowflakeDestinationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             SnowflakeDestinationDescription unmarshalledObject = new SnowflakeDestinationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BufferingHints", targetDepth))
+                {
+                    var unmarshaller = SnowflakeBufferingHintsUnmarshaller.Instance;
+                    unmarshalledObject.BufferingHints = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CloudWatchLoggingOptions", targetDepth))
@@ -134,6 +142,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Schema = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecretsManagerConfiguration", targetDepth))
+                {
+                    var unmarshaller = SecretsManagerConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SecretsManagerConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SnowflakeRoleConfiguration", targetDepth))

@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public MutationActionSetStateParameter Unmarshall(JsonUnmarshallerContext context)
         {
             MutationActionSetStateParameter unmarshalledObject = new MutationActionSetStateParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

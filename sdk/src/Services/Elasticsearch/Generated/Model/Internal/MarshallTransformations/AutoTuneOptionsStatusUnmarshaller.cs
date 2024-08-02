@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public AutoTuneOptionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
             AutoTuneOptionsStatus unmarshalledObject = new AutoTuneOptionsStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

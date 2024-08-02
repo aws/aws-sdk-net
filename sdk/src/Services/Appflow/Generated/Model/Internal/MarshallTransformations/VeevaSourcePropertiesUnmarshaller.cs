@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public VeevaSourceProperties Unmarshall(JsonUnmarshallerContext context)
         {
             VeevaSourceProperties unmarshalledObject = new VeevaSourceProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

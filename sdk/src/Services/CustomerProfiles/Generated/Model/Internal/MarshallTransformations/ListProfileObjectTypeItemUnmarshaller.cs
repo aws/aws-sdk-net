@@ -57,6 +57,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         public ListProfileObjectTypeItem Unmarshall(JsonUnmarshallerContext context)
         {
             ListProfileObjectTypeItem unmarshalledObject = new ListProfileObjectTypeItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -80,6 +82,18 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxAvailableProfileObjectCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxAvailableProfileObjectCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxProfileObjectCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxProfileObjectCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ObjectTypeName", targetDepth))

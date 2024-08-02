@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public FileCacheLustreConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             FileCacheLustreConfiguration unmarshalledObject = new FileCacheLustreConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

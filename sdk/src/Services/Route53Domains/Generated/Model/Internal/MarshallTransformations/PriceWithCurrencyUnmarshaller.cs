@@ -57,6 +57,8 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         public PriceWithCurrency Unmarshall(JsonUnmarshallerContext context)
         {
             PriceWithCurrency unmarshalledObject = new PriceWithCurrency();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

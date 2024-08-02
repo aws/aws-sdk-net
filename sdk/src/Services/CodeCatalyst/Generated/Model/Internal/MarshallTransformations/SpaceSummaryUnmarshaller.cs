@@ -57,6 +57,8 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         public SpaceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SpaceSummary unmarshalledObject = new SpaceSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

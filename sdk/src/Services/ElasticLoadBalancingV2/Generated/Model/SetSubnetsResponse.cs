@@ -58,6 +58,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
+        /// [Application Load Balancers] The IP address type.
+        /// </para>
+        ///  
+        /// <para>
         /// [Network Load Balancers] The IP address type.
         /// </para>
         ///  

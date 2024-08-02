@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public ConnectorConfigResponse Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectorConfigResponse unmarshalledObject = new ConnectorConfigResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

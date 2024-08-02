@@ -57,6 +57,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         public CreateBackendAuthForgotPasswordConfig Unmarshall(JsonUnmarshallerContext context)
         {
             CreateBackendAuthForgotPasswordConfig unmarshalledObject = new CreateBackendAuthForgotPasswordConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

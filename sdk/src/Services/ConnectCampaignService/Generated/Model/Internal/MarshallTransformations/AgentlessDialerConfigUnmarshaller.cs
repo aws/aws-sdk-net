@@ -57,6 +57,8 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         public AgentlessDialerConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AgentlessDialerConfig unmarshalledObject = new AgentlessDialerConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

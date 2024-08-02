@@ -70,7 +70,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the certificate. 
+        /// The Amazon Resource Name (ARN) of the certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

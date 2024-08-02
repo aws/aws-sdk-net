@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public ClusterSetting Unmarshall(JsonUnmarshallerContext context)
         {
             ClusterSetting unmarshalledObject = new ClusterSetting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

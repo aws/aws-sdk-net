@@ -57,6 +57,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         public RepositoryBranch Unmarshall(JsonUnmarshallerContext context)
         {
             RepositoryBranch unmarshalledObject = new RepositoryBranch();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-    /// metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.
     /// </summary>
     public partial class LaunchTemplateInstanceMetadataOptionsRequest
     {

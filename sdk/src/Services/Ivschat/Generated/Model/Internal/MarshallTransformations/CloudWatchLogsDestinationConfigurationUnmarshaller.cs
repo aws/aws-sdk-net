@@ -57,6 +57,8 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
         public CloudWatchLogsDestinationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             CloudWatchLogsDestinationConfiguration unmarshalledObject = new CloudWatchLogsDestinationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

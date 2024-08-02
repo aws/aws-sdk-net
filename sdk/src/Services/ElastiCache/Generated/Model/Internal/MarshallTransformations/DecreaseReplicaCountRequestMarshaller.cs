@@ -74,18 +74,18 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     {
                         if(publicRequestlistValue.IsSetNewReplicaCount())
                         {
-                            request.Parameters.Add("ReplicaConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NewReplicaCount", StringUtils.FromInt(publicRequestlistValue.NewReplicaCount));
+                            request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "NewReplicaCount", StringUtils.FromInt(publicRequestlistValue.NewReplicaCount));
                         }
                         if(publicRequestlistValue.IsSetNodeGroupId())
                         {
-                            request.Parameters.Add("ReplicaConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NodeGroupId", StringUtils.FromString(publicRequestlistValue.NodeGroupId));
+                            request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "NodeGroupId", StringUtils.FromString(publicRequestlistValue.NodeGroupId));
                         }
                         if(publicRequestlistValue.IsSetPreferredAvailabilityZones())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
                             foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PreferredAvailabilityZones)
                             {
-                                request.Parameters.Add("ReplicaConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PreferredAvailabilityZones" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "PreferredAvailabilityZones" + "." + "PreferredAvailabilityZone" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
@@ -94,7 +94,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                             int publicRequestlistValuelistValueIndex = 1;
                             foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PreferredOutpostArns)
                             {
-                                request.Parameters.Add("ReplicaConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PreferredOutpostArns" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "PreferredOutpostArns" + "." + "PreferredOutpostArn" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }

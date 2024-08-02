@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public PrestoParameters Unmarshall(JsonUnmarshallerContext context)
         {
             PrestoParameters unmarshalledObject = new PrestoParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public ChunkingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ChunkingConfiguration unmarshalledObject = new ChunkingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,18 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = FixedSizeChunkingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FixedSizeChunkingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hierarchicalChunkingConfiguration", targetDepth))
+                {
+                    var unmarshaller = HierarchicalChunkingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.HierarchicalChunkingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("semanticChunkingConfiguration", targetDepth))
+                {
+                    var unmarshaller = SemanticChunkingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SemanticChunkingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

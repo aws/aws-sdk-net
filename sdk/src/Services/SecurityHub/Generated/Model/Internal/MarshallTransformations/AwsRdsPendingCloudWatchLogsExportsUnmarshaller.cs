@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRdsPendingCloudWatchLogsExports Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRdsPendingCloudWatchLogsExports unmarshalledObject = new AwsRdsPendingCloudWatchLogsExports();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

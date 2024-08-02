@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public JobDependency Unmarshall(JsonUnmarshallerContext context)
         {
             JobDependency unmarshalledObject = new JobDependency();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

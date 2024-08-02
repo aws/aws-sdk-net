@@ -65,6 +65,9 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextpage_opaque_marker", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetNsInstanceId())
+                request.Parameters.Add("nsInstanceId", StringUtils.FromString(publicRequest.NsInstanceId));
             request.ResourcePath = "/sol/nslcm/v1/ns_lcm_op_occs";
             request.UseQueryString = true;
 

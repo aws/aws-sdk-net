@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public VerificationMessageTemplateType Unmarshall(JsonUnmarshallerContext context)
         {
             VerificationMessageTemplateType unmarshalledObject = new VerificationMessageTemplateType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

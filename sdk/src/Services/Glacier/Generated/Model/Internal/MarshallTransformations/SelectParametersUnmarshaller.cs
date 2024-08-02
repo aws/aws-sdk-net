@@ -57,6 +57,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public SelectParameters Unmarshall(JsonUnmarshallerContext context)
         {
             SelectParameters unmarshalledObject = new SelectParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

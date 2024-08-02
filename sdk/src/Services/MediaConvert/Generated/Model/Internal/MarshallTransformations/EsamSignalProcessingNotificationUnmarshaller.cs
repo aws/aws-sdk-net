@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public EsamSignalProcessingNotification Unmarshall(JsonUnmarshallerContext context)
         {
             EsamSignalProcessingNotification unmarshalledObject = new EsamSignalProcessingNotification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

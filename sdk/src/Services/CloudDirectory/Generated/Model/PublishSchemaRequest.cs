@@ -57,7 +57,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if DevelopmentSchemaArn property is set
         internal bool IsSetDevelopmentSchemaArn()
         {
-            return this._developmentSchemaArn != null;
+            return !string.IsNullOrEmpty(this._developmentSchemaArn);
         }
 
         /// <summary>

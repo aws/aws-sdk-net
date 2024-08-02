@@ -23,6 +23,7 @@ using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using System;
 using System.Net;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -67,6 +68,11 @@ namespace AWSSDK.UnitTests
                     RegionEndpoint = RegionEndpoint.USEast1
                 }
             };
+
+            // Create and set the internal ServiceMetadata via reflection
+            var serviceMetaData = Assembly.GetAssembly(requestContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
+            requestContext.GetType().GetProperty("ServiceMetaData").SetValue(requestContext, serviceMetaData);
+
             requestContext.Request.Endpoint = new Uri("https://s3.amazonaws.com");
 
             var putObjectResponse = MockWebResponse.CreateFromResource("PutObjectResponse.txt")
@@ -100,6 +106,11 @@ namespace AWSSDK.UnitTests
                     RegionEndpoint = RegionEndpoint.USEast1
                 }
             };
+
+            // Create and set the internal ServiceMetadata via reflection
+            var serviceMetaData = Assembly.GetAssembly(requestContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
+            requestContext.GetType().GetProperty("ServiceMetaData").SetValue(requestContext, serviceMetaData);
+
             requestContext.Request.Endpoint = new Uri("https://s3.amazonaws.com");
 
             var putObjectResponse = MockWebResponse.CreateFromResource("PutObjectResponse.txt")

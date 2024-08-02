@@ -57,6 +57,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         public DestinationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DestinationSummary unmarshalledObject = new DestinationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

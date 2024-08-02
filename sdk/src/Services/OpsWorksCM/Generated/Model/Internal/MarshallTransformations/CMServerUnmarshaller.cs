@@ -57,6 +57,8 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
         public CMServer Unmarshall(JsonUnmarshallerContext context)
         {
             CMServer unmarshalledObject = new CMServer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

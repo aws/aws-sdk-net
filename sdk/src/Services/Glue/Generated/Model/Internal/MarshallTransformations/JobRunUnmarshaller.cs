@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public JobRun Unmarshall(JsonUnmarshallerContext context)
         {
             JobRun unmarshalledObject = new JobRun();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -124,6 +126,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JobMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -146,6 +154,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaintenanceWindow", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaintenanceWindow = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxCapacity", targetDepth))
@@ -176,6 +190,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreviousRunId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProfileName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProfileName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SecurityConfiguration", targetDepth))

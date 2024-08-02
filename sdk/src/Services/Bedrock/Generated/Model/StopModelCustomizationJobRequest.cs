@@ -32,7 +32,8 @@ namespace Amazon.Bedrock.Model
     /// <summary>
     /// Container for the parameters to the StopModelCustomizationJob operation.
     /// Stops an active model customization job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-    /// models</a> in the Amazon Bedrock User Guide.
+    /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+    /// Bedrock User Guide</a>.
     /// </summary>
     public partial class StopModelCustomizationJobRequest : AmazonBedrockRequest
     {

@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public DelegatedAdminAccount Unmarshall(JsonUnmarshallerContext context)
         {
             DelegatedAdminAccount unmarshalledObject = new DelegatedAdminAccount();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

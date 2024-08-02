@@ -57,6 +57,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         public ServicePrincipalName Unmarshall(JsonUnmarshallerContext context)
         {
             ServicePrincipalName unmarshalledObject = new ServicePrincipalName();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

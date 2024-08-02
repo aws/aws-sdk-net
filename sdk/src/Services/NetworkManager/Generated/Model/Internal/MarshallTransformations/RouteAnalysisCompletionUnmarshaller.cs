@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public RouteAnalysisCompletion Unmarshall(JsonUnmarshallerContext context)
         {
             RouteAnalysisCompletion unmarshalledObject = new RouteAnalysisCompletion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

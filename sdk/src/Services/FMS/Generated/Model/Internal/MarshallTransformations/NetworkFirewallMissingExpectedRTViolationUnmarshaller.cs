@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public NetworkFirewallMissingExpectedRTViolation Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkFirewallMissingExpectedRTViolation unmarshalledObject = new NetworkFirewallMissingExpectedRTViolation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

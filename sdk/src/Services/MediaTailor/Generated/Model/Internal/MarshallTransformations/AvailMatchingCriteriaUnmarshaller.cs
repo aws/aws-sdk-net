@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public AvailMatchingCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             AvailMatchingCriteria unmarshalledObject = new AvailMatchingCriteria();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

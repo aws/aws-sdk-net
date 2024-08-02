@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public LastUpdateStatus Unmarshall(JsonUnmarshallerContext context)
         {
             LastUpdateStatus unmarshalledObject = new LastUpdateStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

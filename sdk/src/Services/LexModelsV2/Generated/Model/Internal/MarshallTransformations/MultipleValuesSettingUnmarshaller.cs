@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public MultipleValuesSetting Unmarshall(JsonUnmarshallerContext context)
         {
             MultipleValuesSetting unmarshalledObject = new MultipleValuesSetting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

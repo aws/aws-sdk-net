@@ -57,6 +57,8 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
         public QuotaPeriod Unmarshall(JsonUnmarshallerContext context)
         {
             QuotaPeriod unmarshalledObject = new QuotaPeriod();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

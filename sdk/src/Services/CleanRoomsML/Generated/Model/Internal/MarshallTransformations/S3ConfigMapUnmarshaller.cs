@@ -57,6 +57,8 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         public S3ConfigMap Unmarshall(JsonUnmarshallerContext context)
         {
             S3ConfigMap unmarshalledObject = new S3ConfigMap();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

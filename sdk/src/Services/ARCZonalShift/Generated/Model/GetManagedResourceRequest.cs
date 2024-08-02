@@ -50,8 +50,8 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// The identifier for the resource to shift away traffic for. The identifier is the Amazon
-        /// Resource Name (ARN) for the resource.
+        /// The identifier for the resource that Amazon Web Services shifts traffic for. The identifier
+        /// is the Amazon Resource Name (ARN) for the resource.
         /// </para>
         ///  
         /// <para>

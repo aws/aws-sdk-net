@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public XssMatchStatement Unmarshall(JsonUnmarshallerContext context)
         {
             XssMatchStatement unmarshalledObject = new XssMatchStatement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

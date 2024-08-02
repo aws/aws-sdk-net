@@ -29,8 +29,7 @@ namespace Amazon.Util.Internal
     public static partial class InternalSDKUtils
     {
         #region UserAgent
-        static string _versionNumber;
-        static string _customSdkUserAgent;
+        static string _overrideVersionNumber;
         static string _customData;
         const string USER_AGENT_VERSION = "ua/2.0";
 
@@ -53,10 +52,8 @@ namespace Amazon.Util.Internal
         public static void SetUserAgent(string productName, string versionNumber, string customData)
         {
             _userAgentBaseName = productName;
-            _versionNumber = versionNumber;
+            _overrideVersionNumber = versionNumber;
             _customData = customData;
-
-            BuildCustomUserAgentString();
         }
 
         /// <summary>
@@ -70,39 +67,6 @@ namespace Amazon.Util.Internal
             var validUserAgent = DisallowedCharactersRegex().Replace(userAgent, "-");
 
             return validUserAgent;
-        }
-
-        static void BuildCustomUserAgentString()
-        {
-            if (_versionNumber == null)
-            {
-                _versionNumber = CoreVersionNumber;
-            }
-
-            var environmentInfo = ServiceFactory.Instance.GetService<IEnvironmentInfo>();
-            var executionEnvironmentString = GetExecutionEnvironmentUserAgentString();
-
-            if (string.IsNullOrEmpty(executionEnvironmentString))
-            {
-                _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} {2} {3} OS/{4} {5}",
-                    _userAgentBaseName,
-                    _versionNumber,
-                    USER_AGENT_VERSION,
-                    environmentInfo.FrameworkUserAgent,
-                    environmentInfo.PlatformUserAgent,
-                    _customData).Trim();
-            }
-            else
-            {
-                _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} {2} OS/{3} {4} {5} {6}",
-                    _userAgentBaseName,
-                    _versionNumber,
-                    USER_AGENT_VERSION,
-                    environmentInfo.FrameworkUserAgent,
-                    environmentInfo.PlatformUserAgent,
-                    executionEnvironmentString,
-                    _customData).Trim();
-            }
         }
 
         /// <summary>
@@ -123,18 +87,16 @@ namespace Amazon.Util.Internal
         /// <returns> User agent header string </returns>
         public static string BuildUserAgentString(string serviceId, string serviceSdkVersion)
         {
-            if (!string.IsNullOrEmpty(_customSdkUserAgent))
-            {
-                return _customSdkUserAgent;
-            }
-
             var sb = new StringBuilder();
             sb.Append(_userAgentBaseName);
-            if(!string.IsNullOrEmpty(serviceSdkVersion))
+            if (!string.IsNullOrEmpty(_overrideVersionNumber))
+            {
+                sb.AppendFormat("/{0}", _overrideVersionNumber);
+            }
+            else if(!string.IsNullOrEmpty(serviceSdkVersion))
             {
                 sb.AppendFormat("/{0}", serviceSdkVersion);
             }
-
 
             sb.AppendFormat(" {0}", USER_AGENT_VERSION);
 

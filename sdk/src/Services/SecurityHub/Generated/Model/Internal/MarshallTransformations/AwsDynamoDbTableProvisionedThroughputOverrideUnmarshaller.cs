@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsDynamoDbTableProvisionedThroughputOverride Unmarshall(JsonUnmarshallerContext context)
         {
             AwsDynamoDbTableProvisionedThroughputOverride unmarshalledObject = new AwsDynamoDbTableProvisionedThroughputOverride();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

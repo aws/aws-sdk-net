@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public GeneratedPolicyProperties Unmarshall(JsonUnmarshallerContext context)
         {
             GeneratedPolicyProperties unmarshalledObject = new GeneratedPolicyProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

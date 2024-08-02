@@ -57,6 +57,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         public DevicePoolCompatibilityResult Unmarshall(JsonUnmarshallerContext context)
         {
             DevicePoolCompatibilityResult unmarshalledObject = new DevicePoolCompatibilityResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

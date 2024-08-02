@@ -44,7 +44,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The expiry date of a payment card.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=4)]
+        [AWSProperty(Required=true, Sensitive=true, Min=4, Max=4)]
         public string CardExpiryDate
         {
             get { return this._cardExpiryDate; }
@@ -64,7 +64,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Code (CSC).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=3)]
+        [AWSProperty(Required=true, Sensitive=true, Min=3, Max=3)]
         public string ServiceCode
         {
             get { return this._serviceCode; }

@@ -57,6 +57,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public ChangeRequest Unmarshall(JsonUnmarshallerContext context)
         {
             ChangeRequest unmarshalledObject = new ChangeRequest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

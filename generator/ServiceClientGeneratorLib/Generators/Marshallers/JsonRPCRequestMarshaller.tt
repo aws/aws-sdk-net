@@ -138,7 +138,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			request.ContentStream =  publicRequest.<#=payload.PropertyName#> ?? new MemoryStream();
 <#		
 		var requiresLength = payload.RequiresLength;
-		if (!requiresLength && payload.IsStreaming && this.Operation.AuthType == OperationAuthType.V4UnsignedBody)
+		if (!requiresLength && payload.Shape.IsStreaming && this.Operation.AuthType == OperationAuthType.V4UnsignedBody)
 		{
 #>
 			if (request.ContentStream.CanSeek)
@@ -155,7 +155,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		}
 		else
 		{
-			if (payload.IsStreaming && requiresLength)
+			if (payload.Shape.IsStreaming && requiresLength)
 			{
 #>
 			if (!request.ContentStream.CanSeek)

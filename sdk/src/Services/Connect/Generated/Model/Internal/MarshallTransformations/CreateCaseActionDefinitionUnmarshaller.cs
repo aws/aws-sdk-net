@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public CreateCaseActionDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             CreateCaseActionDefinition unmarshalledObject = new CreateCaseActionDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

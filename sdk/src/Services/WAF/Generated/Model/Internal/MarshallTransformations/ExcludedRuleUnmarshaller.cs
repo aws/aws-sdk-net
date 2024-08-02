@@ -57,6 +57,8 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         public ExcludedRule Unmarshall(JsonUnmarshallerContext context)
         {
             ExcludedRule unmarshalledObject = new ExcludedRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

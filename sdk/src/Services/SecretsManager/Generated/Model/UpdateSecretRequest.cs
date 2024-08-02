@@ -83,10 +83,18 @@ namespace Amazon.SecretsManager.Model
     /// and access control in Secrets Manager</a>. If you use a customer managed key, you
     /// must also have <c>kms:GenerateDataKey</c>, <c>kms:Encrypt</c>, and <c>kms:Decrypt</c>
     /// permissions on the key. If you change the KMS key and you don't have <c>kms:Encrypt</c>
-    /// permission to the new key, Secrets Manager does not re-ecrypt existing secret versions
+    /// permission to the new key, Secrets Manager does not re-encrypt existing secret versions
     /// with the new key. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html">
     /// Secret encryption and decryption</a>.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// When you enter commands in a command shell, there is a risk of the command history
+    /// being accessed or utilities having access to your command parameters. This is a concern
+    /// if the command includes the value of a secret. Learn how to <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+    /// the risks of using command-line tools to store Secrets Manager secrets</a>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateSecretRequest : AmazonSecretsManagerRequest
     {
@@ -162,8 +170,8 @@ namespace Amazon.SecretsManager.Model
         /// The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt new
         /// secret versions as well as any existing versions with the staging labels <c>AWSCURRENT</c>,
         /// <c>AWSPENDING</c>, or <c>AWSPREVIOUS</c>. If you don't have <c>kms:Encrypt</c> permission
-        /// to the new key, Secrets Manager does not re-ecrypt existing secret versions with the
-        /// new key. For more information about versions and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
+        /// to the new key, Secrets Manager does not re-encrypt existing secret versions with
+        /// the new key. For more information about versions and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
         /// Version</a>.
         /// </para>
         ///  
@@ -220,6 +228,12 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// You can't access this parameter in the Secrets Manager console.
         /// </para>
+        ///  
+        /// <para>
+        /// Sensitive: This field contains sensitive information, so the service does not include
+        /// it in CloudTrail log entries. If you create your own log entries, you must also avoid
+        /// logging the information in this field.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=65536)]
         public MemoryStream SecretBinary
@@ -269,6 +283,12 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// Either <c>SecretBinary</c> or <c>SecretString</c> must have a value, but not both.
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Sensitive: This field contains sensitive information, so the service does not include
+        /// it in CloudTrail log entries. If you create your own log entries, you must also avoid
+        /// logging the information in this field.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=65536)]

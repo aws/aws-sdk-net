@@ -71,7 +71,7 @@ namespace Amazon.LocationService.Model
         // Check to see if CacheControl property is set
         internal bool IsSetCacheControl()
         {
-            return this._cacheControl != null;
+            return !string.IsNullOrEmpty(this._cacheControl);
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.LocationService.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
     }

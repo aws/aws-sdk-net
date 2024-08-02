@@ -42,15 +42,15 @@ namespace Amazon.ControlTower.Model
     ///  
     /// <para>
     /// If the enabled control shows an <c>EnablementStatus</c> of FAILED, Amazon Web Services
-    /// Control Tower will update the control to match any valid parameters that you supply.
+    /// Control Tower updates the control to match any valid parameters that you supply.
     /// </para>
     ///  
     /// <para>
     /// If the <c>DriftSummary</c> status for the control shows as DRIFTED, you cannot call
     /// this API. Instead, you can update the control by calling <c>DisableControl</c> and
     /// again calling <c>EnableControl</c>, or you can run an extending governance operation.
-    /// For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-    /// <i>the Amazon Web Services Control Tower User Guide</i> </a> 
+    /// For usage examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
+    /// <i>Controls Reference Guide</i> </a>. 
     /// </para>
     /// </summary>
     public partial class UpdateEnabledControlRequest : AmazonControlTowerRequest

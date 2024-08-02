@@ -304,28 +304,13 @@ namespace Amazon.DynamoDBv2.DataModel
 
             throw new InvalidOperationException(errorMessage);
         }
-        
-        public static bool IsValidMemberInfo(MemberInfo member)
-        {
-            // filter out non-fields and non-properties
-            if (!(member is FieldInfo || member is PropertyInfo))
-                return false;
-
-            // filter out properties that aren't both read and write
-            if (!Utils.IsReadWrite(member))
-                return false;
-
-            return true;
-        }
 
         private static Dictionary<string, MemberInfo> GetMembersDictionary(Type type)
         {
             Dictionary<string, MemberInfo> dictionary = new Dictionary<string, MemberInfo>(StringComparer.Ordinal);
 
-            var members = type
-                .GetMembers(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public)
-                .Where(IsValidMemberInfo)
-                .ToList();
+            var members = Utils.GetMembersFromType(type);
+            
             foreach (var member in members)
             {
                 InternalSDKUtils.AddToDictionary(dictionary, member.Name, member);
@@ -773,11 +758,10 @@ namespace Amazon.DynamoDBv2.DataModel
             if (AWSConfigsDynamoDB.Context.TableAliases.TryGetValue(config.TableName, out tableAlias))
                 config.TableName = tableAlias;
 
-            foreach (var member in type.GetMembers(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public))
+            var members = Utils.GetMembersFromType(type);
+            
+            foreach (var member in members)
             {
-                if (!StorageConfig.IsValidMemberInfo(member))
-                    continue;
-                
                 // prepare basic info
                 PropertyStorage propertyStorage = new PropertyStorage(member);
                 propertyStorage.AttributeName = GetAccurateCase(config, member.Name);

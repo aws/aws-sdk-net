@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public DolbyVision81Settings Unmarshall(JsonUnmarshallerContext context)
         {
             DolbyVision81Settings unmarshalledObject = new DolbyVision81Settings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

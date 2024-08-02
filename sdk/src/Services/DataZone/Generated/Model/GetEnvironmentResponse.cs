@@ -227,7 +227,6 @@ namespace Amazon.DataZone.Model
         /// The ID of the environment profile with which the environment is created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string EnvironmentProfileId
         {
             get { return this._environmentProfileId; }

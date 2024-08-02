@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public AgentContactReference Unmarshall(JsonUnmarshallerContext context)
         {
             AgentContactReference unmarshalledObject = new AgentContactReference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

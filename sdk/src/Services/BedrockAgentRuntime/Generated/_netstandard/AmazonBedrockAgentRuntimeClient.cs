@@ -269,6 +269,136 @@ namespace Amazon.BedrockAgentRuntime
         #endregion
 
 
+        #region  DeleteAgentMemory
+
+        internal virtual DeleteAgentMemoryResponse DeleteAgentMemory(DeleteAgentMemoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAgentMemoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAgentMemoryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAgentMemoryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes memory from the specified memory identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentMemory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAgentMemory service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
+        /// There was an issue with a dependency due to a server issue. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/DeleteAgentMemory">REST API Reference for DeleteAgentMemory Operation</seealso>
+        public virtual Task<DeleteAgentMemoryResponse> DeleteAgentMemoryAsync(DeleteAgentMemoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAgentMemoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAgentMemoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAgentMemoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAgentMemory
+
+        internal virtual GetAgentMemoryResponse GetAgentMemory(GetAgentMemoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAgentMemoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgentMemoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetAgentMemoryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the sessions stored in the memory of the agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentMemory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgentMemory service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
+        /// There was an issue with a dependency due to a server issue. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetAgentMemory">REST API Reference for GetAgentMemory Operation</seealso>
+        public virtual Task<GetAgentMemoryResponse> GetAgentMemoryAsync(GetAgentMemoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAgentMemoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgentMemoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAgentMemoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  InvokeAgent
 
         internal virtual InvokeAgentResponse InvokeAgent(InvokeAgentRequest request)
@@ -283,14 +413,16 @@ namespace Amazon.BedrockAgentRuntime
 
 
         /// <summary>
-        /// Sends a prompt for the agent to process and respond to. Use return control event type
-        /// for function calling.
-        /// 
-        ///  <note> 
+        /// <note> 
         /// <para>
-        /// The CLI doesn't support <c>InvokeAgent</c>.
+        /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeAgent</c>.
         /// </para>
-        ///  </note> <ul> <li> 
+        ///  </note> 
+        /// <para>
+        /// Sends a prompt for the agent to process and respond to. Note the following fields
+        /// for the request:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// To continue the same conversation with an agent, use the same <c>sessionId</c> value
         /// in the request.
@@ -310,11 +442,8 @@ namespace Amazon.BedrockAgentRuntime
         ///  </li> <li> 
         /// <para>
         /// In the <c>sessionState</c> object, you can include attributes for the session or prompt
-        /// or parameters returned from the action group.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Use return control event type for function calling.
+        /// or, if you configured an action group to return control, results from invocation of
+        /// the action group.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -328,6 +457,11 @@ namespace Amazon.BedrockAgentRuntime
         /// <para>
         /// If you set <c>enableTrace</c> to <c>true</c> in the request, you can trace the agent's
         /// steps and reasoning process that led it to the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the action predicted was configured to return control, the response returns parameters
+        /// for the action, elicited from the user, in the <c>returnControl</c> field.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -380,6 +514,74 @@ namespace Amazon.BedrockAgentRuntime
             options.ResponseUnmarshaller = InvokeAgentResponseUnmarshaller.Instance;
 
             return InvokeAsync<InvokeAgentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  InvokeFlow
+
+        internal virtual InvokeFlowResponse InvokeFlow(InvokeFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeFlowResponseUnmarshaller.Instance;
+
+            return Invoke<InvokeFlowResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Invokes an alias of a flow to run the inputs that you specify and return the output
+        /// of each node as a stream. If there's an error, the error is returned. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html">Test
+        /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InvokeFlow service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
+        /// There was an issue with a dependency due to a server issue. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeFlow">REST API Reference for InvokeFlow Operation</seealso>
+        public virtual Task<InvokeFlowResponse> InvokeFlowAsync(InvokeFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeFlowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<InvokeFlowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -524,8 +726,32 @@ namespace Amazon.BedrockAgentRuntime
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
+<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
+||||||| Commit version number update changes
+            var requestContext = new RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonBedrockAgentRuntimeEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+=======
+            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
+            {
+                ClientConfig = Config,
+                OriginalRequest = request,
+                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            var resolver = new AmazonBedrockAgentRuntimeEndpointResolver();
+            return resolver.GetEndpoint(executionContext);
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

@@ -57,6 +57,8 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
         public ReportStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ReportStatus unmarshalledObject = new ReportStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

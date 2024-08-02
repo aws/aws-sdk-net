@@ -133,7 +133,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>MIXED</c> This is an advanced setting. For more information, see <a href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+        ///  <c>MIXED</c> This is an advanced setting. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
         /// security style</a> in the Amazon FSx for NetApp ONTAP User Guide.
         /// </para>
         ///  </li> </ul>

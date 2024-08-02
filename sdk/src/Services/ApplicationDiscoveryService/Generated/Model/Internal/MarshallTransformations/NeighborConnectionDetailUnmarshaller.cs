@@ -57,6 +57,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         public NeighborConnectionDetail Unmarshall(JsonUnmarshallerContext context)
         {
             NeighborConnectionDetail unmarshalledObject = new NeighborConnectionDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

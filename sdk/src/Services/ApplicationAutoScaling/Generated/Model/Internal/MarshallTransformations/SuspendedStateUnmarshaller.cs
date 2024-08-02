@@ -57,6 +57,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         public SuspendedState Unmarshall(JsonUnmarshallerContext context)
         {
             SuspendedState unmarshalledObject = new SuspendedState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

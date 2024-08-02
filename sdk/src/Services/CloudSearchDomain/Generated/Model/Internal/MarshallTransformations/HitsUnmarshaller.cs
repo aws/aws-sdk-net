@@ -57,6 +57,8 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
         public Hits Unmarshall(JsonUnmarshallerContext context)
         {
             Hits unmarshalledObject = new Hits();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

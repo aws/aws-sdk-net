@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AxisDisplayMinMaxRange Unmarshall(JsonUnmarshallerContext context)
         {
             AxisDisplayMinMaxRange unmarshalledObject = new AxisDisplayMinMaxRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

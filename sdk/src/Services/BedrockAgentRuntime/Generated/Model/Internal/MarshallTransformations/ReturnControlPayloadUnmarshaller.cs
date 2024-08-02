@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         public ReturnControlPayload Unmarshall(JsonUnmarshallerContext context)
         {
             ReturnControlPayload unmarshalledObject = new ReturnControlPayload();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

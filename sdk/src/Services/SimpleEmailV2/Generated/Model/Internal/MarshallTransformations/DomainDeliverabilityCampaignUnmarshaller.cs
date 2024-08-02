@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public DomainDeliverabilityCampaign Unmarshall(JsonUnmarshallerContext context)
         {
             DomainDeliverabilityCampaign unmarshalledObject = new DomainDeliverabilityCampaign();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

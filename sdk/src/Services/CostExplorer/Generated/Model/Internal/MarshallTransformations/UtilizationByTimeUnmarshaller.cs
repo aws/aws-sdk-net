@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public UtilizationByTime Unmarshall(JsonUnmarshallerContext context)
         {
             UtilizationByTime unmarshalledObject = new UtilizationByTime();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

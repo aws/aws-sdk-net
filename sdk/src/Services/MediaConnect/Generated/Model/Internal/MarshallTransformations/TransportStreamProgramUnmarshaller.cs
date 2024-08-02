@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public TransportStreamProgram Unmarshall(JsonUnmarshallerContext context)
         {
             TransportStreamProgram unmarshalledObject = new TransportStreamProgram();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

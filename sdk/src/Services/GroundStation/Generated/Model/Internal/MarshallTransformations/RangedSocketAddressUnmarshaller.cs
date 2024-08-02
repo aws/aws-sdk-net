@@ -57,6 +57,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public RangedSocketAddress Unmarshall(JsonUnmarshallerContext context)
         {
             RangedSocketAddress unmarshalledObject = new RangedSocketAddress();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

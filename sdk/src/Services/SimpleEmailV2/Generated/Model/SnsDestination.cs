@@ -31,7 +31,7 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// An object that defines an Amazon SNS destination for email events. You can use Amazon
-    /// SNS to send notification when certain email events occur.
+    /// SNS to send notifications when certain email events occur.
     /// </summary>
     public partial class SnsDestination
     {

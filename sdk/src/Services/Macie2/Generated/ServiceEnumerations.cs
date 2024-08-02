@@ -203,6 +203,210 @@ namespace Amazon.Macie2
 
 
     /// <summary>
+    /// Constants used for properties of type AutoEnableMode.
+    /// </summary>
+    public class AutoEnableMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for AutoEnableMode
+        /// </summary>
+        public static readonly AutoEnableMode ALL = new AutoEnableMode("ALL");
+        /// <summary>
+        /// Constant NEW for AutoEnableMode
+        /// </summary>
+        public static readonly AutoEnableMode NEW = new AutoEnableMode("NEW");
+        /// <summary>
+        /// Constant NONE for AutoEnableMode
+        /// </summary>
+        public static readonly AutoEnableMode NONE = new AutoEnableMode("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoEnableMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoEnableMode FindValue(string value)
+        {
+            return FindValue<AutoEnableMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoEnableMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomatedDiscoveryAccountStatus.
+    /// </summary>
+    public class AutomatedDiscoveryAccountStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AutomatedDiscoveryAccountStatus
+        /// </summary>
+        public static readonly AutomatedDiscoveryAccountStatus DISABLED = new AutomatedDiscoveryAccountStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AutomatedDiscoveryAccountStatus
+        /// </summary>
+        public static readonly AutomatedDiscoveryAccountStatus ENABLED = new AutomatedDiscoveryAccountStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedDiscoveryAccountStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedDiscoveryAccountStatus FindValue(string value)
+        {
+            return FindValue<AutomatedDiscoveryAccountStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedDiscoveryAccountStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomatedDiscoveryAccountUpdateErrorCode.
+    /// </summary>
+    public class AutomatedDiscoveryAccountUpdateErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_NOT_FOUND for AutomatedDiscoveryAccountUpdateErrorCode
+        /// </summary>
+        public static readonly AutomatedDiscoveryAccountUpdateErrorCode ACCOUNT_NOT_FOUND = new AutomatedDiscoveryAccountUpdateErrorCode("ACCOUNT_NOT_FOUND");
+        /// <summary>
+        /// Constant ACCOUNT_PAUSED for AutomatedDiscoveryAccountUpdateErrorCode
+        /// </summary>
+        public static readonly AutomatedDiscoveryAccountUpdateErrorCode ACCOUNT_PAUSED = new AutomatedDiscoveryAccountUpdateErrorCode("ACCOUNT_PAUSED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedDiscoveryAccountUpdateErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedDiscoveryAccountUpdateErrorCode FindValue(string value)
+        {
+            return FindValue<AutomatedDiscoveryAccountUpdateErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedDiscoveryAccountUpdateErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomatedDiscoveryMonitoringStatus.
+    /// </summary>
+    public class AutomatedDiscoveryMonitoringStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MONITORED for AutomatedDiscoveryMonitoringStatus
+        /// </summary>
+        public static readonly AutomatedDiscoveryMonitoringStatus MONITORED = new AutomatedDiscoveryMonitoringStatus("MONITORED");
+        /// <summary>
+        /// Constant NOT_MONITORED for AutomatedDiscoveryMonitoringStatus
+        /// </summary>
+        public static readonly AutomatedDiscoveryMonitoringStatus NOT_MONITORED = new AutomatedDiscoveryMonitoringStatus("NOT_MONITORED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedDiscoveryMonitoringStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedDiscoveryMonitoringStatus FindValue(string value)
+        {
+            return FindValue<AutomatedDiscoveryMonitoringStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedDiscoveryMonitoringStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutomatedDiscoveryStatus.
     /// </summary>
     public class AutomatedDiscoveryStatus : ConstantClass
@@ -2212,6 +2416,10 @@ namespace Amazon.Macie2
         /// Constant ACCOUNT_ID for SearchResourcesSimpleCriterionKey
         /// </summary>
         public static readonly SearchResourcesSimpleCriterionKey ACCOUNT_ID = new SearchResourcesSimpleCriterionKey("ACCOUNT_ID");
+        /// <summary>
+        /// Constant AUTOMATED_DISCOVERY_MONITORING_STATUS for SearchResourcesSimpleCriterionKey
+        /// </summary>
+        public static readonly SearchResourcesSimpleCriterionKey AUTOMATED_DISCOVERY_MONITORING_STATUS = new SearchResourcesSimpleCriterionKey("AUTOMATED_DISCOVERY_MONITORING_STATUS");
         /// <summary>
         /// Constant S3_BUCKET_EFFECTIVE_PERMISSION for SearchResourcesSimpleCriterionKey
         /// </summary>

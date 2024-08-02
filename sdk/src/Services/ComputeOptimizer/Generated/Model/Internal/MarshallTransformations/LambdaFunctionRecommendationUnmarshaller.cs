@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public LambdaFunctionRecommendation Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaFunctionRecommendation unmarshalledObject = new LambdaFunctionRecommendation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

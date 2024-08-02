@@ -37,6 +37,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListAssetFilters operation
+        ///</summary>
+        public IListAssetFiltersPaginator ListAssetFilters(ListAssetFiltersRequest request) 
+        {
+            return new ListAssetFiltersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssetRevisions operation
         ///</summary>
         public IListAssetRevisionsPaginator ListAssetRevisions(ListAssetRevisionsRequest request) 
@@ -77,6 +85,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListEnvironmentActions operation
+        ///</summary>
+        public IListEnvironmentActionsPaginator ListEnvironmentActions(ListEnvironmentActionsRequest request) 
+        {
+            return new ListEnvironmentActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEnvironmentBlueprintConfigurations operation
         ///</summary>
         public IListEnvironmentBlueprintConfigurationsPaginator ListEnvironmentBlueprintConfigurations(ListEnvironmentBlueprintConfigurationsRequest request) 
@@ -106,6 +122,14 @@ namespace Amazon.DataZone.Model
         public IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request) 
         {
             return new ListEnvironmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLineageNodeHistory operation
+        ///</summary>
+        public IListLineageNodeHistoryPaginator ListLineageNodeHistory(ListLineageNodeHistoryRequest request) 
+        {
+            return new ListLineageNodeHistoryPaginator(this.client, request);
         }
 
         /// <summary>

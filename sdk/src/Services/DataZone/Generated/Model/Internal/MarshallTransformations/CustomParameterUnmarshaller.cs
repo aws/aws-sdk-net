@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public CustomParameter Unmarshall(JsonUnmarshallerContext context)
         {
             CustomParameter unmarshalledObject = new CustomParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

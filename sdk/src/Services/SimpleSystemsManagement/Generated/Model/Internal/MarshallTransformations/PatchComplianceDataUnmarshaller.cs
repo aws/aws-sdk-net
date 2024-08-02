@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public PatchComplianceData Unmarshall(JsonUnmarshallerContext context)
         {
             PatchComplianceData unmarshalledObject = new PatchComplianceData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

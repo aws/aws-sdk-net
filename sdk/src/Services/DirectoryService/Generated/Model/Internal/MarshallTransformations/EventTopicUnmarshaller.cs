@@ -57,6 +57,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         public EventTopic Unmarshall(JsonUnmarshallerContext context)
         {
             EventTopic unmarshalledObject = new EventTopic();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

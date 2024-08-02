@@ -57,6 +57,8 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public AdvancedFieldSelector Unmarshall(JsonUnmarshallerContext context)
         {
             AdvancedFieldSelector unmarshalledObject = new AdvancedFieldSelector();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

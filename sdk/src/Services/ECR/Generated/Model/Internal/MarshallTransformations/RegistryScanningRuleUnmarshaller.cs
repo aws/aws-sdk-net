@@ -57,6 +57,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         public RegistryScanningRule Unmarshall(JsonUnmarshallerContext context)
         {
             RegistryScanningRule unmarshalledObject = new RegistryScanningRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

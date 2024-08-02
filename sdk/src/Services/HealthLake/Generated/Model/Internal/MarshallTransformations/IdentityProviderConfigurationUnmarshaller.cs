@@ -57,6 +57,8 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         public IdentityProviderConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             IdentityProviderConfiguration unmarshalledObject = new IdentityProviderConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

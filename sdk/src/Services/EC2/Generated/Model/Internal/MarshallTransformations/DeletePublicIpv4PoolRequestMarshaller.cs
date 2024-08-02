@@ -59,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetNetworkBorderGroup())
+                {
+                    request.Parameters.Add("NetworkBorderGroup", StringUtils.FromString(publicRequest.NetworkBorderGroup));
+                }
                 if(publicRequest.IsSetPoolId())
                 {
                     request.Parameters.Add("PoolId", StringUtils.FromString(publicRequest.PoolId));

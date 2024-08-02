@@ -35,6 +35,17 @@
         "errors":[],
         "documentation":"<p> Request without a body </p>"
       },
+      "NoPayloadPost":{
+        "name":"NoPayloadPost",
+        "http":{
+          "method":"POST",
+          "requestUri":"/no-payload"
+        },
+        "input":{"shape":"NoPayloadRequest"},
+        "output":{"shape":"NoPayloadResult"},
+        "errors":[],
+        "documentation":"<p> A POST request without a body, for verifying that we don't set a Content-Type even though a POST could have a body </p>"
+      },
       "TestPayload":{
         "name":"TestPayload",
         "http":{

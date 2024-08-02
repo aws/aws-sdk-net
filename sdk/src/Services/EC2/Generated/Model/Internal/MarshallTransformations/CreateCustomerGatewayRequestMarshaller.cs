@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("BgpAsn", StringUtils.FromInt(publicRequest.BgpAsn));
                 }
+                if(publicRequest.IsSetBgpAsnExtended())
+                {
+                    request.Parameters.Add("BgpAsnExtended", StringUtils.FromLong(publicRequest.BgpAsnExtended));
+                }
                 if(publicRequest.IsSetCertificateArn())
                 {
                     request.Parameters.Add("CertificateArn", StringUtils.FromString(publicRequest.CertificateArn));

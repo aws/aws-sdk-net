@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public SourceCodeRepository Unmarshall(JsonUnmarshallerContext context)
         {
             SourceCodeRepository unmarshalledObject = new SourceCodeRepository();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

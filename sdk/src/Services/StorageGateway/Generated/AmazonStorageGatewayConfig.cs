@@ -34,10 +34,16 @@ namespace Amazon.StorageGateway
     public partial class AmazonStorageGatewayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Storage Gateway", "4.0.0.0");
 
         private static readonly AmazonStorageGatewayEndpointResolver EndpointResolver =
             new AmazonStorageGatewayEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Storage Gateway", "3.7.301.44");
+=======
+            InternalSDKUtils.BuildUserAgentString("Storage Gateway", "3.7.400.2");
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
 
         private string _userAgent = UserAgentString;
         ///<summary>

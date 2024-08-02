@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public S3BucketLogDestination Unmarshall(JsonUnmarshallerContext context)
         {
             S3BucketLogDestination unmarshalledObject = new S3BucketLogDestination();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

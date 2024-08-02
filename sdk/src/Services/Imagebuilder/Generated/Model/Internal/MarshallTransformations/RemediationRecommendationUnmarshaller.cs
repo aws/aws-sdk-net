@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public RemediationRecommendation Unmarshall(JsonUnmarshallerContext context)
         {
             RemediationRecommendation unmarshalledObject = new RemediationRecommendation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

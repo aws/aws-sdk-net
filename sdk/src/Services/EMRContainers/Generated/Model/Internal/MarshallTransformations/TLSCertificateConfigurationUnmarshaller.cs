@@ -57,6 +57,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         public TLSCertificateConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TLSCertificateConfiguration unmarshalledObject = new TLSCertificateConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public ShareAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             ShareAttributes unmarshalledObject = new ShareAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

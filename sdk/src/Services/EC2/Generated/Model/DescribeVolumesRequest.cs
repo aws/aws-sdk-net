@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates DescribeVolumesRequest with the parameterized properties
         /// </summary>
-        /// <param name="volumeIds">The volume IDs.</param>
+        /// <param name="volumeIds">The volume IDs. If not specified, then all volumes are included in the response.</param>
         public DescribeVolumesRequest(List<string> volumeIds)
         {
             _volumeIds = volumeIds;
@@ -177,10 +177,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of volumes to return for this request. This value can be between
-        /// 5 and 500; if you specify a value larger than 500, only 500 items are returned. If
-        /// this parameter is not used, then all items are returned. You cannot specify this parameter
-        /// and the volume IDs parameter in the same request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+        /// The maximum number of items to return for this request. To get the next page of items,
+        /// make another request with the token returned in the output. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
         public int? MaxResults
@@ -199,7 +198,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token returned from a previous paginated request. Pagination continues from the
-        /// end of the items returned from the previous request.
+        /// end of the items returned by the previous request.
         /// </para>
         /// </summary>
         public string NextToken
@@ -217,7 +216,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeIds. 
         /// <para>
-        /// The volume IDs.
+        /// The volume IDs. If not specified, then all volumes are included in the response.
         /// </para>
         /// </summary>
         public List<string> VolumeIds

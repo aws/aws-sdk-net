@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public RepositoryAggregationResponse Unmarshall(JsonUnmarshallerContext context)
         {
             RepositoryAggregationResponse unmarshalledObject = new RepositoryAggregationResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

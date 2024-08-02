@@ -57,6 +57,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         public VolumeRecoveryPointInfo Unmarshall(JsonUnmarshallerContext context)
         {
             VolumeRecoveryPointInfo unmarshalledObject = new VolumeRecoveryPointInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

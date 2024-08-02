@@ -86,6 +86,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateMalwareProtectionPlanRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.CreateMembersRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>

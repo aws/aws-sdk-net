@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public SecurityGroupRemediationAction Unmarshall(JsonUnmarshallerContext context)
         {
             SecurityGroupRemediationAction unmarshalledObject = new SecurityGroupRemediationAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

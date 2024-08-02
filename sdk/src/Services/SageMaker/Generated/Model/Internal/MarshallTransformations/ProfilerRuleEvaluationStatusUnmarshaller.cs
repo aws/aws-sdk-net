@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ProfilerRuleEvaluationStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ProfilerRuleEvaluationStatus unmarshalledObject = new ProfilerRuleEvaluationStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

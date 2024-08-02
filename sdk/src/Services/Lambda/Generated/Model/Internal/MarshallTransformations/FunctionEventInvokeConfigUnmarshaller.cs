@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public FunctionEventInvokeConfig Unmarshall(JsonUnmarshallerContext context)
         {
             FunctionEventInvokeConfig unmarshalledObject = new FunctionEventInvokeConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

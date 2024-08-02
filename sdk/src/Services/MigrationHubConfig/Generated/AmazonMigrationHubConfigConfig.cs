@@ -34,10 +34,16 @@ namespace Amazon.MigrationHubConfig
     public partial class AmazonMigrationHubConfigConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("MigrationHub Config", "4.0.0.0");
 
         private static readonly AmazonMigrationHubConfigEndpointResolver EndpointResolver =
             new AmazonMigrationHubConfigEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("MigrationHub Config", "3.7.300.84");
+=======
+            InternalSDKUtils.BuildUserAgentString("MigrationHub Config", "3.7.400.2");
+>>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
 
         private string _userAgent = UserAgentString;
         ///<summary>

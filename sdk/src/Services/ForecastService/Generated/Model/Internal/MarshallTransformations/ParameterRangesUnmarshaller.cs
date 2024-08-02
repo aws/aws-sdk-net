@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public ParameterRanges Unmarshall(JsonUnmarshallerContext context)
         {
             ParameterRanges unmarshalledObject = new ParameterRanges();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

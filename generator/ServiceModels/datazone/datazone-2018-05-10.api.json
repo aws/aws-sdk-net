@@ -52,6 +52,25 @@
       ],
       "idempotent":true
     },
+    "AssociateEnvironmentRole":{
+      "name":"AssociateEnvironmentRole",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/v2/domains/{domainIdentifier}/environments/{environmentIdentifier}/roles/{environmentRoleArn}",
+        "responseCode":200
+      },
+      "input":{"shape":"AssociateEnvironmentRoleInput"},
+      "output":{"shape":"AssociateEnvironmentRoleOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ]
+    },
     "CancelMetadataGenerationRun":{
       "name":"CancelMetadataGenerationRun",
       "http":{
@@ -100,6 +119,27 @@
       },
       "input":{"shape":"CreateAssetInput"},
       "output":{"shape":"CreateAssetOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ],
+      "idempotent":true
+    },
+    "CreateAssetFilter":{
+      "name":"CreateAssetFilter",
+      "http":{
+        "method":"POST",
+        "requestUri":"/v2/domains/{domainIdentifier}/assets/{assetIdentifier}/filters",
+        "responseCode":201
+      },
+      "input":{"shape":"CreateAssetFilterInput"},
+      "output":{"shape":"CreateAssetFilterOutput"},
       "errors":[
         {"shape":"InternalServerException"},
         {"shape":"ResourceNotFoundException"},
@@ -202,6 +242,25 @@
       },
       "input":{"shape":"CreateEnvironmentInput"},
       "output":{"shape":"CreateEnvironmentOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ]
+    },
+    "CreateEnvironmentAction":{
+      "name":"CreateEnvironmentAction",
+      "http":{
+        "method":"POST",
+        "requestUri":"/v2/domains/{domainIdentifier}/environments/{environmentIdentifier}/actions",
+        "responseCode":201
+      },
+      "input":{"shape":"CreateEnvironmentActionInput"},
+      "output":{"shape":"CreateEnvironmentActionOutput"},
       "errors":[
         {"shape":"InternalServerException"},
         {"shape":"ResourceNotFoundException"},
@@ -464,6 +523,25 @@
       ],
       "idempotent":true
     },
+    "DeleteAssetFilter":{
+      "name":"DeleteAssetFilter",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/v2/domains/{domainIdentifier}/assets/{assetIdentifier}/filters/{identifier}",
+        "responseCode":204
+      },
+      "input":{"shape":"DeleteAssetFilterInput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ],
+      "idempotent":true
+    },
     "DeleteAssetType":{
       "name":"DeleteAssetType",
       "http":{
@@ -537,6 +615,25 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ],
+      "idempotent":true
+    },
+    "DeleteEnvironmentAction":{
+      "name":"DeleteEnvironmentAction",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/v2/domains/{domainIdentifier}/environments/{environmentIdentifier}/actions/{identifier}",
+        "responseCode":204
+      },
+      "input":{"shape":"DeleteEnvironmentActionInput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ConflictException"},
         {"shape":"ValidationException"},
         {"shape":"UnauthorizedException"}
       ],
@@ -770,6 +867,25 @@
       ],
       "idempotent":true
     },
+    "DisassociateEnvironmentRole":{
+      "name":"DisassociateEnvironmentRole",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/v2/domains/{domainIdentifier}/environments/{environmentIdentifier}/roles/{environmentRoleArn}",
+        "responseCode":200
+      },
+      "input":{"shape":"DisassociateEnvironmentRoleInput"},
+      "output":{"shape":"DisassociateEnvironmentRoleOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ]
+    },
     "GetAsset":{
       "name":"GetAsset",
       "http":{
@@ -779,6 +895,24 @@
       },
       "input":{"shape":"GetAssetInput"},
       "output":{"shape":"GetAssetOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ]
+    },
+    "GetAssetFilter":{
+      "name":"GetAssetFilter",
+      "http":{
+        "method":"GET",
+        "requestUri":"/v2/domains/{domainIdentifier}/assets/{assetIdentifier}/filters/{identifier}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetAssetFilterInput"},
+      "output":{"shape":"GetAssetFilterOutput"},
       "errors":[
         {"shape":"InternalServerException"},
         {"shape":"ResourceNotFoundException"},
@@ -883,6 +1017,24 @@
         {"shape":"UnauthorizedException"}
       ]
     },
+    "GetEnvironmentAction":{
+      "name":"GetEnvironmentAction",
+      "http":{
+        "method":"GET",
+        "requestUri":"/v2/domains/{domainIdentifier}/environments/{environmentIdentifier}/actions/{identifier}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetEnvironmentActionInput"},
+      "output":{"shape":"GetEnvironmentActionOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ]
+    },
     "GetEnvironmentBlueprint":{
       "name":"GetEnvironmentBlueprint",
       "http":{
@@ -910,6 +1062,24 @@
       },
       "input":{"shape":"GetEnvironmentBlueprintConfigurationInput"},
       "output":{"shape":"GetEnvironmentBlueprintConfigurationOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ]
+    },
+    "GetEnvironmentCredentials":{
+      "name":"GetEnvironmentCredentials",
+      "http":{
+        "method":"GET",
+        "requestUri":"/v2/domains/{domainIdentifier}/environments/{environmentIdentifier}/credentials",
+        "responseCode":200
+      },
+      "input":{"shape":"GetEnvironmentCredentialsInput"},
+      "output":{"shape":"GetEnvironmentCredentialsOutput"},
       "errors":[
         {"shape":"InternalServerException"},
         {"shape":"ResourceNotFoundException"},
@@ -1024,6 +1194,24 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ThrottlingException"},
         {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ]
+    },
+    "GetLineageNode":{
+      "name":"GetLineageNode",
+      "http":{
+        "method":"GET",
+        "requestUri":"/v2/domains/{domainIdentifier}/lineage/nodes/{identifier}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetLineageNodeInput"},
+      "output":{"shape":"GetLineageNodeOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"UnauthorizedException"}
       ]
@@ -1190,6 +1378,24 @@
         {"shape":"UnauthorizedException"}
       ]
     },
+    "ListAssetFilters":{
+      "name":"ListAssetFilters",
+      "http":{
+        "method":"GET",
+        "requestUri":"/v2/domains/{domainIdentifier}/assets/{assetIdentifier}/filters",
+        "responseCode":200
+      },
+      "input":{"shape":"ListAssetFiltersInput"},
+      "output":{"shape":"ListAssetFiltersOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ]
+    },
     "ListAssetRevisions":{
       "name":"ListAssetRevisions",
       "http":{
@@ -1288,6 +1494,23 @@
         {"shape":"UnauthorizedException"}
       ]
     },
+    "ListEnvironmentActions":{
+      "name":"ListEnvironmentActions",
+      "http":{
+        "method":"GET",
+        "requestUri":"/v2/domains/{domainIdentifier}/environments/{environmentIdentifier}/actions",
+        "responseCode":200
+      },
+      "input":{"shape":"ListEnvironmentActionsInput"},
+      "output":{"shape":"ListEnvironmentActionsOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ]
+    },
     "ListEnvironmentBlueprintConfigurations":{
       "name":"ListEnvironmentBlueprintConfigurations",
       "http":{
@@ -1352,6 +1575,24 @@
       "output":{"shape":"ListEnvironmentsOutput"},
       "errors":[
         {"shape":"InternalServerException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ]
+    },
+    "ListLineageNodeHistory":{
+      "name":"ListLineageNodeHistory",
+      "http":{
+        "method":"GET",
+        "requestUri":"/v2/domains/{domainIdentifier}/lineage/nodes/{identifier}/history",
+        "responseCode":200
+      },
+      "input":{"shape":"ListLineageNodeHistoryInput"},
+      "output":{"shape":"ListLineageNodeHistoryOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
@@ -1536,6 +1777,27 @@
         {"shape":"ValidationException"},
         {"shape":"UnauthorizedException"}
       ]
+    },
+    "PostLineageEvent":{
+      "name":"PostLineageEvent",
+      "http":{
+        "method":"POST",
+        "requestUri":"/v2/domains/{domainIdentifier}/lineage/events",
+        "responseCode":200
+      },
+      "input":{"shape":"PostLineageEventInput"},
+      "output":{"shape":"PostLineageEventOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ],
+      "idempotent":true
     },
     "PostTimeSeriesDataPoints":{
       "name":"PostTimeSeriesDataPoints",
@@ -1803,6 +2065,26 @@
       ],
       "idempotent":true
     },
+    "UpdateAssetFilter":{
+      "name":"UpdateAssetFilter",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/v2/domains/{domainIdentifier}/assets/{assetIdentifier}/filters/{identifier}",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdateAssetFilterInput"},
+      "output":{"shape":"UpdateAssetFilterOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ],
+      "idempotent":true
+    },
     "UpdateDataSource":{
       "name":"UpdateDataSource",
       "http":{
@@ -1859,6 +2141,25 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ThrottlingException"},
         {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ]
+    },
+    "UpdateEnvironmentAction":{
+      "name":"UpdateEnvironmentAction",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/v2/domains/{domainIdentifier}/environments/{environmentIdentifier}/actions/{identifier}",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdateEnvironmentActionInput"},
+      "output":{"shape":"UpdateEnvironmentActionOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
         {"shape":"ConflictException"},
         {"shape":"ValidationException"},
         {"shape":"UnauthorizedException"}
@@ -2189,9 +2490,49 @@
       "type":"string",
       "sensitive":true
     },
+    "ActionParameters":{
+      "type":"structure",
+      "members":{
+        "awsConsoleLink":{"shape":"AwsConsoleLinkParameters"}
+      },
+      "union":true
+    },
     "ApplicableAssetTypes":{
       "type":"list",
       "member":{"shape":"TypeName"}
+    },
+    "AssetFilterConfiguration":{
+      "type":"structure",
+      "members":{
+        "columnConfiguration":{"shape":"ColumnFilterConfiguration"},
+        "rowConfiguration":{"shape":"RowFilterConfiguration"}
+      },
+      "union":true
+    },
+    "AssetFilterSummary":{
+      "type":"structure",
+      "required":[
+        "assetId",
+        "domainId",
+        "id",
+        "name"
+      ],
+      "members":{
+        "assetId":{"shape":"AssetId"},
+        "createdAt":{"shape":"CreatedAt"},
+        "description":{"shape":"Description"},
+        "domainId":{"shape":"DomainId"},
+        "effectiveColumnNames":{"shape":"ColumnNameList"},
+        "effectiveRowFilter":{"shape":"String"},
+        "errorMessage":{"shape":"String"},
+        "id":{"shape":"FilterId"},
+        "name":{"shape":"FilterName"},
+        "status":{"shape":"FilterStatus"}
+      }
+    },
+    "AssetFilters":{
+      "type":"list",
+      "member":{"shape":"AssetFilterSummary"}
     },
     "AssetId":{
       "type":"string",
@@ -2350,6 +2691,36 @@
         "updatedBy":{"shape":"UpdatedBy"}
       }
     },
+    "AssociateEnvironmentRoleInput":{
+      "type":"structure",
+      "required":[
+        "domainIdentifier",
+        "environmentIdentifier",
+        "environmentRoleArn"
+      ],
+      "members":{
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "environmentIdentifier":{
+          "shape":"EnvironmentId",
+          "location":"uri",
+          "locationName":"environmentIdentifier"
+        },
+        "environmentRoleArn":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"environmentRoleArn"
+        }
+      }
+    },
+    "AssociateEnvironmentRoleOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "Attribute":{
       "type":"string",
       "max":128,
@@ -2375,6 +2746,12 @@
     "AwsAccountId":{
       "type":"string",
       "pattern":"^\\d{12}$"
+    },
+    "AwsConsoleLinkParameters":{
+      "type":"structure",
+      "members":{
+        "uri":{"shape":"String"}
+      }
     },
     "AwsRegion":{
       "type":"string",
@@ -2479,6 +2856,16 @@
         "templateUrl":{"shape":"String"}
       }
     },
+    "ColumnFilterConfiguration":{
+      "type":"structure",
+      "members":{
+        "includedColumnNames":{"shape":"ColumnNameList"}
+      }
+    },
+    "ColumnNameList":{
+      "type":"list",
+      "member":{"shape":"String"}
+    },
     "ConfigurableActionParameter":{
       "type":"structure",
       "members":{
@@ -2520,6 +2907,57 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "CreateAssetFilterInput":{
+      "type":"structure",
+      "required":[
+        "assetIdentifier",
+        "configuration",
+        "domainIdentifier",
+        "name"
+      ],
+      "members":{
+        "assetIdentifier":{
+          "shape":"AssetId",
+          "location":"uri",
+          "locationName":"assetIdentifier"
+        },
+        "clientToken":{
+          "shape":"String",
+          "idempotencyToken":true
+        },
+        "configuration":{"shape":"AssetFilterConfiguration"},
+        "description":{"shape":"Description"},
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "name":{"shape":"FilterName"}
+      }
+    },
+    "CreateAssetFilterOutput":{
+      "type":"structure",
+      "required":[
+        "assetId",
+        "configuration",
+        "domainId",
+        "id",
+        "name"
+      ],
+      "members":{
+        "assetId":{"shape":"AssetId"},
+        "configuration":{"shape":"AssetFilterConfiguration"},
+        "createdAt":{"shape":"CreatedAt"},
+        "description":{"shape":"Description"},
+        "domainId":{"shape":"DomainId"},
+        "effectiveColumnNames":{"shape":"ColumnNameList"},
+        "effectiveRowFilter":{"shape":"String"},
+        "errorMessage":{"shape":"String"},
+        "id":{"shape":"FilterId"},
+        "name":{"shape":"FilterName"},
+        "status":{"shape":"FilterStatus"}
+      }
     },
     "CreateAssetInput":{
       "type":"structure",
@@ -2790,6 +3228,48 @@
         "tags":{"shape":"Tags"}
       }
     },
+    "CreateEnvironmentActionInput":{
+      "type":"structure",
+      "required":[
+        "domainIdentifier",
+        "environmentIdentifier",
+        "name",
+        "parameters"
+      ],
+      "members":{
+        "description":{"shape":"String"},
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "environmentIdentifier":{
+          "shape":"EnvironmentId",
+          "location":"uri",
+          "locationName":"environmentIdentifier"
+        },
+        "name":{"shape":"String"},
+        "parameters":{"shape":"ActionParameters"}
+      }
+    },
+    "CreateEnvironmentActionOutput":{
+      "type":"structure",
+      "required":[
+        "domainId",
+        "environmentId",
+        "id",
+        "name",
+        "parameters"
+      ],
+      "members":{
+        "description":{"shape":"String"},
+        "domainId":{"shape":"DomainId"},
+        "environmentId":{"shape":"EnvironmentId"},
+        "id":{"shape":"EnvironmentActionId"},
+        "name":{"shape":"String"},
+        "parameters":{"shape":"ActionParameters"}
+      }
+    },
     "CreateEnvironmentInput":{
       "type":"structure",
       "required":[
@@ -2805,6 +3285,9 @@
           "location":"uri",
           "locationName":"domainIdentifier"
         },
+        "environmentAccountIdentifier":{"shape":"String"},
+        "environmentAccountRegion":{"shape":"String"},
+        "environmentBlueprintIdentifier":{"shape":"String"},
         "environmentProfileIdentifier":{"shape":"EnvironmentProfileId"},
         "glossaryTerms":{"shape":"GlossaryTerms"},
         "name":{"shape":"String"},
@@ -2817,7 +3300,6 @@
       "required":[
         "createdBy",
         "domainId",
-        "environmentProfileId",
         "name",
         "projectId",
         "provider"
@@ -3409,57 +3891,6 @@
       "type":"string",
       "pattern":"^[a-zA-Z0-9_-]{0,36}$"
     },
-    "DataProductDescription":{
-      "type":"string",
-      "max":4096,
-      "min":1,
-      "sensitive":true
-    },
-    "DataProductId":{
-      "type":"string",
-      "pattern":"^[a-zA-Z0-9_-]{1,36}$"
-    },
-    "DataProductItem":{
-      "type":"structure",
-      "members":{
-        "domainId":{"shape":"DomainId"},
-        "itemId":{"shape":"DataProductId"}
-      }
-    },
-    "DataProductItems":{
-      "type":"list",
-      "member":{"shape":"DataProductItem"},
-      "max":100,
-      "min":0
-    },
-    "DataProductName":{
-      "type":"string",
-      "max":64,
-      "min":1,
-      "sensitive":true
-    },
-    "DataProductSummary":{
-      "type":"structure",
-      "required":[
-        "domainId",
-        "id",
-        "name",
-        "owningProjectId"
-      ],
-      "members":{
-        "createdAt":{"shape":"CreatedAt"},
-        "createdBy":{"shape":"CreatedBy"},
-        "dataProductItems":{"shape":"DataProductItems"},
-        "description":{"shape":"DataProductDescription"},
-        "domainId":{"shape":"DomainId"},
-        "glossaryTerms":{"shape":"GlossaryTerms"},
-        "id":{"shape":"DataProductId"},
-        "name":{"shape":"DataProductName"},
-        "owningProjectId":{"shape":"ProjectId"},
-        "updatedAt":{"shape":"UpdatedAt"},
-        "updatedBy":{"shape":"UpdatedBy"}
-      }
-    },
     "DataSourceConfigurationInput":{
       "type":"structure",
       "members":{
@@ -3637,6 +4068,31 @@
       "min":1,
       "sensitive":true
     },
+    "DeleteAssetFilterInput":{
+      "type":"structure",
+      "required":[
+        "assetIdentifier",
+        "domainIdentifier",
+        "identifier"
+      ],
+      "members":{
+        "assetIdentifier":{
+          "shape":"AssetId",
+          "location":"uri",
+          "locationName":"assetIdentifier"
+        },
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "identifier":{
+          "shape":"FilterId",
+          "location":"uri",
+          "locationName":"identifier"
+        }
+      }
+    },
     "DeleteAssetInput":{
       "type":"structure",
       "required":[
@@ -3707,6 +4163,11 @@
           "shape":"DataSourceId",
           "location":"uri",
           "locationName":"identifier"
+        },
+        "retainPermissionsOnRevokeFailure":{
+          "shape":"Boolean",
+          "location":"querystring",
+          "locationName":"retainPermissionsOnRevokeFailure"
         }
       }
     },
@@ -3735,7 +4196,9 @@
         "name":{"shape":"Name"},
         "projectId":{"shape":"ProjectId"},
         "publishOnImport":{"shape":"Boolean"},
+        "retainPermissionsOnRevokeFailure":{"shape":"Boolean"},
         "schedule":{"shape":"ScheduleConfiguration"},
+        "selfGrantStatus":{"shape":"SelfGrantStatusOutput"},
         "status":{"shape":"DataSourceStatus"},
         "type":{"shape":"DataSourceType"},
         "updatedAt":{"shape":"DateTime"}
@@ -3768,6 +4231,31 @@
       "required":["status"],
       "members":{
         "status":{"shape":"DomainStatus"}
+      }
+    },
+    "DeleteEnvironmentActionInput":{
+      "type":"structure",
+      "required":[
+        "domainIdentifier",
+        "environmentIdentifier",
+        "identifier"
+      ],
+      "members":{
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "environmentIdentifier":{
+          "shape":"EnvironmentId",
+          "location":"uri",
+          "locationName":"environmentIdentifier"
+        },
+        "identifier":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"identifier"
+        }
       }
     },
     "DeleteEnvironmentBlueprintConfigurationInput":{
@@ -4183,6 +4671,36 @@
       "type":"list",
       "member":{"shape":"DetailedGlossaryTerm"}
     },
+    "DisassociateEnvironmentRoleInput":{
+      "type":"structure",
+      "required":[
+        "domainIdentifier",
+        "environmentIdentifier",
+        "environmentRoleArn"
+      ],
+      "members":{
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "environmentIdentifier":{
+          "shape":"EnvironmentId",
+          "location":"uri",
+          "locationName":"environmentIdentifier"
+        },
+        "environmentRoleArn":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"environmentRoleArn"
+        }
+      }
+    },
+    "DisassociateEnvironmentRoleOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DomainDescription":{
       "type":"string",
       "sensitive":true
@@ -4232,6 +4750,13 @@
         "status":{"shape":"DomainStatus"}
       }
     },
+    "EdgeDirection":{
+      "type":"string",
+      "enum":[
+        "UPSTREAM",
+        "DOWNSTREAM"
+      ]
+    },
     "EditedValue":{
       "type":"string",
       "max":5000,
@@ -4262,9 +4787,31 @@
       "type":"string",
       "enum":["ASSET"]
     },
+    "EnvironmentActionId":{
+      "type":"string",
+      "pattern":"^[a-zA-Z0-9_-]{1,36}$"
+    },
     "EnvironmentActionList":{
       "type":"list",
       "member":{"shape":"ConfigurableEnvironmentAction"}
+    },
+    "EnvironmentActionSummary":{
+      "type":"structure",
+      "required":[
+        "domainId",
+        "environmentId",
+        "id",
+        "name",
+        "parameters"
+      ],
+      "members":{
+        "description":{"shape":"String"},
+        "domainId":{"shape":"DomainId"},
+        "environmentId":{"shape":"EnvironmentId"},
+        "id":{"shape":"EnvironmentActionId"},
+        "name":{"shape":"String"},
+        "parameters":{"shape":"ActionParameters"}
+      }
     },
     "EnvironmentBlueprintConfigurationItem":{
       "type":"structure",
@@ -4278,6 +4825,7 @@
         "enabledRegions":{"shape":"EnabledRegionList"},
         "environmentBlueprintId":{"shape":"EnvironmentBlueprintId"},
         "manageAccessRoleArn":{"shape":"RoleArn"},
+        "provisioningConfigurations":{"shape":"ProvisioningConfigurationList"},
         "provisioningRoleArn":{"shape":"RoleArn"},
         "regionalParameters":{"shape":"RegionalParameterMap"},
         "updatedAt":{"shape":"SyntheticTimestamp_date_time"}
@@ -4351,7 +4899,7 @@
     },
     "EnvironmentProfileId":{
       "type":"string",
-      "pattern":"^[a-zA-Z0-9_-]{1,36}$"
+      "pattern":"^[a-zA-Z0-9_-]{0,36}$"
     },
     "EnvironmentProfileName":{
       "type":"string",
@@ -4414,7 +4962,6 @@
       "required":[
         "createdBy",
         "domainId",
-        "environmentProfileId",
         "name",
         "projectId",
         "provider"
@@ -4433,6 +4980,17 @@
         "provider":{"shape":"String"},
         "status":{"shape":"EnvironmentStatus"},
         "updatedAt":{"shape":"SyntheticTimestamp_date_time"}
+      }
+    },
+    "EqualToExpression":{
+      "type":"structure",
+      "required":[
+        "columnName",
+        "value"
+      ],
+      "members":{
+        "columnName":{"shape":"String"},
+        "value":{"shape":"String"}
       }
     },
     "ErrorMessage":{"type":"string"},
@@ -4499,11 +5057,29 @@
       "type":"list",
       "member":{"shape":"FilterExpression"}
     },
+    "FilterId":{
+      "type":"string",
+      "pattern":"^[a-zA-Z0-9_-]{1,36}$"
+    },
     "FilterList":{
       "type":"list",
       "member":{"shape":"FilterClause"},
       "max":100,
       "min":1
+    },
+    "FilterName":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"^[\\w -]+$",
+      "sensitive":true
+    },
+    "FilterStatus":{
+      "type":"string",
+      "enum":[
+        "VALID",
+        "INVALID"
+      ]
     },
     "FilterValueString":{
       "type":"string",
@@ -4555,7 +5131,7 @@
     },
     "FormInputContentString":{
       "type":"string",
-      "max":150000,
+      "max":300000,
       "min":0
     },
     "FormInputList":{
@@ -4643,6 +5219,54 @@
       "value":{"shape":"FormEntryOutput"},
       "max":10,
       "min":0
+    },
+    "GetAssetFilterInput":{
+      "type":"structure",
+      "required":[
+        "assetIdentifier",
+        "domainIdentifier",
+        "identifier"
+      ],
+      "members":{
+        "assetIdentifier":{
+          "shape":"AssetId",
+          "location":"uri",
+          "locationName":"assetIdentifier"
+        },
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "identifier":{
+          "shape":"FilterId",
+          "location":"uri",
+          "locationName":"identifier"
+        }
+      }
+    },
+    "GetAssetFilterOutput":{
+      "type":"structure",
+      "required":[
+        "assetId",
+        "configuration",
+        "domainId",
+        "id",
+        "name"
+      ],
+      "members":{
+        "assetId":{"shape":"AssetId"},
+        "configuration":{"shape":"AssetFilterConfiguration"},
+        "createdAt":{"shape":"CreatedAt"},
+        "description":{"shape":"Description"},
+        "domainId":{"shape":"DomainId"},
+        "effectiveColumnNames":{"shape":"ColumnNameList"},
+        "effectiveRowFilter":{"shape":"String"},
+        "errorMessage":{"shape":"String"},
+        "id":{"shape":"FilterId"},
+        "name":{"shape":"FilterName"},
+        "status":{"shape":"FilterStatus"}
+      }
     },
     "GetAssetInput":{
       "type":"structure",
@@ -4796,6 +5420,7 @@
         "publishOnImport":{"shape":"Boolean"},
         "recommendation":{"shape":"RecommendationConfiguration"},
         "schedule":{"shape":"ScheduleConfiguration"},
+        "selfGrantStatus":{"shape":"SelfGrantStatusOutput"},
         "status":{"shape":"DataSourceStatus"},
         "type":{"shape":"DataSourceType"},
         "updatedAt":{"shape":"DateTime"}
@@ -4881,6 +5506,49 @@
         "tags":{"shape":"Tags"}
       }
     },
+    "GetEnvironmentActionInput":{
+      "type":"structure",
+      "required":[
+        "domainIdentifier",
+        "environmentIdentifier",
+        "identifier"
+      ],
+      "members":{
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "environmentIdentifier":{
+          "shape":"EnvironmentId",
+          "location":"uri",
+          "locationName":"environmentIdentifier"
+        },
+        "identifier":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"identifier"
+        }
+      }
+    },
+    "GetEnvironmentActionOutput":{
+      "type":"structure",
+      "required":[
+        "domainId",
+        "environmentId",
+        "id",
+        "name",
+        "parameters"
+      ],
+      "members":{
+        "description":{"shape":"String"},
+        "domainId":{"shape":"DomainId"},
+        "environmentId":{"shape":"EnvironmentId"},
+        "id":{"shape":"EnvironmentActionId"},
+        "name":{"shape":"String"},
+        "parameters":{"shape":"ActionParameters"}
+      }
+    },
     "GetEnvironmentBlueprintConfigurationInput":{
       "type":"structure",
       "required":[
@@ -4912,6 +5580,7 @@
         "enabledRegions":{"shape":"EnabledRegionList"},
         "environmentBlueprintId":{"shape":"EnvironmentBlueprintId"},
         "manageAccessRoleArn":{"shape":"RoleArn"},
+        "provisioningConfigurations":{"shape":"ProvisioningConfigurationList"},
         "provisioningRoleArn":{"shape":"RoleArn"},
         "regionalParameters":{"shape":"RegionalParameterMap"},
         "updatedAt":{"shape":"SyntheticTimestamp_date_time"}
@@ -4957,6 +5626,35 @@
         "userParameters":{"shape":"CustomParameterList"}
       }
     },
+    "GetEnvironmentCredentialsInput":{
+      "type":"structure",
+      "required":[
+        "domainIdentifier",
+        "environmentIdentifier"
+      ],
+      "members":{
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "environmentIdentifier":{
+          "shape":"EnvironmentId",
+          "location":"uri",
+          "locationName":"environmentIdentifier"
+        }
+      }
+    },
+    "GetEnvironmentCredentialsOutput":{
+      "type":"structure",
+      "members":{
+        "accessKeyId":{"shape":"String"},
+        "expiration":{"shape":"SyntheticTimestamp_date_time"},
+        "secretAccessKey":{"shape":"String"},
+        "sessionToken":{"shape":"String"}
+      },
+      "sensitive":true
+    },
     "GetEnvironmentInput":{
       "type":"structure",
       "required":[
@@ -4981,7 +5679,6 @@
       "required":[
         "createdBy",
         "domainId",
-        "environmentProfileId",
         "name",
         "projectId",
         "provider"
@@ -5229,6 +5926,55 @@
       "members":{
         "authCodeUrl":{"shape":"String"},
         "userProfileId":{"shape":"String"}
+      }
+    },
+    "GetLineageNodeInput":{
+      "type":"structure",
+      "required":[
+        "domainIdentifier",
+        "identifier"
+      ],
+      "members":{
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "eventTimestamp":{
+          "shape":"Timestamp",
+          "location":"querystring",
+          "locationName":"timestamp"
+        },
+        "identifier":{
+          "shape":"LineageNodeIdentifier",
+          "location":"uri",
+          "locationName":"identifier"
+        }
+      }
+    },
+    "GetLineageNodeOutput":{
+      "type":"structure",
+      "required":[
+        "domainId",
+        "id",
+        "typeName"
+      ],
+      "members":{
+        "createdAt":{"shape":"CreatedAt"},
+        "createdBy":{"shape":"CreatedBy"},
+        "description":{"shape":"String"},
+        "domainId":{"shape":"DomainId"},
+        "downstreamNodes":{"shape":"LineageNodeReferenceList"},
+        "eventTimestamp":{"shape":"Timestamp"},
+        "formsOutput":{"shape":"FormOutputList"},
+        "id":{"shape":"LineageNodeId"},
+        "name":{"shape":"String"},
+        "sourceIdentifier":{"shape":"String"},
+        "typeName":{"shape":"String"},
+        "typeRevision":{"shape":"Revision"},
+        "updatedAt":{"shape":"UpdatedAt"},
+        "updatedBy":{"shape":"UpdatedBy"},
+        "upstreamNodes":{"shape":"LineageNodeReferenceList"}
       }
     },
     "GetListingInput":{
@@ -5775,6 +6521,13 @@
       "min":4,
       "pattern":"[a-z]{2}-?(iso|gov)?-{1}[a-z]*-{1}[0-9]"
     },
+    "GlueSelfGrantStatusOutput":{
+      "type":"structure",
+      "required":["selfGrantStatusDetails"],
+      "members":{
+        "selfGrantStatusDetails":{"shape":"SelfGrantStatusDetails"}
+      }
+    },
     "GrantedEntity":{
       "type":"structure",
       "members":{
@@ -5788,6 +6541,28 @@
         "listing":{"shape":"ListingRevisionInput"}
       },
       "union":true
+    },
+    "GreaterThanExpression":{
+      "type":"structure",
+      "required":[
+        "columnName",
+        "value"
+      ],
+      "members":{
+        "columnName":{"shape":"String"},
+        "value":{"shape":"String"}
+      }
+    },
+    "GreaterThanOrEqualToExpression":{
+      "type":"structure",
+      "required":[
+        "columnName",
+        "value"
+      ],
+      "members":{
+        "columnName":{"shape":"String"},
+        "value":{"shape":"String"}
+      }
     },
     "GroupDetails":{
       "type":"structure",
@@ -5867,6 +6642,17 @@
       "max":10,
       "min":1
     },
+    "InExpression":{
+      "type":"structure",
+      "required":[
+        "columnName",
+        "values"
+      ],
+      "members":{
+        "columnName":{"shape":"String"},
+        "values":{"shape":"StringList"}
+      }
+    },
     "Integer":{
       "type":"integer",
       "box":true
@@ -5890,15 +6676,184 @@
         "GLOSSARY_TERM"
       ]
     },
+    "IsNotNullExpression":{
+      "type":"structure",
+      "required":["columnName"],
+      "members":{
+        "columnName":{"shape":"String"}
+      }
+    },
+    "IsNullExpression":{
+      "type":"structure",
+      "required":["columnName"],
+      "members":{
+        "columnName":{"shape":"String"}
+      }
+    },
     "KmsKeyArn":{
       "type":"string",
       "max":1024,
       "min":1,
       "pattern":"^arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}$"
     },
+    "LakeFormationConfiguration":{
+      "type":"structure",
+      "members":{
+        "locationRegistrationExcludeS3Locations":{"shape":"S3LocationList"},
+        "locationRegistrationRole":{"shape":"RoleArn"}
+      }
+    },
     "LastName":{
       "type":"string",
       "sensitive":true
+    },
+    "LessThanExpression":{
+      "type":"structure",
+      "required":[
+        "columnName",
+        "value"
+      ],
+      "members":{
+        "columnName":{"shape":"String"},
+        "value":{"shape":"String"}
+      }
+    },
+    "LessThanOrEqualToExpression":{
+      "type":"structure",
+      "required":[
+        "columnName",
+        "value"
+      ],
+      "members":{
+        "columnName":{"shape":"String"},
+        "value":{"shape":"String"}
+      }
+    },
+    "LikeExpression":{
+      "type":"structure",
+      "required":[
+        "columnName",
+        "value"
+      ],
+      "members":{
+        "columnName":{"shape":"String"},
+        "value":{"shape":"String"}
+      }
+    },
+    "LineageEvent":{
+      "type":"blob",
+      "max":300000,
+      "min":0,
+      "sensitive":true
+    },
+    "LineageNodeId":{
+      "type":"string",
+      "pattern":"^[a-zA-Z0-9_-]{1,36}$"
+    },
+    "LineageNodeIdentifier":{
+      "type":"string",
+      "max":2086,
+      "min":1
+    },
+    "LineageNodeReference":{
+      "type":"structure",
+      "members":{
+        "eventTimestamp":{"shape":"Timestamp"},
+        "id":{"shape":"LineageNodeId"}
+      }
+    },
+    "LineageNodeReferenceList":{
+      "type":"list",
+      "member":{"shape":"LineageNodeReference"},
+      "max":100,
+      "min":0
+    },
+    "LineageNodeSummaries":{
+      "type":"list",
+      "member":{"shape":"LineageNodeSummary"}
+    },
+    "LineageNodeSummary":{
+      "type":"structure",
+      "required":[
+        "domainId",
+        "id",
+        "typeName"
+      ],
+      "members":{
+        "createdAt":{"shape":"CreatedAt"},
+        "createdBy":{"shape":"CreatedBy"},
+        "description":{"shape":"String"},
+        "domainId":{"shape":"DomainId"},
+        "eventTimestamp":{"shape":"Timestamp"},
+        "id":{"shape":"LineageNodeId"},
+        "name":{"shape":"String"},
+        "sourceIdentifier":{"shape":"String"},
+        "typeName":{"shape":"String"},
+        "typeRevision":{"shape":"Revision"},
+        "updatedAt":{"shape":"UpdatedAt"},
+        "updatedBy":{"shape":"UpdatedBy"}
+      }
+    },
+    "LineageNodeTypeItem":{
+      "type":"structure",
+      "required":[
+        "domainId",
+        "formsOutput",
+        "revision"
+      ],
+      "members":{
+        "createdAt":{"shape":"CreatedAt"},
+        "createdBy":{"shape":"CreatedBy"},
+        "description":{"shape":"String"},
+        "domainId":{"shape":"DomainId"},
+        "formsOutput":{"shape":"FormsOutputMap"},
+        "name":{"shape":"String"},
+        "revision":{"shape":"Revision"},
+        "updatedAt":{"shape":"UpdatedAt"},
+        "updatedBy":{"shape":"UpdatedBy"}
+      }
+    },
+    "ListAssetFiltersInput":{
+      "type":"structure",
+      "required":[
+        "assetIdentifier",
+        "domainIdentifier"
+      ],
+      "members":{
+        "assetIdentifier":{
+          "shape":"AssetId",
+          "location":"uri",
+          "locationName":"assetIdentifier"
+        },
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "status":{
+          "shape":"FilterStatus",
+          "location":"querystring",
+          "locationName":"status"
+        }
+      }
+    },
+    "ListAssetFiltersOutput":{
+      "type":"structure",
+      "required":["items"],
+      "members":{
+        "items":{"shape":"AssetFilters"},
+        "nextToken":{"shape":"PaginationToken"}
+      }
     },
     "ListAssetRevisionsInput":{
       "type":"structure",
@@ -6105,6 +7060,46 @@
         "nextToken":{"shape":"PaginationToken"}
       }
     },
+    "ListEnvironmentActionSummaries":{
+      "type":"list",
+      "member":{"shape":"EnvironmentActionSummary"}
+    },
+    "ListEnvironmentActionsInput":{
+      "type":"structure",
+      "required":[
+        "domainIdentifier",
+        "environmentIdentifier"
+      ],
+      "members":{
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "environmentIdentifier":{
+          "shape":"EnvironmentId",
+          "location":"uri",
+          "locationName":"environmentIdentifier"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListEnvironmentActionsOutput":{
+      "type":"structure",
+      "members":{
+        "items":{"shape":"ListEnvironmentActionSummaries"},
+        "nextToken":{"shape":"PaginationToken"}
+      }
+    },
     "ListEnvironmentBlueprintConfigurationsInput":{
       "type":"structure",
       "required":["domainIdentifier"],
@@ -6296,6 +7291,62 @@
       "members":{
         "items":{"shape":"EnvironmentSummaries"},
         "nextToken":{"shape":"PaginationToken"}
+      }
+    },
+    "ListLineageNodeHistoryInput":{
+      "type":"structure",
+      "required":[
+        "domainIdentifier",
+        "identifier"
+      ],
+      "members":{
+        "direction":{
+          "shape":"EdgeDirection",
+          "location":"querystring",
+          "locationName":"direction"
+        },
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "eventTimestampGTE":{
+          "shape":"Timestamp",
+          "location":"querystring",
+          "locationName":"timestampGTE"
+        },
+        "eventTimestampLTE":{
+          "shape":"Timestamp",
+          "location":"querystring",
+          "locationName":"timestampLTE"
+        },
+        "identifier":{
+          "shape":"LineageNodeIdentifier",
+          "location":"uri",
+          "locationName":"identifier"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "sortOrder":{
+          "shape":"SortOrder",
+          "location":"querystring",
+          "locationName":"sortOrder"
+        }
+      }
+    },
+    "ListLineageNodeHistoryOutput":{
+      "type":"structure",
+      "members":{
+        "nextToken":{"shape":"PaginationToken"},
+        "nodes":{"shape":"LineageNodeSummaries"}
       }
     },
     "ListMetadataGenerationRunsInput":{
@@ -6947,6 +7998,39 @@
       "min":1,
       "sensitive":true
     },
+    "NotEqualToExpression":{
+      "type":"structure",
+      "required":[
+        "columnName",
+        "value"
+      ],
+      "members":{
+        "columnName":{"shape":"String"},
+        "value":{"shape":"String"}
+      }
+    },
+    "NotInExpression":{
+      "type":"structure",
+      "required":[
+        "columnName",
+        "values"
+      ],
+      "members":{
+        "columnName":{"shape":"String"},
+        "values":{"shape":"StringList"}
+      }
+    },
+    "NotLikeExpression":{
+      "type":"structure",
+      "required":[
+        "columnName",
+        "value"
+      ],
+      "members":{
+        "columnName":{"shape":"String"},
+        "value":{"shape":"String"}
+      }
+    },
     "NotificationOutput":{
       "type":"structure",
       "required":[
@@ -7019,6 +8103,33 @@
       "type":"string",
       "max":8192,
       "min":1
+    },
+    "PostLineageEventInput":{
+      "type":"structure",
+      "required":[
+        "domainIdentifier",
+        "event"
+      ],
+      "members":{
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true,
+          "location":"querystring",
+          "locationName":"clientToken"
+        },
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "event":{"shape":"LineageEvent"}
+      },
+      "payload":"event"
+    },
+    "PostLineageEventOutput":{
+      "type":"structure",
+      "members":{
+      }
     },
     "PostTimeSeriesDataPointsInput":{
       "type":"structure",
@@ -7135,6 +8246,17 @@
         "updatedAt":{"shape":"SyntheticTimestamp_date_time"}
       }
     },
+    "ProvisioningConfiguration":{
+      "type":"structure",
+      "members":{
+        "lakeFormationConfiguration":{"shape":"LakeFormationConfiguration"}
+      },
+      "union":true
+    },
+    "ProvisioningConfigurationList":{
+      "type":"list",
+      "member":{"shape":"ProvisioningConfiguration"}
+    },
     "ProvisioningProperties":{
       "type":"structure",
       "members":{
@@ -7162,6 +8284,7 @@
           "locationName":"environmentBlueprintIdentifier"
         },
         "manageAccessRoleArn":{"shape":"RoleArn"},
+        "provisioningConfigurations":{"shape":"ProvisioningConfigurationList"},
         "provisioningRoleArn":{"shape":"RoleArn"},
         "regionalParameters":{"shape":"RegionalParameterMap"}
       }
@@ -7178,6 +8301,7 @@
         "enabledRegions":{"shape":"EnabledRegionList"},
         "environmentBlueprintId":{"shape":"EnvironmentBlueprintId"},
         "manageAccessRoleArn":{"shape":"RoleArn"},
+        "provisioningConfigurations":{"shape":"ProvisioningConfigurationList"},
         "provisioningRoleArn":{"shape":"RoleArn"},
         "regionalParameters":{"shape":"RegionalParameterMap"},
         "updatedAt":{"shape":"SyntheticTimestamp_date_time"}
@@ -7264,6 +8388,13 @@
       "max":16,
       "min":4,
       "pattern":"[a-z]{2}-?(iso|gov)?-{1}[a-z]*-{1}[0-9]"
+    },
+    "RedshiftSelfGrantStatusOutput":{
+      "type":"structure",
+      "required":["selfGrantStatusDetails"],
+      "members":{
+        "selfGrantStatusDetails":{"shape":"SelfGrantStatusDetails"}
+      }
     },
     "RedshiftServerlessStorage":{
       "type":"structure",
@@ -7544,6 +8675,45 @@
       "type":"string",
       "pattern":"^arn:aws[^:]*:iam::\\d{12}:(role|role/service-role)/[\\w+=,.@-]*$"
     },
+    "RowFilter":{
+      "type":"structure",
+      "members":{
+        "and":{"shape":"RowFilterList"},
+        "expression":{"shape":"RowFilterExpression"},
+        "or":{"shape":"RowFilterList"}
+      },
+      "union":true
+    },
+    "RowFilterConfiguration":{
+      "type":"structure",
+      "required":["rowFilter"],
+      "members":{
+        "rowFilter":{"shape":"RowFilter"},
+        "sensitive":{"shape":"Boolean"}
+      }
+    },
+    "RowFilterExpression":{
+      "type":"structure",
+      "members":{
+        "equalTo":{"shape":"EqualToExpression"},
+        "greaterThan":{"shape":"GreaterThanExpression"},
+        "greaterThanOrEqualTo":{"shape":"GreaterThanOrEqualToExpression"},
+        "in":{"shape":"InExpression"},
+        "isNotNull":{"shape":"IsNotNullExpression"},
+        "isNull":{"shape":"IsNullExpression"},
+        "lessThan":{"shape":"LessThanExpression"},
+        "lessThanOrEqualTo":{"shape":"LessThanOrEqualToExpression"},
+        "like":{"shape":"LikeExpression"},
+        "notEqualTo":{"shape":"NotEqualToExpression"},
+        "notIn":{"shape":"NotInExpression"},
+        "notLike":{"shape":"NotLikeExpression"}
+      },
+      "union":true
+    },
+    "RowFilterList":{
+      "type":"list",
+      "member":{"shape":"RowFilter"}
+    },
     "RunStatisticsForAssets":{
       "type":"structure",
       "members":{
@@ -7553,6 +8723,18 @@
         "unchanged":{"shape":"Integer"},
         "updated":{"shape":"Integer"}
       }
+    },
+    "S3Location":{
+      "type":"string",
+      "max":1024,
+      "min":1,
+      "pattern":"^s3://.+$"
+    },
+    "S3LocationList":{
+      "type":"list",
+      "member":{"shape":"S3Location"},
+      "max":20,
+      "min":0
     },
     "ScheduleConfiguration":{
       "type":"structure",
@@ -7627,7 +8809,6 @@
       "type":"structure",
       "members":{
         "assetItem":{"shape":"AssetItem"},
-        "dataProductItem":{"shape":"DataProductSummary"},
         "glossaryItem":{"shape":"GlossaryItem"},
         "glossaryTermItem":{"shape":"GlossaryTermItem"}
       },
@@ -7741,7 +8922,8 @@
       "type":"structure",
       "members":{
         "assetTypeItem":{"shape":"AssetTypeItem"},
-        "formTypeItem":{"shape":"FormTypeData"}
+        "formTypeItem":{"shape":"FormTypeData"},
+        "lineageNodeTypeItem":{"shape":"LineageNodeTypeItem"}
       },
       "union":true
     },
@@ -7774,6 +8956,53 @@
         "nextToken":{"shape":"PaginationToken"}
       }
     },
+    "SelfGrantStatus":{
+      "type":"string",
+      "enum":[
+        "GRANT_PENDING",
+        "REVOKE_PENDING",
+        "GRANT_IN_PROGRESS",
+        "REVOKE_IN_PROGRESS",
+        "GRANTED",
+        "GRANT_FAILED",
+        "REVOKE_FAILED"
+      ]
+    },
+    "SelfGrantStatusDetail":{
+      "type":"structure",
+      "required":[
+        "databaseName",
+        "status"
+      ],
+      "members":{
+        "databaseName":{"shape":"SelfGrantStatusDetailDatabaseNameString"},
+        "failureCause":{"shape":"String"},
+        "schemaName":{"shape":"SelfGrantStatusDetailSchemaNameString"},
+        "status":{"shape":"SelfGrantStatus"}
+      }
+    },
+    "SelfGrantStatusDetailDatabaseNameString":{
+      "type":"string",
+      "max":128,
+      "min":1
+    },
+    "SelfGrantStatusDetailSchemaNameString":{
+      "type":"string",
+      "max":128,
+      "min":1
+    },
+    "SelfGrantStatusDetails":{
+      "type":"list",
+      "member":{"shape":"SelfGrantStatusDetail"}
+    },
+    "SelfGrantStatusOutput":{
+      "type":"structure",
+      "members":{
+        "glueSelfGrantStatus":{"shape":"GlueSelfGrantStatusOutput"},
+        "redshiftSelfGrantStatus":{"shape":"RedshiftSelfGrantStatusOutput"}
+      },
+      "union":true
+    },
     "ServiceQuotaExceededException":{
       "type":"structure",
       "required":["message"],
@@ -7801,7 +9030,7 @@
     },
     "Smithy":{
       "type":"string",
-      "max":10000,
+      "max":100000,
       "min":1
     },
     "SortFieldProject":{
@@ -7921,6 +9150,10 @@
       }
     },
     "String":{"type":"string"},
+    "StringList":{
+      "type":"list",
+      "member":{"shape":"String"}
+    },
     "SubscribedAsset":{
       "type":"structure",
       "required":[
@@ -8522,7 +9755,8 @@
       "type":"string",
       "enum":[
         "ASSET_TYPE",
-        "FORM_TYPE"
+        "FORM_TYPE",
+        "LINEAGE_NODE_TYPE"
       ]
     },
     "UnauthorizedException":{
@@ -8561,6 +9795,57 @@
       "members":{
       }
     },
+    "UpdateAssetFilterInput":{
+      "type":"structure",
+      "required":[
+        "assetIdentifier",
+        "domainIdentifier",
+        "identifier"
+      ],
+      "members":{
+        "assetIdentifier":{
+          "shape":"AssetId",
+          "location":"uri",
+          "locationName":"assetIdentifier"
+        },
+        "configuration":{"shape":"AssetFilterConfiguration"},
+        "description":{"shape":"Description"},
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "identifier":{
+          "shape":"FilterId",
+          "location":"uri",
+          "locationName":"identifier"
+        },
+        "name":{"shape":"String"}
+      }
+    },
+    "UpdateAssetFilterOutput":{
+      "type":"structure",
+      "required":[
+        "assetId",
+        "configuration",
+        "domainId",
+        "id",
+        "name"
+      ],
+      "members":{
+        "assetId":{"shape":"AssetId"},
+        "configuration":{"shape":"AssetFilterConfiguration"},
+        "createdAt":{"shape":"CreatedAt"},
+        "description":{"shape":"Description"},
+        "domainId":{"shape":"DomainId"},
+        "effectiveColumnNames":{"shape":"ColumnNameList"},
+        "effectiveRowFilter":{"shape":"String"},
+        "errorMessage":{"shape":"String"},
+        "id":{"shape":"FilterId"},
+        "name":{"shape":"FilterName"},
+        "status":{"shape":"FilterStatus"}
+      }
+    },
     "UpdateDataSourceInput":{
       "type":"structure",
       "required":[
@@ -8585,6 +9870,7 @@
         "name":{"shape":"Name"},
         "publishOnImport":{"shape":"Boolean"},
         "recommendation":{"shape":"RecommendationConfiguration"},
+        "retainPermissionsOnRevokeFailure":{"shape":"Boolean"},
         "schedule":{"shape":"ScheduleConfiguration"}
       }
     },
@@ -8614,7 +9900,9 @@
         "projectId":{"shape":"ProjectId"},
         "publishOnImport":{"shape":"Boolean"},
         "recommendation":{"shape":"RecommendationConfiguration"},
+        "retainPermissionsOnRevokeFailure":{"shape":"Boolean"},
         "schedule":{"shape":"ScheduleConfiguration"},
+        "selfGrantStatus":{"shape":"SelfGrantStatusOutput"},
         "status":{"shape":"DataSourceStatus"},
         "type":{"shape":"DataSourceType"},
         "updatedAt":{"shape":"DateTime"}
@@ -8653,6 +9941,52 @@
         "singleSignOn":{"shape":"SingleSignOn"}
       }
     },
+    "UpdateEnvironmentActionInput":{
+      "type":"structure",
+      "required":[
+        "domainIdentifier",
+        "environmentIdentifier",
+        "identifier"
+      ],
+      "members":{
+        "description":{"shape":"String"},
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "environmentIdentifier":{
+          "shape":"EnvironmentId",
+          "location":"uri",
+          "locationName":"environmentIdentifier"
+        },
+        "identifier":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"identifier"
+        },
+        "name":{"shape":"String"},
+        "parameters":{"shape":"ActionParameters"}
+      }
+    },
+    "UpdateEnvironmentActionOutput":{
+      "type":"structure",
+      "required":[
+        "domainId",
+        "environmentId",
+        "id",
+        "name",
+        "parameters"
+      ],
+      "members":{
+        "description":{"shape":"String"},
+        "domainId":{"shape":"DomainId"},
+        "environmentId":{"shape":"EnvironmentId"},
+        "id":{"shape":"EnvironmentActionId"},
+        "name":{"shape":"String"},
+        "parameters":{"shape":"ActionParameters"}
+      }
+    },
     "UpdateEnvironmentInput":{
       "type":"structure",
       "required":[
@@ -8680,7 +10014,6 @@
       "required":[
         "createdBy",
         "domainId",
-        "environmentProfileId",
         "name",
         "projectId",
         "provider"

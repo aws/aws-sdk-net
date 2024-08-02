@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public ExclusionByResourceTypes Unmarshall(JsonUnmarshallerContext context)
         {
             ExclusionByResourceTypes unmarshalledObject = new ExclusionByResourceTypes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

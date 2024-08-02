@@ -70,6 +70,17 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetApplicationSystemRollbackConfigurationUpdate())
+            {
+                context.Writer.WritePropertyName("ApplicationSystemRollbackConfigurationUpdate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ApplicationSystemRollbackConfigurationUpdateMarshaller.Instance;
+                marshaller.Marshall(requestObject.ApplicationSystemRollbackConfigurationUpdate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEnvironmentPropertyUpdates())
             {
                 context.Writer.WritePropertyName("EnvironmentPropertyUpdates");

@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public AmplitudeConnectorProfileProperties Unmarshall(JsonUnmarshallerContext context)
         {
             AmplitudeConnectorProfileProperties unmarshalledObject = new AmplitudeConnectorProfileProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

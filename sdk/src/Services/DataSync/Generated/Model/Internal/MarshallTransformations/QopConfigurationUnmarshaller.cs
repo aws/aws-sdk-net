@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public QopConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             QopConfiguration unmarshalledObject = new QopConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

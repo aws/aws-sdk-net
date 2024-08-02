@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public FaqSummary Unmarshall(JsonUnmarshallerContext context)
         {
             FaqSummary unmarshalledObject = new FaqSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

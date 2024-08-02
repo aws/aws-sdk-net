@@ -70,6 +70,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     response.CloudWatchLoggingOptionDescriptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OperationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OperationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

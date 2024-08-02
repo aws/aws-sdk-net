@@ -57,6 +57,8 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
         public InvalidParameterDetail Unmarshall(JsonUnmarshallerContext context)
         {
             InvalidParameterDetail unmarshalledObject = new InvalidParameterDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

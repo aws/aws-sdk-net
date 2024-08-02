@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public EffectivePatch Unmarshall(JsonUnmarshallerContext context)
         {
             EffectivePatch unmarshalledObject = new EffectivePatch();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

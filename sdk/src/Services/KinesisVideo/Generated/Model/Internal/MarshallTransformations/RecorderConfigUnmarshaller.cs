@@ -57,6 +57,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         public RecorderConfig Unmarshall(JsonUnmarshallerContext context)
         {
             RecorderConfig unmarshalledObject = new RecorderConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

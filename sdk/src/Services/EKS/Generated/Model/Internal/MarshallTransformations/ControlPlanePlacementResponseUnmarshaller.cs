@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public ControlPlanePlacementResponse Unmarshall(JsonUnmarshallerContext context)
         {
             ControlPlanePlacementResponse unmarshalledObject = new ControlPlanePlacementResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

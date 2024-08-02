@@ -57,6 +57,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         public BatchIsAuthorizedWithTokenOutputItem Unmarshall(JsonUnmarshallerContext context)
         {
             BatchIsAuthorizedWithTokenOutputItem unmarshalledObject = new BatchIsAuthorizedWithTokenOutputItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

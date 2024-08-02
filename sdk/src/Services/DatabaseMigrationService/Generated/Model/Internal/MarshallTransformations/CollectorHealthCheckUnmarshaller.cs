@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public CollectorHealthCheck Unmarshall(JsonUnmarshallerContext context)
         {
             CollectorHealthCheck unmarshalledObject = new CollectorHealthCheck();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

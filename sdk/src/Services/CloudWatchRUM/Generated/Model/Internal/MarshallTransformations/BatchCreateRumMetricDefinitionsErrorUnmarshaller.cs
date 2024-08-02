@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         public BatchCreateRumMetricDefinitionsError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchCreateRumMetricDefinitionsError unmarshalledObject = new BatchCreateRumMetricDefinitionsError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

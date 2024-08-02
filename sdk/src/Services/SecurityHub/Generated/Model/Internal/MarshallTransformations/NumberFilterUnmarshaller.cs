@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public NumberFilter Unmarshall(JsonUnmarshallerContext context)
         {
             NumberFilter unmarshalledObject = new NumberFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

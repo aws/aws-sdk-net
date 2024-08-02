@@ -57,6 +57,8 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
         public IncludedProperty Unmarshall(JsonUnmarshallerContext context)
         {
             IncludedProperty unmarshalledObject = new IncludedProperty();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

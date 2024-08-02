@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public EmbeddedSourceSettings Unmarshall(JsonUnmarshallerContext context)
         {
             EmbeddedSourceSettings unmarshalledObject = new EmbeddedSourceSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

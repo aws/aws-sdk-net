@@ -133,6 +133,8 @@ namespace Amazon.S3.Internal
                 result.DisableS3ExpressSessionAuth = true;
                 var request = (CopyObjectRequest)requestContext.OriginalRequest;
                 result.Bucket = request.DestinationBucket;
+                result.Key = request.DestinationKey;
+                result.CopySource = request.SourceKey;
                 return result;
             }
             if (requestContext.RequestName == "CopyPartRequest") {

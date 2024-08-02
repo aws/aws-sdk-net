@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public ParentBotNetwork Unmarshall(JsonUnmarshallerContext context)
         {
             ParentBotNetwork unmarshalledObject = new ParentBotNetwork();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

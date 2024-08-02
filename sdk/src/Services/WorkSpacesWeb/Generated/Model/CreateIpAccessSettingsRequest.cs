@@ -168,7 +168,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to add to the browser settings resource. A tag is a key-value pair.
+        /// The tags to add to the IP access settings resource. A tag is a key-value pair.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

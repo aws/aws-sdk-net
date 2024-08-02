@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public BoxPlotChartConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             BoxPlotChartConfiguration unmarshalledObject = new BoxPlotChartConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -112,8 +112,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// A security group connection tracking specification that enables you to set the timeout
         /// for connection tracking on an Elastic network interface. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
-        /// tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Idle
+        /// connection tracking timeout</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public ConnectionTrackingSpecificationRequest ConnectionTrackingSpecification
@@ -167,7 +167,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeviceIndex. 
         /// <para>
-        /// The device index for the network interface attachment.
+        /// The device index for the network interface attachment. Each network interface requires
+        /// a device index. If you create a launch template that includes secondary network interfaces
+        /// but not a primary network interface, then you must add a primary network interface
+        /// as a launch parameter when you launch an instance from the template.
         /// </para>
         /// </summary>
         public int? DeviceIndex
@@ -223,7 +226,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The type of network interface. To create an Elastic Fabric Adapter (EFA), specify
         /// <c>efa</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-        /// Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>

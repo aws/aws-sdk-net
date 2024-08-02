@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public MetricsExportConfig Unmarshall(JsonUnmarshallerContext context)
         {
             MetricsExportConfig unmarshalledObject = new MetricsExportConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

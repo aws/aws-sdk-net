@@ -57,6 +57,8 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
         public RegistryAlias Unmarshall(JsonUnmarshallerContext context)
         {
             RegistryAlias unmarshalledObject = new RegistryAlias();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

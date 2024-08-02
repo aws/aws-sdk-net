@@ -57,6 +57,8 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         public KeyMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             KeyMetadata unmarshalledObject = new KeyMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -128,6 +130,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExpirationModel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyAgreementAlgorithms", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.KeyAgreementAlgorithms = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("KeyId", targetDepth))

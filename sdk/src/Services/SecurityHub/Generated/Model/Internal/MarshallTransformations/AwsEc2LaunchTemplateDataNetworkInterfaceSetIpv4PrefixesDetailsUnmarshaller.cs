@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails unmarshalledObject = new AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

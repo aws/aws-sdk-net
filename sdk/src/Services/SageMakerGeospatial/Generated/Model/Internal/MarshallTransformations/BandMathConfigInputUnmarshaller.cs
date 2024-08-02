@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public BandMathConfigInput Unmarshall(JsonUnmarshallerContext context)
         {
             BandMathConfigInput unmarshalledObject = new BandMathConfigInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

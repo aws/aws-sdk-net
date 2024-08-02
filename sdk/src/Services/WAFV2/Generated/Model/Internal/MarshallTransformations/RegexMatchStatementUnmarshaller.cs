@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public RegexMatchStatement Unmarshall(JsonUnmarshallerContext context)
         {
             RegexMatchStatement unmarshalledObject = new RegexMatchStatement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

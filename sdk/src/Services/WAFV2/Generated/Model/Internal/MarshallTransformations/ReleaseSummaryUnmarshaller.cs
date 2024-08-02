@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public ReleaseSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ReleaseSummary unmarshalledObject = new ReleaseSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

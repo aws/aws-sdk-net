@@ -57,6 +57,8 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
         public JobAlbumArt Unmarshall(JsonUnmarshallerContext context)
         {
             JobAlbumArt unmarshalledObject = new JobAlbumArt();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

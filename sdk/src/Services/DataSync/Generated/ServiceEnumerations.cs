@@ -2163,6 +2163,10 @@ namespace Amazon.DataSync
     {
 
         /// <summary>
+        /// Constant CANCELLING for TaskExecutionStatus
+        /// </summary>
+        public static readonly TaskExecutionStatus CANCELLING = new TaskExecutionStatus("CANCELLING");
+        /// <summary>
         /// Constant ERROR for TaskExecutionStatus
         /// </summary>
         public static readonly TaskExecutionStatus ERROR = new TaskExecutionStatus("ERROR");

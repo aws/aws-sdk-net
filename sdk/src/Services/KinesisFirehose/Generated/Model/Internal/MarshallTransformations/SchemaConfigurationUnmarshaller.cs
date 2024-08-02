@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public SchemaConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SchemaConfiguration unmarshalledObject = new SchemaConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

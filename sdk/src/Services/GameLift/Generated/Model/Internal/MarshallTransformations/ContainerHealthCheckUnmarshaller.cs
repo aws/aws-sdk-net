@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public ContainerHealthCheck Unmarshall(JsonUnmarshallerContext context)
         {
             ContainerHealthCheck unmarshalledObject = new ContainerHealthCheck();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -1410,6 +1410,52 @@ namespace Amazon.LakeFormation
 
         #endregion
         
+        #region  GetDataLakePrincipal
+
+
+        /// <summary>
+        /// Returns the identity of the invoking principal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakePrincipal service method.</param>
+        /// 
+        /// <returns>The response from the GetDataLakePrincipal service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal">REST API Reference for GetDataLakePrincipal Operation</seealso>
+        GetDataLakePrincipalResponse GetDataLakePrincipal(GetDataLakePrincipalRequest request);
+
+
+
+        /// <summary>
+        /// Returns the identity of the invoking principal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakePrincipal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataLakePrincipal service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal">REST API Reference for GetDataLakePrincipal Operation</seealso>
+        Task<GetDataLakePrincipalResponse> GetDataLakePrincipalAsync(GetDataLakePrincipalRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetDataLakeSettings
 
 

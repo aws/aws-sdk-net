@@ -184,8 +184,9 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property LifecycleState. 
         /// <para>
         /// The lifecycle state for the instance. The <c>Quarantined</c> state is not used. For
-        /// information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
-        /// lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
+        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html">Amazon
+        /// EC2 Auto Scaling instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// 
         /// </para>
         ///  
         /// <para>

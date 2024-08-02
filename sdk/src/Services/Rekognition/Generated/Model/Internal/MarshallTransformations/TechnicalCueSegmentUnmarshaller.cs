@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public TechnicalCueSegment Unmarshall(JsonUnmarshallerContext context)
         {
             TechnicalCueSegment unmarshalledObject = new TechnicalCueSegment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

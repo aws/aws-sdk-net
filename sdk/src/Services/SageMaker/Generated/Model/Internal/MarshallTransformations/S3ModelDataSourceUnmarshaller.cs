@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public S3ModelDataSource Unmarshall(JsonUnmarshallerContext context)
         {
             S3ModelDataSource unmarshalledObject = new S3ModelDataSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CompressionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HubAccessConfig", targetDepth))
+                {
+                    var unmarshaller = InferenceHubAccessConfigUnmarshaller.Instance;
+                    unmarshalledObject.HubAccessConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ModelAccessConfig", targetDepth))

@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public AssociatedAccessPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             AssociatedAccessPolicy unmarshalledObject = new AssociatedAccessPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

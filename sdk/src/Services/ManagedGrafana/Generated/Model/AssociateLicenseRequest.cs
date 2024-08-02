@@ -31,8 +31,10 @@ namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateLicense operation.
-    /// Assigns a Grafana Enterprise license to a workspace. Upgrading to Grafana Enterprise
-    /// incurs additional fees. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html">Upgrade
+    /// Assigns a Grafana Enterprise license to a workspace. To upgrade, you must use <c>ENTERPRISE</c>
+    /// for the <c>licenseType</c>, and pass in a valid Grafana Labs token for the <c>grafanaToken</c>.
+    /// Upgrading to Grafana Enterprise incurs additional fees. For more information, see
+    /// <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html">Upgrade
     /// a workspace to Grafana Enterprise</a>.
     /// </summary>
     public partial class AssociateLicenseRequest : AmazonManagedGrafanaRequest
@@ -45,8 +47,8 @@ namespace Amazon.ManagedGrafana.Model
         /// Gets and sets the property GrafanaToken. 
         /// <para>
         /// A token from Grafana Labs that ties your Amazon Web Services account with a Grafana
-        /// Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
-        /// with Grafana Labs</a>.
+        /// Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
+        /// your account with Grafana Labs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -59,7 +61,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if GrafanaToken property is set
         internal bool IsSetGrafanaToken()
         {
-            return this._grafanaToken != null;
+            return !string.IsNullOrEmpty(this._grafanaToken);
         }
 
         /// <summary>

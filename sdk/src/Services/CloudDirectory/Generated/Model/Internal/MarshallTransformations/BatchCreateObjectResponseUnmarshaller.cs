@@ -57,6 +57,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         public BatchCreateObjectResponse Unmarshall(JsonUnmarshallerContext context)
         {
             BatchCreateObjectResponse unmarshalledObject = new BatchCreateObjectResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -179,11 +179,11 @@ namespace Amazon.OpsWorks.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>st1</c> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD
-        /// volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.
+        /// volumes must have a minimum size of 125 GiB and a maximum size of 16384 GiB.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>sc1</c> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a
+        ///  <c>sc1</c> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a
         /// maximum size of 16384 GiB.
         /// </para>
         ///  </li> </ul>

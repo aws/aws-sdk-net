@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public ZonalConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ZonalConfig unmarshalledObject = new ZonalConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

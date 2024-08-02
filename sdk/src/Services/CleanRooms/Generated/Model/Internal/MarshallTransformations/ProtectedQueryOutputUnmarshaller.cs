@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public ProtectedQueryOutput Unmarshall(JsonUnmarshallerContext context)
         {
             ProtectedQueryOutput unmarshalledObject = new ProtectedQueryOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

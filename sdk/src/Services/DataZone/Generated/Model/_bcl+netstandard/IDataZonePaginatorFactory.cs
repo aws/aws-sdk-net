@@ -27,6 +27,11 @@ namespace Amazon.DataZone.Model
     {
 
         /// <summary>
+        /// Paginator for ListAssetFilters operation
+        ///</summary>
+        IListAssetFiltersPaginator ListAssetFilters(ListAssetFiltersRequest request);
+
+        /// <summary>
         /// Paginator for ListAssetRevisions operation
         ///</summary>
         IListAssetRevisionsPaginator ListAssetRevisions(ListAssetRevisionsRequest request);
@@ -52,6 +57,11 @@ namespace Amazon.DataZone.Model
         IListDomainsPaginator ListDomains(ListDomainsRequest request);
 
         /// <summary>
+        /// Paginator for ListEnvironmentActions operation
+        ///</summary>
+        IListEnvironmentActionsPaginator ListEnvironmentActions(ListEnvironmentActionsRequest request);
+
+        /// <summary>
         /// Paginator for ListEnvironmentBlueprintConfigurations operation
         ///</summary>
         IListEnvironmentBlueprintConfigurationsPaginator ListEnvironmentBlueprintConfigurations(ListEnvironmentBlueprintConfigurationsRequest request);
@@ -70,6 +80,11 @@ namespace Amazon.DataZone.Model
         /// Paginator for ListEnvironments operation
         ///</summary>
         IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListLineageNodeHistory operation
+        ///</summary>
+        IListLineageNodeHistoryPaginator ListLineageNodeHistory(ListLineageNodeHistoryRequest request);
 
         /// <summary>
         /// Paginator for ListMetadataGenerationRuns operation

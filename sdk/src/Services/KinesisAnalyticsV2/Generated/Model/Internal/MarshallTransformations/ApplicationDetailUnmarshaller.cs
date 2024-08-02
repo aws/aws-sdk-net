@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public ApplicationDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationDetail unmarshalledObject = new ApplicationDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -104,6 +106,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApplicationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ApplicationVersionCreateTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ApplicationVersionCreateTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ApplicationVersionId", targetDepth))

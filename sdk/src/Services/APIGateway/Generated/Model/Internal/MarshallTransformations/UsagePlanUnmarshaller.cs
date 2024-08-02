@@ -57,6 +57,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         public UsagePlan Unmarshall(JsonUnmarshallerContext context)
         {
             UsagePlan unmarshalledObject = new UsagePlan();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

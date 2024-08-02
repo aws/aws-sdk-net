@@ -70,6 +70,22 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetReplacementHeaders())
+            {
+                context.Writer.WritePropertyName("ReplacementHeaders");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectReplacementHeadersListValue in requestObject.ReplacementHeaders)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MessageHeaderMarshaller.Instance;
+                    marshaller.Marshall(requestObjectReplacementHeadersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetReplacementTags())
             {
                 context.Writer.WritePropertyName("ReplacementTags");

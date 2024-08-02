@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         public TimestampStructure Unmarshall(JsonUnmarshallerContext context)
         {
             TimestampStructure unmarshalledObject = new TimestampStructure();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

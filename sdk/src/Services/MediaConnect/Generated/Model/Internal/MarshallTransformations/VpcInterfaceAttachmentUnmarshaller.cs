@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public VpcInterfaceAttachment Unmarshall(JsonUnmarshallerContext context)
         {
             VpcInterfaceAttachment unmarshalledObject = new VpcInterfaceAttachment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

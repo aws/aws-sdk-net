@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public MultiConditionalBranch Unmarshall(JsonUnmarshallerContext context)
         {
             MultiConditionalBranch unmarshalledObject = new MultiConditionalBranch();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public SupportedEndpointType Unmarshall(JsonUnmarshallerContext context)
         {
             SupportedEndpointType unmarshalledObject = new SupportedEndpointType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public InputClippingSettings Unmarshall(JsonUnmarshallerContext context)
         {
             InputClippingSettings unmarshalledObject = new InputClippingSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

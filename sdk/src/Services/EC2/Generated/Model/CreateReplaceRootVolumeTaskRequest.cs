@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
-    /// a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// a root volume</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateReplaceRootVolumeTaskRequest : AmazonEC2Request
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
         /// If you do not specify a client token, a randomly generated token is used for the request
-        /// to ensure idempotency. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// to ensure idempotency. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
         /// idempotency</a>.
         /// </para>
         /// </summary>

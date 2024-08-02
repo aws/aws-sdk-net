@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public StreamingNotificationTarget Unmarshall(JsonUnmarshallerContext context)
         {
             StreamingNotificationTarget unmarshalledObject = new StreamingNotificationTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

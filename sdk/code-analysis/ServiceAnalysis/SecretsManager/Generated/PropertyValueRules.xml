@@ -295,6 +295,12 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.PutSecretValueRequest.RotationToken</property>
+    <min>36</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.PutSecretValueRequest.SecretBinary</property>
     <min>1</min>
     <max>65536</max>

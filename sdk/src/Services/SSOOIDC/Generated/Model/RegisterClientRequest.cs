@@ -40,6 +40,10 @@ namespace Amazon.SSOOIDC.Model
     {
         private string _clientName;
         private string _clientType;
+        private string _entitledApplicationArn;
+        private List<string> _grantTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _issuerUrl;
+        private List<string> _redirectUris = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _scopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -79,6 +83,84 @@ namespace Amazon.SSOOIDC.Model
         internal bool IsSetClientType()
         {
             return this._clientType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EntitledApplicationArn. 
+        /// <para>
+        /// This IAM Identity Center application ARN is used to define administrator-managed configuration
+        /// for public client access to resources. At authorization, the scopes, grants, and redirect
+        /// URI available to this client will be restricted by this application resource.
+        /// </para>
+        /// </summary>
+        public string EntitledApplicationArn
+        {
+            get { return this._entitledApplicationArn; }
+            set { this._entitledApplicationArn = value; }
+        }
+
+        // Check to see if EntitledApplicationArn property is set
+        internal bool IsSetEntitledApplicationArn()
+        {
+            return this._entitledApplicationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GrantTypes. 
+        /// <para>
+        /// The list of OAuth 2.0 grant types that are defined by the client. This list is used
+        /// to restrict the token granting flows available to the client.
+        /// </para>
+        /// </summary>
+        public List<string> GrantTypes
+        {
+            get { return this._grantTypes; }
+            set { this._grantTypes = value; }
+        }
+
+        // Check to see if GrantTypes property is set
+        internal bool IsSetGrantTypes()
+        {
+            return this._grantTypes != null && (this._grantTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IssuerUrl. 
+        /// <para>
+        /// The IAM Identity Center Issuer URL associated with an instance of IAM Identity Center.
+        /// This value is needed for user access to resources through the client.
+        /// </para>
+        /// </summary>
+        public string IssuerUrl
+        {
+            get { return this._issuerUrl; }
+            set { this._issuerUrl = value; }
+        }
+
+        // Check to see if IssuerUrl property is set
+        internal bool IsSetIssuerUrl()
+        {
+            return this._issuerUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedirectUris. 
+        /// <para>
+        /// The list of redirect URI that are defined by the client. At completion of authorization,
+        /// this list is used to restrict what locations the user agent can be redirected back
+        /// to.
+        /// </para>
+        /// </summary>
+        public List<string> RedirectUris
+        {
+            get { return this._redirectUris; }
+            set { this._redirectUris = value; }
+        }
+
+        // Check to see if RedirectUris property is set
+        internal bool IsSetRedirectUris()
+        {
+            return this._redirectUris != null && (this._redirectUris.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

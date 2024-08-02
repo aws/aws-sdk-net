@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public TraceContent Unmarshall(JsonUnmarshallerContext context)
         {
             TraceContent unmarshalledObject = new TraceContent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

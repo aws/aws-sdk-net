@@ -57,6 +57,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         public VolumeStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             VolumeStatistics unmarshalledObject = new VolumeStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

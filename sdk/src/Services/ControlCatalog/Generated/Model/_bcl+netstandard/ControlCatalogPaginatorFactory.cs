@@ -45,6 +45,14 @@ namespace Amazon.ControlCatalog.Model
         }
 
         /// <summary>
+        /// Paginator for ListControls operation
+        ///</summary>
+        public IListControlsPaginator ListControls(ListControlsRequest request) 
+        {
+            return new ListControlsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDomains operation
         ///</summary>
         public IListDomainsPaginator ListDomains(ListDomainsRequest request) 

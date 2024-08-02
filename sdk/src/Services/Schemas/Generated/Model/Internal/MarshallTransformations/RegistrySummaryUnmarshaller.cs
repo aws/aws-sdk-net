@@ -57,6 +57,8 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         public RegistrySummary Unmarshall(JsonUnmarshallerContext context)
         {
             RegistrySummary unmarshalledObject = new RegistrySummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

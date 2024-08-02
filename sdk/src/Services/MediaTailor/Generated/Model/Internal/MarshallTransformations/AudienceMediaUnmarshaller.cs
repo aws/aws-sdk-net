@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public AudienceMedia Unmarshall(JsonUnmarshallerContext context)
         {
             AudienceMedia unmarshalledObject = new AudienceMedia();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

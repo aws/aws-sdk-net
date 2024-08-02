@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         public SecurityPolicySummary Unmarshall(JsonUnmarshallerContext context)
         {
             SecurityPolicySummary unmarshalledObject = new SecurityPolicySummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

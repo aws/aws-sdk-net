@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public AccountLevelPermissions Unmarshall(JsonUnmarshallerContext context)
         {
             AccountLevelPermissions unmarshalledObject = new AccountLevelPermissions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

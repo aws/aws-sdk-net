@@ -57,6 +57,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public ExcelOptions Unmarshall(JsonUnmarshallerContext context)
         {
             ExcelOptions unmarshalledObject = new ExcelOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

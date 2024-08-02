@@ -149,7 +149,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// An optional flag that can be included in the <c>DescribeCacheCluster</c> request to
         /// show only nodes (API/CLI: clusters) that are not members of a replication group. In
-        /// practice, this mean Memcached and single node Redis clusters.
+        /// practice, this mean Memcached and single node Redis OSS clusters.
         /// </para>
         /// </summary>
         public bool? ShowCacheClustersNotInReplicationGroups

@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public EcrRescanDurationState Unmarshall(JsonUnmarshallerContext context)
         {
             EcrRescanDurationState unmarshalledObject = new EcrRescanDurationState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

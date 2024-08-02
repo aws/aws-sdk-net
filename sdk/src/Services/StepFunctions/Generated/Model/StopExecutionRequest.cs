@@ -37,6 +37,17 @@ namespace Amazon.StepFunctions.Model
     /// <para>
     /// This API action is not supported by <c>EXPRESS</c> state machines.
     /// </para>
+    ///  
+    /// <para>
+    /// For an execution with encryption enabled, Step Functions will encrypt the error and
+    /// cause fields using the KMS key for the execution role.
+    /// </para>
+    ///  
+    /// <para>
+    /// A caller can stop an execution without using any KMS permissions in the execution
+    /// role if the caller provides a null value for both <c>error</c> and <c>cause</c> fields
+    /// because no data needs to be encrypted.
+    /// </para>
     /// </summary>
     public partial class StopExecutionRequest : AmazonStepFunctionsRequest
     {

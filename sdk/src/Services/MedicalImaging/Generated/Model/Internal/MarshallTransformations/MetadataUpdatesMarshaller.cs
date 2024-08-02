@@ -59,6 +59,12 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRevertToVersionId())
+            {
+                context.Writer.WritePropertyName("revertToVersionId");
+                context.Writer.Write(requestObject.RevertToVersionId);
+            }
+
         }
 
         /// <summary>

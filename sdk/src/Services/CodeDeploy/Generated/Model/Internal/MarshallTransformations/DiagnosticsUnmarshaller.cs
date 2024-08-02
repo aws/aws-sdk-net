@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public Diagnostics Unmarshall(JsonUnmarshallerContext context)
         {
             Diagnostics unmarshalledObject = new Diagnostics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

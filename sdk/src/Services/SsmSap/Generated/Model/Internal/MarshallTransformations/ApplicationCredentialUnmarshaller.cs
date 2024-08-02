@@ -57,6 +57,8 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         public ApplicationCredential Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationCredential unmarshalledObject = new ApplicationCredential();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

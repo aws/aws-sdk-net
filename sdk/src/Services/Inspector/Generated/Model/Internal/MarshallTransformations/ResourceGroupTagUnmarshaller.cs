@@ -57,6 +57,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         public ResourceGroupTag Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceGroupTag unmarshalledObject = new ResourceGroupTag();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

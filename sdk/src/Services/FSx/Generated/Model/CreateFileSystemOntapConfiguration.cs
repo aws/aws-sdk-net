@@ -87,17 +87,25 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>MULTI_AZ_1</c> - (Default) A high availability file system configured for Multi-AZ
-        /// redundancy to tolerate temporary Availability Zone (AZ) unavailability. 
+        ///  <c>MULTI_AZ_1</c> - A high availability file system configured for Multi-AZ redundancy
+        /// to tolerate temporary Availability Zone (AZ) unavailability. This is a first-generation
+        /// FSx for ONTAP file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SINGLE_AZ_1</c> - A file system configured for Single-AZ redundancy.
+        ///  <c>MULTI_AZ_2</c> - A high availability file system configured for Multi-AZ redundancy
+        /// to tolerate temporary AZ unavailability. This is a second-generation FSx for ONTAP
+        /// file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SINGLE_AZ_1</c> - A file system configured for Single-AZ redundancy. This is a
+        /// first-generation FSx for ONTAP file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>SINGLE_AZ_2</c> - A file system configured with multiple high-availability (HA)
-        /// pairs for Single-AZ redundancy.
+        /// pairs for Single-AZ redundancy. This is a second-generation FSx for ONTAP file system.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -186,11 +194,15 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property HAPairs. 
         /// <para>
         /// Specifies how many high-availability (HA) pairs of file servers will power your file
-        /// system. Scale-up file systems are powered by 1 HA pair. The default value is 1. FSx
-        /// for ONTAP scale-out file systems are powered by up to 12 HA pairs. The value of this
-        /// property affects the values of <c>StorageCapacity</c>, <c>Iops</c>, and <c>ThroughputCapacity</c>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability
-        /// (HA) pairs</a> in the FSx for ONTAP user guide.
+        /// system. First-generation file systems are powered by 1 HA pair. Second-generation
+        /// multi-AZ file systems are powered by 1 HA pair. Second generation single-AZ file systems
+        /// are powered by up to 12 HA pairs. The default value is 1. The value of this property
+        /// affects the values of <c>StorageCapacity</c>, <c>Iops</c>, and <c>ThroughputCapacity</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability
+        /// (HA) pairs</a> in the FSx for ONTAP user guide. Block storage protocol support (iSCSI
+        /// and NVMe over TCP) is disabled on file systems with more than 6 HA pairs. For more
+        /// information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html#using-block-storage">Using
+        /// block storage protocols</a>. 
         /// </para>
         ///  
         /// <para>
@@ -203,7 +215,7 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         /// The value of <c>HAPairs</c> is greater than 1 and the value of <c>DeploymentType</c>
-        /// is <c>SINGLE_AZ_1</c> or <c>MULTI_AZ_1</c>.
+        /// is <c>SINGLE_AZ_1</c>, <c>MULTI_AZ_1</c>, or <c>MULTI_AZ_2</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -223,8 +235,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property PreferredSubnetId. 
         /// <para>
-        /// Required when <c>DeploymentType</c> is set to <c>MULTI_AZ_1</c>. This specifies the
-        /// subnet in which you want the preferred file server to be located.
+        /// Required when <c>DeploymentType</c> is set to <c>MULTI_AZ_1</c> or <c>MULTI_AZ_2</c>.
+        /// This specifies the subnet in which you want the preferred file server to be located.
         /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=24)]
@@ -319,8 +331,8 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// This field and <c>ThroughputCapacity</c> are the same for scale-up file systems powered
-        /// by one HA pair.
+        /// This field and <c>ThroughputCapacity</c> are the same for file systems powered by
+        /// one HA pair.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -329,7 +341,11 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>SINGLE_AZ_2</c> file systems, valid values are 3072 or 6144 MBps.
+        /// For <c>SINGLE_AZ_2</c>, valid values are 1536, 3072, or 6144 MBps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <c>MULTI_AZ_2</c>, valid values are 384, 768, 1536, 3072, or 6144 MBps.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -343,7 +359,7 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         /// The value of deployment type is <c>SINGLE_AZ_2</c> and <c>ThroughputCapacity</c> /
-        /// <c>ThroughputCapacityPerHAPair</c> is a valid HA pair (a value between 2 and 12).
+        /// <c>ThroughputCapacityPerHAPair</c> is not a valid HA pair (a value between 1 and 12).
         /// </para>
         ///  </li> <li> 
         /// <para>

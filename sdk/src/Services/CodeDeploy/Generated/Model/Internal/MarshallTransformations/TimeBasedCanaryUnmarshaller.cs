@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public TimeBasedCanary Unmarshall(JsonUnmarshallerContext context)
         {
             TimeBasedCanary unmarshalledObject = new TimeBasedCanary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

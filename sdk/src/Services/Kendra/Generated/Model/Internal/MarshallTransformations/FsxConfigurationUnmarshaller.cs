@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public FsxConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             FsxConfiguration unmarshalledObject = new FsxConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

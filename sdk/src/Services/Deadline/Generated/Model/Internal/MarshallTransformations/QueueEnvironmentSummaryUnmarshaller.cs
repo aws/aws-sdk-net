@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public QueueEnvironmentSummary Unmarshall(JsonUnmarshallerContext context)
         {
             QueueEnvironmentSummary unmarshalledObject = new QueueEnvironmentSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

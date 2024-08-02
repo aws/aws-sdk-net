@@ -57,6 +57,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public ApiKeyRestrictions Unmarshall(JsonUnmarshallerContext context)
         {
             ApiKeyRestrictions unmarshalledObject = new ApiKeyRestrictions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

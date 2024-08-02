@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public BucketMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             BucketMetadata unmarshalledObject = new BucketMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AllowsUnencryptedObjectUploads = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("automatedDiscoveryMonitoringStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AutomatedDiscoveryMonitoringStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("bucketArn", targetDepth))

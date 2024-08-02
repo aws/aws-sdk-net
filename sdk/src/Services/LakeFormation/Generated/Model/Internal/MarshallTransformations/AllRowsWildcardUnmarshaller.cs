@@ -57,6 +57,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public AllRowsWildcard Unmarshall(JsonUnmarshallerContext context)
         {
             AllRowsWildcard unmarshalledObject = new AllRowsWildcard();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

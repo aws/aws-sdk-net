@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public SqsQueueSinkConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SqsQueueSinkConfiguration unmarshalledObject = new SqsQueueSinkConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

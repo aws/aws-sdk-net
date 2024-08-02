@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public ImpersonatedUser Unmarshall(JsonUnmarshallerContext context)
         {
             ImpersonatedUser unmarshalledObject = new ImpersonatedUser();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

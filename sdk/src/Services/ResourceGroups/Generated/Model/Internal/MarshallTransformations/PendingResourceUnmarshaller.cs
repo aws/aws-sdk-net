@@ -57,6 +57,8 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
         public PendingResource Unmarshall(JsonUnmarshallerContext context)
         {
             PendingResource unmarshalledObject = new PendingResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

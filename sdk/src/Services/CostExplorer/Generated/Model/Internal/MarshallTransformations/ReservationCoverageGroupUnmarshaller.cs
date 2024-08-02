@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public ReservationCoverageGroup Unmarshall(JsonUnmarshallerContext context)
         {
             ReservationCoverageGroup unmarshalledObject = new ReservationCoverageGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
