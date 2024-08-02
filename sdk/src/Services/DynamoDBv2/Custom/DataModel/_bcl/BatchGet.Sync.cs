@@ -23,10 +23,16 @@ namespace Amazon.DynamoDBv2.DataModel
         void Execute();
     }
 
-    public partial class BatchGet<T> : IBatchGet<T>
+    public abstract partial class BatchGet
     {
         /// <inheritdoc/>
-        public void Execute()
+        public abstract void Execute();
+    }
+
+    public partial class BatchGet<T> : BatchGet, IBatchGet<T>
+    {
+        /// <inheritdoc/>
+        public override void Execute()
         {
             ExecuteHelper();
         }

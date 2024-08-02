@@ -101,13 +101,22 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a non-generic object for retrieving a batch of items
     /// from a single DynamoDB table
     /// </summary>
-    public abstract class BatchGet
+    public abstract partial class BatchGet : IBatchGet
     {
         internal DocumentBatchGet DocumentBatch { get; set; }
 
         internal abstract void CreateDocumentBatch();
 
         internal abstract void PopulateResults(List<Document> items);
+
+        /// <inheritdoc/>
+        public abstract int TotalKeys { get; }
+
+        /// <inheritdoc/>
+        public List<object> UntypedResults { get; } = new();
+
+        /// <inheritdoc/>
+        public bool ConsistentRead { get; set; }
     }
 
     /// <summary>
@@ -119,19 +128,13 @@ namespace Amazon.DynamoDBv2.DataModel
         private readonly DynamoDBContext _context;
         private readonly DynamoDBFlatConfig _config;
         private readonly ItemStorageConfig _itemStorageConfig;
-        private readonly List<Key> _keys;
+        private readonly List<Key> _keys = new();
 
         /// <inheritdoc/>
-        public int TotalKeys => _keys.Count;
+        public override int TotalKeys => _keys.Count;
 
         /// <inheritdoc/>
-        public List<object> UntypedResults { get; private set; } = new List<object>();
-
-        /// <inheritdoc/>
-        public List<T> Results { get; private set; } = new List<T>();
-
-        /// <inheritdoc/>
-        public bool ConsistentRead { get; set; }
+        public List<T> Results { get; } = new();
 
         /// <inheritdoc/>
         public void AddKey(object hashKey)
@@ -164,7 +167,6 @@ namespace Amazon.DynamoDBv2.DataModel
             _context = context;
             _config = config;
             _itemStorageConfig = context.StorageConfigCache.GetConfig<T>(config);
-            _keys = new List<Key>();
         }
 
         private void ExecuteHelper()
@@ -199,8 +201,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal override void PopulateResults(List<Document> items)
         {
-            UntypedResults = new List<object>();
-            Results = new List<T>();
+            UntypedResults.Clear();
+            Results.Clear();
             foreach (var doc in items)
             {
                 var item = _context.FromDocumentHelper<T>(doc, _config);

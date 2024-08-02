@@ -30,10 +30,16 @@ namespace Amazon.DynamoDBv2.DataModel
         Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
     }
 
-    public partial class BatchGet<T> : IBatchGet<T>
+    public abstract partial class BatchGet
     {
         /// <inheritdoc/>
-        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public abstract Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class BatchGet<T> : BatchGet, IBatchGet<T>
+    {
+        /// <inheritdoc/>
+        public override Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }

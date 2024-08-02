@@ -165,6 +165,7 @@ namespace Amazon.DynamoDBv2.DataModel
         [Obsolete("Use the CreateBatchGet overload that takes BatchGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
         BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig = null);
         /// <returns>An interface with the ability to perform BatchGet operations</returns>
+        /// <returns>A BatchGet object using this context's configuration, which can be used to prepare and execute a BatchGet request</returns>
         IBatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
@@ -181,7 +182,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// individual BatchGet objects.
         /// </summary>
         /// <param name="batches">Individual BatchGet objects</param>
-        /// <returns>An interface with the ability to perform MultiTableBatchGet operations</returns>
+        /// <returns>A MultiTableBatchGet object using this context's configuration, which can be used to prepare and execute a MultiTableBatchGet request</returns>
         IMultiTableBatchGet CreateMultiTableBatchGet(params IBatchGet[] batches);
 
         #endregion
