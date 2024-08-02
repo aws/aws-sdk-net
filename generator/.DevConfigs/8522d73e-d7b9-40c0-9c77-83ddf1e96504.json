@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "CodeStar",
+            "type": "removal",
+            "changeLogMessages": [
+                "AWS CodeStar has been removed from the SDK because it has been discontinued."
+            ]
+        }
+    ]
+}
