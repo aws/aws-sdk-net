@@ -80,9 +80,9 @@ namespace Amazon.QuickSight.Model
         /// The window size for the <c>TopicIRComparisonMethod</c>.
         /// </para>
         /// </summary>
-        public int WindowSize
+        public int? WindowSize
         {
-            get { return this._windowSize.GetValueOrDefault(); }
+            get { return this._windowSize; }
             set { this._windowSize = value; }
         }
 

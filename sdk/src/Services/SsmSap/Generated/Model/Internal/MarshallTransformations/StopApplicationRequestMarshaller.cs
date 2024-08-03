@@ -76,7 +76,7 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeEc2InstanceShutdown())
                 {
                     context.Writer.WritePropertyName("IncludeEc2InstanceShutdown");
-                    context.Writer.Write(publicRequest.IncludeEc2InstanceShutdown);
+                    context.Writer.Write(publicRequest.IncludeEc2InstanceShutdown.Value);
                 }
 
                 if(publicRequest.IsSetStopConnectedEntity())

@@ -45,9 +45,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxAttempts
+        public int? MaxAttempts
         {
-            get { return this._maxAttempts.GetValueOrDefault(); }
+            get { return this._maxAttempts; }
             set { this._maxAttempts = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxFailedAttemptsPerHour
+        public int? MaxFailedAttemptsPerHour
         {
-            get { return this._maxFailedAttemptsPerHour.GetValueOrDefault(); }
+            get { return this._maxFailedAttemptsPerHour; }
             set { this._maxFailedAttemptsPerHour = value; }
         }
 

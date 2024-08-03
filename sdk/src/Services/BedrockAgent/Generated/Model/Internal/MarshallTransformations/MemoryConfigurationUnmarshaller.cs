@@ -74,7 +74,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("storageDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageDays = unmarshaller.Unmarshall(context);
                     continue;
                 }

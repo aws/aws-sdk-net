@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4096)]
-        public int Dimensions
+        public int? Dimensions
         {
-            get { return this._dimensions.GetValueOrDefault(); }
+            get { return this._dimensions; }
             set { this._dimensions = value; }
         }
 

@@ -51,7 +51,7 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttachToVpc())
             {
                 context.Writer.WritePropertyName("AttachToVpc");
-                context.Writer.Write(requestObject.AttachToVpc);
+                context.Writer.Write(requestObject.AttachToVpc.Value);
             }
 
             if(requestObject.IsSetCidrBlock())

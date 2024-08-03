@@ -44,9 +44,9 @@ namespace Amazon.NetworkManager.Model
         /// The proposed new attachment policy rule number for the network function group.
         /// </para>
         /// </summary>
-        public int AttachmentPolicyRuleNumber
+        public int? AttachmentPolicyRuleNumber
         {
-            get { return this._attachmentPolicyRuleNumber.GetValueOrDefault(); }
+            get { return this._attachmentPolicyRuleNumber; }
             set { this._attachmentPolicyRuleNumber = value; }
         }
 

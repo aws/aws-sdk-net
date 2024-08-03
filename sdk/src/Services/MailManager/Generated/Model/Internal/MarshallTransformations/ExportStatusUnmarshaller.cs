@@ -68,7 +68,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CompletionTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CompletionTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,7 +86,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SubmissionTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SubmissionTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -91,9 +91,9 @@ namespace Amazon.DataZone.Model
         /// after the event timestamp.
         /// </para>
         /// </summary>
-        public DateTime EventTimestampGTE
+        public DateTime? EventTimestampGTE
         {
-            get { return this._eventTimestampGTE.GetValueOrDefault(); }
+            get { return this._eventTimestampGTE; }
             set { this._eventTimestampGTE = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.DataZone.Model
         /// prior of the event timestamp.
         /// </para>
         /// </summary>
-        public DateTime EventTimestampLTE
+        public DateTime? EventTimestampLTE
         {
-            get { return this._eventTimestampLTE.GetValueOrDefault(); }
+            get { return this._eventTimestampLTE; }
             set { this._eventTimestampLTE = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.DataZone.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

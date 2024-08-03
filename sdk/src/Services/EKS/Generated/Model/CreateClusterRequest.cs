@@ -136,9 +136,9 @@ namespace Amazon.EKS.Model
         /// the default networking add-ons.
         /// </para>
         /// </summary>
-        public bool BootstrapSelfManagedAddons
+        public bool? BootstrapSelfManagedAddons
         {
-            get { return this._bootstrapSelfManagedAddons.GetValueOrDefault(); }
+            get { return this._bootstrapSelfManagedAddons; }
             set { this._bootstrapSelfManagedAddons = value; }
         }
 

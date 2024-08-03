@@ -64,9 +64,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaximumLength
+        public int? MaximumLength
         {
-            get { return this._maximumLength.GetValueOrDefault(); }
+            get { return this._maximumLength; }
             set { this._maximumLength = value; }
         }
 

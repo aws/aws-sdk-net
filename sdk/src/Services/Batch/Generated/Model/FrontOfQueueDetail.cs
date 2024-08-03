@@ -65,9 +65,9 @@ namespace Amazon.Batch.Model
         /// jobs were last updated. 
         /// </para>
         /// </summary>
-        public long LastUpdatedAt
+        public long? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

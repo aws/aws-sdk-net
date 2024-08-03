@@ -57,7 +57,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManageResourcePolicies())
             {
                 context.Writer.WritePropertyName("manageResourcePolicies");
-                context.Writer.Write(requestObject.ManageResourcePolicies);
+                context.Writer.Write(requestObject.ManageResourcePolicies.Value);
             }
 
         }

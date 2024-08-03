@@ -127,9 +127,9 @@ namespace Amazon.MailManager.Model
         /// A flag indicating if the email has attachments.
         /// </para>
         /// </summary>
-        public bool HasAttachments
+        public bool? HasAttachments
         {
-            get { return this._hasAttachments.GetValueOrDefault(); }
+            get { return this._hasAttachments; }
             set { this._hasAttachments = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.MailManager.Model
         /// The timestamp of when the email was received.
         /// </para>
         /// </summary>
-        public DateTime ReceivedTimestamp
+        public DateTime? ReceivedTimestamp
         {
-            get { return this._receivedTimestamp.GetValueOrDefault(); }
+            get { return this._receivedTimestamp; }
             set { this._receivedTimestamp = value; }
         }
 

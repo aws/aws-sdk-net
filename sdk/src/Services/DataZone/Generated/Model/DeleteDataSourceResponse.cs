@@ -344,9 +344,9 @@ namespace Amazon.DataZone.Model
         /// failure for a data source.
         /// </para>
         /// </summary>
-        public bool RetainPermissionsOnRevokeFailure
+        public bool? RetainPermissionsOnRevokeFailure
         {
-            get { return this._retainPermissionsOnRevokeFailure.GetValueOrDefault(); }
+            get { return this._retainPermissionsOnRevokeFailure; }
             set { this._retainPermissionsOnRevokeFailure = value; }
         }
 

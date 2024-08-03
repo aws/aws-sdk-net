@@ -113,9 +113,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=300)]
-        public int UrlExpiryInSeconds
+        public int? UrlExpiryInSeconds
         {
-            get { return this._urlExpiryInSeconds.GetValueOrDefault(); }
+            get { return this._urlExpiryInSeconds; }
             set { this._urlExpiryInSeconds = value; }
         }
 

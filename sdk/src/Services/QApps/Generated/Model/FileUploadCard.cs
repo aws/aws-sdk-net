@@ -48,9 +48,9 @@ namespace Amazon.QApps.Model
         /// A flag indicating if the user can override the default file for the upload card.
         /// </para>
         /// </summary>
-        public bool AllowOverride
+        public bool? AllowOverride
         {
-            get { return this._allowOverride.GetValueOrDefault(); }
+            get { return this._allowOverride; }
             set { this._allowOverride = value; }
         }
 

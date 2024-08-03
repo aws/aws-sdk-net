@@ -62,9 +62,9 @@ namespace Amazon.MailManager.Model
         /// A flag indicating if the email was malformed.
         /// </para>
         /// </summary>
-        public bool MessageMalformed
+        public bool? MessageMalformed
         {
-            get { return this._messageMalformed.GetValueOrDefault(); }
+            get { return this._messageMalformed; }
             set { this._messageMalformed = value; }
         }
 

@@ -63,9 +63,9 @@ namespace Amazon.MediaLive.Model
         /// for implementing packet loss and recovery. Packet recovery is a key feature of SRT.
         /// Obtain this value from the operator at the upstream system.
         /// </summary>
-        public int MinimumLatency
+        public int? MinimumLatency
         {
-            get { return this._minimumLatency.GetValueOrDefault(); }
+            get { return this._minimumLatency; }
             set { this._minimumLatency = value; }
         }
 

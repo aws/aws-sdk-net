@@ -68,7 +68,7 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AttachToVpc", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AttachToVpc = unmarshaller.Unmarshall(context);
                     continue;
                 }

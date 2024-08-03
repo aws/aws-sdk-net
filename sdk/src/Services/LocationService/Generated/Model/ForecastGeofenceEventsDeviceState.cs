@@ -63,9 +63,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double Speed
+        public double? Speed
         {
-            get { return this._speed.GetValueOrDefault(); }
+            get { return this._speed; }
             set { this._speed = value; }
         }
 

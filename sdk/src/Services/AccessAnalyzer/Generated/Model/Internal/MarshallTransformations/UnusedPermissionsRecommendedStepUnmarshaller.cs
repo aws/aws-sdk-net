@@ -74,7 +74,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("policyUpdatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PolicyUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

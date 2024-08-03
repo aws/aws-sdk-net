@@ -63,9 +63,9 @@ namespace Amazon.AppTest.Model
         /// The test configuration version.
         /// </para>
         /// </summary>
-        public int TestConfigurationVersion
+        public int? TestConfigurationVersion
         {
-            get { return this._testConfigurationVersion.GetValueOrDefault(); }
+            get { return this._testConfigurationVersion; }
             set { this._testConfigurationVersion = value; }
         }
 

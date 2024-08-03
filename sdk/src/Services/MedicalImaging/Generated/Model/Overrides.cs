@@ -44,9 +44,9 @@ namespace Amazon.MedicalImaging.Model
         /// operations, even if Patient, Study, or Series level metadata are mismatched.
         /// </para>
         /// </summary>
-        public bool Forced
+        public bool? Forced
         {
-            get { return this._forced.GetValueOrDefault(); }
+            get { return this._forced; }
             set { this._forced = value; }
         }
 

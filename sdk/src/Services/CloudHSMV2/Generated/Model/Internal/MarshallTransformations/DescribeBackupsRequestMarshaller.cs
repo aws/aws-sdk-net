@@ -103,7 +103,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetShared())
                 {
                     context.Writer.WritePropertyName("Shared");
-                    context.Writer.Write(publicRequest.Shared);
+                    context.Writer.Write(publicRequest.Shared.Value);
                 }
 
                 if(publicRequest.IsSetSortAscending())

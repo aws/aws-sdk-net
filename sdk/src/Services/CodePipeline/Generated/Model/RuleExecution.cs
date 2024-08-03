@@ -105,9 +105,9 @@ namespace Amazon.CodePipeline.Model
         /// The last status change of the rule.
         /// </para>
         /// </summary>
-        public DateTime LastStatusChange
+        public DateTime? LastStatusChange
         {
-            get { return this._lastStatusChange.GetValueOrDefault(); }
+            get { return this._lastStatusChange; }
             set { this._lastStatusChange = value; }
         }
 

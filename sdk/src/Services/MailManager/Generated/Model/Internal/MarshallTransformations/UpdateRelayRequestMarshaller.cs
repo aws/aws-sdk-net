@@ -101,7 +101,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetServerPort())
                 {
                     context.Writer.WritePropertyName("ServerPort");
-                    context.Writer.Write(publicRequest.ServerPort);
+                    context.Writer.Write(publicRequest.ServerPort.Value);
                 }
 
                 writer.WriteObjectEnd();

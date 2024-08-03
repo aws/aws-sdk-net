@@ -49,9 +49,9 @@ namespace Amazon.QApps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.QApps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int RatingCount
+        public int? RatingCount
         {
-            get { return this._ratingCount.GetValueOrDefault(); }
+            get { return this._ratingCount; }
             set { this._ratingCount = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.QApps.Model
         /// The date and time the library item was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

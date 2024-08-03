@@ -67,9 +67,9 @@ namespace Amazon.AppTest.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ListenerPort
+        public int? ListenerPort
         {
-            get { return this._listenerPort.GetValueOrDefault(); }
+            get { return this._listenerPort; }
             set { this._listenerPort = value; }
         }
 

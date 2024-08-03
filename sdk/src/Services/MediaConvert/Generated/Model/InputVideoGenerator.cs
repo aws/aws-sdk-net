@@ -49,9 +49,9 @@ namespace Amazon.MediaConvert.Model
         /// audio within a single audio track. Enter an integer from 1 to 32.
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
-        public int Channels
+        public int? Channels
         {
-            get { return this._channels.GetValueOrDefault(); }
+            get { return this._channels; }
             set { this._channels = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.MediaConvert.Model
         /// of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
         /// </summary>
         [AWSProperty(Min=1, Max=1001)]
-        public int FramerateDenominator
+        public int? FramerateDenominator
         {
-            get { return this._framerateDenominator.GetValueOrDefault(); }
+            get { return this._framerateDenominator; }
             set { this._framerateDenominator = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.MediaConvert.Model
         /// rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
         /// </summary>
         [AWSProperty(Min=1, Max=60000)]
-        public int FramerateNumerator
+        public int? FramerateNumerator
         {
-            get { return this._framerateNumerator.GetValueOrDefault(); }
+            get { return this._framerateNumerator; }
             set { this._framerateNumerator = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.MediaConvert.Model
         /// silent audio in your video generator input.Enter an integer from 32000 to 48000.
         /// </summary>
         [AWSProperty(Min=32000, Max=48000)]
-        public int SampleRate
+        public int? SampleRate
         {
-            get { return this._sampleRate.GetValueOrDefault(); }
+            get { return this._sampleRate; }
             set { this._sampleRate = value; }
         }
 

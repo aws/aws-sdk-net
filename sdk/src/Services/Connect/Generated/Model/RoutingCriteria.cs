@@ -47,9 +47,9 @@ namespace Amazon.Connect.Model
         /// activated for contacts in agent queue.
         /// </para>
         /// </summary>
-        public DateTime ActivationTimestamp
+        public DateTime? ActivationTimestamp
         {
-            get { return this._activationTimestamp.GetValueOrDefault(); }
+            get { return this._activationTimestamp; }
             set { this._activationTimestamp = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Connect.Model
         /// Information about the index of the routing criteria.
         /// </para>
         /// </summary>
-        public int Index
+        public int? Index
         {
-            get { return this._index.GetValueOrDefault(); }
+            get { return this._index; }
             set { this._index = value; }
         }
 

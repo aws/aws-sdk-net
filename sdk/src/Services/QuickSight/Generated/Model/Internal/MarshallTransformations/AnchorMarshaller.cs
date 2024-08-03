@@ -57,7 +57,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("Offset");
-                context.Writer.Write(requestObject.Offset);
+                context.Writer.Write(requestObject.Offset.Value);
             }
 
             if(requestObject.IsSetTimeGranularity())

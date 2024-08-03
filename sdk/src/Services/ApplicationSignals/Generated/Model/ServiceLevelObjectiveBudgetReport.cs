@@ -69,9 +69,9 @@ namespace Amazon.ApplicationSignals.Model
         /// service has attained the SLO's attainment goal, as of the time of the request.
         /// </para>
         /// </summary>
-        public double Attainment
+        public double? Attainment
         {
-            get { return this._attainment.GetValueOrDefault(); }
+            get { return this._attainment; }
             set { this._attainment = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.ApplicationSignals.Model
         /// negative, then the SLO is already in <c>BREACHING</c> status.
         /// </para>
         /// </summary>
-        public int BudgetSecondsRemaining
+        public int? BudgetSecondsRemaining
         {
-            get { return this._budgetSecondsRemaining.GetValueOrDefault(); }
+            get { return this._budgetSecondsRemaining; }
             set { this._budgetSecondsRemaining = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.ApplicationSignals.Model
         /// The total number of seconds in the error budget for the interval.
         /// </para>
         /// </summary>
-        public int TotalBudgetSeconds
+        public int? TotalBudgetSeconds
         {
-            get { return this._totalBudgetSeconds.GetValueOrDefault(); }
+            get { return this._totalBudgetSeconds; }
             set { this._totalBudgetSeconds = value; }
         }
 

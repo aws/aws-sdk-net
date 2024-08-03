@@ -80,19 +80,19 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("attempt", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Attempt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("attemptCreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AttemptCreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("attemptUpdatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AttemptUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

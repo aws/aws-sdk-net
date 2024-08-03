@@ -146,7 +146,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxWebservers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxWebservers = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -158,7 +158,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MinWebservers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinWebservers = unmarshaller.Unmarshall(context);
                     continue;
                 }

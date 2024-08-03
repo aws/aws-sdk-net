@@ -51,7 +51,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRollbackEnabledUpdate())
             {
                 context.Writer.WritePropertyName("RollbackEnabledUpdate");
-                context.Writer.Write(requestObject.RollbackEnabledUpdate);
+                context.Writer.Write(requestObject.RollbackEnabledUpdate.Value);
             }
 
         }

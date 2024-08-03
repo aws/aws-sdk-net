@@ -68,7 +68,7 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("acceptRoleSessionName", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AcceptRoleSessionName = unmarshaller.Unmarshall(context);
                     continue;
                 }

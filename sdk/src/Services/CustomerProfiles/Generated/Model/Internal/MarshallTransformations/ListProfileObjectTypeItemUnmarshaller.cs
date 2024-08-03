@@ -86,13 +86,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxAvailableProfileObjectCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxAvailableProfileObjectCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxProfileObjectCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxProfileObjectCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -103,9 +103,9 @@ namespace Amazon.LocationService.Model
         /// 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c> 
         /// </para>
         /// </summary>
-        public DateTime ForecastedBreachTime
+        public DateTime? ForecastedBreachTime
         {
-            get { return this._forecastedBreachTime.GetValueOrDefault(); }
+            get { return this._forecastedBreachTime; }
             set { this._forecastedBreachTime = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsDeviceInGeofence
+        public bool? IsDeviceInGeofence
         {
-            get { return this._isDeviceInGeofence.GetValueOrDefault(); }
+            get { return this._isDeviceInGeofence; }
             set { this._isDeviceInGeofence = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public double NearestDistance
+        public double? NearestDistance
         {
-            get { return this._nearestDistance.GetValueOrDefault(); }
+            get { return this._nearestDistance; }
             set { this._nearestDistance = value; }
         }
 

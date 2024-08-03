@@ -87,9 +87,9 @@ namespace Amazon.Connect.Model
         /// The maxValue to be used while evaluating the number condition.
         /// </para>
         /// </summary>
-        public int MaxValue
+        public int? MaxValue
         {
-            get { return this._maxValue.GetValueOrDefault(); }
+            get { return this._maxValue; }
             set { this._maxValue = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Connect.Model
         /// The minValue to be used while evaluating the number condition.
         /// </para>
         /// </summary>
-        public int MinValue
+        public int? MinValue
         {
-            get { return this._minValue.GetValueOrDefault(); }
+            get { return this._minValue; }
             set { this._minValue = value; }
         }
 

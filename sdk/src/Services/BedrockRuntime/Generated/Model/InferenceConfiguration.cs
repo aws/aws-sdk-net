@@ -60,9 +60,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxTokens
+        public int? MaxTokens
         {
-            get { return this._maxTokens.GetValueOrDefault(); }
+            get { return this._maxTokens; }
             set { this._maxTokens = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public float Temperature
+        public float? Temperature
         {
-            get { return this._temperature.GetValueOrDefault(); }
+            get { return this._temperature; }
             set { this._temperature = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public float TopP
+        public float? TopP
         {
-            get { return this._topp.GetValueOrDefault(); }
+            get { return this._topp; }
             set { this._topp = value; }
         }
 

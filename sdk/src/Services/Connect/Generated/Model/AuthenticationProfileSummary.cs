@@ -92,9 +92,9 @@ namespace Amazon.Connect.Model
         /// in an Amazon Connect instance, unless overridden by another authentication profile.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.Connect.Model
         /// The timestamp when the authentication profile summary was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

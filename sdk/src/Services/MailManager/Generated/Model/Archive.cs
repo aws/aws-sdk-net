@@ -111,9 +111,9 @@ namespace Amazon.MailManager.Model
         /// The timestamp of when the archive was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTimestamp
+        public DateTime? LastUpdatedTimestamp
         {
-            get { return this._lastUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdatedTimestamp; }
             set { this._lastUpdatedTimestamp = value; }
         }
 

@@ -67,9 +67,9 @@ namespace Amazon.ApplicationSignals.Model
         /// the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 

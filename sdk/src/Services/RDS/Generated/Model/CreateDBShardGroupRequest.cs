@@ -146,9 +146,9 @@ namespace Amazon.RDS.Model
         /// The minimum capacity of the DB shard group in Aurora capacity units (ACUs).
         /// </para>
         /// </summary>
-        public double MinACU
+        public double? MinACU
         {
-            get { return this._minACU.GetValueOrDefault(); }
+            get { return this._minACU; }
             set { this._minACU = value; }
         }
 

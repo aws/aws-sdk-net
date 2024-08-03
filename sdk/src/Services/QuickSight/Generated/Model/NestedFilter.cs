@@ -86,9 +86,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IncludeInnerSet
+        public bool? IncludeInnerSet
         {
-            get { return this._includeInnerSet.GetValueOrDefault(); }
+            get { return this._includeInnerSet; }
             set { this._includeInnerSet = value; }
         }
 

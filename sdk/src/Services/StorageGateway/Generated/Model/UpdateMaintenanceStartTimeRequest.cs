@@ -125,16 +125,8 @@ namespace Amazon.StorageGateway.Model
         /// is the hour (00 to 23). The hour of the day is in the time zone of the gateway.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=0, Max=23)]
-        public int? HourOfDay
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=0, Max=23)]
-        public int HourOfDay
-=======
         [AWSProperty(Min=0, Max=23)]
-        public int HourOfDay
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
+        public int? HourOfDay
         {
             get { return this._hourOfDay; }
             set { this._hourOfDay = value; }
@@ -154,16 +146,8 @@ namespace Amazon.StorageGateway.Model
         /// the gateway.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=0, Max=59)]
-        public int? MinuteOfHour
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=0, Max=59)]
-        public int MinuteOfHour
-=======
         [AWSProperty(Min=0, Max=59)]
-        public int MinuteOfHour
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
+        public int? MinuteOfHour
         {
             get { return this._minuteOfHour; }
             set { this._minuteOfHour = value; }

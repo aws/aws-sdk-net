@@ -68,7 +68,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("earliestTimeAtPosition", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EarliestTimeAtPosition = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -183,9 +183,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long FileSizeInBytes
+        public long? FileSizeInBytes
         {
-            get { return this._fileSizeInBytes.GetValueOrDefault(); }
+            get { return this._fileSizeInBytes; }
             set { this._fileSizeInBytes = value; }
         }
 

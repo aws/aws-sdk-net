@@ -103,9 +103,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
-        public float ProficiencyLevel
+        public float? ProficiencyLevel
         {
-            get { return this._proficiencyLevel.GetValueOrDefault(); }
+            get { return this._proficiencyLevel; }
             set { this._proficiencyLevel = value; }
         }
 

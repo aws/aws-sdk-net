@@ -51,7 +51,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredUserSessions())
             {
                 context.Writer.WritePropertyName("DesiredUserSessions");
-                context.Writer.Write(requestObject.DesiredUserSessions);
+                context.Writer.Write(requestObject.DesiredUserSessions.Value);
             }
 
         }

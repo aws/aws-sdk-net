@@ -62,7 +62,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStorageDays())
             {
                 context.Writer.WritePropertyName("storageDays");
-                context.Writer.Write(requestObject.StorageDays);
+                context.Writer.Write(requestObject.StorageDays.Value);
             }
 
         }

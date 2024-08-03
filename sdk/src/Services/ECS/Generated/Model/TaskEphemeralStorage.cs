@@ -64,9 +64,9 @@ namespace Amazon.ECS.Model
         /// GiB.
         /// </para>
         /// </summary>
-        public int SizeInGiB
+        public int? SizeInGiB
         {
-            get { return this._sizeInGiB.GetValueOrDefault(); }
+            get { return this._sizeInGiB; }
             set { this._sizeInGiB = value; }
         }
 

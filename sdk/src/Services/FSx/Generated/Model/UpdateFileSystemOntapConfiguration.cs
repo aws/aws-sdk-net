@@ -156,9 +156,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=12)]
-        public int HAPairs
+        public int? HAPairs
         {
-            get { return this._haPairs.GetValueOrDefault(); }
+            get { return this._haPairs; }
             set { this._haPairs = value; }
         }
 

@@ -74,7 +74,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaximumLength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumLength = unmarshaller.Unmarshall(context);
                     continue;
                 }

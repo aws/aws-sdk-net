@@ -86,9 +86,9 @@ namespace Amazon.QApps.Model
         /// A flag indicating whether the user can edit the Q App.
         /// </para>
         /// </summary>
-        public bool CanEdit
+        public bool? CanEdit
         {
-            get { return this._canEdit.GetValueOrDefault(); }
+            get { return this._canEdit; }
             set { this._canEdit = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.QApps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 

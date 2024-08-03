@@ -97,16 +97,8 @@ namespace Amazon.NeptuneGraph.Model
         /// Min = 128
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=128, Max=24576)]
-        public int? ProvisionedMemory
-||||||| Commit version number update changes
-        [AWSProperty(Min=128, Max=24576)]
-        public int ProvisionedMemory
-=======
         [AWSProperty(Min=32, Max=24576)]
-        public int ProvisionedMemory
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
+        public int? ProvisionedMemory
         {
             get { return this._provisionedMemory; }
             set { this._provisionedMemory = value; }

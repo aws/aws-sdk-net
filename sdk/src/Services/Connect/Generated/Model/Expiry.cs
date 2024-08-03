@@ -43,9 +43,9 @@ namespace Amazon.Connect.Model
         /// The number of seconds to wait before expiring the routing step.
         /// </para>
         /// </summary>
-        public int DurationInSeconds
+        public int? DurationInSeconds
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
+            get { return this._durationInSeconds; }
             set { this._durationInSeconds = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Connect.Model
         /// The timestamp indicating when the routing step expires.
         /// </para>
         /// </summary>
-        public DateTime ExpiryTimestamp
+        public DateTime? ExpiryTimestamp
         {
-            get { return this._expiryTimestamp.GetValueOrDefault(); }
+            get { return this._expiryTimestamp; }
             set { this._expiryTimestamp = value; }
         }
 

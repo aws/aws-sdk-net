@@ -62,9 +62,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property MinimumLatency. The preferred latency (in milliseconds)
         /// for implementing packet loss and recovery. Packet recovery is a key feature of SRT.
         /// </summary>
-        public int MinimumLatency
+        public int? MinimumLatency
         {
-            get { return this._minimumLatency.GetValueOrDefault(); }
+            get { return this._minimumLatency; }
             set { this._minimumLatency = value; }
         }
 

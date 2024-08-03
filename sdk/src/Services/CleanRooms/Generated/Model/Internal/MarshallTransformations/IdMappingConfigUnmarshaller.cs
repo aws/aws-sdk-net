@@ -68,7 +68,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowUseAsDimensionColumn", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowUseAsDimensionColumn = unmarshaller.Unmarshall(context);
                     continue;
                 }

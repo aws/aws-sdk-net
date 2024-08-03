@@ -103,9 +103,9 @@ namespace Amazon.MailManager.Model
         /// The start of the timestamp range the exported emails cover.
         /// </para>
         /// </summary>
-        public DateTime FromTimestamp
+        public DateTime? FromTimestamp
         {
-            get { return this._fromTimestamp.GetValueOrDefault(); }
+            get { return this._fromTimestamp; }
             set { this._fromTimestamp = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.MailManager.Model
         /// The maximum number of email items included in the export.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.MailManager.Model
         /// The end of the date range the exported emails cover.
         /// </para>
         /// </summary>
-        public DateTime ToTimestamp
+        public DateTime? ToTimestamp
         {
-            get { return this._toTimestamp.GetValueOrDefault(); }
+            get { return this._toTimestamp; }
             set { this._toTimestamp = value; }
         }
 

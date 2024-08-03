@@ -48,9 +48,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AllowUseAsDimensionColumn
+        public bool? AllowUseAsDimensionColumn
         {
-            get { return this._allowUseAsDimensionColumn.GetValueOrDefault(); }
+            get { return this._allowUseAsDimensionColumn; }
             set { this._allowUseAsDimensionColumn = value; }
         }
 

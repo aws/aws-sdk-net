@@ -118,9 +118,9 @@ namespace Amazon.EKS.Model
         /// Indicates if the Addon requires IAM Permissions to operate, such as networking permissions.
         /// </para>
         /// </summary>
-        public bool RequiresIamPermissions
+        public bool? RequiresIamPermissions
         {
-            get { return this._requiresIamPermissions.GetValueOrDefault(); }
+            get { return this._requiresIamPermissions; }
             set { this._requiresIamPermissions = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.DataZone.Model
         /// The event timestamp of the data lineage node.
         /// </para>
         /// </summary>
-        public DateTime EventTimestamp
+        public DateTime? EventTimestamp
         {
-            get { return this._eventTimestamp.GetValueOrDefault(); }
+            get { return this._eventTimestamp; }
             set { this._eventTimestamp = value; }
         }
 

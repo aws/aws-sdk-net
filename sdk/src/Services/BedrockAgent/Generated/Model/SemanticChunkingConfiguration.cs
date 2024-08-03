@@ -65,9 +65,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=50, Max=99)]
-        public int BreakpointPercentileThreshold
+        public int? BreakpointPercentileThreshold
         {
-            get { return this._breakpointPercentileThreshold.GetValueOrDefault(); }
+            get { return this._breakpointPercentileThreshold; }
             set { this._breakpointPercentileThreshold = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]
-        public int BufferSize
+        public int? BufferSize
         {
-            get { return this._bufferSize.GetValueOrDefault(); }
+            get { return this._bufferSize; }
             set { this._bufferSize = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int MaxTokens
+        public int? MaxTokens
         {
-            get { return this._maxTokens.GetValueOrDefault(); }
+            get { return this._maxTokens; }
             set { this._maxTokens = value; }
         }
 

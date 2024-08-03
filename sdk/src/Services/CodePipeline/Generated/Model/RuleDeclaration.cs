@@ -166,9 +166,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=86400)]
-        public int TimeoutInMinutes
+        public int? TimeoutInMinutes
         {
-            get { return this._timeoutInMinutes.GetValueOrDefault(); }
+            get { return this._timeoutInMinutes; }
             set { this._timeoutInMinutes = value; }
         }
 

@@ -51,9 +51,9 @@ namespace Amazon.AppTest.Model
         /// The run end time of the test run summary.
         /// </para>
         /// </summary>
-        public DateTime RunEndTime
+        public DateTime? RunEndTime
         {
-            get { return this._runEndTime.GetValueOrDefault(); }
+            get { return this._runEndTime; }
             set { this._runEndTime = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.AppTest.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime RunStartTime
+        public DateTime? RunStartTime
         {
-            get { return this._runStartTime.GetValueOrDefault(); }
+            get { return this._runStartTime; }
             set { this._runStartTime = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.AppTest.Model
         /// The test configuration version of the test run summary.
         /// </para>
         /// </summary>
-        public int TestConfigurationVersion
+        public int? TestConfigurationVersion
         {
-            get { return this._testConfigurationVersion.GetValueOrDefault(); }
+            get { return this._testConfigurationVersion; }
             set { this._testConfigurationVersion = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.AppTest.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TestSuiteVersion
+        public int? TestSuiteVersion
         {
-            get { return this._testSuiteVersion.GetValueOrDefault(); }
+            get { return this._testSuiteVersion; }
             set { this._testSuiteVersion = value; }
         }
 

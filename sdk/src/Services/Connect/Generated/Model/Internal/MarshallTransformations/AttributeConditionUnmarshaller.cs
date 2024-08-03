@@ -86,7 +86,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ProficiencyLevel", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ProficiencyLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }

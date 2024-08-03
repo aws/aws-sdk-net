@@ -62,9 +62,9 @@ namespace Amazon.QuickSight.Model
         /// The offset of the Anchor.
         /// </para>
         /// </summary>
-        public int Offset
+        public int? Offset
         {
-            get { return this._offset.GetValueOrDefault(); }
+            get { return this._offset; }
             set { this._offset = value; }
         }
 

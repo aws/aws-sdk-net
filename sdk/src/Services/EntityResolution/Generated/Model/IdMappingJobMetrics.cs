@@ -84,9 +84,9 @@ namespace Amazon.EntityResolution.Model
         ///  The total number of records that were mapped.
         /// </para>
         /// </summary>
-        public int TotalMappedRecords
+        public int? TotalMappedRecords
         {
-            get { return this._totalMappedRecords.GetValueOrDefault(); }
+            get { return this._totalMappedRecords; }
             set { this._totalMappedRecords = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.EntityResolution.Model
         ///  The total number of mapped source records.
         /// </para>
         /// </summary>
-        public int TotalMappedSourceRecords
+        public int? TotalMappedSourceRecords
         {
-            get { return this._totalMappedSourceRecords.GetValueOrDefault(); }
+            get { return this._totalMappedSourceRecords; }
             set { this._totalMappedSourceRecords = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.EntityResolution.Model
         ///  The total number of distinct mapped target records.
         /// </para>
         /// </summary>
-        public int TotalMappedTargetRecords
+        public int? TotalMappedTargetRecords
         {
-            get { return this._totalMappedTargetRecords.GetValueOrDefault(); }
+            get { return this._totalMappedTargetRecords; }
             set { this._totalMappedTargetRecords = value; }
         }
 

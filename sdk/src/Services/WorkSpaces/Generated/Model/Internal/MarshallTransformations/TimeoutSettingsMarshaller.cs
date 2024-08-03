@@ -51,19 +51,19 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisconnectTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("DisconnectTimeoutInSeconds");
-                context.Writer.Write(requestObject.DisconnectTimeoutInSeconds);
+                context.Writer.Write(requestObject.DisconnectTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetIdleDisconnectTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("IdleDisconnectTimeoutInSeconds");
-                context.Writer.Write(requestObject.IdleDisconnectTimeoutInSeconds);
+                context.Writer.Write(requestObject.IdleDisconnectTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetMaxUserDurationInSeconds())
             {
                 context.Writer.WritePropertyName("MaxUserDurationInSeconds");
-                context.Writer.Write(requestObject.MaxUserDurationInSeconds);
+                context.Writer.Write(requestObject.MaxUserDurationInSeconds.Value);
             }
 
         }

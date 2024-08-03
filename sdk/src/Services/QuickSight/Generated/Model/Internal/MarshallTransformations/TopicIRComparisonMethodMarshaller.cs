@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWindowSize())
             {
                 context.Writer.WritePropertyName("WindowSize");
-                context.Writer.Write(requestObject.WindowSize);
+                context.Writer.Write(requestObject.WindowSize.Value);
             }
 
         }

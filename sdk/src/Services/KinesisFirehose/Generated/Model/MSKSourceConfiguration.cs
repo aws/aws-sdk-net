@@ -92,9 +92,9 @@ namespace Amazon.KinesisFirehose.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime ReadFromTimestamp
+        public DateTime? ReadFromTimestamp
         {
-            get { return this._readFromTimestamp.GetValueOrDefault(); }
+            get { return this._readFromTimestamp; }
             set { this._readFromTimestamp = value; }
         }
 

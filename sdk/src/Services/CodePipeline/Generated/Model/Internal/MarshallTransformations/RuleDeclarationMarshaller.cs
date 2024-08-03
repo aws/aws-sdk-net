@@ -110,7 +110,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("timeoutInMinutes");
-                context.Writer.Write(requestObject.TimeoutInMinutes);
+                context.Writer.Write(requestObject.TimeoutInMinutes.Value);
             }
 
         }

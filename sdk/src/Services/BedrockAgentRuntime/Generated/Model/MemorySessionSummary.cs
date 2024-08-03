@@ -65,9 +65,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// The time when the memory duration for the session is set to end.
         /// </para>
         /// </summary>
-        public DateTime SessionExpiryTime
+        public DateTime? SessionExpiryTime
         {
-            get { return this._sessionExpiryTime.GetValueOrDefault(); }
+            get { return this._sessionExpiryTime; }
             set { this._sessionExpiryTime = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// The start time for this session.
         /// </para>
         /// </summary>
-        public DateTime SessionStartTime
+        public DateTime? SessionStartTime
         {
-            get { return this._sessionStartTime.GetValueOrDefault(); }
+            get { return this._sessionStartTime; }
             set { this._sessionStartTime = value; }
         }
 

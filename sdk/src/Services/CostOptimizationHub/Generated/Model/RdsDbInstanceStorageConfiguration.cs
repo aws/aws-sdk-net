@@ -45,9 +45,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The new amount of storage in GB to allocate for the DB instance.
         /// </para>
         /// </summary>
-        public double AllocatedStorageInGb
+        public double? AllocatedStorageInGb
         {
-            get { return this._allocatedStorageInGb.GetValueOrDefault(); }
+            get { return this._allocatedStorageInGb; }
             set { this._allocatedStorageInGb = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// allocated for the DB instance.
         /// </para>
         /// </summary>
-        public double Iops
+        public double? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The storage throughput for the DB instance.
         /// </para>
         /// </summary>
-        public double StorageThroughput
+        public double? StorageThroughput
         {
-            get { return this._storageThroughput.GetValueOrDefault(); }
+            get { return this._storageThroughput; }
             set { this._storageThroughput = value; }
         }
 

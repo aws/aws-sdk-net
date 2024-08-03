@@ -67,9 +67,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool AcceptBundleUpdate
+        public bool? AcceptBundleUpdate
         {
-            get { return this._acceptBundleUpdate.GetValueOrDefault(); }
+            get { return this._acceptBundleUpdate; }
             set { this._acceptBundleUpdate = value; }
         }
 

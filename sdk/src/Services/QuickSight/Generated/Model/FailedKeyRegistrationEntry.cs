@@ -88,9 +88,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool SenderFault
+        public bool? SenderFault
         {
-            get { return this._senderFault.GetValueOrDefault(); }
+            get { return this._senderFault; }
             set { this._senderFault = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int StatusCode
+        public int? StatusCode
         {
-            get { return this._statusCode.GetValueOrDefault(); }
+            get { return this._statusCode; }
             set { this._statusCode = value; }
         }
 

@@ -68,13 +68,13 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ApplicationVersionUpdatedFrom", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ApplicationVersionUpdatedFrom = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ApplicationVersionUpdatedTo", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ApplicationVersionUpdatedTo = unmarshaller.Unmarshall(context);
                     continue;
                 }

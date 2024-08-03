@@ -80,7 +80,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ForecastedBreachTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ForecastedBreachTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -98,13 +98,13 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsDeviceInGeofence", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsDeviceInGeofence = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NearestDistance", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.NearestDistance = unmarshaller.Unmarshall(context);
                     continue;
                 }

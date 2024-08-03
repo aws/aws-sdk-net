@@ -74,7 +74,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("overlapTokens", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OverlapTokens = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -62,9 +62,9 @@ namespace Amazon.DataZone.Model
         /// Specifies whether the row filter is sensitive.
         /// </para>
         /// </summary>
-        public bool Sensitive
+        public bool? Sensitive
         {
-            get { return this._sensitive.GetValueOrDefault(); }
+            get { return this._sensitive; }
             set { this._sensitive = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.DynamoDBv2.Model
         /// Maximum number of read request units for the specified replica table.
         /// </para>
         /// </summary>
-        public long MaxReadRequestUnits
+        public long? MaxReadRequestUnits
         {
-            get { return this._maxReadRequestUnits.GetValueOrDefault(); }
+            get { return this._maxReadRequestUnits; }
             set { this._maxReadRequestUnits = value; }
         }
 

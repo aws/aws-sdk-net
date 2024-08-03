@@ -68,25 +68,25 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allocatedStorage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AllocatedStorage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("iops", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxAllocatedStorage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxAllocatedStorage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("storageThroughput", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageThroughput = unmarshaller.Unmarshall(context);
                     continue;
                 }

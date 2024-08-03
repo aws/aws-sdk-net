@@ -68,37 +68,37 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("contentPolicyUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ContentPolicyUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("contextualGroundingPolicyUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ContextualGroundingPolicyUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sensitiveInformationPolicyFreeUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SensitiveInformationPolicyFreeUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sensitiveInformationPolicyUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SensitiveInformationPolicyUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("topicPolicyUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TopicPolicyUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("wordPolicyUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WordPolicyUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

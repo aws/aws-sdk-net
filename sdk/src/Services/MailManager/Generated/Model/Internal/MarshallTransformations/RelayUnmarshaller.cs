@@ -68,7 +68,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LastModifiedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

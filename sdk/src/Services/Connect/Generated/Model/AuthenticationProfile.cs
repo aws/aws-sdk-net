@@ -121,9 +121,9 @@ namespace Amazon.Connect.Model
         /// The timestamp when the authentication profile was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.Connect.Model
         /// in an Amazon Connect instance, unless overridden by another authentication profile.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.Connect.Model
         /// The timestamp when the authentication profile was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -236,9 +236,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=360, Max=720)]
-        public int MaxSessionDuration
+        public int? MaxSessionDuration
         {
-            get { return this._maxSessionDuration.GetValueOrDefault(); }
+            get { return this._maxSessionDuration; }
             set { this._maxSessionDuration = value; }
         }
 
@@ -277,9 +277,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=60)]
-        public int PeriodicSessionDuration
+        public int? PeriodicSessionDuration
         {
-            get { return this._periodicSessionDuration.GetValueOrDefault(); }
+            get { return this._periodicSessionDuration; }
             set { this._periodicSessionDuration = value; }
         }
 

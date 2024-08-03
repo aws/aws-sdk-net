@@ -104,7 +104,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFileSizeInBytes())
                 {
                     context.Writer.WritePropertyName("FileSizeInBytes");
-                    context.Writer.Write(publicRequest.FileSizeInBytes);
+                    context.Writer.Write(publicRequest.FileSizeInBytes.Value);
                 }
 
                 if(publicRequest.IsSetFileUseCaseType())
@@ -130,7 +130,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUrlExpiryInSeconds())
                 {
                     context.Writer.WritePropertyName("UrlExpiryInSeconds");
-                    context.Writer.Write(publicRequest.UrlExpiryInSeconds);
+                    context.Writer.Write(publicRequest.UrlExpiryInSeconds.Value);
                 }
 
                 writer.WriteObjectEnd();

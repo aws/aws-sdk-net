@@ -63,9 +63,9 @@ namespace Amazon.DataZone.Model
         /// The expiration timestamp of the environment credentials.
         /// </para>
         /// </summary>
-        public DateTime Expiration
+        public DateTime? Expiration
         {
-            get { return this._expiration.GetValueOrDefault(); }
+            get { return this._expiration; }
             set { this._expiration = value; }
         }
 

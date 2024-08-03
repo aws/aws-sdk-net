@@ -57,7 +57,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsGroupVatEnabled())
             {
                 context.Writer.WritePropertyName("isGroupVatEnabled");
-                context.Writer.Write(requestObject.IsGroupVatEnabled);
+                context.Writer.Write(requestObject.IsGroupVatEnabled.Value);
             }
 
         }

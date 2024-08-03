@@ -319,9 +319,9 @@ namespace Amazon.Glue.Model
         /// connection. Default is true. 
         /// </para>
         /// </summary>
-        public bool ValidateCredentials
+        public bool? ValidateCredentials
         {
-            get { return this._validateCredentials.GetValueOrDefault(); }
+            get { return this._validateCredentials; }
             set { this._validateCredentials = value; }
         }
 

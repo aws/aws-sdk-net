@@ -350,9 +350,9 @@ namespace Amazon.MWAA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2)]
-        public int MaxWebservers
+        public int? MaxWebservers
         {
-            get { return this._maxWebservers.GetValueOrDefault(); }
+            get { return this._maxWebservers; }
             set { this._maxWebservers = value; }
         }
 
@@ -397,9 +397,9 @@ namespace Amazon.MWAA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2)]
-        public int MinWebservers
+        public int? MinWebservers
         {
-            get { return this._minWebservers.GetValueOrDefault(); }
+            get { return this._minWebservers; }
             set { this._minWebservers = value; }
         }
 

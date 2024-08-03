@@ -54,9 +54,9 @@ namespace Amazon.AppTest.Model
         /// The after steps of the test run step.
         /// </para>
         /// </summary>
-        public bool AfterStep
+        public bool? AfterStep
         {
-            get { return this._afterStep.GetValueOrDefault(); }
+            get { return this._afterStep; }
             set { this._afterStep = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.AppTest.Model
         /// The before steps of the test run step.
         /// </para>
         /// </summary>
-        public bool BeforeStep
+        public bool? BeforeStep
         {
-            get { return this._beforeStep.GetValueOrDefault(); }
+            get { return this._beforeStep; }
             set { this._beforeStep = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.AppTest.Model
         /// The run end time of the test run step.
         /// </para>
         /// </summary>
-        public DateTime RunEndTime
+        public DateTime? RunEndTime
         {
-            get { return this._runEndTime.GetValueOrDefault(); }
+            get { return this._runEndTime; }
             set { this._runEndTime = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.AppTest.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime RunStartTime
+        public DateTime? RunStartTime
         {
-            get { return this._runStartTime.GetValueOrDefault(); }
+            get { return this._runStartTime; }
             set { this._runStartTime = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.AppTest.Model
         /// The test case version of the test run step.
         /// </para>
         /// </summary>
-        public int TestCaseVersion
+        public int? TestCaseVersion
         {
-            get { return this._testCaseVersion.GetValueOrDefault(); }
+            get { return this._testCaseVersion; }
             set { this._testCaseVersion = value; }
         }
 
@@ -274,9 +274,9 @@ namespace Amazon.AppTest.Model
         /// The test suite version of the test run step.
         /// </para>
         /// </summary>
-        public int TestSuiteVersion
+        public int? TestSuiteVersion
         {
-            get { return this._testSuiteVersion.GetValueOrDefault(); }
+            get { return this._testSuiteVersion; }
             set { this._testSuiteVersion = value; }
         }
 

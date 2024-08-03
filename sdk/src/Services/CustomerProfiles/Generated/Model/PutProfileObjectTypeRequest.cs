@@ -198,9 +198,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxProfileObjectCount
+        public int? MaxProfileObjectCount
         {
-            get { return this._maxProfileObjectCount.GetValueOrDefault(); }
+            get { return this._maxProfileObjectCount; }
             set { this._maxProfileObjectCount = value; }
         }
 

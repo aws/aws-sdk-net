@@ -68,7 +68,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lastStatusChange", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastStatusChange = unmarshaller.Unmarshall(context);
                     continue;
                 }

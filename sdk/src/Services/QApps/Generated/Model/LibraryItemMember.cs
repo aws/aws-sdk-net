@@ -74,9 +74,9 @@ namespace Amazon.QApps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int AppVersion
+        public int? AppVersion
         {
-            get { return this._appVersion.GetValueOrDefault(); }
+            get { return this._appVersion; }
             set { this._appVersion = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.QApps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.QApps.Model
         /// Whether the current user has rated the library item.
         /// </para>
         /// </summary>
-        public bool IsRatedByUser
+        public bool? IsRatedByUser
         {
-            get { return this._isRatedByUser.GetValueOrDefault(); }
+            get { return this._isRatedByUser; }
             set { this._isRatedByUser = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.QApps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int RatingCount
+        public int? RatingCount
         {
-            get { return this._ratingCount.GetValueOrDefault(); }
+            get { return this._ratingCount; }
             set { this._ratingCount = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.QApps.Model
         /// The date and time the library item was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 
@@ -260,9 +260,9 @@ namespace Amazon.QApps.Model
         /// The number of users who have the associated Q App.
         /// </para>
         /// </summary>
-        public int UserCount
+        public int? UserCount
         {
-            get { return this._userCount.GetValueOrDefault(); }
+            get { return this._userCount; }
             set { this._userCount = value; }
         }
 

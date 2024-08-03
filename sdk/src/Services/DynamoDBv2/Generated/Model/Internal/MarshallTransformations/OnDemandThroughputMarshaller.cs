@@ -51,13 +51,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxReadRequestUnits())
             {
                 context.Writer.WritePropertyName("MaxReadRequestUnits");
-                context.Writer.Write(requestObject.MaxReadRequestUnits);
+                context.Writer.Write(requestObject.MaxReadRequestUnits.Value);
             }
 
             if(requestObject.IsSetMaxWriteRequestUnits())
             {
                 context.Writer.WritePropertyName("MaxWriteRequestUnits");
-                context.Writer.Write(requestObject.MaxWriteRequestUnits);
+                context.Writer.Write(requestObject.MaxWriteRequestUnits.Value);
             }
 
         }

@@ -95,9 +95,9 @@ namespace Amazon.EntityResolution.Model
         /// the column values are cleartext.
         /// </para>
         /// </summary>
-        public bool Hashed
+        public bool? Hashed
         {
-            get { return this._hashed.GetValueOrDefault(); }
+            get { return this._hashed; }
             set { this._hashed = value; }
         }
 

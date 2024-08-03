@@ -51,7 +51,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowUseAsDimensionColumn())
             {
                 context.Writer.WritePropertyName("allowUseAsDimensionColumn");
-                context.Writer.Write(requestObject.AllowUseAsDimensionColumn);
+                context.Writer.Write(requestObject.AllowUseAsDimensionColumn.Value);
             }
 
         }

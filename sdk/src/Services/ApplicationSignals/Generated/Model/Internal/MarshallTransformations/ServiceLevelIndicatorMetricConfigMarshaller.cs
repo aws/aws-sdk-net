@@ -93,7 +93,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPeriodSeconds())
             {
                 context.Writer.WritePropertyName("PeriodSeconds");
-                context.Writer.Write(requestObject.PeriodSeconds);
+                context.Writer.Write(requestObject.PeriodSeconds.Value);
             }
 
             if(requestObject.IsSetStatistic())

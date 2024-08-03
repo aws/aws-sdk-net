@@ -68,7 +68,7 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("forced", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Forced = unmarshaller.Unmarshall(context);
                     continue;
                 }

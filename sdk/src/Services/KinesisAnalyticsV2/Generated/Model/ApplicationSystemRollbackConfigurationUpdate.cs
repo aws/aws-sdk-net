@@ -41,9 +41,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// are enabled for a Managed Service for Apache Flink application
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool RollbackEnabledUpdate
+        public bool? RollbackEnabledUpdate
         {
-            get { return this._rollbackEnabledUpdate.GetValueOrDefault(); }
+            get { return this._rollbackEnabledUpdate; }
             set { this._rollbackEnabledUpdate = value; }
         }
 

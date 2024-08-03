@@ -67,9 +67,9 @@ namespace Amazon.QApps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int AppVersion
+        public int? AppVersion
         {
-            get { return this._appVersion.GetValueOrDefault(); }
+            get { return this._appVersion; }
             set { this._appVersion = value; }
         }
 

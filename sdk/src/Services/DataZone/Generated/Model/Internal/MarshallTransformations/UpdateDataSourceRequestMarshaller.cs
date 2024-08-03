@@ -138,7 +138,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRetainPermissionsOnRevokeFailure())
                 {
                     context.Writer.WritePropertyName("retainPermissionsOnRevokeFailure");
-                    context.Writer.Write(publicRequest.RetainPermissionsOnRevokeFailure);
+                    context.Writer.Write(publicRequest.RetainPermissionsOnRevokeFailure.Value);
                 }
 
                 if(publicRequest.IsSetSchedule())

@@ -511,6 +511,35 @@ namespace Amazon.EventBridge
         /// period of time for changes to take effect. If you do not specify a pattern to filter
         /// events sent to the archive, all events are sent to the archive except replayed events.
         /// Replayed events are not sent to an archive.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Archives and schema discovery are not supported for event buses encrypted using a
+        /// customer managed key. EventBridge returns an error if:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateArchive.html">CreateArchive</a>
+        /// </c> on an event bus set to use a customer managed key for encryption.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#CreateDiscoverer">CreateDiscoverer</a>
+        /// </c> on an event bus set to use a customer managed key for encryption.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdatedEventBus.html">UpdatedEventBus</a>
+        /// </c> to set a customer managed key on an event bus with an archives or schema discovery
+        /// enabled.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To enable archives or schema discovery on an event bus, choose to use an Amazon Web
+        /// Services owned key. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data
+        /// encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateArchive service method.</param>
         /// 
@@ -551,6 +580,35 @@ namespace Amazon.EventBridge
         /// period of time for changes to take effect. If you do not specify a pattern to filter
         /// events sent to the archive, all events are sent to the archive except replayed events.
         /// Replayed events are not sent to an archive.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Archives and schema discovery are not supported for event buses encrypted using a
+        /// customer managed key. EventBridge returns an error if:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateArchive.html">CreateArchive</a>
+        /// </c> on an event bus set to use a customer managed key for encryption.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#CreateDiscoverer">CreateDiscoverer</a>
+        /// </c> on an event bus set to use a customer managed key for encryption.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You call <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdatedEventBus.html">UpdatedEventBus</a>
+        /// </c> to set a customer managed key on an event bus with an archives or schema discovery
+        /// enabled.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To enable archives or schema discovery on an event bus, choose to use an Amazon Web
+        /// Services owned key. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data
+        /// encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateArchive service method.</param>
         /// <param name="cancellationToken">
@@ -1331,7 +1389,7 @@ namespace Amazon.EventBridge
         /// Delete an existing global endpoint. For more information about global endpoints, see
         /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
         /// applications Regional-fault tolerant with global endpoints and event replication</a>
-        /// in the <i>Amazon EventBridge User Guide</i>.
+        /// in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
         /// 
@@ -1360,7 +1418,7 @@ namespace Amazon.EventBridge
         /// Delete an existing global endpoint. For more information about global endpoints, see
         /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
         /// applications Regional-fault tolerant with global endpoints and event replication</a>
-        /// in the <i>Amazon EventBridge User Guide</i>.
+        /// in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -1814,7 +1872,7 @@ namespace Amazon.EventBridge
         /// Get the information about an existing global endpoint. For more information about
         /// global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
         /// applications Regional-fault tolerant with global endpoints and event replication</a>
-        /// in the <i>Amazon EventBridge User Guide</i>.
+        /// in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
         /// 
@@ -1840,7 +1898,7 @@ namespace Amazon.EventBridge
         /// Get the information about an existing global endpoint. For more information about
         /// global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
         /// applications Regional-fault tolerant with global endpoints and event replication</a>
-        /// in the <i>Amazon EventBridge User Guide</i>.
+        /// in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -2537,7 +2595,7 @@ namespace Amazon.EventBridge
         /// List the global endpoints associated with this account. For more information about
         /// global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
         /// applications Regional-fault tolerant with global endpoints and event replication</a>
-        /// in the <i>Amazon EventBridge User Guide</i>.
+        /// in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEndpoints service method.</param>
         /// 
@@ -2560,7 +2618,7 @@ namespace Amazon.EventBridge
         /// List the global endpoints associated with this account. For more information about
         /// global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
         /// applications Regional-fault tolerant with global endpoints and event replication</a>
-        /// in the <i>Amazon EventBridge User Guide</i>.
+        /// in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEndpoints service method.</param>
         /// <param name="cancellationToken">
@@ -3125,7 +3183,8 @@ namespace Amazon.EventBridge
         /// The maximum size for a PutEvents event entry is 256 KB. Entry size is calculated including
         /// the event and any necessary characters and keys of the JSON representation of the
         /// event. To learn more, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevent-size.html">Calculating
-        /// PutEvents event entry size</a> in the <i>Amazon EventBridge User Guide</i> 
+        /// PutEvents event entry size</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -3164,7 +3223,8 @@ namespace Amazon.EventBridge
         /// The maximum size for a PutEvents event entry is 256 KB. Entry size is calculated including
         /// the event and any necessary characters and keys of the JSON representation of the
         /// event. To learn more, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevent-size.html">Calculating
-        /// PutEvents event entry size</a> in the <i>Amazon EventBridge User Guide</i> 
+        /// PutEvents event entry size</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -3648,7 +3708,7 @@ namespace Amazon.EventBridge
         ///  </note> 
         /// <para>
         /// For a list of services you can configure as targets for events, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-targets.html">EventBridge
-        /// targets</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// targets</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
@@ -3696,7 +3756,7 @@ namespace Amazon.EventBridge
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
-        /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// and Access Control</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
@@ -3834,7 +3894,7 @@ namespace Amazon.EventBridge
         ///  </note> 
         /// <para>
         /// For a list of services you can configure as targets for events, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-targets.html">EventBridge
-        /// targets</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// targets</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
@@ -3882,7 +3942,7 @@ namespace Amazon.EventBridge
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
-        /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// and Access Control</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
@@ -4758,7 +4818,7 @@ namespace Amazon.EventBridge
         /// <summary>
         /// Update an existing endpoint. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
         /// applications Regional-fault tolerant with global endpoints and event replication</a>
-        /// in the <i>Amazon EventBridge User Guide</i>.
+        /// in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
         /// 
@@ -4786,7 +4846,7 @@ namespace Amazon.EventBridge
         /// <summary>
         /// Update an existing endpoint. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
         /// applications Regional-fault tolerant with global endpoints and event replication</a>
-        /// in the <i>Amazon EventBridge User Guide</i>.
+        /// in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -4811,6 +4871,71 @@ namespace Amazon.EventBridge
             options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEventBus
+
+
+        /// <summary>
+        /// Updates the specified event bus.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventBus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEventBus service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEventBus">REST API Reference for UpdateEventBus Operation</seealso>
+        public virtual UpdateEventBusResponse UpdateEventBus(UpdateEventBusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventBusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventBusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEventBusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the specified event bus.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventBus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEventBus service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEventBus">REST API Reference for UpdateEventBus Operation</seealso>
+        public virtual Task<UpdateEventBusResponse> UpdateEventBusAsync(UpdateEventBusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventBusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventBusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateEventBusResponse>(request, options, cancellationToken);
         }
 
         #endregion

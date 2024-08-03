@@ -91,7 +91,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHAPairs())
             {
                 context.Writer.WritePropertyName("HAPairs");
-                context.Writer.Write(requestObject.HAPairs);
+                context.Writer.Write(requestObject.HAPairs.Value);
             }
 
             if(requestObject.IsSetRemoveRouteTableIds())

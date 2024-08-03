@@ -144,7 +144,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("retainPermissionsOnRevokeFailure", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.RetainPermissionsOnRevokeFailure = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -84,7 +84,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForce())
                 {
                     context.Writer.WritePropertyName("Force");
-                    context.Writer.Write(publicRequest.Force);
+                    context.Writer.Write(publicRequest.Force.Value);
                 }
 
                 if(publicRequest.IsSetSkipArchive())

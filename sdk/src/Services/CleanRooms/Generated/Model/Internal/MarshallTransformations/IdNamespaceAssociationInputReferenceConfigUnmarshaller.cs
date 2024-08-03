@@ -74,7 +74,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("manageResourcePolicies", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ManageResourcePolicies = unmarshaller.Unmarshall(context);
                     continue;
                 }

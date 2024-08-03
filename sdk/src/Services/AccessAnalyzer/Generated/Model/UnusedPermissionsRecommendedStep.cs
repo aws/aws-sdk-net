@@ -66,9 +66,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// updated.
         /// </para>
         /// </summary>
-        public DateTime PolicyUpdatedAt
+        public DateTime? PolicyUpdatedAt
         {
-            get { return this._policyUpdatedAt.GetValueOrDefault(); }
+            get { return this._policyUpdatedAt; }
             set { this._policyUpdatedAt = value; }
         }
 

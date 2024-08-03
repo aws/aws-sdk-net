@@ -68,9 +68,9 @@ namespace Amazon.Connect.Model
         /// Number measuring the estimated quality of the media connection.
         /// </para>
         /// </summary>
-        public float QualityScore
+        public float? QualityScore
         {
-            get { return this._qualityScore.GetValueOrDefault(); }
+            get { return this._qualityScore; }
             set { this._qualityScore = value; }
         }
 

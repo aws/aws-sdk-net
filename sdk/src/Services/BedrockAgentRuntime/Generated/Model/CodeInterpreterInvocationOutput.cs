@@ -81,9 +81,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Indicates if the execution of the code timed out.
         /// </para>
         /// </summary>
-        public bool ExecutionTimeout
+        public bool? ExecutionTimeout
         {
-            get { return this._executionTimeout.GetValueOrDefault(); }
+            get { return this._executionTimeout; }
             set { this._executionTimeout = value; }
         }
 

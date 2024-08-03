@@ -44,9 +44,9 @@ namespace Amazon.MailManager.Model
         /// The previous password expiry timestamp of the ingress endpoint resource.
         /// </para>
         /// </summary>
-        public DateTime PreviousSmtpPasswordExpiryTimestamp
+        public DateTime? PreviousSmtpPasswordExpiryTimestamp
         {
-            get { return this._previousSmtpPasswordExpiryTimestamp.GetValueOrDefault(); }
+            get { return this._previousSmtpPasswordExpiryTimestamp; }
             set { this._previousSmtpPasswordExpiryTimestamp = value; }
         }
 

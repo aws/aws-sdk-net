@@ -51,13 +51,13 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIntervalInSeconds())
             {
                 context.Writer.WritePropertyName("IntervalInSeconds");
-                context.Writer.Write(requestObject.IntervalInSeconds);
+                context.Writer.Write(requestObject.IntervalInSeconds.Value);
             }
 
             if(requestObject.IsSetSizeInMBs())
             {
                 context.Writer.WritePropertyName("SizeInMBs");
-                context.Writer.Write(requestObject.SizeInMBs);
+                context.Writer.Write(requestObject.SizeInMBs.Value);
             }
 
         }

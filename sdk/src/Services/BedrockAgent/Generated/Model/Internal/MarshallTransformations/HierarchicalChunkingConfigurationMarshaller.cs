@@ -67,7 +67,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOverlapTokens())
             {
                 context.Writer.WritePropertyName("overlapTokens");
-                context.Writer.Write(requestObject.OverlapTokens);
+                context.Writer.Write(requestObject.OverlapTokens.Value);
             }
 
         }

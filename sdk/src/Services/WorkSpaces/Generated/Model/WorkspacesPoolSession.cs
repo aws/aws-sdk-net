@@ -87,9 +87,9 @@ namespace Amazon.WorkSpaces.Model
         /// The time that the pool session ended.
         /// </para>
         /// </summary>
-        public DateTime ExpirationTime
+        public DateTime? ExpirationTime
         {
-            get { return this._expirationTime.GetValueOrDefault(); }
+            get { return this._expirationTime; }
             set { this._expirationTime = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.WorkSpaces.Model
         /// The time that the pool sission started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

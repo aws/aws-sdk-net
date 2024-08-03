@@ -60,7 +60,7 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("testCaseVersion", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TestCaseVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }

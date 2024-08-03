@@ -68,7 +68,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReadFromTimestamp())
             {
                 context.Writer.WritePropertyName("ReadFromTimestamp");
-                context.Writer.Write(requestObject.ReadFromTimestamp);
+                context.Writer.Write(requestObject.ReadFromTimestamp.Value);
             }
 
             if(requestObject.IsSetTopicName())

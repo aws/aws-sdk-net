@@ -51,7 +51,7 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
             if(requestObject.IsSetForceStop())
             {
                 context.Writer.WritePropertyName("forceStop");
-                context.Writer.Write(requestObject.ForceStop);
+                context.Writer.Write(requestObject.ForceStop.Value);
             }
 
             if(requestObject.IsSetImportDataSetLocation())

@@ -110,7 +110,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPeriodicSessionDuration())
                 {
                     context.Writer.WritePropertyName("PeriodicSessionDuration");
-                    context.Writer.Write(publicRequest.PeriodicSessionDuration);
+                    context.Writer.Write(publicRequest.PeriodicSessionDuration.Value);
                 }
 
                 writer.WriteObjectEnd();

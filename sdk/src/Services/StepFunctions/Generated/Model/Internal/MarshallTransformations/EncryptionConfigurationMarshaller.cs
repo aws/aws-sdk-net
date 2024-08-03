@@ -51,7 +51,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKmsDataKeyReusePeriodSeconds())
             {
                 context.Writer.WritePropertyName("kmsDataKeyReusePeriodSeconds");
-                context.Writer.Write(requestObject.KmsDataKeyReusePeriodSeconds);
+                context.Writer.Write(requestObject.KmsDataKeyReusePeriodSeconds.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())

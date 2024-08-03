@@ -68,25 +68,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ActiveUserSessions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ActiveUserSessions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ActualUserSessions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ActualUserSessions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AvailableUserSessions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AvailableUserSessions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DesiredUserSessions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DesiredUserSessions = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -599,16 +599,8 @@ namespace Amazon.CodeBuild.Model
         /// out any related build that did not get marked as completed. The default is 60 minutes.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=5, Max=480)]
-        public int? TimeoutInMinutes
-||||||| Commit version number update changes
-        [AWSProperty(Min=5, Max=480)]
-        public int TimeoutInMinutes
-=======
         [AWSProperty(Min=5, Max=2160)]
-        public int TimeoutInMinutes
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
+        public int? TimeoutInMinutes
         {
             get { return this._timeoutInMinutes; }
             set { this._timeoutInMinutes = value; }

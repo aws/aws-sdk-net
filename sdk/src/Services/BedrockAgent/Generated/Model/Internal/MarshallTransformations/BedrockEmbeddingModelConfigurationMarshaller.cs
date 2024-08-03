@@ -51,7 +51,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("dimensions");
-                context.Writer.Write(requestObject.Dimensions);
+                context.Writer.Write(requestObject.Dimensions.Value);
             }
 
         }

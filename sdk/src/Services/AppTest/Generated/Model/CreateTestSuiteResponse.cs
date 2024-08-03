@@ -63,9 +63,9 @@ namespace Amazon.AppTest.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TestSuiteVersion
+        public int? TestSuiteVersion
         {
-            get { return this._testSuiteVersion.GetValueOrDefault(); }
+            get { return this._testSuiteVersion; }
             set { this._testSuiteVersion = value; }
         }
 

@@ -51,13 +51,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("threshold");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Threshold))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Threshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Threshold));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Threshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Threshold);
+                    context.Writer.Write(requestObject.Threshold.Value);
                 }
             }
 

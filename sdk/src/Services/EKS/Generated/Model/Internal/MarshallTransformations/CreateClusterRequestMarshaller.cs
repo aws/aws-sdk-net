@@ -81,7 +81,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBootstrapSelfManagedAddons())
                 {
                     context.Writer.WritePropertyName("bootstrapSelfManagedAddons");
-                    context.Writer.Write(publicRequest.BootstrapSelfManagedAddons);
+                    context.Writer.Write(publicRequest.BootstrapSelfManagedAddons.Value);
                 }
 
                 if(publicRequest.IsSetClientRequestToken())

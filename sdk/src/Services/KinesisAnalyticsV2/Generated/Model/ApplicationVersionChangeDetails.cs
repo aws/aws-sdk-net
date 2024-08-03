@@ -42,9 +42,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// on this version of the application
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]
-        public long ApplicationVersionUpdatedFrom
+        public long? ApplicationVersionUpdatedFrom
         {
-            get { return this._applicationVersionUpdatedFrom.GetValueOrDefault(); }
+            get { return this._applicationVersionUpdatedFrom; }
             set { this._applicationVersionUpdatedFrom = value; }
         }
 
@@ -59,9 +59,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// in the transition to the following version of the application
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]
-        public long ApplicationVersionUpdatedTo
+        public long? ApplicationVersionUpdatedTo
         {
-            get { return this._applicationVersionUpdatedTo.GetValueOrDefault(); }
+            get { return this._applicationVersionUpdatedTo; }
             set { this._applicationVersionUpdatedTo = value; }
         }
 

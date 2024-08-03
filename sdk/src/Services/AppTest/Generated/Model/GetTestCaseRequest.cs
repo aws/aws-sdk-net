@@ -63,9 +63,9 @@ namespace Amazon.AppTest.Model
         /// The test case version of the test case.
         /// </para>
         /// </summary>
-        public int TestCaseVersion
+        public int? TestCaseVersion
         {
-            get { return this._testCaseVersion.GetValueOrDefault(); }
+            get { return this._testCaseVersion; }
             set { this._testCaseVersion = value; }
         }
 

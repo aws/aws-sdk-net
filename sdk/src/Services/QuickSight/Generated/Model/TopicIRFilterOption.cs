@@ -223,9 +223,9 @@ namespace Amazon.QuickSight.Model
         /// The inclusive for the <c>TopicIRFilterOption</c>.
         /// </para>
         /// </summary>
-        public bool Inclusive
+        public bool? Inclusive
         {
-            get { return this._inclusive.GetValueOrDefault(); }
+            get { return this._inclusive; }
             set { this._inclusive = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.QuickSight.Model
         /// The inverse for the <c>TopicIRFilterOption</c>.
         /// </para>
         /// </summary>
-        public bool Inverse
+        public bool? Inverse
         {
-            get { return this._inverse.GetValueOrDefault(); }
+            get { return this._inverse; }
             set { this._inverse = value; }
         }
 

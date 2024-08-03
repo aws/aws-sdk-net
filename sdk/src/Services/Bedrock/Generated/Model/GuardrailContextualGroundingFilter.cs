@@ -44,9 +44,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public double Threshold
+        public double? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

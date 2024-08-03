@@ -74,7 +74,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isGroupVatEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsGroupVatEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

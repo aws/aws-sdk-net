@@ -178,9 +178,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=60)]
-        public int PeriodicSessionDuration
+        public int? PeriodicSessionDuration
         {
-            get { return this._periodicSessionDuration.GetValueOrDefault(); }
+            get { return this._periodicSessionDuration; }
             set { this._periodicSessionDuration = value; }
         }
 

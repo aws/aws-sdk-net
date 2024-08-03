@@ -68,7 +68,7 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("listenerPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ListenerPort = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -143,9 +143,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long FileSizeInBytes
+        public long? FileSizeInBytes
         {
-            get { return this._fileSizeInBytes.GetValueOrDefault(); }
+            get { return this._fileSizeInBytes; }
             set { this._fileSizeInBytes = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=300)]
-        public int UrlExpiryInSeconds
+        public int? UrlExpiryInSeconds
         {
-            get { return this._urlExpiryInSeconds.GetValueOrDefault(); }
+            get { return this._urlExpiryInSeconds; }
             set { this._urlExpiryInSeconds = value; }
         }
 

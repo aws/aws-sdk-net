@@ -1603,32 +1603,8 @@ namespace Amazon.IoTEvents
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-<<<<<<< HEAD
             var parameters = new ServiceOperationEndpointParameters(request);
             return Config.DetermineServiceOperationEndpoint(parameters);
-||||||| Commit version number update changes
-            var requestContext = new RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonIoTEventsEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
-=======
-            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonIoTEventsEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         }
 
         #endregion

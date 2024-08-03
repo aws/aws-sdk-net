@@ -158,9 +158,9 @@ namespace Amazon.CloudHSMV2.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Shared
+        public bool? Shared
         {
-            get { return this._shared.GetValueOrDefault(); }
+            get { return this._shared; }
             set { this._shared = value; }
         }
 

@@ -63,9 +63,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
-        public int StorageDays
+        public int? StorageDays
         {
-            get { return this._storageDays.GetValueOrDefault(); }
+            get { return this._storageDays; }
             set { this._storageDays = value; }
         }
 

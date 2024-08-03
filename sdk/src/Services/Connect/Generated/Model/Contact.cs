@@ -161,9 +161,9 @@ namespace Amazon.Connect.Model
         /// The timestamp when customer endpoint connected to Amazon Connect.
         /// </para>
         /// </summary>
-        public DateTime ConnectedToSystemTimestamp
+        public DateTime? ConnectedToSystemTimestamp
         {
-            get { return this._connectedToSystemTimestamp.GetValueOrDefault(); }
+            get { return this._connectedToSystemTimestamp; }
             set { this._connectedToSystemTimestamp = value; }
         }
 

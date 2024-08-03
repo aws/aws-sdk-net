@@ -196,9 +196,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// Turns language identification on or off for multiple languages.
         /// </para>
         /// </summary>
-        public bool IdentifyMultipleLanguages
+        public bool? IdentifyMultipleLanguages
         {
-            get { return this._identifyMultipleLanguages.GetValueOrDefault(); }
+            get { return this._identifyMultipleLanguages; }
             set { this._identifyMultipleLanguages = value; }
         }
 

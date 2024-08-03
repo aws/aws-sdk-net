@@ -76,7 +76,7 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAppVersion())
                 {
                     context.Writer.WritePropertyName("appVersion");
-                    context.Writer.Write(publicRequest.AppVersion);
+                    context.Writer.Write(publicRequest.AppVersion.Value);
                 }
 
                 if(publicRequest.IsSetCategories())

@@ -104,9 +104,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxAvailableProfileObjectCount
+        public int? MaxAvailableProfileObjectCount
         {
-            get { return this._maxAvailableProfileObjectCount.GetValueOrDefault(); }
+            get { return this._maxAvailableProfileObjectCount; }
             set { this._maxAvailableProfileObjectCount = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxProfileObjectCount
+        public int? MaxProfileObjectCount
         {
-            get { return this._maxProfileObjectCount.GetValueOrDefault(); }
+            get { return this._maxProfileObjectCount; }
             set { this._maxProfileObjectCount = value; }
         }
 

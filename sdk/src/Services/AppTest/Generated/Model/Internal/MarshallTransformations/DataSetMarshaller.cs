@@ -63,7 +63,7 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLength())
             {
                 context.Writer.WritePropertyName("length");
-                context.Writer.Write(requestObject.Length);
+                context.Writer.Write(requestObject.Length.Value);
             }
 
             if(requestObject.IsSetName())

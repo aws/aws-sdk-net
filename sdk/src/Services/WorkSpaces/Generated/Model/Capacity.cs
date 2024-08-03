@@ -43,9 +43,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int DesiredUserSessions
+        public int? DesiredUserSessions
         {
-            get { return this._desiredUserSessions.GetValueOrDefault(); }
+            get { return this._desiredUserSessions; }
             set { this._desiredUserSessions = value; }
         }
 

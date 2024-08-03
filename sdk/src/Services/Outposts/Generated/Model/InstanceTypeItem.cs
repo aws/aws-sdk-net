@@ -58,9 +58,9 @@ namespace Amazon.Outposts.Model
         /// The number of default VCPUs in an instance type.
         /// </para>
         /// </summary>
-        public int VCPUs
+        public int? VCPUs
         {
-            get { return this._vcpUs.GetValueOrDefault(); }
+            get { return this._vcpUs; }
             set { this._vcpUs = value; }
         }
 

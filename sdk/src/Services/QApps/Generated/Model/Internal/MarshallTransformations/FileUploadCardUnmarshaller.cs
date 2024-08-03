@@ -68,7 +68,7 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowOverride", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowOverride = unmarshaller.Unmarshall(context);
                     continue;
                 }

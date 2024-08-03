@@ -159,15 +159,7 @@ namespace Amazon.MQ.Model
         /// </para>
         /// </note>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true)]
         public bool? AutoMinorVersionUpgrade
-||||||| Commit version number update changes
-        [AWSProperty(Required=true)]
-        public bool AutoMinorVersionUpgrade
-=======
-        public bool AutoMinorVersionUpgrade
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         {
             get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }

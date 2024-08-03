@@ -49,9 +49,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int ContentBlockIndex
+        public int? ContentBlockIndex
         {
-            get { return this._contentBlockIndex.GetValueOrDefault(); }
+            get { return this._contentBlockIndex; }
             set { this._contentBlockIndex = value; }
         }
 

@@ -57,7 +57,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExactResponse())
             {
                 context.Writer.WritePropertyName("exactResponse");
-                context.Writer.Write(requestObject.ExactResponse);
+                context.Writer.Write(requestObject.ExactResponse.Value);
             }
 
             if(requestObject.IsSetExactResponseFields())

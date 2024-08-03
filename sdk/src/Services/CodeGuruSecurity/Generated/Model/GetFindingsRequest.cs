@@ -49,16 +49,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// to retrieve additional results. If not specified, returns 1000 results.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=1, Max=100)]
-        public int? MaxResults
-||||||| Commit version number update changes
-        [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
-=======
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
+        public int? MaxResults
         {
             get { return this._maxResults; }
             set { this._maxResults = value; }

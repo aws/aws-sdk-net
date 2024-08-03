@@ -366,9 +366,9 @@ namespace Amazon.Glue.Model
         /// A timestamp of the time this connection was last validated.
         /// </para>
         /// </summary>
-        public DateTime LastConnectionValidationTime
+        public DateTime? LastConnectionValidationTime
         {
-            get { return this._lastConnectionValidationTime.GetValueOrDefault(); }
+            get { return this._lastConnectionValidationTime; }
             set { this._lastConnectionValidationTime = value; }
         }
 

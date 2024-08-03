@@ -119,15 +119,7 @@ namespace Amazon.WorkSpaces.Model
         /// error. Set <c>EnableWorkDocs</c> to disabled, and try again.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true)]
         public bool? EnableWorkDocs
-||||||| Commit version number update changes
-        [AWSProperty(Required=true)]
-        public bool EnableWorkDocs
-=======
-        public bool EnableWorkDocs
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         {
             get { return this._enableWorkDocs; }
             set { this._enableWorkDocs = value; }

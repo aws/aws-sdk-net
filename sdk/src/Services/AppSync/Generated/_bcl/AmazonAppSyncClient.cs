@@ -46,6 +46,22 @@ namespace Amazon.AppSync
     public partial class AmazonAppSyncClient : AmazonServiceClient, IAmazonAppSync
     {
         private static IServiceMetadata serviceMetadata = new AmazonAppSyncMetadata();
+        private IAppSyncPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAppSyncPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AppSyncPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>

@@ -62,7 +62,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSensitive())
             {
                 context.Writer.WritePropertyName("sensitive");
-                context.Writer.Write(requestObject.Sensitive);
+                context.Writer.Write(requestObject.Sensitive.Value);
             }
 
         }

@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcceptEula())
             {
                 context.Writer.WritePropertyName("AcceptEula");
-                context.Writer.Write(requestObject.AcceptEula);
+                context.Writer.Write(requestObject.AcceptEula.Value);
             }
 
         }

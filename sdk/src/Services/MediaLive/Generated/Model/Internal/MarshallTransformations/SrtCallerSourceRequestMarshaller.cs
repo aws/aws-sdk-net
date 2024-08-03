@@ -62,7 +62,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinimumLatency())
             {
                 context.Writer.WritePropertyName("minimumLatency");
-                context.Writer.Write(requestObject.MinimumLatency);
+                context.Writer.Write(requestObject.MinimumLatency.Value);
             }
 
             if(requestObject.IsSetSrtListenerAddress())

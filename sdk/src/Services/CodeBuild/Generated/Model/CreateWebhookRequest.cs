@@ -139,9 +139,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool ManualCreation
+        public bool? ManualCreation
         {
-            get { return this._manualCreation.GetValueOrDefault(); }
+            get { return this._manualCreation; }
             set { this._manualCreation = value; }
         }
 

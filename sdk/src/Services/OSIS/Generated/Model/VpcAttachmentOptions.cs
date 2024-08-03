@@ -44,9 +44,9 @@ namespace Amazon.OSIS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AttachToVpc
+        public bool? AttachToVpc
         {
-            get { return this._attachToVpc.GetValueOrDefault(); }
+            get { return this._attachToVpc; }
             set { this._attachToVpc = value; }
         }
 

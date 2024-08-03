@@ -327,7 +327,8 @@ namespace Amazon.DynamoDBv2
         /// This operation allows you to perform batch reads or writes on data stored in DynamoDB,
         /// using PartiQL. Each read statement in a <c>BatchExecuteStatement</c> must specify
         /// an equality condition on all key attributes. This enforces that each <c>SELECT</c>
-        /// statement in a batch returns at most a single item.
+        /// statement in a batch returns at most a single item. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.multiplestatements.batching.html">Running
+        /// batch operations with PartiQL for DynamoDB </a>.
         /// 
         ///  <note> 
         /// <para>
@@ -368,7 +369,8 @@ namespace Amazon.DynamoDBv2
         /// This operation allows you to perform batch reads or writes on data stored in DynamoDB,
         /// using PartiQL. Each read statement in a <c>BatchExecuteStatement</c> must specify
         /// an equality condition on all key attributes. This enforces that each <c>SELECT</c>
-        /// statement in a batch returns at most a single item.
+        /// statement in a batch returns at most a single item. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.multiplestatements.batching.html">Running
+        /// batch operations with PartiQL for DynamoDB </a>.
         /// 
         ///  <note> 
         /// <para>
@@ -1078,8 +1080,12 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// For tables and indexes with provisioned capacity, if none of the items can be processed
+        /// due to insufficient provisioned throughput on all of the tables in the request, then
+        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
+        /// all tables and indexes, if none of the items can be processed due to other throttling
+        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
+        /// a <c>ThrottlingException</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1154,6 +1160,11 @@ namespace Amazon.DynamoDBv2
         ///  </li> <li> 
         /// <para>
         /// The total request size exceeds 16 MB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any individual items with keys exceeding the key length limits. For a partition key,
+        /// the limit is 2048 bytes and for a sort key, the limit is 1024 bytes.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1221,8 +1232,12 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// For tables and indexes with provisioned capacity, if none of the items can be processed
+        /// due to insufficient provisioned throughput on all of the tables in the request, then
+        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
+        /// all tables and indexes, if none of the items can be processed due to other throttling
+        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
+        /// a <c>ThrottlingException</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1297,6 +1312,11 @@ namespace Amazon.DynamoDBv2
         ///  </li> <li> 
         /// <para>
         /// The total request size exceeds 16 MB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any individual items with keys exceeding the key length limits. For a partition key,
+        /// the limit is 2048 bytes and for a sort key, the limit is 1024 bytes.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1368,8 +1388,12 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// For tables and indexes with provisioned capacity, if none of the items can be processed
+        /// due to insufficient provisioned throughput on all of the tables in the request, then
+        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
+        /// all tables and indexes, if none of the items can be processed due to other throttling
+        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
+        /// a <c>ThrottlingException</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1444,6 +1468,11 @@ namespace Amazon.DynamoDBv2
         ///  </li> <li> 
         /// <para>
         /// The total request size exceeds 16 MB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any individual items with keys exceeding the key length limits. For a partition key,
+        /// the limit is 2048 bytes and for a sort key, the limit is 1024 bytes.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1514,8 +1543,12 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// For tables and indexes with provisioned capacity, if none of the items can be processed
+        /// due to insufficient provisioned throughput on all of the tables in the request, then
+        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
+        /// all tables and indexes, if none of the items can be processed due to other throttling
+        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
+        /// a <c>ThrottlingException</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1590,6 +1623,11 @@ namespace Amazon.DynamoDBv2
         ///  </li> <li> 
         /// <para>
         /// The total request size exceeds 16 MB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any individual items with keys exceeding the key length limits. For a partition key,
+        /// the limit is 2048 bytes and for a sort key, the limit is 1024 bytes.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1893,14 +1931,17 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility,
-        /// higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine
-        /// which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-        /// the version</a>. To update existing global tables from version 2017.11.29 (Legacy)
-        /// to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-        /// Updating global tables</a>. 
+        /// This documentation is for version 2017.11.29 (Legacy) of global tables, which should
+        /// be avoided for new global tables. Customers should use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+        /// Tables version 2019.11.21 (Current)</a> when possible, because it provides greater
+        /// flexibility, higher efficiency, and consumes less write capacity than 2017.11.29 (Legacy).
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine which version you're using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+        /// the global table version you are using</a>. To update existing global tables from
+        /// version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+        /// global tables</a>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -2035,14 +2076,17 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility,
-        /// higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine
-        /// which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-        /// the version</a>. To update existing global tables from version 2017.11.29 (Legacy)
-        /// to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-        /// Updating global tables</a>. 
+        /// This documentation is for version 2017.11.29 (Legacy) of global tables, which should
+        /// be avoided for new global tables. Customers should use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+        /// Tables version 2019.11.21 (Current)</a> when possible, because it provides greater
+        /// flexibility, higher efficiency, and consumes less write capacity than 2017.11.29 (Legacy).
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine which version you're using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+        /// the global table version you are using</a>. To update existing global tables from
+        /// version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+        /// global tables</a>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3286,14 +3330,14 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </important> <note> 
         /// <para>
         /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
         /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
-        /// is complete.
+        /// is complete. For the full list of table states, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3378,14 +3422,14 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </important> <note> 
         /// <para>
         /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
         /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
-        /// is complete.
+        /// is complete. For the full list of table states, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3474,14 +3518,14 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </important> <note> 
         /// <para>
         /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
         /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
-        /// is complete.
+        /// is complete. For the full list of table states, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3569,14 +3613,14 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </important> <note> 
         /// <para>
         /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
         /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
-        /// is complete.
+        /// is complete. For the full list of table states, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4054,14 +4098,17 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility,
-        /// higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine
-        /// which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-        /// the version</a>. To update existing global tables from version 2017.11.29 (Legacy)
-        /// to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-        /// Updating global tables</a>. 
+        /// This documentation is for version 2017.11.29 (Legacy) of global tables, which should
+        /// be avoided for new global tables. Customers should use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+        /// Tables version 2019.11.21 (Current)</a> when possible, because it provides greater
+        /// flexibility, higher efficiency, and consumes less write capacity than 2017.11.29 (Legacy).
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine which version you're using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+        /// the global table version you are using</a>. To update existing global tables from
+        /// version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+        /// global tables</a>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -4092,14 +4139,17 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility,
-        /// higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine
-        /// which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-        /// the version</a>. To update existing global tables from version 2017.11.29 (Legacy)
-        /// to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-        /// Updating global tables</a>. 
+        /// This documentation is for version 2017.11.29 (Legacy) of global tables, which should
+        /// be avoided for new global tables. Customers should use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+        /// Tables version 2019.11.21 (Current)</a> when possible, because it provides greater
+        /// flexibility, higher efficiency, and consumes less write capacity than 2017.11.29 (Legacy).
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine which version you're using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+        /// the global table version you are using</a>. To update existing global tables from
+        /// version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+        /// global tables</a>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -4137,14 +4187,17 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility,
-        /// higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine
-        /// which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-        /// the version</a>. To update existing global tables from version 2017.11.29 (Legacy)
-        /// to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-        /// Updating global tables</a>. 
+        /// This documentation is for version 2017.11.29 (Legacy) of global tables, which should
+        /// be avoided for new global tables. Customers should use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+        /// Tables version 2019.11.21 (Current)</a> when possible, because it provides greater
+        /// flexibility, higher efficiency, and consumes less write capacity than 2017.11.29 (Legacy).
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine which version you're using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+        /// the global table version you are using</a>. To update existing global tables from
+        /// version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+        /// global tables</a>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -4175,14 +4228,17 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility,
-        /// higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine
-        /// which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-        /// the version</a>. To update existing global tables from version 2017.11.29 (Legacy)
-        /// to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-        /// Updating global tables</a>. 
+        /// This documentation is for version 2017.11.29 (Legacy) of global tables, which should
+        /// be avoided for new global tables. Customers should use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+        /// Tables version 2019.11.21 (Current)</a> when possible, because it provides greater
+        /// flexibility, higher efficiency, and consumes less write capacity than 2017.11.29 (Legacy).
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine which version you're using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+        /// the global table version you are using</a>. To update existing global tables from
+        /// version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+        /// global tables</a>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -4552,8 +4608,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </important> <note> 
         /// <para>
@@ -4590,8 +4646,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </important> <note> 
         /// <para>
@@ -4632,8 +4688,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </important> <note> 
         /// <para>
@@ -4673,8 +4729,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </important> <note> 
         /// <para>
@@ -4721,8 +4777,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables.
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version).
         /// </para>
         ///  </important>
         /// </summary>
@@ -4752,8 +4808,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables.
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version).
         /// </para>
         ///  </important>
         /// </summary>
@@ -6541,11 +6597,11 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// After a <c>GetResourcePolicy</c> request returns a policy created using the <c>PutResourcePolicy</c>
-        /// request, you can assume the policy will start getting applied in the authorization
-        /// of requests to the resource. Because this process is eventually consistent, it will
-        /// take some time to apply the policy to all requests to a resource. Policies that you
-        /// attach while creating a table using the <c>CreateTable</c> request will always be
-        /// applied to all requests for that table.
+        /// request, the policy will be applied in the authorization of requests to the resource.
+        /// Because this process is eventually consistent, it will take some time to apply the
+        /// policy to all requests to a resource. Policies that you attach while creating a table
+        /// using the <c>CreateTable</c> request will always be applied to all requests for that
+        /// table.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
@@ -6616,11 +6672,11 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// After a <c>GetResourcePolicy</c> request returns a policy created using the <c>PutResourcePolicy</c>
-        /// request, you can assume the policy will start getting applied in the authorization
-        /// of requests to the resource. Because this process is eventually consistent, it will
-        /// take some time to apply the policy to all requests to a resource. Policies that you
-        /// attach while creating a table using the <c>CreateTable</c> request will always be
-        /// applied to all requests for that table.
+        /// request, the policy will be applied in the authorization of requests to the resource.
+        /// Because this process is eventually consistent, it will take some time to apply the
+        /// policy to all requests to a resource. Policies that you attach while creating a table
+        /// using the <c>CreateTable</c> request will always be applied to all requests for that
+        /// table.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
@@ -7059,14 +7115,17 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility,
-        /// higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine
-        /// which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-        /// the version</a>. To update existing global tables from version 2017.11.29 (Legacy)
-        /// to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-        /// Updating global tables</a>. 
+        /// This documentation is for version 2017.11.29 (Legacy) of global tables, which should
+        /// be avoided for new global tables. Customers should use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+        /// Tables version 2019.11.21 (Current)</a> when possible, because it provides greater
+        /// flexibility, higher efficiency, and consumes less write capacity than 2017.11.29 (Legacy).
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine which version you're using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+        /// the global table version you are using</a>. To update existing global tables from
+        /// version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+        /// global tables</a>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -7094,14 +7153,17 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility,
-        /// higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine
-        /// which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-        /// the version</a>. To update existing global tables from version 2017.11.29 (Legacy)
-        /// to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-        /// Updating global tables</a>. 
+        /// This documentation is for version 2017.11.29 (Legacy) of global tables, which should
+        /// be avoided for new global tables. Customers should use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+        /// Tables version 2019.11.21 (Current)</a> when possible, because it provides greater
+        /// flexibility, higher efficiency, and consumes less write capacity than 2017.11.29 (Legacy).
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine which version you're using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+        /// the global table version you are using</a>. To update existing global tables from
+        /// version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+        /// global tables</a>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -8054,7 +8116,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         ///  <c>PutResourcePolicy</c> is an idempotent operation; running it multiple times on
         /// the same resource using the same policy document will return the same revision ID.
-        /// If you specify an <c>ExpectedRevisionId</c> which doesn't match the current policy's
+        /// If you specify an <c>ExpectedRevisionId</c> that doesn't match the current policy's
         /// <c>RevisionId</c>, the <c>PolicyNotFoundException</c> will be returned.
         /// </para>
         ///  <note> 
@@ -8149,7 +8211,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         ///  <c>PutResourcePolicy</c> is an idempotent operation; running it multiple times on
         /// the same resource using the same policy document will return the same revision ID.
-        /// If you specify an <c>ExpectedRevisionId</c> which doesn't match the current policy's
+        /// If you specify an <c>ExpectedRevisionId</c> that doesn't match the current policy's
         /// <c>RevisionId</c>, the <c>PolicyNotFoundException</c> will be returned.
         /// </para>
         ///  <note> 
@@ -11690,19 +11752,22 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility,
-        /// higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine
-        /// which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-        /// the version</a>. To update existing global tables from version 2017.11.29 (Legacy)
-        /// to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-        /// Updating global tables</a>. 
+        /// This documentation is for version 2017.11.29 (Legacy) of global tables, which should
+        /// be avoided for new global tables. Customers should use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+        /// Tables version 2019.11.21 (Current)</a> when possible, because it provides greater
+        /// flexibility, higher efficiency, and consumes less write capacity than 2017.11.29 (Legacy).
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine which version you're using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+        /// the global table version you are using</a>. To update existing global tables from
+        /// version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+        /// global tables</a>.
         /// </para>
         ///  </important> <note> 
         /// <para>
-        ///  This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29</a> of global tables. If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+        ///  For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Version
         /// 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html">UpdateTable</a>
         /// instead. 
         /// </para>
@@ -11774,19 +11839,22 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility,
-        /// higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine
-        /// which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-        /// the version</a>. To update existing global tables from version 2017.11.29 (Legacy)
-        /// to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-        /// Updating global tables</a>. 
+        /// This documentation is for version 2017.11.29 (Legacy) of global tables, which should
+        /// be avoided for new global tables. Customers should use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+        /// Tables version 2019.11.21 (Current)</a> when possible, because it provides greater
+        /// flexibility, higher efficiency, and consumes less write capacity than 2017.11.29 (Legacy).
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine which version you're using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+        /// the global table version you are using</a>. To update existing global tables from
+        /// version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+        /// global tables</a>.
         /// </para>
         ///  </important> <note> 
         /// <para>
-        ///  This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29</a> of global tables. If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+        ///  For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Version
         /// 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html">UpdateTable</a>
         /// instead. 
         /// </para>
@@ -11862,14 +11930,17 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility,
-        /// higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine
-        /// which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-        /// the version</a>. To update existing global tables from version 2017.11.29 (Legacy)
-        /// to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-        /// Updating global tables</a>. 
+        /// This documentation is for version 2017.11.29 (Legacy) of global tables, which should
+        /// be avoided for new global tables. Customers should use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+        /// Tables version 2019.11.21 (Current)</a> when possible, because it provides greater
+        /// flexibility, higher efficiency, and consumes less write capacity than 2017.11.29 (Legacy).
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine which version you're using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+        /// the global table version you are using</a>. To update existing global tables from
+        /// version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+        /// global tables</a>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -11945,14 +12016,17 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-        /// 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility,
-        /// higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine
-        /// which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
-        /// the version</a>. To update existing global tables from version 2017.11.29 (Legacy)
-        /// to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-        /// Updating global tables</a>. 
+        /// This documentation is for version 2017.11.29 (Legacy) of global tables, which should
+        /// be avoided for new global tables. Customers should use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Global
+        /// Tables version 2019.11.21 (Current)</a> when possible, because it provides greater
+        /// flexibility, higher efficiency, and consumes less write capacity than 2017.11.29 (Legacy).
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine which version you're using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
+        /// the global table version you are using</a>. To update existing global tables from
+        /// version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">Upgrading
+        /// global tables</a>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -12538,8 +12612,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </important> 
         /// <para>
@@ -12632,8 +12706,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </important> 
         /// <para>
@@ -12728,8 +12802,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </important> 
         /// <para>
@@ -12825,8 +12899,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </important> 
         /// <para>
@@ -12927,8 +13001,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </important>
         /// </summary>
@@ -12997,8 +13071,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <important> 
         /// <para>
-        /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21 (Current)</a> of global tables. 
+        /// For global tables, this operation only applies to global tables using Version 2019.11.21
+        /// (Current version). 
         /// </para>
         ///  </important>
         /// </summary>

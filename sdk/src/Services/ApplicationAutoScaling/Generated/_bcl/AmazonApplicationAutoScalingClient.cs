@@ -93,15 +93,19 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon SageMaker Serverless endpoint provisioned concurrency
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// Amazon SageMaker inference components
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Amazon SageMaker serverless endpoint provisioned concurrency
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Spot Fleets (Amazon EC2)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Pool of WorkSpaces
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -949,8 +953,7 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-        /// scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-additional-cli-commands.html">Managing
-        /// scheduled scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// scaling</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions service method.</param>
@@ -993,8 +996,7 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-        /// scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-additional-cli-commands.html">Managing
-        /// scheduled scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// scaling</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions service method.</param>
@@ -1038,7 +1040,7 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For general information about tags, including the format and syntax, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
+        /// your Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -1064,7 +1066,7 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For general information about tags, including the format and syntax, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
+        /// your Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -1618,7 +1620,7 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For general information about tags, including the format and syntax, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
+        /// your Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         ///  
         /// <para>
@@ -1672,7 +1674,7 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For general information about tags, including the format and syntax, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
+        /// your Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         ///  
         /// <para>

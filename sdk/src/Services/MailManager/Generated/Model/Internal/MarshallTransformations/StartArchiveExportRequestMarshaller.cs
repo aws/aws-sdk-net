@@ -100,19 +100,19 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFromTimestamp())
                 {
                     context.Writer.WritePropertyName("FromTimestamp");
-                    context.Writer.Write(publicRequest.FromTimestamp);
+                    context.Writer.Write(publicRequest.FromTimestamp.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetToTimestamp())
                 {
                     context.Writer.WritePropertyName("ToTimestamp");
-                    context.Writer.Write(publicRequest.ToTimestamp);
+                    context.Writer.Write(publicRequest.ToTimestamp.Value);
                 }
 
                 writer.WriteObjectEnd();

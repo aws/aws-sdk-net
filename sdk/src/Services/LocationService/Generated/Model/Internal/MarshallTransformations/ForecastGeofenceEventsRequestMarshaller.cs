@@ -90,7 +90,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -108,13 +108,13 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeHorizonMinutes())
                 {
                     context.Writer.WritePropertyName("TimeHorizonMinutes");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.TimeHorizonMinutes))
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.TimeHorizonMinutes.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.TimeHorizonMinutes));
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.TimeHorizonMinutes.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.TimeHorizonMinutes);
+                        context.Writer.Write(publicRequest.TimeHorizonMinutes.Value);
                     }
                 }
 

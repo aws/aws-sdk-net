@@ -68,9 +68,9 @@ namespace Amazon.MailManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxMessageSizeBytes
+        public int? MaxMessageSizeBytes
         {
-            get { return this._maxMessageSizeBytes.GetValueOrDefault(); }
+            get { return this._maxMessageSizeBytes; }
             set { this._maxMessageSizeBytes = value; }
         }
 

@@ -2937,6 +2937,113 @@ namespace Amazon.LocationService
 
         #endregion
         
+        #region  ForecastGeofenceEvents
+
+
+        /// <summary>
+        /// Evaluates device positions against geofence geometries from a given geofence collection.
+        /// The event forecasts three states for which a device can be in relative to a geofence:
+        /// 
+        ///  
+        /// <para>
+        ///  <c>ENTER</c>: If a device is outside of a geofence, but would breach the fence if
+        /// the device is moving at its current speed within time horizon window.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>EXIT</c>: If a device is inside of a geofence, but would breach the fence if the
+        /// device is moving at its current speed within time horizon window.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>IDLE</c>: If a device is inside of a geofence, and the device is not moving.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ForecastGeofenceEvents service method.</param>
+        /// 
+        /// <returns>The response from the ForecastGeofenceEvents service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ForecastGeofenceEvents">REST API Reference for ForecastGeofenceEvents Operation</seealso>
+        public virtual ForecastGeofenceEventsResponse ForecastGeofenceEvents(ForecastGeofenceEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ForecastGeofenceEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ForecastGeofenceEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ForecastGeofenceEventsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Evaluates device positions against geofence geometries from a given geofence collection.
+        /// The event forecasts three states for which a device can be in relative to a geofence:
+        /// 
+        ///  
+        /// <para>
+        ///  <c>ENTER</c>: If a device is outside of a geofence, but would breach the fence if
+        /// the device is moving at its current speed within time horizon window.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>EXIT</c>: If a device is inside of a geofence, but would breach the fence if the
+        /// device is moving at its current speed within time horizon window.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>IDLE</c>: If a device is inside of a geofence, and the device is not moving.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ForecastGeofenceEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ForecastGeofenceEvents service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ForecastGeofenceEvents">REST API Reference for ForecastGeofenceEvents Operation</seealso>
+        public virtual Task<ForecastGeofenceEventsResponse> ForecastGeofenceEventsAsync(ForecastGeofenceEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ForecastGeofenceEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ForecastGeofenceEventsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ForecastGeofenceEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDevicePosition
 
 
@@ -3118,6 +3225,13 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Retrieves the geofence details from a geofence collection.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The returned geometry will always match the geometry format used when the geofence
+        /// was created.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGeofence service method.</param>
         /// 
@@ -3152,6 +3266,13 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Retrieves the geofence details from a geofence collection.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The returned geometry will always match the geometry format used when the geofence
+        /// was created.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGeofence service method.</param>
         /// <param name="cancellationToken">
@@ -5357,6 +5478,85 @@ namespace Amazon.LocationService
             options.ResponseUnmarshaller = UpdateTrackerResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateTrackerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  VerifyDevicePosition
+
+
+        /// <summary>
+        /// Verifies the integrity of the device's position by determining if it was reported
+        /// behind a proxy, and by comparing it to an inferred position estimated based on the
+        /// device's state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDevicePosition service method.</param>
+        /// 
+        /// <returns>The response from the VerifyDevicePosition service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/VerifyDevicePosition">REST API Reference for VerifyDevicePosition Operation</seealso>
+        public virtual VerifyDevicePositionResponse VerifyDevicePosition(VerifyDevicePositionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = VerifyDevicePositionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyDevicePositionResponseUnmarshaller.Instance;
+
+            return Invoke<VerifyDevicePositionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Verifies the integrity of the device's position by determining if it was reported
+        /// behind a proxy, and by comparing it to an inferred position estimated based on the
+        /// device's state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDevicePosition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the VerifyDevicePosition service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/VerifyDevicePosition">REST API Reference for VerifyDevicePosition Operation</seealso>
+        public virtual Task<VerifyDevicePositionResponse> VerifyDevicePositionAsync(VerifyDevicePositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = VerifyDevicePositionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyDevicePositionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<VerifyDevicePositionResponse>(request, options, cancellationToken);
         }
 
         #endregion

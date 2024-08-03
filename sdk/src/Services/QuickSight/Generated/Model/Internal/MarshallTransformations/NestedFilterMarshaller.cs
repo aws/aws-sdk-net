@@ -68,7 +68,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeInnerSet())
             {
                 context.Writer.WritePropertyName("IncludeInnerSet");
-                context.Writer.Write(requestObject.IncludeInnerSet);
+                context.Writer.Write(requestObject.IncludeInnerSet.Value);
             }
 
             if(requestObject.IsSetInnerFilter())

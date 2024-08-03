@@ -60,13 +60,13 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastModifiedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -96,7 +96,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ServerPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ServerPort = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -43,16 +43,8 @@ namespace Amazon.LocationService.Model
         /// position of a device, along the Earth's surface.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=0, Max=10000)]
-        public double? Horizontal
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=0, Max=10000)]
-        public double Horizontal
-=======
         [AWSProperty(Required=true, Min=0, Max=10000000)]
-        public double Horizontal
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
+        public double? Horizontal
         {
             get { return this._horizontal; }
             set { this._horizontal = value; }

@@ -75,9 +75,9 @@ namespace Amazon.SageMaker.Model
         /// <c>AutomaticModelRegistration</c> defaults to <c>False</c>.
         /// </para>
         /// </summary>
-        public bool AutomaticModelRegistration
+        public bool? AutomaticModelRegistration
         {
-            get { return this._automaticModelRegistration.GetValueOrDefault(); }
+            get { return this._automaticModelRegistration; }
             set { this._automaticModelRegistration = value; }
         }
 

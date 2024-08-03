@@ -51,7 +51,7 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowOverride())
             {
                 context.Writer.WritePropertyName("allowOverride");
-                context.Writer.Write(requestObject.AllowOverride);
+                context.Writer.Write(requestObject.AllowOverride.Value);
             }
 
             if(requestObject.IsSetFileId())

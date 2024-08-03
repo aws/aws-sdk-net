@@ -109,13 +109,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Priority))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Priority.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Priority));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Priority.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Priority);
+                    context.Writer.Write(requestObject.Priority.Value);
                 }
             }
 

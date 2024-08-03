@@ -45,9 +45,9 @@ namespace Amazon.MailManager.Model
         /// The timestamp of when the relay was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTimestamp
+        public DateTime? LastModifiedTimestamp
         {
-            get { return this._lastModifiedTimestamp.GetValueOrDefault(); }
+            get { return this._lastModifiedTimestamp; }
             set { this._lastModifiedTimestamp = value; }
         }
 

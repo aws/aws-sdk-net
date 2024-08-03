@@ -134,7 +134,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxWebservers())
                 {
                     context.Writer.WritePropertyName("MaxWebservers");
-                    context.Writer.Write(publicRequest.MaxWebservers);
+                    context.Writer.Write(publicRequest.MaxWebservers.Value);
                 }
 
                 if(publicRequest.IsSetMaxWorkers())
@@ -146,7 +146,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinWebservers())
                 {
                     context.Writer.WritePropertyName("MinWebservers");
-                    context.Writer.Write(publicRequest.MinWebservers);
+                    context.Writer.Write(publicRequest.MinWebservers.Value);
                 }
 
                 if(publicRequest.IsSetMinWorkers())

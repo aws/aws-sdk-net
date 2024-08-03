@@ -74,7 +74,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("VCPUs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VCPUs = unmarshaller.Unmarshall(context);
                     continue;
                 }

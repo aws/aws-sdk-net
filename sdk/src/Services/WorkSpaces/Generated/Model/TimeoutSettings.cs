@@ -49,9 +49,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=36000)]
-        public int DisconnectTimeoutInSeconds
+        public int? DisconnectTimeoutInSeconds
         {
-            get { return this._disconnectTimeoutInSeconds.GetValueOrDefault(); }
+            get { return this._disconnectTimeoutInSeconds; }
             set { this._disconnectTimeoutInSeconds = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=36000)]
-        public int IdleDisconnectTimeoutInSeconds
+        public int? IdleDisconnectTimeoutInSeconds
         {
-            get { return this._idleDisconnectTimeoutInSeconds.GetValueOrDefault(); }
+            get { return this._idleDisconnectTimeoutInSeconds; }
             set { this._idleDisconnectTimeoutInSeconds = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=600, Max=432000)]
-        public int MaxUserDurationInSeconds
+        public int? MaxUserDurationInSeconds
         {
-            get { return this._maxUserDurationInSeconds.GetValueOrDefault(); }
+            get { return this._maxUserDurationInSeconds; }
             set { this._maxUserDurationInSeconds = value; }
         }
 

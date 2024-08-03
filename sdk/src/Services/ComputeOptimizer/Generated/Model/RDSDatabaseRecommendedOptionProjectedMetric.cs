@@ -69,9 +69,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The rank identifier of the RDS instance recommendation option. 
         /// </para>
         /// </summary>
-        public int Rank
+        public int? Rank
         {
-            get { return this._rank.GetValueOrDefault(); }
+            get { return this._rank; }
             set { this._rank = value; }
         }
 

@@ -73,7 +73,7 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAcceptRoleSessionName())
                 {
                     context.Writer.WritePropertyName("acceptRoleSessionName");
-                    context.Writer.Write(publicRequest.AcceptRoleSessionName);
+                    context.Writer.Write(publicRequest.AcceptRoleSessionName.Value);
                 }
 
                 if(publicRequest.IsSetDurationSeconds())

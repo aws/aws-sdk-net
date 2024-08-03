@@ -72,13 +72,13 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FromTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.FromTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxResults", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxResults = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -90,7 +90,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ToTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ToTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

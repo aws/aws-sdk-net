@@ -71,9 +71,9 @@ namespace Amazon.CodePipeline.Model
         /// The date and time of the last change to the rule execution, in timestamp format.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int PipelineVersion
+        public int? PipelineVersion
         {
-            get { return this._pipelineVersion.GetValueOrDefault(); }
+            get { return this._pipelineVersion; }
             set { this._pipelineVersion = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.CodePipeline.Model
         /// The start time of the rule execution.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

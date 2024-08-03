@@ -85,9 +85,9 @@ namespace Amazon.MailManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime FromTimestamp
+        public DateTime? FromTimestamp
         {
-            get { return this._fromTimestamp.GetValueOrDefault(); }
+            get { return this._fromTimestamp; }
             set { this._fromTimestamp = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.MailManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.MailManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ToTimestamp
+        public DateTime? ToTimestamp
         {
-            get { return this._toTimestamp.GetValueOrDefault(); }
+            get { return this._toTimestamp; }
             set { this._toTimestamp = value; }
         }
 

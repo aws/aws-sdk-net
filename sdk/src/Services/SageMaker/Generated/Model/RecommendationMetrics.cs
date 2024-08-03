@@ -48,15 +48,7 @@ namespace Amazon.SageMaker.Model
         /// Defines the cost per hour for the instance. 
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true)]
         public float? CostPerHour
-||||||| Commit version number update changes
-        [AWSProperty(Required=true)]
-        public float CostPerHour
-=======
-        public float CostPerHour
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         {
             get { return this._costPerHour; }
             set { this._costPerHour = value; }
@@ -74,15 +66,7 @@ namespace Amazon.SageMaker.Model
         /// Defines the cost per inference for the instance .
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true)]
         public float? CostPerInference
-||||||| Commit version number update changes
-        [AWSProperty(Required=true)]
-        public float CostPerInference
-=======
-        public float CostPerInference
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         {
             get { return this._costPerInference; }
             set { this._costPerInference = value; }
@@ -123,15 +107,7 @@ namespace Amazon.SageMaker.Model
         /// The expected maximum number of requests per minute for the instance.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true)]
         public int? MaxInvocations
-||||||| Commit version number update changes
-        [AWSProperty(Required=true)]
-        public int MaxInvocations
-=======
-        public int MaxInvocations
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         {
             get { return this._maxInvocations; }
             set { this._maxInvocations = value; }
@@ -172,15 +148,7 @@ namespace Amazon.SageMaker.Model
         /// The expected model latency at maximum invocation per minute for the instance.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true)]
         public int? ModelLatency
-||||||| Commit version number update changes
-        [AWSProperty(Required=true)]
-        public int ModelLatency
-=======
-        public int ModelLatency
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
         {
             get { return this._modelLatency; }
             set { this._modelLatency = value; }

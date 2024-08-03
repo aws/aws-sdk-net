@@ -51,9 +51,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.SageMaker.Model
         /// The time when the optimization job was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.SageMaker.Model
         /// The time when the optimization job finished processing.
         /// </para>
         /// </summary>
-        public DateTime OptimizationEndTime
+        public DateTime? OptimizationEndTime
         {
-            get { return this._optimizationEndTime.GetValueOrDefault(); }
+            get { return this._optimizationEndTime; }
             set { this._optimizationEndTime = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.SageMaker.Model
         /// The time when the optimization job started.
         /// </para>
         /// </summary>
-        public DateTime OptimizationStartTime
+        public DateTime? OptimizationStartTime
         {
-            get { return this._optimizationStartTime.GetValueOrDefault(); }
+            get { return this._optimizationStartTime; }
             set { this._optimizationStartTime = value; }
         }
 

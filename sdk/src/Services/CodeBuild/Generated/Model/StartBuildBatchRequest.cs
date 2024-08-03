@@ -140,16 +140,8 @@ namespace Amazon.CodeBuild.Model
         /// Overrides the build timeout specified in the batch build project.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=5, Max=480)]
-        public int? BuildTimeoutInMinutesOverride
-||||||| Commit version number update changes
-        [AWSProperty(Min=5, Max=480)]
-        public int BuildTimeoutInMinutesOverride
-=======
         [AWSProperty(Min=5, Max=2160)]
-        public int BuildTimeoutInMinutesOverride
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
+        public int? BuildTimeoutInMinutesOverride
         {
             get { return this._buildTimeoutInMinutesOverride; }
             set { this._buildTimeoutInMinutesOverride = value; }

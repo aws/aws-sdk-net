@@ -62,13 +62,13 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSpeed())
             {
                 context.Writer.WritePropertyName("Speed");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Speed))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Speed.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Speed));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Speed.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Speed);
+                    context.Writer.Write(requestObject.Speed.Value);
                 }
             }
 

@@ -60,7 +60,7 @@ namespace Amazon.SSMQuickSetup.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -72,7 +72,7 @@ namespace Amazon.SSMQuickSetup.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModifiedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

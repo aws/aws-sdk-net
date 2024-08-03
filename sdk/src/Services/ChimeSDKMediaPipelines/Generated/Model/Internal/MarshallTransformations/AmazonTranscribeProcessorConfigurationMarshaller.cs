@@ -81,7 +81,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdentifyMultipleLanguages())
             {
                 context.Writer.WritePropertyName("IdentifyMultipleLanguages");
-                context.Writer.Write(requestObject.IdentifyMultipleLanguages);
+                context.Writer.Write(requestObject.IdentifyMultipleLanguages.Value);
             }
 
             if(requestObject.IsSetLanguageCode())

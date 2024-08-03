@@ -110,7 +110,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ApplicationVersionCreateTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ApplicationVersionCreateTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

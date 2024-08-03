@@ -58,9 +58,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// request.
         /// </para>
         /// </summary>
-        public bool AcceptRoleSessionName
+        public bool? AcceptRoleSessionName
         {
-            get { return this._acceptRoleSessionName.GetValueOrDefault(); }
+            get { return this._acceptRoleSessionName; }
             set { this._acceptRoleSessionName = value; }
         }
 

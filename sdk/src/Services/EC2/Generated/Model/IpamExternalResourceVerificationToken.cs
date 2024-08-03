@@ -147,9 +147,9 @@ namespace Amazon.EC2.Model
         /// Token expiration.
         /// </para>
         /// </summary>
-        public DateTime NotAfter
+        public DateTime? NotAfter
         {
-            get { return this._notAfter.GetValueOrDefault(); }
+            get { return this._notAfter; }
             set { this._notAfter = value; }
         }
 

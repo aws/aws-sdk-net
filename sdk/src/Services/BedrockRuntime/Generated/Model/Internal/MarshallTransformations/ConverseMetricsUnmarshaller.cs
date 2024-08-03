@@ -68,7 +68,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("latencyMs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LatencyMs = unmarshaller.Unmarshall(context);
                     continue;
                 }

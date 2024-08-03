@@ -51,7 +51,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRateLimit())
             {
                 context.Writer.WritePropertyName("rateLimit");
-                context.Writer.Write(requestObject.RateLimit);
+                context.Writer.Write(requestObject.RateLimit.Value);
             }
 
         }

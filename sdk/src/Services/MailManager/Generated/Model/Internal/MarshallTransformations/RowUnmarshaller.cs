@@ -92,7 +92,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HasAttachments", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HasAttachments = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -116,7 +116,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReceivedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReceivedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

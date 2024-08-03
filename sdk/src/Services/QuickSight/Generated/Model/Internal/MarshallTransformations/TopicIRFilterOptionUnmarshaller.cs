@@ -122,13 +122,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Inclusive", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Inclusive = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Inverse", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Inverse = unmarshaller.Unmarshall(context);
                     continue;
                 }

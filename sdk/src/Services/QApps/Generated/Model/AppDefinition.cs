@@ -63,9 +63,9 @@ namespace Amazon.QApps.Model
         /// A flag indicating whether the Q App's definition can be edited by the user.
         /// </para>
         /// </summary>
-        public bool CanEdit
+        public bool? CanEdit
         {
-            get { return this._canEdit.GetValueOrDefault(); }
+            get { return this._canEdit; }
             set { this._canEdit = value; }
         }
 

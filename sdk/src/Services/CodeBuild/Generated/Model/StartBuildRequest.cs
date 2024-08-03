@@ -778,16 +778,8 @@ namespace Amazon.CodeBuild.Model
         /// this build only, the latest setting already defined in the build project.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=5, Max=480)]
-        public int? TimeoutInMinutesOverride
-||||||| Commit version number update changes
-        [AWSProperty(Min=5, Max=480)]
-        public int TimeoutInMinutesOverride
-=======
         [AWSProperty(Min=5, Max=2160)]
-        public int TimeoutInMinutesOverride
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
+        public int? TimeoutInMinutesOverride
         {
             get { return this._timeoutInMinutesOverride; }
             set { this._timeoutInMinutesOverride = value; }

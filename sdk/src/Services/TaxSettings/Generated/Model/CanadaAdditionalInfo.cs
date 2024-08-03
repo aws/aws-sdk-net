@@ -94,9 +94,9 @@ namespace Amazon.TaxSettings.Model
         /// request.
         /// </para>
         /// </summary>
-        public bool IsResellerAccount
+        public bool? IsResellerAccount
         {
-            get { return this._isResellerAccount.GetValueOrDefault(); }
+            get { return this._isResellerAccount; }
             set { this._isResellerAccount = value; }
         }
 

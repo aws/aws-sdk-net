@@ -65,9 +65,9 @@ namespace Amazon.ApplicationSignals.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double MetricThreshold
+        public double? MetricThreshold
         {
-            get { return this._metricThreshold.GetValueOrDefault(); }
+            get { return this._metricThreshold; }
             set { this._metricThreshold = value; }
         }
 

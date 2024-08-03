@@ -69,9 +69,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=900)]
-        public int KmsDataKeyReusePeriodSeconds
+        public int? KmsDataKeyReusePeriodSeconds
         {
-            get { return this._kmsDataKeyReusePeriodSeconds.GetValueOrDefault(); }
+            get { return this._kmsDataKeyReusePeriodSeconds; }
             set { this._kmsDataKeyReusePeriodSeconds = value; }
         }
 

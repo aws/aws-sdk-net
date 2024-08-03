@@ -136,9 +136,9 @@ namespace Amazon.Bedrock.Model
         /// if they were shared with the current account (<c>false</c>).
         /// </para>
         /// </summary>
-        public bool IsOwned
+        public bool? IsOwned
         {
-            get { return this._isOwned.GetValueOrDefault(); }
+            get { return this._isOwned; }
             set { this._isOwned = value; }
         }
 

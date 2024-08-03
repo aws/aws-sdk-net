@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.AppTest.Endpoints;
 using Amazon.AppTest.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class AppTestEndpointsTests

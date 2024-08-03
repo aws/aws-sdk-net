@@ -85,9 +85,9 @@ namespace Amazon.MedicalImaging.Model
         /// or Series level metadata are mismatched across the <c>sourceImageSet</c> and <c>destinationImageSet</c>.
         /// </para>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

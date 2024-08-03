@@ -46,9 +46,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int ActiveUserSessions
+        public int? ActiveUserSessions
         {
-            get { return this._activeUserSessions.GetValueOrDefault(); }
+            get { return this._activeUserSessions; }
             set { this._activeUserSessions = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int ActualUserSessions
+        public int? ActualUserSessions
         {
-            get { return this._actualUserSessions.GetValueOrDefault(); }
+            get { return this._actualUserSessions; }
             set { this._actualUserSessions = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int AvailableUserSessions
+        public int? AvailableUserSessions
         {
-            get { return this._availableUserSessions.GetValueOrDefault(); }
+            get { return this._availableUserSessions; }
             set { this._availableUserSessions = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int DesiredUserSessions
+        public int? DesiredUserSessions
         {
-            get { return this._desiredUserSessions.GetValueOrDefault(); }
+            get { return this._desiredUserSessions; }
             set { this._desiredUserSessions = value; }
         }
 

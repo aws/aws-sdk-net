@@ -48,9 +48,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ContentPolicyUnits
+        public int? ContentPolicyUnits
         {
-            get { return this._contentPolicyUnits.GetValueOrDefault(); }
+            get { return this._contentPolicyUnits; }
             set { this._contentPolicyUnits = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ContextualGroundingPolicyUnits
+        public int? ContextualGroundingPolicyUnits
         {
-            get { return this._contextualGroundingPolicyUnits.GetValueOrDefault(); }
+            get { return this._contextualGroundingPolicyUnits; }
             set { this._contextualGroundingPolicyUnits = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int SensitiveInformationPolicyFreeUnits
+        public int? SensitiveInformationPolicyFreeUnits
         {
-            get { return this._sensitiveInformationPolicyFreeUnits.GetValueOrDefault(); }
+            get { return this._sensitiveInformationPolicyFreeUnits; }
             set { this._sensitiveInformationPolicyFreeUnits = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int SensitiveInformationPolicyUnits
+        public int? SensitiveInformationPolicyUnits
         {
-            get { return this._sensitiveInformationPolicyUnits.GetValueOrDefault(); }
+            get { return this._sensitiveInformationPolicyUnits; }
             set { this._sensitiveInformationPolicyUnits = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TopicPolicyUnits
+        public int? TopicPolicyUnits
         {
-            get { return this._topicPolicyUnits.GetValueOrDefault(); }
+            get { return this._topicPolicyUnits; }
             set { this._topicPolicyUnits = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int WordPolicyUnits
+        public int? WordPolicyUnits
         {
-            get { return this._wordPolicyUnits.GetValueOrDefault(); }
+            get { return this._wordPolicyUnits; }
             set { this._wordPolicyUnits = value; }
         }
 

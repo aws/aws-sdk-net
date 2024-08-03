@@ -133,9 +133,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double TimeHorizonMinutes
+        public double? TimeHorizonMinutes
         {
-            get { return this._timeHorizonMinutes.GetValueOrDefault(); }
+            get { return this._timeHorizonMinutes; }
             set { this._timeHorizonMinutes = value; }
         }
 

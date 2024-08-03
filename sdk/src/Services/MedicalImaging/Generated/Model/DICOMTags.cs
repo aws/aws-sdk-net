@@ -96,16 +96,8 @@ namespace Amazon.MedicalImaging.Model
         /// The total number of series in the DICOM study.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=0, Max=10000)]
-        public int? DICOMNumberOfStudyRelatedSeries
-||||||| Commit version number update changes
-        [AWSProperty(Min=0, Max=10000)]
-        public int DICOMNumberOfStudyRelatedSeries
-=======
         [AWSProperty(Min=0, Max=1000000)]
-        public int DICOMNumberOfStudyRelatedSeries
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
+        public int? DICOMNumberOfStudyRelatedSeries
         {
             get { return this._dicomNumberOfStudyRelatedSeries; }
             set { this._dicomNumberOfStudyRelatedSeries = value; }
