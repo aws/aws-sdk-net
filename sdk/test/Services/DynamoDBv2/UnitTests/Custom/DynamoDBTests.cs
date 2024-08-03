@@ -3,6 +3,7 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
+using Amazon.Util.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
@@ -11,41 +12,9 @@ using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-<<<<<<< HEAD
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon.Auth.AccessControlPolicy;
-using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.DataModel;
-using Amazon.DynamoDBv2.Model;
-||||||| Commit version number update changes
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon.Auth.AccessControlPolicy;
-using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
-using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.DataModel;
-using Amazon.DynamoDBv2.Model;
-=======
-using Amazon.Util.Internal;
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
 using ThirdParty.Json.LitJson;
 
-<<<<<<< HEAD
-using Moq;
-using Amazon;
-
 namespace AWSSDK_DotNet.UnitTests
-||||||| Commit version number update changes
-using Moq;
-using Amazon;
-
-namespace AWSSDK_DotNet35.UnitTests
-=======
-namespace AWSSDK_DotNet35.UnitTests
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
 {
     [TestClass]
     public class DynamoDBEntryTests

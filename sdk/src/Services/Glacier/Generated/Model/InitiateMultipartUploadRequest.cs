@@ -180,7 +180,7 @@ namespace Amazon.Glacier.Model
         // Check to see if PartSize property is set
         internal bool IsSetPartSize()
         {
-            return !string.IsNullOrEmpty(this._partSize);
+            return this._partSize != null;
         }
 
         /// <summary>

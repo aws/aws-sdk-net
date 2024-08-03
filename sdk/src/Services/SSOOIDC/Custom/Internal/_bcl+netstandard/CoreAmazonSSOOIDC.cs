@@ -118,7 +118,7 @@ namespace Amazon.SSOOIDC.Internal
 
                 // Spec: The expiration time must be calculated by adding the number of seconds 
                 // returned by StartDeviceAuthorization (ExpiresIn) to the current time.
-                DateTime deviceCodeExpiration = DateTime.UtcNow.AddSeconds(startDeviceAuthorizationResponse.ExpiresIn);
+                DateTime deviceCodeExpiration = DateTime.UtcNow.AddSeconds(startDeviceAuthorizationResponse.ExpiresIn.Value);
 
                 request.SsoVerificationCallback(new SsoVerificationArguments
                 {
@@ -136,7 +136,7 @@ namespace Amazon.SSOOIDC.Internal
                 };
                 InternalSDKUtils.ApplyValues(createTokenRequest, request.AdditionalProperties);
 
-                createTokenResponse = PollForSsoToken(client, createTokenRequest, startDeviceAuthorizationResponse.Interval, deviceCodeExpiration, context);
+                createTokenResponse = PollForSsoToken(client, createTokenRequest, startDeviceAuthorizationResponse.Interval.Value, deviceCodeExpiration, context);
             }
             else
             {
@@ -171,7 +171,7 @@ namespace Amazon.SSOOIDC.Internal
                 ClientSecret = registerClientResponse.ClientSecret,
                 RegistrationExpiresAt = clientSecretExpiresAtString,
                 RefreshToken = createTokenResponse.RefreshToken,
-                ExpiresAt = DateTime.UtcNow.AddSeconds(createTokenResponse.ExpiresIn),
+                ExpiresAt = DateTime.UtcNow.AddSeconds(createTokenResponse.ExpiresIn.Value),
                 StartUrl = request.StartUrl,
                 CodeVerifier = codeVerifier
             };
@@ -274,7 +274,7 @@ namespace Amazon.SSOOIDC.Internal
 
                 // Spec: The expiration time must be calculated by adding the number of seconds 
                 // returned by StartDeviceAuthorization (ExpiresIn) to the current time.
-                DateTime deviceCodeExpiration = DateTime.UtcNow.AddSeconds(startDeviceAuthorizationResponse.ExpiresIn);
+                DateTime deviceCodeExpiration = DateTime.UtcNow.AddSeconds(startDeviceAuthorizationResponse.ExpiresIn.Value);
 
                 request.SsoVerificationCallback(new SsoVerificationArguments
                 {
@@ -295,7 +295,7 @@ namespace Amazon.SSOOIDC.Internal
                 createTokenResponse = await PollForSsoTokenAsync(
                     client,
                     createTokenRequest,
-                    startDeviceAuthorizationResponse.Interval,
+                    startDeviceAuthorizationResponse.Interval.Value,
                     deviceCodeExpiration,
                     context,
                     cancellationToken
@@ -337,7 +337,7 @@ namespace Amazon.SSOOIDC.Internal
                 ClientSecret = registerClientResponse.ClientSecret,
                 RegistrationExpiresAt = clientSecretExpiresAtString,
                 RefreshToken = createTokenResponse.RefreshToken,
-                ExpiresAt = DateTime.UtcNow.AddSeconds(createTokenResponse.ExpiresIn),
+                ExpiresAt = DateTime.UtcNow.AddSeconds(createTokenResponse.ExpiresIn.Value),
                 StartUrl = request.StartUrl,
                 CodeVerifier = codeVerifier
             };
@@ -365,7 +365,7 @@ namespace Amazon.SSOOIDC.Internal
             return new GetSsoTokenResponse
             {
                 AccessToken = ssoToken.AccessToken,
-                ExpiresAt = AWSSDKUtils.CorrectedUtcNow.AddSeconds(ssoToken.ExpiresIn),
+                ExpiresAt = AWSSDKUtils.CorrectedUtcNow.AddSeconds(ssoToken.ExpiresIn.Value),
                 RefreshToken = ssoToken.RefreshToken,
                 Region = previousResponse.Region,
                 RegistrationExpiresAt = previousResponse.RegistrationExpiresAt,
@@ -396,7 +396,7 @@ namespace Amazon.SSOOIDC.Internal
             return new GetSsoTokenResponse
             {
                 AccessToken = ssoToken.AccessToken,
-                ExpiresAt = AWSSDKUtils.CorrectedUtcNow.AddSeconds(ssoToken.ExpiresIn),
+                ExpiresAt = AWSSDKUtils.CorrectedUtcNow.AddSeconds(ssoToken.ExpiresIn.Value),
                 RefreshToken = ssoToken.RefreshToken,
                 Region = previousResponse.Region,
                 RegistrationExpiresAt = previousResponse.RegistrationExpiresAt,

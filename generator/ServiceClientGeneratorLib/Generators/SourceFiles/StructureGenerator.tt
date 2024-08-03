@@ -316,7 +316,9 @@ namespace <#=this.Config.Namespace#>.Model
                     }
                     else
                     {
-                        if(member.Shape.IsString && (member.MarshallLocation == MarshallLocation.Header || member.MarshallLocation == MarshallLocation.Headers))
+                        // If there's a customization overriding the data type, we'll not use string.IsNullOrEmpty (and rely on checking for not null instead).
+                        // At the moment, this is only the case for Glacier (and InitiateMultipartUploadInput.partSize property).
+                        if (member.Shape.IsString && (member.MarshallLocation == MarshallLocation.Header || member.MarshallLocation == MarshallLocation.Headers) && member.OverrideDataType == null)
                         {
 #>
             return !string.IsNullOrEmpty(this.<#=member.VariableName#>);

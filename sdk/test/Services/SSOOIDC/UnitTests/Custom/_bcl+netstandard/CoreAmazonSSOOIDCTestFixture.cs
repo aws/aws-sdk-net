@@ -25,6 +25,7 @@ using Amazon.Runtime.SharedInterfaces;
 using Amazon.SSOOIDC;
 using Amazon.SSOOIDC.Internal;
 using Amazon.SSOOIDC.Model;
+using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -69,6 +70,7 @@ namespace AWSSDK.UnitTests
         {
             ClientSecret = "client-secret",
             ClientId = "client-id",
+            ClientSecretExpiresAt = AWSSDKUtils.EPOCH_START.Ticks,
         };
 
         public readonly StartDeviceAuthorizationRequest StartDeviceAuthorizationRequest = new StartDeviceAuthorizationRequest()
@@ -338,9 +340,9 @@ namespace AWSSDK.UnitTests
             return request => request.ClientName == expectedRequest.ClientName &&
                               request.ClientType == expectedRequest.ClientType &&
                               request.IssuerUrl == expectedRequest.IssuerUrl &&
-                              request.Scopes.SequenceEqual(expectedRequest.Scopes) &&
-                              request.GrantTypes.SequenceEqual(expectedRequest.GrantTypes) &&
-                              request.RedirectUris.SequenceEqual(expectedRequest.RedirectUris);
+                              (expectedRequest.Scopes == null || request.Scopes.SequenceEqual(expectedRequest.Scopes)) &&
+                              (expectedRequest.GrantTypes == null || request.GrantTypes.SequenceEqual(expectedRequest.GrantTypes)) &&
+                              (expectedRequest.RedirectUris == null || request.RedirectUris.SequenceEqual(expectedRequest.RedirectUris));
         }
 
         private static Expression<Func<StartDeviceAuthorizationRequest, bool>> MatchesRequest(

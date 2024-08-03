@@ -3,13 +3,7 @@ using Amazon.RestJsonTest.Model;
 using Amazon.RestJsonTest.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal;
 using Amazon.Util;
-<<<<<<< HEAD
-using AWSSDK_DotNet.UnitTests.TestTools;
-||||||| Commit version number update changes
-using AWSSDK_DotNet35.UnitTests.TestTools;
-=======
 using AWSSDK.UnitTests.Mocking;
->>>>>>> 2b0190e05c1787d2530d4c1a94beb3208b2b9f8e
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
