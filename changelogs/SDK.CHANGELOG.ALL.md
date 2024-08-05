@@ -1,3 +1,16 @@
+### 3.7.858.0 (2024-08-05 18:19 UTC)
+* DataZone (3.7.402.0)
+	* This releases Data Product feature. Data Products allow grouping data assets into cohesive, self-contained units for ease of publishing for data producers, and ease of finding and accessing for data consumers.
+* ECR (3.7.402.0)
+	* Released two new APIs along with documentation updates. The GetAccountSetting API is used to view the current basic scan type version setting for your registry, while the PutAccountSetting API is used to update the basic scan type version for your registry.
+* KinesisVideoWebRTCStorage (3.7.401.0)
+	* Add JoinStorageSessionAsViewer API
+* PI (3.7.400.3)
+	* Added a description for the Dimension db.sql.tokenized_id on the DimensionGroup data type page.
+* Core 3.7.400.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.857.0 (2024-08-02 18:27 UTC)
 * CloudWatch (3.7.401.0)
 	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
