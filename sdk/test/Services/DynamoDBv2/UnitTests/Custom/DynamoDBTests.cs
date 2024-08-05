@@ -451,16 +451,17 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void DisableFetchingTableMetadata_QueryWithMissingRangeKey_ThrowsException()
         {
-            var config = new DynamoDBContextConfig()
+            // For variety, use the operation-level override
+            var config = new DynamoDBOperationConfig()
             {
                 DisableFetchingTableMetadata = true
             };
 
-            var context = new DynamoDBContext(new Mock<IAmazonDynamoDB>().Object, config);
+            var context = new DynamoDBContext(new Mock<IAmazonDynamoDB>().Object);
 
             // This is the table's range key, which is not attributed
             Assert.ThrowsException<InvalidOperationException>(() => 
-            context.Query<EmployeeMissingRangeKeys>("123", QueryOperator.GreaterThan, 5));
+            context.Query<EmployeeMissingRangeKeys>("123", QueryOperator.GreaterThan, 5, config));
             
             // This is a GSI's range key, which is not attributed
             Assert.ThrowsException<InvalidOperationException>(() =>
@@ -753,6 +754,45 @@ namespace AWSSDK_DotNet.UnitTests
             protected string _protected { get; set; }
 
             public string PublicAccessToProtected => _protected;
+        }
+
+        /// <summary>
+        /// Verifies that specifing an TableName on the operation-level config overrides 
+        /// the table name from the data model
+        /// </summary>
+        [TestMethod]
+        public void OperationConfig_CanOverrideTableName()
+        {
+            var client = new Mock<IAmazonDynamoDB>();
+            client.Setup(client => client.DescribeTable(It.IsAny<DescribeTableRequest>()))
+                .Returns(new DescribeTableResponse { Table = new TableDescription
+                {
+                    KeySchema = new List<KeySchemaElement>
+                    {
+                        new KeySchemaElement("Name", KeyType.HASH),
+                        new KeySchemaElement("Age", KeyType.RANGE)
+                    },
+                    AttributeDefinitions = new List<AttributeDefinition>()
+                    {
+                        new AttributeDefinition("Name", ScalarAttributeType.S),
+                        new AttributeDefinition("Age", ScalarAttributeType.S)
+                    }
+                }});
+            client.Setup(client => client.Query(It.IsAny<QueryRequest>())).Returns(new QueryResponse { Items = new() });
+
+            var config = new DynamoDBOperationConfig
+            {
+                OverrideTableName = "OverrideTableName"
+            };
+
+            var context = new DynamoDBContext(client.Object, config);
+
+            var query = context.Query<Employee>("123", config);
+            var objects =  query.ToList();
+
+            client.Verify(client => client.DescribeTable(It.Is<DescribeTableRequest>(request => request.TableName == "OverrideTableName")), Times.Once());
+            client.Verify(client => client.Query(It.Is<QueryRequest>(request => request.TableName == "OverrideTableName")), Times.Once());
+            client.VerifyNoOtherCalls();
         }
     }
 }
