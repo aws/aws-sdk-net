@@ -181,9 +181,10 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property SubscriptionId. 
         /// <para>
-        /// The ID of the subscription grant.
+        /// The ID of the subscription.
         /// </para>
         /// </summary>
+        [Obsolete("Multiple subscriptions can exist for a single grant")]
         public string SubscriptionId
         {
             get { return this._subscriptionId; }

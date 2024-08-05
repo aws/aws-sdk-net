@@ -184,6 +184,7 @@ namespace Amazon.DataZone.Model
         /// The identifier of the subsctiption whose subscription grant is to be deleted.
         /// </para>
         /// </summary>
+        [Obsolete("Multiple subscriptions can exist for a single grant")]
         public string SubscriptionId
         {
             get { return this._subscriptionId; }

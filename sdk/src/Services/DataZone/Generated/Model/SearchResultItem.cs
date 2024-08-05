@@ -35,6 +35,7 @@ namespace Amazon.DataZone.Model
     public partial class SearchResultItem
     {
         private AssetListingItem _assetListing;
+        private DataProductListingItem _dataProductListing;
 
         /// <summary>
         /// Gets and sets the property AssetListing. 
@@ -52,6 +53,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetAssetListing()
         {
             return this._assetListing != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataProductListing. 
+        /// <para>
+        /// The data product listing.
+        /// </para>
+        /// </summary>
+        public DataProductListingItem DataProductListing
+        {
+            get { return this._dataProductListing; }
+            set { this._dataProductListing = value; }
+        }
+
+        // Check to see if DataProductListing property is set
+        internal bool IsSetDataProductListing()
+        {
+            return this._dataProductListing != null;
         }
 
     }

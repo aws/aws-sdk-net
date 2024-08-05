@@ -35,6 +35,7 @@ namespace Amazon.DataZone.Model
     public partial class SubscribedListingItem
     {
         private SubscribedAssetListing _assetListing;
+        private SubscribedProductListing _productListing;
 
         /// <summary>
         /// Gets and sets the property AssetListing. 
@@ -52,6 +53,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetAssetListing()
         {
             return this._assetListing != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductListing. 
+        /// <para>
+        /// The data product listing.
+        /// </para>
+        /// </summary>
+        public SubscribedProductListing ProductListing
+        {
+            get { return this._productListing; }
+            set { this._productListing = value; }
+        }
+
+        // Check to see if ProductListing property is set
+        internal bool IsSetProductListing()
+        {
+            return this._productListing != null;
         }
 
     }

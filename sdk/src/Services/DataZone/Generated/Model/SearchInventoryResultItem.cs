@@ -35,6 +35,7 @@ namespace Amazon.DataZone.Model
     public partial class SearchInventoryResultItem
     {
         private AssetItem _assetItem;
+        private DataProductResultItem _dataProductItem;
         private GlossaryItem _glossaryItem;
         private GlossaryTermItem _glossaryTermItem;
 
@@ -54,6 +55,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetAssetItem()
         {
             return this._assetItem != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataProductItem. 
+        /// <para>
+        /// The data product.
+        /// </para>
+        /// </summary>
+        public DataProductResultItem DataProductItem
+        {
+            get { return this._dataProductItem; }
+            set { this._dataProductItem = value; }
+        }
+
+        // Check to see if DataProductItem property is set
+        internal bool IsSetDataProductItem()
+        {
+            return this._dataProductItem != null;
         }
 
         /// <summary>

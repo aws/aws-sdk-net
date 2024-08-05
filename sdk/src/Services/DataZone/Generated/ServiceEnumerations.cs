@@ -299,6 +299,106 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type DataProductItemType.
+    /// </summary>
+    public class DataProductItemType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSET for DataProductItemType
+        /// </summary>
+        public static readonly DataProductItemType ASSET = new DataProductItemType("ASSET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataProductItemType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataProductItemType FindValue(string value)
+        {
+            return FindValue<DataProductItemType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataProductItemType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataProductStatus.
+    /// </summary>
+    public class DataProductStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for DataProductStatus
+        /// </summary>
+        public static readonly DataProductStatus CREATE_FAILED = new DataProductStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATED for DataProductStatus
+        /// </summary>
+        public static readonly DataProductStatus CREATED = new DataProductStatus("CREATED");
+        /// <summary>
+        /// Constant CREATING for DataProductStatus
+        /// </summary>
+        public static readonly DataProductStatus CREATING = new DataProductStatus("CREATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataProductStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataProductStatus FindValue(string value)
+        {
+            return FindValue<DataProductStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataProductStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataSourceErrorType.
     /// </summary>
     public class DataSourceErrorType : ConstantClass
@@ -842,6 +942,10 @@ namespace Amazon.DataZone
         /// Constant ASSET for EntityType
         /// </summary>
         public static readonly EntityType ASSET = new EntityType("ASSET");
+        /// <summary>
+        /// Constant DATA_PRODUCT for EntityType
+        /// </summary>
+        public static readonly EntityType DATA_PRODUCT = new EntityType("DATA_PRODUCT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1332,6 +1436,10 @@ namespace Amazon.DataZone
         /// Constant ASSET for InventorySearchScope
         /// </summary>
         public static readonly InventorySearchScope ASSET = new InventorySearchScope("ASSET");
+        /// <summary>
+        /// Constant DATA_PRODUCT for InventorySearchScope
+        /// </summary>
+        public static readonly InventorySearchScope DATA_PRODUCT = new InventorySearchScope("DATA_PRODUCT");
         /// <summary>
         /// Constant GLOSSARY for InventorySearchScope
         /// </summary>
